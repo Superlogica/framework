@@ -1,0 +1,11 @@
+<?php
+
+$url = Application_Helpers_Pagamento::verificarDesinstalacao();
+if ( $url === true )
+    echo "App ainda não contratado.";
+else{
+?>
+    <iframe src="<?php echo $url?>" frameborder="0" width="100%" height="600"></iframe>
+<?php
+}
+?>

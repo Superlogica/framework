@@ -1,0 +1,9 @@
+<?php
+
+$response = Superlogica_Response::getResponse();
+$url = $response['data']['url'];
+
+$response = Zend_Controller_Front::getInstance()->getResponse();        
+$response->setRedirect($url);
+$response->sendResponse();
+Superlogica_App::morra();

@@ -1,0 +1,62 @@
+#formBusca,#barraDeFerramentas a,
+#topo #menu,
+#breadcrumbs,
+#rodape,
+.classGridPaginacao,
+.bg2,
+.fr b,
+#menuTopo, 
+.noprint, #outrosFormatos, 
+#tempoDeExecucao,
+input[type='checkbox'].Superlogica_Js_Grid_Marcador,.alerta,
+td[coluna='botoes'] img,
+.Superlogica_Js_Grid_Marcadores,
+.paginacaoPorData,
+.joyride-content-wrapper,
+#Suporte,
+.module_id_areadocliente .barraAuxiliar,
+.module_id_areadocliente .header .complemento,
+.module_id_areadocondomino .barraAuxiliar,
+.module_id_areadocondomino .header .complemento
+{
+    display:none;
+    visibility: hidden;
+}
+
+.module_id_areadocliente #rodape,
+.module_id_areadocondomino #rodape{
+    display:block;
+    visibility: visible;
+}
+
+.module_id_areadocliente .corpoBarraAuxiliar,
+.module_id_areadocondomino .corpoBarraAuxiliar{
+    width:100%;
+}
+
+.fr{width: 200px !important;}
+
+/*mostra os elementos que possue essa classe, que no browser estavam escondidos*/
+.somenteImpressao{
+    display:block;
+}
+/*
+td[coluna="checkbox"],
+th[coluna="checkbox"],
+td[coluna="checkbox"] *,
+th[coluna="checkbox"] *,
+td[coluna="botoes"],
+th[coluna="botoes"],
+td[coluna="botoes"] *,
+th[coluna="botoes"] *{
+    width: 0% !important;
+    height: 0% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }*/

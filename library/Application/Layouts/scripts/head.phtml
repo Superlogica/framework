@@ -1,0 +1,24 @@
+<!--[if lte IE 8]>
+	<script type="text/javascript" src="<?php echo APPLICATION_URL;?>/scripts/css_browser_selector.js"></script>
+<![endif]-->
+<?php
+echo $this->headLink()->appendStylesheet( CLOUD_TEMA_URL . 'style/main.css','all')
+        ->appendStylesheet(CLOUD_TEMA_URL . 'style/ids.css','all')
+        ->appendStylesheet(CLOUD_TEMA_URL . 'style/print.css','print')
+        ->appendStylesheet(CLOUD_TEMA_URL . 'style/jquery-ui-1.8.6.custom.css')
+        ->headLink(array('rel' => 'shortcut icon', 'href' => APPLICATION_CLIENT_TEMA_URL . '/img/favicon.ico'), 'PREPEND');
+
+
+$baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
+
+$headScript = $this->headScript();
+$js = new Superlogica_Js();
+$scripts = $js->getScripts();
+foreach ($scripts as $script) {
+    $url = strpos($script['filename'],'http')===false ? APPLICATION_URL . '/scripts/min/' . $script['filename'] :$script['filename'];
+    $script['tipo'] == 'arquivo' ? $headScript->appendFile( $url) : $headScript->appendScript($script['codigo']);
+}
+
+echo $headScript;
+
+?>

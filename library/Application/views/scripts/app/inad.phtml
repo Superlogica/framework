@@ -1,0 +1,10 @@
+<?php
+$urlClient = Application_Plugins_Api::getRemoteClientUrl();
+
+$this->assign('titulo', 'Existem faturas pendentes');
+$this->assign('subtitulo', '<div id="subtitulo">Necessário efetuar o pagamento para continuar.</div>');
+?>
+
+<iframe src="<?php echo Application_Plugins_Api::getRemoteDevUrl();?>/clients/areadocliente/cobranca/index" frameborder="0" width="100%" height="600"></iframe>
+
+<a href="<?php echo $urlClient.'/apps';?>">Voltar</a>

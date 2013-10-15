@@ -1,0 +1,18 @@
+
+<div id="barraDeFerramentas">
+    <?php echo $this->render('busca.phtml');?>
+</div>
+
+<h2>Exemplos de utilização</h2>
+
+<h3>Grids</h3>
+<?php
+
+$grid = new Grids_Index(array(
+    array('valor' => 'primeiro item'),
+    array('valor' => 'segundo item' )
+));
+
+echo $grid;
+
+?>

@@ -1,0 +1,27 @@
+<?php
+
+$response = Superlogica_Response::getResponse();
+$devInfo = $response['data'];
+
+$this->assign('titulo', 'Contratar ' . $devInfo['nome']);
+$urlDev = Application_Plugins_Api::getRemoteDevUrl();
+      
+$session = Application_Helpers_Session::getInstance();
+if (!$session->redirecttoken)
+    $session->redirecttoken = sha1(uniqid(rand(1,1000), true));
+//die( $session->redirecttoken );
+?>
+<div id="superlogica_planos_script"></div>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+var appUrl = encodeURIComponent( document.location.href );
+var iframePlanos = document.createElement("iframe");
+iframePlanos.setAttribute("frameborder",0);
+iframePlanos.setAttribute("width","100%");
+iframePlanos.setAttribute("height",900);
+iframePlanos.src="<?php echo $urlDev;?>/clients/areadocliente/planos/put?redirecttoken=<?php echo $session->redirecttoken;?>&identificadorContrato=<?php echo Application_Helpers_Pagamento::getContratoIdentificador();?>&filename=<?php echo $devInfo['licenca'];?>&idplano=<?php echo $devInfo['idplano']; ?>&url="+appUrl+"";
+document.getElementById("superlogica_planos_script").appendChild(iframePlanos);
+}());
+//]]>
+</script>

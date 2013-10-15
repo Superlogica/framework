@@ -1,0 +1,283 @@
+<?php 
+
+$frontendOptions = array(
+    'lifetime' => 60 * 60 * 24,
+    "automatic_serialization" => true,
+    'cache_id_prefix' => 'layout_'
+);
+
+$backendOptions = array(
+    'cache_dir' => Superlogica_App::getCacheDir()
+);
+
+$cache = Zend_Cache::factory(
+    'Core',
+    'File',
+    $frontendOptions,
+    $backendOptions
+);
+
+$session = Application_Helpers_Session::getInstance();
+$arrMenu = $session->menu['array'];
+$controllerName = strtolower(Zend_Controller_Front::getInstance()->getRequest()->getControllerName());
+$layoutCacheName = md5(serialize($arrMenu) . $session->licenca.$_SERVER['REQUEST_URI'] );
+
+$cachedContent = $cache->load($layoutCacheName);
+$titulo = '';
+if ($cachedContent && $controllerName != 'error' ) {
+    
+    $menu = $cachedContent['menu'];
+    $breadcrumb = $cachedContent['breadcrumb'];
+    $titulo = $cachedContent['titulo'];
+    
+} else {
+    
+    $_menu = new Zend_Navigation( $arrMenu );
+    $breadcrumb = $this->navigation()->breadcrumbs()->setContainer($_menu)->setMinDepth(0)->setLinkLast(true);
+    $menu = $this->navigation()->menu()->setUlClass('navegacao')->setContainer($_menu)->setMaxDepth(1);
+    
+    $paginaAtual = $this->navigation()->findActive($_menu);
+        
+    if ($paginaAtual['page'] instanceof Zend_Navigation_Page_Mvc) {
+        $titulo = $paginaAtual['page']->titulo;        
+    }
+    
+    
+    if ( $controllerName != 'error' )
+        $cache->save(array('menu' => $menu->__toString(), 'breadcrumb' => $breadcrumb->__toString(), 'titulo' => $titulo), $layoutCacheName);      
+    
+}
+$titulo = $this->titulo ? $titulo . ' ' . $this->titulo : $titulo;
+$bodyClass = (APPLICATION_ENV !== 'production') ? ' ambienteTeste' : '';
+
+Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+    
+    __logout : function(){
+        this.bind("click", function(event){
+            event.preventDefault();
+            var locationProxyLogout = new Superlogica_Js_Location();
+                locationProxyLogout.setController("auth").setAction("logout").setParam("getUrl",1).setApi(true).viaProxy(true);
+            
+            var request = new Superlogica_Js_Request( locationProxyLogout.toString() );
+            var response = request.getResponse();
+            var url = response.getData().url;
+            
+            var locationLogout = new Superlogica_Js_Location();
+                locationLogout.setApi(true).setController("auth").setAction("logout");
+            
+            var request = new Superlogica_Js_Request( locationLogout.toString() );
+            var response = request.getResponse();
+            if ( response.isValid() ){            
+                window.location.href = url;
+            }
+        });
+    },
+    
+    __focarConteudo : function(){
+        this.bind("click", function(evento){
+            evento.preventDefault();
+            var linkParaFoco = new Superlogica_Js_Elemento("h1:first a:eq(1)");
+            if ( linkParaFoco.contar() <= 0 )
+                linkParaFoco = new Superlogica_Js_Elemento("h1:first a:first");
+            linkParaFoco.simularEvento("focus");
+        });
+    },
+        
+    __usuarioHover : function (){            
+            this.bind("mouseover",function(event){
+               event.preventDefault();
+               var divAlvo = new Superlogica_Js_Elemento("#divAlvo");
+               divAlvo.mostrar();
+           });
+           
+           this.bind("focusin",function(event){
+                event.preventDefault();
+                new Superlogica_Js_Elemento( this ).simularEvento("mouseover");
+           })
+           .encontrar("a:last")
+           .bind("focusout", function(event){
+                event.preventDefault();
+                new Superlogica_Js_Elemento( this ).simularEvento("mouseout");
+           });
+           
+        },
+    __usuarioOut : function (){
+            this.bind("mouseout",function(event){
+               event.preventDefault();
+               var divAlvo = new Superlogica_Js_Elemento("#divAlvo");
+               divAlvo.esconder();
+           });
+        }
+});');
+
+if ($session->vencimentoApp){ 
+    $vencimentoSoftware= '<div id="trial">Seu período de utilização termina em '.$session->vencimentoApp.'.</div>';
+}
+
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <?php
+    echo $this->headMeta();
+    $this->headTitle(strip_tags($titulo));
+    echo $this->headTitle();
+    echo $this->render('head.phtml');        
+  ?>
+</head>
+<body <?php echo $bodyClass ? 'class="'.$bodyClass.'"' : '';?>>
+    <div id="estrutura">
+        
+        <div id="wrap">
+            
+            <div id="topo">
+                <div class="bg">
+                    <div id="dados">
+                        <div class="licenca">
+                            <?php echo $session->licenca?>
+                        </div>
+                        <?=$vencimentoSoftware?>
+                    </div>
+                </div>
+                <div class="bg2">
+                    <div class="infosoftware">
+                        <div id="info" class="layoutStatico">
+                           <div id="logo">
+                                    <?php
+                                    $session = Application_Helpers_Session::getInstance();
+                                    $location = new Superlogica_Location();
+                                    ?>
+                                <a href="<?php echo $location->setParams(array())->setController('index')->setAction('index')->toString();?>"><img src="<?php echo APPLICATION_CLIENT_TEMA_URL ?>/img/<?php echo $session->app_id?>.png" alt="Superlogica" border="0" /></a>
+                           </div>
+                            <?php
+                            $nomeUsuario = $session->ST_APELIDO_USU;
+                            if ( $controllerName != 'publico' ){
+                            ?>
+                            <div class="usuario" comportamentos="usuarioHover usuarioOut">
+                                    <a href="#">
+                                       <img src="<?=APPLICATION_CLIENT_TEMA_URL?>/img/usuario.png" title="<?php echo $nomeUsuario;?>" alt="<?php echo $nomeUsuario;?>" border="0" />
+                                   </a>
+                                   <br />
+                                   <?php
+                                       $location = new Superlogica_Location();
+                                       $location->viaProxy();
+                                   ?>
+                                   <ul id="divAlvo" class="blocoEscondido">
+                                       <li>
+                                           <span>
+                                               <b><?php echo ucwords($nomeUsuario);?></b>
+                                           </span>
+                                            <?php  if( $session->app_id != 'condor'){ ?>
+                                           <span><a href="<?=$location->setParams(array())->setController('usuario')->setParams(array('exibirAcessosDosUsuarios'=>1))->setAction('index')->toString();?>">Todos os usuários</a></span>                                    
+                                            <?php  } ?>                                           
+                                       </li>
+                                       <li>
+                                           <span><a href="<?=$location->setParams(array())->setController('auditoria')->setAction('index')->toString();?>">Histórico de alterações</a></span>
+                                       </li>
+                                       <li>
+                                           <span><a href="<?=$location->setParams(array())->setController('filadeemails')->setAction('index')->toString();?>">Histórico de e-mails enviados</a></span>
+                                       </li>
+                                       <li>
+                                           <?php 
+                                             $nomeMenu = ($session->app_id == 'condor') ? 'Documentos' : 'Histórico impressões';
+                                           ?>
+                                           <span><a href="<?=$location->setParams(array())->setController('impressoes')->setAction('index')->toString();?>"><?php echo $nomeMenu ?></a></span>
+                                       </li>
+                                       <li>
+                                           <span><a href="<?=$location->setParams(array())->setController('lotes')->setAction('index')->toString();?>">Histórico proc. em lote</a></span>
+                                       </li>                                    
+                                       <li>
+                                           <span><a href="<?=$location->setParams(array())->setController('contasuperlogica')->setAction('index')->toString();?>">Minha conta na Superlógica</a></span>
+                                       </li>                                                                           
+                                       <li>
+                                           <span><a href="<?=$location->setParams(array())->setController('auth')->setAction('logout');?>" comportamentos="logout">Sair</a></span>
+                                       </li>                                    
+                                   </ul>
+                               </div>
+                            <?php 
+                                } 
+                            ?>
+                       </div>      
+                    </div>
+                </div>
+               <div class="clearfix"></div>
+               <div id="menu">
+                    <?php echo $menu; ?>
+                </div>
+
+            </div>
+            <div id="conteudo">
+
+                <?php
+                if ($breadcrumb) {
+                ?>
+                    <div id="breadcrumbs">
+                        <?php echo $breadcrumb; ?>
+                    </div>
+                <?php
+                }
+                ?>
+
+
+                <h1>
+                    <a name="conteudo" href="javascript:void(0);"></a>
+                    <?php echo $titulo; ?>
+                    <?php
+                    if (is_array($this->subtitulo)) {
+
+                        if (is_array($this->subtitulo['itens'])) {
+                    ?>
+                            <div id="subTitulo">
+                                <?php
+                                foreach ($this->subtitulo['itens'] as $key => $item) {
+                                ?>
+                                    <span comportamentos="Superlogica_Js_Params" data='<?php echo Zend_Json::encode(Superlogica_Utf8::encode($item)) ?>'></span>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                        <?php
+                        } else {
+                        ?>
+                        <div id="subtitulo">
+                            <span comportamentos="Superlogica_Js_Params" data='<?php echo Zend_Json::encode(Superlogica_Utf8::encode($this->subtitulo)) ?>'></span>
+                        </div>
+                    <?php
+                        }
+                    } else if (is_string($this->subtitulo)) {
+                        echo '<div id="subTitulo">' . $this->subtitulo . '</div>';
+                    }
+                    ?>
+                </h1>
+                
+                <?php echo $this->layout()->content ?>
+            </div>
+            <?php
+                
+            $slLayout = Superlogica_Layout::getInstance();
+            $codigosSlLayout = $slLayout->getCodigos(true);
+            if ( $codigosSlLayout )
+                echo '<div id="Superlogica_Layout_Codigos_Append" class="blocoEscondido">'.$codigosSlLayout.'</div>';
+            ?>
+            <div id="rodape">
+                    <div class="shadow"></div>
+                    <div class="bg">
+                        <div class="container">
+
+                            <b>Executado em:</b>
+                            <?php
+                            global $time_start; 
+                            echo round(round(microtime(true), 4) - $time_start, 4);
+                            ?>s
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            
+            
+        </div>
+        
+    </div>
+</body>
+</html>

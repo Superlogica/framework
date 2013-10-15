@@ -1,0 +1,719 @@
+/****************************
+ * Estrutura da página
+ ****************************/
+
+/*#estrutura .container .conteudo{position:relative;margin:0 auto;width:900px;padding:9px 0 9px 0}*/
+
+#estrutura{
+    text-align: center;
+}
+
+/*Laytou statico*/
+.layoutStatico, #dados{
+    max-width: 1000px;
+    margin:0 auto;
+    padding: 0 20px;
+}
+
+* html #dados{
+    width: 1000px;
+}
+
+  /*Contém todos os dados da página*/
+#wrap{
+    margin: 0 auto;
+    width:100%;
+    text-align: center;
+}
+
+ /*Contém todos os dados com excessão de topo, menu e rodapé*/
+#conteudo{
+    text-align: left;
+    min-height: 839px;
+    max-width: 940px;
+    min-width: 940px;
+    _height: 839px;
+    _width: 940px;
+    margin:0 auto;
+    padding: 20px;
+}
+
+#dados{
+    color:white;
+}
+#topo .licenca{
+    float: left;
+    width:315px;
+    text-align: left;
+    font-size: 14px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-transform:uppercase;
+}
+
+.ambienteTeste #topo{
+    background:url('../img/bg-teste.png') top repeat-x !important;
+}
+
+#topo{
+    background:url('../img/bg-producao.png') top repeat-x;
+    min-height: 40px;
+    min-width: 980px;
+    _height: 40px;
+    _width: 980px;    
+    margin:0 auto;
+/*    padding: 5px;*/
+}
+
+#topo #adicionais {
+    float: left;
+    font-size: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#topo #info #dados, #topo #adicionais #empresa{
+    float: left !important;
+    font-size: 14px!important;
+    font-weight:bold!important;
+}
+
+#topo #info #logo, #topo #adicionais #logo{
+    float: left !important;
+    padding-top: 12px;
+}
+
+#topo #configuracoes {
+    float: right;
+    font-weight: bold;
+}
+#topo #configuracoes .zend_form .item{
+    margin: 0;
+}
+
+#topo #configuracoes div{
+    float:right;
+    text-align: right;
+    clear: both;
+}
+
+#topo #configuracoes #ST_FANTASIA_COND{
+    text-align: right;
+}
+
+#subtitulo{
+   padding-bottom: 5px;
+   font-size: 14px!important;
+   font-weight: lighter;
+}
+
+
+
+/****************************
+ * Login
+ ****************************/
+
+
+#login {
+  color: #000;
+  background-color: #e5e5e5;
+  text-align:center;
+}
+
+/*Inputs do login*/
+#login div#conteudoLogin .formElement input{
+    width:100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#login div#logo {
+  margin-top: 0;
+  text-align: center;
+}
+/*Todos os dados da tela de login*/
+#login div#conteudoLogin,#slSocial{
+    text-align: left;
+    padding: 25px 28px;
+    color:#ffffff !important;
+    border:0;
+    text-align: left;
+    width: 260px;
+    margin: 55px auto;
+    font-family: lucida grande, verdana;
+    font-size: 12px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#slSocial{
+    color:#ffffff !important;
+    font-style: normal;
+    text-align: center;
+}
+
+#slSocial .textoInfo{
+    text-align: left;
+}
+
+#login .item{
+    float: none;
+}
+
+
+
+/*Tela te login deve ser igual a tela de apps*/
+#estruturaLogin{
+    width: 100%;
+    position: absolute;
+    margin-top: 150px;
+    text-align: center;
+    top:0;
+    left:0;
+}
+/* navegadores modernos */
+#bg{z-index:-9999;position:fixed;top:-50%;left:-50%;width:200%;height:200%}
+#bg img {position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;min-width:50%;min-height:50%}
+
+/* hakc ie */
+* html #bg{top:0%;left:0%;width:100%;height:100%}
+* html  #bg img {width:100%;height:100%}
+
+/* hakc opera */
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){
+    #bg{top:0%;left:0%;width:100%;height:100%}
+    #bg img {width:100%;height:100%}
+}
+
+#conteudoLogin, #slSocial{
+     /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";   
+    
+    box-shadow: 0px 0px 5px rgba(00,00,00,0.5);
+    -moz-box-shadow: 0px 0px 5px rgba(00,00,00,0.5);
+    -webkit-box-shadow: 0px 0px 5px rgba(00,00,00,0.5);    
+    
+}
+
+
+/****************************
+ * Formulário de busca
+ ****************************/
+
+
+#formBusca{
+    display: inline;
+}
+
+
+/****************************
+ * Relatórios
+ ****************************/
+
+#relatorio h1{
+    margin: 0;
+}
+
+#relatorio .sobretitulo{
+    font-weight: bold;
+}
+
+#relatorio .subtitulo{
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+#relatorio .linhaPar{
+    background-color: #EFEFEF;
+}
+#relatorio table .negrito td{
+/*    border-bottom:1px solid #ddd;*/
+    font-weight: bold;
+    text-align: left;
+}
+
+#relatorio table thead th{
+    border-bottom:1px solid #ddd;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: left;
+}
+
+#relatorio table tfoot td{
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#relatorio table{
+    font-size: 10;
+}
+
+fieldset#fieldset-DESPESA_LIQUIDAR{
+    background-color: lightgray;
+    box-shadow : 3px 3px 13px #888;
+    border: none
+}
+
+#despesasMensaisDiv{
+/*    border-left: 2px solid lightgray;*/
+    float: right;
+    padding-left: 35px;
+    width: 32%;
+}
+
+#Clients_Condor_Grids_DespesasMensais0 td.form{
+    padding : 0;
+}
+#Clients_Condor_Grids_DespesasMensais0 td{
+    height: 80px;
+}
+
+#Clients_Financeiro_Grids_Mensalidades1 .plano_cabecalho,
+#Clients_Financeiro_Grids_Mensalidades0 .plano_cabecalho{
+    padding-top: 10px;
+    clear:both;
+}
+
+#Clients_Financeiro_Grids_Mensalidades1 .plano_item,
+#Clients_Financeiro_Grids_Mensalidades0 .plano_item{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 30px;
+    padding-top: 10px;
+    clear:both;
+}
+
+#Clients_Financeiro_Grids_Mensalidades1 .plano_item div
+#Clients_Financeiro_Grids_Mensalidades0 .plano_item div{
+    float:left;
+}
+/* topo */
+#estrutura #topo .bg{
+    height:35px;
+    line-height: 35px;
+    width: 100%;
+/*    background-color: #231f20;*/
+/*    background:url('../img/be-top-1.jpg') top repeat-x;*/
+}
+#estrutura #topo .bg span{
+    padding-top:3px
+}
+* html #estrutura #topo .bg span{padding-top:1px}
+#estrutura #topo .bg span a{text-decoration:none;}
+#estrutura #topo .bg span a:hover{text-decoration:underline;}
+#estrutura #topo .bg2{
+    height:40px;
+/*    line-height: 55px;*/
+    width:100%;
+/*    background-color: #005596;*/
+/*    background:url('../img/be-top-2.jpg') top repeat-x;*/
+}    
+
+#topo{width:100%}
+#topo .shadow{height:6px;width:100%;background:url('../img/top-shadow.png') top repeat-x}
+* html #topo .shadow{display:none}
+
+/* menu */
+#topo .bg{
+    height:25px;
+    width:100%;
+/*    background:url('../img/be-top-1.jpg') top repeat-x;*/
+}
+    #topo .bg p{padding-top:5px}
+        #topo .bg p a{text-decoration:none;color:#000}
+#topo .bg2{
+/*    vertical-align: middle
+    height:40px;*/
+/*    height:55px;*/
+    width:100%;
+/*    background-color: #005596;*/
+/*    background:url('../img/be-top-2.jpg') top repeat-x;*/
+}
+* html #topo .bg2 .infosoftware{
+    width:1000px;
+}
+#topo #menu{
+    height:32px;
+    margin-top:-6px;
+    text-align: center;
+    margin: 0 auto;
+/*    display: inline-block; comentado porque estava desalinhando o menu do sistema */
+    position: relative;
+    
+    /* Bordas */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #E1E3E5;
+}
+
+* html #menu{
+    display: inline;
+    width:347px;
+}
+
+
+#topo #menu .mais{
+    width: 20px;
+    background:url('../img/maisMenu.png') center no-repeat;
+    text-indent: -99999px;
+    border-right: 0px !important;
+}
+
+#topo #menu .mais:hover{
+    background:url('../img/maisMenu-ativo.png') center no-repeat;
+}
+
+#topo #menu li.active .mais{
+    width: 20px;
+    text-indent: -99999px;
+    background:url('../img/maisMenu-ativo.png') center no-repeat;
+}
+
+#topo #menu .inicio{
+    width: 20px;
+    text-indent: -99999px;
+    background:url('../img/home.png') center no-repeat;
+}
+
+* html #topo #menu a.inicio, * html #topo #menu a.mais{
+    width: 41px;
+    height:28px;
+}
+
+#topo #menu .inicio:hover{
+    background:url('../img/home-ativo.png') center no-repeat;
+}
+
+#topo #menu li.active .inicio{
+    width: 20px;
+    text-indent: -99999px;
+    background:url('../img/home-ativo.png') center no-repeat;
+}
+
+#topo .usuario img{
+    float: right;
+    cursor: pointer;
+}
+
+#topo .usuario #divAlvo{
+    left: -190px;
+    z-index: 9999;
+    text-align: left;
+    background: #E1E3E5;
+    width: 200px;
+    position: absolute;
+    margin-top: 10px;
+    padding: 5px 20px 5px 20px;
+    list-style: none;
+    
+    /* Bordas */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#formFechamento{  
+    left: 37%;
+    top: -150px;   
+    z-index: 9999;
+    text-align: left;
+    background: #E1E3E5;
+    width: 215px;
+    position: absolute;
+    margin-top: 10;
+    padding: 5px 20px 5px 20px;
+    list-style: none;
+    
+    /* Bordas */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+    
+}
+
+#formFechamento span{
+    color:black !important;
+    text-decoration: none;
+}
+
+#topo .usuario #divAlvo li:first-child{
+    padding: 20px 20px 10px 0px ;
+    border-bottom: 1px solid gray;
+    margin-bottom: 5px;
+}
+
+#topo .usuario #divAlvo .dados{
+    padding: 0px 4px 4px 4px !important;
+    margin-bottom: 10px;
+}
+
+#topo .usuario #divAlvo li:last-child{
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid gray !important;
+    margin-top: 5px;
+}
+
+#topo .usuario #divAlvo li span a{
+    display: block;
+    padding: 4px 4px;
+    height: 20px;
+    width: 90%;
+    line-height: 20px;
+    font-size:13px;
+    color:#000 !important;
+    
+}
+
+#topo .usuario #divAlvo li span a:hover{
+    color:#0593d1 !important;
+    text-decoration: none;
+    
+}
+
+#topo #menu ul{z-index:2;list-style:none;margin:0 auto;padding:2px 0 3px 0; margin:0;}
+    #topo #menu ul li{position:relative;float:left;border-right:1px solid #fff}
+    #topo #menu ul li:last-child{border-right:0px !important}
+    #topo #menu ul li a{border-right:1px solid #949494}
+    #topo #menu ul li.last{border-right:0}
+    #topo #menu ul li.last a{border-right:0}
+    #topo #menu ul li a{
+        font-size:13px;
+/*        font-family:ZemestroStd, Arial, Helvetica, sans-serif, Verdana, sans-serif;*/
+/*        text-transform:uppercase;*/
+        color:#000;
+        text-decoration:none;
+        padding:5px 10px;
+        display:block;
+    }
+    
+    #topo #menu ul li a:hover{color:#0055D4}
+
+    #topo #menu ul li ul{padding:4px 6px 4px 6px;background:#E1E3E5;position:absolute;top:24px;display:none;z-index:102}
+    #topo #menu ul li ul li{float:none;display:block;border:0;border-bottom:1px solid #e2e2e2}
+    #topo #menu ul li ul li:last-child{border-bottom:0px !important}
+    #topo #menu ul li ul li.last{border-bottom:0px !important}
+    #topo #menu ul li ul li:last-child a{border-bottom:0px !important}
+    #topo #menu ul li ul li a{text-align:left;white-space:pre;border:0;border-bottom:1px solid #b8b8b8}
+        
+#topo #menu ul li.active a,
+#topo #menu ul li a:focus{
+    color: #0055d4;
+}
+
+#topo #menu ul li.active li a{
+    color: #000;
+}
+
+#topo #menu ul li.active li.active a{
+    color: #0055D4;
+}
+
+#topo #menu li.over ul li.active a,
+#topo #menu li ul li a:focus {
+    color: #0055D4;
+}
+
+* html #topo #menu ul li ul{
+    margin-left: 1px;
+}
+
+/* rodape */
+#rodape{height:33px;margin-top:33px;min-width: 980px;}
+.module_id_financeiro #rodape .bg{height:48px;background-color:#231f20;}
+#rodape .bg{height:48px;background-color:#231f20;}
+#rodape .shadow{height:6px;background:url('../img/bottom-shadow.png') top repeat-x}
+* html #rodape .shadow{display:none}
+#rodape .container{padding:8px 0 0 0;color:#fff;text-align:center}
+#rodape .container a{color:#FFF;text-decoration:underline}
+
+#trial{
+    float: left;
+    width: 370px; 
+    background-color: #231F20;
+}
+#trial img{
+    vertical-align: text-bottom;
+}
+
+#submenu{
+    display: inline;
+    position: relative;
+    float:right;
+}
+
+#submenu .abrirSubmenu{
+    padding: 3px 0 !important;
+    width: 40px;
+    background-image: url('../img/trespontos-branco.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-indent: -99999px;
+    margin-left: 5px;
+    
+    background-color: #AAA;
+    display: inline-block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 16px;
+}
+
+#submenu ul{
+    display: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #AAA;
+    min-width: 150px;
+    position: absolute;
+    background-color : white;
+    z-index: 9;
+}
+
+#submenu.hover ul{
+    display: block;    
+}
+
+#submenu.hover a.abrirSubmenu{
+    border-radius: 5px 5px 0 0 !important
+}
+
+#submenu ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+}
+
+#submenu ul li a{
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    border:none !important;
+/*    border-bottom: 1px solid black !important;*/
+    color: #00C !important;
+    display: block !important;
+    padding: 5px 10px !important;
+    text-align: left !important;
+}
+
+#submenu ul li a:hover{
+    text-decoration: underline !important;
+}
+
+#avisos{
+    width:80%;
+    margin: 10px auto;
+}
+
+#avisos .aviso{
+    border-bottom : 1px dotted #CCC;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 5px;
+    background-color: #F5F5F5;
+}
+
+#avisos .aviso.nao-visualizado{
+    background-color: #E1E3E5;
+}
+
+#avisos p{
+    padding: 7px 0;
+}
+
+#avisos-notificacao{
+    background-image: url('../img/sem_notificacao.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    float:right;
+    text-indent: -999px;
+    width: 20px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+}
+
+#avisos-notificacao.nao-lidos{
+    background-image: url('../img/com_notificacao.png');
+}
+
+#avisos-notificacao .quanti{    
+    top: 5px;
+    right: 0;
+    color: white;
+    position: absolute;
+    text-indent: 0;
+    background-color: #C73737;
+    height: 10px;
+    padding: 0 1px !important;
+    line-height: 10px;
+    font-size: .8em;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 gray;
+    font-weight: bold;
+
+}
+
+#suporte{
+    background-image: url('../img/suporte.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    float:right;
+    text-indent: -999px;
+    width: 20px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#containerAlterarSacado.alinharADireita{
+    float:right;
+    margin-bottom: 60px;
+}
+
+#div-logo-empresa{
+    text-align: center;
+    margin: 40px 0px 40px 0px;
+}
+
+#msgLoginExterno{
+    margin: 0 auto;
+    width: 30%;
+    text-align: left;
+}
+
+#msgCadastroContatoExterno{
+    width: 45%;
+    margin: 70px auto;
+    text-align: left;
+}
+
+#clientes_confirmar select{
+    width: 280px;
+}
+
+#formCheckout{
+    text-align: center;
+}
+
+#formCheckout input[type='submit'][disabled]{
+    background-color:gray;
+    cursor: auto;
+}
+#formCheckout input[type='submit']{
+    background-color: #61AE24;
+    border:none;
+    padding: 5px 20px;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+}

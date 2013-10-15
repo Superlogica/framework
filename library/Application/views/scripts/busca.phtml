@@ -1,0 +1,31 @@
+<?php
+    new Superlogica_Js_Form();
+    
+    $request = Zend_Controller_Front::getInstance()->getRequest();
+    $pesquisa = $request->getParam( 'pesquisaEmTudo', '' );
+    
+    if( $pesquisa === '' )
+        $pesquisa = $request->getParam('pesquisa','');
+    
+?>
+<div class="maisopcoes">
+    
+    <?php
+    if ( $pesquisa === '' ) {
+    ?>
+        <a href="javascript:void(0);" class="btn-search" title="Pesquisar" comportamentos="cliqueAlteraVisibilidade alternarVisibilidadeComForm Form.formExibir" divid="formBuscaDiv">Pesquisar</a>
+    <?php 
+    }
+    ?>
+
+    <span <?php if ( $pesquisa === '' ) { ?>class="blocoEscondido"<?php } ?> id="formBuscaDiv">
+        <form id="formBusca" action="">
+            <input type="text" name="pesquisa" comportamentos="Form_Elementos.popularBusca">
+            <input type="submit" value="Buscar" id="buscar" comportamentos="Form_Elementos.submeterBusca">
+            <?php if ($this->buscarEmTudo) echo '<input id="buscarEmTudo" type="submit" value="Buscar em tudo" comportamentos="Form_Elementos.submeterBusca">'; ?>
+            <input type="submit" value="" id="btnBuscar" class="limparBusca" comportamentos="Form_Elementos.limparBusca">
+            <a href="#" class='fechar blocoEscondido'>Fechar</a>
+        </form>
+    </span>
+        
+</div>

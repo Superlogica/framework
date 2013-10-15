@@ -1,0 +1,494 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+h1{
+    padding: 0px;
+}
+
+#conteudo{
+    margin: 0 auto;
+    width: 940px;
+    padding-top:0;
+    height:auto;
+    min-height:auto;  
+    min-width: auto;
+}
+
+.header{
+    border-radius: 0 0 10px 10px;
+    height: 90px;
+    margin-bottom: 25px;
+        padding: 10px 70px;
+}
+
+.corpo{
+    border-radius: 10px 10px 0 0;
+    padding: 50px 70px;
+    min-height: 500px;
+}
+
+#logo{
+    float: left;
+}
+
+#logo img{
+    margin-right: 30px;
+}
+
+#logo strong{
+    width: 250px;
+    display: inline-block;
+}
+
+.complemento{
+    float: right;
+    margin-top: 30px;
+    font-size: 14px;
+    color: black;
+}
+
+
+.corpo, .header{
+    width: 800px; 
+    border: 1px solid #c3c3c3;
+    background-color: white;
+}
+
+.corpoBarraAuxiliar{
+    width: 580px;
+    float: left;
+}
+.barraAuxiliar{
+    width: 198px;
+    padding: 0px !important;
+    background: none;
+    float: right;
+}
+
+.mostrarBoletosFuturos{
+    float: left;
+    margin: 16px 0px -30px 0px;
+}
+
+.module_id_areadocondomino .barraAuxiliar{
+    margin-top: 85px;
+}
+.sidebar{
+    width: 355px;
+    float: right;
+}
+
+
+#formBusca input{
+    width: 105px;
+}
+#formBusca #buscar{
+    padding: 4px 0px 4px 0px;
+    width: 62px !important;
+}
+
+.menu h2{
+    margin: 0px 0px 10px 0px;
+    float: left;
+    width: 198px;
+}
+.menu{
+    list-style: none;
+    -webkit-padding-start: 0px;
+    display: inline;
+}
+
+.menu li{
+    display : inline;
+    float:left;
+}
+
+.menu a, .menu .item{
+    width: 178px;
+    height: 73px;
+    margin: 5px 0px;
+    float: left;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: arial;
+    text-decoration: none;
+    position: relative;
+}
+
+/*Resolve bug do cursor no internet explorer*/
+.menu a{
+    cursor:pointer;
+}
+
+.menu .item_peq{
+    width: 75px;
+    margin-right: 8px;
+    font-size: 12px;
+    text-align: center
+}
+
+.menu .item_peq_ultimo{
+    margin-right: 0px;
+}
+
+.menu .item_peq .linha1{
+    height: 60%;
+    line-height: 70px;
+}
+.menu .item_peq .linha2{
+    height: 40%;
+    line-height: 36.5px;
+}
+
+.menu .item_peq .coluna1,.menu .item_peq .coluna2{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.menu .coluna1,.menu .coluna2{
+    float: left;
+    width: 69px;
+    height: 73px;
+}
+.menu .coluna2{
+    width: 109px;
+}
+
+.loginemail div.coluna2 img, .loginsocial div.coluna2 img{
+    margin-left: -50px;
+}
+
+.loginemail div.coluna1, .loginsocial div.coluna1, .loginemail div.coluna2, .loginsocial div.coluna2{
+    height: 90px;
+}
+
+
+.loginemail div.coluna2 img {
+    padding-top: 35px;
+}
+
+.menu .coluna1{
+    text-align: right;
+}
+
+.menu .numItemPeq{
+    font-size: 24px;
+    text-align: right;
+}
+
+.menu .numero{
+    font-size: 37px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.menu .alinharCentro{
+   position: absolute; 
+   top: 25%;
+}
+
+.menu .amarelo{
+    background: #e3c500;
+}
+
+.menu .azul{
+    background: #3280df;
+}
+
+.menu .vermelho{
+    background: #a72f29;
+}
+
+.menu .laranja{
+    background: #eb9724;
+}
+
+.menu .verde{
+    background: #64962e;
+}
+
+.menu .roxo{
+    background: #6d5794;
+}
+
+.menu .cinza-claro{
+    background: #ececec;
+    color: black;
+}
+
+
+.menu .txtBnt{
+    float: left;
+    margin-top: 35px;
+    width: 60px;
+}
+
+.menu .valorAtualizado{
+    text-align: right; 
+    margin-top: 50px;
+    float:right;
+}
+
+.menu .iconeTopo{
+    background-position: 170px 10px;
+}
+
+.menu .alinharTopoDireita{
+    float: right;
+}
+
+.fontePeq{
+    font-size: 12px;
+}
+
+.menu .imgDocumento{
+    background-image: url(/temas/default/img/docs.png) !important;    
+    background-repeat: no-repeat  !important;
+    background-position: 56px 21px;
+}
+
+.menu .imgPrestacao{
+    background-image: url(/temas/default/img/prestacao.png) !important;    
+    background-repeat: no-repeat  !important;
+    background-position: 5px 0px;
+}
+
+
+.menu .imgFotos{
+    background-image: url(/temas/default/img/fotos.png) !important;    
+    background-repeat: no-repeat  !important;
+    background-position: center 15px;
+}
+
+/*.menu .imgCadastro{
+    background-image: url(/temas/default/img/cadastro.png) !important;
+}
+.menu .imgCadastro.item_peq .linha2, 
+.menu .imgFormaPagamanto.item_peq .linha2{
+    line-height: normal;
+}
+
+.menu .imgFormaPagamanto{
+    background-image: url(/temas/default/img/pagamento.png) !important;
+}*/
+
+.imgImprimir{
+    background-image: url(/temas/default/img/impressora.png) !important;    
+    background-repeat: no-repeat  !important;
+}
+
+.imgAtrasado{
+    background-image: url(/temas/default/img/atrasados.png) !important;    
+    background-repeat: no-repeat  !important;
+}
+
+.imgBoletos{
+    background-image: url(/temas/default/img/boletos.png) !important;    
+    background-repeat: no-repeat  !important;
+}
+
+.imgTopoCoroa{
+    background-image: url(/temas/default/img/coroa.png) !important;    
+    background-repeat: no-repeat  !important;
+}
+
+.imgSmile{
+    background-image: url(/temas/default/img/smile.png) !important;    
+    background-repeat: no-repeat  !important;
+    background-position: 10px 8px;
+}
+
+.menu .imgCadastro{
+    background-image: url(/temas/default/img/cadastro.png) !important;    
+    background-repeat: no-repeat  !important;
+    background-position: center 15px;
+    background-color: #eb9724;
+}
+
+.menu .imgPagamento{
+    background-image: url(/temas/default/img/pagamento.png) !important;    
+    background-repeat: no-repeat  !important;
+    background-position: center 15px;
+    background-color: #6d5794;
+}
+
+.menu .imgCadastro .linha2, .menu .imgPagamento .linha2{
+    line-height: normal;
+}
+.imgPlanos{
+    background-image: url(/temas/default/img/planos.png) !important;    
+    background-repeat: no-repeat  !important;
+}
+
+.pequeno{
+    width: 130px;
+}
+
+.grande{
+    width: 280;
+}
+
+#rodape{
+    background: #e6e6e6;
+    height: 130px;
+    border-radius: 0 0 10px 10px;
+    width: 940px;
+    min-width: 940px;
+    border: 1px solid #c3c3c3;
+    border-top: none;
+    margin-top:0;
+}
+
+#powered{
+    float: right;
+    margin-right: 70px;
+    margin-top: 35px;
+}
+
+.assinatura{
+    float: left;
+    width: 200px;
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+.embedded{
+    background-color: white;
+}
+.embedded .header, 
+.embedded #rodape{
+    display : none;
+}
+
+.embedded .corpo, .embedded #conteudo{
+    border:none;
+    width:auto;
+    padding:0;
+    margin:0;
+    min-height : 100%;
+    max-width : 100%;
+}
+
+.embedded .grade-container{
+    width:100% !important;
+    margin: 0;
+}
+
+.formaPagamento{
+    margin-right: 10px;
+}
+/*
+.alinharAoCentro{
+    margin: 0 auto;
+    width: 50%;
+}*/
+.grade-planos{
+    padding:0;
+    text-align: center;
+    margin:0;
+}
+
+.grade-planos li {
+    list-style: none;
+    list-style-image: none;
+    display: inline;
+    float: left;
+    margin-top: 3px;
+    padding: 20px;
+    padding-bottom: 70px;
+    border: 1px solid #c3c3c3;
+    min-height: 260px;
+    position: relative;
+    width: 150px;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+}
+
+.grade-planos li:hover {
+    padding: 18px;
+    padding-bottom: 68px;
+    border: 3px solid #ccc;
+}
+
+.grade-planos li:hover .btn-checkout{
+    bottom: 18px;
+    left:18px;
+}
+
+.grade-planos li h2{
+    margin-top:0;
+}
+
+.grade-planos li h3{
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.grade-planos .btn-checkout,
+.btn-destaque{
+    background-color:#5aa02c;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    font-size: 14px;
+    border-radius:5px;
+    padding:8px 15px;
+    border:0.5px solid #666;
+    text-align:center;
+    height: 35px;
+    line-height: 35px;
+}
+
+.grade-planos .btn-checkout{
+    position: absolute;
+    bottom: 20px;
+    left:20px;
+    width: 120px;
+    display:block;
+}
+
+.grade-planos .btn-checkout.trial{
+    line-height: normal;
+    background: #005596;
+}
+
+.grade-planos .adesao-descricao,
+.grade-planos .adesao-zero{
+    margin-bottom: 30px;
+}
+
+.grade-container{
+    margin: 0 auto;
+}
+
+.grade-planos li.recomendado{    
+    border: 3px solid #f18d05;    
+    padding: 18px;
+    padding-bottom: 68px;
+    background-color: white;
+}
+
+.grade-planos li.recomendado:hover{
+    border: 3px solid #ffccaa !important;
+}
+
+.grade-planos li.recomendado .btn-checkout,
+.grade-planos li.recomendado:hover .btn-checkout{
+    bottom:18px;
+    left: 18px;
+}
+
+.mensalidade-zero, .adesao-zero{    
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #005596;
+}
+
+.grade-planos .mensalidade-zero,
+.grade-planos .adesao-zero{
+    font-size: 16px;
+}
