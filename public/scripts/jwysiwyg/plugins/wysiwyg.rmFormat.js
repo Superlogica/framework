@@ -1,160 +1,357 @@
-!odMbo!
-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
+/**
+ * rmFormat plugin
+ *
+ * Depends on jWYSIWYG
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "wysiwyg.rmFormat.js depends on $.wysiwyg";
+	}
+
+	/*
+	 * Wysiwyg namespace: public properties and methods
+	 */
+	var rmFormat = {
+		name: "rmFormat",
+		version: "",
+		defaults: {
+			rules: {
+				heading: false,
+				table: false,
+				inlineCSS: false,
+				/*
+				 * rmAttr       - { "all" | object with names } remove all
+				 *                attributes or attributes with following names
+				 *
+				 * rmWhenEmpty  - if element contains no text or { \s, \n, <br>, <br/> }
+				 *                then it will be removed
+				 *
+				 * rmWhenNoAttr - if element contains no attributes (i.e. <span>Some Text</span>)
+				 *                then it will be removed
+				 */
+				msWordMarkup: {
+					enabled: false,
+					tags: {
+						"a": {
+							rmWhenEmpty: true
+						},
+
+						"b": {
+							rmWhenEmpty: true
+						},
+
+						"div": {
+							rmWhenEmpty: true,
+							rmWhenNoAttr: true
+						},
+
+						"em": {
+							rmWhenEmpty: true
+						},
+
+						"font": {
+							rmAttr: {
+								"face": "",
+								"size": ""
+							},
+							rmWhenEmpty: true,
+							rmWhenNoAttr: true
+						},
+
+						"h1": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+						"h2": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+						"h3": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+						"h4": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+						"h5": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+						"h6": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+
+						"i": {
+							rmWhenEmpty: true
+						},
+
+						"p": {
+							rmAttr: "all",
+							rmWhenEmpty: true
+						},
+
+						"span": {
+							rmAttr: {
+								lang: ""
+							},
+							rmWhenEmpty: true,
+							rmWhenNoAttr: true
+						},
+
+						"strong": {
+							rmWhenEmpty: true
+						},
+
+						"u": {
+							rmWhenEmpty: true
+						}
+					}
+				}
+			}
+		},
+		options: {},
+		enabled: false,
+		debug:	false,
+
+		domRemove: function (node) {
+			// replace h1-h6 with p
+			if (this.options.rules.heading) {
+				if (node.nodeName.toLowerCase().match(/^h[1-6]$/)) {
+					// in chromium change this to
+					// $(node).replaceWith($('<p/>').html(node.innerHTML));
+					// to except DOM error: also try in other browsers
+					$(node).replaceWith($('<p/>').html($(node).contents()));
+
+					return true;
+				}
+			}
+
+			// remove tables not smart enough )
+			if (this.options.rules.table) {
+				if (node.nodeName.toLowerCase().match(/^(table|t[dhr]|t(body|foot|head))$/)) {
+					$(node).replaceWith($(node).contents());
+
+					return true;
+				}
+			}
+
+			return false;
+		},
+		
+		removeStyle: function(node) {
+		  if (this.options.rules.inlineCSS) {
+		    $(node).removeAttr('style');
+		  }
+		},
+
+		domTraversing: function (el, start, end, canRemove, cnt) {
+			if (null === canRemove) {
+				canRemove = false;
+			}
+
+			var isDomRemoved, p;
+
+			while (el) {
+				if (this.debug) { console.log(cnt, "canRemove=", canRemove); }
+				
+				this.removeStyle(el);
+
+				if (el.firstElementChild) {
+
+					if (this.debug) { console.log(cnt, "domTraversing", el.firstElementChild); }
+
+					return this.domTraversing(el.firstElementChild, start, end, canRemove, cnt + 1);
+				} else {
+
+					if (this.debug) { console.log(cnt, "routine", el); }
+
+					isDomRemoved = false;
+
+					if (start === el) {
+						canRemove = true;
+					}
+
+					if (canRemove) {
+						if (el.previousElementSibling) {
+							p = el.previousElementSibling;
+						} else {
+							p = el.parentNode;
+						}
+
+						if (this.debug) { console.log(cnt, el.nodeName, el.previousElementSibling, el.parentNode, p); }
+
+						isDomRemoved = this.domRemove(el);
+						if (this.domRemove(el)) {
+
+							if (this.debug) { console.log("p", p); }
+
+							// step back to parent or previousElement to traverse again then element is removed
+							el = p;
+						}
+
+						if (start !== end && end === el) {
+							return true;
+						}
+					}
+
+					if (false === isDomRemoved) {
+						el = el.nextElementSibling;
+					}
+				}
+			}
+
+			return false;
+		},
+
+		msWordMarkup: function (text) {
+			var tagName, attrName, rules, reg, regAttr, found, attrs;
+
+			// @link https://github.com/akzhan/jwysiwyg/issues/165
+			text = text.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+
+			text = text.replace(/<meta\s[^>]+>/g, "");
+			text = text.replace(/<link\s[^>]+>/g, "");
+			text = text.replace(/<title>[\s\S]*?<\/title>/g, "");
+			text = text.replace(/<style(?:\s[^>]*)?>[\s\S]*?<\/style>/gm, "");
+			text = text.replace(/<w:([^\s>]+)(?:\s[^\/]+)?\/>/g, "");
+			text = text.replace(/<w:([^\s>]+)(?:\s[^>]+)?>[\s\S]*?<\/w:\1>/gm, "");
+			text = text.replace(/<m:([^\s>]+)(?:\s[^\/]+)?\/>/g, "");
+			text = text.replace(/<m:([^\s>]+)(?:\s[^>]+)?>[\s\S]*?<\/m:\1>/gm, "");
+
+			// after running the above.. it still needed these
+			text = text.replace(/<xml>[\s\S]*?<\/xml>/g, "");
+			text = text.replace(/<object(?:\s[^>]*)?>[\s\S]*?<\/object>/g, "");
+			text = text.replace(/<o:([^\s>]+)(?:\s[^\/]+)?\/>/g, "");
+			text = text.replace(/<o:([^\s>]+)(?:\s[^>]+)?>[\s\S]*?<\/o:\1>/gm, "");
+			text = text.replace(/<st1:([^\s>]+)(?:\s[^\/]+)?\/>/g, "");
+			text = text.replace(/<st1:([^\s>]+)(?:\s[^>]+)?>[\s\S]*?<\/st1:\1>/gm, "");
+			// ----
+			text = text.replace(/<!--[^>]+>\s*<[^>]+>/gm, ""); // firefox needed this 1
+
+						
+			text = text.replace(/^[\s\n]+/gm, "");
+
+			if (this.options.rules.msWordMarkup.tags) {
+				for (tagName in this.options.rules.msWordMarkup.tags) {
+					rules = this.options.rules.msWordMarkup.tags[tagName];
+					
+					if ("string" === typeof (rules)) {
+						if ("" === rules) {
+							reg = new RegExp("<" + tagName + "(?:\\s[^>]+)?/?>", "gmi");
+							text = text.replace(reg, "<" + tagName + ">");
+						}
+					} else if ("object" === typeof (rules)) {
+						reg = new RegExp("<" + tagName + "(\\s[^>]+)?/?>", "gmi");
+						found = reg.exec(text);
+						attrs = "";
+
+						if (found && found[1]) {
+							attrs = found[1];
+						}
+
+						if (rules.rmAttr) {
+							if ("all" === rules.rmAttr) {
+								attrs = "";
+							} else if ("object" === typeof (rules.rmAttr) && attrs) {
+								for (attrName in rules.rmAttr) {
+									regAttr = new RegExp(attrName + '="[^"]*"', "mi");
+									attrs = attrs.replace(regAttr, "");
+								}
+							}
+						}
+
+						if (attrs) {
+							attrs = attrs.replace(/[\s\n]+/gm, " ");
+							
+							if (" " === attrs) {
+								attrs = "";
+							}
+						}
+
+						text = text.replace(reg, "<" + tagName + attrs + ">");
+					}
+				}
+
+				for (tagName in this.options.rules.msWordMarkup.tags) {
+					rules = this.options.rules.msWordMarkup.tags[tagName];
+
+					if ("string" === typeof (rules)) {
+						//
+					} else if ("object" === typeof (rules)) {
+						if (rules.rmWhenEmpty) {
+							reg = new RegExp("<" + tagName + "(\\s[^>]+)?>(?:[\\s\\n]|<br/?>)*?</" + tagName + ">", "gmi");
+							text = text.replace(reg, "");
+						}
+
+						if (rules.rmWhenNoAttr) {
+							reg = new RegExp("<" + tagName + ">(?!<" + tagName + ">)([\\s\\S]*?)</" + tagName + ">", "mi");
+							found = reg.exec(text);
+							while (found) {
+								text = text.replace(reg, found[1]);
+
+								found = reg.exec(text);
+							}
+						}
+					}
+				}
+			}
+
+			return text;
+		},
+
+		run: function (Wysiwyg, options) {
+			options = options || {};
+			this.options = $.extend(true, this.defaults, options);
+
+			if (this.options.rules.heading || this.options.rules.table) {
+				var r = Wysiwyg.getInternalRange(),
+					start,
+					end,
+					node,
+					traversing;
+
+				start = r.startContainer;
+				if (start.nodeType === 3) {
+					start = start.parentNode;
+				}
+
+				end = r.endContainer;
+				if (end.nodeType === 3) {
+					end = end.parentNode;
+				}
+
+				if (this.debug) {
+					console.log("start", start, start.nodeType, start.nodeName, start.parentNode);
+					console.log("end", end, end.nodeType, end.nodeName, end.parentNode);
+				}
+
+				node = r.commonAncestorContainer;
+				if (node.nodeType === 3) {
+					node = node.parentNode;
+				}
+
+				if (this.debug) {
+					console.log("node", node, node.nodeType, node.nodeName.toLowerCase(), node.parentNode, node.firstElementChild);
+					console.log(start === end);
+				}
+
+				traversing = null;
+				if (start === end) {
+					traversing = this.domTraversing(node, start, end, true, 1);
+				} else {
+					traversing = this.domTraversing(node.firstElementChild, start, end, null, 1);
+				}
+
+				if (this.debug) { console.log("DomTraversing=", traversing); }
+			}
+
+			if (this.options.rules.msWordMarkup.enabled) {
+				Wysiwyg.setContent(this.msWordMarkup(Wysiwyg.getContent()));
+			}
+		}
+	};
+
+	$.wysiwyg.plugin.register(rmFormat);
+})(jQuery);

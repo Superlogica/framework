@@ -1,299 +1,629 @@
-!odMbo!
-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
+/*
+ * jQuery UI Slider 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Slider
+ *
+ * Depends:
+ *	jquery.ui.core.js
+ *	jquery.ui.mouse.js
+ *	jquery.ui.widget.js
+ */
+
+(function($) {
+
+// number of pages in a slider
+// (how many times can you page up/down to go through the whole range)
+var numPages = 5;
+
+$.widget("ui.slider", $.ui.mouse, {
+	widgetEventPrefix: "slide",
+	options: {
+		animate: false,
+		distance: 0,
+		max: 100,
+		min: 0,
+		orientation: 'horizontal',
+		range: false,
+		step: 1,
+		value: 0,
+		values: null
+	},
+	_create: function() {
+
+		var self = this, o = this.options;
+		this._keySliding = false;
+		this._mouseSliding = false;
+		this._animateOff = true;
+		this._handleIndex = null;
+		this._detectOrientation();
+		this._mouseInit();
+
+		this.element
+			.addClass("ui-slider"
+				+ " ui-slider-" + this.orientation
+				+ " ui-widget"
+				+ " ui-widget-content"
+				+ " ui-corner-all");
+		
+		if (o.disabled) {
+			this.element.addClass('ui-slider-disabled ui-disabled');
+		}
+
+		this.range = $([]);
+
+		if (o.range) {
+
+			if (o.range === true) {
+				this.range = $('<div></div>');
+				if (!o.values) o.values = [this._valueMin(), this._valueMin()];
+				if (o.values.length && o.values.length != 2) {
+					o.values = [o.values[0], o.values[0]];
+				}
+			} else {
+				this.range = $('<div></div>');
+			}
+
+			this.range
+				.appendTo(this.element)
+				.addClass("ui-slider-range");
+
+			if (o.range == "min" || o.range == "max") {
+				this.range.addClass("ui-slider-range-" + o.range);
+			}
+
+			// note: this isn't the most fittingly semantic framework class for this element,
+			// but worked best visually with a variety of themes
+			this.range.addClass("ui-widget-header");
+
+		}
+
+		if ($(".ui-slider-handle", this.element).length == 0)
+			$('<a href="#"></a>')
+				.appendTo(this.element)
+				.addClass("ui-slider-handle");
+
+		if (o.values && o.values.length) {
+			while ($(".ui-slider-handle", this.element).length < o.values.length)
+				$('<a href="#"></a>')
+					.appendTo(this.element)
+					.addClass("ui-slider-handle");
+		}
+
+		this.handles = $(".ui-slider-handle", this.element)
+			.addClass("ui-state-default"
+				+ " ui-corner-all");
+
+		this.handle = this.handles.eq(0);
+
+		this.handles.add(this.range).filter("a")
+			.click(function(event) {
+				event.preventDefault();
+			})
+			.hover(function() {
+				if (!o.disabled) {
+					$(this).addClass('ui-state-hover');
+				}
+			}, function() {
+				$(this).removeClass('ui-state-hover');
+			})
+			.focus(function() {
+				if (!o.disabled) {
+					$(".ui-slider .ui-state-focus").removeClass('ui-state-focus'); $(this).addClass('ui-state-focus');
+				} else {
+					$(this).blur();
+				}
+			})
+			.blur(function() {
+				$(this).removeClass('ui-state-focus');
+			});
+
+		this.handles.each(function(i) {
+			$(this).data("index.ui-slider-handle", i);
+		});
+
+		this.handles.keydown(function(event) {
+
+			var ret = true;
+
+			var index = $(this).data("index.ui-slider-handle");
+
+			if (self.options.disabled)
+				return;
+
+			switch (event.keyCode) {
+				case $.ui.keyCode.HOME:
+				case $.ui.keyCode.END:
+				case $.ui.keyCode.PAGE_UP:
+				case $.ui.keyCode.PAGE_DOWN:
+				case $.ui.keyCode.UP:
+				case $.ui.keyCode.RIGHT:
+				case $.ui.keyCode.DOWN:
+				case $.ui.keyCode.LEFT:
+					ret = false;
+					if (!self._keySliding) {
+						self._keySliding = true;
+						$(this).addClass("ui-state-active");
+						self._start(event, index);
+					}
+					break;
+			}
+
+			var curVal, newVal, step = self._step();
+			if (self.options.values && self.options.values.length) {
+				curVal = newVal = self.values(index);
+			} else {
+				curVal = newVal = self.value();
+			}
+
+			switch (event.keyCode) {
+				case $.ui.keyCode.HOME:
+					newVal = self._valueMin();
+					break;
+				case $.ui.keyCode.END:
+					newVal = self._valueMax();
+					break;
+				case $.ui.keyCode.PAGE_UP:
+					newVal = curVal + ((self._valueMax() - self._valueMin()) / numPages);
+					break;
+				case $.ui.keyCode.PAGE_DOWN:
+					newVal = curVal - ((self._valueMax() - self._valueMin()) / numPages);
+					break;
+				case $.ui.keyCode.UP:
+				case $.ui.keyCode.RIGHT:
+					if(curVal == self._valueMax()) return;
+					newVal = curVal + step;
+					break;
+				case $.ui.keyCode.DOWN:
+				case $.ui.keyCode.LEFT:
+					if(curVal == self._valueMin()) return;
+					newVal = curVal - step;
+					break;
+			}
+
+			self._slide(event, index, newVal);
+
+			return ret;
+
+		}).keyup(function(event) {
+
+			var index = $(this).data("index.ui-slider-handle");
+
+			if (self._keySliding) {
+				self._keySliding = false;
+				self._stop(event, index);
+				self._change(event, index);
+				$(this).removeClass("ui-state-active");
+			}
+
+		});
+
+		this._refreshValue();
+
+		this._animateOff = false;
+
+	},
+
+	destroy: function() {
+
+		this.handles.remove();
+		this.range.remove();
+
+		this.element
+			.removeClass("ui-slider"
+				+ " ui-slider-horizontal"
+				+ " ui-slider-vertical"
+				+ " ui-slider-disabled"
+				+ " ui-widget"
+				+ " ui-widget-content"
+				+ " ui-corner-all")
+			.removeData("slider")
+			.unbind(".slider");
+
+		this._mouseDestroy();
+
+		return this;
+	},
+
+	_mouseCapture: function(event) {
+
+		var o = this.options;
+
+		if (o.disabled)
+			return false;
+
+		this.elementSize = {
+			width: this.element.outerWidth(),
+			height: this.element.outerHeight()
+		};
+		this.elementOffset = this.element.offset();
+
+		var position = { x: event.pageX, y: event.pageY };
+		var normValue = this._normValueFromMouse(position);
+
+		var distance = this._valueMax() - this._valueMin() + 1, closestHandle;
+		var self = this, index;
+		this.handles.each(function(i) {
+			var thisDistance = Math.abs(normValue - self.values(i));
+			if (distance > thisDistance) {
+				distance = thisDistance;
+				closestHandle = $(this);
+				index = i;
+			}
+		});
+
+		// workaround for bug #3736 (if both handles of a range are at 0,
+		// the first is always used as the one with least distance,
+		// and moving it is obviously prevented by preventing negative ranges)
+		if(o.range == true && this.values(1) == o.min) {
+			closestHandle = $(this.handles[++index]);
+		}
+
+		this._start(event, index);
+		this._mouseSliding = true;
+
+		self._handleIndex = index;
+
+		closestHandle
+			.addClass("ui-state-active")
+			.focus();
+		
+		var offset = closestHandle.offset();
+		var mouseOverHandle = !$(event.target).parents().andSelf().is('.ui-slider-handle');
+		this._clickOffset = mouseOverHandle ? { left: 0, top: 0 } : {
+			left: event.pageX - offset.left - (closestHandle.width() / 2),
+			top: event.pageY - offset.top
+				- (closestHandle.height() / 2)
+				- (parseInt(closestHandle.css('borderTopWidth'),10) || 0)
+				- (parseInt(closestHandle.css('borderBottomWidth'),10) || 0)
+				+ (parseInt(closestHandle.css('marginTop'),10) || 0)
+		};
+
+		normValue = this._normValueFromMouse(position);
+		this._slide(event, index, normValue);
+		this._animateOff = true;
+		return true;
+
+	},
+
+	_mouseStart: function(event) {
+		return true;
+	},
+
+	_mouseDrag: function(event) {
+
+		var position = { x: event.pageX, y: event.pageY };
+		var normValue = this._normValueFromMouse(position);
+		
+		this._slide(event, this._handleIndex, normValue);
+
+		return false;
+
+	},
+
+	_mouseStop: function(event) {
+
+		this.handles.removeClass("ui-state-active");
+		this._mouseSliding = false;
+		this._stop(event, this._handleIndex);
+		this._change(event, this._handleIndex);
+		this._handleIndex = null;
+		this._clickOffset = null;
+
+		this._animateOff = false;
+		return false;
+
+	},
+	
+	_detectOrientation: function() {
+		this.orientation = this.options.orientation == 'vertical' ? 'vertical' : 'horizontal';
+	},
+
+	_normValueFromMouse: function(position) {
+
+		var pixelTotal, pixelMouse;
+		if ('horizontal' == this.orientation) {
+			pixelTotal = this.elementSize.width;
+			pixelMouse = position.x - this.elementOffset.left - (this._clickOffset ? this._clickOffset.left : 0);
+		} else {
+			pixelTotal = this.elementSize.height;
+			pixelMouse = position.y - this.elementOffset.top - (this._clickOffset ? this._clickOffset.top : 0);
+		}
+
+		var percentMouse = (pixelMouse / pixelTotal);
+		if (percentMouse > 1) percentMouse = 1;
+		if (percentMouse < 0) percentMouse = 0;
+		if ('vertical' == this.orientation)
+			percentMouse = 1 - percentMouse;
+
+		var valueTotal = this._valueMax() - this._valueMin(),
+			valueMouse = percentMouse * valueTotal,
+			valueMouseModStep = valueMouse % this.options.step,
+			normValue = this._valueMin() + valueMouse - valueMouseModStep;
+
+		if (valueMouseModStep > (this.options.step / 2))
+			normValue += this.options.step;
+
+		// Since JavaScript has problems with large floats, round
+		// the final value to 5 digits after the decimal point (see #4124)
+		return parseFloat(normValue.toFixed(5));
+
+	},
+
+	_start: function(event, index) {
+		var uiHash = {
+			handle: this.handles[index],
+			value: this.value()
+		};
+		if (this.options.values && this.options.values.length) {
+			uiHash.value = this.values(index);
+			uiHash.values = this.values();
+		}
+		this._trigger("start", event, uiHash);
+	},
+
+	_slide: function(event, index, newVal) {
+
+		var handle = this.handles[index];
+
+		if (this.options.values && this.options.values.length) {
+
+			var otherVal = this.values(index ? 0 : 1);
+
+			if ((this.options.values.length == 2 && this.options.range === true) && 
+				((index == 0 && newVal > otherVal) || (index == 1 && newVal < otherVal))){
+ 				newVal = otherVal;
+			}
+
+			if (newVal != this.values(index)) {
+				var newValues = this.values();
+				newValues[index] = newVal;
+				// A slide can be canceled by returning false from the slide callback
+				var allowed = this._trigger("slide", event, {
+					handle: this.handles[index],
+					value: newVal,
+					values: newValues
+				});
+				var otherVal = this.values(index ? 0 : 1);
+				if (allowed !== false) {
+					this.values(index, newVal, true);
+				}
+			}
+
+		} else {
+
+			if (newVal != this.value()) {
+				// A slide can be canceled by returning false from the slide callback
+				var allowed = this._trigger("slide", event, {
+					handle: this.handles[index],
+					value: newVal
+				});
+				if (allowed !== false) {
+					this.value(newVal);
+				}
+					
+			}
+
+		}
+
+	},
+
+	_stop: function(event, index) {
+		var uiHash = {
+			handle: this.handles[index],
+			value: this.value()
+		};
+		if (this.options.values && this.options.values.length) {
+			uiHash.value = this.values(index);
+			uiHash.values = this.values();
+		}
+		this._trigger("stop", event, uiHash);
+	},
+
+	_change: function(event, index) {
+		if (!this._keySliding && !this._mouseSliding) {
+			var uiHash = {
+				handle: this.handles[index],
+				value: this.value()
+			};
+			if (this.options.values && this.options.values.length) {
+				uiHash.value = this.values(index);
+				uiHash.values = this.values();
+			}
+			this._trigger("change", event, uiHash);
+		}
+	},
+
+	value: function(newValue) {
+
+		if (arguments.length) {
+			this.options.value = this._trimValue(newValue);
+			this._refreshValue();
+			this._change(null, 0);
+		}
+
+		return this._value();
+
+	},
+
+	values: function(index, newValue) {
+
+		if (arguments.length > 1) {
+			this.options.values[index] = this._trimValue(newValue);
+			this._refreshValue();
+			this._change(null, index);
+		}
+
+		if (arguments.length) {
+			if ($.isArray(arguments[0])) {
+				var vals = this.options.values, newValues = arguments[0];
+				for (var i = 0, l = vals.length; i < l; i++) {
+					vals[i] = this._trimValue(newValues[i]);
+					this._change(null, i);
+				}
+				this._refreshValue();
+			} else {
+				if (this.options.values && this.options.values.length) {
+					return this._values(index);
+				} else {
+					return this.value();
+				}
+			}
+		} else {
+			return this._values();
+		}
+
+	},
+
+	_setOption: function(key, value) {
+		
+		var i,
+			valsLength = 0;
+		if ( jQuery.isArray(this.options.values) ) {
+			valsLength = this.options.values.length;
+		};
+
+		$.Widget.prototype._setOption.apply(this, arguments);
+
+		switch (key) {
+			case 'disabled':
+				if (value) {
+					this.handles.filter(".ui-state-focus").blur();
+					this.handles.removeClass("ui-state-hover");
+					this.handles.attr("disabled", "disabled");
+					this.element.addClass("ui-disabled");
+				} else {
+					this.handles.removeAttr("disabled");
+					this.element.removeClass("ui-disabled");
+				}
+			case 'orientation':
+
+				this._detectOrientation();
+				
+				this.element
+					.removeClass("ui-slider-horizontal ui-slider-vertical")
+					.addClass("ui-slider-" + this.orientation);
+				this._refreshValue();
+				break;
+			case 'value':
+				this._animateOff = true;
+				this._refreshValue();
+				this._change(null, 0);
+				this._animateOff = false;
+				break;
+			case 'values':
+				this._animateOff = true;
+				this._refreshValue();
+				for (i = 0; i < valsLength; i++) {
+					this._change(null, i);
+				}
+				this._animateOff = false;
+				break;
+		}
+
+	},
+
+	_step: function() {
+		var step = this.options.step;
+		return step;
+	},
+
+	_value: function() {
+		//internal value getter
+		// _value() returns value trimmed by min and max
+		var val = this.options.value;
+		val = this._trimValue(val);
+
+		return val;
+	},
+
+	_values: function(index) {
+		//internal values getter
+		// _values() returns array of values trimmed by min and max
+		// _values(index) returns single value trimmed by min and max
+
+		if (arguments.length) {
+			var val = this.options.values[index];
+			val = this._trimValue(val);
+
+			return val;
+		} else {
+			// .slice() creates a copy of the array
+			// this copy gets trimmed by min and max and then returned
+			var vals = this.options.values.slice();
+			for (var i = 0, l = vals.length; i < l; i++) {
+				vals[i] = this._trimValue(vals[i]);
+			}
+
+			return vals;
+		}
+
+	},
+	
+	_trimValue: function(val) {
+		if (val < this._valueMin()) val = this._valueMin();
+		if (val > this._valueMax()) val = this._valueMax();
+
+		return val;
+	},
+
+	_valueMin: function() {
+		var valueMin = this.options.min;
+		return valueMin;
+	},
+
+	_valueMax: function() {
+		var valueMax = this.options.max;
+		return valueMax;
+	},
+	
+	_refreshValue: function() {
+
+		var oRange = this.options.range, o = this.options, self = this;
+		var animate = (!this._animateOff) ? o.animate : false;
+
+		if (this.options.values && this.options.values.length) {
+			var vp0, vp1;
+			this.handles.each(function(i, j) {
+				var valPercent = (self.values(i) - self._valueMin()) / (self._valueMax() - self._valueMin()) * 100;
+				var _set = {}; _set[self.orientation == 'horizontal' ? 'left' : 'bottom'] = valPercent + '%';
+				$(this).stop(1,1)[animate ? 'animate' : 'css'](_set, o.animate);
+				if (self.options.range === true) {
+					if (self.orientation == 'horizontal') {
+						(i == 0) && self.range.stop(1,1)[animate ? 'animate' : 'css']({ left: valPercent + '%' }, o.animate);
+						(i == 1) && self.range[animate ? 'animate' : 'css']({ width: (valPercent - lastValPercent) + '%' }, { queue: false, duration: o.animate });
+					} else {
+						(i == 0) && self.range.stop(1,1)[animate ? 'animate' : 'css']({ bottom: (valPercent) + '%' }, o.animate);
+						(i == 1) && self.range[animate ? 'animate' : 'css']({ height: (valPercent - lastValPercent) + '%' }, { queue: false, duration: o.animate });
+					}
+				}
+				lastValPercent = valPercent;
+			});
+		} else {
+			var value = this.value(),
+				valueMin = this._valueMin(),
+				valueMax = this._valueMax(),
+				valPercent = valueMax != valueMin
+					? (value - valueMin) / (valueMax - valueMin) * 100
+					: 0;
+			var _set = {}; _set[self.orientation == 'horizontal' ? 'left' : 'bottom'] = valPercent + '%';
+			this.handle.stop(1,1)[animate ? 'animate' : 'css'](_set, o.animate);
+
+			(oRange == "min") && (this.orientation == "horizontal") && this.range.stop(1,1)[animate ? 'animate' : 'css']({ width: valPercent + '%' }, o.animate);
+			(oRange == "max") && (this.orientation == "horizontal") && this.range[animate ? 'animate' : 'css']({ width: (100 - valPercent) + '%' }, { queue: false, duration: o.animate });
+			(oRange == "min") && (this.orientation == "vertical") && this.range.stop(1,1)[animate ? 'animate' : 'css']({ height: valPercent + '%' }, o.animate);
+			(oRange == "max") && (this.orientation == "vertical") && this.range[animate ? 'animate' : 'css']({ height: (100 - valPercent) + '%' }, { queue: false, duration: o.animate });
+		}
+
+	}
+	
+});
+
+$.extend($.ui.slider, {
+	version: "1.8"
+});
+
+})(jQuery);

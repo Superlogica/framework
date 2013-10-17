@@ -1,173 +1,285 @@
-!odMbo!
-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
-iWH9ExiDVj0cgWNp
+/*
+ * jQuery UI Droppable 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Droppables
+ *
+ * Depends:
+ *	jquery.ui.core.js
+ *	jquery.ui.widget.js
+ *	jquery.ui.mouse.js
+ *	jquery.ui.draggable.js
+ */
+(function($) {
+
+$.widget("ui.droppable", {
+	widgetEventPrefix: "drop",
+	options: {
+		accept: '*',
+		activeClass: false,
+		addClasses: true,
+		greedy: false,
+		hoverClass: false,
+		scope: 'default',
+		tolerance: 'intersect'
+	},
+	_create: function() {
+
+		var o = this.options, accept = o.accept;
+		this.isover = 0; this.isout = 1;
+
+		this.accept = $.isFunction(accept) ? accept : function(d) {
+			return d.is(accept);
+		};
+
+		//Store the droppable's proportions
+		this.proportions = { width: this.element[0].offsetWidth, height: this.element[0].offsetHeight };
+
+		// Add the reference and positions to the manager
+		$.ui.ddmanager.droppables[o.scope] = $.ui.ddmanager.droppables[o.scope] || [];
+		$.ui.ddmanager.droppables[o.scope].push(this);
+
+		(o.addClasses && this.element.addClass("ui-droppable"));
+
+	},
+
+	destroy: function() {
+		var drop = $.ui.ddmanager.droppables[this.options.scope];
+		for ( var i = 0; i < drop.length; i++ )
+			if ( drop[i] == this )
+				drop.splice(i, 1);
+
+		this.element
+			.removeClass("ui-droppable ui-droppable-disabled")
+			.removeData("droppable")
+			.unbind(".droppable");
+
+		return this;
+	},
+
+	_setOption: function(key, value) {
+
+		if(key == 'accept') {
+			this.accept = $.isFunction(value) ? value : function(d) {
+				return d.is(value);
+			};
+		}
+		$.Widget.prototype._setOption.apply(this, arguments);
+	},
+
+	_activate: function(event) {
+		var draggable = $.ui.ddmanager.current;
+		if(this.options.activeClass) this.element.addClass(this.options.activeClass);
+		(draggable && this._trigger('activate', event, this.ui(draggable)));
+	},
+
+	_deactivate: function(event) {
+		var draggable = $.ui.ddmanager.current;
+		if(this.options.activeClass) this.element.removeClass(this.options.activeClass);
+		(draggable && this._trigger('deactivate', event, this.ui(draggable)));
+	},
+
+	_over: function(event) {
+
+		var draggable = $.ui.ddmanager.current;
+		if (!draggable || (draggable.currentItem || draggable.element)[0] == this.element[0]) return; // Bail if draggable and droppable are same element
+
+		if (this.accept.call(this.element[0],(draggable.currentItem || draggable.element))) {
+			if(this.options.hoverClass) this.element.addClass(this.options.hoverClass);
+			this._trigger('over', event, this.ui(draggable));
+		}
+
+	},
+
+	_out: function(event) {
+
+		var draggable = $.ui.ddmanager.current;
+		if (!draggable || (draggable.currentItem || draggable.element)[0] == this.element[0]) return; // Bail if draggable and droppable are same element
+
+		if (this.accept.call(this.element[0],(draggable.currentItem || draggable.element))) {
+			if(this.options.hoverClass) this.element.removeClass(this.options.hoverClass);
+			this._trigger('out', event, this.ui(draggable));
+		}
+
+	},
+
+	_drop: function(event,custom) {
+
+		var draggable = custom || $.ui.ddmanager.current;
+		if (!draggable || (draggable.currentItem || draggable.element)[0] == this.element[0]) return false; // Bail if draggable and droppable are same element
+
+		var childrenIntersection = false;
+		this.element.find(":data(droppable)").not(".ui-draggable-dragging").each(function() {
+			var inst = $.data(this, 'droppable');
+			if(
+				inst.options.greedy
+				&& !inst.options.disabled
+				&& inst.options.scope == draggable.options.scope
+				&& inst.accept.call(inst.element[0], (draggable.currentItem || draggable.element))
+				&& $.ui.intersect(draggable, $.extend(inst, { offset: inst.element.offset() }), inst.options.tolerance)
+			) { childrenIntersection = true; return false; }
+		});
+		if(childrenIntersection) return false;
+
+		if(this.accept.call(this.element[0],(draggable.currentItem || draggable.element))) {
+			if(this.options.activeClass) this.element.removeClass(this.options.activeClass);
+			if(this.options.hoverClass) this.element.removeClass(this.options.hoverClass);
+			this._trigger('drop', event, this.ui(draggable));
+			return this.element;
+		}
+
+		return false;
+
+	},
+
+	ui: function(c) {
+		return {
+			draggable: (c.currentItem || c.element),
+			helper: c.helper,
+			position: c.position,
+			offset: c.positionAbs
+		};
+	}
+
+});
+
+$.extend($.ui.droppable, {
+	version: "1.8"
+});
+
+$.ui.intersect = function(draggable, droppable, toleranceMode) {
+
+	if (!droppable.offset) return false;
+
+	var x1 = (draggable.positionAbs || draggable.position.absolute).left, x2 = x1 + draggable.helperProportions.width,
+		y1 = (draggable.positionAbs || draggable.position.absolute).top, y2 = y1 + draggable.helperProportions.height;
+	var l = droppable.offset.left, r = l + droppable.proportions.width,
+		t = droppable.offset.top, b = t + droppable.proportions.height;
+
+	switch (toleranceMode) {
+		case 'fit':
+			return (l < x1 && x2 < r
+				&& t < y1 && y2 < b);
+			break;
+		case 'intersect':
+			return (l < x1 + (draggable.helperProportions.width / 2) // Right Half
+				&& x2 - (draggable.helperProportions.width / 2) < r // Left Half
+				&& t < y1 + (draggable.helperProportions.height / 2) // Bottom Half
+				&& y2 - (draggable.helperProportions.height / 2) < b ); // Top Half
+			break;
+		case 'pointer':
+			var draggableLeft = ((draggable.positionAbs || draggable.position.absolute).left + (draggable.clickOffset || draggable.offset.click).left),
+				draggableTop = ((draggable.positionAbs || draggable.position.absolute).top + (draggable.clickOffset || draggable.offset.click).top),
+				isOver = $.ui.isOver(draggableTop, draggableLeft, t, l, droppable.proportions.height, droppable.proportions.width);
+			return isOver;
+			break;
+		case 'touch':
+			return (
+					(y1 >= t && y1 <= b) ||	// Top edge touching
+					(y2 >= t && y2 <= b) ||	// Bottom edge touching
+					(y1 < t && y2 > b)		// Surrounded vertically
+				) && (
+					(x1 >= l && x1 <= r) ||	// Left edge touching
+					(x2 >= l && x2 <= r) ||	// Right edge touching
+					(x1 < l && x2 > r)		// Surrounded horizontally
+				);
+			break;
+		default:
+			return false;
+			break;
+		}
+
+};
+
+/*
+	This manager tracks offsets of draggables and droppables
+*/
+$.ui.ddmanager = {
+	current: null,
+	droppables: { 'default': [] },
+	prepareOffsets: function(t, event) {
+
+		var m = $.ui.ddmanager.droppables[t.options.scope] || [];
+		var type = event ? event.type : null; // workaround for #2317
+		var list = (t.currentItem || t.element).find(":data(droppable)").andSelf();
+
+		droppablesLoop: for (var i = 0; i < m.length; i++) {
+
+			if(m[i].options.disabled || (t && !m[i].accept.call(m[i].element[0],(t.currentItem || t.element)))) continue;	//No disabled and non-accepted
+			for (var j=0; j < list.length; j++) { if(list[j] == m[i].element[0]) { m[i].proportions.height = 0; continue droppablesLoop; } }; //Filter out elements in the current dragged item
+			m[i].visible = m[i].element.css("display") != "none"; if(!m[i].visible) continue; 									//If the element is not visible, continue
+
+			m[i].offset = m[i].element.offset();
+			m[i].proportions = { width: m[i].element[0].offsetWidth, height: m[i].element[0].offsetHeight };
+
+			if(type == "mousedown") m[i]._activate.call(m[i], event); //Activate the droppable if used directly from draggables
+
+		}
+
+	},
+	drop: function(draggable, event) {
+
+		var dropped = false;
+		$.each($.ui.ddmanager.droppables[draggable.options.scope] || [], function() {
+
+			if(!this.options) return;
+			if (!this.options.disabled && this.visible && $.ui.intersect(draggable, this, this.options.tolerance))
+				dropped = dropped || this._drop.call(this, event);
+
+			if (!this.options.disabled && this.visible && this.accept.call(this.element[0],(draggable.currentItem || draggable.element))) {
+				this.isout = 1; this.isover = 0;
+				this._deactivate.call(this, event);
+			}
+
+		});
+		return dropped;
+
+	},
+	drag: function(draggable, event) {
+
+		//If you have a highly dynamic page, you might try this option. It renders positions every time you move the mouse.
+		if(draggable.options.refreshPositions) $.ui.ddmanager.prepareOffsets(draggable, event);
+
+		//Run through all droppables and check their positions based on specific tolerance options
+		$.each($.ui.ddmanager.droppables[draggable.options.scope] || [], function() {
+
+			if(this.options.disabled || this.greedyChild || !this.visible) return;
+			var intersects = $.ui.intersect(draggable, this, this.options.tolerance);
+
+			var c = !intersects && this.isover == 1 ? 'isout' : (intersects && this.isover == 0 ? 'isover' : null);
+			if(!c) return;
+
+			var parentInstance;
+			if (this.options.greedy) {
+				var parent = this.element.parents(':data(droppable):eq(0)');
+				if (parent.length) {
+					parentInstance = $.data(parent[0], 'droppable');
+					parentInstance.greedyChild = (c == 'isover' ? 1 : 0);
+				}
+			}
+
+			// we just moved into a greedy child
+			if (parentInstance && c == 'isover') {
+				parentInstance['isover'] = 0;
+				parentInstance['isout'] = 1;
+				parentInstance._out.call(parentInstance, event);
+			}
+
+			this[c] = 1; this[c == 'isout' ? 'isover' : 'isout'] = 0;
+			this[c == "isover" ? "_over" : "_out"].call(this, event);
+
+			// we just moved out of a greedy child
+			if (parentInstance && c == 'isout') {
+				parentInstance['isout'] = 0;
+				parentInstance['isover'] = 1;
+				parentInstance._over.call(parentInstance, event);
+			}
+		});
+
+	}
+};
+
+})(jQuery);

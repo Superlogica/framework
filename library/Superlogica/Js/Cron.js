@@ -1,46 +1,80 @@
-!odMbo!
-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
-XSLjov8+jZMLuAOGwnz/HZRbrJTl
+var Superlogica_Js_Cron = new Class({    
+    _url : null,
+    
+    _msg : null,
+    
+    _elementoAlvo : null,
+
+    _statusParar : [],        
+    
+    _tentarNovamente : null,
+        
+    initialize : function(url,elementoAlvo, msg){
+        this._url= url;
+        
+        if (!msg) 
+            msg = 'Processando';       
+                
+        this._msg= msg;
+        
+        if (!elementoAlvo) 
+            elementoAlvo = 'cron';
+        
+        this._elementoAlvo= new Superlogica_Js_Elemento('#'+elementoAlvo);    
+    },
+    
+    parar : function(status,msg,tentarNovamente){
+        this._statusParar.push ({
+            'status':status,
+            'msg':(typeof(msg == undefined) ) ? '' : msg,
+            'tentarNovamente' : (typeof(tentarNovamente) == 'undefined' ) ? true : tentarNovamente
+        });
+        
+        return this;
+    },
+    
+    executar : function(){        
+        var request = new Superlogica_Js_Request(this._url);
+        request.setResponseOptions({
+            autoThrowError : false
+        });
+        
+        var cron = this;
+        
+        request.enviarAssincrono(function( response ){
+            cron._processarResponse( response );
+        });
+    },
+    
+    _processarResponse : function(response){
+        var msg='';        
+        
+        Object.each( this._statusParar, function(statusParar, indice){                    
+            if (parseInt(response.getStatus())==parseInt(statusParar['status'])){
+                msg= response.getMsg();
+                
+                if (statusParar['msg']){
+                    msg= statusParar['msg'];
+                }
+                
+                if (statusParar['tentarNovamente']){
+                    var location= new Superlogica_Js_Location();
+                    msg= msg+ ' <a href="'+location.toString()+'">Tentar novamente</a>.'
+                }                
+            }            
+        }, this);
+        
+        if (msg.trim()==''){        
+            
+            
+            var cron= this;            
+            msg= this._msg+' <img alt="'+msg+'" src="'+APPLICATION_CONF['APPLICATION_CLIENT_TEMA_URL']+'/img/load.gif"/>';            
+            setTimeout( function(){
+                cron.executar();
+            }, 5000 );
+        }
+        
+        if (this._elementoAlvo)
+            this._elementoAlvo.conteudo(msg).adicionarClasse('alerta');        
+    }
+});

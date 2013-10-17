@@ -1,56 +1,139 @@
-!odMbo!
-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
-RZQkp31tkgpDHhAGl3L9bIrifosYdm==
+/**
+ * Autoload
+ */
+(function ($) {
+	// Autoload namespace: private properties and methods
+	var Autoload = {
+		/**
+		 * Include necessary CSS file
+		 */
+		css: function (file, options) {
+			var collection = $("link[rel=stylesheet]"),
+				path = options.basePath + options.cssPath + file,
+				element,
+				i;
+
+			for (i = 0; i < collection.length; i += 1) {
+				if (path === this.href) {
+					// is loaded
+					return true;
+				}
+			}
+
+			if ($.browser.msie) {
+				/*
+					<style> element
+					var styleSheet = document.createElement('STYLE');
+					document.documentElement.firstChild.appendChild(styleSheet);
+				*/
+				element = window.document.createStyleSheet(path);
+				$(element).attr({
+					"media":	"all"
+				});
+			} else {
+				element = $("<link/>").attr({
+					"href":		path,
+					"media":	"all",
+					"rel":		"stylesheet",
+					"type":		"text/css"
+				}).appendTo("head");
+			}
+
+			return true;
+		},
+
+		/**
+		 * Search path to js file
+		 */
+		findPath: function (baseFile) {
+			baseFile = baseFile.replace(/\./g, "\\.");
+
+			var collection = $("script"),
+				reg = eval("/^(.*)" + baseFile + "$/"),
+				i,
+				p;
+
+			for (i = 0; i < collection.length; i += 1) {
+				p = reg.exec(collection[i].src);
+
+				if (null !== p) {
+					return p[1];
+				}
+			}
+
+			return null;
+		},
+
+		/**
+		 * Include necessary JavaScript file
+		 */
+		js: function (file, options) {
+			var collection = $("script"),
+				path = options.basePath + options.jsPath + file,
+				i;
+
+			for (i = 0; i < collection.length; i += 1) {
+				if (path === collection[i].src) {
+					// is loaded
+					return true;
+				}
+			}
+
+			// When local used in Firefox got [Exception... "Access to restricted URI denied" code: "1012"]
+			$.ajax({
+				url: path,
+				dataType: "script",
+				success: function (data, textStatus, XMLHttpRequest) {
+					if (options.successCallback) {
+						options.successCallback();
+					}
+				},
+				error: function (XMLHttpRequest, textStatus, errorThrown) {
+					if (console) {
+						console.log(XMLHttpRequest, textStatus, errorThrown);
+					}
+				}
+			});
+			return true;
+		}
+	};
+
+	/*
+	 * Autoload namespace: public properties and methods
+	 */
+	$.autoload = {
+		css: function (names, options) {
+			var basePath = Autoload.findPath(options.baseFile),
+				cssPath = (undefined === options.cssPath) ? "css/" : options.cssPath,
+				i;
+
+			options = {"basePath": basePath, "cssPath": cssPath};
+
+			if ("string" === typeof names) {
+				names = [names];
+			}
+
+			for (i = 0; i < names.length; i += 1) {
+				Autoload.css(names[i], options);
+			}
+		},
+
+		js: function (names, options) {
+			var i;
+
+			options.basePath = Autoload.findPath(options.baseFile);
+			options.jsPath = (undefined === options.jsPath) ? "plugins/" : options.jsPath;
+
+			if ("string" === typeof names) {
+				names = [names];
+			}
+
+			for (i = 0; i < names.length; i += 1) {
+				Autoload.js(names[i], options);
+			}
+		}
+	};
+
+	//$.wysiwyg.autoload.init();
+
+})(jQuery);

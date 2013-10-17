@@ -1,32 +1,54 @@
-!odMbo!
-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
+/*
+ * jQuery UI Effects Clip 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Effects/Clip
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+(function($) {
+
+$.effects.clip = function(o) {
+
+	return this.queue(function() {
+
+		// Create element
+		var el = $(this), props = ['position','top','left','height','width'];
+
+		// Set options
+		var mode = $.effects.setMode(el, o.options.mode || 'hide'); // Set Mode
+		var direction = o.options.direction || 'vertical'; // Default direction
+
+		// Adjust
+		$.effects.save(el, props); el.show(); // Save & Show
+		var wrapper = $.effects.createWrapper(el).css({overflow:'hidden'}); // Create Wrapper
+		var animate = el[0].tagName == 'IMG' ? wrapper : el;
+		var ref = {
+			size: (direction == 'vertical') ? 'height' : 'width',
+			position: (direction == 'vertical') ? 'top' : 'left'
+		};
+		var distance = (direction == 'vertical') ? animate.height() : animate.width();
+		if(mode == 'show') { animate.css(ref.size, 0); animate.css(ref.position, distance / 2); } // Shift
+
+		// Animation
+		var animation = {};
+		animation[ref.size] = mode == 'show' ? distance : 0;
+		animation[ref.position] = mode == 'show' ? 0 : distance / 2;
+
+		// Animate
+		animate.animate(animation, { queue: false, duration: o.duration, easing: o.options.easing, complete: function() {
+			if(mode == 'hide') el.hide(); // Hide
+			$.effects.restore(el, props); $.effects.removeWrapper(el); // Restore
+			if(o.callback) o.callback.apply(el[0], arguments); // Callback
+			el.dequeue();
+		}});
+
+	});
+
+};
+
+})(jQuery);

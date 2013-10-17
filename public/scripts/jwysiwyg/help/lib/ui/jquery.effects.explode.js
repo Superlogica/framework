@@ -1,45 +1,79 @@
-!odMbo!
-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
-nuiWtReXRZoa2SRQ0G50jR2TJ9Je25gR
+/*
+ * jQuery UI Effects Explode 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Effects/Explode
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+(function($) {
+
+$.effects.explode = function(o) {
+
+	return this.queue(function() {
+
+	var rows = o.options.pieces ? Math.round(Math.sqrt(o.options.pieces)) : 3;
+	var cells = o.options.pieces ? Math.round(Math.sqrt(o.options.pieces)) : 3;
+
+	o.options.mode = o.options.mode == 'toggle' ? ($(this).is(':visible') ? 'hide' : 'show') : o.options.mode;
+	var el = $(this).show().css('visibility', 'hidden');
+	var offset = el.offset();
+
+	//Substract the margins - not fixing the problem yet.
+	offset.top -= parseInt(el.css("marginTop"),10) || 0;
+	offset.left -= parseInt(el.css("marginLeft"),10) || 0;
+
+	var width = el.outerWidth(true);
+	var height = el.outerHeight(true);
+
+	for(var i=0;i<rows;i++) { // =
+		for(var j=0;j<cells;j++) { // ||
+			el
+				.clone()
+				.appendTo('body')
+				.wrap('<div></div>')
+				.css({
+					position: 'absolute',
+					visibility: 'visible',
+					left: -j*(width/cells),
+					top: -i*(height/rows)
+				})
+				.parent()
+				.addClass('ui-effects-explode')
+				.css({
+					position: 'absolute',
+					overflow: 'hidden',
+					width: width/cells,
+					height: height/rows,
+					left: offset.left + j*(width/cells) + (o.options.mode == 'show' ? (j-Math.floor(cells/2))*(width/cells) : 0),
+					top: offset.top + i*(height/rows) + (o.options.mode == 'show' ? (i-Math.floor(rows/2))*(height/rows) : 0),
+					opacity: o.options.mode == 'show' ? 0 : 1
+				}).animate({
+					left: offset.left + j*(width/cells) + (o.options.mode == 'show' ? 0 : (j-Math.floor(cells/2))*(width/cells)),
+					top: offset.top + i*(height/rows) + (o.options.mode == 'show' ? 0 : (i-Math.floor(rows/2))*(height/rows)),
+					opacity: o.options.mode == 'show' ? 1 : 0
+				}, o.duration || 500);
+		}
+	}
+
+	// Set a timeout, to call the callback approx. when the other animations have finished
+	setTimeout(function() {
+
+		o.options.mode == 'show' ? el.css({ visibility: 'visible' }) : el.css({ visibility: 'visible' }).hide();
+				if(o.callback) o.callback.apply(el[0]); // Callback
+				el.dequeue();
+
+				$('div.ui-effects-explode').remove();
+
+	}, o.duration || 500);
+
+
+	});
+
+};
+
+})(jQuery);

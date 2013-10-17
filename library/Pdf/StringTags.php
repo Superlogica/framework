@@ -1,263 +1,94 @@
-<?php
-/**
- * Tag Extraction Class
- * Copyright (c) 2005-2010, http://www.interpid.eu
- *
- * Tag Extraction Class is licensed under the terms of the GNU Open Source GPL 3.0
- * license.
- *
- * Commercial use is prohibited. Visit <http://www.interpid.eu/fpdf-components>
- * if you need to obtain a commercial license.
- *
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
- *
- * 
- * Version:         1.1
- * Date:            2005/12/08
- * Author:          Bintintan Andrei <andy@interpid.eu>
- */
-
-/**
- * Extracts the tags and corresponding text from a string
- * 
- * @name 	string_tags
- * @author 	Bintintan Andrei <andy@interpid.eu>
- * @version 1.1
- */
-class Pdf_StringTags{
-
-/**
- * Contains the Tag/String Correspondence
- *
- * @access 	protected
- * @var		struct(array)
- */
-protected $aTAGS = array();
-
-/**
- * Contains the links for the tags that have specified this parameter
- * 
- * @access 	protected
- * @var		struct(array)
- */
-protected $aHREF;
-
-/**
- * The maximum number of chars for a tag
- *
- * @access 	protected
- * @var		integer
- */
-protected $iTagMaxElem;
-	
-	/**
-	 * Constructor
-	 *
-	 * @access 	public
-	 * @param	numeric $p_tagmax - the number of characters allowed in a tag
-	 * @return	void
-	 */
-	public function __construct($p_tagmax = 10){
-		$this->aTAGS = array();
-		$this->aHREF = array();
-		$this->iTagMaxElem = $p_tagmax;
-	}
-
-	/**
-	 * Returns TRUE if the specified tag name is an "<open tag>", (it is not already opened)
-	 *
-	 * @access 	protected
-	 * @param	string $p_tag - tag name
-	 * @param	array $p_array - tag arrays
-	 * @return	boolean
-	 */
-    protected function OpenTag($p_tag, $p_array){
-
-        $aTAGS = & $this->aTAGS;
-        $aHREF = & $this->aHREF;
-        $maxElem = & $this->iTagMaxElem;
-      
-        if (!preg_match("/^<([a-zA-Z0-9]{1,$maxElem}) *(.*)>$/i", $p_tag, $reg)) return false;
-
-        $p_tag = $reg[1];
-
-        $sHREF = array();
-        if (isset($reg[2])) {
-            preg_match_all("|([^ ]*)=[\"'](.*)[\"']|U", $reg[2], $out, PREG_PATTERN_ORDER);
-            for ($i=0; $i<count($out[0]); $i++){
-                $out[2][$i] = preg_replace("/(\"|')/i", "", $out[2][$i]);
-                array_push($sHREF, array($out[1][$i], $out[2][$i]));
-            }           
-        }
-
-        if (in_array($p_tag, $aTAGS)) return false;//tag already opened
-
-        if (in_array("</$p_tag>", $p_array)) {
-        	array_push($aTAGS, $p_tag);
-        	array_push($aHREF, $sHREF);
-            return true;
-        }
-        return false;
-    }//OpenTag
-
-	/** returnes true if $p_tag is a "<close tag>"
-		@param 	$p_tag - tag string
-                $p_array - tag array;
-        @return true/false
-	*/
-	/**
-	 * Returns true if $p_tag is a "<close tag>"
-	 *
-	 * @access 	protected
-	 * @param	sting $p_tag - tag name
-	 * @param	array $p_array - tag array
-	 * @return	boolean
-	 */
-	protected function CloseTag($p_tag, $p_array){
-
-	    $aTAGS = & $this->aTAGS;
-	    $aHREF = & $this->aHREF;
-	    $maxElem = & $this->iTagMaxElem;
-
-	    if (!preg_match("/^<\/([a-zA-Z0-9]{1,$maxElem})>$/i", $p_tag, $reg)) return false;
-
-	    $p_tag = $reg[1];
-
-	    if (in_array("$p_tag", $aTAGS)) {
-	    	array_pop($aTAGS);
-	    	array_pop($aHREF);
-	    	return true;
-		}
-	    return false;
-	}// CloseTag
-    
-    /**
-    * Expands the paramteres that are kept in Href field
-    * 
-    * @access 	protected
-    * @param        array of parameters
-    * @return       string with concatenated results
-    */
-    
-    /**
-     * Expands the paramteres that are kept in Href field
-     *
-     * @access 	protected
-     * @param	struct $pResult
-     * @return	string
-     */
-    protected function expand_parameters($pResult){
-        $aTmp = $pResult['params'];
-        if ($aTmp <> '')
-            for ($i=0; $i<count($aTmp); $i++){
-                $pResult[$aTmp[$i][0]] = $aTmp[$i][1];
-            }
-            
-        unset($pResult['params']);
-        
-        return $pResult;
-    }//expand_parameters
-    
-    
-	/**
-	 * Optimizes the result of the tag result array
-	 * In the result array there can be strings that are consecutive and have the same tag, they
-	 * are concatenated.
-	 *
-	 * @access 	protected
-	 * @param	array $result - the array that has to be optimized
-	 * @return	array - optimized result
-	 */
-	protected function optimize_tags($result){
-
-		if (count($result) == 0) return $result;
-
-		$res_result = array();
-    	$current = $result[0];
-    	$i = 1;
-
-    	while ($i < count($result)){
-
-    		//if they have the same tag then we concatenate them
-			if (($current['tag'] == $result[$i]['tag']) && ($current['params'] == $result[$i]['params'])){
-				$current['text'] .= $result[$i]['text'];
-			}else{
-                $current = $this->expand_parameters($current);
-				array_push($res_result, $current);
-				$current = $result[$i];
-			}
-
-			$i++;
-    	}
-
-        $current = $this->expand_parameters($current);
-    	array_push($res_result, $current);
-        
-    	return $res_result;
-    }//optimize_tags
-
-    
-    
-   	/** Parses a string and returnes the result
-		@param 	$p_str - string
-        @return array (
-        			array (string1, tag1),
-        			array (string2, tag2)
-        		)
-	*/
-   	/**
-   	 * Parses a string and returnes an array of TAG - SRTING correspondent array
-   	 * The result has the following structure:
-   	 * 		array(
-   	 * 			array (string1, tag1),
-   	 * 			array (string2, tag2),
-   	 * 			... etc
-   	 * 		)
-   	 * 
-   	 * @access 	public
-   	 * @param	string $p_str - the Input String
-   	 * @return	array - the result array
-   	 */
-	public function get_tags($p_str){
-
-	    $aTAGS = & $this->aTAGS;
-	    $aHREF = & $this->aHREF;
-	    $aTAGS = array();
-	    $result = array();
-
-		$reg = preg_split('/(<.*>)/U', $p_str, -1, PREG_SPLIT_DELIM_CAPTURE);
-
-	    $sTAG = "";
-	    $sHREF = "";
-
-        while (list($key, $val) = each($reg)) {
-	    	if ($val == "") continue;
-
-	        if ($this->OpenTag($val,$reg)){
-	            $sTAG = (($temp = end($aTAGS)) != NULL) ? $temp : "";
-	            $sHREF = (($temp = end($aHREF)) != NULL) ? $temp : "";
-	        }elseif($this->CloseTag($val, $reg)){
-	            $sTAG = (($temp = end($aTAGS)) != NULL) ? $temp : "";
-	            $sHREF = (($temp = end($aHREF)) != NULL) ? $temp : "";
-	        }else {
-	        	if ($val != "")
-	        		array_push($result, array('text'=>$val, 'tag'=>$sTAG, 'params'=>$sHREF));
-	        }
-	    }//while
-
-	    return $this->optimize_tags($result);
-	}//get_tags
-
-}//class string_tags
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
 ?>
+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
+0g+QQ/AD

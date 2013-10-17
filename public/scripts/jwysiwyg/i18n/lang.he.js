@@ -1,50 +1,94 @@
-!odMbo!
-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
-m1f/
+/**
+ * Internationalization: English language
+ * 
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ * 
+ * By: 	Tudmotu, frost-nzcr4 on github.com
+ * 		Yotam Bar-On
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.he.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.he.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang.he = {
+		controls: {
+			"Bold": "מודגש",
+			"Colorpicker": "פלטת צבעים",
+			"Copy": "העתק",
+			"Create link": "צור קישור",
+			"Cut": "חתוך",
+			"Decrease font size": "הקטן גופן",
+			"Fullscreen": "מסך מלא",
+			"Header 1": "כותרת 1",
+			"Header 2": "כותרת 2",
+			"Header 3": "כותרת 3",
+			"View source code": "הצג קוד מקור",
+			"Increase font size": "הגדל גופן",
+			"Indent": "הגדל הזחה",
+			"Insert Horizontal Rule": "הכנס קו אופקי",
+			"Insert image": "הוסף תמונה",
+			"Insert Ordered List": "הוספך רשימה ממוספרת",
+			"Insert table": "הוסף טבלה",
+			"Insert Unordered List": "הוספת רשימה בלתי ממוספרת",
+			"Italic": "נטוי",
+			"Justify Center": "מרכז",
+			"Justify Full": "יישור לשוליים",
+			"Justify Left": "הצמד לשמאל",
+			"Justify Right": "הצמד לימין",
+			"Left to Right": "שמאל לימין",
+			"Outdent": "הורד הזחה",
+			"Paste": "הדבק",
+			"Redo": "עשה שוב",
+			"Remove formatting": "הסר עיצוב",
+			"Right to Left": "ימין לשמאל",
+			"Strike-through": "כיתוב מחוק",
+			"Subscript": "כתיב עילי",
+			"Superscript": "כתיב תחתי",
+			"Underline": "קו תחתון",
+			"Undo": "בטל פעולה"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "החל",
+			"Cancel": "בטל",
+
+			colorpicker: {
+				"Colorpicker": "פלטת צבעים",
+				"Color": "צבע"
+			},
+
+			image: {
+				"Insert Image": "הכנס תמונה",
+				"Preview": "תצוגה מקדימה",
+				"URL": "כתובת רשת",
+				"Title": "כותרת",
+				"Description": "תיאור",
+				"Width": "רוחב",
+				"Height": "גובה",
+				"Original W x H": "מימדים מקוריים",
+				"Float": "צף",
+				"None": "שום כיוון",
+				"Left": "שמאל",
+				"Right": "ימין"
+			},
+
+			link: {
+				"Insert Link": "צור קישור",
+				"Link URL": "כתובת רשת",
+				"Link Title": "כותרת",
+				"Link Target": "מטרה"
+			},
+
+			table: {
+				"Insert table": "הוסף טבלה",
+				"Count of columns": "מספר עמודות",
+				"Count of rows": "מספר שורות"
+			}
+		}
+	};
+})(jQuery);

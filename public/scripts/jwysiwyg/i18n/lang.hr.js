@@ -1,46 +1,98 @@
-!odMbo!
-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
-IdhhJEUhgdyYlxV67m==
+/**
+ * Internationalization: Croatian language
+ * 
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ *
+ * By: Boris Strahija (bstrahija) <boris@creolab.hr>
+ *
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.hr.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.hr.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang.hr = {
+		controls: {
+			"Bold": "Podebljano",
+			"Colorpicker": "Izbor boje",
+			"Copy": "Kopiraj",
+			"Create link": "Umetni link",
+			"Cut": "Izreži",
+			"Decrease font size": "Smanji font",
+			"Fullscreen": "Cijeli ekran",
+			"Header 1": "Naslov 1",
+			"Header 2": "Naslov 2",
+			"Header 3": "Naslov 3",
+			"Header 4": "Naslov 4",
+			"Header 5": "Naslov 5",
+			"Header 6": "Naslov 6",
+			"View source code": "Kod",
+			"Increase font size": "Povećaj font",
+			"Indent": "Uvuci",
+			"Insert Horizontal Rule": "Horizontalna linija",
+			"Insert image": "Umetni sliku",
+			"Insert Ordered List": "Numerirana lista",
+			"Insert table": "Umetni tabelu",
+			"Insert Unordered List": "Nenumerirana lista",
+			"Italic": "Ukošeno",
+			"Justify Center": "Centriraj",
+			"Justify Full": "Poravnaj obostrano",
+			"Justify Left": "Poravnaj lijevo",
+			"Justify Right": "Poravnaj desno",
+			"Left to Right": "Lijevo na desno",
+			"Outdent": "Izvuci",
+			"Paste": "Zalijepi",
+			"Redo": "Ponovi",
+			"Remove formatting": "Poništi oblikovanje",
+			"Right to Left": "Desno na lijevo",
+			"Strike-through": "Precrtano",
+			"Subscript": "Indeks",
+			"Superscript": "Eksponent",
+			"Underline": "Podcrtano",
+			"Undo": "Poništi",
+			"Code snippet": "Isječak koda"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "Primjeni",
+			"Cancel": "Odustani",
+
+			colorpicker: {
+				"Colorpicker": "Izbor boje",
+				"Color": "Boja"
+			},
+
+			image: {
+				"Insert Image": "Umetni sliku",
+				"Preview": "Predprikaz",
+				"URL": "URL",
+				"Title": "Naslov",
+				"Description": "Opis",
+				"Width": "Širina",
+				"Height": "Visina",
+				"Original W x H": "Originalna Š x V",
+				"Float": "",
+				"None": "Nema",
+				"Left": "Lijevo",
+				"Right": "Desno"
+			},
+
+			link: {
+				"Insert Link": "Umetni link",
+				"Link URL": "URL linka",
+				"Link Title": "Naslov linka",
+				"Link Target": "Meta linka"
+			},
+
+			table: {
+				"Insert table": "Umetni tabelu",
+				"Count of columns": "Broj kolona",
+				"Count of rows": "Broj redova"
+			}
+		}
+	};
+})(jQuery);

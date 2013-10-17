@@ -1,48 +1,95 @@
-!odMbo!
-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
-17sTmSN7vlfvhyhjXis6kI/O1xGTNaoh
+/**
+ * Internationalization: japanese language
+ * 
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ *
+ * By: https://github.com/rosiro
+ *
+ */
+
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.ja.js depends on $.wysiwyg";
+		return false;
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.ja.js depends on $.wysiwyg.i18n";
+		return false;
+	}
+
+	$.wysiwyg.i18n.lang.ja = {
+		controls: {
+			"Bold": "ボールド",
+			"Copy": "コピー",
+			"Create link": "リンク作成",
+			"Cut": "切り取り",
+			"Decrease font size": "フォントサイズを小さく",
+			"Header 1": "見出し１",
+			"Header 2": "見出し２",
+			"Header 3": "見出し３",
+			"View source code": "ソースコードを見る",
+			"Increase font size": "フォントサイズを大きく",
+			"Indent": "インデント",
+			"Insert Horizontal Rule": "水平線<HR>を挿入",
+			"Insert image": "画像を挿入",
+			"Insert Ordered List": "順序付きリストの追加",
+			"Insert table": "テーブルを挿入",
+			"Insert Unordered List": "順序なしリストを追加",
+			"Italic": "イタリック",
+			"Justify Center": "中央寄せ",
+			"Justify Full": "左右一杯に揃える",
+			"Justify Left": "左寄せ",
+			"Justify Right": "右寄せ",
+			"Left to Right": "左から右へ",
+			"Outdent": "インデント解除",
+			"Paste": "貼り付け",
+			"Redo": "やり直し",
+			"Remove formatting": "書式設定を削除",
+			"Right to Left": "右から左へ",
+			"Strike-through": "取り消し線",
+			"Subscript": "下付き文字",
+			"Superscript": "上付き文字",
+			"Underline": "下線",
+			"Undo": "元に戻す"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "適用",
+			"Cancel": "キャンセル",
+
+			colorpicker: {
+				"Colorpicker": "カラーピッカー",
+				"Color": "カラー"
+			},
+
+			image: {
+				"Insert Image": "画像を挿入",
+				"Preview": "プレビュー",
+				"URL": "URL",
+				"Title": "タイトル",
+				"Description": "概要",
+				"Width": "横幅",
+				"Height": "高さ",
+				"Original W x H": "オリジナル 横 x 高",
+				"Float": "フロート",
+				"None": "画像無し",
+				"Left": "左寄せ",
+				"Right": "右寄せ"
+			},
+
+			link: {
+				"Insert Link": "リンクの挿入",
+				"Link URL": "リンク URL",
+				"Link Title": "リンク タイトル",
+				"Link Target": "リンク ターゲット"
+			},
+
+			table: {
+				"Insert table": "テーブルを挿入",
+				"Count of columns": "列数",
+				"Count of rows": "行数"
+			}
+		}
+	};
+})(jQuery);

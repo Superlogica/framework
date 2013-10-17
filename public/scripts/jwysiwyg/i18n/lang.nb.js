@@ -1,73 +1,138 @@
-!odMbo!
-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
-rW==
+/**
+ * Internationalization: norwegian (bokmål) language
+ *
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ *
+ * By: strauman on github.com / strauman.net
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.nb.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.nb.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang.cs = {
+		controls: {
+			"Bold": "Fet",
+			"Colorpicker": "Fargevelger",
+			"Copy": "Kopier",
+			"Create link": "Lag lenge",
+			"Cut": "Klipp ut",
+			"Decrease font size": "Mindre skrift",
+			"Fullscreen": "Fullskjerm",
+			"Header 1": "Stor tittel",
+			"Header 2": "Mellomstor tittel",
+			"Header 3": "Liten tittel",
+			"View source code": "Vis kildekode",
+			"Increase font size": "Større skrift",
+			"Indent": "Rykk inn",
+			"Insert Horizontal Rule": "Sett inn horisontal linje",
+			"Insert image": "Sett inn bilde",
+			"Insert Ordered List": "Sett inn organisert liste",
+			"Insert table": "Sett inn tabell",
+			"Insert Unordered List": "Sett inn uorganisert liste",
+			"Italic": "Kursiv",
+			"Justify Center": "Midtstill",
+			"Justify Full": "Hele siden",
+			"Justify Left": "Sett tekst til venstre",
+			"Justify Right": "Set tekst til høyre",
+			"Left to Right": "Venstre til høyre",
+			"Outdent": "Rykk ut",
+			"Paste": "Lim inn",
+			"Redo": "Gjør om",
+			"Remove formatting": "Fjern formatering",
+			"Right to Left": "Høyre til venstre",
+			"Strike-through": "Strek igjennom",
+			"Subscript": "Underpotens",
+			"Superscript": "Pontens",
+			"Underline": "Understrek",
+			"Undo": "Angre"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "Bruk",
+			"Cancel": "Avbryt",
+
+			colorpicker: {
+				"Colorpicker": "Fargevelger",
+				"Color": "Farge"
+			},
+
+			fileManager: {
+				"file_manager": "Fil-utforsker",
+				"upload_title": "Last opp fil",
+				"rename_title": "Endre tittelnavn",
+				"remove_title": "Fjern tittel",
+				"mkdir_title": "Lag tittel",
+				"upload_action": "Nahrát nový soubor do aktualního adresáře",
+				"mkdir_action": "Vytvořit nový adresář",
+				"remove_action": "Odstranit tento soubor",
+				"rename_action": "Přejmenovat tento soubor" ,
+				"delete_message": "Jste si jist, že chcete smazat tento soubor?",
+				"new_directory": "Nový adresář",
+				"previous_directory": "Vrať se do přechozího adresáře",
+				"rename": "Přejmenovat",
+				"select": "Vybrat",
+				"create": "Vytvořit",
+				"submit": "Vložit",
+				"cancel": "Zrušit",
+				"yes": "Ano",
+				"no": "Ne"
+			},
+			
+			fileManager: {
+				"file_manager": 		"Utforsker",
+				"upload_title":			"Last opp fil",
+				"rename_title":			"Gi nytt navn",
+				"remove_title":			"Slett fil",
+				"mkdir_title":			"Ny mappe",
+				"upload_action": 		"Last opp fil til denne mappen",
+				"mkdir_action": 		"Lag ny mappe",
+				"remove_action": 		"Slett filen",
+				"rename_action": 		"Nytt navn" ,	
+				"delete_message": 		"Er du sikker på at du vil slette denne filen?",
+				"new_directory": 		"Mappe uten navn",
+				"previous_directory": 	"Opp",
+				"rename":				"Gi nytt navn",
+				"select": 				"Velg",
+				"create": 				"Lag",
+				"submit": 				"Send",
+				"cancel": 				"Avbryt",
+				"yes":					"Ja",
+				"no":					"Nei"
+			},
+
+			image: {
+				"Insert Image": "Sett inn bilde",
+				"Preview": "Forhåndsvisning",
+				"URL": "URL",
+				"Title": "Tittel",
+				"Description": "Beskrivelse",
+				"Width": "Bredde",
+				"Height": "Høyde",
+				"Original W x H": "Original B x H",
+				"Float": "Flyt",
+				"None": "Ingen",
+				"Left": "Venstre",
+				"Right": "Høyre",
+				"Select file from server": "Velg fil fra server"
+			},
+
+			link: {
+				"Insert Link": "Sett inn link",
+				"Link URL": "Link URL",
+				"Link Title": "Linktittel",
+				"Link Target": "Link-mål"
+			},
+
+			table: {
+				"Insert table": "Sett inn tabell",
+				"Count of columns": "Antall kolonner",
+				"Count of rows": "Antall rader"
+			}
+		}
+	};
+})(jQuery);

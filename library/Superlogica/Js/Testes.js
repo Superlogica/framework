@@ -1,3 +1,6 @@
-!odMbo!
-3K5u194HStesYEB0QGmLYm4000000000TLksaAc+ymwuRxozctLDK6spqDX+kRDjifu+CuNCmnmG
-BvZNRhFLK99AhWOo3M/uazKJy14S6sI1x2CMsJnIKW==
+/* 
+ * Executa os testes de Javascript
+ */
+
+
+

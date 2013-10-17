@@ -1,83 +1,141 @@
-!odMbo!
-PeHkkdXJVemUiKiFoFCqL0400000000010N/dIG9NNAfkfwt9o4Jqsl0TATTffYJCmlTuZNMwOGP
-IfMfm6ca4F7n4DImiAmMqWUuGFHUtLvUEc/yw4s1o6ZEq8WmE7q5Kn2TDVGAIFwximyHab4ZOyjD
-boNMFD9LVW8XFHWtY99Rw6VID9JwVm76m0OPaXevRHkJP4Eh8udHjTx7zt7Yx7pWyOpwZZdyt69c
-ucQVen+Wz5R0oTLk/uHNF1CONRaLI8I208FefJ3MhH2WIE+YrLjwl6uymYy9f6SpwfVNa6/uzOFE
-o8xm5q2uCKXtChWszw3lhOYa7bxExwucyHbUQekHAoxO0Hc2vQPVSn+bYjJlKHt25FJIzgQ0IFpw
-dgaS1qvHZ4KdnTPOY7rLdCAs7PMMwXre3H1KhqsT1IZdASexjze8PC9Ee/Ef+rUM+lT3M61y/98P
-PNvbrDChD8wTCZGDH5ZSZzTm9bEza7W8AON1xsX3AmlokyHuIYJSMUjtheWuz4DOGvCyKpNKP+tP
-G1DWn4xu8TzJP4u40HDzQ1t01oP1fzjbFB+N6ykwch+Xvf0iO5VzX14eL0MF5b6/o/Tdk5YQG3bl
-EN93KQF7+OxTHMqFBKenMZNQFlCq6VT6GEH2MCOd3Y/jmp207yciJgG4EDwmQRR6bOUkGTH1Xqw+
-rc7nvOdtPMz3nz8ZUGpu/KiJU0CqVMsO4I9Qa/ZJ8k2K6WTQpfNJ5RWUsLJnmbE+8hueIsuRrI8d
-85Dh6cRjbXty183cdDUYgY8ZOQ1B7K+IG0dfpuc20zslfNbN3KYj3JdEcoStya41uFmWu6KidUTr
-yqdXI8ieX0mEtDB9irUOID+o4Jw+t+Bfzvy8yJNczz01qY0W8goztomXQWvf0lUKFePp0HowEa0Z
-6wzyWXuslNCjzY6yQKdM0G/jbHJB7f0/qW2Vsg95euUwoTz9miwyMDDGB1xajDJeGUVlJ/CAoDT2
-pLvuogHalbceK4AClLPubi4Hj6U5DWYXioIONDXdhUzDDWthVnh9OH05YozBn2/CM1LObPTqJwg2
-DbVz/At1rwXv4/IZuSgvBQArFqGxP4kAa1vuyCwx1j9ae88QwbJrSsllXEIUiKdQBXgEayc0Q60n
-jzLK70Zp13mTlyD52FGGFeuuY0jv1MCI7riNufZf5P+mDFIQBWi1yyEQ7HKaQdqkiS6SAC7fNdAl
-1rdCbWfK3TNG1SFaB48xGsWziz3+uXoUBJVGVPteA6vRelAPSbdZsjLbaOehTaBXxTNP3uPVqu4D
-czZRZ6SXwDCL8794G0I2qLdY6XUKM+VMv+uxLtxz9JBMUwz0fazFt3/4hwZlwQ8LhppfEFPxa/kJ
-xRnsnu7IugDWkAACX8Fyv54jHnvxVX+vkiA7IlTWQ5rD5/GklpF3dcF+2ScjprIUNlaYFYzF+Wlr
-D2ve0r+purxmSHPqIilK1IgYVVcoAJ3NLGnWhpLFm/4jVv0N48qrGLAkYfKbH6PyS7zXY+FpDNO6
-KLXf++Jm5IF2nPeAmQtHxI74aAR2j54XiS/5hXYWf2WqHInIKwBkI/fNHd7WiB7q6c9oKKPVOetq
-lJOeEojbkxSTn6AUEI56iBx/ZjWR98N4O0X4hEOh3zgF8rS/KkYaioV15//f/v3O/Qf6MfXVPeOB
-Pd1LdWfkaS6Mi3lJEI3dj3r+0fJ6DVKD13czQbM2LTVE+xvVamdktXe2V70WzPft6P+nbhV6FWqM
-6KROH1rPTB3kWaIapcmgu+Zs1CJU976ZjpBgbh+7rYu0uac+x44uxIjAMfu/+PpUj3eLPi6mR5eT
-gCqsg0RJYYTJjQE4ZPKqvZl0eLQ13GEv5HjWl7q0j2jLNr68meCJtkgaKzSoO/nxv0HM58AoPSSE
-bNLsvx3xjirVYzKvaHtip66bKyVDqip7hno7HopIKK+uxIMbz5dHXUhbCQ1zxwU9g66QCzn2b4wT
-dQ6cLzRAk4PVQRhKQN0c2IRTYnI/UiEONX5Fmnlnd4bUJwxpNwWru0KjA6yFsPnMBdGlX2Va2vPw
-oTY9q/CuslfqLEtxXdFYplSfL6Vg9NEt5BKWmpDuNuBUbXrsDRMAOxaig8Vj0F2MB+bIecamURtl
-mfKE5PyPUTGGjStmWKAa5DW4EnhSKmhQDEbNvm8vsAlUHVgQqVx6sR30HlkMdh0IiDIsCNtoTql6
-7W0DYVVBhr4e+6M33JVuxAkaJ10Eo7fPGWbdKfintW6l7UujNIFmigOq5t+WBGKl0RjHDMD3CrJz
-VjA34Wk4kmKoNh4kcAMbU1TDNq/0YQZRr6S4XwLXVir11ciT+IL862NCaqCkMg+i0jdAzsZ2x+xD
-TQpd66dJq2B4uTJ8b357NLMbVjpHvEh322q9mDjL2J6JnJ2zjO5RZ6JYg3ny2888VJ0SwbdUx22A
-LS3/zq5ajVwRUvPlMGg0QOz5xPHTsraNtQnTyUzwLOJ7T9kufczSc35y+ZZrP3YK7wm0eVYJJr/F
-RSCWhLxjvKk4CgmHnDNpDTJymEmGSavbxLOmAlHtizJOXRr3tDJTJMbubWoazypEY7vqMU3I4Zpk
-nMxafyjLEBwMXa+g0JEXkEObXlLyCOEYdnr8vzkD7OnySrKRgKNNabV3kw+xaLn4XWJDDqvWX8V8
-4cHR1I8wRljCkRvj0YnM6bzOxMmTmwXoaCxTvyOW72DgOzW6tIEWyEoThgRLqjEVzziekyj6T2wM
-cG25smk+qTnEkvHXwa87H730uVJhq9DT2n5jciZWxCx4LTsBZjk8rRlgXz5qrFcMz/85NpDkgKaB
-8QbRvDe8OthSc5Vti8WDniFWQRNkQjVZbJXTVKOaV6QlvJQS1mAqnjeNux4lCvRsKrZrIXkQREaK
-j9ZNNXkDcdKcXbXKc1YCDSw4dyXUadcMW6NhqD0pSrPqE3v5d7fc5Of89AF9abvxzZhAoVNtX7zL
-Y0tqaun6QIilB9k6+It/Q9aGOlf3UjVbH16onpEizLEudDEngnkOfCxTxbR7R8YJiHdw9LubiUON
-8hy6FV/lVPCNr8QLTpglcp2OALzAGPcttOs9ZfeJHfajcmvp+oNk36vvTIgGt7PGN9ap/nOkAYc0
-vnvdQsdvlYQokOeBhl8UlM5sGCU7zazuTcv+H3hHGxpEKPXFLdhNagbeESpnzZARSkttgYwL/rUo
-ljTx2pkGapzHaRcerKHr/tS91e+w3VzK5HIs/E4Yr8p2NMDMEJjBgGWVTRJaiaExS0PAhsx7jqMc
-80ogiT0IU+2B0WimJcsE0jBfDTNyLP9MbNXBnPD8BeCr0B1FtM3rSBJ5oKtuhCL0p7nlj0ykZdiG
-EQ0ZhoHrEueWmAsQ5nqYPqpGeqIKomH5yBwHEiZNFE9XQlQkGv3SYv0x9FPJAh4EOUP2qhNIGG2Z
-NX4iIJCVG+1/14BROKo1Vs1AmEc9lo9ymy9VoKKrKNppY2pFarLlbMFQwsYeT4kBzHYGB3HdG1Je
-Np8y9hOVriRg/EhZJnMKZD84u9ju1Z5JEJK9CqiXEBNwX+MzvHICuf+nplTnNTJPTC0HQSxo8O8h
-uHJBFVA5uOhsU9UXVsOj/IDeTN3VrfHhbK4iWT5uwy3MFWRk7Mt0s5xDAMne6n2hYNtEqYm79vxU
-AIE+mVHlnAdhQcQqFH1OvPYV4sm63b4MmflQkhotxIfVazPEh5t3I+BpZchBLyxmyGay4RBlMzhL
-yVY87ZqGEP+iW8wKrJ07zslPQtrOMl5SxbDKtCFOtuSoXZfrYvLNYfwFs9jh8MKTjvqASrjONbUt
-QqWLHCvTR3/qBMwTrge+X+iBH7DN6VEu+GICwgNDuuR9DIieE1fOk6HRunto27bw7GEXzaH8hm8W
-0Oz5TuTlBFmei9QIlRnsuCoRD6oUTb/TjrpZLeCM0ZaFDODnWoQ6hO1HnLveWBWvZfugfcLjkQW4
-znQnaGPj0HXKmJLInDNk2MfqqJcYcLyx1zXeEgjRjvsUdK1lZkRiPdcPviGilTMMjR4dxV8LH1ss
-AxeNfQlZZgkU3evQIzGDA4dJacqWHFfmc4jng2YeqYC/Db731TnQfgWNCqhJkN58yE6/cNtqaf+S
-XDFcqM5NYmMXDjNksYv+7BpNzHtDpEpyaDVqqcfpAIb/dufjdaqhBovyNXqKcdB/0GOmAIh+HjEB
-yoHgNpy5wqjYb3TbX5CLeze5B7NcAJe9mFD7Eg6+EZJIS1whkzGCa5cfZdW0hyaV9iuFzD97ytpF
-OR9g0YbTRDf5RTMnTIFJQT0YQMsbBMna6/L5gjR8u2GxsA5b2M9g+rjfvqFYL5c+1BzvzsuuDeJb
-/UUHC02uVu7ANxq2qq2enLXfUZZQB1atBKdN+KrpPqXCdlwxYobCIUROPiYtJh+45hemTCOceSjr
-Qq80MG+/Vq/S7aOkWdiM5WydU7WwreL2LOrU5ujLtqefIj3alsvqk92zpmUYFriHYqwErY/ycSgd
-tfkHrygUh24bDB3hnz1OqcCQqf3ljGwav01QfIm4kPZ6O/jONnd/Aub+/rhTEKCSQbmA0DgH9OPI
-XxStJqhA9hjD71egMoQGg56VDJJh8IFwLGBOli5izNTwfl8StSLmIqgPq3aadSGZMHw1LEQS+b6k
-dJiZDr4oOzlvRj8/LNfxm4Sti1VdouiUSHMlf1lkO546tU10IddelimYoXg1Idnbp37EfGz7QsBt
-YCBdJil264ogTEB442BoqtLuUzTfXgUJ54u3Tv/W/57NNvgqwn4yr1fRbA1wai31dsleo/Rqz+aP
-IOR9j5hW5dnRqwKaIaLMuqAUA5j2U0eU0syyKcU9dmr70Lj5vGVluJP7ymeH6jbOfC+7NKGOwOA8
-Brg0Z3VS8QPhUGF9CgEpQa3ciYZyf2e40rxomuo+no09/7usivQiVv36KWUgODGC7Ai+MhCo1eKa
-I85HRAT78CXxU3coNqFmkiFV/DPHn3anWx9yo9Mjg0Wry4tLmN0G7EBPFd+sFiDdTVMF3HgQRuTU
-IS56GxBtMF9i0rmwt6ZzQLZ1RkUkFNPzBnauGo+93Jee/rWuACIuhbK2mjjO0vS/+/cXLbPrf3IE
-dJlVl9vHIXfsRjyMNof+iWMY271SDSthGjRqcmlRPQYmbHcEHlYz6rwqUWgqc3S+IwhCU3PFo/DR
-1PU31EMAsgOpAR0/6ZMfPv9HNQaX1hvfycil6JLoCHX3UFbY8RxAdYiu23RjBgnqLKHpfrRrCn5m
-kqu3AkhFr3d6TF97gmmAKvtueUiDkiZbf5o37cvLAnZMqVp6Cgq8XCUNRgTYgxlKlmX3in1B75/9
-Yep1ipzv2czz7fhtAAV2nz9f8DzlvSKnNZPYefWVnE/lTSPxtiqLX/PSnH/YDOMy/3uHJRcV7NGK
-3ttNXos0F4bSqfYOLYLro5i9imdEcINDKxP+7NnohmBlIgJ3LJ9JCMDu4bDQmdZhd1vPysUmA0MN
-REbXkLkjKq+O9rZK6hs8JBe3cBrFCT+na13sXCy7SmziYfvP8wfoFKEFIrquONJGdyfcUpBH3uPU
-qowQdcyxbtA3IZm8KTxCIwlwCvExO6y2N4cJiUneRuV1m6kpGQX5CDvu9lAUqca4eEwLvAmGhHXz
-knvbaIMp3+B3CzW3TZZKetgECmdYm0NUOEm3k64LlAOgXDFbDLwU8GBg3hD1+PMZb8Pbo6S4xjUk
-zxc8QVt5gSqU47VMjfaj7i0wYx7AXNSmCskEPcPu7wpV+HPo5nTR1fVKGkxF1Q7moSR30BjAIVdk
-qilYtrIs8xDedhrWMJoBWh7sde9hmWadh9IeoH+JHIrVRqgvr02ah5OpPpfXkze3PnlkIJrLs88m
-51PZjeO00ACaSsOkpK/EnfbvkRK0rkmYGE5Ibh4VBFbdsAN+k/mWxVZaICM2mVtRNsO9Fyb4a+vy
-wTu6nU8V+eSyzdt5hpX7IgKVWN5wJssawvVI9A7JBfRo4vmw/mQ2bVU7MbXNFFLHOoI/GOzQ+To7
-oV5U+2Gft8IEYjIEIeUg4K+m7bVpwddmOTBi7z3RPQtuhghEOHPTb11MMnn8S9VkDaeqoGk0cECu
-CvQWtQQfWQc5wZ02hgfvVzsZO4yQ0Y+QEWxEoJPGfx3s2bce7f2+FcYC4ocZiqbLizwh4eqznSiR
-6qxCB+4ppji3EAr6PZwgRK+kGnFqdaI8q5ahDKSanm==
+var Superlogica_Js_Notificacao = new Class({
+        
+    /**
+     * Tempo em milisegundos que a msg fica aberta
+     * @var int
+     */
+    _tempoAberto : 5000,
+    
+    _msg : "",
+    
+    /**
+     * Chamada ao instanciar o objeto
+     */
+    initialize : function( msg ){
+        this.setMsg(msg);
+    },
+    
+    /**
+     * Seta a msg da notificação
+     * @param string msg
+     */
+    setMsg : function( msg ){
+        this._msg = msg ? msg : "";
+    },
+    
+    /**
+     * Retorna a msg da notificação
+     * @return string
+     */
+    getMsg : function(){
+        return this._msg;
+    },
+    
+    /**
+     * Cria o div com informações padrões
+     * 
+     * @return Superlogica_Js_Elemento
+     */
+    _createBox : function(){
+        var box = new Superlogica_Js_Elemento("<div></div>");
+        box.adicionarClasse( 'blocoEscondido' ).adicionarClasse( 'Superlogica_Js_Notificacao' );
+        return box;
+    },
+    
+    /**
+     * Retorna um novo box ou a referencia para o que já existe na tela
+     * 
+     * @param string classe Classe do elemento
+     * @param string texto Conteudo da msg
+     * @return Superlogica_Js_Elemento
+     */
+    _getBox : function( classe, texto ){
+        
+        var notificacao = new Superlogica_Js_Elemento("div.Superlogica_Js_Notificacao");
+        if ( !notificacao || notificacao.contar() <= 0 ){
+            notificacao = this._createBox();
+            new Superlogica_Js_Elemento('#conteudo').adicionarHtmlAoInicio( notificacao );
+        }
+        notificacao.conteudo( texto );      
+        notificacao.adicionarClasse(classe);
+        
+        return notificacao;
+    },
+    
+    /**
+     * Responsável por mostrar o box
+     * 
+     * @param string tipo
+     * @param string texto
+     */
+    _show : function( tipo, texto ){
+        var box = this._getBox( tipo, texto );
+            box.mostrar();
+        
+        new Superlogica_Js_Elemento(window.document).simularEvento('scroll');
+        new Superlogica_Js_Elemento(window).simularEvento('resize');
+        
+        setTimeout(function(){
+            box.esconder(true, function(){
+                new Superlogica_Js_Elemento(this).remover();
+            });
+        }, this._tempoAberto );
+        
+    },
+    
+    /**
+     * Função chamada para mostrar o box
+     * 
+     * @param string msg
+     */
+    show : function( msg ){
+        if ( !msg )
+            msg = this.getMsg();
+        this._show( 'info', msg );
+    }
+        
+});
+
+Superlogica_Js_Notificacao.atualizarPosicoes = function( distanciaTopo ){
+    var notificacao = new Superlogica_Js_Elemento("div.Superlogica_Js_Notificacao");
+    var conteudo = new Superlogica_Js_Elemento("#conteudo");
+    var paddingTopo = parseFloat( (conteudo.css('padding-top')+"").replace('px','') );
+    var marginTopo = parseFloat( (conteudo.css('margin-top')+"").replace('px','') );
+    
+    if ( isNaN(marginTopo)) marginTopo = 0;
+    if ( isNaN(paddingTopo)) paddingTopo = 0;
+    notificacao.css({'top': conteudo.posicao().topo + distanciaTopo +paddingTopo+marginTopo });
+};
+
+new Superlogica_Js_Elemento(window.document).bind('scroll.Superlogica_Js_Notificacao', function(){
+    var elemento = this;
+    var timeoutPosicaoNotificacao = elemento.getDados('timeoutPosicaoNotificacao');
+    if ( timeoutPosicaoNotificacao ) return true;
+    timeoutPosicaoNotificacao = setTimeout( function(){
+        
+        elemento.setDados('timeoutPosicaoNotificacao', null );
+        var conteudo = new Superlogica_Js_Elemento("#conteudo");
+        var notificacao = new Superlogica_Js_Elemento("div.Superlogica_Js_Notificacao");
+        if ( notificacao.contar() <= 0 )
+            return true;
+
+        if( conteudo.contar() <= 0)
+            conteudo = new Superlogica_Js_Elemento('body');
+        var distanciaTopo = conteudo.posicao().topo;
+        var scrollTopo = elemento.scrollTopo();
+        if (  scrollTopo > distanciaTopo ){
+            Superlogica_Js_Notificacao.atualizarPosicoes( scrollTopo - distanciaTopo );
+        }
+        
+    }, 100 );
+    elemento.setDados('timeoutPosicaoNotificacao', timeoutPosicaoNotificacao );
+});
+new Superlogica_Js_Elemento(window).bind('resize.Superlogica_Js_Notificacao', function(){
+    var notificacao = new Superlogica_Js_Elemento(".Superlogica_Js_Notificacao");
+    var documento = new Superlogica_Js_Elemento(window.document);
+    var larguraTela = documento.largura();
+    notificacao.css({
+        'left' : (larguraTela/2) - (notificacao.largura()/2)
+    });
+});
+

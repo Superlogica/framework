@@ -1,12 +1,23 @@
-!odMbo!
-Mrh66CDz4WmV0+iEgX/BzW4000000000PyaQZLHvidCBOfZxqcbS+LWxNfmK+s2cHUnoaMR20cpd
-HKLXMP/rJYNpBosXBlRwLd9Ay/+vgF9r7fSA+jJobW2wTt00K6v5UeKWTGwSK8Vfe/XQiYF4Rl0V
-sZ7dYNFMLqkcel3ZHL7ZZ28OJXOLeSdiTHAY5AMd62PM93O1IM4zt3idMj7qU5G/jfvmBos2Svz2
-P5BemXEcfWJIyhsrr8polKqL4ebK6iCH6CKhmtAevvEl0dwU8jceHpvTLaXTgESKVIVqgQBWap5N
-GBUqcEBX/w1rlA3jsZlNfEIO02dTPk11XejJ1Mdy5AdgRrVB4hH5CAKh/+hGSgkqAdAw4ANGLFD7
-wvXHPbtEsqREA4WF/Nf5YQaRsJV08w4cDJ0L1x6AFj3wcEMce2IFU2RQ+SjfvMRdISLBcTcEOmOZ
-hTPgiaZSDiy5Jc5FtBagMHk8bSOGOtBjthby6eTaqbMWWBmZwxZwtJawfSCxiJxmkyz4rB3QQvvh
-2OaEyM7bbFVkE0PpjPY1Wm+2GLR+JUrOyCr+6XYEe13F7zcLoW574dVsbycQE2K1bwPZ4RreDFHi
-2hIOphINTT0rmzMN9EZNOh31nANAXR3yc+9PNUoD1QLUmdEZsT7tZMkdHMMP4gt6IK3fZMZ0OqND
-eXS78xF+U1Ve0GfYsHKEnMwJAs7LeMnelSaqG7Ie43J0CMAzgh1hJNmAzhY0RmOcaU1brEKU86BK
-yG7eRwP4SP4CyliP4V4mbX6r4gTYLuhIWCmMhIrxQCS=
+describe("issue 159", function () {
+	beforeEach(function () {
+		$("#id1").wysiwyg({
+			rmUnusedControls: true,
+			controls: {
+				bold: { visible: true },
+				html: { visible: true }
+			}
+		});
+	});
+
+	afterEach(function () {
+		$("textarea").wysiwyg("clear").wysiwyg("destroy");
+	});
+
+	it('should insert image and return content with correct image source', function () {
+		$("#id1").wysiwyg("insertImage", "../images/quote02.gif");
+
+		var content = $("#id1").val();
+
+		expect(content.indexOf("../images/quote02.gif")).not.toEqual(-1);
+	});
+});

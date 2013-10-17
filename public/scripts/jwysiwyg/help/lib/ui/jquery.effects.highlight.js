@@ -1,24 +1,50 @@
-!odMbo!
-VKLIpPM2PLy4b1/fEOeYim4000000000PslG31wUy74NMobHuBMLTs2C5uD9QsNcnPR1+uApQzsd
-eiP95ZjJqv6AoyNhyFxGGO+h+Oy6NMr0DutMoIUDIivIMMcN+1fIIrH98MYPyAe7Y726RSXUMjB/
-3Sa+nkbjAUUys/CSHudd8MMIUCEY9x7JqPLIqzsJ5/pcSlwXJSI+yZV/vVRGbJdRV9ItlO6AP7v1
-XphLtyKWvrMCRvNGSPwCtLZQ0HhkbxijGiRpZ/XvQA/JUXnnDCNcAL+M0OCWM7i9h+bWYAm0gpox
-Gk/4hgDCFTLjg1iizyM9YHKrzM+CoSJQC3J0XdHSOWLChs4HpVXdVuPzvr5oCEy8dDpAs71rSQ6D
-pxLFY1IO0Hif305/SB4kjJQOXEaXpFgpa8a+IKRLQ4hmuIvRwbeDK0sC6kQ8+/s4RLl9ymWCVKuB
-M3oCMKh+wMeNkNmrDqnGzQEjbuDU/Qd9UpZnfYg3nU3UATtMjFysOOfrbY2fdNv8hIe1bbqPksol
-Ti9Pfz2zVJikVwwGkdZdphoTXIQDAAK3as0nJJrKO9ITkzOzttacKHCpMeTMm08vmlpN1bCilQmx
-TcySWdytIwvkCqA5BCQu18LBgTSq1TwxUvV5O6gESzFAX+8Ihj70rWShzrEnSkvQ30sdpCpgLCky
-XlQSnyio88smXwmZmf2+dnmC2cPVHqplsIssPDVLgQ3sf+D5q5fG/4aA0e+sEmUBWgQb/C8wJjro
-HnUVB1IkzWFgvUr0FWnEZMNTT6d5slWFImVD9ue25LlxnAIfsDxgo4GttBhz+uPaf3DMlO2hdo3e
-hyCQwumpaDqkPRFJVqyK7MwrT+xzuXJHE/KLyLkEJ5vprUqXXIkd2PSlZ+EY5To+j9xAee8z08Zp
-dS7YZNLnfxTnFpWeOjC/tFvzzZ0oVbGgcSOF3L3hW2JDVbDDTC7PuAtmsVRwx4vDDiYCxbA+Eg0i
-nhLpiQt2G/a36buZePBTKGWZAaPR7vfiFIZF/kEVp72yeC3rHCgQC4//CL+OFHS+XnsPA5NMYmP+
-r7iMMjcO1DRM9aUF6OiLsdoHPRJhIBBwVZ4AIWr/63uxWMtnrUSCHih1ztvJLDGasO56oozcpj/q
-aHRqXBNcrdL5P2F+8oO+3VqNgDzjoQE9hYO4Y0Gk0LEtE/DQm9hE5exPl+dP1zK2DLXrqYDtnZAW
-S677l6WeRnBkwhlk6NG+DQ0SKcKMrA4w74MRMC5OaTTd87Qeqqi2KWUmgIBEekU/tXrvBpkZBZI5
-s0V9fQWPFkUvp7vSvTmC/CiJoG0Aieqd/6oTs6qiXDT5He41JCeOPeKzm+9I4mo1lm86gLhdpYhi
-IiQTQtDn5BqcZcQa2R7CwVCql39zr3jOgWhqcXy14Uz/frZVUlhlEJkQkKY6GHWlAUtxF9b/4opy
-m/PB7X1LMoYW7wsXzRExQFqfGKdbG4v2xKCHIFna4M5i0QEcmdPgt+bKkKcwS31iMlbGeIuwdQzb
-PngtuHkgIyw7QCbV+gXVxn6kC5x5jkOylZd5Q5EJNh4u0/yTA438EsVc3wfFn8oxRZ532JHfYs09
-QaUC7zijEpEq4kW8SfBwjT3rpxmvRGe7LJQmzGw0r/8UEFYi1CDX2LPn+K8f3T0VFozklbmUUIlS
-J84MoHy5veWN/kskMG+4MG==
+/*
+ * jQuery UI Effects Highlight 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Effects/Highlight
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+(function($) {
+
+$.effects.highlight = function(o) {
+	return this.queue(function() {
+		var elem = $(this),
+			props = ['backgroundImage', 'backgroundColor', 'opacity'],
+			mode = $.effects.setMode(elem, o.options.mode || 'show'),
+			animation = {
+				backgroundColor: elem.css('backgroundColor')
+			};
+
+		if (mode == 'hide') {
+			animation.opacity = 0;
+		}
+
+		$.effects.save(elem, props);
+		elem
+			.show()
+			.css({
+				backgroundImage: 'none',
+				backgroundColor: o.options.color || '#ffff99'
+			})
+			.animate(animation, {
+				queue: false,
+				duration: o.duration,
+				easing: o.options.easing,
+				complete: function() {
+					(mode == 'hide' && elem.hide());
+					$.effects.restore(elem, props);
+					(mode == 'show' && !$.support.opacity && this.style.removeAttribute('filter'));
+					(o.callback && o.callback.apply(this, arguments));
+					elem.dequeue();
+				}
+			});
+	});
+};
+
+})(jQuery);

@@ -1,32 +1,50 @@
-!odMbo!
-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
-vG1jHW3CEFyL
+/*
+ * jQuery UI Effects Drop 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Effects/Drop
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+(function($) {
+
+$.effects.drop = function(o) {
+
+	return this.queue(function() {
+
+		// Create element
+		var el = $(this), props = ['position','top','left','opacity'];
+
+		// Set options
+		var mode = $.effects.setMode(el, o.options.mode || 'hide'); // Set Mode
+		var direction = o.options.direction || 'left'; // Default Direction
+
+		// Adjust
+		$.effects.save(el, props); el.show(); // Save & Show
+		$.effects.createWrapper(el); // Create Wrapper
+		var ref = (direction == 'up' || direction == 'down') ? 'top' : 'left';
+		var motion = (direction == 'up' || direction == 'left') ? 'pos' : 'neg';
+		var distance = o.options.distance || (ref == 'top' ? el.outerHeight({margin:true}) / 2 : el.outerWidth({margin:true}) / 2);
+		if (mode == 'show') el.css('opacity', 0).css(ref, motion == 'pos' ? -distance : distance); // Shift
+
+		// Animation
+		var animation = {opacity: mode == 'show' ? 1 : 0};
+		animation[ref] = (mode == 'show' ? (motion == 'pos' ? '+=' : '-=') : (motion == 'pos' ? '-=' : '+=')) + distance;
+
+		// Animate
+		el.animate(animation, { queue: false, duration: o.duration, easing: o.options.easing, complete: function() {
+			if(mode == 'hide') el.hide(); // Hide
+			$.effects.restore(el, props); $.effects.removeWrapper(el); // Restore
+			if(o.callback) o.callback.apply(this, arguments); // Callback
+			el.dequeue();
+		}});
+
+	});
+
+};
+
+})(jQuery);

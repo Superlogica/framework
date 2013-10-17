@@ -1,1567 +1,535 @@
-<?php
-/**
- * FPDF Table - FPDF class extension
- * Copyright (c) 2005-2010, http://www.interpid.eu
- *
- * FPDF Table is licensed under the terms of the GNU Open Source GPL 3.0
- * license.
- *
- * Commercial use is prohibited. Visit <http://www.interpid.eu/fpdf-components>
- * if you need to obtain a commercial license.
- *
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
- *
- * 
-  * Version:        3.4.3
- * Date:        2005/07/20
- * Author:        Bintintan Andrei <andy@interpid.eu>
-
-
-
-/**
-Modifications:
-2007.03.03
-	- added support for ROWSPAN
-	- changed the class functions/variables for PHP5 
-2006.09.25
-    - corrected a bug for empty cell texts
-    - corrected a bug for cell lines aligment error on new page
-2006.05.18
-    - added support for cell splitting if new page ocuurs. FPDF_TABLE::tbSetSplitMode(true/false)
-    sets the splitting mode.
-            true = normal mode, the cell is splitted where the split ocuurs.
-            false = if splitting is required then the cell is drawed on the new page. If the cell
-            Height is bigger then the page height then the cell will be splitted.
-    - if the header does not have enough space for double it's Height then a new page ocuurs.
-*/
-
-
-/**
- * FPDF_TABLE - FPDF TABLE Add On Class
- * @author 		Bintintan Andrei
- * @copyright 	2005 - 2007
- */
-class Pdf_FpdfTable extends Pdf_Multicelltag 
-{
-	
-/**
- * Number of Columns of the Table
- * @access 	protected
- * @var		int
- */
-protected 	$iColumnsNr = 0;
-
-/**
- *	Contains the Header Data - header characteristics and texts
- *	
- *	Characteristics constants for Header Type:
- *	EVERY CELL FROM THE TABLE IS A MULTICELL
- *
- *	WIDTH - this is the cell width. This value must be sent only to the HEADER!!!!!!!!
- *	T_COLOR - text color = array(r,g,b);
- *	T_SIZE - text size
- *	T_FONT - text font - font type = "Arial", "Times"
- *	T_ALIGN - text align - "RLCJ"
- *	V_ALIGN - text vertical alignment - "TMB"
- *	T_TYPE - text type (Bold Italic etc)
- *	LN_SPACE - space between lines
- *	BG_COLOR - background color = array(r,g,b);
- *	BRD_COLOR - border color = array(r,g,b);
- *	BRD_SIZE - border size --
- *	BRD_TYPE - border size -- up down, with border without!!! etc
- *	BRD_TYPE_NEW_PAGE - border type on new page - this is user only if specified(<>'')
- *	TEXT - header text -- THIS ALSO BELONGS ONLY TO THE HEADER!!!!
- *
- *	all these setting conform to the settings from the multicell functions!!!!	
- * 
- * @access 	protected
- * @var 	array
- */
-protected 	$aTableHeaderType = array();
-
-/**
- * Header is drawed or not
- * @access 	protected
- * @var		boolean
- */
-protected	$bTableHeaderDraw = true;
-
-/**
- * Table Border is drawed or not
- * @access 	protected
- * @var		boolean
- */
-protected	$bTableBorderDraw = true;
-
-/**
- * Table Data Characteristics 
- * @access 	protected
- * @var		array
- */
-protected 	$aTableDataType = array();
-
-/**
- * Table Characteristics 
- * @access 	protected
- * @var		array
- */
-protected 	$aTableType = array();
-
-/**
- * Page Split Variable - if the table does not have enough space on the current page then the cells will be splitted.
- * This onlu if $bTableSplit == TRUE
- * If $bTableSplit == FALSE then the current cell will be drawed on the next page
- *
- * @access 	protected
- * @var 	boolean
- */
-protected	$bTableSplit = true;
-
-/**
- * TRUE - if on current page was some data written
- * @access 	protected
- * @var		boolean
- */
-protected	$bDataOnCurrentPage = false;
-
-/**
- * Table Data Cache. Will contain the information about the rows of the table
- * @access 	protected
- * @var		array
- */
-protected	$aDataCache = array();
-
-/**
- * TRUE - if there is a Rowspan in the Data Cache
- * @access 	protected	
- * @var		boolean
- */
-protected	$bRowSpanInCache = false;
-
-/**
- * Sequence for Rowspan ID's. Every Rowspan gets a unique ID
- * @access 	protected
- * @var		int
- */
-protected	$iRowSpanID = 0;
-
-/**
- * Table Header Cache. Will contain the information about the header of the table
- * @access 	protected
- * @var		array
- */
-protected	$aHeaderCache = array();
-
-/**
- * Header Height. In user units!
- * @access 	protected
- * @var		int
- */
-protected	$iHeaderHeight = 0;
-
-/**
- * Table Start X Position
- * @access 	protected
- * @var		int
- */
-protected	$iTableStartX = 0;
-
-/**
- * Table Start Y Position
- * @access 	protected
- * @var		int
- */
-protected	$iTableStartY = 0;
-
-/**
- * CLASS FUNCTIONS 
- */
-
-/**
- * Returns the current page Width
- *
- * @access 	protected
- * @param 	void
- * @return  integer - the Page Width
- */
-protected function PageWidth(){
-	return (int) $this->w - $this->rMargin - $this->lMargin;
-}//function PageWidth
-
-
-/**
- * Returns the current page Height
- *
- * @access 	protected
- * @param 	void
- * @return	integer - the Page Height
- */
-protected function PageHeight(){
-	return (int) $this->h - $this->tMargin - $this->bMargin;
-}//function PageHeight
-
-
-
-/**
- * CONSTRUCTOR
- * Table Initialization Function
- *
- * @access 	public
- * @param	integer	- $iColumnsNr - Number of Colums 
- * @param	boolean	- $bTableHeaderDraw	- true => Draw the table header on a new page
- * @param	boolean - $bTableBorderDraw - true => Draw the table border
- * @return 	null
- */
-public function tbInitialize($iColumnsNr = 0, $bTableHeaderDraw = true, $bTableBorderDraw = true){
-
-	$this->iColumnsNr = $iColumnsNr;
-	$this->aTableHeaderType = Array();
-	$this->bTableHeaderDraw = $bTableHeaderDraw;
-	$this->aTableDataType = Array();
-	
-	$this->aDataCache = Array();
-	$this->aHeaderCache = Array();
-	
-	$this->bTableBorderDraw = $bTableBorderDraw;
-	$this->bTableHeaderDraw = $bTableHeaderDraw;
-			
-	$this->iTableStartX = $this->GetX();
-	$this->iTableStartY = $this->GetY();
-
-	$this->bDataOnCurrentPage = false;
-}
-
-/**
- * Sets the number of Columns in the Table
- *
- * @access 	public
- * @param	integer	$iNr	- the number of Columns
- * @return 	void
- */
-public function tbSetColumnsNo($iNr){
-	$this->iColumnsNr = $iNr;
-}
-
-/**
- * Sets the Split Mode of the Table. Default is ON(true)
- *
- * @access 	public
- * @param	boolean $bSplit - if TRUE then Split is Active
- * @return 	void
- */
-public function tbSetSplitMode($bSplit = true){
-	$this->bTableSplit = $bSplit;
-}
-
-/**
- * Sets the Header Type
- * 
- * $aHeaderType=
- *	 array(
- *		0=>array(
- *				"WIDTH" => 10,
- *				"T_COLOR" => array(120,120,120),
- *				"T_SIZE" => 5,
- *				...
- *				"TEXT" => "Header text 1"
- *			  ),
- *		1=>array(
- *				...
- *			  ),
- *	 );
- * 
- * 	where 0,1... are the column number
- * 
- * If the Header has multiple lines than $aHeaderType WILL HAVE TO Contain an array, which elements are composed from the array
- * desribed above.
- * 		$aHeaderType = array ($aHeaderType1, $aHeaderType2) where $aHeaderType1 and $aHeaderType2 have the above description
- *
- * @access 	public
- * @param	array	$type_arr - header type
- * @param	boolean $bMultiLines - the header has multiple lines or not
- * @return 	void
- */
-public function tbSetHeaderType($aHeaderType, $bMultiLines = false){
-	if ($bMultiLines == false)
-		$this->aTableHeaderType[0] = $aHeaderType;
-	else 
-		$this->aTableHeaderType = $aHeaderType;
-		
-	//create the header cache data
-	foreach ($this->aTableHeaderType as $val)
-		$this->_tbAddDataToCache($val, 'header');	
-		
-	$this->_tbCacheParseRowspan(0, 'header');
-		
-	$this->tbHeaderHeight();
-}
-
-
-/**
- * Calculates the Header Height. 
- * If the Header height is bigger than the page height then the script dies. 
- * 
- * @access 	private
- * @param 	void
- * @return 	void
- */
-private function tbHeaderHeight(){
-	$this->iHeaderHeight = 0;
-		
-	$iItems = count($this->aHeaderCache);
-	for ($i=0; $i< $iItems; $i++){
-		$this->iHeaderHeight += $this->aHeaderCache[$i]['HEIGHT'];
-	}
-		
-	if ($this->iHeaderHeight > $this->PageHeight()){
-		die("Header Height({$this->iHeaderHeight}) bigger than Page Height({$this->PageHeight()})");
-	}
-}//private function tbHeaderHeight
-
-
-
-/**
- * Calculates the X margin of the table depending on the ALIGN 
- *
- * @access 		protected
- * @param 		void
- * @return 		void
- */
-protected function tbMarkMarginX(){
-	
-	
-	if (isset($this->aTableType['TB_ALIGN'])){
-		$tb_align = $this->aTableType['TB_ALIGN']; 
-	}else{
-		$tb_align='';
-	}
-
-	//set the table align
-	switch($tb_align){
-		case 'C':
-			$this->iTableStartX = $this->lMargin + $this->aTableType['L_MARGIN'] + ($this->PageWidth() - $this->tbGetWidth())/2;
-			break;
-		case 'R':
-			$this->iTableStartX = $this->lMargin + $this->aTableType['L_MARGIN'] + ($this->PageWidth() - $this->tbGetWidth());
-			break;
-		default:
-			$this->iTableStartX = $this->lMargin + $this->aTableType['L_MARGIN'];
-			break;
-	}//
-	
-}//protected function tbMarkMarginX
-
-
-/*
-Characteristics constants for Data Type:
-EVERY CELL FROM THE TABLE IS A MULTICELL
-	T_COLOR - text color = array(r,g,b);
-	T_SIZE - text size
-	T_FONT - text font - font type = "Arial", "Times"
-	T_ALIGN - text align - "RLCJ"
-	V_ALIGN - text vertical alignment - "TMB"
-	T_TYPE - text type (Bold Italic etc)
-	LN_SPACE - space between lines
-	BG_COLOR - background color = array(r,g,b);
-	BRD_COLOR - border color = array(r,g,b);
-	BRD_SIZE - border size --
-	BRD_TYPE - border size -- up down, with border without!!! etc
-	BRD_TYPE_NEW_PAGE - border type on new page - this is user only if specified(<>'')
-
-	all these settings conform to the settings from the multicell functions!!!!
-*/
-
-/**
- * Sets the Data Type. This Data Type is used as the default type for datas in the entire table. Of corse the user can
- * specify for every cell some specific data types
- * $aDataType=
- *	 array(
- *		0=>array(
- *				"WIDTH" => 10,
- *				"T_COLOR" => array(120,120,120),
- *				"T_SIZE" => 5,
- *				...
- *				"TEXT" => "Header text 1"
- *			  ),
- *		1=>array(
- *				...
- *			  ),
- *	 );
- * 
- * 	where 0,1... are the column number
- * 
- * @access 	public
- * @param	array - $aDataType - Array Containing the Data Type
- * @return 	void
- */
-public function tbSetDataType($aDataType){
-	$this->aTableDataType = $aDataType;
-}//function tbSetDataType
-
-
-/**
- * Sets the Table Type
- * 
- * $aTableType = array(
- * 					"BRD_COLOR"=> array (120,120,120), //border color
- * 					"BRD_SIZE"=>5), //border line width
- * 					"iColumnsNr"=>5), //the number of columns
- * 					"TB_ALIGN"=>"L"), //the align of the table, possible values = L, R, C equivalent to Left, Right, Center
- * 					'L_MARGIN' => 0// left margin... reference from this->lmargin values
- * 					);
- * 
- * @access 	public
- * @param	array	$aTableType - array containing the Table Type
- * @return 	void
- */
-public function tbSetTableType($aTableType){
-
-	if (isset($aTableType['iColumnsNr'])) $this->iColumnsNr = $aTableType['iColumnsNr'];
-	if (!isset($aTableType['L_MARGIN'])) $aTableType['L_MARGIN']=0;//default values
-
-	$this->aTableType = $aTableType;
-	$this->tbMarkMarginX();
-
-}//function tbSetTableType
-
-
-/**
- * Draws the Table Border
- * 
- * @access 	public
- * @param 	void
- * @return 	void
- */
-public function tbDrawBorder(){
-
-	if ( ! $this->bTableBorderDraw ) return;
-
-	if ( ! $this->bDataOnCurrentPage) return; //there was no data on the current page
-
-	//set the colors
-	list($r, $g, $b) = $this->aTableType['BRD_COLOR'];
-	$this->SetDrawColor($r, $g, $b);
-
-	//set the line width
-	$this->SetLineWidth($this->aTableType['BRD_SIZE']);
-    
-	//draw the border
-	$this->Rect(
-		$this->iTableStartX,
-		$this->iTableStartY,
-		$this->tbGetWidth(),
-		$this->GetY() - $this->iTableStartY);
-
-}//function tbDrawBorder
-
-
-/**
- * End Page Special Border Draw. This is called in the case of a Page Split
- *
- * @access 	protected
- * @param 	void
- * @return 	void
- */
-protected function _tbEndPageBorder(){
-	if (isset($this->aTableType['BRD_TYPE_END_PAGE'])){
-
-		if (strpos($this->aTableType['BRD_TYPE_END_PAGE'], 'B') >= 0){
-
-			//set the colors
-			list($r, $g, $b) = $this->aTableType['BRD_COLOR'];
-			$this->SetDrawColor($r, $g, $b);
-
-			//set the line width
-			$this->SetLineWidth($this->aTableType['BRD_SIZE']);
-
-			//draw the line
-			$this->Line($this->table_startx, $this->GetY(), $this->table_startx + $this->tbGetWidth(), $this->GetY());
-		}//fi
-	}//fi
-}//function _tbEndPageBorder
-
-/**
- * Returns the table width in user units
- *
- * @access 	public
- * @param 	void
- * @return 	integer - table width
- */
-public function tbGetWidth()
-{
-	//calculate the table width
-	$tb_width = 0;
-	
-	for ($i=0; $i < $this->iColumnsNr; $i++){
-		$tb_width += $this->aTableHeaderType[0][$i]['WIDTH'];
-	}
-	
-	return $tb_width;
-}//tbGetWidth
-
-
-/**
- * Aligns the table to the Start X point
- *
- * @access 		protected
- * @param 		void
- * @return 		void
- * 
- */
-protected function _tbAlign(){
-	$this->SetX($this->iTableStartX);
-}//function _tbAlign(){
-
-
-/**
- * "Draws the Header". 
- * More specific puts the data from the Header Cache into the Data Cache
- * 
- * @access 	public
- * @param 	void
- * @return 	void
- */
-public function tbDrawHeader(){
-	
-	foreach($this->aHeaderCache as $val){
-		$this->aDataCache[] = $val;
-	}
-}//function tbDrawHeader
-
-
-/**
- * Adds a line to the Table Data or Header Cache.
- * Call this function after the table initialization, table, header and data types are set
- * 
- * @access 	public
- * @param	array $data - Data to be Drawed
- * @param	booleab $header - Array Containing data is Header Data or Data Data
- * @return	null
- */
-public function tbDrawData($data, $header = true){
-	$this->_tbAddDataToCache($data);
-}
-
-/**
- * Adds the data to the cache
- *
- * @access	protected
- * @param	array	$data - array containing the data to be added
- * @param	string 	$sDataType - data type. Can be 'data' or 'header'. Depending on this data the $data is put in the selected cache
- * @return 	void
- */
-protected function _tbAddDataToCache($data, $sDataType = 'data'){
-	
-	
-	if (!is_array($data)) {
-		//this is fatal error
-		trigger_error("Invalid data value 0x00012. (not array)", E_USER_ERROR);
-	}
-	
-	//IF UTF8 Support is needed then 
-	if (isset($this->utf8_support) && ($this->utf8_support)){
-		for($i=0; $i < $this->iColumnsNr; $i++){
-			$data[$i]['TEXT'] = utf8_decode($data[$i]['TEXT']);
-		}
-		
-		//keep the compatibility with the "old" fpdf utf8 support.
-		if (isset($this->utf8_decoded)) $this->utf8_decoded = true;		
-	}
-		
-	if ($sDataType == 'data')
-		$aDataCache = & $this->aDataCache;
-	elseif ($sDataType == 'header')
-		$aDataCache = & $this->aHeaderCache;
-		
-	$aRowSpan = array();
-	
-	
-	$hm = 0;
-	$rowspan = false;
-	
-	/**
-	 * If datacache is empty initialize it
-	 */
-	if (count($aDataCache) > 0) $aLastDataCache = end($aDataCache);
-	else $aLastDataCache = array();
-	
-	//this variable will contain the active colspans
-	$iActiveColspan = 0;
-	
-	//calculate the maximum height of the cells
-	for($i=0; $i < $this->iColumnsNr; $i++){
-		
-        if (!isset($data[$i]['TEXT']) || ($data[$i]['TEXT']=='')) $data[$i]['TEXT'] = ' ';
-		if (!isset($data[$i]['T_FONT'])) $data[$i]['T_FONT'] = $this->aTableDataType[$i]['T_FONT'];
-		if (!isset($data[$i]['T_TYPE'])) $data[$i]['T_TYPE'] = $this->aTableDataType[$i]['T_TYPE'];
-		if (!isset($data[$i]['T_SIZE'])) $data[$i]['T_SIZE'] = $this->aTableDataType[$i]['T_SIZE'];
-		if (!isset($data[$i]['T_COLOR'])) $data[$i]['T_COLOR'] = $this->aTableDataType[$i]['T_COLOR'];
-		if (!isset($data[$i]['T_ALIGN'])) $data[$i]['T_ALIGN'] = $this->aTableDataType[$i]['T_ALIGN'];
-		if (!isset($data[$i]['V_ALIGN'])) $data[$i]['V_ALIGN'] = $this->aTableDataType[$i]['V_ALIGN'];
-		if (!isset($data[$i]['LN_SIZE'])) $data[$i]['LN_SIZE'] = $this->aTableDataType[$i]['LN_SIZE'];
-		if (!isset($data[$i]['BRD_SIZE'])) $data[$i]['BRD_SIZE'] = $this->aTableDataType[$i]['BRD_SIZE'];
-		if (!isset($data[$i]['BRD_COLOR'])) $data[$i]['BRD_COLOR'] = $this->aTableDataType[$i]['BRD_COLOR'];
-		if (!isset($data[$i]['BRD_TYPE'])) $data[$i]['BRD_TYPE'] = $this->aTableDataType[$i]['BRD_TYPE'];
-		if (!isset($data[$i]['BG_COLOR'])) $data[$i]['BG_COLOR'] = $this->aTableDataType[$i]['BG_COLOR'];
-		if (!isset($data[$i]['COLSPAN'])) $data[$i]['COLSPAN'] = 1; else $data[$i]['COLSPAN'] = (int) $data[$i]['COLSPAN'];
-		if (!isset($data[$i]['ROWSPAN'])) $data[$i]['ROWSPAN'] = 1; else $data[$i]['ROWSPAN'] = (int) $data[$i]['ROWSPAN'];
-		$data[$i]['HEIGHT'] = 0;	//default HEIGHT
-		$data[$i]['SKIP'] = false;	//default SKIP (don't skip)
-		$data[$i]['CELL_WIDTH'] = $this->aTableHeaderType[0][$i]['WIDTH'];	//copy this from the header settings
-		$data[$i]['ROWSPAN_PRIMARY'] = FALSE;	//==true then this row has generated the rowspan
-		$data[$i]['ROWSPAN_ID'] = 0;	//rowspan ID
-		$data[$i]['HEIGHT'] = 0;	//default HEIGHT
-				
-		if ($data[$i]['LN_SIZE'] <= 0){
-			trigger_error("Invalid Line Size {$data[$i]['LN_SIZE']}", E_USER_ERROR);
-		}
-		
-		
-		//if there is an active colspan on this line we just skip this cell
-		if ($iActiveColspan > 1){
-			$data[$i]['SKIP'] = true;
-			//if ($i>0) $data[$i]['ROWSPAN'] = $data[$i-1]['ROWSPAN'];
-			$iActiveColspan --;
-			continue;
-		}
-
-		
-		if (!empty($aLastDataCache)){
-			
-			//there was at least one row before
-			
-			if ( $aLastDataCache['DATA'][$i]['ROWSPAN'] > 1 ){
-				/**
-				 * This is rowspan over this cell. The cell will be ignored but some characteristics are kept
-				 */
-				
-				//this cell will be skipped
-				$data[$i]['SKIP'] =true;
-				//decrease the rowspan value... one line less to be spanned
-				$data[$i]['ROWSPAN'] = $aLastDataCache['DATA'][$i]['ROWSPAN'] - 1;
-				$data[$i]['ROWSPAN_ID'] = $aLastDataCache['DATA'][$i]['ROWSPAN_ID'];
-				$data[$i]['ROWSPAN_PRIMARY'] = false;
-				//copy the colspan from the last value
-				$data[$i]['COLSPAN'] = $aLastDataCache['DATA'][$i]['COLSPAN'];
-				//cell with is the same as the one from the line before it
-				$data[$i]['CELL_WIDTH'] = $aLastDataCache['DATA'][$i]['CELL_WIDTH'];
-				
-				if ($data[$i]['COLSPAN'] > 1){
-					$iActiveColspan = $data[$i]['COLSPAN'];
-				}
-				
-				continue; //jump to the next column
-				
-			}//if
-			
-		}//if
-		
-		
-		//set the font settings
-		$this->SetFont(	$data[$i]['T_FONT'],
-						$data[$i]['T_TYPE'],
-						$data[$i]['T_SIZE']);
-
-		
-		/**
-		 * If we have colspan then we ignore the "colspanned" cells
-		 */
-		if ( $data[$i]['COLSPAN'] > 1 ){
-
-			for ($j = 1; $j < $data[$i]['COLSPAN']; $j++){
-				//if there is a colspan, then calculate the number of lines also with the with of the next cell
-				if (($i + $j) < $this->iColumnsNr)
-					$data[$i]['CELL_WIDTH'] += $this->aTableHeaderType[0][$i + $j]['WIDTH'];
-			}//for
-					
-		}//if
-		
-		//add the cells that are with rowspan to the rowspan array - this is used later
-		if ( $data[$i]['ROWSPAN'] > 1 ){
-			$data[$i]['ROWSPAN_PRIMARY'] = true;
-			$this->iRowSpanID++;
-			$data[$i]['ROWSPAN_ID'] = $this->iRowSpanID;
-			$aRowSpan[] = $i;
-		}
-       
-		
-        //$MaxLines = floor($AvailPageH / $data[$i]['LN_SIZE']);//floor this value, must be the lowest possible
-        
-        if (!isset($data[$i]['TEXT_STRLINES'])) $data[$i]['TEXT_STRLINES'] = $this->mt_StringToLines($data[$i]['CELL_WIDTH'], $data[$i]['TEXT']);
-        $data[$i]['CELL_LINES'] = count($data[$i]['TEXT_STRLINES']);
-        
-        /**
-         * IF THERE IS ROWSPAN ACTIVE Don't include this cell Height in the calculation. 
-         * This will be calculated later with the sum of all heights
-         */
-        
-        $data[$i]['HEIGHT'] = $data[$i]['LN_SIZE'] * $data[$i]['CELL_LINES'];
-        
-        if ( $data[$i]['ROWSPAN'] == 1 ){
-        	$hm = max($hm, $data[$i]['HEIGHT']);//this would be the normal height
-        }
-        
-		if ( $data[$i]['COLSPAN'] > 1 ){
-			//just skip the other cells
-			$iActiveColspan = $data[$i]['COLSPAN'];
-		}//if
-		
-	}//for($i=0; $i < $this->iColumnsNr; $i++)	
-	
-	
-	$aDataCache[] = array(
-		'HEIGHT' => $hm,	//THIS LINE MAXIMUM HEIGHT
-		'DEFAULT_HEIGHT' => $hm,	//THIS LINE DEFAULT MAXIMUM HEIGHT
-		'DEFAULT_HEIGHT_SET' => true,
-		'DATATYPE' => $sDataType,	//The data Type - Data/Header
-		'DATA' => $data,	//this line's data
-		'ROWSPAN' => $aRowSpan	//rowspan ID array
-	);
-	
-	//we set the rowspan in cache variable to true if we have a rowspan
-	if (! empty($aRowSpan) && (!$this->bRowSpanInCache)){
-		$this->bRowSpanInCache = true;
-	}
-	
-	return;
-}//function _tbAddDataToCache
-
-
-
-/**
- * Parses the Data Cache and calculates the maximum Height of each row. Normally the cell Height of a row is calculated 
- * when the data's are added, but when that row is involved in a Rowspan then it's Height can change!
- *
- * @access 	protected
- * @param	integer	$iStartIndex - the index from which to parse
- * @param	string	$sCacheType - what type has the cache - possible values: 'header' && 'data'
- * @return	void
- */
-protected function _tbCacheParseRowspan($iStartIndex = 0, $sCacheType = 'data'){
-	
-	if ($sCacheType == 'data')
-		$aDataCache = & $this->aDataCache;
-	else 
-		$aDataCache = & $this->aHeaderCache;
-	
-	$aRowSpans = array();
-	
-	$iItems = count($aDataCache);
-	
-	for ($ix = $iStartIndex; $ix < $iItems; $ix++){
-		
-		$val = & $aDataCache[$ix];
-	
-		if (!in_array($val['DATATYPE'], array('data', 'header') )) continue;
-		
-		//if there is no rowspan jump over
-		if (empty($val['ROWSPAN'])) continue;
-		
-		foreach ($val['ROWSPAN'] as $k){
-			
-			#$val['HEIGHT'] = $val['DEFAULT_HEIGHT'];			
-			
-			if ($val['DATA'][$k]['ROWSPAN'] < 1) continue;	//skip the rows without rowspan
-			
-			/**
-			if ($val['DEFAULT_HEIGHT_SET'] == false){
-				$val['HEIGHT'] = $val['DEFAULT_HEIGHT'];
-			}
-			*/
-			
-			$aRowSpans[] = array(
-				'row_id' => $ix,
-				'cell_id' => &$val['DATA'][$k]
-			);
-			
-			$h_rows = 0;
-			
-			//calculate the sum of the Heights for the lines that are included in the rowspan
-			for ( $i=0; $i < $val['DATA'][$k]['ROWSPAN']; $i++){
-				if (isset($aDataCache[$ix + $i]))
-					$h_rows += $aDataCache[$ix + $i]['HEIGHT'];
-			}
-			
-			//this is the cell height that makes the rowspan
-			$h_cell = $val['DATA'][$k]['HEIGHT'];
-			
-			//if the 
-			//$val['DATA'][$k]['HEIGHT_MAX'] = max($h_cell, $h_rows);
-			
-			/**
-			 * The Rowspan Cell's Height is bigger than the sum of the Rows Heights that he is spanning
-			 * In this case we have to increase the height of each row
-			 */
-			if ($h_cell > $h_rows){
-				//calculate the value of the HEIGHT to be added to each row
-				$add_on = ($h_cell - $h_rows) / $val['DATA'][$k]['ROWSPAN'];
-				for ( $i=0; $i < $val['DATA'][$k]['ROWSPAN']; $i++){
-					if (isset($aDataCache[$ix + $i])){
-						$aDataCache[$ix + $i]['HEIGHT'] += $add_on;
-						$aDataCache[$ix + $i]['DEFAULT_HEIGHT_SET'] = false;
-					}
-				}//for
-			}//
-			
-		}//foreach
-	}//foreach
-	
-	
-	
-	
-	/**
-	 * Calculate the height of each cell that makes the rowspan. 
-	 * The height of this cell is the sum of the heights of the rows where the rowspan occurs
-	 */
-	
-	foreach ($aRowSpans as $val1){
-		$h_rows = 0;
-		//calculate the sum of the Heights for the lines that are included in the rowspan
-		for ( $i=0; $i < $val1['cell_id']['ROWSPAN']; $i++){
-			if (isset($aDataCache[$val1['row_id'] + $i]))
-				$h_rows += $aDataCache[$val1['row_id'] + $i]['HEIGHT'];
-		}
-		$val1['cell_id']['HEIGHT_MAX'] = $h_rows;
-		if (false == $this->bTableSplit){
-		    $aDataCache[$val1['row_id']]['HEIGHT_ROWSPAN'] = $h_rows;
-		}
-	}
-	
-}//function _tbCacheParseRowspan
-
-
-/**
- * Splits a cell into 2 cells. The first cell will have maximum $iHeightMax height
- *
- * @access 		protected
- * @param		array - $aCellData - array containing cell data
- * @param 		integer - $iRowHeight - the Height of the row that contains this cell
- * @param		integer - $iHeightMax - the maximum Height of the first cell
- * @return 		$aNewData - the second cell value
- */
-protected function tbSplitCell(&$aCellData, $iHeightRow = 0, $iHeightMax = 0){
-	
-	//$aTData will contain the second cell data
-	$aCell2Data = $aCellData;
-	$fHeightSplit = 0;		//The Height where the split will be made
-	
-	/**
-	 * Have to look at the V_ALIGN of the cells and calculate exaclty for each cell how much space is left
-	 */
-	switch($aCellData['V_ALIGN']){
-		case 'M':
-			//Middle align
-			$x = ($iHeightRow - $aCellData['HEIGHT']) / 2;
-
-			if ($iHeightMax  <= $x){
-				//CASE 1
-				$fHeightSplit = 0;
-				$aCellData['V_OFFSET'] = $x - $iHeightMax;
-				$aCellData['V_ALIGN'] = 'T';//top align
-				
-			}elseif( ($x + $aCellData['HEIGHT']) >= $iHeightMax){
-				//CASE 2
-				$fHeightSplit = $iHeightMax - $x;
-				$aCellData['V_ALIGN'] = 'B';//top align
-				$aCell2Data['V_ALIGN'] = 'T';//top align
-			}else{//{
-				//CASE 3
-				$fHeightSplit = $iHeightMax;
-				$aCellData['V_OFFSET'] = $x;
-				$aCellData['V_ALIGN'] = 'B';//bottom align
-			}
-													
-			break;
-		case 'B':
-			//Bottom Align
-			if (($iHeightRow - $aCellData['HEIGHT']) > $iHeightMax){
-				//if the text has enough place on the other page then we show nothing on this page
-				$fHeightSplit = 0;
-			}else{
-				//calculate the space that the text needs on this page 
-				$fHeightSplit = $iHeightMax - ($iHeightRow - $aCellData['HEIGHT']);
-			}
-			
-			break;
-			
-		case 'T':
-		default:
-			//Top Align and default align 
-			$fHeightSplit = $iHeightMax;
-			break;
-	}
-
-	//calculate the number of the lines that have space on the $fHeightSplit
-	$iNoLinesCPage = floor($fHeightSplit / $aCellData['LN_SIZE']);
-	//if the number of the lines is bigger than the number of the lines in the cell decrease the number of the lines
-	if ($iNoLinesCPage > $aCellData['CELL_LINES']){
-		$iNoLinesCPage = $aCellData['CELL_LINES'];
-	}
-										
-	$aCellData['TEXT_SPLITLINES'] = array_splice($aCellData['TEXT_STRLINES'], $iNoLinesCPage);
-	#$aCellData['CELL_LINES'] = $iNoLinesCPage;
-	$aCellData['CELL_LINES'] = count($aCellData['TEXT_STRLINES']);
-	
-	//calculate the new height for this cell
-	$aCellData['HEIGHT'] = $aCellData['LN_SIZE'] * $aCellData['CELL_LINES'];
-	
-	#$fRowH = max($fRowH, $aData[$j]['HEIGHT'] );
-	
-	//this is the second cell from the splitted one
-	$aCell2Data['TEXT_STRLINES'] = $aCellData['TEXT_SPLITLINES'];
-	$aCell2Data['CELL_LINES'] = count ($aCell2Data['TEXT_STRLINES']);
-	$aCell2Data['HEIGHT'] = $aCell2Data['LN_SIZE'] * $aCell2Data['CELL_LINES'];
-	
-	return array($aCell2Data, $fHeightSplit);
-				
-}//function tbSplitCell()
-
-/**
- * Splits the Data Cache into Pages. 
- * Parses the Data Cache and when it is needed then a "new page" command is inserted into the Data Cache. 
- *
- * @access 	protected
- * @param 	void
- * @return 	void
- */
-protected function _tbCachePaginate(){
-
-	$iPageHeight = $this->PageHeight();
-
-	/**
-	 * This Variable will contain the remained page Height
-	 */
-	$iLeftHeight = $iPageHeight - $this->GetY() + $this->tMargin;
-
-	//the number of lines that the header contains
-	if ($this->bTableHeaderDraw){
-		$iHeaderLines = count($this->aHeaderCache);	
-	}else {
-		$iHeaderLines = 0;
-	}
-		
-	$bWasData = true;		//can be deleted
-	$iLastOkKey = -1;		//can be deleted
-	
-	$bDataOnThisPage = false;
-	$bHeaderOnThisPage = false;
-	$iLastDataKey = 0;
-
-	
-	//will contain the rowspans on the current page, EMPTY THIS VARIABLE AT EVERY NEW PAGE!!!
-	$aRowSpans = array();
-	
-	$aDC = & $this->aDataCache;
-	
-	$iItems = count($aDC);
-	
-	for ($i=0; $i < $iItems; $i++){
-		
-		$val = & $aDC[$i];
-		
-		$bIsHeader = $val['DATATYPE'] == 'header';
-		
-		if (($bIsHeader) && ($bWasData)){
-			$iLastDataKey = $iLastOkKey;
-		}//fi
-		
-		if (isset($val['ROWSPAN'])){
-			
-			foreach ($val['ROWSPAN'] as $k=>$v){
-				$aRowSpans[] = array($i, $v);
-				$aDC[$i]['DATA'][$v]['HEIGHT_LEFT_RW'] = $iLeftHeight;
-			}//foreach
-			
-		}//fi
-		
-		$iLeftHeightLast = $iLeftHeight;
-		
-		$iRowHeight = $val['HEIGHT'];
-		$iRowHeightRowspan = 0;
-		if ((false == $this->bTableSplit) && (isset($val['HEIGHT_ROWSPAN']))){
-		    $iRowHeightRowspan = $val['HEIGHT_ROWSPAN'];
-		}
-		
-        $iLeftHeightRowspan = $iLeftHeight - $iRowHeightRowspan;				
-		$iLeftHeight -= $iRowHeight;
-
-		if (($iLeftHeight >= 0) && ($iLeftHeightRowspan >=0)){
-			//this row has enough space on the page
-			if (true == $bIsHeader) {
-				$bHeaderOnThisPage = true;
-			}else{
-				$iLastDataKey = $i;
-				$bDataOnThisPage = true;
-			}
-			$iLastOkKey = $i;
-			$bLastOkType = $bIsHeader;
-			
-		}else{
-							
-			/**
-			 * THERE IS NOT ENOUGH SPACE ON THIS PAGE - HAVE TO SPLIT
-			 * Decide the split type
-			 * 
-			 * SITUATION 1:
-			 * IF
-			 * 		- the current data type is header OR
-			 * 		- on this page we had no data(that means untill this point was nothing or just header) AND bTableSplit is off
-			 * THEN we just add new page on the positions of LAST DATA KEY ($iLastDataKey)
-			 * 
-			 * SITUATION 2:
-			 * IF
-			 * 		- TableSplit is OFF and the height of the current data is bigger than the Page Height minus (-) Header Height
-			 * THEN we split the current cell
-			 * 
-			 * SITUATION 3:
-			 * 		- normal split flow
-			 *  
-			 */
-			
-			//use this switch for flow control
-			switch(1){
-				case 1:
-				
-				//SITUATION 1:
-				if ((true == $bIsHeader) OR ((false == $bHeaderOnThisPage) AND (false == $bDataOnThisPage) AND (false == $this->bTableSplit)) ){
-					$iItems = $this->tbInsertNewPage($iLastDataKey, null, (!$bIsHeader) && (!$bHeaderOnThisPage));
-					break;//exit from switch(1);
-				}
-
-				$bSplitCommand = $this->bTableSplit;
-				
-				//SITUATION 2:
-				if ($val['HEIGHT'] > ($iPageHeight - $this->iHeaderHeight)){
-					//even if the bTableSplit is OFF - split the data!!!
-					$bSplitCommand = true;
-				}
-
-				if (true == $bSplitCommand){
-				/***************************************************
-				 * * * * * * * * * * * * * * * * * * * * * * * * * * 
-				 * SPLIT IS ACTIVE
-				 * * * * * * * * * * * * * * * * * * * * * * * * * * 
-				 ***************************************************/
-								
-					//if we can draw on this page at least one line from the cells
-					$bAtLeastOneLine = false;
-					
-					$aData = $val['DATA'];
-					
-					$fRowH = $iLeftHeightLast;
-					#$fRowH = 0;
-					$fRowHTdata = 0;
-					
-					$aTData = array();
-					
-					//parse the data's on this line
-					for( $j=0; $j < $this->iColumnsNr; $j++){
-						
-						$aTData[$j] = $aData[$j];
-						
-						/**
-						 * The cell is Skipped or is a Rowspan. For active split we handle rowspanned cells later
-						 */
-						if (($aData[$j]['SKIP'] === TRUE) || ($aData[$j]['ROWSPAN'] > 1)) continue;
-						
-						list($aTData[$j]) = $this->tbSplitCell($aData[$j], $val['HEIGHT'], $iLeftHeightLast);
-						
-						$fRowH = max($fRowH, $aData[$j]['HEIGHT'] );
-						$fRowHTdata = max($fRowHTdata, $aTData[$j]['HEIGHT'] );
-										
-					}//for
-					
-					$val['HEIGHT'] = $fRowH;
-					$val['DATA'] = $aData;				
-					
-					$v_new = $val;
-					$v_new['HEIGHT'] = $fRowHTdata;
-					$v_new['ROWSPAN'] = array();
-					/**
-					 * Parse separately the rows with the ROWSPAN
-					 */
-					
-					
-					$bNeedParseCache = false;
-					
-					$aRowSpan = $aDC[$i]['ROWSPAN'];
-					
-					
-					foreach ($aRowSpans as $rws_key => $rws){
-										
-						$rData = & $aDC[$rws[0]]['DATA'][$rws[1]];
-															
-						if ($rData['HEIGHT_MAX'] > $rData['HEIGHT_LEFT_RW']){
-							/**
-							 * This cell has a rowspan in IT
-							 * We have to split this cell only if its height is bigger than the space to the end of page
-							 * that was set when the cell was parsed. HEIGHT_LEFT_RW 
-							 */
-													
-							list($aTData[$rws[1]], $fHeightSplit)  = $this->tbSplitCell($rData, $rData['HEIGHT_MAX'] , $rData['HEIGHT_LEFT_RW']);
-				
-							$rData['HEIGHT_MAX'] = $rData['HEIGHT_LEFT_RW'];
-												
-							$aTData[$rws[1]]['ROWSPAN'] = $aTData[$rws[1]]['ROWSPAN'] - ($i - $rws[0]);
-							
-							$v_new['ROWSPAN'][] = $rws[1];
-							
-							$bNeedParseCache = true;												
-						}//fi
-					}//foreach
-					
-					$v_new['DATA'] = $aTData;
-					
-					//Insert the new page, and get the new number of the lines
-					$iItems = $this->tbInsertNewPage($i, $v_new);
-					
-					if ($bNeedParseCache) $this->_tbCacheParseRowspan($i+1);
-					
-				}else{
-					
-				/***************************************************
-				 * * * * * * * * * * * * * * * * * * * * * * * * * * 
-				 * SPLIT IS INACTIVE
-				 * * * * * * * * * * * * * * * * * * * * * * * * * * 
-				 ***************************************************/
-	
-					/**
-					 * Check if we have a rowspan that needs to be splitted
-					 */
-					
-					#var_dump($aRowSpans); die();
-					$bNeedParseCache = false;
-					
-					$aRowSpan = $aDC[$i]['ROWSPAN'];
-					
-					foreach ($aRowSpans as $rws){
-										
-						$rData = & $aDC[$rws[0]]['DATA'][$rws[1]];
-						
-						if ($rws[0] == $i)continue;	//means that this was added at the last line, that will not appear on this page
-										
-						if ($rData['HEIGHT_MAX'] > $rData['HEIGHT_LEFT_RW']){
-							/**
-							 * This cell has a rowspan in IT
-							 * We have to split this cell only if its height is bigger than the space to the end of page
-							 * that was set when the cell was parsed. HEIGHT_LEFT_RW 
-							 */
-							
-							list($aTData, $fHeightSplit)  = $this->tbSplitCell($rData, $rData['HEIGHT_MAX'] , $rData['HEIGHT_LEFT_RW'] - $iLeftHeightLast);
-				
-							$rData['HEIGHT_MAX'] = $rData['HEIGHT_LEFT_RW'] - $iLeftHeightLast;
-												
-							$aTData['ROWSPAN'] = $aTData['ROWSPAN'] - ($i - $rws[0]);
-							
-							$aDC[$i]['DATA'][$rws[1]] = $aTData;
-							
-							$aRowSpan[] = $rws[1];
-							$aDC[$i]['ROWSPAN'] = $aRowSpan;
-							
-							$bNeedParseCache = true;
-													
-						}//fi
-					}//for
-					
-					if ($bNeedParseCache) $this->_tbCacheParseRowspan($i);
-	
-					//Insert the new page, and get the new number of the lines
-					$iItems = $this->tbInsertNewPage($i);
-	
-				}//else				
-							
-				
-			}//switch(1);
-			
-			$iLeftHeight = $iPageHeight;
-			$aRowSpans = array();
-			$bDataOnThisPage = false;	//new page
-			
-		}//else
-		
-		
-	}//for
-	
-}//function _tbCachePaginate
-
-
-
-/**
- * Inserts a new page in the Data Cache, after the specified Index. If sent then also a new data is inserted after the new page
- *
- * @access 		protected
- * @param		integer	- $iIndex - after this index is the new page inserted
- * @param		resource - $rNewData - default null. If specified this data is inserted after the new page
- * @param 		boolean	- $bInsertHeader - true then the header is inserted, false - no header is inserted
- * @return 		integer - the new number of lines that the Data Cache Contains. 
- */
-protected function tbInsertNewPage($iIndex, $rNewData = null, $bInsertHeader = true){
-	
-	//the number of lines that the header contains
-	if ((true == $this->bTableHeaderDraw) && (true == $bInsertHeader)){
-		$iHeaderLines = count($this->aHeaderCache);	
-	}else {
-		$iHeaderLines = 0;
-	}
-	
-	$aDC = & $this->aDataCache;
-	$iItems = count($aDC);		//the number of elements in the cache
-
-	//if we have a NewData to be inserted after the new page then we have to shift the data with 1
-	if( null != $rNewData) $iShift = 1;
-	else $iShift = 0;
-	
-	//shift the array with the number of lines that the header contains + one line for the new page
-	for($j = $iItems; $j > $iIndex; $j--){
-		$aDC[$j + $iHeaderLines + $iShift] = $aDC[$j - 1];
-	}//for
-		
-	$aDC[$iIndex + $iShift] = array(
-	    'HEIGHT' => 0, 
-	    'DATATYPE' => 'new_page',
-	);
-	
-	$j = $iShift;
-	
-	
-	if ($iHeaderLines > 0){
-		//only if we have a header
-		
-		//insert the header into the corresponding positions
-		foreach ($this->aHeaderCache as $rHeaderVal){
-			$j++;
-			$aDC[$iIndex + $j] = $rHeaderVal;
-		}//foreach
-		
-	}//fi
-	
-	if( 1 == $iShift ){
-		$j++;
-		$aDC[$iIndex + $j] = $rNewData;	
-	}//fi
-	
-	/**/
-	$this->bDataOnCurrentPage = false;
-	
-	return count($aDC);
-	
-}//function tbInsertNewPage
-
-
-
-/**
- * Sends all the Data Cache to the PDF Document. 
- * This is the REAL Function that Outputs the table data to the pdf document
- *
- * @access 	protected
- * @param 	void
- * @return 	void
- */
-protected function _tbCachePrepOutputData(){
-	
-	$aDataCache = & $this->aDataCache;
-			
-	$iItems = count($aDataCache);
-	
-	for ($k=0; $k < $iItems; $k++){
-		
-	$val = & $aDataCache[$k];
-		
-		//each array contains one line
-		$this->_tbAlign();
-		
-		if ($val['DATATYPE'] == 'new_page') {
-			//add a new page
-			$this->tbAddPage();
-			continue;
-		}
-		
-		$data = &$val['DATA'];
-				
-		//Draw the cells of the row
-		for( $i = 0; $i < $this->iColumnsNr; $i++ )
-		{
-			
-			//Save the current position
-			$x=$this->GetX();
-			$y=$this->GetY();
-			
-			if ($data[$i]['SKIP'] === FALSE){
-				
-				if (isset($data[$i]['HEIGHT_MAX'])) 
-					$h = $data[$i]['HEIGHT_MAX'];
-				else 
-					$h = $val['HEIGHT'];
-				
-			
-				//border size BRD_SIZE
-				$this->SetLineWidth($data[$i]['BRD_SIZE']);
-		
-				//fill color = BG_COLOR
-				list($r, $g, $b) = $data[$i]['BG_COLOR'];
-				$this->SetFillColor($r, $g, $b);
-		
-				//Draw Color = BRD_COLOR
-				list($r, $g, $b) = $data[$i]['BRD_COLOR'];
-				$this->SetDrawColor($r, $g, $b);
-		
-				//Text Color = T_COLOR
-				list($r, $g, $b) = $data[$i]['T_COLOR'];
-				$this->SetTextColor($r, $g, $b);
-		
-				//Set the font, font type and size
-				$this->SetFont(	$data[$i]['T_FONT'],
-								$data[$i]['T_TYPE'],
-								$data[$i]['T_SIZE']);
-			
-				//print the text
-				$this->tbMultiCellTbl(
-						$data[$i]['CELL_WIDTH'],
-						$data[$i]['LN_SIZE'],
-						$data[$i]['TEXT_STRLINES'],
-						$data[$i]['BRD_TYPE'],
-						$data[$i]['T_ALIGN'],
-						$data[$i]['V_ALIGN'],
-						1,
-						$h - $data[$i]['HEIGHT']
-						);
-			}
-	
-			//Put the position to the right of the cell
-			$this->SetXY($x + $data[$i]['CELL_WIDTH'],$y);
-	
-			//if we have colspan, just ignore the next cells
-			if (isset($data[$i]['COLSPAN'])){
-				$i = $i + (int) $data[$i]['COLSPAN'] - 1;
-			}
-	
-		}//for
-	
-		$this->bDataOnCurrentPage = true;
-	
-		//Go to the next line
-		$this->Ln($val['HEIGHT']);
-	}//foreach	
-	
-}//function _tbCachePrepOutputData
-
-
-/**
- * Prepares the cache for Output.
- * 
- * Parses the cache for Rowspans, Paginates the cache and then send the data to the pdf document
- * @access 	protected
- * @param 	void
- * @return 	void
- */
-protected function _tbCachePrepOutput(){
-	
-	if ($this->bRowSpanInCache) $this->_tbCacheParseRowspan();
-	
-	$this->_tbCachePaginate();
-	
-	$this->_tbCachePrepOutputData();
-}
-
-
-
-/**
- * Adds a new page in the pdf document and initializes the table and the header if necessary.
- *
- * @access 	protected
- * @param	void	 
- * @return	void
- */
-protected function tbAddPage($bHeader = true){
-    
-	$this->tbDrawBorder();//draw the table border
-
-    $this->_tbEndPageBorder();//if there is a special handling for end page??? this is specific for me
-    
-    $bUtf8Set = false;
-
-	//IF UTF8 Support is needed then 
-	if (isset($this->utf8_support) && ($this->utf8_support)){
-		//keep the compatibility with the "old" fpdf utf8 support.
-		if (isset($this->utf8_decoded)){
-			$old_utf8_decoded = $this->utf8_decoded;
-			$this->utf8_decoded = false;
-			$bUtf8Set = true;
-		}		
-	}    
-    
-    $this->AddPage($this->CurOrientation);//add a new page
-    
-	//IF UTF8 Support is needed then
-	if ($bUtf8Set){
-		 $this->utf8_decoded = $old_utf8_decoded;
-	}
-
-    $this->bDataOnCurrentPage = false;
-
-    $this->iTableStartX = $this->GetX();
-    $this->iTableStartY = $this->GetY();
-    $this->tbMarkMarginX();
-    
-}//function tbAddPage
-
-
-/**   This method allows printing text with line breaks.
-      It works like a modified MultiCell
-      Call:
-      @param
-                        $w - width
-                        $h - line height
-                        $txtData - the outputed text
-                        $border - border(LRTB 0 or 1)
-                        $align - horizontal align 'JLR'
-                        $valign - Vertical Alignment - Top, Middle, Bottom
-                        $fill - fill (1/0)
-                        $vh - vertical adjustment - the Multicell Height will be with this VH Higher!!!!
-                        $vtop - vertical top add-on
-      @return           nothing
-*/
-/**
- * Ouputs a Table Cell. It works like a modified MultiCell.
- *
- * @param 	integer $w	- cell width
- * @param	integer $h	- line height
- * @param	array	$txtData - variable that contains the data to be outputted. This data is already formatted!!!
- * @param	string 	$border - border(LRTB 0 or 1)
- * @param	string 	$align - horizontal align 'JLR'
- * @param 	string 	$valign - Vertical Alignment - Top, Middle, Bottom
- * @param 	string	$fill - Cell Fill (0 no Fill, 1 fill)
- * @param	integer	$vh	- Vertical Adjustment	- the Multicell Height will be with this VH Higher!!!!
- * @param	integer	$vtop - vertical top add-on
- * @param	integer $pad_left - Cell Pad left - NOT IMPLEMENTED
- * @param 	integer $pad_top - Cell Pad left - NOT IMPLEMENTED
- * @param 	integer $pad_right - Cell Pad left - NOT IMPLEMENTED
- * @param 	integer $pad_bottom - Cell Pad left - NOT IMPLEMENTED
- * @return 	void
- */
-function tbMultiCellTbl($w, $h, $txtData, $border=0, $align='J', $valign='T', $fill=0, $vh=0, $vtop=0, $pad_left=0, $pad_top=0, $pad_right=0, $pad_bottom=0){
-
-	$b1 = '';//border for top cell
-	$b2 = '';//border for middle cell
-	$b3 = '';//border for bottom cell
-	$wh_Top = 0;
-	
-	if ($vtop > 0){//if this parameter is set
-		if($vtop < $vh){//only if the top add-on is bigger than the add-width
-			$wh_Top = $vtop;
-			$vh = $vh - $vtop;
-		}
-	}
-	
-	if($border)
-	{
-		if($border==1)
-		{
-			$border = 'LTRB';
-			$b1 = 'LRT';//without the bottom
-			$b2 = 'LR';//without the top and bottom
-			$b3 = 'LRB';//without the top
-		}
-		else
-		{
-			$b2='';
-			if(is_int(strpos($border,'L')))
-				$b2.='L';
-			if(is_int(strpos($border,'R')))
-				$b2.='R';
-			$b1=is_int(strpos($border,'T')) ? $b2.'T' : $b2;
-			$b3=is_int(strpos($border,'B')) ? $b2.'B' : $b2;
-
-		}
-	}
-	
-	if (empty($txtData)){
-		//draw the top borders!!!
-		$this->Cell($w,$vh,'',$border,2,$align,$fill);//19.01.2007 - andy
-		return;
-	}
-	
-	
-	
-
-	switch ($valign){
-		case 'T':
-			$wh_T = $wh_Top;//Top width
-			$wh_B = $vh - $wh_T;//Bottom width
-			break;
-		case 'M':
-			$wh_T = $wh_Top + $vh/2;
-			$wh_B = $vh/2;
-			break;
-		case 'B':
-			$wh_T = $wh_Top + $vh;
-			$wh_B = 0;
-			break;
-		default://default is TOP ALIGN
-			$wh_T = $wh_Top;//Top width
-			$wh_B = $vh - $wh_T;//Bottom width
-	}
-
-	//save the X position
-	$x = $this->x;
-	/*
-		if $wh_T == 0 that means that we have no vertical adjustments so I will skip the cells that
-		draws the top and bottom borders
-	*/
-
-	if ($wh_T > 0)//only when there is a difference
-	{
-		//draw the top borders!!!
-		$this->Cell($w,$wh_T,'',$b1,2,$align,$fill);//19.01.2007 - andy
-	}
-	
-	$b2 = is_int(strpos($border,'T')) && ($wh_T == 0) ? $b2.'T' : $b2;
-	$b2 = is_int(strpos($border,'B')) && ($wh_B == 0) ? $b2.'B' : $b2;		
-	$this->MultiCellTag($w, $h, $txtData, $b2, $align, 1, $pad_left, $pad_top, $pad_right, $pad_bottom, false);
-
-	if ($wh_B > 0){//only when there is a difference
-
-		//go to the saved X position
-		//a multicell always runs to the begin of line
-		$this->x = $x;
-
-		$this->Cell($w, $wh_B, '', $b3, 2, $align,$fill);//19.01.2007 - andy
-
-		#$this->x = $this->lMargin;//andy 23.02.2006
-		$this->x = $x;
-	}
-
-}//function tbMultiCellTbl
-
-
-/**
- * Sends to the pdf document the cache data
- * 
- * @access 	public
- * @param 	void
- * @return 	void
- */
-public function tbOuputData(){
-	$this->_tbCachePrepOutput();
-
-	//IF UTF8 Support is needed then 
-	if (isset($this->utf8_support) && ($this->utf8_support)){
-		//keep the compatibility with the "old" fpdf utf8 support.
-		if (isset($this->utf8_decoded)) $this->utf8_decoded = false;		
-	}
-}//function tbOuputData
-
-
-}//end of pdf_table class
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
 ?>
+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

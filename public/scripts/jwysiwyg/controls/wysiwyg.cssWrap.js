@@ -1,93 +1,134 @@
-!odMbo!
-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
+/**
+ * Controls: Element CSS Wrapper plugin
+ *
+ * Depends on jWYSIWYG
+ * 
+ * By Yotam Bar-On (https://github.com/tudmotu)
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "wysiwyg.cssWrap.js depends on $.wysiwyg";
+	}
+	/* For core enhancements #143
+	$.wysiwyg.ui.addControl("cssWrap", {
+		visible : false,
+		groupIndex: 6,
+		tooltip: "CSS Wrapper",
+		exec: function () { 
+				$.wysiwyg.controls.cssWrap.init(this);
+			}
+	}
+	*/	
+	if (!$.wysiwyg.controls) {
+		$.wysiwyg.controls = {};
+	}
+
+	/*
+	 * Wysiwyg namespace: public properties and methods
+	 */
+	$.wysiwyg.controls.cssWrap = {
+		init: function (Wysiwyg) {
+			var self = this, formWrapHtml, key, translation,
+				dialogReplacements = {
+					legend	: "Wrap Element",
+					wrapperType : "Wrapper Type",
+					ID : "ID",
+					"class" : "Class",
+					wrap  : "Wrap",
+					unwrap: "Unwrap",
+					cancel   : "Cancel"
+				};
+
+			formWrapHtml = '<form class="wysiwyg"><fieldset><legend>{legend}</legend>' +
+				'<div class="wysiwyg-dialogRow"><label>{wrapperType}: &nbsp;<select name="type"><option value="span">Span</option><option value="div">Div</option></select></label></div>' +
+				'<div class="wysiwyg-dialogRow"><label>{ID}: &nbsp;<input name="id" type="text" /></label></div>' + 
+				'<div class="wysiwyg-dialogRow"><label>{class}: &nbsp;<input name="class" type="text" /></label></div>' +
+				'<div class="wysiwyg-dialogRow"><input type="button" class="button cssWrap-unwrap" style="display:none;" value="{unwrap}"/></label>' +
+				'<input type="submit"  class="button cssWrap-submit" value="{wrap}"/></label>' +
+				'<input type="reset" class="button cssWrap-cancel" value="{cancel}"/></div></fieldset></form>';
+
+			for (key in dialogReplacements) {
+				if ($.wysiwyg.i18n) {
+					translation = $.wysiwyg.i18n.t(dialogReplacements[key]);
+					if (translation === dialogReplacements[key]) { // if not translated search in dialogs 
+						translation = $.wysiwyg.i18n.t(dialogReplacements[key], "dialogs");
+					}
+					dialogReplacements[key] = translation;
+				}
+				formWrapHtml = formWrapHtml.replace("{" + key + "}", dialogReplacements[key]);
+			}
+			if (!$(".wysiwyg-dialog-wrapper").length) {
+				$(formWrapHtml).appendTo("body");
+				$("form.wysiwyg").dialog({
+					modal: true,
+					open: function (ev, ui) {
+						var $this = $(this), range	= Wysiwyg.getInternalRange(), common, $nodeName;
+						// We make sure that there is some selection:
+						if (range) {
+							if ($.browser.msie) {
+								Wysiwyg.ui.focus();
+							}
+							common	= $(range.commonAncestorContainer);
+						} else {
+							alert("You must select some elements before you can wrap them.");
+							$this.dialog("close");
+							return 0;
+						}
+						$nodeName = range.commonAncestorContainer.nodeName.toLowerCase();
+						// If the selection is already a .wysiwygCssWrapper, then we want to change it and not double-wrap it.
+						if (common.parent(".wysiwygCssWrapper").length) {
+							alert(common.parent(".wysiwygCssWrapper").get(0).nodeName.toLowerCase());
+							$this.find("select[name=type]").val(common.parent(".wysiwygCssWrapper").get(0).nodeName.toLowerCase());
+							$this.find("select[name=type]").attr("disabled", "disabled");
+							$this.find("input[name=id]").val(common.parent(".wysiwygCssWrapper").attr("id"));
+							$this.find("input[name=class]").val(common.parent(".wysiwygCssWrapper").attr("class").replace('wysiwygCssWrapper ', ''));
+							// Add the "unwrap" button:
+							$("form.wysiwyg").find(".cssWrap-unwrap").show();
+							$("form.wysiwyg").find(".cssWrap-unwrap").click(function (e) {
+								e.preventDefault();
+								if ($nodeName !== "body") {
+									common.unwrap();
+								}
+								$this.dialog("close");
+								return 1;
+							});
+						}
+						// Submit button.
+						$("form.wysiwyg").find(".cssWrap-submit").click(function (e) {
+							e.preventDefault();
+							var $wrapper = $("form.wysiwyg").find("select[name=type]").val(),
+								$id = $("form.wysiwyg").find("input[name=id]").val(),
+								$class = $("form.wysiwyg").find("input[name=class]").val();
+
+							if ($nodeName !== "body") {
+								// If the selection is already a .wysiwygCssWrapper, then we want to change it and not double-wrap it.
+								if (common.parent(".wysiwygCssWrapper").length) {
+									common.parent(".wysiwygCssWrapper").attr("id", $class);
+									common.parent(".wysiwygCssWrapper").attr("class", $class);
+								} else {
+									common.wrap("<" + $wrapper + " id=\"" + $id + "\" class=\"" + "wysiwygCssWrapper " + $class + "\"/>");
+								}
+							} else {
+								// Currently no implemntation for if $nodeName == 'body'.
+							}
+							$this.dialog("close");
+						});
+						// Cancel button.
+						$("form.wysiwyg").find(".cssWrap-cancel").click(function (e) {
+							e.preventDefault();
+							$this.dialog("close");
+							return 1;
+						});
+					},
+					close: function () {
+						$(this).dialog("destroy");
+						$(this).remove();
+					}
+				});
+				Wysiwyg.saveContent();
+			}
+			$(Wysiwyg.editorDoc).trigger("editorRefresh.wysiwyg");
+			return 1;
+		}
+	};
+})(jQuery);

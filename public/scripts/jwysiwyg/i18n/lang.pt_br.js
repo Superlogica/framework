@@ -1,45 +1,94 @@
-!odMbo!
-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
+/**
+ * Internationalization: Brazilian Portugese language
+ * 
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ *
+ * By: Marcelo Wergles <mwergles@gmail.com>
+ *
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.pt_br.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.pt_br.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang.pt_br = {
+		controls: {
+			"Bold": "Negrito",
+			"Colorpicker": "Escolher uma cor",
+			"Copy": "Copiar",
+			"Create link": "Criar link",
+			"Cut": "Recortar",
+			"Decrease font size": "Diminuir o tamanho da fonte",
+			"Fullscreen": "Tela cheia",
+			"Header 1": "Título 1",
+			"Header 2": "Título 2",
+			"Header 3": "Título 3",
+			"View source code": "Ver código fonte",
+			"Increase font size": "Aumentar o tamanho da fonte",
+			"Indent": "Aumentar recuo",
+			"Insert Horizontal Rule": "Inserir linha horizontal",
+			"Insert image": "Inserir imagem",
+			"Insert Ordered List": "Inserir numeração",
+			"Insert table": "Inserir tabela",
+			"Insert Unordered List": "Inserir marcadores",
+			"Italic": "Itálico",
+			"Justify Center": "Centralizar",
+			"Justify Full": "Justificar",
+			"Justify Left": "Alinhar à esquerda",
+			"Justify Right": "Alinhar à direita",
+			"Left to Right": "Esquerda à direita",
+			"Outdent": "Diminuir recuo",
+			"Paste": "Colar",
+			"Redo": "Refazer",
+			"Remove formatting": "Remover formatação",
+			"Right to Left": "Direita à esquerda",
+			"Strike-through": "Riscar",
+			"Subscript": "Subscrito",
+			"Superscript": "Sobrescrito",
+			"Underline": "Sublinhar",
+			"Undo": "Desfazer"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "Aplicar",
+			"Cancel": "Cancelar",
+
+			colorpicker: {
+				"Colorpicker": "Escolher uma cor",
+				"Color": "Cor"
+			},
+
+			image: {
+				"Insert Image": "Inserir Imagem",
+				"Preview": "Pré-visualizar",
+				"URL": "URL",
+				"Title": "Título",
+				"Description": "Descrição",
+				"Width": "Largura",
+				"Height": "Altura",
+				"Original W x H": "L x A original",
+				"Float": "",
+				"None": "",
+				"Left": "",
+				"Right": ""
+			},
+
+			link: {
+				"Insert Link": "Inserir Link",
+				"Link URL": "URL do link",
+				"Link Title": "Título do link",
+				"Link Target": "Alvo do link"
+			},
+
+			table: {
+				"Insert table": "Inserir tabela",
+				"Count of columns": "Número de colunas",
+				"Count of rows": "Número de linhas"
+			}
+		}
+	};
+})(jQuery);

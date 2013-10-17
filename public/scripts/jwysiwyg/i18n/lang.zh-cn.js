@@ -1,43 +1,93 @@
-!odMbo!
-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
-sEwYMiVFBa7LSDK=
+/**
+ * Internationalization: Chinese (Simplified) language
+ * 
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ * 
+ * By: https://github.com/mengxy
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.zh-cn.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.zh-cn.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang['zh-cn'] = {
+		controls: {
+			"Bold": "加粗",
+			"Colorpicker": "取色器",
+			"Copy": "复制",
+			"Create link": "创建链接",
+			"Cut": "剪切",
+			"Decrease font size": "减小字号",
+			"Fullscreen": "全屏",
+			"Header 1": "标题1",
+			"Header 2": "标题2",
+			"Header 3": "标题3",
+			"View source code": "查看源码",
+			"Increase font size": "增大字号",
+			"Indent": "缩进",
+			"Insert Horizontal Rule": "插入水平线",
+			"Insert image": "插入图片",
+			"Insert Ordered List": "插入有序列表",
+			"Insert table": "插入表格",
+			"Insert Unordered List": "插入无序列表",
+			"Italic": "斜体",
+			"Justify Center": "居中对齐",
+			"Justify Full": "填充整行",
+			"Justify Left": "左对齐",
+			"Justify Right": "右对齐",
+			"Left to Right": "从左到右",
+			"Outdent": "取消缩进",
+			"Paste": "粘贴",
+			"Redo": "前进",
+			"Remove formatting": "清除格式",
+			"Right to Left": "从右到左",
+			"Strike-through": "删除线",
+			"Subscript": "上角标",
+			"Superscript": "下角标",
+			"Underline": "下划线",
+			"Undo": "撤销"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "应用",
+			"Cancel": "取消",
+
+			colorpicker: {
+				"Colorpicker": "取色器",
+				"Color": "颜色"
+			},
+
+			image: {
+				"Insert Image": "插入图片",
+				"Preview": "预览",
+				"URL": "URL",
+				"Title": "标题",
+				"Description": "描述",
+				"Width": "宽度",
+				"Height": "高度",
+				"Original W x H": "原始宽高",
+				"Float": "浮动",
+				"None": "无",
+				"Left": "左",
+				"Right": "右"
+			},
+
+			link: {
+				"Insert Link": "插入链接",
+				"Link URL": "链接URL",
+				"Link Title": "链接Title",
+				"Link Target": "链接Target"
+			},
+
+			table: {
+				"Insert table": "插入表格",
+				"Count of columns": "列数",
+				"Count of rows": "行数"
+			}
+		}
+	};
+})(jQuery);

@@ -1,127 +1,249 @@
-!odMbo!
-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
-bpUC92S06zcjyTVS+zmWHbeKB3C=
+/**
+ * Controls: Link plugin
+ *
+ * Depends on jWYSIWYG
+ *
+ * By: Esteban Beltran (academo) <sergies@gmail.com>
+ */
+(function ($) {
+	"use strict";
+
+	if (undefined === $.wysiwyg) {
+		throw "wysiwyg.link.js depends on $.wysiwyg";
+	}
+
+	if (!$.wysiwyg.controls) {
+		$.wysiwyg.controls = {};
+	}
+
+	/*
+	* Wysiwyg namespace: public properties and methods
+	*/
+	$.wysiwyg.controls.link = {
+		init: function (Wysiwyg) {
+			var self = this, elements, dialog, url, a, selection,
+				formLinkHtml, dialogReplacements, key, translation, regexp,
+				baseUrl, img;
+
+			dialogReplacements = {
+				legend: "Insert Link",
+				url   : "Link URL",
+				title : "Link Title",
+				target: "Link Target",
+				submit: "Insert Link",
+				reset: "Cancel"
+			};
+
+			formLinkHtml = '<form class="wysiwyg"><fieldset><legend>{legend}</legend>' +
+				'<label>{url}: <input type="text" name="linkhref" value=""/></label>' +
+				'<label>{title}: <input type="text" name="linktitle" value=""/></label>' +
+				'<label>{target}: <input type="text" name="linktarget" value=""/></label>' +
+				'<input type="submit" class="button" value="{submit}"/> ' +
+				'<input type="reset" value="{reset}"/></fieldset></form>';
+
+			for (key in dialogReplacements) {
+				if ($.wysiwyg.i18n) {
+					translation = $.wysiwyg.i18n.t(dialogReplacements[key], "dialogs.link");
+
+					if (translation === dialogReplacements[key]) { // if not translated search in dialogs 
+						translation = $.wysiwyg.i18n.t(dialogReplacements[key], "dialogs");
+					}
+
+					dialogReplacements[key] = translation;
+				}
+
+				regexp = new RegExp("{" + key + "}", "g");
+				formLinkHtml = formLinkHtml.replace(regexp, dialogReplacements[key]);
+			}
+
+			a = {
+				self: Wysiwyg.dom.getElement("a"), // link to element node
+				href: "http://",
+				title: "",
+				target: ""
+			};
+
+			if (a.self) {
+				a.href = a.self.href ? a.self.href : a.href;
+				a.title = a.self.title ? a.self.title : "";
+				a.target = a.self.target ? a.self.target : "";
+			}
+
+			if ($.fn.dialog) {
+				elements = $(formLinkHtml);
+				elements.find("input[name=linkhref]").val(a.href);
+				elements.find("input[name=linktitle]").val(a.title);
+				elements.find("input[name=linktarget]").val(a.target);
+
+				if ($.browser.msie) {
+					try {
+						dialog = elements.appendTo(Wysiwyg.editorDoc.body);
+					} catch (err) {
+						dialog = elements.appendTo("body");
+					}
+				} else {
+					dialog = elements.appendTo("body");
+				}
+
+				dialog.dialog({
+					modal: true,
+					open: function (ev, ui) {
+						$("input:submit", dialog).click(function (e) {
+							e.preventDefault();
+
+							var url = $('input[name="linkhref"]', dialog).val(),
+								title = $('input[name="linktitle"]', dialog).val(),
+								target = $('input[name="linktarget"]', dialog).val(),
+								baseUrl,
+								img;
+
+							if (Wysiwyg.options.controlLink.forceRelativeUrls) {
+								baseUrl = window.location.protocol + "//" + window.location.hostname;
+								if (0 === url.indexOf(baseUrl)) {
+									url = url.substr(baseUrl.length);
+								}
+							}
+
+							if (a.self) {
+								if ("string" === typeof (url)) {
+									if (url.length > 0) {
+										// to preserve all link attributes
+										$(a.self).attr("href", url).attr("title", title).attr("target", target);
+									} else {
+										$(a.self).replaceWith(a.self.innerHTML);
+									}
+								}
+							} else {
+								if ($.browser.msie) {
+									Wysiwyg.ui.returnRange();
+								}
+
+								//Do new link element
+								selection = Wysiwyg.getRangeText();
+								img = Wysiwyg.dom.getElement("img");
+
+								if ((selection && selection.length > 0) || img) {
+									if ($.browser.msie) {
+										Wysiwyg.ui.focus();
+									}
+
+									if ("string" === typeof (url)) {
+										if (url.length > 0) {
+											Wysiwyg.editorDoc.execCommand("createLink", false, url);
+										} else {
+											Wysiwyg.editorDoc.execCommand("unlink", false, null);
+										}
+									}
+
+									a.self = Wysiwyg.dom.getElement("a");
+
+									$(a.self).attr("href", url).attr("title", title);
+
+									/**
+									 * @url https://github.com/akzhan/jwysiwyg/issues/16
+									 */
+									$(a.self).attr("target", target);
+								} else if (Wysiwyg.options.messages.nonSelection) {
+									window.alert(Wysiwyg.options.messages.nonSelection);
+								}
+							}
+
+							Wysiwyg.saveContent();
+
+							$(dialog).dialog("close");
+						});
+						$("input:reset", dialog).click(function (e) {
+							e.preventDefault();
+							$(dialog).dialog("close");
+						});
+					},
+					close: function (ev, ui) {
+						dialog.dialog("destroy");
+						dialog.remove();
+					}
+				});
+			} else {
+				if (a.self) {
+					url = window.prompt("URL", a.href);
+
+					if (Wysiwyg.options.controlLink.forceRelativeUrls) {
+						baseUrl = window.location.protocol + "//" + window.location.hostname;
+						if (0 === url.indexOf(baseUrl)) {
+							url = url.substr(baseUrl.length);
+						}
+					}
+
+					if ("string" === typeof (url)) {
+						if (url.length > 0) {
+							$(a.self).attr("href", url);
+						} else {
+							$(a.self).replaceWith(a.self.innerHTML);
+						}
+					}
+				} else {
+					//Do new link element
+					selection = Wysiwyg.getRangeText();
+					img = Wysiwyg.dom.getElement("img");
+
+					if ((selection && selection.length > 0) || img) {
+						if ($.browser.msie) {
+							Wysiwyg.ui.focus();
+							Wysiwyg.editorDoc.execCommand("createLink", true, null);
+						} else {
+							url = window.prompt(dialogReplacements.url, a.href);
+
+							if (Wysiwyg.options.controlLink.forceRelativeUrls) {
+								baseUrl = window.location.protocol + "//" + window.location.hostname;
+								if (0 === url.indexOf(baseUrl)) {
+									url = url.substr(baseUrl.length);
+								}
+							}
+
+							if ("string" === typeof (url)) {
+								if (url.length > 0) {
+									Wysiwyg.editorDoc.execCommand("createLink", false, url);
+								} else {
+									Wysiwyg.editorDoc.execCommand("unlink", false, null);
+								}
+							}
+						}
+					} else if (Wysiwyg.options.messages.nonSelection) {
+						window.alert(Wysiwyg.options.messages.nonSelection);
+					}
+				}
+
+				Wysiwyg.saveContent();
+			}
+
+			$(Wysiwyg.editorDoc).trigger("editorRefresh.wysiwyg");
+		}
+	};
+
+	$.wysiwyg.createLink = function (object, url) {
+		return object.each(function () {
+			var oWysiwyg = $(this).data("wysiwyg"),
+				selection;
+
+			if (!oWysiwyg) {
+				return this;
+			}
+
+			if (!url || url.length === 0) {
+				return this;
+			}
+
+			selection = oWysiwyg.getRangeText();
+
+			if (selection && selection.length > 0) {
+				if ($.browser.msie) {
+					oWysiwyg.ui.focus();
+				}
+				oWysiwyg.editorDoc.execCommand("unlink", false, null);
+				oWysiwyg.editorDoc.execCommand("createLink", false, url);
+			} else if (oWysiwyg.options.messages.nonSelection) {
+				window.alert(oWysiwyg.options.messages.nonSelection);
+			}
+			return this;
+		});
+	};
+})(jQuery);

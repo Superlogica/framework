@@ -1,146 +1,217 @@
-!odMbo!
-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
-zLRqHWkEadf2g4Cc70==
+/**
+ *
+ * Utilizado para formatar campo como moeda
+ *
+ */
+var Superlogica_Js_Currency = new Class({
+
+    /**
+     * Prefixo do valor formatado
+     */
+    currencyPrefix : 'R$',
+
+    /**
+     * Delimitador das casas decimais
+     */
+    currencyDelimiter : ',',
+
+    /**
+     * Retorna o valor no formato Currency -> 1.000,00
+     * @param currency valor
+     */
+    toString : function( valor, casasDecimais, autoAcrescentarZeros ){
+
+        var sinal = '';
+        if ( valor < 0) {
+            sinal = '-';
+            valor = Math.abs(valor);
+        }
+
+        if ( isNaN( valor ) ){
+            valor = "0";
+        }
+        
+        var cents = Math.floor( ( valor * 100 + 0.5 ) % 100 );        
+        if ( casasDecimais > 0 ){
+            cents = '00';
+            if ( valor.toString().indexOf('.') !== -1 ){
+                cents = valor.toString().replace(/^[0-9]{1,}\./,'');
+                cents = '0.'+cents.replace('.','');
+                cents = Superlogica_Js_Currency.round( cents, casasDecimais );
+                cents = (cents).toString().replace('0.','');
+            }
+            if ( autoAcrescentarZeros && cents.length < autoAcrescentarZeros ){                
+                for( var x=0, centsLength = cents.length; x < autoAcrescentarZeros-centsLength ;x++){
+                    cents = cents.toString()+'0';
+                }
+            }
+        } else if (cents < 10){
+            cents = "0" + cents;
+        }
+        valor = Math.floor( ( valor * 100 + 0.5 ) / 100 ).toString();
+
+        
+        for (var i = 0; i < Math.floor( ( valor.length-( 1 + i ) ) / 3 ); i++ ){
+            valor = valor.substring( 0, valor.length-( 4 * i + 3 ) ) + '.'
+                   +valor.substring( valor.length -( 4 * i + 3 ) );
+        }
+
+        return sinal + valor + ',' + cents;
+
+    },
+
+
+    /**
+     * Retorna o valor no formato float -> 1,000.00
+     * @param currency valor
+     */
+    toJson : function( valor, forceInt ){
+        
+        valor = parseFloat( new String( valor ).replace(/\./g,'').replace(/\,/g,'.') );
+        if ( isNaN(valor) ){
+            valor = forceInt ? 0 : "";
+        }
+        return valor;
+    },
+
+
+    /**
+     * Retorna um valor formatado, cria classe específica para valor positivo ou negativo
+     */
+    toHtml : function( valor, destaque ){
+        var valorFormatado = this.toString( valor );
+        if (destaque){
+            var retorno = valorFormatado.split(',');
+            valorFormatado = "<span class='inteiro'>"+retorno['0']+"</span><span class='centavos'>,"+retorno['1']+"</span>";
+        }
+        
+        if ( (typeof valor != 'undefined') && (valor.toFloat() < 0) ){
+            return "<span class='numeric negativo'>"+valorFormatado+"</span>";
+        }        
+        return "<span class='numeric positivo'>"+valorFormatado+"</span>";        
+    }    
+
+});
+
+Superlogica_Js_Currency.number_format = function(number, decimals, dec_point, thousands_sep){
+    // http://kevin.vanzonneveld.net
+    // +   original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +     bugfix by: Michael White (http://getsprink.com)
+    // +     bugfix by: Benjamin Lupton
+    // +     bugfix by: Allan Jensen (http://www.winternet.no)
+    // +    revised by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+    // +     bugfix by: Howard Yeend
+    // +    revised by: Luke Smith (http://lucassmith.name)
+    // +     bugfix by: Diogo Resende
+    // +     bugfix by: Rival
+    // +      input by: Kheang Hok Chin (http://www.distantia.ca/)
+    // +   improved by: davook
+    // +   improved by: Brett Zamir (http://brett-zamir.me)
+    // +      input by: Jay Klehr
+    // +   improved by: Brett Zamir (http://brett-zamir.me)
+    // +      input by: Amir Habibi (http://www.residence-mixte.com/)
+    // +     bugfix by: Brett Zamir (http://brett-zamir.me)
+    // +   improved by: Theriault
+    // +      input by: Amirouche
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // *     example 1: number_format(1234.56);
+    // *     returns 1: '1,235'
+    // *     example 2: number_format(1234.56, 2, ',', ' ');
+    // *     returns 2: '1 234,56'
+    // *     example 3: number_format(1234.5678, 2, '.', '');
+    // *     returns 3: '1234.57'
+    // *     example 4: number_format(67, 2, ',', '.');
+    // *     returns 4: '67,00'
+    // *     example 5: number_format(1000);
+    // *     returns 5: '1,000'
+    // *     example 6: number_format(67.311, 2);
+    // *     returns 6: '67.31'
+    // *     example 7: number_format(1000.55, 1);
+    // *     returns 7: '1,000.6'
+    // *     example 8: number_format(67000, 5, ',', '.');
+    // *     returns 8: '67.000,00000'
+    // *     example 9: number_format(0.9, 0);
+    // *     returns 9: '1'
+    // *    example 10: number_format('1.20', 2);
+    // *    returns 10: '1.20'
+    // *    example 11: number_format('1.20', 4);
+    // *    returns 11: '1.2000'
+    // *    example 12: number_format('1.2000', 3);
+    // *    returns 12: '1.200'
+    // *    example 13: number_format('1 000,50', 2, '.', ' ');
+    // *    returns 13: '100 050.00'
+    // Strip all characters but numerical ones.
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+    sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+    dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+    s = '',
+    toFixedFix = function (n, prec) {
+        var k = Math.pow(10, prec);
+        return '' + Math.round(n * k) / k;
+    };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
+Superlogica_Js_Currency.round = function(value, precision, mode) {
+  // http://kevin.vanzonneveld.net
+  // +   original by: Philip Peterson
+  // +    revised by: Onno Marsman
+  // +      input by: Greenseed
+  // +    revised by: T.Wild
+  // +      input by: meo
+  // +      input by: William
+  // +   bugfixed by: Brett Zamir (http://brett-zamir.me)
+  // +      input by: Josep Sanz (http://www.ws3.es/)
+  // +    revised by: Rafa? Kukawski (http://blog.kukawski.pl/)
+  // %        note 1: Great work. Ideas for improvement:
+  // %        note 1:  - code more compliant with developer guidelines
+  // %        note 1:  - for implementing PHP constant arguments look at
+  // %        note 1:  the pathinfo() function, it offers the greatest
+  // %        note 1:  flexibility & compatibility possible
+  // *     example 1: round(1241757, -3);
+  // *     returns 1: 1242000
+  // *     example 2: round(3.6);
+  // *     returns 2: 4
+  // *     example 3: round(2.835, 2);
+  // *     returns 3: 2.84
+  // *     example 4: round(1.1749999999999, 2);
+  // *     returns 4: 1.17
+  // *     example 5: round(58551.799999999996, 2);
+  // *     returns 5: 58551.8
+  var m, f, isHalf, sgn; // helper variables
+  precision |= 0; // making sure precision is integer
+  m = Math.pow(10, precision);
+  value *= m;
+  sgn = (value > 0) | -(value < 0); // sign of the number
+  isHalf = value % 1 === 0.5 * sgn;
+  f = Math.floor(value);
+
+  if (isHalf) {
+    switch (mode) {
+    case 'PHP_ROUND_HALF_DOWN':
+      value = f + (sgn < 0); // rounds .5 toward zero
+      break;
+    case 'PHP_ROUND_HALF_EVEN':
+      value = f + (f % 2 * sgn); // rouds .5 towards the next even integer
+      break;
+    case 'PHP_ROUND_HALF_ODD':
+      value = f + !(f % 2); // rounds .5 towards the next odd integer
+      break;
+    default:
+      value = f + (sgn > 0); // rounds .5 away from zero
+    }
+  }
+
+  return (isHalf ? value : Math.round(value)) / m;
+}

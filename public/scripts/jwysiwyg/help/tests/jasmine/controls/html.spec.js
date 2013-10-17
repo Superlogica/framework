@@ -1,13 +1,25 @@
-!odMbo!
-QkMZHouc5D/PIvD9m+XNjm4000000000eYqthAmuMUvpSJ+Js72b4UgmZPDIEkkSGhmfCSgUsOr0
-TmMV0U8tMvUJzQfNRGhziMx7k+r/7KiA/ug/6z1b9GlgC9Rmou3fmu8mMX+9jtlYciRp+6C17wLn
-WKVe0TEfcpjJbCpm8TJcbN24PWX2jn5a4qTCCwD1ehvBReH51eImsycU1Rv3cwwWhq//leLMwCrf
-XwnZKeYsyjBRFcTyehMCERn5pEFAOvKbsTUpcLuekzq0LIOz1Z+S7NVYkBpeWp+vMMzPOqyc7/yE
-yy0VtUR2UUg63RUVXwgFLkrXEMsF5aRabuVNRtQli+9ymJkFeT3xYkYss5DwZEWnVdT2mdaKnMJC
-8sLbUp+dwuwvhOO0coyuQbCG+97CBvrQJzgD6Pk8NKvlSpj1gf/pyESrI1G/EN5A13/OxHTUS2g1
-Gx/Y0slVGBqF6mFJA4+KMmgLIX/cZynsr/x3xCwCvTkjB07QZl5zgWbDEmJpUFRLIColpOjrlxCx
-owBQFVuH7xj7J+hIBnEOslHBVrqRTaZPwhiEnuh8KYMVOsgtucvcui9g8nZXrDgviVOWVMDAYYTM
-niMrAgMFPCEUZ6uNQPs8Ek9PAAndvThpT43iikmHkTcCvJX5xeeG6oOSe6L/1h/SQboFQZDX0hBX
-sKKCVMjTHwWPqNWHsBfqENuLruZsNZ30AUHqnlwndmQK9z1iEImErAEyZlLeHle11ANvtHR5ZIjY
-s8HFa/lUAjui+0MpNDm+DJxl+Rxx/+lUxyhUOVHn3725cn8qRUZhw0NzMCqsXMaRbHV3Ybk6/lt4
-KauQs84eSaalUJHgNRYhzzd95VE2R4dZTBGW6lTjfSZ6IS/QWjjxGX2/gT7p18jcqOlC
+describe("controls.html", function () {
+	beforeEach(function () {
+		$("#id1").wysiwyg({
+			rmUnusedControls: true,
+			controls: {
+				bold: { visible: true },
+				html: { visible: true }
+			}
+		}).wysiwyg("clear");
+	});
+
+	afterEach(function () {
+		$("textarea").wysiwyg("destroy");
+	});
+
+	it('should save text into editor iframe when it was typed in source', function () {
+		$("#id1").wysiwyg("triggerControl", "html");
+
+		$("#id1").val("insert text in textarea when html is triggered on");
+
+		$("#id1").wysiwyg("triggerControl", "html");
+
+		expect($("#id1").wysiwyg("getContent")).toEqual($("#id1").val());
+	});
+});

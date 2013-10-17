@@ -1,61 +1,116 @@
-!odMbo!
-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
+/**
+ * Internationalization: czech language
+ *
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ *
+ * By: deepj on github.com
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.cs.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.cs.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang.cs = {
+		controls: {
+			"Bold": "Tučné",
+			"Colorpicker": "Výběr barvy",
+			"Copy": "Kopírovat",
+			"Create link": "Vytvořit odkaz",
+			"Cut": "Vyjmout",
+			"Decrease font size": "Zmenšit velikost písma",
+			"Fullscreen": "Celá obrazovka",
+			"Header 1": "Nadpis 1",
+			"Header 2": "Nadpis 2",
+			"Header 3": "Nadpis 3",
+			"View source code": "Zobrazit zdrojový kód",
+			"Increase font size": "Zvětšit velikost písma",
+			"Indent": "Zvětšit odsazení",
+			"Insert Horizontal Rule": "Vložit horizontální čáru",
+			"Insert image": "Vložit obrázek",
+			"Insert Ordered List": "Vložit číslovaný seznam",
+			"Insert table": "Vložit tabulku",
+			"Insert Unordered List": "Vložit odrážkový seznam",
+			"Italic": "Kurzíva",
+			"Justify Center": "Zarovnat na střed",
+			"Justify Full": "Zarovnat do bloku",
+			"Justify Left": "Zarovnat doleva",
+			"Justify Right": "Zarovnat doprava",
+			"Left to Right": "Zleva doprava",
+			"Outdent": "Zmenšit odsazení",
+			"Paste": "Vložit",
+			"Redo": "Znovu",
+			"Remove formatting": "Odstranit formátování",
+			"Right to Left": "Zprava doleva",
+			"Strike-through": "Přeškrnuté",
+			"Subscript": "Dolní index",
+			"Superscript": "Horní index",
+			"Underline": "Potržené",
+			"Undo": "Zpět"
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "Použij",
+			"Cancel": "Zrušit",
+
+			colorpicker: {
+				"Colorpicker": "Výběr barvy",
+				"Color": "Barva"
+			},
+
+			fileManager: {
+				"file_manager": "Správce souborů",
+				"upload_title": "Nahrát soubor",
+				"rename_title": "Přejmenovat soubor",
+				"remove_title": "Odstranit soubor",
+				"mkdir_title": "Vytvořit adresář",
+				"upload_action": "Nahrát nový soubor do aktualního adresáře",
+				"mkdir_action": "Vytvořit nový adresář",
+				"remove_action": "Odstranit tento soubor",
+				"rename_action": "Přejmenovat tento soubor" ,
+				"delete_message": "Jste si jist, že chcete smazat tento soubor?",
+				"new_directory": "Nový adresář",
+				"previous_directory": "Vrať se do přechozího adresáře",
+				"rename": "Přejmenovat",
+				"select": "Vybrat",
+				"create": "Vytvořit",
+				"submit": "Vložit",
+				"cancel": "Zrušit",
+				"yes": "Ano",
+				"no": "Ne"
+			},
+
+			image: {
+				"Insert Image": "Vložit obrázek",
+				"Preview": "Náhled",
+				"URL": "Odkaz",
+				"Title": "Název",
+				"Description": "Popis",
+				"Width": "Šířka",
+				"Height": "Výška",
+				"Original W x H": "Původní šířka a výška",
+				"Float": "Obtékání",
+				"None": "Žádné",
+				"Left": "Doleva",
+				"Right": "Doprava",
+				"Select file from server": "Vybrat soubor ze serveru"
+			},
+
+			link: {
+				"Insert Link": "Vložit odkaz",
+				"Link URL": "Odkaz",
+				"Link Title": "Název odkazu",
+				"Link Target": "Cíl odkazu"
+			},
+
+			table: {
+				"Insert table": "Vložit tabulku",
+				"Count of columns": "Počet sloupců",
+				"Count of rows": "Počet řádků"
+			}
+		}
+	};
+})(jQuery);

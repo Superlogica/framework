@@ -1,31 +1,50 @@
-!odMbo!
-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
-LW0MoHpzNmNTwRzNdEerX081tpLKepcKtHaF
+/*
+ * jQuery UI Effects Slide 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Effects/Slide
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+(function($) {
+
+$.effects.slide = function(o) {
+
+	return this.queue(function() {
+
+		// Create element
+		var el = $(this), props = ['position','top','left'];
+
+		// Set options
+		var mode = $.effects.setMode(el, o.options.mode || 'show'); // Set Mode
+		var direction = o.options.direction || 'left'; // Default Direction
+
+		// Adjust
+		$.effects.save(el, props); el.show(); // Save & Show
+		$.effects.createWrapper(el).css({overflow:'hidden'}); // Create Wrapper
+		var ref = (direction == 'up' || direction == 'down') ? 'top' : 'left';
+		var motion = (direction == 'up' || direction == 'left') ? 'pos' : 'neg';
+		var distance = o.options.distance || (ref == 'top' ? el.outerHeight({margin:true}) : el.outerWidth({margin:true}));
+		if (mode == 'show') el.css(ref, motion == 'pos' ? -distance : distance); // Shift
+
+		// Animation
+		var animation = {};
+		animation[ref] = (mode == 'show' ? (motion == 'pos' ? '+=' : '-=') : (motion == 'pos' ? '-=' : '+=')) + distance;
+
+		// Animate
+		el.animate(animation, { queue: false, duration: o.duration, easing: o.options.easing, complete: function() {
+			if(mode == 'hide') el.hide(); // Hide
+			$.effects.restore(el, props); $.effects.removeWrapper(el); // Restore
+			if(o.callback) o.callback.apply(this, arguments); // Callback
+			el.dequeue();
+		}});
+
+	});
+
+};
+
+})(jQuery);

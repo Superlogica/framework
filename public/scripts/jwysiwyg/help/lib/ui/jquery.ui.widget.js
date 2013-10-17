@@ -1,112 +1,236 @@
-!odMbo!
-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
-B3fn97XpWAEaRazXgG==
+/*!
+ * jQuery UI Widget 1.8
+ *
+ * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses.
+ *
+ * http://docs.jquery.com/UI/Widget
+ */
+(function( $ ) {
+
+var _remove = $.fn.remove;
+
+$.fn.remove = function( selector, keepData ) {
+	return this.each(function() {
+		if ( !keepData ) {
+			if ( !selector || $.filter( selector, [ this ] ).length ) {
+				$( "*", this ).add( this ).each(function() {
+					$( this ).triggerHandler( "remove" );
+				});
+			}
+		}
+		return _remove.call( $(this), selector, keepData );
+	});
+};
+
+$.widget = function( name, base, prototype ) {
+	var namespace = name.split( "." )[ 0 ],
+		fullName;
+	name = name.split( "." )[ 1 ];
+	fullName = namespace + "-" + name;
+
+	if ( !prototype ) {
+		prototype = base;
+		base = $.Widget;
+	}
+
+	// create selector for plugin
+	$.expr[ ":" ][ fullName ] = function( elem ) {
+		return !!$.data( elem, name );
+	};
+
+	$[ namespace ] = $[ namespace ] || {};
+	$[ namespace ][ name ] = function( options, element ) {
+		// allow instantiation without initializing for simple inheritance
+		if ( arguments.length ) {
+			this._createWidget( options, element );
+		}
+	};
+
+	var basePrototype = new base();
+	// we need to make the options hash a property directly on the new instance
+	// otherwise we'll modify the options hash on the prototype that we're
+	// inheriting from
+//	$.each( basePrototype, function( key, val ) {
+//		if ( $.isPlainObject(val) ) {
+//			basePrototype[ key ] = $.extend( {}, val );
+//		}
+//	});
+	basePrototype.options = $.extend( {}, basePrototype.options );
+	$[ namespace ][ name ].prototype = $.extend( true, basePrototype, {
+		namespace: namespace,
+		widgetName: name,
+		widgetEventPrefix: $[ namespace ][ name ].prototype.widgetEventPrefix || name,
+		widgetBaseClass: fullName
+	}, prototype );
+
+	$.widget.bridge( name, $[ namespace ][ name ] );
+};
+
+$.widget.bridge = function( name, object ) {
+	$.fn[ name ] = function( options ) {
+		var isMethodCall = typeof options === "string",
+			args = Array.prototype.slice.call( arguments, 1 ),
+			returnValue = this;
+
+		// allow multiple hashes to be passed on init
+		options = !isMethodCall && args.length ?
+			$.extend.apply( null, [ true, options ].concat(args) ) :
+			options;
+
+		// prevent calls to internal methods
+		if ( isMethodCall && options.substring( 0, 1 ) === "_" ) {
+			return returnValue;
+		}
+
+		if ( isMethodCall ) {
+			this.each(function() {
+				var instance = $.data( this, name ),
+					methodValue = instance && $.isFunction( instance[options] ) ?
+						instance[ options ].apply( instance, args ) :
+						instance;
+				if ( methodValue !== instance && methodValue !== undefined ) {
+					returnValue = methodValue;
+					return false;
+				}
+			});
+		} else {
+			this.each(function() {
+				var instance = $.data( this, name );
+				if ( instance ) {
+					if ( options ) {
+						instance.option( options );
+					}
+					instance._init();
+				} else {
+					$.data( this, name, new object( options, this ) );
+				}
+			});
+		}
+
+		return returnValue;
+	};
+};
+
+$.Widget = function( options, element ) {
+	// allow instantiation without initializing for simple inheritance
+	if ( arguments.length ) {
+		this._createWidget( options, element );
+	}
+};
+
+$.Widget.prototype = {
+	widgetName: "widget",
+	widgetEventPrefix: "",
+	options: {
+		disabled: false
+	},
+	_createWidget: function( options, element ) {
+		// $.widget.bridge stores the plugin instance, but we do it anyway
+		// so that it's stored even before the _create function runs
+		this.element = $( element ).data( this.widgetName, this );
+		this.options = $.extend( true, {},
+			this.options,
+			$.metadata && $.metadata.get( element )[ this.widgetName ],
+			options );
+
+		var self = this;
+		this.element.bind( "remove." + this.widgetName, function() {
+			self.destroy();
+		});
+
+		this._create();
+		this._init();
+	},
+	_create: function() {},
+	_init: function() {},
+
+	destroy: function() {
+		this.element
+			.unbind( "." + this.widgetName )
+			.removeData( this.widgetName );
+		this.widget()
+			.unbind( "." + this.widgetName )
+			.removeAttr( "aria-disabled" )
+			.removeClass(
+				this.widgetBaseClass + "-disabled " +
+				this.namespace + "-state-disabled" );
+	},
+
+	widget: function() {
+		return this.element;
+	},
+
+	option: function( key, value ) {
+		var options = key,
+			self = this;
+
+		if ( arguments.length === 0 ) {
+			// don't return a reference to the internal hash
+			return $.extend( {}, self.options );
+		}
+
+		if  (typeof key === "string" ) {
+			if ( value === undefined ) {
+				return this.options[ key ];
+			}
+			options = {};
+			options[ key ] = value;
+		}
+
+		$.each( options, function( key, value ) {
+			self._setOption( key, value );
+		});
+
+		return self;
+	},
+	_setOption: function( key, value ) {
+		this.options[ key ] = value;
+
+		if ( key === "disabled" ) {
+			this.widget()
+				[ value ? "addClass" : "removeClass"](
+					this.widgetBaseClass + "-disabled" + " " +
+					this.namespace + "-state-disabled" )
+				.attr( "aria-disabled", value );
+		}
+
+		return this;
+	},
+
+	enable: function() {
+		return this._setOption( "disabled", false );
+	},
+	disable: function() {
+		return this._setOption( "disabled", true );
+	},
+
+	_trigger: function( type, event, data ) {
+		var callback = this.options[ type ];
+
+		event = $.Event( event );
+		event.type = ( type === this.widgetEventPrefix ?
+			type :
+			this.widgetEventPrefix + type ).toLowerCase();
+		data = data || {};
+
+		// copy original event properties over to the new event
+		// this would happen if we could call $.event.fix instead of $.Event
+		// but we don't have a way to force an event to be fixed multiple times
+		if ( event.originalEvent ) {
+			for ( var i = $.event.props.length, prop; i; ) {
+				prop = $.event.props[ --i ];
+				event[ prop ] = event.originalEvent[ prop ];
+			}
+		}
+
+		this.element.trigger( event, data );
+
+		return !( $.isFunction(callback) &&
+			callback.call( this.element[0], event, data ) === false ||
+			event.isDefaultPrevented() );
+	}
+};
+
+})( jQuery );

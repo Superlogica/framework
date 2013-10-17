@@ -1,63 +1,129 @@
-!odMbo!
-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
-9aBcYRk8Qfd8XESpJsBFr9ML/pPaT64m
+/**
+ * Controls: Table plugin
+ * 
+ * Depends on jWYSIWYG
+ */
+(function ($) {
+	"use strict";
+
+	if (undefined === $.wysiwyg) {
+		throw "wysiwyg.table.js depends on $.wysiwyg";
+	}
+
+	if (!$.wysiwyg.controls) {
+		$.wysiwyg.controls = {};
+	}
+
+	var insertTable = function (colCount, rowCount, filler) {
+		if (isNaN(rowCount) || isNaN(colCount) || rowCount === null || colCount === null) {
+			return;
+		}
+
+		var i, j, html = ['<table border="1" style="width: 100%;"><tbody>'];
+
+		colCount = parseInt(colCount, 10);
+		rowCount = parseInt(rowCount, 10);
+
+		if (filler === null) {
+			filler = "&nbsp;";
+		}
+		filler = "<td>" + filler + "</td>";
+
+		for (i = rowCount; i > 0; i -= 1) {
+			html.push("<tr>");
+			for (j = colCount; j > 0; j -= 1) {
+				html.push(filler);
+			}
+			html.push("</tr>");
+		}
+		html.push("</tbody></table>");
+
+		return this.insertHtml(html.join(""));
+	};
+
+	/*
+	 * Wysiwyg namespace: public properties and methods
+	 */
+	$.wysiwyg.controls.table = function (Wysiwyg) {
+		var adialog, dialog, colCount, rowCount, formTableHtml, dialogReplacements, key, translation, regexp;
+
+		dialogReplacements = {
+			legend: "Insert table",
+			cols  : "Count of columns",
+			rows  : "Count of rows",
+			submit: "Insert table",
+			reset: "Cancel"
+		};
+
+		formTableHtml = '<form class="wysiwyg" id="wysiwyg-tableInsert"><fieldset><legend>{legend}</legend>' +
+			'<label>{cols}: <input type="text" name="colCount" value="3" /></label><br/>' +
+			'<label>{rows}: <input type="text" name="rowCount" value="3" /></label><br/>' +
+			'<input type="submit" class="button" value="{submit}"/> ' +
+			'<input type="reset" value="{reset}"/></fieldset></form>';
+		
+		for (key in dialogReplacements) {
+			if ($.wysiwyg.i18n) {
+				translation = $.wysiwyg.i18n.t(dialogReplacements[key], "dialogs.table");
+
+				if (translation === dialogReplacements[key]) { // if not translated search in dialogs 
+					translation = $.wysiwyg.i18n.t(dialogReplacements[key], "dialogs");
+				}
+
+				dialogReplacements[key] = translation;
+			}
+
+			regexp = new RegExp("{" + key + "}", "g");
+			formTableHtml = formTableHtml.replace(regexp, dialogReplacements[key]);
+		}
+
+		if (!Wysiwyg.insertTable) {
+			Wysiwyg.insertTable = insertTable;
+		}
+
+		adialog = new $.wysiwyg.dialog(Wysiwyg, {
+			"title"   : dialogReplacements.legend,
+			"content" : formTableHtml,
+			"open"    : function (e, dialog) {
+				dialog.find("form#wysiwyg-tableInsert").submit(function (e) {
+					e.preventDefault();
+					rowCount = dialog.find("input[name=rowCount]").val();
+					colCount = dialog.find("input[name=colCount]").val();
+
+					Wysiwyg.insertTable(colCount, rowCount, Wysiwyg.defaults.tableFiller);
+
+					adialog.close();
+					return false;
+				});
+
+				dialog.find("input:reset").click(function (e) {
+					e.preventDefault();
+					adialog.close();
+					return false;
+				});
+			}
+		});
+		
+		adialog.open();
+
+		$(Wysiwyg.editorDoc).trigger("editorRefresh.wysiwyg");
+	};
+
+	$.wysiwyg.insertTable = function (object, colCount, rowCount, filler) {
+		return object.each(function () {
+			var Wysiwyg = $(this).data("wysiwyg");
+
+			if (!Wysiwyg.insertTable) {
+				Wysiwyg.insertTable = insertTable;
+			}
+
+			if (!Wysiwyg) {
+				return this;
+			}
+
+			Wysiwyg.insertTable(colCount, rowCount, filler);
+			$(Wysiwyg.editorDoc).trigger("editorRefresh.wysiwyg");
+
+			return this;
+		});
+	};
+})(jQuery);

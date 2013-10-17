@@ -1,26 +1,8 @@
-!odMbo!
-6Ey7asBkMNYjCNX7FIJEe04000000000jAi+mYGDISoxh4tplBspixNmXlCMf4xeb4iPY7ew6rcF
-Mo7Xb8JdlDibxL4CN1HFO++vqLQz6obot3Z+GLA88zUJs9n89kVp8NFbQgjvfJb9+eIrH3z344Ka
-jjhMzpUbJn/0QCPMAHMse2utKygDwEv3gB8JHSQS54r4r3sAn6htUGPey96BRDW6MfBPxUrmMVIN
-Rnf6B0R61tRLE4esZz66e5NX5g/SoVYPG1fA/39HkIpP+2z9EXbPgM6ZY7eTf/2Q752gk6F5N14k
-RztzEvbnIh3vU8Oyhjc6l3PHu4gcjJnxid0gS6BU0ls3KS+GRogEs5jRSWYDieGCkOgcgns3Se3Q
-h3tqBF2WOLDLifvIwN5Ro1r3rPXy1qOOHLwp3WNnt049iV7f8n0exP8EIASd/YLk+cE81w9sOu/O
-i6D4u7tBW+HfzdrvGFJG1t0q7CoEgD1iK0LZLDtr2bkI0Y4FnjdazbruxMxyldat6LeSrpLgh3H4
-VYjlom1ksykXvbutvfVaN78As7MwxxLjL38ObbtaWutmKAwhWnt69HdLH5dT0e45p8nWz1aqLgyH
-e/O0rtHNs+0p55VimdnM1rVXs5nb5qS/jLdnuoItMhOlFDYrCcoQQQYlAY+FXMBbGYHVOl0+ZdjG
-RSPEVKqjDewNGXH2Iv+YbERgIjKhl8/YcATHt7JHSkXRWt/g2A4ib1YdSdVf6dOGKuhYrVDwszs9
-AiLyZTE6X3B2SVFbFuXCnNRrbOxV235xTcrVqFc1RgSkPyUF7zh0kg+7sb9zQHMKOYAkrTzNjlnL
-MrFvGBMdoFVBCVn2tRqq59/Xg+CB9ovbnGFV89AWCWZfSJHDwMtDnpjYaHDkhDiwNF8mKieIVbdz
-OVoLplL4mOudsE9qSdxgv9FBpum3/RgRlT9FSziR9jS3JyLPei8WKY8E41AF4sxbhG2QYBZmhieG
-ATWLtzCqL43kgvow0pIHRCnah1vTabjEeJorDk8E9n9cE5IoUEbWHRtCpKMYfRB1MA2MTZUZXbul
-FLC9D+Xms7qMemHdrOLbJFDp725E6vyhyp75F9DjI30FBMhoGx/Z8lHZuI1ghTkh9objpqLlG1K1
-weTDQTH1ORxsgd2XD5BCv4Bb4CwJI/jZ05JOViPxdqW0hdIqesZpvv62NeePqYbjn4s8bv7QGCUM
-T4XU75p0AgAmLzKLo3nyTHtOx+up0prIo21l+dG9jyHOvucCd3C8SeJe1dQyE3CfQYHVqMbRy4zD
-DKioj8PvpntH/MgiGdhYIuS5Otz41LX3l4Cbs1uhUkCJ1SqFMFJ00/9QBEn5K39kskZ5j9PWf7D2
-CAAjo6vvF8B/TSPUAZTxUwZJVih4gCVuIMQ3bT1otCREwrGZsPiRM20f4L2PgxLEnTkvlkGCSpSy
-v8XQaIG3eLTmdWATMp4vN/604w3VSBFu1S6WIMIlWQm0H71U6QAT558anJZYxUnGp8gN6gCinjFp
-+noAs0mtxBAqjw45VaXYjoBC77JdB3CMguT4uREK2UevFx1ADIsLdbe+8O6ZqvtYxsPd4p2weJby
-e4/3WGlKehiBxz+B0zoKnsnn5r3k1uLHFrPD4rKD8EAfYblKjet3BMf9upSphwsuvECbRu8hT/lz
-Iahpp28xnZqx3OK+RIKEU6U1EKkDRCcEO8LVxHrPzhXHr9IIIsOpd6cEzSj2vRhEBhstiMxiFxvq
-yD3jIyfev7GK/Bz/Gms4b0MmcKgR0+A8uUPz12+M197j4HM+KAQlEMhhyVYa5EhFQ0de4j1p19DZ
-lURtIvYl78eh2tNH
+/**
+ * CSS Browser Selector v0.4.0 (Nov 02, 2010)
+ * Rafael Lima (http://rafael.adm.br)
+ * http://rafael.adm.br/css_browser_selector
+ * License: http://creativecommons.org/licenses/by/2.5/
+ * Contributors: http://rafael.adm.br/css_browser_selector#contributors
+ */
+function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua.indexOf(t)>-1},g='gecko',w='webkit',s='safari',o='opera',m='mobile',h=document.documentElement,b=[(!(/opera|webtv/i.test(ua))&&/msie\s(\d)/.test(ua))?('ie ie'+RegExp.$1):is('firefox/2')?g+' ff2':is('firefox/3.5')?g+' ff3 ff3_5':is('firefox/3.6')?g+' ff3 ff3_6':is('firefox/3')?g+' ff3':is('gecko/')?g:is('opera')?o+(/version\/(\d+)/.test(ua)?' '+o+RegExp.$1:(/opera(\s|\/)(\d+)/.test(ua)?' '+o+RegExp.$2:'')):is('konqueror')?'konqueror':is('blackberry')?m+' blackberry':is('android')?m+' android':is('chrome')?w+' chrome':is('iron')?w+' iron':is('applewebkit/')?w+' '+s+(/version\/(\d+)/.test(ua)?' '+s+RegExp.$1:''):is('mozilla/')?g:'',is('j2me')?m+' j2me':is('iphone')?m+' iphone':is('ipod')?m+' ipod':is('ipad')?m+' ipad':is('mac')?'mac':is('darwin')?'mac':is('webtv')?'webtv':is('win')?'win'+(is('windows nt 6.0')?' vista':''):is('freebsd')?'freebsd':(is('x11')||is('linux'))?'linux':'','js']; c = b.join(' '); h.className += ' '+c; return c;}; css_browser_selector(navigator.userAgent);

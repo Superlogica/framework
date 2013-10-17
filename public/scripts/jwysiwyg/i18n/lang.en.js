@@ -1,48 +1,117 @@
-!odMbo!
-wBRTD8haSmxO8+HGKQzmAm4000000000i43J0IW39LeAQnPOnIe6KSU8m69Ri4ZJ6k06dxv0nDKL
-nd5wVCT9+WeEPsbYaufOpNv31zM1gi4Y3cGJ+/ssm/DEt/3drmz6J5rAvBTlhX3DQ4WCnsy6vhff
-18JSIiAYltvDN4PwENPAiAjscJ/Hhh+45Q7EKXoAeTV/FtANUn3jyl/VtIFDNZWFxf2gqAxOtlQF
-sbDD4tgSBQZIYImPWWC/cdPZBF0c903YqbXdzJEh/odEVlRTueNEPxCQK98Q43u/SPG3+mtc0tP+
-sRKP0VRtUQoj81o7sVLB26uryjwGM23Drzu4i2C7XPFLWwgF2RvvOt5ZTcSo0QoyEP6fywJjydGJ
-rblfUiFUdErcF5Ec4XbkPhbsBPz0ZnQGxRn8oXRFezWn5VxIY953Ny9e+IqNuVrZUAd8aga9P6Fa
-tfepjy/lxtKImTylNBgpJI3nic9Oy9dLiWnzxgdYBp3XvlLxfoRNw2QtDmDnHjCiykLJLszawlMR
-/6i59t+sPMU8uj8txhaiFG43MItB3VQjQzOKq8y1yTh7wi5KVHNFKiJIRciI7axFNvOuQPZ4ywUY
-jwp7oioasZYFwD/H7RD4j0i3RpmNZVJFsHtlf0A7VxwqF7nPTbU+gbieFes7Fqp/8hWI8TQGE2eY
-FtYqDauEU02cJOp1ewUGeT3EyQ5H7E5+pfi/+LKYL1T3Cy1Y0jGVtJ+Zg4rf7yIYCA4PXDj68SS7
-gSFXbZHK9nQhjGmjnIJozxETQgnYwKwSNoLnMJ6hg2300Y63RtnKWW/Ne5oF+kH/xuNsb/oiZuiS
-gh4SFX4Z0MCw2wwgxjvOaifvUMldhkSn0qQFQ+1UXXcqoWv7byCHJcfx6Ds4cJrE+5lj7Ao0+TbS
-a5cNmdYHXYyVPSqEdeikC5UjZCgJNWCGr9mEwI+sOw4RUMi8QXbYrK0wrlbTdIV75hpIwVNwHdm/
-+JA+HXAX00D7Sy550+uEUhUeyW6/gXf7e5GQXEaaiFN9ezPZ/zywaWBLpZtJP1II6SMgrZ+PgCBu
-wt40DE/G7hPwFmiDjNK/wVcRd0obhPTv3wIVHmpgfS0ELAhNz/6MWfGwWCJl9dLhk14M9XwZWRZK
-PZMPLeeuTDd3t13lHneJsjgwCGLLv+46+UnzZV4JATzmqvS33bWSqAL3BG7o6CocXsg6Dwp+lj66
-Q7nnTgB2CseU2pNzy6Oy9uU6GVyr7QDAmUkPEBsWDlg/OxoWFSWdS3mH6qefkTq5/2xCZ9axqPsW
-CXLZ5XRiCdwKnzs7326VrXaddCmqLD6oTZnn4ZxKQOramC3K5a5SKfc0kqmgr13HVSxCwH6lylXV
-DsYLPBtWaqeUJ1SI3N/Dym3Ou7PXC/ibQ4Tq+gQOWeOa+FgDh+VDVablw+BKmWJyf8WFZzNUirhU
-2OmgpQ+/lCrqQIB+aQ2XLBQGQP55rMNmBL/6vsbrGO3NQoFsUjxQSu9O4DBrS7DfqUlRhjZ92Lec
-qw5D85Z3jsgPuCXZtqnXm6Biwv6nr/GZVqSCmOsC9GGTgE1It8IibGNf9bet7gK5VPIRCRAb5aV1
-fgI3zRWNIlar4B+DNzI4ZthWcQg4wiynPXoLCWFAeoA3NUt/ctHuTT2ReG3bGAupMcWCJkg/Ftpz
-UItsV2iuvFFefhpKpMQ3yArBlLxajXmgY4R5J8L3ECNA7Bp06kLCtqmLBgtgjaKmVMQHm0L0m2gd
-g9ztTwAoDB4CqwT31iclUv2mX/5X9IhSC4jBYdKBKqk9kgah8WpsK3sjQnqFl1IknzUZkXq24I9p
-+N8l0TGgRuNUeUWUG0hn94USfqGS2OlsE8HwzVGBd7U1V9IuE4HW06blR7NnmucC62amJt+9nVAr
-39RNEa5IfK9AEEUw/j3ZLA8UH5k+Ht7v9WWMa7d8Is+ozHlmxdDA1hUmPTWj+zL32B6MFTGMnWb/
-gT+64EyfBVxw3W0fo6dYfdaJeTGfD9Oso/5ZexyaQmhxaMCRgTCxLd7xaEUksVsrbaj2jFHcaS4f
-wXrUN9h2sULDyybCbHeNBG6ZB+mGN2/o15W1W4BQsVYXNLSjlHEer3VkUeBQAXJ0HadtzRIiTqci
-/eDexJK+Oe1PrcE1gf/D3nI8rEVbxansaQbamw4v2PbHiMrCUu/pbpjACfTSEGBhwNvgFWT2X2aq
-4xdIJZDczVNGnysuMbWXOLk1rfUJOKBdBwfn7pHBqKs4RwP9tuRTd0Cw9RHUx/fiAx7z0zrcAjiV
-oZeXiCQ/I2zlTyy7Nz7pvVKo4pBM/pKVkCI5NqnaeZgpVP2VjbxJodvXlwgepfJ4mprAmYeIcCMt
-fe+IiGl+MYhc707a1lzVBCCpWIFOC2KmOkW9nE61g/Gf273gW4YzK63OVC5frUDp0dbFmi5znDrV
-WiL7e4nFBaKbVFKa4upW3SJh8hQ5JW8h94A3c0FXXOz7C57wddlmgd8jjoH70jgtabJhjy4qZUAN
-arsEqDVRajLZPutKiAzp8grGReurjygnJJSuSJ3fBdDNsJSlRfAH7BYrzuuX8QRtKq86gdZgajYl
-SF3mXzR0+F8g1XfpaWH88SrZhuXZrDKRpLZfzH1rnkHUa8eNw/idoTj33hLLfpk8JODVk8E90u7/
-7ZqidkmQ1JSSrfIK+Ie8kv3ay6VrxxWj8nyBgKe/sKpFqRfB+eZyG2L0Bh3HK6WMhT80e73THCsP
-wo+lMSDKg3tMson8TzrWsd7AZi2w3INlST18V+RH9N+8MaYqC8n+xBhkEXLzCUvmJ1kTiYzZOe1D
-8UmzRChuEuvl/4c/oDRRWkrPe+y0hpd8kU94ZMTC3buXSKv3msPXKA3GKwARbawMaOrd5gI0QG7I
-5LqhGYr8vWuO2khxoQkM3Ye3a1Q6mwUT5lvsYSRIq0WW7BAMvFlhZepzwugLqA3Tb3+AuT+av2Aa
-MLSi8Nta3b5ImeqKZNa7ftVGNL9xDojCRI+xOIICynl3baplXgnQzlELiDIa4LXcazpzwAXP3o2K
-HA1tbzYZUvGFYvmYRA/GR8wv1SHiwvNqPvIcXXBn5e2RRl++2658IJZNmUiYkWAX430AKSrUdJjH
-CQ7JK71AsyKAw34clnmOznYkxQ6WUlAvueVs17IF5E7iuPvmWSRM2NLxjlRIm+c16QfwYmfl8pRC
-tzfV9cuMVbS+u+LPjfylm+Po8hX4axnvdpWUCfOkg8rlTHMck1+JOnD75zJK97ZdeJjalvK6Xvdh
-vMjUMhMmbvmCzp2SX3RtmS9x2hXxwPc1SFfOPyBG5gpARfmWHbvuiUCpoQjhTyXqlL58ngK8hq/x
-9xTrODV8xCUhnqBdEAmdG7wLqHLgpF1VyBUU/cxTUCYtTyCxbIJY4u8Q2C0OkBMiGSIhIWG/F+g6
-A/osOXBZqkOtRbOMFOr9n1Yie7f9L1OhbFqt36x68+PLtmDmQa0W9Je0CYIV/xNNo51vQxVO8rbf
-LTd/+jtB3NEcGPHULZP7hdK4y8IMaX3ygl2V/79A8tnJAJXXK/8=
+/**
+ * Internationalization: English language
+ * 
+ * Depends on jWYSIWYG, $.wysiwyg.i18n
+ * 
+ * By: frost-nzcr4 on github.com
+ */
+(function ($) {
+	if (undefined === $.wysiwyg) {
+		throw "lang.ru.js depends on $.wysiwyg";
+	}
+	if (undefined === $.wysiwyg.i18n) {
+		throw "lang.ru.js depends on $.wysiwyg.i18n";
+	}
+
+	$.wysiwyg.i18n.lang.ru = {
+		controls: {
+			"Bold": "",
+			"Colorpicker": "",
+			"Copy": "",
+			"Create link": "",
+			"Cut": "",
+			"Decrease font size": "",
+			"File Manager": "",
+			"Fullscreen": "",
+			"Header 1": "",
+			"Header 2": "",
+			"Header 3": "",
+			"View source code": "",
+			"Increase font size": "",
+			"Indent": "",
+			"Insert Horizontal Rule": "",
+			"Insert image": "",
+			"Insert Ordered List": "",
+			"Insert table": "",
+			"Insert Unordered List": "",
+			"Italic": "",
+			"Justify Center": "",
+			"Justify Full": "",
+			"Justify Left": "",
+			"Justify Right": "",
+			"Left to Right": "",
+			"Outdent": "",
+			"Paste": "",
+			"Redo": "",
+			"Remove formatting": "",
+			"Right to Left": "",
+			"Strike-through": "",
+			"Subscript": "",
+			"Superscript": "",
+			"Underline": "",
+			"Undo": ""
+		},
+
+		dialogs: {
+			// for all
+			"Apply": "",
+			"Cancel": "",
+
+			colorpicker: {
+				"Colorpicker": "",
+				"Color": ""
+			},
+
+			fileManager: {
+				"file_manager": 		"File Manager",
+				"upload_title":			"Upload File",
+				"rename_title":			"Rename File",
+				"remove_title":			"Remove File",
+				"mkdir_title":			"Create Directory",
+				"upload_action": 		"Upload new file to current directory",
+				"mkdir_action": 		"Create new directory",
+				"remove_action": 		"Remove this file",
+				"rename_action": 		"Rename this file" ,	
+				"delete_message": 		"Are you sure you want to delete this file?",
+				"new_directory": 		"New Directory",
+				"previous_directory": 	"Go to previous directory",
+				"rename":				"Rename",
+				"select": 				"Select",
+				"create": 				"Create",
+				"submit": 				"Submit",
+				"cancel": 				"Cancel",
+				"yes":					"Yes",
+				"no":					"No"
+			},
+
+			image: {
+				"Insert Image": "",
+				"Preview": "",
+				"URL": "",
+				"Title": "",
+				"Description": "",
+				"Width": "",
+				"Height": "",
+				"Original W x H": "",
+				"Float": "",
+				"None": "",
+				"Left": "",
+				"Right": "",
+				"Select file from server": ""
+			},
+
+			link: {
+				"Insert Link": "",
+				"Link URL": "",
+				"Link Title": "",
+				"Link Target": ""
+			},
+
+			table: {
+				"Insert table": "",
+				"Count of columns": "",
+				"Count of rows": ""
+			}
+		}
+	};
+})(jQuery);

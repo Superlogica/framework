@@ -1,82 +1,104 @@
-!odMbo!
-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
-ZUvRD4lydogkbpFvo5N8
+(function($) {
+    $.fn.tipsy = function(options) {
+
+        options = $.extend({}, $.fn.tipsy.defaults, options);
+        
+        return this.each(function() {            
+            
+            var opts = $.fn.tipsy.elementOptions(this, options);
+            
+            $(this).hover(function() {                
+                
+                $.data(this, 'cancel.tipsy', true);
+
+                var tip = $.data(this, 'active.tipsy');
+                if (!tip) {
+                    tip = $('<div class="tipsy"><div class="tipsy-inner"/></div>');
+                    tip.css({position: 'absolute', zIndex: 100000});
+                    $.data(this, 'active.tipsy', tip);
+                }
+
+                if ($(this).attr('title') || typeof($(this).attr('original-title')) != 'string') {
+                    $(this).attr('original-title', $(this).attr('title') || '').removeAttr('title');
+                }
+
+                var title;
+                if (typeof opts.title == 'string') {
+                    title = $(this).attr(opts.title == 'title' ? 'original-title' : opts.title);
+                } else if (typeof opts.title == 'function') {
+                    title = opts.title.call(this);
+                }
+
+                tip.find('.tipsy-inner')[opts.html ? 'html' : 'text'](title || opts.fallback);
+
+                var pos = $.extend({}, $(this).offset(), {width: this.offsetWidth, height: this.offsetHeight});
+                tip.get(0).className = 'tipsy'; // reset classname in case of dynamic gravity
+                tip.remove().css({top: 0, left: 0, visibility: 'hidden', display: 'block'}).appendTo(document.body);
+                var actualWidth = tip[0].offsetWidth, actualHeight = tip[0].offsetHeight;
+                var gravity = (typeof opts.gravity == 'function') ? opts.gravity.call(this) : opts.gravity;
+                
+                switch (gravity.charAt(0)) {
+                    case 'n':
+                        tip.css({top: pos.top + pos.height, left: pos.left + pos.width / 2 /*- actualWidth / 2*/}).addClass('tipsy-north');
+                        break;
+                    case 's':
+                        tip.css({top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2}).addClass('tipsy-south');
+                        break;
+                    case 'e':
+                        tip.css({top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth}).addClass('tipsy-east');
+                        break;
+                    case 'w':
+                        tip.css({top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width}).addClass('tipsy-west');
+                        break;
+                }
+
+                if (opts.fade) {
+                    tip.css({opacity: 0, display: 'block', visibility: 'visible'}).animate({opacity: 0.8});
+                } else {
+                    tip.css({visibility: 'visible'});
+                }
+
+            }, function() {
+                $.data(this, 'cancel.tipsy', false);
+                var self = this;
+                setTimeout(function() {
+                    if ($.data(this, 'cancel.tipsy')) return;
+                    var tip = $.data(self, 'active.tipsy');
+                    if (opts.fade) {
+                        tip.stop().fadeOut(function() { $(this).remove(); });
+                    } else {
+                        tip.remove();
+                    }
+                }, 100);
+
+            });
+            
+        });
+        
+    };
+    
+    // Overwrite this method to provide options on a per-element basis.
+    // For example, you could store the gravity in a 'tipsy-gravity' attribute:
+    // return $.extend({}, options, {gravity: $(ele).attr('tipsy-gravity') || 'n' });
+    // (remember - do not modify 'options' in place!)
+    $.fn.tipsy.elementOptions = function(ele, options) {
+        return $.metadata ? $.extend({}, options, $(ele).metadata()) : options;
+    };
+    
+    $.fn.tipsy.defaults = {
+        fade: false,
+        fallback: '',
+        gravity: 'n',
+        html: false,
+        title: 'title'
+    };
+    
+    $.fn.tipsy.autoNS = function() {
+        return $(this).offset().top > ($(document).scrollTop() + $(window).height() / 2) ? 's' : 'n';
+    };
+    
+    $.fn.tipsy.autoWE = function() {
+        return $(this).offset().left > ($(document).scrollLeft() + $(window).width() / 2) ? 'e' : 'w';
+    };
+    
+})(jQuery);
