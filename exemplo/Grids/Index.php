@@ -1,6 +1,13 @@
 <?php
 
-class Grids_Index extends Superlogica_Js_Grid {    
+class Grids_Index extends Superlogica_Js_Grid {  
+    
+    /**
+     * Mensagem para Grid vazio
+     * @var string
+     */
+    protected $_msgVazio = "Nenhum fornecedor encontrado.";
+    
     
     // Array de botoes do Grid
     protected $_botoes = array(
@@ -14,11 +21,17 @@ class Grids_Index extends Superlogica_Js_Grid {
     );
     
     protected $_colunas = array(
-        'primeira' => array(
-            'label' => 'Coluna principal',
-            'template' => 'Este é o {valor}',
-            'tamanho' => '100%'
-        )
+        'nome' => array(
+            'label' => 'Nome',
+            'template' => '{st_fantasia_fav}',
+            'tamanho' => '80%'
+        ), 
+        
+        'telefone' => array(
+            'label' => 'Telefone',
+            'template' => '{st_telefone_fav}',
+            'tamanho' => '20%'
+        ),         
     );
     
 }

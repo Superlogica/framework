@@ -7,11 +7,13 @@ class IndexController extends Superlogica_Controller_Action {
         $params = $this->_request->getParam('todos'); // Pega todos parametros        
         $api = $this->_api; // Instancia da API já logada
         
-        print_r( $api->action('fornecedores/index'));
-                
-        Superlogica_Response::multipleResponse(array(
-            array( 'status' => 500, 'msg' => 'Erro' ),
-            array( 'status' => 200, 'msg' => 'sucesso' ),
-        ));
+        $api->action('fornecedores/index'); //Faz uma requisição no financeiro, controller fornecedores e action index
+              
+        $response = $api->getData(-1); /*Obtem resposta do financeiro. Paramentos: -1 para pegar todos as linhas do array
+                                                                                    0 para pegar primeira linha*/
+        
+       
+        /*Função padrão para resposta, renderiza os dados no formato JSON*/
+        Superlogica_Response::multipleResponse($response);
     }
 }

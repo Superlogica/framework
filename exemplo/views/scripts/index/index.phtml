@@ -1,18 +1,29 @@
+<?php
+//Resultado da função indexAction que está dentro do actionController
+$response = Superlogica_Response::getResponse();
+
+//instância grid do php, localizado na pasta Grids. Passar array com conteudo desejado
+$grid = new Grids_Index($response['data']);
+
+//instância form escrito em php, localizado na pasta Forms.
+$formNovoFornecedor = new Forms_Fornecedores_Put();
+
+//Titulo da página
+$this->assign('titulo', 'Fornecedores');
+?>
 
 <div id="barraDeFerramentas">
-    <?php echo $this->render('busca.phtml');?>
+    <!--Formulário padrão de busca-->
+    <?php echo $this->render('busca.phtml'); ?>
+    
+    <a href="javascript:void(0);" class="destaque" comportamentos="cliqueAlteraVisibilidade Form.formExibir" divid="<?= $formNovoFornecedor->getAttrib('id') ?>Div" >Novo</a>
+    
+    <div id="<?= $formNovoFornecedor->getAttrib('id') ?>Div" class="blocoEscondido">
+        <?php echo $formNovoFornecedor; ?>
+    </div>             
 </div>
 
-<h2>Exemplos de utilização</h2>
-
-<h3>Grids</h3>
-<?php
-
-$grid = new Grids_Index(array(
-    array('valor' => 'primeiro item'),
-    array('valor' => 'segundo item' )
-));
-
-echo $grid;
-
-?>
+<div>
+    <!--imprime a instância do grid na tela-->
+    <?php echo $grid; ?>
+</div>
