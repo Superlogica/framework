@@ -16,7 +16,11 @@ $this->assign('titulo', 'Fornecedores');
     <!--Formulário padrão de busca-->
     <?php echo $this->render('busca.phtml'); ?>
     
-    <a href="javascript:void(0);" class="destaque" comportamentos="cliqueAlteraVisibilidade Form.formExibir" divid="<?= $formNovoFornecedor->getAttrib('id') ?>Div" >Novo</a>
+    <!--comportamentos tem funções escritas em um arquivo js padrão da superlogica,para adicionar novas funções editar o arquivo localizado em ../views/scripts/js/-->
+    <a href="javascript:void(0);" 
+       class="destaque" 
+       comportamentos="cliqueAlteraVisibilidade Form.formExibir"  
+       divid="<?= $formNovoFornecedor->getAttrib('id') ?>Div" >Novo</a>
     
     <div id="<?= $formNovoFornecedor->getAttrib('id') ?>Div" class="blocoEscondido">
         <?php echo $formNovoFornecedor; ?>

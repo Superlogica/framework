@@ -6,8 +6,9 @@ class IndexController extends Superlogica_Controller_Action {
         
         $params = $this->_request->getParam('todos'); // Pega todos parametros        
         $api = $this->_api; // Instancia da API já logada
-        
-        $api->action('fornecedores/index'); //Faz uma requisição no financeiro, controller fornecedores e action index
+                
+        $pesquisa = $params[0]['pesquisa'];
+        $api->action('fornecedores/index', array('pesquisa' => $pesquisa)); //Faz uma requisição no financeiro, controller fornecedores e action index
               
         $response = $api->getData(-1); /*Obtem resposta do financeiro. Paramentos: -1 para pegar todos as linhas do array
                                                                                     0 para pegar primeira linha*/

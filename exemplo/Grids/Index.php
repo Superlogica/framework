@@ -12,9 +12,9 @@ class Grids_Index extends Superlogica_Js_Grid {
     // Array de botoes do Grid
     protected $_botoes = array(
         array(
-            'acao' => 'editar',
-            'form' => 'Forms_Exemplo_Editar',
-            'titulo' => 'Exemplo de form',
+            'acao' => 'post',
+            'form' => 'Forms_Fornecedores_Post',
+            'titulo' => 'Editar fornecedor',
             'img' => 'post.png',
             'tipo' => 'abaixo',
         )
