@@ -1,0 +1,42 @@
+<?php
+
+    $location = new Superlogica_Location();    
+    $formFile = APPLICATION_PATH."/Clients/".  ucfirst( APPLICATION_ID ) ."/Relatorios/Forms/". strtoupper( $location->getId() ).'.php';
+//    if ( !file_exists($formFile)){
+        
+        $formClass = "Relatorios_Forms_". strtoupper( $location->getId() );
+//    }else{
+//        $formClass = "Clients_".  ucfirst( APPLICATION_ID ) ."_Relatorios_Forms_". strtoupper( $location->getId() );
+//    }
+    $form = new $formClass;
+    $form->setAttrib('comportamentos', $form->getAttrib('comportamentos') ." Form.submeterComDadosDoFormulario" );
+    $form->setDefaults( $location->getParams() );
+
+    $opcoes = $form->getValues();
+
+    $subtitulo = array();
+//    if ($opcoes['exibirNome']) $subtitulo[] = "Com Nome";
+//    if ($opcoes['exibirNomeFantasia']) $subtitulo[] = "Com Nome Fantasia";
+//    if ($opcoes['exibirVencimento']) $subtitulo[] = "Com Vencimento";
+    $subtitulo = trim($this->relatorio->subtitulo) ? $this->relatorio->subtitulo : "Selecionar opções";
+
+    $this->assign('titulo', $this->relatorio->titulo );
+
+     if (count($form->getElements()) > 0) {
+        $this->assign('subtitulo', "<a href='javascript:void(0);' comportamentos='cliqueAlteraVisibilidade' divid=" . $form->getAttrib("id") ."Div >".$subtitulo."</a>" );
+     }
+?>
+
+<div>
+
+    <div id="barraDeFerramentas">
+        <div id="<?php echo $form->getAttrib('id'); ?>Div" class="blocoEscondido clearFix ferramenta">
+            <?php echo $form;?>
+        </div>
+    </div>
+    <br/>
+    <div>
+        <?php echo $this->relatorio;?>
+    </div>
+
+</div>

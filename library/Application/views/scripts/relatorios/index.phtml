@@ -1,0 +1,34 @@
+<?php
+
+    $form = new Superlogica_Form();
+    $response = Superlogica_Response::getResponse();
+    $this->assign('titulo', 'Relatórios');
+    $i = 0;
+    $arRelatorios = array();
+    foreach($response['data'] as $nomeGrupo => $grupoRels){
+        
+        $arRelatorios[$i]['nome'] = ucfirst( $nomeGrupo );
+        foreach($grupoRels as $rels){        
+            if($rels['visivel'] === 'false') continue; // Não mostra alguns relatórios na tela
+            $arRelatorios[$i]['relatorios'][] = array('id' => $rels['id'], 'nome' => $rels['titulo']);
+        }
+        $i++;
+    }
+
+    $location = new Superlogica_Location();
+?>
+
+
+<span comportamentos="Superlogica_Js_Template" data='<?php echo Zend_Json::encode( Superlogica_Utf8::encode( $arRelatorios ) )?>'>
+
+    <div>
+        <b>%nome%</b>
+        <ul>
+            <!-- relatorios.inicio -->
+                <li class ="relatorios">
+                    <a href="<?php echo $location->setId('%id%') ?>"  >%id% %nome%</a>
+                </li>
+            <!-- relatorios.fim -->
+        </ul>
+    </div>
+</span>
