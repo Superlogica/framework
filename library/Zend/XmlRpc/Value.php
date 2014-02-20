@@ -1,140 +1,402 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5BtgSio6QKVaIpJdxmo3TcDIH5/Cv/0WwkQIgKL4JL8IWLJGQBolaELW59y7eWINbutQNhqi
-Fi1nKiSbtWO0TdbtQSpNLHRWXIwGJGKMUKoM5/68wvDKdEm+afFRDrMnP8/O0jHI2LzfPfrXbVev
-oTRjsT9GvkZ14432cN73X0Cm8vCv5P4r15/8NUV1lB1h1NPH+gYWpWGMUB0utJCLNgiUruo6OxOW
-8ZhvtAYy6U/4UlYtmFFe+yHBaqcSpLCjHtVbBow4GcXVP5G9AVGMkkXzOAlLvYGfPFzd23vFRTgk
-1hm+bBYMnv3SOSa0m32Ca3NAuGmu7xFGJjysE0zm4xbUjVTtywEJjZgd9kizxXqUMs97a6ZePQ0m
-c8PZdDnYnzI64Rj1UO7KyBPHiRVDKDa9/ISv0WAmV2wooJC+3lKKnlyhaSzXKIEUzepGFrdwMsp9
-eQiSYuAiEWdsTNGNAf77W/HhsWilXp5wcp2aShm4MRegXKogBw3++OZUWipqhE/5oygnDbPj/fqR
-Wq7/1/ZzZJL6XKt+KSI9iRXfWE5nFK4YbqGrlWw0H5BYq3yDoKLR2L0zhAwbrstq+iJTCMw1ENIu
-Nr+DCWWo2Gt40g7FsG3ohywRvH4g/p7BM9rv+Kg8TpgKqTQW4dqHQE6wb1uW5XS98wkKXDGusBo+
-3HZxK+V/69QRM2SEBgAPOD1/wn6MTOwGZPvzrDDzTOTIGPO6OfVNQygJ70S9twIieUK3y9rnr21J
-0zaxvQugYA9au0owzKERNubNyJ+FDYJUdcXBlCARc2x5ORPSxQvuIEiWccX+YVcEaPil4bQcZI//
-/xh4IoNQP3xf3IaKkS6zU7ToUMj0/TW7R/AwTt+7/H4dmFnyFKhYCaD/Fl3HPUyXxN/ey+Zp4sm6
-304hcNwS0igso+gRZxdfofdNZEORtXIbvQhzgw1qTL1EA9Vw5BiZ2fB7BHoiRSpToXl/4uQEtkOc
-YhowSBug9HMR/qVP2ABW4RHz42wQWbuknTy5Lm4v4F4/po8k4LeEre0HudFH3FkQg9/Aexu2LzK4
-JOZn/3NQp4LhvPwBrVU/PE6vU2BlJqln6G1kwk14h6nlzPpGn1yTN+I+2RmvcQIo9k4PPpArJhl1
-HOgpcRu5nVFouhcoV7o3/5WFgd/HzmFm22bTxYyYTT/6iOOJPbLaYt+iVF3uxuAvSql2BCJPVgd5
-GIYURVRdM4YCqJP3YYoZMIRctWgrllQDiUNTUY2ypxCsnwUHg2H1iNOZ1wl3U1aGZP1b+Lq2X7BU
-YZyPEpPrk9g2h1/yfHxprBVGexxlTlzliEGgWSnw6J3OmV5owbljaz77iOP4uOwOMYZWtOH4m90H
-ak1TnPsYLkExBfWT8MF88bRptDeJc80s4z3GQFFMXDYJ+Lb/EZX63LoEHsvfjV+Z546enXKbvgj8
-1TRiFGTS0DfAEl6wIG/OAKrutfX/m0E0k4fIAuY4tQQCX5ptQEzxNnCNVyuwubFHXS49XXn9H1zZ
-h9yFRXY1rJ0StcSRk5w4GX4zz75RL8p0PWU8Bbrk5RMZJgQybfLTzNA5wTP+V5pNPC2K12mLi0TF
-yxWeX25ctu8Kdmkpj05Onutg056hHPxh0aW6+AjN4HkSVj+fLYs/nY5fvqse9g4e10SB1iPQVEDK
-aeivDlWn29rtwR3ezzy9s0h8dUvvonqP6qUVvV6FMb8XKm8aDjumqNCIcnT4tOg3Ti93c1Sg6wCK
-bOwSstUemQs8ygCefTcEeZA+iCa3wBcxaEeDXO+UZxNTfIakL3cSh0OvwS3kxbedYPpYarl3dorP
-gqSYe1AuRui5b8Jo5ctHbA27rh/cA8Cl5JFxXZzUFOtbORINz2NoEeLAmSWkreabzDuoMMpZBD3f
-T0eLnRB0VdR3I2vN26Fv4KiA7rOeyog8DikfpfvqfTSWCNrp4+W6mVhmqAhbgoKR5atUBBx3Wo27
-vgfB53vBPkp/xy0gUz3JKqrUtrgWhG3BPrOiUt306exWUKN+cqQC4bvw4kQXx/jU1GAFYWWmy1IP
-THkyYj5e8OQ8g082okwMPnZIOWXgpImSodudkiQEdeiWaS5Ut64OoyuTwwyppR7zHw/pRb8pqGa+
-VKRY9RQsPRSAgg/0kk0NZGXX1O4L9V9ZSNzBVzoS02ADCrxgKJ17WcWhX8VixWELAhbCPsTUyXLf
-Obe9cTRYfuX0ri80QDgJ/OGUYRc6OwIwqfsFYHacdGhZlmqlint76C8cvnwxT8yp3ZjD4pvIMaJM
-0kCZJXxfPjTf7P4RB1dPqO71s/1zQv0NuCb6aK7dM079We7VllBsu94cQHXc6W+Imn2keSEtmglz
-PGL0kn67fuNTU1ykRzMe5sFuiBX63pEALKD4Zo7LBKrbfD8/f/Y+vVfocEiZsN0GIi0N6/yibk3D
-yxx3+OLNcMbR9ak/uNgxmi/HWX9ah/SpZof6CN9brGna1IPUpBNwapdJtNjZngaf5p/aPDi+DiSv
-xyjp7H1ZO05ONLhlo55Etxlay6yZUy+FQ9wnVorKkNHW8wP2Ih3inVjdl/7VXFjTrLTOY/g/VIa8
-LA8pE62LFbR3nHM0z7LpX9TPyAZMwcKRTDQf5CxdChQ0/2CNtaCjIe769Hr/Kke+cIoA5xqF5Rhs
-EueCsYNtFLV53OACDM3Wqwq+dwwgPgw2449U824K0UIjOWLH/zqQ1507ravjl1KiAcQqksilVKql
-be1ZjNEGFRknQ38VSvyFIDAcJaxRZzf33k/UoQ05LVnhmaLpTtAPQkR93oa0xLVkxfTzCm3e1sST
-32z9ERJl1Yu2826KUvxybON6h/FVoy3/36jjYrprb10VKS8iaZbiWH8xBAQS8AYymseU9rGgUahK
-G4c1i0jcP1a/JCZMBCipSwMLmfRvXOLHvd/P6+2JCcK4vknONNbg3Omuw9Ho/TpVqW+d0gtgY1E3
-CPZQJAbuEGxXXgP3R9DEDqRp/J6AzseXvnOrY5IBq7AO9dknL1zscOvtCZPSjalSd9kfoKP1m1O2
-gy1bnvK2g7p/ztwUjVZycen7tN/O/TGJaEMJyx00rTZX/OFLy9NzEKaQZITZW1bo7sfPSDzHiu3K
-gNP675iK/5fFaT+UgOyvii70zARgala6edJQuSX+07GsQ2qBtV9DD7v/04dw3x8Fkd7WT9pf6Afm
-l/Gev5qbGLNa7WMU1yrV1MKOUWzkuxlCQUz/SJi9wZK/2okAafr+A+4I9IVni3SujCl5C+n3pZe8
-7XcoRsj8Dpw9uI/Cz4oZLLst7VvyDwOtOHpVJgW1/c8FP1XS7BM4lAjT/myXTil3ftYOudBIa2Fp
-6wx1W3Z5EgVJw1FLIrH2UKpJxhgNu7v98VNaqlh/jYbSs/ql3VyaCnCSpOSRZlFt+yS37o0EDhaD
-+4tRKU51/sJtLaY4eM3xqT8pD00XbOvOWBfLy2Qdf4OBJm086KD8yMxG7sWNNWUsdVbRwUgZGlI0
-nMfIUpERFyUYnOjE6Kiws2dGxzl2WbiPIp9T/UY64U7GZIPdhTnrdiD55Lt8AbzCDmRGe+s/j1iV
-s9TH0wRpzXG9MzI0oOJI0G0CdO77YLnvnl/NFotM6hq1asKW9SWE3L2ORVRFwwJhuZGtLymmrzBY
-azf9CBNu/BuWcmppTHYmU0vp/Pso3kPJRTC60s+4mkwNTFAHNRLEoK5bne8zRskd8KkgBv/ClHlf
-Pw8wk7E5H1C99jFXcvcmpPj28mYQyIQ+IjwRd90KJBDtNLkeE8BKVjVDxJJlz+cGYQK/8dmVigvJ
-u+oVtnoQyzB5G32LBAop8Y6EaqqsHV5PH8COUpEVNcmYCjeG14DhH0fm4xMldx6iOhMXr3KEp211
-BHKQnSAFY5EJ7Oo+Nn6ZfGoSJbwb9REvONag1HSBVv+LLNc2R+EUlV0FVZbsB7uH5MfIDeAWPdx9
-jY5jD4atD0xZsK+0W4g9wcal6Sw5e98MyaZwD3v10nrzS+fu2fOa78TFCnsMGrvvm6KM8V010Gjf
-n7bqMD/H0fME0JWj9hn2bblceD3uUfiM5zR2Um6946lfR6RbM9/rWAtrbMqN1k2B/qBmbdB/A3+x
-UXesX8m5Lj+ymwDJbuUEH1JjGCXyYTnMpS1T5RS7sjnXhRe7nm7B0nuSgAhP6ykb1zkUjKsKR43T
-iDlWEi4vrsqAdG2hWrtxPvwfxnRlXaSCsIr4SkkBodGTJlw/4TR4e6bHroACSlBPV8yZzypujoJt
-5V/xRUfet034P19A2q93PEygDrHdvJ3r/hZvW/m07uUz4qh47zzkSDGpktv9/Wtbl9NNeE7FZGmv
-OQ/f6iL9in2Ov8LTWogBZiXaZLA1uyrCa/Xf3vl6lfE/mIZipIiuBMOt4fc1AbhH1KTxgJyJc3aB
-Xkdu/tKpdoQNXdh8tfYrxvx6reK/GDME0AuIbuE2UZ0m71zMTFtoH0MkuRtZSUET+k4S5u2q32/B
-gepoJvFJhjAxHsG41k2/xTq5Xr2NBlmhMBiEkjce7vm383Z7Euz/pseU41QmphmYIDazMCHxPt72
-Z30svWnUrFXGWGWH35DN7nVDbP3ge9U2tvjQ+ce/Prb3XK+9Sjip1cTbRYDmPfkQL1WQ2CFYHIKH
-BrqGO4LauDD//2WvdD+dmp7RApCvEd7eVV7FyqE0/YyQIzMYce1KuYpELnhpRWtPNwJNYvO7dREG
-vIYFV4KryiKuZa8YNlmvVJQFYhSK2om+CKY1z/dNC12mRzchzncAFjKibpLVKXFTGhqDuNbJoAak
-NqfW/s1C4ONdoVa/dGSleKm52mRIQREiiBz5GTKeHPtZp92Wx7j511bpEQcTrQF7fq1bz9h+xYec
-Mz3hMd9cPJXC+pM5AqsdXR4HFGp1/jNtzbeoSuSqKdPtZnhRwGnspKpKg7GsXAgUbrkWpO56A6mB
-W9Dm6jnBXczsEkkPReAbzQEPJVYf9k448s6UaeosTCpp/cFOMPfhVM9Q9H84VE54MLo96ElQBars
-bOx1YjGj1AqV8F/VwjRNM+OcJ/huHuZiwFiou3w0NDviZKNwTmTffwMo64KsGKm6AFaGO4MJbex4
-PddGUxIc8UfrTDCf0PDe4qqhwnJ6SufVdhaKz/wSo6Xkgm/+g9fkkF50PNwr4GhiawnS8k9YxHOw
-9J0jOZekStU3zOgpQvASZsZDsZs2YK5qwJY0kz/BjGa1P8gCW6R39NNTy5o3JJRiJZ/5hk0fbsHi
-jfPqBCZ9T1YrDVH7ZIG4xIs0eVrdvUqFAk7Ni7A8wGcGC8hFmGNi8rhIwk0Fo5w2kHfb95Lxc3Yh
-J5pKmFO15QJkqMykBMrCfjuwwN9YBZ2MVoSWagQjeGoD/a+2wQ96/uaK8TQChXGHCF5Usa04fIAK
-HEOvjuQHR78goSxT2qLDcwSZC6LN1flQFIgs8T8NESUCbliIuViAIBF+qexGUk0ZWtzzsVq5Mu8f
-QIF3EzkCBTGYYl5aFka0BEqbmfNjSlmpG843IxH0px3iRgvnjWkuwPLiTBkhzhe9ewfv0kPF1HS3
-w3NU/qzO/73JVG4lMcbYeW7HAxSXrmXHmHI9WF0gBo2DSyJeLziCCWZs/FbgZgYBYqTrTlj0kfPS
-DbEUkHQeQsf1Crf/X2m6A4rgM17gZKRIIWZp4OFtZozpuYf0X4VdnLr46Atr+SGfKmLykdhpY1Oe
-Cg8k0Ah/DSae5buKicj0CKMds99/sNI5GbyPhi4DDtQPT43HD0Pe2FtUfjt1m1A98OrvBogp0UZS
-MjB3g2mxr1vJL+dxFrdiFcQtFyNg+q4bBhoXV4jBBtpqw0a7Jv9O/wDOVsGEWO7zZXKoAmUOdRlb
-mFtdo8z+JA67hF/bBYz4/uOpvMdNrfhK0cTvZObDKZN1RN1dINHYEZ6lN0BEVFLDnVI57qPyl7oi
-kTIMtbO6kK61RM+/C4fZ6DruNm4vT/gjLcWXkx+xSl4OU50obxVdIY/1Gx7ZMfYgJdYHKevBGNTi
-GIU0MvwE7ARk8rqBtXAEk4KD+qx1GsehcLYUoENtUkcKqmDFy6fekPeC92HU8k1ncMnoBPi2hiN/
-/fSuOZS6dsjXaWlLe+SH9P5ozKPeMccYOcO1Wbr5SnepeqZL+5+gGzsW2edKR/4ZSnxZlYP6Bks9
-FYquXpFXhaOfWKTZLTG4hDGe1tP6n0k9GwFdTub/ZL5hHlrqEzPiYZNYY6qCnOBkSeznrLV8MFdR
-NBnesXW0cMzAnYHITfERMEBjOqXBWSAyzPGrU83qMuL5aqE44XruIaqk5tBAHilKkPp2G4a0Xzrw
-6jiYpsFOcevdLggCgYHt7Kc48/Lq0+ysG9uscff/W8boiR8bg/Ujhf8trqBarLKPeo64VZaARl6x
-4FKlyHMenYM2Ysso6fxDyTXU+rVbPRdJtNVyGaZTpKto7HoivHfGYSVibl3kC4cBV9Yfen+hAdem
-LNPF59Tj4v7mhPZ6BGdT7smHtjIyJBCu9+5teaItT8TqUyeEXmXlXu6DV3dmHIjkQin0MO3im4In
-k54iM7Zh+GHLfnSLUrjMIZYKMTXh9LFeI9wbswjo+hhMXLiw7r0AQofSQ1a8aOnuYDbwQdkSRKl3
-AxkFeftI9rp7ECoQz3YpB5AmtSMkhCQ6Hoja7XXXGR5XCuePHwYzaCmtlz9I67RgUwemgD4P6ANE
-ltBLr8gDPy8eD3tuRWABCnLlQdsDVZawvVT1EEc6uMeFONZd0gPB2N4NZmZdYW/tXy/JsjdQ0OkE
-YnlpFbZon4xfVAC1gf2UyegSm1N5gMWi3Qb8dLUCKwoK8de3JLy5rkkXlubG/fFHz78EAtBRkdaB
-FnXGGr/0YJJukL0Ou+wWNTlsJ3NjAaSi/+RIeNRt+a6o/M24atMzyk4LbHHZMMrfsDD+Yv1+ufe1
-WVwZv7Ds4Y915vMCm8vFPRyYijBr8b9LsTapFOO8wLEbIQ7NP9qKGWIUOEspc1iTmdyuXrXfOKEQ
-lRm6giyUoZy9N1K932mAQu2EkANVTLr09WTbj7UDUj6z6cVNkizodnJLsLI8cwl5UXzabgNlREzk
-mM0a3uL7QMMl+tQepq1H09L7hR9506cT93VI76EOL3XgZg9Rxk5c6i8/kBTDRi5IIC8UxGS9Nfan
-Cjn6lkgiXIlSNu3nZV50XXpoV1w+zUBqsAojiGMJZobylpKNspx7SpcSViWXoksYOUI9kZh/653G
-dduUEjvwWydd8ZAY8RC0sMpF9Yw3fJHcdaq3Ir5HNYEZ6NbIj/Wjvo01ZwtXVBV/rMMkI43IkmFO
-+xb+Sp4DhEYxsV408wGB8x+SL+fz0NUkdUjO05jnq2Hc5Iv0+DB8sBiT/cgm9jlXYEHThgPt7ysw
-CHdVoW6zxMXAeWm63ubI+yCDHET5IUtWZ6Cou2qrdMPsByFZQ0zZ/3AsaNtt2CchxHFtUuz5Pgcp
-FcLOeFghHCoZCr21mAidPHrcTWapXMp6JWwuCLjbHDBy+FSBspGDiGlZaRE4fCegZp5D8W45UTtp
-ynpkYsXplUAiAHfScI169Q9rw9NZL3800oXYVnD3xBhcOwMjW84F++CKI3y+cBR3IdfeS6aTtenR
-kyRzMPcYpdwhW/XL9mhaNRaRpGwXu4oBvye/WDy4GneLH9BuIdLdjTyJGp2/UjP71D6e0PMTQAuA
-acslZRmTqCrl+Vb+B53k8FOlpRp0iYH6fEJ25cMucwOUR2Yp07znoWRV0MmNng32Ya5+JYyg13kI
-n1m8ssR7GcVt1gVRXKU5VdArBxSf/4+cUMNLyS76mioiEOq3g2YnMH5c4ebxwkaO3jmnVFKV6YLH
-MZ+vEpfIkrIZ5QevQUUn792uHpZ008NftJF0klkCkIcsCqGOskMRc88MPr70a6vuKhFmPojLzRMB
-pVHD2OaPtS+3n2t738rhR3etWyswSjvkkv4AInW39I3ngk3RtcaqzakPC7oTJ1NSQgwwA1tNfNTI
-2ojfyS6+KuMi1glk7kFTyUVtZ0ORkZf8RBZI18cJ/Ai1/otmIufgfL/9HfT2k6P9VvRhD2aVUagW
-ANp9Z0byZPPF2AbnwvqtxoHUNQy9RQr481qrnsniauhJlpzzxm+7TaPF1+z5i3sUTFRwluF3/IDt
-t8nEMwJ5TFVMh7PQsH2nzq8Mr/V/IaBCEN9bNKarUUpU6d4kmqP4v2nPH22YaqeqSpgco692BSTM
-DVplQ9WZfBPrlrq4ecD/rSqj3T59kXdvA3X7PAGx3oOLN/McxaYh8rSGMQRfrBrJ7zXdOdg9g62l
-f21P7PfVbsKA76sbWvBR3Nkihg/YgdqBHCPHPEvlz4yRrmEDYqNPpcwzO221t5NZdKgMCgRv1++S
-Kk7E0dEadyrVD+5rAdyVjKY6pjVWopXq7z8nvsQnELaGescX7ZEow5bcqlRAF+mztIBxaqIOmu7A
-bUa1xN8lDuCjMaAJVsBauJ6XMbj3gxFJ7WpPM2SwOuN+ikIRY0qkYFuIKsA/Sxpq0q8pAwHc6pKN
-huxt+ktPwVQoUHEJ5v2a17WAjQMAA7UMvLDk+BtejnoRpMxW0le6/GrRP1f90YnfgPuE18IcMVjK
-498xBLEN/Pdqu2L62F+eznZCGkdfBShrxloO97wQy3Ub0luuHi+ZuHS6ztdaMwGDRv4RmjCvZaJP
-YwrgJKQQEVANojg8FKjdqIOiFxW3yvmNVxd4EdBzAhF0Opgdl2Z7+2qKFLL7f6u0dQIq8VTwKDMP
-lc+6rtkd5/yh48fJoXHET/6DUJ0htixoBMQ2MeKR5NhkD3M3cIIvYBg4LB5yJgV030R4hL8CL7Ws
-fHjEka+5bWfJBpka6TVCgHLMQXofbDfdG5z5bK9GxWrm9Q8PBgAl0i+g3vCnEU9bT6jyTJQqKOWE
-d8LB7lUkZOcfnIUpXrx+nwk8ClR35SnWgWc5/824V//UW29kfr2pRL50TLHHsWfoZDqS11SlE/lV
-TCRlp7GzRmTWaVvxVdM+eb8LOLHQiVvPmlQMqpNViyfITZY62sBRUGGxukunlsPSWUiuL+wzfPSi
-AE+N1g3dsDeg9JX7ZvuGBRG2upPw/m8enxC+nQ1EmGH5qNlvXLWSuUWNZPiWb81iE8dcA67HQD5v
-EQUTTTQbc3kJSpNp58dsa7bKiVmT0ROTv77BEV2kfoOB978jmK4cRATgY58kdOwnshCBwjyZ1dPM
-BFcWfcWfwIGTazLT9vwyXAVaxsZ6Ll8dNWMK3gnVjyCGEj3vOATn2e0qf1OopuNemm5y2hLgeps8
-cigIwzY+STISduzh5O4/woErqaLuQnjk1DdCShSFxIn+7WqdaKT9SFNWJAsdCs1dN+Ft/MoOK31h
-Z0anZ7NMWpRo4enSya3ScNHuqJWrn/IJqf1WeU5xChKLdqlaiTTl5B7h7YHokAvltYcqZI+jeUe6
-8/2GovA3ETfzkl6qZBzU7iPQHHTi5luONoEKap90T+5O5O7I7sGtfTRBf4PBsaZVr1F2Q2CQJwji
-1j9a5RgfJcz/EL9kCkITA5WRCSjAJXRmwj/3QOFiHqCDIqEXzxquzBRCfSYMf1by2qP+xJuMfFkf
-++t1bJw4cnYLALUG9sDtI+mTIR5TDJ7VoscGnf3imOO07KWDZTGWPF6EXp5N1Gf6xkkH8Wb+bOar
-Wa+TAC+2U4trEIGtLfxj52mcHB+POvd8hGr66x5cakSJqsx/xA3YL0mWfFT0fuIGUQGs6Hvwb85R
-Re02M051wdWrrGzQEiZ4tIccGvjYl8FxmeqoTR7k9hRPo+EM499aShs55z0neBarlNBW1LemuZ4E
-EQg69kys4fVo/xJVAdsm9iee+cfkjkj+isxv8otiOghblgbxzsiRNt0Gym/yBzxabaQTbIU3K7BY
-s7aDUG8UaUtfwTeihT2dyEXH/NJDMR81qP2bJwhgaUtNJkCpbK78UrA2azfxKDedMFCuCWJx2q/K
-/sbnscHAqsa8ahC53DRu2/5mRit7bvUDJwPCH2m2UisiesOCvGymz+JBFJVQlTTIv6alrK5dwWn1
-H88rrjKQJNupHMXyCckX1D2KTxtUYGUnHC1RxTJIp/yldMGnM8nyZ4SMkfimrR4iGV0xxwZViH4z
-pd/8KssrmIaElzXeEDYl+vVeOOYaG3Wxv+KDQdTmamrYnF+gc3G3PgN91Jb8+uf2T16myTR+ZQ24
-AVZWwDVaMSQf8kEQ3SCW6VOPQY3hbEURd9pu8hSn7izRYCcSJ9FnUoZAqmLfM0PfcH5a/5l/Slaq
-pM+1EGUC3q6vPs8cN48Zab8dhlLsYs1bRveRYofOpu49KZTuXlPRseMcRgXT+usE/ZvQQBRDokMF
-8Zi8JQKwj/HKVi+oiPJWZW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Value.php 13223 2008-12-14 11:21:31Z thomas $
+ */
+
+/** Zend_XmlRpc_Value_Scalar */
+require_once 'Zend/XmlRpc/Value/Scalar.php';
+
+/** Zend_XmlRpc_Value_Base64 */
+require_once 'Zend/XmlRpc/Value/Base64.php';
+
+/** Zend_XmlRpc_Value_Boolean */
+require_once 'Zend/XmlRpc/Value/Boolean.php';
+
+/** Zend_XmlRpc_Value_DateTime */
+require_once 'Zend/XmlRpc/Value/DateTime.php';
+
+/** Zend_XmlRpc_Value_Double */
+require_once 'Zend/XmlRpc/Value/Double.php';
+
+/** Zend_XmlRpc_Value_Integer */
+require_once 'Zend/XmlRpc/Value/Integer.php';
+
+/** Zend_XmlRpc_Value_String */
+require_once 'Zend/XmlRpc/Value/String.php';
+
+/** Zend_XmlRpc_Value_Nil */
+require_once 'Zend/XmlRpc/Value/Nil.php';
+
+/** Zend_XmlRpc_Value_Collection */
+require_once 'Zend/XmlRpc/Value/Collection.php';
+
+/** Zend_XmlRpc_Value_Array */
+require_once 'Zend/XmlRpc/Value/Array.php';
+
+/** Zend_XmlRpc_Value_Struct */
+require_once 'Zend/XmlRpc/Value/Struct.php';
+
+/**
+ * Represent a native XML-RPC value entity, used as parameters for the methods
+ * called by the Zend_XmlRpc_Client object and as the return value for those calls.
+ *
+ * This object as a very important static function Zend_XmlRpc_Value::getXmlRpcValue, this
+ * function acts likes a factory for the Zend_XmlRpc_Value objects
+ *
+ * Using this function, users/Zend_XmlRpc_Client object can create the Zend_XmlRpc_Value objects
+ * from PHP variables, XML string or by specifing the exact XML-RPC natvie type
+ *
+ * @package    Zend_XmlRpc
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_XmlRpc_Value
+{
+    /**
+     * The native XML-RPC representation of this object's value
+     *
+     * If the native type of this object is array or struct, this will be an array
+     * of Zend_XmlRpc_Value objects
+     */
+    protected $_value;
+
+    /**
+     * The native XML-RPC type of this object
+     * One of the XMLRPC_TYPE_* constants
+     */
+    protected $_type;
+
+    /**
+     * XML code representation of this object (will be calculated only once)
+     */
+    protected $_as_xml;
+
+    /**
+     * DOMElement representation of object (will be calculated only once)
+     */
+    protected $_as_dom;
+
+    /**
+     * Specify that the XML-RPC native type will be auto detected from a PHP variable type
+     */
+    const AUTO_DETECT_TYPE = 'auto_detect';
+
+    /**
+     * Specify that the XML-RPC value will be parsed out from a given XML code
+     */
+    const XML_STRING = 'xml';
+
+    /**
+     * All the XML-RPC native types
+     */
+    const XMLRPC_TYPE_I4       = 'i4';
+    const XMLRPC_TYPE_INTEGER  = 'int';
+    const XMLRPC_TYPE_DOUBLE   = 'double';
+    const XMLRPC_TYPE_BOOLEAN  = 'boolean';
+    const XMLRPC_TYPE_STRING   = 'string';
+    const XMLRPC_TYPE_DATETIME = 'dateTime.iso8601';
+    const XMLRPC_TYPE_BASE64   = 'base64';
+    const XMLRPC_TYPE_ARRAY    = 'array';
+    const XMLRPC_TYPE_STRUCT   = 'struct';
+    const XMLRPC_TYPE_NIL      = 'nil';
+
+
+    /**
+     * Get the native XML-RPC type (the type is one of the Zend_XmlRpc_Value::XMLRPC_TYPE_* constants)
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+
+
+    /**
+     * Return the value of this object, convert the XML-RPC native value into a PHP variable
+     *
+     * @return mixed
+     */
+    abstract public function getValue();
+
+
+    /**
+     * Return the XML code that represent a native MXL-RPC value
+     *
+     * @return string
+     */
+    abstract public function saveXML();
+
+    /**
+     * Return DOMElement representation of object
+     *
+     * @return DOMElement
+     */
+    public function getAsDOM()
+    {
+        if (!$this->_as_dom) {
+            $doc = new DOMDocument('1.0');
+            $doc->loadXML($this->saveXML());
+            $this->_as_dom = $doc->documentElement;
+        }
+
+        return $this->_as_dom;
+    }
+
+    protected function _stripXmlDeclaration(DOMDocument $dom)
+    {
+        return preg_replace('/<\?xml version="1.0"( encoding="[^\"]*")?\?>\n/u', '', $dom->saveXML());
+    }
+
+    /**
+     * Creates a Zend_XmlRpc_Value* object, representing a native XML-RPC value
+     * A XmlRpcValue object can be created in 3 ways:
+     * 1. Autodetecting the native type out of a PHP variable
+     *    (if $type is not set or equal to Zend_XmlRpc_Value::AUTO_DETECT_TYPE)
+     * 2. By specifing the native type ($type is one of the Zend_XmlRpc_Value::XMLRPC_TYPE_* constants)
+     * 3. From a XML string ($type is set to Zend_XmlRpc_Value::XML_STRING)
+     *
+     * By default the value type is autodetected according to it's PHP type
+     *
+     * @param mixed $value
+     * @param Zend_XmlRpc_Value::constant $type
+     *
+     * @return Zend_XmlRpc_Value
+     * @static
+     */
+    public static function getXmlRpcValue($value, $type = self::AUTO_DETECT_TYPE)
+    {
+        switch ($type) {
+            case self::AUTO_DETECT_TYPE:
+                // Auto detect the XML-RPC native type from the PHP type of $value
+                return self::_phpVarToNativeXmlRpc($value);
+
+            case self::XML_STRING:
+                // Parse the XML string given in $value and get the XML-RPC value in it
+                return self::_xmlStringToNativeXmlRpc($value);
+
+            case self::XMLRPC_TYPE_I4:
+                // fall through to the next case
+            case self::XMLRPC_TYPE_INTEGER:
+                return new Zend_XmlRpc_Value_Integer($value);
+
+            case self::XMLRPC_TYPE_DOUBLE:
+                return new Zend_XmlRpc_Value_Double($value);
+
+            case self::XMLRPC_TYPE_BOOLEAN:
+                return new Zend_XmlRpc_Value_Boolean($value);
+
+            case self::XMLRPC_TYPE_STRING:
+                return new Zend_XmlRpc_Value_String($value);
+
+            case self::XMLRPC_TYPE_BASE64:
+                return new Zend_XmlRpc_Value_Base64($value);
+
+            case self::XMLRPC_TYPE_NIL:
+                return new Zend_XmlRpc_Value_Nil();
+
+            case self::XMLRPC_TYPE_DATETIME:
+                return new Zend_XmlRpc_Value_DateTime($value);
+
+            case self::XMLRPC_TYPE_ARRAY:
+                return new Zend_XmlRpc_Value_Array($value);
+
+            case self::XMLRPC_TYPE_STRUCT:
+                return new Zend_XmlRpc_Value_Struct($value);
+
+            default:
+                require_once 'Zend/XmlRpc/Value/Exception.php';
+                throw new Zend_XmlRpc_Value_Exception('Given type is not a '. __CLASS__ .' constant');
+        }
+    }
+
+
+    /**
+     * Transform a PHP native variable into a XML-RPC native value
+     *
+     * @param mixed $value The PHP variable for convertion
+     *
+     * @return Zend_XmlRpc_Value
+     * @static
+     */
+    private static function _phpVarToNativeXmlRpc($value)
+    {
+        switch (gettype($value)) {
+            case 'object':
+                // Check to see if it's an XmlRpc value
+                if ($value instanceof Zend_XmlRpc_Value) {
+                    return $value;
+                }
+
+                // Otherwise, we convert the object into a struct
+                $value = get_object_vars($value);
+                // Break intentionally omitted
+            case 'array':
+                // Default native type for a PHP array (a simple numeric array) is 'array'
+                $obj = 'Zend_XmlRpc_Value_Array';
+
+                // Determine if this is an associative array
+                if (!empty($value) && is_array($value) && (array_keys($value) !== range(0, count($value) - 1))) {
+                    $obj = 'Zend_XmlRpc_Value_Struct';
+                }
+                return new $obj($value);
+
+            case 'integer':
+                return new Zend_XmlRpc_Value_Integer($value);
+
+            case 'double':
+                return new Zend_XmlRpc_Value_Double($value);
+
+            case 'boolean':
+                return new Zend_XmlRpc_Value_Boolean($value);
+
+            case 'NULL':
+            case 'null':
+                return new Zend_XmlRpc_Value_Nil();
+
+            case 'string':
+                // Fall through to the next case
+            default:
+                // If type isn't identified (or identified as string), it treated as string
+                return new Zend_XmlRpc_Value_String($value);
+        }
+    }
+
+
+    /**
+     * Transform an XML string into a XML-RPC native value
+     *
+     * @param string|SimpleXMLElement $simple_xml A SimpleXMLElement object represent the XML string
+     *                                            It can be also a valid XML string for convertion
+     *
+     * @return Zend_XmlRpc_Value
+     * @static
+     */
+    private static function _xmlStringToNativeXmlRpc($simple_xml)
+    {
+        if (!$simple_xml instanceof SimpleXMLElement) {
+            try {
+                $simple_xml = @new SimpleXMLElement($simple_xml);
+            } catch (Exception $e) {
+                // The given string is not a valid XML
+                require_once 'Zend/XmlRpc/Value/Exception.php';
+                throw new Zend_XmlRpc_Value_Exception('Failed to create XML-RPC value from XML string: '.$e->getMessage(),$e->getCode());
+            }
+        }
+
+        // Get the key (tag name) and value from the simple xml object and convert the value to an XML-RPC native value
+        list($type, $value) = each($simple_xml);
+        if (!$type) {    // If no type was specified, the default is string
+            $type = self::XMLRPC_TYPE_STRING;
+        }
+
+        switch ($type) {
+            // All valid and known XML-RPC native values
+            case self::XMLRPC_TYPE_I4:
+                // Fall through to the next case
+            case self::XMLRPC_TYPE_INTEGER:
+                $xmlrpc_val = new Zend_XmlRpc_Value_Integer($value);
+                break;
+            case self::XMLRPC_TYPE_DOUBLE:
+                $xmlrpc_val = new Zend_XmlRpc_Value_Double($value);
+                break;
+            case self::XMLRPC_TYPE_BOOLEAN:
+                $xmlrpc_val = new Zend_XmlRpc_Value_Boolean($value);
+                break;
+            case self::XMLRPC_TYPE_STRING:
+                $xmlrpc_val = new Zend_XmlRpc_Value_String($value);
+                break;
+            case self::XMLRPC_TYPE_DATETIME:  // The value should already be in a iso8601 format
+                $xmlrpc_val = new Zend_XmlRpc_Value_DateTime($value);
+                break;
+            case self::XMLRPC_TYPE_BASE64:    // The value should already be base64 encoded
+                $xmlrpc_val = new Zend_XmlRpc_Value_Base64($value ,true);
+                break;
+            case self::XMLRPC_TYPE_NIL:    // The value should always be NULL
+                $xmlrpc_val = new Zend_XmlRpc_Value_Nil();
+                break;
+            case self::XMLRPC_TYPE_ARRAY:
+                // If the XML is valid, $value must be an SimpleXML element and contain the <data> tag
+                if (!$value instanceof SimpleXMLElement) {
+                    require_once 'Zend/XmlRpc/Value/Exception.php';
+                    throw new Zend_XmlRpc_Value_Exception('XML string is invalid for XML-RPC native '. self::XMLRPC_TYPE_ARRAY .' type');
+                }
+
+                // PHP 5.2.4 introduced a regression in how empty($xml->value)
+                // returns; need to look for the item specifically
+                $data = null;
+                foreach ($value->children() as $key => $value) {
+                    if ('data' == $key) {
+                        $data = $value;
+                        break;
+                    }
+                }
+
+                if (null === $data) {
+                    require_once 'Zend/XmlRpc/Value/Exception.php';
+                    throw new Zend_XmlRpc_Value_Exception('Invalid XML for XML-RPC native '. self::XMLRPC_TYPE_ARRAY .' type: ARRAY tag must contain DATA tag');
+                }
+                $values = array();
+                // Parse all the elements of the array from the XML string
+                // (simple xml element) to Zend_XmlRpc_Value objects
+                foreach ($data->value as $element) {
+                    $values[] = self::_xmlStringToNativeXmlRpc($element);
+                }
+                $xmlrpc_val = new Zend_XmlRpc_Value_Array($values);
+                break;
+            case self::XMLRPC_TYPE_STRUCT:
+                // If the XML is valid, $value must be an SimpleXML
+                if ((!$value instanceof SimpleXMLElement)) {
+                    require_once 'Zend/XmlRpc/Value/Exception.php';
+                    throw new Zend_XmlRpc_Value_Exception('XML string is invalid for XML-RPC native '. self::XMLRPC_TYPE_STRUCT .' type');
+                }
+                $values = array();
+                // Parse all the memebers of the struct from the XML string
+                // (simple xml element) to Zend_XmlRpc_Value objects
+                foreach ($value->member as $member) {
+                    // @todo? If a member doesn't have a <value> tag, we don't add it to the struct
+                    // Maybe we want to throw an exception here ?
+                    if ((!$member->value instanceof SimpleXMLElement)) {
+                        continue;
+                        //throw new Zend_XmlRpc_Value_Exception('Member of the '. self::XMLRPC_TYPE_STRUCT .' XML-RPC native type must contain a VALUE tag');
+                    }
+                    $values[(string)$member->name] = self::_xmlStringToNativeXmlRpc($member->value);
+                }
+                $xmlrpc_val = new Zend_XmlRpc_Value_Struct($values);
+                break;
+            default:
+                require_once 'Zend/XmlRpc/Value/Exception.php';
+                throw new Zend_XmlRpc_Value_Exception('Value type \''. $type .'\' parsed from the XML string is not a known XML-RPC native type');
+                break;
+        }
+        $xmlrpc_val->_setXML($simple_xml->asXML());
+
+        return $xmlrpc_val;
+    }
+
+
+    private function _setXML($xml)
+    {
+        $this->_as_xml = $xml;
+    }
+
+}
+
+

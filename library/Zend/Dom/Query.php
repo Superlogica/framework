@@ -1,76 +1,221 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-1OXAyfdhbLWWkqANGiS=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dom
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Dom_Query_Css2Xpath
+ */
+require_once 'Zend/Dom/Query/Css2Xpath.php';
+
+/**
+ * @see Zend_Dom_Query_Result
+ */
+require_once 'Zend/Dom/Query/Result.php';
+
+/**
+ * Query DOM structures based on CSS selectors and/or XPath
+ * 
+ * @package    Zend_Dom
+ * @subpackage Query
+ * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ */
+class Zend_Dom_Query
+{
+    /**#@+
+     * @const string Document types
+     */
+    const DOC_XML   = 'docXml';
+    const DOC_HTML  = 'docHtml';
+    const DOC_XHTML = 'docXhtml';
+    /**#@-*/
+
+    /**
+     * @var string
+     */
+    protected $_document;
+
+    /**
+     * Document type
+     * @var string
+     */
+    protected $_docType;
+
+    /**
+     * Constructor
+     * 
+     * @param  null|string $document 
+     * @return void
+     */
+    public function __construct($document = null)
+    {
+        if (null !== $document) {
+            $this->setDocument($document);
+        }
+    }
+
+    /**
+     * Set document to query
+     * 
+     * @param  string $document 
+     * @return Zend_Dom_Query
+     */
+    public function setDocument($document)
+    {
+        if ('<?xml' == substr(trim($document), 0, 5)) {
+            return $this->setDocumentXml($document);
+        }
+        if (strstr($document, 'DTD XHTML')) {
+            return $this->setDocumentXhtml($document);
+        }
+        return $this->setDocumentHtml($document);
+    }
+
+    /**
+     * Register HTML document 
+     * 
+     * @param  string $document 
+     * @return Zend_Dom_Query
+     */
+    public function setDocumentHtml($document)
+    {
+        $this->_document = (string) $document;
+        $this->_docType  = self::DOC_HTML;
+        return $this;
+    }
+
+    /**
+     * Register XHTML document
+     * 
+     * @param  string $document 
+     * @return Zend_Dom_Query
+     */
+    public function setDocumentXhtml($document)
+    {
+        $this->_document = (string) $document;
+        $this->_docType  = self::DOC_XHTML;
+        return $this;
+    }
+
+    /**
+     * Register XML document
+     * 
+     * @param  string $document 
+     * @return Zend_Dom_Query
+     */
+    public function setDocumentXml($document)
+    {
+        $this->_document = (string) $document;
+        $this->_docType  = self::DOC_XML;
+        return $this;
+    }
+
+    /**
+     * Retrieve current document
+     * 
+     * @return string
+     */
+    public function getDocument()
+    {
+        return $this->_document;
+    }
+
+    /**
+     * Get document type
+     * 
+     * @return string
+     */
+    public function getDocumentType()
+    {
+        return $this->_docType;
+    }
+
+    /**
+     * Perform a CSS selector query
+     * 
+     * @param  string $query 
+     * @return Zend_Dom_Query_Result
+     */
+    public function query($query)
+    {
+        $xpathQuery = Zend_Dom_Query_Css2Xpath::transform($query);
+        return $this->queryXpath($xpathQuery, $query);
+    }
+
+    /**
+     * Perform an XPath query
+     * 
+     * @param  string $xpathQuery
+     * @param  string $query CSS selector query
+     * @return Zend_Dom_Query_Result
+     */
+    public function queryXpath($xpathQuery, $query = null)
+    {
+        if (null === ($document = $this->getDocument())) {
+            require_once 'Zend/Dom/Exception.php';
+            throw new Zend_Dom_Exception('Cannot query; no document registered');
+        }
+
+        $domDoc = new DOMDocument;
+        $type   = $this->getDocumentType();
+        switch ($type) {
+            case self::DOC_XML:
+                $success = @$domDoc->loadXML($document);
+                break;
+            case self::DOC_HTML:
+            case self::DOC_XHTML:
+            default:
+                $success = @$domDoc->loadHTML($document);
+                break;
+        }
+
+        if (!$success) {
+            require_once 'Zend/Dom/Exception.php';
+            throw new Zend_Dom_Exception(sprintf('Error parsing document (type == %s)', $type));
+        }
+
+        $nodeList   = $this->_getNodeList($domDoc, $xpathQuery);
+        return new Zend_Dom_Query_Result($query, $xpathQuery, $domDoc, $nodeList);
+    }
+
+    /**
+     * Prepare node list
+     * 
+     * @param  DOMDocument $document
+     * @param  string|array $xpathQuery
+     * @return array
+     */
+    protected function _getNodeList($document, $xpathQuery)
+    {
+        $xpath      = new DOMXPath($document);
+        $xpathQuery = (string) $xpathQuery;
+        if (preg_match_all('|\[contains\((@[a-z0-9_-]+),\s?\' |i', $xpathQuery, $matches)) {
+            foreach ($matches[1] as $attribute) {
+                $queryString = '//*[' . $attribute . ']';
+                $attributeName = substr($attribute, 1);
+                $nodes = $xpath->query($queryString);
+                foreach ($nodes as $node) {
+                    $attr = $node->attributes->getNamedItem($attributeName);
+                    $attr->value = ' ' . $attr->value . ' ';
+                }
+            }
+        }
+        return $xpath->query($xpathQuery);
+    }
+}

@@ -1,200 +1,503 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Console_GetOpt
+ */
+require_once 'Zend/Console/Getopt.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Client_Console_ArgumentParser implements Zend_Tool_Framework_Registry_EnabledInterface 
+{
+    
+    /**
+     * @var Zend_Tool_Framework_Registry_Interface
+     */
+    protected $_registry = null;
+
+    /**
+     * @var Zend_Tool_Framework_Client_Request
+     */
+    protected $_request = null;
+
+    /**
+     * @var Zend_Tool_Framework_Client_Response
+     */
+    protected $_response = null;
+
+    /**#@+
+     * @var array
+     */
+    protected $_argumentsOriginal = null;
+    protected $_argumentsWorking  = null;
+    /**#@-*/
+
+    /**
+     * @var bool
+     */
+    protected $_help = false;
+    protected $_helpKnownAction = false;
+    protected $_helpKnownProvider = false;
+    protected $_helpKnownSpecialty = false;
+    
+    
+    /**
+     * setArguments
+     *
+     * @param array $arguments
+     * @return Zend_Tool_Framework_Client_Console_ArgumentParser
+     */
+    public function setArguments(Array $arguments)
+    {
+        $this->_argumentsOriginal = $this->_argumentsWorking = $arguments;
+        return $this;
+    }
+    
+    /**
+     * setRegistry()
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     * @return Zend_Tool_Framework_Client_Console_ArgumentParser
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        // get the client registry
+        $this->_registry = $registry;
+        
+        // set manifest repository, request, response for easy access
+        $this->_manifestRepository = $this->_registry->getManifestRepository();
+        $this->_request  = $this->_registry->getRequest();
+        $this->_response = $this->_registry->getResponse();
+        return $this;
+    }
+    
+    /**
+     * Parse() - This method does the work of parsing the arguments into the enpooint request,
+     * this will also (during help operations) fill the response in with information as needed
+     *
+     * @return null
+     */
+    public function parse()
+    {
+
+        if ($this->_request == null || $this->_response == null) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('The client registry must have both a request and response registered.');
+        }
+        
+        // setup the help options
+        $helpResponseOptions = array();
+        
+        // check to see if the first cli arg is the script name
+        if ($this->_argumentsWorking[0] == $_SERVER['SCRIPT_NAME' ]) {
+            array_shift($this->_argumentsWorking);
+        }
+
+        // process global options
+        try {
+            $this->_parseGlobalPart();
+        } catch (Zend_Tool_Framework_Client_Exception $exception) {
+            $this->_createHelpResponse(array('error' => $exception->getMessage()));
+            return;
+        }
+
+        // ensure there are arguments left
+        if (count($this->_argumentsWorking) == 0) {
+            $this->_request->setDispatchable(false); // at this point request is not dispatchable
+            
+            // check to see if this was a help request
+            if ($this->_help) {
+                $this->_createHelpResponse();
+            } else {
+                $this->_createHelpResponse(array('error' => 'An action and provider is required.'));
+            }
+            return;
+        }
+
+        // process the action part of the command line
+        try {
+            $this->_parseActionPart();
+        } catch (Zend_Tool_Framework_Client_Exception $exception) {
+            $this->_request->setDispatchable(false);
+            $this->_createHelpResponse(array('error' => $exception->getMessage()));
+            return;
+        }
+
+        if ($this->_helpKnownAction) {
+            $helpResponseOptions = array_merge(
+                $helpResponseOptions, 
+                array('actionName' => $this->_request->getActionName())
+                );
+        }
+        
+        /* @TODO Action Parameter Requirements */
+
+        // make sure there are more "words" on the command line
+        if (count($this->_argumentsWorking) == 0) {
+            $this->_request->setDispatchable(false); // at this point request is not dispatchable
+            
+            // check to see if this is a help request
+            if ($this->_help) {
+                $this->_createHelpResponse($helpResponseOptions);
+            } else {
+                $this->_createHelpResponse(array_merge($helpResponseOptions, array('error' => 'A provider is required.')));
+            }
+            return;
+        }
+
+        
+        // process the provider part of the command line
+        try {
+            $this->_parseProviderPart();
+        } catch (Zend_Tool_Framework_Client_Exception $exception) {
+            $this->_request->setDispatchable(false);
+            $this->_createHelpResponse(array('error' => $exception->getMessage()));
+            return;
+        }
+        
+        if ($this->_helpKnownProvider) {
+            $helpResponseOptions = array_merge(
+                $helpResponseOptions, 
+                array('providerName' => $this->_request->getProviderName())
+                );
+        }
+
+        if ($this->_helpKnownSpecialty) {
+            $helpResponseOptions = array_merge(
+                $helpResponseOptions, 
+                array('specialtyName' => $this->_request->getSpecialtyName())
+                );
+        }
+        
+        // if there are arguments on the command line, lets process them as provider options
+        if (count($this->_argumentsWorking) != 0) {
+            $this->_parseProviderOptionsPart();
+        }
+
+        // if there is still arguments lingering around, we can assume something is wrong
+        if (count($this->_argumentsWorking) != 0) {
+            $this->_request->setDispatchable(false); // at this point request is not dispatchable
+            if ($this->_help) {
+                $this->_createHelpResponse($helpResponseOptions);
+            } else {
+                $this->_createHelpResponse(array_merge(
+                    $helpResponseOptions,
+                    array('error' => 'Unknown arguments left on the command line: ' . implode(' ', $this->_argumentsWorking))
+                    ));
+            }
+            return;
+        }
+
+        // everything was processed and this is a request for help information
+        if ($this->_help) {
+            $this->_request->setDispatchable(false); // at this point request is not dispatchable
+            $this->_createHelpResponse($helpResponseOptions);
+        }
+
+        return;
+    }
+
+    /**
+     * Internal routine for parsing global options from the command line
+     *
+     * @return null
+     */
+    protected function _parseGlobalPart()
+    {
+        $getoptOptions = array();
+        $getoptOptions['help|h']    = 'HELP';
+        $getoptOptions['verbose|v'] = 'VERBOSE';
+        $getoptOptions['pretend|p'] = 'PRETEND';
+        $getoptOptions['debug|d']   = 'DEBUG';
+        $getoptParser = new Zend_Console_Getopt($getoptOptions, $this->_argumentsWorking, array('parseAll' => false));
+        
+        // @todo catch any exceptions here
+        $getoptParser->parse();
+
+        foreach ($getoptParser->getOptions() as $option) {
+            if ($option == 'pretend') {
+                $this->_request->setPretend(true);
+            } elseif ($option == 'debug') {
+                $this->_request->setDebug(true);
+            } elseif ($option == 'verbose') {
+                $this->_request->setVerbose(true);
+            } else {
+                $property = '_'.$option;
+                $this->{$property} = true;                
+            }
+        }
+
+        $this->_argumentsWorking = $getoptParser->getRemainingArgs();
+
+        return;
+    }
+
+    /**
+     * Internal routine for parsing the action name from the arguments
+     *
+     * @return null
+     */
+    protected function _parseActionPart()
+    {
+        // the next "word" should be the action name
+        $consoleActionName = array_shift($this->_argumentsWorking);
+
+        if ($consoleActionName == '?') {
+            $this->_help = true;
+            return;
+        }
+
+        // is the action name valid?
+        $actionMetadata = $this->_manifestRepository->getMetadata(array(
+            'type'       => 'Tool',
+            'name'       => 'actionName',
+            'value'      => $consoleActionName,
+            'clientName' => 'console'
+            ));
+
+        // if no action, handle error
+        if (!$actionMetadata) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('Action \'' . $consoleActionName . '\' is not a valid action.');
+        }
+
+        // prepare action request name
+        $this->_helpKnownAction = true;
+        $this->_request->setActionName($actionMetadata->getActionName());
+        return;
+    }
+
+    /**
+     * Internal routine for parsing the provider part of the command line arguments
+     *
+     * @return null
+     */
+    protected function _parseProviderPart()
+    {
+        // get the cli "word" as the provider name from command line
+        $consoleProviderFull = array_shift($this->_argumentsWorking);
+        $consoleSpecialtyName = '_global';
+
+        // if there is notation for specialties? If so, break them up
+        if (strstr($consoleProviderFull, '.')) {
+            list($consoleProviderName, $consoleSpecialtyName) = explode('.', $consoleProviderFull);
+        } else {
+            $consoleProviderName = $consoleProviderFull;
+        }
+
+        if ($consoleProviderName == '?') {
+            $this->_help = true;
+            return;
+        }
+                
+        // get the cli provider names from the manifest
+        $providerMetadata = $this->_manifestRepository->getMetadata(array(
+            'type'       => 'Tool',
+            'name'       => 'providerName',
+            'value'      => $consoleProviderName,
+            'clientName' => 'console'
+            ));
+
+        if (!$providerMetadata) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception(
+                'Provider \'' . $consoleProviderFull . '\' is not a valid provider.'
+                );
+        }
+
+        $this->_helpKnownProvider = true;
+        $this->_request->setProviderName($providerMetadata->getProviderName());
+        
+        if ($consoleSpecialtyName == '?') {
+            $this->_help = true;
+            return;
+        }
+        
+        $providerSpecialtyMetadata = $this->_manifestRepository->getMetadata(array(
+            'type'         => 'Tool', 
+            'name'         => 'specialtyName', 
+            'value'        => $consoleSpecialtyName,
+            'providerName' => $providerMetadata->getProviderName(),
+            'clientName'   => 'console'
+            ));
+
+        if (!$providerSpecialtyMetadata) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception(
+                'Provider \'' . $consoleSpecialtyName . '\' is not a valid specialty.'
+                );
+        }
+
+        $this->_helpKnownSpecialty = true;
+        $this->_request->setSpecialtyName($providerSpecialtyMetadata->getSpecialtyName());
+        return;
+    }
+
+    /**
+     * Internal routine for parsing the provider options from the command line
+     *
+     * @return null
+     */
+    protected function _parseProviderOptionsPart()
+    {
+        if (current($this->_argumentsWorking) == '?') {
+            $this->_help = true;
+            return;
+        }
+        
+        $searchParams = array(
+            'type'          => 'Tool',
+            'providerName'  => $this->_request->getProviderName(),
+            'actionName'    => $this->_request->getActionName(),
+            'specialtyName' => $this->_request->getSpecialtyName(),
+            'clientName'    => 'console'
+            );
+
+        $actionableMethodLongParamsMetadata = $this->_manifestRepository->getMetadata(
+            array_merge($searchParams, array('name' => 'actionableMethodLongParams'))
+            );
+
+        $actionableMethodShortParamsMetadata = $this->_manifestRepository->getMetadata(
+            array_merge($searchParams, array('name' => 'actionableMethodShortParams'))
+            );
+
+        $paramNameShortValues = $actionableMethodShortParamsMetadata->getValue();
+
+        $getoptOptions = array();
+        $wordArguments = array();
+        $longParamCanonicalNames = array();
+
+        $actionableMethodLongParamsMetadataReference = $actionableMethodLongParamsMetadata->getReference();
+        foreach ($actionableMethodLongParamsMetadata->getValue() as $parameterNameLong => $consoleParameterNameLong) {
+            $optionConfig = $consoleParameterNameLong . '|';
+
+            $parameterInfo = $actionableMethodLongParamsMetadataReference['parameterInfo'][$parameterNameLong];
+
+            // process ParameterInfo into array for command line option matching
+            if ($parameterInfo['type'] == 'string' || $parameterInfo['type'] == 'bool') {
+                $optionConfig .= $paramNameShortValues[$parameterNameLong] 
+                               . (($parameterInfo['optional']) ? '-' : '=') . 's';
+            } elseif (in_array($parameterInfo['type'], array('int', 'integer', 'float'))) {
+                $optionConfig .= $paramNameShortValues[$parameterNameLong] 
+                               . (($parameterInfo['optional']) ? '-' : '=') . 'i';
+            } else {
+                $optionConfig .= $paramNameShortValues[$parameterNameLong] . '-s';
+            }
+
+            $getoptOptions[$optionConfig] = ($parameterInfo['description'] != '') ? $parameterInfo['description'] : 'No description available.';
+
+
+            // process ParameterInfo into array for command line WORD (argument) matching
+            $wordArguments[$parameterInfo['position']]['parameterName'] = $parameterInfo['name'];
+            $wordArguments[$parameterInfo['position']]['optional']      = $parameterInfo['optional'];
+            $wordArguments[$parameterInfo['position']]['type']          = $parameterInfo['type'];
+
+            // keep a translation of console to canonical names
+            $longParamCanonicalNames[$consoleParameterNameLong] = $parameterNameLong;
+        }
+
+
+        if (!$getoptOptions) {
+            // no options to parse here, return
+            return;
+        }
+
+        // if non-option arguments exist, attempt to process them before processing options
+        $wordStack = array();
+        while ($wordOnTop = array_shift($this->_argumentsWorking)) {
+            if (substr($wordOnTop, 0, 1) != '-') {
+                array_push($wordStack, $wordOnTop);
+            } else {
+                // put word back on stack and move on
+                array_unshift($this->_argumentsWorking, $wordOnTop);
+                break;
+            }
+
+            if (count($wordStack) == count($wordArguments)) {
+                // when we get at most the number of arguments we are expecting
+                // then break out.
+                break;
+            }
+
+        }
+
+        if ($wordStack && $wordArguments) {
+            for ($wordIndex = 1; $wordIndex <= count($wordArguments); $wordIndex++) {
+                if (!array_key_exists($wordIndex-1, $wordStack) || !array_key_exists($wordIndex, $wordArguments)) {
+                    break;
+                }
+                $this->_request->setProviderParameter($wordArguments[$wordIndex]['parameterName'], $wordStack[$wordIndex-1]);
+                unset($wordStack[$wordIndex-1]);
+            }
+        }
+
+        $getoptParser = new Zend_Console_Getopt($getoptOptions, $this->_argumentsWorking, array('parseAll' => false));
+        $getoptParser->parse();
+        foreach ($getoptParser->getOptions() as $option) {
+            $value = $getoptParser->getOption($option);
+            $providerParamOption = $longParamCanonicalNames[$option];
+            $this->_request->setProviderParameter($providerParamOption, $value);
+        }
+
+        /*
+        $this->_metadataProviderOptionsLong = $actionableMethodLongParamsMetadata;
+        $this->_metadataProviderOptionsShort = $actionableMethodShortParamsMetadata;
+        */
+        
+        $this->_argumentsWorking = $getoptParser->getRemainingArgs();
+
+        return;
+    }
+
+    /**
+     * _createHelpResponse
+     *
+     * @param unknown_type $options
+     */
+    protected function _createHelpResponse($options = array())
+    {
+        require_once 'Zend/Tool/Framework/Client/Console/HelpSystem.php';
+        $helpSystem = new Zend_Tool_Framework_Client_Console_HelpSystem();
+        $helpSystem->setRegistry($this->_registry);
+        
+        if (isset($options['error'])) {
+            $helpSystem->respondWithErrorMessage($options['error']);
+        }
+        
+        if (isset($options['actionName']) && isset($options['providerName'])) {
+            $helpSystem->respondWithSpecialtyAndParamHelp($options['providerName'], $options['actionName']);
+        } elseif (isset($options['actionName'])) {
+            $helpSystem->respondWithActionHelp($options['actionName']);
+        } elseif (isset($options['providerName'])) {
+            $helpSystem->respondWithProviderHelp($options['providerName']);
+        } else {
+            $helpSystem->respondWithGeneralHelp();
+        }
+
+    }
+
+}

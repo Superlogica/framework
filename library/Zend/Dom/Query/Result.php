@@ -1,39 +1,183 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV594LcWl9/7uiWA8FA6ejrRmK7qe0Y6TvD9+i01AcHKsLWMXbCOR3yBUIbCJGCXATKMzSLpqY
-NsatgkOGY2Z7u442P+SUGOfbOPS0FohNMW9gGFbf8N/4PNmOKRmEUIz70sXSaSuBHGrVgKXxrC5k
-yKzWAc/cI869wS/ntlfD8/EM4KgszrNww+DB/lzsr76EM1lseRk/XHbbMWTdlBiQKpUXSltxo52l
-lSEJJ1WZo4H61YnpxAzwn4kJIPpDKor7T+KlBeH2Q1rSmKydu46d+mh4uTKsXuDr/Rxg9QhqkYpB
-xxoU3ieWVkwfDxh1R/3iR8EZUoSB+eNdnMOdnZcHFYwFWGcHSzp0MCwMgOVx8d9SfvoNq9vfhEYR
-m0lZgiQTTd4gVnwwlWa3rAuRjOdpGRpFNldHV2d6gEYb1r9cQsPFLiZRWYzShsBfbX2gEkfQbr0/
-mXXl3tK8Olj4YSJki8tuB/1EVAhUr4f/wNd0USoUZ/67mTg9WcHN5/Z293/sd+TF+rGs1laUmfIG
-O+jReruwFdo6NRXVjKOcZZESWIVqmd4JI64l5i83c1j4zbqGcVjasLfeI9OPt0W/f9K7z5CJ4Svf
-K11cnQTT1asS/tLOlz6rakoL6WC1BHupbnxEkjqHKxKvhPI787y+u69uFutt+mQYh+NW+ms9tDId
-WyVFQl158P4nNy7XTkQ/UMPxdWmMkb63TKITgoJnA/2bxqrqz/Ai7OxGnGi5U06AI6uKfuhnN8PT
-7aGbXjFkmzQ5xagjHwyGtLPLzTKUXtn5StBm/E5NAotUvd6NZHdpkte7O/+qu/FAx6qkdX4OlNhm
-wY0iunrhQRuwb+8HVSY1GMDW/evXSpfe2YQ+IhxB66uwwx3yJiU6g7Dj3Gdi66yNOywSuloBubYu
-7py6tDE8mLexL925MFSgktS/FVzXUvztwj6+KqjW0epgDwtKEvPqFH3JzPhrGV3dK2J7DZ9CGbC5
-PS5Z90qKT0OCu03uxzAvENbYxoyrn012uO9xt7EOmCoWSuvLh1KEpx/ImMxp1pJiIdj5RDpMqx0q
-G+vf4PzpIs8VW8nbZAnTxu+TG/QAFT9a8Htf9XpIdpQFmvkoHcH9ZpwR+NVtD6YpChlOEbipp2oS
-7WT4kDMUJbSIwlL8YXeIaVyPmlf9ypXOpLfgp0yakMFGMlwHoQozIp0m6/Vb1MbTndKsQHX8C4ti
-AaWw+PKV776OtXu5JaVWvUgELCn6+XA/XU8VFONW3mDdkKmL9CEYoFF795w/spqDoLJRreqiaQHf
-DJsyiRpAbvIbJa9I5qyvN7XwodU+WYKPY4RWsefb8nnXfkmCUaQBLFornyAVbOZnOqTL7NrgNwQ+
-p78ci2LD0bUEv+Nff0kneubCvybIQi+y40EhwM1cmqda6qYRWa35xTIWwNYevBY8gkULDnOkDt/A
-zH3ySNKwpk2lDVWaiMprwCYrMui68efKRF63D/GOb8agdzjpEBdgWe+b8SObytG6UjDnqSnNW6RV
-RDTzTWiMfnipj+oQ9K6+m9ykLKaIJOGPZ/tFHxQ1IIHOmfbp9N3x3aZV7XkWtiVebbEAdiKonBcv
-7AZghYt7SinMoGL+luV8+lHIBJxi1Nd2b16ZNVOTpMvBsnHoKaX/vPQwWldy/rhvmUSD8o8CYqm1
-5H6HTI7Fw5lHauk9riizjPfFfJ9CpHfIwYhAZXctWFr9ycmkOX0msx0nde3ss1aIu2hyJyLLvSBU
-X6iS2NSuukPvhBUYaJ5B2fuLL1u2UZ4C+bcYQ36b9JKqmMHEcMpJb9Elta7n4OnSjwwWj0AxCvRy
-Yaid9C0v6UX8VmdqN71Amp7DMm5xBRQJd32GJKeWo1mk7qQXUN6NtCkaCxCQy2ZDF+q14LjUjiZ4
-dAi7RVmzFMxVI3XEv06qt2Ohe3kljI2mWGEq9oEaCW4wLv5lCaRd6+GcGVQl6yERAnijzExgHMVL
-oAhvisWqgP6j4pDlC1JSOMyWX0FQsT1Vmm2dKQiVEcY5rLnuz34wSVyuLW7utnFTEk+LhdeP2NN+
-FgfgGb0l82OPzb6m7+GUWjHat08tf44MffY+QIXynZ4fVeGE1lBRcmI004TT1CSe+RpSHw8Y4AKE
-jXox7Z1IiafqOx395dILd3NhgIL6AUuJAKtLDscI6RpeyX7YX4XjKrjGLwTwaiJp1boaFIi+Z+mt
-QBut4+EgYg0WNBEpJeJE/YTUqlxMLFqXxRnm7LtHoKZv5aW/ed0nWLc90v6+GxvL+q3V52vXNSkB
-BpahOIFkkwo/VMU/b/3krAjUb5GbMJGxKlZNoDMYyMVpys6Q+z/pWLfhp1uIDG+7YCyRUEDGpHCg
-LTdJVnBsLDCJBl0o7lYgPSotpNq9ntlzugqvNdvalATNvw5s0IcKs45OevBrI1gBOirnctJML0vL
-PFhqdKzql1rIdQdC1r+i88XW6G5VcJvYE049FQNbH6bWx0cORpDKQvWTHtQNX/YDT6L1lusYIdwL
-aDOzeOKHhMZ+lTUDjbx4vtQAbjFB4UXGWknN2e2L7u9rWnWPUK2NE4vtCWVka8bDe6G8q6Kl/z2t
-IxqpLaAAhmpfYBdEs7K3B7nvv3XtRDYc5imf5/5ulBzTn+jsIiJvkMbF6oUProPVKb9BGLNG66oW
-HKrZEZ1+BnM19/ON0SulG+o9W2Lq80DqEBmZRTs7FJd/en1iHmVXLkL4aWyLAnsZWeCDwG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dom
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Results for DOM XPath query
+ * 
+ * @package    Zend_Dom
+ * @subpackage Query
+ * @uses       Iterator
+ * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ * @version    $Id: Result.php 12507 2008-11-10 16:29:09Z matthew $
+ */
+class Zend_Dom_Query_Result implements Iterator,Countable
+{
+    /**
+     * Number of results
+     * @var int
+     */
+    protected $_count;
+
+    /**
+     * CSS Selector query
+     * @var string
+     */
+    protected $_cssQuery;
+
+    /**
+     * @var DOMDocument
+     */
+    protected $_document;
+
+    /**
+     * @var DOMNodeList
+     */
+    protected $_nodeList;
+
+    /**
+     * Current iterator position
+     * @var int
+     */
+    protected $_position = 0;
+
+    /**
+     * @var DOMXPath
+     */
+    protected $_xpath;
+
+    /**
+     * XPath query
+     * @var string
+     */
+    protected $_xpathQuery;
+
+    /**
+     * Constructor
+     * 
+     * @param  string $cssQuery 
+     * @param  string|array $xpathQuery 
+     * @param  DOMDocument $document 
+     * @param  DOMNodeList $nodeList
+     * @return void
+     */
+    public function  __construct($cssQuery, $xpathQuery, DOMDocument $document, DOMNodeList $nodeList)
+    {
+        $this->_cssQuery   = $cssQuery;
+        $this->_xpathQuery = $xpathQuery;
+        $this->_document   = $document;
+        $this->_nodeList   = $nodeList;
+    }
+
+    /**
+     * Retrieve CSS Query
+     * 
+     * @return string
+     */
+    public function getCssQuery()
+    {
+        return $this->_cssQuery;
+    }
+
+    /**
+     * Retrieve XPath query
+     * 
+     * @return string
+     */
+    public function getXpathQuery()
+    {
+        return $this->_xpathQuery;
+    }
+
+    /**
+     * Retrieve DOMDocument
+     * 
+     * @return DOMDocument
+     */
+    public function getDocument()
+    {
+        return $this->_document;
+    }
+
+    /**
+     * Iterator: rewind to first element
+     * 
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_position = 0;
+        return $this->_nodeList->item(0);
+    }
+
+    /**
+     * Iterator: is current position valid?
+     * 
+     * @return bool
+     */
+    public function valid()
+    {
+        if (in_array($this->_position, range(0, $this->_nodeList->length - 1)) && $this->_nodeList->length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Iterator: return current element
+     * 
+     * @return DOMElement
+     */
+    public function current()
+    {
+        return $this->_nodeList->item($this->_position);
+    }
+
+    /**
+     * Iterator: return key of current element
+     * 
+     * @return int
+     */
+    public function key()
+    {
+        return $this->_position;
+    }
+
+    /**
+     * Iterator: move to next element
+     * 
+     * @return void
+     */
+    public function next()
+    {
+        ++$this->_position;
+        return $this->_nodeList->item($this->_position);
+    }
+
+    /**
+     * Countable: get count
+     * 
+     * @return int
+     */
+    public function count()
+    {
+        return $this->_nodeList->length;
+    }
+}

@@ -1,30 +1,51 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9Qq=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage Math
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * Support for arbitrary precision mathematics in PHP.
+ *
+ * Interface for a wrapper across any PHP extension supporting arbitrary
+ * precision maths.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Crypt_Math_BigInteger_Interface
+{
+
+    public function init($operand, $base = 10);
+    public function add($left_operand, $right_operand);
+    public function subtract($left_operand, $right_operand);
+    public function compare($left_operand, $right_operand);
+    public function divide($left_operand, $right_operand);
+    public function modulus($left_operand, $modulus);
+    public function multiply($left_operand, $right_operand);
+    public function pow($left_operand, $right_operand);
+    public function powmod($left_operand, $right_operand, $modulus);
+    public function sqrt($operand);
+    public function binaryToInteger($operand);
+    public function integerToBinary($operand);
+    public function hexToDecimal($operand);
+
+}

@@ -1,54 +1,193 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-e0pl3K1tcaHc/EAyTC+uqweTGvd4
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * PDF file reference table
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Reference_Table
+{
+    /**
+     * Parent reference table
+     *
+     * @var Zend_Pdf_Element_Reference_Table
+     */
+    private $_parent;
+
+    /**
+     * Free entries
+     * 'reference' => next free object number
+     *
+     * @var array
+     */
+    private $_free;
+
+    /**
+     * Generation numbers for free objects.
+     * Array: objNum => nextGeneration
+     *
+     * @var array
+     */
+    private $_generations;
+
+    /**
+     * In use entries
+     * 'reference' => offset
+     *
+     * @var array
+     */
+    private $_inuse;
+
+    /**
+     * Generation numbers for free objects.
+     * Array: objNum => objGeneration
+     *
+     * @var array
+     */
+    private $_usedObjects;
+
+
+
+    /**
+     * Object constructor
+     */
+    public function  __construct()
+    {
+        $this->_parent = null;
+        $this->_free   = array();  $this->_generations = array();
+        $this->_inuse  = array();  $this->_usedObjects = array();
+    }
+
+
+    /**
+     * Add reference to the reference table
+     *
+     * @param string $ref
+     * @param integer $offset
+     * @param boolean $inuse
+     */
+    public function addReference($ref, $offset, $inuse = true)
+    {
+        $refElements = explode(' ', $ref);
+        if (!is_numeric($refElements[0]) || !is_numeric($refElements[1]) || $refElements[2] != 'R') {
+            throw new Zend_Pdf_Exception("Incorrect reference: '$ref'");
+        }
+        $objNum = (int)$refElements[0];
+        $genNum = (int)$refElements[1];
+
+        if ($inuse) {
+            $this->_inuse[$ref]          = $offset;
+            $this->_usedObjects[$objNum] = $objNum;
+        } else {
+            $this->_free[$ref]           = $offset;
+            $this->_generations[$objNum] = $genNum;
+        }
+    }
+
+
+    /**
+     * Set parent reference table
+     *
+     * @param Zend_Pdf_Element_Reference_Table $parent
+     */
+    public function setParent(self $parent)
+    {
+        $this->_parent = $parent;
+    }
+
+
+    /**
+     * Get object offset
+     *
+     * @param string $ref
+     * @return integer
+     */
+    public function getOffset($ref)
+    {
+        if (isset($this->_inuse[$ref])) {
+            return $this->_inuse[$ref];
+        }
+
+        if (isset($this->_free[$ref])) {
+            return null;
+        }
+
+        if (isset($this->_parent)) {
+            return $this->_parent->getOffset($ref);
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Get next object from a list of free objects.
+     *
+     * @param string $ref
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    public function getNextFree($ref)
+    {
+        if (isset($this->_inuse[$ref])) {
+            throw new Zend_Pdf_Exception('Object is not free');
+        }
+
+        if (isset($this->_free[$ref])) {
+            return $this->_free[$ref];
+        }
+
+        if (isset($this->_parent)) {
+            return $this->_parent->getNextFree($ref);
+        }
+
+        throw new Zend_Pdf_Exception('Object not found.');
+    }
+
+
+    /**
+     * Get next generation number for free object
+     *
+     * @param integer $objNum
+     * @return unknown
+     */
+    public function getNewGeneration($objNum)
+    {
+        if (isset($this->_usedObjects[$objNum])) {
+            throw new Zend_Pdf_Exception('Object is not free');
+        }
+
+        if (isset($this->_generations[$objNum])) {
+            return $this->_generations[$objNum];
+        }
+
+        if (isset($this->_parent)) {
+            return $this->_parent->getNewGeneration($objNum);
+        }
+
+        throw new Zend_Pdf_Exception('Object not found.');
+    }
+}
+

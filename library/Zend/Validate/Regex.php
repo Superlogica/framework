@@ -1,34 +1,125 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-taOWeNgiqApeC3j1eHVc10u=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Regex.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Regex extends Zend_Validate_Abstract
+{
+
+    const NOT_MATCH = 'regexNotMatch';
+
+    /**
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::NOT_MATCH => "'%value%' does not match against pattern '%pattern%'"
+    );
+
+    /**
+     * @var array
+     */
+    protected $_messageVariables = array(
+        'pattern' => '_pattern'
+    );
+
+    /**
+     * Regular expression pattern
+     *
+     * @var string
+     */
+    protected $_pattern;
+
+    /**
+     * Sets validator options
+     *
+     * @param  string $pattern
+     * @return void
+     */
+    public function __construct($pattern)
+    {
+        $this->setPattern($pattern);
+    }
+
+    /**
+     * Returns the pattern option
+     *
+     * @return string
+     */
+    public function getPattern()
+    {
+        return $this->_pattern;
+    }
+
+    /**
+     * Sets the pattern option
+     *
+     * @param  string $pattern
+     * @return Zend_Validate_Regex Provides a fluent interface
+     */
+    public function setPattern($pattern)
+    {
+        $this->_pattern = (string) $pattern;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value matches against the pattern option
+     *
+     * @param  string $value
+     * @throws Zend_Validate_Exception if there is a fatal error in pattern matching
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $valueString = (string) $value;
+
+        $this->_setValue($valueString);
+
+        $status = @preg_match($this->_pattern, $valueString);
+        if (false === $status) {
+            /**
+             * @see Zend_Validate_Exception
+             */
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("Internal error matching pattern '$this->_pattern' against value '$valueString'");
+        }
+        if (!$status) {
+            $this->_error();
+            return false;
+        }
+        return true;
+    }
+
+}

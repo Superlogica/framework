@@ -1,61 +1,281 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-T4QEIaiUONEpSb6N776ilTOzi0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource_Font */
+require_once 'Zend/Pdf/Resource/Font.php';
+
+/** Zend_Pdf_Cmap */
+require_once 'Zend/Pdf/Cmap.php';
+
+
+
+/**
+ * Adobe PDF Simple fonts implementation
+ * 
+ * PDF simple fonts functionality is presented by Adobe Type 1 
+ * (including standard PDF Type1 built-in fonts) and TrueType fonts support.
+ *
+ * Both fonts have the following properties:
+ * - Glyphs in the font are selected by single-byte character codes obtained from a
+ *   string that is shown by the text-showing operators. Logically, these codes index
+ *   into a table of 256 glyphs; the mapping from codes to glyphs is called the font’s
+ *   encoding.
+ *   PDF specification provides a possibility to specify any user defined encoding in addition
+ *   to the standard built-in encodings: Standard-Encoding, MacRomanEncoding, WinAnsiEncoding, 
+ *   and PDFDocEncoding, but Zend_Pdf simple fonts implementation operates only with 
+ *   Windows ANSI encoding (except Symbol and ZapfDingbats built-in fonts).
+ *
+ * - Each glyph has a single set of metrics, including a horizontal displacement or
+ *   width. That is, simple fonts support only horizontal writing mode.
+ *
+ * 
+ * The code in this class is common to both types. However, you will only deal
+ * directly with subclasses.
+ * 
+ * Font objects should be normally be obtained from the factory methods
+ * {@link Zend_Pdf_Font::fontWithName} and {@link Zend_Pdf_Font::fontWithPath}.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Resource_Font_Simple extends Zend_Pdf_Resource_Font
+{
+    /**
+     * Object representing the font's cmap (character to glyph map).
+     * @var Zend_Pdf_Cmap
+     */
+    protected $_cmap = null;
+
+    /**
+     * Array containing the widths of each of the glyphs contained in the font.
+     *
+     * Keys are integers starting from 0, which coresponds to Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH.
+     *
+     * Font character map may contain gaps for actually used glyphs, nevertheless glyphWidths array
+     * contains widths for all glyphs even they are unused.
+     *
+     * @var array
+     */
+    protected $_glyphWidths = null;
+
+    /**
+     * Width for glyphs missed in the font
+     * 
+     * Note: Adobe PDF specfication (V1.4 - V1.6) doesn't define behavior for rendering
+     * characters missed in the standard PDF fonts (such us 0x7F (DEL) Windows ANSI code)
+     * Adobe Font Metrics files doesn't also define metrics for "missed glyph".
+     * We provide character width as "0" for this case, but actually it depends on PDF viewer
+     * implementation. 
+     *
+     * @var integer
+     */
+    protected $_missingGlyphWidth = 0;
+
+
+    /**** Public Interface ****/
+
+
+  /* Object Lifecycle */
+
+    /**
+     * Object constructor
+     *
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        /**
+         * @todo
+         * It's easy to add other encodings support now (Standard-Encoding, MacRomanEncoding, 
+         * PDFDocEncoding, MacExpertEncoding, Symbol, and ZapfDingbats).
+         * Steps for the implementation:
+         * - completely describe all PDF single byte encodings in the documentation
+         * - implement non-WinAnsi encodings processing into encodeString()/decodeString() methods
+         * 
+         * These encodings will be automatically supported for standard builtin PDF fonts as well 
+         * as for external fonts.
+         */
+        $this->_resource->Encoding = new Zend_Pdf_Element_Name('WinAnsiEncoding');
+    }
+
+    /**
+     * Returns an array of glyph numbers corresponding to the Unicode characters.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumberForCharacter()}.
+     *
+     * @param array $characterCodes Array of Unicode character codes (code points).
+     * @return array Array of glyph numbers.
+     */
+    public function glyphNumbersForCharacters($characterCodes)
+    {
+        return $this->_cmap->glyphNumbersForCharacters($characterCodes);
+    }
+
+    /**
+     * Returns the glyph number corresponding to the Unicode character.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
+     * operations.
+     *
+     * @param integer $characterCode Unicode character code (code point).
+     * @return integer Glyph number.
+     */
+    public function glyphNumberForCharacter($characterCode)
+    {
+        return $this->_cmap->glyphNumberForCharacter($characterCode);
+    }
+
+    /**
+     * Returns a number between 0 and 1 inclusive that indicates the percentage
+     * of characters in the string which are covered by glyphs in this font.
+     *
+     * Since no one font will contain glyphs for the entire Unicode character
+     * range, this method can be used to help locate a suitable font when the
+     * actual contents of the string are not known.
+     *
+     * Note that some fonts lie about the characters they support. Additionally,
+     * fonts don't usually contain glyphs for control characters such as tabs
+     * and line breaks, so it is rare that you will get back a full 1.0 score.
+     * The resulting value should be considered informational only.
+     *
+     * @param string $string
+     * @param string $charEncoding (optional) Character encoding of source text.
+     *   If omitted, uses 'current locale'.
+     * @return float
+     */
+    public function getCoveredPercentage($string, $charEncoding = '')
+    {
+        /* Convert the string to UTF-16BE encoding so we can match the string's
+         * character codes to those found in the cmap.
+         */
+        if ($charEncoding != 'UTF-16BE') {
+            if (PHP_OS != 'AIX') { // AIX doesnt know what UTF-16BE is
+                $string = iconv($charEncoding, 'UTF-16BE', $string);
+            }
+        }
+
+        $charCount = (PHP_OS != 'AIX') ? iconv_strlen($string, 'UTF-16BE') : strlen($string);
+        if ($charCount == 0) {
+            return 0;
+        }
+
+        /* Fetch the covered character code list from the font's cmap.
+         */
+        $coveredCharacters = $this->_cmap->getCoveredCharacters();
+
+        /* Calculate the score by doing a lookup for each character.
+         */
+        $score = 0;
+        $maxIndex = strlen($string);
+        for ($i = 0; $i < $maxIndex; $i++) {
+            /**
+             * @todo Properly handle characters encoded as surrogate pairs.
+             */
+            $charCode = (ord($string[$i]) << 8) | ord($string[++$i]);
+            /* This could probably be optimized a bit with a binary search...
+             */
+            if (in_array($charCode, $coveredCharacters)) {
+                $score++;
+            }
+        }
+        return $score / $charCount;
+    }
+
+    /**
+     * Returns the widths of the glyphs.
+     *
+     * The widths are expressed in the font's glyph space. You are responsible
+     * for converting to user space as necessary. See {@link unitsPerEm()}.
+     *
+     * See also {@link widthForGlyph()}.
+     *
+     * @param array &$glyphNumbers Array of glyph numbers.
+     * @return array Array of glyph widths (integers).
+     */
+    public function widthsForGlyphs($glyphNumbers)
+    {
+        $widths = array();
+        foreach ($glyphNumbers as $key => $glyphNumber) {
+            if (!isset($this->_glyphWidths[$glyphNumber])) {
+                $widths[$key] = $this->_missingGlyphWidth;
+            } else {
+                $widths[$key] = $this->_glyphWidths[$glyphNumber];
+            }
+        }
+        return $widths;
+    }
+
+    /**
+     * Returns the width of the glyph.
+     *
+     * Like {@link widthsForGlyphs()} but used for one glyph at a time.
+     *
+     * @param integer $glyphNumber
+     * @return integer
+     */
+    public function widthForGlyph($glyphNumber)
+    {
+        if (!isset($this->_glyphWidths[$glyphNumber])) {
+            return $this->_missingGlyphWidth;
+        }
+        return $this->_glyphWidths[$glyphNumber];
+    }
+
+    /**
+     * Convert string to the font encoding.
+     * 
+     * The method is used to prepare string for text drawing operators 
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of source text.
+     * @return string
+     */
+    public function encodeString($string, $charEncoding)
+    {
+        if (PHP_OS == 'AIX') {
+            return $string; // returning here b/c AIX doesnt know what CP1252 is
+        }
+        
+        return iconv($charEncoding, 'CP1252//IGNORE', $string);
+    }
+
+    /**
+     * Convert string from the font encoding.
+     *
+     * The method is used to convert strings retrieved from existing content streams
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of resulting text.
+     * @return string
+     */
+    public function decodeString($string, $charEncoding)
+    {
+        return iconv('CP1252', $charEncoding, $string);
+    }
+}

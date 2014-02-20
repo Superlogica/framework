@@ -1,241 +1,961 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vmIWKk0jWGkutJbfjrJhElKCARA/rz2nFWLrwW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Server_Interface
+ */
+require_once 'Zend/Server/Interface.php';
+
+/**
+ * Zend_Soap_Server
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Server
+ * @uses       Zend_Server_Interface
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Server.php 14918 2009-04-15 16:07:53Z beberlei $
+ */
+class Zend_Soap_Server implements Zend_Server_Interface
+{
+    /**
+     * Actor URI
+     * @var string URI
+     */
+    protected $_actor;
+
+    /**
+     * Class registered with this server
+     * @var string
+     */
+    protected $_class;
+
+    /**
+     * Arguments to pass to {@link $_class} constructor
+     * @var array
+     */
+    protected $_classArgs = array();
+
+    /**
+     * Object registered with this server
+     */
+    protected $_object;
+
+    /**
+     * Array of SOAP type => PHP class pairings for handling return/incoming values
+     * @var array
+     */
+    protected $_classmap;
+
+    /**
+     * Encoding
+     * @var string
+     */
+    protected $_encoding;
+
+    /**
+     * SOAP Server Features
+     *
+     * @var int
+     */
+    protected $_features;
+
+    /**
+     * WSDL Caching Options of SOAP Server
+     *
+     * @var
+     */
+    protected $_wsdlCache;
+
+
+    /**
+     * Registered fault exceptions
+     * @var array
+     */
+    protected $_faultExceptions = array();
+
+    /**
+     * Functions registered with this server; may be either an array or the SOAP_FUNCTIONS_ALL
+     * constant
+     * @var array|int
+     */
+    protected $_functions = array();
+
+    /**
+     * Persistence mode; should be one of the SOAP persistence constants
+     * @var int
+     */
+    protected $_persistence;
+
+    /**
+     * Request XML
+     * @var string
+     */
+    protected $_request;
+
+    /**
+     * Response XML
+     * @var string
+     */
+    protected $_response;
+
+    /**
+     * Flag: whether or not {@link handle()} should return a response instead
+     * of automatically emitting it.
+     * @var boolean
+     */
+    protected $_returnResponse = false;
+
+    /**
+     * SOAP version to use; SOAP_1_2 by default, to allow processing of headers
+     * @var int
+     */
+    protected $_soapVersion = SOAP_1_2;
+
+    /**
+     * URI or path to WSDL
+     * @var string
+     */
+    protected $_wsdl;
+
+    /**
+     * URI namespace for SOAP server
+     * @var string URI
+     */
+    protected $_uri;
+
+    /**
+     * Constructor
+     *
+     * Sets display_errors INI setting to off (prevent client errors due to bad
+     * XML in response). Registers {@link handlePhpErrors()} as error handler
+     * for E_USER_ERROR.
+     *
+     * If $wsdl is provided, it is passed on to {@link setWsdl()}; if any
+     * options are specified, they are passed on to {@link setOptions()}.
+     *
+     * @param string $wsdl
+     * @param array $options
+     * @return void
+     */
+    public function __construct($wsdl = null, array $options = null)
+    {
+        if (!extension_loaded('soap')) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('SOAP extension is not loaded.');
+        }
+
+        if (null !== $wsdl) {
+            $this->setWsdl($wsdl);
+        }
+
+        if (null !== $options) {
+            $this->setOptions($options);
+        }
+    }
+
+    /**
+     * Set Options
+     *
+     * Allows setting options as an associative array of option => value pairs.
+     *
+     * @param  array|Zend_Config $options
+     * @return Zend_Soap_Server
+     */
+    public function setOptions($options)
+    {
+        if($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        }
+
+        foreach ($options as $key => $value) {
+            switch ($key) {
+                case 'actor':
+                    $this->setActor($value);
+                    break;
+                case 'classmap':
+                case 'classMap':
+                    $this->setClassmap($value);
+                    break;
+                case 'encoding':
+                    $this->setEncoding($value);
+                    break;
+                case 'soapVersion':
+                case 'soap_version':
+                    $this->setSoapVersion($value);
+                    break;
+                case 'uri':
+                    $this->setUri($value);
+                    break;
+                case 'wsdl':
+                    $this->setWsdl($value);
+                    break;
+                case 'featues':
+                    $this->setSoapFeatures($value);
+                    break;
+                case 'cache_wsdl':
+                    $this->setWsdlCache($value);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Return array of options suitable for using with SoapServer constructor
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        $options = array();
+        if (null !== $this->_actor) {
+            $options['actor'] = $this->_actor;
+        }
+
+        if (null !== $this->_classmap) {
+            $options['classmap'] = $this->_classmap;
+        }
+
+        if (null !== $this->_encoding) {
+            $options['encoding'] = $this->_encoding;
+        }
+
+        if (null !== $this->_soapVersion) {
+            $options['soap_version'] = $this->_soapVersion;
+        }
+
+        if (null !== $this->_uri) {
+            $options['uri'] = $this->_uri;
+        }
+
+        if(null !== $this->_features) {
+            $options['features'] = $this->_features;
+        }
+
+        if(null !== $this->_wsdlCache) {
+            $options['cache_wsdl'] = $this->_wsdlCache;
+        }
+
+        return $options;
+    }
+
+    /**
+     * Set encoding
+     *
+     * @param  string $encoding
+     * @return Zend_Soap_Server
+     * @throws Zend_Soap_Server_Exception with invalid encoding argument
+     */
+    public function setEncoding($encoding)
+    {
+        if (!is_string($encoding)) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Invalid encoding specified');
+        }
+
+        $this->_encoding = $encoding;
+        return $this;
+    }
+
+    /**
+     * Get encoding
+     *
+     * @return string
+     */
+    public function getEncoding()
+    {
+        return $this->_encoding;
+    }
+
+    /**
+     * Set SOAP version
+     *
+     * @param  int $version One of the SOAP_1_1 or SOAP_1_2 constants
+     * @return Zend_Soap_Server
+     * @throws Zend_Soap_Server_Exception with invalid soap version argument
+     */
+    public function setSoapVersion($version)
+    {
+        if (!in_array($version, array(SOAP_1_1, SOAP_1_2))) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Invalid soap version specified');
+        }
+
+        $this->_soapVersion = $version;
+        return $this;
+    }
+
+    /**
+     * Get SOAP version
+     *
+     * @return int
+     */
+    public function getSoapVersion()
+    {
+        return $this->_soapVersion;
+    }
+
+    /**
+     * Check for valid URN
+     *
+     * @param  string $urn
+     * @return true
+     * @throws Zend_Soap_Server_Exception on invalid URN
+     */
+    public function validateUrn($urn)
+    {
+        $segs = parse_url($urn);
+        if (isset($segs['scheme'])) {
+            return true;
+        }
+
+        require_once 'Zend/Soap/Server/Exception.php';
+        throw new Zend_Soap_Server_Exception('Invalid URN');
+    }
+
+    /**
+     * Set actor
+     *
+     * Actor is the actor URI for the server.
+     *
+     * @param  string $actor
+     * @return Zend_Soap_Server
+     */
+    public function setActor($actor)
+    {
+        $this->validateUrn($actor);
+        $this->_actor = $actor;
+        return $this;
+    }
+
+    /**
+     * Retrieve actor
+     *
+     * @return string
+     */
+    public function getActor()
+    {
+        return $this->_actor;
+    }
+
+    /**
+     * Set URI
+     *
+     * URI in SoapServer is actually the target namespace, not a URI; $uri must begin with 'urn:'.
+     *
+     * @param  string $uri
+     * @return Zend_Soap_Server
+     * @throws Zend_Soap_Server_Exception with invalid uri argument
+     */
+    public function setUri($uri)
+    {
+        $this->validateUrn($uri);
+        $this->_uri = $uri;
+        return $this;
+    }
+
+    /**
+     * Retrieve URI
+     *
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->_uri;
+    }
+
+    /**
+     * Set classmap
+     *
+     * @param  array $classmap
+     * @return Zend_Soap_Server
+     * @throws Zend_Soap_Server_Exception for any invalid class in the class map
+     */
+    public function setClassmap($classmap)
+    {
+        if (!is_array($classmap)) {
+            /**
+             * @see Zend_Soap_Server_Exception
+             */
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Classmap must be an array');
+        }
+        foreach ($classmap as $type => $class) {
+            if (!class_exists($class)) {
+                /**
+                 * @see Zend_Soap_Server_Exception
+                 */
+                require_once 'Zend/Soap/Server/Exception.php';
+                throw new Zend_Soap_Server_Exception('Invalid class in class map');
+            }
+        }
+
+        $this->_classmap = $classmap;
+        return $this;
+    }
+
+    /**
+     * Retrieve classmap
+     *
+     * @return mixed
+     */
+    public function getClassmap()
+    {
+        return $this->_classmap;
+    }
+
+    /**
+     * Set wsdl
+     *
+     * @param string $wsdl  URI or path to a WSDL
+     * @return Zend_Soap_Server
+     */
+    public function setWsdl($wsdl)
+    {
+        $this->_wsdl = $wsdl;
+        return $this;
+    }
+
+    /**
+     * Retrieve wsdl
+     *
+     * @return string
+     */
+    public function getWsdl()
+    {
+        return $this->_wsdl;
+    }
+
+    /**
+     * Set the SOAP Feature options.
+     *
+     * @param  string|int $feature
+     * @return Zend_Soap_Server
+     */
+    public function setSoapFeatures($feature)
+    {
+        $this->_features = $feature;
+        return $this;
+    }
+
+    /**
+     * Return current SOAP Features options
+     * 
+     * @return int
+     */
+    public function getSoapFeatures()
+    {
+        return $this->_features;
+    }
+
+    /**
+     * Set the SOAP Wsdl Caching Options
+     *
+     * @param string|int|boolean $caching
+     * @return Zend_Soap_Server
+     */
+    public function setWsdlCache($options)
+    {
+        $this->_wsdlCache = $options;
+        return $this;
+    }
+
+    /**
+     * Get current SOAP Wsdl Caching option
+     */
+    public function getWsdlCache()
+    {
+        return $this->_wsdlCache;
+    }
+
+    /**
+     * Attach a function as a server method
+     *
+     * @param array|string $function Function name, array of function names to attach,
+     * or SOAP_FUNCTIONS_ALL to attach all functions
+     * @param  string $namespace Ignored
+     * @return Zend_Soap_Server
+     * @throws Zend_Soap_Server_Exception on invalid functions
+     */
+    public function addFunction($function, $namespace = '')
+    {
+        // Bail early if set to SOAP_FUNCTIONS_ALL
+        if ($this->_functions == SOAP_FUNCTIONS_ALL) {
+            return $this;
+        }
+
+        if (is_array($function)) {
+            foreach ($function as $func) {
+                if (is_string($func) && function_exists($func)) {
+                    $this->_functions[] = $func;
+                } else {
+                    require_once 'Zend/Soap/Server/Exception.php';
+                    throw new Zend_Soap_Server_Exception('One or more invalid functions specified in array');
+                }
+            }
+            $this->_functions = array_merge($this->_functions, $function);
+        } elseif (is_string($function) && function_exists($function)) {
+            $this->_functions[] = $function;
+        } elseif ($function == SOAP_FUNCTIONS_ALL) {
+            $this->_functions = SOAP_FUNCTIONS_ALL;
+        } else {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Invalid function specified');
+        }
+
+        if (is_array($this->_functions)) {
+            $this->_functions = array_unique($this->_functions);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Attach a class to a server
+     *
+     * Accepts a class name to use when handling requests. Any additional
+     * arguments will be passed to that class' constructor when instantiated.
+     *
+     * @param mixed $class Class name or object instance to examine and attach
+     * to the server.
+     * @param mixed $arg1 Optional argument to pass to class constructor
+     * @param mixed $arg2 Optional second argument to pass to class constructor
+     * dispatch.
+     * @return Zend_Soap_Server
+     * @throws Zend_Soap_Server_Exception if called more than once, or if class
+     * does not exist
+     */
+    public function setClass($class, $arg1 = null, $arg2 = null)
+    {
+        if (isset($this->_class)) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('A class has already been registered with this soap server instance');
+        }
+
+        if (!is_string($class)) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Invalid class argument (' . gettype($class) . ')');
+        }
+
+        if (!class_exists($class)) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Class "' . $class . '" does not exist');
+        }
+
+        $this->_class = $class;
+        if (1 < func_num_args()) {
+            $argv = func_get_args();
+            array_shift($argv);
+            $this->_classArgs = $argv;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Attach an object to a server
+     *
+     * Accepts an instanciated object to use when handling requests.
+     *
+     * @param object $object
+     * @return Zend_Soap_Server
+     */
+    public function setObject($object)
+    {
+        if(!is_object($object)) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Invalid object argument ('.gettype($object).')');
+        }
+
+        if(isset($this->_object)) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('An object has already been registered with this soap server instance');
+        }
+
+        $this->_object = $object;
+
+        return $this;
+    }
+
+    /**
+     * Return a server definition array
+     *
+     * Returns a list of all functions registered with {@link addFunction()},
+     * merged with all public methods of the class set with {@link setClass()}
+     * (if any).
+     *
+     * @access public
+     * @return array
+     */
+    public function getFunctions()
+    {
+        $functions = array();
+        if (null !== $this->_class) {
+            $functions = get_class_methods($this->_class);
+        } elseif (null !== $this->_object) {
+            $functions = get_class_methods($this->_object);
+        }
+
+        return array_merge((array) $this->_functions, $functions);
+    }
+
+    /**
+     * Unimplemented: Load server definition
+     *
+     * @param array $array
+     * @return void
+     * @throws Zend_Soap_Server_Exception Unimplemented
+     */
+    public function loadFunctions($definition)
+    {
+        require_once 'Zend/Soap/Server/Exception.php';
+        throw new Zend_Soap_Server_Exception('Unimplemented');
+    }
+
+    /**
+     * Set server persistence
+     *
+     * @param int $mode
+     * @return Zend_Soap_Server
+     */
+    public function setPersistence($mode)
+    {
+        if (!in_array($mode, array(SOAP_PERSISTENCE_SESSION, SOAP_PERSISTENCE_REQUEST))) {
+            require_once 'Zend/Soap/Server/Exception.php';
+            throw new Zend_Soap_Server_Exception('Invalid persistence mode specified');
+        }
+
+        $this->_persistence = $mode;
+        return $this;
+    }
+
+    /**
+     * Get server persistence
+     *
+     * @return Zend_Soap_Server
+     */
+    public function getPersistence()
+    {
+        return $this->_persistence;
+    }
+
+    /**
+     * Set request
+     *
+     * $request may be any of:
+     * - DOMDocument; if so, then cast to XML
+     * - DOMNode; if so, then grab owner document and cast to XML
+     * - SimpleXMLElement; if so, then cast to XML
+     * - stdClass; if so, calls __toString() and verifies XML
+     * - string; if so, verifies XML
+     *
+     * @param DOMDocument|DOMNode|SimpleXMLElement|stdClass|string $request
+     * @return Zend_Soap_Server
+     */
+    private function _setRequest($request)
+    {
+        if ($request instanceof DOMDocument) {
+            $xml = $request->saveXML();
+        } elseif ($request instanceof DOMNode) {
+            $xml = $request->ownerDocument->saveXML();
+        } elseif ($request instanceof SimpleXMLElement) {
+            $xml = $request->asXML();
+        } elseif (is_object($request) || is_string($request)) {
+            if (is_object($request)) {
+                $xml = $request->__toString();
+            } else {
+                $xml = $request;
+            }
+
+            $dom = new DOMDocument();
+            if(strlen($xml) == 0 || !$dom->loadXML($xml)) {
+                require_once 'Zend/Soap/Server/Exception.php';
+                throw new Zend_Soap_Server_Exception('Invalid XML');
+            }
+        }
+        $this->_request = $xml;
+        return $this;
+    }
+
+    /**
+     * Retrieve request XML
+     *
+     * @return string
+     */
+    public function getLastRequest()
+    {
+        return $this->_request;
+    }
+
+    /**
+     * Set return response flag
+     *
+     * If true, {@link handle()} will return the response instead of
+     * automatically sending it back to the requesting client.
+     *
+     * The response is always available via {@link getResponse()}.
+     *
+     * @param boolean $flag
+     * @return Zend_Soap_Server
+     */
+    public function setReturnResponse($flag)
+    {
+        $this->_returnResponse = ($flag) ? true : false;
+        return $this;
+    }
+
+    /**
+     * Retrieve return response flag
+     *
+     * @return boolean
+     */
+    public function getReturnResponse()
+    {
+        return $this->_returnResponse;
+    }
+
+    /**
+     * Get response XML
+     *
+     * @return string
+     */
+    public function getLastResponse()
+    {
+        return $this->_response;
+    }
+
+    /**
+     * Get SoapServer object
+     *
+     * Uses {@link $_wsdl} and return value of {@link getOptions()} to instantiate
+     * SoapServer object, and then registers any functions or class with it, as
+     * well as peristence.
+     *
+     * @return SoapServer
+     */
+    protected function _getSoap()
+    {
+        $options = $this->getOptions();
+        $server  = new SoapServer($this->_wsdl, $options);
+
+        if (!empty($this->_functions)) {
+            $server->addFunction($this->_functions);
+        }
+
+        if (!empty($this->_class)) {
+            $args = $this->_classArgs;
+            array_unshift($args, $this->_class);
+            call_user_func_array(array($server, 'setClass'), $args);
+        }
+
+        if (!empty($this->_object)) {
+            $server->setObject($this->_object);
+        }
+
+        if (null !== $this->_persistence) {
+            $server->setPersistence($this->_persistence);
+        }
+
+        return $server;
+    }
+
+    /**
+     * Handle a request
+     *
+     * Instantiates SoapServer object with options set in object, and
+     * dispatches its handle() method.
+     *
+     * $request may be any of:
+     * - DOMDocument; if so, then cast to XML
+     * - DOMNode; if so, then grab owner document and cast to XML
+     * - SimpleXMLElement; if so, then cast to XML
+     * - stdClass; if so, calls __toString() and verifies XML
+     * - string; if so, verifies XML
+     *
+     * If no request is passed, pulls request using php:://input (for
+     * cross-platform compatability purposes).
+     *
+     * @param DOMDocument|DOMNode|SimpleXMLElement|stdClass|string $request Optional request
+     * @return void|string
+     */
+    public function handle($request = null)
+    {
+        if (null === $request) {
+            $request = file_get_contents('php://input');
+        }
+
+        // Set Zend_Soap_Server error handler
+        $displayErrorsOriginalState = $this->_initializeSoapErrorContext();
+
+        $setRequestException = null;
+        /**
+         * @see Zend_Soap_Server_Exception
+         */
+        require_once 'Zend/Soap/Server/Exception.php';
+        try {
+            $this->_setRequest($request);
+        } catch (Zend_Soap_Server_Exception $e) {
+            $setRequestException = $e;
+        }
+
+        $soap = $this->_getSoap();
+
+        ob_start();
+        if($setRequestException instanceof Exception) {
+            // Send SOAP fault message if we've catched exception
+            $soap->fault("Sender", $setRequestException->getMessage());
+        } else {
+            try {
+                $soap->handle($request);
+            } catch (Exception $e) {
+                $fault = $this->fault($e);
+                $soap->fault($fault->faultcode, $fault->faultstring);
+            }
+        }
+        $this->_response = ob_get_clean();
+
+        // Restore original error handler
+        restore_error_handler();
+        ini_set('display_errors', $displayErrorsOriginalState);
+
+        if (!$this->_returnResponse) {
+            echo $this->_response;
+            return;
+        }
+
+        return $this->_response;
+    }
+
+    /**
+     * Method initalizes the error context that the SOAPServer enviroment will run in.
+     *
+     * @return boolean display_errors original value
+     */
+    protected function _initializeSoapErrorContext()
+    {
+        $displayErrorsOriginalState = ini_get('display_errors');
+        ini_set('display_errors', false);
+        set_error_handler(array($this, 'handlePhpErrors'), E_USER_ERROR);
+        return $displayErrorsOriginalState;
+    }
+
+    /**
+     * Register a valid fault exception
+     *
+     * @param  string|array $class Exception class or array of exception classes
+     * @return Zend_Soap_Server
+     */
+    public function registerFaultException($class)
+    {
+        $this->_faultExceptions = array_merge($this->_faultExceptions, (array) $class);
+        return $this;
+    }
+
+    /**
+     * Deregister a fault exception from the fault exception stack
+     *
+     * @param  string $class
+     * @return boolean
+     */
+    public function deregisterFaultException($class)
+    {
+        if (in_array($class, $this->_faultExceptions, true)) {
+            $index = array_search($class, $this->_faultExceptions);
+            unset($this->_faultExceptions[$index]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Return fault exceptions list
+     *
+     * @return array
+     */
+    public function getFaultExceptions()
+    {
+        return $this->_faultExceptions;
+    }
+
+    /**
+     * Generate a server fault
+     *
+     * Note that the arguments are reverse to those of SoapFault.
+     *
+     * If an exception is passed as the first argument, its message and code
+     * will be used to create the fault object if it has been registered via
+     * {@Link registerFaultException()}.
+     *
+     * @link   http://www.w3.org/TR/soap12-part1/#faultcodes
+     * @param  string|Exception $fault
+     * @param  string $code SOAP Fault Codes
+     * @return SoapFault
+     */
+    public function fault($fault = null, $code = "Receiver")
+    {
+        if ($fault instanceof Exception) {
+            $class = get_class($fault);
+            if (in_array($class, $this->_faultExceptions)) {
+                $message = $fault->getMessage();
+                $eCode   = $fault->getCode();
+                $code    = empty($eCode) ? $code : $eCode;
+            } else {
+                $message = 'Unknown error';
+            }
+        } elseif(is_string($fault)) {
+            $message = $fault;
+        } else {
+            $message = 'Unknown error';
+        }
+
+        $allowedFaultModes = array(
+            'VersionMismatch', 'MustUnderstand', 'DataEncodingUnknown',
+            'Sender', 'Receiver', 'Server'
+        );
+        if(!in_array($code, $allowedFaultModes)) {
+            $code = "Receiver";
+        }
+
+        return new SoapFault($code, $message);
+    }
+
+    /**
+     * Throw PHP errors as SoapFaults
+     *
+     * @param int $errno
+     * @param string $errstr
+     * @param string $errfile
+     * @param int $errline
+     * @param array $errcontext
+     * @return void
+     * @throws SoapFault
+     */
+    public function handlePhpErrors($errno, $errstr, $errfile = null, $errline = null, array $errcontext = null)
+    {
+        throw $this->fault($errstr, "Receiver");
+    }
+}

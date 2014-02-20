@@ -1,36 +1,115 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-2xYlSKRxhDafpy+uygOw7Zsq
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Entry.php 3941 2007-03-14 21:36:13Z darby $
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension_Element
+ */
+require_once 'Zend/Gdata/App/Extension/Element.php';
+
+/**
+ * Concrete class for working with ItemType elements.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gbase_Extension_BaseAttribute extends Zend_Gdata_App_Extension_Element
+{
+
+    /**
+     * Namespace for Google Base elements
+     *
+     * var @string
+     */
+    protected $_rootNamespace = 'g';
+
+    /**
+     * Create a new instance.
+     *
+     * @param string $name (optional) The name of the Base attribute
+     * @param string $text (optional) The text value of the Base attribute
+     * @param string $text (optional) The type of the Base attribute
+     */
+    public function __construct($name = null, $text = null, $type = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gbase::$namespaces);
+        if ($type !== null) {
+          $attr = array('name' => 'type', 'value' => $type);
+          $typeAttr = array('type' => $attr);
+          $this->setExtensionAttributes($typeAttr);
+        }
+        parent::__construct($name,
+                            $this->_rootNamespace,
+                            $this->lookupNamespace($this->_rootNamespace),
+                            $text);
+    }
+
+    /**
+     * Get the name of the attribute
+     *
+     * @return attribute name The requested object.
+     */
+    public function getName() {
+      return $this->_rootElement;
+    }
+
+    /**
+     * Get the type of the attribute
+     *
+     * @return attribute type The requested object.
+     */
+    public function getType() {
+      $typeAttr = $this->getExtensionAttributes();
+      return $typeAttr['type']['value'];
+    }
+
+    /**
+     * Set the 'name' of the Base attribute object:
+     *     &lt;g:[$name] type='[$type]'&gt;[$value]&lt;/g:[$name]&gt;
+     *
+     * @param Zend_Gdata_App_Extension_Element $attribute The attribute object
+     * @param string $name The name of the Base attribute
+     * @return Zend_Gdata_Extension_ItemEntry Provides a fluent interface
+     */
+    public function setName($name) {
+      $this->_rootElement = $name;
+      return $this;
+    }
+
+    /**
+     * Set the 'type' of the Base attribute object:
+     *     &lt;g:[$name] type='[$type]'&gt;[$value]&lt;/g:[$name]&gt;
+     *
+     * @param Zend_Gdata_App_Extension_Element $attribute The attribute object
+     * @param string $type The type of the Base attribute
+     * @return Zend_Gdata_Extension_ItemEntry Provides a fluent interface
+     */
+    public function setType($type) {
+      $attr = array('name' => 'type', 'value' => $type);
+      $typeAttr = array('type' => $attr);
+      $this->setExtensionAttributes($typeAttr);
+      return $this;
+    }
+
+}

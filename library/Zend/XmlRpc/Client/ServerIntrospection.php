@@ -1,55 +1,160 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-GwOzp/n4eQdKEhlI
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Wraps the XML-RPC system.* introspection methods
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Client_ServerIntrospection
+{
+    /**
+     * @var Zend_XmlRpc_Client_ServerProxy
+     */
+    private $_system = null;
+
+
+    /**
+     * @param Zend_XmlRpc_Client $client
+     */
+    public function __construct(Zend_XmlRpc_Client $client)
+    {
+        $this->_system = $client->getProxy('system');
+    }
+
+    /**
+     * Returns the signature for each method on the server,
+     * autodetecting whether system.multicall() is supported and
+     * using it if so.
+     *
+     * @return array
+     */
+    public function getSignatureForEachMethod()
+    {
+        $methods = $this->listMethods();
+
+        require_once 'Zend/XmlRpc/Client/FaultException.php';
+        try {
+            $signatures = $this->getSignatureForEachMethodByMulticall($methods);
+        } catch (Zend_XmlRpc_Client_FaultException $e) {
+            // degrade to looping
+        }
+
+        if (empty($signatures)) {
+            $signatures = $this->getSignatureForEachMethodByLooping($methods);
+        }
+
+        return $signatures;
+    }
+
+    /**
+     * Attempt to get the method signatures in one request via system.multicall().
+     * This is a boxcar feature of XML-RPC and is found on fewer servers.  However,
+     * can significantly improve performance if present.
+     *
+     * @param  array $methods
+     * @return array array(array(return, param, param, param...))
+     */
+    public function getSignatureForEachMethodByMulticall($methods = null)
+    {
+        if ($methods === null) {
+            $methods = $this->listMethods();
+        }
+
+        $multicallParams = array();
+        foreach ($methods as $method) {
+            $multicallParams[] = array('methodName' => 'system.methodSignature',
+                                       'params'     => array($method));
+        }
+
+        $serverSignatures = $this->_system->multicall($multicallParams);
+
+        if (! is_array($serverSignatures)) {
+            $type = gettype($serverSignatures);
+            $error = "Multicall return is malformed.  Expected array, got $type";
+            require_once 'Zend/XmlRpc/Client/IntrospectException.php';
+            throw new Zend_XmlRpc_Client_IntrospectException($error);
+        }
+
+        if (count($serverSignatures) != count($methods)) {
+            $error = 'Bad number of signatures received from multicall';
+            require_once 'Zend/XmlRpc/Client/IntrospectException.php';
+            throw new Zend_XmlRpc_Client_IntrospectException($error);
+        }
+
+        // Create a new signatures array with the methods name as keys and the signature as value
+        $signatures = array();
+        foreach ($serverSignatures as $i => $signature) {
+            $signatures[$methods[$i]] = $signature;
+        }
+
+        return $signatures;
+    }
+
+    /**
+     * Get the method signatures for every method by
+     * successively calling system.methodSignature
+     *
+     * @param array $methods
+     * @return array
+     */
+    public function getSignatureForEachMethodByLooping($methods = null)
+    {
+        if ($methods === null) {
+            $methods = $this->listMethods();
+        }
+
+        $signatures = array();
+        foreach ($methods as $method) {
+            $signatures[$method] = $this->getMethodSignature($method);
+        }
+
+        return $signatures;
+    }
+
+    /**
+     * Call system.methodSignature() for the given method
+     *
+     * @param  array  $method
+     * @return array  array(array(return, param, param, param...))
+     */
+    public function getMethodSignature($method)
+    {
+        $signature = $this->_system->methodSignature($method);
+        return $signature;
+    }
+
+    /**
+     * Call system.listMethods()
+     *
+     * @param  array  $method
+     * @return array  array(method, method, method...)
+     */
+    public function listMethods()
+    {
+        return $this->_system->listMethods();
+    }
+
+}

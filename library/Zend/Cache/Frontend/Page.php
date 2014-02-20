@@ -1,147 +1,401 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Core
+ */
+require_once 'Zend/Cache/Core.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Frontend_Page extends Zend_Cache_Core
+{
+    /**
+     * This frontend specific options
+     *
+     * ====> (boolean) http_conditional :
+     * - if true, http conditional mode is on
+     * WARNING : http_conditional OPTION IS NOT IMPLEMENTED FOR THE MOMENT (TODO)
+     *
+     * ====> (boolean) debug_header :
+     * - if true, a debug text is added before each cached pages
+     *
+     * ====> (boolean) content_type_memorization :
+     * - deprecated => use memorize_headers instead
+     * - if the Content-Type header is sent after the cache was started, the
+     *   corresponding value can be memorized and replayed when the cache is hit
+     *   (if false (default), the frontend doesn't take care of Content-Type header)
+     *
+     * ====> (array) memorize_headers :
+     * - an array of strings corresponding to some HTTP headers name. Listed headers
+     *   will be stored with cache datas and "replayed" when the cache is hit
+     *
+     * ====> (array) default_options :
+     * - an associative array of default options :
+     *     - (boolean) cache : cache is on by default if true
+     *     - (boolean) cacheWithXXXVariables  (XXXX = 'Get', 'Post', 'Session', 'Files' or 'Cookie') :
+     *       if true,  cache is still on even if there are some variables in this superglobal array
+     *       if false, cache is off if there are some variables in this superglobal array
+     *     - (boolean) makeIdWithXXXVariables (XXXX = 'Get', 'Post', 'Session', 'Files' or 'Cookie') :
+     *       if true, we have to use the content of this superglobal array to make a cache id
+     *       if false, the cache id won't be dependent of the content of this superglobal array
+     *     - (int) specific_lifetime : cache specific lifetime
+     *                                (false => global lifetime is used, null => infinite lifetime,
+     *                                 integer => this lifetime is used), this "lifetime" is probably only
+     *                                usefull when used with "regexps" array
+     *     - (array) tags : array of tags (strings)
+     *     - (int) priority : integer between 0 (very low priority) and 10 (maximum priority) used by
+     *                        some particular backends
+     *
+     * ====> (array) regexps :
+     * - an associative array to set options only for some REQUEST_URI
+     * - keys are (pcre) regexps
+     * - values are associative array with specific options to set if the regexp matchs on $_SERVER['REQUEST_URI']
+     *   (see default_options for the list of available options)
+     * - if several regexps match the $_SERVER['REQUEST_URI'], only the last one will be used
+     *
+     * @var array options
+     */
+    protected $_specificOptions = array(
+        'http_conditional' => false,
+        'debug_header' => false,
+        'content_type_memorization' => false,
+        'memorize_headers' => array(),
+        'default_options' => array(
+            'cache_with_get_variables' => false,
+            'cache_with_post_variables' => false,
+            'cache_with_session_variables' => false,
+            'cache_with_files_variables' => false,
+            'cache_with_cookie_variables' => false,
+            'make_id_with_get_variables' => true,
+            'make_id_with_post_variables' => true,
+            'make_id_with_session_variables' => true,
+            'make_id_with_files_variables' => true,
+            'make_id_with_cookie_variables' => true,
+            'cache' => true,
+            'specific_lifetime' => false,
+            'tags' => array(),
+            'priority' => null
+        ),
+        'regexps' => array()
+    );
+
+    /**
+     * Internal array to store some options
+     *
+     * @var array associative array of options
+     */
+    protected $_activeOptions = array();
+
+    /**
+     * If true, the page won't be cached
+     *
+     * @var boolean
+     */
+    protected $_cancel = false;
+
+    /**
+     * Constructor
+     *
+     * @param  array   $options                Associative array of options
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        while (list($name, $value) = each($options)) {
+            $name = strtolower($name);
+            switch ($name) {
+                case 'regexps':
+                    $this->_setRegexps($value);
+                    break;
+                case 'default_options':
+                    $this->_setDefaultOptions($value);
+                    break;
+                case 'content_type_memorization':
+                    $this->_setContentTypeMemorization($value);
+                    break;
+                default:
+                    $this->setOption($name, $value);
+            }
+        }
+        if (isset($this->_specificOptions['http_conditional'])) {
+            if ($this->_specificOptions['http_conditional']) {
+                Zend_Cache::throwException('http_conditional is not implemented for the moment !');
+            }
+        }
+        $this->setOption('automatic_serialization', true);
+    }
+
+    /**
+     * Specific setter for the 'default_options' option (with some additional tests)
+     *
+     * @param  array $options Associative array
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    protected function _setDefaultOptions($options)
+    {
+        if (!is_array($options)) {
+            Zend_Cache::throwException('default_options must be an array !');
+        }
+        foreach ($options as $key=>$value) {
+            if (!is_string($key)) {
+                Zend_Cache::throwException("invalid option [$key] !");
+            }
+            $key = strtolower($key);
+            if (isset($this->_specificOptions['default_options'][$key])) {
+                $this->_specificOptions['default_options'][$key] = $value;
+            }
+        }
+    }
+
+    /**
+     * Set the deprecated contentTypeMemorization option
+     *
+     * @param boolean $value value
+     * @return void
+     * @deprecated
+     */
+    protected function _setContentTypeMemorization($value)
+    {
+        $found = null;
+        foreach ($this->_specificOptions['memorize_headers'] as $key => $value) {
+            if (strtolower($value) == 'content-type') {
+                $found = $key;
+            }
+        }
+        if ($value) {
+            if (!$found) {
+                $this->_specificOptions['memorize_headers'][] = 'Content-Type';
+            }
+        } else {
+            if ($found) {
+                unset($this->_specificOptions['memorize_headers'][$found]);
+            }
+        }
+    }
+
+    /**
+     * Specific setter for the 'regexps' option (with some additional tests)
+     *
+     * @param  array $options Associative array
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    protected function _setRegexps($regexps)
+    {
+        if (!is_array($regexps)) {
+            Zend_Cache::throwException('regexps option must be an array !');
+        }
+        foreach ($regexps as $regexp=>$conf) {
+            if (!is_array($conf)) {
+                Zend_Cache::throwException('regexps option must be an array of arrays !');
+            }
+            $validKeys = array_keys($this->_specificOptions['default_options']);
+            foreach ($conf as $key=>$value) {
+                if (!is_string($key)) {
+                    Zend_Cache::throwException("unknown option [$key] !");
+                }
+                $key = strtolower($key);
+                if (!in_array($key, $validKeys)) {
+                    unset($regexps[$regexp][$key]);
+                }
+            }
+        }
+        $this->setOption('regexps', $regexps);
+    }
+
+    /**
+     * Start the cache
+     *
+     * @param  string  $id       (optional) A cache id (if you set a value here, maybe you have to use Output frontend instead)
+     * @param  boolean $doNotDie For unit testing only !
+     * @return boolean True if the cache is hit (false else)
+     */
+    public function start($id = false, $doNotDie = false)
+    {
+        $this->_cancel = false;
+        $lastMatchingRegexp = null;
+        foreach ($this->_specificOptions['regexps'] as $regexp => $conf) {
+            if (preg_match("`$regexp`", $_SERVER['REQUEST_URI'])) {
+                $lastMatchingRegexp = $regexp;
+            }
+        }
+        $this->_activeOptions = $this->_specificOptions['default_options'];
+        if ($lastMatchingRegexp !== null) {
+            $conf = $this->_specificOptions['regexps'][$lastMatchingRegexp];
+            foreach ($conf as $key=>$value) {
+                $this->_activeOptions[$key] = $value;
+            }
+        }
+        if (!($this->_activeOptions['cache'])) {
+            return false;
+        }
+        if (!$id) {
+            $id = $this->_makeId();
+            if (!$id) {
+                return false;
+            }
+        }
+        $array = $this->load($id);
+        if ($array !== false) {
+            $data = $array['data'];
+            $headers = $array['headers'];
+            if (!headers_sent()) {
+                foreach ($headers as $key=>$headerCouple) {
+                    $name = $headerCouple[0];
+                    $value = $headerCouple[1];
+                    header("$name: $value");
+                }
+            }
+        	if ($this->_specificOptions['debug_header']) {
+                echo 'DEBUG HEADER : This is a cached page !';
+            }
+            echo $data;
+            if ($doNotDie) {
+                return true;
+            }
+            die();
+        }
+        ob_start(array($this, '_flush'));
+        ob_implicit_flush(false);
+        return false;
+    }
+
+    /**
+     * Cancel the current caching process
+     */
+    public function cancel()
+    {
+        $this->_cancel = true;
+    }
+
+    /**
+     * callback for output buffering
+     * (shouldn't really be called manually)
+     *
+     * @param  string $data Buffered output
+     * @return string Data to send to browser
+     */
+    public function _flush($data)
+    {
+        if ($this->_cancel) {
+            return $data;
+        }
+        $contentType = null;
+        $storedHeaders = array();
+        $headersList = headers_list();
+        foreach($this->_specificOptions['memorize_headers'] as $key=>$headerName) {
+            foreach ($headersList as $headerSent) {
+                $tmp = split(':', $headerSent);
+                $headerSentName = trim(array_shift($tmp));
+                if (strtolower($headerName) == strtolower($headerSentName)) {
+                    $headerSentValue = trim(implode(':', $tmp));
+                    $storedHeaders[] = array($headerSentName, $headerSentValue);
+                }
+            }
+        }
+        $array = array(
+            'data' => $data,
+            'headers' => $storedHeaders
+        );
+        $this->save($array, null, $this->_activeOptions['tags'], $this->_activeOptions['specific_lifetime'], $this->_activeOptions['priority']);
+        return $data;
+    }
+
+    /**
+     * Make an id depending on REQUEST_URI and superglobal arrays (depending on options)
+     *
+     * @return mixed|false a cache id (string), false if the cache should have not to be used
+     */
+    protected function _makeId()
+    {
+        $tmp = $_SERVER['REQUEST_URI'];
+        $array = explode('?', $tmp, 2);
+      	$tmp = $array[0];
+        foreach (array('Get', 'Post', 'Session', 'Files', 'Cookie') as $arrayName) {
+        	$tmp2 = $this->_makePartialId($arrayName, $this->_activeOptions['cache_with_' . strtolower($arrayName) . '_variables'], $this->_activeOptions['make_id_with_' . strtolower($arrayName) . '_variables']);
+            if ($tmp2===false) {
+                return false;
+            }
+            $tmp = $tmp . $tmp2;
+        }
+        return md5($tmp);
+    }
+
+    /**
+     * Make a partial id depending on options
+     *
+     * @param  string $arrayName Superglobal array name
+     * @param  bool   $bool1     If true, cache is still on even if there are some variables in the superglobal array
+     * @param  bool   $bool2     If true, we have to use the content of the superglobal array to make a partial id
+     * @return mixed|false Partial id (string) or false if the cache should have not to be used
+     */
+    protected function _makePartialId($arrayName, $bool1, $bool2)
+    {
+    	switch ($arrayName) {
+        case 'Get':
+            $var = $_GET;
+            break;
+        case 'Post':
+            $var = $_POST;
+            break;
+        case 'Session':
+            if (isset($_SESSION)) {
+                $var = $_SESSION;
+            } else {
+                $var = null;
+            }
+            break;
+        case 'Cookie':
+            if (isset($_COOKIE)) {
+                $var = $_COOKIE;
+            } else {
+                $var = null;
+            }
+            break;
+        case 'Files':
+            $var = $_FILES;
+            break;
+        default:
+            return false;
+        }
+        if ($bool1) {
+            if ($bool2) {
+                return serialize($var);
+            }
+            return '';
+        }
+        if (count($var) > 0) {
+            return false;
+        }
+        return '';
+    }
+
+}

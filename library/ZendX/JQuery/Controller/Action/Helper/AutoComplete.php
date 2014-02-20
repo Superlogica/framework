@@ -1,31 +1,76 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: AutoComplete.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+require_once "Zend/Controller/Action/Helper/AutoComplete/Abstract.php";
+
+class ZendX_JQuery_Controller_Action_Helper_AutoComplete
+extends Zend_Controller_Action_Helper_AutoComplete_Abstract
+{
+    /**
+     * Validate autocompletion data
+     *
+     * @param  mixed $data
+     * @return boolean
+     */
+    public function validateData($data)
+    {
+        if (!is_array($data)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Prepare autocompletion data
+     *
+     * @param  mixed   $data
+     * @param  boolean $keepLayouts
+     * @return mixed
+     */
+    public function prepareAutoCompletion($data, $keepLayouts = false)
+    {
+        if (!$this->validateData($data)) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('Invalid data passed for autocompletion');
+        }
+
+        $data = (array) $data;
+        $output = "";
+        foreach($data AS $k => $v) {
+            if(is_numeric($k)) {
+                $output .= $v."\n";
+            } else {
+                $output .= $k."|".$v."\n";
+            }
+        }
+
+        if (!$keepLayouts) {
+            $this->disableLayouts();
+        }
+
+        return $output;
+    }
+}

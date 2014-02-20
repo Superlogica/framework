@@ -1,40 +1,110 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-RW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element_String */
+require_once 'Zend/Pdf/Element/String.php';
+
+
+/**
+ * PDF file 'binary string' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_String_Binary extends Zend_Pdf_Element_String
+{
+    /**
+     * Object value
+     *
+     * @var string
+     */
+    public $value;
+
+
+    /**
+     * Escape string according to the PDF rules
+     *
+     * @param string $inStr
+     * @return string
+     */
+    public static function escape($inStr)
+    {
+        $outStr = '';
+
+        for ($count = 0; $count < strlen($inStr); $count++) {
+            $outStr .= sprintf('%02X', ord($inStr[$count]));
+        }
+        return $outStr;
+    }
+
+
+    /**
+     * Unescape string according to the PDF rules
+     *
+     * @param string $inStr
+     * @return string
+     */
+    public static function unescape($inStr)
+    {
+        $outStr = '';
+        $nextHexCode = '';
+
+        for ($count = 0; $count < strlen($inStr); $count++) {
+            $nextCharCode = ord($inStr[$count]);
+
+            if( ($nextCharCode >= 48  /*'0'*/ &&
+                 $nextCharCode <= 57  /*'9'*/   ) ||
+                ($nextCharCode >= 97  /*'a'*/ &&
+                 $nextCharCode <= 102 /*'f'*/   ) ||
+                ($nextCharCode >= 65  /*'A'*/ &&
+                 $nextCharCode <= 70  /*'F'*/   ) ) {
+                $nextHexCode .= $inStr[$count];
+            }
+
+            if (strlen($nextHexCode) == 2) {
+                $outStr .= chr(intval($nextHexCode, 16));
+                $nextHexCode = '';
+            }
+        }
+
+        if ($nextHexCode != '') {
+            // We have odd number of digits.
+            // Final digit is assumed to be '0'
+            $outStr .= chr(base_convert($nextHexCode . '0', 16, 10));
+        }
+
+        return $outStr;
+    }
+
+
+    /**
+     * Return object as string
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        return '<' . self::escape((string)$this->value) . '>';
+    }
+}

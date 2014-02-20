@@ -1,89 +1,258 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: EmailAddress.php 14560 2009-03-31 14:41:22Z thomas $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * @see Zend_Validate_Hostname
+ */
+require_once 'Zend/Validate/Hostname.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_EmailAddress extends Zend_Validate_Abstract
+{
+    const INVALID            = 'emailAddressInvalid';
+    const INVALID_HOSTNAME   = 'emailAddressInvalidHostname';
+    const INVALID_MX_RECORD  = 'emailAddressInvalidMxRecord';
+    const DOT_ATOM           = 'emailAddressDotAtom';
+    const QUOTED_STRING      = 'emailAddressQuotedString';
+    const INVALID_LOCAL_PART = 'emailAddressInvalidLocalPart';
+    const LENGTH_EXCEEDED    = 'emailAddressLengthExceeded';
+
+    /**
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::INVALID            => "'%value%' is not a valid email address in the basic format local-part@hostname",
+        self::INVALID_HOSTNAME   => "'%hostname%' is not a valid hostname for email address '%value%'",
+        self::INVALID_MX_RECORD  => "'%hostname%' does not appear to have a valid MX record for the email address '%value%'",
+        self::DOT_ATOM           => "'%localPart%' not matched against dot-atom format",
+        self::QUOTED_STRING      => "'%localPart%' not matched against quoted-string format",
+        self::INVALID_LOCAL_PART => "'%localPart%' is not a valid local part for email address '%value%'",
+        self::LENGTH_EXCEEDED    => "'%value%' exceeds the allowed length"
+    );
+
+    /**
+     * @var array
+     */
+    protected $_messageVariables = array(
+        'hostname'  => '_hostname',
+        'localPart' => '_localPart'
+    );
+
+    /**
+     * Local object for validating the hostname part of an email address
+     *
+     * @var Zend_Validate_Hostname
+     * @depreciated
+     */
+    public $hostnameValidator;
+
+    /**
+     * Whether we check for a valid MX record via DNS
+     *
+     * @var boolean
+     */
+    protected $_validateMx = false;
+
+    /**
+     * @var string
+     */
+    protected $_hostname;
+
+    /**
+     * @var string
+     */
+    protected $_localPart;
+
+    /**
+     * Instantiates hostname validator for local use
+     *
+     * You can pass a bitfield to determine what types of hostnames are allowed.
+     * These bitfields are defined by the ALLOW_* constants in Zend_Validate_Hostname
+     * The default is to allow DNS hostnames only
+     *
+     * @param integer                $allow             OPTIONAL
+     * @param bool                   $validateMx        OPTIONAL
+     * @param Zend_Validate_Hostname $hostnameValidator OPTIONAL
+     * @return void
+     */
+    public function __construct($allow = Zend_Validate_Hostname::ALLOW_DNS, $validateMx = false, Zend_Validate_Hostname $hostnameValidator = null)
+    {
+        $this->setValidateMx($validateMx);
+        $this->setHostnameValidator($hostnameValidator, $allow);
+    }
+
+    /**
+     * Returns the set hostname validator
+     *
+     * @return Zend_Validate_Hostname
+     */
+    public function getHostnameValidator()
+    {
+        return $this->hostnameValidator;
+    }
+
+    /**
+     * @param Zend_Validate_Hostname $hostnameValidator OPTIONAL
+     * @param int                    $allow             OPTIONAL
+     * @return void
+     */
+    public function setHostnameValidator(Zend_Validate_Hostname $hostnameValidator = null, $allow = Zend_Validate_Hostname::ALLOW_DNS)
+    {
+        if ($hostnameValidator === null) {
+            $hostnameValidator = new Zend_Validate_Hostname($allow);
+        }
+        $this->hostnameValidator = $hostnameValidator;
+    }
+
+    /**
+     * Whether MX checking via dns_get_mx is supported or not
+     *
+     * This currently only works on UNIX systems
+     *
+     * @return boolean
+     */
+    public function validateMxSupported()
+    {
+        return function_exists('dns_get_mx');
+    }
+
+    /**
+     * Set whether we check for a valid MX record via DNS
+     *
+     * This only applies when DNS hostnames are validated
+     *
+     * @param boolean $allowed Set allowed to true to validate for MX records, and false to not validate them
+     */
+    public function setValidateMx($allowed)
+    {
+        $this->_validateMx = (bool) $allowed;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value is a valid email address
+     * according to RFC2822
+     *
+     * @link   http://www.ietf.org/rfc/rfc2822.txt RFC2822
+     * @link   http://www.columbia.edu/kermit/ascii.html US-ASCII characters
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $valueString = (string) $value;
+        $matches     = array();
+        $length      = true;
+
+        $this->_setValue($valueString);
+
+        // Split email address up and disallow '..'
+        if ((strpos($valueString, '..') !== false) or
+            (!preg_match('/^(.+)@([^@]+)$/', $valueString, $matches))) {
+            $this->_error(self::INVALID);
+            return false;
+        }
+
+        $this->_localPart = $matches[1];
+        $this->_hostname  = $matches[2];
+
+        if ((strlen($this->_localPart) > 64) || (strlen($this->_hostname) > 255)) {
+            $length = false;
+            $this->_error(self::LENGTH_EXCEEDED);
+        }
+
+        // Match hostname part
+        $hostnameResult = $this->hostnameValidator->setTranslator($this->getTranslator())
+                               ->isValid($this->_hostname);
+        if (!$hostnameResult) {
+            $this->_error(self::INVALID_HOSTNAME);
+
+            // Get messages and errors from hostnameValidator
+            foreach ($this->hostnameValidator->getMessages() as $code => $message) {
+                $this->_messages[$code] = $message;
+            }
+            foreach ($this->hostnameValidator->getErrors() as $error) {
+                $this->_errors[] = $error;
+            }
+        } else if ($this->_validateMx) {
+            // MX check on hostname via dns_get_record()
+            if ($this->validateMxSupported()) {
+                $result = dns_get_mx($this->_hostname, $mxHosts);
+                if (count($mxHosts) < 1) {
+                    $hostnameResult = false;
+                    $this->_error(self::INVALID_MX_RECORD);
+                }
+            } else {
+                /**
+                 * MX checks are not supported by this system
+                 * @see Zend_Validate_Exception
+                 */
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception('Internal error: MX checking not available on this system');
+            }
+        }
+
+        // First try to match the local part on the common dot-atom format
+        $localResult = false;
+
+        // Dot-atom characters are: 1*atext *("." 1*atext)
+        // atext: ALPHA / DIGIT / and "!", "#", "$", "%", "&", "'", "*",
+        //        "+", "-", "/", "=", "?", "^", "_", "`", "{", "|", "}", "~"
+        $atext = 'a-zA-Z0-9\x21\x23\x24\x25\x26\x27\x2a\x2b\x2d\x2f\x3d\x3f\x5e\x5f\x60\x7b\x7c\x7d\x7e';
+        if (preg_match('/^[' . $atext . ']+(\x2e+[' . $atext . ']+)*$/', $this->_localPart)) {
+            $localResult = true;
+        } else {
+            // Try quoted string format
+
+            // Quoted-string characters are: DQUOTE *([FWS] qtext/quoted-pair) [FWS] DQUOTE
+            // qtext: Non white space controls, and the rest of the US-ASCII characters not
+            //   including "\" or the quote character
+            $noWsCtl    = '\x01-\x08\x0b\x0c\x0e-\x1f\x7f';
+            $qtext      = $noWsCtl . '\x21\x23-\x5b\x5d-\x7e';
+            $ws         = '\x20\x09';
+            if (preg_match('/^\x22([' . $ws . $qtext . '])*[$ws]?\x22$/', $this->_localPart)) {
+                $localResult = true;
+            } else {
+                $this->_error(self::DOT_ATOM);
+                $this->_error(self::QUOTED_STRING);
+                $this->_error(self::INVALID_LOCAL_PART);
+            }
+        }
+
+        // If both parts valid, return true
+        if ($localResult && $hostnameResult && $length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}

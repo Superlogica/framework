@@ -1,48 +1,170 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-J9fl9YsMhnlK2hLDUIbI
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract Priority Queue
+ *
+ * It implements a priority queue.
+ * Please go to "Data Structures and Algorithms",
+ * Aho, Hopcroft, and Ullman, Addison-Wesley, 1983 (corrected 1987 edition),
+ * for implementation details.
+ *
+ * It provides O(log(N)) time of put/pop operations, where N is a size of queue
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Search_Lucene_PriorityQueue
+{
+    /**
+     * Queue heap
+     *
+     * Heap contains balanced partial ordered binary tree represented in array
+     * [0] - top of the tree
+     * [1] - first child of [0]
+     * [2] - second child of [0]
+     * ...
+     * [2*n + 1] - first child of [n]
+     * [2*n + 2] - second child of [n]
+     *
+     * @var array
+     */
+    private $_heap = array();
+
+
+    /**
+     * Add element to the queue
+     *
+     * O(log(N)) time
+     *
+     * @param mixed $element
+     */
+    public function put($element)
+    {
+        $nodeId   = count($this->_heap);
+        $parentId = ($nodeId-1) >> 1;   // floor( ($nodeId-1)/2 )
+
+        while ($nodeId != 0  &&  $this->_less($element, $this->_heap[$parentId])) {
+            // Move parent node down
+            $this->_heap[$nodeId] = $this->_heap[$parentId];
+
+            // Move pointer to the next level of tree
+            $nodeId   = $parentId;
+            $parentId = ($nodeId-1) >> 1;   // floor( ($nodeId-1)/2 )
+        }
+
+        // Put new node into the tree
+        $this->_heap[$nodeId] = $element;
+    }
+
+
+    /**
+     * Return least element of the queue
+     *
+     * Constant time
+     *
+     * @return mixed
+     */
+    public function top()
+    {
+        if (count($this->_heap) == 0) {
+            return null;
+        }
+
+        return $this->_heap[0];
+    }
+
+
+    /**
+     * Removes and return least element of the queue
+     *
+     * O(log(N)) time
+     *
+     * @return mixed
+     */
+    public function pop()
+    {
+        if (count($this->_heap) == 0) {
+            return null;
+        }
+
+        $top = $this->_heap[0];
+        $lastId = count($this->_heap) - 1;
+
+        /**
+         * Find appropriate position for last node
+         */
+        $nodeId  = 0;     // Start from a top
+        $childId = 1;     // First child
+
+        // Choose smaller child
+        if ($lastId > 2  &&  $this->_less($this->_heap[2], $this->_heap[1])) {
+            $childId = 2;
+        }
+
+        while ($childId < $lastId  &&
+               $this->_less($this->_heap[$childId], $this->_heap[$lastId])
+          ) {
+            // Move child node up
+            $this->_heap[$nodeId] = $this->_heap[$childId];
+
+            $nodeId  = $childId;               // Go down
+            $childId = ($nodeId << 1) + 1;     // First child
+
+            // Choose smaller child
+            if (($childId+1) < $lastId  &&
+                $this->_less($this->_heap[$childId+1], $this->_heap[$childId])
+               ) {
+                $childId++;
+            }
+        }
+
+        // Move last element to the new position
+        $this->_heap[$nodeId] = $this->_heap[$lastId];
+        unset($this->_heap[$lastId]);
+
+        return $top;
+    }
+
+
+    /**
+     * Clear queue
+     */
+    public function clear()
+    {
+        $this->_heap = array();
+    }
+
+
+    /**
+     * Compare elements
+     *
+     * Returns true, if $el1 is less than $el2; else otherwise
+     *
+     * @param mixed $el1
+     * @param mixed $el2
+     * @return boolean
+     */
+    abstract protected function _less($el1, $el2);
+}
+

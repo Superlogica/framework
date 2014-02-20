@@ -1,47 +1,125 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-hG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8 extends Zend_Search_Lucene_Analysis_Analyzer_Common
+{
+    /**
+     * Current char position in an UTF-8 stream
+     *
+     * @var integer
+     */
+    private $_position;
+
+    /**
+     * Current binary position in an UTF-8 stream
+     *
+     * @var integer
+     */
+    private $_bytePosition;
+    
+    /**
+     * Object constructor
+     *
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function __construct()
+    {
+        if (@preg_match('/\pL/u', 'a') != 1) {
+            // PCRE unicode support is turned off
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Utf8 analyzer needs PCRE unicode support to be enabled.');
+        }
+    }
+
+    /**
+     * Reset token stream
+     */
+    public function reset()
+    {
+        $this->_position     = 0;
+        $this->_bytePosition = 0;
+
+        // convert input into UTF-8
+        if (strcasecmp($this->_encoding, 'utf8' ) != 0  &&
+            strcasecmp($this->_encoding, 'utf-8') != 0 ) {
+                $this->_input = iconv($this->_encoding, 'UTF-8', $this->_input);
+                $this->_encoding = 'UTF-8';
+        }
+    }
+
+    /**
+     * Tokenization stream API
+     * Get next token
+     * Returns null at the end of stream
+     *
+     * @return Zend_Search_Lucene_Analysis_Token|null
+     */
+    public function nextToken()
+    {
+        if ($this->_input === null) {
+            return null;
+        }
+
+        do {
+            if (! preg_match('/[\p{L}]+/u', $this->_input, $match, PREG_OFFSET_CAPTURE, $this->_bytePosition)) {
+                // It covers both cases a) there are no matches (preg_match(...) === 0)
+                // b) error occured (preg_match(...) === FALSE)
+                return null;
+            }
+
+            // matched string
+            $matchedWord = $match[0][0];
+            
+            // binary position of the matched word in the input stream
+            $binStartPos = $match[0][1];
+            
+            // character position of the matched word in the input stream
+            $startPos = $this->_position + 
+                        iconv_strlen(substr($this->_input,
+                                            $this->_bytePosition,
+                                            $binStartPos - $this->_bytePosition),
+                                     'UTF-8');
+            // character postion of the end of matched word in the input stream
+            $endPos = $startPos + iconv_strlen($matchedWord, 'UTF-8');
+
+            $this->_bytePosition = $binStartPos + strlen($matchedWord);
+            $this->_position     = $endPos;
+
+            $token = $this->normalize(new Zend_Search_Lucene_Analysis_Token($matchedWord, $startPos, $endPos));
+        } while ($token === null); // try again if token is skipped
+
+        return $token;
+    }
+}
+

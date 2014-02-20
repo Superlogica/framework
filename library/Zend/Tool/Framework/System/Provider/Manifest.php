@@ -1,65 +1,114 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Registry_EnabledInterface
+ */
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * @see Zend_Tool_Framework_Provider_Interface
+ */
+require_once 'Zend/Tool/Framework/Provider/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_System_Provider_Manifest 
+    implements Zend_Tool_Framework_Provider_Interface, Zend_Tool_Framework_Registry_EnabledInterface
+{
+    
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+    }
+    
+    public function getName()
+    {
+        return 'Manifest';
+    }
+    
+    public function show()
+    {
+        
+        $manifestRepository = $this->_registry->getManifestRepository();
+        $response           = $this->_registry->getResponse();
+        
+        $metadataTree = array();
+        
+        $longestAttrNameLen = 50;
+        
+        foreach ($manifestRepository as $metadata) {
+            
+            $metadataType  = $metadata->getType();
+            $metadataName  = $metadata->getName();
+            $metadataAttrs = $metadata->getAttributes('attributesParent');
+
+            if (!$metadataAttrs) {
+                $metadataAttrs = '(None)';
+            } else {
+                $metadataAttrs = urldecode(http_build_query($metadataAttrs, null, ', ')); 
+            }
+            
+            if (!array_key_exists($metadataType, $metadataTree)) {
+                $metadataTree[$metadataType] = array();
+            }
+            
+            if (!array_key_exists($metadataName, $metadataTree[$metadataType])) {
+                $metadataTree[$metadataType][$metadataName] = array();
+            }
+            
+            if (!array_key_exists($metadataAttrs, $metadataTree[$metadataType][$metadataName])) {
+                $metadataTree[$metadataType][$metadataName][$metadataAttrs] = array();
+            }
+            
+            $longestAttrNameLen = (strlen($metadataAttrs) > $longestAttrNameLen) ? strlen($metadataAttrs) : $longestAttrNameLen;
+            
+            $metadataValue = $metadata->getValue();
+            if (is_array($metadataValue) && count($metadataValue) > 0) {
+                $metadataValue = urldecode(http_build_query($metadataValue, null, ', '));
+            } elseif (is_array($metadataValue)) {
+                $metadataValue = '(empty array)';
+            }
+            
+            $metadataTree[$metadataType][$metadataName][$metadataAttrs][] = $metadataValue;
+        }
+        
+        foreach ($metadataTree as $metadataType => $metadatasByName) {
+            $response->appendContent($metadataType);
+            foreach ($metadatasByName as $metadataName => $metadatasByAttributes) {
+                $response->appendContent("   " . $metadataName);
+                foreach ($metadatasByAttributes as $metadataAttributeName => $metadataValues) {
+                    foreach ($metadataValues as $metadataValue) {
+                        $string = sprintf("      %-{$longestAttrNameLen}.{$longestAttrNameLen}s : ", $metadataAttributeName)
+                            . $metadataValue;
+                        $response->appendContent($string);
+                    }
+                }
+            }
+        }
+        
+    }
+}

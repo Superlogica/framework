@@ -1,89 +1,270 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Loader
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Loader.php 15519 2009-05-11 11:57:05Z matthew $
+ */
+
+/**
+ * Static methods for loading classes and files.
+ *
+ * @category   Zend
+ * @package    Zend_Loader
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Loader
+{
+    /**
+     * Loads a class from a PHP file.  The filename must be formatted
+     * as "$class.php".
+     *
+     * If $dirs is a string or an array, it will search the directories
+     * in the order supplied, and attempt to load the first matching file.
+     *
+     * If $dirs is null, it will split the class name at underscores to
+     * generate a path hierarchy (e.g., "Zend_Example_Class" will map
+     * to "Zend/Example/Class.php").
+     *
+     * If the file was not found in the $dirs, or if no $dirs were specified,
+     * it will attempt to load it from PHP's include_path.
+     *
+     * @param string $class      - The full class name of a Zend component.
+     * @param string|array $dirs - OPTIONAL Either a path or an array of paths
+     *                             to search.
+     * @return void
+     * @throws Zend_Exception
+     */
+    public static function loadClass($class, $dirs = null)
+    {
+        if (class_exists($class, false) || interface_exists($class, false)) {
+            return;
+        }
+
+        if ((null !== $dirs) && !is_string($dirs) && !is_array($dirs)) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception('Directory argument must be a string or an array');
+        }
+
+        // autodiscover the path from the class name
+        $file = str_replace('_', DIRECTORY_SEPARATOR, $class) . '.php';
+        if (!empty($dirs)) {
+            // use the autodiscovered path
+            $dirPath = dirname($file);
+            if (is_string($dirs)) {
+                $dirs = explode(PATH_SEPARATOR, $dirs);
+            }
+            foreach ($dirs as $key => $dir) {
+                if ($dir == '.') {
+                    $dirs[$key] = $dirPath;
+                } else {
+                    $dir = rtrim($dir, '\\/');
+                    $dirs[$key] = $dir . DIRECTORY_SEPARATOR . $dirPath;
+                }
+            }
+            $file = basename($file);
+            self::loadFile($file, $dirs, true);
+        } else {
+            self::_securityCheck($file);
+            include $file;
+        }
+
+        if (!class_exists($class, false) && !interface_exists($class, false)) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception("File \"$file\" does not exist or class \"$class\" was not found in the file");
+        }
+    }
+
+    /**
+     * Loads a PHP file.  This is a wrapper for PHP's include() function.
+     *
+     * $filename must be the complete filename, including any
+     * extension such as ".php".  Note that a security check is performed that
+     * does not permit extended characters in the filename.  This method is
+     * intended for loading Zend Framework files.
+     *
+     * If $dirs is a string or an array, it will search the directories
+     * in the order supplied, and attempt to load the first matching file.
+     *
+     * If the file was not found in the $dirs, or if no $dirs were specified,
+     * it will attempt to load it from PHP's include_path.
+     *
+     * If $once is TRUE, it will use include_once() instead of include().
+     *
+     * @param  string        $filename
+     * @param  string|array  $dirs - OPTIONAL either a path or array of paths
+     *                       to search.
+     * @param  boolean       $once
+     * @return boolean
+     * @throws Zend_Exception
+     */
+    public static function loadFile($filename, $dirs = null, $once = false)
+    {
+        self::_securityCheck($filename);
+
+        /**
+         * Search in provided directories, as well as include_path
+         */
+        $incPath = false;
+        if (!empty($dirs) && (is_array($dirs) || is_string($dirs))) {
+            if (is_array($dirs)) {
+                $dirs = implode(PATH_SEPARATOR, $dirs);
+            }
+            $incPath = get_include_path();
+            set_include_path($dirs . PATH_SEPARATOR . $incPath);
+        }
+
+        /**
+         * Try finding for the plain filename in the include_path.
+         */
+        if ($once) {
+            include_once $filename;
+        } else {
+            include $filename;
+        }
+
+        /**
+         * If searching in directories, reset include_path
+         */
+        if ($incPath) {
+            set_include_path($incPath);
+        }
+
+        return true;
+    }
+
+    /**
+     * Returns TRUE if the $filename is readable, or FALSE otherwise.
+     * This function uses the PHP include_path, where PHP's is_readable()
+     * does not.
+     *
+     * Note from ZF-2900:
+     * If you use custom error handler, please check whether return value
+     *  from error_reporting() is zero or not.
+     * At mark of fopen() can not suppress warning if the handler is used.
+     *
+     * @param string   $filename
+     * @return boolean
+     */
+    public static function isReadable($filename)
+    {
+        if (!$fh = @fopen($filename, 'r', true)) {
+            return false;
+        }
+        @fclose($fh);
+        return true;
+    }
+
+    /**
+     * spl_autoload() suitable implementation for supporting class autoloading.
+     *
+     * Attach to spl_autoload() using the following:
+     * <code>
+     * spl_autoload_register(array('Zend_Loader', 'autoload'));
+     * </code>
+     *
+     * @deprecated Since 1.8.0
+     * @param  string $class
+     * @return string|false Class name on success; false on failure
+     */
+    public static function autoload($class)
+    {
+        trigger_error(__CLASS__ . '::' . __METHOD__ . ' is deprecated as of 1.8.0 and will be removed with 2.0.0; use Zend_Loader_Autoloader instead', E_USER_NOTICE);
+        try {
+            @self::loadClass($class);
+            return $class;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    /**
+     * Register {@link autoload()} with spl_autoload()
+     *
+     * @deprecated Since 1.8.0
+     * @param string $class (optional)
+     * @param boolean $enabled (optional)
+     * @return void
+     * @throws Zend_Exception if spl_autoload() is not found
+     * or if the specified class does not have an autoload() method.
+     */
+    public static function registerAutoload($class = 'Zend_Loader', $enabled = true)
+    {
+        trigger_error(__CLASS__ . '::' . __METHOD__ . ' is deprecated as of 1.8.0 and will be removed with 2.0.0; use Zend_Loader_Autoloader instead', E_USER_NOTICE);
+        require_once 'Zend/Loader/Autoloader.php';
+        $autoloader = Zend_Loader_Autoloader::getInstance();
+        $autoloader->setFallbackAutoloader(true);
+
+        if ('Zend_Loader' != $class) {
+            self::loadClass($class);
+            $methods = get_class_methods($class);
+            if (!in_array('autoload', (array) $methods)) {
+                require_once 'Zend/Exception.php';
+                throw new Zend_Exception("The class \"$class\" does not have an autoload() method");
+            }
+
+            $callback = array($class, 'autoload');
+
+            if ($enabled) {
+                $autoloader->pushAutoloader($callback);
+            } else {
+                $autoloader->removeAutoloader($callback);
+            }
+        }
+    }
+
+    /**
+     * Ensure that filename does not contain exploits
+     *
+     * @param  string $filename
+     * @return void
+     * @throws Zend_Exception
+     */
+    protected static function _securityCheck($filename)
+    {
+        /**
+         * Security check
+         */
+        if (preg_match('/[^a-z0-9\\/\\\\_.:-]/i', $filename)) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception('Security check: Illegal character in filename');
+        }
+    }
+
+    /**
+     * Attempt to include() the file.
+     *
+     * include() is not prefixed with the @ operator because if
+     * the file is loaded and contains a parse error, execution
+     * will halt silently and this is difficult to debug.
+     *
+     * Always set display_errors = Off on production servers!
+     *
+     * @param  string  $filespec
+     * @param  boolean $once
+     * @return boolean
+     * @deprecated Since 1.5.0; use loadFile() instead
+     */
+    protected static function _includeFile($filespec, $once = false)
+    {
+        if ($once) {
+            return include_once $filespec;
+        } else {
+            return include $filespec ;
+        }
+    }
+}

@@ -1,142 +1,473 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Json_Server_Smd
+ */
+require_once 'Zend/Json/Server/Smd.php';
+
+/**
+ * Create Service Mapping Description for a method
+ * 
+ * @package    Zend_Json
+ * @subpackage Server
+ * @version    $Id: Service.php 12510 2008-11-10 16:29:34Z matthew $
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Json_Server_Smd_Service
+{
+    /**#@+
+     * Service metadata
+     * @var string
+     */
+    protected $_envelope  = Zend_Json_Server_Smd::ENV_JSONRPC_1;
+    protected $_name;
+    protected $_return;
+    protected $_target;
+    protected $_transport = 'POST';
+    /**#@-*/
+
+    /**
+     * Allowed envelope types
+     * @var array
+     */
+    protected $_envelopeTypes = array(
+        Zend_Json_Server_Smd::ENV_JSONRPC_1,
+        Zend_Json_Server_Smd::ENV_JSONRPC_2,
+    );
+
+    /**
+     * Regex for names
+     * @var string
+     */
+    protected $_nameRegex = '/^[a-z][a-z0-9._]+$/i';
+
+    /**
+     * Parameter option types
+     * @var array
+     */
+    protected $_paramOptionTypes = array(
+        'name'        => 'is_string',
+        'optional'    => 'is_bool',
+        'default'     => null,
+        'description' => 'is_string',
+    );
+
+    /**
+     * Service params
+     * @var array
+     */
+    protected $_params = array();
+
+    /**
+     * Mapping of parameter types to JSON-RPC types
+     * @var array
+     */
+    protected $_paramMap = array(
+        'any'     => 'any',
+        'arr'     => 'array',
+        'array'   => 'array',
+        'assoc'   => 'object',
+        'bool'    => 'boolean',
+        'boolean' => 'boolean',
+        'dbl'     => 'float',
+        'double'  => 'float',
+        'false'   => 'boolean',
+        'float'   => 'float',
+        'hash'    => 'object',
+        'integer' => 'integer',
+        'int'     => 'integer',
+        'mixed'   => 'any',
+        'nil'     => 'null',
+        'null'    => 'null',
+        'object'  => 'object',
+        'string'  => 'string',
+        'str'     => 'string',
+        'struct'  => 'object',
+        'true'    => 'boolean',
+        'void'    => 'null',
+    );
+
+    /**
+     * Allowed transport types
+     * @var array
+     */
+    protected $_transportTypes = array(
+        'POST',
+    );
+
+    /**
+     * Constructor
+     * 
+     * @param  string|array $spec 
+     * @return void
+     * @throws Zend_Json_Server_Exception if no name provided
+     */
+    public function __construct($spec)
+    {
+        if (is_string($spec)) {
+            $this->setName($spec);
+        } elseif (is_array($spec)) {
+            $this->setOptions($spec);
+        }
+
+        if (null == $this->getName()) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('SMD service description requires a name; none provided');
+        }
+    }
+
+    /**
+     * Set object state
+     * 
+     * @param  array $options 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function setOptions(array $options)
+    {
+        $methods = get_class_methods($this);
+        foreach ($options as $key => $value) {
+            if ('options' == strtolower($key)) {
+                continue;
+            }
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Set service name
+     * 
+     * @param  string $name 
+     * @return Zend_Json_Server_Smd_Service
+     * @throws Zend_Json_Server_Exception
+     */
+    public function setName($name)
+    {
+        $name = (string) $name;
+        if (!preg_match($this->_nameRegex, $name)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception(sprintf('Invalid name "%s" provided for service; must follow PHP method naming conventions', $name));
+        }
+        $this->_name = $name;
+        return $this;
+    }
+
+    /**
+     * Retrieve name
+     * 
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * Set Transport 
+     *
+     * Currently limited to POST
+     * 
+     * @param  string $transport 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function setTransport($transport)
+    {
+        if (!in_array($transport, $this->_transportTypes)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception(sprintf('Invalid transport "%s"; please select one of (%s)', $transport, implode(', ', $this->_transportTypes)));
+        }
+
+        $this->_transport = $transport;
+        return $this;
+    }
+
+    /**
+     * Get transport
+     * 
+     * @return string
+     */
+    public function getTransport()
+    {
+        return $this->_transport;
+    }
+
+    /**
+     * Set service target
+     * 
+     * @param  string $target 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function setTarget($target)
+    {
+        $this->_target = (string) $target;
+        return $this;
+    }
+
+    /**
+     * Get service target
+     * 
+     * @return string
+     */
+    public function getTarget()
+    {
+        return $this->_target;
+    }
+
+    /**
+     * Set envelope type
+     * 
+     * @param  string $envelopeType 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function setEnvelope($envelopeType)
+    {
+        if (!in_array($envelopeType, $this->_envelopeTypes)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception(sprintf('Invalid envelope type "%s"; please specify one of (%s)', $envelopeType, implode(', ', $this->_envelopeTypes)));
+        }
+
+        $this->_envelope = $envelopeType;
+        return $this;
+    }
+
+    /**
+     * Get envelope type
+     * 
+     * @return string
+     */
+    public function getEnvelope()
+    {
+        return $this->_envelope;
+    }
+
+    /**
+     * Add a parameter to the service
+     * 
+     * @param  string|array $type 
+     * @param  array $options 
+     * @param  int|null $order 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function addParam($type, array $options = array(), $order = null)
+    {
+        if (is_string($type)) {
+            $type = $this->_validateParamType($type);
+        } elseif (is_array($type)) {
+            foreach ($type as $key => $paramType) {
+                $type[$key] = $this->_validateParamType($paramType);
+            }
+        } else {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('Invalid param type provided');
+        }
+
+        $paramOptions = array(
+            'type' => $type,
+        );
+        foreach ($options as $key => $value) {
+            if (in_array($key, array_keys($this->_paramOptionTypes))) {
+                if (null !== ($callback = $this->_paramOptionTypes[$key])) {
+                    if (!$callback($value)) {
+                        continue;
+                    }
+                }
+                $paramOptions[$key] = $value;
+            }
+        }
+
+        $this->_params[] = array(
+            'param' => $paramOptions,
+            'order' => $order,
+        );
+
+        return $this;
+    }
+
+    /**
+     * Add params
+     *
+     * Each param should be an array, and should include the key 'type'.
+     * 
+     * @param  array $params 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function addParams(array $params)
+    {
+        ksort($params);
+        foreach ($params as $options) {
+            if (!is_array($options)) {
+                continue;
+            }
+            if (!array_key_exists('type', $options)) {
+                continue;
+            }
+            $type  = $options['type'];
+            $order = (array_key_exists('order', $options)) ? $options['order'] : null;
+            $this->addParam($type, $options, $order);
+        }
+        return $this;
+    }
+
+    /**
+     * Overwrite all parameters
+     * 
+     * @param  array $params 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function setParams(array $params)
+    {
+        $this->_params = array();
+        return $this->addParams($params);
+    }
+
+    /**
+     * Get all parameters 
+     *
+     * Returns all params in specified order.
+     * 
+     * @return array
+     */
+    public function getParams()
+    {
+        $params = array();
+        $index  = 0;
+        foreach ($this->_params as $param) {
+            if (null === $param['order']) {
+                if (array_search($index, array_keys($params), true)) {
+                    ++$index;
+                }
+                $params[$index] = $param['param'];
+                ++$index;
+            } else {
+                $params[$param['order']] = $param['param'];
+            }
+        }
+        ksort($params);
+        return $params;
+    }
+
+    /**
+     * Set return type
+     * 
+     * @param  string|array $type 
+     * @return Zend_Json_Server_Smd_Service
+     */
+    public function setReturn($type)
+    {
+        if (is_string($type)) {
+            $type = $this->_validateParamType($type, true);
+        } elseif (is_array($type)) {
+            foreach ($type as $key => $returnType) {
+                $type[$key] = $this->_validateParamType($returnType, true);
+            }
+        } else {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('Invalid param type provided ("' . gettype($type) .'")');
+        }
+        $this->_return = $type;
+        return $this;
+    }
+
+    /**
+     * Get return type
+     * 
+     * @return string|array
+     */
+    public function getReturn()
+    {
+        return $this->_return;
+    }
+
+    /**
+     * Cast service description to array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        $name       = $this->getName();
+        $envelope   = $this->getEnvelope();
+        $target     = $this->getTarget();
+        $transport  = $this->getTransport();
+        $parameters = $this->getParams();
+        $returns    = $this->getReturn();
+
+        if (empty($target)) {
+            return compact('envelope', 'transport', 'parameters', 'returns');
+        } 
+
+        return $paramInfo = compact('envelope', 'target', 'transport', 'parameters', 'returns');
+    }
+
+    /**
+     * Return JSON encoding of service
+     * 
+     * @return string
+     */
+    public function toJson()
+    {
+        $service = array($this->getName() => $this->toArray());
+
+        require_once 'Zend/Json.php';
+        return Zend_Json::encode($service);
+    }
+
+    /**
+     * Cast to string
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+
+    /**
+     * Validate parameter type
+     * 
+     * @param  string $type 
+     * @return true
+     * @throws Zend_Json_Server_Exception
+     */
+    protected function _validateParamType($type, $isReturn = false)
+    {
+        if (!is_string($type)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('Invalid param type provided ("' . $type .'")');
+        }
+
+        if (!array_key_exists($type, $this->_paramMap)) {
+            $type = 'object';
+        }
+
+        $paramType = $this->_paramMap[$type];
+        if (!$isReturn && ('null' == $paramType)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('Invalid param type provided ("' . $type . '")');
+        }
+
+        return $paramType;
+    }
+}

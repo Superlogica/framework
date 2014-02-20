@@ -1,38 +1,125 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-W0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * Represents the yt:duration element used by the YouTube data API
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_Extension_Duration extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'yt';
+    protected $_rootElement = 'duration';
+    protected $_seconds = null;
+
+    /**
+     * Constructs a new Zend_Gdata_YouTube_Extension_Duration object.
+     * @param bool $seconds(optional) The seconds value of the element.
+     */
+    public function __construct($seconds = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct();
+        $this->_seconds = $seconds;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_seconds !== null) {
+            $element->setAttribute('seconds', $this->_seconds);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and valueare
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'seconds':
+            $this->_seconds = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's seconds attribute.
+     *
+     * @return int The value associated with this attribute.
+     */
+    public function getSeconds()
+    {
+        return $this->_seconds;
+    }
+
+    /**
+     * Set the value for this element's seconds attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_YouTube_Extension_Duration The element being modified.
+     */
+    public function setSeconds($value)
+    {
+        $this->_seconds = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     *
+     * @return string The duration in seconds
+     */
+    public function __toString()
+    {
+        return $this->_seconds;
+    }
+
+}

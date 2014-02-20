@@ -1,31 +1,80 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-67/YQU98MNaSdU+XJfKgfG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract class for extension
+ */
+require_once 'Zend/View/Helper/FormElement.php';
+
+
+/**
+ * Helper to generate a "file" element
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_FormFile extends Zend_View_Helper_FormElement
+{
+    /**
+     * Generates a 'file' element.
+     *
+     * @access public
+     *
+     * @param string|array $name If a string, the element name.  If an
+     * array, all other parameters are ignored, and the array elements
+     * are extracted in place of added parameters.
+     *
+     * @param array $attribs Attributes for the element tag.
+     *
+     * @return string The element XHTML.
+     */
+    public function formFile($name, $attribs = null)
+    {
+        $info = $this->_getInfo($name, null, $attribs);
+        extract($info); // name, id, value, attribs, options, listsep, disable
+
+        // is it disabled?
+        $disabled = '';
+        if ($disable) {
+            $disabled = ' disabled="disabled"';
+        } 
+
+        // XHTML or HTML end tag?
+        $endTag = ' />';
+        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
+            $endTag= '>';
+        }
+
+        // build the element
+        $xhtml = '<input type="file"'
+                . ' name="' . $this->view->escape($name) . '"'
+                . ' id="' . $this->view->escape($id) . '"'
+                . $disabled
+                . $this->_htmlAttribs($attribs) 
+                . $endTag;
+
+        return $xhtml;
+    }
+}

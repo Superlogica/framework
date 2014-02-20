@@ -1,37 +1,126 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Yahoo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Result.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Yahoo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Yahoo_Result
+{
+    /**
+     * The title of the search entry
+     *
+     * @var string
+     */
+    public $Title;
+
+    /**
+     * The URL of the found object
+     *
+     * @var string
+     */
+    public $Url;
+
+    /**
+     * The URL for linking to the found object
+     *
+     * @var string
+     */
+    public $ClickUrl;
+
+    /**
+     * Result fields
+     *
+     * @var array
+     */
+    protected $_fields;
+
+    /**
+     * REST response fragment for the result
+     *
+     * @var DOMElement
+     */
+    protected $_result;
+
+    /**
+     * Object for XPath queries
+     *
+     * @var DOMXPath
+     */
+    protected $_xpath;
+
+
+    /**
+     * Initializes the result
+     *
+     * @param  DOMElement $result
+     * @return void
+     */
+    public function __construct(DOMElement $result)
+    {
+        // default fields for all search results:
+        $fields = array('Title', 'Url', 'ClickUrl');
+
+        // merge w/ child's fields
+        $this->_fields = array_merge($this->_fields, $fields);
+
+        $this->_xpath = new DOMXPath($result->ownerDocument);
+        $this->_xpath->registerNamespace('yh', $this->_namespace);
+
+        // add search results to appropriate fields
+
+        foreach ($this->_fields as $f) {
+            $query = "./yh:$f/text()";
+            $node = $this->_xpath->query($query, $result);
+            if ($node->length == 1) {
+                $this->{$f} = $node->item(0)->data;
+            }
+        }
+
+        $this->_result = $result;
+    }
+
+
+    /**
+     * Sets the Thumbnail property
+     *
+     * @return void
+     */
+    protected function _setThumbnail()
+    {
+        $node = $this->_xpath->query('./yh:Thumbnail', $this->_result);
+        if ($node->length == 1) {
+            /**
+             * @see Zend_Service_Yahoo_Image
+             */
+            require_once 'Zend/Service/Yahoo/Image.php';
+            $this->Thumbnail = new Zend_Service_Yahoo_Image($node->item(0), $this->_namespace);
+        } else {
+            $this->Thumbnail = null;
+        }
+    }
+}

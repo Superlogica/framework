@@ -1,194 +1,616 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-gOWnQZ4I+eWTn4HuBDk0b1yTJR8lfl8J
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Delicious
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Delicious.php 9638 2008-06-08 15:58:11Z ghacek $
+ */
+
+
+/**
+ * @see Zend_Rest_Client
+ */
+require_once 'Zend/Rest/Client.php';
+
+/**
+ * @see Zend_Json_Decoder
+ */
+require_once 'Zend/Json/Decoder.php';
+
+/**
+ * @see Zend_Service_Delicious_SimplePost
+ */
+require_once 'Zend/Service/Delicious/SimplePost.php';
+
+/**
+ * @see Zend_Service_Delicious_Post
+ */
+require_once 'Zend/Service/Delicious/Post.php';
+
+/**
+ * @see Zend_Service_Delicious_PostList
+ */
+require_once 'Zend/Service/Delicious/PostList.php';
+
+
+/**
+ * Zend_Service_Delicious is a concrete implementation of the del.icio.us web service
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Delicious
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Delicious
+{
+    const API_URI = 'https://api.del.icio.us';
+
+    const PATH_UPDATE        = '/v1/posts/update';
+    const PATH_TAGS          = '/v1/tags/get';
+    const PATH_TAG_RENAME    = '/v1/tags/rename';
+    const PATH_BUNDLES       = '/v1/tags/bundles/all';
+    const PATH_BUNDLE_DELETE = '/v1/tags/bundles/delete';
+    const PATH_BUNDLE_ADD    = '/v1/tags/bundles/set';
+    const PATH_DATES         = '/v1/posts/dates';
+    const PATH_POST_DELETE   = '/v1/posts/delete';
+    const PATH_POSTS_GET     = '/v1/posts/get';
+    const PATH_POSTS_ALL     = '/v1/posts/all';
+    const PATH_POSTS_ADD     = '/v1/posts/add';
+    const PATH_POSTS_RECENT  = '/v1/posts/recent';
+
+    const JSON_URI     = 'http://del.icio.us';
+    const JSON_POSTS   = '/feeds/json/%s/%s';
+    const JSON_TAGS    = '/feeds/json/tags/%s';
+    const JSON_NETWORK = '/feeds/json/network/%s';
+    const JSON_FANS    = '/feeds/json/fans/%s';
+    const JSON_URL     = '/feeds/json/url/data';
+
+    /**
+     * Zend_Service_Rest instance
+     *
+     * @var Zend_Service_Rest
+     */
+    protected $_rest;
+
+    /**
+     * Username
+     *
+     * @var string
+     */
+    protected $_authUname;
+
+    /**
+     * Password
+     *
+     * @var string
+     */
+    protected $_authPass;
+
+    /**
+     * Microtime of last request
+     *
+     * @var float
+     */
+    protected static $_lastRequestTime = 0;
+
+    /**
+     * Constructs a new del.icio.us Web Services Client
+     *
+     * @param  string $uname Client username
+     * @param  string $pass  Client password
+     * @return void
+     */
+    public function __construct($uname = null, $pass = null)
+    {
+        $this->_rest = new Zend_Rest_Client();
+        $this->_rest->getHttpClient()->setConfig(array('ssltransport' => 'ssl'));
+        $this->setAuth($uname, $pass);
+    }
+
+    /**
+     * Set client username and password
+     *
+     * @param  string $uname Client user name
+     * @param  string $pass  Client password
+     * @return Zend_Service_Delicious Provides a fluent interface
+     */
+    public function setAuth($uname, $pass)
+    {
+        $this->_authUname = $uname;
+        $this->_authPass  = $pass;
+
+        return $this;
+    }
+
+    /**
+     * Get time of the last update
+     *
+     * @throws Zend_Service_Delicious_Exception
+     * @return Zend_Date
+     */
+    public function getLastUpdate()
+    {
+        $response = $this->makeRequest(self::PATH_UPDATE);
+
+        $rootNode = $response->documentElement;
+        if ($rootNode && $rootNode->nodeName == 'update') {
+            /**
+             * @todo replace strtotime() with Zend_Date equivalent
+             */
+            return new Zend_Date(strtotime($rootNode->getAttribute('time')));
+        } else {
+            /**
+             * @see Zend_Service_Delicious_Exception
+             */
+            require_once 'Zend/Service/Delicious/Exception.php';
+            throw new Zend_Service_Delicious_Exception('del.icio.us web service has returned something odd!');
+        }
+    }
+
+    /**
+     * Get all tags, returning an array with tags as keys and number of corresponding posts as values
+     *
+     * @return array list of tags
+     */
+    public function getTags()
+    {
+        $response = $this->makeRequest(self::PATH_TAGS);
+
+        return self::_xmlResponseToArray($response, 'tags', 'tag', 'tag', 'count');
+    }
+
+    /**
+     * Rename a tag
+     *
+     * @param  string $old Old tag name
+     * @param  string $new New tag name
+     * @return Zend_Service_Delicious Provides a fluent interface
+     */
+    public function renameTag($old, $new)
+    {
+        $response = $this->makeRequest(self::PATH_TAG_RENAME, array('old' => $old, 'new' => $new));
+
+        self::_evalXmlResult($response);
+
+        return $this;
+    }
+
+    /**
+     * Get all bundles, returning an array with bundles as keys and array of tags as values
+     *
+     * @return array list of bundles
+     */
+    public function getBundles()
+    {
+        $response = $this->makeRequest(self::PATH_BUNDLES);
+
+        $bundles = self::_xmlResponseToArray($response, 'bundles', 'bundle', 'name', 'tags');
+        foreach ($bundles as &$tags) {
+            $tags = explode(' ', $tags);
+        }
+        return $bundles;
+    }
+
+    /**
+     * Adds a new bundle
+     *
+     * @param  string $bundle Name of new bundle
+     * @param  array  $tags   Array of tags
+     * @return Zend_Service_Delicious Provides a fluent interface
+     */
+    public function addBundle($bundle, array $tags)
+    {
+        $tags = implode(' ', (array) $tags);
+        $response = $this->makeRequest(self::PATH_BUNDLE_ADD, array('bundle' => $bundle, 'tags' => $tags));
+
+        self::_evalXmlResult($response);
+
+        return $this;
+    }
+
+    /**
+     * Delete a bundle
+     *
+     * @param  string $bundle Name of bundle to be deleted
+     * @return Zend_Service_Delicious Provides a fluent interface
+     */
+    public function deleteBundle($bundle)
+    {
+        $response = $this->makeRequest(self::PATH_BUNDLE_DELETE, array('bundle' => $bundle));
+
+        self::_evalXmlResult($response);
+
+        return $this;
+    }
+
+    /**
+     * Delete a post
+     *
+     * @param  string $url URL of post to be deleted
+     * @return Zend_Service_Delicious Provides a fluent interface
+     */
+    public function deletePost($url)
+    {
+        $response = $this->makeRequest(self::PATH_POST_DELETE, array('url' => $url));
+
+        self::_evalXmlResult($response);
+
+        return $this;
+    }
+
+    /**
+     * Get number of posts by date
+     *
+     * Returns array where keys are dates and values are numbers of posts
+     *
+     * @param  string $tag Optional filtering by tag
+     * @return array list of dates
+     */
+    public function getDates($tag = null)
+    {
+        $parms = array();
+        if ($tag) {
+            $parms['tag'] = $tag;
+        }
+
+        $response = $this->makeRequest(self::PATH_DATES, $parms);
+
+        return self::_xmlResponseToArray($response, 'dates', 'date', 'date', 'count');
+    }
+
+    /**
+     * Get posts matching the arguments
+     *
+     * If no date or url is given, most recent date will be used
+     *
+     * @param  string    $tag Optional filtering by tag
+     * @param  Zend_Date $dt  Optional filtering by date
+     * @param  string    $url Optional filtering by url
+     * @throws Zend_Service_Delicious_Exception
+     * @return Zend_Service_Delicious_PostList
+     */
+    public function getPosts($tag = null, Zend_Date $dt = null, $url = null)
+    {
+        $parms = array();
+        if ($tag) {
+            $parms['tag'] = $tag;
+        }
+        if ($url) {
+            $parms['url'] = $url;
+        }
+        if ($dt) {
+            $parms['dt'] = $dt->get('Y-m-d\TH:i:s\Z');
+        }
+
+        $response = $this->makeRequest(self::PATH_POSTS_GET, $parms);
+
+        return $this->_parseXmlPostList($response);
+    }
+
+    /**
+     * Get all posts
+     *
+     * @param  string $tag Optional filtering by tag
+     * @return Zend_Service_Delicious_PostList
+     */
+    public function getAllPosts($tag = null)
+    {
+        $parms = array();
+        if ($tag) {
+            $parms['tag'] = $tag;
+        }
+
+        $response = $this->makeRequest(self::PATH_POSTS_ALL, $parms);
+
+        return $this->_parseXmlPostList($response);
+    }
+
+    /**
+     * Get recent posts
+     *
+     * @param  string $tag   Optional filtering by tag
+     * @param  string $count Maximum number of posts to be returned (default 15)
+     * @return Zend_Service_Delicious_PostList
+     */
+    public function getRecentPosts($tag = null, $count = 15)
+    {
+        $parms = array();
+        if ($tag) {
+            $parms['tag'] = $tag;
+        }
+        if ($count) {
+            $parms['count'] = $count;
+        }
+
+        $response = $this->makeRequest(self::PATH_POSTS_RECENT, $parms);
+
+        return $this->_parseXmlPostList($response);
+    }
+
+    /**
+     * Create new post
+     *
+     * @return Zend_Service_Delicious_Post
+     */
+    public function createNewPost($title, $url)
+    {
+        return new Zend_Service_Delicious_Post($this, array('title' => $title, 'url' => $url));
+    }
+
+    /**
+     * Get posts of a user
+     *
+     * @param  string $user  Owner of the posts
+     * @param  int    $count Number of posts (default 15, max. 100)
+     * @param  string $tag   Optional filtering by tag
+     * @return Zend_Service_Delicious_PostList
+     */
+    public function getUserPosts($user, $count = null, $tag = null)
+    {
+        $parms = array();
+        if ($count) {
+            $parms['count'] = $count;
+        }
+
+        $path = sprintf(self::JSON_POSTS, $user, $tag);
+        $res = $this->makeRequest($path, $parms, 'json');
+
+        return new Zend_Service_Delicious_PostList($this, $res);
+    }
+
+    /**
+     * Get tags of a user
+     *
+     * Returned array has tags as keys and number of posts as values
+     *
+     * @param  string $user    Owner of the posts
+     * @param  int    $atleast Include only tags for which there are at least ### number of posts
+     * @param  int    $count   Number of tags to get (default all)
+     * @param  string $sort    Order of returned tags ('alpha' || 'count')
+     * @return array
+     */
+    public function getUserTags($user, $atleast = null, $count = null, $sort = 'alpha')
+    {
+        $parms = array();
+        if ($atleast) {
+            $parms['atleast'] = $atleast;
+        }
+        if ($count) {
+            $parms['count'] = $count;
+        }
+        if ($sort) {
+            $parms['sort'] = $sort;
+        }
+
+        $path = sprintf(self::JSON_TAGS, $user);
+
+        return $this->makeRequest($path, $parms, 'json');
+    }
+
+    /**
+     * Get network of a user
+     *
+     * @param  string $user Owner of the network
+     * @return array
+     */
+    public function getUserNetwork($user)
+    {
+        $path = sprintf(self::JSON_NETWORK, $user);
+        return $this->makeRequest($path, array(), 'json');
+    }
+
+    /**
+     * Get fans of a user
+     *
+     * @param  string $user Owner of the fans
+     * @return array
+     */
+    public function getUserFans($user)
+    {
+        $path = sprintf(self::JSON_FANS, $user);
+        return $this->makeRequest($path, array(), 'json');
+    }
+    
+    /**
+     * Get details on a particular bookmarked URL
+     * 
+     * Returned array contains four elements:
+     *  - hash - md5 hash of URL
+     *  - top_tags - array of tags and their respective usage counts
+     *  - url - URL for which details were returned
+     *  - total_posts - number of users that have bookmarked URL
+     *
+     * If URL hasen't been bookmarked null is returned.
+     *
+     * @param  string $url URL for which to get details
+     * @return array 
+     */
+    public function getUrlDetails($url) 
+    {
+        $parms = array('hash' => md5($url));
+        
+        $res = $this->makeRequest(self::JSON_URL, $parms, 'json');
+        
+        if(isset($res[0])) {
+            return $res[0];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Handles all GET requests to a web service
+     *
+     * @param   string $path  Path
+     * @param   array  $parms Array of GET parameters
+     * @param   string $type  Type of a request ("xml"|"json")
+     * @return  mixed  decoded response from web service
+     * @throws  Zend_Service_Delicious_Exception
+     */
+    public function makeRequest($path, array $parms = array(), $type = 'xml')
+    {
+        // if previous request was made less then 1 sec ago
+        // wait until we can make a new request
+        $timeDiff = microtime(true) - self::$_lastRequestTime;
+        if ($timeDiff < 1) {
+            usleep((1 - $timeDiff) * 1000000);
+        }
+
+        $this->_rest->getHttpClient()->setAuth($this->_authUname, $this->_authPass);
+
+        switch ($type) {
+            case 'xml':
+                $this->_rest->setUri(self::API_URI);
+                break;
+            case 'json':
+                $parms['raw'] = true;
+                $this->_rest->setUri(self::JSON_URI);
+                break;
+            default:
+                /**
+                 * @see Zend_Service_Delicious_Exception
+                 */
+                require_once 'Zend/Service/Delicious/Exception.php';
+                throw new Zend_Service_Delicious_Exception('Unknown request type');
+        }
+
+        self::$_lastRequestTime = microtime(true);
+        $response = $this->_rest->restGet($path, $parms);
+
+        if (!$response->isSuccessful()) {
+            /**
+             * @see Zend_Service_Delicious_Exception
+             */
+            require_once 'Zend/Service/Delicious/Exception.php';
+            throw new Zend_Service_Delicious_Exception("Http client reported an error: '{$response->getMessage()}'");
+        }
+
+        $responseBody = $response->getBody();
+
+        switch ($type) {
+            case 'xml':
+                $dom = new DOMDocument() ;
+
+                if (!@$dom->loadXML($responseBody)) {
+                    /**
+                     * @see Zend_Service_Delicious_Exception
+                     */
+                    require_once 'Zend/Service/Delicious/Exception.php';
+                    throw new Zend_Service_Delicious_Exception('XML Error');
+                }
+
+                return $dom;
+            case 'json':
+                return Zend_Json_Decoder::decode($responseBody);
+        }
+    }
+
+    /**
+     * Transform XML string to array
+     *
+     * @param   DOMDocument $response
+     * @param   string      $root     Name of root tag
+     * @param   string      $child    Name of children tags
+     * @param   string      $attKey   Attribute of child tag to be used as a key
+     * @param   string      $attValue Attribute of child tag to be used as a value
+     * @return  array
+     * @throws  Zend_Service_Delicious_Exception
+     */
+    private static function _xmlResponseToArray(DOMDocument $response, $root, $child, $attKey, $attValue)
+    {
+        $rootNode = $response->documentElement;
+        $arrOut = array();
+
+        if ($rootNode->nodeName == $root) {
+            $childNodes = $rootNode->childNodes;
+
+            for ($i = 0; $i < $childNodes->length; $i++) {
+                $currentNode = $childNodes->item($i);
+                if ($currentNode->nodeName == $child) {
+                    $arrOut[$currentNode->getAttribute($attKey)] = $currentNode->getAttribute($attValue);
+                }
+            }
+        } else {
+            /**
+             * @see Zend_Service_Delicious_Exception
+             */
+            require_once 'Zend/Service/Delicious/Exception.php';
+            throw new Zend_Service_Delicious_Exception('del.icio.us web service has returned something odd!');
+        }
+
+        return $arrOut;
+    }
+
+    /**
+     * Constructs Zend_Service_Delicious_PostList from XML response
+     *
+     * @param   DOMDocument $response
+     * @return  Zend_Service_Delicious_PostList
+     * @throws  Zend_Service_Delicious_Exception
+     */
+    private function _parseXmlPostList(DOMDocument $response)
+    {
+        $rootNode = $response->documentElement;
+
+        if ($rootNode->nodeName == 'posts') {
+            return new Zend_Service_Delicious_PostList($this, $rootNode->childNodes);
+        } else {
+            /**
+             * @see Zend_Service_Delicious_Exception
+             */
+            require_once 'Zend/Service/Delicious/Exception.php';
+            throw new Zend_Service_Delicious_Exception('del.icio.us web service has returned something odd!');
+        }
+    }
+
+    /**
+     * Evaluates XML response
+     *
+     * @param   DOMDocument $response
+     * @return  void
+     * @throws  Zend_Service_Delicious_Exception
+     */
+    private static function _evalXmlResult(DOMDocument $response)
+    {
+        $rootNode = $response->documentElement;
+
+        if ($rootNode && $rootNode->nodeName == 'result') {
+
+            if ($rootNode->hasAttribute('code')) {
+                $strResponse = $rootNode->getAttribute('code');
+            } else {
+                $strResponse = $rootNode->nodeValue;
+            }
+
+            if ($strResponse != 'done' && $strResponse != 'ok') {
+                /**
+                 * @see Zend_Service_Delicious_Exception
+                 */
+                require_once 'Zend/Service/Delicious/Exception.php';
+                throw new Zend_Service_Delicious_Exception("del.icio.us web service: '{$strResponse}'");
+            }
+        } else {
+            /**
+             * @see Zend_Service_Delicious_Exception
+             */
+            require_once 'Zend/Service/Delicious/Exception.php';
+            throw new Zend_Service_Delicious_Exception('del.icio.us web service has returned something odd!');
+        }
+    }
+}

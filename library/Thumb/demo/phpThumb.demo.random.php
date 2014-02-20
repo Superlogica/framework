@@ -1,79 +1,97 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+///                                                         //
+// phpThumb.demo.random.php                                 //
+// James Heinrich <info@silisoftware.com>                   //
+//                                                          //
+// Display a random image from a specified directory.       //
+// Run with no parameters for usage instructions.           //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
+
+function SelectRandomImage($dirname='.', $portrait=true, $landscape=true, $square=true) {
+	// return a random image filename from $dirname
+	// the last 3 parameters determine what aspect ratio of images
+	// may be returned
+	$possibleimages = array();
+	if ($dh = opendir($dirname)) {
+		while ($file = readdir($dh)) {
+			if (is_file($dirname.'/'.$file) && preg_match('#\\.(jpg|jpeg|gif|png|tiff|bmp)$#i', $file)) {
+				if ($gis = @GetImageSize($dirname.'/'.$file)) {
+					if ($portrait && ($gis[0] < $gis[1])) {
+						// portrait
+						$possibleimages[] = $file;
+					} elseif ($landscape && ($gis[0] > $gis[1])) {
+						// landscape
+						$possibleimages[] = $file;
+					} elseif ($square) {
+						// square
+						$possibleimages[] = $file;
+					}
+				}
+			}
+		}
+		closedir($dh);
+	}
+	if (empty($possibleimages)) {
+		return false;
+	}
+	if (phpversion() < '4.2.0') {
+		mt_srand(time());
+	}
+	$randkey = mt_rand(0, count($possibleimages) - 1);
+	return realpath($dirname.'/'.$possibleimages[$randkey]);
+}
+
+if (@$_REQUEST['dir']) {
+	if (is_dir($_REQUEST['dir'])) {
+
+		if (!@$_REQUEST['o']) {
+			$_REQUEST['o'] = 'PLS';
+		}
+		$_REQUEST['o'] = strtoupper($_REQUEST['o']);
+		$portrait  = (strpos(@$_REQUEST['o'], 'P') !== false);
+		$landscape = (strpos(@$_REQUEST['o'], 'L') !== false);
+		$square    = (strpos(@$_REQUEST['o'], 'S') !== false);
+		$randomSRC = SelectRandomImage($_REQUEST['dir'], $portrait, $landscape, $square);
+		if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
+			$randomSRC = str_replace('\\', '/', preg_replace('#^'.realpath(@$_SERVER['DOCUMENT_ROOT']).'#i', '', realpath($randomSRC)));
+		} else {
+			$randomSRC = str_replace(realpath(@$_SERVER['DOCUMENT_ROOT']), '', realpath($randomSRC));
+		}
+
+		$otherParams = array();
+		foreach ($_GET as $key => $value) {
+			if (($key == 'dir') || ($key == 'o')) {
+				continue;
+			}
+			if (is_array($value)) {
+				foreach ($value as $vkey => $vvalue) {
+					$otherParams[] = urlencode($key).'['.urlencode($vkey).']='.urlencode($vvalue);
+				}
+			} else {
+				$otherParams[] = urlencode($key).'='.urlencode($value);
+			}
+		}
+		header('Location: ../phpThumb.php?src='.urlencode($randomSRC).'&'.implode('&', $otherParams));
+		exit;
+
+	} else {
+		die($_REQUEST['dir'].' is not a directory');
+	}
+
+} else {
+
+	echo '<html><body>Usage: <b>'.basename($_SERVER['PHP_SELF']).'?dir=<i>&lt;directory&gt;</i>&amp;<i>&lt;phpThumb parameters&gt;</i></b>&amp;o=<i>(P|L|S)</i><br><br>Examples:<ul>';
+	echo '<li>'.basename($_SERVER['PHP_SELF']).'?./images/&o=L <i>(landscape images only)</i></li>';
+	echo '<li>'.basename($_SERVER['PHP_SELF']).'?./images/&o=PS <i>(portrait or square images only)</i></li>';
+	echo '</ul></body></html>';
+
+}
+
 ?>
-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

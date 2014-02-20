@@ -1,93 +1,387 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV54nzTAHHw4oCEBRXXpdPUR3Ky/I5lP7ervIi+x95fpskgP9NMYoYJ27i1J+JW0QIcTy2w0Mp
-SaO/8SphSgWq1qRox6ffUj85Qnqqcz78TxctJfgi6Mtqa3WBqh0cLcOGWxb6Y1Epha5H8nz8uOuo
-OJ1naUcXZ0GfP+iry/XxPFQOOmBlEWmQHGGPjZwWqA1rkphErkDIXGICdsONP17ZzyBC8E3MpJB2
-MoMOQt8v6nUFELa4+cTfn4kJIPpDKor7T+KlBeH2Q9nVrhZCYsXN+BcIjzKEd0O42ovwuVtzh5c1
-sxaLX3eY3RPE3CiTdVOliLcroYM2RWPnpbO1b9IFHZxh/3ULvWukftn0p2msGlSjUyD15xQm5Huv
-ZN5cOO8ptz3nR/dL+R97NrA/YTCWIG08TFh9MSsxUWabmhXQMxB0KJuwiStkssDAdyzTHMmMgwkF
-+gPqrCSqRVLfd78suShGh06sdaOAZGI6wmjp2CJqexKT/Tk3Y/G5ZKtwjP5dPUIPQOcIiNWiWQ9+
-//LKta4lQFQNcZjPZhY/fqiQWDz8bhkJIxIc1g03HR/fZlU7m26HPRASBkq1562TAqacSt98MwYW
-jafmkbyGVYFL6y93Dup8LWqMBVkdlpwEmM7PdoWxaFExeahI8covAMks6pcE/IBDj+YThmT7POnH
-362W9Z/WUZ5FnlSW5mKZNLDuuiFVCFXjTW4T39f7Q4S40J64Osl2lbvNNyPYRCtJZtK905ppTbQf
-o2BRCN+c4C6dx+Wi7f15WG/b14Da7JRHqC8SE7Xm1a0tTpiW8vUp9eas4eudFJIW3Jl97MS35Zf9
-6xTGDJKP9Yw9QOchmR2GN88xlfpj+L9u665s8mFd464Uc3rZuczq8J1+QfjPs5O7tmwkjS5A3Wk9
-t9hgn/u1fVVNHIfxYziHHbg8asI3Zi1cGFLvZVQhp1NSWzcmDEKTJkzRMqGif5Au/SpTXU7T062r
-KwQptQHR/xMoLGpIeIjk++8XSCTTgR3FgAnSA6c3NiFzOCoUl1Ri+DjGRJ5qzkkDYfli49e5alux
-o/N5vfhOGNtquTTI8pSGhN0S+bxMywGE0VcvHiOYAdKhO8VgtrYJZMtAbaQ9SShzBubemt3bwy10
-3qBw6Fii2PLpWna6nGm4MLXSAjJcF+R21xXu+BKigegMBDVhtR+SrAcciIH76JZVJjItiKzbaBqB
-vBHcnm7EAgiuo6snAr8Ikw3hp5exzp/RKUKLHor/br0v1DY2YSJOav1m6Y7vjrb620mo4mMVuCED
-NBdpRMAdalooXgNjuyOcBPuDx0ecfHExFNMCziKpFZ/S2JJ/HRmaLvG8iGExMob5vGlTELB5hpJq
-tay4gNcFlWAheYzhpXDBEiETk5ioT+Fo8wfgyzO595H5nXTDrkvgjTjbhfGtgb8pg7GIMVMraKke
-OHsQAK4Wn7CxmTPgFVy0K1b07p4TClqva6kLHWBoKtGR7Es7Syh1Xa92Iv2tvY8rJoXFodH2X5Ly
-ILrD8b3iAaLvTWE5PQ9L5gLvVmdi8rLHzEzbWyJNFrdWgtuntS12ngtDLbXorVa9W6KelpgQBvAP
-fRzyCtPaxvsT3WDu/tDJ+J79omMiYILEQnAmJecr28b4nPvKrJTfCkVdMNvV0Q1OLCEwrpS5eE6Q
-Ap3ghO1jT9+l1KSn27H6APOa5K/jV651B4EiLRg0KpTtv7oi+uggoy0tNPWZzGUyowmEb4PYpTyY
-jzLrLHnIc06oU7bIFR/YlwHrqPjrQEII4zx1r7BnRhytzoyJVcuHo0FB22pXXpe1n2VojuSPc4Ro
-kynKjU/1Eamkfs6I+oblBaK1edfIhPEZrfTvventqvY/otRBAXnYBpfhz/eMQEhRqasQG7UKm34H
-onCo1fbYFounXDL2HCS7yhMHrIuS4XN9BbWZB4iNHniYnCGBUoabJv2rElNF8pzKX8uE0Z13qDxJ
-lrXAnENsEI0VytehlCXTi3KTRK0lIi9Opvc9fETKdgmJY2anR05RDn9iZXqR/mMz0/dwAex3kWqj
-d0SdxQ3pzINUsI8NRzSDuJF6TTFroRKzMqSFjMly62MYBjqkj9Iz1JDvXUmABOTxnRsUSqIVblPO
-r84ogz/fEHB6tpwiYqSlbG4eCxg1cPntrBVYcYe6J8E8lZWwrrQAoy3AfuJFfYTwleGeHTyMfq8p
-m6EQN/yB60+xEoNaPGZNIp3kKJQO6ldTr4aTBSx3ozm7TnbitO2Gi0Yw1MTvcaZTnTQBbS9QJhvQ
-oupFKYA+D18T/plu8NVzaPRQs8iqIAkYQCE7bKLHs0vzHGB3TZhKQC8eKBjBXUflyO/p3mi6p6Mr
-w4WztetY/5uZQt9mIz+eoGOPoAk0pKhQTAUPA4Z3Amr63J5tXFmackMwQeQuFq2r5e0RI4s3UaYZ
-BlI/OsLGH9BZKhXA59qnvjXQ21tpTou4apVv9Fwz2t1m07qV346dpLHcDS40bJgLf8BJp5HGdme7
-fCMYha6H7YFoiOKXBF7qsh/q8ZuTsydOTXbMHodONu3cRvu5EjZ1KK7P2I5caV+ZuWwoyTLDcRSv
-8ZTwVufSoxc6yLg7O7KQ/Lm3OxBGASWiQ2Bz+ya/mQYOAesYmfJtpZcS4oqeU5mNOVgXWVFZSJjC
-8kT87aFjLQTl28PiWveCgNF8LQe3Y5wGWzJirw5jN8TWpph0lrGchukHat9LIenaGxENCVz7xy8i
-jZ76ki4p+HnCmzfYiFwH6zSEMtjMi/3lKAP1swBXAWbfUxnbZtX+tJgdiLo1QSQMuBTxv4/IYcJD
-AiaV6ZXNLzqe5UlJDb7zbFPAvbVuVdvqv5Y7p3H4ypEfFunb3iri2BT0pkjmnnL3/cJZ/D7gjkTE
-ckbxWasXNbm4nCTTTTp2TiPvKjrz9x51aYwkmmQxBVHfSsJq5NY0DWjMbKhk+x1qSdCJsYbessC0
-LAEyyBdYeHdMwLDHt06Ox+Z0XRFTrV3/NVjSLYOq0Xpg8IpzTLBV9DC5r6KFHoJqk0bPrZRa4Cze
-K9FBDqGSwCHVMbr5d90ES2Lm/79Ix/C6P9B/5o2izXbkeDvNAtfG3iCNwLM2DZTjzbe0yYNm+vkq
-WAiiVK+LsXsHI5WacS9ZIgctLRn9ohc0JZVNIKsCXOkWJsfhJq8x/xk4VCZZUVtpmGy3t6KVR5FS
-VNRlRQRkq9xJC5c6LH1yf2lXr8klwxZYFOxwO99f1J1waCxTuMcjNsgHDC1EYsoCh3XjCJP+B2Fl
-5dbMI4iFREZK3hfIoY+OMDK9gzIVc59MMupI90ZQD7oN6LodIcRCkic7WzzmyAnpRRZRpvhEP+Ug
-YSdHidlWZ3AR0eJmMBVKnV1zvfcQ5B5uXv3iSXsVjV3ljplsI6dMc/Vy4AoSCmTZI6TagE7PfwF9
-yM2aO/L1UZv3U1de2xnScFbi9aegubjeSCqKCcJlAoeSok/825yo2rNBYR4NsrwlK0MxR3xKuvt1
-FxyYLqTQZ01TrFNG2qkrfKqmaghAveHHgGj+hSEa4+Vv/f5T1MjoQdS8dVFMkvJ238TSjQJTmlZo
-AI+IWJ98LAog+9pQhVuv79i+qDk9vGRmSUXbEQHTESjtM8WoibpE+o90gayXopZGrQg6y+Q0c3LQ
-txmFUvL/VRYeyld0wCUoOqSstQiXD1pMsqVr10oJvO2B1yBO9gI3R509dSnkqXZuZ6G610WTab2a
-jH++Njb5JJyHttBw6xFkG83++g7gIenPSBFZOuDOkdkuR/zDhBErJOdygwcuZXTtI/UDr7sJrXfu
-TwOcrP7BDKjuw5xoGJSzcEEMtXmFni9q91aKyya3HIDLbPsYEVVkctW+2V8ziRcb0ny3Mz64dNcB
-sNTh0zL4Oi4ox75PqI9/Y6qFRBZecPeH/CD8DuKvrkN0q6BEI3zsSfURlTq7nGS8JeCwypkl6Ebf
-gf7zBjumJgVXAEhz3+XZFGSHpzPsNBqUTXG7Qqz3i7Xy57JMbdhN0fGnNjojsSeihWY6df9BFafW
-hhBlDsMLckPC3nSulI9npxVdgt9HFlVY8qI5lOVDDqKwaETgvQfD0orrj6PfRXR96qNPogJsG8f3
-NfFGTs8kThm6bcYWb8LCnb8B1BbtKt9SbLGm3woK5P2/SXoi14b66FDp7nRpNgWjKMQRsaFVwQ3U
-xNbvGGBionWb1oi6KohqmGeH277r5saoCdOng1qkEDhsHNY8h9v1Tqw+7otztbTjyVm+gQUKFcFp
-MHRIuhwquK1E/4cEeGvjKcr+21aOrL6vyrZM9beo/vAL2Es2pu8nVHXFiCHp03zCArptjFJ9pFa9
-NfbSxwMW2K8N0Q3u9PeujsAKvhnAGX/h+qUlAFCu+IXO4rSlYuQs3VV/vWA//HqpNczOqMfHnyJ/
-d+ru8uzqHHXc68vZL1g4HIqRp0RPbheZQUypd8McPxJaWypI5X9U3LZ/tAdVpHlYIJ/k2OI/b2Ja
-kFZTZfigzOFTSRP3fe//f/MIdA8jtpWRjoxFxizDDcNaZX+/pn/ET1z4y0VVdMtrNXVR5C9LpfPn
-qi6aqPwiovFwGPJLOilNboORq5fctERo/NDWalRtDVTT7zksYyj5HXWI8BI50k5azLuHd9nWTz6P
-vhahssHjTPHRnSeOnu5k/kPumUQNJ3cgNgj7brue1nJLHMTkwA8vnvgHWZLDffaqm5zf2o3toFA9
-1a1DPjC3ppJXTP9Nd8nnh/cK5zSbEeow9i+eBDiVIddyM5KDl1PYe2UXKFP5S/FBgORmj91gwxD3
-fpltK8xcSarHNPbPPFy6+YbD5bMOFNG4vRYDjl6+Mx61UEvBNdC4qiR8tb+2RIFyxoDQzzZHi0nK
-lPf3ThWlmYwvcyD+iiZsH+PcGGe34X9sI6nMRdupTnPAu4lpwM8ZdtX28zQmdFAixinllo7vqSSJ
-a1LYWp4n4nODkwhdJdcsin361jqGynYkx0mVWMRCqqEmPNbE39NvZKJ0wWjrKKR5Naw11m5RKR+M
-1HbT/0C5DXt7CjgS38pmv0+uYa/P5+2oNwEbJ0HXgHVRH6HjNGvAi/lWg1/e5s+9NQH2tjYNOIsi
-QLNB30sXaMlEHHdIMuMMqyhFmCvlLBmiYf18LMpFdWGnrQEOrcIu2YGSof9gwLu5ndJhqa/UgCI2
-XBjTR6Hyq0xe8wu9+1ppTyUhadVqAfXBsxJuvkJI8GoaEjVrCTnGHfmzgyesbApd3qYSqXfSwjr5
-/KNXBLWO5CvE5VpETbLRyCT0TPslnwltx2M8oIP544oxx1nRUTz5XqSU8vf6YVMjIoGTTxDA2VfN
-ZOsrzssh2jGnLns5dGyhpth+2umuTLuRy3k60ffr7IjRoUBXyHzaM6FhxUo34mfam40P/uQH16O+
-JybpLhZAs7YsQ+ZvU7aoWOASvK8qtPjwiFJJewHLlzeQqTngnbye6W0EsmQFSrTCtWYeY4WV/o6/
-vELkL/JX1gUxRYDqxQrQR5J/4nWaeys9/Z5Ri7P6fRDk4xks6rX4YhRDOy7Mg6xCuYxeQCDD/dsv
-gL00+tBelXWF+aR82ujO5w0DyzsYGeS+zgqbNCdDzoEARQyb2SpmGo53y2bapwcBI2TywJVJeCxc
-yVZdj/A+sqCAe2wT9ck3XuexX8jogmTY1HQcVV8SqiPecUB3zaZqhzHj/JQ+Zhs+FfwfKYixIKy9
-zNav4zksygDS8nyzHa3BKgQe7toY3t6CXQoc34dIzbKgzmbPxn5/5bVfdappXDeIRsNNc6Bp/ALo
-amuHZcCH+HDREr+qJkja0xBXt63JxsIPk+rLtp3Xct7lUiiLgD6yfzabf6SVVVzWiTV8+xC9EDrF
-MuSbHrpP6dQBJZtDJAeadowuq3IapJ3TIjWp9qUchiQAVbidzDRhcfEVGSTyz7QrgZ0TvukDBsji
-7gmPM9siEbtufS9+fxJhKUbyyQcy8fHt1cNYx1iBu6hZscAkxYkUHTnZsz2CIfXa0gnKZTx3/MM7
-6V4cQJ5mDQYqJTDR1zo8nKM7FIR0judISjWkkEMJR8M2OLtmN33fh9dbHIzeKLdE45WKK7OqvroS
-gMNLB0axqP5AJN8f9lWpXoVZWv8EE3iIQzGobhN9GtgdTlaSx1G/D9+4bTuRrpJQlNF2kvXwLUlO
-znglqizC5RGxDgkTSJ5aVVyz/wyrPNDx7n98GCeiAy3f3UKLxsAYV18B+vvUVAsx8s0YGjeG+WqA
-H/EHAGReGnoFhkuz4Kzj7dX4kmcF+3zLMVIY2L7xamiqapz1QhnCXgtwVvXGIJN7+xfw+hbVLrZQ
-6Sj9wKGlN1ylD1yXMre2001ZjoyAbJUmxTDQ5ZUJKX9V1m5CFVwIIvtASNpJubsQIIkJ4Taq9xD8
-q18wl+3b+HKEDaUBgBQ9tAB75bZ4W/KQ0bt5RiksqA27yXyT9WEzk4VxVwe4PPuntR6ZkCCTLK2G
-TdcHBCMuTdjfSyxSilf3umuoQ4x2ivpmMSY+wMuYxiNfZ8yUtkgAwRsJaIyMP3eRDk2mIDiEgmKO
-rYdGaNQuPO0XMiPoAhSkjPHwcWnFcTUcsWQLnIGUSf/pQUQ4I+u5UPQ1/EB2j9hMkaRYRSl7ACqZ
-upIs3KTIQWcZh0cxyeMRStPZjsROQdbXmQ9WPWtEODmxjlaoC4rdfLtSWHr3Zsjz2xF09/m9tFI8
-td2ooLrmrRNiLXBiTF4SghJ+dYjJCLx2LjeKEn2dy+tOdB0uNkDWyDpwOzb/BvDYYHW0Oyq7pBOr
-s4CjRgedUFif
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Akismet
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Akismet.php 8502 2008-03-01 19:56:46Z weppos $
+ */
+
+
+/**
+ * @see Zend_Version
+ */
+require_once 'Zend/Version.php';
+
+/**   
+ * @see Zend_Service_Abstract
+ */
+require_once 'Zend/Service/Abstract.php';
+
+
+/**
+ * Akismet REST service implementation
+ *
+ * @uses       Zend_Service_Abstract
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Akismet
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Akismet extends Zend_Service_Abstract
+{
+    /**
+     * Akismet API key
+     * @var string
+     */
+    protected $_apiKey;
+
+    /**
+     * Blog URL
+     * @var string
+     */
+    protected $_blogUrl;
+
+    /**
+     * Charset used for encoding
+     * @var string
+     */
+    protected $_charset = 'UTF-8';
+
+    /**
+     * TCP/IP port to use in requests
+     * @var int
+     */
+    protected $_port = 80;
+
+    /**
+     * User Agent string to send in requests
+     * @var string
+     */
+    protected $_userAgent;
+
+    /**
+     * Constructor
+     *
+     * @param string $apiKey Akismet API key
+     * @param string $blog Blog URL
+     * @return void
+     */
+    public function __construct($apiKey, $blog)
+    {
+        $this->setBlogUrl($blog)
+             ->setApiKey($apiKey)
+             ->setUserAgent('Zend Framework/' . Zend_Version::VERSION . ' | Akismet/1.11');
+    }
+
+    /**
+     * Retrieve blog URL
+     *
+     * @return string
+     */
+    public function getBlogUrl()
+    {
+        return $this->_blogUrl;
+    }
+
+    /**
+     * Set blog URL
+     *
+     * @param string $blogUrl
+     * @return Zend_Service_Akismet
+     * @throws Zend_Service_Exception if invalid URL provided
+     */
+    public function setBlogUrl($blogUrl)
+    {
+        require_once 'Zend/Uri.php';
+        if (!Zend_Uri::check($blogUrl)) {
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Invalid url provided for blog');
+        }
+
+        $this->_blogUrl = $blogUrl;
+        return $this;
+    }
+
+    /**
+     * Retrieve API key
+     *
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->_apiKey;
+    }
+
+    /**
+     * Set API key
+     *
+     * @param string $apiKey
+     * @return Zend_Service_Akismet
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->_apiKey = $apiKey;
+        return $this;
+    }
+
+    /**
+     * Retrieve charset
+     *
+     * @return string
+     */
+    public function getCharset()
+    {
+        return $this->_charset;
+    }
+
+    /**
+     * Set charset
+     *
+     * @param string $charset
+     * @return Zend_Service_Akismet
+     */
+    public function setCharset($charset)
+    {
+        $this->_charset = $charset;
+        return $this;
+    }
+
+    /**
+     * Retrieve TCP/IP port
+     *
+     * @return int
+     */
+    public function getPort()
+    {
+        return $this->_port;
+    }
+
+    /**
+     * Set TCP/IP port
+     *
+     * @param int $port
+     * @return Zend_Service_Akismet
+     * @throws Zend_Service_Exception if non-integer value provided
+     */
+    public function setPort($port)
+    {
+        if (!is_int($port)) {
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Invalid port');
+        }
+
+        $this->_port = $port;
+        return $this;
+    }
+
+    /**
+     * Retrieve User Agent string
+     *
+     * @return string
+     */
+    public function getUserAgent()
+    {
+        return $this->_userAgent;
+    }
+
+    /**
+     * Set User Agent
+     *
+     * Should be of form "Some user agent/version | Akismet/version"
+     *
+     * @param string $userAgent
+     * @return Zend_Service_Akismet
+     * @throws Zend_Service_Exception with invalid user agent string
+     */
+    public function setUserAgent($userAgent)
+    {
+        if (!is_string($userAgent)
+            || !preg_match(":^[^\n/]*/[^ ]* \| Akismet/[0-9\.]*$:i", $userAgent))
+        {
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Invalid User Agent string; must be of format "Application name/version | Akismet/version"');
+        }
+
+        $this->_userAgent = $userAgent;
+        return $this;
+    }
+
+    /**
+     * Post a request
+     *
+     * @param string $host
+     * @param string $path
+     * @param array  $params
+     * @return mixed
+     */
+    protected function _post($host, $path, array $params)
+    {
+        $uri    = 'http://' . $host . ':' . $this->getPort() . $path;
+        $client = self::getHttpClient();
+        $client->setUri($uri);
+        $client->setConfig(array(
+            'useragent'    => $this->getUserAgent(),
+        ));
+
+        $client->setHeaders(array(
+            'Host'         => $host,
+            'Content-Type' => 'application/x-www-form-urlencoded; charset=' . $this->getCharset()
+        ));
+        $client->setParameterPost($params);
+
+        $client->setMethod(Zend_Http_Client::POST);
+        return $client->request();
+    }
+
+    /**
+     * Verify an API key
+     *
+     * @param string $key Optional; API key to verify
+     * @param string $blog Optional; blog URL against which to verify key
+     * @return boolean
+     */
+    public function verifyKey($key = null, $blog = null)
+    {
+        if (null === $key) {
+            $key = $this->getApiKey();
+        }
+
+        if (null === $blog) {
+            $blog = $this->getBlogUrl();
+        }
+
+        $response = $this->_post('rest.akismet.com', '/1.1/verify-key', array(
+            'key'  => $key,
+            'blog' => $blog
+        ));
+
+        return ('valid' == $response->getBody());
+    }
+
+    /**
+     * Perform an API call
+     *
+     * @param string $path
+     * @param array $params
+     * @return Zend_Http_Response
+     * @throws Zend_Service_Exception if missing user_ip or user_agent fields
+     */
+    protected function _makeApiCall($path, $params)
+    {
+        if (empty($params['user_ip']) || empty($params['user_agent'])) {
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Missing required Akismet fields (user_ip and user_agent are required)');
+        }
+
+        if (!isset($params['blog'])) {
+            $params['blog'] = $this->getBlogUrl();
+        }
+
+        return $this->_post($this->getApiKey() . '.rest.akismet.com', $path, $params);
+    }
+
+    /**
+     * Check a comment for spam
+     *
+     * Checks a comment to see if it is spam. $params should be an associative
+     * array with one or more of the following keys (unless noted, all keys are
+     * optional):
+     * - blog: URL of the blog. If not provided, uses value returned by {@link getBlogUrl()}
+     * - user_ip (required): IP address of comment submitter
+     * - user_agent (required): User Agent used by comment submitter
+     * - referrer: contents of HTTP_REFERER header
+     * - permalink: location of the entry to which the comment was submitted
+     * - comment_type: typically, one of 'blank', 'comment', 'trackback', or 'pingback', but may be any value
+     * - comment_author: name submitted with the content
+     * - comment_author_email: email submitted with the content
+     * - comment_author_url: URL submitted with the content
+     * - comment_content: actual content
+     *
+     * Additionally, Akismet suggests returning the key/value pairs in the
+     * $_SERVER array, and these may be included in the $params.
+     *
+     * This method implements the Akismet comment-check REST method.
+     *
+     * @param array $params
+     * @return boolean
+     * @throws Zend_Service_Exception with invalid API key
+     */
+    public function isSpam($params)
+    {
+        $response = $this->_makeApiCall('/1.1/comment-check', $params);
+
+        $return = trim($response->getBody());
+
+        if ('invalid' == $return) {
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Invalid API key');
+        }
+
+        if ('true' == $return) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Submit spam
+     *
+     * Takes the same arguments as {@link isSpam()}.
+     *
+     * Submits known spam content to Akismet to help train it.
+     *
+     * This method implements Akismet's submit-spam REST method.
+     *
+     * @param array $params
+     * @return void
+     * @throws Zend_Service_Exception with invalid API key
+     */
+    public function submitSpam($params)
+    {
+        $response = $this->_makeApiCall('/1.1/submit-spam', $params);
+        $value    = trim($response->getBody());
+        if ('invalid' == $value) {
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Invalid API key');
+        }
+    }
+
+    /**
+     * Submit ham
+     *
+     * Takes the same arguments as {@link isSpam()}.
+     *
+     * Submits a comment that has been falsely categorized as spam by Akismet
+     * as a false positive, telling Akismet's filters not to filter such
+     * comments as spam in the future.
+     *
+     * Unlike {@link submitSpam()} and {@link isSpam()}, a valid API key is
+     * never necessary; as a result, this method never throws an exception
+     * (unless an exception happens with the HTTP client layer).
+     *
+     * this method implements Akismet's submit-ham REST method.
+     *
+     * @param array $params
+     * @return void
+     */
+    public function submitHam($params)
+    {
+        $response = $this->_makeApiCall('/1.1/submit-ham', $params);
+    }
+}

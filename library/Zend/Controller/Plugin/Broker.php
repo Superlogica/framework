@@ -1,101 +1,362 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Plugins
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Plugin_Abstract */
+require_once 'Zend/Controller/Plugin/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Plugins
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
+{
+
+    /**
+     * Array of instance of objects extending Zend_Controller_Plugin_Abstract
+     *
+     * @var array
+     */
+    protected $_plugins = array();
+
+
+    /**
+     * Register a plugin.
+     *
+     * @param  Zend_Controller_Plugin_Abstract $plugin
+     * @param  int $stackIndex
+     * @return Zend_Controller_Plugin_Broker
+     */
+    public function registerPlugin(Zend_Controller_Plugin_Abstract $plugin, $stackIndex = null)
+    {
+        if (false !== array_search($plugin, $this->_plugins, true)) {
+            require_once 'Zend/Controller/Exception.php';
+            throw new Zend_Controller_Exception('Plugin already registered');
+        }
+
+        $stackIndex = (int) $stackIndex;
+
+        if ($stackIndex) {
+            if (isset($this->_plugins[$stackIndex])) {
+                require_once 'Zend/Controller/Exception.php';
+                throw new Zend_Controller_Exception('Plugin with stackIndex "' . $stackIndex . '" already registered');
+            }
+            $this->_plugins[$stackIndex] = $plugin;
+        } else {
+            $stackIndex = count($this->_plugins);
+            while (isset($this->_plugins[$stackIndex])) {
+                ++$stackIndex;
+            }
+            $this->_plugins[$stackIndex] = $plugin;
+        }
+
+        $request = $this->getRequest();
+        if ($request) {
+            $this->_plugins[$stackIndex]->setRequest($request);
+        }
+        $response = $this->getResponse();
+        if ($response) {
+            $this->_plugins[$stackIndex]->setResponse($response);
+        }
+
+        ksort($this->_plugins);
+
+        return $this;
+    }
+
+    /**
+     * Unregister a plugin.
+     *
+     * @param string|Zend_Controller_Plugin_Abstract $plugin Plugin object or class name
+     * @return Zend_Controller_Plugin_Broker
+     */
+    public function unregisterPlugin($plugin)
+    {
+        if ($plugin instanceof Zend_Controller_Plugin_Abstract) {
+            // Given a plugin object, find it in the array
+            $key = array_search($plugin, $this->_plugins, true);
+            if (false === $key) {
+                require_once 'Zend/Controller/Exception.php';
+                throw new Zend_Controller_Exception('Plugin never registered.');
+            }
+            unset($this->_plugins[$key]);
+        } elseif (is_string($plugin)) {
+            // Given a plugin class, find all plugins of that class and unset them
+            foreach ($this->_plugins as $key => $_plugin) {
+                $type = get_class($_plugin);
+                if ($plugin == $type) {
+                    unset($this->_plugins[$key]);
+                }
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Is a plugin of a particular class registered?
+     *
+     * @param  string $class
+     * @return bool
+     */
+    public function hasPlugin($class)
+    {
+        foreach ($this->_plugins as $plugin) {
+            $type = get_class($plugin);
+            if ($class == $type) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Retrieve a plugin or plugins by class
+     *
+     * @param  string $class Class name of plugin(s) desired
+     * @return false|Zend_Controller_Plugin_Abstract|array Returns false if none found, plugin if only one found, and array of plugins if multiple plugins of same class found
+     */
+    public function getPlugin($class)
+    {
+        $found = array();
+        foreach ($this->_plugins as $plugin) {
+            $type = get_class($plugin);
+            if ($class == $type) {
+                $found[] = $plugin;
+            }
+        }
+
+        switch (count($found)) {
+            case 0:
+                return false;
+            case 1:
+                return $found[0];
+            default:
+                return $found;
+        }
+    }
+
+    /**
+     * Retrieve all plugins
+     *
+     * @return array
+     */
+    public function getPlugins()
+    {
+        return $this->_plugins;
+    }
+
+    /**
+     * Set request object, and register with each plugin
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     * @return Zend_Controller_Plugin_Broker
+     */
+    public function setRequest(Zend_Controller_Request_Abstract $request)
+    {
+        $this->_request = $request;
+
+        foreach ($this->_plugins as $plugin) {
+            $plugin->setRequest($request);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get request object
+     *
+     * @return Zend_Controller_Request_Abstract $request
+     */
+    public function getRequest()
+    {
+        return $this->_request;
+    }
+
+    /**
+     * Set response object
+     *
+     * @param Zend_Controller_Response_Abstract $response
+     * @return Zend_Controller_Plugin_Broker
+     */
+    public function setResponse(Zend_Controller_Response_Abstract $response)
+    {
+        $this->_response = $response;
+
+        foreach ($this->_plugins as $plugin) {
+            $plugin->setResponse($response);
+        }
+
+
+        return $this;
+    }
+
+    /**
+     * Get response object
+     *
+     * @return Zend_Controller_Response_Abstract $response
+     */
+    public function getResponse()
+    {
+        return $this->_response;
+    }
+
+
+    /**
+     * Called before Zend_Controller_Front begins evaluating the
+     * request against its routes.
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function routeStartup(Zend_Controller_Request_Abstract $request)
+    {
+        foreach ($this->_plugins as $plugin) {
+            try {
+                $plugin->routeStartup($request);
+            } catch (Exception $e) {
+                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                    throw $e;
+                } else {
+                    $this->getResponse()->setException($e);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Called before Zend_Controller_Front exits its iterations over
+     * the route set.
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function routeShutdown(Zend_Controller_Request_Abstract $request)
+    {
+        foreach ($this->_plugins as $plugin) {
+            try {
+                $plugin->routeShutdown($request);
+            } catch (Exception $e) {
+                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                    throw $e;
+                } else {
+                    $this->getResponse()->setException($e);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Called before Zend_Controller_Front enters its dispatch loop.
+     *
+     * During the dispatch loop, Zend_Controller_Front keeps a
+     * Zend_Controller_Request_Abstract object, and uses
+     * Zend_Controller_Dispatcher to dispatch the
+     * Zend_Controller_Request_Abstract object to controllers/actions.
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function dispatchLoopStartup(Zend_Controller_Request_Abstract $request)
+    {
+        foreach ($this->_plugins as $plugin) {
+            try {
+                $plugin->dispatchLoopStartup($request);
+            } catch (Exception $e) {
+                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                    throw $e;
+                } else {
+                    $this->getResponse()->setException($e);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Called before an action is dispatched by Zend_Controller_Dispatcher.
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function preDispatch(Zend_Controller_Request_Abstract $request)
+    {
+        foreach ($this->_plugins as $plugin) {
+            try {
+                $plugin->preDispatch($request);
+            } catch (Exception $e) {
+                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                    throw $e;
+                } else {
+                    $this->getResponse()->setException($e);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Called after an action is dispatched by Zend_Controller_Dispatcher.
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function postDispatch(Zend_Controller_Request_Abstract $request)
+    {
+        foreach ($this->_plugins as $plugin) {
+            try {
+                $plugin->postDispatch($request);
+            } catch (Exception $e) {
+                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                    throw $e;
+                } else {
+                    $this->getResponse()->setException($e);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Called before Zend_Controller_Front exits its dispatch loop.
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function dispatchLoopShutdown()
+    {
+       foreach ($this->_plugins as $plugin) {
+           try {
+                $plugin->dispatchLoopShutdown();
+            } catch (Exception $e) {
+                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                    throw $e;
+                } else {
+                    $this->getResponse()->setException($e);
+                }
+            }
+       }
+    }
+}

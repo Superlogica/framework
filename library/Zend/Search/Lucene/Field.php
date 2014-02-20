@@ -1,54 +1,225 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-sAZP7yzv
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Document
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * A field is a section of a Document.  Each field has two parts,
+ * a name and a value. Values may be free text or they may be atomic
+ * keywords, which are not further processed. Such keywords may
+ * be used to represent dates, urls, etc.  Fields are optionally
+ * stored in the index, so that they may be returned with hits
+ * on the document.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Document
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Field
+{
+    /**
+     * Field name
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * Field value
+     * 
+     * @var boolean
+     */
+    public $value;
+    
+    /**
+     * Field is to be stored in the index for return with search hits.
+     * 
+     * @var boolean
+     */
+    public $isStored    = false;
+    
+    /**
+     * Field is to be indexed, so that it may be searched on.
+     * 
+     * @var boolean
+     */
+    public $isIndexed   = true;
+
+    /**
+     * Field should be tokenized as text prior to indexing.
+     * 
+     * @var boolean
+     */
+    public $isTokenized = true;
+    /**
+     * Field is stored as binary.
+     * 
+     * @var boolean
+     */
+    public $isBinary    = false;
+
+    /**
+     * Field are stored as a term vector
+     * 
+     * @var boolean
+     */
+    public $storeTermVector = false;
+
+    /**
+     * Field boost factor
+     * It's not stored directly in the index, but affects on normalization factor
+     *
+     * @var float
+     */
+    public $boost = 1.0;
+
+    /**
+     * Field value encoding.
+     *
+     * @var string
+     */
+    public $encoding;
+
+    /**
+     * Object constructor
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $encoding
+     * @param boolean $isStored
+     * @param boolean $isIndexed
+     * @param boolean $isTokenized
+     * @param boolean $isBinary
+     */
+    public function __construct($name, $value, $encoding, $isStored, $isIndexed, $isTokenized, $isBinary = false)
+    {
+        $this->name  = $name;
+        $this->value = $value;
+
+        if (!$isBinary) {
+            $this->encoding    = $encoding;
+            $this->isTokenized = $isTokenized;
+        } else {
+            $this->encoding    = '';
+            $this->isTokenized = false;
+        }
+
+        $this->isStored  = $isStored;
+        $this->isIndexed = $isIndexed;
+        $this->isBinary  = $isBinary;
+
+        $this->storeTermVector = false;
+        $this->boost           = 1.0;
+    }
+
+
+    /**
+     * Constructs a String-valued Field that is not tokenized, but is indexed
+     * and stored.  Useful for non-text fields, e.g. date or url.
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Field
+     */
+    public static function keyword($name, $value, $encoding = '')
+    {
+        return new self($name, $value, $encoding, true, true, false);
+    }
+
+
+    /**
+     * Constructs a String-valued Field that is not tokenized nor indexed,
+     * but is stored in the index, for return with hits.
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Field
+     */
+    public static function unIndexed($name, $value, $encoding = '')
+    {
+        return new self($name, $value, $encoding, true, false, false);
+    }
+
+
+    /**
+     * Constructs a Binary String valued Field that is not tokenized nor indexed,
+     * but is stored in the index, for return with hits.
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Field
+     */
+    public static function binary($name, $value)
+    {
+        return new self($name, $value, '', true, false, false, true);
+    }
+
+    /**
+     * Constructs a String-valued Field that is tokenized and indexed,
+     * and is stored in the index, for return with hits.  Useful for short text
+     * fields, like "title" or "subject". Term vector will not be stored for this field.
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Field
+     */
+    public static function text($name, $value, $encoding = '')
+    {
+        return new self($name, $value, $encoding, true, true, true);
+    }
+
+
+    /**
+     * Constructs a String-valued Field that is tokenized and indexed,
+     * but that is not stored in the index.
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Field
+     */
+    public static function unStored($name, $value, $encoding = '')
+    {
+        return new self($name, $value, $encoding, false, true, true);
+    }
+
+    /**
+     * Get field value in UTF-8 encoding
+     *
+     * @return string
+     */
+    public function getUtf8Value()
+    {
+        if (strcasecmp($this->encoding, 'utf8' ) == 0  ||
+            strcasecmp($this->encoding, 'utf-8') == 0 ) {
+                return $this->value;
+        } else {
+            
+            return (PHP_OS != 'AIX') ? iconv($this->encoding, 'UTF-8', $this->value) : iconv('ISO8859-1', 'UTF-8', $this->value);
+        }
+    }
+}
+

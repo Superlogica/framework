@@ -1,50 +1,88 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-7SHKI3iA+VkEv+ar9htx61DX8WkHjM2vLVa=
+<?php
+
+require_once 'Zend/Tool/Framework/Registry.php';
+require_once 'Zend/Tool/Framework/Provider/Interface.php';
+require_once 'Zend/Version.php';
+
+/**
+ * Version Provider
+ *
+ */
+class Zend_Tool_Framework_System_Provider_Version 
+    implements Zend_Tool_Framework_Provider_Interface, Zend_Tool_Framework_Registry_EnabledInterface
+{
+
+    /**
+     * @var Zend_Tool_Framework_Registry_Interface
+     */
+    protected $_registry = null;
+    
+    const MODE_MAJOR = 'major';
+    const MODE_MINOR = 'minor';
+    const MODE_MINI  = 'mini';
+
+    protected $_specialties = array('MajorPart', 'MinorPart', 'MiniPart');
+
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+    
+    /**
+     * Show Action
+     *
+     * @param string $mode The mode switch can be one of: major, minor, or mini (default)
+     * @param bool $nameincluded
+     */
+    public function show($mode = self::MODE_MINI, $nameIncluded = true)
+    {
+
+        $versionInfo = $this->_splitVersion();
+
+        switch($mode) {
+            case self::MODE_MINOR:
+                unset($versionInfo['mini']);
+                break;
+            case self::MODE_MAJOR:
+                unset($versionInfo['mini'], $versionInfo['minor']);
+                break;
+        }
+
+        $output = implode('.', $versionInfo);
+
+        if ($nameIncluded) {
+            $output = 'Zend Framework Version: ' . $output;
+        }
+
+        $this->_registry->response->appendContent($output);
+    }
+
+    public function showMajorPart($nameIncluded = true)
+    {
+        $versionNumbers = $this->_splitVersion();
+        $output = (($nameIncluded == true) ? 'ZF Major Version: ' : null) . $versionNumbers['major'];
+        $this->_registry->response->appendContent($output);
+    }
+
+    public function showMinorPart($nameIncluded = true)
+    {
+        $versionNumbers = $this->_splitVersion();
+        $output = (($nameIncluded == true) ? 'ZF Minor Version: ' : null) . $versionNumbers['minor'];
+        $this->_registry->response->appendContent($output);
+    }
+
+    public function showMiniPart($nameIncluded = true)
+    {
+        $versionNumbers = $this->_splitVersion();
+        $output = (($nameIncluded == true) ? 'ZF Mini Version: ' : null)  . $versionNumbers['mini'];
+        $this->_registry->response->appendContent($output);
+    }
+
+    protected function _splitVersion()
+    {
+        list($major, $minor, $mini) = explode('.', Zend_Version::VERSION);
+        return array('major' => $major, 'minor' => $minor, 'mini' => $mini);
+    }
+
+}

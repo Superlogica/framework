@@ -1,16 +1,52 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV52mRmLcx/3cULg5KUbDyGH+VLiHJlfJgJj01qzrHbHStsytKqnJ5Pzx6D/ebZnYb9TEfMroZ
-FnbRE8FwsqIkB51PasM2jAWEbvXuzeuT2Z2lGC8UbSUJLWbwCl0+D8f7XRJmc4dHHoB3eACfxT1n
-g5ZQuJBSg0SVA+MmrTgmWXMfmQpVtddlTyVNTr4tDyzot4U3jaFTeBonYgGFs2k9hXrmHucMOWos
-dsPe9G+uEL3yzoJQF/dqgFJ4IvD9dCrJBKTtvIykX49ev6NHdCvSCMOb3pLkrTO+84t/aSLXSpcq
-XHDfBwbLswtkUjIpTBIVojOtrG9biVD8hey+7RtnYMcEsE5V78ZoP0puc+taA6hJX8vRwElSLXeb
-h6JHu/A0hijVK6JI4m0A3bVTnnL9Pb2f0Bz0KKIX0OP9Co4OBEmfiPhrAsjk7cAUy7TIkjmo/1+X
-eHrbaTc9MlKHR7w6NoflultWGWFYxGrK4l5NTICgg/SaBkzQy8xkwHt2ndsEOToSkv749P6fFHHz
-IEoVbWCsfv8kLlYSRbGd5XFrhDQDE1OQBEGMqds8dKv28aHryD04NPydBTgXg6gN9IunSk0SDSA4
-K6xwt6yRx4YVC3zilLUTkzaINFM97l0w0p16PVrduXkeJqL7VRatOP9iGFk0fwAQ2c1m3Q4DFPE0
-Z7TZyZVCX7qU8k6ZbKxLWvKX290Ca7bwu2Kc7v82AdGdY74A5AvErTz3+2+EkOH0/sLPPD5dBA9F
-/lpBWk14UgMFam3jTqofCCg3JxQTmnYcC5tSz+j+vHYZCoscMjFi9NyiTcPZkYBhnY//lDMxX1Mg
-oh19c76+RvtNXVkWhjTP/GHAUoG9eTxEefwQ6CzgkCatVqXcCcSs00Z7u9m4werd9kc1tVF3kwgL
-O3N4j8w7LuFu+c/VTcuIrRHaC4ExgqPgC46WvwSJu7gNRmsvcVYCvG==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: No.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Validate_Hostname_Interface
+ */
+require_once 'Zend/Validate/Hostname/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Hostname_No implements Zend_Validate_Hostname_Interface
+{
+
+    /**
+     * Returns UTF-8 characters allowed in DNS hostnames for the specified Top-Level-Domain
+     *
+     * @see http://www.norid.no/domeneregistrering/idn/idn_nyetegn.en.html Norway (.NO)
+     * @return string
+     */
+    static function getCharacters()
+    {
+        return  '\x00E1\x00E0\x00E4\x010D\x00E7\x0111\x00E9\x00E8\x00EA\x\x014B' .
+                '\x0144\x00F1\x00F3\x00F2\x00F4\x00F6\x0161\x0167\x00FC\x017E\x00E6' .
+                '\x00F8\x00E5';
+    }
+
+}

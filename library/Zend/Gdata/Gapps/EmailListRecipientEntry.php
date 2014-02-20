@@ -1,42 +1,145 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-B7UN4J6UVEtt+VyW8SYj9P7xUB+sUhmnxdLT
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Extension_Who
+ */
+require_once 'Zend/Gdata/Extension/Who.php';
+
+/**
+ * Data model class for a Google Apps Email List Recipient Entry.
+ *
+ * Each instance of this class represents a recipient of an email list
+ * hosted on a Google Apps domain. Each email list may contain multiple
+ * recipients. Email lists themselves are described by
+ * Zend_Gdata_EmailListEntry. Multiple recipient entries are contained within
+ * instances of Zend_Gdata_Gapps_EmailListRecipientFeed.
+ *
+ * To transfer email list recipients to and from the Google Apps servers,
+ * including creating new recipients, refer to the Google Apps service class,
+ * Zend_Gdata_Gapps.
+ *
+ * This class represents <atom:entry> in the Google Data protocol.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_EmailListRecipientEntry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_Gapps_EmailListRecipientEntry';
+
+    /**
+     * <gd:who> element used to store the email address of the current
+     * recipient. Only the email property of this element should be
+     * populated.
+     *
+     * @var Zend_Gdata_Extension_Who
+     */
+    protected $_who = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_who !== null) {
+            $element->appendChild($this->_who->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gd') . ':' . 'who';
+                $who = new Zend_Gdata_Extension_Who();
+                $who->transferFromDOM($child);
+                $this->_who = $who;
+                break;
+            default:
+                parent::takeChildFromDOM($child);
+                break;
+        }
+    }
+
+    /**
+     * Get the value of the who property for this object.
+     *
+     * @see setWho
+     * @return Zend_Gdata_Extension_Who The requested object.
+     */
+    public function getWho()
+    {
+        return $this->_who;
+    }
+
+    /**
+     * Set the value of the who property for this object. This property
+     * is used to store the email address of the current recipient.
+     *
+     * @param Zend_Gdata_Extension_Who $value The desired value for this
+     *          instance's who property.
+     * @return Zend_Gdata_Gapps_EventEntry Provides a fluent interface.
+     */
+    public function setWho($value)
+    {
+        $this->_who = $value;
+        return $this;
+    }
+
+}

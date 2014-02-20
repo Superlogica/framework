@@ -1,152 +1,563 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Uyo+bkCu+G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Data.php 11282 2008-09-08 16:05:59Z matthew $
+ */
+
+/**
+ * dojo.data support for Zend Framework
+ * 
+ * @uses       ArrayAccess
+ * @uses       Iterator
+ * @uses       Countable
+ * @package    Zend_Dojo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable 
+{
+    /**
+     * Identifier field of item
+     * @var string|int
+     */
+    protected $_identifier;
+
+    /**
+     * Collected items
+     * @var array
+     */
+    protected $_items = array();
+
+    /**
+     * Label field of item
+     * @var string
+     */
+    protected $_label;
+
+    /**
+     * Data container metadata
+     * @var array
+     */
+    protected $_metadata = array();
+
+    /**
+     * Constructor
+     * 
+     * @param  string|null $identifier 
+     * @param  array|Traversable|null $items 
+     * @param  string|null $label 
+     * @return void
+     */
+    public function __construct($identifier = null, $items = null, $label = null) 
+    { 
+        if (null !== $identifier) { 
+            $this->setIdentifier($identifier); 
+        } 
+        if (null !== $items) { 
+            $this->setItems($items); 
+        } 
+        if (null !== $label) { 
+            $this->setLabel($label); 
+        } 
+    } 
+ 
+    /**
+     * Set the items to collect
+     *
+     * @param array|Traversable $items
+     * @return Zend_Dojo_Data
+     */
+    public function setItems($items)
+    {
+        $this->clearItems();
+        return $this->addItems($items);
+    }
+
+    /**
+     * Set an individual item, optionally by identifier (overwrites)
+     *
+     * @param  array|object $item
+     * @param  string|null $identifier
+     * @return Zend_Dojo_Data
+     */
+    public function setItem($item, $id = null)
+    {
+        $item = $this->_normalizeItem($item, $id);
+        $this->_items[$item['id']] = $item['data'];
+        return $this;
+    }
+
+    /**
+     * Add an individual item, optionally by identifier
+     *
+     * @param  array|object $item
+     * @param  string|null $id
+     * @return Zend_Dojo_Data
+     */
+    public function addItem($item, $id = null)
+    {
+        $item = $this->_normalizeItem($item, $id);
+
+        if ($this->hasItem($item['id'])) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('Overwriting items using addItem() is not allowed');
+        }
+
+        $this->_items[$item['id']] = $item['data'];
+
+        return $this;
+    }
+
+    /**
+     * Add multiple items at once
+     *
+     * @param  array|Traversable $items
+     * @return Zend_Dojo_Data
+     */
+    public function addItems($items)
+    {
+        if (!is_array($items) && (!is_object($items) || !($items instanceof Traversable))) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('Only arrays and Traversable objects may be added to ' . __CLASS__);
+        }
+
+        foreach ($items as $item) {
+            $this->addItem($item);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get all items as an array
+     *
+     * Serializes items to arrays.
+     *
+     * @return array
+     */
+    public function getItems()
+    {
+        return $this->_items;
+    }
+
+    /**
+     * Does an item with the given identifier exist?
+     * 
+     * @param  string|int $id 
+     * @return bool
+     */
+    public function hasItem($id)
+    {
+        return array_key_exists($id, $this->_items);
+    }
+
+    /**
+     * Retrieve an item by identifier
+     *
+     * Item retrieved will be flattened to an array.
+     *
+     * @param  string $id
+     * @return array
+     */
+    public function getItem($id)
+    {
+        if (!$this->hasItem($id)) {
+            return null;
+        }
+
+        return $this->_items[$id];
+    }
+
+    /**
+     * Remove item by identifier
+     *
+     * @param  string $id
+     * @return Zend_Dojo_Data
+     */
+    public function removeItem($id)
+    {
+        if ($this->hasItem($id)) {
+            unset($this->_items[$id]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Remove all items at once
+     *
+     * @return Zend_Dojo_Data
+     */
+    public function clearItems()
+    {
+        $this->_items = array();
+        return $this;
+    }
+
+ 
+    /**
+     * Set identifier for item lookups
+     *
+     * @param  string|int|null $identifier
+     * @return Zend_Dojo_Data
+     */
+    public function setIdentifier($identifier)
+    {
+        if (null === $identifier) {
+            $this->_identifier = null;
+        } elseif (is_string($identifier)) {
+            $this->_identifier = $identifier;
+        } elseif (is_numeric($identifier)) {
+            $this->_identifier = (int) $identifier;
+        } else {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('Invalid identifier; please use a string or integer');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve current item identifier
+     *
+     * @return string|int|null
+     */
+    public function getIdentifier()
+    {
+        return $this->_identifier;
+    }
+
+ 
+    /**
+     * Set label to use for displaying item associations
+     *
+     * @param  string|null $label
+     * @return Zend_Dojo_Data
+     */
+    public function setLabel($label)
+    {
+        if (null === $label) {
+            $this->_label = null;
+        } else {
+            $this->_label = (string) $label;
+        }
+        return $this;
+    }
+
+    /**
+     * Retrieve item association label
+     *
+     * @return string|null
+     */
+    public function getLabel()
+    {
+        return $this->_label;
+    }
+
+    /**
+     * Set metadata by key or en masse
+     * 
+     * @param  string|array $spec 
+     * @param  mixed $value 
+     * @return Zend_Dojo_Data
+     */
+    public function setMetadata($spec, $value = null)
+    {
+        if (is_string($spec) && (null !== $value)) {
+            $this->_metadata[$spec] = $value;
+        } elseif (is_array($spec)) {
+            foreach ($spec as $key => $value) {
+                $this->setMetadata($key, $value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Get metadata item or all metadata
+     * 
+     * @param  null|string $key Metadata key when pulling single metadata item
+     * @return mixed
+     */
+    public function getMetadata($key = null)
+    {
+        if (null === $key) {
+            return $this->_metadata;
+        }
+
+        if (array_key_exists($key, $this->_metadata)) {
+            return $this->_metadata[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Clear individual or all metadata item(s)
+     * 
+     * @param  null|string $key 
+     * @return Zend_Dojo_Data
+     */
+    public function clearMetadata($key = null)
+    {
+        if (null === $key) {
+            $this->_metadata = array();
+        } elseif (array_key_exists($key, $this->_metadata)) {
+            unset($this->_metadata[$key]);
+        }
+        return $this;
+    }
+
+    /**
+     * Load object from array
+     * 
+     * @param  array $data 
+     * @return Zend_Dojo_Data
+     */
+    public function fromArray(array $data)
+    {
+        if (array_key_exists('identifier', $data)) {
+            $this->setIdentifier($data['identifier']);
+        }
+        if (array_key_exists('label', $data)) {
+            $this->setLabel($data['label']);
+        }
+        if (array_key_exists('items', $data) && is_array($data['items'])) {
+            $this->setItems($data['items']);
+        } else {
+            $this->clearItems();
+        }
+        return $this;
+    }
+
+    /**
+     * Load object from JSON
+     * 
+     * @param  string $json 
+     * @return Zend_Dojo_Data
+     */
+    public function fromJson($json)
+    {
+        if (!is_string($json)) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('fromJson() expects JSON input');
+        }
+        require_once 'Zend/Json.php';
+        $data = Zend_Json::decode($json);
+        return $this->fromArray($data);
+    }
+
+    /**
+     * Seralize entire data structure, including identifier and label, to array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        if (null === ($identifier = $this->getIdentifier())) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('Serialization requires that an identifier be present in the object; first call setIdentifier()');
+        }
+
+        $array = array(
+            'identifier' => $identifier,
+            'items'      => array_values($this->getItems()),
+        );
+
+        $metadata = $this->getMetadata();
+        if (!empty($metadata)) {
+            foreach ($metadata as $key => $value) {
+                $array[$key] = $value;
+            }
+        }
+
+        if (null !== ($label = $this->getLabel())) {
+            $array['label'] = $label;
+        }
+
+        return $array;
+    }
+ 
+    /**
+     * Serialize to JSON (dojo.data format)
+     *
+     * @return string
+     */
+    public function toJson()
+    {
+        require_once 'Zend/Json.php';
+        return Zend_Json::encode($this->toArray());
+    }
+
+    /**
+     * Serialize to string (proxy to {@link toJson()})
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+
+    /**
+     * ArrayAccess: does offset exist?
+     *
+     * @param  string|int $offset
+     * @return bool
+     */
+    public function offsetExists($offset)
+    {
+        return (null !== $this->getItem($offset));
+    }
+
+    /**
+     * ArrayAccess: retrieve by offset
+     *
+     * @param  string|int $offset
+     * @return array
+     */
+    public function offsetGet($offset)
+    {
+        return $this->getItem($offset);
+    }
+
+    /**
+     * ArrayAccess: set value by offset
+     *
+     * @param  string $offset
+     * @param  array|object|null $value
+     * @return void
+     */
+    public function offsetSet($offset, $value)
+    {
+        $this->setItem($value, $offset);
+    }
+
+    /**
+     * ArrayAccess: unset value by offset
+     *
+     * @param  string $offset
+     * @return void
+     */
+    public function offsetUnset($offset)
+    {
+        $this->removeItem($offset);
+    }
+
+    /**
+     * Iterator: get current value
+     *
+     * @return array
+     */
+    public function current()
+    {
+        return current($this->_items);
+    }
+
+    /**
+     * Iterator: get current key
+     *
+     * @return string|int
+     */
+    public function key()
+    {
+        return key($this->_items);
+    }
+
+    /**
+     * Iterator: get next item
+     *
+     * @return void
+     */
+    public function next()
+    {
+        return next($this->_items);
+    }
+
+    /**
+     * Iterator: rewind to first value in collection
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        return reset($this->_items);
+    }
+
+    /**
+     * Iterator: is item valid?
+     *
+     * @return bool
+     */
+    public function valid()
+    {
+        return (bool) $this->current();
+    }
+
+    /**
+     * Countable: how many items are present
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_items);
+    }
+
+    /**
+     * Normalize an item to attach to the collection 
+     * 
+     * @param  array|object $item 
+     * @param  string|int|null $id 
+     * @return array
+     */
+    protected function _normalizeItem($item, $id)
+    {
+        if (null === ($identifier = $this->getIdentifier())) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('You must set an identifier prior to adding items');
+        }
+
+        if (!is_object($item) && !is_array($item)) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('Only arrays and objects may be attached');
+        }
+
+        if (is_object($item)) {
+            if (method_exists($item, 'toArray')) {
+                $item = $item->toArray();
+            } else {
+                $item = get_object_vars($item);
+            }
+        }
+
+        if ((null === $id) && !array_key_exists($identifier, $item)) {
+            require_once 'Zend/Dojo/Exception.php';
+            throw new Zend_Dojo_Exception('Item must contain a column matching the currently set identifier');
+        } elseif (null === $id) {
+            $id = $item[$identifier];
+        } else {
+            $item[$identifier] = $id;
+        }
+
+        return array(
+            'id'   => $id,
+            'data' => $item,
+        );
+    }
+} 

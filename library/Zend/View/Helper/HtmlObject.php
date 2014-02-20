@@ -1,38 +1,80 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-NUOtQIjL6sAylpflZpP+V+7Om2KmZAM+TMu8XW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: HtmlObject.php 10192 2008-07-18 20:14:57Z matthew $
+ */
+
+/**
+ * @see Zend_View_Helper_HtmlElement
+ */
+require_once 'Zend/View/Helper/HtmlElement.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_HtmlObject extends Zend_View_Helper_HtmlElement
+{
+    /**
+     * Output an object set
+     *
+     * @param string $data The data file
+     * @param string $type Data file type
+     * @param array  $attribs Attribs for the object tag
+     * @param array  $params Params for in the object tag
+     * @param string $content Alternative content for object
+     * @return string
+     */
+    public function htmlObject($data, $type, array $attribs = array(), array $params = array(), $content = null)
+    {
+        // Merge data and type
+        $attribs = array_merge(array('data' => $data,
+                                     'type' => $type), $attribs);
+
+        // Params
+        $paramHtml = array();
+        $closingBracket = $this->getClosingBracket();
+
+        foreach ($params as $param => $options) {
+            if (is_string($options)) {
+                $options = array('value' => $options);
+            }
+
+            $options = array_merge(array('name' => $param), $options);
+
+            $paramHtml[] = '<param' . $this->_htmlAttribs($options) . $closingBracket;
+        }
+
+        // Content
+        if (is_array($content)) {
+            $content = implode(self::EOL, $content);
+        }
+
+        // Object header
+        $xhtml = '<object' . $this->_htmlAttribs($attribs) . '>' . self::EOL
+                 . implode(self::EOL, $paramHtml) . self::EOL
+                 . ($content ? $content . self::EOL : '')
+                 . '</object>';
+
+        return $xhtml;
+    }
+}

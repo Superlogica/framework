@@ -1,32 +1,90 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: NumberSpinner.php 10043 2008-07-11 15:41:54Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Dojo NumberSpinner dijit
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_NumberSpinner extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Dijit being used
+     * @var string
+     */
+    protected $_dijit  = 'dijit.form.NumberSpinner';
+
+    /**
+     * HTML element type
+     * @var string
+     */
+    protected $_elementType = 'text';
+
+    /**
+     * Dojo module to use
+     * @var string
+     */
+    protected $_module = 'dijit.form.NumberSpinner';
+
+    /**
+     * dijit.form.NumberSpinner
+     * 
+     * @param  int $id 
+     * @param  mixed $value 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @return string
+     */
+    public function numberSpinner($id, $value = null, array $params = array(), array $attribs = array())
+    {
+        // Get constraints and serialize to JSON if necessary
+        if (array_key_exists('constraints', $params)) {
+            if (!is_array($params['constraints'])) {
+                unset($params['constraints']);
+            }
+        } else {
+            $constraints = array();
+            if (array_key_exists('min', $params)) {
+                $constraints['min'] = $params['min'];
+                unset($params['min']);
+            }
+            if (array_key_exists('max', $params)) {
+                $constraints['max'] = $params['max'];
+                unset($params['max']);
+            }
+            if (array_key_exists('places', $params)) {
+                $constraints['places'] = $params['places'];
+                unset($params['places']);
+            }
+            $params['constraints'] = $constraints;
+        }
+
+        return $this->_createFormElement($id, $value, $params, $attribs);
+    }
+}

@@ -1,94 +1,355 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * For handling the HTTP connection to the XML-RPC service
+ * @see Zend_Http_Client
+ */
+require_once 'Zend/Http/Client.php';
+
+/**
+ * Enables object chaining for calling namespaced XML-RPC methods.
+ * @see Zend_XmlRpc_Client_ServerProxy
+ */
+require_once 'Zend/XmlRpc/Client/ServerProxy.php';
+
+/**
+ * Introspects remote servers using the XML-RPC de facto system.* methods
+ * @see Zend_XmlRpc_Client_ServerIntrospection
+ */
+require_once 'Zend/XmlRpc/Client/ServerIntrospection.php';
+
+/**
+ * Represent a native XML-RPC value, used both in sending parameters
+ * to methods and as the parameters retrieve from method calls
+ * @see Zend_XmlRpc_Value
+ */
+require_once 'Zend/XmlRpc/Value.php';
+
+/**
+ * XML-RPC Request
+ * @see Zend_XmlRpc_Request
+ */
+require_once 'Zend/XmlRpc/Request.php';
+
+/**
+ * XML-RPC Response
+ * @see Zend_XmlRpc_Response
+ */
+require_once 'Zend/XmlRpc/Response.php';
+
+/**
+ * XML-RPC Fault
+ * @see Zend_XmlRpc_Fault
+ */
+require_once 'Zend/XmlRpc/Fault.php';
+
+
+/**
+ * An XML-RPC client implementation
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Client
+{
+    /**
+     * Full address of the XML-RPC service
+     * @var string
+     * @example http://time.xmlrpc.com/RPC2
+     */
+    protected $_serverAddress;
+
+    /**
+     * HTTP Client to use for requests
+     * @var Zend_Http_Client
+     */
+    protected $_httpClient = null;
+
+    /**
+     * Introspection object
+     * @var Zend_Http_Client_Introspector
+     */
+    protected $_introspector = null;
+
+    /**
+     * Request of the last method call
+     * @var Zend_XmlRpc_Request
+     */
+    protected $_lastRequest = null;
+
+    /**
+     * Response received from the last method call
+     * @var Zend_XmlRpc_Response
+     */
+    protected $_lastResponse = null;
+
+    /**
+     * Proxy object for more convenient method calls
+     * @var array of Zend_XmlRpc_Client_ServerProxy
+     */
+    protected $_proxyCache = array();
+
+    /**
+     * Flag for skipping system lookup
+     * @var bool
+     */
+    protected $_skipSystemLookup = false;
+
+    /**
+     * Create a new XML-RPC client to a remote server
+     *
+     * @param  string $server      Full address of the XML-RPC service
+     *                             (e.g. http://time.xmlrpc.com/RPC2)
+     * @param  Zend_Http_Client $httpClient HTTP Client to use for requests
+     * @return void
+     */
+    public function __construct($server, Zend_Http_Client $httpClient = null)
+    {
+        if ($httpClient === null) {
+            $this->_httpClient = new Zend_Http_Client();
+        } else {
+            $this->_httpClient = $httpClient;
+        }
+
+        $this->_introspector  = new Zend_XmlRpc_Client_ServerIntrospection($this);
+        $this->_serverAddress = $server;
+    }
+
+
+    /**
+     * Sets the HTTP client object to use for connecting the XML-RPC server.
+     *
+     * @param  Zend_Http_Client $httpClient
+     * @return Zend_Http_Client
+     */
+    public function setHttpClient(Zend_Http_Client $httpClient)
+    {
+        return $this->_httpClient = $httpClient;
+    }
+
+
+    /**
+     * Gets the HTTP client object.
+     *
+     * @return Zend_Http_Client
+     */
+    public function getHttpClient()
+    {
+        return $this->_httpClient;
+    }
+
+
+    /**
+     * Sets the object used to introspect remote servers
+     *
+     * @param  Zend_XmlRpc_Client_ServerIntrospection
+     * @return Zend_XmlRpc_Client_ServerIntrospection
+     */
+    public function setIntrospector(Zend_XmlRpc_Client_ServerIntrospection $introspector)
+    {
+        return $this->_introspector = $introspector;
+    }
+
+
+    /**
+     * Gets the introspection object.
+     *
+     * @return Zend_XmlRpc_Client_ServerIntrospection
+     */
+    public function getIntrospector()
+    {
+        return $this->_introspector;
+    }
+
+
+   /**
+     * The request of the last method call
+     *
+     * @return Zend_XmlRpc_Request
+     */
+    public function getLastRequest()
+    {
+        return $this->_lastRequest;
+    }
+
+
+    /**
+     * The response received from the last method call
+     *
+     * @return Zend_XmlRpc_Response
+     */
+    public function getLastResponse()
+    {
+        return $this->_lastResponse;
+    }
+
+
+    /**
+     * Returns a proxy object for more convenient method calls
+     *
+     * @param $namespace  Namespace to proxy or empty string for none
+     * @return Zend_XmlRpc_Client_ServerProxy
+     */
+    public function getProxy($namespace = '')
+    {
+        if (empty($this->_proxyCache[$namespace])) {
+            $proxy = new Zend_XmlRpc_Client_ServerProxy($this, $namespace);
+            $this->_proxyCache[$namespace] = $proxy;
+        }
+        return $this->_proxyCache[$namespace];
+    }
+
+    /**
+     * Set skip system lookup flag
+     *
+     * @param  bool $flag
+     * @return Zend_XmlRpc_Client
+     */
+    public function setSkipSystemLookup($flag = true)
+    {
+        $this->_skipSystemLookup = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Skip system lookup when determining if parameter should be array or struct?
+     *
+     * @return bool
+     */
+    public function skipSystemLookup()
+    {
+        return $this->_skipSystemLookup;
+    }
+
+    /**
+     * Perform an XML-RPC request and return a response.
+     *
+     * @param Zend_XmlRpc_Request $request
+     * @param null|Zend_XmlRpc_Response $response
+     * @return void
+     * @throws Zend_XmlRpc_Client_HttpException
+     */
+    public function doRequest($request, $response = null)
+    {
+        $this->_lastRequest = $request;
+
+        iconv_set_encoding('input_encoding', 'UTF-8');
+        iconv_set_encoding('output_encoding', 'UTF-8');
+        iconv_set_encoding('internal_encoding', 'UTF-8');
+
+        $http = $this->getHttpClient();
+        if($http->getUri() === null) {
+            $http->setUri($this->_serverAddress);
+        }
+
+        $http->setHeaders(array(
+            'Content-Type: text/xml; charset=utf-8',
+            'User-Agent: Zend_XmlRpc_Client',
+            'Accept: text/xml',
+        ));
+
+        $xml = $this->_lastRequest->__toString();
+        $http->setRawData($xml);
+        $httpResponse = $http->request(Zend_Http_Client::POST);
+
+        if (! $httpResponse->isSuccessful()) {
+            /**
+             * Exception thrown when an HTTP error occurs
+             * @see Zend_XmlRpc_Client_HttpException
+             */
+            require_once 'Zend/XmlRpc/Client/HttpException.php';
+            throw new Zend_XmlRpc_Client_HttpException(
+                                    $httpResponse->getMessage(),
+                                    $httpResponse->getStatus());
+        }
+
+        if ($response === null) {
+            $response = new Zend_XmlRpc_Response();
+        }
+        $this->_lastResponse = $response;
+        $this->_lastResponse->loadXml($httpResponse->getBody());
+    }
+
+    /**
+     * Send an XML-RPC request to the service (for a specific method)
+     *
+     * @param  string $method Name of the method we want to call
+     * @param  array $params Array of parameters for the method
+     * @return mixed
+     * @throws Zend_XmlRpc_Client_FaultException
+     */
+    public function call($method, $params=array())
+    {
+        if (!$this->skipSystemLookup() && ('system.' != substr($method, 0, 7))) {
+            // Ensure empty array/struct params are cast correctly
+            // If system.* methods are not available, bypass. (ZF-2978)
+            $success = true;
+            try {
+                $signatures = $this->getIntrospector()->getMethodSignature($method);
+            } catch (Zend_XmlRpc_Exception $e) {
+                $success = false;
+            }
+            if ($success) {
+                foreach ($params as $key => $param) {
+                    if (is_array($param) && empty($param)) {
+                        $type = 'array';
+                        foreach ($signatures as $signature) {
+                            if (!is_array($signature)) {
+                                continue;
+                            }
+                            if (array_key_exists($key + 1, $signature)) {
+                                $type = $signature[$key + 1];
+                                $type = (in_array($type, array('array', 'struct'))) ? $type : 'array';
+                                break;
+                            }
+                        }
+                        $params[$key] = array(
+                            'type'  => $type,
+                            'value' => $param
+                        );
+                    }
+                }
+            }
+        }
+
+        $request = new Zend_XmlRpc_Request($method, $params);
+
+        $this->doRequest($request);
+
+        if ($this->_lastResponse->isFault()) {
+            $fault = $this->_lastResponse->getFault();
+            /**
+             * Exception thrown when an XML-RPC fault is returned
+             * @see Zend_XmlRpc_Client_FaultException
+             */
+            require_once 'Zend/XmlRpc/Client/FaultException.php';
+            throw new Zend_XmlRpc_Client_FaultException($fault->getMessage(),
+                                                        $fault->getCode());
+        }
+
+        return $this->_lastResponse->getReturnValue();
+    }
+}

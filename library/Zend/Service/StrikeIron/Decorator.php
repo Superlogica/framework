@@ -1,35 +1,143 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage StrikeIron
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Decorator.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+/**
+ * Decorates a StrikeIron response object returned by the SOAP extension
+ * to provide more a PHP-like interface.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage StrikeIron
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_StrikeIron_Decorator
+{
+    /**
+     * Name of the decorated object
+     * @var null|string
+     */
+    protected $_name = null;
+
+    /**
+     * Object to decorate
+     * @var object
+     */
+    protected $_object = null;
+
+    /**
+     * Class constructor
+     *
+     * @param object       $object  Object to decorate
+     * @param null|string  $name    Name of the object
+     */
+    public function __construct($object, $name = null)
+    {
+        $this->_object = $object;
+        $this->_name   = $name;
+    }
+
+    /**
+     * Proxy property access to the decorated object, inflecting
+     * the property name and decorating any child objects returned.
+     * If the property is not found in the decorated object, return
+     * NULL as a convenience feature to avoid notices.
+     *
+     * @param  string $property  Property name to retrieve
+     * @return mixed             Value of property or NULL
+     */
+    public function __get($property)
+    {
+        $result = null;
+
+        if (! isset($this->_object->$property)) {
+            $property = $this->_inflect($property);
+        }
+
+        if (isset($this->_object->$property)) {
+            $result = $this->_object->$property;
+            $result = $this->_decorate($result);
+        }
+        return $result;
+    }
+
+    /**
+     * Proxy method calls to the decorated object.  This will only
+     * be used when the SOAPClient returns a custom PHP object via
+     * its classmap option so no inflection is done.
+     *
+     * @param string  $method  Name of method called
+     * @param array   $args    Arguments for method
+     */
+    public function __call($method, $args)
+    {
+        return call_user_func_array(array($this->_object, $method), $args);
+    }
+
+    /**
+     * Inflect a property name from PHP-style to the result object's
+     * style.  The default implementation here only inflects the case
+     * of the first letter, e.g. from "fooBar" to "FooBar".
+     *
+     * @param  string $property  Property name to inflect
+     * @return string            Inflected property name
+     */
+    protected function _inflect($property)
+    {
+        return ucfirst($property);
+    }
+
+    /**
+     * Decorate a value returned by the result object.  The default
+     * implementation here only decorates child objects.
+     *
+     * @param  mixed  $result  Value to decorate
+     * @return mixed           Decorated result
+     */
+    protected function _decorate($result)
+    {
+        if (is_object($result)) {
+            $result = new self($result);
+        }
+        return $result;
+    }
+
+    /**
+     * Return the object being decorated
+     *
+     * @return object
+     */
+    public function getDecoratedObject()
+    {
+        return $this->_object;
+    }
+
+    /**
+     * Return the name of the object being decorated
+     *
+     * @return null|string
+     */
+    public function getDecoratedObjectName()
+    {
+        return $this->_name;
+    }
+}

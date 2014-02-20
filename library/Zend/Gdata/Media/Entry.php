@@ -1,42 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-27HIzS9A0RNa1hk1dJ9qumoWzAvmkkcgAkKghG==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Media
+ */
+require_once 'Zend/Gdata/Media.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaGroup
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaGroup.php';
+
+/**
+ * Represents the Gdata flavor of an Atom entry
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Media_Entry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_Media_Entry';
+
+    /**
+     * media:group element
+     *
+     * @var Zend_Gdata_Media_Extension_MediaGroup
+     */
+    protected $_mediaGroup = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_mediaGroup != null) {
+            $element->appendChild($this->_mediaGroup->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('media') . ':' . 'group':
+            $mediaGroup = new Zend_Gdata_Media_Extension_MediaGroup();
+            $mediaGroup->transferFromDOM($child);
+            $this->_mediaGroup = $mediaGroup;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Returns the entry's mediaGroup object.
+     *
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+    */
+    public function getMediaGroup()
+    {
+        return $this->_mediaGroup;
+    }
+
+    /**
+     * Sets the entry's mediaGroup object.
+     *
+     * @param Zend_Gdata_Media_Extension_MediaGroup $mediaGroup
+     * @return Zend_Gdata_Media_Entry Provides a fluent interface
+     */
+    public function setMediaGroup($mediaGroup)
+    {
+        $this->_mediaGroup = $mediaGroup;
+        return $this;
+    }
+
+
+}

@@ -1,34 +1,102 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage Math
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Crypt_Math_BigInteger
+ */
+require_once 'Zend/Crypt/Math/BigInteger.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Crypt_Math extends Zend_Crypt_Math_BigInteger
+{
+
+    /**
+     * Generate a pseudorandom number within the given range.
+     * Will attempt to read from a systems RNG if it exists or else utilises
+     * a simple random character to maximum length process. Simplicity
+     * is a factor better left for development...
+     *
+     * @param string|int $minimum
+     * @param string|int $maximum
+     * @return string
+     */
+    public function rand($minimum, $maximum)
+    {
+        if (file_exists('/dev/urandom')) {
+            $frandom = fopen('/dev/urandom', 'r');
+            if ($frandom !== false) {
+                return fread($frandom, strlen($maximum) - 1);
+            }
+        }
+        if (strlen($maximum) < 4) {
+            return mt_rand($minimum, $maximum - 1);
+        }
+        $rand = '';
+        $i2 = strlen($maximum) - 1;
+        for ($i = 1;$i < $i2;$i++) {
+            $rand .= mt_rand(0,9);
+        }
+        $rand .= mt_rand(0,9);
+        return $rand;
+    }
+
+    /**
+     * Get the big endian two's complement of a given big integer in
+     * binary notation
+     *
+     * @param string $long
+     * @return string
+     */
+    public function btwoc($long) {
+        if (ord($long[0]) > 127) {
+            return "\x00" . $long;
+        }
+        return $long;
+    }
+
+    /**
+     * Translate a binary form into a big integer string
+     *
+     * @param string $binary
+     * @return string
+     */
+    public function fromBinary($binary) {
+        return $this->_math->binaryToInteger($binary);
+    }
+
+    /**
+     * Translate a big integer string into a binary form
+     *
+     * @param string $integer
+     * @return string
+     */
+    public function toBinary($integer)
+    {
+        return $this->_math->integerToBinary($integer);
+    }
+
+}

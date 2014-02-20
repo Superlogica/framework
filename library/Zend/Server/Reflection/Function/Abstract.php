@@ -1,187 +1,502 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Server_Reflection_Node
+ */
+require_once 'Zend/Server/Reflection/Node.php';
+
+/**
+ * Zend_Server_Reflection_Parameter
+ */
+require_once 'Zend/Server/Reflection/Parameter.php';
+
+/**
+ * Zend_Server_Reflection_Prototype
+ */
+require_once 'Zend/Server/Reflection/Prototype.php';
+
+/**
+ * Function/Method Reflection
+ *
+ * Decorates a ReflectionFunction. Allows setting and retrieving an alternate
+ * 'service' name (i.e., the name to be used when calling via a service),
+ * setting and retrieving the description (originally set using the docblock
+ * contents), retrieving the callback and callback type, retrieving additional
+ * method invocation arguments, and retrieving the
+ * method {@link Zend_Server_Reflection_Prototype prototypes}.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Reflection
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version $Id: Abstract.php 13217 2008-12-14 11:09:37Z thomas $
+ */
+abstract class Zend_Server_Reflection_Function_Abstract
+{
+    /**
+     * @var ReflectionFunction
+     */
+    protected $_reflection;
+
+    /**
+     * Additional arguments to pass to method on invocation
+     * @var array
+     */
+    protected $_argv = array();
+
+    /**
+     * Used to store extra configuration for the method (typically done by the
+     * server class, e.g., to indicate whether or not to instantiate a class).
+     * Associative array; access is as properties via {@link __get()} and
+     * {@link __set()}
+     * @var array
+     */
+    protected $_config = array();
+
+    /**
+     * Declaring class (needed for when serialization occurs)
+     * @var string
+     */
+    protected $_class;
+
+    /**
+     * Function/method description
+     * @var string
+     */
+    protected $_description = '';
+
+    /**
+     * Namespace with which to prefix function/method name
+     * @var string
+     */
+    protected $_namespace;
+
+    /**
+     * Prototypes
+     * @var array
+     */
+    protected $_prototypes = array();
+
+    private $_return;
+    private $_returnDesc;
+    private $_paramDesc;
+    private $_sigParams;
+    private $_sigParamsDepth;
+
+    /**
+     * Constructor
+     *
+     * @param ReflectionFunction $r
+     */
+    public function __construct(Reflector $r, $namespace = null, $argv = array())
+    {
+        // In PHP 5.1.x, ReflectionMethod extends ReflectionFunction. In 5.2.x,
+        // both extend ReflectionFunctionAbstract. So, we can't do normal type
+        // hinting in the prototype, but instead need to do some explicit
+        // testing here.
+        if ((!$r instanceof ReflectionFunction)
+            && (!$r instanceof ReflectionMethod)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid reflection class');
+        }
+        $this->_reflection = $r;
+
+        // Determine namespace
+        if (null !== $namespace){
+            $this->setNamespace($namespace);
+        }
+
+        // Determine arguments
+        if (is_array($argv)) {
+            $this->_argv = $argv;
+        }
+
+        // If method call, need to store some info on the class
+        if ($r instanceof ReflectionMethod) {
+            $this->_class = $r->getDeclaringClass()->getName();
+        }
+
+        // Perform some introspection
+        $this->_reflect();
+    }
+
+    /**
+     * Create signature node tree
+     *
+     * Recursive method to build the signature node tree. Increments through
+     * each array in {@link $_sigParams}, adding every value of the next level
+     * to the current value (unless the current value is null).
+     *
+     * @param Zend_Server_Reflection_Node $parent
+     * @param int $level
+     * @return void
+     */
+    protected function _addTree(Zend_Server_Reflection_Node $parent, $level = 0)
+    {
+        if ($level >= $this->_sigParamsDepth) {
+            return;
+        }
+
+        foreach ($this->_sigParams[$level] as $value) {
+            $node = new Zend_Server_Reflection_Node($value, $parent);
+            if ((null !== $value) && ($this->_sigParamsDepth > $level + 1)) {
+                $this->_addTree($node, $level + 1);
+            }
+        }
+    }
+
+    /**
+     * Build the signature tree
+     *
+     * Builds a signature tree starting at the return values and descending
+     * through each method argument. Returns an array of
+     * {@link Zend_Server_Reflection_Node}s.
+     *
+     * @return array
+     */
+    protected function _buildTree()
+    {
+        $returnTree = array();
+        foreach ((array) $this->_return as $value) {
+            $node = new Zend_Server_Reflection_Node($value);
+            $this->_addTree($node);
+            $returnTree[] = $node;
+        }
+
+        return $returnTree;
+    }
+
+    /**
+     * Build method signatures
+     *
+     * Builds method signatures using the array of return types and the array of
+     * parameters types
+     *
+     * @param array $return Array of return types
+     * @param string $returnDesc Return value description
+     * @param array $params Array of arguments (each an array of types)
+     * @param array $paramDesc Array of parameter descriptions
+     * @return array
+     */
+    protected function _buildSignatures($return, $returnDesc, $paramTypes, $paramDesc)
+    {
+        $this->_return         = $return;
+        $this->_returnDesc     = $returnDesc;
+        $this->_paramDesc      = $paramDesc;
+        $this->_sigParams      = $paramTypes;
+        $this->_sigParamsDepth = count($paramTypes);
+        $signatureTrees        = $this->_buildTree();
+        $signatures            = array();
+
+        $endPoints = array();
+        foreach ($signatureTrees as $root) {
+            $tmp = $root->getEndPoints();
+            if (empty($tmp)) {
+                $endPoints = array_merge($endPoints, array($root));
+            } else {
+                $endPoints = array_merge($endPoints, $tmp);
+            }
+        }
+
+        foreach ($endPoints as $node) {
+            if (!$node instanceof Zend_Server_Reflection_Node) {
+                continue;
+            }
+
+            $signature = array();
+            do {
+                array_unshift($signature, $node->getValue());
+                $node = $node->getParent();
+            } while ($node instanceof Zend_Server_Reflection_Node);
+
+            $signatures[] = $signature;
+        }
+
+        // Build prototypes
+        $params = $this->_reflection->getParameters();
+        foreach ($signatures as $signature) {
+            $return = new Zend_Server_Reflection_ReturnValue(array_shift($signature), $this->_returnDesc);
+            $tmp    = array();
+            foreach ($signature as $key => $type) {
+                $param = new Zend_Server_Reflection_Parameter($params[$key], $type, $this->_paramDesc[$key]);
+                $param->setPosition($key);
+                $tmp[] = $param;
+            }
+
+            $this->_prototypes[] = new Zend_Server_Reflection_Prototype($return, $tmp);
+        }
+    }
+
+    /**
+     * Use code reflection to create method signatures
+     *
+     * Determines the method help/description text from the function DocBlock
+     * comment. Determines method signatures using a combination of
+     * ReflectionFunction and parsing of DocBlock @param and @return values.
+     *
+     * @param ReflectionFunction $function
+     * @return array
+     */
+    protected function _reflect()
+    {
+        $function           = $this->_reflection;
+        $helpText           = '';
+        $signatures         = array();
+        $returnDesc         = '';
+        $paramCount         = $function->getNumberOfParameters();
+        $paramCountRequired = $function->getNumberOfRequiredParameters();
+        $parameters         = $function->getParameters();
+        $docBlock           = $function->getDocComment();
+
+        if (!empty($docBlock)) {
+            // Get help text
+            if (preg_match(':/\*\*\s*\r?\n\s*\*\s(.*?)\r?\n\s*\*(\s@|/):s', $docBlock, $matches))
+            {
+                $helpText = $matches[1];
+                $helpText = preg_replace('/(^\s*\*\s)/m', '', $helpText);
+                $helpText = preg_replace('/\r?\n\s*\*\s*(\r?\n)*/s', "\n", $helpText);
+                $helpText = trim($helpText);
+            }
+
+            // Get return type(s) and description
+            $return     = 'void';
+            if (preg_match('/@return\s+(\S+)/', $docBlock, $matches)) {
+                $return = explode('|', $matches[1]);
+                if (preg_match('/@return\s+\S+\s+(.*?)(@|\*\/)/s', $docBlock, $matches))
+                {
+                    $value = $matches[1];
+                    $value = preg_replace('/\s?\*\s/m', '', $value);
+                    $value = preg_replace('/\s{2,}/', ' ', $value);
+                    $returnDesc = trim($value);
+                }
+            }
+
+            // Get param types and description
+            if (preg_match_all('/@param\s+([^\s]+)/m', $docBlock, $matches)) {
+                $paramTypesTmp = $matches[1];
+                if (preg_match_all('/@param\s+\S+\s+(\$^\S+)\s+(.*?)(@|\*\/)/s', $docBlock, $matches))
+                {
+                    $paramDesc = $matches[2];
+                    foreach ($paramDesc as $key => $value) {
+                        $value = preg_replace('/\s?\*\s/m', '', $value);
+                        $value = preg_replace('/\s{2,}/', ' ', $value);
+                        $paramDesc[$key] = trim($value);
+                    }
+                }
+            }
+        } else {
+            $helpText = $function->getName();
+            $return   = 'void';
+        }
+
+        // Set method description
+        $this->setDescription($helpText);
+
+        // Get all param types as arrays
+        if (!isset($paramTypesTmp) && (0 < $paramCount)) {
+            $paramTypesTmp = array_fill(0, $paramCount, 'mixed');
+        } elseif (!isset($paramTypesTmp)) {
+            $paramTypesTmp = array();
+        } elseif (count($paramTypesTmp) < $paramCount) {
+            $start = $paramCount - count($paramTypesTmp);
+            for ($i = $start; $i < $paramCount; ++$i) {
+                $paramTypesTmp[$i] = 'mixed';
+            }
+        }
+
+        // Get all param descriptions as arrays
+        if (!isset($paramDesc) && (0 < $paramCount)) {
+            $paramDesc = array_fill(0, $paramCount, '');
+        } elseif (!isset($paramDesc)) {
+            $paramDesc = array();
+        } elseif (count($paramDesc) < $paramCount) {
+            $start = $paramCount - count($paramDesc);
+            for ($i = $start; $i < $paramCount; ++$i) {
+                $paramDesc[$i] = '';
+            }
+        }
+
+        if (count($paramTypesTmp) != $paramCount) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception(
+               'Variable number of arguments is not supported for services (except optional parameters). '
+             . 'Number of function arguments must currespond to actual number of arguments described in a docblock.');
+        }
+
+        $paramTypes = array();
+        foreach ($paramTypesTmp as $i => $param) {
+            $tmp = explode('|', $param);
+            if ($parameters[$i]->isOptional()) {
+                array_unshift($tmp, null);
+            }
+            $paramTypes[] = $tmp;
+        }
+
+        $this->_buildSignatures($return, $returnDesc, $paramTypes, $paramDesc);
+    }
+
+
+    /**
+     * Proxy reflection calls
+     *
+     * @param string $method
+     * @param array $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        if (method_exists($this->_reflection, $method)) {
+            return call_user_func_array(array($this->_reflection, $method), $args);
+        }
+
+        require_once 'Zend/Server/Reflection/Exception.php';
+        throw new Zend_Server_Reflection_Exception('Invalid reflection method ("' .$method. '")');
+    }
+
+    /**
+     * Retrieve configuration parameters
+     *
+     * Values are retrieved by key from {@link $_config}. Returns null if no
+     * value found.
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        if (isset($this->_config[$key])) {
+            return $this->_config[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Set configuration parameters
+     *
+     * Values are stored by $key in {@link $_config}.
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public function __set($key, $value)
+    {
+        $this->_config[$key] = $value;
+    }
+
+    /**
+     * Set method's namespace
+     *
+     * @param string $namespace
+     * @return void
+     */
+    public function setNamespace($namespace)
+    {
+        if (empty($namespace)) {
+            $this->_namespace = '';
+            return;
+        }
+
+        if (!is_string($namespace) || !preg_match('/[a-z0-9_\.]+/i', $namespace)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid namespace');
+        }
+
+        $this->_namespace = $namespace;
+    }
+
+    /**
+     * Return method's namespace
+     *
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->_namespace;
+    }
+
+    /**
+     * Set the description
+     *
+     * @param string $string
+     * @return void
+     */
+    public function setDescription($string)
+    {
+        if (!is_string($string)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid description');
+        }
+
+        $this->_description = $string;
+    }
+
+    /**
+     * Retrieve the description
+     *
+     * @return void
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * Retrieve all prototypes as array of
+     * {@link Zend_Server_Reflection_Prototype Zend_Server_Reflection_Prototypes}
+     *
+     * @return array
+     */
+    public function getPrototypes()
+    {
+        return $this->_prototypes;
+    }
+
+    /**
+     * Retrieve additional invocation arguments
+     *
+     * @return array
+     */
+    public function getInvokeArguments()
+    {
+        return $this->_argv;
+    }
+
+    /**
+     * Wakeup from serialization
+     *
+     * Reflection needs explicit instantiation to work correctly. Re-instantiate
+     * reflection object on wakeup.
+     *
+     * @return void
+     */
+    public function __wakeup()
+    {
+        if ($this->_reflection instanceof ReflectionMethod) {
+            $class = new ReflectionClass($this->_class);
+            $this->_reflection = new ReflectionMethod($class->newInstance(), $this->getName());
+        } else {
+            $this->_reflection = new ReflectionFunction($this->getName());
+        }
+    }
+}

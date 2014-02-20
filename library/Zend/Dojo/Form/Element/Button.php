@@ -1,36 +1,121 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vhwT5Trt+5aLSpUWxA327l9GrBejBpvI
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_Dijit */
+require_once 'Zend/Dojo/Form/Element/Dijit.php';
+
+/**
+ * Button dijit
+ * 
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Button.php 10091 2008-07-15 03:46:37Z matthew $
+ */
+class Zend_Dojo_Form_Element_Button extends Zend_Dojo_Form_Element_Dijit
+{
+    /**
+     * Use Button dijit view helper
+     * @var string
+     */
+    public $helper = 'Button';
+
+    /**
+     * Constructor
+     * 
+     * @param  string|array|Zend_Config $spec Element name or configuration
+     * @param  string|array|Zend_Config $options Element value or configuration
+     * @return void
+     */
+    public function __construct($spec, $options = null)
+    {
+        if (is_string($spec) && ((null !== $options) && is_string($options))) {
+            $options = array('label' => $options);
+        }
+
+        parent::__construct($spec, $options);
+    }
+
+    /**
+     * Return label
+     *
+     * If no label is present, returns the currently set name.
+     *
+     * If a translator is present, returns the translated label.
+     * 
+     * @return string
+     */
+    public function getLabel()
+    {
+        $value = parent::getLabel();
+
+        if (null === $value) {
+            $value = $this->getName();
+        }
+
+        if (null !== ($translator = $this->getTranslator())) {
+            return $translator->translate($value);
+        }
+
+        return $value;
+    }
+
+    /**
+     * Has this submit button been selected?
+     * 
+     * @return bool
+     */
+    public function isChecked()
+    {
+        $value = $this->getValue();
+
+        if (empty($value)) {
+            return false;
+        }
+        if ($value != $this->getLabel()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Default decorators
+     *
+     * Uses only 'DijitElement' and 'DtDdWrapper' decorators by default.
+     * 
+     * @return void
+     */
+    public function loadDefaultDecorators()
+    {
+        if ($this->loadDefaultDecoratorsIsDisabled()) {
+            return;
+        }
+
+        $decorators = $this->getDecorators();
+        if (empty($decorators)) {
+            $this->addDecorator('DijitElement')
+                 ->addDecorator('DtDdWrapper');
+        }
+    }
+}

@@ -1,135 +1,357 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Placeholder.php 7078 2007-12-11 14:29:33Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_View_Helper_Placeholder_Container_Standalone */
+require_once 'Zend/View/Helper/Placeholder/Container/Standalone.php';
+
+/**
+ * Zend_Layout_View_Helper_HeadMeta
+ *
+ * @see        http://www.w3.org/TR/xhtml1/dtds.html
+ * @uses       Zend_View_Helper_Placeholder_Container_Standalone
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_Standalone
+{
+    /**
+     * Types of attributes
+     * @var array
+     */
+    protected $_typeKeys     = array('name', 'http-equiv');
+    protected $_requiredKeys = array('content');
+    protected $_modifierKeys = array('lang', 'scheme');
+
+    /**
+     * @var string registry key
+     */
+    protected $_regKey = 'Zend_View_Helper_HeadMeta';
+
+    /**
+     * Constructor
+     *
+     * Set separator to PHP_EOL
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setSeparator(PHP_EOL);
+    }
+
+    /**
+     * Retrieve object instance; optionally add meta tag
+     *
+     * @param  string $content
+     * @param  string $keyValue
+     * @param  string $keyType
+     * @param  array $modifiers
+     * @param  string $placement
+     * @return Zend_View_Helper_HeadMeta
+     */
+    public function headMeta($content = null, $keyValue = null, $keyType = 'name', $modifiers = array(), $placement = Zend_View_Helper_Placeholder_Container_Abstract::APPEND)
+    {
+        if ((null !== $content) && (null !== $keyValue)) {
+            $item   = $this->createData($keyType, $keyValue, $content, $modifiers);
+            $action = strtolower($placement);
+            switch ($action) {
+                case 'append':
+                case 'prepend':
+                case 'set':
+                    $this->$action($item);
+                    break;
+                default:
+                    $this->append($item);
+                    break;
+            }
+        }
+
+        return $this;
+    }
+
+    protected function _normalizeType($type)
+    {
+        switch ($type) {
+            case 'Name':
+                return 'name';
+            case 'HttpEquiv':
+                return 'http-equiv';
+            default:
+                require_once 'Zend/View/Exception.php';
+                throw new Zend_View_Exception(sprintf('Invalid type "%s" passed to _normalizeType', $type));
+        }
+    }
+
+    /**
+     * Overload method access
+     *
+     * Allows the following 'virtual' methods:
+     * - appendName($keyValue, $content, $modifiers = array())
+     * - offsetGetName($index, $keyValue, $content, $modifers = array())
+     * - prependName($keyValue, $content, $modifiers = array())
+     * - setName($keyValue, $content, $modifiers = array())
+     * - appendHttpEquiv($keyValue, $content, $modifiers = array())
+     * - offsetGetHttpEquiv($index, $keyValue, $content, $modifers = array())
+     * - prependHttpEquiv($keyValue, $content, $modifiers = array())
+     * - setHttpEquiv($keyValue, $content, $modifiers = array())
+     *
+     * @param  string $method
+     * @param  array $args
+     * @return Zend_View_Helper_HeadMeta
+     */
+    public function __call($method, $args)
+    {
+        if (preg_match('/^(?P<action>set|(pre|ap)pend|offsetSet)(?P<type>Name|HttpEquiv)$/', $method, $matches)) {
+            $action = $matches['action'];
+            $type   = $this->_normalizeType($matches['type']);
+            $argc   = count($args);
+            $index  = null;
+
+            if ('offsetSet' == $action) {
+                if (0 < $argc) {
+                    $index = array_shift($args);
+                    --$argc;
+                }
+            }
+
+            if (2 > $argc) {
+                require_once 'Zend/View/Exception.php';
+                throw new Zend_View_Exception('Too few arguments provided; requires key value, and content');
+            }
+
+            if (3 > $argc) {
+                $args[] = array();
+            }
+
+            $item  = $this->createData($type, $args[0], $args[1], $args[2]);
+
+            if ('offsetSet' == $action) {
+                return $this->offsetSet($index, $item);
+            }
+
+            if ($action == 'set') {
+                //var_dump($this->getContainer());
+            }
+
+            $this->$action($item);
+            return $this;
+        }
+
+        return parent::__call($method, $args);
+    }
+
+    /**
+     * Determine if item is valid
+     *
+     * @param  mixed $item
+     * @return boolean
+     */
+    protected function _isValid($item)
+    {
+        if ((!$item instanceof stdClass)
+            || !isset($item->type)
+            || !isset($item->content)
+            || !isset($item->modifiers))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Append
+     *
+     * @param  string $value
+     * @return void
+     * @throws Zend_View_Exception
+     */
+    public function append($value)
+    {
+        if (!$this->_isValid($value)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('Invalid value passed to append; please use appendMeta()');
+        }
+
+        return $this->getContainer()->append($value);
+    }
+
+    /**
+     * OffsetSet
+     *
+     * @param  string|int $index
+     * @param  string $value
+     * @return void
+     * @throws Zend_View_Exception
+     */
+    public function offsetSet($index, $value)
+    {
+        if (!$this->_isValid($value)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('Invalid value passed to offsetSet; please use offsetSetMeta()');
+        }
+
+        return $this->getContainer()->offsetSet($index, $value);
+    }
+
+    /**
+     * OffsetUnset
+     *
+     * @param  string|int $index
+     * @return void
+     * @throws Zend_View_Exception
+     */
+    public function offsetUnset($index)
+    {
+        if (!in_array($index, $this->getContainer()->getKeys())) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('Invalid index passed to offsetUnset.');
+        }
+
+        return $this->getContainer()->offsetUnset($index);
+    }
+
+    /**
+     * Prepend
+     *
+     * @param  string $value
+     * @return void
+     * @throws Zend_View_Exception
+     */
+    public function prepend($value)
+    {
+        if (!$this->_isValid($value)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('Invalid value passed to prepend; please use prependMeta()');
+        }
+
+        return $this->getContainer()->prepend($value);
+    }
+
+    /**
+     * Set
+     *
+     * @param  string $value
+     * @return void
+     * @throws Zend_View_Exception
+     */
+    public function set($value)
+    {
+        if (!$this->_isValid($value)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('Invalid value passed to set; please use setMeta()');
+        }
+
+        $container = $this->getContainer();
+        foreach ($container->getArrayCopy() as $index => $item) {
+            if ($item->type == $value->type && $item->{$item->type} == $value->{$value->type}) {
+                $this->offsetUnset($index);
+            }
+        }
+
+        return $this->append($value);
+    }
+
+    /**
+     * Build meta HTML string
+     *
+     * @param  string $type
+     * @param  string $typeValue
+     * @param  string $content
+     * @param  array $modifiers
+     * @return string
+     */
+    public function itemToString(stdClass $item)
+    {
+        if (!in_array($item->type, $this->_typeKeys)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception(sprintf('Invalid type "%s" provided for meta', $item->type));
+        }
+        $type = $item->type;
+
+        $modifiersString = '';
+        foreach ($item->modifiers as $key => $value) {
+            if (!in_array($key, $this->_modifierKeys)) {
+                continue;
+            }
+            $modifiersString .= $key . '="' . $this->_escape($value) . '" ';
+        }
+
+        if ($this->view instanceof Zend_View_Abstract) {
+            $tpl = ($this->view->doctype()->isXhtml())
+                 ? '<meta %s="%s" content="%s" %s/>'
+                 : '<meta %s="%s" content="%s" %s>';
+        } else {
+            $tpl = '<meta %s="%s" content="%s" %s/>';
+        }
+
+        $meta = sprintf(
+            $tpl,
+            $type,
+            $this->_escape($item->$type),
+            $this->_escape($item->content),
+            $modifiersString
+        );
+        return $meta;
+    }
+
+    /**
+     * Render placeholder as string
+     *
+     * @param  string|int $indent
+     * @return string
+     */
+    public function toString($indent = null)
+    {
+        $indent = (null !== $indent)
+                ? $this->getWhitespace($indent)
+                : $this->getIndent();
+
+        $items = array();
+        $this->getContainer()->ksort();
+        foreach ($this as $item) {
+            $items[] = $this->itemToString($item);
+        }
+        return $indent . implode($this->_escape($this->getSeparator()) . $indent, $items);
+    }
+
+    /**
+     * Create data item for inserting into stack
+     *
+     * @param  string $type
+     * @param  string $typeValue
+     * @param  string $content
+     * @param  array $modifiers
+     * @return stdClass
+     */
+    public function createData($type, $typeValue, $content, array $modifiers)
+    {
+        $data            = new stdClass;
+        $data->type      = $type;
+        $data->$type     = $typeValue;
+        $data->content   = $content;
+        $data->modifiers = $modifiers;
+        return $data;
+    }
+}

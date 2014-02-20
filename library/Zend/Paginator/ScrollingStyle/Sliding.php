@@ -1,32 +1,78 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Paginator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Sliding.php 10013 2008-07-09 21:08:06Z norm2782 $
+ */
+
+/**
+ * @see Zend_Paginator_ScrollingStyle_Interface
+ */
+require_once 'Zend/Paginator/ScrollingStyle/Interface.php';
+
+/**
+ * A Yahoo! Search-like scrolling style.  The cursor will advance to 
+ * the middle of the range, then remain there until the user reaches 
+ * the end of the page set, at which point it will continue on to 
+ * the end of the range and the last page in the set.
+ *
+ * @link       http://search.yahoo.com/search?p=Zend+Framework
+ * @category   Zend
+ * @package    Zend_Paginator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Paginator_ScrollingStyle_Sliding implements Zend_Paginator_ScrollingStyle_Interface
+{
+    /**
+     * Returns an array of "local" pages given a page number and range.
+     * 
+     * @param  Zend_Paginator $paginator
+     * @param  integer $pageRange (Optional) Page range
+     * @return array
+     */
+    public function getPages(Zend_Paginator $paginator, $pageRange = null)
+    {
+        if ($pageRange === null) {
+            $pageRange = $paginator->getPageRange();
+        }
+
+        $pageNumber = $paginator->getCurrentPageNumber();
+        $pageCount  = count($paginator);
+        
+        if ($pageRange > $pageCount) {
+            $pageRange = $pageCount;
+        }
+        
+        $delta = ceil($pageRange / 2);
+
+        if ($pageNumber - $delta > $pageCount - $pageRange) {
+            $lowerBound = $pageCount - $pageRange + 1;
+            $upperBound = $pageCount; 
+        } else {
+            if ($pageNumber - $delta < 0) {
+                $delta = $pageNumber;
+            }
+            
+            $offset     = $pageNumber - $delta;
+            $lowerBound = $offset + 1; 
+            $upperBound = $offset + $pageRange;
+        }
+
+        return $paginator->getPagesInRange($lowerBound, $upperBound);
+    }
+}

@@ -1,39 +1,103 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-DpNIRkRIsRRIMQPhZgFB9hAdikkKul+A
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_File
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+
+require_once 'Zend/Application.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_Zf_BootstrapFile extends Zend_Tool_Project_Context_Filesystem_File 
+{
+    
+    /**
+     * @var string
+     */
+    protected $_filesystemName = 'Bootstrap.php';
+    
+    protected $_applicationInstance = null;
+    protected $_bootstrapInstance = null;
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'BootstrapFile';
+    }
+    
+    public function init()
+    {
+        parent::init();
+        
+        $applicationConfigFile = $this->_resource->getProfile()->search('ApplicationConfigFile');
+        $applicationDirectory = $this->_resource->getProfile()->search('ApplicationDirectory');
+        
+        if (($applicationConfigFile === false) || ($applicationDirectory === false)) {
+            throw new Exception('To use the BootstrapFile context, your project requires the use of both the "ApplicationConfigFile" and "ApplicationDirectory" contexts.');
+        }
+        
+        if ($applicationConfigFile->getContext()->exists()) {
+            define('APPLICATION_PATH', $applicationDirectory->getPath());
+            $applicationOptions = array();
+            $applicationOptions['config'] = $applicationConfigFile->getPath();
+    
+            $this->_applicationInstance = new Zend_Application(
+                'development',
+                $applicationOptions
+                );
+        }
+    }
+    
+    /**
+     * getContents()
+     *
+     * @return array
+     */
+    public function getContents()
+    {
+        $codeGenFile = new Zend_CodeGenerator_Php_File(array(
+            'classes' => array(
+                new Zend_CodeGenerator_Php_Class(array(
+                    'name' => 'Bootstrap',
+                    'extendedClass' => 'Zend_Application_Bootstrap_Bootstrap',
+                )),
+            )
+        ));
+       
+        return $codeGenFile->generate();
+    }
+}

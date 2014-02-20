@@ -1,46 +1,195 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Yahoo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ResultSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Yahoo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Yahoo_ResultSet implements SeekableIterator
+{
+    /**
+     * Total number of results available
+     *
+     * @var int
+     */
+    public $totalResultsAvailable;
+
+    /**
+     * The number of results in this result set
+     *
+     * @var int
+     */
+    public $totalResultsReturned;
+
+    /**
+     * The offset in the total result set of this search set
+     *
+     * @var int
+     */
+    public $firstResultPosition;
+
+    /**
+     * A DOMNodeList of results
+     *
+     * @var DOMNodeList
+     */
+    protected $_results;
+
+    /**
+     * Yahoo Web Service Return Document
+     *
+     * @var DOMDocument
+     */
+    protected $_dom;
+
+    /**
+     * Xpath Object for $this->_dom
+     *
+     * @var DOMXPath
+     */
+    protected $_xpath;
+
+    /**
+     * Current Index for SeekableIterator
+     *
+     * @var int
+     */
+    protected $_currentIndex = 0;
+
+
+    /**
+     * Parse the search response and retrieve the results for iteration
+     *
+     * @param  DOMDocument $dom the REST fragment for this object
+     * @return void
+     */
+    public function __construct(DOMDocument $dom)
+    {
+        $this->totalResultsAvailable = (int) $dom->documentElement->getAttribute('totalResultsAvailable');
+        $this->totalResultsReturned = (int) $dom->documentElement->getAttribute('totalResultsReturned');
+        $this->firstResultPosition = (int) $dom->documentElement->getAttribute('firstResultPosition');
+
+        $this->_dom = $dom;
+        $this->_xpath = new DOMXPath($dom);
+
+        $this->_xpath->registerNamespace('yh', $this->_namespace);
+
+        $this->_results = $this->_xpath->query('//yh:Result');
+    }
+
+
+    /**
+     * Total Number of results returned
+     *
+     * @return int Total number of results returned
+     */
+    public function totalResults()
+    {
+        return $this->totalResultsReturned;
+    }
+
+
+    /**
+     * Implement SeekableIterator::current()
+     *
+     * Must be implemented by child classes
+     *
+     * @throws Zend_Service_Exception
+     * @return Zend_Service_Yahoo_Result
+     */
+    public function current()
+    {
+        /**
+         * @see Zend_Service_Exception
+         */
+        require_once 'Zend/Service/Exception.php';
+        throw new Zend_Service_Exception('Zend_Service_Yahoo_ResultSet::current() must be implemented by child '
+                                       . 'classes');
+    }
+
+
+    /**
+     * Implement SeekableIterator::key()
+     *
+     * @return int
+     */
+    public function key()
+    {
+        return $this->_currentIndex;
+    }
+
+
+    /**
+     * Implement SeekableIterator::next()
+     *
+     * @return void
+     */
+    public function next()
+    {
+        $this->_currentIndex += 1;
+    }
+
+
+    /**
+     * Implement SeekableIterator::rewind()
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_currentIndex = 0;
+    }
+
+
+    /**
+     * Implement SeekableIterator::seek()
+     *
+     * @param  int $index
+     * @return void
+     * @throws OutOfBoundsException
+     */
+    public function seek($index)
+    {
+        $indexInt = (int) $index;
+        if ($indexInt >= 0 && $indexInt < $this->_results->length) {
+            $this->_currentIndex = $indexInt;
+        } else {
+            throw new OutOfBoundsException("Illegal index '$index'");
+        }
+    }
+
+
+    /**
+     * Implement SeekableIterator::valid()
+     *
+     * @return boolean
+     */
+    public function valid()
+    {
+        return $this->_currentIndex < $this->_results->length;
+    }
+}

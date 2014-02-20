@@ -1,58 +1,178 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-TJGC002r0pu0sigYo8jOks2P1ai=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Translate.php 15766 2009-05-25 20:09:35Z thomas $
+ */
+
+/** Zend_Locale */
+require_once 'Zend/Locale.php';
+
+/** Zend_View_Helper_Abstract.php */
+require_once 'Zend/View/Helper/Abstract.php';
+
+/**
+ * Translation view helper
+ *
+ * @category  Zend
+ * @package   Zend_View
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_Translate extends Zend_View_Helper_Abstract
+{
+    /**
+     * Translation object
+     *
+     * @var Zend_Translate_Adapter
+     */
+    protected $_translator;
+
+    /**
+     * Constructor for manually handling
+     *
+     * @param Zend_Translate|Zend_Translate_Adapter $translate Instance of Zend_Translate
+     */
+    public function __construct($translate = null)
+    {
+        if (empty($translate) === false) {
+            $this->setTranslator($translate);
+        }
+    }
+
+    /**
+     * Translate a message
+     * You can give multiple params or an array of params.
+     * If you want to output another locale just set it as last single parameter
+     * Example 1: translate('%1\$s + %2\$s', $value1, $value2, $locale);
+     * Example 2: translate('%1\$s + %2\$s', array($value1, $value2), $locale);
+     *
+     * @param  string $messageid Id of the message to be translated
+     * @return string Translated message
+     */
+    public function translate($messageid = null)
+    {
+        if ($messageid === null) {
+            return $this;
+        }
+
+        $translate = $this->getTranslator();
+        if ($translate === null) {
+            return $messageid;
+        }
+
+        $options = func_get_args();
+        array_shift($options);
+
+        $count  = count($options);
+        $locale = null;
+        if ($count > 0) {
+            if (Zend_Locale::isLocale($options[($count - 1)], null, false) !== false) {
+                $locale = array_pop($options);
+            }
+        }
+
+        if ((count($options) === 1) and (is_array($options[0]) === true)) {
+            $options = $options[0];
+        }
+
+        $message = $translate->translate($messageid, $locale);
+        if (count($options) === 0) {
+            return $message;
+        }
+
+        return vsprintf($message, $options);
+    }
+
+    /**
+     * Sets a translation Adapter for translation
+     *
+     * @param  Zend_Translate|Zend_Translate_Adapter $translate Instance of Zend_Translate
+     * @throws Zend_View_Exception When no or a false instance was set
+     * @return Zend_View_Helper_Translate
+     */
+    public function setTranslator($translate)
+    {
+        if ($translate instanceof Zend_Translate_Adapter) {
+            $this->_translator = $translate;
+        } else if ($translate instanceof Zend_Translate) {
+            $this->_translator = $translate->getAdapter();
+        } else {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('You must set an instance of Zend_Translate or Zend_Translate_Adapter');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve translation object
+     *
+     * If none is currently registered, attempts to pull it from the registry
+     * using the key 'Zend_Translate'.
+     *
+     * @return Zend_Translate_Adapter|null
+     */
+    public function getTranslator()
+    {
+        if ($this->_translator === null) {
+            require_once 'Zend/Registry.php';
+            if (Zend_Registry::isRegistered('Zend_Translate') === true) {
+                $this->setTranslator(Zend_Registry::get('Zend_Translate'));
+            }
+        }
+
+        return $this->_translator;
+    }
+
+    /**
+     * Set's an new locale for all further translations
+     *
+     * @param  string|Zend_Locale $locale New locale to set
+     * @throws Zend_View_Exception When no Zend_Translate instance was set
+     * @return Zend_View_Helper_Translate
+     */
+    public function setLocale($locale = null)
+    {
+        $translate = $this->getTranslator();
+        if ($translate === null) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('You must set an instance of Zend_Translate or Zend_Translate_Adapter');
+        }
+
+        $translate->setLocale($locale);
+        return $this;
+    }
+
+    /**
+     * Returns the set locale for translations
+     *
+     * @throws Zend_View_Exception When no Zend_Translate instance was set
+     * @return string|Zend_Locale
+     */
+    public function getLocale()
+    {
+        $translate = $this->getTranslator();
+        if ($translate === null) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception('You must set an instance of Zend_Translate or Zend_Translate_Adapter');
+        }
+
+        return $translate->getLocale();
+    }
+}

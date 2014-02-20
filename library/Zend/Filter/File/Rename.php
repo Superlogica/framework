@@ -1,102 +1,305 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-lq5nykqF0YW44JRbwfMwLYLZE2phi/ZteageoqG=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_File_Rename implements Zend_Filter_Interface
+{
+    /**
+     * Internal array of array(source, target, overwrite)
+     */
+    protected $_files = array();
+
+    /**
+     * Class constructor
+     *
+     * Options argument may be either a string, a Zend_Config object, or an array.
+     * If an array or Zend_Config object, it accepts the following keys:
+     * 'source'    => Source filename or directory which will be renamed
+     * 'target'    => Target filename or directory, the new name of the sourcefile
+     * 'overwrite' => Shall existing files be overwritten ?
+     *
+     * @param  string|array $options Target file or directory to be renamed
+     * @param  string $target Source filename or directory (deprecated)
+     * @param  bool $overwrite Should existing files be overwritten (deprecated)
+     * @return void
+     */
+    public function __construct($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (is_string($options)) {
+            $options = array('target' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Invalid options argument provided to filter');
+        }
+
+        if (1 < func_num_args()) {
+            trigger_error('Support for multiple arguments is deprecated in favor of a single options array', E_USER_NOTICE);
+            $argv = func_get_args();
+            array_shift($argv);
+            $source    = array_shift($argv);
+            $overwrite = false;
+            if (!empty($argv)) {
+                $overwrite = array_shift($argv);
+            }
+            $options['source']    = $source;
+            $options['overwrite'] = $overwrite;
+        }
+
+        $this->setFile($options);
+    }
+
+    /**
+     * Returns the files to rename and their new name and location
+     *
+     * @return array
+     */
+    public function getFile()
+    {
+        return $this->_files;
+    }
+
+    /**
+     * Sets a new file or directory as target, deleting existing ones
+     *
+     * Array accepts the following keys:
+     * 'source'    => Source filename or directory which will be renamed
+     * 'target'    => Target filename or directory, the new name of the sourcefile
+     * 'overwrite' => Shall existing files be overwritten ?
+     *
+     * @param  string|array $options Old file or directory to be rewritten
+     * @return Zend_Filter_File_Rename
+     */
+    public function setFile($options)
+    {
+        $this->_files = array();
+        $this->addFile($options);
+
+        return $this;
+    }
+
+    /**
+     * Adds a new file or directory as target to the existing ones
+     *
+     * Array accepts the following keys:
+     * 'source'    => Source filename or directory which will be renamed
+     * 'target'    => Target filename or directory, the new name of the sourcefile
+     * 'overwrite' => Shall existing files be overwritten ?
+     *
+     * @param  string|array $options Old file or directory to be rewritten
+     * @return Zend_Filter_File_Rename
+     */
+    public function addFile($options)
+    {
+        if (is_string($options)) {
+            $options = array('target' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception ('Invalid options to rename filter provided');
+        }
+
+        $this->_convertOptions($options);
+
+        return $this;
+    }
+
+    /**
+     * Returns only the new filename without moving it
+     * But existing files will be erased when the overwrite option is true
+     *
+     * @param  string  $value  Full path of file to change
+     * @param  boolean $source Return internal informations
+     * @return string The new filename which has been set
+     */
+    public function getNewName($value, $source = false)
+    {
+        $file = $this->_getFileName($value);
+        if ($file['source'] == $file['target']) {
+            return $value;
+        }
+
+        if (!file_exists($file['source'])) {
+            return $value;
+        }
+
+        if (($file['overwrite'] == true) && (file_exists($file['target']))) {
+            unlink($file['target']);
+        }
+
+        if (file_exists($file['target'])) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception(sprintf("File '%s' could not be renamed. It already exists.", $value));
+        }
+
+        if ($source) {
+            return $file;
+        }
+
+        return $file['target'];
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Renames the file $value to the new name set before
+     * Returns the file $value, removing all but digit characters
+     *
+     * @param  string $value Full path of file to change
+     * @throws Zend_Filter_Exception
+     * @return string The new filename which has been set, or false when there were errors
+     */
+    public function filter($value)
+    {
+        $file   = $this->getNewName($value, true);
+        if (is_string($file)) {
+            return $file;
+        }
+
+        $result = rename($file['source'], $file['target']);
+
+        if ($result === true) {
+            return $file['target'];
+        }
+
+        require_once 'Zend/Filter/Exception.php';
+        throw new Zend_Filter_Exception(sprintf("File '%s' could not be renamed. An error occured while processing the file.", $value));
+    }
+
+    /**
+     * Internal method for creating the file array
+     * Supports single and nested arrays
+     *
+     * @param  array $options
+     * @return array
+     */
+    protected function _convertOptions($options) {
+        $files = array();
+        foreach ($options as $key => $value) {
+            if (is_array($value)) {
+                $this->_convertOptions($value);
+                continue;
+            }
+
+            switch ($key) {
+                case "source":
+                    $files['source'] = (string) $value;
+                    break;
+
+                case 'target' :
+                    $files['target'] = (string) $value;
+                    break;
+
+                case 'overwrite' :
+                    $files['overwrite'] = (boolean) $value;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        if (empty($files)) {
+            return $this;
+        }
+
+        if (empty($files['source'])) {
+            $files['source'] = '*';
+        }
+
+        if (empty($files['target'])) {
+            $files['target'] = '*';
+        }
+
+        if (empty($files['overwrite'])) {
+            $files['overwrite'] = false;
+        }
+
+        $found = false;
+        foreach ($this->_files as $key => $value) {
+            if ($value['source'] == $files['source']) {
+                $this->_files[$key] = $files;
+                $found              = true;
+            }
+        }
+
+        if (!$found) {
+            $count                = count($this->_files);
+            $this->_files[$count] = $files;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Internal method to resolve the requested source
+     * and return all other related parameters
+     *
+     * @param  string $file Filename to get the informations for
+     * @return array
+     */
+    protected function _getFileName($file)
+    {
+        $rename = array();
+        foreach ($this->_files as $value) {
+            if ($value['source'] == '*') {
+                if (!isset($rename['source'])) {
+                    $rename           = $value;
+                    $rename['source'] = $file;
+                }
+            }
+
+            if ($value['source'] == $file) {
+                $rename = $value;
+            }
+        }
+
+        if (!isset($rename['source'])) {
+            return $file;
+        }
+
+        if (!isset($rename['target']) or ($rename['target'] == '*')) {
+            $rename['target'] = $rename['source'];
+        }
+
+        if (is_dir($rename['target'])) {
+            $name = basename($rename['source']);
+            $last = $rename['target'][strlen($rename['target']) - 1];
+            if (($last != '/') and ($last != '\\')) {
+                $rename['target'] .= DIRECTORY_SEPARATOR;
+            }
+
+            $rename['target'] .= $name;
+        }
+
+        return $rename;
+    }
+}

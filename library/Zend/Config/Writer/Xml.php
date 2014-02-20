@@ -1,84 +1,199 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-il3ajxGgSmMwuIitxw4OgiHw9h8=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Xml.php 14267 2009-03-10 15:49:03Z dasprid $
+ */
+
+/**
+ * @see Zend_Config_Writer
+ */
+require_once 'Zend/Config/Writer.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Config_Writer_Xml extends Zend_Config_Writer
+{
+    /**
+     * Filename to write to
+     *
+     * @var string
+     */
+    protected $_filename = null;
+    
+    /**
+     * Wether to exclusively lock the file or not
+     *
+     * @var boolean
+     */
+    protected $_exclusiveLock = false;
+    
+    /**
+     * Set the target filename
+     *
+     * @param  string $filename
+     * @return Zend_Config_Writer_Xml
+     */
+    public function setFilename($filename)
+    {
+        $this->_filename = $filename;
+        
+        return $this;
+    }
+    
+    /**
+     * Set wether to exclusively lock the file or not
+     *
+     * @param  boolean     $exclusiveLock
+     * @return Zend_Config_Writer_Array
+     */
+    public function setExclusiveLock($exclusiveLock)
+    {
+        $this->_exclusiveLock = $exclusiveLock;
+        
+        return $this;
+    }
+    
+    /**
+     * Defined by Zend_Config_Writer
+     *
+     * @param  string      $filename
+     * @param  Zend_Config $config
+     * @param  boolean     $exclusiveLock
+     * @throws Zend_Config_Exception When filename was not set
+     * @throws Zend_Config_Exception When filename is not writable
+     * @return void
+     */
+    public function write($filename = null, Zend_Config $config = null, $exclusiveLock = null)
+    {
+        if ($filename !== null) {
+            $this->setFilename($filename);
+        }
+        
+        if ($config !== null) {
+            $this->setConfig($config);
+        }
+        
+        if ($exclusiveLock !== null) {
+            $this->setExclusiveLock($exclusiveLock);
+        }
+        
+        if ($this->_filename === null) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('No filename was set');
+        }
+        
+        if ($this->_config === null) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('No config was set');
+        }
+        
+        $xml         = new SimpleXMLElement('<zend-config/>');
+        $extends     = $this->_config->getExtends();
+        $sectionName = $this->_config->getSectionName();
+        
+        if (is_string($sectionName)) {
+            $child = $xml->addChild($sectionName);
+
+            $this->_addBranch($this->_config, $child, $xml);
+        } else {
+            foreach ($this->_config as $sectionName => $data) {
+                if (!($data instanceof Zend_Config)) {
+                    $xml->addChild($sectionName, (string) $data);
+                } else {
+                    $child = $xml->addChild($sectionName);
+                    
+                    if (isset($extends[$sectionName])) {
+                        $child->addAttribute('extends', $extends[$sectionName]);
+                    }
+        
+                    $this->_addBranch($data, $child, $xml);
+                }
+            }
+        }
+                
+        $dom = dom_import_simplexml($xml)->ownerDocument;
+        $dom->formatOutput = true;
+        
+        $xmlString = $dom->saveXML();
+       
+        $flags = 0;
+        
+        if ($this->_exclusiveLock) {
+            $flags |= LOCK_EX;
+        }
+        
+        $result = @file_put_contents($this->_filename, $xmlString, $flags);
+        
+        if ($result === false) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('Could not write to file "' . $this->_filename . '"');
+        }
+    }
+    
+    /**
+     * Add a branch to an XML object recursively
+     *
+     * @param  Zend_Config      $config
+     * @param  SimpleXMLElement $xml
+     * @param  SimpleXMLElement $parent
+     * @return void
+     */
+    protected function _addBranch(Zend_Config $config, SimpleXMLElement $xml, SimpleXMLElement $parent)
+    {
+        $branchType = null;
+        
+        foreach ($config as $key => $value) {
+            if ($branchType === null) {
+                if (is_numeric($key)) {
+                    $branchType = 'numeric';
+                    $branchName = $xml->getName();
+                    $xml        = $parent;
+                    
+                    unset($parent->{$branchName});
+                } else {
+                    $branchType = 'string';
+                }
+            } else if ($branchType !== (is_numeric($key) ? 'numeric' : 'string')) {
+                require_once 'Zend/Config/Exception.php';
+                throw new Zend_Config_Exception('Mixing of string and numeric keys is not allowed');                
+            }
+            
+            if ($branchType === 'numeric') {
+                if ($value instanceof Zend_Config) {
+                    $child = $parent->addChild($branchName, (string) $value);
+    
+                    $this->_addBranch($value, $child, $parent);
+                } else {
+                    $parent->addChild($branchName, (string) $value);
+                }
+            } else {            
+                if ($value instanceof Zend_Config) {
+                    $child = $xml->addChild($key);
+    
+                    $this->_addBranch($value, $child, $xml);
+                } else {
+                    $xml->addChild($key, (string) $value);
+                }
+            }
+        }
+    }
+}

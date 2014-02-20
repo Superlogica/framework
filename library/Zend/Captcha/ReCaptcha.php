@@ -1,70 +1,267 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-673yLjcK4DkZx1RMOzMeLwUV4tktXyBRkH40k0G=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Captcha_Base */
+require_once 'Zend/Captcha/Base.php';
+
+/** Zend_Service_ReCaptcha */
+require_once 'Zend/Service/ReCaptcha.php';
+
+/**
+ * ReCaptcha adapter
+ * 
+ * Allows to insert captchas driven by ReCaptcha service
+ * 
+ * @see http://recaptcha.net/apidocs/captcha/
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+class Zend_Captcha_ReCaptcha extends Zend_Captcha_Base 
+{
+    /**
+     * Recaptcha public key
+     *
+     * @var string
+     */
+    protected $_pubkey;
+
+    /**
+     * Recaptcha private key
+     *
+     * @var string
+     */
+    protected $_privkey;
+    
+    /**@+
+     * ReCaptcha Field names 
+     * @var string
+     */
+    protected $_CHALLENGE = 'recaptcha_challenge_field';
+    protected $_RESPONSE  = 'recaptcha_response_field';
+    /**@-*/
+     
+    /**
+     * Recaptcha service object
+     *
+     * @var Zend_Service_Recaptcha
+     */
+    protected $_service;
+
+    /**
+     * Parameters defined by the service
+     * 
+     * @var array
+     */
+    protected $_serviceParams = array();
+
+    /**#@+
+     * Error codes
+     * @const string
+     */
+    const MISSING_VALUE = 'missingValue';
+    const ERR_CAPTCHA   = 'errCaptcha';
+    const BAD_CAPTCHA   = 'badCaptcha';
+    /**#@-*/
+
+    /**
+     * Error messages
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::MISSING_VALUE => 'Missing captcha fields',
+        self::ERR_CAPTCHA   => 'Failed to validate captcha',
+        self::BAD_CAPTCHA   => 'Captcha value is wrong: %value%',
+    );
+    
+    /**
+     * Retrieve ReCaptcha Private key
+     *
+     * @return string
+     */
+    public function getPrivkey() 
+    {
+        return $this->_privkey;
+    }
+    
+    /**
+     * Retrieve ReCaptcha Public key
+     *
+     * @return string
+     */
+    public function getPubkey() 
+    {
+        return $this->_pubkey;
+    }
+    
+    /**
+     * Set ReCaptcha Private key
+     *
+     * @param string $_privkey
+     * @return Zend_Captcha_ReCaptcha
+     */
+    public function setPrivkey($privkey) 
+    {
+        $this->_privkey = $privkey;
+        return $this;
+    }
+    
+    /**
+     * Set ReCaptcha public key
+     *
+     * @param string $_pubkey
+     * @return Zend_Captcha_ReCaptcha
+     */
+    public function setPubkey($pubkey) 
+    {
+        $this->_pubkey = $pubkey;
+        return $this;
+    }
+    
+    /**
+     * Constructor
+     *
+     * @param  array|Zend_Config $options 
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        parent::__construct($options);
+
+        $this->setService(new Zend_Service_ReCaptcha($this->getPubKey(), $this->getPrivKey()));
+        $this->_serviceParams = $this->getService()->getParams();
+
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        }
+        if (!empty($options)) {
+            $this->setOptions($options);
+        }
+    }
+
+    /**
+     * Set service object
+     * 
+     * @param  Zend_Service_ReCaptcha $service 
+     * @return Zend_Captcha_ReCaptcha
+     */
+    public function setService(Zend_Service_ReCaptcha $service)
+    {
+        $this->_service = $service;
+        return $this;
+    }
+
+    /**
+     * Retrieve ReCaptcha service object
+     * 
+     * @return Zend_Service_ReCaptcha
+     */
+    public function getService()
+    {
+        return $this->_service;
+    }
+
+    /**
+     * Set option
+     *
+     * If option is a service parameter, proxies to the service.
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return Zend_Captcha_ReCaptcha
+     */
+    public function setOption($key, $value)
+    {
+        $service = $this->getService();
+        if (isset($this->_serviceParams[$key])) {
+            $service->setParam($key, $value);
+            return $this;
+        }
+        return parent::setOption($key, $value);
+    }
+    
+    /**
+     * Generate captcha
+     *
+     * @see Zend_Form_Captcha_Adapter::generate()
+     * @return string
+     */
+    public function generate()
+    {
+        return "";
+    }
+
+    /**
+     * Validate captcha
+     *
+     * @see    Zend_Validate_Interface::isValid()
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isValid($value, $context = null)
+    {
+        if (!is_array($value) && !is_array($context)) {
+            $this->_error(self::MISSING_VALUE);
+            return false;
+        }
+        if (!is_array($value) && is_array($context)) {
+            $value = $context;
+        }
+
+        if (empty($value[$this->_CHALLENGE]) || empty($value[$this->_RESPONSE])) {
+            $this->_error(self::MISSING_VALUE);
+            return false;
+        }
+
+        $service = $this->getService();
+        
+        $res = $service->verify($value[$this->_CHALLENGE], $value[$this->_RESPONSE]); 
+        
+        if (!$res) {
+            $this->_error(self::ERR_CAPTCHA);
+            return false;
+        }
+        
+        if (!$res->isValid()) {
+            $this->_error(self::BAD_CAPTCHA, $res->getErrorCode());
+            $service->setParam('error', $res->getErrorCode());
+            return false;
+        }
+
+        return true;
+    }
+    
+    /**
+     * Render captcha
+     * 
+     * @param  Zend_View_Interface $view 
+     * @param  mixed $element 
+     * @return string
+     */
+    public function render(Zend_View_Interface $view, $element = null)
+    {
+        return $this->getService()->getHTML();
+    }
+}

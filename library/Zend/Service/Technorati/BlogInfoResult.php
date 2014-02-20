@@ -1,43 +1,161 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: BlogInfoResult.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Technorati_Utils
+ */
+require_once 'Zend/Service/Technorati/Utils.php';
+
+
+/**
+ * Represents a single Technorati BlogInfo query result object.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_BlogInfoResult
+{
+    /**
+     * Technorati weblog url, if queried URL is a valid weblog.
+     *
+     * @var     Zend_Uri_Http
+     * @access  protected
+     */
+    protected $_url;
+
+    /**
+     * Technorati weblog, if queried URL is a valid weblog.
+     *
+     * @var     Zend_Service_Technorati_Weblog
+     * @access  protected
+     */
+    protected $_weblog;
+
+    /**
+     * Number of unique blogs linking this blog
+     *
+     * @var     integer
+     * @access  protected
+     */
+    protected $_inboundBlogs;
+
+    /**
+     * Number of incoming links to this blog
+     *
+     * @var     integer
+     * @access  protected
+     */
+    protected $_inboundLinks;
+    
+
+    /**
+     * Constructs a new object object from DOM Document.
+     *
+     * @param   DomDocument $dom the ReST fragment for this object
+     */
+    public function __construct(DomDocument $dom)
+    {
+        $xpath = new DOMXPath($dom);
+        /**
+         * @see Zend_Service_Technorati_Weblog
+         */
+        require_once 'Zend/Service/Technorati/Weblog.php';
+
+        $result = $xpath->query('//result/weblog');
+        if ($result->length == 1) {
+            $this->_weblog = new Zend_Service_Technorati_Weblog($result->item(0));
+        } else {
+            // follow the same behavior of blogPostTags 
+            // and raise an Exception if the URL is not a valid weblog
+            /**
+             * @see Zend_Service_Technorati_Exception
+             */
+            require_once 'Zend/Service/Technorati/Exception.php';
+            throw new Zend_Service_Technorati_Exception(
+                "Your URL is not a recognized Technorati weblog");
+        }
+        
+        $result = $xpath->query('//result/url/text()');
+        if ($result->length == 1) {
+            try {
+                // fetched URL often doens't include schema 
+                // and this issue causes the following line to fail
+                $this->_url = Zend_Service_Technorati_Utils::normalizeUriHttp($result->item(0)->data);
+            } catch(Zend_Service_Technorati_Exception $e) {
+                if ($this->getWeblog() instanceof Zend_Service_Technorati_Weblog) {
+                    $this->_url = $this->getWeblog()->getUrl();
+                }
+            }
+        }
+        
+        $result = $xpath->query('//result/inboundblogs/text()');
+        if ($result->length == 1) $this->_inboundBlogs = (int) $result->item(0)->data;
+        
+        $result = $xpath->query('//result/inboundlinks/text()');
+        if ($result->length == 1) $this->_inboundLinks = (int) $result->item(0)->data;
+        
+    }
+
+
+    /**
+     * Returns the weblog URL.
+     * 
+     * @return  Zend_Uri_Http
+     */
+    public function getUrl() {
+        return $this->_url;
+    }
+    
+    /**
+     * Returns the weblog.
+     * 
+     * @return  Zend_Service_Technorati_Weblog
+     */
+    public function getWeblog() {
+        return $this->_weblog;
+    }
+    
+    /**
+     * Returns number of unique blogs linking this blog.
+     * 
+     * @return  integer the number of inbound blogs
+     */
+    public function getInboundBlogs() 
+    {
+        return (int) $this->_inboundBlogs;
+    }
+    
+    /**
+     * Returns number of incoming links to this blog.
+     * 
+     * @return  integer the number of inbound links
+     */
+    public function getInboundLinks() 
+    {
+        return (int) $this->_inboundLinks;
+    }
+    
+}

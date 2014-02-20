@@ -1,96 +1,164 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-kj4uenMdezaDyW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: Slider.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "ZendX/JQuery/View/Helper/UiWidget.php";
+
+/**
+ * jQuery Slider View Helper
+ *
+ * @uses 	   Zend_Json
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_Slider extends ZendX_JQuery_View_Helper_UiWidget
+{
+    /**
+     * Create jQuery slider that updates its values into a hidden form input field.
+     *
+     * @link   http://docs.jquery.com/UI/Slider
+     * @param  string $id
+     * @param  string $value
+     * @param  array  $params
+     * @param  array  $attribs
+     * @return string
+     */
+    public function slider($id, $value = null, array $params = array(), array $attribs = array())
+    {
+        if(!isset($attribs['id'])) {
+            $attribs['id'] = $id;
+        }
+
+        $jqh = ZendX_JQuery_View_Helper_JQuery::getJQueryHandler();
+
+        $params = $this->initializeStartingValues($value, $params);
+        $handleCount = $this->getHandleCount($params);
+
+        // Build the Change/Update functionality of the Slider via javascript, updating hidden fields. aswell as hidden fields
+        $hidden = "";
+        if(!isset($params['change'])) {
+            $sliderUpdateFn = 'function(e, ui) {'.PHP_EOL;
+            for($i = 0; $i < $handleCount; $i++) {
+                // Js Func
+                if($i === 0) {
+                    $sliderHiddenId = $attribs['id'];
+                } else {
+                    $sliderHiddenId = $attribs['id']."-".$i;
+                }
+                $sliderUpdateFn .= $this->getChangeCallback($jqh, $sliderHiddenId, $attribs['id'], $i);
+
+                // Hidden Fields
+                $startValue = $this->getHandleValue($i, $params);
+                $hiddenAttribs = array('type' => 'hidden', 'id' => $sliderHiddenId, 'name' => $sliderHiddenId, 'value' => $startValue);
+                $hidden .= '<input' . $this->_htmlAttribs($hiddenAttribs) . $this->getClosingBracket(). PHP_EOL;
+            }
+            $sliderUpdateFn .= "}".PHP_EOL;
+            $params['change'] = new Zend_Json_Expr($sliderUpdateFn);
+        }
+
+        $attribs['id'] .= "-slider";
+
+        if(count($params) > 0) {
+            $params = ZendX_JQuery::encodeJson($params);
+        } else {
+            $params = '{}';
+        }
+
+        $js = sprintf('%s("#%s").slider(%s);', $jqh, $attribs['id'], $params);
+        $this->jquery->addOnLoad($js);
+
+        $html = '<div' . $this->_htmlAttribs($attribs) . '>';
+        for($i = 0; $i < $handleCount; $i++) {
+            $html .= '<div class="ui-slider-handle"></div>';
+        }
+        $html .= '</div>';
+
+        return $hidden.$html;
+    }
+
+    protected function getChangeCallback($jqh, $sliderHiddenId, $elementId, $handlerNum)
+    {
+        if(version_compare($this->jquery->getUiVersion(), "1.7.0") >= 0) {
+            return sprintf('    %s("#%s").attr("value", %s("#%s-slider").slider("values", %d));'.PHP_EOL,
+                $jqh, $sliderHiddenId, $jqh, $elementId, $handlerNum
+            );
+        } else {
+            return sprintf('    %s("#%s").attr("value", %s("#%s-slider").slider("value", %d));'.PHP_EOL,
+                $jqh, $sliderHiddenId, $jqh, $elementId, $handlerNum
+            );
+        }
+    }
+
+    protected function getHandleCount($params)
+    {
+        if(version_compare($this->jquery->getUiVersion(), "1.7.0") >= 0) {
+            return count($params['values']);
+        } else {
+            return count($params['handles']);
+        }
+    }
+
+    protected function getHandleValue($handleNum, $params)
+    {
+        if(version_compare($this->jquery->getUiVersion(), "1.7.0") >= 0) {
+            return $params['values'][$handleNum];
+        } else {
+            return $params['handles'][$handleNum]['start'];
+        }
+    }
+
+    protected function initializeStartingValues($value, $params)
+    {
+        $values = array();
+        if(isset($params['value'])) {
+            $values[] = $params['value'];
+            unset($params['value']);
+        } else if(isset($params['values'])) {
+            $values = $params['values'];
+            unset($params['values']);
+        } else if(isset($params['handles'])) {
+            for($i = 0; $i < count($params['handles']); $i++) {
+                $values[] = $params['handles'][$i]['start'];
+            }
+            unset($params['handles']);
+        } else if(isset($params['startValue'])) {
+            $values[] = $params['startValue'];
+            unset($params['startValue']);
+        } else if(is_numeric($value)) {
+            $values[] = $value;
+        }
+
+        if(version_compare($this->jquery->getUiVersion(), "1.7.0") >= 0) {
+            $params['values'] = $values;
+        } else {
+            $params['handles'] = array();
+            for($i = 0; $i < count($values); $i++) {
+                $params['handles'][$i]['start'] = $values[$i];
+            }
+        }
+        return $params;
+    }
+}

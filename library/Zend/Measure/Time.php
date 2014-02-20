@@ -1,29 +1,117 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV55cQv4f5Ozrj12znQU4GvRF9bpAQ3xWLLzDP67bO3Ij5hV8XwpXOVUJyzCYXB7G6yE7bNzOc
-K15wWuLB0jGxxO8I0Zik6G9VotY9ENLdpcCId6nirNoDSbSqruo22g1H4JX7km299rwZ+6KYaSdC
-gYKBzZInKdGdE75ZiQOZZv5RMhrbGyWlEioiqzyicmAtz56e/s77CD/7qm/J7RghM+N0TJKQgc05
-PTGX8oBe7hbRzgbjoOVXmSHBaqcSpLCjHtVbBow4GcZQNH49znJ6wJHg1JJLRgtV17nVOziBhK+1
-mpiUm7lldmoT6fadq3wKXImIt2kjulxNespUYQA7TbbV9XwDtoNBVhooElzL0VWrXRvmuJRJmIlO
-OQTqT8wgy/Q0a3z6DBA1zM2BvejRgp1ijpAvn6dCFPBe3fv1kYjd5Wh5eQ+2TBXKKVxQFsx/5yUR
-lpB/XE9HWY9/JkN4kBe+z38IJxyTq5kDOstyp/xixVlTX64V9i5PnySrcQ+gm7621/gCkYtDBYvE
-/Z8a3AvyvUE6/OkD3Shgozds/6XcLWg50MHVZGoKKtWkBP+NXqXuBj5xkvOOaSJG+RQRtDYCNcIf
-DNCYIPvWJ9Hp8XjR0DFPpwAzIz6rMaK1/v4JG0IoswyqtSWrlvORHdmr5DVy2abldCWkOo17JHLT
-LdhvLEGbB0W12cWDNgwvoT8oAlvwHjsVfD5zgWD769zoVevlZEgo4do1/8b9o1m/VznfcuCvdWlo
-A2xX3BqaY1PlwgT8zFymx9IXNU5GomqtR+slH9VWkxYSWl98jSSk/fqqV5JHl4kfYBLI0uxJ8GRr
-BA/v4VPX6baZtBw0qG+sLrZKSw9t2RBxGLPdtqessvpmh6J4GMA3UMjqxvMHg9gx20DTvRzXMV8a
-x3NCBB/fREL+2swP8f9OYf0vmltu7Qa5Hqa/M4PEPsgKk4z9PCy/78WhEblxa/D9kx6RfWJ/MNT7
-LBZOAqwp9A4Vz1SXmfkHNe502ffI8x9tbwz9DT7T7v01pgb6wr5m89deo5ihBJscCthWIPLV43Pi
-hD5cA6tCzyfdDrdcK+tMPjGGPLIF042xYuvZ4ZBxJJjie//s8RgHeL7wyGUmgEhLoeC+DaKa6EIF
-WqeJTHeRa7uuVwDN2UFqX7Qtv0SuZ+xlRDa1/o2EHejociJtl6NvshnelSaUHuS8UX6vZySwDSsm
-Dpt1OUPizpsAQmVeZJGjyscqgoZ+flKhEWBqBShBjvsfDlgR9kUILTdoLngd5T6WlhtkrPBV4gVE
-oTO7fH3dNGGZtbylfeZxuJFEZVVU/wDN8FzLV5a9fTceSiPCJ/v2oZJ7pjYerCDjkPpASMlxH5Ou
-SWNIlHZSb3yfXnTYUAXOZYvPf2XKkpLjUSF78nKneFYj6oyeDZ0NaD6a5+luRGGEbd1QjsieG3Zj
-vDsatuAe4o9iXo5x9b1hn+THNIIckoB0g9ijhsJNI32t6l1epNVrcQ7N8uageNXQKlNKwRU6inM/
-07Ds5S3jHWrGDtq322Xoajb1WFbRJsciS4nIsV8qSMXN5VO9q0LlkX+4hiiv0REVJWckTS76lErH
-wd0JohN+BzHkt3De/9iM5EpttxR9jdYldHkDQYYBf3RQgKj7Hda+cTusS2B4rw6YJymQvPyZoXpd
-NwW5AVR8AsQD6eYSVRYt68OKUZWAgGzi28qPJ+Wts/FgDCig0NrQzn6sjov5rNQcaoT2y9XnzM0Z
-30JhRJuCR5UwXqDDjx9gb1MssL46VgD6c2Zr3VoChL2mUOjrvzY454NDZYKwlYLHIzqE1tbVpDWP
-7mmXx/s97Z0ionrOBv5OwkFqg7B+fWsHlg4jXstIYzwfa2vk51KKlsQH7McqLabbiZj3Fj0/P2mV
-aCfbVK0lGINAcDPQ7WztU6j8C0pncsxwNaYObDwuvMNqMW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling time conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Time
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Time extends Zend_Measure_Abstract
+{
+    const STANDARD = 'SECOND';
+
+    const ANOMALISTIC_YEAR  = 'ANOMALISTIC_YEAR';
+    const ATTOSECOND        = 'ATTOSECOND';
+    const CENTURY           = 'CENTURY';
+    const DAY               = 'DAY';
+    const DECADE            = 'DECADE';
+    const DRACONIC_YEAR     = 'DRACONTIC_YEAR';
+    const EXASECOND         = 'EXASECOND';
+    const FEMTOSECOND       = 'FEMTOSECOND';
+    const FORTNIGHT         = 'FORTNIGHT';
+    const GAUSSIAN_YEAR     = 'GAUSSIAN_YEAR';
+    const GIGASECOND        = 'GIGASECOND';
+    const GREGORIAN_YEAR    = 'GREGORIAN_YEAR';
+    const HOUR              = 'HOUR';
+    const JULIAN_YEAR       = 'JULIAN_YEAR';
+    const KILOSECOND        = 'KILOSECOND';
+    const LEAPYEAR          = 'LEAPYEAR';
+    const MEGASECOND        = 'MEGASECOND';
+    const MICROSECOND       = 'MICROSECOND';
+    const MILLENIUM         = 'MILLENIUM';
+    const MILLISECOND       = 'MILLISECOND';
+    const MINUTE            = 'MINUTE';
+    const MONTH             = 'MONTH';
+    const NANOSECOND        = 'NANOSECOND';
+    const PETASECOND        = 'PETASECOND';
+    const PICOSECOND        = 'PICOSECOND';
+    const QUARTER           = 'QUARTER';
+    const SECOND            = 'SECOND';
+    const SHAKE             = 'SHAKE';
+    const SIDEREAL_YEAR     = 'SYNODIC_MONTH';
+    const TERASECOND        = 'TERASECOND';
+    const TROPICAL_YEAR     = 'TROPIC_YEAR';
+    const WEEK              = 'WEEK';
+    const YEAR              = 'YEAR';
+
+    /**
+     * Calculations for all time units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'ANOMALISTIC_YEAR'  => array('31558432', 'anomalistic year'),
+        'ATTOSECOND'        => array('1.0e-18', 'as'),
+        'CENTURY'           => array('3153600000', 'century'),
+        'DAY'               => array('86400', 'day'),
+        'DECADE'            => array('315360000', 'decade'),
+        'DRACONIC_YEAR'     => array('29947974', 'draconic year'),
+        'EXASECOND'         => array('1.0e+18', 'Es'),
+        'FEMTOSECOND'       => array('1.0e-15', 'fs'),
+        'FORTNIGHT'         => array('1209600', 'fortnight'),
+        'GAUSSIAN_YEAR'     => array('31558196', 'gaussian year'),
+        'GIGASECOND'        => array('1.0e+9', 'Gs'),
+        'GREAT_YEAR'        => array(array('*' => '31536000', '*' => '25700'), 'great year'),
+        'GREGORIAN_YEAR'    => array('31536000', 'year'),
+        'HOUR'              => array('3600', 'h'),
+        'JULIAN_YEAR'       => array('31557600', 'a'),
+        'KILOSECOND'        => array('1000', 'ks'),
+        'LEAPYEAR'          => array('31622400', 'year'),
+        'MEGASECOND'        => array('1000000', 'Ms'),
+        'MICROSECOND'       => array('0.000001', 'µs'),
+        'MILLENIUM'         => array('31536000000', 'millenium'),
+        'MILLISECOND'       => array('0.001', 'ms'),
+        'MINUTE'            => array('60', 'min'),
+        'MONTH'             => array('2628600', 'month'),
+        'NANOSECOND'        => array('1.0e-9', 'ns'),
+        'PETASECOND'        => array('1.0e+15', 'Ps'),
+        'PICOSECOND'        => array('1.0e-12', 'ps'),
+        'QUARTER'           => array('7884000', 'quarter'),
+        'SECOND'            => array('1', 's'),
+        'SHAKE'             => array('1.0e-9', 'shake'),
+        'SIDEREAL_YEAR'     => array('31558149.7676', 'sidereal year'),
+        'TERASECOND'        => array('1.0e+12', 'Ts'),
+        'TROPICAL_YEAR'     => array('31556925', 'tropical year'),
+        'WEEK'              => array('604800', 'week'),
+        'YEAR'              => array('31536000', 'year'),
+        'STANDARD'          => 'SECOND'
+    );
+}

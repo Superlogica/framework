@@ -1,31 +1,87 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Enable Dojo components
+ * 
+ * @package    Zend_Dojo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Dojo.php 10130 2008-07-16 14:51:08Z matthew $
+ */
+class Zend_Dojo
+{
+    /**
+     *  @const string Base path to AOL CDN
+     */
+    const CDN_BASE_AOL = 'http://o.aolcdn.com/dojo/';
+
+    /**
+     * @const string Path to dojo on AOL CDN (following version string)
+     */
+    const CDN_DOJO_PATH_AOL = '/dojo/dojo.xd.js';
+
+    /**
+     *  @const string Base path to Google CDN
+     */
+    const CDN_BASE_GOOGLE = 'http://ajax.googleapis.com/ajax/libs/dojo/';
+
+    /**
+     * @const string Path to dojo on Google CDN (following version string)
+     */
+    const CDN_DOJO_PATH_GOOGLE = '/dojo/dojo.xd.js';
+
+    /**
+     * Dojo-enable a form instance
+     * 
+     * @param  Zend_Form $form 
+     * @return void
+     */
+    public static function enableForm(Zend_Form $form)
+    {
+        $form->addPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
+             ->addPrefixPath('Zend_Dojo_Form_Element', 'Zend/Dojo/Form/Element', 'element')
+             ->addElementPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
+             ->addDisplayGroupPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator')
+             ->setDefaultDisplayGroupClass('Zend_Dojo_Form_DisplayGroup');
+
+        foreach ($form->getSubForms() as $subForm) {
+            self::enableForm($subForm);
+        }
+
+        if (null !== ($view = $form->getView())) {
+            self::enableView($view);
+        }
+    }
+
+    /**
+     * Dojo-enable a view instance
+     * 
+     * @param  Zend_View_Interface $view 
+     * @return void
+     */
+    public static function enableView(Zend_View_Interface $view)
+    {
+        if (false === $view->getPluginLoader('helper')->getPaths('Zend_Dojo_View_Helper')) {
+            $view->addHelperPath('Zend/Dojo/View/Helper', 'Zend_Dojo_View_Helper');
+        }
+    }
+}
+

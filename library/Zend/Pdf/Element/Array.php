@@ -1,51 +1,151 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-fiT1HyXBihN134i=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+/** Zend_Pdf_PhpArray */
+require_once 'Zend/Pdf/PhpArray.php';
+
+
+
+/**
+ * PDF file 'array' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Array extends Zend_Pdf_Element
+{
+    /**
+     * Object value
+     * Array of Zend_Pdf_Element objects.
+     * Appropriate methods must (!) be used to modify it to provide correct
+     * work with objects and references.
+     *
+     * @var Zend_Pdf_PhpArray
+     */
+    private $_items;
+
+
+    /**
+     * Object constructor
+     *
+     * @param array $val   - array of Zend_Pdf_Element objects
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($val = null)
+    {
+        $this->_items = new Zend_Pdf_PhpArray();
+
+        if ($val !== null  &&  is_array($val)) {
+            foreach ($val as $element) {
+                if (!$element instanceof Zend_Pdf_Element) {
+                    throw new Zend_Pdf_Exception('Array elements must be Zend_Pdf_Element objects');
+                }
+                $this->_items[] = $element;
+            }
+        } else if ($val !== null){
+            throw new Zend_Pdf_Exception('Argument must be an array');
+        }
+    }
+
+
+    /**
+     * Provides access to $this->_items
+     *
+     * @param string $property
+     * @return Zend_Pdf_PhpArray
+     */
+    public function __get($property) {
+        if ($property=='items') {
+            return $this->_items;
+        }
+        throw new Exception('Undefined property: Zend_Pdf_Element_Array::$' . $property);
+    }
+
+
+    /**
+     * Provides read-only access to $this->_items;
+     *
+     * @param unknown_type $offset
+     * @param unknown_type $value
+     */
+    public function __set($property, $value) {
+        if ($property=='items') {
+            throw new Exception('Array container cannot be overwritten');
+        }
+        throw new Exception('Undefined property: Zend_Pdf_Element_Array::$' . $property);
+    }
+
+    /**
+     * Return type of the element.
+     *
+     * @return integer
+     */
+    public function getType()
+    {
+        return Zend_Pdf_Element::TYPE_ARRAY;
+    }
+
+
+    /**
+     * Return object as string
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        $outStr = '[';
+        $lastNL = 0;
+
+        foreach ($this->_items as $element) {
+            if (strlen($outStr) - $lastNL > 128)  {
+                $outStr .= "\n";
+                $lastNL = strlen($outStr);
+            }
+
+            $outStr .= $element->toString($factory) . ' ';
+        }
+        $outStr .= ']';
+
+        return $outStr;
+    }
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * Dictionary is returned as an associative array
+     *
+     * @return mixed
+     */
+    public function toPhp()
+    {
+        foreach ($this->_items as $item) {
+            $phpArray[] = $item->toPhp();
+        }
+
+        return $phpArray;
+    }
+}

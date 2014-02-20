@@ -1,43 +1,124 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-k9FZOFO9knNrnY0=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 10383 2008-07-24 19:46:15Z matthew $
+ */
+
+
+/**
+ * @see Zend_Feed
+ */
+require_once 'Zend/Feed.php';
+
+/**
+ * @see Zend_Feed_Element
+ */
+require_once 'Zend/Feed/Element.php';
+
+
+/**
+ * Zend_Feed_Entry_Abstract represents a single entry in an Atom or RSS
+ * feed.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Feed_Entry_Abstract extends Zend_Feed_Element
+{
+    /**
+     * Root XML element for entries. Subclasses must define this to a
+     * non-null value.
+     *
+     * @var string
+     */
+    protected $_rootElement;
+
+    /**
+     * Root namespace for entries. Subclasses may define this to a
+     * non-null value.
+     *
+     * @var string
+     */
+    protected $_rootNamespace = null;
+
+
+    /**
+     * Zend_Feed_Entry_Abstract constructor
+     *
+     * The Zend_Feed_Entry_Abstract constructor takes the URI of the feed the entry
+     * is part of, and optionally an XML construct (usually a
+     * SimpleXMLElement, but it can be an XML string or a DOMNode as
+     * well) that contains the contents of the entry.
+     *
+     * @param  string $uri
+     * @param  SimpleXMLElement|DOMNode|string  $element
+     * @return void
+     * @throws Zend_Feed_Exception
+     */
+    public function __construct($uri = null, $element = null)
+    {
+        if (!($element instanceof DOMElement)) {
+            if ($element) {
+                // Load the feed as an XML DOMDocument object
+                @ini_set('track_errors', 1);
+                $doc = new DOMDocument();
+                $status = @$doc->loadXML($element);
+                @ini_restore('track_errors');
+
+                if (!$status) {
+                    // prevent the class to generate an undefined variable notice (ZF-2590)
+                    if (!isset($php_errormsg)) {
+                        if (function_exists('xdebug_is_enabled')) {
+                            $php_errormsg = '(error message not available, when XDebug is running)';
+                        } else {
+                            $php_errormsg = '(error message not available)';
+                        }
+                    }
+
+                    /** 
+                     * @see Zend_Feed_Exception
+                     */
+                    require_once 'Zend/Feed/Exception.php';
+                    throw new Zend_Feed_Exception("DOMDocument cannot parse XML: $php_errormsg");
+                }
+
+                $element = $doc->getElementsByTagName($this->_rootElement)->item(0);
+                if (!$element) {
+                    /** 
+                     * @see Zend_Feed_Exception
+                     */
+                    require_once 'Zend/Feed/Exception.php';
+                    throw new Zend_Feed_Exception('No root <' . $this->_rootElement . '> element found, cannot parse feed.');
+                }
+            } else {
+                $doc = new DOMDocument('1.0', 'utf-8');
+                if ($this->_rootNamespace !== null) {
+                    $element = $doc->createElementNS(Zend_Feed::lookupNamespace($this->_rootNamespace), $this->_rootElement);
+                } else {
+                    $element = $doc->createElement($this->_rootElement);
+                }
+            }
+        }
+
+        parent::__construct($element);
+    }
+
+}

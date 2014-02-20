@@ -1,73 +1,224 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-gILgl53xNhL1CvSj
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Rest
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Rest
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Rest_Client_Result implements IteratorAggregate {
+    /**
+     * @var SimpleXMLElement
+     */
+    protected $_sxml;
+
+    /**
+     * Constructor
+     *
+     * @param string $data XML Result
+     * @return void
+     */
+    public function __construct($data)
+    {
+        set_error_handler(array($this, 'handleXmlErrors'));
+        $this->_sxml = simplexml_load_string($data);
+        if($this->_sxml === false) {
+            $this->handleXmlErrors(0, "An error occured while parsing the REST response with simplexml.");
+        } else {
+            restore_error_handler();
+        }
+    }
+
+    /**
+     * Temporary error handler for parsing REST responses.
+     *
+     * @param int    $errno
+     * @param string $errstr
+     * @param string $errfile
+     * @param string $errline
+     * @param array  $errcontext
+     * @throws Zend_Result_Client_Result_Exception
+     */
+    public function handleXmlErrors($errno, $errstr, $errfile = null, $errline = null, array $errcontext = null)
+    {
+        restore_error_handler();
+        require_once "Zend/Rest/Client/Result/Exception.php";
+        throw new Zend_Rest_Client_Result_Exception("REST Response Error: ".$errstr);
+    }
+
+    /**
+     * Casts a SimpleXMLElement to its appropriate PHP value
+     *
+     * @param SimpleXMLElement $value
+     * @return mixed
+     */
+    public function toValue(SimpleXMLElement $value)
+    {
+        $node = dom_import_simplexml($value);
+        return $node->nodeValue;
+    }
+
+    /**
+     * Get Property Overload
+     *
+     * @param string $name
+     * @return null|SimpleXMLElement|array Null if not found, SimpleXMLElement if only one value found, array of Zend_Rest_Client_Result objects otherwise
+     */
+    public function __get($name)
+    {
+        if (isset($this->_sxml->{$name})) {
+            return $this->_sxml->{$name};
+        }
+
+        $result = $this->_sxml->xpath("//$name");
+        $count  = count($result);
+
+        if ($count == 0) {
+            return null;
+        } elseif ($count == 1) {
+            return $result[0];
+        } else {
+            return $result;
+        }
+    }
+
+    /**
+     * Cast properties to PHP values
+     *
+     * For arrays, loops through each element and casts to a value as well.
+     *
+     * @param string $method
+     * @param array $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        if (null !== ($value = $this->__get($method))) {
+            if (!is_array($value)) {
+                return $this->toValue($value);
+            } else {
+                $return = array();
+                foreach ($value as $element) {
+                    $return[] = $this->toValue($element);
+                }
+                return $return;
+            }
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Isset Overload
+     *
+     * @param string $name
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        if (isset($this->_sxml->{$name})) {
+            return true;
+        }
+
+        $result = $this->_sxml->xpath("//$name");
+
+        if (sizeof($result) > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Implement IteratorAggregate::getIterator()
+     *
+     * @return SimpleXMLIterator
+     */
+    public function getIterator()
+    {
+        return $this->_sxml;
+    }
+
+    /**
+     * Get Request Status
+     *
+     * @return boolean
+     */
+    public function getStatus()
+    {
+        $status = $this->_sxml->xpath('//status/text()');
+
+        $status = strtolower($status[0]);
+
+        if (ctype_alpha($status) && $status == 'success') {
+            return true;
+        } elseif (ctype_alpha($status) && $status != 'success') {
+            return false;
+        } else {
+            return (bool) $status;
+        }
+    }
+
+    public function isError()
+    {
+        $status = $this->getStatus();
+        if ($status) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function isSuccess()
+    {
+        $status = $this->getStatus();
+        if ($status) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * toString overload
+     *
+     * Be sure to only call this when the result is a single value!
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        if (!$this->getStatus()) {
+            $message = $this->_sxml->xpath('//message');
+            return (string) $message[0];
+        } else {
+            $result = $this->_sxml->xpath('//response');
+            if (sizeof($result) > 1) {
+                return (string) "An error occured.";
+            } else {
+                return (string) $result[0];
+            }
+        }
+    }
+}

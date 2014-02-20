@@ -1,45 +1,147 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * Represents the media:category element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Media_Extension_MediaCategory extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'category';
+    protected $_rootNamespace = 'media';
+
+    /**
+     * @var string
+     */
+    protected $_scheme = null;
+    protected $_label = null;
+
+    /**
+     * Creates an individual MediaCategory object.
+     *
+     * @param string $text      Indication of the type and content of the media
+     * @param string $scheme    URI that identifies the categorization scheme
+     * @param string $label     Human-readable label to be displayed in applications
+     */
+    public function __construct($text = null, $scheme = null, $label = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
+        parent::__construct();
+        $this->_text = $text;
+        $this->_scheme = $scheme;
+        $this->_label = $label;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_scheme !== null) {
+            $element->setAttribute('scheme', $this->_scheme);
+        }
+        if ($this->_label !== null) {
+            $element->setAttribute('label', $this->_label);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'scheme':
+            $this->_scheme = $attribute->nodeValue;
+            break;
+        case 'label':
+            $this->_label = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Returns the URI that identifies the categorization scheme
+     * Optional.
+     *
+     * @return string URI that identifies the categorization scheme
+     */
+    public function getScheme()
+    {
+        return $this->_scheme;
+    }
+
+    /**
+     * @param string $value     URI that identifies the categorization scheme
+     * @return Zend_Gdata_Media_Extension_MediaCategory Provides a fluent interface
+     */
+    public function setScheme($value)
+    {
+        $this->_scheme = $value;
+        return $this;
+    }
+
+    /**
+     * @return string Human-readable label to be displayed in applications
+     */
+    public function getLabel()
+    {
+        return $this->_label;
+    }
+
+    /**
+     * @param string $value     Human-readable label to be displayed in applications
+     * @return Zend_Gdata_Media_Extension_MediaCategory Provides a fluent interface
+     */
+    public function setLabel($value)
+    {
+        $this->_label = $value;
+        return $this;
+    }
+
+}

@@ -1,34 +1,64 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+///                                                         //
+// phpThumb.demo.object.simple.php                          //
+// James Heinrich <info@silisoftware.com>                   //
+//                                                          //
+// Simplified example of how to use phpthumb.class.php as   //
+// an object -- please also see phpThumb.demo.object.php    //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+// Note: phpThumb.php is where the caching code is located, if
+//   you instantiate your own phpThumb() object that code is
+//   bypassed and it's up to you to handle the reading and
+//   writing of cached files, if appropriate.
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
+
+require_once('../phpthumb.class.php');
+
+// create phpThumb object
+$phpThumb = new phpThumb();
+
+$thumbnail_width = 100;
+
+// set data source -- do this first, any settings must be made AFTER this call
+if (is_uploaded_file(@$_FILES['userfile']['tmp_name'])) {
+	$phpThumb->setSourceFilename($_FILES['userfile']['tmp_name']);
+	$output_filename = './thumbnails/'.basename($_FILES['userfile']['name']).'_'.$thumbnail_width.'.'.$phpThumb->config_output_format;
+} else {
+	$phpThumb->setSourceData(file_get_contents('..\images\disk.jpg'));
+	$output_filename = './thumbnails/disk_small.jpg';
+}
+
+// PLEASE NOTE:
+// You must set any relevant config settings here. The phpThumb
+// object mode does NOT pull any settings from phpThumb.config.php
+//$phpThumb->setParameter('config_document_root', '/home/groups/p/ph/phpthumb/htdocs/');
+//$phpThumb->setParameter('config_cache_directory', '/tmp/persistent/phpthumb/cache/');
+
+// set parameters (see "URL Parameters" in phpthumb.readme.txt)
+$phpThumb->setParameter('w', $thumbnail_width);
+//$phpThumb->setParameter('fltr', 'gam|1.2');
+//$phpThumb->setParameter('fltr', 'wmi|../watermark.jpg|C|75|20|20');
+
+// generate & output thumbnail
+if ($phpThumb->GenerateThumbnail()) { // this line is VERY important, do not remove it!
+	if ($phpThumb->RenderToFile($output_filename)) {
+		// do something on success
+		echo 'Successfully rendered to "'.$output_filename.'"';
+	} else {
+		// do something with debug/error messages
+		echo 'Failed:<pre>'.implode("\n\n", $phpThumb->debugmessages).'</pre>';
+	}
+	$phpThumb->purgeTempFiles();
+} else {
+	// do something with debug/error messages
+	echo 'Failed:<pre>'.$phpThumb->fatalerror."\n\n".implode("\n\n", $phpThumb->debugmessages).'</pre>';
+}
+
 ?>
-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

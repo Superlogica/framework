@@ -1,45 +1,169 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-WVXQqs5E4lE4E4j26u0i2GW0ewKY8eyo
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Controller_Router_Interface */
+require_once 'Zend/Controller/Router/Interface.php';
+
+/**
+ * Simple first implementation of a router, to be replaced
+ * with rules-based URI processor.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Controller_Router_Abstract implements Zend_Controller_Router_Interface
+{
+    /**
+     * Front controller instance
+     * @var Zend_Controller_Front
+     */
+    protected $_frontController;
+
+    /**
+     * Array of invocation parameters to use when instantiating action
+     * controllers
+     * @var array
+     */
+    protected $_invokeParams = array();
+
+    /**
+     * Constructor
+     *
+     * @param array $params
+     * @return void
+     */
+    public function __construct(array $params = array())
+    {
+        $this->setParams($params);
+    }
+
+    /**
+     * Add or modify a parameter to use when instantiating an action controller
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return Zend_Controller_Router
+     */
+    public function setParam($name, $value)
+    {
+        $name = (string) $name;
+        $this->_invokeParams[$name] = $value;
+        return $this;
+    }
+
+    /**
+     * Set parameters to pass to action controller constructors
+     *
+     * @param array $params
+     * @return Zend_Controller_Router
+     */
+    public function setParams(array $params)
+    {
+        $this->_invokeParams = array_merge($this->_invokeParams, $params);
+        return $this;
+    }
+
+    /**
+     * Retrieve a single parameter from the controller parameter stack
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function getParam($name)
+    {
+        if(isset($this->_invokeParams[$name])) {
+            return $this->_invokeParams[$name];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve action controller instantiation parameters
+     *
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->_invokeParams;
+    }
+
+    /**
+     * Clear the controller parameter stack
+     *
+     * By default, clears all parameters. If a parameter name is given, clears
+     * only that parameter; if an array of parameter names is provided, clears
+     * each.
+     *
+     * @param null|string|array single key or array of keys for params to clear
+     * @return Zend_Controller_Router
+     */
+    public function clearParams($name = null)
+    {
+        if (null === $name) {
+            $this->_invokeParams = array();
+        } elseif (is_string($name) && isset($this->_invokeParams[$name])) {
+            unset($this->_invokeParams[$name]);
+        } elseif (is_array($name)) {
+            foreach ($name as $key) {
+                if (is_string($key) && isset($this->_invokeParams[$key])) {
+                    unset($this->_invokeParams[$key]);
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve Front Controller
+     *
+     * @return Zend_Controller_Front
+     */
+    public function getFrontController()
+    {
+        // Used cache version if found
+        if (null !== $this->_frontController) {
+            return $this->_frontController;
+        }
+
+        require_once 'Zend/Controller/Front.php';
+        $this->_frontController = Zend_Controller_Front::getInstance();
+        return $this->_frontController;
+    }
+
+    /**
+     * Set Front Controller
+     *
+     * @param Zend_Controller_Front $controller
+     * @return Zend_Controller_Router_Interface
+     */
+    public function setFrontController(Zend_Controller_Front $controller)
+    {
+        $this->_frontController = $controller;
+        return $this;
+    }
+
+}

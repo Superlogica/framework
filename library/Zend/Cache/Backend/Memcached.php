@@ -1,161 +1,501 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-zF1Z6MHL/ju75ss8iCWK52O=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Backend_Interface
+ */
+require_once 'Zend/Cache/Backend/ExtendedInterface.php';
+
+/**
+ * @see Zend_Cache_Backend
+ */
+require_once 'Zend/Cache/Backend.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend_Memcached extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface
+{
+    /**
+     * Default Values
+     */
+    const DEFAULT_HOST = '127.0.0.1';
+    const DEFAULT_PORT =  11211;
+    const DEFAULT_PERSISTENT = true;
+    const DEFAULT_WEIGHT  = 1;
+    const DEFAULT_TIMEOUT = 1;
+    const DEFAULT_RETRY_INTERVAL = 15;
+    const DEFAULT_STATUS = true;
+    const DEFAULT_FAILURE_CALLBACK = null;
+
+    /**
+     * Log message
+     */
+    const TAGS_UNSUPPORTED_BY_CLEAN_OF_MEMCACHED_BACKEND = 'Zend_Cache_Backend_Memcached::clean() : tags are unsupported by the Memcached backend';
+    const TAGS_UNSUPPORTED_BY_SAVE_OF_MEMCACHED_BACKEND =  'Zend_Cache_Backend_Memcached::save() : tags are unsupported by the Memcached backend';
+
+    /**
+     * Available options
+     *
+     * =====> (array) servers :
+     * an array of memcached server ; each memcached server is described by an associative array :
+     * 'host' => (string) : the name of the memcached server
+     * 'port' => (int) : the port of the memcached server
+     * 'persistent' => (bool) : use or not persistent connections to this memcached server
+     * 'weight' => (int) : number of buckets to create for this server which in turn control its
+     *                     probability of it being selected. The probability is relative to the total
+     *                     weight of all servers.
+     * 'timeout' => (int) : value in seconds which will be used for connecting to the daemon. Think twice
+     *                      before changing the default value of 1 second - you can lose all the
+     *                      advantages of caching if your connection is too slow.
+     * 'retry_interval' => (int) : controls how often a failed server will be retried, the default value
+     *                             is 15 seconds. Setting this parameter to -1 disables automatic retry.
+     * 'status' => (bool) : controls if the server should be flagged as online.
+     * 'failure_callback' => (callback) : Allows the user to specify a callback function to run upon
+     *                                    encountering an error. The callback is run before failover
+     *                                    is attempted. The function takes two parameters, the hostname
+     *                                    and port of the failed server.
+     *
+     * =====> (boolean) compression :
+     * true if you want to use on-the-fly compression
+     *
+     * =====> (boolean) compatibility :
+     * true if you use old memcache server or extension
+     *
+     * @var array available options
+     */
+    protected $_options = array(
+        'servers' => array(array(
+            'host' => self::DEFAULT_HOST,
+            'port' => self::DEFAULT_PORT,
+            'persistent' => self::DEFAULT_PERSISTENT,
+            'weight'  => self::DEFAULT_WEIGHT,
+            'timeout' => self::DEFAULT_TIMEOUT,
+            'retry_interval' => self::DEFAULT_RETRY_INTERVAL,
+            'status' => self::DEFAULT_STATUS,
+            'failure_callback' => self::DEFAULT_FAILURE_CALLBACK
+        )),
+        'compression' => false,
+        'compatibility' => false,
+    );
+
+    /**
+     * Memcache object
+     *
+     * @var mixed memcache object
+     */
+    protected $_memcache = null;
+
+    /**
+     * Constructor
+     *
+     * @param array $options associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        if (!extension_loaded('memcache')) {
+            Zend_Cache::throwException('The memcache extension must be loaded for using this backend !');
+        }
+        parent::__construct($options);
+        if (isset($this->_options['servers'])) {
+            $value= $this->_options['servers'];
+            if (isset($value['host'])) {
+                // in this case, $value seems to be a simple associative array (one server only)
+                $value = array(0 => $value); // let's transform it into a classical array of associative arrays
+            }
+            $this->setOption('servers', $value);
+        }
+        $this->_memcache = new Memcache;
+        foreach ($this->_options['servers'] as $server) {
+            if (!array_key_exists('port', $server)) {
+                $server['port'] = self::DEFAULT_PORT;
+            }
+            if (!array_key_exists('persistent', $server)) {
+                $server['persistent'] = self::DEFAULT_PERSISTENT;
+            }
+            if (!array_key_exists('weight', $server)) {
+                $server['weight'] = self::DEFAULT_WEIGHT;
+            }
+            if (!array_key_exists('timeout', $server)) {
+                $server['timeout'] = self::DEFAULT_TIMEOUT;
+            }
+            if (!array_key_exists('retry_interval', $server)) {
+                $server['retry_interval'] = self::DEFAULT_RETRY_INTERVAL;
+            }
+            if (!array_key_exists('status', $server)) {
+                $server['status'] = self::DEFAULT_STATUS;
+            }
+            if (!array_key_exists('failure_callback', $server)) {
+                $server['failure_callback'] = self::DEFAULT_FAILURE_CALLBACK;
+            }
+            if ($this->_options['compatibility']) {
+				// No status for compatibility mode (#ZF-5887)
+            	$this->_memcache->addServer($server['host'], $server['port'], $server['persistent'],
+                                        $server['weight'], $server['timeout'],
+                                        $server['retry_interval']);
+			} else {
+				$this->_memcache->addServer($server['host'], $server['port'], $server['persistent'],
+                                        $server['weight'], $server['timeout'],
+                                        $server['retry_interval'],
+                                        $server['status'], $server['failure_callback']);
+			}
+        }
+    }
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * @param  string  $id                     Cache id
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @return string|false cached datas
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        $tmp = $this->_memcache->get($id);
+        if (is_array($tmp)) {
+            return $tmp[0];
+        }
+        return false;
+    }
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * @param  string $id Cache id
+     * @return mixed|false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    public function test($id)
+    {
+        $tmp = $this->_memcache->get($id);
+        if (is_array($tmp)) {
+            return $tmp[1];
+        }
+        return false;
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * Note : $data is always "string" (serialization is done by the
+     * core not by the backend)
+     *
+     * @param  string $data             Datas to cache
+     * @param  string $id               Cache id
+     * @param  array  $tags             Array of strings, the cache record will be tagged by each string entry
+     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @return boolean True if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false)
+    {
+        $lifetime = $this->getLifetime($specificLifetime);
+        if ($this->_options['compression']) {
+            $flag = MEMCACHE_COMPRESSED;
+        } else {
+            $flag = 0;
+        }
+        // #ZF-5702 : we try add() first becase set() seems to be slower
+        if (!($result = $this->_memcache->add($id, array($data, time(), $lifetime), $flag, $lifetime))) {
+            $result = $this->_memcache->set($id, array($data, time(), $lifetime), $flag, $lifetime);
+        }
+        if (count($tags) > 0) {
+            $this->_log("Zend_Cache_Backend_Memcached::save() : tags are unsupported by the Memcached backend");
+        }
+        return $result;
+    }
+
+    /**
+     * Remove a cache record
+     *
+     * @param  string $id Cache id
+     * @return boolean True if no problem
+     */
+    public function remove($id)
+    {
+        return $this->_memcache->delete($id);
+    }
+
+    /**
+     * Clean some cache records
+     *
+     * Available modes are :
+     * 'all' (default)  => remove all cache entries ($tags is not used)
+     * 'old'            => unsupported
+     * 'matchingTag'    => unsupported
+     * 'notMatchingTag' => unsupported
+     * 'matchingAnyTag' => unsupported
+     *
+     * @param  string $mode Clean mode
+     * @param  array  $tags Array of tags
+     * @throws Zend_Cache_Exception
+     * @return boolean True if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        switch ($mode) {
+            case Zend_Cache::CLEANING_MODE_ALL:
+                return $this->_memcache->flush();
+                break;
+            case Zend_Cache::CLEANING_MODE_OLD:
+                $this->_log("Zend_Cache_Backend_Memcached::clean() : CLEANING_MODE_OLD is unsupported by the Memcached backend");
+                break;
+            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
+            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
+            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
+                $this->_log(self::TAGS_UNSUPPORTED_BY_CLEAN_OF_MEMCACHED_BACKEND);
+                break;
+               default:
+                Zend_Cache::throwException('Invalid mode for clean() method');
+                   break;
+        }
+    }
+
+    /**
+     * Return true if the automatic cleaning is available for the backend
+     *
+     * @return boolean
+     */
+    public function isAutomaticCleaningAvailable()
+    {
+        return false;
+    }
+
+    /**
+     * Set the frontend directives
+     *
+     * @param  array $directives Assoc of directives
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function setDirectives($directives)
+    {
+        parent::setDirectives($directives);
+        $lifetime = $this->getLifetime(false);
+        if ($lifetime > 2592000) {
+            // #ZF-3490 : For the memcached backend, there is a lifetime limit of 30 days (2592000 seconds)
+            $this->_log('memcached backend has a limit of 30 days (2592000 seconds) for the lifetime');
+        }
+        if ($lifetime === null) {
+            // #ZF-4614 : we tranform null to zero to get the maximal lifetime
+            parent::setDirectives(array('lifetime' => 0));
+        }
+    }
+
+    /**
+     * Return an array of stored cache ids
+     *
+     * @return array array of stored cache ids (string)
+     */
+    public function getIds()
+    {
+        $this->_log("Zend_Cache_Backend_Memcached::save() : getting the list of cache ids is unsupported by the Memcache backend");
+        return array();
+    }
+
+    /**
+     * Return an array of stored tags
+     *
+     * @return array array of stored tags (string)
+     */
+    public function getTags()
+    {
+        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_MEMCACHED_BACKEND);
+        return array();
+    }
+
+    /**
+     * Return an array of stored cache ids which match given tags
+     *
+     * In case of multiple tags, a logical AND is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of matching cache ids (string)
+     */
+    public function getIdsMatchingTags($tags = array())
+    {
+        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_MEMCACHED_BACKEND);
+        return array();
+    }
+
+    /**
+     * Return an array of stored cache ids which don't match given tags
+     *
+     * In case of multiple tags, a logical OR is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of not matching cache ids (string)
+     */
+    public function getIdsNotMatchingTags($tags = array())
+    {
+        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_MEMCACHED_BACKEND);
+        return array();
+    }
+
+    /**
+     * Return an array of stored cache ids which match any given tags
+     *
+     * In case of multiple tags, a logical AND is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of any matching cache ids (string)
+     */
+    public function getIdsMatchingAnyTags($tags = array())
+    {
+        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_MEMCACHED_BACKEND);
+        return array();
+    }
+
+    /**
+     * Return the filling percentage of the backend storage
+     *
+     * @throws Zend_Cache_Exception
+     * @return int integer between 0 and 100
+     */
+    public function getFillingPercentage()
+    {
+        $mems = $this->_memcache->getExtendedStats();
+
+        $memSize = 0;
+        $memUsed = 0;
+        foreach ($mems as $key => $mem) {
+        	if ($mem === false) {
+                Zend_Cache::throwException('can\'t get stat from ' . $key);
+        	} else {
+        		$eachSize = $mem['limit_maxbytes'];
+        		if ($eachSize == 0) {
+                    Zend_Cache::throwException('can\'t get memory size from ' . $key);
+        		}
+
+        		$eachUsed = $mem['bytes'];
+		        if ($eachUsed > $eachSize) {
+		            $eachUsed = $eachSize;
+		        }
+
+        		$memSize += $eachSize;
+        		$memUsed += $eachUsed;
+        	}
+        }
+
+        return ((int) (100. * ($memUsed / $memSize)));
+    }
+
+    /**
+     * Return an array of metadatas for the given cache id
+     *
+     * The array must include these keys :
+     * - expire : the expire timestamp
+     * - tags : a string array of tags
+     * - mtime : timestamp of last modification time
+     *
+     * @param string $id cache id
+     * @return array array of metadatas (false if the cache id is not found)
+     */
+    public function getMetadatas($id)
+    {
+        $tmp = $this->_memcache->get($id);
+        if (is_array($tmp)) {
+            $data = $tmp[0];
+            $mtime = $tmp[1];
+            if (!isset($tmp[2])) {
+                // because this record is only with 1.7 release
+                // if old cache records are still there...
+                return false;
+            }
+            $lifetime = $tmp[2];
+            return array(
+                'expire' => $mtime + $lifetime,
+                'tags' => array(),
+                'mtime' => $mtime
+            );
+        }
+        return false;
+    }
+
+    /**
+     * Give (if possible) an extra lifetime to the given cache id
+     *
+     * @param string $id cache id
+     * @param int $extraLifetime
+     * @return boolean true if ok
+     */
+    public function touch($id, $extraLifetime)
+    {
+        if ($this->_options['compression']) {
+            $flag = MEMCACHE_COMPRESSED;
+        } else {
+            $flag = 0;
+        }
+        $tmp = $this->_memcache->get($id);
+        if (is_array($tmp)) {
+            $data = $tmp[0];
+            $mtime = $tmp[1];
+            if (!isset($tmp[2])) {
+                // because this record is only with 1.7 release
+                // if old cache records are still there...
+                return false;
+            }
+            $lifetime = $tmp[2];
+            $newLifetime = $lifetime - (time() - $mtime) + $extraLifetime;
+            if ($newLifetime <=0) {
+                return false;
+            }
+            // #ZF-5702 : we try replace() first becase set() seems to be slower
+            if (!($result = $this->_memcache->replace($id, array($data, time(), $newLifetime), $flag, $newLifetime))) {
+            	$result = $this->_memcache->set($id, array($data, time(), $newLifetime), $flag, $newLifetime);
+            }
+            return $result;
+        }
+        return false;
+    }
+
+    /**
+     * Return an associative array of capabilities (booleans) of the backend
+     *
+     * The array must include these keys :
+     * - automatic_cleaning (is automating cleaning necessary)
+     * - tags (are tags supported)
+     * - expired_read (is it possible to read expired cache records
+     *                 (for doNotTestCacheValidity option for example))
+     * - priority does the backend deal with priority when saving
+     * - infinite_lifetime (is infinite lifetime can work with this backend)
+     * - get_list (is it possible to get the list of cache ids and the complete list of tags)
+     *
+     * @return array associative of with capabilities
+     */
+    public function getCapabilities()
+    {
+        return array(
+            'automatic_cleaning' => false,
+            'tags' => false,
+            'expired_read' => false,
+            'priority' => false,
+            'infinite_lifetime' => false,
+            'get_list' => false
+        );
+    }
+
+}

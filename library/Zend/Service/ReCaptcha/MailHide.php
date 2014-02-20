@@ -1,97 +1,300 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5610Hf5u7hkc4OJJieCzCvuZJcapno1MyvUiGy6vnNCG8dBz5/NVkxz1XkBytLKLS7U+t2m3
-lYFIyZQ/F+WmA1Dcx+YEBD7FKml8LbUUOdJTINdhzEHvx7kDBudDJCu43nC9yBE4pa18VEphRP0P
-26yQPU93/13WGMYQANlBHe21BJJ5uG6c4pqKGk66yuH0I0T431ry9MLsFa5prDCuw+YaKsP7kj3N
-76aZpfFe2BQbkHxIuh/Bn4kJIPpDKor7T+KlBeH2Q8nWQTLPd1bScaKU4jMMQVbb7nrrz7ohao6f
-MiVR3C/emB+fsejtAXiR4Ew1wVXhmg25oIdVP170mzjJAv+hoOkhDrr5VN6AdX3VmbRltlQcOX5A
-XpTBae0Wx+5AMSBBgum8H91H6Nk4TFpz/iyO8ls0G1rWrJta1r3gzuksHCWtndHh4zsjBPnPHZks
-u2W+vqq1bna83tSDUv+1ZQV1/v4hpwYafojedwk3lkC34kYd4HOqy1/adlNNFvzVm08hFlPKxw6c
-DzTbQTOJYuogYqmxBQjkzND0IMdnOpGDIfLIKUdzHNwQHrvnmw7OoQ4CzdwSjfv2AGjfLySb/mf3
-OgdG5Q+w7I7kxdkwDwCDMvLKxW+x256CHNmYmabhgTolM7GNDyCO+o+Jtcke8OudHyDMBKgbq7jT
-pPCTnFJWGgGViwW8TXuMITCSYsju3/0tTdn/yPT0rssaPk6/hUwU0+NnPh5rkkAiof6EU6C+mpw0
-kPCkwI+91KqmawWYZyQZVT3Id50+pXptrNPevYwH97HFjcqADw0ZuK0mtYjtQ3HmcB+H57fo89Sw
-wz1J8SVcK7tvoWY64WaYz/hmQwwYxLGgUwZ9GFI5LsccuQZnlTE6f/GN/jjY/7HM1F0FdQCChLgy
-L/dGPGksyGj9ajED5+toAJlt5w9ctb0GqSgjFdoPwrdOqHirSObnBqhD5PFHZcE5/pQd2Rc1Rs7P
-/TTor903Kr+fPni2dVUvgQsaFVIsmKgd1hn4w9CrqWkqmrtqPjbNED7pkYCN9Ny2Tjyo4tSFazpP
-f/RzcauXCn34f8x95gI4wSiMqlJ7ePPnuWinWFqjtszr3KaaQgdqZyr+JJOJx/FRdWZyYmP4Hx97
-MIXvQZWqxsE5VeKZ8ikRQfVpSVot9YrRy3cQIt9phXULICykfkoVbAIfleZEU4IzPURInEdqUiZl
-C+RGs9DbdaTwJv/dy6Df7TT/ww1Z7OD7jzwKYkgKr8pEc538pzdYLhnJ4e/E9nPeKlTUDnawCUS6
-RCjMYCWUoVKEaENUy1Fzi+GjIRAx/YvkcqqlY3kdBXvp33+gD+lIeMePHxQEs9FcKIvV3a5P8Tez
-CL1KZbibWy/6qs5pZTgQchBrGdURV7BPhyToyY40f2Dp++/lEfnbaG5Qm+SYfU4xC1Lh/N6Tmhn0
-vfuOqiNW7RizgF/pvUBR/FRjSHQzvs6TnL0NtFuXiVDMdKpu76nFpD0Vr2edkNCcrR3Yurn+IvM7
-CFTMnpEE3c78KKPsbTLXNZ4x4FCYhtBCa96Z0SyGbbcIkfr04Bgz0pcT81l3PoxQHlSA7LjG23SY
-2cJRwUCWS2XEszTfU1XvZ2hiHG0gAmfoCILuI1zTJ+hg15HtD52+9L9esKGJ6TZrU+fhn6spdf1s
-g2yHPyQhbuKU071jjWCZ03dTBY1AJYPnQmTd4dMUCBNXaRypLmqwbAqJpe+enoGbzRo6VLMFzJkP
-Sh7sCYhDuI/H/VgzBaWTzCNHZvi3cgFnMWMdbcME9QkwxtoxZxunBuU7pXgr10dNFSLpgs0FFw0N
-0sPgciBmGf1hDf5bzT1QtKk4slS04F9HLIGXgWqLH8n5VWN3jt3cnpVHqX6L7/RQB0+thN7U4FNp
-tPWEhM9hJ/8QgEGNwpdMM0VVcQN4hMYUhr0Im/RgPzUowarHP0GT/kgKbLYw2ZOiPJdVWQHmBqkB
-bmcNfU4KYKD6fn0G/DaGVy722A5NJQTztZbW5ZSbGnSeqjrLv9lqBv+oRQ4P5yeWvtzhobbk/rfM
-v2qoFjfy9enZV66VagLqkW19ZfJtxCGobvkvBsaHScvurnPJMFEOC6zcRzdjTmWk2f6pQ+dPE2IZ
-Xy7fucOaFbU03JUtQ/dffOp+SxtBTUAs8jcVdMNP4Gq0j7ZslXKnD1zzzpyMfbZPPmU9Vhqs1qw3
-B1lqa/fUPaX/9ZfrvSZW1e9ZBTi6LN803DDOHSHmcTBTHutXGLruQQcbAUVXUmKAgVstv5WQ/BO7
-0SSU2TuMeHTaAfvqs6z+fDdcu1U+fMB9mSOkc5vJzP4G0EDbOY/XVM6tPlxwYMUEZy8uqcVT6O3H
-jFQhmneEAZ5GIj3nP3HFeR16/vxVEWjVn75eDHXz8ESUVhH2/B4gA6lsJAnaE7ItAWXvyfL5ZudK
-Q/i6mx36MkdnvlLDRVvMl9jVhFMtHfU8A8Gsj0x859vnR5k/YDY9jqR46619DxefcquLswmf5j3Y
-3YHrXs9MCD7DDRcj/gQoWjjhWXdhl5hrEch0Q2Jt1qMjTsV/gO96VavnbE8JPlIbnRbU5KQqol8V
-qseVhnIIDgp+5dVITsgQ05ql/Re7PAkwtZ3HsXBOWV9LoJEjClorIs7aGnaIOBkMlwyMqBeYo7wx
-8P1VTCfyVTTnN2brd1a+9YDUPDNK4wypHmt4dPlTg9iYwQ6+GNwq5ZS8i0edC3J/3jEX56YA/cCC
-32+VfZ1Wa9nzrNedJPyJVi9WFz5G38EZwiKkmKlhsvb0HWAxH/FTqdf2YEce3ZlO6OeidvZsHSC0
-vafK+z9HcuSXR6tLINpb6Lu82CEUKMq6EKmnk9/gVSZR3bTB76aHgXq1GASp1tgWG3GcurdEouky
-mlkWlH29Q3kTgx5rzqmZ0Jjl857oZ5nKyO0A9ovP3bx+Xd8L+Un6epDprqmAzi0+BIYHuMQbBlU6
-U5PNNcElWTs016JHyCKfcv9ibSWzEMmDToCAbKMzoMrJDU1ChOFKfASBixUAhG0/x7T9kzpiOuXc
-G5JHWsWmi2L46AeDGb9n8q+rVjwJshQpCfPGlN45QPGt5Isun/cxVdP77UzES54l3Ifs5n6aIekW
-MVVmkWp8mOvA8+jrYVWgFsSK89BTl9OoMMw0MmXlgS9QAG21sZXTJJvXsiLQUTLxHXAbOt0/vH5d
-OqoDjF3GaI7xVBAJWDaepfYWnHNwtPOCV0QNa2eKupslcIAbuV9SwTNKiNLwAwSEjjy2xhRQrtBl
-MBZDTXhJEiOZTc0bIIiXuLEKJyXkoyHKZY5lUAmbEp7IwDbfbsmVDeX1VASJrZMsKjQ5FZ5UJeQ3
-wq2Pho9xN47HiBjwP5sUfsmWRYO6i2jb82s5diUfv+vKLvrvi6tHQVIR7TAFT27SshKMfcW67T9x
-ihYujuPWYwF/O5ah++whCGpAUMiNI558YP67ElkZUi/G8h6USibzkDy3SqmakWA2PyAfBSB9J5El
-OhZCVFqA5FpCjHy9Z9FplEBwPpICdSqaa9SWpt0QHOOIkf1y58nMav7LLg+Qo9O6t41u3HQZgCPY
-Nt2TIPVD8CuJrhzS0S5IT1CvoEH+njq7Qgl3GIXLS3hFRQWVxINQEd2l0w5+QJsMIrPO8Bq27FM7
-eD6laOzihtAJ8rKRSN97gX8pMhME3oFY6NlQL+mwOerMY4SLPsGR+1DL2BtmXh98sZCYk09PjB4b
-g+MEtf1ZvoA7PyUdXeM+q/4x28U/1EDUBLN/3HFamdPo+8796NzsSwEVFlRCJfEcmkmHH/YEFQ5b
-lF7ZwcOgZoQAq5cEw0qEpWrAfefk2gYFJv10PKqi+wKkMXn8oiAw9qvFt3Gduy2iFyn05p1znmWj
-eF9kR16EFKMDcA8dm0zyDwIHJ4Jj11O6IlZvDR9bKS1GZGDVvQFzHlYonWZ3xFT7lWZPuIh5yNt5
-SUuDJjFW9W/knicoEOBE8fS56QprKFhkMd/wERqrTJKsZvP6v/dL9FNiuX9uXgrWSQQ2yiSDoCOt
-34TBbTkQfGXUlSsJWWYPTBG1oVl5Z6viUZMkHNOR+gLbylAqPzwnLXFz392gm0FZyUyndpUET/+o
-mfLUsDOxwHXoZUxzpN8Awp8LfiBuGxuMTuiqxK70r5hKyW0ZH04V9uW/WFtHCH2EALfDs2kLI8af
-AosXKTM7h/nrK6IHrOn5QgOlBlZJwi93JxgxMND9ZpSlcM5e108rsQ2BysYCuUiIid5GiQrGyghC
-LBCOkssx+pWOWhtWZmSrCKBe0I0EWq7CCwo72HUQj8PilTbTkGFCYkoM2prQ8gCH6qiJIwicLKQR
-dIKaIrc9uPEToJtE4qXWrfTW6hNytEXtl6CzpaYuZat97GMrW9BQWhuWB0fGB2LhWo+wHTN53dW+
-9DFlsfAvdcKFlWneUbvoA4v3CSBWNJUSsO4c/rMjqP/6b336v+kcacmbDMA/b30nvBuvgAhTvjyt
-8teSj2pLFU89H3O3knEvpQltkjohK3ObRU6qjRRzPtfnuqUQg7ToIrhB7Hd+W3eUq+lc/8w4nPPM
-YHDOQGGgqqBM7sKVCUv8R9tG+jRXXcO4RSZLrmVoMmG04XFDl9HAACvcvzockr8u85awqGi8Ta/1
-Ow5HxNTAk63xe4eB0dZB18Kw8NL+ybQMOuN4w5Z6XTxOetngS/4FhPXVrVJvd2XzO2jcVWqccUEr
-gzn0WQQUu2Vydn8qgAzrmWvbC5/6NO7IJerqMcPYxy+YJ1XcModlb3Hmo0pkY9biaZkZIklcrqd/
-x4A5rPy5x+3yOg2IbN6blsbIGZi7rLSFgBZllQ1Z87A1+8Ftj/Mxd1HlnCIFjiNJKWiYLFmoCnMo
-5s8qZ4XRVFJm8mn9yPxjyboihv76Tvxj9FXgRmVVV5B2UL098Bohh/TuvHBFmRbbW7qlDpel2LE8
-Dw+ndBJ8oy5T4tBiotK7B8F975yiDEDidv75YHtbV68uD6JPahcpUoGKcu5535jKbAie01/PiWvd
-1AhD64Spa9E6X2pyf2CJ5N5vB05sGI997klVGnU1tDp5+Qm2E0+yd6/h/apQsdYpHdHoi9Rn1gO9
-Sf8IudAo+9ZeeXImrvASpQQMMauH2REEri8hSV/h6JOWhwz2nAVR4lw15E723tWKfhOnSgP/07JE
-sqj195xcjmQi7UQglqYicEa4bKO5LgiYLWGOAr04mhUmvYL/xqDlRp6U8s9scbxW8/ZzPx1q56JX
-tR9ecVpsYvzc21x+pCaGNsiuXiPFqWf8/0ygKEgBd+TrquIdIIE/PHIfFtFbzjxRjJk4oVtqWCO0
-SK/+5su0QNAFaTLNvgacZ/+OMnJ4lImNX6BW99E4yFn4GwGbk3593SiCt5uBkmr0DLkzpN/xzZN7
-oYtGU87RxkxKScUWVeSrLh0tpm63Lcm342IaFS8VzoEsZBsvXvIVpGfBIg+qALDT9sZaBYFbZZzl
-X7BrXqfoE9L7y2aLC7+pp+Q2AoTweRzLyXZwA07ywBH4pZ8pQ7QZ8dYphtR0fveFl9QpDd3RFvpg
-dBgpLesE/6dvOUSXB+o0Uu9jNiWmqgk+lYKiJX21vz4P6OKWfxVLAT7MnjiaTNUGtqUW42a5pCJZ
-QA6tjqOvXQpL2bX5dFI5aQ1yV8ydTH2ZvXi7S290goMAFygDuJTObQfi8xBeZgpKOd/0o3YCRzsE
-GRbmCKAI+Gl65lZVuAAh56o0Vf+DZF9yHTYKTeJ7u88hzO/Nm7RsAqy3qEbyRBFRSZUOvLlsMyMX
-dt5BrD4XnObKhn6Mf1iRDpcolIf5uIMb9i8t3uDZgIDts/a13px/8LLyu9YACs82Wo5gwWYvoGgY
-Ae2SllpvILZLHBZzMD2Hlh1coZIeu+CKRfmXZHxZiFrlbnc74l3oDfbufwV6yP3REyGAkZBj/qn2
-yf8wehz3Z5v1QuvIs07n5YD23Hjewfa7lPu/n6xe1PuUEymUH77B3tlgODSATLyKRrikoWkUzmxX
-DRZaj1k6EwHZfRju5nqdYlsvObQ0EAy4gOaFXRuoPmHuTfvTI5o/Rj2K8OHcSeBnn0TKGFd5We3E
-tdJCy0/fpCAIJcVqQ/kwR28ZHFUPzp3oXxMGBe5NDTPf9D3yZXmGayeR42y0FWyeVBtHbp/+pnHz
-0f6B5J6RQgAZ2kBcykqzLM7+fZba0ng8jiPEWRLrZSFvOzlGuM+gZkUTVoLyAxfRf6m0PRrnCs9k
-v1LnEvlFDrWujcQCekCJtireVFYBUCCkzYy32OC7qyL2BiAEWSkUooDKGdJkI+4lFWSeRF9S4AaO
-Rc/x+jX67Pez+Kd2QRXxkqBxCM6KaQYjtKYVhx2hWgRKSeLIbpUjEsO0jbxc66XbtJbSfzATjvrD
-APpl+qoYlF232SZhPmOvCqIBGkiIesBfbpHaVqhnsolOvy8Kc1lt3fva0gMb/kzvKPt/QyQMu4JZ
-TUVV0U/w1+QZYYHT7E+QEwt2lig81VM1BdFoc7mq0KzhwieTo8q6zmqx/tZYbmUpCdFCwH7rvaq6
-9JatnqXMcRQfjBLjA3txkz5WOzUgjGte7K7P5QGmVVTapmC7K+6ADXDIPJYBL9xovvdHHaNvKf38
-mVY/9SzkJZ9frGiFGxxddSAynM10aSTnzd6N1Yp/3gOvWRbArf/bCDkn3/oijr0V6RHVUmMJYUGw
-+i77xUVxRaHfAZIAuW1FwX9wPPyJg+7PlLX7qp+a1LWMomTjU0ft0G0R2GqWYKhB1i4TCZ/+vEnX
-+9JcnKW3c7zIDzS6QuWBQccf3sHKfY3Nd+s1OONiq82kAan6sTc8FcCLUdB0xfiCU42Fo/obdTpK
-/3BXKg+ue+Mxsy9u2dDIsXDDO3HlDrdj+5KjEb1vG+tq2G99pATdyMxMlcnumUR1A7z2ZU7KQ8N3
-cDCJ8d1QfXjeD3Ne7TOlscaTJtQw7GYfBC3RzN8U2QjmzI5Uy8pXefDt7sjGSyP5lBpnO7CZlzmg
-AWikLlpVFc3vcnT4T69jerOlG3Kij6WuNH9QCt/imZf+adfI/gTD1yMSujF0s5xjAgNZ0NFknkE2
-VGyDCnx+km0pILe02XjK+C18X54SNFK4VjkbYe2sT1gmyi0omwCG+Pc7
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage ReCaptcha
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** @see Zend_Service_ReCaptcha */
+require_once 'Zend/Service/ReCaptcha.php';
+
+/**
+ * Zend_Service_ReCaptcha_MailHide
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage ReCaptcha
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
+{
+    /**#@+
+     * Encryption constants
+     */
+    const ENCRYPTION_MODE = MCRYPT_MODE_CBC;
+    const ENCRYPTION_CIPHER = MCRYPT_RIJNDAEL_128;
+    const ENCRYPTION_BLOCK_SIZE = 16;
+    const ENCRYPTION_IV = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+    /**#@-*/
+
+    /**
+     * Url to the mailhide server
+     *
+     * @var string
+     */
+    const MAILHIDE_SERVER = 'http://mailhide.recaptcha.net/d';
+
+    /**
+     * The email address to protect
+     *
+     * @var string
+     */
+    protected $_email = null;
+
+    /**
+     * Binary representation of the private key
+     *
+     * @var string
+     */
+    protected $_privateKeyPacked = null;
+
+    /**
+     * The local part of the email
+     *
+     * @var string
+     */
+    protected $_emailLocalPart = null;
+
+    /**
+     * The domain part of the email
+     *
+     * @var string
+     */
+    protected $_emailDomainPart = null;
+
+    /**
+     * Local constructor
+     *
+     * @param string $publicKey
+     * @param string $privateKey
+     * @param string $email
+     * @param array|Zend_Config $options
+     */
+    public function __construct($publicKey = null, $privateKey = null, $email = null, $options = null)
+    {
+        /* Require the mcrypt extension to be loaded */
+        $this->_requireMcrypt();
+
+        /* If options is a Zend_Config object we want to convert it to an array so we can merge it with the default options */
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        }
+
+        /* Merge if needed */
+        if (is_array($options)) {
+            $options = array_merge($this->getDefaultOptions(), $options);
+        } else {
+            $options = $this->getDefaultOptions();
+        }
+
+        parent::__construct($publicKey, $privateKey, null, $options);
+
+        if ($email !== null) {
+            $this->setEmail($email);
+        }
+    }
+
+    /**
+     * See if the mcrypt extension is available
+     *
+     * @throws Zend_Service_ReCaptcha_MailHide_Exception
+     */
+    protected function _requireMcrypt()
+    {
+        if (!extension_loaded('mcrypt')) {
+            /** @see Zend_Service_ReCaptcha_MailHide_Exception */
+            require_once 'Zend/Service/ReCaptcha/MailHide/Exception.php';
+
+            throw new Zend_Service_ReCaptcha_MailHide_Exception('Use of the Zend_Service_ReCaptcha_MailHide component requires the mcrypt extension to be enabled in PHP');
+        }
+    }
+
+    /**
+     * Serialize as string
+     *
+     * When the instance is used as a string it will display the email address. Since we can't
+     * throw exceptions within this method we will trigger a user warning instead.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        try {
+            $return = $this->getHtml();
+        } catch (Exception $e) {
+            $return = '';
+            trigger_error($e->getMessage(), E_USER_WARNING);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Get the default set of parameters
+     *
+     * @return array
+     */
+    public function getDefaultOptions()
+    {
+        return array(
+            'linkTitle'      => 'Reveal this e-mail address',
+            'linkHiddenText' => '...',
+            'popupWidth'     => 500,
+            'popupHeight'    => 300,
+        );
+    }
+
+    /**
+     * Override the setPrivateKey method
+     *
+     * Override the parent method to store a binary representation of the private key as well.
+     *
+     * @param string $privateKey
+     * @return Zend_Service_ReCaptcha_MailHide
+     */
+    public function setPrivateKey($privateKey)
+    {
+        parent::setPrivateKey($privateKey);
+
+        /* Pack the private key into a binary string */
+        $this->_privateKeyPacked = pack('H*', $this->_privateKey);
+
+        return $this;
+    }
+
+    /**
+     * Set the email property
+     *
+     * This method will set the email property along with the local and domain parts
+     *
+     * @param string $email
+     * @return Zend_Service_ReCaptcha_MailHide
+     */
+    public function setEmail($email)
+    {
+        $this->_email = $email;
+
+        $emailParts = explode('@', $email, 2);
+
+        /* Decide on how much of the local part we want to reveal */
+        if (strlen($emailParts[0]) <= 4) {
+            $emailParts[0] = substr($emailParts[0], 0, 1);
+        } else if (strlen($emailParts[0]) <= 6) {
+            $emailParts[0] = substr($emailParts[0], 0, 3);
+        } else {
+            $emailParts[0] = substr($emailParts[0], 0, 4);
+        }
+
+        $this->_emailLocalPart = $emailParts[0];
+        $this->_emailDomainPart = $emailParts[1];
+
+        return $this;
+    }
+
+    /**
+     * Get the email property
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->_email;
+    }
+
+    /**
+     * Get the local part of the email address
+     *
+     * @return string
+     */
+    public function getEmailLocalPart()
+    {
+        return $this->_emailLocalPart;
+    }
+
+    /**
+     * Get the domain part of the email address
+     *
+     * @return string
+     */
+    public function getEmailDomainPart()
+    {
+        return $this->_emailDomainPart;
+    }
+
+    /**
+     * Get the HTML code needed for the mail hide
+     *
+     * @param string $email
+     * @return string
+     * @throws Zend_Service_ReCaptcha_MailHide_Exception
+     */
+    public function getHtml($email = null)
+    {
+        if ($email !== null) {
+            $this->setEmail($email);
+        } else if ($this->_email === null) {
+            /** @see Zend_Service_ReCaptcha_MailHide_Exception */
+            require_once 'Zend/Service/ReCaptcha/MailHide/Exception.php';
+
+            throw new Zend_Service_ReCaptcha_MailHide_Exception('Missing email address');
+        }
+
+        if ($this->_publicKey === null) {
+            /** @see Zend_Service_ReCaptcha_MailHide_Exception */
+            require_once 'Zend/Service/ReCaptcha/MailHide/Exception.php';
+
+            throw new Zend_Service_ReCaptcha_MailHide_Exception('Missing public key');
+        }
+
+        if ($this->_privateKey === null) {
+            /** @see Zend_Service_ReCaptcha_MailHide_Exception */
+            require_once 'Zend/Service/ReCaptcha/MailHide/Exception.php';
+
+            throw new Zend_Service_ReCaptcha_MailHide_Exception('Missing private key');
+        }
+
+        /* Generate the url */
+        $url = $this->_getUrl();
+
+        /* Genrate the HTML used to represent the email address */
+        $html = htmlentities($this->_emailLocalPart) . '<a href="' . htmlentities($url) . '" onclick="window.open(\'' . htmlentities($url) . '\', \'\', \'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=' . $this->_options['popupWidth'] . ',height=' . $this->_options['popupHeight'] . '\'); return false;" title="' . $this->_options['linkTitle'] . '">' . $this->_options['linkHiddenText'] . '</a>@' . htmlentities($this->_emailDomainPart);
+
+        return $html;
+    }
+
+    /**
+     * Get the url used on the "hidden" part of the email address
+     *
+     * @return string
+     */
+    protected function _getUrl()
+    {
+        /* Figure out how much we need to pad the email */
+        $numPad = self::ENCRYPTION_BLOCK_SIZE - (strlen($this->_email) % self::ENCRYPTION_BLOCK_SIZE);
+
+        /* Pad the email */
+        $emailPadded = str_pad($this->_email, strlen($this->_email) + $numPad, chr($numPad));
+
+        /* Encrypt the email */
+        $emailEncrypted = mcrypt_encrypt(self::ENCRYPTION_CIPHER, $this->_privateKeyPacked, $emailPadded, self::ENCRYPTION_MODE, self::ENCRYPTION_IV);
+
+        /* Return the url */
+        return self::MAILHIDE_SERVER . '?k=' . $this->_publicKey . '&c=' . strtr(base64_encode($emailEncrypted), '+/', '-_');
+    }
+}

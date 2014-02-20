@@ -1,105 +1,446 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_App_util
+ */
+require_once('Zend/Gdata/App/Util.php');
+
+/**
+ * Zend_Gdata_Query
+ */
+require_once('Zend/Gdata/Query.php');
+
+/**
+ * Assists in constructing queries for Google Calendar events
+ *
+ * @link http://code.google.com/apis/gdata/calendar/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
+{
+
+    const CALENDAR_FEED_URI = 'http://www.google.com/calendar/feeds';
+
+    protected $_defaultFeedUri = self::CALENDAR_FEED_URI;
+    protected $_comments = null;
+    protected $_user = null;
+    protected $_visibility = null;
+    protected $_projection = null;
+    protected $_event = null;
+
+    /**
+     * Create Gdata_Calendar_EventQuery object.  If a URL is provided,
+     * it becomes the base URL, and additional URL components may be
+     * appended.  For instance, if $url is 'http://www.foo.com', the
+     * default URL constructed will be 'http://www.foo.com/default/public/full'
+     *
+     * @param string $url The URL to use as the base path for requests
+     */
+    public function __construct($url = null)
+    {
+        parent::__construct($url);
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setComments($value)
+    {
+        $this->_comments = $value;
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setEvent($value)
+    {
+        $this->_event = $value;
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setProjection($value)
+    {
+        $this->_projection = $value;
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setUser($value)
+    {
+        $this->_user = $value;
+        return $this;
+    }
+
+    /**
+     * @param bool $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setVisibility($value)
+    {
+        $this->_visibility = $value;
+        return $this;
+    }
+
+    /**
+     * @return string comments
+     */
+    public function getComments()
+    {
+        return $this->_comments;
+    }
+
+    /**
+     * @return string event
+     */
+    public function getEvent()
+    {
+        return $this->_event;
+    }
+
+    /**
+     * @return string projection
+     */
+    public function getProjection()
+    {
+        return $this->_projection;
+    }
+
+    /**
+     * @return string user
+     */
+    public function getUser()
+    {
+        return $this->_user;
+    }
+
+    /**
+     * @return string visibility
+     */
+    public function getVisibility()
+    {
+        return $this->_visibility;
+    }
+
+    /**
+     * @param int $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setStartMax($value)
+    {
+        if ($value != null) {
+            $this->_params['start-max'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['start-max']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param int $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setStartMin($value)
+    {
+        if ($value != null) {
+            $this->_params['start-min'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['start-min']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setOrderBy($value)
+    {
+        if ($value != null) {
+            $this->_params['orderby'] = $value;
+        } else {
+            unset($this->_params['orderby']);
+        }
+        return $this;
+    }
+
+    /**
+     * @return int start-max
+     */
+    public function getStartMax()
+    {
+        if (array_key_exists('start-max', $this->_params)) {
+            return $this->_params['start-max'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return int start-min
+     */
+    public function getStartMin()
+    {
+        if (array_key_exists('start-min', $this->_params)) {
+            return $this->_params['start-min'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string orderby
+     */
+    public function getOrderBy()
+    {
+        if (array_key_exists('orderby', $this->_params)) {
+            return $this->_params['orderby'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string sortorder
+     */
+    public function getSortOrder()
+    {
+        if (array_key_exists('sortorder', $this->_params)) {
+            return $this->_params['sortorder'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string sortorder
+     */
+    public function setSortOrder($value)
+    {
+        if ($value != null) {
+            $this->_params['sortorder'] = $value;
+        } else {
+            unset($this->_params['sortorder']);
+        }
+        return $this;
+    }
+
+    /**
+     * @return string recurrence-expansion-start
+     */
+    public function getRecurrenceExpansionStart()
+    {
+        if (array_key_exists('recurrence-expansion-start', $this->_params)) {
+            return $this->_params['recurrence-expansion-start'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string recurrence-expansion-start
+     */
+    public function setRecurrenceExpansionStart($value)
+    {
+        if ($value != null) {
+            $this->_params['recurrence-expansion-start'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['recurrence-expansion-start']);
+        }
+        return $this;
+    }
+
+
+    /**
+     * @return string recurrence-expansion-end
+     */
+    public function getRecurrenceExpansionEnd()
+    {
+        if (array_key_exists('recurrence-expansion-end', $this->_params)) {
+            return $this->_params['recurrence-expansion-end'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string recurrence-expansion-end
+     */
+    public function setRecurrenceExpansionEnd($value)
+    {
+        if ($value != null) {
+            $this->_params['recurrence-expansion-end'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['recurrence-expansion-end']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value Also accepts bools.
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function getSingleEvents()
+    {
+        if (array_key_exists('singleevents', $this->_params)) {
+            $value = $this->_params['singleevents'];
+            switch ($value) {
+                case 'true':
+                    return true;
+                    break;
+                case 'false':
+                    return false;
+                    break;
+                default:
+                    require_once 'Zend/Gdata/App/Exception.php';
+                    throw new Zend_Gdata_App_Exception(
+                            'Invalid query param value for futureevents: ' .
+                            $value . ' It must be a boolean.');
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @param string $value Also accepts bools. If using a string, must be either "true" or "false".
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setSingleEvents($value)
+    {
+        if ($value !== null) {
+            if (is_bool($value)) {
+                $this->_params['singleevents'] = ($value?'true':'false');
+            } elseif ($value == 'true' | $value == 'false') {
+                $this->_params['singleevents'] = $value;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception(
+                        'Invalid query param value for futureevents: ' .
+                        $value . ' It must be a boolean.');
+            }
+        } else {
+            unset($this->_params['singleevents']);
+        }
+        return $this;
+    }
+
+    /**
+     * @return string futureevents
+     */
+    public function getFutureEvents()
+    {
+        if (array_key_exists('futureevents', $this->_params)) {
+            $value = $this->_params['futureevents'];
+            switch ($value) {
+                case 'true':
+                    return true;
+                    break;
+                case 'false':
+                    return false;
+                    break;
+                default:
+                    require_once 'Zend/Gdata/App/Exception.php';
+                    throw new Zend_Gdata_App_Exception(
+                            'Invalid query param value for futureevents: ' .
+                            $value . ' It must be a boolean.');
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @param string $value Also accepts bools. If using a string, must be either "true" or "false" or
+     *                      an exception will be thrown on retrieval.
+     * @return Zend_Gdata_Calendar_EventQuery Provides a fluent interface
+     */
+    public function setFutureEvents($value)
+    {
+        if ($value !== null) {
+            if (is_bool($value)) {
+                $this->_params['futureevents'] = ($value?'true':'false');
+            } elseif ($value == 'true' | $value == 'false') {
+                $this->_params['futureevents'] = $value;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception(
+                        'Invalid query param value for futureevents: ' .
+                        $value . ' It must be a boolean.');
+            }
+        } else {
+            unset($this->_params['futureevents']);
+        }
+        return $this;
+    }
+
+    /**
+     * @return string url
+     */
+    public function getQueryUrl()
+    {
+        if (isset($this->_url)) {
+            $uri = $this->_url;
+        } else {
+            $uri = $this->_defaultFeedUri;
+        }
+        if ($this->getUser() != null) {
+            $uri .= '/' . $this->getUser();
+        } else {
+            $uri .= '/default';
+        }
+        if ($this->getVisibility() != null) {
+            $uri .= '/' . $this->getVisibility();
+        } else {
+            $uri .= '/public';
+        }
+        if ($this->getProjection() != null) {
+            $uri .= '/' . $this->getProjection();
+        } else {
+            $uri .= '/full';
+        }
+        if ($this->getEvent() != null) {
+            $uri .= '/' . $this->getEvent();
+            if ($this->getComments() != null) {
+                $uri .= '/comments/' . $this->getComments();
+            }
+        }
+        $uri .= $this->getQueryString();
+        return $uri;
+    }
+
+}

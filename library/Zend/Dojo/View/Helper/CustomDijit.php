@@ -1,41 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/** Zend_Dojo_View_Helper_DijitContainer */
+require_once 'Zend/Dojo/View/Helper/DijitContainer.php';
+
+/**
+ * Arbitrary dijit support
+ * 
+ * @uses       Zend_Dojo_View_Helper_DijitContainer
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_CustomDijit extends Zend_Dojo_View_Helper_DijitContainer
+{
+    /**
+     * Default dojoType; set the value when extending
+     * @var string
+     */
+    protected $_defaultDojoType;
+
+    /**
+     * Render a custom dijit
+     *
+     * Requires that either the {@link $_defaultDojotype} property is set, or 
+     * that you pass a value to the "dojoType" key of the $params argument.
+     * 
+     * @param  string $id 
+     * @param  string $value 
+     * @param  array $params 
+     * @param  array $attribs 
+     * @return string|Zend_Dojo_View_Helper_CustomDijit
+     */
+    public function customDijit($id = null, $value = null, array $params = array(), array $attribs = array())
+    {
+        if (null === $id) {
+            return $this;
+        }
+
+        if (!array_key_exists('dojoType', $params) 
+            && (null === $this->_defaultDojoType)
+        ) {
+            require_once 'Zend/Dojo/View/Exception.php';
+            throw new Zend_Dojo_View_Exception('No dojoType specified; cannot create dijit');
+        } elseif (array_key_exists('dojoType', $params)) {
+            $this->_dijit  = $params['dojoType'];
+            $this->_module = $params['dojoType'];
+            unset($params['dojoType']);
+        } else {
+            $this->_dijit  = $this->_defaultDojoType;
+            $this->_module = $this->_defaultDojoType;
+        }
+
+        return $this->_createLayoutContainer($id, $value, $params, $attribs);
+    }
+
+    /**
+     * Begin capturing content.
+     * 
+     * Requires that either the {@link $_defaultDojotype} property is set, or 
+     * that you pass a value to the "dojoType" key of the $params argument.
+     * 
+     * @param  string $id 
+     * @param  array $params 
+     * @param  array $attribs 
+     * @return void
+     */
+    public function captureStart($id, array $params = array(), array $attribs = array())
+    {
+        if (!array_key_exists('dojoType', $params) 
+            && (null === $this->_defaultDojoType)
+        ) {
+            require_once 'Zend/Dojo/View/Exception.php';
+            throw new Zend_Dojo_View_Exception('No dojoType specified; cannot create dijit');
+        } elseif (array_key_exists('dojoType', $params)) {
+            $this->_dijit  = $params['dojoType'];
+            $this->_module = $params['dojoType'];
+            unset($params['dojoType']);
+        } else {
+            $this->_dijit  = $this->_defaultDojoType;
+            $this->_module = $this->_defaultDojoType;
+        }
+
+        return parent::captureStart($id, $params, $attribs);
+    }
+}

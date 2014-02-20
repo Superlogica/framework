@@ -1,154 +1,427 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * @see Zend_Gdata_Extension_Where
+ */
+require_once 'Zend/Gdata/Extension/Where.php';
+
+/**
+ * @see Zend_Gdata_Extension_When
+ */
+require_once 'Zend/Gdata/Extension/When.php';
+
+/**
+ * @see Zend_Gdata_Extension_Who
+ */
+require_once 'Zend/Gdata/Extension/Who.php';
+
+/**
+ * @see Zend_Gdata_Extension_Recurrence
+ */
+require_once 'Zend/Gdata/Extension/Recurrence.php';
+
+/**
+ * @see Zend_Gdata_Extension_EventStatus
+ */
+require_once 'Zend/Gdata/Extension/EventStatus.php';
+
+/**
+ * @see Zend_Gdata_Extension_Comments
+ */
+require_once 'Zend/Gdata/Extension/Comments.php';
+
+/**
+ * @see Zend_Gdata_Extension_Transparency
+ */
+require_once 'Zend/Gdata/Extension/Transparency.php';
+
+/**
+ * @see Zend_Gdata_Extension_Visibility
+ */
+require_once 'Zend/Gdata/Extension/Visibility.php';
+
+/**
+ * @see Zend_Gdata_Extension_ExtendedProperty
+ */
+require_once 'Zend/Gdata/Extension/ExtendedProperty.php';
+
+/**
+ * @see Zend_Gdata_Extension_OriginalEvent
+ */
+require_once 'Zend/Gdata/Extension/OriginalEvent.php';
+
+/**
+ * @see Zend_Gdata_Extension_EntryLink
+ */
+require_once 'Zend/Gdata/Extension/EntryLink.php';
+
+/**
+ * Data model for the Gdata Event "Kind".  Google Calendar has a separate
+ * EventEntry class which extends this.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Kind_EventEntry extends Zend_Gdata_Entry
+{
+    protected $_who = array();
+    protected $_when = array();
+    protected $_where = array();
+    protected $_recurrence = null;
+    protected $_eventStatus = null;
+    protected $_comments = null;
+    protected $_transparency = null;
+    protected $_visibility = null;
+    protected $_recurrenceException = array();
+    protected $_extendedProperty = array();
+    protected $_originalEvent = null;
+    protected $_entryLink = null;
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_who != null) {
+            foreach ($this->_who as $who) {
+                $element->appendChild($who->getDOM($element->ownerDocument));
+            }
+        }
+        if ($this->_when != null) {
+            foreach ($this->_when as $when) {
+                $element->appendChild($when->getDOM($element->ownerDocument));
+            }
+        }
+        if ($this->_where != null) {
+            foreach ($this->_where as $where) {
+                $element->appendChild($where->getDOM($element->ownerDocument));
+            }
+        }
+        if ($this->_recurrenceException != null) {
+            foreach ($this->_recurrenceException as $recurrenceException) {
+                $element->appendChild($recurrenceException->getDOM($element->ownerDocument));
+            }
+        }
+        if ($this->_extendedProperty != null) {
+            foreach ($this->_extendedProperty as $extProp) {
+                $element->appendChild($extProp->getDOM($element->ownerDocument));
+            }
+        }
+
+        if ($this->_recurrence != null) {
+            $element->appendChild($this->_recurrence->getDOM($element->ownerDocument));
+        }
+        if ($this->_eventStatus != null) {
+            $element->appendChild($this->_eventStatus->getDOM($element->ownerDocument));
+        }
+        if ($this->_comments != null) {
+            $element->appendChild($this->_comments->getDOM($element->ownerDocument));
+        }
+        if ($this->_transparency != null) {
+            $element->appendChild($this->_transparency->getDOM($element->ownerDocument));
+        }
+        if ($this->_visibility != null) {
+            $element->appendChild($this->_visibility->getDOM($element->ownerDocument));
+        }
+        if ($this->_originalEvent != null) {
+            $element->appendChild($this->_originalEvent->getDOM($element->ownerDocument));
+        }
+        if ($this->_entryLink != null) {
+            $element->appendChild($this->_entryLink->getDOM($element->ownerDocument));
+        }
+
+
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('gd') . ':' . 'where';
+            $where = new Zend_Gdata_Extension_Where();
+            $where->transferFromDOM($child);
+            $this->_where[] = $where;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'when';
+            $when = new Zend_Gdata_Extension_When();
+            $when->transferFromDOM($child);
+            $this->_when[] = $when;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'who';
+            $who = new Zend_Gdata_Extension_Who();
+            $who ->transferFromDOM($child);
+            $this->_who[] = $who;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'recurrence';
+            $recurrence = new Zend_Gdata_Extension_Recurrence();
+            $recurrence->transferFromDOM($child);
+            $this->_recurrence = $recurrence;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'eventStatus';
+            $eventStatus = new Zend_Gdata_Extension_EventStatus();
+            $eventStatus->transferFromDOM($child);
+            $this->_eventStatus = $eventStatus;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'comments';
+            $comments = new Zend_Gdata_Extension_Comments();
+            $comments->transferFromDOM($child);
+            $this->_comments = $comments;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'transparency';
+            $transparency = new Zend_Gdata_Extension_Transparency();
+            $transparency ->transferFromDOM($child);
+            $this->_transparency = $transparency;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'visibility';
+            $visiblity = new Zend_Gdata_Extension_Visibility();
+            $visiblity ->transferFromDOM($child);
+            $this->_visibility = $visiblity;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'recurrenceException';
+            require_once 'Zend/Gdata/Extension/RecurrenceException.php';
+            $recurrenceException = new Zend_Gdata_Extension_RecurrenceException();
+            $recurrenceException ->transferFromDOM($child);
+            $this->_recurrenceException[] = $recurrenceException;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'originalEvent';
+            $originalEvent = new Zend_Gdata_Extension_OriginalEvent();
+            $originalEvent ->transferFromDOM($child);
+            $this->_originalEvent = $originalEvent;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'extendedProperty';
+            $extProp = new Zend_Gdata_Extension_ExtendedProperty();
+            $extProp->transferFromDOM($child);
+            $this->_extendedProperty[] = $extProp;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'entryLink':
+            $entryLink = new Zend_Gdata_Extension_EntryLink();
+            $entryLink->transferFromDOM($child);
+            $this->_entryLink = $entryLink;
+            break;
+
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    public function getWhen()
+    {
+        return $this->_when;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setWhen($value)
+    {
+        $this->_when = $value;
+        return $this;
+    }
+
+    public function getWhere()
+    {
+        return $this->_where;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setWhere($value)
+    {
+        $this->_where = $value;
+        return $this;
+    }
+
+    public function getWho()
+    {
+        return $this->_who;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setWho($value)
+    {
+        $this->_who = $value;
+        return $this;
+    }
+
+    public function getRecurrence()
+    {
+        return $this->_recurrence;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setRecurrence($value)
+    {
+        $this->_recurrence = $value;
+        return $this;
+    }
+
+    public function getEventStatus()
+    {
+        return $this->_eventStatus;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setEventStatus($value)
+    {
+        $this->_eventStatus = $value;
+        return $this;
+    }
+
+    public function getComments()
+    {
+        return $this->_comments;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setComments($value)
+    {
+        $this->_comments = $value;
+        return $this;
+    }
+
+    public function getTransparency()
+    {
+        return $this->_transparency;
+    }
+
+    /**
+     * @param Zend_Gdata_Transparency $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setTransparency($value)
+    {
+        $this->_transparency = $value;
+        return $this;
+    }
+
+    public function getVisibility()
+    {
+        return $this->_visibility;
+    }
+
+    /**
+     * @param Zend_Gdata_Visibility $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setVisibility($value)
+    {
+        $this->_visibility = $value;
+        return $this;
+    }
+
+    public function getRecurrenceExcption()
+    {
+        return $this->_recurrenceException;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setRecurrenceException($value)
+    {
+        $this->_recurrenceException = $value;
+        return $this;
+    }
+
+    public function getExtendedProperty()
+    {
+        return $this->_extendedProperty;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setExtendedProperty($value)
+    {
+        $this->_extendedProperty = $value;
+        return $this;
+    }
+
+    public function getOriginalEvent()
+    {
+        return $this->_originalEvent;
+    }
+
+    /**
+     * @param Zend_Gdata_Extension_OriginalEvent $value
+     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
+     */
+    public function setOriginalEvent($value)
+    {
+        $this->_originalEvent = $value;
+        return $this;
+    }
+
+    /**
+     * Get this entry's EntryLink element.
+     *
+     * @return Zend_Gdata_Extension_EntryLink The requested entry.
+     */
+    public function getEntryLink()
+    {
+        return $this->_entryLink;
+    }
+
+    /**
+     * Set the child's EntryLink element.
+     *
+     * @param Zend_Gdata_Extension_EntryLink $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Who The element being modified.
+     */
+    public function setEntryLink($value)
+    {
+        $this->_entryLink = $value;
+        return $this;
+    }
+
+
+}

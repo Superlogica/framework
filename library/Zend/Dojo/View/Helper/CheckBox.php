@@ -1,40 +1,100 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-pj9DlPxN/W3U9gM7ZnLO
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CheckBox.php 11292 2008-09-08 18:51:39Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Dojo CheckBox dijit
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_CheckBox extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Dijit being used
+     * @var string
+     */
+    protected $_dijit  = 'dijit.form.CheckBox';
+
+    /**
+     * Element type
+     * @var string
+     */
+    protected $_elementType = 'checkbox';
+
+    /**
+     * Dojo module to use
+     * @var string
+     */
+    protected $_module = 'dijit.form.CheckBox';
+
+    /**
+     * dijit.form.CheckBox
+     * 
+     * @param  int $id 
+     * @param  string $content 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @param  array $checkedOptions Should contain either two items, or the keys checkedValue and unCheckedValue
+     * @return string
+     */
+    public function checkBox($id, $value = null, array $params = array(), array $attribs = array(), array $checkedOptions = null)
+    {
+        // Prepare the checkbox options
+        require_once 'Zend/View/Helper/FormCheckbox.php';
+        $checked = false;
+        if (isset($attribs['checked']) && $attribs['checked']) {
+            $checked = true;
+        } elseif (isset($attribs['checked'])) {
+            $checked = false;
+        }
+        $checkboxInfo = Zend_View_Helper_FormCheckbox::determineCheckboxInfo($value, $checked, $checkedOptions);
+        $attribs['checked'] = $checkboxInfo['checked'];
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id'] = $id;
+        }
+
+        $attribs = $this->_prepareDijit($attribs, $params, 'element');
+
+        // strip options so they don't show up in markup
+        if (array_key_exists('options', $attribs)) {
+            unset($attribs['options']);
+        }
+
+        // and now we create it:
+        $html = '';
+        if (!strstr($id, '[]')) {
+            // hidden element for unchecked value
+            $html .= $this->_renderHiddenElement($id, $checkboxInfo['unCheckedValue']);
+        }
+
+        // and final element
+        $html .= $this->_createFormElement($id, $checkboxInfo['checkedValue'], $params, $attribs);
+
+        return $html;
+    }
+}

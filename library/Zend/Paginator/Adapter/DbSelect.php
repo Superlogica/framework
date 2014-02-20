@@ -1,88 +1,214 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-KnQBNuPC1w6vWmpA8xptmfqDYjOghnZXm3K=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Paginator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: DbSelect.php 15842 2009-05-31 01:40:20Z norm2782 $
+ */
+
+/**
+ * @see Zend_Paginator_Adapter_Interface
+ */
+require_once 'Zend/Paginator/Adapter/Interface.php';
+
+/**
+ * @see Zend_Db
+ */
+require_once 'Zend/Db.php';
+
+/**
+ * @see Zend_Db_Select
+ */
+require_once 'Zend/Db/Select.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Paginator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Paginator_Adapter_DbSelect implements Zend_Paginator_Adapter_Interface
+{
+    /**
+     * Name of the row count column
+     *
+     * @var string
+     */
+    const ROW_COUNT_COLUMN = 'zend_paginator_row_count';
+
+    /**
+     * Database query
+     *
+     * @var Zend_Db_Select
+     */
+    protected $_select = null;
+
+    /**
+     * Total item count
+     *
+     * @var integer
+     */
+    protected $_rowCount = null;
+
+    /**
+     * Constructor.
+     *
+     * @param Zend_Db_Select $select The select query
+     */
+    public function __construct(Zend_Db_Select $select)
+    {
+        $this->_select = $select;
+    }
+
+    /**
+     * Sets the total row count, either directly or through a supplied
+     * query.  Without setting this, {@link getPages()} selects the count
+     * as a subquery (SELECT COUNT ... FROM (SELECT ...)).  While this
+     * yields an accurate count even with queries containing clauses like
+     * LIMIT, it can be slow in some circumstances.  For example, in MySQL,
+     * subqueries are generally slow when using the InnoDB storage engine.
+     * Users are therefore encouraged to profile their queries to find
+     * the solution that best meets their needs.
+     *
+     * @param  Zend_Db_Select|integer $totalRowCount Total row count integer
+     *                                               or query
+     * @return Zend_Paginator_Adapter_DbSelect $this
+     * @throws Zend_Paginator_Exception
+     */
+    public function setRowCount($rowCount)
+    {
+        if ($rowCount instanceof Zend_Db_Select) {
+            $columns = $rowCount->getPart(Zend_Db_Select::COLUMNS);
+
+            $countColumnPart = $columns[0][1];
+
+            if ($countColumnPart instanceof Zend_Db_Expr) {
+                $countColumnPart = $countColumnPart->__toString();
+            }
+
+            $rowCountColumn = $this->_select->getAdapter()->foldCase(self::ROW_COUNT_COLUMN);
+
+            // The select query can contain only one column, which should be the row count column
+            if (false === strpos($countColumnPart, $rowCountColumn)) {
+                /**
+                 * @see Zend_Paginator_Exception
+                 */
+                require_once 'Zend/Paginator/Exception.php';
+
+                throw new Zend_Paginator_Exception('Row count column not found');
+            }
+
+            $result = $rowCount->query(Zend_Db::FETCH_ASSOC)->fetch();
+
+            $this->_rowCount = count($result) > 0 ? $result[$rowCountColumn] : 0;
+        } else if (is_integer($rowCount)) {
+            $this->_rowCount = $rowCount;
+        } else {
+            /**
+             * @see Zend_Paginator_Exception
+             */
+            require_once 'Zend/Paginator/Exception.php';
+
+            throw new Zend_Paginator_Exception('Invalid row count');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns an array of items for a page.
+     *
+     * @param  integer $offset Page offset
+     * @param  integer $itemCountPerPage Number of items per page
+     * @return array
+     */
+    public function getItems($offset, $itemCountPerPage)
+    {
+        $this->_select->limit($itemCountPerPage, $offset);
+
+        return $this->_select->query()->fetchAll();
+    }
+
+    /**
+     * Returns the total number of rows in the result set.
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        if ($this->_rowCount === null) {
+            $rowCount = clone $this->_select;
+            $db = $rowCount->getAdapter();
+
+            /**
+             * The DISTINCT and GROUP BY queries only work when selecting one column.
+             * The question is whether any RDBMS supports DISTINCT for multiple columns, without workarounds.
+             */
+            if (true === $rowCount->getPart(Zend_Db_Select::DISTINCT)) {
+                $columnParts = $rowCount->getPart(Zend_Db_Select::COLUMNS);
+
+                $columns = array();
+
+                foreach ($columnParts as $part) {
+                    if ($part[1] == Zend_Db_Select::SQL_WILDCARD || $part[1] instanceof Zend_Db_Expr) {
+                        $columns[] = $part[1];
+                    } else {
+                        $column = $db->quoteIdentifier($part[1], true);
+
+                        if (!empty($part[0])) {
+                            $column = $db->quoteIdentifier($part[0], true) . '.' . $column;
+                        }
+
+                        $columns[] = $column;
+                    }
+                }
+
+                if (count($columns) == 1 && $columns[0] == Zend_Db_Select::SQL_WILDCARD) {
+                    $groupPart = null;
+                } else {
+                    $groupPart = implode(',', $columns);
+                }
+            } else {
+                $groupParts = $rowCount->getPart(Zend_Db_Select::GROUP);
+
+                foreach ($groupParts as &$part) {
+                    if (!($part == Zend_Db_Select::SQL_WILDCARD || $part instanceof Zend_Db_Expr)) {
+                        $part = $db->quoteIdentifier($part, true);
+                    }
+                }
+
+                $groupPart = implode(',', $groupParts);
+            }
+
+            $countPart  = empty($groupPart) ? 'COUNT(*)' : 'COUNT(DISTINCT ' . $groupPart . ')';
+            $expression = new Zend_Db_Expr(
+                $countPart . ' AS ' . $db->quoteIdentifier($db->foldCase(self::ROW_COUNT_COLUMN))
+            );
+
+            $rowCount->__toString(); // Workaround for ZF-3719 and related
+            $rowCount->reset(Zend_Db_Select::COLUMNS)
+                     ->reset(Zend_Db_Select::ORDER)
+                     ->reset(Zend_Db_Select::LIMIT_OFFSET)
+                     ->reset(Zend_Db_Select::GROUP)
+                     ->reset(Zend_Db_Select::DISTINCT)
+                     ->columns($expression);
+
+            $this->setRowCount($rowCount);
+        }
+
+        return $this->_rowCount;
+    }
+}

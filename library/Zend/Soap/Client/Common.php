@@ -1,29 +1,75 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV53hHhgB0FXELYMGxWNz+RZ5OOQIXkAisUwoixr/zBBUilHQ7C3f9I/VGuZIjOatstTQyGDfi
-veCkDk+/jplzsv3C1PpVH4CWXNy7lp4PR9g3nv1JcguPc3TGk1lgn9uG7S4KLW70SrVEfNNqa3gd
-Dsdr0Ox/a2BBNokBUmQNi9Nj/ubqumamMwGUK4KlMre8jHCaLLSxKAAHNlQq8m95YuWU6Vih7XQy
-U7ufBJZylSGrhMoXjYKqn4kJIPpDKor7T+KlBeH2QDDTPa3tuFlZ0stqFDLcuWmD/u92HupcEbiJ
-zywlsPIaOAHfq/HBVE1Iyv7GsqMpCn7sJGEEm29mlw8du61UiNvVZBT2b3lhVNV4/kpfoMdsHdVc
-YG2+rr6hzD1UE/5F+BqLIq2zgnZE4x8ic9XsJWcl8IaCeoHH5pdc2DAwI+Tcfnox2iREwq1hD4av
-ltdPfFtiqhVzSn34LUfXqZeog88WuROOM5slBby40PCxgRpntKKuujeLmXKXQh9No/Cwd7uXz1TS
-0TQPB3TnaqCui5B3EcB3R/5nAGhsIu2wsuS/UFajHcAalSpsoKo2EbN0zaHVMvMSu9H0i7wJUCWJ
-1q4evVtjnWTL0DAT5fLi8Mojwn//1bUidl+x6+7lf61jH1ja6TuQGdZ8jGTrqMQf03YBPL6O8XmT
-hHALJbKsABMAVk6zVkZv2Fjl+isi2CAoUEx9ucjRn0v8L0SG2lGdxTmvZN8Z8CEpBcsksdSJQ8PA
-oo0sFyfeG7Fwk4eBkNmlurt8GptePFPa6av3LCslytu7ON7c2Dw0sZTWNKDHC6yR9FJKWfQg+uLA
-9W2vxnM1OWfogOqezJC1udkHc/5q4LDDAJsO7MgVHTP+ywmmpAyOeSRz7eEA4MtmuMMVzI+u31QL
-LNvOpgDO2v6JPBHgVxEHvUU+UvUERtUnEHHvZJdLw5D4Whq5wcLDxiFTHgE0BebsUakibzkLTp3n
-oJZbj5dyAljBUyYgMKnUJMtTVUbjqB5JLO49E/AYVK1j1DO0srrxxl4YLDH5Ur/wozFYT70pwAuu
-8YTVp5SHoEo5lz+QM2yhFl8KA9GoOE1yQ3Cfps3yu6tOSk1lYkaxdSCFHnbBg2xz+ookaLqvIL7K
-gO+jU8V1NX7cVyvEIe7UxlveMw7tZT+/wCuIGm5ss8wdY38b1gcDsdxlgdJigBNQkn0lccHQMMtu
-mI1yvrnqaRCEQ16D0U2AhaFIjkOJRdhiwvNo9HvS1J67QCcVJTwyOvI5cyg7m/3i09RYGuvHMYQC
-HnLSF/1tdFHVuK7k3yXOCTnoNVpkpqTr1KCp/+KCek4Y0UZpwIqqyzlT/IPvzPGnu6p+xvCiYvno
-nqCnPnou+4PCV+zdSlPxiyiCkURf0FvXkgKDlkTFrw44nFDF/yrhMbgf7LDxnFtlG6ncYXXHcaUH
-mRGWX22gUIKgYUyvBrMPViieCuLUDqS3GpRpf4TVbDEDFSHxXjO1CZdxQB+zSIi3cbHmu/AiRKD5
-vOivboW3hHK73r/U/lhTWyyW1o1oQMPd6V9yhVwxGGIZIZ6Yc4vN/dk5hOV3Sr2SbKMqIfBk847S
-Lpl/fFr7uaXFGlhPitMk0qwpgOgGwa4pOGClqBYC+sMXfixwke/+CWtmBQQ7wbaSkmaFR1Z7z4Eo
-0q+LVgvKccnIwkOjKfNMkuyv3c/fGYZZdejyClKJ4PERfuiONuegVXunA2vRKFgWNCKbAP5RjQy3
-U5upLQRrZx57EQf+fZkm9orlrts7uyByfDVeyoMszdBunh2EcZsmcX52BRQZU7eSnvE0hhjF/hOT
-hnqQlR9XaDOkXIrP8UBSmCvYciFPpDXdgJA2eq42NfSRx7ts7rw0xav6fIgiqJWVR2Irhn3eSneC
-Kfkk4CwgbxT/Ptik
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+if (extension_loaded('soap')) {
+
+/**
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Client
+ */
+class Zend_Soap_Client_Common extends SoapClient
+{
+    /**
+     * doRequest() pre-processing method
+     *
+     * @var callback
+     */
+    protected $_doRequestCallback;
+
+    /**
+     * Common Soap Client constructor
+     *
+     * @param callback $doRequestMethod
+     * @param string $wsdl
+     * @param array $options
+     */
+    function __construct($doRequestCallback, $wsdl, $options)
+    {
+        $this->_doRequestCallback = $doRequestCallback;
+
+        parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * Performs SOAP request over HTTP.
+     * Overridden to implement different transport layers, perform additional XML processing or other purpose.
+     *
+     * @param string $request
+     * @param string $location
+     * @param string $action
+     * @param int    $version
+     * @param int    $one_way
+     * @return mixed
+     */
+    function __doRequest($request, $location, $action, $version, $one_way = null)
+    {
+        if ($one_way === null) {
+            return call_user_func($this->_doRequestCallback, $this, $request, $location, $action, $version);
+        } else {
+            return call_user_func($this->_doRequestCallback, $this, $request, $location, $action, $version, $one_way);
+        }
+    }
+
+}
+
+} // end if (extension_loaded('soap')

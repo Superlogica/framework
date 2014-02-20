@@ -1,36 +1,89 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-TBqfZ0rdu6bchYSIB88=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: AutoComplete.php 20752 2010-01-29 11:31:30Z beberlei $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "ZendX/JQuery/View/Helper/UiWidget.php";
+
+/**
+ * jQuery Autocomplete View Helper
+ *
+ * @uses 	   Zend_Json, Zend_View_Helper_FormText
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_AutoComplete extends ZendX_JQuery_View_Helper_UiWidget
+{
+    /**
+     * Builds an AutoComplete ready input field.
+     *
+     * This view helper builds an input field with the {@link Zend_View_Helper_FormText} FormText
+     * Helper and adds additional javascript to the jQuery stack to initialize an AutoComplete
+     * field. Make sure you have set one out of the two following options: $params['data'] or
+     * $params['url']. The first one accepts an array as data input to the autoComplete, the
+     * second accepts an url, where the autoComplete content is returned from. For the format
+     * see jQuery documentation.
+     *
+     * @link   http://docs.jquery.com/UI/Autocomplete
+     * @throws ZendX_JQuery_Exception
+     * @param  String $id
+     * @param  String $value
+     * @param  array $params
+     * @param  array $attribs
+     * @return String
+     */
+    public function autoComplete($id, $value = null, array $params = array(), array $attribs = array())
+    {
+        $attribs = $this->_prepareAttributes($id, $value, $attribs);
+
+        if (!isset($params['source'])) {
+            if (isset($params['url'])) {
+                $params['source'] = $params['url'];
+                unset($params['url']);
+            } else if (isset($params['data'])) {
+                $params['source'] = $params['data'];
+                unset($params['data']);
+            } else {
+                require_once "ZendX/JQuery/Exception.php";
+                throw new ZendX_JQuery_Exception(
+                    "Cannot construct AutoComplete field without specifying 'source' field, ".
+                    "either an url or an array of elements."
+                );
+            }
+        }
+
+        $params = ZendX_JQuery::encodeJson($params);
+
+        $js = sprintf('%s("#%s").autocomplete(%s);',
+                ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
+                $attribs['id'],
+                $params
+        );
+
+        $this->jquery->addOnLoad($js);
+
+        return $this->view->formText($id, $value, $attribs);
+    }
+}

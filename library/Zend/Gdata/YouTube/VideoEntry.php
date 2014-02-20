@@ -1,305 +1,1095 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-lKtg4WC=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: VideoEntry.php 13359 2008-12-18 22:49:31Z jhartmann $
+ */
+
+/**
+ * @see Zend_Gdata_Extension_Comments
+ */
+require_once 'Zend/Gdata/Extension/Comments.php';
+
+/**
+ * @see Zend_Gdata_Extension_FeedLink
+ */
+require_once 'Zend/Gdata/Extension/FeedLink.php';
+
+/**
+ * @see Zend_Gdata_YouTube_MediaEntry
+ */
+require_once 'Zend/Gdata/YouTube/MediaEntry.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_MediaGroup
+ */
+require_once 'Zend/Gdata/YouTube/Extension/MediaGroup.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_NoEmbed
+ */
+require_once 'Zend/Gdata/YouTube/Extension/NoEmbed.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Statistics
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Statistics.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Link
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Link.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Racy
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Racy.php';
+
+/**
+ * @see Zend_Gdata_Extension_Rating
+ */
+require_once 'Zend/Gdata/Extension/Rating.php';
+
+/**
+ * @see Zend_Gdata_Geo_Extension_GeoRssWhere
+ */
+require_once 'Zend/Gdata/Geo/Extension/GeoRssWhere.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Control
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Control.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Recorded
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Recorded.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Location
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Location.php';
+
+/**
+ * Represents the YouTube video flavor of an Atom entry
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_VideoEntry extends Zend_Gdata_YouTube_MediaEntry
+{
+
+    const YOUTUBE_DEVELOPER_TAGS_SCHEMA = 'http://gdata.youtube.com/schemas/2007/developertags.cat';
+    const YOUTUBE_CATEGORY_SCHEMA = 'http://gdata.youtube.com/schemas/2007/categories.cat';
+    protected $_entryClassName = 'Zend_Gdata_YouTube_VideoEntry';
+
+    /**
+     * If null, the video can be embedded
+     *
+     * @var Zend_Gdata_YouTube_Extension_NoEmbed|null
+     */
+    protected $_noEmbed = null;
+
+    /**
+     * Specifies the statistics relating to the video.
+     *
+     * @var Zend_Gdata_YouTube_Extension_Statistics
+     */
+    protected $_statistics = null;
+
+    /**
+     * If not null, specifies that the video has racy content.
+     *
+     * @var Zend_Gdata_YouTube_Extension_Racy|null
+     */
+    protected $_racy = null;
+
+    /**
+     * If not null, specifies that the video is private.
+     *
+     * @var Zend_Gdata_YouTube_Extension_Private|null
+     */
+    protected $_private = null;
+
+    /**
+     * Specifies the video's rating.
+     *
+     * @var Zend_Gdata_Extension_Rating
+     */
+    protected $_rating = null;
+
+    /**
+     * Specifies the comments associated with a video.
+     *
+     * @var Zend_Gdata_Extensions_Comments
+     */
+    protected $_comments = null;
+
+    /**
+     * Nested feed links
+     *
+     * @var array
+     */
+    protected $_feedLink = array();
+
+    /**
+     * Geo location for the video
+     *
+     * @var Zend_Gdata_Geo_Extension_GeoRssWhere
+     */
+    protected $_where = null;
+
+    /**
+     * Recording date for the video
+     *
+     * @var Zend_Gdata_YouTube_Extension_Recorded|null
+     */
+    protected $_recorded = null;
+
+    /**
+     * Location informtion for the video
+     *
+     * @var Zend_Gdata_YouTube_Extension_Location|null
+     */
+    protected $_location = null;
+
+    /**
+     * Creates a Video entry, representing an individual video
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_noEmbed != null) {
+            $element->appendChild($this->_noEmbed->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_statistics != null) {
+            $element->appendChild($this->_statistics->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_racy != null) {
+            $element->appendChild($this->_racy->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_recorded != null) {
+            $element->appendChild($this->_recorded->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_location != null) {
+            $element->appendChild($this->_location->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_rating != null) {
+            $element->appendChild($this->_rating->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_comments != null) {
+            $element->appendChild($this->_comments->getDOM(
+                $element->ownerDocument));
+        }
+        if ($this->_feedLink != null) {
+            foreach ($this->_feedLink as $feedLink) {
+                $element->appendChild($feedLink->getDOM(
+                    $element->ownerDocument));
+            }
+        }
+        if ($this->_where != null) {
+           $element->appendChild($this->_where->getDOM(
+                $element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('yt') . ':' . 'statistics':
+            $statistics = new Zend_Gdata_YouTube_Extension_Statistics();
+            $statistics->transferFromDOM($child);
+            $this->_statistics = $statistics;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'racy':
+            $racy = new Zend_Gdata_YouTube_Extension_Racy();
+            $racy->transferFromDOM($child);
+            $this->_racy = $racy;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'recorded':
+            $recorded = new Zend_Gdata_YouTube_Extension_Recorded();
+            $recorded->transferFromDOM($child);
+            $this->_recorded = $recorded;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'location':
+            $location = new Zend_Gdata_YouTube_Extension_Location();
+            $location->transferFromDOM($child);
+            $this->_location = $location;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'rating':
+            $rating = new Zend_Gdata_Extension_Rating();
+            $rating->transferFromDOM($child);
+            $this->_rating = $rating;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'comments':
+            $comments = new Zend_Gdata_Extension_Comments();
+            $comments->transferFromDOM($child);
+            $this->_comments = $comments;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'noembed':
+            $noEmbed = new Zend_Gdata_YouTube_Extension_NoEmbed();
+            $noEmbed->transferFromDOM($child);
+            $this->_noEmbed = $noEmbed;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'feedLink':
+            $feedLink = new Zend_Gdata_Extension_FeedLink();
+            $feedLink->transferFromDOM($child);
+            $this->_feedLink[] = $feedLink;
+            break;
+        case $this->lookupNamespace('georss') . ':' . 'where':
+            $where = new Zend_Gdata_Geo_Extension_GeoRssWhere();
+            $where->transferFromDOM($child);
+            $this->_where = $where;
+            break;
+        case $this->lookupNamespace('atom') . ':' . 'link';
+            $link = new Zend_Gdata_YouTube_Extension_Link();
+            $link->transferFromDOM($child);
+            $this->_link[] = $link;
+            break;
+        case $this->lookupNamespace('app') . ':' . 'control':
+            $control = new Zend_Gdata_YouTube_Extension_Control();
+            $control->transferFromDOM($child);
+            $this->_control = $control;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Sets when the video was recorded.
+     *
+     * @param Zend_Gdata_YouTube_Extension_Recorded $recorded When the video was recorded
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setRecorded($recorded = null)
+    {
+        $this->_recorded = $recorded;
+        return $this;
+    }
+
+    /**
+     * Gets the date that the video was recorded.
+     *
+     * @return Zend_Gdata_YouTube_Extension_Recorded|null
+     */
+    public function getRecorded()
+    {
+        return $this->_recorded;
+    }
+
+    /**
+     * Sets the location information.
+     *
+     * @param Zend_Gdata_YouTube_Extension_Location $location Where the video
+     *        was recorded
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setLocation($location = null)
+    {
+        $this->_location = $location;
+        return $this;
+    }
+
+    /**
+     * Gets the location where the video was recorded.
+     *
+     * @return Zend_Gdata_YouTube_Extension_Location|null
+     */
+    public function getLocation()
+    {
+        return $this->_location;
+    }
+
+    /**
+     * If an instance of Zend_Gdata_YouTube_Extension_NoEmbed is passed in,
+     * the video cannot be embedded.  Otherwise, if null is passsed in, the
+     * video is able to be embedded.
+     *
+     * @param Zend_Gdata_YouTube_Extension_NoEmbed $noEmbed Whether or not the
+     *          video can be embedded.
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setNoEmbed($noEmbed = null)
+    {
+        $this->_noEmbed = $noEmbed;
+        return $this;
+    }
+
+    /**
+     * If the return value is an instance of
+     * Zend_Gdata_YouTube_Extension_NoEmbed, this video cannot be embedded.
+     *
+     * @return Zend_Gdata_YouTube_Extension_NoEmbed|null Whether or not the video can be embedded
+     */
+    public function getNoEmbed()
+    {
+        return $this->_noEmbed;
+    }
+
+    /**
+     * Checks whether the video is embeddable.
+     *
+     * @return bool Returns true if the video is embeddable.
+     */
+    public function isVideoEmbeddable()
+    {
+        if ($this->getNoEmbed() == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Sets the statistics relating to the video.
+     *
+     * @param Zend_Gdata_YouTube_Extension_Statistics $statistics The statistics relating to the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setStatistics($statistics = null)
+    {
+        $this->_statistics = $statistics;
+        return $this;
+    }
+
+    /**
+     * Returns the statistics relating to the video.
+     *
+     * @return Zend_Gdata_YouTube_Extension_Statistics  The statistics relating to the video
+     */
+    public function getStatistics()
+    {
+        return $this->_statistics;
+    }
+
+    /**
+     * Specifies that the video has racy content.
+     *
+     * @param Zend_Gdata_YouTube_Extension_Racy $racy The racy flag object
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setRacy($racy = null)
+    {
+        if ($this->getMajorProtocolVersion() == 2) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException(
+                'Calling getRacy() on a YouTube VideoEntry is deprecated ' .
+                'as of version 2 of the API.');
+        }
+
+        $this->_racy = $racy;
+        return $this;
+    }
+
+    /**
+     * Returns the racy flag object.
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_Extension_Racy|null  The racy flag object
+     */
+    public function getRacy()
+    {
+        if ($this->getMajorProtocolVersion() == 2) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException(
+                'Calling getRacy() on a YouTube VideoEntry is deprecated ' .
+                'as of version 2 of the API.');
+        }
+        return $this->_racy;
+    }
+
+    /**
+     * Sets the rating relating to the video.
+     *
+     * @param Zend_Gdata_Extension_Rating $rating The rating relating to the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setRating($rating = null)
+    {
+        $this->_rating = $rating;
+        return $this;
+    }
+
+    /**
+     * Returns the rating relating to the video.
+     *
+     * @return Zend_Gdata_Extension_Rating  The rating relating to the video
+     */
+    public function getRating()
+    {
+        return $this->_rating;
+    }
+
+    /**
+     * Sets the comments relating to the video.
+     *
+     * @param Zend_Gdata_Extension_Comments $comments The comments relating to the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setComments($comments = null)
+    {
+        $this->_comments = $comments;
+        return $this;
+    }
+
+    /**
+     * Returns the comments relating to the video.
+     *
+     * @return Zend_Gdata_Extension_Comments  The comments relating to the video
+     */
+    public function getComments()
+    {
+        return $this->_comments;
+    }
+
+    /**
+     * Sets the array of embedded feeds related to the video
+     *
+     * @param array $feedLink The array of embedded feeds relating to the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setFeedLink($feedLink = null)
+    {
+        $this->_feedLink = $feedLink;
+        return $this;
+    }
+
+    /**
+     * Get the feed link property for this entry.
+     *
+     * @see setFeedLink
+     * @param string $rel (optional) The rel value of the link to be found.
+     *          If null, the array of links is returned.
+     * @return mixed If $rel is specified, a Zend_Gdata_Extension_FeedLink
+     *          object corresponding to the requested rel value is returned
+     *          if found, or null if the requested value is not found. If
+     *          $rel is null or not specified, an array of all available
+     *          feed links for this entry is returned, or null if no feed
+     *          links are set.
+     */
+    public function getFeedLink($rel = null)
+    {
+        if ($rel == null) {
+            return $this->_feedLink;
+        } else {
+            foreach ($this->_feedLink as $feedLink) {
+                if ($feedLink->rel == $rel) {
+                    return $feedLink;
+                }
+            }
+            return null;
+        }
+    }
+
+    /**
+     * Returns the link element relating to video responses.
+     *
+     * @return Zend_Gdata_App_Extension_Link
+     */
+    public function getVideoResponsesLink()
+    {
+        return $this->getLink(Zend_Gdata_YouTube::VIDEO_RESPONSES_REL);
+    }
+
+    /**
+     * Returns the link element relating to video ratings.
+     *
+     * @return Zend_Gdata_App_Extension_Link
+     */
+    public function getVideoRatingsLink()
+    {
+        return $this->getLink(Zend_Gdata_YouTube::VIDEO_RATINGS_REL);
+    }
+
+    /**
+     * Returns the link element relating to video complaints.
+     *
+     * @return Zend_Gdata_App_Extension_Link
+     */
+    public function getVideoComplaintsLink()
+    {
+        return $this->getLink(Zend_Gdata_YouTube::VIDEO_COMPLAINTS_REL);
+    }
+
+    /**
+     * Gets the YouTube video ID based upon the atom:id value
+     *
+     * @return string The video ID
+     */
+    public function getVideoId()
+    {
+        if ($this->getMajorProtocolVersion() == 2) {
+            $videoId = $this->getMediaGroup()->getVideoId()->text;
+        } else {
+            $fullId = $this->getId()->getText();
+            $position = strrpos($fullId, '/');
+            if ($position === false) {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception(
+                    'Slash not found in atom:id of ' . $fullId);
+            } else {
+                $videoId = substr($fullId, $position + 1);
+            }
+        }
+        return $videoId;
+    }
+
+    /**
+     * Gets the date that the video was recorded.
+     *
+     * @return string|null The date that the video was recorded
+     */
+    public function getVideoRecorded()
+    {
+        $recorded = $this->getRecorded();
+        if ($recorded != null) {
+          return $recorded->getText();
+        } else {
+          return null;
+        }
+    }
+
+    /**
+     * Sets the date that the video was recorded.
+     *
+     * @param string $recorded The date that the video was recorded, in the
+     *          format of '2001-06-19'
+     */
+    public function setVideoRecorded($recorded)
+    {
+        $this->setRecorded(
+            new Zend_Gdata_YouTube_Extension_Recorded($recorded));
+        return $this;
+    }
+
+    /**
+     * Gets the georss:where element
+     *
+     * @return Zend_Gdata_Geo_Extension_GeoRssWhere
+     */
+    public function getWhere()
+    {
+        return $this->_where;
+    }
+
+    /**
+     * Sets the georss:where element
+     *
+     * @param Zend_Gdata_Geo_Extension_GeoRssWhere $value The georss:where class value
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setWhere($value)
+    {
+        $this->_where = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the title of the video as a string.  null is returned
+     * if the video title is not available.
+     *
+     * @return string|null The title of the video
+     */
+    public function getVideoTitle()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getTitle() != null) {
+            return $this->getMediaGroup()->getTitle()->getText();
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the title of the video as a string.
+     *
+     * @param string $title Title for the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoTitle($title)
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $this->getMediaGroup()->setTitle(
+            new Zend_Gdata_Media_Extension_MediaTitle($title));
+        return $this;
+    }
+
+    /**
+     * Sets the description of the video as a string.
+     *
+     * @param string $description Description for the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoDescription($description)
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $this->getMediaGroup()->setDescription(
+            new Zend_Gdata_Media_Extension_MediaDescription($description));
+        return $this;
+    }
+
+
+    /**
+     * Gets the description  of the video as a string.  null is returned
+     * if the video description is not available.
+     *
+     * @return string|null The description of the video
+     */
+    public function getVideoDescription()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getDescription() != null) {
+            return $this->getMediaGroup()->getDescription()->getText();
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets the URL of the YouTube video watch page.  null is returned
+     * if the video watch page URL is not available.
+     *
+     * @return string|null The URL of the YouTube video watch page
+     */
+    public function getVideoWatchPageUrl()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getPlayer() != null &&
+             array_key_exists(0, $this->getMediaGroup()->getPlayer())) {
+            $players = $this->getMediaGroup()->getPlayer();
+            return $players[0]->getUrl();
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets an array of the thumbnails representing the video.
+     * Each thumbnail is an element of the array, and is an
+     * array of the thumbnail properties - time, height, width,
+     * and url.  For convient usage inside a foreach loop, an
+     * empty array is returned if there are no thumbnails.
+     *
+     * @return array An array of video thumbnails.
+     */
+    public function getVideoThumbnails()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getThumbnail() != null) {
+
+            $thumbnailArray = array();
+
+            foreach ($this->getMediaGroup()->getThumbnail() as $thumbnailObj) {
+                $thumbnail = array();
+                $thumbnail['time'] = $thumbnailObj->time;
+                $thumbnail['height'] = $thumbnailObj->height;
+                $thumbnail['width'] = $thumbnailObj->width;
+                $thumbnail['url'] = $thumbnailObj->url;
+                $thumbnailArray[] = $thumbnail;
+            }
+            return $thumbnailArray;
+        } else {
+            return array();
+        }
+    }
+
+    /**
+     * Gets the URL of the flash player SWF.  null is returned if the
+     * duration value is not available.
+     *
+     * @return string|null The URL of the flash player SWF
+     */
+    public function getFlashPlayerUrl()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        foreach ($this->getMediaGroup()->getContent() as $content) {
+                if ($content->getType() === 'application/x-shockwave-flash') {
+                    return $content->getUrl();
+                }
+            }
+        return null;
+    }
+
+    /**
+     * Gets the duration of the video, in seconds.  null is returned
+     * if the duration value is not available.
+     *
+     * @return string|null The duration of the video, in seconds.
+     */
+    public function getVideoDuration()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getDuration() != null) {
+            return $this->getMediaGroup()->getDuration()->getSeconds();
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Checks whether the video is private.
+     *
+     * @return bool Return true if video is private
+     */
+    public function isVideoPrivate()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getPrivate() != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Sets video to private.
+     *
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoPrivate()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $this->getMediaGroup()->setPrivate(new Zend_Gdata_YouTube_Extension_Private());
+        return $this;
+    }
+
+    /**
+     * Sets a private video to be public.
+     *
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoPublic()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $this->getMediaGroup()->private = null;
+        return $this;
+    }
+
+    /**
+     * Gets an array of the tags assigned to this video.  For convient
+     * usage inside a foreach loop, an empty array is returned when there
+     * are no tags assigned.
+     *
+     * @return array An array of the tags assigned to this video
+     */
+    public function getVideoTags()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        if ($this->getMediaGroup()->getKeywords() != null) {
+
+            $keywords = $this->getMediaGroup()->getKeywords();
+            $keywordsString = $keywords->getText();
+            if (strlen(trim($keywordsString)) > 0) {
+                return split('(, *)|,', $keywordsString);
+            }
+        }
+        return array();
+    }
+
+    /**
+     * Sets the keyword tags for a video.
+     *
+     * @param mixed $tags Either a comma-separated string or an array
+     * of tags for the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoTags($tags)
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $keywords = new Zend_Gdata_Media_Extension_MediaKeywords();
+        if (is_array($tags)) {
+            $tags = implode(', ', $tags);
+        }
+        $keywords->setText($tags);
+        $this->getMediaGroup()->setKeywords($keywords);
+        return $this;
+    }
+
+    /**
+     * Gets the number of views for this video.  null is returned if the
+     * number of views is not available.
+     *
+     * @return string|null The number of views for this video
+     */
+    public function getVideoViewCount()
+    {
+        if ($this->getStatistics() != null) {
+            return $this->getStatistics()->getViewCount();
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets the location specified for this video, if available.  The location
+     * is returned as an array containing the keys 'longitude' and 'latitude'.
+     * null is returned if the location is not available.
+     *
+     * @return array|null The location specified for this video
+     */
+    public function getVideoGeoLocation()
+    {
+        if ($this->getWhere() != null &&
+            $this->getWhere()->getPoint() != null &&
+            ($position = $this->getWhere()->getPoint()->getPos()) != null) {
+
+            $positionString = $position->__toString();
+
+            if (strlen(trim($positionString)) > 0) {
+                $positionArray = explode(' ', trim($positionString));
+                if (count($positionArray) == 2) {
+                    $returnArray = array();
+                    $returnArray['latitude'] = $positionArray[0];
+                    $returnArray['longitude'] = $positionArray[1];
+                    return $returnArray;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Gets the rating information for this video, if available.  The rating
+     * is returned as an array containing the keys 'average' and 'numRaters'.
+     * null is returned if the rating information is not available.
+     *
+     * @return array|null The rating information for this video
+     */
+    public function getVideoRatingInfo()
+    {
+        if ($this->getRating() != null) {
+            $returnArray = array();
+            $returnArray['average'] = $this->getRating()->getAverage();
+            $returnArray['numRaters'] = $this->getRating()->getNumRaters();
+            return $returnArray;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets the category of this video, if available.  The category is returned
+     * as a string. Valid categories are found at:
+     * http://gdata.youtube.com/schemas/2007/categories.cat
+     * If the category is not set, null is returned.
+     *
+     * @return string|null The category of this video
+     */
+    public function getVideoCategory()
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $categories = $this->getMediaGroup()->getCategory();
+        if ($categories != null) {
+            foreach($categories as $category) {
+                if ($category->getScheme() == self::YOUTUBE_CATEGORY_SCHEMA) {
+                    return $category->getText();
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Sets the category of the video as a string.
+     *
+     * @param string $category Categories for the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoCategory($category)
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $this->getMediaGroup()->setCategory(array(new Zend_Gdata_Media_Extension_MediaCategory($category, self::YOUTUBE_CATEGORY_SCHEMA)));
+        return $this;
+    }
+
+    /**
+     * Gets the developer tags for the video, if available and if client is
+     * authenticated with a valid developerKey. The tags are returned
+     * as an array.
+     * If no tags are set, null is returned.
+     *
+     * @return array|null The developer tags for this video or null if none were set.
+     */
+    public function getVideoDeveloperTags()
+    {
+        $developerTags = null;
+        $this->ensureMediaGroupIsNotNull();
+
+        $categoryArray = $this->getMediaGroup()->getCategory();
+        if ($categoryArray != null) {
+            foreach ($categoryArray as $category) {
+                if ($category instanceof Zend_Gdata_Media_Extension_MediaCategory) {
+                    if ($category->getScheme() == self::YOUTUBE_DEVELOPER_TAGS_SCHEMA) {
+                        $developerTags[] = $category->getText();
+                    }
+                }
+            }
+            return $developerTags;
+        }
+        return null;
+    }
+
+    /**
+     * Adds a developer tag to array of tags for the video.
+     *
+     * @param string $developerTag DeveloperTag for the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function addVideoDeveloperTag($developerTag)
+    {
+        $this->ensureMediaGroupIsNotNull();
+        $newCategory = new Zend_Gdata_Media_Extension_MediaCategory($developerTag, self::YOUTUBE_DEVELOPER_TAGS_SCHEMA);
+
+        if ($this->getMediaGroup()->getCategory() == null) {
+            $this->getMediaGroup()->setCategory($newCategory);
+        } else {
+            $categories = $this->getMediaGroup()->getCategory();
+            $categories[] = $newCategory;
+            $this->getMediaGroup()->setCategory($categories);
+        }
+        return $this;
+    }
+
+    /**
+     * Set multiple developer tags for the video as strings.
+     *
+     * @param array $developerTags Array of developerTag for the video
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface
+     */
+    public function setVideoDeveloperTags($developerTags)
+    {
+        foreach($developerTags as $developerTag) {
+            $this->addVideoDeveloperTag($developerTag);
+        }
+        return $this;
+    }
+
+
+    /**
+     * Get the current publishing state of the video.
+     *
+     * @return Zend_Gdata_YouTube_Extension_State|null The publishing state of this video
+     */
+    public function getVideoState()
+    {
+        $control = $this->getControl();
+        if ($control != null &&
+            $control->getDraft() != null &&
+            $control->getDraft()->getText() == 'yes') {
+
+            return $control->getState();
+        }
+        return null;
+    }
+
+    /**
+     * Get the VideoEntry's Zend_Gdata_YouTube_Extension_MediaGroup object.
+     * If the mediaGroup does not exist, then set it.
+     *
+     * @return void
+     */
+    public function ensureMediaGroupIsNotNull()
+    {
+        if ($this->getMediagroup() == null) {
+            $this->setMediagroup(new Zend_Gdata_YouTube_Extension_MediaGroup());
+        }
+    }
+
+    /**
+     * Helper function to conveniently set a video's rating.
+     *
+     * @param integer $ratingValue A number representing the rating. Must
+     *          be between 1 and 5 inclusive.
+     * @throws Zend_Gdata_Exception
+     * @return Zend_Gdata_YouTube_VideoEntry Provides a fluent interface.
+     */
+    public function setVideoRating($ratingValue)
+    {
+        if ($ratingValue < 1 || $ratingValue > 5) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                'Rating for video entry must be between 1 and 5 inclusive.');
+        }
+
+         require_once 'Zend/Gdata/Extension/Rating.php';
+         $rating = new Zend_Gdata_Extension_Rating(null, 1, 5, null,
+            $ratingValue);
+        $this->setRating($rating);
+        return $this;
+    }
+
+    /**
+     * Retrieve the URL for a video's comment feed.
+     *
+     * @return string|null The URL if found, or null if not found.
+     */
+    public function getVideoCommentFeedUrl()
+    {
+        $commentsExtension = $this->getComments();
+        $commentsFeedUrl = null;
+        if ($commentsExtension) {
+            $commentsFeedLink = $commentsExtension->getFeedLink();
+            if ($commentsFeedLink) {
+                $commentsFeedUrl = $commentsFeedLink->getHref();
+            }
+        }
+        return $commentsFeedUrl;
+    }
+
+}

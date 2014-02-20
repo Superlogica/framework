@@ -1,166 +1,475 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-HWojTbVRpKhd4nzWBmO7KrguNM+9S0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Maildir.php 12519 2008-11-10 18:41:24Z alexander $
+ */
+
+
+/**
+ * @see Zend_Mail_Storage_Abstract
+ */
+require_once 'Zend/Mail/Storage/Abstract.php';
+
+/**
+ * @see Zend_Mail_Message_File
+ */
+require_once 'Zend/Mail/Message/File.php';
+
+/**
+ * @see Zend_Mail_Storage
+ */
+require_once 'Zend/Mail/Storage.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Storage_Maildir extends Zend_Mail_Storage_Abstract
+{
+    /**
+     * used message class, change it in an extened class to extend the returned message class
+     * @var string
+     */
+    protected $_messageClass = 'Zend_Mail_Message_File';
+
+    /**
+     * data of found message files in maildir dir
+     * @var array
+     */
+    protected $_files = array();
+
+    /**
+     * known flag chars in filenames
+     *
+     * This list has to be in alphabetical order for setFlags()
+     *
+     * @var array
+     */
+    protected static $_knownFlags = array('D' => Zend_Mail_Storage::FLAG_DRAFT,
+                                          'F' => Zend_Mail_Storage::FLAG_FLAGGED,
+                                          'P' => Zend_Mail_Storage::FLAG_PASSED,
+                                          'R' => Zend_Mail_Storage::FLAG_ANSWERED,
+                                          'S' => Zend_Mail_Storage::FLAG_SEEN,
+                                          'T' => Zend_Mail_Storage::FLAG_DELETED);
+                                          
+    // TODO: getFlags($id) for fast access if headers are not needed (i.e. just setting flags)?
+
+    /**
+     * Count messages all messages in current box
+     *
+     * @return int number of messages
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function countMessages($flags = null)
+    {
+        if ($flags === null) {
+            return count($this->_files);
+        }
+
+        $count = 0;                
+        if (!is_array($flags)) {
+            foreach ($this->_files as $file) {
+                if (isset($file['flaglookup'][$flags])) {
+                    ++$count;
+                }
+            }
+            return $count;
+        }
+        
+        $flags = array_flip($flags);
+           foreach ($this->_files as $file) {
+               foreach ($flags as $flag => $v) {
+                   if (!isset($file['flaglookup'][$flag])) {
+                       continue 2;
+                   }
+               }
+               ++$count;
+           }
+           return $count;
+    }
+
+    /**
+     * Get one or all fields from file structure. Also checks if message is valid
+     *
+     * @param  int         $id    message number
+     * @param  string|null $field wanted field
+     * @return string|array wanted field or all fields as array
+     * @throws Zend_Mail_Storage_Exception
+     */
+    protected function _getFileData($id, $field = null)
+    {
+        if (!isset($this->_files[$id - 1])) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('id does not exist');
+        }
+
+        if (!$field) {
+            return $this->_files[$id - 1];
+        }
+
+        if (!isset($this->_files[$id - 1][$field])) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('field does not exist');
+        }
+
+        return $this->_files[$id - 1][$field];
+    }
+
+    /**
+     * Get a list of messages with number and size
+     *
+     * @param  int|null $id number of message or null for all messages
+     * @return int|array size of given message of list with all messages as array(num => size)
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getSize($id = null)
+    {
+        if ($id !== null) {
+            $filedata = $this->_getFileData($id);
+            return isset($filedata['size']) ? $filedata['size'] : filesize($filedata['filename']);
+        }
+
+        $result = array();
+        foreach ($this->_files as $num => $data) {
+            $result[$num + 1] = isset($data['size']) ? $data['size'] : filesize($data['filename']);
+        }
+
+        return $result;
+    }
+
+
+
+    /**
+     * Fetch a message
+     *
+     * @param  int $id number of message
+     * @return Zend_Mail_Message_File
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getMessage($id)
+    {
+        // TODO that's ugly, would be better to let the message class decide
+        if (strtolower($this->_messageClass) == 'zend_mail_message_file' || is_subclass_of($this->_messageClass, 'zend_mail_message_file')) {
+            return new $this->_messageClass(array('file'  => $this->_getFileData($id, 'filename'),
+                                                  'flags' => $this->_getFileData($id, 'flags')));
+        }
+        
+        return new $this->_messageClass(array('handler' => $this, 'id' => $id, 'headers' => $this->getRawHeader($id),
+                                              'flags'   => $this->_getFileData($id, 'flags')));
+    }
+
+    /*
+     * Get raw header of message or part
+     *
+     * @param  int               $id       number of message
+     * @param  null|array|string $part     path to part or null for messsage header
+     * @param  int               $topLines include this many lines with header (after an empty line)
+     * @return string raw header
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getRawHeader($id, $part = null, $topLines = 0)
+    {
+        if ($part !== null) {
+            // TODO: implement
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('not implemented');
+        }
+
+        $fh = fopen($this->_getFileData($id, 'filename'), 'r');
+
+        $content = '';
+        while (!feof($fh)) {
+            $line = fgets($fh);
+            if (!trim($line)) {
+                break;
+            }
+            $content .= $line;
+        }
+
+        fclose($fh);
+        return $content;
+    }
+
+    /*
+     * Get raw content of message or part
+     *
+     * @param  int               $id   number of message
+     * @param  null|array|string $part path to part or null for messsage content
+     * @return string raw content
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getRawContent($id, $part = null)
+    {
+        if ($part !== null) {
+            // TODO: implement
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('not implemented');
+        }
+
+        $fh = fopen($this->_getFileData($id, 'filename'), 'r');
+
+        while (!feof($fh)) {
+            $line = fgets($fh);
+            if (!trim($line)) {
+                break;
+            }
+        }
+
+        $content = stream_get_contents($fh);
+        fclose($fh);
+        return $content;
+    }
+
+    /**
+     * Create instance with parameters
+     * Supported parameters are:
+     *   - dirname dirname of mbox file
+     *
+     * @param  $params array mail reader specific parameters
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function __construct($params)
+    {
+        if (is_array($params)) {
+            $params = (object)$params;
+        }
+
+        if (!isset($params->dirname) || !is_dir($params->dirname)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('no valid dirname given in params');
+        }
+
+        if (!$this->_isMaildir($params->dirname)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('invalid maildir given');
+        }
+
+        $this->_has['top'] = true;
+        $this->_has['flags'] = true;
+        $this->_openMaildir($params->dirname);
+    }
+
+    /**
+     * check if a given dir is a valid maildir
+     *
+     * @param string $dirname name of dir
+     * @return bool dir is valid maildir
+     */
+    protected function _isMaildir($dirname)
+    {
+        if (file_exists($dirname . '/new') && !is_dir($dirname . '/new')) {
+            return false;
+        }
+        if (file_exists($dirname . '/tmp') && !is_dir($dirname . '/tmp')) {
+            return false;
+        }
+        return is_dir($dirname . '/cur');
+    }
+
+    /**
+     * open given dir as current maildir
+     *
+     * @param string $dirname name of maildir
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    protected function _openMaildir($dirname)
+    {
+        if ($this->_files) {
+            $this->close();
+        }
+
+        $dh = @opendir($dirname . '/cur/');
+        if (!$dh) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot open maildir');
+        }
+        $this->_getMaildirFiles($dh, $dirname . '/cur/');
+        closedir($dh);
+
+        $dh = @opendir($dirname . '/new/');
+        if ($dh) {
+            $this->_getMaildirFiles($dh, $dirname . '/new/', array(Zend_Mail_Storage::FLAG_RECENT));
+            closedir($dh);
+        } else if (file_exists($dirname . '/new/')) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot read recent mails in maildir');
+        }
+    }
+
+    /**
+     * find all files in opened dir handle and add to maildir files
+     *
+     * @param resource $dh            dir handle used for search
+     * @param string   $dirname       dirname of dir in $dh
+     * @param array    $default_flags default flags for given dir
+     * @return null
+     */
+    protected function _getMaildirFiles($dh, $dirname, $default_flags = array())
+    {
+        while (($entry = readdir($dh)) !== false) {
+            if ($entry[0] == '.' || !is_file($dirname . $entry)) {
+                continue;
+            }
+
+            @list($uniq, $info) = explode(':', $entry, 2);
+            @list(,$size) = explode(',', $uniq, 2);
+            if ($size && $size[0] == 'S' && $size[1] == '=') {
+                $size = substr($size, 2);
+            }
+            if (!ctype_digit($size)) {
+                $size = null;
+            }
+            @list($version, $flags) = explode(',', $info, 2);
+            if ($version != 2) {
+                $flags = '';
+            }
+
+            $named_flags = $default_flags;
+            $length = strlen($flags);
+            for ($i = 0; $i < $length; ++$i) {
+                $flag = $flags[$i];
+                $named_flags[$flag] = isset(self::$_knownFlags[$flag]) ? self::$_knownFlags[$flag] : $flag;
+            }
+
+            $data = array('uniq'       => $uniq,
+                          'flags'      => $named_flags,
+                          'flaglookup' => array_flip($named_flags),
+                          'filename'   => $dirname . $entry);
+            if ($size !== null) {
+                $data['size'] = (int)$size;
+            }
+            $this->_files[] = $data;
+        }
+    }
+
+
+    /**
+     * Close resource for mail lib. If you need to control, when the resource
+     * is closed. Otherwise the destructor would call this.
+     *
+     * @return void
+     */
+    public function close()
+    {
+        $this->_files = array();
+    }
+
+
+    /**
+     * Waste some CPU cycles doing nothing.
+     *
+     * @return void
+     */
+    public function noop()
+    {
+        return true;
+    }
+
+
+    /**
+     * stub for not supported message deletion
+     *
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function removeMessage($id)
+    {
+        /**
+         * @see Zend_Mail_Storage_Exception
+         */
+        require_once 'Zend/Mail/Storage/Exception.php';
+        throw new Zend_Mail_Storage_Exception('maildir is (currently) read-only');
+    }
+
+    /**
+     * get unique id for one or all messages
+     *
+     * if storage does not support unique ids it's the same as the message number
+     *
+     * @param int|null $id message number
+     * @return array|string message number for given message or all messages as array
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getUniqueId($id = null)
+    {
+        if ($id) {
+            return $this->_getFileData($id, 'uniq');
+        }
+
+        $ids = array();
+        foreach ($this->_files as $num => $file) {
+            $ids[$num + 1] = $file['uniq'];
+        }
+        return $ids;
+    }
+
+    /**
+     * get a message number from a unique id
+     *
+     * I.e. if you have a webmailer that supports deleting messages you should use unique ids
+     * as parameter and use this method to translate it to message number right before calling removeMessage()
+     *
+     * @param string $id unique id
+     * @return int message number
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getNumberByUniqueId($id)
+    {
+        foreach ($this->_files as $num => $file) {
+            if ($file['uniq'] == $id) {
+                return $num + 1;
+            }
+        }
+
+        /**
+         * @see Zend_Mail_Storage_Exception
+         */
+        require_once 'Zend/Mail/Storage/Exception.php';
+        throw new Zend_Mail_Storage_Exception('unique id not found');
+    }
+}

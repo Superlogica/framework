@@ -1,58 +1,206 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_File
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_Zf_ViewScriptFile extends Zend_Tool_Project_Context_Filesystem_File
+{
+    
+    /**
+     * @var string
+     */
+    protected $_filesystemName = 'view.phtml';
+    
+    /**
+     * @var string
+     */
+    protected $_forActionName = null;
+    
+    /**
+     * @var string
+     */
+    protected $_scriptName = null;
+
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ViewScriptFile';
+    }
+    
+    /**
+     * init()
+     *
+     * @return Zend_Tool_Project_Context_Zf_ViewScriptFile
+     */
+    public function init()
+    {
+        if ($forActionName = $this->_resource->getAttribute('forActionName')) {
+            $this->_forActionName = $forActionName;
+            $this->_filesystemName = $forActionName . '.phtml';
+        } elseif ($scriptName = $this->_resource->getAttribute('scriptName')) {
+            $this->_scriptName = $scriptName;
+            $this->_filesystemName = $scriptName . '.phtml';
+        } else {
+            throw new Exception('Either a forActionName or scriptName is required.');
+        }
+        
+        parent::init();
+        return $this;
+    }
+    
+    /**
+     * getPersistentAttributes()
+     *
+     * @return unknown
+     */
+    public function getPersistentAttributes()
+    {
+        $attributes = array();
+        
+        if ($this->_forActionName) {
+            $attributes['forActionName'] = $this->_forActionName;      
+        }
+        
+        if ($this->_scriptName) {
+            $attributes['scriptName'] = $this->_scriptName;
+        }
+        
+        return $attributes;
+    }
+    
+    /**
+     * getContents()
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+        $contents = '';
+        
+        if ($this->_filesystemName == 'error.phtml') {  // should also check that the above directory is forController=error
+            $contents .= <<<EOS
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"; "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>Zend Framework Default Application</title> 
+</head> 
+<body> 
+  <h1>An error occurred</h1> 
+  <h2><?= \$this->message ?></h2> 
+
+  <? if ('development' == APPLICATION_ENV): ?> 
+  
+  <h3>Exception information:</h3> 
+  <p> 
+      <b>Message:</b> <?= \$this->exception->getMessage() ?> 
+  </p> 
+
+  <h3>Stack trace:</h3> 
+  <pre><?= \$this->exception->getTraceAsString() ?> 
+  </pre> 
+
+  <h3>Request Parameters:</h3> 
+  <pre><? var_dump(\$this->request->getParams()) ?> 
+  </pre> 
+  <? endif ?>
+  
+</body> 
+</html>
+            
+EOS;
+        } elseif ($this->_forActionName == 'index' && $this->_resource->getParentResource()->getAttribute('forControllerName') == 'index') {
+            
+            $contents =<<<EOS
+<style>
+    
+    a:link,
+    a:visited
+    {
+        color: #0398CA;
+    }
+
+    span#zf-name
+    {
+        color: #91BE3F;
+    }
+
+    div#welcome
+    {
+        color: #FFFFFF;
+        background-image: url(http://framework.zend.com/images/bkg_header.jpg);
+        width:  600px;
+        height: 400px;
+        border: 2px solid #444444;
+        overflow: hidden;
+    }
+    
+    div#more-information
+    {
+        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
+        height: 100%;
+    }
+
+</style>
+<center>
+    <div id="welcome">
+        <center>
+        <br />
+        <h1>Welcome to the <span id="zf-name">Zend Framework!</span><h1 />
+        <h3>This is your project's main page<h3 /><br /><br />
+        <div id="more-information">
+            <br />
+            <img src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /><br /><br />
+            Helpful Links: <br />
+            <A href="http://framework.zend.com/">Zend Framework Website</a> |
+            <A href="http://framework.zend.com/manual/en/">Zend Framework Manual</a>
+        </div>
+    </div>
+</center>
+EOS;
+            
+        } else {
+            $contents = '<br /><br /><center>View script for controller <b>' . $this->_resource->getParentResource()->getAttribute('forControllerName') . '</b>'
+                . ' and script/action name <b>' . $this->_forActionName . '</b></center>';
+        }
+        return $contents;
+    }
+    
+}

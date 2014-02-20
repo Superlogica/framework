@@ -1,29 +1,83 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5AgwYL5EWt9c0mySSdUcESEip0X97ikM+xMiJuLpq9sizZVVJ5OFjLWagLgO9+ywousrG88N
-addg/FOxKVRvcWyHK2nnGBXO5lTKNOv7Y9sFI8s0TuqtK8jmPaU86Pu2Fsq9b4bxElII9JeOB4aS
-Mh0p7Cp4edbDSLsyDR4rvIBHxup7WCoT//tlCZvLVyQkHtIEzCohQJ9id135sZeOQ1lLodNx3jiF
-jfXTIwvDYUbM50Y+i8BCn4kJIPpDKor7T+KlBeH2QCDUUQah45UUucnfgDKMvFns/yJjKKsPLlKg
-iPIwwp4vrg7P2bvnuyVo3L20oLsfIHlteegRPuvyDCrjI0eZHDgyAYdL+FW3by60eUGWi6tMAMWw
-m68Rdj5bk/CTGKf/ivj4dNJKJqJUS3q/EUbjx/HVRinQEnZ+qCKiRmNgBSNtnj9xlVMwRX0eomX/
-dgQ7QiSVEPcLiB9GP8TXo8rtrh12iyTxU8rjOScTKWdGW1/APownUYtsFed4SFwYi9eL7POo7hf+
-sHVprdOH25OuJJJanvVcwDFbmEUQLY+d1ZeTlYCVeaCZfWtFAzUIw7mAatNwB5S1HIlHkFIqZokJ
-vWXcGGdxlaB9XT9moDc2iccxk1HTj63w7U5sDtZv0SmzFlwBScxQtaePKeEJY7fndRu9qrxzFLxe
-3j0QdaFK0LcMlfP5gFRKpKlYcEYZw6FBiKbGA73tN8BTGEJ/75miixzqfsL/ItvW8a3hKfATce/u
-b3HbeMmejifsTRWP2tQoU+zwdhdVtctR1TlNLOqzeQp3AyJ2FR0O99jwfTDCMxRnWi2TMdYTI5dw
-+q0rzUQEyKwI2UGVTE3c3NTndI1gGkeZwkfOKACE3V0nsjCNfhtG4xwguHsiwcZ6RXo7EBuxJm2O
-A7nAgY/MbDL3nQ09BrGlIpvEsFW1Sg8saYH1E74O6uN3NcCVy0v42hkQ+MHkQcL55d6WKZhgkzFm
-8hnDyjS7gb9FB4uTO7n7fDSWgx3v/PoL8tcQ6+TTw697rIuKtuz+tsDAKILlK8nr/hB9NXwZaWid
-nB1cf4LkfXbpjSpYa4DyZaFpnE8xHFx/z/u/1VJ0OoPau2dBxSwUBKhd1HXH2mtIdknZ2nxp3go0
-qVHlG2fo1tfEBkK0UJg579he71JjWtOmrPuY+682rist/Z/ysOUfDgVDSbzbAJywRI/S6+QnucsD
-G5s/6jejoE0ptOgEN2IDhiox4goh7Hi/LxREa33JYch5wgdoqOqPVxfhiFbGIeSlBVjyKg/XC4mG
-/4lex2PiTHf4z/ObcGFAB21YMT8P+GyLrHqcZSO3mcsQsE8AFybuSxW4SduZWzxeUJOocZghRC1x
-l4ATMxz8qKzWdZvnbWjL86a3VlehQADXAAnkWZNQzcVTjhZh1E09jlJDf3j8lT++8sh1amiJjoP2
-30L0X9lXs5/RGmA7CAa5/IRQu7j8XYwYQvdWNp9EOE4v8Q8m+50hYeEbEWjRYliIRZd3CYt6P8Pz
-24Cqj4UOirx1YtEDx0z4KH5krvmGFeU6yQfVeovqYalbW8c3OfB6onq4PSP+blBbiF6wnyyIbOn0
-CgpInK9vVHMhHVw9Y3XtBK3/7fu/Shjf2nSCTZyYa7RAlAbS7purUMBwlKEf0wkB2tAugWr95JSk
-6fkE0rospO7/obZngDjx3oGj4KteDDPHmIMlbBjzBOqMqGWf49Iswrq8zNvjCTNmt5b2YSiPu2M5
-wNltfg6CLjuDSu4ZUvDUNfP8XlCCye6p8JcCzND3Vvob6BB7l/48hNFghejE4/HbhChDZf2qhZli
-dWRg/t/EzOM58V574dgJ7SRB/xaoFWZMzRc9543lXRxHK5raB/OkEAnltGsa+v385XiFBeVjcS5x
-QmZNeV7Q+3fRqLvkScicGPs+YsNF+0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: NoteSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Simpy_Note
+ */
+require_once 'Zend/Service/Simpy/Note.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_NoteSet implements IteratorAggregate
+{
+    /**
+     * List of notes
+     *
+     * @var array of Zend_Service_Simpy_Note objects
+     */
+    protected $_notes;
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMDocument $doc Parsed response from a GetNotes operation
+     * @return void
+     */
+    public function __construct(DOMDocument $doc)
+    {
+        $xpath = new DOMXPath($doc);
+        $list = $xpath->query('//notes/note');
+        $this->_notes = array();
+
+        for ($x = 0; $x < $list->length; $x++) {
+            $this->_notes[$x] = new Zend_Service_Simpy_Note($list->item($x));
+        }
+    }
+
+    /**
+     * Returns an iterator for the note set
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->_notes);
+    }
+
+    /**
+     * Returns the number of notes in the set
+     *
+     * @return int
+     */
+    public function getLength()
+    {
+        return count($this->_notes);
+    }
+}

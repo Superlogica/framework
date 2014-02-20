@@ -1,118 +1,350 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-30Z6IyDR1PRLAkMAbxY+D8em
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Transport
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 15934 2009-06-08 02:05:48Z yoshida@zend.co.jp $
+ */
+
+
+/**
+ * @see Zend_Mime
+ */
+require_once 'Zend/Mime.php';
+
+
+/**
+ * Abstract for sending eMails through different
+ * ways of transport
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Transport
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Mail_Transport_Abstract
+{
+    /**
+     * Mail body
+     * @var string
+     * @access public
+     */
+    public $body = '';
+
+    /**
+     * MIME boundary
+     * @var string
+     * @access public
+     */
+    public $boundary = '';
+
+    /**
+     * Mail header string
+     * @var string
+     * @access public
+     */
+    public $header = '';
+
+    /**
+     * Array of message headers
+     * @var array
+     * @access protected
+     */
+    protected $_headers = array();
+
+    /**
+     * Message is a multipart message
+     * @var boolean
+     * @access protected
+     */
+    protected $_isMultipart = false;
+
+    /**
+     * Zend_Mail object
+     * @var false|Zend_Mail
+     * @access protected
+     */
+    protected $_mail = false;
+
+    /**
+     * Array of message parts
+     * @var array
+     * @access protected
+     */
+    protected $_parts = array();
+
+    /**
+     * Recipients string
+     * @var string
+     * @access public
+     */
+    public $recipients = '';
+
+    /**
+     * EOL character string used by transport
+     * @var string
+     * @access public
+     */
+    public $EOL = "\r\n";
+
+    /**
+     * Send an email independent from the used transport
+     *
+     * The requisite information for the email will be found in the following
+     * properties:
+     *
+     * - {@link $recipients} - list of recipients (string)
+     * - {@link $header} - message header
+     * - {@link $body} - message body
+     */
+    abstract protected function _sendMail();
+
+    /**
+     * Return all mail headers as an array
+     *
+     * If a boundary is given, a multipart header is generated with a
+     * Content-Type of either multipart/alternative or multipart/mixed depending
+     * on the mail parts present in the {@link $_mail Zend_Mail object} present.
+     *
+     * @param string $boundary
+     * @return array
+     */
+    protected function _getHeaders($boundary)
+    {
+        if (null !== $boundary) {
+            // Build multipart mail
+            $type = $this->_mail->getType();
+            if (!$type) {
+                if ($this->_mail->hasAttachments) {
+                    $type = Zend_Mime::MULTIPART_MIXED;
+                } elseif ($this->_mail->getBodyText() && $this->_mail->getBodyHtml()) {
+                    $type = Zend_Mime::MULTIPART_ALTERNATIVE;
+                } else {
+                    $type = Zend_Mime::MULTIPART_MIXED;
+                }
+            }
+
+            $this->_headers['Content-Type'] = array(
+                $type . '; charset="' . $this->_mail->getCharset() . '";'
+                . $this->EOL
+                . " " . 'boundary="' . $boundary . '"'
+            );
+            $this->boundary = $boundary;
+        }
+
+        $this->_headers['MIME-Version'] = array('1.0');
+
+        return $this->_headers;
+    }
+
+    /**
+     * Prepend header name to header value
+     *
+     * @param string $item
+     * @param string $key
+     * @param string $prefix
+     * @static
+     * @access protected
+     * @return void
+     */
+    protected static function _formatHeader(&$item, $key, $prefix)
+    {
+        $item = $prefix . ': ' . $item;
+    }
+
+    /**
+     * Prepare header string for use in transport
+     *
+     * Prepares and generates {@link $header} based on the headers provided.
+     *
+     * @param mixed $headers
+     * @access protected
+     * @return void
+     * @throws Zend_Mail_Transport_Exception if any header lines exceed 998
+     * characters
+     */
+    protected function _prepareHeaders($headers)
+    {
+        if (!$this->_mail) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Transport_Exception('Missing Zend_Mail object in _mail property');
+        }
+
+        $this->header = '';
+
+        foreach ($headers as $header => $content) {
+            if (isset($content['append'])) {
+                unset($content['append']);
+                $value = implode(',' . $this->EOL . ' ', $content);
+                $this->header .= $header . ': ' . $value . $this->EOL;
+            } else {
+                array_walk($content, array(get_class($this), '_formatHeader'), $header);
+                $this->header .= implode($this->EOL, $content) . $this->EOL;
+            }
+        }
+
+        // Sanity check on headers -- should not be > 998 characters
+        $sane = true;
+        foreach (explode($this->EOL, $this->header) as $line) {
+            if (strlen(trim($line)) > 998) {
+                $sane = false;
+                break;
+            }
+        }
+        if (!$sane) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Exception('At least one mail header line is too long');
+        }
+    }
+
+    /**
+     * Generate MIME compliant message from the current configuration
+     *
+     * If both a text and HTML body are present, generates a
+     * multipart/alternative Zend_Mime_Part containing the headers and contents
+     * of each. Otherwise, uses whichever of the text or HTML parts present.
+     *
+     * The content part is then prepended to the list of Zend_Mime_Parts for
+     * this message.
+     *
+     * @return void
+     */
+    protected function _buildBody()
+    {
+        if (($text = $this->_mail->getBodyText())
+            && ($html = $this->_mail->getBodyHtml()))
+        {
+            // Generate unique boundary for multipart/alternative
+            $mime = new Zend_Mime(null);
+            $boundaryLine = $mime->boundaryLine($this->EOL);
+            $boundaryEnd  = $mime->mimeEnd($this->EOL);
+
+            $text->disposition = false;
+            $html->disposition = false;
+
+            $body = $boundaryLine
+                  . $text->getHeaders($this->EOL)
+                  . $this->EOL
+                  . $text->getContent($this->EOL)
+                  . $this->EOL
+                  . $boundaryLine
+                  . $html->getHeaders($this->EOL)
+                  . $this->EOL
+                  . $html->getContent($this->EOL)
+                  . $this->EOL
+                  . $boundaryEnd;
+
+            $mp           = new Zend_Mime_Part($body);
+            $mp->type     = Zend_Mime::MULTIPART_ALTERNATIVE;
+            $mp->boundary = $mime->boundary();
+
+            $this->_isMultipart = true;
+
+            // Ensure first part contains text alternatives
+            array_unshift($this->_parts, $mp);
+
+            // Get headers
+            $this->_headers = $this->_mail->getHeaders();
+            return;
+        }
+
+        // If not multipart, then get the body
+        if (false !== ($body = $this->_mail->getBodyHtml())) {
+            array_unshift($this->_parts, $body);
+        } elseif (false !== ($body = $this->_mail->getBodyText())) {
+            array_unshift($this->_parts, $body);
+        }
+
+        if (!$body) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Transport_Exception('No body specified');
+        }
+
+        // Get headers
+        $this->_headers = $this->_mail->getHeaders();
+        $headers = $body->getHeadersArray($this->EOL);
+        foreach ($headers as $header) {
+            // Headers in Zend_Mime_Part are kept as arrays with two elements, a
+            // key and a value
+            $this->_headers[$header[0]] = array($header[1]);
+        }
+    }
+
+    /**
+     * Send a mail using this transport
+     *
+     * @param  Zend_Mail $mail
+     * @access public
+     * @return void
+     * @throws Zend_Mail_Transport_Exception if mail is empty
+     */
+    public function send(Zend_Mail $mail)
+    {
+        $this->_isMultipart = false;
+        $this->_mail        = $mail;
+        $this->_parts       = $mail->getParts();
+        $mime               = $mail->getMime();
+
+        // Build body content
+        $this->_buildBody();
+
+        // Determine number of parts and boundary
+        $count    = count($this->_parts);
+        $boundary = null;
+        if ($count < 1) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Transport_Exception('Empty mail cannot be sent');
+        }
+
+        if ($count > 1) {
+            // Multipart message; create new MIME object and boundary
+            $mime     = new Zend_Mime($this->_mail->getMimeBoundary());
+            $boundary = $mime->boundary();
+        } elseif ($this->_isMultipart) {
+            // multipart/alternative -- grab boundary
+            $boundary = $this->_parts[0]->boundary;
+        }
+
+        // Determine recipients, and prepare headers
+        $this->recipients = implode(',', $mail->getRecipients());
+        $this->_prepareHeaders($this->_getHeaders($boundary));
+
+        // Create message body
+        // This is done so that the same Zend_Mail object can be used in
+        // multiple transports
+        $message = new Zend_Mime_Message();
+        $message->setParts($this->_parts);
+        $message->setMime($mime);
+        $this->body = $message->generateMessage($this->EOL);
+
+        // Send to transport!
+        $this->_sendMail();
+    }
+}

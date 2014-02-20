@@ -1,192 +1,444 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+
+/**
+ * An Amazon EC2 interface that allows yout to run, terminate, reboot and describe Amazon
+ * Ec2 Instances.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Instance extends Zend_Service_Amazon_Ec2_Abstract
+{
+    /**
+     * Constant for Small Instance TYpe
+     */
+    const SMALL = 'm1.small';
+
+    /**
+     * Constant for Large Instance TYpe
+     */
+    const LARGE = 'm1.large';
+
+    /**
+     * Constant for X-Large Instance TYpe
+     */
+    const XLARGE = 'm1.xlarge';
+
+    /**
+     * Constant for High CPU Medium Instance TYpe
+     */
+    const HCPU_MEDIUM = 'c1.medium';
+
+    /**
+     * Constant for High CPU X-Large Instance TYpe
+     */
+    const HCPU_XLARGE = 'c1.xlarge';
+
+
+    /**
+     * Launches a specified number of Instances.
+     *
+     * If Amazon EC2 cannot launch the minimum number AMIs you request, no
+     * instances launch. If there is insufficient capacity to launch the
+     * maximum number of AMIs you request, Amazon EC2 launches as many
+     * as possible to satisfy the requested maximum values.
+     *
+     * Every instance is launched in a security group. If you do not specify
+     * a security group at launch, the instances start in your default security group.
+     * For more information on creating security groups, see CreateSecurityGroup.
+     *
+     * An optional instance type can be specified. For information
+     * about instance types, see Instance Types.
+     *
+     * You can provide an optional key pair ID for each image in the launch request
+     * (for more information, see CreateKeyPair). All instances that are created
+     * from images that use this key pair will have access to the associated public
+     * key at boot. You can use this key to provide secure access to an instance of an
+     * image on a per-instance basis. Amazon EC2 public images use this feature to
+     * provide secure access without passwords.
+     *
+     * Launching public images without a key pair ID will leave them inaccessible.
+     *
+     * @param array $options                        An array that contins the options to start an instance.
+     *                                              Required Values:
+     *                                                imageId string        ID of the AMI with which to launch instances.
+     *                                              Optional Values:
+     *                                                minCount integer      Minimum number of instances to launch.
+     *                                                maxCount integer      Maximum number of instances to launch.
+     *                                                keyName string        Name of the key pair with which to launch instances.
+     *                                                securityGruop string|array Names of the security groups with which to associate the instances.
+     *                                                userData string       The user data available to the launched instances. This should not be Base64 encoded.
+     *                                                instanceType constant Specifies the instance type.
+     *                                                placement string      Specifies the availability zone in which to launch the instance(s). By default, Amazon EC2 selects an availability zone for you.
+     *                                                kernelId string       The ID of the kernel with which to launch the instance.
+     *                                                ramdiskId string      The ID of the RAM disk with which to launch the instance.
+     *                                                blockDeviceVirtualName string     Specifies the virtual name to map to the corresponding device name. For example: instancestore0
+     *                                                blockDeviceName string            Specifies the device to which you are mapping a virtual name. For example: sdb
+     * @return array
+     */
+    public function run(array $options)
+    {
+        $_defaultOptions = array(
+            'minCount'  => 1,
+            'maxCount'  => 1,
+            'instanceType' => Zend_Service_Amazon_Ec2_Instance::SMALL
+        );
+
+        // set / override the defualt optoins if they are not passed into the array;
+        $options = array_merge($_defaultOptions, $options);
+
+        if(!isset($options['imageId'])) {
+            require_once 'Zend/Service/Amazon/Ec2/Exception.php';
+            throw new Zend_Service_Amazon_Ec2_Exception('No Image Id Provided');
+        }
+
+
+        $params = array();
+        $params['Action'] = 'RunInstances';
+        $params['ImageId'] = $options['imageId'];
+        $params['MinCount'] = $options['minCount'];
+        $params['MaxCount'] = $options['maxCount'];
+
+        if(isset($options['keyName'])) {
+            $params['KeyName'] = $options['keyName'];
+        }
+
+        if(is_array($options['securityGroup']) && !empty($options['securityGroup'])) {
+            foreach($options['securityGroup'] as $k=>$name) {
+                $params['SecurityGroup.' . ($k+1)] = $name;
+            }
+        } elseif(isset($options['securityGroup'])) {
+            $params['SecurityGroup.1'] = $options['securityGroup'];
+        }
+
+        if(isset($options['userData'])) {
+            $params['UserData'] = base64_encode($options['userData']);
+        }
+
+        if(isset($options['instanceType'])) {
+            $params['InstanceType'] = $options['instanceType'];
+        }
+
+        if(isset($options['placement'])) {
+            $params['Placement.AvailabilityZone'] = $options['placement'];
+        }
+
+        if(isset($options['kernelId'])) {
+            $params['KernelId'] = $options['kernelId'];
+        }
+
+        if(isset($options['ramdiskId'])) {
+            $params['RamdiskId'] = $options['ramdiskId'];
+        }
+
+        if(isset($options['blockDeviceVirtualName']) && isset($options['blockDeviceName'])) {
+            $params['BlockDeviceMapping.n.VirtualName'] = $options['blockDeviceVirtualName'];
+            $params['BlockDeviceMapping.n.DeviceName'] = $options['blockDeviceName'];
+        }
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = array();
+
+        $return['reservationId'] = $xpath->evaluate('string(//ec2:reservationId/text())');
+        $return['ownerId'] = $xpath->evaluate('string(//ec2:ownerId/text())');
+
+        $gs = $xpath->query('//ec2:groupSet/ec2:item');
+        foreach($gs as $gs_node) {
+            $return['groupSet'][] = $xpath->evaluate('string(ec2:groupId/text())', $gs_node);
+            unset($gs_node);
+        }
+        unset($gs);
+
+        $is = $xpath->query('//ec2:instancesSet/ec2:item');
+        foreach($is as $is_node) {
+            $item = array();
+
+            $item['instanceId'] = $xpath->evaluate('string(ec2:instanceId/text())', $is_node);
+            $item['imageId'] = $xpath->evaluate('string(ec2:imageId/text())', $is_node);
+            $item['instanceState']['code'] = $xpath->evaluate('string(ec2:instanceState/ec2:code/text())', $is_node);
+            $item['instanceState']['name'] = $xpath->evaluate('string(ec2:instanceState/ec2:name/text())', $is_node);
+            $item['privateDnsName'] = $xpath->evaluate('string(ec2:privateDnsName/text())', $is_node);
+            $item['dnsName'] = $xpath->evaluate('string(ec2:dnsName/text())', $is_node);
+            $item['keyName'] = $xpath->evaluate('string(ec2:keyName/text())', $is_node);
+            $item['instanceType'] = $xpath->evaluate('string(ec2:instanceType/text())', $is_node);
+            $item['amiLaunchIndex'] = $xpath->evaluate('string(ec2:amiLaunchIndex/text())', $is_node);
+            $item['launchTime'] = $xpath->evaluate('string(ec2:launchTime/text())', $is_node);
+            $item['availabilityZone'] = $xpath->evaluate('string(ec2:placement/ec2:availabilityZone/text())', $is_node);
+
+            $return['instances'][] = $item;
+            unset($item);
+            unset($is_node);
+        }
+        unset($is);
+
+        return $return;
+
+    }
+
+    /**
+     * Returns information about instances that you own.
+     *
+     * If you specify one or more instance IDs, Amazon EC2 returns information
+     * for those instances. If you do not specify instance IDs, Amazon EC2
+     * returns information for all relevant instances. If you specify an invalid
+     * instance ID, a fault is returned. If you specify an instance that you do
+     * not own, it will not be included in the returned results.
+     *
+     * Recently terminated instances might appear in the returned results.
+     * This interval is usually less than one hour.
+     *
+     * @param string|array $instaceId       Set of instances IDs of which to get the status.
+     * @param boolean                       Ture to ignore Terminated Instances.
+     * @return array
+     */
+    public function describe($instanceId = null, $ignoreTerminated = false)
+    {
+        $params = array();
+        $params['Action'] = 'DescribeInstances';
+
+        if(is_array($instanceId) && !empty($instanceId)) {
+            foreach($instanceId as $k=>$name) {
+                $params['InstanceId.' . ($k+1)] = $name;
+            }
+        } elseif($instanceId) {
+            $params['InstanceId.1'] = $instanceId;
+        }
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $nodes = $xpath->query('//ec2:reservationSet/ec2:item');
+
+        $return = array();
+
+        foreach($nodes as $node) {
+            $return['reservationId'] = $xpath->evaluate('string(ec2:reservationId/text())', $node);
+            $return['ownerId'] = $xpath->evaluate('string(ec2:ownerId/text())', $node);
+
+            $gs = $xpath->query('ec2:groupSet/ec2:item', $node);
+            foreach($gs as $gs_node) {
+                $return['groupSet'][] = $xpath->evaluate('string(ec2:groupId/text())', $gs_node);
+                unset($gs_node);
+            }
+            unset($gs);
+
+            $is = $xpath->query('ec2:instancesSet/ec2:item', $node);
+            $return['instances'] = array();
+            foreach($is as $is_node) {
+                if($xpath->evaluate('string(ec2:instanceState/ec2:code/text())', $is_node) == 48 && $ignoreTerminated) continue;
+
+                $item = array();
+
+                $item['instanceId'] = $xpath->evaluate('string(ec2:instanceId/text())', $is_node);
+                $item['imageId'] = $xpath->evaluate('string(ec2:imageId/text())', $is_node);
+                $item['instanceState']['code'] = $xpath->evaluate('string(ec2:instanceState/ec2:code/text())', $is_node);
+                $item['instanceState']['name'] = $xpath->evaluate('string(ec2:instanceState/ec2:name/text())', $is_node);
+                $item['privateDnsName'] = $xpath->evaluate('string(ec2:privateDnsName/text())', $is_node);
+                $item['dnsName'] = $xpath->evaluate('string(ec2:dnsName/text())', $is_node);
+                $item['keyName'] = $xpath->evaluate('string(ec2:keyName/text())', $is_node);
+                $item['productCode'] = $xpath->evaluate('string(ec2:productCodesSet/ec2:item/ec2:productCode/text())', $is_node);
+                $item['instanceType'] = $xpath->evaluate('string(ec2:instanceType/text())', $is_node);
+                $item['launchTime'] = $xpath->evaluate('string(ec2:launchTime/text())', $is_node);
+                $item['availabilityZone'] = $xpath->evaluate('string(ec2:placement/ec2:availabilityZone/text())', $is_node);
+                $item['kernelId'] = $xpath->evaluate('string(ec2:kernelId/text())', $is_node);
+                $item['ramediskId'] = $xpath->evaluate('string(ec2:ramediskId/text())', $is_node);
+
+                $return['instances'][] = $item;
+                unset($item);
+                unset($is_node);
+            }
+            unset($is);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Returns information about instances that you own that were started from
+     * a specific imageId
+     *
+     * Recently terminated instances might appear in the returned results.
+     * This interval is usually less than one hour.
+     *
+     * @param string $imageId               The imageId used to start the Instance.
+     * @param boolean                       Ture to ignore Terminated Instances.
+     * @return array
+     */
+    public function describeByImageId($imageId, $ignoreTerminated = false)
+    {
+        $arrInstances = $this->describe(null, $ignoreTerminated);
+
+        $return = array();
+
+        foreach($arrInstances['instances'] as $k => $instance) {
+            if($instance['imageId'] !== $imageId) continue;
+            $instance['groupSet'] = $arrInstances['groupSet'][$k];
+            $return[] = $instance;
+        }
+
+        return $return;
+    }
+
+    /**
+     * Shuts down one or more instances. This operation is idempotent; if you terminate
+     * an instance more than once, each call will succeed.
+     *
+     * Terminated instances will remain visible after termination (approximately one hour).
+     *
+     * @param string|array $instanceId      One or more instance IDs returned.
+     * @return array
+     */
+    public function terminate($instanceId)
+    {
+        $params = array();
+        $params['Action'] = 'TerminateInstances';
+
+        if(is_array($instanceId) && !empty($instanceId)) {
+            foreach($instanceId as $k=>$name) {
+                $params['InstanceId.' . ($k+1)] = $name;
+            }
+        } elseif($instanceId) {
+            $params['InstanceId.1'] = $instanceId;
+        }
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $nodes = $xpath->query('//ec2:instancesSet/ec2:item');
+
+        $return = array();
+        foreach($nodes as $node) {
+            $item = array();
+
+            $item['instanceId'] = $xpath->evaluate('string(ec2:instanceId/text())', $node);
+            $item['shutdownState']['code'] = $xpath->evaluate('string(ec2:shutdownState/ec2:code/text())', $node);
+            $item['shutdownState']['name'] = $xpath->evaluate('string(ec2:shutdownState/ec2:name/text())', $node);
+            $item['previousState']['code'] = $xpath->evaluate('string(ec2:previousState/ec2:code/text())', $node);
+            $item['previousState']['name'] = $xpath->evaluate('string(ec2:previousState/ec2:name/text())', $node);
+
+            $return[] = $item;
+            unset($item);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Requests a reboot of one or more instances.
+     *
+     * This operation is asynchronous; it only queues a request to reboot the specified instance(s). The operation
+     * will succeed if the instances are valid and belong to the user. Requests to reboot terminated instances are ignored.
+     *
+     * @param string|array $instanceId  One or more instance IDs.
+     * @return boolean
+     */
+    public function reboot($instanceId)
+    {
+        $params = array();
+        $params['Action'] = 'RebootInstances';
+
+        if(is_array($instanceId) && !empty($instanceId)) {
+            foreach($instanceId as $k=>$name) {
+                $params['InstanceId.' . ($k+1)] = $name;
+            }
+        } elseif($instanceId) {
+            $params['InstanceId.1'] = $instanceId;
+        }
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($return === "true");
+    }
+
+    /**
+     * Retrieves console output for the specified instance.
+     *
+     * Instance console output is buffered and posted shortly after instance boot, reboot, and termination.
+     * Amazon EC2 preserves the most recent 64 KB output which will be available for at least one hour after the most recent post.
+     *
+     * @param string $instanceId       An instance ID
+     * @return array
+     */
+    public function consoleOutput($instanceId)
+    {
+        $params = array();
+        $params['Action'] = 'GetConsoleOutput';
+        $params['InstanceId'] = $instanceId;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = array();
+
+        $return['instanceId'] = $xpath->evaluate('string(//ec2:instanceId/text())');
+        $return['timestamp'] = $xpath->evaluate('string(//ec2:timestamp/text())');
+        $return['output'] = base64_decode($xpath->evaluate('string(//ec2:output/text())'));
+
+        return $return;
+    }
+
+    /**
+     * Returns true if the specified product code is attached to the specified instance.
+     * The operation returns false if the product code is not attached to the instance.
+     *
+     * The confirmProduct operation can only be executed by the owner of the AMI.
+     * This feature is useful when an AMI owner is providing support and wants to
+     * verify whether a user's instance is eligible.
+     *
+     * @param string $productCode           The product code to confirm.
+     * @param string $instanceId            The instance for which to confirm the product code.
+     * @return array|boolean                An array if the product code is attached to the instance, false if it is not.
+     */
+    public function confirmProduct($productCode, $instanceId)
+    {
+        $params = array();
+        $params['Action'] = 'ConfirmProductInstance';
+        $params['ProductCode'] = $productCode;
+        $params['InstanceId'] = $instanceId;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $result = $xpath->evaluate('string(//ec2:result/text())');
+
+        if($result === "true") {
+            $return['result'] = true;
+            $return['ownerId'] = $xpath->evaluate('string(//ec2:ownerId/text())');
+
+            return $return;
+        }
+
+        return false;
+    }
+
+}

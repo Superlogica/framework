@@ -1,53 +1,150 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Gbase_Extension_BaseAttribute
+ */
+require_once 'Zend/Gdata/Gbase/Extension/BaseAttribute.php';
+
+/**
+ * Base class for working with Google Base entries.
+ *
+ * @link http://code.google.com/apis/base/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gbase_Entry extends Zend_Gdata_Entry
+{
+
+    /**
+     * Name of the base class for Google Base entries
+     *
+     * var @string
+     */
+    protected $_entryClassName = 'Zend_Gdata_Gbase_Entry';
+
+    /**
+     * Google Base attribute elements in the 'g' namespace
+     *
+     * @var array
+     */
+    protected $_baseAttributes = array();
+
+    /**
+     * Constructs a new Zend_Gdata_Gbase_ItemEntry object.
+     * @param DOMElement $element (optional) The DOMElement on which to base this object.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gbase::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        foreach ($this->_baseAttributes as $baseAttribute) {
+            $element->appendChild($baseAttribute->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        if (strstr($absoluteNodeName, $this->lookupNamespace('g') . ':')) {
+            $baseAttribute = new Zend_Gdata_Gbase_Extension_BaseAttribute();
+            $baseAttribute->transferFromDOM($child);
+            $this->_baseAttributes[] = $baseAttribute;
+        } else {
+            parent::takeChildFromDOM($child);
+        }
+    }
+
+    /**
+     * Get the value of the itme_type
+     *
+     * @return Zend_Gdata_Gbase_Extension_ItemType The requested object.
+     */
+    public function getItemType()
+    {
+        $itemType = $this->getGbaseAttribute('item_type');
+        if (is_object($itemType[0])) {
+          return $itemType[0];
+        } else {
+          return null;
+        }
+    }
+
+    /**
+     * Return all the Base attributes
+     * @return Zend_Gdata_Gbase_Extension_BaseAttribute
+     */
+    public function getGbaseAttributes() {
+        return $this->_baseAttributes;
+    }
+
+    /**
+     * Return an array of Base attributes that match the given attribute name
+     *
+     * @param string $name The name of the Base attribute to look for
+     * @return array $matches Array that contains the matching list of Base attributes
+     */
+    public function getGbaseAttribute($name)
+    {
+        $matches = array();
+        for ($i = 0; $i < count($this->_baseAttributes); $i++) {
+            $baseAttribute = $this->_baseAttributes[$i];
+            if ($baseAttribute->rootElement == $name &&
+                $baseAttribute->rootNamespaceURI == $this->lookupNamespace('g')) {
+                $matches[] = &$this->_baseAttributes[$i];
+            }
+        }
+        return $matches;
+    }
+
+}

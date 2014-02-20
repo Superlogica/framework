@@ -1,71 +1,222 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-rfzJuQ8g4eWu
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Log
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Log.php 13459 2008-12-26 14:13:34Z yoshida@zend.co.jp $
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Log
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Log.php 13459 2008-12-26 14:13:34Z yoshida@zend.co.jp $
+ */
+class Zend_Log
+{
+    const EMERG   = 0;  // Emergency: system is unusable
+    const ALERT   = 1;  // Alert: action must be taken immediately
+    const CRIT    = 2;  // Critical: critical conditions
+    const ERR     = 3;  // Error: error conditions
+    const WARN    = 4;  // Warning: warning conditions
+    const NOTICE  = 5;  // Notice: normal but significant condition
+    const INFO    = 6;  // Informational: informational messages
+    const DEBUG   = 7;  // Debug: debug messages
+
+    /**
+     * @var array of priorities where the keys are the
+     * priority numbers and the values are the priority names
+     */
+    protected $_priorities = array();
+
+    /**
+     * @var array of Zend_Log_Writer_Abstract
+     */
+    protected $_writers = array();
+
+    /**
+     * @var array of Zend_Log_Filter_Interface
+     */
+    protected $_filters = array();
+
+    /**
+     * @var array of extra log event
+     */
+    protected $_extras = array();
+
+    /**
+     * Class constructor.  Create a new logger
+     *
+     * @param Zend_Log_Writer_Abstract|null  $writer  default writer
+     */
+    public function __construct(Zend_Log_Writer_Abstract $writer = null)
+    {
+        $r = new ReflectionClass($this);
+        $this->_priorities = array_flip($r->getConstants());
+
+        if ($writer !== null) {
+            $this->addWriter($writer);
+        }
+    }
+
+    /**
+     * Class destructor.  Shutdown log writers
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        foreach($this->_writers as $writer) {
+            $writer->shutdown();
+        }
+    }
+
+    /**
+     * Undefined method handler allows a shortcut:
+     *   $log->priorityName('message')
+     *     instead of
+     *   $log->log('message', Zend_Log::PRIORITY_NAME)
+     *
+     * @param  string  $method  priority name
+     * @param  string  $params  message to log
+     * @return void
+     * @throws Zend_Log_Exception
+     */
+    public function __call($method, $params)
+    {
+        $priority = strtoupper($method);
+        if (($priority = array_search($priority, $this->_priorities)) !== false) {
+            $this->log(array_shift($params), $priority);
+        } else {
+            /** @see Zend_Log_Exception */
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception('Bad log priority');
+        }
+    }
+
+    /**
+     * Log a message at a priority
+     *
+     * @param  string   $message   Message to log
+     * @param  integer  $priority  Priority of message
+     * @return void
+     * @throws Zend_Log_Exception
+     */
+    public function log($message, $priority)
+    {
+        // sanity checks
+        if (empty($this->_writers)) {
+            /** @see Zend_Log_Exception */
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception('No writers were added');
+        }
+
+        if (! isset($this->_priorities[$priority])) {
+            /** @see Zend_Log_Exception */
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception('Bad log priority');
+        }
+
+        // pack into event required by filters and writers
+        $event = array_merge(array('timestamp'    => date('c'),
+                                    'message'      => $message,
+                                    'priority'     => $priority,
+                                    'priorityName' => $this->_priorities[$priority]),
+                              $this->_extras);
+
+        // abort if rejected by the global filters
+        foreach ($this->_filters as $filter) {
+            if (! $filter->accept($event)) {
+                return;
+            }
+        }
+
+        // send to each writer
+        foreach ($this->_writers as $writer) {
+            $writer->write($event);
+        }
+    }
+
+    /**
+     * Add a custom priority
+     *
+     * @param  string   $name      Name of priority
+     * @param  integer  $priority  Numeric priority
+     * @throws Zend_Log_InvalidArgumentException
+     */
+    public function addPriority($name, $priority)
+    {
+        // Priority names must be uppercase for predictability.
+        $name = strtoupper($name);
+
+        if (isset($this->_priorities[$priority])
+            || array_search($name, $this->_priorities)) {
+            /** @see Zend_Log_Exception */
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception('Existing priorities cannot be overwritten');
+        }
+
+        $this->_priorities[$priority] = $name;
+    }
+
+    /**
+     * Add a filter that will be applied before all log writers.
+     * Before a message will be received by any of the writers, it
+     * must be accepted by all filters added with this method.
+     *
+     * @param  int|Zend_Log_Filter_Interface $filter
+     * @return void
+     */
+    public function addFilter($filter)
+    {
+        if (is_integer($filter)) {
+        	/** @see Zend_Log_Filter_Priority */
+            require_once 'Zend/Log/Filter/Priority.php';
+            $filter = new Zend_Log_Filter_Priority($filter);
+        } elseif(!is_object($filter) || ! $filter instanceof Zend_Log_Filter_Interface) {
+            /** @see Zend_Log_Exception */
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception('Invalid filter provided');
+        }
+
+        $this->_filters[] = $filter;
+    }
+
+    /**
+     * Add a writer.  A writer is responsible for taking a log
+     * message and writing it out to storage.
+     *
+     * @param  Zend_Log_Writer_Abstract $writer
+     * @return void
+     */
+    public function addWriter(Zend_Log_Writer_Abstract $writer)
+    {
+        $this->_writers[] = $writer;
+    }
+
+    /**
+     * Set an extra item to pass to the log writers.
+     *
+     * @param  $name    Name of the field
+     * @param  $value   Value of the field
+     * @return void
+     */
+    public function setEventItem($name, $value) {
+        $this->_extras = array_merge($this->_extras, array($name => $value));
+    }
+
+}

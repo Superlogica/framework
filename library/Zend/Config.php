@@ -1,124 +1,455 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-LihTU0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Config.php 14415 2009-03-21 21:56:00Z rob $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Config implements Countable, Iterator
+{
+    /**
+     * Whether in-memory modifications to configuration data are allowed
+     *
+     * @var boolean
+     */
+    protected $_allowModifications;
+
+    /**
+     * Iteration index
+     *
+     * @var integer
+     */
+    protected $_index;
+
+    /**
+     * Number of elements in configuration data
+     *
+     * @var integer
+     */
+    protected $_count;
+
+    /**
+     * Contains array of configuration data
+     *
+     * @var array
+     */
+    protected $_data;
+
+    /**
+     * Used when unsetting values during iteration to ensure we do not skip
+     * the next element
+     *
+     * @var boolean
+     */
+    protected $_skipNextIteration;
+
+    /**
+     * Contains which config file sections were loaded. This is null
+     * if all sections were loaded, a string name if one section is loaded
+     * and an array of string names if multiple sections were loaded.
+     *
+     * @var mixed
+     */
+    protected $_loadedSection;
+
+    /**
+     * This is used to track section inheritance. The keys are names of sections that
+     * extend other sections, and the values are the extended sections.
+     *
+     * @var array
+     */
+    protected $_extends = array();
+
+    /**
+     * Load file error string.
+     * 
+     * Is null if there was no error while file loading
+     *
+     * @var string
+     */
+    protected $_loadFileErrorStr = null;
+
+    /**
+     * Zend_Config provides a property based interface to
+     * an array. The data are read-only unless $allowModifications
+     * is set to true on construction.
+     *
+     * Zend_Config also implements Countable and Iterator to
+     * facilitate easy access to the data.
+     *
+     * @param  array   $array
+     * @param  boolean $allowModifications
+     * @return void
+     */
+    public function __construct(array $array, $allowModifications = false)
+    {
+        $this->_allowModifications = (boolean) $allowModifications;
+        $this->_loadedSection = null;
+        $this->_index = 0;
+        $this->_data = array();
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $this->_data[$key] = new self($value, $this->_allowModifications);
+            } else {
+                $this->_data[$key] = $value;
+            }
+        }
+        $this->_count = count($this->_data);
+    }
+
+    /**
+     * Retrieve a value and return $default if there is no element set.
+     *
+     * @param string $name
+     * @param mixed $default
+     * @return mixed
+     */
+    public function get($name, $default = null)
+    {
+        $result = $default;
+        if (array_key_exists($name, $this->_data)) {
+            $result = $this->_data[$name];
+        }
+        return $result;
+    }
+
+    /**
+     * Magic function so that $obj->value will work.
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this->get($name);
+    }
+
+    /**
+     * Only allow setting of a property if $allowModifications
+     * was set to true on construction. Otherwise, throw an exception.
+     *
+     * @param  string $name
+     * @param  mixed  $value
+     * @throws Zend_Config_Exception
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        if ($this->_allowModifications) {
+            if (is_array($value)) {
+                $this->_data[$name] = new self($value, true);
+            } else {
+                $this->_data[$name] = $value;
+            }
+            $this->_count = count($this->_data);
+        } else {
+            /** @see Zend_Config_Exception */
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('Zend_Config is read only');
+        }
+    }
+    
+    /**
+     * Deep clone of this instance to ensure that nested Zend_Configs
+     * are also cloned.
+     * 
+     * @return void
+     */
+    public function __clone()
+    {
+      $array = array();
+      foreach ($this->_data as $key => $value) {
+          if ($value instanceof Zend_Config) {
+              $array[$key] = clone $value;
+          } else {
+              $array[$key] = $value;
+          }
+      }
+      $this->_data = $array;
+    }
+
+    /**
+     * Return an associative array of the stored data.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        $array = array();
+        foreach ($this->_data as $key => $value) {
+            if ($value instanceof Zend_Config) {
+                $array[$key] = $value->toArray();
+            } else {
+                $array[$key] = $value;
+            }
+        }
+        return $array;
+    }
+
+    /**
+     * Support isset() overloading on PHP 5.1
+     *
+     * @param string $name
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        return isset($this->_data[$name]);
+    }
+
+    /**
+     * Support unset() overloading on PHP 5.1
+     *
+     * @param  string $name
+     * @throws Zend_Config_Exception
+     * @return void
+     */
+    public function __unset($name)
+    {
+        if ($this->_allowModifications) {
+            unset($this->_data[$name]);
+            $this->_count = count($this->_data);
+            $this->_skipNextIteration = true;
+        } else {
+            /** @see Zend_Config_Exception */
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('Zend_Config is read only');
+        }
+
+    }
+
+    /**
+     * Defined by Countable interface
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return $this->_count;
+    }
+
+    /**
+     * Defined by Iterator interface
+     *
+     * @return mixed
+     */
+    public function current()
+    {
+        $this->_skipNextIteration = false;
+        return current($this->_data);
+    }
+
+    /**
+     * Defined by Iterator interface
+     *
+     * @return mixed
+     */
+    public function key()
+    {
+        return key($this->_data);
+    }
+
+    /**
+     * Defined by Iterator interface
+     *
+     */
+    public function next()
+    {
+        if ($this->_skipNextIteration) {
+            $this->_skipNextIteration = false;
+            return;
+        }
+        next($this->_data);
+        $this->_index++;
+    }
+
+    /**
+     * Defined by Iterator interface
+     *
+     */
+    public function rewind()
+    {
+        $this->_skipNextIteration = false;
+        reset($this->_data);
+        $this->_index = 0;
+    }
+
+    /**
+     * Defined by Iterator interface
+     *
+     * @return boolean
+     */
+    public function valid()
+    {
+        return $this->_index < $this->_count;
+    }
+
+    /**
+     * Returns the section name(s) loaded.
+     *
+     * @return mixed
+     */
+    public function getSectionName()
+    {
+        if(is_array($this->_loadedSection) && count($this->_loadedSection) == 1) {
+            $this->_loadedSection = $this->_loadedSection[0];
+        }
+        return $this->_loadedSection;
+    }
+
+    /**
+     * Returns true if all sections were loaded
+     *
+     * @return boolean
+     */
+    public function areAllSectionsLoaded()
+    {
+        return $this->_loadedSection === null;
+    }
+
+
+    /**
+     * Merge another Zend_Config with this one. The items
+     * in $merge will override the same named items in
+     * the current config.
+     *
+     * @param Zend_Config $merge
+     * @return Zend_Config
+     */
+    public function merge(Zend_Config $merge)
+    {
+        foreach($merge as $key => $item) {
+            if(array_key_exists($key, $this->_data)) {
+                if($item instanceof Zend_Config && $this->$key instanceof Zend_Config) {
+                    $this->$key = $this->$key->merge(new Zend_Config($item->toArray(), !$this->readOnly()));
+                } else {
+                    $this->$key = $item;
+                }
+            } else {
+                if($item instanceof Zend_Config) {
+                    $this->$key = new Zend_Config($item->toArray(), !$this->readOnly());
+                } else {
+                    $this->$key = $item;
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Prevent any more modifications being made to this instance. Useful
+     * after merge() has been used to merge multiple Zend_Config objects
+     * into one object which should then not be modified again.
+     *
+     */
+    public function setReadOnly()
+    {
+        $this->_allowModifications = false;
+        foreach ($this->_data as $key => $value) {
+            if ($value instanceof Zend_Config) {
+                $value->setReadOnly();
+            }
+        }
+    }
+    
+    /**
+     * Returns if this Zend_Config object is read only or not.
+     *
+     * @return boolean
+     */
+    public function readOnly()
+    {
+        return !$this->_allowModifications;
+    }
+    
+    /**
+     * Get the current extends
+     *
+     * @return array
+     */
+    public function getExtends()
+    {
+        return $this->_extends;
+    }
+    
+    /**
+     * Set an extend for Zend_Config_Writer
+     *
+     * @param  string $extendingSection
+     * @param  string $extendedSection
+     * @return void
+     */
+    public function setExtend($extendingSection, $extendedSection = null)
+    {
+        if ($extendedSection === null && isset($this->_extends[$extendingSection])) {
+            unset($this->_extends[$extendingSection]);
+        } else if ($extendedSection !== null) {
+            $this->_extends[$extendingSection] = $extendedSection;
+        }
+    }
+    
+    /**
+     * Throws an exception if $extendingSection may not extend $extendedSection,
+     * and tracks the section extension if it is valid.
+     *
+     * @param  string $extendingSection
+     * @param  string $extendedSection
+     * @throws Zend_Config_Exception
+     * @return void
+     */
+    protected function _assertValidExtend($extendingSection, $extendedSection)
+    {
+        // detect circular section inheritance
+        $extendedSectionCurrent = $extendedSection;
+        while (array_key_exists($extendedSectionCurrent, $this->_extends)) {
+            if ($this->_extends[$extendedSectionCurrent] == $extendingSection) {
+                /** @see Zend_Config_Exception */
+                require_once 'Zend/Config/Exception.php';
+                throw new Zend_Config_Exception('Illegal circular inheritance detected');
+            }
+            $extendedSectionCurrent = $this->_extends[$extendedSectionCurrent];
+        }
+        // remember that this section extends another section
+        $this->_extends[$extendingSection] = $extendedSection;
+    }
+
+    /**
+     * Handle any errors from simplexml_load_file or parse_ini_file
+     *
+     * @param integer $errno
+     * @param string $errstr
+     * @param string $errfile
+     * @param integer $errline
+     */
+    protected function _loadFileErrorHandler($errno, $errstr, $errfile, $errline)
+    { 
+        if ($this->_loadFileErrorStr === null) {
+            $this->_loadFileErrorStr = $errstr;
+        } else {
+            $this->_loadFileErrorStr .= (PHP_EOL . $errstr);
+        }
+    }
+
+}

@@ -1,60 +1,174 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-tXKM5/ItBPShnOMl7/IbNZ2kXFmBiJlK/ci=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: EncryptedKey.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Element
+ */
+require_once 'Zend/InfoCard/Xml/Element.php';
+
+/**
+ * Zend_InfoCard_Xml_EncryptedKey
+ */
+require_once 'Zend/InfoCard/Xml/EncryptedKey.php';
+
+/**
+ * Zend_InfoCard_Xml_KeyInfo_Interface
+ */
+require_once 'Zend/InfoCard/Xml/KeyInfo/Interface.php';
+
+/**
+ * An object representing an Xml EncryptedKEy block
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Xml_EncryptedKey
+    extends Zend_InfoCard_Xml_Element
+    implements Zend_InfoCard_Xml_KeyInfo_Interface
+{
+    /**
+     * Return an instance of the object based on input XML Data
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @param string $xmlData The EncryptedKey XML Block
+     * @return Zend_InfoCard_Xml_EncryptedKey
+     */
+    static public function getInstance($xmlData)
+    {
+        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
+            $strXmlData = $xmlData->asXML();
+        } else if (is_string($xmlData)) {
+            $strXmlData = $xmlData;
+        } else {
+            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
+        }
+
+        $sxe = simplexml_load_string($strXmlData);
+
+        if($sxe->getName() != "EncryptedKey") {
+            throw new Zend_InfoCard_Xml_Exception("Invalid XML Block provided for EncryptedKey");
+        }
+
+        return simplexml_load_string($strXmlData, "Zend_InfoCard_Xml_EncryptedKey");
+    }
+
+    /**
+     * Returns the Encyption Method Algorithm URI of the block
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @return string the Encryption method algorithm URI
+     */
+    public function getEncryptionMethod()
+    {
+
+        $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
+        list($encryption_method) = $this->xpath("//e:EncryptionMethod");
+
+        if(!($encryption_method instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to find the e:EncryptionMethod KeyInfo encryption block");
+        }
+
+        $dom = self::convertToDOM($encryption_method);
+
+        if(!$dom->hasAttribute('Algorithm')) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to determine the encryption algorithm in the Symmetric enc:EncryptionMethod XML block");
+        }
+
+        return $dom->getAttribute('Algorithm');
+
+    }
+
+    /**
+     * Returns the Digest Method Algorithm URI used
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @return string the Digest Method Algorithm URI
+     */
+    public function getDigestMethod()
+    {
+        $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
+        list($encryption_method) = $this->xpath("//e:EncryptionMethod");
+
+        if(!($encryption_method instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to find the e:EncryptionMethod KeyInfo encryption block");
+        }
+
+        if(!($encryption_method->DigestMethod instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to find the DigestMethod block");
+        }
+
+        $dom = self::convertToDOM($encryption_method->DigestMethod);
+
+        if(!$dom->hasAttribute('Algorithm')) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to determine the digest algorithm for the symmetric Keyinfo");
+        }
+
+        return $dom->getAttribute('Algorithm');
+
+    }
+
+    /**
+     * Returns the KeyInfo block object
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @return Zend_InfoCard_Xml_KeyInfo_Abstract
+     */
+    public function getKeyInfo()
+    {
+
+        if(isset($this->KeyInfo)) {
+            return Zend_InfoCard_Xml_KeyInfo::getInstance($this->KeyInfo);
+        }
+
+        throw new Zend_InfoCard_Xml_Exception("Unable to locate a KeyInfo block");
+    }
+
+    /**
+     * Return the encrypted value of the block in base64 format
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @return string The Value of the CipherValue block in base64 format
+     */
+    public function getCipherValue()
+    {
+
+        $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
+
+        list($cipherdata) = $this->xpath("//e:CipherData");
+
+        if(!($cipherdata instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to find the e:CipherData block");
+        }
+
+        $cipherdata->registerXPathNameSpace('enc', 'http://www.w3.org/2001/04/xmlenc#');
+        list($ciphervalue) = $cipherdata->xpath("//enc:CipherValue");
+
+        if(!($ciphervalue instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to fidn the enc:CipherValue block");
+        }
+
+        return (string)$ciphervalue;
+    }
+}

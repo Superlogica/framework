@@ -1,50 +1,186 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_DijitMulti */
+require_once 'Zend/Dojo/Form/Element/DijitMulti.php';
+
+/**
+ * ComboBox dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_DijitMulti
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ComboBox.php 10723 2008-08-06 15:30:18Z matthew $
+ */
+class Zend_Dojo_Form_Element_ComboBox extends Zend_Dojo_Form_Element_DijitMulti
+{
+    /**
+     * Use ComboBox dijit view helper
+     * @var string
+     */
+    public $helper = 'ComboBox';
+
+    /**
+     * Flag: autoregister inArray validator?
+     * @var bool
+     */
+    protected $_registerInArrayValidator = false;
+
+    /**
+     * Get datastore information 
+     * 
+     * @return array
+     */
+    public function getStoreInfo()
+    {
+        if (!$this->hasDijitParam('store')) {
+            $this->dijitParams['store'] = array();
+        }
+        return $this->dijitParams['store'];
+    }
+
+    /**
+     * Set datastore identifier
+     * 
+     * @param  string $identifier 
+     * @return Zend_Dojo_Form_Element_ComboBox
+     */
+    public function setStoreId($identifier)
+    {
+        $store = $this->getStoreInfo();
+        $store['store'] = (string) $identifier;
+        $this->setDijitParam('store', $store);
+        return $this;
+    }
+
+    /**
+     * Get datastore identifier 
+     * 
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        $store = $this->getStoreInfo();
+        if (array_key_exists('store', $store)) {
+            return $store['store'];
+        }
+        return null;
+    }
+
+    /**
+     * Set datastore dijit type
+     * 
+     * @param  string $dojoType 
+     * @return Zend_Dojo_Form_Element_ComboBox
+     */
+    public function setStoreType($dojoType)
+    {
+        $store = $this->getStoreInfo();
+        $store['type'] = (string) $dojoType;
+        $this->setDijitParam('store', $store);
+        return $this;
+    }
+
+    /**
+     * Get datastore dijit type 
+     * 
+     * @return string|null
+     */
+    public function getStoreType()
+    {
+        $store = $this->getStoreInfo();
+        if (array_key_exists('type', $store)) {
+            return $store['type'];
+        }
+        return null;
+    }
+
+    /**
+     * Set datastore parameters
+     * 
+     * @param  array $params 
+     * @return Zend_Dojo_Form_Element_ComboBox
+     */
+    public function setStoreParams(array $params)
+    {
+        $store = $this->getStoreInfo();
+        $store['params'] = $params;
+        $this->setDijitParam('store', $store);
+        return $this;
+    }
+
+    /**
+     * Get datastore params
+     * 
+     * @return array
+     */
+    public function getStoreParams()
+    {
+        $store = $this->getStoreInfo();
+        if (array_key_exists('params', $store)) {
+            return $store['params'];
+        }
+        return array();
+    }
+
+    /**
+     * Set autocomplete flag
+     * 
+     * @param  bool $flag 
+     * @return Zend_Dojo_Form_Element_ComboBox
+     */
+    public function setAutocomplete($flag)
+    {
+        $this->setDijitParam('autocomplete', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Get autocomplete flag
+     * 
+     * @return bool
+     */
+    public function getAutocomplete()
+    {
+        if (!$this->hasDijitParam('autocomplete')) {
+            return false;
+        }
+        return $this->getDijitParam('autocomplete');
+    }
+
+    /**
+     * Is the value valid?
+     * 
+     * @param  string $value 
+     * @param  mixed $context 
+     * @return bool
+     */
+    public function isValid($value, $context = null)
+    {
+        $storeInfo = $this->getStoreInfo();
+        if (!empty($storeInfo)) {
+            $this->setRegisterInArrayValidator(false);
+        }
+        return parent::isValid($value, $context);
+    }
+}

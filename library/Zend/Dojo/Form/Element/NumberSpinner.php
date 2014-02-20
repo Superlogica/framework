@@ -1,52 +1,245 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_ValidationTextBox */
+require_once 'Zend/Dojo/Form/Element/ValidationTextBox.php';
+
+/**
+ * NumberSpinner dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_ValidationTextBox
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: NumberSpinner.php 10069 2008-07-12 23:48:03Z matthew $
+ */
+class Zend_Dojo_Form_Element_NumberSpinner extends Zend_Dojo_Form_Element_ValidationTextBox
+{
+    /**
+     * Use NumberSpinner dijit view helper
+     * @var string
+     */
+    public $helper = 'NumberSpinner';
+
+    /**
+     * Set defaultTimeout
+     *
+     * @param  int $timeout
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setDefaultTimeout($timeout)
+    {
+        $this->setDijitParam('defaultTimeout', (int) $timeout);
+        return $this;
+    }
+
+    /**
+     * Retrieve defaultTimeout
+     *
+     * @return int|null
+     */
+    public function getDefaultTimeout()
+    {
+        return $this->getDijitParam('defaultTimeout');
+    }
+
+    /**
+     * Set timeoutChangeRate
+     *
+     * @param  int $rate
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setTimeoutChangeRate($rate)
+    {
+        $this->setDijitParam('timeoutChangeRate', (int) $rate);
+        return $this;
+    }
+
+    /**
+     * Retrieve timeoutChangeRate
+     *
+     * @return int|null
+     */
+    public function getTimeoutChangeRate()
+    {
+        return $this->getDijitParam('timeoutChangeRate');
+    }
+
+    /**
+     * Set largeDelta
+     *
+     * @param  int $delta
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setLargeDelta($delta)
+    {
+        $this->setDijitParam('largeDelta', (int) $delta);
+        return $this;
+    }
+
+    /**
+     * Retrieve largeDelta
+     *
+     * @return int|null
+     */
+    public function getLargeDelta()
+    {
+        return $this->getDijitParam('largeDelta');
+    }
+
+    /**
+     * Set smallDelta
+     *
+     * @param  int $delta
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setSmallDelta($delta)
+    {
+        $this->setDijitParam('smallDelta', (int) $delta);
+        return $this;
+    }
+
+    /**
+     * Retrieve smallDelta
+     *
+     * @return int|null
+     */
+    public function getSmallDelta()
+    {
+        return $this->getDijitParam('smallDelta');
+    }
+
+    /**
+     * Set intermediateChanges flag
+     *
+     * @param  bool $flag
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setIntermediateChanges($flag)
+    {
+        $this->setDijitParam('intermediateChanges', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve intermediateChanges flag
+     *
+     * @return bool
+     */
+    public function getIntermediateChanges()
+    {
+        if (!$this->hasDijitParam('intermediateChanges')) {
+            return false;
+        }
+        return $this->getDijitParam('intermediateChanges');
+    }
+
+    /**
+     * Set rangeMessage
+     *
+     * @param  string $message
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setRangeMessage($message)
+    {
+        $this->setDijitParam('rangeMessage', (string) $message);
+        return $this;
+    }
+
+    /**
+     * Retrieve rangeMessage
+     *
+     * @return string|null
+     */
+    public function getRangeMessage()
+    {
+        return $this->getDijitParam('rangeMessage');
+    }
+
+    /**
+     * Set minimum value
+     * 
+     * @param  int $value 
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setMin($value)
+    {
+        $constraints = array();
+        if ($this->hasDijitParam('constraints')) {
+            $constraints = $this->getDijitParam('constraints');
+        }
+        $constraints['min'] = (int) $value;
+        $this->setDijitParam('constraints', $constraints);
+        return $this;
+    }
+
+    /**
+     * Get minimum value
+     * 
+     * @return null|int
+     */
+    public function getMin()
+    {
+        if (!$this->hasDijitParam('constraints')) {
+            return null;
+        }
+        $constraints = $this->getDijitParam('constraints');
+        if (!array_key_exists('min', $constraints)) {
+            return null;
+        }
+        return $constraints['min'];
+    }
+
+    /**
+     * Set maximum value
+     * 
+     * @param  int $value 
+     * @return Zend_Dojo_Form_Element_NumberSpinner
+     */
+    public function setMax($value)
+    {
+        $constraints = array();
+        if ($this->hasDijitParam('constraints')) {
+            $constraints = $this->getDijitParam('constraints');
+        }
+        $constraints['max'] = (int) $value;
+        $this->setDijitParam('constraints', $constraints);
+        return $this;
+    }
+
+    /**
+     * Get maximum value
+     * 
+     * @return null|int
+     */
+    public function getMax()
+    {
+        if (!$this->hasDijitParam('constraints')) {
+            return null;
+        }
+        $constraints = $this->getDijitParam('constraints');
+        if (!array_key_exists('max', $constraints)) {
+            return null;
+        }
+        return $constraints['max'];
+    }
+}

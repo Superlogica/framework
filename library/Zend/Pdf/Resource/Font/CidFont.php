@@ -1,156 +1,482 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource_Font */
+require_once 'Zend/Pdf/Resource/Font.php';
+
+/** Zend_Pdf_FileParser_Font_OpenType */
+require_once 'Zend/Pdf/FileParser/Font/OpenType.php';
+
+/** Zend_Pdf_Cmap */
+require_once 'Zend/Pdf/Cmap.php';
+
+
+
+/**
+ * Adobe PDF CIDFont font object implementation
+ * 
+ * A CIDFont program contains glyph descriptions that are accessed using a CID as
+ * the character selector. There are two types of CIDFont. A Type 0 CIDFont contains
+ * glyph descriptions based on Adobe’s Type 1 font format, whereas those in a
+ * Type 2 CIDFont are based on the TrueType font format.
+ *
+ * A CIDFont dictionary is a PDF object that contains information about a CIDFont program. 
+ * Although its Type value is Font, a CIDFont is not actually a font. It does not have an Encoding 
+ * entry, it cannot be listed in the Font subdictionary of a resource dictionary, and it cannot be 
+ * used as the operand of the Tf operator. It is used only as a descendant of a Type 0 font. 
+ * The CMap in the Type 0 font is what defines the encoding that maps character codes to CIDs 
+ * in the CIDFont. 
+ * 
+ * Font objects should be normally be obtained from the factory methods
+ * {@link Zend_Pdf_Font::fontWithName} and {@link Zend_Pdf_Font::fontWithPath}.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Resource_Font_CidFont extends Zend_Pdf_Resource_Font
+{
+    /**
+     * Object representing the font's cmap (character to glyph map).
+     * @var Zend_Pdf_Cmap
+     */
+    protected $_cmap = null;
+
+    /**
+     * Array containing the widths of each character that have entries in used character map.
+     *
+     * @var array
+     */
+    protected $_charWidths = null;
+
+    /**
+     * Width for characters missed in the font
+     * 
+     * @var integer
+     */
+    protected $_missingCharWidth = 0;
+    
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Pdf_FileParser_Font_OpenType $fontParser Font parser object
+     *   containing OpenType file.
+     * @param integer $embeddingOptions Options for font embedding.
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct(Zend_Pdf_FileParser_Font_OpenType $fontParser)
+    {
+        parent::__construct();
+
+        $fontParser->parse();
+        
+
+        /* Object properties */
+
+        $this->_fontNames = $fontParser->names;
+
+        $this->_isBold       = $fontParser->isBold;
+        $this->_isItalic     = $fontParser->isItalic;
+        $this->_isMonospaced = $fontParser->isMonospaced;
+
+        $this->_underlinePosition  = $fontParser->underlinePosition;
+        $this->_underlineThickness = $fontParser->underlineThickness;
+        $this->_strikePosition     = $fontParser->strikePosition;
+        $this->_strikeThickness    = $fontParser->strikeThickness;
+
+        $this->_unitsPerEm = $fontParser->unitsPerEm;
+
+        $this->_ascent  = $fontParser->ascent;
+        $this->_descent = $fontParser->descent;
+        $this->_lineGap = $fontParser->lineGap;
+
+
+        $this->_cmap = $fontParser->cmap;
+
+
+        /* Resource dictionary */
+
+        $baseFont = $this->getFontName(Zend_Pdf_Font::NAME_POSTSCRIPT, 'en', 'UTF-8');
+        $this->_resource->BaseFont = new Zend_Pdf_Element_Name($baseFont);
+
+
+        /**
+         * Prepare widths array.
+         */
+        /* Constract characters widths array using font CMap and glyphs widths array */
+        $glyphWidths = $fontParser->glyphWidths;
+        $charGlyphs  = $this->_cmap->getCoveredCharactersGlyphs();
+        $charWidths  = array();
+        foreach ($charGlyphs as $charCode => $glyph) {
+            $charWidths[$charCode] = $glyphWidths[$glyph];
+        }
+        $this->_charWidths       = $charWidths;
+        $this->_missingCharWidth = $glyphWidths[0];  
+
+        /* Width array optimization. Step1: extract default value */
+        $widthFrequencies = array_count_values($charWidths);
+        $defaultWidth          = null;
+        $defaultWidthFrequency = -1;
+        foreach ($widthFrequencies as $width => $frequency) {
+            if ($frequency > $defaultWidthFrequency) {
+                $defaultWidth          = $width;
+                $defaultWidthFrequency = $frequency;
+            }
+        }
+
+        // Store default value in the font dictionary
+        $this->_resource->DW = new Zend_Pdf_Element_Numeric($this->toEmSpace($defaultWidth));
+        
+        // Remove characters which corresponds to default width from the widths array
+        $defWidthChars = array_keys($charWidths, $defaultWidth);
+        foreach ($defWidthChars as $charCode) {
+            unset($charWidths[$charCode]);
+        } 
+
+        // Order cheracter widths aray by character codes
+        ksort($charWidths, SORT_NUMERIC);
+
+        /* Width array optimization. Step2: Compact character codes sequences */
+        $lastCharCode = -1;
+        $widthsSequences = array();
+        foreach ($charWidths as $charCode => $width) {
+            if ($lastCharCode == -1) {
+                $charCodesSequense = array();
+                $sequenceStartCode = $charCode;
+            } else if ($charCode != $lastCharCode + 1) {
+                // New chracters sequence detected
+                $widthsSequences[$sequenceStartCode] = $charCodesSequense; 
+                $charCodesSequense = array();
+                $sequenceStartCode = $charCode;
+            }
+            $charCodesSequense[] = $width;
+            $lastCharCode = $charCode;
+        }
+        // Save last sequence, if widths array is not empty (it may happens for monospaced fonts)
+        if (count($charWidths) != 0) {
+            $widthsSequences[$sequenceStartCode] = $charCodesSequense;
+        } 
+
+        $pdfCharsWidths = array();
+        foreach ($widthsSequences as $startCode => $widthsSequence) {
+            /* Width array optimization. Step3: Compact widths sequences */
+            $pdfWidths        = array();
+            $lastWidth        = -1;
+            $widthsInSequence = 0;
+            foreach ($widthsSequence as $width) {
+                if ($lastWidth != $width) {
+                    // New width is detected
+                    if ($widthsInSequence != 0) {
+                        // Previous width value was a part of the widths sequence. Save it as 'c_1st c_last w'.
+                        $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($startCode);                         // First character code
+                        $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($startCode + $widthsInSequence - 1); // Last character code
+                        $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($this->toEmSpace($lastWidth));       // Width 
+
+                        // Reset widths sequence
+                        $startCode = $startCode + $widthsInSequence;
+                        $widthsInSequence = 0;
+                    }
+
+                    // Collect new width
+                    $pdfWidths[] = new Zend_Pdf_Element_Numeric($this->toEmSpace($width));
+
+                    $lastWidth = $width;
+                } else {
+                    // Width is equal to previous
+                    if (count($pdfWidths) != 0) {
+                        // We already have some widths collected 
+                        // So, we've just detected new widths sequence
+                        
+                        // Remove last element from widths list, since it's a part of widths sequence
+                        array_pop($pdfWidths);
+
+                        // and write the rest if it's not empty 
+                        if (count($pdfWidths) != 0) {
+                            // Save it as 'c_1st [w1 w2 ... wn]'.
+                            $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($startCode); // First character code
+                            $pdfCharsWidths[] = new Zend_Pdf_Element_Array($pdfWidths);   // Widths array
+
+                            // Reset widths collection
+                            $startCode += count($pdfWidths);
+                            $pdfWidths = array();
+                        }
+
+                        $widthsInSequence = 2;
+                    } else {
+                        // Continue widths sequence
+                        $widthsInSequence++;
+                    }
+                }
+            }
+
+            // Check if we have widths collection or widths sequence to wite it down
+            if (count($pdfWidths) != 0) {
+                // We have some widths collected
+                // Save it as 'c_1st [w1 w2 ... wn]'.
+                $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($startCode); // First character code
+                $pdfCharsWidths[] = new Zend_Pdf_Element_Array($pdfWidths);   // Widths array
+            } else if ($widthsInSequence != 0){
+                // We have widths sequence
+                // Save it as 'c_1st c_last w'.
+                $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($startCode);                         // First character code
+                $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($startCode + $widthsInSequence - 1); // Last character code
+                $pdfCharsWidths[] = new Zend_Pdf_Element_Numeric($this->toEmSpace($lastWidth));       // Width 
+            }
+        }
+
+        /* Create the Zend_Pdf_Element_Array object and add it to the font's
+         * object factory and resource dictionary.
+         */
+        $widthsArrayElement = new Zend_Pdf_Element_Array($pdfCharsWidths);
+        $widthsObject = $this->_objectFactory->newObject($widthsArrayElement);
+        $this->_resource->W = $widthsObject;
+
+        
+        /* CIDSystemInfo dictionary */
+        $cidSystemInfo = new Zend_Pdf_Element_Dictionary();
+        $cidSystemInfo->Registry   = new Zend_Pdf_Element_String('Adobe');
+        $cidSystemInfo->Ordering   = new Zend_Pdf_Element_String('UCS');
+        $cidSystemInfo->Supplement = new Zend_Pdf_Element_Numeric(0);
+        $cidSystemInfoObject            = $this->_objectFactory->newObject($cidSystemInfo);
+        $this->_resource->CIDSystemInfo = $cidSystemInfoObject;
+    }
+
+    
+    
+    /**
+     * Returns an array of glyph numbers corresponding to the Unicode characters.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumberForCharacter()}.
+     *
+     * @param array $characterCodes Array of Unicode character codes (code points).
+     * @return array Array of glyph numbers.
+     */
+    public function glyphNumbersForCharacters($characterCodes)
+    {
+        /**
+         * CIDFont object is not actually a font. It does not have an Encoding entry, 
+         * it cannot be listed in the Font subdictionary of a resource dictionary, and 
+         * it cannot be used as the operand of the Tf operator.
+         * 
+         * Throw an exception.
+         */
+        throw new Zend_Pdf_Exception('CIDFont PDF objects could not be used as the operand of the text drawing operators');
+    }
+
+    /**
+     * Returns the glyph number corresponding to the Unicode character.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
+     * operations.
+     *
+     * @param integer $characterCode Unicode character code (code point).
+     * @return integer Glyph number.
+     */
+    public function glyphNumberForCharacter($characterCode)
+    {
+        /**
+         * CIDFont object is not actually a font. It does not have an Encoding entry, 
+         * it cannot be listed in the Font subdictionary of a resource dictionary, and 
+         * it cannot be used as the operand of the Tf operator.
+         * 
+         * Throw an exception.
+         */
+        throw new Zend_Pdf_Exception('CIDFont PDF objects could not be used as the operand of the text drawing operators');
+    }
+
+
+    /**
+     * Returns a number between 0 and 1 inclusive that indicates the percentage
+     * of characters in the string which are covered by glyphs in this font.
+     *
+     * Since no one font will contain glyphs for the entire Unicode character
+     * range, this method can be used to help locate a suitable font when the
+     * actual contents of the string are not known.
+     *
+     * Note that some fonts lie about the characters they support. Additionally,
+     * fonts don't usually contain glyphs for control characters such as tabs
+     * and line breaks, so it is rare that you will get back a full 1.0 score.
+     * The resulting value should be considered informational only.
+     *
+     * @param string $string
+     * @param string $charEncoding (optional) Character encoding of source text.
+     *   If omitted, uses 'current locale'.
+     * @return float
+     */
+    public function getCoveredPercentage($string, $charEncoding = '')
+    {
+        /* Convert the string to UTF-16BE encoding so we can match the string's
+         * character codes to those found in the cmap.
+         */
+        if ($charEncoding != 'UTF-16BE') {
+            $string = iconv($charEncoding, 'UTF-16BE', $string);
+        }
+
+        $charCount = iconv_strlen($string, 'UTF-16BE');
+        if ($charCount == 0) {
+            return 0;
+        }
+
+        /* Calculate the score by doing a lookup for each character.
+         */
+        $score = 0;
+        $maxIndex = strlen($string);
+        for ($i = 0; $i < $maxIndex; $i++) {
+            /**
+             * @todo Properly handle characters encoded as surrogate pairs.
+             */
+            $charCode = (ord($string[$i]) << 8) | ord($string[++$i]);
+            /* This could probably be optimized a bit with a binary search...
+             */
+            if (isset($this->_charWidths[$charCode])) {
+                $score++;
+            }
+        }
+        return $score / $charCount;
+    }
+
+    /**
+     * Returns the widths of the Chars.
+     *
+     * The widths are expressed in the font's glyph space. You are responsible
+     * for converting to user space as necessary. See {@link unitsPerEm()}.
+     *
+     * See also {@link widthForChar()}.
+     *
+     * @param array &$glyphNumbers Array of glyph numbers.
+     * @return array Array of glyph widths (integers).
+     */
+    public function widthsForChars($charCodes)
+    {
+        $widths = array();
+        foreach ($charCodes as $key => $charCode) {
+            if (!isset($this->_charWidths[$charCode])) {
+                $widths[$key] = $this->_missingCharWidth;
+            } else {
+                $widths[$key] = $this->_charWidths[$charCode];
+            }
+        }
+        return $widths;
+    }
+
+    /**
+     * Returns the width of the character.
+     *
+     * Like {@link widthsForChars()} but used for one char at a time.
+     *
+     * @param integer $charCode
+     * @return integer
+     */
+    public function widthForChar($charCode)
+    {
+        if (!isset($this->_charWidths[$charCode])) {
+            return $this->_missingCharWidth;
+        }
+        return $this->_charWidths[$charCode];
+    }
+    
+    /**
+     * Returns the widths of the glyphs.
+     *
+     * @param array &$glyphNumbers Array of glyph numbers.
+     * @return array Array of glyph widths (integers).
+     * @throws Zend_Pdf_Exception
+     */
+    public function widthsForGlyphs($glyphNumbers)
+    {
+        /**
+         * CIDFont object is not actually a font. It does not have an Encoding entry, 
+         * it cannot be listed in the Font subdictionary of a resource dictionary, and 
+         * it cannot be used as the operand of the Tf operator.
+         * 
+         * Throw an exception.
+         */
+        throw new Zend_Pdf_Exception('CIDFont PDF objects could not be used as the operand of the text drawing operators');
+    }
+
+    /**
+     * Returns the width of the glyph.
+     *
+     * Like {@link widthsForGlyphs()} but used for one glyph at a time.
+     *
+     * @param integer $glyphNumber
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    public function widthForGlyph($glyphNumber)
+    {
+        /**
+         * CIDFont object is not actually a font. It does not have an Encoding entry, 
+         * it cannot be listed in the Font subdictionary of a resource dictionary, and 
+         * it cannot be used as the operand of the Tf operator.
+         * 
+         * Throw an exception.
+         */
+        throw new Zend_Pdf_Exception('CIDFont PDF objects could not be used as the operand of the text drawing operators');
+    }
+
+    /**
+     * Convert string to the font encoding.
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of source text.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     *      */
+    public function encodeString($string, $charEncoding)
+    {
+        /**
+         * CIDFont object is not actually a font. It does not have an Encoding entry, 
+         * it cannot be listed in the Font subdictionary of a resource dictionary, and 
+         * it cannot be used as the operand of the Tf operator.
+         * 
+         * Throw an exception.
+         */
+        throw new Zend_Pdf_Exception('CIDFont PDF objects could not be used as the operand of the text drawing operators');
+    }
+
+    /**
+     * Convert string from the font encoding.
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of resulting text.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function decodeString($string, $charEncoding)
+    {
+        /**
+         * CIDFont object is not actually a font. It does not have an Encoding entry, 
+         * it cannot be listed in the Font subdictionary of a resource dictionary, and 
+         * it cannot be used as the operand of the Tf operator.
+         * 
+         * Throw an exception.
+         */
+        throw new Zend_Pdf_Exception('CIDFont PDF objects could not be used as the operand of the text drawing operators');
+    }
+}

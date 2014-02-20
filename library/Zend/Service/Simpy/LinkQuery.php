@@ -1,33 +1,200 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-/+eiW8MUHqBZjpV0SG8=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: LinkQuery.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_LinkQuery
+{
+    /**
+     * Query string for the query
+     *
+     * @var string
+     */
+    protected $_query = null;
+
+    /**
+     * Maximum number of search results to return
+     *
+     * @var int
+     */
+    protected $_limit = null;
+
+    /**
+     * Date on which search results must have been added
+     *
+     * @var string
+     */
+    protected $_date = null;
+
+    /**
+     * Date after which search results must have been added
+     *
+     * @var string
+     */
+    protected $_afterDate = null;
+
+    /**
+     * Date before which search results must have been added
+     *
+     * @var string
+     */
+    protected $_beforeDate = null;
+
+    /**
+     * Sets the query string for the query
+     *
+     * @param  string $query Query string in valid Simpy syntax
+     * @see    http://www.simpy.com/faq#searchSyntax
+     * @see    http://www.simpy.com/faq#searchFieldsLinks
+     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
+     */
+    public function setQueryString($query)
+    {
+        $this->_query = $query;
+
+        return $this;
+    }
+
+    /**
+     * Returns the query string set for this query
+     *
+     * @return string
+     */
+    public function getQueryString()
+    {
+        return $this->_query;
+    }
+
+    /**
+     * Sets the maximum number of search results to return
+     *
+     * @param  int $limit
+     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
+     */
+    public function setLimit($limit)
+    {
+        $this->_limit = intval($limit);
+
+        if ($this->_limit == 0) {
+            $this->_limit = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the maximum number of search results to return
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->_limit;
+    }
+
+    /**
+     * Sets the date on which search results must have been added, which will
+     * override any existing values set using setAfterDate() and setBeforeDate()
+     *
+     * @param  string $date
+     * @see    setAfterDate()
+     * @see    setBeforeDate()
+     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
+     */
+    public function setDate($date)
+    {
+        $this->_date = $date;
+        $this->_afterDate = null;
+        $this->_beforeDate = null;
+
+        return $this;
+    }
+
+    /**
+     * Returns the date on which search results must have been added
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->_date;
+    }
+
+    /**
+     * Sets the date after which search results must have been added, which will
+     * override any existing values set using setDate()
+     *
+     * @param  string $date
+     * @see    setDate()
+     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
+     */
+    public function setAfterDate($date)
+    {
+        $this->_afterDate = $date;
+        $this->_date = null;
+
+        return $this;
+    }
+
+    /**
+     * Returns the date after which search results must have been added
+     *
+     * @return string
+     */
+    public function getAfterDate()
+    {
+        return $this->_afterDate;
+    }
+
+    /**
+     * Sets the date before which search results must have been added, which
+     * will override any existing values set using setDate()
+     *
+     * @param  string $date
+     * @see    setDate()
+     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
+     */
+    public function setBeforeDate($date)
+    {
+        $this->_beforeDate = $date;
+        $this->_date = null;
+
+        return $this;
+    }
+
+    /**
+     * Returns the date before which search results must have been added
+     *
+     * @return string
+     */
+    public function getBeforeDate()
+    {
+        return $this->_beforeDate;
+    }
+}

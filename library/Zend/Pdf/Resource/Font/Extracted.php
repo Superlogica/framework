@@ -1,86 +1,261 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource_Font */
+require_once 'Zend/Pdf/Resource/Font.php';
+
+/** Zend_Pdf_Cmap */
+require_once 'Zend/Pdf/Cmap.php';
+
+
+
+/**
+ * Extracted fonts implementation
+ * 
+ * Thes class allows to extract fonts already mentioned within PDF document and use them
+ * for text drawing.
+ * 
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Resource_Font_Extracted extends Zend_Pdf_Resource_Font
+{
+    /**
+     * Extracted font encoding
+     * 
+     * Only 'Identity-H' and 'WinAnsiEncoding' encodings are supported now
+     * 
+     * @var string
+     */
+    protected $_encoding = null;
+    
+    /**
+     * Object constructor
+     * 
+     * $fontDictionary is a Zend_Pdf_Element_Reference or Zend_Pdf_Element_Object object
+     *
+     * @param mixed $fontDictionary
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($fontDictionary)
+    {
+        // Extract object factory and resource object from font dirctionary object 
+        $this->_objectFactory = $fontDictionary->getFactory();
+        $this->_resource      = $fontDictionary;
+        
+        if ($fontDictionary->Encoding !== null) {
+            $this->_encoding = $fontDictionary->Encoding->value;
+        } 
+
+        switch ($fontDictionary->Subtype->value) {
+            case 'Type0':
+                // Composite type 0 font
+                if ($fontDictionary->DescendantFonts->items->count() != 1) {
+                    // Multiple descendant fonts are not supported
+                    throw new Zend_Pdf_Exception('Unsupported font type.');
+                }
+                
+                $descFontsArrayItems = $fontDictionary->DescendantFonts->items; 
+                $descFontsArrayItems->rewind();
+                
+                $descendantFont = $descFontsArrayItems->current();
+                $fontDescriptor = $descendantFont->FontDescriptor;
+                break;
+                
+            case 'Type1':
+                if ($fontDictionary->FontDescriptor === null) {
+                    // That's one of the standard fonts
+                    $standardFont = Zend_Pdf_Font::fontWithName($fontDictionary->BaseFont->value);
+                    
+                    $this->_fontNames          = $standardFont->getFontNames();
+                    $this->_isBold             = $standardFont->isBold();  
+                    $this->_isItalic           = $standardFont->isItalic();
+                    $this->_isMonospace        = $standardFont->isMonospace();
+                    $this->_underlinePosition  = $standardFont->getUnderlinePosition();
+                    $this->_underlineThickness = $standardFont->getUnderlineThickness();
+                    $this->_strikePosition     = $standardFont->getStrikePosition();
+                    $this->_strikeThickness    = $standardFont->getStrikeThickness();
+                    $this->_unitsPerEm         = $standardFont->getUnitsPerEm();
+                    $this->_ascent             = $standardFont->getAscent();
+                    $this->_descent            = $standardFont->getDescent();
+                    $this->_lineGap            = $standardFont->getLineGap();
+
+                    return;
+                }
+
+                $fontDescriptor = $fontDictionary->FontDescriptor;
+                break;
+
+            case 'TrueType':
+                $fontDescriptor = $fontDictionary->FontDescriptor;
+                break;
+                
+            default:
+                throw new Zend_Pdf_Exception('Unsupported font type.'); 
+        }
+
+        $this->_fontNames[Zend_Pdf_Font::NAME_POSTSCRIPT]['en'] = iconv('UTF-8', 'UTF-16BE', $fontDictionary->BaseFont->value);
+        
+        $this->_isBold             = false; // this property is actually not used anywhere 
+        $this->_isItalic           = ( ($fontDescriptor->Flags->value & (1 << 6)) != 0 ); // Bit-7 is set
+        $this->_isMonospace        = ( ($fontDescriptor->Flags->value & (1 << 0)) != 0 ); // Bit-1 is set
+        $this->_underlinePosition  = null; // Can't be extracted
+        $this->_underlineThickness = null; // Can't be extracted
+        $this->_strikePosition     = null; // Can't be extracted
+        $this->_strikeThickness    = null; // Can't be extracted
+        $this->_unitsPerEm         = null; // Can't be extracted
+        $this->_ascent             = $fontDescriptor->Ascent->value;
+        $this->_descent            = $fontDescriptor->Descent->value;
+        $this->_lineGap            = null; // Can't be extracted
+    }
+
+    /**
+     * Returns an array of glyph numbers corresponding to the Unicode characters.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumberForCharacter()}.
+     *
+     * @param array $characterCodes Array of Unicode character codes (code points).
+     * @return array Array of glyph numbers.
+     */
+    public function glyphNumbersForCharacters($characterCodes)
+    {
+        throw new Zend_Pdf_Exception('Operation is not supported for extracted fonts');
+    }
+
+    /**
+     * Returns the glyph number corresponding to the Unicode character.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
+     * operations.
+     *
+     * @param integer $characterCode Unicode character code (code point).
+     * @return integer Glyph number.
+     */
+    public function glyphNumberForCharacter($characterCode)
+    {
+        throw new Zend_Pdf_Exception('Operation is not supported for extracted fonts');
+    }
+
+    /**
+     * Returns a number between 0 and 1 inclusive that indicates the percentage
+     * of characters in the string which are covered by glyphs in this font.
+     *
+     * Since no one font will contain glyphs for the entire Unicode character
+     * range, this method can be used to help locate a suitable font when the
+     * actual contents of the string are not known.
+     *
+     * Note that some fonts lie about the characters they support. Additionally,
+     * fonts don't usually contain glyphs for control characters such as tabs
+     * and line breaks, so it is rare that you will get back a full 1.0 score.
+     * The resulting value should be considered informational only.
+     *
+     * @param string $string
+     * @param string $charEncoding (optional) Character encoding of source text.
+     *   If omitted, uses 'current locale'.
+     * @return float
+     */
+    public function getCoveredPercentage($string, $charEncoding = '')
+    {
+        throw new Zend_Pdf_Exception('Operation is not supported for extracted fonts');
+    }
+
+    /**
+     * Returns the widths of the glyphs.
+     *
+     * The widths are expressed in the font's glyph space. You are responsible
+     * for converting to user space as necessary. See {@link unitsPerEm()}.
+     *
+     * See also {@link widthForGlyph()}.
+     *
+     * @param array $glyphNumbers Array of glyph numbers.
+     * @return array Array of glyph widths (integers).
+     * @throws Zend_Pdf_Exception
+     */
+    public function widthsForGlyphs($glyphNumbers)
+    {
+        throw new Zend_Pdf_Exception('Operation is not supported for extracted fonts');
+    }
+
+    /**
+     * Returns the width of the glyph.
+     *
+     * Like {@link widthsForGlyphs()} but used for one glyph at a time.
+     *
+     * @param integer $glyphNumber
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    public function widthForGlyph($glyphNumber)
+    {
+        throw new Zend_Pdf_Exception('Operation is not supported for extracted fonts');
+    }
+    
+    /**
+     * Convert string to the font encoding.
+     * 
+     * The method is used to prepare string for text drawing operators 
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of source text.
+     * @return string
+     */
+    public function encodeString($string, $charEncoding)
+    {
+        if ($this->_encoding == 'Identity-H') {
+            return iconv($charEncoding, 'UTF-16BE', $string);
+        }
+        
+        if ($this->_encoding == 'WinAnsiEncoding') {
+            return iconv($charEncoding, 'CP1252//IGNORE', $string);
+        }
+        
+        throw new Zend_Pdf_Exception('Fonf encoding is not supported');
+    }
+
+    /**
+     * Convert string from the font encoding.
+     *
+     * The method is used to convert strings retrieved from existing content streams
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of resulting text.
+     * @return string
+     */
+    public function decodeString($string, $charEncoding)
+    {
+        if ($this->_encoding == 'Identity-H') {
+            return iconv('UTF-16BE', $charEncoding, $string);
+        }
+        
+        if ($this->_encoding == 'WinAnsiEncoding') {
+            return iconv('CP1252', $charEncoding, $string);
+        }
+        
+        throw new Zend_Pdf_Exception('Fonf encoding is not supported');
+    }
+}

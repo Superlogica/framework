@@ -1,85 +1,416 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV50icXuXUetklC+yIgshHPxTpQit3oJ7WgDXDB6su/aDrwgyJf8jYMaGUkhYb+Wjs5TGzSh2O
-uzBcL0yCww1qSNoRZPrMNUqWexyTgATRFKDHgeaBOk/DGAxDis75lQQoCh0JGoItZGkRNkkAv9Zo
-WCw31zjcN6uQ+mzn2ANVyOlRKrSIYN2eIjf50W1uQIX6xb8dN/En8zW3SoW6pajMbuaTx2OAGHku
-NO0cdFMjfuaV8PLmJWupBCHBaqcSpLCjHtVbBow4GcW5N+089lpnpVE68qxLHcc/1GyU/70BuQ/P
-ZvD5AFgcA+M5T5hl1fAbthTOpLOYqH4XFXM29EHe3Eyu/PU3ZQhi+yfcCTlAzbfoGGTDdMhz7nBy
-+heIn7fIselwtBtOTlYSwwcaJZX9zETdQmGePn4vEUfu1/DQNR8cDJBF/t03Y82VtwLGPT6qSpt+
-cr/tHWfAztH9IPPTRidvQIMgjYDZW7shbVNQZYn6fM9yjsyxj2Ei4ZBiRDRL+Tl+REQ3/yGqB5IK
-pMf3jhq0CrZ8AM3ogrqvPT7uGms2qIU8YAE0gyhpkIDdSdi96PbKrz/LVOlE10JWqLut11o/N6K9
-B4derjYimgxrrTbHpWuBcYgVO/4e0PyW9TuL8cbkg65vw71/Z4HC6Heb9dTzRsRtQktS+ehL9HlT
-o/wsAT+0X3ETFcSthvjc6rQokfOEkq9mIpHDfHEw0gIW4JsIJDb3GE4DtqwFdTIHe3qYltMnJrFL
-46OCw81ymOwmkwx+kf2RefICYmzXsHYuuU5HvyPj+SUtrax9BBuPs6mUQkhxQBwitZApvWU0cVrq
-XjLnlTftJEXVRq8hm92WOGVd4n1vTtQk+Uf3MAHVHDoL2Id5yZZhYC6SHOJobXpNDyIElfFOQpl0
-BtsNga2O1aHMCJieUCGit3xVXIc3X0X9iFRp1iEz+s0hhzyAKQz9j6oTevL2alCThC22c+XzFV4/
-crkgBSlnl7sWmg5k+yc5z9enM4D9d3vDAhptaynt+BMLpXbRuc/ZlBk/323AyuTWCUQMOnfPPXx6
-6Br1FwJ/WFRqSMGF7KllJYjkguEXRc8ijVMrkCpXqPtyA/x3OyuaIvd2YTfP8RsN8noPptMCrW3F
-fipIebbx3MXa86wW713row8rtYyeTdbmTiU5CBVCR63jvctRNcqlbY2+V4MT4znqQT7WKdqH+1a5
-clkRJrzKYn5XUkqEb2dx/LfIni9YLKskVX+D0952SZJ3wyc8+5/yId1oiArGkKENQy9Th35JMnbn
-W3UGVVmtd1q2ui74CXMS7IcfwcYTbd59s7mt3uYovX9wAC2Bl0fFANJ5DJittwRuhLYCvOkhlDSu
-jm0Ijr05EdaVq/gERgwNLjGDPxooaxpkPPjSt/EuTmRwq+7UIuRQ3QUoEzzJ4km2YM0xfzhCh3t3
-olrWoEFXAfS/b97JGxTIvYpN0OwQOdm+cPEJG7N/j9OYZOOJP+IxDqj0eZBUKLW+H2ZSzMV0dPrk
-SfjKkT1X5IebDvi3m6VRy8yqN1l9xAwqw9ZHD3zWpxdTtLcLznawlcgktLXtwtWT8SvE1u96Bxc8
-lma+7z+txtI3WhnRs9tuRrNvda467JX5L0rPLHnEQaecsHdU+treIFp6p1YBpcD7os2DdrdJ4Prj
-kdD70JUStRHyTuHcTBaO6KU5ZGLn6QbHNU7wQ5tbU0+/4AlFgjTAX0eV/lLs+t1Wka34bB+9Go+m
-ijF+c9ckWcz0LOqeXZBvU85lZRkdeUG98SkcsBJoh1bVRlb+ez6v49zafXDjZbr9m60rg1ileiO2
-Ak/9tQdAuDT3OJuaLm5Ud55dHQf8Vo81mFrY1Bt6kqB0mt8pBTZCiNaZ+9fg+yxHUHC9HXtlmkg5
-OcAhlowCyZNOsD5CVvf0RuXCZBQIxjdzPPG4ZduLweSNI47AkymTxCDJbAik5r5CCXU/2H/ewRi1
-mvLFpKuMmZR9Cfv+ChVRw8YGbPL/CVvFDS6V1e7wdWrd51hIApBey/AUyMn2SfH65UnA9DmHCYov
-TO6LL70uYSuJvSU2QUaJq1VvyoAscJZ8MBE41ofAJQGDpHVCeynQDvphsKa8C0KQtj7+kaBKZDaD
-l8P4S+YrwOKBb70G7SI7eqK1tfbXFxxM+CAWqx2WR463rGwEZRMWRCHnHySBGdAEHsMcrnHJ/p8z
-BGS3/FBu//BnDa0RrIDceax01KpzugbIBctUSAPxKTW8AhXr9xQ8s+ECH4cXoRqAkKucHG3z+yVA
-FVXa2EbrU2FBy/J6Sh0OpFbOtq+W8nfQ/P1DvoT/ZdfHNBDqeYVQbPSdOpdHpS4c6Kg1zN4GzoVk
-1p6DnHgczCDYnxMwvdcMuRhYLmFKdCMNTb1usuVo05/GYxqmCU0mdHZVkGSIhQgdaW+155V2xMs+
-DhuU8QUXZ8jK934mj9rJzh50ELh9LXCmaZ/ZtVxHSIZaPY96lSNCEi6vyLNYZPODWbjGdKXgzb1/
-eH4/Yr7XeDRGMJ9ghyLFbZfJo01fxZ5fPHiMuW+4C5gOa2moWi3kePllmyMLGXRHf7Hq4qkaE/og
-ApCo6EGBLCJEOGKVJ8vAqk0hHjNOlLvcsWLLRBJj9lNUgaZCHhVD7LoFnoYl+xEiGQfKT1npG3F4
-kKN1iYQvvlEeglKFAKE6nxGHpJ/1vMuneXlIBleqR3uIebx7EecsRcRoKkEvk4gWlvMMImDn/rZO
-ppW93dElOi7pFjbOhm3f2j5fwyfHnMksKBxyzuXommc96Jygd9cy0XBLnq0zsJClX8a5jrRoVgan
-jEPkY87fpIsMhdB2D200gzxPdtimXemKiL95AYbuJD0kIwnYBJgsr8Q/KxF0bYzwUrrGhmpEgSBi
-1ctXephMeFGRFVBCP4nuL5pSvOdFUCBVWaXAMzZ17jOY/gPiG9nw1HKFKTOJmiMH6V0CVZPyYJ4h
-LkK+fxgZp/jjhV/Jzc5cY0/iAI2XpzA9XtlapWUh/9ufCrn/XjxUqTeLoYJWpLzH2+FVZXa7QL52
-3i/skiOoYPG8QhUkYzbkC3/+/+1tAZ5srs4KV7WqwVd0iNKtTYXobMDvgIjuRqo1yIDeDImBUrc6
-c7lcL4m7nmxMqkRdU110ajkRjtDTjHB4z4oS2hVum7B8YDitNVO5C8TJUzVGsaaBbjFEqrgRk7Vm
-Ovm2gGngvFox08b3q46BHDMRgq4DioDML6UmQdaI3BLH7UHDZ4cifeA3tnCvNIlKrvgpIMJJNcfy
-znw9g3jcRrTbojFW9tKf8uoTMWKYNEyzYy1vDIYuLrEnKSpH25jhgXuHzBzeambAHooDIQEVPzRV
-XBhVhChRt1TmiNr7z7cDvFsFcsl4fMXjgKn8p5E0ry824qa7rC9cK9AI7iluiuKGFKkFKXApxyY9
-GygLQXWfTm+1eWS+qEJfR4/12MDrsY2NrXoW51fEZ3SkjotdeL4z9AtDhi+xmb3rLLi7BUNV7aL3
-hmZ1o+aU1yJ3YfWmvDbYEPDWcilDy27Hrhm1Zi61bJv8A5f4ECt0gIz8lUDly1GZQPjUd8eZzvbU
-Mul/28fctaXBhx/6FRUE9XZ22ATwP/GQ0EPUIZf0aiTie71r4vCk3ti9CSrg0TCXDTcynOG0Awtx
-b0d1Jmca5T/5XA2Xlmlu8PoWKpJoSWIUAL8Qe6d/pfR9u9dKtkSIbVjRnNiVsaVtGuKROBSpXsHw
-Hgy1e3MlJQXtWEpXlyuaatwTVbuOVmRczxoIDTu3B9jL/sMNvILrgi45pi71JCEM7d4d0Ueo363y
-rfs6GpbaBqqbcBAwd9YqYt14HO31Yw3pl7LmqVm29dI0N95u1O4cTYsns/CvUZxgTNNHII2TSrKm
-WVMxx8EetQRvkp/Hws2jqm6TNfcMehq642ewGbu8M5SC8+tWfSaetYUqLLIXQ6UNw98AsVeCipRf
-Bd53jVdfCCK8NVWjslsdyBWBRhBVhV5VNGvZvoF4c40/ftM2FZiZP+yWJ3spiRaCRXjFk7SM5wdl
-IQ2RNHTMvigoeENoe+cC9GaeAsfxaWr7gm6obPpSTqk4tnAPcVQiafrCA1xiaU2UxISUxI4hCkv1
-8ObD5nBPnI4uQc3rT5lG9A4IIyIJVYvvG7iQm5w56IL/kzYxpqxZcvcF3z436EsXHCsWyk75mKQy
-AJ4NtfJ1qK3W87YvmQxOYp3T1bvxnzC5Fy4/XWBWjUoPZG6dtSePGUbouv+vtl3arx+vtMZKcese
-nEt9VaRNwWdtMIA9+/Cw7ChQrQC7DaFXu8+rYVWJO/VTGVmX5QUYWL8P84ZjDTx1g0QWw/7gt1Wx
-iNa7TxFpcUFtWJBJWp5jsfd/H0wKQnAq8dPOJeZtWqVUaz9nQ/tDfriIMpf29iHTYojEuqez30SS
-EKp3sFXCtpGkSQ3rsgBuKMneHJq1cVXBzggB6opXLlc1tYmMQ7LnHqWIY80JgdeHmnZnCEcBLkGw
-0JF/eXgI4gnOCgQ5eWHCUDE2AQKFpIsqpS0nEzCfCFq79GBE8XPXvAJuk6IWLQQmG+DR0WbZNIBW
-1C0YoYD17smqzpFES6qXxJKfDV4PCkqxgDTtwNJxLLSaQOlFdAZ2AKoHWzUYgIaNOdE3n75fRA8+
-KJwLBCd/J4yZYtlVxU7aVr5odXphD0DZzJOItz0B2e0pXd7cCDs8DDaY9mWQxKUUUevww8y63Vqf
-CEcsa0eeq/j8oE/woCSWTPPQtOV8tM8IzekEHtNCjJ+chx42alH2wG0wfNZy75u4xmERiKwV/OYV
-GzwhbFjdjbONsKibiGHn5xR9KzE2TZImcU17gcIE1F+v/mpiuUqCr+dqtl29JYGw6HTuaZSpxHuU
-uEG6Qalck5QzT/5pA5WsFV3ShJscHbLHUACO0OF3pt1qIXjbz1kguqMqusmjSypguZhK4Q8Zob+Q
-sxPtNYo+xyzRKSyMj8xeHHq8VssW+JIFgGthsvs5V+eSC3EabPXL3I8wOe8EwAM5NRHcup7ju6er
-V4Rb/TNrfM8AzGq5NgtfIsBIMu07IQPHQ4Cxr42qPJK64Q55rxSBq5DdfiSLQ5Q/5ahVATbGPQuV
-MW+dor2+DP3t10UH0+83K0TAEZOnxy9Z5Fk6i13EL3KYl01vOl+I27B0TvoX0TLVw0ZUdVXtmxrk
-Ul0ceUVuvxitBUsRV1iYqvfuecJyzdBbs3NfFR4cw3z5bHoG+mxyFSXy+qOtE0yXT/5TnvlU25vk
-eRUo4OdYOCXBmWIE24jSwhBcbFKwXdl9ZbfyO4L8Cmsn3CAeSxU2jywqm02CkybXsDY+oOVZo4vu
-/tz20a8oHNFDzbokMod+Rwc5JOm7va0aOlJ/6rwUA2UmJ+u8sCkZhVemP2vDHlpwdD/mXcig6TDd
-sb+GkmwA+JTjBcuMNOiobEdlktLu4m+AcN93ZleGSjWaR6NpuAeu8JgFGcftghJ/Y5abFbNNZ46P
-k1j0V2uioD5lmAlyeHK0RA5b4WkHtpsvA+7C5LBHUcwZP1iG94acG/es6YOY1Ejwz4tK2MskstkU
-6USHNlJkIfcvpCuw8aMdJEqcTNM9MqBAVHtWwkFnSyiPjwTJK9MwdMaXpCLWqk2g/lAcvUBUgAun
-LZLXk2Ao7vre/FsJwE1AatxuyTxV6uQzO3eUv0jRjuQK3bUl31NdHR1bLHqEeFDNxyJ6otY7mg0d
-XdOKT0nipqLrrYqgeug0VtABwfznvaNnKSfi7N/h3VFNRm/cAwlviEn9T3c8UJH/Udz/RHSxaLfj
-nmH/80FrQ1bS6cLvO0rL9utj9/zI6x/hOSoexdUnRFj9LENNe69Z7u6p7RhlkM5PQIEOJIqu7O9m
-PGqLrl8gKgJAzblLXJAI2QHPCiLYb2EGmz8w9y2iSElK6SrQxL/qFOL5KaZt61n6pPBh3Z/F2AYI
-PocyRO1zNM7A3nPe8iK8AQUIY+f6PRAp4nh+HwzX2iX1FHrXhntBzXpQHoK8KwlhG2pKGlgdDVfr
-QLkDM71/3fzoDDazNeI3LnWKQVUXwjozjm6WuuYXgkfYVvAD8oaHGtrSE+SVQI7DYCXixr0ty8VE
-BoqKmFY8fzxj7eb463EDs5mnDTmBQ3XVseejceDXKuPl6RTELvt9mDaGEmx3/J3FIci8EDPCv0AQ
-TSTo2UgW5L+wYAWX20==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_App_util
+ */
+require_once('Zend/Gdata/App/Util.php');
+
+/**
+ * Zend_Gdata_Query
+ */
+require_once('Zend/Gdata/Query.php');
+
+/**
+ * Assists in constructing queries for Google Spreadsheets cells
+ *
+ * @link http://code.google.com/apis/gdata/spreadsheets/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage   Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Spreadsheets_CellQuery extends Zend_Gdata_Query
+{
+
+    const SPREADSHEETS_CELL_FEED_URI = 'http://spreadsheets.google.com/feeds/cells';
+
+    protected $_defaultFeedUri = self::SPREADSHEETS_CELL_FEED_URI;
+    protected $_visibility = 'private';
+    protected $_projection = 'full';
+    protected $_spreadsheetKey = null;
+    protected $_worksheetId = 'default';
+    protected $_cellId = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Spreadsheets_CellQuery object.
+     *
+     * @param string $url Base URL to use for queries
+     */
+    public function __construct($url = null)
+    {
+        parent::__construct($url);
+    }
+
+    /**
+     * Sets the spreadsheet key for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setSpreadsheetKey($value)
+    {
+        $this->_spreadsheetKey = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the spreadsheet key for this query.
+     *
+     * @return string spreadsheet key
+     */
+    public function getSpreadsheetKey()
+    {
+        return $this->_spreadsheetKey;
+    }
+
+    /**
+     * Sets the worksheet id for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setWorksheetId($value)
+    {
+        $this->_worksheetId = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the worksheet id for this query.
+     *
+     * @return string worksheet id
+     */
+    public function getWorksheetId()
+    {
+        return $this->_worksheetId;
+    }
+
+    /**
+     * Sets the cell id for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setCellId($value)
+    {
+        $this->_cellId = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the cell id for this query.
+     *
+     * @return string cell id
+     */
+    public function getCellId()
+    {
+        return $this->_cellId;
+    }
+
+    /**
+     * Sets the projection for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setProjection($value)
+    {
+        $this->_projection = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the visibility for this query.
+     *
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setVisibility($value)
+    {
+        $this->_visibility = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the projection for this query.
+     *
+     * @return string projection
+     */
+    public function getProjection()
+    {
+        return $this->_projection;
+    }
+
+    /**
+     * Gets the visibility for this query.
+     *
+     * @return string visibility
+     */
+    public function getVisibility()
+    {
+        return $this->_visibility;
+    }
+
+    /**
+     * Sets the min-row attribute for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setMinRow($value)
+    {
+        if ($value != null) {
+            $this->_params['min-row'] = $value;
+        } else {
+            unset($this->_params['min-row']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the min-row attribute for this query.
+     *
+     * @return string min-row
+     */
+    public function getMinRow()
+    {
+        if (array_key_exists('min-row', $this->_params)) {
+            return $this->_params['min-row'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the max-row attribute for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setMaxRow($value)
+    {
+        if ($value != null) {
+            $this->_params['max-row'] = $value;
+        } else {
+            unset($this->_params['max-row']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the max-row attribute for this query.
+     *
+     * @return string max-row
+     */
+    public function getMaxRow()
+    {
+        if (array_key_exists('max-row', $this->_params)) {
+            return $this->_params['max-row'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the min-col attribute for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setMinCol($value)
+    {
+        if ($value != null) {
+            $this->_params['min-col'] = $value;
+        } else {
+            unset($this->_params['min-col']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the min-col attribute for this query.
+     *
+     * @return string min-col
+     */
+    public function getMinCol()
+    {
+        if (array_key_exists('min-col', $this->_params)) {
+            return $this->_params['min-col'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the max-col attribute for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setMaxCol($value)
+    {
+        if ($value != null) {
+            $this->_params['max-col'] = $value;
+        } else {
+            unset($this->_params['max-col']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the max-col attribute for this query.
+     *
+     * @return string max-col
+     */
+    public function getMaxCol()
+    {
+        if (array_key_exists('max-col', $this->_params)) {
+            return $this->_params['max-col'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the range attribute for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setRange($value)
+    {
+        if ($value != null) {
+            $this->_params['range'] = $value;
+        } else {
+            unset($this->_params['range']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the range attribute for this query.
+     *
+     * @return string range
+     */
+    public function getRange()
+    {
+        if (array_key_exists('range', $this->_params)) {
+            return $this->_params['range'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the return-empty attribute for this query.
+     *
+     * @param mixed $value String or bool value for whether to return empty cells
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setReturnEmpty($value)
+    {
+        if (is_bool($value)) {
+            $this->_params['return-empty'] = ($value?'true':'false');
+        } else if ($value != null) {
+            $this->_params['return-empty'] = $value;
+        } else {
+            unset($this->_params['return-empty']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the return-empty attribute for this query.
+     *
+     * @return string return-empty
+     */
+    public function getReturnEmpty()
+    {
+        if (array_key_exists('return-empty', $this->_params)) {
+            return $this->_params['return-empty'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets the full query URL for this query.
+     *
+     * @return string url
+     */
+    public function getQueryUrl()
+    {
+        if ($this->_url == null) {
+            $uri = $this->_defaultFeedUri;
+
+            if ($this->_spreadsheetKey != null) {
+                $uri .= '/'.$this->_spreadsheetKey;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception('A spreadsheet key must be provided for cell queries.');
+            }
+
+            if ($this->_worksheetId != null) {
+                $uri .= '/'.$this->_worksheetId;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception('A worksheet id must be provided for cell queries.');
+            }
+
+            if ($this->_visibility != null) {
+                $uri .= '/'.$this->_visibility;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception('A visibility must be provided for cell queries.');
+            }
+
+            if ($this->_projection != null) {
+                $uri .= '/'.$this->_projection;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php';
+                throw new Zend_Gdata_App_Exception('A projection must be provided for cell queries.');
+            }
+
+            if ($this->_cellId != null) {
+                $uri .= '/'.$this->_cellId;
+            }
+        } else {
+            $uri = $this->_url;
+        }
+
+        $uri .= $this->getQueryString();
+        return $uri;
+    }
+
+    /**
+     * Gets the attribute query string for this query.
+     *
+     * @return string query string
+     */
+    public function getQueryString()
+    {
+        return parent::getQueryString();
+    }
+
+}

@@ -1,35 +1,113 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-0G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_ProgressBar
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Adapter.php 14099 2009-02-17 15:16:15Z yoshida@zend.co.jp $
+ */
+
+/**
+ * Abstract class for Zend_ProgressBar_Adapters
+ *
+ * @category  Zend
+ * @package   Zend_ProgressBar
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_ProgressBar_Adapter
+{
+    /**
+     * Option keys to skip when calling setOptions()
+     *
+     * @var array
+     */
+    protected $_skipOptions = array(
+        'options',
+        'config',
+    );
+
+    /**
+     * Create a new adapter
+     *
+     * $options may be either be an array or a Zend_Config object which
+     * specifies adapter related options.
+     *
+     * @param null|array|Zend_Config $options
+     */
+    public function __construct($options = null)
+    {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } elseif ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        }
+    }
+
+    /**
+     * Set options via a Zend_Config instance
+     *
+     * @param  Zend_Config $config
+     * @return Zend_ProgressBar_Adapter
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        $this->setOptions($config->toArray());
+
+        return $this;
+    }
+
+    /**
+     * Set options via an array
+     *
+     * @param  array $options
+     * @return Zend_ProgressBar_Adapter
+     */
+    public function setOptions(array $options)
+    {
+        foreach ($options as $key => $value) {
+            if (in_array(strtolower($key), $this->_skipOptions)) {
+                continue;
+            }
+
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Notify the adapter about an update
+     *
+     * @param  float   $current       Current progress value
+     * @param  float   $max           Max progress value
+     * @param  float   $percent       Current percent value
+     * @param  integer $timeTaken     Taken time in seconds
+     * @param  integer $timeRemaining Remaining time in seconds
+     * @param  string  $text          Status text
+     * @return void
+     */
+    abstract public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text);
+
+    /**
+     * Called when the progress is explicitly finished
+     *
+     * @return void
+     */
+    abstract public function finish();
+}

@@ -1,68 +1,214 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Extension_EntryLink
+ */
+require_once 'Zend/Gdata/Extension/EntryLink.php';
+
+/**
+ * @see Zend_Gdata_Extension_OriginalEvent
+ */
+require_once 'Zend/Gdata/Extension/OriginalEvent.php';
+
+/**
+ * Data model class to represent an entry's recurrenceException
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_RecurrenceException extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'recurrenceException';
+    protected $_specialized = null;
+    protected $_entryLink = null;
+    protected $_originalEvent = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Extension_RecurrenceException object.
+     * @param bool $specialized (optional) Whether this is a specialized exception or not.
+     * @param Zend_Gdata_EntryLink (optional) An Event entry with details about the exception.
+     * @param Zend_Gdata_OriginalEvent (optional) The origianl recurrent event this is an exeption to.
+     */
+    public function __construct($specialized = null, $entryLink = null,
+            $originalEvent = null)
+    {
+        parent::__construct();
+        $this->_specialized = $specialized;
+        $this->_entryLink = $entryLink;
+        $this->_originalEvent = $originalEvent;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_specialized !== null) {
+            $element->setAttribute('specialized', ($this->_specialized ? "true" : "false"));
+        }
+        if ($this->_entryLink !== null) {
+            $element->appendChild($this->_entryLink->getDOM($element->ownerDocument));
+        }
+        if ($this->_originalEvent !== null) {
+            $element->appendChild($this->_originalEvent->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'specialized':
+            if ($attribute->nodeValue == "true") {
+                $this->_specialized = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_specialized = false;
+            }
+            else {
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+            }
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('gd') . ':' . 'entryLink':
+            $entryLink = new Zend_Gdata_Extension_EntryLink();
+            $entryLink->transferFromDOM($child);
+            $this->_entryLink = $entryLink;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'originalEvent':
+            $originalEvent = new Zend_Gdata_Extension_OriginalEvent();
+            $originalEvent->transferFromDOM($child);
+            $this->_originalEvent = $originalEvent;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Get the value for this element's Specialized attribute.
+     *
+     * @return bool The requested attribute.
+     */
+    public function getSpecialized()
+    {
+        return $this->_specialized;
+    }
+
+    /**
+     * Set the value for this element's Specialized attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_RecurrenceException The element being modified.
+     */
+    public function setSpecialized($value)
+    {
+        $this->_specialized = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's EntryLink attribute.
+     *
+     * @return Zend_Gdata_Extension_EntryLink The requested attribute.
+     */
+    public function getEntryLink()
+    {
+        return $this->_entryLink;
+    }
+
+    /**
+     * Set the value for this element's EntryLink attribute.
+     *
+     * @param Zend_Gdata_Extension_EntryLink $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_RecurrenceException The element being modified.
+     */
+    public function setEntryLink($value)
+    {
+        $this->_entryLink = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's Specialized attribute.
+     *
+     * @return Zend_Gdata_Extension_OriginalEvent The requested attribute.
+     */
+    public function getOriginalEvent()
+    {
+        return $this->_originalEvent;
+    }
+
+    /**
+     * Set the value for this element's Specialized attribute.
+     *
+     * @param Zend_Gdata_Extension_OriginalEvent $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_RecurrenceException The element being modified.
+     */
+    public function setOriginalEvent($value)
+    {
+        $this->_originalEvent = $value;
+        return $this;
+    }
+
+}
+

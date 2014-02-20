@@ -1,39 +1,94 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Mysqli.php 4874 2007-05-19 01:26:32Z bkarwin $
+ */
+
+/**
+ * @see Zend_Db_Statement_Pdo
+ */
+require_once 'Zend/Db/Statement/Pdo.php';
+
+/**
+ * Proxy class to wrap a PDOStatement object for IBM Databases.
+ * Matches the interface of PDOStatement.  All methods simply proxy to the
+ * matching method in PDOStatement.  PDOExceptions thrown by PDOStatement
+ * are re-thrown as Zend_Db_Statement_Exception.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Statement_Pdo_Ibm extends Zend_Db_Statement_Pdo
+{
+    /**
+    * Returns an array containing all of the result set rows.
+    *
+    * Behaves like parent, but if limit()
+    * is used, the final result removes the extra column
+    * 'zend_db_rownum'
+    *
+    * @param int $style OPTIONAL Fetch mode.
+    * @param int $col   OPTIONAL Column number, if fetch mode is by column.
+    * @return array Collection of rows, each in a format by the fetch mode.
+    * @throws Zend_Db_Statement_Exception
+    */
+    public function fetchAll($style = null, $col = null)
+    {
+        $data = parent::fetchAll($style, $col);
+        $results = array();
+        $remove = $this->_adapter->foldCase('ZEND_DB_ROWNUM');
+
+        foreach ($data as $row) {
+            if (is_array($row) && array_key_exists($remove, $row)) {
+                unset($row[$remove]);
+            }
+            $results[] = $row;
+        }
+        return $results;
+    }
+
+    /**
+     * Binds a parameter to the specified variable name.
+     *
+     * @param mixed $parameter Name the parameter, either integer or string.
+     * @param mixed $variable  Reference to PHP variable containing the value.
+     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
+     * @param mixed $length    OPTIONAL Length of SQL parameter.
+     * @param mixed $options   OPTIONAL Other options.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
+    {
+        try {
+            if (($type === null) && ($length === null) && ($options === null)) {
+                return $this->_stmt->bindParam($parameter, $variable);
+            } else {
+                return $this->_stmt->bindParam($parameter, $variable, $type, $length, $options);
+            }
+        } catch (PDOException $e) {
+            require_once 'Zend/Db/Statement/Exception.php';
+            throw new Zend_Db_Statement_Exception($e->getMessage());
+        }
+    }
+
+}

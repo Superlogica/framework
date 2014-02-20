@@ -1,53 +1,160 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Profiler
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Db_Profiler */
+require_once 'Zend/Db/Profiler.php';
+
+/** Zend_Wildfire_Plugin_FirePhp */
+require_once 'Zend/Wildfire/Plugin/FirePhp.php';
+
+/** Zend_Wildfire_Plugin_FirePhp_TableMessage */
+require_once 'Zend/Wildfire/Plugin/FirePhp/TableMessage.php';
+
+/**
+ * Writes DB events as log messages to the Firebug Console via FirePHP.
+ * 
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Profiler
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Profiler_Firebug extends Zend_Db_Profiler
+{
+    /**
+     * The original label for this profiler.
+     * @var string
+     */
+    protected $_label = null;
+    
+    /**
+     * The label template for this profiler
+     * @var string
+     */
+    protected $_label_template = '%label% (%totalCount% @ %totalDuration% sec)';
+  
+    /**
+     * The message envelope holding the profiling summary
+     * @var Zend_Wildfire_Plugin_FirePhp_TableMessage
+     */
+    protected $_message = null;
+  
+    /**
+     * The total time taken for all profiled queries.
+     * @var float
+     */
+    protected $_totalElapsedTime = 0;
+  
+    /**
+     * Constructor
+     *
+     * @param string $label OPTIONAL Label for the profiling info.
+     * @return void
+     */
+    public function __construct($label = null)
+    {
+        $this->_label = $label;
+        if(!$this->_label) {
+            $this->_label = 'Zend_Db_Profiler_Firebug';
+        }
+    }
+
+    /**
+     * Enable or disable the profiler.  If $enable is false, the profiler
+     * is disabled and will not log any queries sent to it.
+     *
+     * @param  boolean $enable
+     * @return Zend_Db_Profiler Provides a fluent interface
+     */
+    public function setEnabled($enable)
+    {
+        parent::setEnabled($enable);
+
+        if ($this->getEnabled()) {
+          
+            if (!$this->_message) {
+                $this->_message = new Zend_Wildfire_Plugin_FirePhp_TableMessage($this->_label);
+                $this->_message->setBuffered(true);
+                $this->_message->setHeader(array('Time','Event','Parameters'));
+                $this->_message->setDestroy(true);
+                $this->_message->setOption('includeLineNumbers', false);
+                Zend_Wildfire_Plugin_FirePhp::getInstance()->send($this->_message);
+            }
+
+        } else {
+
+            if ($this->_message) {
+                $this->_message->setDestroy(true);
+                $this->_message = null;
+            }
+          
+        }
+
+        return $this;
+    }
+
+    /**
+     * Intercept the query end and log the profiling data.
+     *
+     * @param  integer $queryId
+     * @throws Zend_Db_Profiler_Exception
+     * @return void
+     */
+    public function queryEnd($queryId)
+    {
+        parent::queryEnd($queryId);
+        
+        if (!$this->getEnabled()) {
+            return;
+        }
+
+        $this->_message->setDestroy(false);
+
+        $profile = $this->getQueryProfile($queryId);
+        
+        $this->_totalElapsedTime += $profile->getElapsedSecs();
+        
+        $this->_message->addRow(array((string)round($profile->getElapsedSecs(),5),
+                                      $profile->getQuery(),
+                                      ($params=$profile->getQueryParams())?$params:null));
+                                      
+        $this->updateMessageLabel();
+    }
+    
+    /**
+     * Update the label of the message holding the profile info.
+     * 
+     * @return void
+     */
+    protected function updateMessageLabel()
+    {
+        if (!$this->_message) {
+            return;
+        }
+        $this->_message->setLabel(str_replace(array('%label%',
+                                                    '%totalCount%',
+                                                    '%totalDuration%'),
+                                              array($this->_label,
+                                                    $this->getTotalNumQueries(),
+                                                    (string)round($this->_totalElapsedTime,5)),
+                                              $this->_label_template));
+    }
+}

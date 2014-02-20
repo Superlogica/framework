@@ -1,62 +1,275 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV58Gk1HpplFrJdkAGFuAPNz8RkfPwAesFqgciLcMbQV/Y639j1z4Fa0V4WxexNipou5eF2X2x
-lTscia7IAGJa1ZTQ2ZFlJFuDQNGFMOEMzXA1idFH/hcKrm9YYSypdZhgfVDVaRGZ+omXaFOAtCl/
-CIIeq3VTnXKex6IXYCCho1YQQjyAKIUzHkXmWTvV2fusyndPeqLJctpxHqrrmB7FcqoYpoAwYc7c
-rM2FLqn3Z78oTw7cxED3n4kJIPpDKor7T+KlBeH2QDLZnRKzmTQ/+6oACUqcAPnX/nnnRKqVIGvl
-9FmnUU7HWeqjSqqOoVfQMel1ha+9cJwGEU5t+IzzMdLwZflsohGbxlJxywR16rvim6DAYyDwT+3h
-SxnJ/gFqXNHlDKVwxuAUd1iYoNTQOdUFfvyjtayczY7S4E6jjmBY3bmpHG151BFrjPwZRtQpcx47
-j7ilDDpYgKxSnNABKGMdop+6NcOPoScU5+Fz4kcBNFYaI3vsIGAJoaP2sou/USohgR4U02pOfW8+
-wa3PvGZc3Q6IRR4FUmsCEffWtu0C8KXpfCePT0HOAdhmuq6l6unMzL4CtkH4E+R+Iut0iMIr7TNb
-HQ28VLJcYsb421a38c2aU/JmPXW189X0R5rSh5RHgrMCLM/0ahdm5TClIh57zJ0sfdC1IAlxkq8Y
-Y3HVzL+UaclAIkwBnrv0sc5ddaL1fqPyCVaz6Kjy9/eK32A3xR0KJeARiwFdhZkj8rtS+5CFOh0i
-CgeJtbECXtwAwbqTuj+7Zaz6rwhMZ9uFJqZB73fdfKSurriiL7dVrUQeW0sM7BSABMaKMTBbh9DL
-14AxrrO00D12hornYOgaWueVuJ9z+2gavut5vEFamNsCy2yAn9UpTxtnqf7bQgYKYfhuIH2J80AU
-DzZSEUWSaDp+7csqI3f3tYYBHnt5O57ZMLdTdGGFhtxVdavv525wI+tvEF0905DXeUQ1qLf6s3P9
-VMEq1CjdFbqujkUvSBM3fCkct1fJZmMT1E6qdfxARMUUf/EGWQPchB3mr7QMyS/8ZanEYH1xVkMU
-SM0WAbT0oHX7MWZc0y0IsyLJHo6RVV+HUFM/YAk9BnL3gys1n7/garPRSz2TcWc1FXYlKRd6X+pt
-r+k0R98ephQC9hYfXsO/L58ePrGb5Qfn4B+CHU+5sF7qGVi6iG1tDUL8YJ22t9vxrOsKUKlZKjLr
-Yx9HCAwZ0FXUkPmUSqwNlgKTf7OYLwpXp3fjNqR/d9H23s4jPozu0FI+3JDCcGkWXQgbumQ7HkWF
-726a1A2JYTL36Otc4qabLkBVymrq/+XPKbzNBlp07s8QYumi/t+x6kTVCAu/0fqfi1zS4qZHiXzC
-ZpBE4IeAtl3PE/tNZIra4buUel8+Wvqe8pNsOv/Wi/MWzzjzQtujmw9f4k0DJbnHgSBgNe929L6q
-/KMW8VoqAuP6VKKseJXvu99KUVlIK+2FVbYAI7oyA/uhX/k0N1Lr1kqLDsEnB/IgKJbvco29ZpOh
-wZcx5eRGJRQBXhhinCcFcs/wopDTsmjmKUuKaoThH1n/dYBJW3ifsenR8dZAMO6vAXW1TOoUNPj8
-YTJ3IutcUQoHFsbIuIA4qxVWVUE7/gBfPSAGrX0WKnCcuDNi9fbhS0HuAcTiUDK4I6wRAxU+i82P
-6XlyXbZM4tyDoxa4CJW3Nn8VDOFMmP/WB/6P+QulrLqu1r61/GkYnedkbALLfkNUp6Cf/V3uxYUM
-M0eouZljLdgyxyzukKJEAn7IqhNcm6SQoK0P6lRgqHcFOgsmYL5ijmbappRq/eU3QVTK71ztVqhp
-X/kxvqbSUytAWadLn/wXiWkgD3QLzI7b1Q1ZQ/UmdB6dFlKWV0goqUhqAdMfvtYWo/NhHe9guZX5
-PQPYtYeg8FI/K2B3GC7Nxo+syndkNtqxhS0u92d6Yrp9U02c4Hy/OPZ3W27wH5RK9mLBkdqmmNsH
-fYgl/Z5g5hIWzORTeE0EpRebXvz9tEDMjFqERdEwha/WL/DU5YmVKV+/517KD28nPVWAFaurXcMe
-vKgMLkieQAvQs1S38kZI6Nz6q1gN+QSIeR4OHwjpm7XiOtg7XjamX56Fbw3HYwjdzL5cwAwloHx5
-fEUY/f0iJhmmuepERgvutqoJjgMHGlnX7lyk7hFrYQf3wwSKeoP9wlCwBOER9NjzacJTEBgzSLTF
-mu4f6wS7YGOC4ObGmP7V3Z/1X4Q1CQiSYcTmuxyObRYuwoaiGFwOqMW8a2J95HbeW//VmKmHHipE
-oxpIirANLSU33Q6VU1TQ/oVduktMEqnQ5cN6OLjXMMLTAP03yyYR39TGUbUTY4R1CChBBEycinoA
-nVLA7GBzdcBi1Yz2MHuP5Sdiuy5AHVMJGz1LSTK4506P9e1C7RHV28Wr7nPUeO1Nke4pvZv5GG6o
-sDAjglkNDQOgU4R7z3+d4zNtSfPf/KZhy5+92bPfGyKgy8mxCFTEf+ydNApDWWnCfVgmCT+S+lqx
-+WGrTQRpqIn5TqPa1vAa4DCCLwIBTl8i2kgeGPoHlLmU/sDNoSgXhFfy+UaR/k6HanrQkAnjq3UW
-yYlU4jN3hEM4Daf4ofWpTeKxwjNpAsMce4Ne7413A/mSlbH5mOtEJLIrPlvPGSi6WrfJS4Gxlp4E
-NA0OeXW1jMl6qXIdIhZGTXV0CUSdBcOUhJzZJ4HR/9KUEFeL8zv1Yay8r3ySEdtjoPrIDy8TBTJe
-0rrmWQhQL1d8KzVQms3Jm9+53+9/VK7Smkh0C72R5470KHpE39Yo3VgfShsVJGto9Hhz25DNrTzQ
-r2piNMuYuNN76htEvsbbqTG+samRD9cmFIUVn51JhXPho0n7wu9jXepbsX8jhdV1/Wi4Yz3uqG0p
-LLbEuOtJvnaRym4R93A07s7z+i8KRBbXvBufdY2Ac4Z0ZSAyKLrvLGXD+eSF8RuVKWX4bbbUXcYi
-XNu/U1kxWoSKZdPT0oyMtblhVSK/zb1VHrAfDQU9jRGe0z1jqgoZ1XqAEeRzyhD0WUxmCz7RDxsW
-lCdgpMNnXPi2JSDpBElG9qxmJpICOB5bixKtGdBk7KtyNQmbOc6XEAwyE5xINteCdHwgzCyLJV7K
-yXLs5pKrsKryU0b8P+pRZsOIoedEHtAuQhwqYQpghQmW5zqw03hdNAAbmBJmFwCulZ3vwjbTvOnc
-GHR+b8lK88ZNm8vCnjp1IsBuQ/mslWG8WoDvK4gtXHTXyWF0ymxJJHnMbhCWcQ+aVxQD8HuzppNJ
-UrJGcUZq/eDEn9d/JMFivtHEOza/olF6NHsHsoXjc1m3coc4MA3kpyVtCTawa+dQGJPNgwbNyM3J
-89jNFlZbd/jhYbb1D8yd6YEYTNVlH4a7pQ+6day/3yaZz/tmiNgdLcbx1v/BjP51vYPzidZUpB5k
-BhH1Lbujvgn04brfhetl4wygO8ndqyOOQt4B9HZjHhUCrkPMFn+GLpi6IJLUzvsMU7ACLLeW0lYS
-nYFq4bSmDPr/pIZ1wTVjOq1Rc6ddyn3YY7l7iA6R7ZHUVS/GLCnoARsL7+W3RmZH/cVnuVPtNC4q
-kjtss0vhKr3lglf8q02gOLz86T4ku7i/BoO9obiG9QOFEpiz3kHAxcJvsiW7dGBGSbSCv9SaJbb4
-CqcTemPCX8h97BO7ICTXa+DprL36FmGwPzchXGyNqrGsQ70sglPSLXs/ACz3EcYRxtdD5HX2YALO
-fg40pmSCtWrMbJ6uoliEiABksFMkKX+D21BeamgCUHlr4EKueImFO5L4JzhJQiN0H7KYKiVvA9Sn
-qVPyc1UreDozNwj04aTwTXeac9EMUktWnAThPEzh7hbwQCst5f7j67wgmkyzcemrmXZ9D9JnhPj3
-tq6zqAhZyKv3fASevbe6ajWQ6u68GSr2hnG0FOmCyYiI+4/tLEWmaqY4/tP0uLBUIBgQKcFOukRY
-QGuB1JfUdxnhs/dYuMkDX/v0C2ppUNWWSwPGGbWPxzhBi2Y4v1UIxC7M6+4N3bSVMyPV61ORkdFx
-+ugN+4/ONG//zxqEgMEUGiM94yAEGnX8lEdj1oWV+9AILXQpCSCh1ErxgHoQOVrASqzxGVHAfwMY
-PYbpvanbff8G/1znJmik7g1br9Af51MhBctE0ob4RRo+YREBNG2hcY3+heRGIGFvgjg9ZMcp+GXN
-FoBOk67Ej997dEuYiE0ppOvCxSWUyVRUBqizxO2oLBeC6FbTzdFEDd3nYYJIz5CGZPAjghMlwkAa
-Ta8xIioSpE694k0XhxV8XnG/Mvpq7M6R7Xmh9bqZcOupZzDbB0fea5/DTGlI5nApD12QtxrS/jLT
-cbeVEQMNG6h0YQmzwTu7E395baY6bFKSyZ0s9TxPX3JGvNIOsLjtMpxwTgQrJ/9Pt0zKnbYEGjhp
-MrClnJYuz0AW60==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Controller_Request_Http
+ */
+require_once 'Zend/Controller/Request/Http.php';
+
+/**
+ * Zend_Controller_Request_HttpTestCase
+ *
+ * HTTP request object for use with Zend_Controller family.
+ *
+ * @uses Zend_Controller_Request_Http
+ * @package Zend_Controller
+ * @subpackage Request
+ */
+class Zend_Controller_Request_HttpTestCase extends Zend_Controller_Request_Http
+{
+    /**
+     * Request headers
+     * @var array
+     */
+    protected $_headers = array();
+
+    /**
+     * Request method
+     * @var string
+     */
+    protected $_method;
+
+    /**
+     * Raw POST body
+     * @var string|null
+     */
+    protected $_rawBody;
+
+    /**
+     * Valid request method types
+     * @var array
+     */
+    protected $_validMethodTypes = array(
+        'DELETE',
+        'GET',
+        'HEAD',
+        'OPTIONS',
+        'POST',
+        'PUT',
+    );
+
+    /**
+     * Clear GET values
+     * 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function clearQuery()
+    {
+        $_GET = array();
+        return $this;
+    }
+
+    /**
+     * Clear POST values
+     * 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function clearPost()
+    {
+        $_POST = array();
+        return $this;
+    }
+
+    /**
+     * Set raw POST body
+     * 
+     * @param  string $content 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function setRawBody($content)
+    {
+        $this->_rawBody = (string) $content;
+        return $this;
+    }
+
+    /**
+     * Get RAW POST body
+     * 
+     * @return string|null
+     */
+    public function getRawBody()
+    {
+        return $this->_rawBody;
+    }
+
+    /**
+     * Clear raw POST body
+     * 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function clearRawBody()
+    {
+        $this->_rawBody = null;
+        return $this;
+    }
+
+    /**
+     * Set a cookie
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function setCookie($key, $value)
+    {
+        $_COOKIE[(string) $key] = $value;
+        return $this;
+    }
+
+    /**
+     * Set multiple cookies at once
+     * 
+     * @param array $cookies 
+     * @return void
+     */
+    public function setCookies(array $cookies)
+    {
+        foreach ($cookies as $key => $value) {
+            $_COOKIE[$key] = $value;
+        }
+        return $this;
+    }
+
+    /**
+     * Clear all cookies
+     * 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function clearCookies()
+    {
+        $_COOKIE = array();
+        return $this;
+    }
+
+    /**
+     * Set request method
+     * 
+     * @param  string $type 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function setMethod($type)
+    {
+        $type = strtoupper(trim((string) $type));
+        if (!in_array($type, $this->_validMethodTypes)) {
+            require_once 'Zend/Controller/Exception.php';
+            throw new Zend_Controller_Exception('Invalid request method specified');
+        }
+        $this->_method = $type;
+        return $this;
+    }
+
+    /**
+     * Get request method
+     * 
+     * @return string|null
+     */
+    public function getMethod()
+    {
+        return $this->_method;
+    }
+
+    /**
+     * Set a request header
+     * 
+     * @param  string $key 
+     * @param  string $value 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function setHeader($key, $value)
+    {
+        $key = $this->_normalizeHeaderName($key);
+        $this->_headers[$key] = (string) $value;
+        return $this;
+    }
+
+    /**
+     * Set request headers
+     * 
+     * @param  array $headers 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function setHeaders(array $headers)
+    {
+        foreach ($headers as $key => $value) {
+            $this->setHeader($key, $value);
+        }
+        return $this;
+    }
+
+    /**
+     * Get request header
+     * 
+     * @param  string $header 
+     * @param  mixed $default 
+     * @return string|null
+     */
+    public function getHeader($header, $default = null)
+    {
+        $header = $this->_normalizeHeaderName($header);
+        if (array_key_exists($header, $this->_headers)) {
+            return $this->_headers[$header];
+        }
+        return $default;
+    }
+
+    /**
+     * Get all request headers
+     * 
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->_headers;
+    }
+
+    /**
+     * Clear request headers
+     * 
+     * @return Zend_Controller_Request_HttpTestCase
+     */
+    public function clearHeaders()
+    {
+        $this->_headers = array();
+        return $this;
+    }
+
+    /**
+     * Get REQUEST_URI
+     * 
+     * @return null|string
+     */
+    public function getRequestUri()
+    {
+        return $this->_requestUri;
+    }
+
+    /**
+     * Normalize a header name for setting and retrieval
+     * 
+     * @param  string $name 
+     * @return string
+     */
+    protected function _normalizeHeaderName($name)
+    {
+        $name = strtoupper((string) $name);
+        $name = str_replace('-', '_', $name);
+        return $name;
+    }
+}

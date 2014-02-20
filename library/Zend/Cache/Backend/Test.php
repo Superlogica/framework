@@ -1,67 +1,269 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Backend_Interface
+ */
+require_once 'Zend/Cache/Backend/Interface.php';
+
+/**
+ * @see Zend_Cache_Backend
+ */
+require_once 'Zend/Cache/Backend.php';
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend_Test extends Zend_Cache_Backend implements Zend_Cache_Backend_Interface
+{
+    /**
+     * Available options
+     *
+     * @var array available options
+     */
+    protected $_options = array();
+
+    /**
+     * Frontend or Core directives
+     *
+     * @var array directives
+     */
+    protected $_directives = array();
+
+    /**
+     * Array to log actions
+     *
+     * @var array $_log
+     */
+    private $_log = array();
+
+    /**
+     * Current index for log array
+     *
+     * @var int $_index
+     */
+    private $_index = 0;
+
+    /**
+     * Constructor
+     *
+     * @param  array $options associative array of options
+     * @return void
+     */
+    public function __construct($options = array())
+    {
+        $this->_addLog('construct', array($options));
+    }
+
+    /**
+     * Set the frontend directives
+     *
+     * @param  array $directives assoc of directives
+     * @return void
+     */
+    public function setDirectives($directives)
+    {
+        $this->_addLog('setDirectives', array($directives));
+    }
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * For this test backend only, if $id == 'false', then the method will return false
+     * if $id == 'serialized', the method will return a serialized array
+     * ('foo' else)
+     *
+     * @param  string  $id                     Cache id
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @return string Cached datas (or false)
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        $this->_addLog('get', array($id, $doNotTestCacheValidity));
+        if ($id=='false') {
+            return false;
+        }
+        if ($id=='serialized') {
+            return serialize(array('foo'));
+        }
+        if ($id=='serialized2') {
+            return serialize(array('headers' => array(), 'data' => 'foo'));
+        }
+        if (($id=='71769f39054f75894288e397df04e445') or ($id=='615d222619fb20b527168340cebd0578')) {
+            return serialize(array('foo', 'bar'));
+        }
+        if (($id=='8a02d218a5165c467e7a5747cc6bd4b6') or ($id=='648aca1366211d17cbf48e65dc570bee')) {
+            return serialize(array('foo', 'bar'));
+        }
+        return 'foo';
+    }
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * For this test backend only, if $id == 'false', then the method will return false
+     * (123456 else)
+     *
+     * @param  string $id Cache id
+     * @return mixed|false false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    public function test($id)
+    {
+        $this->_addLog('test', array($id));
+        if ($id=='false') {
+            return false;
+        }
+        if (($id=='d8523b3ee441006261eeffa5c3d3a0a7') or ($id=='3c439c922209e2cb0b54d6deffccd75a')) {
+            return false;
+        }
+        if (($id=='40f649b94977c0a6e76902e2a0b43587') or ($id=='e83249ea22178277d5befc2c5e2e9ace')) {
+            return false;
+        }
+        return 123456;
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * For this test backend only, if $id == 'false', then the method will return false
+     * (true else)
+     *
+     * @param  string $data             Datas to cache
+     * @param  string $id               Cache id
+     * @param  array  $tags             Array of strings, the cache record will be tagged by each string entry
+     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @return boolean True if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false)
+    {
+        $this->_addLog('save', array($data, $id, $tags));
+        if ($id=='false') {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Remove a cache record
+     *
+     * For this test backend only, if $id == 'false', then the method will return false
+     * (true else)
+     *
+     * @param  string $id Cache id
+     * @return boolean True if no problem
+     */
+    public function remove($id)
+    {
+        $this->_addLog('remove', array($id));
+        if ($id=='false') {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Clean some cache records
+     *
+     * For this test backend only, if $mode == 'false', then the method will return false
+     * (true else)
+     *
+     * Available modes are :
+     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
+     *                                               ($tags can be an array of strings or a single string)
+     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
+     *                                               ($tags can be an array of strings or a single string)
+     *
+     * @param  string $mode Clean mode
+     * @param  array  $tags Array of tags
+     * @return boolean True if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        $this->_addLog('clean', array($mode, $tags));
+        if ($mode=='false') {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Get the last log
+     *
+     * @return string The last log
+     */
+    public function getLastLog()
+    {
+        return $this->_log[$this->_index - 1];
+    }
+
+    /**
+     * Get the log index
+     *
+     * @return int Log index
+     */
+    public function getLogIndex()
+    {
+        return $this->_index;
+    }
+
+    /**
+     * Get the complete log array
+     *
+     * @return array Complete log array
+     */
+    public function getAllLogs()
+    {
+        return $this->_log;
+    }
+
+    /**
+     * Return true if the automatic cleaning is available for the backend
+     *
+     * @return boolean
+     */
+    public function isAutomaticCleaningAvailable()
+    {
+        return true;
+    }
+
+    /**
+     * Add an event to the log array
+     *
+     * @param  string $methodName MethodName
+     * @param  array  $args       Arguments
+     * @return void
+     */
+    private function _addLog($methodName, $args)
+    {
+        $this->_log[$this->_index] = array(
+            'methodName' => $methodName,
+            'args' => $args
+        );
+        $this->_index = $this->_index + 1;
+    }
+
+}

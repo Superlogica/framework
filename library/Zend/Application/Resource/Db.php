@@ -1,35 +1,156 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Db.php 15337 2009-05-05 17:33:06Z matthew $
+ */
+
+/**
+ * Resource for creating database adapter
+ *
+ * @uses       Zend_Application_Resource_ResourceAbstract
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbstract
+{
+    /**
+     * Adapter to use
+     *
+     * @var string
+     */
+    protected $_adapter = null;
+
+    /**
+     * @var Zend_Db_Adapter_Interface
+     */
+    protected $_db;
+    
+    /**
+     * Parameters to use
+     *
+     * @var array
+     */
+    protected $_params = array();
+    
+    /**
+     * Wether to register the created adapter as default table adapter
+     *
+     * @var boolean
+     */
+    protected $_isDefaultTableAdapter = true; 
+    
+    /**
+     * Set the adapter
+     * 
+     * @param  $adapter string
+     * @return Zend_Application_Resource_Db
+     */
+    public function setAdapter($adapter)
+    {
+        $this->_adapter = $adapter;
+        return $this;
+    }
+
+    /**
+     * Adapter type to use
+     * 
+     * @return string
+     */
+    public function getAdapter()
+    {
+        return $this->_adapter;
+    }
+
+    /**
+     * Set the adapter params
+     * 
+     * @param  $adapter string
+     * @return Zend_Application_Resource_Db
+     */
+    public function setParams(array $params)
+    {
+        $this->_params = $params;
+        return $this;
+    }
+
+    /**
+     * Adapter parameters
+     * 
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->_params;
+    }
+    
+    /**
+     * Set whether to use this as default table adapter
+     *
+     * @param  boolean $defaultTableAdapter
+     * @return Zend_Application_Resource_Db
+     */
+    public function setIsDefaultTableAdapter($isDefaultTableAdapter)
+    {
+        $this->_isDefaultTableAdapter = $isDefaultTableAdapter;
+        return $this;
+    }
+
+    /**
+     * Is this adapter the default table adapter?
+     * 
+     * @return void
+     */
+    public function isDefaultTableAdapter()
+    {
+        return $this->_isDefaultTableAdapter;
+    }
+
+    /**
+     * Retrieve initialized DB connection
+     * 
+     * @return null|Zend_Db_Adapter_Interface
+     */
+    public function getDbAdapter()
+    {
+        if ((null === $this->_db) 
+            && (null !== ($adapter = $this->getAdapter()))
+        ) {
+            $this->_db = Zend_Db::factory($adapter, $this->getParams());
+        }
+        return $this->_db;
+    }
+    
+    /**
+     * Defined by Zend_Application_Resource_Resource
+     *
+     * @return Zend_Db_Adapter_Abstract|null
+     */
+    public function init()
+    {
+        if (null !== ($db = $this->getDbAdapter())) {
+            if ($this->isDefaultTableAdapter()) {
+                Zend_Db_Table::setDefaultAdapter($db);
+            }
+            return $db;
+        }
+    }
+}

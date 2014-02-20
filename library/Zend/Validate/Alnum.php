@@ -1,36 +1,140 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Alnum.php 14560 2009-03-31 14:41:22Z thomas $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Alnum extends Zend_Validate_Abstract
+{
+    /**
+     * Validation failure message key for when the value contains non-alphabetic or non-digit characters
+     */
+    const NOT_ALNUM = 'notAlnum';
+
+    /**
+     * Validation failure message key for when the value is an empty string
+     */
+    const STRING_EMPTY = 'stringEmpty';
+
+    /**
+     * Whether to allow white space characters; off by default
+     *
+     * @var boolean
+     * @depreciated
+     */
+    public $allowWhiteSpace;
+
+    /**
+     * Alphanumeric filter used for validation
+     *
+     * @var Zend_Filter_Alnum
+     */
+    protected static $_filter = null;
+
+    /**
+     * Validation failure message template definitions
+     *
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::NOT_ALNUM    => "'%value%' has not only alphabetic and digit characters",
+        self::STRING_EMPTY => "'%value%' is an empty string"
+    );
+
+    /**
+     * Sets default option values for this instance
+     *
+     * @param  boolean $allowWhiteSpace
+     * @return void
+     */
+    public function __construct($allowWhiteSpace = false)
+    {
+        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
+    }
+
+    /**
+     * Returns the allowWhiteSpace option
+     *
+     * @return boolean
+     */
+    public function getAllowWhiteSpace()
+    {
+        return $this->allowWhiteSpace;
+    }
+
+    /**
+     * Sets the allowWhiteSpace option
+     *
+     * @param boolean $allowWhiteSpace
+     * @return Zend_Filter_Alnum Provides a fluent interface
+     */
+    public function setAllowWhiteSpace($allowWhiteSpace)
+    {
+        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value contains only alphabetic and digit characters
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $valueString = (string) $value;
+
+        $this->_setValue($valueString);
+
+        if ('' === $valueString) {
+            $this->_error(self::STRING_EMPTY);
+            return false;
+        }
+
+        if (null === self::$_filter) {
+            /**
+             * @see Zend_Filter_Alnum
+             */
+            require_once 'Zend/Filter/Alnum.php';
+            self::$_filter = new Zend_Filter_Alnum();
+        }
+
+        self::$_filter->allowWhiteSpace = $this->allowWhiteSpace;
+
+        if ($valueString !== self::$_filter->filter($valueString)) {
+            $this->_error(self::NOT_ALNUM);
+            return false;
+        }
+
+        return true;
+    }
+
+}

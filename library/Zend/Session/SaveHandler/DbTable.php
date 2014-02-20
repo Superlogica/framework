@@ -1,170 +1,589 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9vRUcgDd7AjBy7IaBOHmTrAikR3cFgCK2avW
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-webat this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Session
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: DbTable.php 12585 2008-11-12 17:02:49Z alexander $
+ */
+
+/**
+ * @see Zend_Session
+ */
+require_once 'Zend/Session.php';
+
+/**
+ * @see Zend_Db_Table_Abstract
+ */
+require_once 'Zend/Db/Table/Abstract.php';
+
+/**
+ * @see Zend_Db_Table_Row_Abstract
+ */
+require_once 'Zend/Db/Table/Row/Abstract.php';
+
+/**
+ * @see Zend_Config
+ */
+require_once 'Zend/Config.php';
+
+/**
+ * Zend_Session_SaveHandler_DbTable
+ *
+ * @category   Zend
+ * @package    Zend_Session
+ * @subpackage SaveHandler
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Session_SaveHandler_DbTable extends Zend_Db_Table_Abstract implements Zend_Session_SaveHandler_Interface
+{
+    const PRIMARY_ASSIGNMENT                   = 'primaryAssignment';
+    const PRIMARY_ASSIGNMENT_SESSION_SAVE_PATH = 'sessionSavePath';
+    const PRIMARY_ASSIGNMENT_SESSION_NAME      = 'sessionName';
+    const PRIMARY_ASSIGNMENT_SESSION_ID        = 'sessionId';
+
+    const MODIFIED_COLUMN   = 'modifiedColumn';
+    const LIFETIME_COLUMN   = 'lifetimeColumn';
+    const DATA_COLUMN       = 'dataColumn';
+
+    const LIFETIME          = 'lifetime';
+    const OVERRIDE_LIFETIME = 'overrideLifetime';
+
+    const PRIMARY_TYPE_NUM         = 'PRIMARY_TYPE_NUM';
+    const PRIMARY_TYPE_PRIMARYNUM  = 'PRIMARY_TYPE_PRIMARYNUM';
+    const PRIMARY_TYPE_ASSOC       = 'PRIMARY_TYPE_ASSOC';
+    const PRIMARY_TYPE_WHERECLAUSE = 'PRIMARY_TYPE_WHERECLAUSE';
+
+    /**
+     * Session table primary key value assignment
+     *
+     * @var array
+     */
+    protected $_primaryAssignment = null;
+
+    /**
+     * Session table last modification time column
+     *
+     * @var string
+     */
+    protected $_modifiedColumn = null;
+
+    /**
+     * Session table lifetime column
+     *
+     * @var string
+     */
+    protected $_lifetimeColumn = null;
+
+    /**
+     * Session table data column
+     *
+     * @var string
+     */
+    protected $_dataColumn = null;
+
+    /**
+     * Session lifetime
+     *
+     * @var int
+     */
+    protected $_lifetime = false;
+
+    /**
+     * Whether or not the lifetime of an existing session should be overridden
+     *
+     * @var boolean
+     */
+    protected $_overrideLifetime = false;
+
+    /**
+     * Session save path
+     *
+     * @var string
+     */
+    protected $_sessionSavePath;
+
+    /**
+     * Session name
+     *
+     * @var string
+     */
+    protected $_sessionName;
+
+    /**
+     * Constructor
+     *
+     * $config is an instance of Zend_Config or an array of key/value pairs containing configuration options for
+     * Zend_Session_SaveHandler_DbTable and Zend_Db_Table_Abstract. These are the configuration options for
+     * Zend_Session_SaveHandler_DbTable:
+     *
+     * primaryAssignment => (string|array) Session table primary key value assignment
+     *      (optional; default: 1 => sessionId) You have to assign a value to each primary key of your session table.
+     *      The value of this configuration option is either a string if you have only one primary key or an array if
+     *      you have multiple primary keys. The array consists of numeric keys starting at 1 and string values. There
+     *      are some values which will be replaced by session information:
+     *
+     *      sessionId       => The id of the current session
+     *      sessionName     => The name of the current session
+     *      sessionSavePath => The save path of the current session
+     *
+     *      NOTE: One of your assignments MUST contain 'sessionId' as value!
+     *
+     * modifiedColumn    => (string) Session table last modification time column
+     *
+     * lifetimeColumn    => (string) Session table lifetime column
+     *
+     * dataColumn        => (string) Session table data column
+     *
+     * lifetime          => (integer) Session lifetime (optional; default: ini_get('session.gc_maxlifetime'))
+     *
+     * overrideLifetime  => (boolean) Whether or not the lifetime of an existing session should be overridden
+     *      (optional; default: false)
+     *
+     * @param  Zend_Config|array $config      User-provided configuration
+     * @return void
+     * @throws Zend_Session_SaveHandler_Exception
+     */
+    public function __construct($config)
+    {
+        if ($config instanceof Zend_Config) {
+            $config = $config->toArray();
+        } else if (!is_array($config)) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception(
+                '$config must be an instance of Zend_Config or array of key/value pairs containing '
+              . 'configuration options for Zend_Session_SaveHandler_DbTable and Zend_Db_Table_Abstract.');
+        }
+
+        foreach ($config as $key => $value) {
+            do {
+                switch ($key) {
+                    case self::PRIMARY_ASSIGNMENT:
+                        $this->_primaryAssignment = $value;
+                        break;
+                    case self::MODIFIED_COLUMN:
+                        $this->_modifiedColumn = (string) $value;
+                        break;
+                    case self::LIFETIME_COLUMN:
+                        $this->_lifetimeColumn = (string) $value;
+                        break;
+                    case self::DATA_COLUMN:
+                        $this->_dataColumn = (string) $value;
+                        break;
+                    case self::LIFETIME:
+                        $this->setLifetime($value);
+                        break;
+                    case self::OVERRIDE_LIFETIME:
+                        $this->setOverrideLifetime($value);
+                        break;
+                    default:
+                        // unrecognized options passed to parent::__construct()
+                        break 2;
+                }
+                unset($config[$key]);
+            } while (false);
+        }
+
+        parent::__construct($config);
+    }
+
+    /**
+     * Destructor
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        Zend_Session::writeClose();
+    }
+
+    /**
+     * Set session lifetime and optional whether or not the lifetime of an existing session should be overridden
+     *
+     * $lifetime === false resets lifetime to session.gc_maxlifetime
+     *
+     * @param int $lifetime
+     * @param boolean $overrideLifetime (optional)
+     * @return Zend_Session_SaveHandler_DbTable
+     */
+    public function setLifetime($lifetime, $overrideLifetime = null)
+    {
+        if ($lifetime < 0) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+            throw new Zend_Session_SaveHandler_Exception();
+        } else if (empty($lifetime)) {
+            $this->_lifetime = (int) ini_get('session.gc_maxlifetime');
+        } else {
+            $this->_lifetime = (int) $lifetime;
+        }
+
+        if ($overrideLifetime != null) {
+            $this->setOverrideLifetime($overrideLifetime);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve session lifetime
+     *
+     * @return int
+     */
+    public function getLifetime()
+    {
+        return $this->_lifetime;
+    }
+
+    /**
+     * Set whether or not the lifetime of an existing session should be overridden
+     *
+     * @param boolean $overrideLifetime
+     * @return Zend_Session_SaveHandler_DbTable
+     */
+    public function setOverrideLifetime($overrideLifetime)
+    {
+        $this->_overrideLifetime = (boolean) $overrideLifetime;
+
+        return $this;
+    }
+
+    /**
+     * Retrieve whether or not the lifetime of an existing session should be overridden
+     *
+     * @return boolean
+     */
+    public function getOverrideLifetime()
+    {
+        return $this->_overrideLifetime;
+    }
+
+    /**
+     * Open Session
+     *
+     * @param string $save_path
+     * @param string $name
+     * @return boolean
+     */
+    public function open($save_path, $name)
+    {
+        $this->_sessionSavePath = $save_path;
+        $this->_sessionName     = $name;
+
+        return true;
+    }
+
+    /**
+     * Close session
+     *
+     * @return boolean
+     */
+    public function close()
+    {
+        return true;
+    }
+
+    /**
+     * Read session data
+     *
+     * @param string $id
+     * @return string
+     */
+    public function read($id)
+    {
+        $return = '';
+
+        $rows = call_user_func_array(array(&$this, 'find'), $this->_getPrimary($id));
+
+        if (count($rows)) {
+            if ($this->_getExpirationTime($row = $rows->current()) > time()) {
+                $return = $row->{$this->_dataColumn};
+            } else {
+                $this->destroy($id);
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * Write session data
+     *
+     * @param string $id
+     * @param string $data
+     * @return boolean
+     */
+    public function write($id, $data)
+    {
+        $return = false;
+
+        $data = array($this->_modifiedColumn => time(),
+                      $this->_dataColumn     => (string) $data);
+
+        $rows = call_user_func_array(array(&$this, 'find'), $this->_getPrimary($id));
+
+        if (count($rows)) {
+            $data[$this->_lifetimeColumn] = $this->_getLifetime($rows->current());
+
+            if ($this->update($data, $this->_getPrimary($id, self::PRIMARY_TYPE_WHERECLAUSE))) {
+                $return = true;
+            }
+        } else {
+            $data[$this->_lifetimeColumn] = $this->_lifetime;
+
+            if ($this->insert(array_merge($this->_getPrimary($id, self::PRIMARY_TYPE_ASSOC), $data))) {
+                $return = true;
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * Destroy session
+     *
+     * @param string $id
+     * @return boolean
+     */
+    public function destroy($id)
+    {
+        $return = false;
+
+        if ($this->delete($this->_getPrimary($id, self::PRIMARY_TYPE_WHERECLAUSE))) {
+            $return = true;
+        }
+
+        return $return;
+    }
+
+    /**
+     * Garbage Collection
+     *
+     * @param int $maxlifetime
+     * @return true
+     */
+    public function gc($maxlifetime)
+    {
+        $this->delete($this->getAdapter()->quoteIdentifier($this->_modifiedColumn) . ' + '
+                    . $this->getAdapter()->quoteIdentifier($this->_lifetimeColumn) . ' < '
+                    . $this->getAdapter()->quote(time()));
+
+        return true;
+    }
+
+    /**
+     * Calls other protected methods for individual setup tasks and requirement checks
+     *
+     * @return void
+     */
+    protected function _setup()
+    {
+        parent::_setup();
+
+        $this->_setupPrimaryAssignment();
+        $this->setLifetime($this->_lifetime);
+
+        $this->_checkRequiredColumns();
+    }
+
+    /**
+     * Initialize table and schema names
+     *
+     * @return void
+     * @throws Zend_Session_SaveHandler_Exception
+     */
+    protected function _setupTableName()
+    {
+        if (empty($this->_name) && basename(($this->_name = session_save_path())) != $this->_name) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception('session.save_path is a path and not a table name.');
+        }
+
+        if (strpos($this->_name, '.')) {
+            list($this->_schema, $this->_name) = explode('.', $this->_name);
+        }
+    }
+
+    /**
+     * Initialize session table primary key value assignment
+     *
+     * @return void
+     * @throws Zend_Session_SaveHandler_Exception
+     */
+    protected function _setupPrimaryAssignment()
+    {
+        if ($this->_primaryAssignment === null) {
+            $this->_primaryAssignment = array(1 => self::PRIMARY_ASSIGNMENT_SESSION_ID);
+        } else if (!is_array($this->_primaryAssignment)) {
+            $this->_primaryAssignment = array(1 => (string) $this->_primaryAssignment);
+        } else if (isset($this->_primaryAssignment[0])) {
+            array_unshift($this->_primaryAssignment, null);
+
+            unset($this->_primaryAssignment[0]);
+        }
+
+        if (count($this->_primaryAssignment) !== count($this->_primary)) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception(
+                "Value for configuration option '" . self::PRIMARY_ASSIGNMENT . "' must have an assignment "
+              . "for each session table primary key.");
+        } else if (!in_array(self::PRIMARY_ASSIGNMENT_SESSION_ID, $this->_primaryAssignment)) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception(
+                "Value for configuration option '" . self::PRIMARY_ASSIGNMENT . "' must have an assignment "
+              . "for the session id ('" . self::PRIMARY_ASSIGNMENT_SESSION_ID . "').");
+        }
+    }
+
+    /**
+     * Check for required session table columns
+     *
+     * @return void
+     * @throws Zend_Session_SaveHandler_Exception
+     */
+    protected function _checkRequiredColumns()
+    {
+        if ($this->_modifiedColumn === null) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception(
+                "Configuration must define '" . self::MODIFIED_COLUMN . "' which names the "
+              . "session table last modification time column.");
+        } else if ($this->_lifetimeColumn === null) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception(
+                "Configuration must define '" . self::LIFETIME_COLUMN . "' which names the "
+              . "session table lifetime column.");
+        } else if ($this->_dataColumn === null) {
+            /**
+             * @see Zend_Session_SaveHandler_Exception
+             */
+            require_once 'Zend/Session/SaveHandler/Exception.php';
+
+            throw new Zend_Session_SaveHandler_Exception(
+                "Configuration must define '" . self::DATA_COLUMN . "' which names the "
+              . "session table data column.");
+        }
+    }
+
+    /**
+     * Retrieve session table primary key values
+     *
+     * @param string $id
+     * @param string $type (optional; default: self::PRIMARY_TYPE_NUM)
+     * @return array
+     */
+    protected function _getPrimary($id, $type = null)
+    {
+    	$this->_setupPrimaryKey();
+
+        if ($type === null) {
+            $type = self::PRIMARY_TYPE_NUM;
+        }
+
+        $primaryArray = array();
+
+        foreach ($this->_primary as $index => $primary) {
+            switch ($this->_primaryAssignment[$index]) {
+                case self::PRIMARY_ASSIGNMENT_SESSION_SAVE_PATH:
+                    $value = $this->_sessionSavePath;
+                    break;
+                case self::PRIMARY_ASSIGNMENT_SESSION_NAME:
+                    $value = $this->_sessionName;
+                    break;
+                case self::PRIMARY_ASSIGNMENT_SESSION_ID:
+                    $value = (string) $id;
+                    break;
+                default:
+                    $value = (string) $this->_primaryAssignment[$index];
+                    break;
+            }
+
+            switch ((string) $type) {
+                case self::PRIMARY_TYPE_PRIMARYNUM:
+                    $primaryArray[$index] = $value;
+                    break;
+                case self::PRIMARY_TYPE_ASSOC:
+                    $primaryArray[$primary] = $value;
+                    break;
+                case self::PRIMARY_TYPE_WHERECLAUSE:
+                    $primaryArray[] = $this->getAdapter()->quoteIdentifier($primary) . ' = '
+                                    . $this->getAdapter()->quote($value);
+                    break;
+                case self::PRIMARY_TYPE_NUM:
+                default:
+                    $primaryArray[] = $value;
+                    break;
+            }
+        }
+
+        return $primaryArray;
+    }
+
+    /**
+     * Retrieve session lifetime considering Zend_Session_SaveHandler_DbTable::OVERRIDE_LIFETIME
+     *
+     * @param Zend_Db_Table_Row_Abstract $row
+     * @return int
+     */
+    protected function _getLifetime(Zend_Db_Table_Row_Abstract $row)
+    {
+        $return = $this->_lifetime;
+
+        if (!$this->_overrideLifetime) {
+            $return = (int) $row->{$this->_lifetimeColumn};
+        }
+
+        return $return;
+    }
+
+    /**
+     * Retrieve session expiration time
+     *
+     * @param Zend_Db_Table_Row_Abstract $row
+     * @return int
+     */
+    protected function _getExpirationTime(Zend_Db_Table_Row_Abstract $row)
+    {
+        return (int) $row->{$this->_modifiedColumn} + $this->_getLifetime($row);
+    }
+}

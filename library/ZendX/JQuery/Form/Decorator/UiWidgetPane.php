@@ -1,57 +1,157 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: UiWidgetPane.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+require_once "Zend/Form/Decorator/Abstract.php";
+
+/**
+ * Abstract Form Decorator for all jQuery UI Pane View Helpers
+ *
+ * @package    ZendX_JQuery
+ * @subpackage Form
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class ZendX_JQuery_Form_Decorator_UiWidgetPane extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * View helper
+     * @var string
+     */
+    protected $_helper;
+
+    /**
+     * Element attributes
+     * @var array
+     */
+    protected $_attribs;
+
+    /**
+     * jQuery option parameters
+     * @var array
+     */
+    protected $_jQueryParams;
+
+    /**
+     * Container title
+     * @var string
+     */
+    protected $_title;
+
+    /**
+     * Get view helper for rendering container
+     *
+     * @return string
+     */
+    public function getHelper()
+    {
+        if (null === $this->_helper) {
+            require_once 'Zend/Form/Decorator/Exception.php';
+            throw new Zend_Form_Decorator_Exception('No view helper specified fo UiWidgetContainer decorator');
+        }
+        return $this->_helper;
+    }
+
+    /**
+     * Get element attributes
+     *
+     * @return array
+     */
+    public function getAttribs()
+    {
+        if (null === $this->_attribs) {
+            $attribs = $this->getElement()->getAttribs();
+            if (array_key_exists('jQueryParams', $attribs)) {
+                $this->getJQueryParams();
+                unset($attribs['jQueryParams']);
+            }
+            $this->_attribs = $attribs;
+        }
+        return $this->_attribs;
+    }
+
+    /**
+     * Get jQuery option parameters
+     *
+     * @return array
+     */
+    public function getJQueryParams()
+    {
+        if (null === $this->_jQueryParams) {
+            $attribs = $this->getElement()->getAttribs();
+            $this->_jQueryParams = array();
+            if (array_key_exists('jQueryParams', $attribs)) {
+                $this->_jQueryParams = $attribs['jQueryParams'];
+            }
+
+            $options = $this->getOptions();
+            if (array_key_exists('jQueryParams', $options)) {
+                $this->_jQueryParams = array_merge($this->_jQueryParams, $options['jQueryParams']);
+                $this->removeOption('jQueryParams');
+            }
+        }
+
+        // Ensure we have a title param
+        if (!array_key_exists('title', $this->_jQueryParams)) {
+            require_once "Zend/Form/Decorator/Exception.php";
+            throw new Zend_Form_Decorator_Exception("UiWidgetPane Decorators have to have a jQueryParam 'title' to render. This title can been set via setJQueryParam('title') on the parent element.");
+        }
+
+        return $this->_jQueryParams;
+    }
+
+    /**
+     * Render an jQuery UI Widget Pane using its associated view helper
+     *
+     * @throws Zend_Form_Decorator_Exception
+     * @param  string $content
+     * @return string
+     * @throws Zend_Form_Decorator_Exception if element or view are not registered
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $jQueryParams = $this->getJQueryParams();
+        $attribs     = array_merge($this->getAttribs(), $this->getOptions());
+
+        if(isset($jQueryParams['title']) && !empty($jQueryParams['title'])) {
+            if (null !== ($translator = $element->getTranslator())) {
+                $jQueryParams['title'] = $translator->translate($jQueryParams['title']);
+            }
+        }
+
+        if(isset($jQueryParams['containerId'])) {
+            $id = $jQueryParams['containerId']."-container";
+        } else {
+            require_once "Zend/Form/Decorator/Exception.php";
+            throw new Zend_Form_Decorator_Exception("UiWidgetPane Decorators have to have a jQueryParam 'containerId', to point at their parent container. This containerId has been set via setAttrib('id') on the parent element.");
+        }
+
+        $helper = $this->getHelper();
+
+        return $view->$helper($id, $content, $jQueryParams, $attribs);
+    }
+}

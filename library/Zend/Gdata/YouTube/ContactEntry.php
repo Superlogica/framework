@@ -1,42 +1,135 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_YouTube_UserProfileEntry
+ */
+require_once 'Zend/Gdata/YouTube/UserProfileEntry.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Status
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Status.php';
+
+/**
+ * The YouTube contacts flavor of an Atom Entry with media support
+ * Represents a an individual contact
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_ContactEntry extends Zend_Gdata_YouTube_UserProfileEntry
+{
+
+    /**
+     * The classname for individual feed elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_YouTube_ContactEntry';
+
+    /**
+     * Status of the user as a contact
+     *
+     * @var string
+     */
+    protected $_status = null;
+
+    /**
+     * Constructs a new Contact Entry object, to represent
+     * an individual contact for a user
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_status != null) {
+            $element->appendChild($this->_status->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('yt') . ':' . 'status':
+            $status = new Zend_Gdata_YouTube_Extension_Status();
+            $status->transferFromDOM($child);
+            $this->_status = $status;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Sets the status
+     *
+     * @param Zend_Gdata_YouTube_Extension_Status $status The status
+     * @return Zend_Gdata_YouTube_ContactEntry Provides a fluent interface
+     */
+    public function setStatus($status = null)
+    {
+        $this->_status = $status;
+        return $this;
+    }
+
+    /**
+     * Returns the status
+     *
+     * @return Zend_Gdata_YouTube_Extension_Status  The status
+     */
+    public function getStatus()
+    {
+        return $this->_status;
+    }
+
+}

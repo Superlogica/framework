@@ -1,129 +1,404 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-ZAAa
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * Validator for the maximum size of a file up to a max of 2GB
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_Size extends Zend_Validate_Abstract
+{
+    /**#@+
+     * @const string Error constants
+     */
+    const TOO_BIG   = 'fileSizeTooBig';
+    const TOO_SMALL = 'fileSizeTooSmall';
+    const NOT_FOUND = 'fileSizeNotFound';
+    /**#@-*/
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::TOO_BIG   => "Maximum allowed size for file '%value%' is '%max%' but '%size%' detected",
+        self::TOO_SMALL => "Minimum expected size for file '%value%' is '%min%' but '%size%' detected",
+        self::NOT_FOUND => "The file '%value%' could not be found"
+    );
+
+    /**
+     * @var array Error message template variables
+     */
+    protected $_messageVariables = array(
+        'min'  => '_min',
+        'max'  => '_max',
+        'size' => '_size',
+    );
+
+    /**
+     * Minimum filesize
+     * @var integer
+     */
+    protected $_min;
+
+    /**
+     * Maximum filesize
+     *
+     * If null, there is no maximum filesize
+     *
+     * @var integer|null
+     */
+    protected $_max;
+
+    /**
+     * Detected size
+     *
+     * @var integer
+     */
+    protected $_size;
+
+    /**
+     * Use bytestring ?
+     *
+     * @var boolean
+     */
+    protected $_useByteString = true;
+
+    /**
+     * Sets validator options
+     *
+     * If $options is a integer, it will be used as maximum filesize
+     * As Array is accepts the following keys:
+     * 'min': Minimum filesize
+     * 'max': Maximum filesize
+     * 'bytestring': Use bytestring or real size for messages
+     *
+     * @param  integer|array $options Options for the adapter
+     */
+    public function __construct($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (is_string($options) || is_numeric($options)) {
+            $options = array('max' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        }
+
+        if (1 < func_num_args()) {
+            trigger_error('Multiple constructor options are deprecated in favor of a single options array', E_USER_NOTICE);
+            $argv = func_get_args();
+            array_shift($argv);
+            $options['max'] = array_shift($argv);
+            if (!empty($argv)) {
+                $options['bytestring'] = array_shift($argv);
+            }
+        }
+
+        if (isset($options['bytestring'])) {
+            $this->setUseByteString($options['bytestring']);
+        }
+
+        if (isset($options['min'])) {
+            $this->setMin($options['min']);
+        }
+
+        if (isset($options['max'])) {
+            $this->setMax($options['max']);
+        }
+    }
+
+    /**
+     * Returns the minimum filesize
+     *
+     * @param  boolean $byteString Use bytestring ?
+     * @return integer
+     */
+    public function setUseByteString($byteString = true)
+    {
+        $this->_useByteString = (bool) $byteString;
+        return $this;
+    }
+
+    /**
+     * Will bytestring be used?
+     *
+     * @return boolean
+     */
+    public function useByteString()
+    {
+        return $this->_useByteString;
+    }
+
+    /**
+     * Returns the minimum filesize
+     *
+     * @param  bool $raw Whether or not to force return of the raw value (defaults off)
+     * @return integer|string
+     */
+    public function getMin($raw = false)
+    {
+        $min = $this->_min;
+        if (!$raw && $this->useByteString()) {
+            $min = $this->_toByteString($min);
+        }
+
+        return $min;
+    }
+
+    /**
+     * Sets the minimum filesize
+     *
+     * @param  integer $min The minimum filesize
+     * @throws Zend_Validate_Exception When min is greater than max
+     * @return Zend_Validate_File_Size Provides a fluent interface
+     */
+    public function setMin($min)
+    {
+        if (!is_string($min) and !is_numeric($min)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        }
+
+        $min = (integer) $this->_fromByteString($min);
+        $max = $this->getMax(true);
+        if (($max !== null) && ($min > $max)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("The minimum must be less than or equal to the maximum filesize, but $min >"
+                                            . " $max");
+        }
+
+        $this->_min = $min;
+        return $this;
+    }
+
+    /**
+     * Returns the maximum filesize
+     *
+     * @param  bool $raw Whether or not to force return of the raw value (defaults off)
+     * @return integer|string
+     */
+    public function getMax($raw = false)
+    {
+        $max = $this->_max;
+        if (!$raw && $this->useByteString()) {
+            $max = $this->_toByteString($max);
+        }
+
+        return $max;
+    }
+
+    /**
+     * Sets the maximum filesize
+     *
+     * @param  integer $max The maximum filesize
+     * @throws Zend_Validate_Exception When max is smaller than min
+     * @return Zend_Validate_StringLength Provides a fluent interface
+     */
+    public function setMax($max)
+    {
+        if (!is_string($max) && !is_numeric($max)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        }
+
+        $max = (integer) $this->_fromByteString($max);
+        $min = $this->getMin(true);
+        if (($min !== null) && ($max < $min)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("The maximum must be greater than or equal to the minimum filesize, but "
+                                            . "$max < $min");
+        }
+
+        $this->_max = $max;
+        return $this;
+    }
+
+    /**
+     * Retrieve current detected file size
+     *
+     * @return int
+     */
+    protected function _getSize()
+    {
+        return $this->_size;
+    }
+
+    /**
+     * Set current size
+     *
+     * @param  int $size
+     * @return Zend_Validate_File_Size
+     */
+    protected function _setSize($size)
+    {
+        $this->_size = $size;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the filesize of $value is at least min and
+     * not bigger than max (when max is not null).
+     *
+     * @param  string $value Real file to check for size
+     * @param  array  $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_FOUND);
+        }
+
+        // limited to 4GB files
+        $size = sprintf("%u", @filesize($value));
+
+        // Check to see if it's smaller than min size
+        $min = $this->getMin(true);
+        $max = $this->getMax(true);
+        if (($min !== null) && ($size < $min)) {
+            if ($this->useByteString()) {
+                $this->_min  = $this->_toByteString($min);
+                $this->_size = $this->_toByteString($size);
+                $this->_throw($file, self::TOO_SMALL);
+                $this->_min  = $min;
+                $this->_size = $size;
+            } else {
+                $this->_throw($file, self::TOO_SMALL);
+            }
+        }
+
+        // Check to see if it's larger than max size
+        if (($max !== null) && ($max < $size)) {
+            if ($this->useByteString()) {
+                $this->_max  = $this->_toByteString($max);
+                $this->_size = $this->_toByteString($size);
+                $this->_throw($file, self::TOO_BIG);
+                $this->_max  = $max;
+                $this->_size = $size;
+            } else {
+                $this->_throw($file, self::TOO_BIG);
+            }
+        }
+
+        if (count($this->_messages) > 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Returns the formatted size
+     *
+     * @param  integer $size
+     * @return string
+     */
+    protected function _toByteString($size)
+    {
+        $sizes = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+        for ($i=0; $size >= 1024 && $i < 9; $i++) {
+            $size /= 1024;
+        }
+
+        return round($size, 2) . $sizes[$i];
+    }
+
+    /**
+     * Returns the unformatted size
+     *
+     * @param  string $size
+     * @return integer
+     */
+    protected function _fromByteString($size)
+    {
+        if (is_numeric($size)) {
+            return (integer) $size;
+        }
+
+        $type  = trim(substr($size, -2, 1));
+
+        $value = substr($size, 0, -1);
+        if (!is_numeric($value)) {
+            $value = substr($value, 0, -1);
+        }
+
+        switch (strtoupper($type)) {
+            case 'Y':
+                $value *= (1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024);
+                break;
+            case 'Z':
+                $value *= (1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024);
+                break;
+            case 'E':
+                $value *= (1024 * 1024 * 1024 * 1024 * 1024 * 1024);
+                break;
+            case 'P':
+                $value *= (1024 * 1024 * 1024 * 1024 * 1024);
+                break;
+            case 'T':
+                $value *= (1024 * 1024 * 1024 * 1024);
+                break;
+            case 'G':
+                $value *= (1024 * 1024 * 1024);
+                break;
+            case 'M':
+                $value *= (1024 * 1024);
+                break;
+            case 'K':
+                $value *= 1024;
+                break;
+            default:
+                break;
+        }
+
+        return $value;
+    }
+
+    /**
+     * Throws an error of the given type
+     *
+     * @param  string $file
+     * @param  string $errorType
+     * @return false
+     */
+    protected function _throw($file, $errorType)
+    {
+        if ($file !== null) {
+            $this->_value = $file['name'];
+        }
+
+        $this->_error($errorType);
+        return false;
+    }
+}

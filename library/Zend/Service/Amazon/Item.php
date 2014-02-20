@@ -1,119 +1,261 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Dnfx8BB+jIrXgXveUJmxnpGU4OXROM/URUiMze8ekQuWHkwdeeWn3rqut62mTNj9lMnOfYa
-wca25J2js9sSxav0WBrVlyZJDyvqYPwmkil4Qbed5Czi7fd11KMsdX77aYlykEVvFZ03CSTEsG2G
-VtZKmGmDhsPVu4OtXGIN0tbCbFJNu7ZdKq5/zNIu9YOiBRMwBsf59+ad29H1r3lfxPOIHiFSXHqD
-yFsA7dW+XtQJMt+kYT5tn4kJIPpDKor7T+KlBeH2Q55cHGnJisFGLOLGwjK6NFrn4aEpIf6uTqY9
-smE2rkpsJiv6lf4hNyeZIFREYtIiip3kmCDVyzETf3ExgvRbsRCz+gGuFVH1YXbSKcgGne/NujsP
-3l4rMbYjKM3S331JpcetlmoH50Uu5Mcyi6JnPtPgZkW8Vl3if4BzE5f0Lqv7iD44cAiYwPq17yWd
-KoZN4Z10mdpOrZbHxnekubb9bhK083xfi7hXjje0Q8/bb3EbuBme/6jID8IXUxIQm+dtoQ53r5Yf
-mE/CV4Iiz2DOnfGKmM9mR2Eip5F1MCW50JFEY9CJzoScbL6xyHJ1+J9waM8sdxX78IvfWi5bPCBD
-rHQaG7BrzAoVEi+fYJiqYTjo/nL0duXagWQ3l38sbrAHbDp5wKrpIyFBfK5SR/DHperNwphpB/px
-B4XQWAQZPweF9U09ut+76Gih3uOz1o6WZKqa9PySJtmkkl0jMRT76SskpXnNEW7yzJI59eOU6viY
-RLJU+a13RyDu9dilvrKkn84MiyObEQIZ7ONgA2pQGOFwyStbogvKQHM0T1E6O3G4rfeGW9J6MNRk
-V0B9/fxuYyhZgcclY2iaPGZbp0lHOpB716zIZ42q0NcqRoTpQlsLjWNXbSMK7eMs/b8ihAL70sO7
-iQORTN6RQW+H/zLpAJwCJUR/IkAHVnzDP2WNXOd9TZG9UOdVovk1URyNY4ae0GREOcADLniSJEB5
-WQ+I3FywTF/4Cp/WppDNmAq0HQZs9k5Ky6sCWWBoX+z5GrjTi2kq8DSOLuEuZG7afCOlxd/hxGrB
-svKOg4gQNsXiuvVWtDmgHYybkCtWX3cwRSs+USeiTEGjVPZZEFR4+qt3OG8EpeT7KzI1+rcYPYec
-k6BAED3QSQUk7m81d1HBy4ht9W61zzgrURjoYRaMRQTS/ILcMa80VM3AVvxfGXUJ3M4r8Lj86qle
-qRrdqLsxC7ySAuahh5Q+Z8S04A0QZcMfZrdOd9V7OEb+RwKDewPasGgy2nH7Crqnhc5JmLyaqviC
-WS+5uCckC4oTGk2M/JUETz1h0qzvdd5C3NTSrUikeH0g/naf2OnNldVqPp1FlcPxKyZAydlsOd9A
-1WmsHqYwDf8IX9juy+JsFMUblZewb8h0sXA0SKf3Bsl7bnnNIWRqHa1Tu2uMNW4/WrUrQth43Afm
-YPzj6ENyxxS3c0M15b59NUFVv3GnukPwmKjvJuHPWtd6pcQ48stgHXAdY2WrnQ5dd1Eq9JVRmtX4
-8E1cQ3+oAGxCV7iTLl8IcRbzWxizgH/HavzrIwjq9yMrf2zp7NLyWfU959+c31D8nsNoEgaay5xi
-EvOCeFm0A/tDFujqCSm2LZ61xozoCDJBW3Tbvc7XZMERsRhOQpuEhnFsMROpB0vBeUdSnZDX2cGT
-on4091d/Sr1X5HoG8i/Uo/eZ471jRegfwg0jBt4EMUshRqXfdoZPN2LPrDCZM7px371lpuuTC74Z
-S9d6gR3lvRbEecqwGfUVESgu937z/OE8G/NoG2fmdbD8hzko8JurML0YTbGwCc2GxlcA98N4p/mK
-7RLYmQ/HeKa9el8vWIr/PaQuPleWVQXMKDxJyn1Bqd2jsEf03TyKjBMsYKgq/6TWkPi3tglFk9q0
-s06gyix7s0dK/o+mdy0s3H/bnlu4t7y1WwyN5EZbVWZxike4o5cPnzmdbO6N/IWM7im0Thhc7b+4
-4LTaHIF+780gh9AT+cU1PmasTVW31w0hNCKaorX46m2k41ab8YYS7jFc6v57jTWTIkkS17Pm1IDr
-6WzsaDbSNejBg8Cg2G1BqPsFxUHNtYvR1T01lIc+0MEVxCpaX+nG/SWqK4zqGarMAqs3crz6t7KX
-2vesQc/aVmtgknRFVAThYhIL0Vljz2AcSzGBqROkpc7Hw5Iwjjhq3/OVizQSU7enARpPL2XBydhq
-/S57QkQ0m39eMrDZlGMIsPPQU7r5hcQQr1//juAdL54uvvLrA+HGeffZNIUaleOBLT7YEzfCWjIW
-UyeFFKcuiX9/PGrYWnk2y8xsA6HWmHcHLMUTs3eiO6fW8GDAHI8lulSVzzXbxqwJQKvcs6G1EQdZ
-R7KCjwI++5NbPx7qANfB4crA/qHLouk+IgPu8VxYLtHFuHGitSvyJJ2kdW7IJ/x5o1N3WgO8tixi
-QPPM5nYimIPMptfM7nr303aoQdwFkp8nB1XWRxC2wmMd04YXOPmEREPwmoRhOx01WTC6dtzEt+R8
-97BS+niiHNyNcMrEizArO6fH7SOWdxYx+hxbjjFUctHqIuKBgINcNGT1q0E9LImANNNGLw6Bk9zM
-ac/dYlOmux7G4XmeIxPSMuFsmAjsWBHvqJRmM3TRMuc+QBGprLFb7vnJQ+dQk+yG8FDab1lt/vp2
-FqvUvtaguwLB7KSWbShhZDy+NvooLvDDNd46mHiFxNGaoFOSYKDKcgngsNL9ump/jDqrqEPg4UNA
-tI3958BaBoKGdx1+mYai2ajElsAdxsRYz6ThNIuM0N2WEZGM8M3vBC71yQKLEIDsJji5jNHeKdx1
-4yl1YcHs/YGQzfaEgPEkshoQ+BvdxKKRj93RbW734tFx8zYK+bHxuS4DghMSp0Fg0RqbB3T7sN+D
-Y3Dz8iOtvNOvVEVrAbnPFSL6dDhGoknD+ixZFaW95NA61pLrY2gWnNPVY8RHjD4bI4X+SNjiWbJi
-AWH/EAxa8T2LUSMikEcWG2VohzCjR9DD7I9Yf969yVsuzhptP7pmsa89PiLgWtFqybGBji9fZyZg
-I30YW5PbKBIqDrx6zQ7VPvXELZ1jd4D66v2im8AZ8OoG+bAIJQvBtddV2MdeJcfUKoGbF+iR7oix
-XzYUUhNK6PIw766MgHpEwCPVSST+3//IYPoPyv/bouoZTzItgQFBssnTsWWo/1CzQUUe1UleKP/f
-slkP6/4Ez9j6WVc32+YwbxwZIv02jazwhJU/+TAy1YyTksWBzaJFlT89cesN0sVmlnd/X3R1Uc3y
-r6M7VRuAxLkzI+vWLct6zu7COUGhX4IJK5qSfU2QluJZ1ncS+wdXCeLXAUpno3hdHrar2d7ZEUdy
-la8NCjX//FBpYVZmyvqWttzhSMVB86CgcAvr8wymv0wQHdabrpWKoxAGGy+uNeFw03vizrFqtvov
-19Q1Qw9Z8omqf6xkf9e529BVD7mKZcbHNmv89GvZe440HTM4uRuiMCJRbEFrGAtnc4H74QK3WTZQ
-qJeVqxXCBOdXQ/ArcyzIYEgW67JBu4ecTPtJi7Fj6G0S6y2W2nEe7cjEkfCsrHWeMbTSevuAXEwu
-8rwb35MjUZdzz41xIDcD7BXv0m8lskd1WbHXd+muXgvlgcRLmJsKDdptzf1z7a4NGtjr7xKLCX8d
-tp+5nKD74ulMVnUBhlLWssGAZX4OH1jhvf68iUgjhOjSTMUm8/a9wYC6Tynx1vIV6vt2mMwa9oVA
-5/0vEDLBh4WfLJNm+ywCtYO7jMeQVHdQ0oZ/gHyGpZGTn5L1XuMeB+i/LLDBSluJAW8/FxtjKZLo
-PXRgnRYwp+HRrx9Bb4rV1QdYuyBNdTLEbwAN/LWJkF5H1subAgI37ReMn2fUl+C1ngMCnCqzc51y
-tVeBcJFgZu/DGFuNUp45ACqzKNrKhY+Fmf3Ko6mYPsn8PC/kJmw3qUYgEM3T7xXzMHQMcK4KV/rk
-AmTm+okO76739SDRrBmXQO5QBSqaGA8AUVVrHDdKeIranuuWVDi5H8VfOALvE/gMbxYXjkoZGFbs
-Lg8rNIHJ1jqon0DPqnhCQxX0gBbFUn/GvdRjmwNJH+UORy0oInO5/fZ4PJdCqlC9I1Mi2LbvFqhl
-jC3UxD9yzdHRaVQv+U6DHX3BT29AqaulpZRDR3HfjWak2guTexuWami7W9eOt01FB1cDBghoaFn6
-eXhF3M/p7u8ha635UeAO6v+V1hI8kKG8yJcz+9no8s6/en5NnMSEYmV64R8uIXr8+LNjcJl2uwZU
-5xv1j6f6d1koR/KCE+YtWkZaNebaTl1ROLdvG6KkhSJL6ZxylqAksnumBjjGkHokUJBrG+iimLCi
-PWYw87NoTQPN2wK4K/X5WIVlqLkW7dHOuoSCPQpWtuVbR4dRTh8i/um70LQDdkMcMF2p7ZyE2pTU
-+gZn++5oPVvIaUSnpH3MPcmmyRGQM/5YQf5bxVzB/wopEHSiu9dunMimmPH+4HtgTaq6h0yoAdEW
-Gcm7sNUIFtT+aHWujXlQIKEslM6c1P5rXe7EN869C55wO4RwLM6T80jffbifWv5SCcFWpheJGHcy
-+lvoKfPFd6DpMpIBUG8oh7Dyw3xmwcjyD1iFMCcbzIlO338ARK52r1xsURd38fQqZRBgt0N7x/Jl
-y3EbjVGw5cGlOaHX6JWXu4b17lC7zh+wBtJq31ws8R+oZNGMyOPWZiKmPEEwvKRjOWAGI44Y1YbV
-mqSDGW+jNAMwcba/6dkZdRZho7QdjWzOeYyrvYwCW1/MXAjTGg48yYIe6XRwfgoZBCVVtDtI22Ns
-9qF/G7tJOfEzh5H2HKo+lBWRG0oM9+nn4ixpSD9wK9y2LCLwLxnNCzZdRJHhbxqSlhmO3yoJw9xo
-ihCuxvsV9ParIicYFNx1VXsZCUvYQOCGRbRxeki2jw+hjm8P98aahOcNVvCnGxdAQOGJjSY5Mazu
-X5BYAlwqPbuHmsmxy/NwnrHhoL9XrgpyIAO0ntE17jbXGbRprLUXhg0DSxzsaQaecxSEmLtONVI8
-TrdV7JKkXCgHdif0URGFx+GXWqXZuntMw60jOLc2br7MKISTykroMoxjTNP3ARAg5iSLx8RhmrpP
-ux3abwgBh9dWClwBOgi57ub+DhDjeOFTDhbYP6tcNFy3POnGM83vWGeDnQENrZ4gbfwM4Eorc/UA
-LdGNu+tC7aXsxymVNkAYPjHMxgVerqZ58mb+fTYVW3SAMIAmZa/alYVi6kTYWUJmuHzJ1LlRWTK1
-lBXJHatLjLHiO/OAogb9Ru8iawCAjNWnOklqhhQ4pswatwnPgR5tUPVo2w1BxUFsloHK1Pbfn8S4
-ABBPOvY2TAQ0jAXJcw56GmfJGxt690ZlG0Rsqj/L+MaptMJW9lnnLnzuWMu7WQ+rDYnGYqfqb2YW
-0VVsKxwLpTxAX/PoacEzB7fgJTxoTKHvOghXNTHUKodFuVL57tOWV+wrJFIFLAXZKEfK0QsIvjGm
-KHabMKw41uSCmos2pDwn77kkjIb35UKIO0PQIumbY+bedQ3w8QIdXokmzIcyxm0wmZHA7BOTM1K/
-l44Kn0d/UZ0BD3AGruqpqjzRO60Wk2LfyVUB0gW6io5S2RuVXVW2fNs5BHryfB6bfuxP4ozapss4
-KJy+IStsYYu71wLLzdp/LyxYH8LZsviHT8iBx69oq2GB9kPWdAE9Eq7YNNJWk+29crF6DsC+Av+h
-YKBkByIofX/tlX8Y4sXukBKbbUr6+1IpNEeLUkGXNWx6moaY2bhLlhBffMLNP8wDydNmxe/t/C9S
-bHnZHXm2cBiD5zHoLCmzK45cHhI2b8phz98a7W89JrycAbGK66tGfZcXO7MKA3XOvVqAceZ7Y6UK
-YmKcQSjoPIFfxKorqbQR0YxfRfs9zFghYQIBp2rC/cyqWJ9ACvl3CW+5WLB3n5UOS5SMG1MhDIsD
-zxjej3thjgs0h22Q6Ov90hZbq7PHutjvB8X8kFd6KuKiM1bbt1iBlYQwGKiuGD63G1QB6qu1RqeL
-vfNngkujmn1sdbFw3lWWmmJH2HWn4nTkCdh+a4wivvCeaqHW/ETEpfJ+YWw/j1C75Kxh+iDhgnXH
-pUf4ACBnkFz/LWTX4BfS8cf9RjdZy3+UVvBnkZFyzvYdHGpN6On+usCi79lhpmeET3CCzrEDI6VK
-9kcQJk0mXmmjrbg6HGsn0Lp/Y642edFcQoJuXRO9NWOhmh7qLQK9lneryToSn6yx2avylW370Kkk
-D2tbbXnxfWC+oz9o/Jz3JrrShR5Q+COmKzVXWyspEO44uYir8YEurw0JJ02ROlPVKDjaYHP5nyGU
-j8Gj2Kv41fqUEV29uKUIg90wuUYH7FQgCO8fKX7EB9cIFQHLQZ0eC1d1MRKA36naFa7B73afiz/q
-e/KvIXn9PhG/J4m1Z1c/Qtn5X55PgtAXKcXf0LYuD09DT7kR9vS0YgTzoiwpnukxhjeqv+0t6TiX
-Bu7LFTZiJ8rIDqDpKXujWwUQYGK9/q6Gm4qar+UIN7yj4rmmxpjKcdYTJ+8Z5zSgj8h4geHulCW3
-YbjQ2XFz+X8eInx5YR/pkbnBOVqNgspnYMAp6NWhszn0ZMOgwxGR4IjMVs6Pv2WAeYtwlPglAPGP
-c21nGPVWO3i+WrmXzG5GAltPe/e+geKjaYISsRI64qIQWgYsvJRDFVjInlYcRWmoUOGFyCC1TcU2
-5GJBHGgLAwC9oU/AyOPy12uC/aO8WsUDcrPBYRn8mjCEM50ez26sJi6T1Z3XjKzfaCEE+M0o9tH0
-cOft7pVD3clyNfoZalFV3zCO8jZe2lV/+d/DWQIfDIFhQNBOAR9lz45A2IU/GW7cfhDlYaYVbK+F
-r8gudqzy4hrhWOJGSl/aPPVOSV8f/Ptaw2EOAcTA7t5FzD4W87mHe+Uy6tBsjaLT/lwEsB9nldlr
-3p5jHf4dZ3B/H5w2MC1i5HfEfmwQF+L88uW9eO25rBnyjzuvh37Jlv7L5/+QsZy+VnOG9mbLxraK
-AWsmTuU/9N5lf4PEN40nx4L8TbzyuaXWrBTtSN7mT+RQv8F4iTp24o0Y5l9tGQfSWjDjZD1XCDzW
-Zdfq+GQA+2E3n6HcsmwZeDsL+D9E9rt1j+8zV/xfbtwemr63CSx6d5Bft8sXW1sIAxL1UKCnfhqH
-5rqN4z0H5g/g7sbEdKJvW6Px46yXCkswrV20/Tf7F+CrW1DPvjqo0Vi6qA+t/T60woRLC0Il1O5C
-KX21hM45teznvaCi8o8YhYVgadDbboB3892x3cbxIbVA5Fd+voN6zpSeV063jxojFuEj6cjfiO2w
-p2Hm0EWR0a5iFLxWUxB+9tWsb19bu4xuj9id7O7EpyJYLXhILmhm36hzdIHaImHxkMwXgn67kISY
-VgE8ZGUXsdV6uVC7uXTle6eEqD6AlKtopfKMrIPsdToXUmCswEn9+Zf6OXziun25R8X3dFrDgn1a
-6Ug5Oc9MxrdZ7lVCiUpPJPS65Zxu4ERscwLf/X7mEhVKBoTbeGGuV9NDOoGoUitG65Yb1L0LOoUp
-cIXDmprRR/pAkR2ERpFN2m2H/iCAUUDDnohn+MmdCFlgKEHWCd8f36/Kc2WroTcVZMkkxst10y0h
-CefbtiIFgo0SWy9PXuMAkL35OIzriF0wcEfhzSzrW2binkIhSkur97gxdwULRG93jmoH18IzGOg2
-sOxkcc8wTZtiVrouX1YwI9Qmp/MnB/95NKX4JD9tn/VGktHI7f0IOMaTLzUvGFXRIz/r/20TcOOf
-lfbkyfz3tUVDplAKT10FHLeNmd99nKC2FTsuhHVHeOuU0w+9EBtv/6OX/ESl0kaMLSb7WHdYjaa3
-qbNzJ2kfz/dxyRMnpTZM9yIFcjl4j7TYui2q+LJMSiCm51lorWk3w5wxS+qfB1OxdyXEWyxfz9VF
-62ycT8ocA0MODsRQNtw37Dn539gBLuP2C6Jbvi0Vfm7JVu7wKRTIiX4lKY/4L1kOlBGhMnBSmyPq
-OwFnILp4vDajunYJylMnBRcF4b1C8bPf4CWHXHmHk8SpGJick1WDga8rPDuzob5Hw3I1LO3/1o49
-i/gxpWXQ3HqE0bHIPatbMWMRvFE85o6ULMLcBuC7jzoUUqbxi0B4ExLc6+gK9ZTD3/rGbzqCCcS9
-HR77toyOpSpuAEKX3s2iUi6dNbPnb7o02jBHEE5v48Br5CbIZ/8t+epv5ZR6ZyIt356lfEIhLRLD
-qMCrzAEhZRhoMdg9PwYJuKqiHYeVw0Pc1wOmULJBje9W9XxlDI/4+qutqKtdUF/wgAO824I6LkTA
-U4AjQdaK9lRrye3h5Cd8Cl+fTSKfnpbhH+2MHTCDKcuoPZKk55WJn6PL0U0f+W6G6phfSvmzuZ+C
-QnTKZrL0YmjxjJZ8bqog+6PqbP9Hd16ksKIRQRrm3FppkA3iBYHZ7Vbcb6qnM67p9+yjPEgAjwsc
-Rhjwu0sF1Wn/ztbO5zUKeu/KRQjP0hS72w5sjK0hjMV9aRnQEBWz9sQhgGJte6+zt0fAoDcDRr3U
-gSSPrGsICRTmXS7taveeBDrlbVXL8TsrI5+JQa/7QJJ1vk30r3vnVBBLZzarPh3ETDB6gu7Woy16
-6Q8KA/hp0EQ6hHvH9qi6MsGgSxSl930qZ5rjgyyIeJEHFreAli3NEEKDcT1srVebQCs8SIgDgFCv
-oV77CwU1DE4aJE32jq4V5DCIbYyVj7pAxc7H5LFeCoosls/ULhSFHpHwAW4CYacnOBr+BHwXnML3
-nDccNAsElUsSuOfeVFfAgA1O4K2mepIUGW==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Item.php 12666 2008-11-15 16:41:02Z beberlei $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Item
+{
+    /**
+     * @var string
+     */
+    public $ASIN;
+
+    /**
+     * @var string
+     */
+    public $DetailPageURL;
+
+    /**
+     * @var int
+     */
+    public $SalesRank;
+
+    /**
+     * @var int
+     */
+    public $TotalReviews;
+
+    /**
+     * @var int
+     */
+    public $AverageRating;
+
+    /**
+     * @var string
+     */
+    public $SmallImage;
+
+    /**
+     * @var string
+     */
+    public $MediumImage;
+
+    /**
+     * @var string
+     */
+    public $LargeImage;
+
+    /**
+     * @var string
+     */
+    public $Subjects;
+
+    /**
+     * @var Zend_Service_Amazon_OfferSet
+     */
+    public $Offers;
+
+    /**
+     * @var Zend_Service_Amazon_CustomerReview[]
+     */
+    public $CustomerReviews = array();
+
+    /**
+     * @var Zend_Service_Amazon_SimilarProducts[]
+     */
+    public $SimilarProducts = array();
+
+    /**
+     * @var Zend_Service_Amazon_Accessories[]
+     */
+    public $Accessories = array();
+
+    /**
+     * @var array
+     */
+    public $Tracks = array();
+
+    /**
+     * @var Zend_Service_Amazon_ListmaniaLists[]
+     */
+    public $ListmaniaLists = array();
+
+    protected $_dom;
+
+
+    /**
+     * Parse the given <Item> element
+     *
+     * @param  DOMElement $dom
+     * @return void
+     */
+    public function __construct(DOMElement $dom)
+    {
+        $xpath = new DOMXPath($dom->ownerDocument);
+        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
+        $this->ASIN = $xpath->query('./az:ASIN/text()', $dom)->item(0)->data;
+
+        $result = $xpath->query('./az:DetailPageURL/text()', $dom);
+        if ($result->length == 1) {
+            $this->DetailPageURL = $result->item(0)->data;
+        }
+
+        if ($xpath->query('./az:ItemAttributes/az:ListPrice', $dom)->length >= 1) {
+            $this->CurrencyCode = (string) $xpath->query('./az:ItemAttributes/az:ListPrice/az:CurrencyCode/text()', $dom)->item(0)->data;
+            $this->Amount = (int) $xpath->query('./az:ItemAttributes/az:ListPrice/az:Amount/text()', $dom)->item(0)->data;
+            $this->FormattedPrice = (string) $xpath->query('./az:ItemAttributes/az:ListPrice/az:FormattedPrice/text()', $dom)->item(0)->data;
+        }
+
+        $result = $xpath->query('./az:ItemAttributes/az:*/text()', $dom);
+        if ($result->length >= 1) {
+            foreach ($result as $v) {
+                if (isset($this->{$v->parentNode->tagName})) {
+                    if (is_array($this->{$v->parentNode->tagName})) {
+                        array_push($this->{$v->parentNode->tagName}, (string) $v->data);
+                    } else {
+                        $this->{$v->parentNode->tagName} = array($this->{$v->parentNode->tagName}, (string) $v->data);
+                    }
+                } else {
+                    $this->{$v->parentNode->tagName} = (string) $v->data;
+                }
+            }
+        }
+
+        foreach (array('SmallImage', 'MediumImage', 'LargeImage') as $im) {
+            $result = $xpath->query("./az:ImageSets/az:ImageSet[position() = 1]/az:$im", $dom);
+            if ($result->length == 1) {
+                /**
+                 * @see Zend_Service_Amazon_Image
+                 */
+                require_once 'Zend/Service/Amazon/Image.php';
+                $this->$im = new Zend_Service_Amazon_Image($result->item(0));
+            }
+        }
+
+        $result = $xpath->query('./az:SalesRank/text()', $dom);
+        if ($result->length == 1) {
+            $this->SalesRank = (int) $result->item(0)->data;
+        }
+
+        $result = $xpath->query('./az:CustomerReviews/az:Review', $dom);
+        if ($result->length >= 1) {
+            /**
+             * @see Zend_Service_Amazon_CustomerReview
+             */
+            require_once 'Zend/Service/Amazon/CustomerReview.php';
+            foreach ($result as $review) {
+                $this->CustomerReviews[] = new Zend_Service_Amazon_CustomerReview($review);
+            }
+            $this->AverageRating = (float) $xpath->query('./az:CustomerReviews/az:AverageRating/text()', $dom)->item(0)->data;
+            $this->TotalReviews = (int) $xpath->query('./az:CustomerReviews/az:TotalReviews/text()', $dom)->item(0)->data;
+        }
+
+        $result = $xpath->query('./az:EditorialReviews/az:*', $dom);
+        if ($result->length >= 1) {
+            /**
+             * @see Zend_Service_Amazon_EditorialReview
+             */
+            require_once 'Zend/Service/Amazon/EditorialReview.php';
+            foreach ($result as $r) {
+                $this->EditorialReviews[] = new Zend_Service_Amazon_EditorialReview($r);
+            }
+        }
+
+        $result = $xpath->query('./az:SimilarProducts/az:*', $dom);
+        if ($result->length >= 1) {
+            /**
+             * @see Zend_Service_Amazon_SimilarProduct
+             */
+            require_once 'Zend/Service/Amazon/SimilarProduct.php';
+            foreach ($result as $r) {
+                $this->SimilarProducts[] = new Zend_Service_Amazon_SimilarProduct($r);
+            }
+        }
+
+        $result = $xpath->query('./az:ListmaniaLists/*', $dom);
+        if ($result->length >= 1) {
+            /**
+             * @see Zend_Service_Amazon_ListmaniaList
+             */
+            require_once 'Zend/Service/Amazon/ListmaniaList.php';
+            foreach ($result as $r) {
+                $this->ListmaniaLists[] = new Zend_Service_Amazon_ListmaniaList($r);
+            }
+        }
+
+        $result = $xpath->query('./az:Tracks/az:Disc', $dom);
+        if ($result->length > 1) {
+            foreach ($result as $disk) {
+                foreach ($xpath->query('./*/text()', $disk) as $t) {
+                    // TODO: For consistency in a bugfix all tracks are appended to one single array
+                    // Erroreous line: $this->Tracks[$disk->getAttribute('number')] = (string) $t->data;
+                    $this->Tracks[] = (string) $t->data;
+                }
+            }
+        } else if ($result->length == 1) {
+            foreach ($xpath->query('./*/text()', $result->item(0)) as $t) {
+                $this->Tracks[] = (string) $t->data;
+            }
+        }
+
+        $result = $xpath->query('./az:Offers', $dom);
+        $resultSummary = $xpath->query('./az:OfferSummary', $dom);
+        if ($result->length > 1 || $resultSummary->length == 1) {
+            /**
+             * @see Zend_Service_Amazon_OfferSet
+             */
+            require_once 'Zend/Service/Amazon/OfferSet.php';
+            $this->Offers = new Zend_Service_Amazon_OfferSet($dom);
+        }
+
+        $result = $xpath->query('./az:Accessories/*', $dom);
+        if ($result->length > 1) {
+            /**
+             * @see Zend_Service_Amazon_Accessories
+             */
+            require_once 'Zend/Service/Amazon/Accessories.php';
+            foreach ($result as $r) {
+                $this->Accessories[] = new Zend_Service_Amazon_Accessories($r);
+            }
+        }
+
+        $this->_dom = $dom;
+    }
+
+
+    /**
+     * Returns the item's original XML
+     *
+     * @return string
+     */
+    public function asXml()
+    {
+        return $this->_dom->ownerDocument->saveXML($this->_dom);
+    }
+}

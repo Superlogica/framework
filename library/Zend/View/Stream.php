@@ -1,47 +1,182 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5B/L0GSMFlee+sIK99T0+7KJi8TExZGOtxMiZt/8q8nMNWL0DnGkLiaiHpBSnxZqjMBY2LEN
-TMjGfWOcHVr1FQz/cjwlgHO6/a+3vYR/ObXM+jFvOcP/YAL7v1ke9pgxihIvVrQIjcJ+1fm0ls/6
-J7r3a94ZmhqpchIEYyxwLaLjjvP1KtQzJQuPZa7XwnrzjNwwH+kISPaCbhb+Q9u3zpQxqIlAUuow
-MSgT9qiY+HlctohCitIwn4kJIPpDKor7T+KlBeH2Q1fZDmPjA5DAZ9sBhzKU3ITahJEjXo7ByeyB
-QTizoC19nY7d3n3aYdJtd4ZXmcT7oFr8b+Nr4w5UkDwFaXJuQ9cCxfG+m8XL/Of+0c4jq8v6WZRp
-rwwVsbp3s/cY6i6bqMdEgWq9DmuKwryYicSEy1pUyidELP7qOSblgJ1bNEbj56KwFiQJDvBiFjJJ
-uwGBp/5nGHmguZGx4lm15q8B4UZ0D+Gt3D9d3R+iJkPMhco//GNlW63ouhLeI4VUa+10X2vIKJ/x
-VDpKXl7d9uToWGMtus+dnza2dYgNUiLZR/XNWn5x8x8XI0ZInOL9QeZIDU48yn76kf7yO2er09Gg
-Xd80vEAv34hTS2lK3xMWL+I94GKBU6PgjbOmW7aQUdNJQDxJDfQts3EciRGrYcPFsFSOL0DInPCe
-nsUqMhg6s4Co6opokStFAIlMtFU3ORX3KARCs+NlSeQu0lHmMCm8uUvYd7t7RiQLLBQ4zUz4ZVxk
-Ar6QNbgdd4xuCqoUYfx2m8QL136wYRYXmiY9wPxyQghZ6eKnALH+YyX0oBs4vSPv6KfyTNmJm+IO
-6OrW5hUFZsuTMBE2X6rMOEV9faENw/l2kMqDmoNcgR+I3Py8CBj5xMGn8nD4cID7D+8HAvKk1NLe
-DzLLntL+60/CnOKS/VUaMIy8wADs8F8VCQ1r0rlY1cZyLg8pCzvnMyfk1ERShy6Gr3RB1VOeYvOj
-6m4LGSM/J6QWHT6k98u744toP83a7CoaYoWJQ0rYY91F2VYjRHOWFGEFutcvdfdFlqvpC7Y/B6js
-IPkfiYmeJ+ygV3SqaygH3N94EC6tJ+jZNy88ZR7FRwfOP3+6AmJuBxEn4i+zO1IwZWsVxVEslAAf
-ec5O06D7KZxr0TJ4Jewr67O7jV04QbxlEsgyxu8O1BplsQLFaUi4fpdV7HyTvaIbC0Rqr6AW1gr4
-IcVqbpzFHOtWO7jpPtw3vgM6ExqD5PSWQVckHdHBDe7/3nWlqT6h0PAOOL06SFh1m5sbFSOPplhZ
-paEFw0CWxyqDGJCUkxOWggEplkeSWaz/mTn1EpvcuxpOmVhYy4qO/neijwIsOCtsgVeEhZgndemL
-PmOo93IYpF422mZTc5n4d1m/n0McdUw3tI+bsViE62laOYxANKxF1ZwlqBnQoG9nD9JBbN7USt3q
-GH39E+qsMQaQyra21wrxUdDjxQQO9KLSm28POEhsnWKB5f2NYdgdS9YnYmF8+FOgfrFqoC9RFuKY
-r5Cd0HR02WcHqb+da6QcNOEq+/vQqhiqPYjIsKErmBp6Cok8bmx5wt+yziNpnw5PxrziZ2cUVnKK
-7mYgfurINrP0cBZ/96xmpfYZtdDSC49+4b2qroLDUVeZOctVJAWSogZWrJEpfk2K8cI58wLqTM+K
-iOjjeJlCx4ftqGZ/DlwhxCZNBe4Cgnw4hJ9Dvt2CgqyUB1yvDLkjxOFfDjAAAa58TlSMVXzJg/A3
-klXhA6Z/ohEKi8Abmk1ihJHA5iDlKkATVUjU/rqENgfwUQ7E1Ye4vIMrgVwJNtncoSd6dFrk1kYc
-4RR2aD7Itm38m5jPCWES5cmI4dDRMr3B/n965EtdX+OLeyboTF82Os2IbVEmElFbw0vNY7f1B+Qj
-xhMmxSXbDGsC/19LliIWY123/Hsc9YF4CtXDeOXXo3dcw8Ja4W5zgYalkwbFlK71BIATjTpn0YgO
-UvNtB03cArksIxIsmX9lS6/N/7uo+0Aa7KlCmL1h5vjLNyFIptNhEF/16EuPD9Z7xV0iJLWSzsXp
-h3/LSRWjxKB84DrSvmbNOk99/v54fNPmf1ac83isXqwkh5qZf/uWILDthb/dekdgtJThh9Rfgck1
-TOdhxopgfe+wlh8/eazfQCqTeo/ivX262Ma2CejX6agCTeMisiEslFQw6nbVjFGmZsr5KE8vGWy0
-LSDsXoEEWSRjRe0cTEZTfpWSx1qQDSaG8KMK4XKml+VTYrC1gH5MUjyGZ84dXIOH3RpNMVnG+yKh
-FR3LsTpIzcxzGVTD+x4bOnyD39r0Sg182BiSiSazi+uhxVauoStkCEmLTG1TjSrnaSXWZecz8cqb
-868t388PWUqlBmXx/+10RzTddScUiNY3AYf9hbufAmZq+xnrk1aUowO2vPemBhti/pOdCqNVQc0u
-/mo0Y1KNplfL6FEzcsJI+wzohttQZeT2vohTOkkF3m4WW4Kqj6LOMzGOapxVTli16HiUx2EvZprm
-kSmsgOeFO39lx7EkKsGWGMSw5/s1JXZA3RvfiI5byr9DAlX/dHjHNfrMztjKd9IWXBku0OnuDkB7
-vBrYqnA+pIFDE2jcGfAtVjVRBqxjdpXH+p8JUi0mHxq2+5qnXPOxf1vCyC5euP/vnEBLP3wqViRF
-xA0HCWsEDv3bZYNwmms1+40TiEujsFyKQ7eW7RjR3k93gQQLXzYHPXR/kpGbz1XF4CmbRvPOgImj
-k7R7Z+y0UrbJRfbKMAe6y7yRsc5yBKIpUWUVIT3fCvCLYwehf/oxnPPOqDbFR7tdaXXxYU+MtW0x
-Fo4LV3FyhGGrVg9htL4ayAkdOIR3qHR43WcD/aHkQWO6hr4Yp0/0jJrp7lNBmwi9m6rxtBLKuIH5
-ogRml/+6mQrdsxL98TLzbhdTtb4RJFEo6Ks5HyxVoi25HfkBp2CDbyZuhiSRQXcwwDDBACcJiv99
-SwCxv7fodD9H5X+uFxodTWI/ZRSz10krFbnIns6WmZzEVz/3qqiv1RjvcdXjMtDYcaTITaPQ3Jc+
-Jrbj55L7RzoGMwvBKy+DYoepW2i7wdmJ5TPycAwPhY949LTMy62BsTpyPE2R/+7ECSJ+NH3ujw+N
-rrMceqSvomD1buWt0TfzbGijRaPnvneC6lN4rp8sLPGZnTN3ECb4LgBmSoi1wyuwQPM7ra5jmO3A
-aYhv6rX3oPhDXxrA8abPm/r42mK9z7nNOQJSYiqkQ3Z/OiKXPImAbEFi7ADg3CaKUf7KR0AMHCZm
-wOxxyaa05/VQs7KxajoPZ9L631JpOqXGP+1TseeJWhXIZosXoKowBLPwGhSU1g9AKjIaDt2m2G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Stream wrapper to convert markup of mostly-PHP templates into PHP prior to 
+ * include().
+ * 
+ * Based in large part on the example at
+ * http://www.php.net/manual/en/function.stream-wrapper-register.php
+ * 
+ * As well as the example provided at:
+ *     http://mikenaberezny.com/2006/02/19/symphony-templates-ruby-erb/
+ * written by 
+ *     Mike Naberezny (@link http://mikenaberezny.com) 
+ *     Paul M. Jones  (@link http://paul-m-jones.com)
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Stream 
+{
+    /**
+     * Current stream position.
+     *
+     * @var int
+     */
+    protected $_pos = 0;
+
+    /**
+     * Data for streaming.
+     *
+     * @var string
+     */
+    protected $_data;
+
+    /**
+     * Stream stats.
+     *
+     * @var array
+     */
+    protected $_stat;
+    
+    /**
+     * Opens the script file and converts markup.
+     */
+    public function stream_open($path, $mode, $options, &$opened_path) 
+    {
+        // get the view script source
+        $path        = str_replace('zend.view://', '', $path);
+        $this->_data = file_get_contents($path);
+        
+        /**
+         * If reading the file failed, update our local stat store
+         * to reflect the real stat of the file, then return on failure
+         */
+        if ($this->_data === false) {
+            $this->_stat = stat($path);
+            return false;
+        }
+
+        /**
+         * Convert <?= ?> to long-form <?php echo ?> and <? ?> to <?php ?>
+         * 
+         */
+        $this->_data = preg_replace('/\<\?\=/',          "<?php echo ",  $this->_data);
+        $this->_data = preg_replace('/<\?(?!xml|php)/s', '<?php ',       $this->_data);
+                
+        /**
+         * file_get_contents() won't update PHP's stat cache, so we grab a stat 
+         * of the file to prevent additional reads should the script be 
+         * requested again, which will make include() happy.
+         */
+        $this->_stat = stat($path);
+
+        return true;
+    }
+
+    /**
+     * Included so that __FILE__ returns the appropriate info
+     * 
+     * @return array
+     */
+    public function url_stat()
+    {
+        return $this->_stat;
+    }
+
+    /**
+     * Reads from the stream.
+     */
+    public function stream_read($count) 
+    {
+        $ret = substr($this->_data, $this->_pos, $count);
+        $this->_pos += strlen($ret);
+        return $ret;
+    }
+
+    
+    /**
+     * Tells the current position in the stream.
+     */
+    public function stream_tell() 
+    {
+        return $this->_pos;
+    }
+
+    
+    /**
+     * Tells if we are at the end of the stream.
+     */
+    public function stream_eof() 
+    {
+        return $this->_pos >= strlen($this->_data);
+    }
+
+    
+    /**
+     * Stream statistics.
+     */
+    public function stream_stat() 
+    {
+        return $this->_stat;
+    }
+
+    
+    /**
+     * Seek to a specific point in the stream.
+     */
+    public function stream_seek($offset, $whence) 
+    {
+        switch ($whence) {
+            case SEEK_SET:
+                if ($offset < strlen($this->_data) && $offset >= 0) {
+                $this->_pos = $offset;
+                    return true;
+                } else {
+                    return false;
+                }
+                break;
+
+            case SEEK_CUR:
+                if ($offset >= 0) {
+                    $this->_pos += $offset;
+                    return true;
+                } else {
+                    return false;
+                }
+                break;
+
+            case SEEK_END:
+                if (strlen($this->_data) + $offset >= 0) {
+                    $this->_pos = strlen($this->_data) + $offset;
+                    return true;
+                } else {
+                    return false;
+                }
+                break;
+
+            default:
+                return false;
+        }
+    }
+}

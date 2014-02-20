@@ -1,37 +1,93 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59zeFqcGieDkUT+gQkhlZhR/AWbz93/0Uyg7QP6xGzGMaoBdrdAs/gf7NOuB7eeFg2RY5FzQ
-n7k40gYcQP+9UePJC2xlFzSU06TFuNjbpNDTYghC/z2H06clEUwqRvG++BT4S9YuCUO0uApTlnRM
-1hABL8ULUO81H+OYrPepP2MCoBkB6Q+O4K/lM7BAeCwUTfhn1ROtEUluHltk++mv9/nBX2Hb/L9D
-vEe6/y0wmFCnfGjkJmEZwyHBaqcSpLCjHtVbBow4GcXdPk8UJ7RGcPPjYhpLxWJqSaefLzOXVU8l
-z2EsYXowMlsFxsUhELlrvpFkRXtbpkzMje9XHwOIDnt/3YY4FuDoqVfjJkihXQSVK+r4i/VNXDGX
-otqHN2sRRbqiy98FUQlDxKx2ym6iQZ1GuF5YBNmcK8b2YwX7JIL+tB+fSMcKMj+MnK2jjcM0B7uX
-3Woq7+a4dPrCskMNrgE4a8M7ee3TwmNgdd7Q2cdFaIbmzoodBZMC6SCHYX1YybW6moLtPWu7yiog
-2SeOPCDrPOeneMpP6DG419qtNFPht6rcvZSLLYCOkLgS0E2yGB9lO5pajpdGWuz0wb2+EuzLFRuS
-Y1Xdxr0HRzC4sNi/PzgPmbS8DkYqCy4+z8O92j9uIj3jvWtDRCA92LnQLZd+D698iTeH9oET8mmn
-GwzBaklsyDvW7N42FOkIfhBArvDriMBKoQk/UsqK7XNU0rbVLPhJ18NcxIDeSWYHA5x0C6pr34SB
-TUt7FP+QsdFSt/lBcdtOmVX1dAXvOls7g4YSPL6MCTgppGJKcFfhOqFUmDYW8sAGg6l5zdxlbp5N
-gLSxpqZ6rPw6XLEbzLW0kHbqrJDrawSTYOitisS79VmPpzJd6M0SPqpHnfgi1C5W/MZ92xmI40+1
-vcydG0kncGO5Dktmxii4KFqsWWjG+mFAEFxvGkFClaWJ08gbSdfQHbq04yUWlzTWjjh7XKNFTcux
-rm3CQQr9zWl/MksZDcxqRIjSmT9UB03n8cUwZ1wYc3q8mEigKyS2eWl3AWh8CenX57uqs8hydp6D
-XwjYoFtGlRLMytBvhHwFeuxPnPDAqOIhmkAVN/AgoCAuBniOsZiHaC9PwRoAYiMLapcd7Qa/zd0f
-ux3+MApzC2J29J9O59but/IFcM7XlO0S9/pRZkFXv5fgjFXtoW8uJABDROhqZM4uJIBr5qgjElGW
-PgIS6moaHrcOFvyDzgxfOkhxoJ66pgEoa9klr3QVcjJBzM+FIDW7MqxlMkv7YVK/oWhoaPaKa3J1
-W7mZQzZEds+CWySkmw2dYp71YBARVQV4Mc8wt1UZp3Q1qjQ94byaRMDzOkf/eBC1T4zw1k7sxla1
-q3vRXSOU7ut6ikZN/42/C5ldJS1TzGoCAwVv82nPlLlDWEnCY+fPjdBT9HOMf/nehwVKrrhhxYQW
-478QishgNPMH61dC5+LOxj1Cx99s2PyjZcdmCgKxeyJbJ3VitfNB4dKWe3/m4IXiszjUvP96EWDn
-PvFtj93WQgzBd4EGp1w2bdHhFYCS5xIubTvEVL7LOXnzzPr0KundU48Ksn8mZ61HjSnLcpD0jcpT
-SkC5XEFLbFgk1oeOZEDCXLwY9w2axGxmrCgQk0JGwrdCZ3kjbEEdNO5O04b39a+g7VsmLYg7vPWE
-Jt9Jde7PL0w9Kmqz/qXsWUTjBaKVV0/39TPId5Wp0u0mfNX6KYHIpIMRPLcT416VP7Wmtitd3HXq
-edQCZEyp/K1LuRcDJaD+dTKWeZqVHriW5adwk9QXT+8hbDtaKFTpVAyuJYC9Rp53LKkGYFSodC6z
-m56Z/Iz87Pnk7OA7iZ9zJ9CeV4tl8VeMCxajAdS2xnaWEE8KVH3yT4PO+1gtYRafoNAC+7wJuSqz
-zDwYmOMTge6cooBdcYX5icteFvGrev0K5z9/YOj+j9abseNn9epmd6zck3IQrW7zZB6QX9fl5gNB
-+2pgUveAlem9kWdL+Dnx8fpqttb2z4c18NuZ1AUEd/h/opXaWGxk3tZ/9nJlRT0agzFAV6JcKwXC
-xca0jpkU0EqARwqaUD5UCSuQLR92GVBgGNGY86kMhHuUHXEYXqQZ+oQ8KL9KXPZCdNwPE+1beF5h
-drz3t/v//ha5YaY43/g8BQdCWTXm/WnHqiPUL2RvLft0daH5xQLn+gcd2Gg0mr4xENCucMLd4sQV
-w/fRvDPLW9QnyW+Ygm9sheiUca/QQ5x8aRdXQmrTbkyE2OYzwlJ8pwCCWp3j6sapPHTQXHGFs7XA
-8cfe1Xvp/6F6qHnrWHIg/1fd2mUiuyhD+xmdY8xJB5zNtU4c18Aqn/aB1gmLvEHw/ueLlaGkCyX/
-N+nno6mSbyQhQqhyUcxIwkvYBWIC6saP3bRbsCv/9MkpY+D3roVV/DOtMgULQdpkhg/HWIinmMkR
-tAzcaEIykK5I5ll+mORyNjBMQD2zMRbEz2NnwvIOCVwsr7BtxV1LwRXnz/Hwb7GOgG+//lx8m8LA
-CTVRx9ijouIK/BKiKugg
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Index_SegmentInfo */
+require_once 'Zend/Search/Lucene/Index/SegmentInfo.php';
+
+/** Zend_Search_Lucene_Index_SegmentWriter */
+require_once 'Zend/Search/Lucene/Index/SegmentWriter.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Index_SegmentWriter_StreamWriter extends Zend_Search_Lucene_Index_SegmentWriter
+{
+    /**
+     * Object constructor.
+     *
+     * @param Zend_Search_Lucene_Storage_Directory $directory
+     * @param string $name
+     */
+    public function __construct(Zend_Search_Lucene_Storage_Directory $directory, $name)
+    {
+        parent::__construct($directory, $name);
+    }
+
+
+    /**
+     * Create stored fields files and open them for write
+     */
+    public function createStoredFieldsFiles()
+    {
+        $this->_fdxFile = $this->_directory->createFile($this->_name . '.fdx');
+        $this->_fdtFile = $this->_directory->createFile($this->_name . '.fdt');
+
+        $this->_files[] = $this->_name . '.fdx';
+        $this->_files[] = $this->_name . '.fdt';
+    }
+
+    public function addNorm($fieldName, $normVector)
+    {
+        if (isset($this->_norms[$fieldName])) {
+            $this->_norms[$fieldName] .= $normVector;
+        } else {
+            $this->_norms[$fieldName] = $normVector;
+        }
+    }
+
+    /**
+     * Close segment, write it to disk and return segment info
+     *
+     * @return Zend_Search_Lucene_Index_SegmentInfo
+     */
+    public function close()
+    {
+        if ($this->_docCount == 0) {
+            return null;
+        }
+
+        $this->_dumpFNM();
+        $this->_generateCFS();
+
+        return new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
+                                                        $this->_name,
+                                                        $this->_docCount,
+                                                        -1,
+                                                        null,
+                                                        true,
+                                                        true);
+    }
+}
+

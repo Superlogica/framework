@@ -1,34 +1,84 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Filter_StringToLower
+ */
+require_once 'Zend/Filter/StringToLower.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_File_LowerCase extends Zend_Filter_StringToLower
+{
+    /**
+     * Adds options to the filter at initiation
+     *
+     * @param string $options
+     */
+    public function __construct($options = null)
+    {
+        if (!empty($options)) {
+            $this->setEncoding($options);
+        }
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Does a lowercase on the content of the given file
+     *
+     * @param  string $value Full path of file to change
+     * @return string The given $value
+     * @throws Zend_Filter_Exception
+     */
+    public function filter($value)
+    {
+        if (!file_exists($value)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("File '$value' not found");
+        }
+
+        if (!is_writable($value)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("File '$value' is not writable");
+        }
+
+        $content = file_get_contents($value);
+        if (!$content) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("Problem while reading file '$value'");
+        }
+
+        $content = parent::filter($content);
+        $result  = file_put_contents($value, $content);
+
+        if (!$result) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("Problem while writing file '$value'");
+        }
+
+        return $value;
+    }
+}

@@ -1,299 +1,526 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Rss.php 15382 2009-05-07 13:28:14Z alexander $
+ */
+
+
+/**
+ * @see Zend_Feed_Abstract
+ */
+require_once 'Zend/Feed/Abstract.php';
+
+/**
+ * @see Zend_Feed_Entry_Rss
+ */
+require_once 'Zend/Feed/Entry/Rss.php';
+
+
+/**
+ * RSS channel class
+ *
+ * The Zend_Feed_Rss class is a concrete subclass of
+ * Zend_Feed_Abstract meant for representing RSS channels. It does not
+ * add any methods to its parent, just provides a classname to check
+ * against with the instanceof operator, and expects to be handling
+ * RSS-formatted data instead of Atom.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Rss extends Zend_Feed_Abstract
+{
+    /**
+     * The classname for individual channel elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Feed_Entry_Rss';
+
+    /**
+     * The element name for individual channel elements (RSS <item>s).
+     *
+     * @var string
+     */
+    protected $_entryElementName = 'item';
+
+    /**
+     * The default namespace for RSS channels.
+     *
+     * @var string
+     */
+    protected $_defaultNamespace = 'rss';
+
+    /**
+     * Override Zend_Feed_Abstract to set up the $_element and $_entries aliases.
+     *
+     * @return void
+     * @throws Zend_Feed_Exception
+     */
+    public function __wakeup()
+    {
+        parent::__wakeup();
+
+        // Find the base channel element and create an alias to it.
+        $rdfTags = $this->_element->getElementsByTagNameNS('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'RDF');
+        if ($rdfTags->length != 0) {
+        	$this->_element = $rdfTags->item(0);
+        } else  {
+            $this->_element = $this->_element->getElementsByTagName('channel')->item(0);
+        }
+        if (!$this->_element) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('No root <channel> element found, cannot parse channel.');
+        }
+
+        // Find the entries and save a pointer to them for speed and
+        // simplicity.
+        $this->_buildEntryCache();
+    }
+
+
+    /**
+     * Make accessing some individual elements of the channel easier.
+     *
+     * Special accessors 'item' and 'items' are provided so that if
+     * you wish to iterate over an RSS channel's items, you can do so
+     * using foreach ($channel->items as $item) or foreach
+     * ($channel->item as $item).
+     *
+     * @param  string $var The property to access.
+     * @return mixed
+     */
+    public function __get($var)
+    {
+        switch ($var) {
+            case 'item':
+                // fall through to the next case
+            case 'items':
+                return $this;
+
+            default:
+                return parent::__get($var);
+        }
+    }
+
+    /**
+     * Generate the header of the feed when working in write mode
+     *
+     * @param  array $array the data to use
+     * @return DOMElement root node
+     */
+    protected function _mapFeedHeaders($array)
+    {
+        $channel = $this->_element->createElement('channel');
+
+        $title = $this->_element->createElement('title');
+        $title->appendChild($this->_element->createCDATASection($array->title));
+        $channel->appendChild($title);
+
+        $link = $this->_element->createElement('link', $array->link);
+        $channel->appendChild($link);
+
+        $desc = isset($array->description) ? $array->description : '';
+        $description = $this->_element->createElement('description');
+        $description->appendChild($this->_element->createCDATASection($desc));
+        $channel->appendChild($description);
+
+        $pubdate = isset($array->lastUpdate) ? $array->lastUpdate : time();
+        $pubdate = $this->_element->createElement('pubDate', gmdate('r', $pubdate));
+        $channel->appendChild($pubdate);
+
+        if (isset($array->published)) {
+            $lastBuildDate = $this->_element->createElement('lastBuildDate', gmdate('r', $array->published));
+            $channel->appendChild($lastBuildDate);
+        }
+
+        $editor = '';
+        if (!empty($array->email)) {
+            $editor .= $array->email;
+        }
+        if (!empty($array->author)) {
+            $editor .= ' (' . $array->author . ')';
+        }
+        if (!empty($editor)) {
+            $author = $this->_element->createElement('managingEditor', ltrim($editor));
+            $channel->appendChild($author);
+        }
+        if (isset($array->webmaster)) {
+            $channel->appendChild($this->_element->createElement('webMaster', $array->webmaster));
+        }
+
+        if (!empty($array->copyright)) {
+            $copyright = $this->_element->createElement('copyright', $array->copyright);
+            $channel->appendChild($copyright);
+        }
+
+        if (isset($array->category)) {
+            $category = $this->_element->createElement('category', $array->category);
+            $channel->appendChild($category);
+        }
+
+        if (!empty($array->image)) {
+            $image = $this->_element->createElement('image');
+            $url = $this->_element->createElement('url', $array->image);
+            $image->appendChild($url);
+            $imagetitle = $this->_element->createElement('title');
+            $imagetitle->appendChild($this->_element->createCDATASection($array->title));
+            $image->appendChild($imagetitle);
+            $imagelink = $this->_element->createElement('link', $array->link);
+            $image->appendChild($imagelink);
+
+            $channel->appendChild($image);
+        }
+
+        $generator = !empty($array->generator) ? $array->generator : 'Zend_Feed';
+        $generator = $this->_element->createElement('generator', $generator);
+        $channel->appendChild($generator);
+
+        if (!empty($array->language)) {
+            $language = $this->_element->createElement('language', $array->language);
+            $channel->appendChild($language);
+        }
+
+        $doc = $this->_element->createElement('docs', 'http://blogs.law.harvard.edu/tech/rss');
+        $channel->appendChild($doc);
+
+        if (isset($array->cloud)) {
+            $cloud = $this->_element->createElement('cloud');
+            $cloud->setAttribute('domain', $array->cloud['uri']->getHost());
+            $cloud->setAttribute('port', $array->cloud['uri']->getPort());
+            $cloud->setAttribute('path', $array->cloud['uri']->getPath());
+            $cloud->setAttribute('registerProcedure', $array->cloud['procedure']);
+            $cloud->setAttribute('protocol', $array->cloud['protocol']);
+            $channel->appendChild($cloud);
+        }
+
+        if (isset($array->ttl)) {
+            $ttl = $this->_element->createElement('ttl', $array->ttl);
+            $channel->appendChild($ttl);
+        }
+
+        if (isset($array->rating)) {
+            $rating = $this->_element->createElement('rating', $array->rating);
+            $channel->appendChild($rating);
+        }
+
+        if (isset($array->textInput)) {
+            $textinput = $this->_element->createElement('textInput');
+            $textinput->appendChild($this->_element->createElement('title', $array->textInput['title']));
+            $textinput->appendChild($this->_element->createElement('description', $array->textInput['description']));
+            $textinput->appendChild($this->_element->createElement('name', $array->textInput['name']));
+            $textinput->appendChild($this->_element->createElement('link', $array->textInput['link']));
+            $channel->appendChild($textinput);
+        }
+
+        if (isset($array->skipHours)) {
+            $skipHours = $this->_element->createElement('skipHours');
+            foreach ($array->skipHours as $hour) {
+                $skipHours->appendChild($this->_element->createElement('hour', $hour));
+            }
+            $channel->appendChild($skipHours);
+        }
+
+        if (isset($array->skipDays)) {
+            $skipDays = $this->_element->createElement('skipDays');
+            foreach ($array->skipDays as $day) {
+                $skipDays->appendChild($this->_element->createElement('day', $day));
+            }
+            $channel->appendChild($skipDays);
+        }
+
+        if (isset($array->itunes)) {
+            $this->_buildiTunes($channel, $array);
+        }
+
+        return $channel;
+    }
+
+    /**
+     * Adds the iTunes extensions to a root node
+     *
+     * @param  DOMElement $root
+     * @param  array $array
+     * @return void
+     */
+    private function _buildiTunes(DOMElement $root, $array)
+    {
+        /* author node */
+        $author = '';
+        if (isset($array->itunes->author)) {
+            $author = $array->itunes->author;
+        } elseif (isset($array->author)) {
+            $author = $array->author;
+        }
+        if (!empty($author)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:author', $author);
+            $root->appendChild($node);
+        }
+
+        /* owner node */
+        $author = '';
+        $email = '';
+        if (isset($array->itunes->owner)) {
+            if (isset($array->itunes->owner['name'])) {
+                $author = $array->itunes->owner['name'];
+            }
+            if (isset($array->itunes->owner['email'])) {
+                $email = $array->itunes->owner['email'];
+            }
+        }
+        if (empty($author) && isset($array->author)) {
+            $author = $array->author;
+        }
+        if (empty($email) && isset($array->email)) {
+            $email = $array->email;
+        }
+        if (!empty($author) || !empty($email)) {
+            $owner = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:owner');
+            if (!empty($author)) {
+                $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:name', $author);
+                $owner->appendChild($node);
+            }
+            if (!empty($email)) {
+                $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:email', $email);
+                $owner->appendChild($node);
+            }
+            $root->appendChild($owner);
+        }
+        $image = '';
+        if (isset($array->itunes->image)) {
+            $image = $array->itunes->image;
+        } elseif (isset($array->image)) {
+            $image = $array->image;
+        }
+        if (!empty($image)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:image');
+            $node->setAttribute('href', $image);
+            $root->appendChild($node);
+        }
+        $subtitle = '';
+        if (isset($array->itunes->subtitle)) {
+            $subtitle = $array->itunes->subtitle;
+        } elseif (isset($array->description)) {
+            $subtitle = $array->description;
+        }
+        if (!empty($subtitle)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:subtitle', $subtitle);
+            $root->appendChild($node);
+        }
+        $summary = '';
+        if (isset($array->itunes->summary)) {
+            $summary = $array->itunes->summary;
+        } elseif (isset($array->description)) {
+            $summary = $array->description;
+        }
+        if (!empty($summary)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:summary', $summary);
+            $root->appendChild($node);
+        }
+        if (isset($array->itunes->block)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:block', $array->itunes->block);
+            $root->appendChild($node);
+        }
+        if (isset($array->itunes->explicit)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:explicit', $array->itunes->explicit);
+            $root->appendChild($node);
+        }
+        if (isset($array->itunes->keywords)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:keywords', $array->itunes->keywords);
+            $root->appendChild($node);
+        }
+        if (isset($array->itunes->new_feed_url)) {
+            $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:new-feed-url', $array->itunes->new_feed_url);
+            $root->appendChild($node);
+        }
+        if (isset($array->itunes->category)) {
+            foreach ($array->itunes->category as $i => $category) {
+                $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:category');
+                $node->setAttribute('text', $category['main']);
+                $root->appendChild($node);
+                $add_end_category = false;
+                if (!empty($category['sub'])) {
+                    $add_end_category = true;
+                    $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:category');
+                    $node->setAttribute('text', $category['sub']);
+                    $root->appendChild($node);
+                }
+                if ($i > 0 || $add_end_category) {
+                    $node = $this->_element->createElementNS('http://www.itunes.com/DTDs/Podcast-1.0.dtd', 'itunes:category');
+                    $root->appendChild($node);
+                }
+            }
+        }
+    }
+
+    /**
+     * Generate the entries of the feed when working in write mode
+     *
+     * The following nodes are constructed for each feed entry
+     * <item>
+     *    <title>entry title</title>
+     *    <link>url to feed entry</link>
+     *    <guid>url to feed entry</guid>
+     *    <description>short text</description>
+     *    <content:encoded>long version, can contain html</content:encoded>
+     * </item>
+     *
+     * @param  DOMElement $root the root node to use
+     * @param  array $array the data to use
+     * @return void
+     */
+    protected function _mapFeedEntries(DOMElement $root, $array)
+    {
+        Zend_Feed::registerNamespace('content', 'http://purl.org/rss/1.0/modules/content/');
+
+        foreach ($array as $dataentry) {
+            $item = $this->_element->createElement('item');
+
+            $title = $this->_element->createElement('title');
+            $title->appendChild($this->_element->createCDATASection($dataentry->title));
+            $item->appendChild($title);
+
+            if (isset($dataentry->author)) {
+                $author = $this->_element->createElement('author', $dataentry->author);
+                $item->appendChild($author);
+            }
+
+            $link = $this->_element->createElement('link', $dataentry->link);
+            $item->appendChild($link);
+
+            if (isset($dataentry->guid)) {
+                $guid = $this->_element->createElement('guid', $dataentry->guid);
+                $item->appendChild($guid);
+            }
+
+            $description = $this->_element->createElement('description');
+            $description->appendChild($this->_element->createCDATASection($dataentry->description));
+            $item->appendChild($description);
+
+            if (isset($dataentry->content)) {
+                $content = $this->_element->createElement('content:encoded');
+                $content->appendChild($this->_element->createCDATASection($dataentry->content));
+                $item->appendChild($content);
+            }
+
+            $pubdate = isset($dataentry->lastUpdate) ? $dataentry->lastUpdate : time();
+            $pubdate = $this->_element->createElement('pubDate', gmdate('r', $pubdate));
+            $item->appendChild($pubdate);
+
+            if (isset($dataentry->category)) {
+                foreach ($dataentry->category as $category) {
+                    $node = $this->_element->createElement('category', $category['term']);
+                    if (isset($category['scheme'])) {
+                        $node->setAttribute('domain', $category['scheme']);
+                    }
+                    $item->appendChild($node);
+                }
+            }
+
+            if (isset($dataentry->source)) {
+                $source = $this->_element->createElement('source', $dataentry->source['title']);
+                $source->setAttribute('url', $dataentry->source['url']);
+                $item->appendChild($source);
+            }
+
+            if (isset($dataentry->comments)) {
+                $comments = $this->_element->createElement('comments', $dataentry->comments);
+                $item->appendChild($comments);
+            }
+            if (isset($dataentry->commentRss)) {
+                $comments = $this->_element->createElementNS('http://wellformedweb.org/CommentAPI/',
+                                                             'wfw:commentRss',
+                                                             $dataentry->commentRss);
+                $item->appendChild($comments);
+            }
+
+
+            if (isset($dataentry->enclosure)) {
+                foreach ($dataentry->enclosure as $enclosure) {
+                    $node = $this->_element->createElement('enclosure');
+                    $node->setAttribute('url', $enclosure['url']);
+                    if (isset($enclosure['type'])) {
+                        $node->setAttribute('type', $enclosure['type']);
+                    }
+                    if (isset($enclosure['length'])) {
+                        $node->setAttribute('length', $enclosure['length']);
+                    }
+                    $item->appendChild($node);
+                }
+            }
+
+            $root->appendChild($item);
+        }
+    }
+
+    /**
+     * Override Zend_Feed_Element to include <rss> root node
+     *
+     * @return string
+     */
+    public function saveXml()
+    {
+        // Return a complete document including XML prologue.
+        $doc = new DOMDocument($this->_element->ownerDocument->version,
+                               $this->_element->ownerDocument->actualEncoding);
+        $root = $doc->createElement('rss');
+
+        // Use rss version 2.0
+        $root->setAttribute('version', '2.0');
+
+        // Content namespace
+        $root->setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:content', 'http://purl.org/rss/1.0/modules/content/');
+        $root->appendChild($doc->importNode($this->_element, true));
+
+        // Append root node
+        $doc->appendChild($root);
+
+        // Format output
+        $doc->formatOutput = true;
+
+        return $doc->saveXML();
+    }
+
+    /**
+     * Send feed to a http client with the correct header
+     *
+     * @return void
+     * @throws Zend_Feed_Exception if headers have already been sent
+     */
+    public function send()
+    {
+        if (headers_sent()) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('Cannot send RSS because headers have already been sent.');
+        }
+
+        header('Content-Type: application/rss+xml; charset=' . $this->_element->ownerDocument->actualEncoding);
+
+        echo $this->saveXml();
+    }
+
+}

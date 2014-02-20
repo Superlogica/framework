@@ -1,53 +1,178 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_MediaSource
+ */
+require_once 'Zend/Gdata/App/MediaSource.php';
+
+/**
+ * Concrete class to use a file handle as an attachment within a MediaEntry.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Gdata_App_BaseMediaSource implements Zend_Gdata_App_MediaSource
+{
+
+    /**
+     * The content type for the attached file (example image/png)
+     *
+     * @var string
+     */
+    protected $_contentType = null;
+
+    /**
+     * The slug header value representing the attached file title, or null if
+     * no slug should be used.  The slug header is only necessary in some cases,
+     * usually when a multipart upload is not being performed.
+     *
+     * @var string
+     */
+    protected $_slug = null;
+
+    /**
+     * The content type for the attached file (example image/png)
+     *
+     * @return string The content type
+     */
+    public function getContentType()
+    {
+        return $this->_contentType;
+    }
+
+    /**
+     * Set the content type for the file attached (example image/png)
+     *
+     * @param string $value The content type
+     * @return Zend_Gdata_App_MediaFileSource Provides a fluent interface
+     */
+    public function setContentType($value)
+    {
+        $this->_contentType = $value;
+        return $this;
+    }
+
+    /**
+     * Returns the Slug header value.  Used by some services to determine the
+     * title for the uploaded file.  Returns null if no slug should be used.
+     *
+     * @return string
+     */
+    public function getSlug(){
+        return $this->_slug;
+    }
+
+    /**
+     * Sets the Slug header value.  Used by some services to determine the
+     * title for the uploaded file.  A null value indicates no slug header.
+     *
+     * @var string The slug value
+     * @return Zend_Gdata_App_MediaSource Provides a fluent interface
+     */
+    public function setSlug($value){
+        $this->_slug = $value;
+        return $this;
+    }
+
+
+    /**
+     * Magic getter to allow acces like $source->foo to call $source->getFoo()
+     * Alternatively, if no getFoo() is defined, but a $_foo protected variable
+     * is defined, this is returned.
+     *
+     * TODO Remove ability to bypass getFoo() methods??
+     *
+     * @param string $name The variable name sought
+     */
+    public function __get($name)
+    {
+        $method = 'get'.ucfirst($name);
+        if (method_exists($this, $method)) {
+            return call_user_func(array(&$this, $method));
+        } else if (property_exists($this, "_${name}")) {
+            return $this->{'_' . $name};
+        } else {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Property ' . $name . ' does not exist');
+        }
+    }
+
+    /**
+     * Magic setter to allow acces like $source->foo='bar' to call
+     * $source->setFoo('bar') automatically.
+     *
+     * Alternatively, if no setFoo() is defined, but a $_foo protected variable
+     * is defined, this is returned.
+     *
+     * @param string $name
+     * @param string $value
+     */
+    public function __set($name, $val)
+    {
+        $method = 'set'.ucfirst($name);
+        if (method_exists($this, $method)) {
+            return call_user_func(array(&$this, $method), $val);
+        } else if (isset($this->{'_' . $name}) || ($this->{'_' . $name} === null)) {
+            $this->{'_' . $name} = $val;
+        } else {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Property ' . $name . '  does not exist');
+        }
+    }
+
+    /**
+     * Magic __isset method
+     *
+     * @param string $name
+     */
+    public function __isset($name)
+    {
+        $rc = new ReflectionClass(get_class($this));
+        $privName = '_' . $name;
+        if (!($rc->hasProperty($privName))) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Property ' . $name . ' does not exist');
+        } else {
+            if (isset($this->{$privName})) {
+                if (is_array($this->{$privName})) {
+                    if (count($this->{$privName}) > 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+
+}

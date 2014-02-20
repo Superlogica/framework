@@ -1,44 +1,191 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5ELn5Dx8tUmHWS61/RH8vTAxlIqOvm6udl4M1PAtvRGhzjZ7l3LcY3hmNlb8VPZC6R+LPwlw
-XMc8aMqMCerSE6itz8gCD5dam204573p3+2FCb9SpygB+mGUVoGJ+QjyH1tuhz9tgwRx+gN5CgkX
-hFUqOkYtRTF9crsyaaXZ+7lGl+vxAhrLcpTZueq9uPjPm9ix5e3U53INPn75Ajtnv35COUDDwBZ9
-vJhy3x0K4Q6/BVBYjPTlxSHBaqcSpLCjHtVbBow4GcXWQuciGt9SmuTjmdtL9kxuCqmzeFEnmUzw
-AM4UZ7cvRVEY8osu0TjaS8/pcXcu1zE+rBtd9e2vW/Pr/j+1zCEYxEAhTQkRSv6kJyL1f2fE10CX
-yFUWFePQdrG0KUCJaoGRgS3uwGg44oBBz6xDEBQhbe7jkcarNKN7HYZ5I3NIW6fF1WpDC+GdLCNS
-hUQ8lt/HbpEYi+PI+1StXbI8B7rzEiX/vxEsWr5AyFCbnj1u+MhKWZkM/dwNyYUAifJBZAx1jc9o
-RrfEdMqomdBBug+i2C9ZYurKHqAMe2zlt9BibJQo0A8lz89eeFIYkjPV/lcyVfUV0iQ4W4LUX1hr
-6mw7vHc6uvqCYSyGui+Rn6m8Rm8tLugHSpGR/yiLdcdX96HShidjmQzbqw5Yq3r63Yeo4WNbgvqv
-0Dt+Tcn7KkvkoBmoqzUzokeEmDumGhQg9Wcy5IbayhqvuVd3kcVRRwUmUiB6GYnkcyA81KS/yOwn
-sA9WKDocBZtuahY3orFuBLbD7nIb0wy99qykWD3SAZ7X7N842N7+CuhpTo5hN2uTJU7scnaac7Su
-FSyDtrdTQ3V08SwpJQgCJSQHOMtcsPh1JykmPN7DFjkJDujMy7izcMIFktOjpuuOiUHnzyWSkgan
-woexyyZGj1Elh102d5l7oEeKyaEdpAd8oFYHgCETIKk6ej2NKA8F59JFvXqZ+lW9pAEAIJTcg3uI
-3Mo3bkg0TTq0HNDjQRTunsOUdiSxx2E9V48LBXfALm3LV2JB99vMi+hTQoGu2KaZHAsyi4aQ1WuF
-nyCIlM5olg5MnhIm0yiqf2r8up/k/Js+UtSbVV+GZllFk8u47/fQuubzbIQBfS1VWNwuicL4wiqR
-zLeU80+D9dMyAU6iMtpOMSjwTSQuWRE1BvlaUQycdY/X7QGYvTrFO5cD1zKU5eCoAmaxQqQYDPkV
-m/cEqAXO4FeuHA6qQ8smJnkWOgQrdJVAQF/BC0+WuKhzen1H+cYv3xTM/yF8k7AfZqNEROAKITzh
-6sKufNoPaZsXYaS7wxF3Pccko5bMt+sF1VFT/uCGU6+n3cy/+1g9SwBKj9slYLiVk1KM/CYPMTdo
-XVwY4WIA8jelGbYnx/O7MEme0fdiNr2OV7fT0u0//2d9sGhcZiIKz1izkVO8kLRqR3Pw+H6Jjbwd
-gIkwBaSkoiEbR2tOhueG5krGEiboL0ysk10XTJ+OumoF9ofpxHXwBH2wMfD6OYfnWiIHTnmfyrBm
-zBOT6jIj4hMqdLhGdqL1lzjByTSp61yM0DBUggrpt2ee1IZo5aedKEnPkY8A1ZxbOk0GWo6DsPn0
-lgQOFO93CGZuJOF4zdquo/EqMvpzg9AGQNzM7tsG0gntWVW+omlK6PYwMp3IGunXnTdVi7ReMbYU
-OOe5GKTOJium6QwYzQq+azTOhlu6bGhZ+KWMicQFdU1iuIL0V+NRsYVqV21g4DcP9+Qb2TrsAY5c
-QnxOmB05D7cUdMY/lR0AX6FeoCADQVqiRGXkcfY+Fpr70bXY3a0IYUaSdc8oRd/T3nmUpQJ1g43l
-ctPjDcCsfoyvshe//Ncj60fsNx+NQXCfooJWBqGbLAQMPVemdtXFSgeeXb2A5PqRIASfjEciRN9o
-UNaYTsj/cHwIMhwnUiLomhvKb/p0OEJQTHpmIpGSb27Es27PMGSnMB7czJarqQWVkerQnJtErZ1w
-xO4Ag3H8nseDepXQokVn8a930visP4pb7EA5cFJhdNa909a/MY8n0pt/6De57rSrtILYY/uM2Qa4
-l65aRaJoy7P3tzPmoIyXolud+7TTMaLPxJHDURez9WKD6kUO2R9ljSWmQafN/6UYVGHLr3zSuYAV
-ynD+Ihme7hHP9bqxdFd5AnbOsPlgtPkF4Yii0mhEL3smh57G4fOI8sZ3khozNZILBD8aaM2s5nwA
-0bwj+TMcf/wknWXL168cS615Ms3LO25FIYhZA+gyIItm0uHvQoVxtNC0tzrkggwpoLd/l7sTq8xO
-mckYYNxIS5fVztAi25Ko6xQHdKf0AbqB0x+TJJkMJj5+LqXHwCMTPm/2brQG9gC4n+hzk567B6XZ
-WRWrOFR3y6Ip8OlRP/JBfu6sul1rXZh67hNE3aYJhAn3YxJKihRf4JSir1XtHefSeOK4sUsi6NXG
-KUUd+bOkPpYagcm0pLNdsX5yJVyXKccqvrP7FiGljyLoXpDVlUbNFqastugFo0EOenMqPn3uOlxs
-L6lJl6w7xpuWMl2z2MelsJhZMSWcbpvOoMbt+wQP8Z+H5yoOisaMEn2OLRnq8ipacgU/wBGRKEHg
-BEqdz+/Zo4s7mE9lifimh2AU7yodIgwQmntPAbQxCH+0XiYiWXbHvDgnmxaf6DIMjJ6Xui7TG1U3
-itRw/q1B0wyoYRziYApgohFbUoonj92JxolZNwdYXvOx2adekusuVNOLeLX6xBPvh/bxwtwGTUoG
-8nlsy2UBvoMHrl643AYRZXb8Ai5A506jyGshPxlbmmBeRFcqUoz1NcVoGT/lLozS9MiX12b6Dl8F
-oLuxPtHRbuAFomff5lbYJFJ2tOrutyuteefbTu4x6Oh2Ew/xCwZJfq6m0UAuAU7PG/oO/Py4wos1
-4ORh6R7TFh4ZZ5FYASNN6Ouds3RcoNxqBwd7j5oAQutHf7jj7TI6ZFRjHiSdPNyXrwFXPdfeErEZ
-a7ew9zBCM8VUpX7wRwfpXhjqSt9srWHi/ASSwwIMAbSs+c9t6juSJiqvL86S7X6A8UJ33pfUilC6
-CFm=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Watchlist.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Simpy_WatchlistFilterSet
+ */
+require_once 'Zend/Service/Simpy/WatchlistFilterSet.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_Watchlist
+{
+    /**
+     * Identifier for the watchlist
+     *
+     * @var int
+     */
+    protected $_id;
+
+    /**
+     * Name of the watchlist
+     *
+     * @var string
+     */
+    protected $_name;
+
+    /**
+     * Description of the watchlist
+     *
+     * @var string
+     */
+    protected $_description;
+
+    /**
+     * Timestamp for when the watchlist was added
+     *
+     * @var string
+     */
+    protected $_addDate;
+
+    /**
+     * Number of new links in the watchlist
+     *
+     * @var int
+     */
+    protected $_newLinks;
+
+    /**
+     * List of usernames for users included in the watchlist
+     *
+     * @var array
+     */
+    protected $_users;
+
+    /**
+     * List of filters included in the watchlist
+     *
+     * @var Zend_Service_Simpy_WatchlistFilterSet
+     */
+    protected $_filters;
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMNode $node Individual <watchlist> node from a parsed
+     *                       response from a GetWatchlists or GetWatchlist
+     *                       operation
+     * @return void
+     */
+    public function __construct($node)
+    {
+        $map =& $node->attributes;
+
+        $this->_id = $map->getNamedItem('id')->nodeValue;
+        $this->_name = $map->getNamedItem('name')->nodeValue;
+        $this->_description = $map->getNamedItem('description')->nodeValue;
+        $this->_addDate = $map->getNamedItem('addDate')->nodeValue;
+        $this->_newLinks = $map->getNamedItem('newLinks')->nodeValue;
+
+        $this->_users = array();
+        $this->_filters = new Zend_Service_Simpy_WatchlistFilterSet();
+
+        $childNode = $node->firstChild;
+        while ($childNode !== null) {
+            if ($childNode->nodeName == 'user') {
+                $this->_users[] = $childNode->attributes->getNamedItem('username')->nodeValue;
+            } elseif ($childNode->nodeName == 'filter') {
+                $filter = new Zend_Service_Simpy_WatchlistFilter($childNode);
+                $this->_filters->add($filter);
+            }
+            $childNode = $childNode->nextSibling;
+        }
+    }
+
+    /**
+     * Returns the identifier for the watchlist
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /**
+     * Returns the name of the watchlist
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * Returns the description of the watchlist
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * Returns a timestamp for when the watchlist was added
+     *
+     * @return string
+     */
+    public function getAddDate()
+    {
+        return $this->_addDate;
+    }
+
+    /**
+     * Returns the number of new links in the watchlist
+     *
+     * @return int
+     */
+    public function getNewLinks()
+    {
+        return $this->_newLinks;
+    }
+
+    /**
+     * Returns a list of usernames for users included in the watchlist
+     *
+     * @return array
+     */
+    public function getUsers()
+    {
+        return $this->_users;
+    }
+
+    /**
+     * Returns a list of filters included in the watchlist
+     *
+     * @return Zend_Service_Simpy_WatchlistFilterSet
+     */
+    public function getFilters()
+    {
+        return $this->_filters;
+    }
+}

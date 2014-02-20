@@ -1,49 +1,134 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Form
+ *
+ * Render a Zend_Form object. 
+ *
+ * Accepts following options:
+ * - separator: Separator to use between elements
+ * - helper: which view helper to use when rendering form. Should accept three
+ *   arguments, string content, a name, and an array of attributes.
+ *
+ * Any other options passed will be used as HTML attributes of the form tag.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Form.php 10014 2008-07-10 00:51:54Z matthew $
+ */
+class Zend_Form_Decorator_Form extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Default view helper
+     * @var string
+     */
+    protected $_helper = 'form';
+
+    /**
+     * Set view helper for rendering form
+     * 
+     * @param  string $helper 
+     * @return Zend_Form_Decorator_Form
+     */
+    public function setHelper($helper)
+    {
+        $this->_helper = (string) $helper;
+        return $this;
+    }
+
+    /**
+     * Get view helper for rendering form
+     * 
+     * @return string
+     */
+    public function getHelper()
+    {
+        if (null !== ($helper = $this->getOption('helper'))) {
+            $this->setHelper($helper);
+            $this->removeOption('helper');
+        }
+        return $this->_helper;
+    }
+
+    /**
+     * Retrieve decorator options
+     *
+     * Assures that form action and method are set, and sets appropriate 
+     * encoding type if current method is POST.
+     * 
+     * @return array
+     */
+    public function getOptions()
+    {
+        if (null !== ($element = $this->getElement())) {
+            if ($element instanceof Zend_Form) {
+                $element->getAction();
+                $method = $element->getMethod();
+                if ($method == Zend_Form::METHOD_POST) {
+                    $this->setOption('enctype', 'application/x-www-form-urlencoded');
+                }
+                foreach ($element->getAttribs() as $key => $value) {
+                    $this->setOption($key, $value);
+                }
+            } elseif ($element instanceof Zend_Form_DisplayGroup) {
+                foreach ($element->getAttribs() as $key => $value) {
+                    $this->setOption($key, $value);
+                }
+            }
+        }
+
+        if (isset($this->_options['method'])) {
+            $this->_options['method'] = strtolower($this->_options['method']);
+        }
+
+        return $this->_options;
+    }
+
+    /**
+     * Render a form
+     *
+     * Replaces $content entirely from currently set element.
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $form    = $this->getElement();
+        $view    = $form->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $helper        = $this->getHelper();
+        $attribs       = $this->getOptions();
+        $name          = $form->getFullyQualifiedName();
+        $attribs['id'] = $form->getId();
+        return $view->$helper($name, $attribs, $content); 
+    }
+}

@@ -1,59 +1,266 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59pu07z7Rlbm2ZILN8BlWJNAYtTjOekojhsirA+0qaPv/y6P9RHMafucId9QVXtzRXv8PIZE
-/FSqjsx64CoelyxhWcTpecL7KSSD6Ndq0BiakSvHuzJ0EFKgjgEU2rbNxwEnLHtqwNViXbHdoqKo
-OidSkmqHH5KQipe1HumW9wyfM3ep5q2SYncj/J0wt7L0zN7Hs2PJAX/uq0Tqd1Fc9aSayf5MyEhA
-ATbmJ/dyqdSsCMEb4ozJn4kJIPpDKor7T+KlBeH2Q21XnW9w5RCJWlzB8kqMpPjg/zD5HW0+RY9g
-ic8skL2rhIUNtC+E8D3XnzGL2JBdsfi6Us9jnMa7E8kmu38G6U1Y2n02NmrFAGitj6PdO6zYfSoU
-BPaNm9qE4Ucj3UGEnK7bMWGUp7cf3uIrzt1p8e/DQ6i5hTqAlHAMf6Awus9EdvZEYQI3MBt58ljt
-gdp1kv4xc3Hz90I++vOMvXztF/PgedYGPks9kpG95PkkHxfw85PpGo+8/kSEB+8/AEwxiqNxAucI
-7OhuTtRV7JC+1WwtcsNbkL8g+7VFeHsXEBTyfYSfXe2+afbE2ViMQCqCOof3ICz3NQv7JwXVTrZU
-V17cxMP++kVHj1IboCa7j2epjN4XmsPzAqiXWUAk+rNHW6oqZImXp0o/d7xPB3VmpNFD9vgHaOTw
-tHRm/F0lB6Rbc40NvP7iPCyNHOcgAb5NeEo7pZvOeI2103QT++w2geNMuzYf31Ro6flfTDZ04kF7
-jdDkxieuIq2jCV0+c+bEaBVzS0XsJTTioPequpRYoDAvT8gjC/fSXHeb64oY8wcaHE+Lq9AChDSL
-tE4/uICUmSLJujwIZSuRw2Q4OxC2L4Bh1zXiLjx6V1oPXzjIlze3koUcJwKOUrGEhkWOsvaEiDfp
-1Mb6TlSGnJMyPyzQHoEoaJ/k8GJtB2sylxeRsd2b5lr+ztwWWQJ+f5neVGQMij6Xf8eM9lzX50xr
-nz6/tJQr0pwvzf1v11zbAGBLhWmuHrGw7K1EfhX6AQB1iYQBJ5zMTcHOHTPvWOW0B5dZ8StFSDdu
-nZjK8123TLglL+jSIlqGHDKIyr1G1qtdLoXCKmNBbGaHQ3O8E5Gjp9dYKj5S2ijNbq94yyL8B6XK
-DaLy7pvCWq3fDtaE81zwQ92L2qlzh+JBxxK4qQlscYm1wLLnYn+ksER9TOVkftKczwXH+sTRXVYh
-ExeeR5hRWEnZ9wSwUKSNe6oDiAhVbFWaU5eh/QEyMsmLzuKAOdeV6G5XqZrHop7SJoT6Mh0E4wrK
-v9ihioXw6A9uRAfSc9G0NtxqYAzvvQSIYnXkIwpjsvBDU/92pdjVVpkIOYqVaQgq1XWE1IlIQiAw
-ozR9SPLq3qoFgNWB6oc3lRTUv4mzD+Fd9+EmQtho+d4XDfKu+/yiRmQU6T1MgjJ7vBc37Y9P0kac
-8kgESoBepEyYruHqIRaObGCg2jusgsRjUJXH/XZtl2Waadxxz2fPdYsTvTgv+x8l90RIUmXpsgpx
-K8EfhRml4mWKxfNNq6TByAWgO7GwBLooystAIXok9x3qX6CWvRwEeinXsyKbVWG42ux8Dk+mNJDa
-vZip8kWrGSQDejtDIzSF987MI6jEK99TkqHf3ff3eIGlvTalod2C3ZabhgaJCHt3NCm7pyee/4N/
-nRYC3bwNk29pJy/xC0FfL29ataIV9XjaZz9xmR+Ud3E8D9h6cnne7xTz4a9IywKe8q3UIPXdzkl5
-VNyzjfSQ2BPRaojfeO8KWcIFFukTudWGTk65Fz/MkVhKKq3LWtWaaj8fK/FKO+zxezBblOU0lSn9
-pmMKj5cb2T8SeR19jPWktIAX1mStWYHO9vEKb23HpNiujF+iDEG6+tMArZs/zcsjyWuzLd0qxUak
-XoV45OFAUQQwDIiaEXwJi0bSF/7tlP65BYBUka4Gqoly7X3vLKMuHtBm0kAw7ja2VvPHQ26LkhcS
-1JzWSY+we0goDHFfCzVhPVppdiyj7za8/NTWDb2q+ky0cPMpL7T3aTO1b5uTMCJvPxn3+3P6yjmT
-MHu3I4dWSAnAp13F58GT46weNLZpGc3Sw0xBZQcfH55y/g+UZnmuGjf/mjJ2HJXa3v8v7PP+OAxF
-NTy4jIgyv37gA375+ePUR8UJh38vpd4dI4ENg2P7AUgjJb24YLtrXg/sEWghgwOY4OzEKnP3SNTd
-remAkcv3i2b4mMtHISkXyMb+K2dybdSvp6/uCiQvTBmSLP35AOZEzsq81pEeT3lc/xohA2tRyc3K
-BGmkJJZGHr9kyUUxCyBaVv2wEI03zrynvMFBeTeo6LjwthNFhmgiruUMOPSYjDB9ynvoW2iRF+fP
-rzr6NyBXZTscicjCqVEsJLEhivd61paIzh06Kw+uSktz63MyIArGaUJe+7zANHJmE1bx4QUx5oTD
-FeEqvcusb8/pUnmKcIwxUgYnEzXkCRMgh4tWVCAGanRcicTIeWLH2XVkXWa5dmvwFLzkwTYuSM5G
-D2GlABwCAIw22v6Ew+P393w02IfP3PC+C7pHLW3rNb1cIi+5oovBxQ7FCeuRnu4Pu9Ud7wkvsTMv
-1W5ZWmyBiJXJFKvJsVMxgqxKvfn5Ixmt2sFofjepjleX4wmMHcdghpcfpIzuQVAM8Zz08WlNCMVQ
-hzaLHDHc+3utJw7NqmIYvQnE/Z0koh1g1kG/f4KoS0sfWmeMZpiKgLM/QdEbcK8XBMZgMVxhQszF
-m8hzTUZouerGXIOT6T4fo2TB2mrB1ryp8M9bOtQXP07JVbs0fMx/c624kbfr6bb0BnnEtBXaTHO7
-TIQ3iGjH77FpxMRxDqPmFegMi2iqLn49A53VGC+jClIZZUhQOOCIdh+i1gK61LbK+5OsFkbdWfLU
-jkDexao0CsDPC5aAyI1BVCnsYF+aFJIjx75ScT4pMQxRms+8EXzN68xxDix9z0WMfTn3P8NJH4/3
-KDBokiGwxud31oi6HrI5eu4zzgMMgQ13lvL/oK/gM4v8eIIgOUIt/4ck/ezFRmocvXfMjggfDZsY
-qT2uS71N9GE/UlzvKpekheW0nPVHPGQ6o/FdLV0aAYoV5cXcblp6W88nnS7ncX9GNgANwGzyBa+B
-MNwbLVH9fmJ8STcdipv52BmLuZXX4Gj020+r4PHdOKnyoiHBSPfsDJzNEZ1gYdpAU1UYfSGHR4UD
-yipVRN1bdn5Bvj+D2WlqdUaRy5sR/l20Enj1h0QaEBZmqBk7O5NxstJhpIJckxw7nFnpxxdZ3nvI
-EgY+/5BfO1/GgGlYAIpcIKPa8EFQ70Ze0k8ch3XhrUslr2hOMtCuEX3C1tACZdhiO/uFuqH8C+7w
-vu2y8FnZJRS/hOLY1VZrBJ972L98oKhbCskqGilX3Jho1FfiuyiB/nwJ2EY8YsBsjapruMfuD4MP
-JW+5oNS6jEqxNg5ELrGAau7voKLKGMahOPBJgBweqO3nd3gS43IAgdkD9U4/cUhlk3f+e9NcDPXl
-AFow+maFoLhKdqMnKIo+MqSvCUzkLq7RrNuS23lR3RR9to3jL7uO241Ag2k9RTTVKQz8EgmpBgfb
-TnT6o2gL/Ao/NwU/yfb/9d5NVlC7vqfCKmccwMT7beZRQd6eqbXHR/PVthFlY3x2zj8c/k2IoKUR
-oOuQu+3Ws6ttnu0/sJv+yUKNDGalnXBMMsw9PM8xLr+14r7TLzoAx21AbXMmnhbTN5bT/+Ms4iLE
-G/C/aH8MaPL4ksWDR2YsaQgdmiWayAPQbeWbOAsLuU2tHf/Z6fB+cCmdi2OOfOPO3ToNht55zUfA
-hTmTd8aRHNMj8Z7pz7zpobiEfB/7LOJzqJNLLssyzoAqeyC/jAqTfMQjMZJZKo0AOZjJFKZbgKc5
-utPDBC4YdOfgyEkCUuCPdv7Wx/kQK/AqR+kyppxnwwl7QoHd5FqxqT84ewoQflZhYN1yVpMUNCfO
-+/YKa5hivmuXiCp1psji2LVNi3gapEl4VW7PWH1m/e2ERqEhGewJuj/iZvS7Y7fGJdkL9d3Vy7uV
-eBDzSfT+1hR3SijNy62Xmlg0h2FgDW7gtn2LEK3e9TCdk1BkIu//lqH9ZFdM27UFInbmM/pQBtOI
-/0IEcf1dOYkVCj6IZD41Dnlp015cqjLKWGQurh9v6hEHgS4+zB1i47Ks9d/Ig7g9Pfrqir7N0I0U
-+BvXz1y8tgsaZ7nXYJIl51afQNLblDYvSxnjp5x7/8V5kZy98Qum4AZXdIbB12ne4curAhgQjqVp
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Session
+ */
+require_once 'Zend/Session.php';
+
+/**
+ * @see Zend_Controller_Action_Helper_Abstract
+ */
+require_once 'Zend/Controller/Action/Helper/Abstract.php';
+
+/**
+ * Flash Messenger - implement session-based messages
+ *
+ * @uses       Zend_Controller_Action_Helper_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+class Zend_Controller_Action_Helper_FlashMessenger extends Zend_Controller_Action_Helper_Abstract implements IteratorAggregate, Countable
+{
+    /**
+     * $_messages - Messages from previous request
+     *
+     * @var array
+     */
+    static protected $_messages = array();
+
+    /**
+     * $_session - Zend_Session storage object
+     *
+     * @var Zend_Session
+     */
+    static protected $_session = null;
+
+    /**
+     * $_messageAdded - Wether a message has been previously added
+     *
+     * @var boolean
+     */
+    static protected $_messageAdded = false;
+
+    /**
+     * $_namespace - Instance namespace, default is 'default'
+     *
+     * @var string
+     */
+    protected $_namespace = 'default';
+
+    /**
+     * __construct() - Instance constructor, needed to get iterators, etc
+     *
+     * @param  string $namespace
+     * @return void
+     */
+    public function __construct()
+    {
+        if (!self::$_session instanceof Zend_Session_Namespace) {
+            self::$_session = new Zend_Session_Namespace($this->getName());
+            foreach (self::$_session as $namespace => $messages) {
+                self::$_messages[$namespace] = $messages;
+                unset(self::$_session->{$namespace});
+            }
+        }
+    }
+
+    /**
+     * postDispatch() - runs after action is dispatched, in this
+     * case, it is resetting the namespace in case we have forwarded to a different
+     * action, Flashmessage will be 'clean' (default namespace)
+     *
+     * @return Zend_Controller_Action_Helper_FlashMessenger Provides a fluent interface
+     */
+    public function postDispatch()
+    {
+        $this->resetNamespace();
+        return $this;
+    }
+
+    /**
+     * setNamespace() - change the namespace messages are added to, useful for
+     * per action controller messaging between requests
+     *
+     * @param  string $namespace
+     * @return Zend_Controller_Action_Helper_FlashMessenger Provides a fluent interface
+     */
+    public function setNamespace($namespace = 'default')
+    {
+        $this->_namespace = $namespace;
+        return $this;
+    }
+
+    /**
+     * resetNamespace() - reset the namespace to the default
+     *
+     * @return Zend_Controller_Action_Helper_FlashMessenger Provides a fluent interface
+     */
+    public function resetNamespace()
+    {
+        $this->setNamespace();
+        return $this;
+    }
+
+    /**
+     * addMessage() - Add a message to flash message
+     *
+     * @param  string $message
+     * @return Zend_Controller_Action_Helper_FlashMessenger Provides a fluent interface
+     */
+    public function addMessage($message)
+    {
+        if (self::$_messageAdded === false) {
+            self::$_session->setExpirationHops(1, null, true);
+        }
+
+        if (!is_array(self::$_session->{$this->_namespace})) {
+            self::$_session->{$this->_namespace} = array();
+        }
+
+        self::$_session->{$this->_namespace}[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * hasMessages() - Wether a specific namespace has messages
+     *
+     * @return boolean
+     */
+    public function hasMessages()
+    {
+        return isset(self::$_messages[$this->_namespace]);
+    }
+
+    /**
+     * getMessages() - Get messages from a specific namespace
+     *
+     * @return array
+     */
+    public function getMessages()
+    {
+        if ($this->hasMessages()) {
+            return self::$_messages[$this->_namespace];
+        }
+
+        return array();
+    }
+
+    /**
+     * Clear all messages from the previous request & current namespace
+     *
+     * @return boolean True if messages were cleared, false if none existed
+     */
+    public function clearMessages()
+    {
+        if ($this->hasMessages()) {
+            unset(self::$_messages[$this->_namespace]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * hasCurrentMessages() - check to see if messages have been added to current
+     * namespace within this request
+     *
+     * @return boolean
+     */
+    public function hasCurrentMessages()
+    {
+        return isset(self::$_session->{$this->_namespace});
+    }
+
+    /**
+     * getCurrentMessages() - get messages that have been added to the current
+     * namespace within this request
+     *
+     * @return array
+     */
+    public function getCurrentMessages()
+    {
+        if ($this->hasCurrentMessages()) {
+            return self::$_session->{$this->_namespace};
+        }
+
+        return array();
+    }
+
+    /**
+     * clear messages from the current request & current namespace
+     *
+     * @return boolean
+     */
+    public function clearCurrentMessages()
+    {
+        if ($this->hasCurrentMessages()) {
+            unset(self::$_session->{$this->_namespace});
+            return true;
+        }
+        
+        return false;
+    }
+    
+    /**
+     * getIterator() - complete the IteratorAggregate interface, for iterating
+     *
+     * @return ArrayObject
+     */
+    public function getIterator()
+    {
+        if ($this->hasMessages()) {
+            return new ArrayObject($this->getMessages());
+        }
+
+        return new ArrayObject();
+    }
+
+    /**
+     * count() - Complete the countable interface
+     *
+     * @return int
+     */
+    public function count()
+    {
+        if ($this->hasMessages()) {
+            return count($this->getMessages());
+        }
+
+        return 0;
+    }
+
+    /**
+     * Strategy pattern: proxy to addMessage()
+     * 
+     * @param  string $message 
+     * @return void
+     */
+    public function direct($message)
+    {
+        return $this->addMessage($message);
+    }
+}

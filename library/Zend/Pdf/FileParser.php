@@ -1,127 +1,483 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Abstract utility class for parsing binary files.
+ *
+ * Provides a library of methods to quickly navigate and extract various data
+ * types (signed and unsigned integers, floating- and fixed-point numbers,
+ * strings, etc.) from the file.
+ *
+ * File access is managed via a {@link Zend_Pdf_FileParserDataSource} object.
+ * This allows the same parser code to work with many different data sources:
+ * in-memory objects, filesystem files, etc.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_FileParser
+{
+  /**** Class Constants ****/
+
+    /**
+     * Little-endian byte order (0x04 0x03 0x02 0x01).
+     */
+    const BYTE_ORDER_LITTLE_ENDIAN = 0;
+
+    /**
+     * Big-endian byte order (0x01 0x02 0x03 0x04).
+     */
+    const BYTE_ORDER_BIG_ENDIAN    = 1;
+
+
+
+  /**** Instance Variables ****/
+
+
+    /**
+     * Flag indicating that the file has passed a cursory validation check.
+     * @var boolean
+     */
+    protected $_isScreened = false;
+
+    /**
+     * Flag indicating that the file has been sucessfully parsed.
+     * @var boolean
+     */
+    protected $_isParsed = false;
+
+    /**
+     * Object representing the data source to be parsed.
+     * @var Zend_Pdf_FileParserDataSource
+     */
+    protected $_dataSource = null;
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Abstract Methods */
+
+    /**
+     * Performs a cursory check to verify that the binary file is in the expected
+     * format. Intended to quickly weed out obviously bogus files.
+     *
+     * Must set $this->_isScreened to true if successful.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    abstract public function screen();
+
+    /**
+     * Reads and parses the complete binary file.
+     *
+     * Must set $this->_isParsed to true if successful.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    abstract public function parse();
+
+
+  /* Object Lifecycle */
+
+    /**
+     * Object constructor.
+     *
+     * Verifies that the data source has been properly initialized.
+     *
+     * @param Zend_Pdf_FileParserDataSource $dataSource
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct(Zend_Pdf_FileParserDataSource $dataSource)
+    {
+        if ($dataSource->getSize() == 0) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception('The data source has not been properly initialized',
+                                         Zend_Pdf_Exception::BAD_DATA_SOURCE);
+        }
+        $this->_dataSource = $dataSource;
+    }
+
+    /**
+     * Object destructor.
+     *
+     * Discards the data source object.
+     */
+    public function __destruct()
+    {
+        $this->_dataSource = null;
+    }
+
+
+  /* Accessors */
+
+    /**
+     * Returns true if the file has passed a cursory validation check.
+     *
+     * @return boolean
+     */
+    public function isScreened()
+    {
+        return $this->_isScreened;
+    }
+
+    /**
+     * Returns true if the file has been successfully parsed.
+     *
+     * @return boolean
+     */
+    public function isParsed()
+    {
+        return $this->_isParsed;
+    }
+
+    /**
+     * Returns the data source object representing the file being parsed.
+     *
+     * @return Zend_Pdf_FileParserDataSource
+     */
+    public function getDataSource()
+    {
+        return $this->_dataSource;
+    }
+
+
+  /* Primitive Methods */
+
+    /**
+     * Convenience wrapper for the data source object's moveToOffset() method.
+     *
+     * @param integer $offset Destination byte offset.
+     * @throws Zend_Pdf_Exception
+     */
+    public function moveToOffset($offset)
+    {
+        $this->_dataSource->moveToOffset($offset);
+    }
+
+    public function getOffset() {
+       return $this->_dataSource->getOffset();
+    }
+
+    public function getSize() {
+       return $this->_dataSource->getSize();
+    }
+
+    /**
+     * Convenience wrapper for the data source object's readBytes() method.
+     *
+     * @param integer $byteCount Number of bytes to read.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readBytes($byteCount)
+    {
+        return $this->_dataSource->readBytes($byteCount);
+    }
+
+    /**
+     * Convenience wrapper for the data source object's skipBytes() method.
+     *
+     * @param integer $byteCount Number of bytes to skip.
+     * @throws Zend_Pdf_Exception
+     */
+    public function skipBytes($byteCount)
+    {
+        $this->_dataSource->skipBytes($byteCount);
+    }
+
+
+  /* Parser Methods */
+
+    /**
+     * Reads the signed integer value from the binary file at the current byte
+     * offset.
+     *
+     * Advances the offset by the number of bytes read. Throws an exception if
+     * an error occurs.
+     *
+     * @param integer $size Size of integer in bytes: 1-4
+     * @param integer $byteOrder (optional) Big- or little-endian byte order.
+     *   Use the BYTE_ORDER_ constants defined in {@link Zend_Pdf_FileParser}.
+     *   If omitted, uses big-endian.
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    public function readInt($size, $byteOrder = Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN)
+    {
+        if (($size < 1) || ($size > 4)) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception("Invalid signed integer size: $size",
+                                         Zend_Pdf_Exception::INVALID_INTEGER_SIZE);
+        }
+        $bytes = $this->_dataSource->readBytes($size);
+        /* unpack() will not work for this method because it always works in
+         * the host byte order for signed integers. It also does not allow for
+         * variable integer sizes.
+         */
+        if ($byteOrder == Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN) {
+            $number = ord($bytes[0]);
+            if (($number & 0x80) == 0x80) {
+                /* This number is negative. Extract the positive equivalent.
+                 */
+                $number = (~ $number) & 0xff;
+                for ($i = 1; $i < $size; $i++) {
+                    $number = ($number << 8) | ((~ ord($bytes[$i])) & 0xff);
+                }
+                /* Now turn this back into a negative number by taking the
+                 * two's complement (we didn't add one above so won't
+                 * subtract it below). This works reliably on both 32- and
+                 * 64-bit systems.
+                 */
+                $number = ~$number;
+            } else {
+                for ($i = 1; $i < $size; $i++) {
+                    $number = ($number << 8) | ord($bytes[$i]);
+                }
+            }
+        } else if ($byteOrder == Zend_Pdf_FileParser::BYTE_ORDER_LITTLE_ENDIAN) {
+            $number = ord($bytes[$size - 1]);
+            if (($number & 0x80) == 0x80) {
+                /* Negative number. See discussion above.
+                 */
+                $number = 0;
+                for ($i = --$size; $i >= 0; $i--) {
+                    $number |= ((~ ord($bytes[$i])) & 0xff) << ($i * 8);
+                }
+                $number = ~$number;
+            } else {
+                $number = 0;
+                for ($i = --$size; $i >= 0; $i--) {
+                    $number |= ord($bytes[$i]) << ($i * 8);
+                }
+            }
+        } else {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception("Invalid byte order: $byteOrder",
+                                         Zend_Pdf_Exception::INVALID_BYTE_ORDER);
+        }
+        return $number;
+    }
+
+    /**
+     * Reads the unsigned integer value from the binary file at the current byte
+     * offset.
+     *
+     * Advances the offset by the number of bytes read. Throws an exception if
+     * an error occurs.
+     *
+     * NOTE: If you ask for a 4-byte unsigned integer on a 32-bit machine, the
+     * resulting value WILL BE SIGNED because PHP uses signed integers internally
+     * for everything. To guarantee portability, be sure to use bitwise operators
+     * operators on large unsigned integers!
+     *
+     * @param integer $size Size of integer in bytes: 1-4
+     * @param integer $byteOrder (optional) Big- or little-endian byte order.
+     *   Use the BYTE_ORDER_ constants defined in {@link Zend_Pdf_FileParser}.
+     *   If omitted, uses big-endian.
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    public function readUInt($size, $byteOrder = Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN)
+    {
+        if (($size < 1) || ($size > 4)) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception("Invalid unsigned integer size: $size",
+                                         Zend_Pdf_Exception::INVALID_INTEGER_SIZE);
+        }
+        $bytes = $this->_dataSource->readBytes($size);
+        /* unpack() is a bit heavyweight for this simple conversion. Just
+         * work the bytes directly.
+         */
+        if ($byteOrder == Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN) {
+            $number = ord($bytes[0]);
+            for ($i = 1; $i < $size; $i++) {
+                $number = ($number << 8) | ord($bytes[$i]);
+            }
+        } else if ($byteOrder == Zend_Pdf_FileParser::BYTE_ORDER_LITTLE_ENDIAN) {
+            $number = 0;
+            for ($i = --$size; $i >= 0; $i--) {
+                $number |= ord($bytes[$i]) << ($i * 8);
+            }
+        } else {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception("Invalid byte order: $byteOrder",
+                                         Zend_Pdf_Exception::INVALID_BYTE_ORDER);
+        }
+        return $number;
+    }
+
+    /**
+     * Returns true if the specified bit is set in the integer bitfield.
+     *
+     * @param integer $bit Bit number to test (i.e. - 0-31)
+     * @param integer $bitField
+     * @return boolean
+     */
+    public function isBitSet($bit, $bitField)
+    {
+        $bitMask = 1 << $bit;
+        $isSet = (($bitField & $bitMask) == $bitMask);
+        return $isSet;
+    }
+
+    /**
+     * Reads the signed fixed-point number from the binary file at the current
+     * byte offset.
+     *
+     * Common fixed-point sizes are 2.14 and 16.16.
+     *
+     * Advances the offset by the number of bytes read. Throws an exception if
+     * an error occurs.
+     *
+     * @param integer $mantissaBits Number of bits in the mantissa
+     * @param integer $fractionBits Number of bits in the fraction
+     * @param integer $byteOrder (optional) Big- or little-endian byte order.
+     *   Use the BYTE_ORDER_ constants defined in {@link Zend_Pdf_FileParser}.
+     *   If omitted, uses big-endian.
+     * @return float
+     * @throws Zend_Pdf_Exception
+     */
+    public function readFixed($mantissaBits, $fractionBits,
+                              $byteOrder = Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN)
+    {
+        $bitsToRead = $mantissaBits + $fractionBits;
+        if (($bitsToRead % 8) !== 0) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception('Fixed-point numbers are whole bytes',
+                                         Zend_Pdf_Exception::BAD_FIXED_POINT_SIZE);
+        }
+        $number = $this->readInt(($bitsToRead >> 3), $byteOrder) / (1 << $fractionBits);
+        return $number;
+    }
+
+    /**
+     * Reads the Unicode UTF-16-encoded string from the binary file at the
+     * current byte offset.
+     *
+     * The byte order of the UTF-16 string must be specified. You must also
+     * supply the desired resulting character set.
+     *
+     * Advances the offset by the number of bytes read. Throws an exception if
+     * an error occurs.
+     *
+     * @todo Consider changing $byteCount to a character count. They are not
+     *   always equivalent (in the case of surrogates).
+     * @todo Make $byteOrder optional if there is a byte-order mark (BOM) in the
+     *   string being extracted.
+     *
+     * @param integer $byteCount Number of bytes (characters * 2) to return.
+     * @param integer $byteOrder (optional) Big- or little-endian byte order.
+     *   Use the BYTE_ORDER_ constants defined in {@link Zend_Pdf_FileParser}.
+     *   If omitted, uses big-endian.
+     * @param string $characterSet (optional) Desired resulting character set.
+     *   You may use any character set supported by {@link iconv()}. If omitted,
+     *   uses 'current locale'.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readStringUTF16($byteCount,
+                                    $byteOrder = Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN,
+                                    $characterSet = '')
+    {
+        if ($byteCount == 0) {
+            return '';
+        }
+        $bytes = $this->_dataSource->readBytes($byteCount);
+        if ($byteOrder == Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN) {
+            if ($characterSet == 'UTF-16BE') {
+                return $bytes;
+            }
+            return iconv('UTF-16BE', $characterSet, $bytes);
+        } else if ($byteOrder == Zend_Pdf_FileParser::BYTE_ORDER_LITTLE_ENDIAN) {
+            if ($characterSet == 'UTF-16LE') {
+                return $bytes;
+            }
+            return iconv('UTF-16LE', $characterSet, $bytes);
+        } else {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception("Invalid byte order: $byteOrder",
+                                         Zend_Pdf_Exception::INVALID_BYTE_ORDER);
+        }
+    }
+
+    /**
+     * Reads the Mac Roman-encoded string from the binary file at the current
+     * byte offset.
+     *
+     * You must supply the desired resulting character set.
+     *
+     * Advances the offset by the number of bytes read. Throws an exception if
+     * an error occurs.
+     *
+     * @param integer $byteCount Number of bytes (characters) to return.
+     * @param string $characterSet (optional) Desired resulting character set.
+     *   You may use any character set supported by {@link iconv()}. If omitted,
+     *   uses 'current locale'.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readStringMacRoman($byteCount, $characterSet = '')
+    {
+        if ($byteCount == 0) {
+            return '';
+        }
+        $bytes = $this->_dataSource->readBytes($byteCount);
+        if ($characterSet == 'MacRoman') {
+            return $bytes;
+        }
+        return iconv('MacRoman', $characterSet, $bytes);
+    }
+
+    /**
+     * Reads the Pascal string from the binary file at the current byte offset.
+     *
+     * The length of the Pascal string is determined by reading the length bytes
+     * which preceed the character data. You must supply the desired resulting
+     * character set.
+     *
+     * Advances the offset by the number of bytes read. Throws an exception if
+     * an error occurs.
+     *
+     * @param string $characterSet (optional) Desired resulting character set.
+     *   You may use any character set supported by {@link iconv()}. If omitted,
+     *   uses 'current locale'.
+     * @param integer $lengthBytes (optional) Number of bytes that make up the
+     *   length. Default is 1.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readStringPascal($characterSet = '', $lengthBytes = 1)
+    {
+        $byteCount = $this->readUInt($lengthBytes);
+        if ($byteCount == 0) {
+            return '';
+        }
+        $bytes = $this->_dataSource->readBytes($byteCount);
+        if ($characterSet == 'ASCII') {
+            return $bytes;
+        }
+        return iconv('ASCII', $characterSet, $bytes);
+    }
+
+}

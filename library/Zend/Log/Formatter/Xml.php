@@ -1,40 +1,90 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Formatter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Xml.php 12363 2008-11-07 10:45:22Z beberlei $
+ */
+
+/** Zend_Log_Formatter_Interface */
+require_once 'Zend/Log/Formatter/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Formatter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Xml.php 12363 2008-11-07 10:45:22Z beberlei $
+ */
+class Zend_Log_Formatter_Xml implements Zend_Log_Formatter_Interface
+{
+    /**
+     * @var Relates XML elements to log data field keys.
+     */
+    protected $_rootElement;
+
+    /**
+     * @var Relates XML elements to log data field keys.
+     */
+    protected $_elementMap;
+
+    /**
+     * Class constructor
+     *
+     * @param array $elementMap
+     */
+    public function __construct($rootElement = 'logEntry', $elementMap = null)
+    {
+        $this->_rootElement = $rootElement;
+        $this->_elementMap  = $elementMap;
+    }
+
+    /**
+     * Formats data into a single line to be written by the writer.
+     *
+     * @param  array    $event    event data
+     * @return string             formatted line to write to the log
+     */
+    public function format($event)
+    {
+        if ($this->_elementMap === null) {
+            $dataToInsert = $event;
+        } else {
+            $dataToInsert = array();
+            foreach ($this->_elementMap as $elementName => $fieldKey) {
+                $dataToInsert[$elementName] = $event[$fieldKey];
+            }
+        }
+
+        $dom = new DOMDocument();
+        $elt = $dom->appendChild(new DOMElement($this->_rootElement));
+
+        foreach ($dataToInsert as $key => $value) {
+            if($key == "message") {
+                $value = htmlspecialchars($value);
+            }
+            $elt->appendChild(new DOMElement($key, $value));
+        }
+
+        $xml = $dom->saveXML();
+        $xml = preg_replace('/<\?xml version="1.0"( encoding="[^\"]*")?\?>\n/u', '', $xml);
+
+        return $xml . PHP_EOL;
+    }
+
+}

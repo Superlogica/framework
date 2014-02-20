@@ -1,106 +1,295 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Sqlite.php 9101 2008-03-30 19:54:38Z thomas $
+ */
+
+
+/**
+ * @see Zend_Db_Adapter_Pdo_Abstract
+ */
+require_once 'Zend/Db/Adapter/Pdo/Abstract.php';
+
+
+/**
+ * Class for connecting to SQLite2 and SQLite3 databases and performing common operations.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Adapter_Pdo_Sqlite extends Zend_Db_Adapter_Pdo_Abstract
+{
+
+    /**
+     * PDO type
+     *
+     * @var string
+     */
+     protected $_pdoType = 'sqlite';
+
+    /**
+     * Keys are UPPERCASE SQL datatypes or the constants
+     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
+     *
+     * Values are:
+     * 0 = 32-bit integer
+     * 1 = 64-bit integer
+     * 2 = float or decimal
+     *
+     * @var array Associative array of datatypes to values 0, 1, or 2.
+     */
+    protected $_numericDataTypes = array(
+        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
+        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
+        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE,
+        'INTEGER'            => Zend_Db::BIGINT_TYPE,
+        'REAL'               => Zend_Db::FLOAT_TYPE
+    );
+
+    /**
+     * Constructor.
+     *
+     * $config is an array of key/value pairs containing configuration
+     * options.  Note that the SQLite options are different than most of
+     * the other PDO adapters in that no username or password are needed.
+     * Also, an extra config key "sqlite2" specifies compatibility mode.
+     *
+     * dbname    => (string) The name of the database to user (required,
+     *                       use :memory: for memory-based database)
+     *
+     * sqlite2   => (boolean) PDO_SQLITE defaults to SQLite 3.  For compatibility
+     *                        with an older SQLite 2 database, set this to TRUE.
+     *
+     * @param array $config An array of configuration keys.
+     */
+    public function __construct(array $config = array())
+    {
+        if (isset($config['sqlite2']) && $config['sqlite2']) {
+            $this->_pdoType = 'sqlite2';
+        }
+
+        // SQLite uses no username/password.  Stub to satisfy parent::_connect()
+        $this->_config['username'] = null;
+        $this->_config['password'] = null;
+
+        return parent::__construct($config);
+    }
+
+    /**
+     * Check for config options that are mandatory.
+     * Throw exceptions if any are missing.
+     *
+     * @param array $config
+     * @throws Zend_Db_Adapter_Exception
+     */
+    protected function _checkRequiredOptions(array $config)
+    {
+        // we need at least a dbname
+        if (! array_key_exists('dbname', $config)) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("Configuration array must have a key for 'dbname' that names the database instance");
+        }
+    }
+
+    /**
+     * DSN builder
+     */
+    protected function _dsn()
+    {
+        return $this->_pdoType .':'. $this->_config['dbname'];
+    }
+
+    /**
+     * Special configuration for SQLite behavior: make sure that result sets
+     * contain keys like 'column' instead of 'table.column'.
+     *
+     * @throws Zend_Db_Adapter_Exception
+     */
+    protected function _connect()
+    {
+        /**
+         * if we already have a PDO object, no need to re-connect.
+         */
+        if ($this->_connection) {
+            return;
+        }
+
+        parent::_connect();
+
+        $retval = $this->_connection->exec('PRAGMA full_column_names=0');
+        if ($retval === false) {
+            $error = $this->_connection->errorInfo();
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception($error[2]);
+        }
+
+        $retval = $this->_connection->exec('PRAGMA short_column_names=1');
+        if ($retval === false) {
+            $error = $this->_connection->errorInfo();
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception($error[2]);
+        }
+    }
+
+    /**
+     * Returns a list of the tables in the database.
+     *
+     * @return array
+     */
+    public function listTables()
+    {
+        $sql = "SELECT name FROM sqlite_master WHERE type='table' "
+             . "UNION ALL SELECT name FROM sqlite_temp_master "
+             . "WHERE type='table' ORDER BY name";
+
+        return $this->fetchCol($sql);
+    }
+
+    /**
+     * Returns the column descriptions for a table.
+     *
+     * The return value is an associative array keyed by the column name,
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME      => string; name of database or schema
+     * TABLE_NAME       => string;
+     * COLUMN_NAME      => string; column name
+     * COLUMN_POSITION  => number; ordinal position of column in table
+     * DATA_TYPE        => string; SQL datatype name of column
+     * DEFAULT          => string; default expression of column, null if none
+     * NULLABLE         => boolean; true if column can have nulls
+     * LENGTH           => number; length of CHAR/VARCHAR
+     * SCALE            => number; scale of NUMERIC/DECIMAL
+     * PRECISION        => number; precision of NUMERIC/DECIMAL
+     * UNSIGNED         => boolean; unsigned property of an integer type
+     * PRIMARY          => boolean; true if column is part of the primary key
+     * PRIMARY_POSITION => integer; position of column in primary key
+     * IDENTITY         => integer; true if column is auto-generated with unique values
+     *
+     * @param string $tableName
+     * @param string $schemaName OPTIONAL
+     * @return array
+     */
+    public function describeTable($tableName, $schemaName = null)
+    {
+        if ($schemaName) {
+            $sql = "PRAGMA $schemaName.table_info($tableName)";
+        } else {
+            $sql = "PRAGMA table_info($tableName)";
+        }
+
+        $stmt = $this->query($sql);
+
+        /**
+         * Use FETCH_NUM so we are not dependent on the CASE attribute of the PDO connection
+         */
+        $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
+
+        $cid        = 0;
+        $name       = 1;
+        $type       = 2;
+        $notnull    = 3;
+        $dflt_value = 4;
+        $pk         = 5;
+
+        $desc = array();
+
+        $p = 1;
+        foreach ($result as $key => $row) {
+            list($length, $scale, $precision, $primary, $primaryPosition, $identity) =
+                array(null, null, null, false, null, false);
+            if (preg_match('/^((?:var)?char)\((\d+)\)/i', $row[$type], $matches)) {
+                $row[$type] = $matches[1];
+                $length = $matches[2];
+            } else if (preg_match('/^decimal\((\d+),(\d+)\)/i', $row[$type], $matches)) {
+                $row[$type] = 'DECIMAL';
+                $precision = $matches[1];
+                $scale = $matches[2];
+            }
+            if ((bool) $row[$pk]) {
+                $primary = true;
+                $primaryPosition = $p;
+                /**
+                 * SQLite INTEGER primary key is always auto-increment.
+                 */
+                $identity = (bool) ($row[$type] == 'INTEGER');
+                ++$p;
+            }
+            $desc[$this->foldCase($row[$name])] = array(
+                'SCHEMA_NAME'      => $this->foldCase($schemaName),
+                'TABLE_NAME'       => $this->foldCase($tableName),
+                'COLUMN_NAME'      => $this->foldCase($row[$name]),
+                'COLUMN_POSITION'  => $row[$cid]+1,
+                'DATA_TYPE'        => $row[$type],
+                'DEFAULT'          => $row[$dflt_value],
+                'NULLABLE'         => ! (bool) $row[$notnull],
+                'LENGTH'           => $length,
+                'SCALE'            => $scale,
+                'PRECISION'        => $precision,
+                'UNSIGNED'         => null, // Sqlite3 does not support unsigned data
+                'PRIMARY'          => $primary,
+                'PRIMARY_POSITION' => $primaryPosition,
+                'IDENTITY'         => $identity
+            );
+        }
+        return $desc;
+    }
+
+    /**
+     * Adds an adapter-specific LIMIT clause to the SELECT statement.
+     *
+     * @param string $sql
+     * @param integer $count
+     * @param integer $offset OPTIONAL
+     * @return string
+     */
+    public function limit($sql, $count, $offset = 0)
+    {
+        $count = intval($count);
+        if ($count <= 0) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("LIMIT argument count=$count is not valid");
+        }
+
+        $offset = intval($offset);
+        if ($offset < 0) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("LIMIT argument offset=$offset is not valid");
+        }
+
+        $sql .= " LIMIT $count";
+        if ($offset > 0) {
+            $sql .= " OFFSET $offset";
+        }
+
+        return $sql;
+    }
+
+}

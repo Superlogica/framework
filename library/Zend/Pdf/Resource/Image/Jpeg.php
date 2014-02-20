@@ -1,69 +1,140 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Resource_Image */
+require_once 'Zend/Pdf/Resource/Image.php';
+
+/** Zend_Pdf_Element_Numeric */
+require_once 'Zend/Pdf/Element/Numeric.php';
+
+/** Zend_Pdf_Element_Name */
+require_once 'Zend/Pdf/Element/Name.php';
+
+
+/**
+ * JPEG image
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Resource_Image_Jpeg extends Zend_Pdf_Resource_Image
+{
+
+    protected $_width;
+    protected $_height;
+    protected $_imageProperties;
+
+    /**
+     * Object constructor
+     *
+     * @param string $imageFileName
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($imageFileName)
+    {
+        if (!function_exists('gd_info')) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception('Image extension is not installed.');
+        }
+
+        $gd_options = gd_info();
+        if (!$gd_options['JPG Support'] ) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception('JPG support is not configured properly.');
+        }
+
+        if (($imageInfo = getimagesize($imageFileName)) === false) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception('Corrupted image or image doesn\'t exist.');
+        }
+        if ($imageInfo[2] != IMAGETYPE_JPEG && $imageInfo[2] != IMAGETYPE_JPEG2000) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception('ImageType is not JPG');
+        }
+
+        parent::__construct();
+
+        switch ($imageInfo['channels']) {
+            case 3:
+                $colorSpace = 'DeviceRGB';
+                break;
+            case 4:
+                $colorSpace = 'DeviceCMYK';
+                break;
+            default:
+                $colorSpace = 'DeviceGray';
+                break;
+        }
+
+        $imageDictionary = $this->_resource->dictionary;
+        $imageDictionary->Width            = new Zend_Pdf_Element_Numeric($imageInfo[0]);
+        $imageDictionary->Height           = new Zend_Pdf_Element_Numeric($imageInfo[1]);
+        $imageDictionary->ColorSpace       = new Zend_Pdf_Element_Name($colorSpace);
+        $imageDictionary->BitsPerComponent = new Zend_Pdf_Element_Numeric($imageInfo['bits']);
+        if ($imageInfo[2] == IMAGETYPE_JPEG) {
+            $imageDictionary->Filter       = new Zend_Pdf_Element_Name('DCTDecode');
+        } else if ($imageInfo[2] == IMAGETYPE_JPEG2000){
+            $imageDictionary->Filter       = new Zend_Pdf_Element_Name('JPXDecode');
+        }
+
+        if (($imageFile = @fopen($imageFileName, 'rb')) === false ) {
+            require_once 'Zend/Pdf/Exception.php';
+            throw new Zend_Pdf_Exception( "Can not open '$imageFileName' file for reading." );
+        }
+        $byteCount = filesize($imageFileName);
+        $this->_resource->value = '';
+        while ( $byteCount > 0 && ($nextBlock = fread($imageFile, $byteCount)) != false ) {
+            $this->_resource->value .= $nextBlock;
+            $byteCount -= strlen($nextBlock);
+        }
+        fclose($imageFile);
+        $this->_resource->skipFilters();
+
+    $this->_width = $imageInfo[0];
+    $this->_height = $imageInfo[1];
+    $this->_imageProperties = array();
+    $this->_imageProperties['bitDepth'] = $imageInfo['bits'];
+    $this->_imageProperties['jpegImageType'] = $imageInfo[2];
+    $this->_imageProperties['jpegColorType'] = $imageInfo['channels'];
+    }
+
+    /**
+     * Image width
+     */
+    public function getPixelWidth() {
+        return $this->_width;
+    }
+
+    /**
+     * Image height
+     */
+    public function getPixelHeight() {
+        return $this->_height;
+    }
+
+    /**
+     * Image properties
+     */
+    public function getProperties() {
+        return $this->_imageProperties;
+    }
+}
+

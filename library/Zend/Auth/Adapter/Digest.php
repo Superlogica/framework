@@ -1,74 +1,230 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Digest.php 9668 2008-06-11 08:15:02Z doctorrock83 $
+ */
+
+
+/**
+ * @see Zend_Auth_Adapter_Interface
+ */
+require_once 'Zend/Auth/Adapter/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Auth_Adapter_Digest implements Zend_Auth_Adapter_Interface
+{
+    /**
+     * Filename against which authentication queries are performed
+     *
+     * @var string
+     */
+    protected $_filename;
+
+    /**
+     * Digest authentication realm
+     *
+     * @var string
+     */
+    protected $_realm;
+
+    /**
+     * Digest authentication user
+     *
+     * @var string
+     */
+    protected $_username;
+
+    /**
+     * Password for the user of the realm
+     *
+     * @var string
+     */
+    protected $_password;
+
+    /**
+     * Sets adapter options
+     *
+     * @param  mixed $filename
+     * @param  mixed $realm
+     * @param  mixed $username
+     * @param  mixed $password
+     * @return void
+     */
+    public function __construct($filename = null, $realm = null, $username = null, $password = null)
+    {
+        $options = array('filename', 'realm', 'username', 'password');
+        foreach ($options as $option) {
+            if (null !== $$option) {
+                $methodName = 'set' . ucfirst($option);
+                $this->$methodName($$option);
+            }
+        }
+    }
+
+    /**
+     * Returns the filename option value or null if it has not yet been set
+     *
+     * @return string|null
+     */
+    public function getFilename()
+    {
+        return $this->_filename;
+    }
+
+    /**
+     * Sets the filename option value
+     *
+     * @param  mixed $filename
+     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
+     */
+    public function setFilename($filename)
+    {
+        $this->_filename = (string) $filename;
+        return $this;
+    }
+
+    /**
+     * Returns the realm option value or null if it has not yet been set
+     *
+     * @return string|null
+     */
+    public function getRealm()
+    {
+        return $this->_realm;
+    }
+
+    /**
+     * Sets the realm option value
+     *
+     * @param  mixed $realm
+     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
+     */
+    public function setRealm($realm)
+    {
+        $this->_realm = (string) $realm;
+        return $this;
+    }
+
+    /**
+     * Returns the username option value or null if it has not yet been set
+     *
+     * @return string|null
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Sets the username option value
+     *
+     * @param  mixed $username
+     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
+     */
+    public function setUsername($username)
+    {
+        $this->_username = (string) $username;
+        return $this;
+    }
+
+    /**
+     * Returns the password option value or null if it has not yet been set
+     *
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+
+    /**
+     * Sets the password option value
+     *
+     * @param  mixed $password
+     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
+     */
+    public function setPassword($password)
+    {
+        $this->_password = (string) $password;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Auth_Adapter_Interface
+     *
+     * @throws Zend_Auth_Adapter_Exception
+     * @return Zend_Auth_Result
+     */
+    public function authenticate()
+    {
+        $optionsRequired = array('filename', 'realm', 'username', 'password');
+        foreach ($optionsRequired as $optionRequired) {
+            if (null === $this->{"_$optionRequired"}) {
+                /**
+                 * @see Zend_Auth_Adapter_Exception
+                 */
+                require_once 'Zend/Auth/Adapter/Exception.php';
+                throw new Zend_Auth_Adapter_Exception("Option '$optionRequired' must be set before authentication");
+            }
+        }
+
+        if (false === ($fileHandle = @fopen($this->_filename, 'r'))) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception("Cannot open '$this->_filename' for reading");
+        }
+
+        $id       = "$this->_username:$this->_realm";
+        $idLength = strlen($id);
+
+        $result = array(
+            'code'  => Zend_Auth_Result::FAILURE,
+            'identity' => array(
+                'realm'    => $this->_realm,
+                'username' => $this->_username,
+                ),
+            'messages' => array()
+            );
+
+        while ($line = trim(fgets($fileHandle))) {
+            if (substr($line, 0, $idLength) === $id) {
+                if (substr($line, -32) === md5("$this->_username:$this->_realm:$this->_password")) {
+                    $result['code'] = Zend_Auth_Result::SUCCESS;
+                } else {
+                    $result['code'] = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
+                    $result['messages'][] = 'Password incorrect';
+                }
+                return new Zend_Auth_Result($result['code'], $result['identity'], $result['messages']);
+            }
+        }
+
+        $result['code'] = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
+        $result['messages'][] = "Username '$this->_username' and realm '$this->_realm' combination not found";
+        return new Zend_Auth_Result($result['code'], $result['identity'], $result['messages']);
+    }
+}

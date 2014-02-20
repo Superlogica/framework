@@ -1,53 +1,179 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_File_Hash
+ */
+require_once 'Zend/Validate/File/Hash.php';
+
+/**
+ * Validator for the crc32 hash of given files
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_Crc32 extends Zend_Validate_File_Hash
+{
+    /**
+     * @const string Error constants
+     */
+    const DOES_NOT_MATCH = 'fileCrc32DoesNotMatch';
+    const NOT_DETECTED   = 'fileCrc32NotDetected';
+    const NOT_FOUND      = 'fileCrc32NotFound';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::DOES_NOT_MATCH => "The file '%value%' does not match the given crc32 hashes",
+        self::NOT_DETECTED   => "There was no crc32 hash detected for the given file",
+        self::NOT_FOUND      => "The file '%value%' could not be found"
+    );
+
+    /**
+     * Hash of the file
+     *
+     * @var string
+     */
+    protected $_hash;
+
+    /**
+     * Sets validator options
+     *
+     * @param  string|array $options
+     * @return void
+     */
+    public function __construct($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (is_scalar($options)) {
+            $options = array('hash1' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
+        }
+
+        $this->setCrc32($options);
+    }
+
+    /**
+     * Returns all set crc32 hashes
+     *
+     * @return array
+     */
+    public function getCrc32()
+    {
+        return $this->getHash();
+    }
+
+    /**
+     * Sets the crc32 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function setHash($options)
+    {
+        if (!is_array($options)) {
+            $options = array($options);
+        }
+
+        $options['algorithm'] = 'crc32';
+        parent::setHash($options);
+        return $this;
+    }
+
+    /**
+     * Sets the crc32 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function setCrc32($options)
+    {
+        $this->setHash($options);
+        return $this;
+    }
+
+    /**
+     * Adds the crc32 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function addHash($options)
+    {
+        if (!is_array($options)) {
+            $options = array($options);
+        }
+
+        $options['algorithm'] = 'crc32';
+        parent::addHash($options);
+        return $this;
+    }
+
+    /**
+     * Adds the crc32 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function addCrc32($options)
+    {
+        $this->addHash($options);
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the given file confirms the set hash
+     *
+     * @param  string $value Filename to check for hash
+     * @param  array  $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_FOUND);
+        }
+
+        $hashes = array_unique(array_keys($this->_hash));
+        $filehash = hash_file('crc32', $value);
+        if ($filehash === false) {
+            return $this->_throw($file, self::NOT_DETECTED);
+        }
+
+        foreach($hashes as $hash) {
+            if ($filehash === $hash) {
+                return true;
+            }
+        }
+
+        return $this->_throw($file, self::DOES_NOT_MATCH);
+    }
+}

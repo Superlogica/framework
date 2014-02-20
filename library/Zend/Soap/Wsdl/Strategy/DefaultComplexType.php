@@ -1,43 +1,71 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Wsdl
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once "Abstract.php";
+
+class Zend_Soap_Wsdl_Strategy_DefaultComplexType extends Zend_Soap_Wsdl_Strategy_Abstract
+{
+    /**
+     * Add a complex type by recursivly using all the class properties fetched via Reflection.
+     *
+     * @param  string $type Name of the class to be specified
+     * @return string XSD Type for the given PHP type
+     */
+    public function addComplexType($type)
+    {
+        if(!class_exists($type)) {
+            require_once "Zend/Soap/Wsdl/Exception.php";
+            throw new Zend_Soap_Wsdl_Exception(sprintf(
+                "Cannot add a complex type %s that is not an object or where ".
+                "class could not be found in 'DefaultComplexType' strategy.", $type
+            ));
+        }
+
+        $dom = $this->getContext()->toDomDocument();
+        $class = new ReflectionClass($type);
+
+        $complexType = $dom->createElement('xsd:complexType');
+        $complexType->setAttribute('name', $type);
+
+        $all = $dom->createElement('xsd:all');
+
+        foreach ($class->getProperties() as $property) {
+            if ($property->isPublic() && preg_match_all('/@var\s+([^\s]+)/m', $property->getDocComment(), $matches)) {
+
+                /**
+                 * @todo check if 'xsd:element' must be used here (it may not be compatible with using 'complexType'
+                 * node for describing other classes used as attribute types for current class
+                 */
+                $element = $dom->createElement('xsd:element');
+                $element->setAttribute('name', $property->getName());
+                $element->setAttribute('type', $this->getContext()->getType(trim($matches[1][0])));
+                $all->appendChild($element);
+            }
+        }
+
+        $complexType->appendChild($all);
+        $this->getContext()->getSchema()->appendChild($complexType);
+        $this->getContext()->addType($type);
+
+        return "tns:$type";
+    }
+}

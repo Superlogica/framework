@@ -1,42 +1,190 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Volume.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling cooking volume conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Cooking_Volume
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Cooking_Volume extends Zend_Measure_Abstract
+{
+    const STANDARD = 'CUBIC_METER';
+
+    const CAN_2POINT5       = 'CAN_2POINT5';
+    const CAN_10            = 'CAN_10';
+    const BARREL_WINE       = 'BARREL_WINE';
+    const BARREL            = 'BARREL';
+    const BARREL_US_DRY     = 'BARREL_US_DRY';
+    const BARREL_US_FEDERAL = 'BARREL_US_FEDERAL';
+    const BARREL_US         = 'BARREL_US';
+    const BUCKET            = 'BUCKET';
+    const BUCKET_US         = 'BUCKET_US';
+    const BUSHEL            = 'BUSHEL';
+    const BUSHEL_US         = 'BUSHEL_US';
+    const CENTILITER        = 'CENTILITER';
+    const COFFEE_SPOON      = 'COFFEE_SPOON';
+    const CUBIC_CENTIMETER  = 'CUBIC_CENTIMETER';
+    const CUBIC_DECIMETER   = 'CUBIC_DECIMETER';
+    const CUBIC_FOOT        = 'CUBIC_FOOT';
+    const CUBIC_INCH        = 'CUBIC_INCH';
+    const CUBIC_METER       = 'CUBIC_METER';
+    const CUBIC_MICROMETER  = 'CUBIC_MICROMETER';
+    const CUBIC_MILLIMETER  = 'CUBIC_MILLIMETER';
+    const CUP_CANADA        = 'CUP_CANADA';
+    const CUP               = 'CUP';
+    const CUP_US            = 'CUP_US';
+    const DASH              = 'DASH';
+    const DECILITER         = 'DECILITER';
+    const DEKALITER         = 'DEKALITER';
+    const DEMI              = 'DEMI';
+    const DRAM              = 'DRAM';
+    const DROP              = 'DROP';
+    const FIFTH             = 'FIFTH';
+    const GALLON            = 'GALLON';
+    const GALLON_US_DRY     = 'GALLON_US_DRY';
+    const GALLON_US         = 'GALLON_US';
+    const GILL              = 'GILL';
+    const GILL_US           = 'GILL_US';
+    const HECTOLITER        = 'HECTOLITER';
+    const HOGSHEAD          = 'HOGSHEAD';
+    const HOGSHEAD_US       = 'HOGSHEAD_US';
+    const JIGGER            = 'JIGGER';
+    const KILOLITER         = 'KILOLITER';
+    const LITER             = 'LITER';
+    const MEASURE           = 'MEASURE';
+    const MEGALITER         = 'MEGALITER';
+    const MICROLITER        = 'MICROLITER';
+    const MILLILITER        = 'MILLILITER';
+    const MINIM             = 'MINIM';
+    const MINIM_US          = 'MINIM_US';
+    const OUNCE             = 'OUNCE';
+    const OUNCE_US          = 'OUNCE_US';
+    const PECK              = 'PECK';
+    const PECK_US           = 'PECK_US';
+    const PINCH             = 'PINCH';
+    const PINT              = 'PINT';
+    const PINT_US_DRY       = 'PINT_US_DRY';
+    const PINT_US           = 'PINT_US';
+    const PIPE              = 'PIPE';
+    const PIPE_US           = 'PIPE_US';
+    const PONY              = 'PONY';
+    const QUART_GERMANY     = 'QUART_GERMANY';
+    const QUART_ANCIENT     = 'QUART_ANCIENT';
+    const QUART             = 'QUART';
+    const QUART_US_DRY      = 'QUART_US_DRY';
+    const QUART_US          = 'QUART_US';
+    const SHOT              = 'SHOT';
+    const TABLESPOON        = 'TABLESPOON';
+    const TABLESPOON_UK     = 'TABLESPOON_UK';
+    const TABLESPOON_US     = 'TABLESPOON_US';
+    const TEASPOON          = 'TEASPOON';
+    const TEASPOON_UK       = 'TEASPOON_UK';
+    const TEASPOON_US       = 'TEASPOON_US';
+
+    /**
+     * Calculations for all cooking volume units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'CAN_2POINT5'       => array(array('' => '0.0037854118', '/' => '16', '' => '3.5'), '2.5th can'),
+        'CAN_10'            => array(array('' => '0.0037854118', '*' => '0.75'),          '10th can'),
+        'BARREL_WINE'       => array('0.143201835',   'bbl'),
+        'BARREL'            => array('0.16365924',    'bbl'),
+        'BARREL_US_DRY'     => array(array('' => '26.7098656608', '/' => '231'), 'bbl'),
+        'BARREL_US_FEDERAL' => array('0.1173477658',  'bbl'),
+        'BARREL_US'         => array('0.1192404717',  'bbl'),
+        'BUCKET'            => array('0.01818436',    'bucket'),
+        'BUCKET_US'         => array('0.018927059',   'bucket'),
+        'BUSHEL'            => array('0.03636872',    'bu'),
+        'BUSHEL_US'         => array('0.03523907',    'bu'),
+        'CENTILITER'        => array('0.00001',       'cl'),
+        'COFFEE_SPOON'      => array(array('' => '0.0037854118', '/' => '1536'), 'coffee spoon'),
+        'CUBIC_CENTIMETER'  => array('0.000001',      'cm³'),
+        'CUBIC_DECIMETER'   => array('0.001',         'dm³'),
+        'CUBIC_FOOT'        => array(array('' => '6.54119159', '/' => '231'),   'ft³'),
+        'CUBIC_INCH'        => array(array('' => '0.0037854118', '/' => '231'), 'in³'),
+        'CUBIC_METER'       => array('1',             'm³'),
+        'CUBIC_MICROMETER'  => array('1.0e-18',       'µm³'),
+        'CUBIC_MILLIMETER'  => array('1.0e-9',        'mm³'),
+        'CUP_CANADA'        => array('0.0002273045',  'c'),
+        'CUP'               => array('0.00025',       'c'),
+        'CUP_US'            => array(array('' => '0.0037854118', '/' => '16'),   'c'),
+        'DASH'              => array(array('' => '0.0037854118', '/' => '6144'), 'ds'),
+        'DECILITER'         => array('0.0001',        'dl'),
+        'DEKALITER'         => array('0.001',         'dal'),
+        'DEMI'              => array('0.00025',       'demi'),
+        'DRAM'              => array(array('' => '0.0037854118', '/' => '1024'),  'dr'),
+        'DROP'              => array(array('' => '0.0037854118', '/' => '73728'), 'ggt'),
+        'FIFTH'             => array('0.00075708236', 'fifth'),
+        'GALLON'            => array('0.00454609',    'gal'),
+        'GALLON_US_DRY'     => array('0.0044048838',  'gal'),
+        'GALLON_US'         => array('0.0037854118',  'gal'),
+        'GILL'              => array(array('' => '0.00454609', '/' => '32'),   'gi'),
+        'GILL_US'           => array(array('' => '0.0037854118', '/' => '32'), 'gi'),
+        'HECTOLITER'        => array('0.1',           'hl'),
+        'HOGSHEAD'          => array('0.28640367',    'hhd'),
+        'HOGSHEAD_US'       => array('0.2384809434',  'hhd'),
+        'JIGGER'            => array(array('' => '0.0037854118', '/' => '128', '*' => '1.5'), 'jigger'),
+        'KILOLITER'         => array('1',             'kl'),
+        'LITER'             => array('0.001',         'l'),
+        'MEASURE'           => array('0.0077',        'measure'),
+        'MEGALITER'         => array('1000',          'Ml'),
+        'MICROLITER'        => array('1.0e-9',        'µl'),
+        'MILLILITER'        => array('0.000001',      'ml'),
+        'MINIM'             => array(array('' => '0.00454609', '/' => '76800'),  'min'),
+        'MINIM_US'          => array(array('' => '0.0037854118','/' => '61440'), 'min'),
+        'OUNCE'             => array(array('' => '0.00454609', '/' => '160'),    'oz'),
+        'OUNCE_US'          => array(array('' => '0.0037854118', '/' => '128'),  'oz'),
+        'PECK'              => array('0.00909218',    'pk'),
+        'PECK_US'           => array('0.0088097676',  'pk'),
+        'PINCH'             => array(array('' => '0.0037854118', '/' => '12288'), 'pinch'),
+        'PINT'              => array(array('' => '0.00454609', '/' => '8'),       'pt'),
+        'PINT_US_DRY'       => array(array('' => '0.0044048838', '/' => '8'),     'pt'),
+        'PINT_US'           => array(array('' => '0.0037854118', '/' => '8'),     'pt'),
+        'PIPE'              => array('0.49097772',    'pipe'),
+        'PIPE_US'           => array('0.4769618868',  'pipe'),
+        'PONY'              => array(array('' => '0.0037854118', '/' => '128'), 'pony'),
+        'QUART_GERMANY'     => array('0.00114504',    'qt'),
+        'QUART_ANCIENT'     => array('0.00108',       'qt'),
+        'QUART'             => array(array('' => '0.00454609', '/' => '4'),     'qt'),
+        'QUART_US_DRY'      => array(array('' => '0.0044048838', '/' => '4'),   'qt'),
+        'QUART_US'          => array(array('' => '0.0037854118', '/' => '4'),   'qt'),
+        'SHOT'              => array(array('' => '0.0037854118', '/' => '128'), 'shot'),
+        'TABLESPOON'        => array('0.000015',      'tbsp'),
+        'TABLESPOON_UK'     => array(array('' => '0.00454609', '/' => '320'),   'tbsp'),
+        'TABLESPOON_US'     => array(array('' => '0.0037854118', '/' => '256'), 'tbsp'),
+        'TEASPOON'          => array('0.000005',      'tsp'),
+        'TEASPOON_UK'       => array(array('' => '0.00454609', '/' => '1280'),  'tsp'),
+        'TEASPOON_US'       => array(array('' => '0.0037854118', '/' => '768'), 'tsp'),
+        'STANDARD'          => 'CUBIC_METER'
+    );
+}

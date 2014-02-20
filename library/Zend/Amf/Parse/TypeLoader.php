@@ -1,67 +1,215 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @subpackage Parse
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+require_once 'Zend/Amf/Value/Messaging/AcknowledgeMessage.php';
+require_once 'Zend/Amf/Value/Messaging/AsyncMessage.php';
+require_once 'Zend/Amf/Value/Messaging/CommandMessage.php';
+require_once 'Zend/Amf/Value/Messaging/ErrorMessage.php';
+require_once 'Zend/Amf/Value/Messaging/RemotingMessage.php';
+
+/**
+ * Loads a local class and executes the instantiation of that class.
+ *
+ * @todo       PHP 5.3 can drastically change this class w/ namespace and the new call_user_func w/ namespace
+ * @package    Zend_Amf
+ * @subpackage Parse
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+final class Zend_Amf_Parse_TypeLoader
+{
+    /**
+     * @var string callback class
+     */
+    public static $callbackClass;
+
+    /**
+     * @var array AMF class map
+     */
+    public static $classMap = array (
+        'flex.messaging.messages.AcknowledgeMessage' => 'Zend_Amf_Value_Messaging_AcknowledgeMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_AsyncMessage',
+        'flex.messaging.messages.CommandMessage'     => 'Zend_Amf_Value_Messaging_CommandMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_ErrorMessage',
+        'flex.messaging.messages.RemotingMessage'    => 'Zend_Amf_Value_Messaging_RemotingMessage',
+        'flex.messaging.io.ArrayCollection'          => 'Zend_Amf_Value_Messaging_ArrayCollection',
+    );
+
+    /**
+     * @var array Default class map
+     */
+    protected static $_defaultClassMap = array(
+        'flex.messaging.messages.AcknowledgeMessage' => 'Zend_Amf_Value_Messaging_AcknowledgeMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_AsyncMessage',
+        'flex.messaging.messages.CommandMessage'     => 'Zend_Amf_Value_Messaging_CommandMessage',
+        'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_ErrorMessage',
+        'flex.messaging.messages.RemotingMessage'    => 'Zend_Amf_Value_Messaging_RemotingMessage',
+        'flex.messaging.io.ArrayCollection'          => 'Zend_Amf_Value_Messaging_ArrayCollection',
+    );
+    
+    /**
+     * @var Zend_Loader_PluginLoader_Interface
+     */
+    protected static $_resourceLoader = null;
+
+
+    /**
+     * Load the mapped class type into a callback.
+     *
+     * @param  string $className
+     * @return object|false
+     */
+    public static function loadType($className)
+    {
+        $class    = self::getMappedClassName($className);
+        if(!$class) {
+            $class = str_replace('.', '_', $className);
+        }
+        if (!class_exists($class)) {
+            return "stdClass";
+        }
+        return $class;
+    }
+
+    /**
+     * Looks up the supplied call name to its mapped class name
+     *
+     * @param  string $className
+     * @return string
+     */
+    public static function getMappedClassName($className)
+    {
+        $mappedName = array_search($className, self::$classMap);
+
+        if ($mappedName) {
+            return $mappedName;
+        }
+
+        $mappedName = array_search($className, array_flip(self::$classMap));
+
+        if ($mappedName) {
+            return $mappedName;
+        }
+
+        return false;
+    }
+
+    /**
+     * Map PHP class names to ActionScript class names
+     *
+     * Allows users to map the class names of there action script classes
+     * to the equivelent php class name. Used in deserialization to load a class
+     * and serialiation to set the class name of the returned object.
+     *
+     * @param  string $asClassName
+     * @param  string $phpClassName
+     * @return void
+     */
+    public static function setMapping($asClassName, $phpClassName)
+    {
+        self::$classMap[$asClassName] = $phpClassName;
+    }
+
+    /**
+     * Reset type map
+     *
+     * @return void
+     */
+    public static function resetMap()
+    {
+        self::$classMap = self::$_defaultClassMap;
+    }
+    
+    /**
+     * Set loader for resource type handlers
+     * 
+     * @param Zend_Loader_PluginLoader_Interface $loader  
+     */
+    public static function setResourceLoader(Zend_Loader_PluginLoader_Interface $loader)
+    {
+    	self::$_resourceLoader = $loader;
+    }
+    
+    /**
+	 * Add directory to the list of places where to look for resource handlers
+	 *
+     * @param string $prefix
+     * @param string $dir
+     */
+    public static function addResourceDirectory($prefix, $dir)
+    {
+    	if(self::$_resourceLoader) {
+    		self::$_resourceLoader->addPrefixPath($prefix, $dir);
+    	} 
+    }
+    
+    /**
+     * Get plugin class that handles this resource
+     * 
+     * @param resource $resource Resource type
+     * @return string Class name
+     */
+    public static function getResourceParser($resource)
+    {
+    	if(self::$_resourceLoader) {
+   			$type = preg_replace("/[^A-Za-z0-9_]/", " ", get_resource_type($resource));
+   			$type = str_replace(" ","", ucwords($type));
+   			return self::$_resourceLoader->load($type);
+    	}
+    	return false;
+    }
+    
+    /**
+     * Convert resource to a serializable object
+     * 
+     * @param resource $resource
+     * @return mixed
+     */
+    public static function handleResource($resource)
+    {
+		if(!self::$_resourceLoader) {
+			require_once 'Zend/Amf/Exception.php';
+			throw new Zend_Amf_Exception('Unable to handle resources - resource plugin loader not set');
+		}
+    	try {
+    		while(is_resource($resource)) {
+				$resclass = self::getResourceParser($resource);
+				if(!$resclass) {
+					require_once 'Zend/Amf/Exception.php';
+					throw new Zend_Amf_Exception('Can not serialize resource type: '. get_resource_type($resource));
+				}
+				$parser = new $resclass();
+				if(is_callable(array($parser, 'parse'))) {
+					$resource = $parser->parse($resource);
+				} else {
+					require_once 'Zend/Amf/Exception.php';
+					throw new Zend_Amf_Exception("Could not call parse() method on class $resclass");
+				}
+    		}
+			return $resource;	
+		} catch(Zend_Amf_Exception $e) {
+			throw $e;
+		} catch(Exception $e) {
+			require_once 'Zend/Amf/Exception.php';
+			throw new Zend_Amf_Exception('Can not serialize resource type: '. get_resource_type($resource));
+		}
+    }
+}

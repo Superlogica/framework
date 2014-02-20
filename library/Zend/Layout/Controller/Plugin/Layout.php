@@ -1,52 +1,155 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-pjL+tvWkCUzH7mvNaO2mPd7IeRSBUMy=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Plugins
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Plugin_Abstract */
+require_once 'Zend/Controller/Plugin/Abstract.php';
+
+/**
+ * Render layouts
+ *
+ * @uses       Zend_Controller_Plugin_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Plugins
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Layout.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+class Zend_Layout_Controller_Plugin_Layout extends Zend_Controller_Plugin_Abstract
+{
+    protected $_layoutActionHelper = null;
+    
+    /**
+     * @var Zend_Layout
+     */
+    protected $_layout;
+
+    /**
+     * Constructor
+     * 
+     * @param  Zend_Layout $layout 
+     * @return void
+     */
+    public function __construct(Zend_Layout $layout = null)
+    {
+        if (null !== $layout) {
+            $this->setLayout($layout);
+        }
+    }
+
+    /**
+     * Retrieve layout object
+     *
+     * @return Zend_Layout
+     */
+    public function getLayout()
+    {
+        return $this->_layout;
+    }
+
+    /**
+     * Set layout object
+     *
+     * @param  Zend_Layout $layout
+     * @return Zend_Layout_Controller_Plugin_Layout
+     */
+    public function setLayout(Zend_Layout $layout)
+    {
+        $this->_layout = $layout;
+        return $this;
+    }
+
+    /**
+     * Set layout action helper
+     * 
+     * @param  Zend_Layout_Controller_Action_Helper_Layout $layoutActionHelper 
+     * @return Zend_Layout_Controller_Plugin_Layout
+     */
+    public function setLayoutActionHelper(Zend_Layout_Controller_Action_Helper_Layout $layoutActionHelper)
+    {
+        $this->_layoutActionHelper = $layoutActionHelper;
+        return $this;
+    }
+
+    /**
+     * Retrieve layout action helper
+     * 
+     * @return Zend_Layout_Controller_Action_Helper_Layout
+     */
+    public function getLayoutActionHelper()
+    {
+        return $this->_layoutActionHelper;
+    }
+    
+    /**
+     * postDispatch() plugin hook -- render layout
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    public function postDispatch(Zend_Controller_Request_Abstract $request)
+    {
+        $layout = $this->getLayout();
+        $helper = $this->getLayoutActionHelper();
+
+        // Return early if forward detected
+        if (!$request->isDispatched() 
+            || ($layout->getMvcSuccessfulActionOnly() 
+                && (!empty($helper) && !$helper->isActionControllerSuccessful()))) 
+        {
+            return;
+        }
+
+        // Return early if layout has been disabled
+        if (!$layout->isEnabled()) {
+            return;
+        }
+
+        $response   = $this->getResponse();
+        $content    = $response->getBody(true);
+        $contentKey = $layout->getContentKey();
+
+        if (isset($content['default'])) {
+            $content[$contentKey] = $content['default'];
+        }
+        if ('default' != $contentKey) {
+            unset($content['default']);
+        }
+
+        $layout->assign($content);
+        
+        $fullContent = null;
+        $obStartLevel = ob_get_level();
+        try {
+            $fullContent = $layout->render();
+            $response->setBody($fullContent);
+        } catch (Exception $e) {
+            while (ob_get_level() > $obStartLevel) {
+                $fullContent .= ob_get_clean();
+            }
+            $request->setParam('layoutFullContent', $fullContent);
+            $request->setParam('layoutContent', $layout->content);
+            $response->setBody(null);
+            throw $e;
+        }
+
+    }
+}

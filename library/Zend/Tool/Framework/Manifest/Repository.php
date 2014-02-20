@@ -1,101 +1,300 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Registry_EnabledInterface
+ */
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Manifest_Repository
+    implements Zend_Tool_Framework_Registry_EnabledInterface, IteratorAggregate, Countable
+{
+
+    /**
+     * @var Zend_Tool_Framework_Provider_Registry_Interface
+     */
+    protected $_registry = null;
+    
+    /**
+     * @var array
+     */
+    protected $_manifests = array();
+
+    /**
+     * @var array Array of Zend_Tool_Framework_Metadata_Interface
+     */
+    protected $_metadatas = array();
+
+    /**
+     * setRegistry()
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     * @return unknown
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+    
+    /**
+     * addManifest() - Add a manifest for later processing
+     *
+     * @param Zend_Tool_Framework_Manifest_Interface $manifest
+     * @return Zend_Tool_Framework_Manifest_Repository
+     */
+    public function addManifest(Zend_Tool_Framework_Manifest_Interface $manifest)
+    {
+        // we need to get an index number so that manifests with 
+        // higher indexes have priority over others
+        $index = count($this->_manifests);
+
+        if ($manifest instanceof Zend_Tool_Framework_Registry_EnabledInterface) {
+            $manifest->setRegistry($this->_registry);
+        }
+        
+        // if the manifest supplies a getIndex() method, use it
+        if ($manifest instanceof Zend_Tool_Framework_Manifest_Indexable) {
+            $index = $manifest->getIndex();
+        }
+
+        // get the required objects from the framework registry
+        $actionRepository   = $this->_registry->getActionRepository();
+        $providerRepository = $this->_registry->getProviderRepository();
+        
+        // load providers if interface supports that method
+        if ($manifest instanceof Zend_Tool_Framework_Manifest_ProviderManifestable) {
+            $providers = $manifest->getProviders();
+            if (!is_array($providers)) {
+                $providers = array($providers);
+            }
+
+            foreach ($providers as $provider) {
+                if (!$provider instanceof Zend_Tool_Framework_Provider_Interface) {
+                    require_once 'Zend/Tool/Framework/Manifest/Exception.php';
+                    throw new Zend_Tool_Framework_Manifest_Exception(
+                        'A provider provided by the ' . get_class($manifest) 
+                        . ' does not implement Zend_Tool_Framework_Provider_Interface'
+                        );
+                }
+                if (!$providerRepository->hasProvider($provider, false)) {
+                    $providerRepository->addProvider($provider);
+                }
+            }
+
+        }
+
+        // load actions if interface supports that method
+        if ($manifest instanceof Zend_Tool_Framework_Manifest_ActionManifestable) {
+            $actions = $manifest->getActions();
+            if (!is_array($actions)) {
+                $actions = array($actions);
+            }
+
+            foreach ($actions as $action) {
+                if (is_string($action)) {
+                    $action = new Zend_Tool_Framework_Action_Base($action);
+                }
+                $actionRepository->addAction($action);
+            }
+        }
+
+        // should we detect collisions here? does it even matter?
+        $this->_manifests[$index] = $manifest;
+        ksort($this->_manifests);
+        
+        return $this;
+    }
+
+    /**
+     * getManifests()
+     *
+     * @return Zend_Tool_Framework_Manifest_Interface[]
+     */
+    public function getManifests()
+    {
+        return $this->_manifests;
+    }
+    
+    /**
+     * addMetadata() - add a metadata peice by peice
+     *
+     * @param Zend_Tool_Framework_Manifest_Metadata $metadata
+     * @return Zend_Tool_Framework_Manifest_Repository
+     */
+    public function addMetadata(Zend_Tool_Framework_Metadata_Interface $metadata)
+    {
+        $this->_metadatas[] = $metadata;
+        return $this;
+    }
+    
+    /**
+     * process() - Process is expected to be called at the end of client construction time.
+     * By this time, the loader has run and loaded any found manifests into the repository 
+     * for loading
+     *
+     * @return Zend_Tool_Framework_Manifest_Repository
+     */
+    public function process()
+    {
+
+        foreach ($this->_manifests as $manifest) {
+            if ($manifest instanceof Zend_Tool_Framework_Manifest_MetadataManifestable) {
+                $metadatas = $manifest->getMetadata();
+                if (!is_array($metadatas)) {
+                    $metadatas = array($metadatas);
+                }
+
+                foreach ($metadatas as $metadata) {
+                    if (!$metadata instanceof Zend_Tool_Framework_Metadata_Interface) {
+                        require_once 'Zend/Tool/Framework/Manifest/Exception.php';
+                        throw new Zend_Tool_Framework_Manifest_Exception(
+                            'A Zend_Tool_Framework_Metadata_Interface object was not found in manifest ' . get_class($manifest)
+                            );
+                    }
+
+                    $this->addMetadata($metadata);
+                }
+
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * getMetadatas() - This is the main search function for the repository.
+     * 
+     * @example This will retrieve all metadata that matches the following criteria
+     *      $manifestRepo->getMetadatas(array(
+     *          'providerName' => 'Version',
+     *          'actionName' => 'show'
+     *          ));
+     * 
+     * @param array $searchProperties
+     * @param bool $includeNonExistentProperties
+     * @return Zend_Tool_Framework_Manifest_Metadata[]
+     */
+    public function getMetadatas(Array $searchProperties = array(), $includeNonExistentProperties = true)
+    {
+
+        $returnMetadatas = array();
+        
+        // loop through the metadatas so that we can search each individual one
+        foreach ($this->_metadatas as $metadata) {
+
+            // each value will be retrieved from the metadata, each metadata should
+            // implement a getter method to retrieve the value
+            foreach ($searchProperties as $searchPropertyName => $searchPropertyValue) {
+                if (method_exists($metadata, 'get' . $searchPropertyName)) {
+                    if ($metadata->{'get' . $searchPropertyName}() != $searchPropertyValue) {
+                        // if the metadata supports a specific property but the value does not
+                        // match, move on
+                        continue 2;
+                    }
+                } elseif (!$includeNonExistentProperties) {
+                    // if the option $includeNonExitentProperties is false, then move on as
+                    // we dont want to include this metadata if non existent
+                    // search properties are not inside the target (current) metadata
+                    continue 2;
+                }
+            }
+
+            // all searching has been accounted for, if we reach this point, then the metadata
+            // is good and we can return it
+            $returnMetadatas[] = $metadata;
+
+        }
+
+        return $returnMetadatas;
+    }
+    
+    /**
+     * getMetadata() - This will proxy to getMetadatas(), but will only return a single metadata.  This method
+     * should be used in situations where the search criteria is known to only find a single metadata object
+     *
+     * @param array $searchProperties
+     * @param bool $includeNonExistentProperties
+     * @return Zend_Tool_Framework_Manifest_Metadata
+     */
+    public function getMetadata(Array $searchProperties = array(), $includeNonExistentProperties = true)
+    {
+        $metadatas = $this->getMetadatas($searchProperties, $includeNonExistentProperties);
+        return array_shift($metadatas);
+    }
+
+    /**
+     * __toString() - cast to string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $metadatasByType = array();
+
+        foreach ($this->_metadatas as $metadata) {
+            if (!array_key_exists($metadata->getType(), $metadatasByType)) {
+                $metadatasByType[$metadata->getType()] = array();
+            }
+            $metadatasByType[$metadata->getType()][] = $metadata;
+        }
+
+        $string = '';
+        foreach ($metadatasByType as $type => $metadatas) {
+            $string .= $type . PHP_EOL;
+            foreach ($metadatas as $metadata) {
+                $metadataString = '    ' . $metadata->__toString() . PHP_EOL;
+                //$metadataString = str_replace(PHP_EOL, PHP_EOL . '    ', $metadataString);
+                $string .= $metadataString;
+            }
+        }
+
+        return $string;
+    }
+    
+    /**
+     * count() - required by the Countable Interface
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_metadatas);
+    }
+    
+    /**
+     * getIterator() - required by the IteratorAggregate interface
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->_metadatas);
+    }
+
+}

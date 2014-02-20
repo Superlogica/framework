@@ -1,38 +1,119 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59Mi3Vq4T/RonHkOtX20epiroFqUmSKfiRMiu2B2edHyVNefRukb0Ie20s4vwFf0mGW1GGGA
-sskdZdNASbwbxz81XEofu/CgNVB2jWGvVx/dpJW8BC9X+ow0EBiNSGkdfC6A2jKofSA7PJZs7Vvg
-b4S6lZQqz2cKjcpJUZ39GLDnpLx40aDAa7CtdPKnpQBw3941QT0EwcUDdIJDsFgKFHuzEkrTUURc
-RrzsTiKDbvvKXBWUJm8mn4kJIPpDKor7T+KlBeH2Q1PWVop5gLaVjhrGhTKU5iLap65MuPJHgPLE
-6xoYfGqGq4MVEEFpJYwo+Sb1mUki0N5VfFLDuZaY3wEGSjvZbvYbz01BlwkW3Ef+B99a1jM6mW/5
-05L1sqzC2Wp9bocVB9C6wUD/+SkH+zlHgeLrjI6t8wjDFoM+OyCfx7TKqtL+xHlY/oTnqxA4Lebc
-7xIr1+mgAsLCu2jIeVzaipc3WNGFbG+qwRnQvhY0CPGQV33q9WjUMo43aatrsjc7VmHobo0p31HK
-hGEO1qh0OSZFy691WvhU/s1p+NxN/zHNJuGN0p1EMeQ9DlZ1Ok91GHg7rgVe6uz9TBELhXgFemWJ
-UzNvJQZrTBm8dv2IwtVovbKBPbY3V6i1aax/qKazaRSsrybFUo35R8Hiw7E0vMFgLh4da+nfcLHQ
-45glsVj671SaVnUaL6oSdUL8kz9HVwj3Mhw/zWNUq6jt0eFFAjeOZmzpoaolu77NBRpDLATUuG0f
-sIfJO7AIDXiN7cLP2Fz1BZa44bejbVzAkal9Xi+h+ndzauEQn6cgGmnO2WdUa82FpMJaaNy7hoI+
-HQYQzelHkkF+dYYWx9EO68uhnbnbaFkCuk6duUcQE4FMXZC67Ow/OQJyyU2aVeS8VZrtBehHzbWb
-QXbyWWmZeSiNn4QOicYGtolHPTO3/iTzb3eYVbi4BIlOiYF0xeWmL8Q6Td35e/BMeIxCHC7ZGV+6
-3GakAKhbgfl2lbsPn2KhRs/fa0BlNtPTW5W4CCpGIaDNvCG5dazySKPqkteu2wGCdajs+1EcgPCD
-nBtanHZMJJEQodrPdhxKVI0jfEXu3AAqf6D1PqwRfBeITbIDKj1XaFw72wF+IXwE0PklYlxfnSGo
-7QGo3tgm3XdKAWg1mhesiXXS71kw7uOHZ9ghUHhHmXFwc2IF4ADoiIAmfWldQfxdF/BVH4AX2vR0
-zf0LaEZ39u3meX7604oOoYj9ZV2odaCMs5lhQr9CeNmvkZxwIqTk6OF3UmPTkDyhOfCojl4BsLHw
-BAf3iNY6RDCAWYjselzkYXHhseXw6PXUifLJPiM4tb2+SgOzVP3S3j+zxboJH7eZsuvzeojtnh2B
-zRw3S+IF7KjMEZYdaoY6/hwiqbZcheLnMKW4vUFnLJ7d7BBi2zkYZ0NjeOEsZDbR9jpUOedKo2ew
-ftcrKCBFs/jbFl+CJ9WjWPFMIqEZU8xiPQY+3zy9mo/vxTyRBvAfvLOD4khuOidHWPaz5Bm6LH2X
-FpFRiWq4ZGa5IhKoRLhthrqu2BqTN0zvxqlR0rUuYvSpL9hgV68ay5wPGBjWQsCCxIAMyN9LB69b
-MMNOO20Q1cisfFM2uJMMLy+Kln/6OGFmhKr9XTBBRgd7KbR/6eHW795OGcap7wLy3r+cJRKI90ud
-ruQJK07/fqDDKeiD2zqiCey17DVbrQOovsrRBkkFuMv38n6uyAU4tNCm95nplmQDIo11LTGX+WVa
-UEudjUWpYqKSY64wVmpBDsbmYbpDB63Tgb5I7Z12y+6KStbL9A7Kci2oaoMwxKAI4wyTU8UhvfBw
-tUG43DAelgX3Z9yXLFGWmkfUxvy9CUYizMBLI/xZIrdpecPTOKfLMZ0WZeEhZF8pxQNtnFKwogDO
-UtJRvtNnpaYSLiYQLZDpDQQ4lp7u4ERPuGvcqE9TGgT4v+kWiV1AW7Y/YFagJ+yGv/LTesoi/bwE
-9+L72bEdt2YlqUZdYja+hO39XYsbnl5bVHEJ3vzfk19M9V/FbyJ5nJFVG+bRhfAT/zgQE8SP6ijN
-J9nbGKN7/PfJNfd/1cAPiB1QvFO8fkGuzabhEQwpBrPhE0ccX5fAgskrtbmLgFKqYKWv8XE1pfmD
-kEYjoT1ogs/Rttj1ymBJMAYi1MTff7f/P4rzd7NtCjT1xuE6DAItr6x89wRKBOw2KODQwK169w5w
-rJ6S3YmTvj00zH5n2bfjJUhAmniacWROrVGPX5A1Ldhbh9HZPvGX3hrKLhs6SRGCJleR7ZLXwhAh
-8foyXNDFfmxUE4/Uamd3Mma+UhjvjZJhmzbrdRueYxXZsiuunZuuPvAWs2iFAq4WCNNRQcMD709s
-1BMYjFv/onUFQB1qoZTXZGwImcLwItROyWypR/EBGbagsNahd4EANnsVrGcig/dykNKPYRRBTT9O
-qjrlYq3t9UANCbrOLard0EiFpcZ5rWhAoSMLm163YxoZqdzLcvTpMj4sj7Pt6etwUGYZvChcvVuv
-09+DkT3tljUXOkBERB/QFhP4i/1WfH34Gh5oaWDHwhLjb5BQzJQsbmVyGK5Qr0kG2cW7a70GBvoL
-enbJCRTmO6sfv3LFkjDfG/soEjdbIG3iniax1o5/NTDFG4cFvbjSfyXnAhy=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaContent
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaContent.php';
+
+/**
+ * Represents the media:content element of Media RSS.
+ * Represents media objects.  Multiple media objects representing
+ * the same content can be represented using a
+ * media:group (Zend_Gdata_Media_Extension_MediaGroup) element.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_Extension_MediaContent extends Zend_Gdata_Media_Extension_MediaContent
+{
+    protected $_rootElement = 'content';
+    protected $_rootNamespace = 'media';
+
+    /*
+     * Format of the video
+     * Optional.
+     *
+     * @var int
+     */
+    protected $_format = null;
+
+
+    function __construct() {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct();
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_format!= null) {
+            $element->setAttributeNS($this->lookupNamespace('yt'), 'yt:format', $this->_format);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        $absoluteAttrName = $attribute->namespaceURI . ':' . $attribute->localName;
+        if ($absoluteAttrName == $this->lookupNamespace('yt') . ':' . 'format') {
+            $this->_format = $attribute->nodeValue;
+        } else {
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Returns the format of the media
+     * Optional.
+     *
+     * @return int  The format of the media
+     */
+    public function getFormat()
+    {
+        return $this->_format;
+    }
+
+    /**
+     * Sets the format of the media
+     *
+     * @param int $value    Format of the media
+     * @return Zend_Gdata_YouTube_Extension_MediaContent  Provides a fluent interface
+     *
+     */
+    public function setFormat($value)
+    {
+        $this->_format = $value;
+        return $this;
+    }
+
+}

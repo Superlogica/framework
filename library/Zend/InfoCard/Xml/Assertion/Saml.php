@@ -1,94 +1,284 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Rz8=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Saml.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Element
+ */
+require_once 'Zend/InfoCard/Xml/Element.php';
+
+/**
+ * Zend_InfoCard_Xml_Assertion_Interface
+ */
+require_once 'Zend/InfoCard/Xml/Assertion/Interface.php';
+
+/**
+ * A Xml Assertion Document in SAML Token format
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Xml_Assertion_Saml
+    extends Zend_InfoCard_Xml_Element
+    implements Zend_InfoCard_Xml_Assertion_Interface
+{
+
+    /**
+     * Audience Restriction Condition
+     */
+    const CONDITION_AUDIENCE = 'AudienceRestrictionCondition';
+
+    /**
+     * The URI for a 'bearer' confirmation
+     */
+    const CONFIRMATION_BEARER = 'urn:oasis:names:tc:SAML:1.0:cm:bearer';
+
+    /**
+     * The amount of time in seconds to buffer when checking conditions to ensure
+     * that differences between client/server clocks don't interfer too much
+     */
+    const CONDITION_TIME_ADJ = 3600; // +- 5 minutes
+
+    protected function _getServerName() {
+        return $_SERVER['SERVER_NAME'];
+    }
+
+    protected function _getServerPort() {
+        return $_SERVER['SERVER_PORT'];
+    }
+
+    /**
+     * Validate the conditions array returned from the getConditions() call
+     *
+     * @param array $conditions An array of condtions for the assertion taken from getConditions()
+     * @return mixed Boolean true on success, an array of condition, error message on failure
+     */
+    public function validateConditions(Array $conditions)
+    {
+
+        $currentTime = time();
+
+        if(!empty($conditions)) {
+
+            foreach($conditions as $condition => $conditionValue) {
+                switch(strtolower($condition)) {
+                    case 'audiencerestrictioncondition':
+
+                        $serverName = $this->_getServerName();
+                        $serverPort = $this->_getServerPort();
+
+                        $self_aliases[] = $serverName;
+                        $self_aliases[] = "{{$serverName}:{$serverPort}";
+
+                        $found = false;
+                        if(is_array($conditionValue)) {
+                            foreach($conditionValue as $audience) {
+
+                                list(,,$audience) = explode('/', $audience);
+                                if(in_array($audience, $self_aliases)) {
+                                    $found = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(!$found) {
+                            return array($condition, 'Could not find self in allowed audience list');
+                        }
+
+                        break;
+                    case 'notbefore':
+                        $notbeforetime = strtotime($conditionValue);
+
+                        if($currentTime < $notbeforetime) {
+                            if($currentTime + self::CONDITION_TIME_ADJ < $notbeforetime) {
+                                return array($condition, 'Current time is before specified window');
+                            }
+                        }
+
+                        break;
+                    case 'notonorafter':
+                        $notonoraftertime = strtotime($conditionValue);
+
+                        if($currentTime >= $notonoraftertime) {
+                            if($currentTime - self::CONDITION_TIME_ADJ >= $notonoraftertime) {
+                                return array($condition, 'Current time is after specified window');
+                            }
+                        }
+
+                        break;
+
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Get the Assertion URI for this type of Assertion
+     *
+     * @return string the Assertion URI
+     */
+    public function getAssertionURI()
+    {
+        return Zend_InfoCard_Xml_Assertion::TYPE_SAML;
+    }
+
+    /**
+     * Get the Major Version of the SAML Assertion
+     *
+     * @return integer The major version number
+     */
+    public function getMajorVersion()
+    {
+        return (int)(string)$this['MajorVersion'];
+    }
+
+    /**
+     * The Minor Version of the SAML Assertion
+     *
+     * @return integer The minor version number
+     */
+    public function getMinorVersion()
+    {
+        return (int)(string)$this['MinorVersion'];
+    }
+
+    /**
+     * Get the Assertion ID of the assertion
+     *
+     * @return string The Assertion ID
+     */
+    public function getAssertionID()
+    {
+        return (string)$this['AssertionID'];
+    }
+
+    /**
+     * Get the Issuer URI of the assertion
+     *
+     * @return string the URI of the assertion Issuer
+     */
+    public function getIssuer()
+    {
+        return (string)$this['Issuer'];
+    }
+
+    /**
+     * Get the Timestamp of when the assertion was issued
+     *
+     * @return integer a UNIX timestamp representing when the assertion was issued
+     */
+    public function getIssuedTimestamp()
+    {
+        return strtotime((string)$this['IssueInstant']);
+    }
+
+    /**
+     * Return an array of conditions which the assertions are predicated on
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @return array an array of conditions
+     */
+    public function getConditions()
+    {
+
+        list($conditions) = $this->xpath("//saml:Conditions");
+
+        if(!($conditions instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to find the saml:Conditions block");
+        }
+
+        $retval = array();
+
+        foreach($conditions->children('urn:oasis:names:tc:SAML:1.0:assertion') as $key => $value) {
+            switch($key) {
+                case self::CONDITION_AUDIENCE:
+                    foreach($value->children('urn:oasis:names:tc:SAML:1.0:assertion') as $audience_key => $audience_value) {
+                        if($audience_key == 'Audience') {
+                            $retval[$key][] = (string)$audience_value;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        $retval['NotBefore'] = (string)$conditions['NotBefore'];
+        $retval['NotOnOrAfter'] = (string)$conditions['NotOnOrAfter'];
+
+        return $retval;
+    }
+
+    /**
+     * Get they KeyInfo element for the Subject KeyInfo block
+     *
+     * @todo Not Yet Implemented
+     * @ignore
+     */
+    public function getSubjectKeyInfo()
+    {
+        /**
+         * @todo Not sure if this is part of the scope for now..
+         */
+
+        if($this->getConfirmationMethod() == self::CONFIRMATION_BEARER) {
+            throw new Zend_InfoCard_Xml_Exception("Cannot get Subject Key Info when Confirmation Method was Bearer");
+        }
+    }
+
+    /**
+     * Return the Confirmation Method URI used in the Assertion
+     *
+     * @return string The confirmation method URI
+     */
+    public function getConfirmationMethod()
+    {
+        list($confirmation) = $this->xPath("//saml:ConfirmationMethod");
+        return (string)$confirmation;
+    }
+
+    /**
+     * Return an array of attributes (claims) contained within the assertion
+     *
+     * @return array An array of attributes / claims within the assertion
+     */
+    public function getAttributes()
+    {
+        $attributes = $this->xPath('//saml:Attribute');
+
+        $retval = array();
+        foreach($attributes as $key => $value) {
+
+            $retkey = (string)$value['AttributeNamespace'].'/'.(string)$value['AttributeName'];
+
+            $retval[$retkey]['name'] = (string)$value['AttributeName'];
+            $retval[$retkey]['namespace'] = (string)$value['AttributeNamespace'];
+
+            list($aValue) = $value->children('urn:oasis:names:tc:SAML:1.0:assertion');
+            $retval[$retkey]['value'] = (string)$aValue;
+        }
+
+        return $retval;
+    }
+}

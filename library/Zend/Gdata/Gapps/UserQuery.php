@@ -1,36 +1,146 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-bTeaxJQHH8nBjaNqhufRImdlcHOl7Qof724JpG==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Gapps_Query
+ */
+require_once('Zend/Gdata/Gapps/Query.php');
+
+/**
+ * Assists in constructing queries for Google Apps user entries. 
+ * Instances of this class can be provided in many places where a URL is 
+ * required.
+ * 
+ * For information on submitting queries to a server, see the Google Apps
+ * service class, Zend_Gdata_Gapps.
+ * 
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_UserQuery extends Zend_Gdata_Gapps_Query
+{
+
+    /**
+     * If not null, specifies the username of the user who should be 
+     * retrieved by this query.
+     * 
+     * @var string
+     */
+    protected $_username = null;
+
+    /**
+     * Create a new instance.
+     * 
+     * @param string $domain (optional) The Google Apps-hosted domain to use 
+     *          when constructing query URIs.
+     * @param string $username (optional) Value for the username 
+     *          property.
+     * @param string $startUsername (optional) Value for the 
+     *          startUsername property.
+     */
+    public function __construct($domain = null, $username = null, 
+            $startUsername = null)
+    {
+        parent::__construct($domain);
+        $this->setUsername($username);
+        $this->setStartUsername($startUsername);
+    }
+
+    /**
+     * Set the username to query for. When set, only users with a username 
+     * matching this value will be returned in search results. Set to 
+     * null to disable filtering by username.
+     * 
+     * @see getUsername
+     * @param string $value The username to filter search results by, or null to 
+     *              disable.
+     */
+    public function setUsername($value)
+    {
+        $this->_username = $value;
+    }
+
+    /**
+     * Get the username to query for. If no username is set, null will be 
+     * returned.
+     * 
+     * @param string $value The username to filter search results by, or 
+     *          null if disabled.
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Set the first username which should be displayed when retrieving 
+     * a list of users.
+     * 
+     * @param string $value The first username to be returned, or null to 
+     *          disable.
+     */
+    public function setStartUsername($value)
+    {
+        if ($value !== null) {
+            $this->_params['startUsername'] = $value;
+        } else {
+            unset($this->_params['startUsername']);
+        }
+    }
+
+    /**
+     * Get the first username which should be displayed when retrieving 
+     * a list of users.
+     * 
+     * @see setStartUsername
+     * @return string The first username to be returned, or null if 
+     *          disabled.
+     */
+    public function getStartUsername()
+    {
+        if (array_key_exists('startUsername', $this->_params)) {
+            return $this->_params['startUsername'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Returns the query URL generated by this query instance.
+     * 
+     * @return string The query URL for this instance.
+     */
+    public function getQueryUrl()
+    {
+        $uri = $this->getBaseUrl();
+        $uri .= Zend_Gdata_Gapps::APPS_USER_PATH;
+        if ($this->_username !== null) {
+            $uri .= '/' . $this->_username;
+        }
+        $uri .= $this->getQueryString();
+        return $uri;
+    }
+
+}

@@ -1,41 +1,143 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-MEV6Etql05X2W2/kUWIyGsRBXKyAIwmmg7Nx
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Helper for returning the current server URL (optionally with request URI)
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_ServerUrl
+{
+    /**
+     * Scheme
+     *
+     * @var string
+     */
+    protected $_scheme;
+
+    /**
+     * Host (including port)
+     *
+     * @var string
+     */
+    protected $_host;
+
+    /**
+     * Constructor
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] === true)) {
+            $scheme = 'https';
+        } else {
+            $scheme = 'http';
+        }
+        $this->setScheme($scheme);
+
+        if (isset($_SERVER['HTTP_HOST']) && !empty($_SERVER['HTTP_HOST'])) {
+            $this->setHost($_SERVER['HTTP_HOST']);
+        } else if (isset($_SERVER['SERVER_NAME'], $_SERVER['SERVER_PORT'])) {
+            $name = $_SERVER['SERVER_NAME'];
+            $port = $_SERVER['SERVER_PORT'];
+
+            if (($scheme == 'http' && $port == 80) ||
+                ($scheme == 'https' && $port == 443)) {
+                $this->setHost($name);
+            } else {
+                $this->setHost($name . ':' . $port);
+            }
+        }
+    }
+
+    /**
+     * View helper entry point:
+     * Returns the current host's URL like http://site.com
+     *
+     * @param  string|boolean $requestUri  [optional] if true, the request URI
+     *                                     found in $_SERVER will be appended
+     *                                     as a path. If a string is given, it
+     *                                     will be appended as a path. Default
+     *                                     is to not append any path.
+     * @return string                      server url
+     */
+    public function serverUrl($requestUri = null)
+    {
+        if ($requestUri === true) {
+            $path = $_SERVER['REQUEST_URI'];
+        } else if (is_string($requestUri)) {
+            $path = $requestUri;
+        } else {
+            $path = '';
+        }
+
+        return $this->getScheme() . '://' . $this->getHost() . $path;
+    }
+
+    /**
+     * Returns host
+     *
+     * @return string  host
+     */
+    public function getHost()
+    {
+        return $this->_host;
+    }
+
+    /**
+     * Sets host
+     *
+     * @param  string $host                new host
+     * @return Zend_View_Helper_ServerUrl  fluent interface, returns self
+     */
+    public function setHost($host)
+    {
+        $this->_host = $host;
+        return $this;
+    }
+
+    /**
+     * Returns scheme (typically http or https)
+     *
+     * @return string  scheme (typically http or https)
+     */
+    public function getScheme()
+    {
+        return $this->_scheme;
+    }
+
+    /**
+     * Sets scheme (typically http or https)
+     *
+     * @param  string $scheme              new scheme (typically http or https)
+     * @return Zend_View_Helper_ServerUrl  fluent interface, returns self
+     */
+    public function setScheme($scheme)
+    {
+        $this->_scheme = $scheme;
+        return $this;
+    }
+}

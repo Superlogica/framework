@@ -1,29 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV56mUquDQvoUqDwj6e93CPqXcIqTsoYU2wAcixRiJ3tei+LL7KuThgm3XCMpg+osecSyaqRIE
-lMl4UqWegHBHx/5c4Th+50jFaHPfB+IU0YmCvnGtNsf5U/qiXCKLWR4H5MMO/BCgCcU/rDICuKWQ
-ADdlfBDr9qgX3R6vhapj5Qsa+Hgjllwo6HKxjaQmjN7ECbLJKGTIIPPB2lBKRsaQaM8ac1yUD8N6
-YMevktGEGwe64i01ewImn4kJIPpDKor7T+KlBeH2QD1S3ZDZyiezQI/EVTLkxVyt/rooOmaOf0lq
-eZen5Qu0G9Oo0LF7hFzlo4S45Kzy5Jk/HKZLQJ7m7WdLFOAPka8LSAEYazHfVSDFFHyAPx8OY4bg
-/SmNL9orv0+jnKLo3YOIvO/bS1LDCqWH2A5LlKnYNyaQeMxLOmoPaDOcoFiD9pYJtm959jtuWgsY
-XMk7V18RXNEx/IpwCRTTLK+0dA9G9Ymt56FT7qPJ4rRQi9Vga9IKTEEC8hlyGoivy9L7fVQgiQEZ
-Wo9E4+qJboO/igdTs3MKqkQ1XYLYl0IqBfH6nB/ea4yJ70dMvaVrVqJnU34/MQKAIeXRXKdqSMgj
-YWM/b/6MScdIsRljI8hdKL1iK13/ijsocdWfjxzjEf6fgaHWMoHfmPoMJRh/8AtJB+rCWReCehQT
-789HuVIOP0jgd+7QSqc1w2q8BCvH7vJL0SnT9A+Xno2OxalxG+f5puSkKKhk05vRdjpCoFzLIsqn
-VEwg9wHl4OFaTIfL/jSCij0HTtU5IYxVbe8zTb/IXqwxLlPpYFzq1xCxkcQAKN6MYoCiylQzh5Tp
-TfCVrYvRknOxHBjz1feTW/tKd1usFOSJx9uE9l3oJHcDjcxLmrOY3UeYrDhBvtuPeLhOdE6WFWDq
-CXhExx+XcmopJdLAKcqX8V5x1cuEHdCKBqXWXyOs2D8eASC7x6ZTpM2AToh7fy06QNHVdvcSJNuq
-16SvC3gKBwftovPOBUsPWCVWueC8cLiVMIscvd0S/lrrOxIFE71J/aNGNaGccuWgAlkGMRvX8dsr
-t9oDu/eJHCofGq0+Ri0HEqvxHVqxP9JWUX7Rxia8xxvkw5dy2K44eqbfhymwYKbUrxTG28cS6YZ6
-HjKH6GnFf0qAEmNUw9fb4F+EMfRDjnHkiew7b6DprnwMqapEQxYXccy7OIpwC3TWONpcsLoeqhZY
-iHDr/GU2co22kTx7co60J8/KjCKj6uw4Owa7jpeq7w1UpvXsEPgHCPghsRYACjMvEYTmrIklsJ3+
-j8bUJX0hZRM0BIzIXqeCjmFhIHT/h9qQcUDn3vdTsyzD2wGPh1WYHifFtf5KQnjMSzgNCrE8cEFo
-8RpJfioq8UfvFss5WGXeoE2Br05bbL3EuXrraXBDf3VwgDBTtagvo+ax3MPawUoENqZ22ztsn4Tw
-kVI95o3Jocwblqr1djNfSw1pWrHHQG4N6+AqCqM35tSLWqmgQPIG7l9TmfsE1hpb9z+m5TEb0RSC
-mIPlqnpsxfU1+rXjctwCvnXFUhkJhPXueSkwZvMIi87ENpETIrvSUVmEmI7/j29cGUqZJZ9WoYfy
-7tzvl0hTdaMw0QtBYzZOpnFEv6uWXXnM5zmvlTNSK2Rmj1Jni/Lu+ebvWHugDjKh6d8+EZYehEqY
-ImgqllEwKbCAhTIM+ei7xJf2R9Fe8hCN8G+QXZIyf0BdRZ6Tqugx4zpQzFoOC8WVmfS09aOSSReR
-xuYKf/83r/tN/ND+suvlqqAcQUuTfUymJhEJGXnW5NQQI7BtO03luC33G2MmDQiJjvDrCZsZ1Lye
-23AXCXwDUWt3bTE1xOOh5jccV3dGc57tZLR+mytztWZ6+rmhVfeDRxGbgVklFVdZvKnmEAWZvLkM
-fdGk098PAEFxtorMYXh3PoSnNyvaDSXRM2iwJGLqVQ8zN3fW
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Zend_Search_Lucene_Search_Weight
+ */
+require_once 'Zend/Search/Lucene/Search/Weight.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Weight_Phrase extends Zend_Search_Lucene_Search_Weight
+{
+    /**
+     * IndexReader.
+     *
+     * @var Zend_Search_Lucene_Interface
+     */
+    private $_reader;
+
+    /**
+     * The query that this concerns.
+     *
+     * @var Zend_Search_Lucene_Search_Query_Phrase
+     */
+    private $_query;
+
+    /**
+     * Score factor
+     *
+     * @var float
+     */
+    private $_idf;
+
+    /**
+     * Zend_Search_Lucene_Search_Weight_Phrase constructor
+     *
+     * @param Zend_Search_Lucene_Search_Query_Phrase $query
+     * @param Zend_Search_Lucene_Interface           $reader
+     */
+    public function __construct(Zend_Search_Lucene_Search_Query_Phrase $query,
+                                Zend_Search_Lucene_Interface           $reader)
+    {
+        $this->_query  = $query;
+        $this->_reader = $reader;
+    }
+
+    /**
+     * The sum of squared weights of contained query clauses.
+     *
+     * @return float
+     */
+    public function sumOfSquaredWeights()
+    {
+        // compute idf
+        $this->_idf = $this->_reader->getSimilarity()->idf($this->_query->getTerms(), $this->_reader);
+
+        // compute query weight
+        $this->_queryWeight = $this->_idf * $this->_query->getBoost();
+
+        // square it
+        return $this->_queryWeight * $this->_queryWeight;
+    }
+
+
+    /**
+     * Assigns the query normalization factor to this.
+     *
+     * @param float $queryNorm
+     */
+    public function normalize($queryNorm)
+    {
+        $this->_queryNorm = $queryNorm;
+
+        // normalize query weight
+        $this->_queryWeight *= $queryNorm;
+
+        // idf for documents
+        $this->_value = $this->_queryWeight * $this->_idf;
+    }
+}
+
+

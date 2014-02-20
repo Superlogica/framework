@@ -1,42 +1,167 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: JQuery.php 20184 2010-01-10 21:22:54Z freak $
+ */
+
+/**
+ * @see ZendX_JQuery
+ */
+require_once "ZendX/JQuery.php";
+
+/**
+ * @see Zend_Registry
+ */
+require_once 'Zend/Registry.php';
+
+/**
+ * @see Zend_View_Helper_Abstract
+ */
+require_once 'Zend/View/Helper/Abstract.php';
+
+/**
+ * @see ZendX_JQuery_View_Helper_JQuery_Container
+ */
+require_once "ZendX/JQuery/View/Helper/JQuery/Container.php";
+
+/**
+ * jQuery Helper. Functions as a stack for code and loads all jQuery dependencies.
+ *
+ * @uses 	   Zend_Json
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_JQuery extends Zend_View_Helper_Abstract
+{
+    /**
+     * @var Zend_View_Interface
+     */
+    public $view;
+
+	/**
+	 * jQuery no Conflict Mode
+	 *
+	 * @see	      http://docs.jquery.com/Using_jQuery_with_Other_Libraries
+	 * @staticvar Boolean Status of noConflict Mode
+	 */
+    private static $noConflictMode = false;
+
+   /**
+     * Initialize helper
+     *
+     * Retrieve container from registry or create new container and store in
+     * registry.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $registry = Zend_Registry::getInstance();
+        if (!isset($registry[__CLASS__])) {
+            require_once 'ZendX/JQuery/View/Helper/JQuery/Container.php';
+            $container = new ZendX_JQuery_View_Helper_JQuery_Container();
+            $registry[__CLASS__] = $container;
+        }
+        $this->_container = $registry[__CLASS__];
+    }
+
+	/**
+	 * Return jQuery View Helper class, to execute jQuery library related functions.
+	 *
+	 * @return ZendX_JQuery_View_Helper_JQuery_Container
+	 */
+    public function jQuery()
+    {
+        return $this->_container;
+    }
+
+    /**
+     * Set view object
+     *
+     * @param  Zend_View_Interface $view
+     * @return void
+     */
+    public function setView(Zend_View_Interface $view)
+    {
+        $this->view = $view;
+        $this->_container->setView($view);
+    }
+
+    /**
+     * Proxy to container methods
+     *
+     * @param  string $method
+     * @param  array  $args
+     * @return mixed
+     * @throws Zend_View_Exception For invalid method calls
+     */
+    public function __call($method, $args)
+    {
+        if (!method_exists($this->_container, $method)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception(sprintf('Invalid method "%s" called on jQuery view helper', $method));
+        }
+
+        return call_user_func_array(array($this->_container, $method), $args);
+    }
+
+	/**
+	 * Enable the jQuery internal noConflict Mode to work with
+	 * other Javascript libraries. Will setup jQuery in the variable
+	 * $j instead of $ to overcome conflicts.
+	 *
+	 * @link http://docs.jquery.com/Using_jQuery_with_Other_Libraries
+	 */
+    public static function enableNoConflictMode()
+    {
+    	self::$noConflictMode = true;
+    }
+
+	/**
+	 * Disable noConflict Mode of jQuery if this was previously enabled.
+	 *
+	 * @return void
+	 */
+    public static function disableNoConflictMode()
+    {
+    	self::$noConflictMode = false;
+    }
+
+	/**
+	 * Return current status of the jQuery no Conflict Mode
+	 *
+	 * @return Boolean
+	 */
+    public static function getNoConflictMode()
+    {
+    	return self::$noConflictMode;
+    }
+
+    /**
+     * Return current jQuery handler based on noConflict mode settings.
+     *
+     * @return String
+     */
+    public static function getJQueryHandler()
+    {
+        return ((self::getNoConflictMode()==true)?'$j':'$');
+    }
+}

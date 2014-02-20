@@ -1,37 +1,120 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @subpackage PHP
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_CodeGenerator_Php_Member_Abstract
+ */
+require_once 'Zend/CodeGenerator/Php/Member/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_CodeGenerator_Php_Property extends Zend_CodeGenerator_Php_Member_Abstract 
+{
+    /**
+     * @var bool
+     */
+    protected $_isConst = null;
+    
+    /**
+     * @var string
+     */
+    protected $_defaultValue = null;
+
+    /**
+     * fromReflection()
+     *
+     * @param Zend_Reflection_Property $reflectionProperty
+     * @return Zend_CodeGenerator_Php_Property
+     */
+    public static function fromReflection(Zend_Reflection_Property $reflectionProperty) {
+        $property = new self();
+        $property->setSourceDirty(false);
+        
+        return $property;
+    }
+    
+    /**
+     * setConst()
+     *
+     * @param bool $const
+     * @return Zend_CodeGenerator_Php_Property
+     */
+    public function setConst($const)
+    {
+        $this->_isConst = $const;
+        return $this;
+    }
+    
+    /**
+     * isConst()
+     *
+     * @return bool
+     */
+    public function isConst()
+    {
+        return ($this->_isConst) ? true : false;
+    }
+    
+    /**
+     * setDefaultValue()
+     *
+     * @param string $defaultValue
+     * @return Zend_CodeGenerator_Php_Property
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->_defaultValue = $defaultValue;
+        return $this;
+    }
+    
+    /**
+     * getDefaultValue()
+     *
+     * @return string
+     */
+    public function getDefaultValue()
+    {
+        return $this->_defaultValue;
+    }
+    
+    /**
+     * generate()
+     *
+     * @return string
+     */
+    public function generate()
+    {
+        $name         = $this->getName();
+        $defaultValue = $this->getDefaultValue();
+        if ($this->isConst()) {
+            $string = '    ' . 'const ' . $name . ' = \'' . $defaultValue . '\';';
+        } else {
+            $string = '    ' . $this->getVisibility() . ' $' . $name . ' = ' . ((null !== $defaultValue) ? '\'' . $defaultValue . '\'' : 'null') . ';';
+        }
+        return $string; 
+    }
+    
+}

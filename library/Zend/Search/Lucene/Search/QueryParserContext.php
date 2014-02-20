@@ -1,123 +1,417 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_FSM */
+require_once 'Zend/Search/Lucene/FSM.php';
+
+/** Zend_Search_Lucene_Index_Term */
+require_once 'Zend/Search/Lucene/Index/Term.php';
+
+/** Zend_Search_Lucene_Search_QueryToken */
+require_once 'Zend/Search/Lucene/Search/QueryToken.php';
+
+/** Zend_Search_Lucene_Search_Query_Term */
+require_once 'Zend/Search/Lucene/Search/Query/Term.php';
+
+/** Zend_Search_Lucene_Search_Query_MultiTerm */
+require_once 'Zend/Search/Lucene/Search/Query/MultiTerm.php';
+
+/** Zend_Search_Lucene_Search_Query_Boolean */
+require_once 'Zend/Search/Lucene/Search/Query/Boolean.php';
+
+/** Zend_Search_Lucene_Search_Query_Phrase */
+require_once 'Zend/Search/Lucene/Search/Query/Phrase.php';
+
+/** Zend_Search_Lucene_Search_BooleanExpressionRecognizer */
+require_once 'Zend/Search/Lucene/Search/BooleanExpressionRecognizer.php';
+
+/** Zend_Search_Lucene_Search_QueryEntry */
+require_once 'Zend/Search/Lucene/Search/QueryEntry.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_QueryParserContext
+{
+    /**
+     * Default field for the context.
+     *
+     * null means, that term should be searched through all fields
+     * Zend_Search_Lucene_Search_Query::rewriteQuery($index) transletes such queries to several
+     *
+     * @var string|null
+     */
+    private $_defaultField;
+
+    /**
+     * Field specified for next entry
+     *
+     * @var string
+     */
+    private $_nextEntryField = null;
+
+    /**
+     * True means, that term is required.
+     * False means, that term is prohibited.
+     * null means, that term is neither prohibited, nor required
+     *
+     * @var boolean
+     */
+    private $_nextEntrySign = null;
+
+
+    /**
+     * Entries grouping mode
+     */
+    const GM_SIGNS   = 0;  // Signs mode: '+term1 term2 -term3 +(subquery1) -(subquery2)'
+    const GM_BOOLEAN = 1;  // Boolean operators mode: 'term1 and term2  or  (subquery1) and not (subquery2)'
+
+    /**
+     * Grouping mode
+     *
+     * @var integer
+     */
+    private $_mode = null;
+
+    /**
+     * Entries signs.
+     * Used in GM_SIGNS grouping mode
+     *
+     * @var arrays
+     */
+    private $_signs = array();
+
+    /**
+     * Query entries
+     * Each entry is a Zend_Search_Lucene_Search_QueryEntry object or
+     * boolean operator (Zend_Search_Lucene_Search_QueryToken class constant)
+     *
+     * @var array
+     */
+    private $_entries = array();
+
+    /**
+     * Query string encoding
+     *
+     * @var string
+     */
+    private $_encoding;
+
+
+    /**
+     * Context object constructor
+     *
+     * @param string $encoding
+     * @param string|null $defaultField
+     */
+    public function __construct($encoding, $defaultField = null)
+    {
+        $this->_encoding     = $encoding;
+        $this->_defaultField = $defaultField;
+    }
+
+
+    /**
+     * Get context default field
+     *
+     * @return string|null
+     */
+    public function getField()
+    {
+        return ($this->_nextEntryField !== null)  ?  $this->_nextEntryField : $this->_defaultField;
+    }
+
+    /**
+     * Set field for next entry
+     *
+     * @param string $field
+     */
+    public function setNextEntryField($field)
+    {
+        $this->_nextEntryField = $field;
+    }
+
+
+    /**
+     * Set sign for next entry
+     *
+     * @param integer $sign
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function setNextEntrySign($sign)
+    {
+        if ($this->_mode === self::GM_BOOLEAN) {
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('It\'s not allowed to mix boolean and signs styles in the same subquery.');
+        }
+
+        $this->_mode = self::GM_SIGNS;
+
+        if ($sign == Zend_Search_Lucene_Search_QueryToken::TT_REQUIRED) {
+            $this->_nextEntrySign = true;
+        } else if ($sign == Zend_Search_Lucene_Search_QueryToken::TT_PROHIBITED) {
+            $this->_nextEntrySign = false;
+        } else {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Unrecognized sign type.');
+        }
+    }
+
+
+    /**
+     * Add entry to a query
+     *
+     * @param Zend_Search_Lucene_Search_QueryEntry $entry
+     */
+    public function addEntry(Zend_Search_Lucene_Search_QueryEntry $entry)
+    {
+        if ($this->_mode !== self::GM_BOOLEAN) {
+            $this->_signs[] = $this->_nextEntrySign;
+        }
+
+        $this->_entries[] = $entry;
+
+        $this->_nextEntryField = null;
+        $this->_nextEntrySign  = null;
+    }
+
+
+    /**
+     * Process fuzzy search or proximity search modifier
+     *
+     * @throws Zend_Search_Lucene_Search_QueryParserException
+     */
+    public function processFuzzyProximityModifier($parameter = null)
+    {
+        // Check, that modifier has came just after word or phrase
+        if ($this->_nextEntryField !== null  ||  $this->_nextEntrySign !== null) {
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('\'~\' modifier must follow word or phrase.');
+        }
+
+        $lastEntry = array_pop($this->_entries);
+
+        if (!$lastEntry instanceof Zend_Search_Lucene_Search_QueryEntry) {
+            // there are no entries or last entry is boolean operator
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('\'~\' modifier must follow word or phrase.');
+        }
+
+        $lastEntry->processFuzzyProximityModifier($parameter);
+
+        $this->_entries[] = $lastEntry;
+    }
+
+    /**
+     * Set boost factor to the entry
+     *
+     * @param float $boostFactor
+     */
+    public function boost($boostFactor)
+    {
+        // Check, that modifier has came just after word or phrase
+        if ($this->_nextEntryField !== null  ||  $this->_nextEntrySign !== null) {
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('\'^\' modifier must follow word, phrase or subquery.');
+        }
+
+        $lastEntry = array_pop($this->_entries);
+
+        if (!$lastEntry instanceof Zend_Search_Lucene_Search_QueryEntry) {
+            // there are no entries or last entry is boolean operator
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('\'^\' modifier must follow word, phrase or subquery.');
+        }
+
+        $lastEntry->boost($boostFactor);
+
+        $this->_entries[] = $lastEntry;
+    }
+
+    /**
+     * Process logical operator
+     *
+     * @param integer $operator
+     */
+    public function addLogicalOperator($operator)
+    {
+        if ($this->_mode === self::GM_SIGNS) {
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('It\'s not allowed to mix boolean and signs styles in the same subquery.');
+        }
+
+        $this->_mode = self::GM_BOOLEAN;
+
+        $this->_entries[] = $operator;
+    }
+
+
+    /**
+     * Generate 'signs style' query from the context
+     * '+term1 term2 -term3 +(<subquery1>) ...'
+     *
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function _signStyleExpressionQuery()
+    {
+        $query = new Zend_Search_Lucene_Search_Query_Boolean();
+
+        if (Zend_Search_Lucene_Search_QueryParser::getDefaultOperator() == Zend_Search_Lucene_Search_QueryParser::B_AND) {
+            $defaultSign = true; // required
+        } else {
+            // Zend_Search_Lucene_Search_QueryParser::B_OR
+            $defaultSign = null; // optional
+        }
+
+        foreach ($this->_entries as $entryId => $entry) {
+            $sign = ($this->_signs[$entryId] !== null) ?  $this->_signs[$entryId] : $defaultSign;
+            $query->addSubquery($entry->getQuery($this->_encoding), $sign);
+        }
+
+        return $query;
+    }
+
+
+    /**
+     * Generate 'boolean style' query from the context
+     * 'term1 and term2   or   term3 and (<subquery1>) and not (<subquery2>)'
+     *
+     * @return Zend_Search_Lucene_Search_Query
+     * @throws Zend_Search_Lucene
+     */
+    private function _booleanExpressionQuery()
+    {
+        /**
+         * We treat each level of an expression as a boolean expression in
+         * a Disjunctive Normal Form
+         *
+         * AND operator has higher precedence than OR
+         *
+         * Thus logical query is a disjunction of one or more conjunctions of
+         * one or more query entries
+         */
+
+        $expressionRecognizer = new Zend_Search_Lucene_Search_BooleanExpressionRecognizer();
+
+        require_once 'Zend/Search/Lucene/Exception.php';
+        try {
+            foreach ($this->_entries as $entry) {
+                if ($entry instanceof Zend_Search_Lucene_Search_QueryEntry) {
+                    $expressionRecognizer->processLiteral($entry);
+                } else {
+                    switch ($entry) {
+                        case Zend_Search_Lucene_Search_QueryToken::TT_AND_LEXEME:
+                            $expressionRecognizer->processOperator(Zend_Search_Lucene_Search_BooleanExpressionRecognizer::IN_AND_OPERATOR);
+                            break;
+
+                        case Zend_Search_Lucene_Search_QueryToken::TT_OR_LEXEME:
+                            $expressionRecognizer->processOperator(Zend_Search_Lucene_Search_BooleanExpressionRecognizer::IN_OR_OPERATOR);
+                            break;
+
+                        case Zend_Search_Lucene_Search_QueryToken::TT_NOT_LEXEME:
+                            $expressionRecognizer->processOperator(Zend_Search_Lucene_Search_BooleanExpressionRecognizer::IN_NOT_OPERATOR);
+                            break;
+
+                        default:
+                            throw new Zend_Search_Lucene('Boolean expression error. Unknown operator type.');
+                    }
+                }
+            }
+
+            $conjuctions = $expressionRecognizer->finishExpression();
+        } catch (Zend_Search_Exception $e) {
+            // throw new Zend_Search_Lucene_Search_QueryParserException('Boolean expression error. Error message: \'' .
+            //                                                          $e->getMessage() . '\'.' );
+            // It's query syntax error message and it should be user friendly. So FSM message is omitted
+            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
+            throw new Zend_Search_Lucene_Search_QueryParserException('Boolean expression error.');
+        }
+
+        // Remove 'only negative' conjunctions
+        foreach ($conjuctions as $conjuctionId => $conjuction) {
+            $nonNegativeEntryFound = false;
+
+            foreach ($conjuction as $conjuctionEntry) {
+                if ($conjuctionEntry[1]) {
+                    $nonNegativeEntryFound = true;
+                    break;
+                }
+            }
+
+            if (!$nonNegativeEntryFound) {
+                unset($conjuctions[$conjuctionId]);
+            }
+        }
+
+
+        $subqueries = array();
+        foreach ($conjuctions as  $conjuction) {
+            // Check, if it's a one term conjuction
+            if (count($conjuction) == 1) {
+                $subqueries[] = $conjuction[0][0]->getQuery($this->_encoding);
+            } else {
+                $subquery = new Zend_Search_Lucene_Search_Query_Boolean();
+
+                foreach ($conjuction as $conjuctionEntry) {
+                    $subquery->addSubquery($conjuctionEntry[0]->getQuery($this->_encoding), $conjuctionEntry[1]);
+                }
+
+                $subqueries[] = $subquery;
+            }
+        }
+
+        if (count($subqueries) == 0) {
+            return new Zend_Search_Lucene_Search_Query_Insignificant();
+        }
+
+        if (count($subqueries) == 1) {
+            return $subqueries[0];
+        }
+
+
+        $query = new Zend_Search_Lucene_Search_Query_Boolean();
+
+        foreach ($subqueries as $subquery) {
+            // Non-requirered entry/subquery
+            $query->addSubquery($subquery);
+        }
+
+        return $query;
+    }
+
+    /**
+     * Generate query from current context
+     *
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function getQuery()
+    {
+        if ($this->_mode === self::GM_BOOLEAN) {
+            return $this->_booleanExpressionQuery();
+        } else {
+            return $this->_signStyleExpressionQuery();
+        }
+    }
+}

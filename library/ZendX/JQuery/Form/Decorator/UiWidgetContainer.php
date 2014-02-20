@@ -1,45 +1,138 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: UiWidgetContainer.php 20745 2010-01-29 10:34:00Z beberlei $
+ */
+
+require_once "Zend/Form/Decorator/Abstract.php";
+
+/**
+ * Abstract Form Decorator for all jQuery UI Widget Containers
+ *
+ * @package    ZendX_JQuery
+ * @subpackage Form
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class ZendX_JQuery_Form_Decorator_UiWidgetContainer extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * View helper
+     * @var string
+     */
+    protected $_helper;
+
+    /**
+     * Element attributes
+     * @var array
+     */
+    protected $_attribs;
+
+    /**
+     * jQuery option parameters
+     * @var array
+     */
+    protected $_jQueryParams;
+
+    /**
+     * Get view helper for rendering container
+     *
+     * @return string
+     */
+    public function getHelper()
+    {
+        if (null === $this->_helper) {
+            require_once 'Zend/Form/Decorator/Exception.php';
+            throw new Zend_Form_Decorator_Exception('No view helper specified fo DijitContainer decorator');
+        }
+        return $this->_helper;
+    }
+
+    /**
+     * Get element attributes
+     *
+     * @return array
+     */
+    public function getAttribs()
+    {
+        if (null === $this->_attribs) {
+            $attribs = $this->getElement()->getAttribs();
+            if (array_key_exists('jQueryParams', $attribs)) {
+                $this->getJQueryParams();
+                unset($attribs['jQueryParams']);
+            }
+            $this->_attribs = $attribs;
+        }
+        return $this->_attribs;
+    }
+
+    /**
+     * Get jQuery option parameters
+     *
+     * @return array
+     */
+    public function getJQueryParams()
+    {
+        if (null === $this->_jQueryParams) {
+            $this->_jQueryParams = array();
+            if($attribs = $this->getElement()->getAttribs()) {
+                if (array_key_exists('jQueryParams', $attribs)) {
+                    $this->_jQueryParams = $attribs['jQueryParams'];
+                }
+            }
+
+            if($options = $this->getOptions()) {
+                if (array_key_exists('jQueryParams', $options)) {
+                    $this->_jQueryParams = array_merge($this->_jQueryParams, $options['jQueryParams']);
+                    $this->removeOption('jQueryParams');
+                }
+            }
+        }
+
+        return $this->_jQueryParams;
+    }
+
+    /**
+     * Render an jQuery UI Widget element using its associated view helper
+     *
+     * Determine view helper from 'helper' option, or, if none set, from
+     * the element type. Then call as
+     * helper($element->getName(), $element->getValue(), $element->getAttribs())
+     *
+     * @param  string $content
+     * @return string
+     * @throws Zend_Form_Decorator_Exception if element or view are not registered
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $jQueryParams = $this->getJQueryParams();
+        $attribs     = $this->getOptions();
+
+        $helper      = $this->getHelper();
+        $id          = $element->getId() . '-container';
+
+        return $view->$helper($id, $jQueryParams, $attribs);
+    }
+}

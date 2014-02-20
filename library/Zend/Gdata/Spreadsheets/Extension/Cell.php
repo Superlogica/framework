@@ -1,57 +1,201 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Entry.php 3941 2007-03-14 21:36:13Z darby $
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+
+/**
+ * Concrete class for working with cell elements.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Spreadsheets_Extension_Cell extends Zend_Gdata_Extension
+{
+    protected $_rootElement = 'cell';
+    protected $_rootNamespace = 'gs';
+
+    /**
+     * The row attribute of this cell
+     *
+     * @var string
+     */
+    protected $_row = null;
+
+    /**
+     * The column attribute of this cell
+     *
+     * @var string
+     */
+    protected $_col = null;
+
+    /**
+     * The inputValue attribute of this cell
+     *
+     * @var string
+     */
+    protected $_inputValue = null;
+
+    /**
+     * The numericValue attribute of this cell
+     *
+     * @var string
+     */
+    protected $_numericValue = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Spreadsheets_Extension_Cell element.
+     *
+     * @param string $text (optional) Text contents of the element.
+     * @param string $row (optional) Row attribute of the element.
+     * @param string $col (optional) Column attribute of the element.
+     * @param string $inputValue (optional) Input value attribute of the element.
+     * @param string $numericValue (optional) Numeric value attribute of the element.
+     */
+    public function __construct($text = null, $row = null, $col = null, $inputValue = null, $numericValue = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Spreadsheets::$namespaces);
+        parent::__construct();
+        $this->_text = $text;
+        $this->_row = $row;
+        $this->_col = $col;
+        $this->_inputValue = $inputValue;
+        $this->_numericValue = $numericValue;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        $element->setAttribute('row', $this->_row);
+        $element->setAttribute('col', $this->_col);
+        if ($this->_inputValue) $element->setAttribute('inputValue', $this->_inputValue);
+        if ($this->_numericValue) $element->setAttribute('numericValue', $this->_numericValue);
+        return $element;
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'row':
+            $this->_row = $attribute->nodeValue;
+            break;
+        case 'col':
+            $this->_col = $attribute->nodeValue;
+            break;
+        case 'inputValue':
+            $this->_inputValue = $attribute->nodeValue;
+            break;
+        case 'numericValue':
+            $this->_numericValue = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Gets the row attribute of the Cell element.
+     * @return string Row of the Cell.
+     */
+    public function getRow()
+    {
+        return $this->_row;
+    }
+
+    /**
+     * Gets the column attribute of the Cell element.
+     * @return string Column of the Cell.
+     */
+    public function getColumn()
+    {
+        return $this->_col;
+    }
+
+    /**
+     * Gets the input value attribute of the Cell element.
+     * @return string Input value of the Cell.
+     */
+    public function getInputValue()
+    {
+        return $this->_inputValue;
+    }
+
+    /**
+     * Gets the numeric value attribute of the Cell element.
+     * @return string Numeric value of the Cell.
+     */
+    public function getNumericValue()
+    {
+        return $this->_numericValue;
+    }
+
+    /**
+     * Sets the row attribute of the Cell element.
+     * @param string $row New row of the Cell.
+     */
+    public function setRow($row)
+    {
+        $this->_row = $row;
+        return $this;
+    }
+
+    /**
+     * Sets the column attribute of the Cell element.
+     * @param string $col New column of the Cell.
+     */
+    public function setColumn($col)
+    {
+        $this->_col = $col;
+        return $this;
+    }
+
+    /**
+     * Sets the input value attribute of the Cell element.
+     * @param string $inputValue New input value of the Cell.
+     */
+    public function setInputValue($inputValue)
+    {
+        $this->_inputValue = $inputValue;
+        return $this;
+    }
+
+    /**
+     * Sets the numeric value attribute of the Cell element.
+     * @param string $numericValue New numeric value of the Cell.
+     */
+    public function setNumericValue($numericValue)
+    {
+        $this->_numericValue = $numericValue;
+    }
+
+}

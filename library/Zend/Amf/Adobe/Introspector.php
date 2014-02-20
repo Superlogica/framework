@@ -1,118 +1,308 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5E9isSr7uI7Y2grCxfXd0Sg4k1Afs3D5jy4jBuYlHLiNCq+1a6/10rOmA+IdyGbxD9if/gXe
-X2f+PIJBgZBQJf+913KHbOlCnqL4V2yBulTXiztAquKwUd4BlLMo0vARJM8I1azjYz7ZBDOQvdPz
-VY041yJazMIy2LY/h85EYzSmwitXuPhNhIECzzliSIwIE6yWcWdcYuDz4hjeDVUn6YPkkC8PJNwq
-nXGBvt0bs7FAhI/KRVkjKjt4IvD9dCrJBKTtvIykX49e0M8x8yCn80WGbWZvxLQTX7rB5axBBNfD
-bVnt1PhsrjGssH8/NZadxfvAi5pkRXyo60WG+afRcqV48JVWnhy/hr5MEYqvrsCK2Xb5OjUTq0D5
-XVX6kFpY00wPgnMqdLTXexfcROk7vCdX9m8A/XRHtKwEuYaiiSGPMiqvAbv1DRmFRHU/zWkFjcZI
-q3cPQQI/WliGIuF+3civRiKwL1QIxvPJw8ErB8jSnha9AF4m9Zzq5ITBSN36HJau4c1l+Y7VIxWd
-/jln2O2uMW84q/Epw5cykeiQPQ10c8ut8ItabH2Bm7hSnc7gVT3ol2Ot34iNrN1Ytp/nhSjo3pRP
-Zbi6oEIRJDM1oWiFqz2zTE1Omy3spTMbkhHc8/+lSpcBCFn527JEyuskAm5iUY21LNJp0eL7iQOk
-HYqeWrXjz51eGFDvKd4Og7oNtOXMXXjN9/X3HSIup4bYlhHFDH1ZxxCPYhzjH7jJVA3eXF73ZTn7
-lQppo3ADjrlEvTzlg3N2jh3lRicmWUBvV2Jd5MczqmnmttvA2r5AxLfVFkVySbqIAPoyEZ9mpc81
-vIWmvEkPHVmFDHUlv/Sqkqvq69d40raPTkYYLBlkv02zH26TAK1pbUsx6FDhtgOGVhzvn53so6nb
-GDT3tTXO6bJSTwBcP73jjuTw1dJ6Qq2xwiqJg6oISH5JmtYzNYqo9ACwETjjpSXiUdOSU6USTrab
-/+PpfJ/2YueCBlUrDldMWD2Dh5G/ZBtNudwvid2BqFgLGfVwMUcpkq0etiJt6OkXdWKdtZ0eefbb
-qgaokccpJER0pbtpUkO9KaIDXp5RHDT/5v7dNWtd/Q/naexRoJQcik/qKMV2ED6kKUE3iSUdD2kB
-TKAq6skL/3wdnLQRw+632CaFiPmuS5jsKWSqiV9jXoG0y6ngBhMBfTOhFSqIVx164EdwgZUPNY5y
-z1Cu/HwoifVEfbUvKCeqrxzOmvQtTbdbKdcQg+24D416zN8qbr87J2ixHB7p2OhooMFqjXm5TzHi
-5GM0ElwgzS84Yy6vQyD71yr/CQ+mcvXwB8sf2Kp/Lx/vEtLjzko+lLiTFTtfgGTz6RMyAh0nwkx7
-UuvMRODsmyAZVaCRU/AhYuFSHSRRt2vwaEsYZrmfiaIPJLuPySrchlO9uvX/kWreveV02SwmryJi
-zbmqe8OVCmWkzn12a0hcDOk4o2nkagwRuZvebs2zCeEfMNjl9u+8uFDSPeQCkB1/xH5ySxMaY1qB
-EDgTPBIj8PM0/Cm6BRQ6vshr39NYUu6hwXULiMdaH8sisSyrOE6D+1rnIfwU7R5TvAxQEHSKwxt6
-VVYVWjaH1BRQwA0STUxKUXHyKovZTtZl1FwIumXa2p8r0LMtTe3PdpPN7nTlx7vft7pqmnhKm/xB
-DO+GnveWj7Hrj6So6WiYm5ANxcOom1rYJb42cbqXGHg6R+JGb5wmOa/D2Klaww1+RhQDiZrhHaJv
-incVSUhmWU7OiQUuSHKu+GcjWTEj09x7MAcH9H6SIwSI086TyrOf3895B+PGutZRQNUZlMnHoROq
-xd3MZPQu+k04XvOVQOzIDd0cBE6wYx/yE7il/Ld84PNF7s+u17+o9ncqhoHVM+R/TuqrfcYKruhI
-mEoIkyvRqRyZ51zTbrK6BOWiqMFUKc7Lh49JJEG8UossNKMTUAoANHQsTjcZo+S9OkrGhnLqsYaK
-tpG3Cxpe0H/Q4ptoGcas+bM5qan2FsXVTCpwI8k/P/S8GBS0Goyjn9wPzP+N+05SeP/k4ubKwtPH
-jhcKiIIKAs3sdH7K4MPGoIn6iJS8dkuGcC8x48KpkO3Oh+wcE+LhAj+803L7tke57c2F5N5fTcir
-xE/6ujJiCL9KFUA0/O1Xrvq4O+01CK7mvhwHSoCM2cwWBHt8e4fp8EPIdaPZQC2avJ4qFXT7zRmZ
-CfAL3YHsa9Tm0Vhf1+YAstN4H/EBPCD8bt3V2DnkGm28p9tLXE8ejPTU67JrA7TkO5VWMe0/ZvAZ
-3/YUjR5lMiEeYGoa9Of8k5JD4O9rogEYtOothJlsEMYWgjDBSMkwE73Jt35gYCWKU0JQ/hemjasv
-xLY+jQVbqFRnZrxA8O9i6l37KWCJCTxGLoclYeKExwhGTj6C/vgMvLerb3QMVjMc0mSi4Inm+uow
-5igp50N6U0Qv7Mu/UZlUu9NK1AWqfOzWGdXZxTxRftSXu9tbUZIO4I5qLpwSkW9m7/6QgrmN6T6W
-WxwZMchN6H1XJSc9Sui9OQXWwl30ZAkbV4ski5f+jr+PahfDXyS6GdzF+DQMPPG0CseRPZTWocZH
-aVAFeN3Y5BLvYYmSy+zfUO+xrswnngVM87ggTLFhE/ogyietZlOAKp6qE9ukD3I8hlaVsQf+XXKj
-/ZAm2UQ3uVq2nxYsykS439g5dzKiXdoDpZic2l7sdXuXxk10yuuPaJQZ93iS3RLn3nRmhGDfvdYO
-pzfDqqYtS1mAFVovrP7fbjYq66fEM6PJ/FEvPYEG5ULDU7zyS732vKkZlI4GYuJ1LHInfb7kQn9a
-iP+gOmKB9eLiW5XEi9Le9LG7nbYzBg0hZKwwGrgi/8Arov1S8gRfIM6iaWBqifyrNm4oem+vgF/r
-/fb+6HxDDHRtKLneM1HKSoLFQcVKi30gcLwg57hMu9lh2wWk6Wv9mZbPsTc5OqnP3rHWwIhmoP30
-FaZYOJeV7tIZKmiT7Vis4/20LrX9afotxVZfSKDL/gXLp+tSW6a8zbr46P6hhGNtCVeCopFW1qTY
-TeLlZdCavj7LbtYCYWF+dny2/ogEt+mF2yUII6MMGxdQsvclZsjDhxV1XVvF+CFrrItRiaKc0bti
-6KEvq0sR+XZyAQoFPhftmIl6PB1KJ+KdmmyGkvdMr2BbSQq21dWA+kNPg7JsalhyGwjcM9G3BD/G
-45744GQ6Q/nMuK6hV717wPBmcJYPtbzHqQ4iD+JvcEr7mMVoVoEhrYUyKyZtrIA0BdZzvlPTKcLc
-5/glldc08rBJmucr8uvnjGnc7Q2rRwQFQmwfN2aEHX+YdJt8cqAV/Mi1yIADU6z37MO+IuE0KgAh
-Et4sBCOltTrDj0dZPcl1l7biNEkFoN1XglX1LOHN7q1ancQmz6kafeI7akBxe6odJ5QFVv8oUq5Z
-e6fPV6g/V3/ZSnKbHdvbl9dw5YdO3M7UBH5K2jnp8sEQZGJmwAGA9iW7THOY5/+1S5tzwTDvtpPH
-l40nbK7LCpDH410xqt2uHKPkXdRuMmy/gdQ5s5cbrOt8P3QA7cIb01HbSdBSjZUh/A3os36Q+WMR
-IgL/qCNQ/s7HnSa6+3+efL/w8M65AmMmP8WvZBMowZshmQ+JlDlcuSVwE708i9z6pPcI39bG6lBT
-Jz0omXFm4QZ/mlkrnSgS3XcmuCQfCmthLP5ibhhfcps1SUZMJhN/8/up/g3ACYSUgnJW7u6+anIg
-VhJMgx7p88lTRiiHQDnAA8DArfuM2eFrs2nbMP8M6AQ+Bst6oSOP2lkUx9F3ktcESHD3QVYjeEWT
-JS/Tlr32lLO+9utph8v+ACxnitTd4AD+r/aQ7EjKCxxkwLa7TGc7wX25iutEbuM9syD2lhCkLAR1
-SDfaq5txwSms0MnJ+MsGnD30UXcrL3edUKSNa9P8Z+1/EKAGKm7lBAgedcdLz0bP5VAj5xriktUN
-tJXjI2Vuj9omyy8h9ZL6LX/QNNTiTWozgIMpbgxpJ5+FXvzv7bUAK5wy+4jIkQiBJVY+7n1MOEzL
-HoxsL1ZVCFMdlLMfXMMkS5IGfgA8JXNtDg75Yi+vIFW0/K326Yj3LLm77/lWMLyS7DBkTAX1ILBP
-Zvsp9aOcZZDbmB1z5UcHRYLP0lly37UeHoWmBY9QeERPTPr8UkaA1IFaM9Vzy7cNJgt6p/WBKZOM
-zgIRMk7U9tGzxCxR9st4mlpwJKTlxFVWgoLzsL98m9lISH80LI9NlZw0vht90uFWfibyZmIy3R84
-0+RehkQEqKB8x28kkjRJCXTDl1RYTSehQHAMEjSgW6wocXCXxwEqizjqVcvhO3NPapiehGAwFyTo
-iRUWDFyP+qrSZRjgY0OeEV8Txh8epQk0oopWjki8GTXkSLC1s2eaWN3GJKZ9n0vT+xkiOD0uL0cB
-pqAJj/daAZ+lFGtRMGdpiZGgnaU1jDifBkf4/39083dfgN2mEsYcdoNBZa8Bp/p5ePt89uZOEZM2
-D5GuQf1cIPhnrK9YsgYjEewQI4Sdge0nmiqRV0K0RXcCXLPy9kH3yvkNAB3ZeM6y95oFT8T+pkTk
-qVgKZogwKzGGizbBX4DYyczXEIRE+YkFfdKjkkS5PEB2Q5LJhC+Two4+FgMzvwXlAPPDp31roN+y
-NY0VCfkraKQEuAo6QiU+ZYcdDOjDxgfT0/B1EgluJAxegYMitXxr+OyaHP/0BTTU+FNXHTIItCS+
-E/S6PJePFizPFGnd6zRr1PAESin84eFM0LQ0NVziCXiTgMHiXfCGnr9Lq6PoUG4kIvqSybJHPTOf
-0er+Y3RVJu2GxrJuniKh9sLufEcUFMAoK5VY4mKI9jYiJCQejy/SQEdq8LhHd/gq+PHYuT/UDSYu
-sOmO/CxeIqJcUOMoUgJ8iBpT+qs+c/H0xZDZMB8VN5Sp9c5096SVXregFmmcl6nUX17KqYBxri1D
-qzD1zf/s+fqVRO5U5pgKxqkUXR5sJrWwqIAY1jenKOLNTfjoDE5gQ5IvupAenhPTU72ADjk5OsyZ
-NCY01fzEIdIl4uLA0qCF4bOIMrFo2T/BotnoyPMwPHz1HGY9WC5Jc3/O7rYEMckzp+hK9HdnXycF
-Bn//FqJL1q2d1uBOI5KJKoe9dY8CtE5y6ZcD7b0Qu7QlbxiftBvvzb0q1bgUtW3afR6hOvTOrnzs
-/oaixgX12x51zrXAPqmMDXffCiy8nZ4fkRgzTG3Mjvgsv0gRr71T8+nivN5Ahv4jPAd7xqOOS+Mj
-fO/34q+5ULSUJXqT0s3IHlYQoliN62P3AOKjIZFYbOut8VOb8C2eQRRph+O4YA/UuiqQmJsoOGbB
-uKoncsnCv1kIOmflJPDTcqB+2bOlHpC/bjTKbr2AHBd0xVFJfG9kjsPYBCqC7JaL5XVfZuzw5Vn9
-3GrLrc8kqOFJ5mfuYuExONl/+ULYz1aT0H3SYtjo3oHsETCRtpE8S9vwuIIda0eDuYMZvHaX3k9d
-RrkixJA7xvaGgNRQvaDLjSeGB3ssKLyZVJjRJ3GHRgGV/6N8tWVc3edZRs2BKvwKAYRj7hIGLqHm
-htKc6x5C9Z5HJKfFH8vK5JJkAmZJ9btYQsjN5Uq0U8MDbKRzryz47wy/d1CImE+f/r1Ughs235x/
-Z9woHaIsEi1uULjVZXZZY16Y+Ul+IWgFnespH/Vi9DTh3ZlWeor6IRUmCS0BY3c1vP77SDkMoPqk
-6EbklMpONUSsKxexwDeBXYDX131E9tRHg9nzhN6/H5kG/Y3cc7yUPWP1pB/dsfEazfuXRWqGKBRM
-mXsDjj52W1dVrOejEBX33Qit3YjXzS7OjEhQ9FJ8T8M3edeMw0RVWCtFaTzdZfT3OZdap9SVvHLV
-o14d08csNY5yp1jml0eXb9cIlE/3eC4srpXt4qnwhDsvHlDy+pZj1+IGWQr8mjQTNVdjwCcMNGsT
-N9oSe7fcQ/fUdXTrfCoJs2BcB7rmuuAniWiL6jtdTM2POzx0uEnww0kPcWtvn4LshHW+GgD3jAHS
-4+7HS5jKlQAKCKnWmpP7yfr44mk/mvvy2DjpRO3+MJ39hq2trz7EGbqtxWcPWELHt8csasqm0fEE
-7AjKq7LTERe6t8TEhGvkyNJPoyDbRTkPirj4LqsnPnLWC6oMLDbsnaT2fAe5BNb4yj9vP5o0A3le
-w6LjvzfTUbjeqfcHPtvshZCIdJSUlEppO43bQ8MuWIh6MtoPBriBYKc4aWasCQmNTfh0QSznRCIq
-YqkIhCKEFcafCBM48mcGsZ3folAVa9VZfWwvWgy6m0/irCN69AQMCJRYk4p14zUVRkrxV8z0Adaw
-56DE+sSvthxSAYPA8M8ve+/joXM3qZPrdrBhf6Hy7OQ4nXYJXJbBmqU4M7ERse01KbdGEu2vFaBN
-WuRt6IGUYrEIKtHqU4cTSKVioSBEcLHwwgInbZIFUOMTVaS5h0rLfwvyv5DguVLnAG0ZFoMs08wi
-vbAKYggXEusixgzpGmU2C6XdhrQ9HriMk95ElEPV2NjOqtmZOMxzkM9uOVjxzWdPyJIx1f0E73JD
-42JFRVRmZvU1HRrk9f5i2U0nyksVChffbuocEXq2/rJeCVl+H7DW1EuPm9UcuMpw2w+vWuS7GhPC
-afhyKDSV0AkuuT70pDSn0XmaxZCrnd+N6YugPYsww8PLO+tx/11Rd+dUBRdMAuGAVTPJqbTgst3d
-T9o7c/SkrFmTupC3nkZ9WvavKYWjaB/cYZ5SVNzSCkDquCWxJmcLbCtAStLJhYWRwEgZct00zRPi
-8sR7KDt41WSVCFVztzJYiGfkW6AjgcA5mAqBtPMcysK9i/L9K/C4m2hHgmxaOOXNIODNGuuuYsEP
-BE8rvQiFDKQBaMMgBT4kDCNh4dyMsdBUIZCFixqOItWilAFwpmdjODmYut8f3bECIs//H2e8ra5Q
-oHz0jQXgYo22vX9eBTckjxexcjgmb47NTPDlFzxGYl+5qSR61nmDaf0+kH3R6/I2mAWXOPp0Sq6M
-K6IwGpAFJtyt2kMBkH9iXo3aljhyVaF4wctaC3jyFYUAXdI0bD4eis4Wfs3tqbAl5f74bwU9flMI
-NSR5THfsYvoLGKrPDZ8irG0mFZCG54ndJNBiQ2qFZVw2KHbdJiE7wipskld8VGWrXxhG9fxUxb2M
-jH50y/kOlG/+g4/K+Ki7SpukURoThiXk6ziq4g5ymctjy5IBc9Rba0FxNDonuzdjG8GDKs8rB8qc
-YdrHQlmcYwpoz56mAolR+ilCnPGzBpz+7TGx4vvl+0piUBOkFl00+LxyNl9AgOLGVMG9oWWSwg/q
-y5E8LRjczy3XCNvhYW3TNuNq2m8zjdC2Ni7XkgEFu2qIElcHTi3v3TPpr56cAKOTPE73ZSjkh7tj
-o1NekzLb3JSUTqEr1jsWwYFvCJLqghMPhgKXbVXsegBw8jCF/HJk4PAEXiBE76Pi4BOPJq2eWMyx
-to7Rd2OazURZmJf/Kdl8tvcc6M0LbdPSLd++56dfUGqX573xXwquwaFqVs2fS5nb6aDbWz9+UpYT
-G/rrX/eh/qUdHniYeNvzJgREc3dtrdlGmaLBso4sL8vobLohXp6q/OGZP51k3h9wCbixN2JN/Art
-oFwGzC2asKrzYCItxLfd4VHiEM4LU2Ap1U6gE97Pw6ApwQNNdHIbshbTPPr34LMUqfKVI3y5+Cxy
-GOjNxTM4W3d3swcBF/TEpfPKGAdqarpvX1ghAVliL4s9Z7LBMV64A2O3Fje6GXY+ROq9LlnbWP9o
-s3MgA7WYWa2tyhbL7BLLAegn+0L+Mjf4R+ioyA+sV/eoNF40pX+ImeVMTE4R1rx4VV64zJcboIqw
-4+8fGVqToUJ92cYMku6g7IP2ISRMfCHDNIpSYLLKbuS0DcpI2WhLrUJQZFud0PEVpZOh75u9N0Kw
-/XRYykrpZEof6yfBIocI0ZJlm6iG/ZMFqHc29+g3icd/ZddRl9C0hYWLAprjaI+IRcvs4l4BRyXJ
-XgoLnfliYeeHs6KNj3wg59NtBEDkSggJRMKO0Y4irKA6KAk0izGNknufMeVCo8D4DkYlM4ibNGBa
-60A0tU7cuK7zeBBPursCdFFr+1eKl4IOCwMacp2ggV0SW3KTmrERA4JcEdDKN/I0c1f53GWluP6y
-eAAIB1HxLJIoPpA+LsePsQMoSnYNnRNpavNha9xcS53PGnoeehXL3buLWgE5tWtBAIil/SNR7vJU
-4bSeAf+NAS4WBQre0zJg0h/6fz9+EiwYjzoqZOHP3Zv32v/+w0mx4s8s/SkyZDHu06fpF/2u+lSL
-iNiTR3loYMtR8776qnbbgXTcbOYGaHLC/71RsaLRLzhLB1rmyoHJqIUoLcRClho2mCYXheyTIlPo
-yW333ZxmbOp70CC8RHOqEH/bPZk8O7IO9MJNEfq5ik0BE4rmgtTLzCVzWjEZj7jqyzyPgWBLVizy
-ns4N97KMX8JbZHOFY6V6QYuN8y+RTKr9BwPgIeCvLs2LRWvh7XSgJy3x+0WNhOrClf74fYknvZ3/
-UyL/G3CqXx5kOUB+ECBRB/OjiCWR9tnSq8P4QV6vH33OEwYTZQ/Ap95xjycl7rZ4r49wk65bROZB
-Dcng9203I8I8UKG4c2LMdfNvhC6J3AgkCttEGFvZXvLovev14um/0OzYuOlwQj+cJyPuNgCq3uwb
-raKhIW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Amf_Parse_TypeLoader */
+require_once 'Zend/Amf/Parse/TypeLoader.php';
+
+/** Zend_Reflection_Class */
+require_once 'Zend/Reflection/Class.php';
+
+/** Zend_Server_Reflection */
+require_once 'Zend/Server/Reflection.php';
+
+/**
+ * This class implements a service for generating AMF service descriptions as XML.
+ *
+ * @package    Zend_Amf
+ * @subpackage Adobe
+ * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Adobe_Introspector 
+{
+    /**
+     * Options used:
+     * - server: instance of Zend_Amf_Server to use
+     * - directories: directories where class files may be looked up
+     *
+     * @var array Introspector options
+     */
+    protected $_options;
+
+    /**
+     * @var DOMElement DOM element to store types
+     */
+    protected $_types;
+
+    /**
+     * @var array Map of the known types
+     */
+    protected $_typesMap = array();
+
+    /**
+     * @var DOMDocument XML document to store data
+     */
+    protected $_xml;
+   
+    /**
+     * Constructor
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->_xml = new DOMDocument('1.0', 'utf-8');
+    }
+    
+    /**
+     * Create XML definition on an AMF service class
+     * 
+     * @param  string $serviceClass Service class name
+     * @param  array $options invocation options
+     * @return string XML with service class introspection
+     */
+    public function introspect($serviceClass, $options = array()) 
+    {
+        $this->_options = $options;
+        
+        if (strpbrk($serviceClass, '\\/<>')) {
+            return $this->_returnError('Invalid service name');
+        }
+
+        // Transform com.foo.Bar into com_foo_Bar
+        $serviceClass = str_replace('.' , '_', $serviceClass);
+
+        // Introspect!
+        if (!class_exists($serviceClass)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($serviceClass, $this->_getServicePath());
+        }
+        
+        $serv = $this->_xml->createElement('service-description');
+        $serv->setAttribute('xmlns', 'http://ns.adobe.com/flex/service-description/2008');
+
+        $this->_types = $this->_xml->createElement('types');
+        $this->_ops   = $this->_xml->createElement('operations');
+
+        $r = Zend_Server_Reflection::reflectClass($serviceClass);
+        $this->_addService($r, $this->_ops);
+    
+        $serv->appendChild($this->_types);
+        $serv->appendChild($this->_ops);
+        $this->_xml->appendChild($serv);
+
+        return $this->_xml->saveXML();
+    }
+    
+    /**
+     * Authentication handler
+     * 
+     * @param  Zend_Acl $acl
+     * @return unknown_type
+     */
+    public function initAcl(Zend_Acl $acl)
+    {
+        return false; // we do not need auth for this class
+    }
+
+    /**
+     * Generate map of public class attributes
+     * 
+     * @param  string $typename type name
+     * @param  DOMElement $typexml target XML element 
+     * @return void
+     */
+    protected function _addClassAttributes($typename, DOMElement $typexml)
+    {
+        // Do not try to autoload here because _phpTypeToAS should 
+        // have already attempted to load this class
+        if (!class_exists($typename, false)) {
+            return;
+        }
+
+        $rc = new Zend_Reflection_Class($typename);
+        foreach ($rc->getProperties() as $prop) {
+            if (!$prop->isPublic()) {
+                continue;
+            }
+
+            $propxml = $this->_xml->createElement('property');
+            $propxml->setAttribute('name', $prop->getName());
+
+            $type = $this->_registerType($this->_getPropertyType($prop));
+            $propxml->setAttribute('type', $type);
+
+            $typexml->appendChild($propxml);
+        }
+    }
+
+    /**
+     * Build XML service description from reflection class
+     * 
+     * @param  Zend_Server_Reflection_Class $refclass  
+     * @param  DOMElement $target target XML element
+     * @return void
+     */
+    protected function _addService(Zend_Server_Reflection_Class $refclass, DOMElement $target)
+    {
+        foreach ($refclass->getMethods() as $method) {
+            if (!$method->isPublic() 
+                || $method->isConstructor()
+                || ('__' == substr($method->name, 0, 2))
+            ) {
+                continue;
+            }
+
+            foreach ($method->getPrototypes() as $proto) {
+                $op = $this->_xml->createElement('operation');
+                $op->setAttribute('name', $method->getName());
+
+                $rettype = $this->_registerType($proto->getReturnType());
+                $op->setAttribute('returnType', $rettype);
+
+                foreach ($proto->getParameters() as $param) {
+                    $arg = $this->_xml->createElement('argument');
+                    $arg->setAttribute('name', $param->getName());
+
+                    $type = $param->getType();
+                    if ($type == 'mixed' && ($pclass = $param->getClass())) {
+                        $type = $pclass->getName();
+                    }
+
+                    $ptype = $this->_registerType($type);
+                    $arg->setAttribute('type', $ptype);
+
+                    $op->appendChild($arg);
+                }
+
+                $target->appendChild($op);
+            }
+        }
+    }
+    
+    /**
+     * Extract type of the property from DocBlock
+     * 
+     * @param  Zend_Reflection_Property $prop reflection property object
+     * @return string Property type
+     */
+    protected function _getPropertyType(Zend_Reflection_Property $prop)
+    {
+        $docBlock = $prop->getDocComment();
+
+        if (!$docBlock) {
+            return 'Unknown';
+        }
+
+        if (!$docBlock->hasTag('var')) {
+            return 'Unknown';
+        }
+
+        $tag = $docBlock->getTag('var');
+        return trim($tag->getDescription());
+    }
+    
+    /**
+     * Get the array of service directories
+     * 
+     * @return array Service class directories
+     */
+    protected function _getServicePath() 
+    {
+        if (isset($this->_options['server'])) {
+            return $this->_options['server']->getDirectory();
+        }
+
+        if (isset($this->_options['directories'])) {
+            return $this->_options['directories'];
+        }
+
+        return array();
+    }
+
+    /**
+     * Map from PHP type name to AS type name
+     * 
+     * @param  string $typename PHP type name
+     * @return string AS type name
+     */
+    protected function _phpTypeToAS($typename)
+    {
+        if (class_exists($typename)) {
+            $vars = get_class_vars($typename);
+
+            if (isset($vars['_explicitType'])) {
+                return $vars['_explicitType'];
+            }
+        }
+
+        if (false !== ($asname = Zend_Amf_Parse_TypeLoader::getMappedClassName($typename))) {
+            return $asname;
+        }
+
+        return $typename;
+    }
+
+    /**
+     * Register new type on the system
+     * 
+     * @param  string $typename type name
+     * @return string New type name
+     */
+    protected function _registerType($typename) 
+    {
+        // Known type - return its AS name
+        if (isset($this->_typesMap[$typename])) {
+            return $this->_typesMap[$typename];
+        }
+
+        // Standard types
+        if (in_array($typename, array('void', 'null', 'mixed', 'unknown_type'))) {
+            return 'Unknown';
+        }
+
+        if (in_array($typename, array('string', 'object', 'Unknown', 'stdClass', 'array'))) {
+            return $typename;
+        }
+
+        // Resolve and store AS name
+        $asTypeName = $this->_phpTypeToAS($typename);
+        $this->_typesMap[$typename] = $asTypeName;
+
+        // Create element for the name
+        $typeEl = $this->_xml->createElement('type');
+        $typeEl->setAttribute('name', $asTypeName);
+        $this->_addClassAttributes($typename, $typeEl);
+        $this->_types->appendChild($typeEl);    
+
+        return $asTypeName;
+    }
+    
+   /**
+     * Return error with error message
+     * 
+     * @param  string $msg Error message
+     * @return string 
+     */
+    protected function _returnError($msg) 
+    {
+        return 'ERROR: $msg';    
+    }
+}

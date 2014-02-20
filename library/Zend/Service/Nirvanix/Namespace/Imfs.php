@@ -1,47 +1,104 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Nirvanix
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Service_Nirvanix_Namespace_Base
+ */
+require_once 'Zend/Service/Nirvanix/Namespace/Base.php'; 
+ 
+/**
+ * Namespace proxy with additional convenience methods for the IMFS namespace.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Nirvanix
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Nirvanix_Namespace_Imfs extends Zend_Service_Nirvanix_Namespace_Base
+{
+    /**
+     * Convenience function to get the contents of a file on
+     * the Nirvanix IMFS.  Analog to PHP's file_get_contents().
+     *
+     * @param  string  $filePath    Remote path and filename
+     * @param  integer $expiration  Number of seconds that Nirvanix
+     *                              make the file available for download.
+     * @return string               Contents of file  
+     */
+    public function getContents($filePath, $expiration = 3600)
+    {
+        // get url to download the file
+        $params = array('filePath'   => $filePath,
+                        'expiration' => $expiration);
+        $resp = $this->getOptimalUrls($params);
+        $url = (string)$resp->Download->DownloadURL;
+
+        // download the file
+        $this->_httpClient->resetParameters();
+        $this->_httpClient->setUri($url);
+        $resp = $this->_httpClient->request(Zend_Http_Client::GET);
+
+        return $resp->getBody();
+    }
+
+    /**
+     * Convenience function to put the contents of a string into
+     * the Nirvanix IMFS.  Analog to PHP's file_put_contents().
+     *
+     * @param  string  $filePath    Remote path and filename
+     * @param  integer $data        Data to store in the file
+     * @param  string  $mimeType    Mime type of data
+     * @return Zend_Service_Nirvanix_Response
+     */
+    public function putContents($filePath, $data, $mimeType = null)
+    {
+        // get storage node for upload
+        $params = array('sizeBytes' => strlen($data));
+        $resp = $this->getStorageNode($params);
+        $host        = (string)$resp->GetStorageNode->UploadHost;
+        $uploadToken = (string)$resp->GetStorageNode->UploadToken;
+
+        // http upload data into remote file
+        $this->_httpClient->resetParameters();
+        $this->_httpClient->setUri("http://{$host}/Upload.ashx");
+        $this->_httpClient->setParameterPost('uploadToken', $uploadToken);
+        $this->_httpClient->setParameterPost('destFolderPath', dirname($filePath));
+        $this->_httpClient->setFileUpload(basename($filePath), 'uploadFile', $data, $mimeType);
+        $response = $this->_httpClient->request(Zend_Http_Client::POST);
+
+        return new Zend_Service_Nirvanix_Response($response->getBody());
+    }
+    
+    /**
+     * Convenience function to remove a file from the Nirvanix IMFS.
+     * Analog to PHP's unlink().
+     *
+     * @param  string  $filePath  Remove path and filename
+     * @return Zend_Service_Nirvanix_Response
+     */
+    public function unlink($filePath)
+    {
+        $params = array('filePath' => $filePath);
+        return $this->deleteFiles($params);
+    }
+
+}

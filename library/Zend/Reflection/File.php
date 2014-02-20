@@ -1,121 +1,410 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Reflection_Class
+ */
+require_once 'Zend/Reflection/Class.php';
+
+/**
+ * @see Zend_Reflection_Function
+ */
+require_once 'Zend/Reflection/Function.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_File implements Reflector
+{
+    /**
+     * @var string
+     */
+    protected $_filepath        = null;
+    
+    /**
+     * @var string
+     */
+    protected $_docComment      = null;
+    
+    /**
+     * @var int
+     */
+    protected $_startLine       = 1;
+    
+    /**
+     * @var int
+     */
+    protected $_endLine         = null;
+    
+    /**
+     * @var string[]
+     */
+    protected $_requiredFiles   = array();
+    
+    /**
+     * @var Zend_Reflection_Class[]
+     */
+    protected $_classes         = array();
+    
+    /**
+     * @var Zend_Reflection_Function[]
+     */
+    protected $_functions       = array();
+    
+    /**
+     * @var string
+     */
+    protected $_contents        = null;
+
+    /**
+     * Constructor
+     *
+     * @param  string $file
+     * @return void
+     */
+    public function __construct($file) 
+    {
+        $fileName = $file;
+
+        if (($fileRealpath = realpath($fileName)) === false) {
+            $fileRealpath = self::findRealpathInIncludePath($file);
+        }
+
+        if (!$fileRealpath || !in_array($fileRealpath, get_included_files())) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('File ' . $file . ' must be required before it can be reflected');
+        }
+
+        $this->_fileName = $fileRealpath;
+        $this->_contents = file_get_contents($this->_fileName);
+        $this->_reflect();
+    }
+
+    /**
+     * Find realpath of file based on include_path
+     *
+     * @param  string $fileName
+     * @return string
+     */
+    public static function findRealpathInIncludePath($fileName)
+    {
+        $includePaths = explode(PATH_SEPARATOR, get_include_path());
+        while (count($includePaths) > 0) {
+            $filePath = array_shift($includePaths) . DIRECTORY_SEPARATOR . $fileName;
+            
+            if ( ($foundRealpath = realpath($filePath)) !== false) {
+                break;
+            }
+        }
+        
+        return $foundRealpath;
+    }
+    
+    /**
+     * Export
+     *
+     * Required by the Reflector interface.
+     *
+     * @todo   What should this do?
+     * @return null
+     */
+    public static function export()
+    {
+        return null;
+    }
+    
+    /**
+     * Return the file name of the reflected file
+     *
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->_fileName;
+    }
+    
+    /**
+     * Get the start line - Always 1, staying consistent with the Reflection API
+     *
+     * @return int
+     */
+    public function getStartLine()
+    {
+        return $this->_startLine;
+    }
+    
+    /**
+     * Get the end line / number of lines
+     *
+     * @return int
+     */
+    public function getEndLine()
+    {
+        return $this->_endLine;
+    }
+    
+    /**
+     * Return the doc comment
+     *
+     * @return string
+     */
+    public function getDocComment()
+    {
+        return $this->_docComment;
+    }
+    
+    /**
+     * Return the docblock
+     *
+     * @param  string $reflectionClass Reflection class to use
+     * @return Zend_Reflection_Docblock
+     */
+    public function getDocblock($reflectionClass = 'Zend_Reflection_Docblock')
+    {
+        $instance = new $reflectionClass($this);
+        if (!$instance instanceof Zend_Reflection_Docblock) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Invalid reflection class specified; must extend Zend_Reflection_Docblock');
+        }
+        return $instance;
+    }
+    
+    /**
+     * Return the reflection classes of the classes found inside this file
+     *
+     * @param  string $reflectionClass Name of reflection class to use for instances
+     * @return array Array of Zend_Reflection_Class instances
+     */
+    public function getClasses($reflectionClass = 'Zend_Reflection_Class')
+    {
+        $classes = array();
+        foreach ($this->_classes as $class) {
+            $instance = new $reflectionClass($class);
+            if (!$instance instanceof Zend_Reflection_Class) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
+            }
+            $classes[] = $instance;
+        }
+        return $classes;
+    }
+    
+	/**
+     * Return the reflection functions of the functions found inside this file
+     *
+     * @param  string $reflectionClass Name of reflection class to use for instances
+     * @return array Array of Zend_Reflection_Functions
+     */
+    public function getFunctions($reflectionClass = 'Zend_Reflection_Function')
+    {
+        $functions = array();
+        foreach ($this->_functions as $function) {
+            $instance = new $reflectionClass($function);
+            if (!$instance instanceof Zend_Reflection_Function) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Function');
+            }
+            $functions[] = $instance;
+        }
+        return $functions;
+    }
+    
+    /**
+     * Retrieve the reflection class of a given class found in this file
+     *
+     * @param  null|string $name
+     * @param  string $reflectionClass Reflection class to use when creating reflection instance
+     * @return Zend_Reflection_Class
+     * @throws Zend_Reflection_Exception for invalid class name or invalid reflection class
+     */
+    public function getClass($name = null, $reflectionClass = 'Zend_Reflection_Class')
+    {
+        if ($name === null) {
+            reset($this->_classes);
+            $selected = current($this->_classes);
+            $instance = new $reflectionClass($selected);
+            if (!$instance instanceof Zend_Reflection_Class) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Invalid reflection class given; must extend Zend_Reflection_Class');
+            }
+            return $instance;
+        }
+        
+        if (in_array($name, $this->_classes)) {
+            $instance = new $reflectionClass($name);
+            if (!$instance instanceof Zend_Reflection_Class) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Invalid reflection class given; must extend Zend_Reflection_Class');
+            }
+            return $instance;
+        }
+        
+        require_once 'Zend/Reflection/Exception.php';
+        throw new Zend_Reflection_Exception('Class by name ' . $name . ' not found.');
+    }
+
+    /**
+     * Return the full contents of file
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+        return $this->_contents;
+    }
+    
+    /**
+     * Serialize to string
+     *
+     * Required by the Reflector interface
+     *
+     * @todo   What should this serialization look like?
+     * @return string
+     */
+    public function __toString()
+    {
+        return '';
+    }
+    
+    /**
+     * This method does the work of "reflecting" the file
+     *
+     * Uses PHP's tokenizer to perform file reflection.
+     *
+     * @return void
+     */
+    protected function _reflect()
+    {
+        $contents = $this->_contents;
+        $tokens   = token_get_all($contents);
+        
+        $functionTrapped = false;
+        $classTrapped    = false;
+        $requireTrapped  = false;
+        $openBraces      = 0;
+        
+        $this->_checkFileDocBlock($tokens);
+                        
+        foreach ($tokens as $token) {
+            /*
+             * Tokens are characters representing symbols or arrays 
+             * representing strings. The keys/values in the arrays are 
+             *
+             * - 0 => token id, 
+             * - 1 => string, 
+             * - 2 => line number
+             *
+             * Token ID's are explained here: 
+             * http://www.php.net/manual/en/tokens.php.
+             */
+            
+            if (is_array($token)) {
+                $type    = $token[0];
+                $value   = $token[1];
+                $lineNum = $token[2];
+            } else {
+                // It's a symbol
+                // Maintain the count of open braces
+                if ($token == '{') {
+                    $openBraces++;
+                } else if ($token == '}') {
+                    $openBraces--;
+                }
+                
+                continue;
+            }
+            
+            switch ($type) {
+                // Name of something
+                case T_STRING:
+                    if ($functionTrapped) {
+                        $this->_functions[] = $value;
+                        $functionTrapped = false;
+                    } elseif ($classTrapped) {
+                        $this->_classes[] = $value;
+                        $classTrapped = false;
+                    }
+                    continue;
+                    
+                // Required file names are T_CONSTANT_ENCAPSED_STRING
+                case T_CONSTANT_ENCAPSED_STRING:
+                    if ($requireTrapped) {
+                        $this->_requiredFiles[] = $value ."\n";
+                        $requireTrapped = false;
+                    }
+                    continue;
+                    
+                // Functions
+                case T_FUNCTION:
+                    if ($openBraces == 0) {
+                        $functionTrapped = true;
+                    }
+                    break;
+                    
+                // Classes
+                case T_CLASS:
+                    $classTrapped = true;
+                    break;
+                    
+                // All types of requires
+                case T_REQUIRE:
+                case T_REQUIRE_ONCE:
+                case T_INCLUDE:
+                case T_INCLUDE_ONCE:
+                    $requireTrapped = true;
+                    break;
+
+                // Default case: do nothing
+                default:
+                    break;
+            }
+        }
+        
+        $this->_endLine = count(explode("\n", $this->_contents));
+    }
+    
+    /**
+     * Validate / check a file level docblock
+     * 
+     * @param  array $tokens Array of tokenizer tokens
+     * @return void
+     */
+    protected function _checkFileDocBlock($tokens) {
+        foreach ($tokens as $token) {
+            $type    = $token[0];
+            $value   = $token[1];
+            $lineNum = $token[2];
+            if(($type == T_OPEN_TAG) || ($type == T_WHITESPACE)) {
+                continue;
+            } elseif ($type == T_DOC_COMMENT) {
+                $this->_docComment = $value;
+                $this->_startLine  = $lineNum + substr_count($value, "\n") + 1;
+                return;
+            } else {
+                // Only whitespace is allowed before file docblocks
+                return;
+            }
+        }
+    }
+}

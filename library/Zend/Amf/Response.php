@@ -1,60 +1,193 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Amf_Constants */
+require_once 'Zend/Amf/Constants.php';
+
+/** Zend_Amf_Parse_OutputStream */
+require_once 'Zend/Amf/Parse/OutputStream.php';
+
+/** Zend_Amf_Parse_Amf0_Serializer */
+require_once 'Zend/Amf/Parse/Amf0/Serializer.php';
+
+/**
+ * Handles converting the PHP object ready for response back into AMF
+ *
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Response
+{
+    /**
+     * @var int Object encoding for response
+     */
+    protected $_objectEncoding = 0;
+
+    /**
+     * Array of Zend_Amf_Value_MessageBody objects
+     * @var array
+     */
+    protected $_bodies = array();
+
+    /**
+     * Array of Zend_Amf_Value_MessageHeader objects
+     * @var array
+     */
+    protected $_headers = array();
+
+    /**
+     * @var Zend_Amf_Parse_OutputStream
+     */
+    protected $_outputStream;
+
+    /**
+     * Instantiate new output stream and start serialization
+     *
+     * @return Zend_Amf_Response
+     */
+    public function finalize()
+    {
+        $this->_outputStream = new Zend_Amf_Parse_OutputStream();
+        $this->writeMessage($this->_outputStream);
+        return $this;
+    }
+
+    /**
+     * Serialize the PHP data types back into Actionscript and
+     * create and AMF stream.
+     *
+     * @param  Zend_Amf_Parse_OutputStream $stream
+     * @return Zend_Amf_Response
+     */
+    public function writeMessage(Zend_Amf_Parse_OutputStream $stream)
+    {
+        $objectEncoding = $this->_objectEncoding;
+
+        //Write encoding to start of stream. Preamble byte is written of two byte Unsigned Short
+        $stream->writeByte(0x00);
+        $stream->writeByte($objectEncoding);
+
+        // Loop through the AMF Headers that need to be returned.
+        $headerCount = count($this->_headers);
+        $stream->writeInt($headerCount);
+        foreach ($this->getAmfHeaders() as $header) {
+            $serializer = new Zend_Amf_Parse_Amf0_Serializer($stream);
+            $stream->writeUTF($header->name);
+            $stream->writeByte($header->mustRead);
+            $stream->writeLong(Zend_Amf_Constants::UNKNOWN_CONTENT_LENGTH);
+            $serializer->writeTypeMarker($header->data);
+        }
+
+        // loop through the AMF bodies that need to be returned.
+        $bodyCount = count($this->_bodies);
+        $stream->writeInt($bodyCount);
+        foreach ($this->_bodies as $body) {
+            $serializer = new Zend_Amf_Parse_Amf0_Serializer($stream);
+            $stream->writeUTF($body->getTargetURI());
+            $stream->writeUTF($body->getResponseURI());
+            $stream->writeLong(Zend_Amf_Constants::UNKNOWN_CONTENT_LENGTH);
+            if($this->_objectEncoding == Zend_Amf_Constants::AMF0_OBJECT_ENCODING) {
+                $serializer->writeTypeMarker($body->getData());
+            } else {
+                // Content is AMF3
+                $serializer->writeTypeMarker($body->getData(),Zend_Amf_Constants::AMF0_AMF3);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Return the output stream content
+     *
+     * @return string The contents of the output stream
+     */
+    public function getResponse()
+    {
+        return $this->_outputStream->getStream();
+    }
+
+    /**
+     * Return the output stream content
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getResponse();
+    }
+
+    /**
+     * Add an AMF body to be sent to the Flash Player
+     *
+     * @param  Zend_Amf_Value_MessageBody $body
+     * @return Zend_Amf_Response
+     */
+    public function addAmfBody(Zend_Amf_Value_MessageBody $body)
+    {
+        $this->_bodies[] = $body;
+        return $this;
+    }
+
+    /**
+     * Return an array of AMF bodies to be serialized
+     *
+     * @return array
+     */
+    public function getAmfBodies()
+    {
+        return $this->_bodies;
+    }
+
+    /**
+     * Add an AMF Header to be sent back to the flash player
+     *
+     * @param  Zend_Amf_Value_MessageHeader $header
+     * @return Zend_Amf_Response
+     */
+    public function addAmfHeader(Zend_Amf_Value_MessageHeader $header)
+    {
+        $this->_headers[] = $header;
+        return $this;
+    }
+
+    /**
+     * Retrieve attached AMF message headers
+     * 
+     * @return array Array of Zend_Amf_Value_MessageHeader objects
+     */
+    public function getAmfHeaders()
+    {
+        return $this->_headers;
+    }
+
+    /**
+     * Set the AMF encoding that will be used for serialization
+     *
+     * @param  int $encoding
+     * @return Zend_Amf_Response
+     */
+    public function setObjectEncoding($encoding)
+    {
+        $this->_objectEncoding = $encoding;
+        return $this;
+    }
+}

@@ -1,72 +1,195 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9FsyKKIjBpAlg0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * Validator for the hash of given files
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_Hash extends Zend_Validate_Abstract
+{
+    /**
+     * @const string Error constants
+     */
+    const DOES_NOT_MATCH = 'fileHashDoesNotMatch';
+    const NOT_DETECTED   = 'fileHashHashNotDetected';
+    const NOT_FOUND      = 'fileHashNotFound';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::DOES_NOT_MATCH => "The file '%value%' does not match the given hashes",
+        self::NOT_DETECTED   => "There was no hash detected for the given file",
+        self::NOT_FOUND      => "The file '%value%' could not be found"
+    );
+
+    /**
+     * Hash of the file
+     *
+     * @var string
+     */
+    protected $_hash;
+
+    /**
+     * Sets validator options
+     *
+     * @param  string|array $options
+     * @return void
+     */
+    public function __construct($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (is_scalar($options)) {
+            $options = array('hash1' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
+        }
+
+        if (1 < func_num_args()) {
+            trigger_error('Multiple constructor options are deprecated in favor of a single options array', E_USER_NOTICE);
+            $options['algorithm'] = func_get_arg(1);
+        }
+
+        $this->setHash($options);
+    }
+
+    /**
+     * Returns the set hash values as array, the hash as key and the algorithm the value
+     *
+     * @return array
+     */
+    public function getHash()
+    {
+        return $this->_hash;
+    }
+
+    /**
+     * Sets the hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function setHash($options)
+    {
+        $this->_hash  = null;
+        $this->addHash($options);
+
+        return $this;
+    }
+
+    /**
+     * Adds the hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function addHash($options)
+    {
+        if (is_string($options)) {
+            $options = array($options);
+        } else if (!is_array($options)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("False parameter given");
+        }
+
+        $known = hash_algos();
+        if (!isset($options['algorithm'])) {
+            $algorithm = 'crc32';
+        } else {
+            $algorithm = $options['algorithm'];
+            unset($options['algorithm']);
+        }
+
+        if (!in_array($algorithm, $known)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("Unknown algorithm '{$algorithm}'");
+        }
+
+        foreach ($options as $value) {
+            $this->_hash[$value] = $algorithm;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the given file confirms the set hash
+     *
+     * @param  string $value Filename to check for hash
+     * @param  array  $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_FOUND);
+        }
+
+        $algos  = array_unique(array_values($this->_hash));
+        $hashes = array_unique(array_keys($this->_hash));
+        foreach ($algos as $algorithm) {
+            $filehash = hash_file($algorithm, $value);
+            if ($filehash === false) {
+                return $this->_throw($file, self::NOT_DETECTED);
+            }
+
+            foreach($hashes as $hash) {
+                if ($filehash === $hash) {
+                    return true;
+                }
+            }
+        }
+
+        return $this->_throw($file, self::DOES_NOT_MATCH);
+    }
+
+    /**
+     * Throws an error of the given type
+     *
+     * @param  string $file
+     * @param  string $errorType
+     * @return false
+     */
+    protected function _throw($file, $errorType)
+    {
+        if ($file !== null) {
+            $this->_value = $file['name'];
+        }
+
+        $this->_error($errorType);
+        return false;
+    }
+}

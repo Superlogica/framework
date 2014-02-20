@@ -1,55 +1,105 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-VSG8qsvc3+rgf/b5Bte=
+<?php
+
+class Zend_Crypt
+{
+
+    const TYPE_OPENSSL = 'openssl';
+    const TYPE_HASH = 'hash';
+    const TYPE_MHASH = 'mhash';
+
+    protected static $_type = null;
+
+    protected static $_supportedAlgosOpenssl = array(
+        'md2',
+        'md4',
+        'mdc2',
+        'rmd160',
+        'sha',
+        'sha1',
+        'sha224',
+        'sha256',
+        'sha384',
+        'sha512'
+    );
+
+    protected static $_supportedAlgosMhash = array(
+        'adler32',
+        'crc32',
+        'crc32b',
+        'gost',
+        'haval128',
+        'haval160',
+        'haval192',
+        'haval256',
+        'md4',
+        'md5',
+        'ripemd160',
+        'sha1',
+        'sha256',
+        'tiger',
+        'tiger128',
+        'tiger160'
+    );
+
+    public static function hash($algorithm, $data, $binaryOutput = false)
+    {
+        $algorithm = strtolower($algorithm);
+        if (function_exists($algorithm)) {
+            return $algorithm($data, $binaryOutput);
+        }
+        self::_detectHashSupport($algorithm);
+        $supportedMethod = '_digest' . ucfirst(self::$_type);
+        $result = self::$supportedMethod($algorithm, $data, $binaryOutput);
+    }
+
+    protected static function _detectHashSupport($algorithm)
+    {
+        if (function_exists('hash')) {
+            self::$_type = self::TYPE_HASH;
+            if (in_array($algorithm, hash_algos())) {
+               return;
+            }
+        }
+        if (function_exists('mhash')) {
+            self::$_type = self::TYPE_MHASH;
+            if (in_array($algorithm, self::$_supportedAlgosMhash)) {
+               return;
+            }
+        }
+        if (function_exists('openssl_digest')) {
+            if ($algorithm == 'ripemd160') {
+                $algorithm = 'rmd160';
+            }
+            self::$_type = self::TYPE_OPENSSL;
+            if (in_array($algorithm, self::$_supportedAlgosOpenssl)) {
+               return;
+            }
+        }
+        require_once 'Zend/Crypt/Exception.php';
+        throw new Zend_Crypt_Exception('\'' . $algorithm . '\' is not supported by any available extension or native function');
+    }
+
+    protected static function _digestHash($algorithm, $data, $binaryOutput)
+    {
+        return hash($algorithm, $data, $binaryOutput);
+    }
+
+    protected static function _digestMhash($algorithm, $data, $binaryOutput)
+    {
+        $constant = constant('MHASH_' . strtoupper($algorithm));
+        $binary = mhash($constant, $data);
+        if ($binaryOutput) {
+            return $binary;
+        }
+        return bin2hex($binary);
+    }
+
+    protected static function _digestOpenssl($algorithm, $data, $binaryOutput)
+    {
+        if ($algorithm == 'ripemd160') {
+            $algorithm = 'rmd160';
+        }
+        return openssl_digest($data, $algorithm, $binaryOutput);
+    }
+
+}

@@ -1,42 +1,136 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Weight */
+require_once 'Zend/Search/Lucene/Search/Weight.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Weight_Boolean extends Zend_Search_Lucene_Search_Weight
+{
+    /**
+     * IndexReader.
+     *
+     * @var Zend_Search_Lucene_Interface
+     */
+    private $_reader;
+
+    /**
+     * The query that this concerns.
+     *
+     * @var Zend_Search_Lucene_Search_Query
+     */
+    private $_query;
+
+    /**
+     * Queries weights
+     * Array of Zend_Search_Lucene_Search_Weight
+     *
+     * @var array
+     */
+    private $_weights;
+
+
+    /**
+     * Zend_Search_Lucene_Search_Weight_Boolean constructor
+     * query - the query that this concerns.
+     * reader - index reader
+     *
+     * @param Zend_Search_Lucene_Search_Query $query
+     * @param Zend_Search_Lucene_Interface    $reader
+     */
+    public function __construct(Zend_Search_Lucene_Search_Query $query,
+                                Zend_Search_Lucene_Interface    $reader)
+    {
+        $this->_query   = $query;
+        $this->_reader  = $reader;
+        $this->_weights = array();
+
+        $signs = $query->getSigns();
+
+        foreach ($query->getSubqueries() as $num => $subquery) {
+            if ($signs === null || $signs[$num] === null || $signs[$num]) {
+                $this->_weights[$num] = $subquery->createWeight($reader);
+            }
+        }
+    }
+
+
+    /**
+     * The weight for this query
+     * Standard Weight::$_value is not used for boolean queries
+     *
+     * @return float
+     */
+    public function getValue()
+    {
+        return $this->_query->getBoost();
+    }
+
+
+    /**
+     * The sum of squared weights of contained query clauses.
+     *
+     * @return float
+     */
+    public function sumOfSquaredWeights()
+    {
+        $sum = 0;
+        foreach ($this->_weights as $weight) {
+            // sum sub weights
+            $sum += $weight->sumOfSquaredWeights();
+        }
+
+        // boost each sub-weight
+        $sum *= $this->_query->getBoost() * $this->_query->getBoost();
+
+        // check for empty query (like '-something -another')
+        if ($sum == 0) {
+            $sum = 1.0;
+        }
+        return $sum;
+    }
+
+
+    /**
+     * Assigns the query normalization factor to this.
+     *
+     * @param float $queryNorm
+     */
+    public function normalize($queryNorm)
+    {
+        // incorporate boost
+        $queryNorm *= $this->_query->getBoost();
+
+        foreach ($this->_weights as $weight) {
+            $weight->normalize($queryNorm);
+        }
+    }
+}
+
+

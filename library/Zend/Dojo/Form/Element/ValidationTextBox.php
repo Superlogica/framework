@@ -1,53 +1,218 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-EyOEXnLywH1zx1i0QwjbYoyleamOBT4=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_TextBox */
+require_once 'Zend/Dojo/Form/Element/TextBox.php';
+
+/**
+ * ValidationTextBox dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_TextBox
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ValidationTextBox.php 10079 2008-07-14 10:56:37Z matthew $
+ */
+class Zend_Dojo_Form_Element_ValidationTextBox extends Zend_Dojo_Form_Element_TextBox
+{
+    /**
+     * Use ValidationTextBox dijit view helper
+     * @var string
+     */
+    public $helper = 'ValidationTextBox';
+
+    /**
+     * Set invalidMessage
+     *
+     * @param  string $message
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function setInvalidMessage($message)
+    {
+        $this->setDijitParam('invalidMessage', (string) $message);
+        return $this;
+    }
+
+    /**
+     * Retrieve invalidMessage
+     *
+     * @return string|null
+     */
+    public function getInvalidMessage()
+    {
+        return $this->getDijitParam('invalidMessage');
+    }
+
+    /**
+     * Set promptMessage
+     *
+     * @param  string $message
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function setPromptMessage($message)
+    {
+        $this->setDijitParam('promptMessage', (string) $message);
+        return $this;
+    }
+
+    /**
+     * Retrieve promptMessage
+     *
+     * @return string|null
+     */
+    public function getPromptMessage()
+    {
+        return $this->getDijitParam('promptMessage');
+    }
+
+    /**
+     * Set regExp
+     *
+     * @param  string $regexp
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function setRegExp($regexp)
+    {
+        $this->setDijitParam('regExp', (string) $regexp);
+        return $this;
+    }
+
+    /**
+     * Retrieve regExp
+     *
+     * @return string|null
+     */
+    public function getRegExp()
+    {
+        return $this->getDijitParam('regExp');
+    }
+
+    /**
+     * Set an individual constraint
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function setConstraint($key, $value)
+    {
+        $constraints = $this->getConstraints();
+        $constraints[(string) $key] = $value;
+        $this->setConstraints($constraints);
+        return $this;
+    }
+
+    /**
+     * Set validation constraints
+     *
+     * Refer to Dojo dijit.form.ValidationTextBox documentation for valid 
+     * structure.
+     * 
+     * @param  array $constraints 
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function setConstraints(array $constraints)
+    {
+        array_walk_recursive($constraints, array($this, '_castBoolToString'));
+        $this->setDijitParam('constraints', $constraints);
+        return $this;
+    }
+
+    /**
+     * Is the given constraint set?
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function hasConstraint($key)
+    {
+        $constraints = $this->getConstraints();
+        return array_key_exists((string)$key, $constraints);
+    }
+
+    /**
+     * Get an individual constraint
+     * 
+     * @param  string $key 
+     * @return mixed
+     */
+    public function getConstraint($key)
+    {
+        $key = (string) $key;
+        if (!$this->hasConstraint($key)) {
+            return null;
+        }
+        return $this->dijitParams['constraints'][$key];
+    }
+
+    /**
+     * Get constraints
+     * 
+     * @return array
+     */
+    public function getConstraints()
+    {
+        if ($this->hasDijitParam('constraints')) {
+            return $this->getDijitParam('constraints');
+        }
+        return array();
+    }
+
+    /**
+     * Remove a single constraint
+     * 
+     * @param  string $key 
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function removeConstraint($key)
+    {
+        $key = (string) $key;
+        if ($this->hasConstraint($key)) {
+            unset($this->dijitParams['constraints'][$key]);
+        }
+        return $this;
+    }
+
+    /**
+     * Clear all constraints
+     * 
+     * @return Zend_Dojo_Form_Element_ValidationTextBox
+     */
+    public function clearConstraints()
+    {
+        return $this->removeDijitParam('constraints');
+    }
+
+    /**
+     * Cast a boolean value to a string
+     * 
+     * @param  mixed $item 
+     * @param  string $key 
+     * @return void
+     */
+    protected function _castBoolToString(&$item, $key)
+    {
+        if (is_bool($item)) {
+            $item = ($item) ? 'true' : 'false';
+        }
+    }
+}

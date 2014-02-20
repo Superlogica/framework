@@ -1,58 +1,180 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: UiWidget.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+require_once "Zend/Form/Element.php";
+
+/**
+ * Base Form Element for jQuery View Helpers
+ *
+ * @package    ZendX_JQuery
+ * @subpackage Form
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_Form_Element_UiWidget extends Zend_Form_Element
+{
+    /**
+     * jQuery related parameters of this form element.
+     *
+     * @var array
+     */
+    public $jQueryParams = array();
+
+    /**
+     * Just here to prevent errors.
+     *
+     * @var array
+     */
+    public $options = array();
+
+    /**
+     * Constructor
+     *
+     * @param  mixed $spec
+     * @param  mixed $options
+     * @return void
+     */
+    public function __construct($spec, $options = null)
+    {
+        $this->addPrefixPath('ZendX_JQuery_Form_Decorator', 'ZendX/JQuery/Form/Decorator', 'decorator');
+        parent::__construct($spec, $options);
+    }
+
+    /**
+     * Get jQuery related parameter of this form element
+     *
+     * @param  string $key
+     * @return string
+     */
+    public function getJQueryParam($key)
+    {
+        $key = (string) $key;
+        return $this->jQueryParams[$key];
+    }
+
+    /**
+     * Get all currently known jQuery related parameters of this element
+     *
+     * @return array
+     */
+    public function getJQueryParams()
+    {
+        return $this->jQueryParams;
+    }
+
+    /**
+     * Set a jQuery related parameter of this form element.
+     *
+     * @param  string $key
+     * @param  string $value
+     * @return ZendX_JQuery_Form_Element_UiWidget
+     */
+    public function setJQueryParam($key, $value)
+    {
+        $key = (string) $key;
+        $this->jQueryParams[$key] = $value;
+        return $this;
+    }
+
+    /**
+     * Set an array of jQuery related options for this element (merging with old options).
+     *
+     * @param  Array $params
+     * @return ZendX_JQuery_Form_Element_UiWidget
+     */
+    public function setJQueryParams($params)
+    {
+        $this->jQueryParams = array_merge($this->jQueryParams, $params);
+        return $this;
+    }
+
+    /**
+     * Load default decorators
+     *
+     * @return void
+     */
+    public function loadDefaultDecorators()
+    {
+        if ($this->loadDefaultDecoratorsIsDisabled()) {
+            return;
+        }
+
+        $decorators = $this->getDecorators();
+        if (empty($decorators)) {
+            $this->addDecorator('UiWidgetElement')
+                 ->addDecorator('Errors')
+                 ->addDecorator('Description', array('tag' => 'p', 'class' => 'description'))
+                 ->addDecorator('HtmlTag', array('tag' => 'dd'))
+                 ->addDecorator('Label', array('tag' => 'dt'));
+        }
+    }
+
+    /**
+     * Set the view object
+     *
+     * Ensures that the view object has the jQuery view helper path set.
+     *
+     * @param  Zend_View_Interface $view
+     * @return ZendX_JQuery_Form_Element_UiWidget
+     */
+    public function setView(Zend_View_Interface $view = null)
+    {
+        if (null !== $view) {
+            if (false === $view->getPluginLoader('helper')->getPaths('ZendX_JQuery_View_Helper')) {
+                $view->addHelperPath('ZendX/JQuery/View/Helper', 'ZendX_JQuery_View_Helper');
+            }
+        }
+        return parent::setView($view);
+    }
+
+    /**
+     * Retrieve all decorators
+     *
+     * @throws ZendX_JQuery_Form_Exception
+     * @return array
+     */
+    public function getDecorators()
+    {
+        $decorators = parent::getDecorators();
+        if(count($decorators) > 0) {
+            // Only check this if there are decorators present, otherwise it could
+            // be that the decorators have not been initialized yet.
+            $foundUiWidgetElementMarker = false;
+            foreach($decorators AS $decorator) {
+                if($decorator instanceof ZendX_JQuery_Form_Decorator_UiWidgetElementMarker) {
+                    $foundUiWidgetElementMarker = true;
+                }
+            }
+            if($foundUiWidgetElementMarker === false) {
+                require_once "ZendX/JQuery/Form/Exception.php";
+                throw new ZendX_JQuery_Form_Exception(
+                    "Cannot render jQuery form element without at least one decorator ".
+                    "implementing the 'ZendX_JQuery_Form_Decorator_UiWidgetElementMarker' interface. ".
+                    "Default decorator for this marker interface is the 'ZendX_JQuery_Form_Decorator_UiWidgetElement'. ".
+                    "Hint: The ViewHelper decorator does not render jQuery elements correctly."
+                );
+            }
+        }
+
+        return $decorators;
+    }
+}

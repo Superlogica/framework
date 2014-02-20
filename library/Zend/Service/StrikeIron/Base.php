@@ -1,87 +1,274 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9RfynyZF
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage StrikeIron
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Base.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_StrikeIron_Decorator
+ */
+require_once 'Zend/Service/StrikeIron/Decorator.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage StrikeIron
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_StrikeIron_Base
+{
+    /**
+     * Configuration options
+     * @param array
+     */
+    protected $_options = array('username' => null,
+                                'password' => null,
+                                'client'   => null,
+                                'options'  => null,
+                                'headers'  => null,
+                                'wsdl'     => null);
+
+    /**
+     * Output headers returned by the last call to SOAPClient->__soapCall()
+     * @param array
+     */
+    protected $_outputHeaders = array();
+
+    /**
+     * Class constructor
+     *
+     * @param  array  $options  Key/value pair options
+     * @throws Zend_Service_StrikeIron_Exception
+     */
+    public function __construct($options = array())
+    {
+        if (!extension_loaded('soap')) {
+            /**
+             * @see Zend_Service_StrikeIron_Exception
+             */
+            require_once 'Zend/Service/StrikeIron/Exception.php';
+            throw new Zend_Service_StrikeIron_Exception('SOAP extension is not enabled');
+        }
+
+        $this->_options  = array_merge($this->_options, $options);
+
+        $this->_initSoapHeaders();
+        $this->_initSoapClient();
+    }
+
+    /**
+     * Proxy method calls to the SOAPClient instance, transforming method
+     * calls and responses for convenience.
+     *
+     * @param  string  $method  Method name
+     * @param  array   $params  Parameters for method
+     * @return mixed            Result
+     * @throws Zend_Service_StrikeIron_Exception
+     */
+    public function __call($method, $params)
+    {
+        // prepare method name and parameters for soap call
+        list($method, $params) = $this->_transformCall($method, $params);
+        $params = isset($params[0]) ? array($params[0]) : array();
+
+        // make soap call, capturing the result and output headers
+        try {
+            $result = $this->_options['client']->__soapCall($method,
+                                                            $params,
+                                                            $this->_options['options'],
+                                                            $this->_options['headers'],
+                                                            $this->_outputHeaders);
+        } catch (Exception $e) {
+            $message = get_class($e) . ': ' . $e->getMessage();
+            /**
+             * @see Zend_Service_StrikeIron_Exception
+             */
+            require_once 'Zend/Service/StrikeIron/Exception.php';
+            throw new Zend_Service_StrikeIron_Exception($message, $e->getCode());
+        }
+
+        // transform/decorate the result and return it
+        $result = $this->_transformResult($result, $method, $params);
+        return $result;
+    }
+
+    /**
+     * Initialize the SOAPClient instance
+     *
+     * @return void
+     */
+    protected function _initSoapClient()
+    {
+        if (! isset($this->_options['options'])) {
+            $this->_options['options'] = array();
+        }
+
+        if (! isset($this->_options['client'])) {
+            $this->_options['client'] = new SoapClient($this->_options['wsdl'],
+                                                       $this->_options['options']);
+        }
+    }
+
+    /**
+     * Initialize the headers to pass to SOAPClient->__soapCall()
+     *
+     * @return void
+     * @throws Zend_Service_StrikeIron_Exception
+     */
+    protected function _initSoapHeaders()
+    {
+        // validate headers and check if LicenseInfo was given
+        $foundLicenseInfo = false;
+        if (isset($this->_options['headers'])) {
+            if (! is_array($this->_options['headers'])) {
+                $this->_options['headers'] = array($this->_options['headers']);
+            }
+
+            foreach ($this->_options['headers'] as $header) {
+                if (! $header instanceof SoapHeader) {
+                    /**
+                     * @see Zend_Service_StrikeIron_Exception
+                     */
+                    require_once 'Zend/Service/StrikeIron/Exception.php';
+                    throw new Zend_Service_StrikeIron_Exception('Header must be instance of SoapHeader');
+                } else if ($header->name == 'LicenseInfo') {
+                    $foundLicenseInfo = true;
+                    break;
+                }
+            }
+        } else {
+            $this->_options['headers'] = array();
+        }
+
+        // add default LicenseInfo header if a custom one was not supplied
+        if (! $foundLicenseInfo) {
+            $this->_options['headers'][] = new SoapHeader('http://ws.strikeiron.com',
+                            'LicenseInfo',
+                            array('RegisteredUser' => array('UserID'   => $this->_options['username'],
+                                                            'Password' => $this->_options['password'])));
+        }
+    }
+
+    /**
+     * Transform a method name or method parameters before sending them
+     * to the remote service.  This can be useful for inflection or other
+     * transforms to give the method call a more PHP-like interface.
+     *
+     * @see    __call()
+     * @param  string  $method  Method name called from PHP
+     * @param  mixed   $param   Parameters passed from PHP
+     * @return array            [$method, $params] for SOAPClient->__soapCall()
+     */
+    protected function _transformCall($method, $params)
+    {
+        return array(ucfirst($method), $params);
+    }
+
+    /**
+     * Transform the result returned from a method before returning
+     * it to the PHP caller.  This can be useful for transforming
+     * the SOAPClient returned result to be more PHP-like.
+     *
+     * The $method name and $params passed to the method are provided to
+     * allow decisions to be made about how to transform the result based
+     * on what was originally called.
+     *
+     * @see    __call()
+     * @param  $result  Raw result returned from SOAPClient_>__soapCall()
+     * @param  $method  Method name that was passed to SOAPClient->__soapCall()
+     * @param  $params  Method parameters that were passed to SOAPClient->__soapCall()
+     * @return mixed    Transformed result
+     */
+    protected function _transformResult($result, $method, $params)
+    {
+        $resultObjectName = "{$method}Result";
+        if (isset($result->$resultObjectName)) {
+            $result = $result->$resultObjectName;
+        }
+        if (is_object($result)) {
+            $result = new Zend_Service_StrikeIron_Decorator($result, $resultObjectName);
+        }
+        return $result;
+    }
+
+    /**
+     * Get the WSDL URL for this service.
+     *
+     * @return string
+     */
+    public function getWsdl()
+    {
+        return $this->_options['wsdl'];
+    }
+
+    /**
+     * Get the SOAP Client instance for this service.
+     */
+    public function getSoapClient()
+    {
+        return $this->_options['client'];
+    }
+
+    /**
+     * Get the StrikeIron output headers returned with the last method response.
+     *
+     * @return array
+     */
+    public function getLastOutputHeaders()
+    {
+        return $this->_outputHeaders;
+    }
+
+    /**
+     * Get the StrikeIron subscription information for this service.
+     * If any service method was recently called, the subscription info
+     * should have been returned in the SOAP headers so it is cached
+     * and returned from the cache.  Otherwise, the getRemainingHits()
+     * method is called as a dummy to get the subscription info headers.
+     *
+     * @param  boolean  $now          Force a call to getRemainingHits instead of cache?
+     * @param  string   $queryMethod  Method that will cause SubscriptionInfo header to be sent
+     * @return Zend_Service_StrikeIron_Decorator  Decorated subscription info
+     * @throws Zend_Service_StrikeIron_Exception
+     */
+    public function getSubscriptionInfo($now = false, $queryMethod = 'GetRemainingHits')
+    {
+        if ($now || empty($this->_outputHeaders['SubscriptionInfo'])) {
+            $this->$queryMethod();
+        }
+
+        // capture subscription info if returned in output headers
+        if (isset($this->_outputHeaders['SubscriptionInfo'])) {
+            $info = (object)$this->_outputHeaders['SubscriptionInfo'];
+            $subscriptionInfo = new Zend_Service_StrikeIron_Decorator($info, 'SubscriptionInfo');
+        } else {
+            $msg = 'No SubscriptionInfo header found in last output headers';
+            /**
+             * @see Zend_Service_StrikeIron_Exception
+             */
+            require_once 'Zend/Service/StrikeIron/Exception.php';
+            throw new Zend_Service_StrikeIron_Exception($msg);
+        }
+
+        return $subscriptionInfo;
+    }
+}

@@ -1,47 +1,134 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Health
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Health_Extension_Ccr
+ */
+require_once 'Zend/Gdata/Health/Extension/Ccr.php';
+
+/**
+ * Concrete class for working with Health profile entries.
+ *
+ * @link http://code.google.com/apis/health/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Health
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Health_ProfileEntry extends Zend_Gdata_Entry
+{
+    /**
+     * The classname for individual profile entry elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_Health_ProfileEntry';
+
+    /**
+     * Google Health CCR data
+     *
+     * @var Zend_Gdata_Health_Extension_Ccr
+     */
+    protected $_ccrData = null;
+    
+    /**
+     * Constructs a new Zend_Gdata_Health_ProfileEntry object.
+     * @param DOMElement $element (optional) The DOMElement on which to base this object.
+     */
+    public function __construct($element = null)
+    {
+        foreach (Zend_Gdata_Health::$namespaces as $nsPrefix => $nsUri) {
+            $this->registerNamespace($nsPrefix, $nsUri);
+        }
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_ccrData !== null) {
+          $element->appendChild($this->_ccrData->getDOM($element->ownerDocument));
+        }
+        
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        if (strstr($absoluteNodeName, $this->lookupNamespace('ccr') . ':')) {
+            $ccrElement = new Zend_Gdata_Health_Extension_Ccr();
+            $ccrElement->transferFromDOM($child);
+            $this->_ccrData = $ccrElement;            
+        } else {
+            parent::takeChildFromDOM($child);
+            
+        }
+    }
+    
+    /** 
+     * Sets the profile entry's CCR data
+     * @param string $ccrXMLStr The CCR as an xml string
+     * @return Zend_Gdata_Health_Extension_Ccr
+     */
+    public function setCcr($ccrXMLStr) {
+        $ccrElement = null;
+        if ($ccrXMLStr != null) {
+          $ccrElement = new Zend_Gdata_Health_Extension_Ccr();
+          $ccrElement->transferFromXML($ccrXMLStr);
+          $this->_ccrData = $ccrElement;
+        }
+        return $ccrElement;
+    }
+
+
+    /** 
+     * Returns all the CCR data in a profile entry
+     * @return Zend_Gdata_Health_Extension_Ccr
+     */
+    public function getCcr() {
+        return $this->_ccrData;
+    }
+}

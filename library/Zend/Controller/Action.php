@@ -1,180 +1,687 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-SPhoOTDmlAvw8sDpHDFsW9HLaFgVfL8Xh3y=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Controller_Action_HelperBroker
+ */
+require_once 'Zend/Controller/Action/HelperBroker.php';
+
+/**
+ * @see Zend_Controller_Action_Interface
+ */
+require_once 'Zend/Controller/Action/Interface.php';
+
+/**
+ * @see Zend_Controller_Front
+ */
+require_once 'Zend/Controller/Front.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Controller_Action implements Zend_Controller_Action_Interface
+{
+    /**
+     * @var array of existing class methods
+     */
+    protected $_classMethods;
+
+    /**
+     * Word delimiters (used for normalizing view script paths)
+     * @var array
+     */
+    protected $_delimiters;
+
+    /**
+     * Array of arguments provided to the constructor, minus the
+     * {@link $_request Request object}.
+     * @var array
+     */
+    protected $_invokeArgs = array();
+
+    /**
+     * Front controller instance
+     * @var Zend_Controller_Front
+     */
+    protected $_frontController;
+
+    /**
+     * Zend_Controller_Request_Abstract object wrapping the request environment
+     * @var Zend_Controller_Request_Abstract
+     */
+    protected $_request = null;
+
+    /**
+     * Zend_Controller_Response_Abstract object wrapping the response
+     * @var Zend_Controller_Response_Abstract
+     */
+    protected $_response = null;
+
+    /**
+     * View script suffix; defaults to 'phtml'
+     * @see {render()}
+     * @var string
+     */
+    public $viewSuffix = 'phtml';
+
+    /**
+     * View object
+     * @var Zend_View_Interface
+     */
+    public $view;
+
+    /**
+     * Helper Broker to assist in routing help requests to the proper object
+     *
+     * @var Zend_Controller_Action_HelperBroker
+     */
+    protected $_helper = null;
+
+    /**
+     * Class constructor
+     *
+     * The request and response objects should be registered with the
+     * controller, as should be any additional optional arguments; these will be
+     * available via {@link getRequest()}, {@link getResponse()}, and
+     * {@link getInvokeArgs()}, respectively.
+     *
+     * When overriding the constructor, please consider this usage as a best
+     * practice and ensure that each is registered appropriately; the easiest
+     * way to do so is to simply call parent::__construct($request, $response,
+     * $invokeArgs).
+     *
+     * After the request, response, and invokeArgs are set, the
+     * {@link $_helper helper broker} is initialized.
+     *
+     * Finally, {@link init()} is called as the final action of
+     * instantiation, and may be safely overridden to perform initialization
+     * tasks; as a general rule, override {@link init()} instead of the
+     * constructor to customize an action controller's instantiation.
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     * @param Zend_Controller_Response_Abstract $response
+     * @param array $invokeArgs Any additional invocation arguments
+     * @return void
+     */
+    public function __construct(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response, array $invokeArgs = array())
+    {
+        $this->setRequest($request)
+             ->setResponse($response)
+             ->_setInvokeArgs($invokeArgs);
+        $this->_helper = new Zend_Controller_Action_HelperBroker($this);
+        $this->init();
+    }
+
+    /**
+     * Initialize object
+     *
+     * Called from {@link __construct()} as final step of object instantiation.
+     *
+     * @return void
+     */
+    public function init()
+    {
+    }
+
+    /**
+     * Initialize View object
+     *
+     * Initializes {@link $view} if not otherwise a Zend_View_Interface.
+     *
+     * If {@link $view} is not otherwise set, instantiates a new Zend_View
+     * object, using the 'views' subdirectory at the same level as the
+     * controller directory for the current module as the base directory.
+     * It uses this to set the following:
+     * - script path = views/scripts/
+     * - helper path = views/helpers/
+     * - filter path = views/filters/
+     *
+     * @return Zend_View_Interface
+     * @throws Zend_Controller_Exception if base view directory does not exist
+     */
+    public function initView()
+    {
+        if (!$this->getInvokeArg('noViewRenderer') && $this->_helper->hasHelper('viewRenderer')) {
+            return $this->view;
+        }
+
+        require_once 'Zend/View/Interface.php';
+        if (isset($this->view) && ($this->view instanceof Zend_View_Interface)) {
+            return $this->view;
+        }
+
+        $request = $this->getRequest();
+        $module  = $request->getModuleName();
+        $dirs    = $this->getFrontController()->getControllerDirectory();
+        if (empty($module) || !isset($dirs[$module])) {
+            $module = $this->getFrontController()->getDispatcher()->getDefaultModule();
+        }
+        $baseDir = dirname($dirs[$module]) . DIRECTORY_SEPARATOR . 'views';
+        if (!file_exists($baseDir) || !is_dir($baseDir)) {
+            require_once 'Zend/Controller/Exception.php';
+            throw new Zend_Controller_Exception('Missing base view directory ("' . $baseDir . '")');
+        }
+
+        require_once 'Zend/View.php';
+        $this->view = new Zend_View(array('basePath' => $baseDir));
+
+        return $this->view;
+    }
+
+    /**
+     * Render a view
+     *
+     * Renders a view. By default, views are found in the view script path as
+     * <controller>/<action>.phtml. You may change the script suffix by
+     * resetting {@link $viewSuffix}. You may omit the controller directory
+     * prefix by specifying boolean true for $noController.
+     *
+     * By default, the rendered contents are appended to the response. You may
+     * specify the named body content segment to set by specifying a $name.
+     *
+     * @see Zend_Controller_Response_Abstract::appendBody()
+     * @param  string|null $action Defaults to action registered in request object
+     * @param  string|null $name Response object named path segment to use; defaults to null
+     * @param  bool $noController  Defaults to false; i.e. use controller name as subdir in which to search for view script
+     * @return void
+     */
+    public function render($action = null, $name = null, $noController = false)
+    {
+        if (!$this->getInvokeArg('noViewRenderer') && $this->_helper->hasHelper('viewRenderer')) {
+            return $this->_helper->viewRenderer->render($action, $name, $noController);
+        }
+
+        $view   = $this->initView();
+        $script = $this->getViewScript($action, $noController);
+
+        $this->getResponse()->appendBody(
+            $view->render($script),
+            $name
+        );
+    }
+
+    /**
+     * Render a given view script
+     *
+     * Similar to {@link render()}, this method renders a view script. Unlike render(),
+     * however, it does not autodetermine the view script via {@link getViewScript()},
+     * but instead renders the script passed to it. Use this if you know the
+     * exact view script name and path you wish to use, or if using paths that do not
+     * conform to the spec defined with getViewScript().
+     *
+     * By default, the rendered contents are appended to the response. You may
+     * specify the named body content segment to set by specifying a $name.
+     *
+     * @param  string $script
+     * @param  string $name
+     * @return void
+     */
+    public function renderScript($script, $name = null)
+    {
+        if (!$this->getInvokeArg('noViewRenderer') && $this->_helper->hasHelper('viewRenderer')) {
+            return $this->_helper->viewRenderer->renderScript($script, $name);
+        }
+
+        $view = $this->initView();
+        $this->getResponse()->appendBody(
+            $view->render($script),
+            $name
+        );
+    }
+
+    /**
+     * Construct view script path
+     *
+     * Used by render() to determine the path to the view script.
+     *
+     * @param  string $action Defaults to action registered in request object
+     * @param  bool $noController  Defaults to false; i.e. use controller name as subdir in which to search for view script
+     * @return string
+     * @throws Zend_Controller_Exception with bad $action
+     */
+    public function getViewScript($action = null, $noController = null)
+    {
+        if (!$this->getInvokeArg('noViewRenderer') && $this->_helper->hasHelper('viewRenderer')) {
+            $viewRenderer = $this->_helper->getHelper('viewRenderer');
+            if (null !== $noController) {
+                $viewRenderer->setNoController($noController);
+            }
+            return $viewRenderer->getViewScript($action);
+        }
+
+        $request = $this->getRequest();
+        if (null === $action) {
+            $action = $request->getActionName();
+        } elseif (!is_string($action)) {
+            require_once 'Zend/Controller/Exception.php';
+            throw new Zend_Controller_Exception('Invalid action specifier for view render');
+        }
+
+        if (null === $this->_delimiters) {
+            $dispatcher = Zend_Controller_Front::getInstance()->getDispatcher();
+            $wordDelimiters = $dispatcher->getWordDelimiter();
+            $pathDelimiters = $dispatcher->getPathDelimiter();
+            $this->_delimiters = array_unique(array_merge($wordDelimiters, (array) $pathDelimiters));
+        }
+
+        $action = str_replace($this->_delimiters, '-', $action);
+        $script = $action . '.' . $this->viewSuffix;
+
+        if (!$noController) {
+            $controller = $request->getControllerName();
+            $controller = str_replace($this->_delimiters, '-', $controller);
+            $script = $controller . DIRECTORY_SEPARATOR . $script;
+        }
+
+        return $script;
+    }
+
+    /**
+     * Return the Request object
+     *
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function getRequest()
+    {
+        return $this->_request;
+    }
+
+    /**
+     * Set the Request object
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     * @return Zend_Controller_Action
+     */
+    public function setRequest(Zend_Controller_Request_Abstract $request)
+    {
+        $this->_request = $request;
+        return $this;
+    }
+
+    /**
+     * Return the Response object
+     *
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function getResponse()
+    {
+        return $this->_response;
+    }
+
+    /**
+     * Set the Response object
+     *
+     * @param Zend_Controller_Response_Abstract $response
+     * @return Zend_Controller_Action
+     */
+    public function setResponse(Zend_Controller_Response_Abstract $response)
+    {
+        $this->_response = $response;
+        return $this;
+    }
+
+    /**
+     * Set invocation arguments
+     *
+     * @param array $args
+     * @return Zend_Controller_Action
+     */
+    protected function _setInvokeArgs(array $args = array())
+    {
+        $this->_invokeArgs = $args;
+        return $this;
+    }
+
+    /**
+     * Return the array of constructor arguments (minus the Request object)
+     *
+     * @return array
+     */
+    public function getInvokeArgs()
+    {
+        return $this->_invokeArgs;
+    }
+
+    /**
+     * Return a single invocation argument
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public function getInvokeArg($key)
+    {
+        if (isset($this->_invokeArgs[$key])) {
+            return $this->_invokeArgs[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Get a helper by name
+     *
+     * @param  string $helperName
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function getHelper($helperName)
+    {
+        return $this->_helper->{$helperName};
+    }
+
+    /**
+     * Get a clone of a helper by name
+     *
+     * @param  string $helperName
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function getHelperCopy($helperName)
+    {
+        return clone $this->_helper->{$helperName};
+    }
+
+    /**
+     * Set the front controller instance
+     *
+     * @param Zend_Controller_Front $front
+     * @return Zend_Controller_Action
+     */
+    public function setFrontController(Zend_Controller_Front $front)
+    {
+        $this->_frontController = $front;
+        return $this;
+    }
+
+    /**
+     * Retrieve Front Controller
+     *
+     * @return Zend_Controller_Front
+     */
+    public function getFrontController()
+    {
+        // Used cache version if found
+        if (null !== $this->_frontController) {
+            return $this->_frontController;
+        }
+
+        // Grab singleton instance, if class has been loaded
+        if (class_exists('Zend_Controller_Front')) {
+            $this->_frontController = Zend_Controller_Front::getInstance();
+            return $this->_frontController;
+        }
+
+        // Throw exception in all other cases
+        require_once 'Zend/Controller/Exception.php';
+        throw new Zend_Controller_Exception('Front controller class has not been loaded');
+    }
+
+    /**
+     * Pre-dispatch routines
+     *
+     * Called before action method. If using class with
+     * {@link Zend_Controller_Front}, it may modify the
+     * {@link $_request Request object} and reset its dispatched flag in order
+     * to skip processing the current action.
+     *
+     * @return void
+     */
+    public function preDispatch()
+    {
+    }
+
+    /**
+     * Post-dispatch routines
+     *
+     * Called after action method execution. If using class with
+     * {@link Zend_Controller_Front}, it may modify the
+     * {@link $_request Request object} and reset its dispatched flag in order
+     * to process an additional action.
+     *
+     * Common usages for postDispatch() include rendering content in a sitewide
+     * template, link url correction, setting headers, etc.
+     *
+     * @return void
+     */
+    public function postDispatch()
+    {
+    }
+
+    /**
+     * Proxy for undefined methods.  Default behavior is to throw an
+     * exception on undefined methods, however this function can be
+     * overridden to implement magic (dynamic) actions, or provide run-time
+     * dispatching.
+     *
+     * @param  string $methodName
+     * @param  array $args
+     * @return void
+     * @throws Zend_Controller_Action_Exception
+     */
+    public function __call($methodName, $args)
+    {
+        require_once 'Zend/Controller/Action/Exception.php';
+        if ('Action' == substr($methodName, -6)) {
+            $action = substr($methodName, 0, strlen($methodName) - 6);
+            throw new Zend_Controller_Action_Exception(sprintf('Action "%s" does not exist and was not trapped in __call()', $action), 404);
+        }
+
+        throw new Zend_Controller_Action_Exception(sprintf('Method "%s" does not exist and was not trapped in __call()', $methodName), 500);
+    }
+
+    /**
+     * Dispatch the requested action
+     *
+     * @param string $action Method name of action
+     * @return void
+     */
+    public function dispatch($action)
+    {
+        // Notify helpers of action preDispatch state
+        $this->_helper->notifyPreDispatch();
+
+        $this->preDispatch();
+        if ($this->getRequest()->isDispatched()) {
+            if (null === $this->_classMethods) {
+                $this->_classMethods = get_class_methods($this);
+            }
+
+            // preDispatch() didn't change the action, so we can continue
+            if ($this->getInvokeArg('useCaseSensitiveActions') || in_array($action, $this->_classMethods)) {
+                if ($this->getInvokeArg('useCaseSensitiveActions')) {
+                    trigger_error('Using case sensitive actions without word separators is deprecated; please do not rely on this "feature"');
+                }
+                $this->$action();
+            } else {
+                $this->__call($action, array());
+            }
+            $this->postDispatch();
+        }
+
+        // whats actually important here is that this action controller is
+        // shutting down, regardless of dispatching; notify the helpers of this
+        // state
+        $this->_helper->notifyPostDispatch();
+    }
+
+    /**
+     * Call the action specified in the request object, and return a response
+     *
+     * Not used in the Action Controller implementation, but left for usage in
+     * Page Controller implementations. Dispatches a method based on the
+     * request.
+     *
+     * Returns a Zend_Controller_Response_Abstract object, instantiating one
+     * prior to execution if none exists in the controller.
+     *
+     * {@link preDispatch()} is called prior to the action,
+     * {@link postDispatch()} is called following it.
+     *
+     * @param null|Zend_Controller_Request_Abstract $request Optional request
+     * object to use
+     * @param null|Zend_Controller_Response_Abstract $response Optional response
+     * object to use
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function run(Zend_Controller_Request_Abstract $request = null, Zend_Controller_Response_Abstract $response = null)
+    {
+        if (null !== $request) {
+            $this->setRequest($request);
+        } else {
+            $request = $this->getRequest();
+        }
+
+        if (null !== $response) {
+            $this->setResponse($response);
+        }
+
+        $action = $request->getActionName();
+        if (empty($action)) {
+            $action = 'index';
+        }
+        $action = $action . 'Action';
+
+        $request->setDispatched(true);
+        $this->dispatch($action);
+
+        return $this->getResponse();
+    }
+
+    /**
+     * Gets a parameter from the {@link $_request Request object}.  If the
+     * parameter does not exist, NULL will be returned.
+     *
+     * If the parameter does not exist and $default is set, then
+     * $default will be returned instead of NULL.
+     *
+     * @param string $paramName
+     * @param mixed $default
+     * @return mixed
+     */
+    protected function _getParam($paramName, $default = null)
+    {
+        $value = $this->getRequest()->getParam($paramName);
+        if ((null == $value) && (null !== $default)) {
+            $value = $default;
+        }
+
+        return $value;
+    }
+
+    /**
+     * Set a parameter in the {@link $_request Request object}.
+     *
+     * @param string $paramName
+     * @param mixed $value
+     * @return Zend_Controller_Action
+     */
+    protected function _setParam($paramName, $value)
+    {
+        $this->getRequest()->setParam($paramName, $value);
+
+        return $this;
+    }
+
+    /**
+     * Determine whether a given parameter exists in the
+     * {@link $_request Request object}.
+     *
+     * @param string $paramName
+     * @return boolean
+     */
+    protected function _hasParam($paramName)
+    {
+        return null !== $this->getRequest()->getParam($paramName);
+    }
+
+    /**
+     * Return all parameters in the {@link $_request Request object}
+     * as an associative array.
+     *
+     * @return array
+     */
+    protected function _getAllParams()
+    {
+        return $this->getRequest()->getParams();
+    }
+
+
+    /**
+     * Forward to another controller/action.
+     *
+     * It is important to supply the unformatted names, i.e. "article"
+     * rather than "ArticleController".  The dispatcher will do the
+     * appropriate formatting when the request is received.
+     *
+     * If only an action name is provided, forwards to that action in this
+     * controller.
+     *
+     * If an action and controller are specified, forwards to that action and
+     * controller in this module.
+     *
+     * Specifying an action, controller, and module is the most specific way to
+     * forward.
+     *
+     * A fourth argument, $params, will be used to set the request parameters.
+     * If either the controller or module are unnecessary for forwarding,
+     * simply pass null values for them before specifying the parameters.
+     *
+     * @param string $action
+     * @param string $controller
+     * @param string $module
+     * @param array $params
+     * @return void
+     */
+    final protected function _forward($action, $controller = null, $module = null, array $params = null)
+    {
+        $request = $this->getRequest();
+
+        if (null !== $params) {
+            $request->setParams($params);
+        }
+
+        if (null !== $controller) {
+            $request->setControllerName($controller);
+
+            // Module should only be reset if controller has been specified
+            if (null !== $module) {
+                $request->setModuleName($module);
+            }
+        }
+
+        $request->setActionName($action)
+                ->setDispatched(false);
+    }
+
+    /**
+     * Redirect to another URL
+     *
+     * Proxies to {@link Zend_Controller_Action_Helper_Redirector::gotoUrl()}.
+     *
+     * @param string $url
+     * @param array $options Options to be used when redirecting
+     * @return void
+     */
+    protected function _redirect($url, array $options = array())
+    {
+        $this->_helper->redirector->gotoUrl($url, $options);
+    }
+}

@@ -1,134 +1,247 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vRtguh2ZikibHXQxJr4TVEElnnFrYsswUleaQm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Locale
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: PhpMath.php 12514 2008-11-10 16:30:24Z matthew $
+ */
+
+
+/**
+ * Utility class for proxying math function to bcmath functions, if present,
+ * otherwise to PHP builtin math operators, with limited detection of overflow conditions.
+ * Sampling of PHP environments and platforms suggests that at least 80% to 90% support bcmath.
+ * This file should only be loaded for the 10% to 20% lacking access to the bcmath extension.
+ *
+ * @category   Zend
+ * @package    Zend_Locale
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Locale_Math_PhpMath extends Zend_Locale_Math
+{
+    public static function disable()
+    {
+        self::$_bcmathDisabled = true;
+        self::$add   = array('Zend_Locale_Math_PhpMath', 'Add');
+        self::$sub   = array('Zend_Locale_Math_PhpMath', 'Sub');
+        self::$pow   = array('Zend_Locale_Math_PhpMath', 'Pow');
+        self::$mul   = array('Zend_Locale_Math_PhpMath', 'Mul');
+        self::$div   = array('Zend_Locale_Math_PhpMath', 'Div');
+        self::$comp  = array('Zend_Locale_Math_PhpMath', 'Comp');
+        self::$sqrt  = array('Zend_Locale_Math_PhpMath', 'Sqrt');
+        self::$mod   = array('Zend_Locale_Math_PhpMath', 'Mod');
+        self::$scale = array('Zend_Locale_Math_PhpMath', 'Scale');
+        
+        self::$defaultScale     = 0;
+        self::$defaultPrecision = 1;
+    }
+
+    public static $defaultScale;
+    public static $defaultPrecision;
+
+    
+    public static function Add($op1, $op2, $scale = null)
+    {
+        if ($scale === null) {
+            $scale     = Zend_Locale_Math_PhpMath::$defaultScale;
+            $precision = Zend_Locale_Math_PhpMath::$defaultPrecision;
+        } else {
+            $precision = pow(10, -$scale);
+        }
+
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        $op1 = self::normalize($op1);
+        $op2 = self::normalize($op2);
+        $result = $op1 + $op2;
+        if (is_infinite($result)  or  (abs($result - $op2 - $op1) > $precision)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("addition overflow: $op1 + $op2 != $result", $op1, $op2, $result);
+        }
+
+        return self::round(self::normalize($result), $scale);
+    }
+
+    public static function Sub($op1, $op2, $scale = null)
+    {
+        if ($scale === null) {
+            $scale     = Zend_Locale_Math_PhpMath::$defaultScale;
+            $precision = Zend_Locale_Math_PhpMath::$defaultPrecision;
+        } else {
+            $precision = pow(10, -$scale);
+        }
+
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        $op1  = self::normalize($op1);
+        $op2  = self::normalize($op2);
+        $result = $op1 - $op2;
+        if (is_infinite($result)  or  (abs($result + $op2 - $op1) > $precision)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("subtraction overflow: $op1 - $op2 != $result", $op1, $op2, $result);
+        }
+
+        return self::round(self::normalize($result), $scale);
+    }
+
+    public static function Pow($op1, $op2, $scale = null)
+    {
+        if ($scale === null) {
+            $scale = Zend_Locale_Math_PhpMath::$defaultScale;
+        }
+        
+        $op1 = self::normalize($op1);
+        $op2 = self::normalize($op2);
+        
+        // BCMath extension doesn't use decimal part of the power
+        // Provide the same behavior 
+        $op2 = ($op2 > 0) ? floor($op2) : ceil($op2);
+        
+        $result = pow($op1, $op2);
+        if (is_infinite($result)  or  is_nan($result)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("power overflow: $op1 ^ $op2", $op1, $op2, $result);
+        }
+
+        return self::round(self::normalize($result), $scale);
+    }
+
+    public static function Mul($op1, $op2, $scale = null)
+    {
+        if ($scale === null) {
+            $scale = Zend_Locale_Math_PhpMath::$defaultScale;
+        }
+
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        $op1 = self::normalize($op1);
+        $op2 = self::normalize($op2);
+        $result = $op1 * $op2;
+        if (is_infinite($result)  or  is_nan($result)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("multiplication overflow: $op1 * $op2 != $result", $op1, $op2, $result);
+        }
+
+        return self::round(self::normalize($result), $scale);
+    }
+
+    public static function Div($op1, $op2, $scale = null)
+    {
+        if ($scale === null) {
+            $scale = Zend_Locale_Math_PhpMath::$defaultScale;
+        }
+
+        if (empty($op2)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("can not divide by zero", $op1, $op2, null);
+        }
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        $op1 = self::normalize($op1);
+        $op2 = self::normalize($op2);
+        $result = $op1 / $op2;
+        if (is_infinite($result)  or  is_nan($result)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("division overflow: $op1 / $op2 != $result", $op1, $op2, $result);
+        }
+
+        return self::round(self::normalize($result), $scale);
+    }
+
+    public static function Sqrt($op1, $scale = null)
+    {
+        if ($scale === null) {
+            $scale = Zend_Locale_Math_PhpMath::$defaultScale;
+        }
+
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        $op1 = self::normalize($op1);
+        $result = sqrt($op1);
+        if (is_nan($result)) {
+            return NULL;
+        }
+
+        return self::round(self::normalize($result), $scale);
+    }
+
+    public static function Mod($op1, $op2)
+    {
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        if (empty($op2)) {
+            return NULL;
+        }
+        $op1 = self::normalize($op1);
+        $op2 = self::normalize($op2);
+        if ((int)$op2 == 0) {
+            return NULL;
+        }
+        $result = $op1 % $op2;
+        if (is_nan($result)  or  (($op1 - $result) % $op2 != 0)) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("modulus calculation error: $op1 % $op2 != $result", $op1, $op2, $result);
+        }
+
+        return self::normalize($result);
+    }
+
+    public static function Comp($op1, $op2, $scale = null)
+    {
+        if ($scale === null) {
+            $scale     = Zend_Locale_Math_PhpMath::$defaultScale;
+        }
+        
+        if (empty($op1)) {
+            $op1 = 0;
+        }
+        $op1 = self::normalize($op1);
+        $op2 = self::normalize($op2);
+        if ($scale <> 0) {
+            $op1 = self::round($op1, $scale);
+            $op2 = self::round($op2, $scale);
+        } else {
+            $op1 = ($op1 > 0) ? floor($op1) : ceil($op1);
+            $op2 = ($op2 > 0) ? floor($op2) : ceil($op2);
+        }
+        if ($op1 > $op2) {
+            return 1;
+        } else if ($op1 < $op2) {
+            return -1;
+        }
+        return 0;
+    }
+
+    public static function Scale($scale)
+    {
+        if ($scale > 9) {
+            require_once 'Zend/Locale/Math/Exception.php';
+            throw new Zend_Locale_Math_Exception("can not scale to precision $scale", $scale, null, null);
+        }
+        self::$defaultScale     = $scale;
+        self::$defaultPrecision = pow(10, -$scale);
+        return true;
+    }
+}
+
+Zend_Locale_Math_PhpMath::disable(); // disable use of bcmath functions

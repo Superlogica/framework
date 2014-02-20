@@ -1,115 +1,261 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Config
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Xml.php 14665 2009-04-05 08:46:51Z rob $
+ */
+
+/**
+ * @see Zend_Config
+ */
+require_once 'Zend/Config.php';
+
+/**
+ * XML Adapter for Zend_Config
+ *
+ * @category  Zend
+ * @package   Zend_Config
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Config_Xml extends Zend_Config
+{
+    /**
+     * Wether to skip extends or not
+     *
+     * @var boolean
+     */
+    protected $_skipExtends = false;
+    
+    /**
+     * Loads the section $section from the config file (or string $xml for
+     * access facilitated by nested object properties.
+     *
+     * Sections are defined in the XML as children of the root element.
+     *
+     * In order to extend another section, a section defines the "extends"
+     * attribute having a value of the section name from which the extending
+     * section inherits values.
+     *
+     * Note that the keys in $section will override any keys of the same
+     * name in the sections that have been included via "extends".
+     *
+     * @param  string  $xml                XML file or string to process
+     * @param  mixed   $section            Section to process
+     * @param  boolean $allowModifications Wether modifiacations are allowed at runtime
+     * @throws Zend_Config_Exception When xml is not set or cannot be loaded
+     * @throws Zend_Config_Exception When section $sectionName cannot be found in $xml
+     */
+    public function __construct($xml, $section = null, $options = false)
+    {
+        if (empty($xml)) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('Filename is not set');
+        }
+
+        $allowModifications = false;
+        if (is_bool($options)) {
+            $allowModifications = $options;
+        } elseif (is_array($options)) {
+            if (isset($options['allowModifications'])) {
+                $allowModifications = (bool) $options['allowModifications'];
+            }
+            if (isset($options['skipExtends'])) {
+                $this->_skipExtends = (bool) $options['skipExtends'];
+            }
+        }
+        
+        set_error_handler(array($this, '_loadFileErrorHandler')); // Warnings and errors are suppressed
+        if (strstr($xml, '<?xml')) {
+            $config = simplexml_load_string($xml);
+        } else {
+            $config = simplexml_load_file($xml);
+        }
+
+        restore_error_handler();
+        // Check if there was a error while loading file
+        if ($this->_loadFileErrorStr !== null) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception($this->_loadFileErrorStr);
+        }
+
+        if ($section === null) {
+            $dataArray = array();
+            foreach ($config as $sectionName => $sectionData) {
+                $dataArray[$sectionName] = $this->_processExtends($config, $sectionName);
+            }
+
+            parent::__construct($dataArray, $allowModifications);
+        } else if (is_array($section)) {
+            $dataArray = array();
+            foreach ($section as $sectionName) {
+                if (!isset($config->$sectionName)) {
+                    require_once 'Zend/Config/Exception.php';
+                    throw new Zend_Config_Exception("Section '$sectionName' cannot be found in $xml");
+                }
+
+                $dataArray = array_merge($this->_processExtends($config, $sectionName), $dataArray);
+            }
+
+            parent::__construct($dataArray, $allowModifications);
+        } else {
+            if (!isset($config->$section)) {
+                require_once 'Zend/Config/Exception.php';
+                throw new Zend_Config_Exception("Section '$section' cannot be found in $xml");
+            }
+
+            $dataArray = $this->_processExtends($config, $section);
+            if (!is_array($dataArray)) {
+                // Section in the XML file contains just one top level string
+                $dataArray = array($section => $dataArray);
+            }
+
+            parent::__construct($dataArray, $allowModifications);
+        }
+
+        $this->_loadedSection = $section;
+    }
+
+    /**
+     * Helper function to process each element in the section and handle
+     * the "extends" inheritance attribute.
+     *
+     * @param  SimpleXMLElement $element XML Element to process
+     * @param  string           $section Section to process
+     * @param  array            $config  Configuration which was parsed yet
+     * @throws Zend_Config_Exception When $section cannot be found
+     * @return array
+     */
+    protected function _processExtends(SimpleXMLElement $element, $section, array $config = array())
+    {
+        if (!isset($element->$section)) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception("Section '$section' cannot be found");
+        }
+
+        $thisSection = $element->$section;
+
+        if (isset($thisSection['extends'])) {
+            $extendedSection = (string) $thisSection['extends'];
+            $this->_assertValidExtend($section, $extendedSection);
+            
+            if (!$this->_skipExtends) {
+                $config = $this->_processExtends($element, $extendedSection, $config);
+            }
+        }
+
+        $config = $this->_arrayMergeRecursive($config, $this->_toArray($thisSection));
+
+        return $config;
+    }
+
+    /**
+     * Returns a string or an associative and possibly multidimensional array from
+     * a SimpleXMLElement.
+     *
+     * @param  SimpleXMLElement $xmlObject Convert a SimpleXMLElement into an array
+     * @return array|string
+     */
+    protected function _toArray(SimpleXMLElement $xmlObject)
+    {
+        $config = array();
+
+        // Search for parent node values
+        if (count($xmlObject->attributes()) > 0) {
+            foreach ($xmlObject->attributes() as $key => $value) {
+                if ($key === 'extends') {
+                    continue;
+                }
+
+                $value = (string) $value;
+
+                if (array_key_exists($key, $config)) {
+                    if (!is_array($config[$key])) {
+                        $config[$key] = array($config[$key]);
+                    }
+
+                    $config[$key][] = $value;
+                } else {
+                    $config[$key] = $value;
+                }
+            }
+        }
+
+        // Search for children
+        if (count($xmlObject->children()) > 0) {
+            foreach ($xmlObject->children() as $key => $value) {
+                if (count($value->children()) > 0) {
+                    $value = $this->_toArray($value);
+                } else if (count($value->attributes()) > 0) {
+                    $attributes = $value->attributes();
+                    if (isset($attributes['value'])) {
+                        $value = (string) $attributes['value'];
+                    } else {
+                        $value = $this->_toArray($value);
+                    }
+                } else {
+                    $value = (string) $value;
+                }
+
+                if (array_key_exists($key, $config)) {
+                    if (!is_array($config[$key]) || !array_key_exists(0, $config[$key])) {
+                        $config[$key] = array($config[$key]);
+                    }
+
+                    $config[$key][] = $value;
+                } else {
+                    $config[$key] = $value;
+                }
+            }
+        } else if (!isset($xmlObject['extends']) && (count($config) === 0)) {
+            // Object has no children nor attributes and doesn't use the extends
+            // attribute: it's a string
+            $config = (string) $xmlObject;
+        }
+
+        return $config;
+    }
+
+    /**
+     * Merge two arrays recursively, overwriting keys of the same name
+     * in $firstArray with the value in $secondArray.
+     *
+     * @param  mixed $firstArray  First array
+     * @param  mixed $secondArray Second array to merge into first array
+     * @return array
+     */
+    protected function _arrayMergeRecursive($firstArray, $secondArray)
+    {
+        if (is_array($firstArray) && is_array($secondArray)) {
+            foreach ($secondArray as $key => $value) {
+                if (isset($firstArray[$key])) {
+                    $firstArray[$key] = $this->_arrayMergeRecursive($firstArray[$key], $value);
+                } else {
+                    if($key === 0) {
+                        $firstArray= array(0=>$this->_arrayMergeRecursive($firstArray, $value));
+                    } else {
+                        $firstArray[$key] = $value;
+                    }
+                }
+            }
+        } else {
+            $firstArray = $secondArray;
+        }
+
+        return $firstArray;
+    }
+}

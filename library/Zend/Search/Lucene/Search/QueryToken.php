@@ -1,66 +1,224 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51lIT/9bSqp6P1/YqOmNr02zy3S1IXZpJEzjK3zco/nxAsyHj+GaVIdeCZ6UAZWf/ANAjmd7
-w35UKgZJv0hzb+lhtJYjG5ql9j58kQWmYTyzvJ6rVs6nW+xlPVci+2RKHy1L9RrftjCFzBQfLdXr
-a8ANDrat+YkhUUYoxrbGaEpa/QfM8RcuUBW+4dVoqFFdmXWgUK8WY2gAQ8TcOKdhGFS07M0e9TYu
-87Pwzo94KsgQfIkklfY45yHBaqcSpLCjHtVbBow4GcWPPTmzSm5TjOT3XQ7L/itmNVzkh7cQE3YO
-OkQJY4k5dBS2YgFd2caFHhHrztAkU0X8CsEe/mFdKTRoBXzGkV5r+H/ChXf+rRNgL1ptCOgslXFp
-NR8szm3pg01Eo2tlAczlBSNiS27CR+Xnn2RoG5dN4FGMguv6H3+AyUIAdZtQSML11iZ+smRkG+ws
-S9XbURYQM2Ck2cB8lfuRX2TmXfzTLl6fcPC3V2SPThwUfOxmJog6Q3CnK6HweBrBqU67RuJI2KPf
-Pe7bLaybrHi8SyuHMd2BRLKQOsMfv7eouEyzMsEjxJ4cJwBbCyXsO6vlT+gY5d+Sy95kcCa6OXqs
-qHblQEAiST8hgaiSyZRnMSkk9GSI/qzUPdcLd+x1cQ4HyAtpmntC+PCP3ybvKaaVnEHzWnwqrSJV
-eqO2bnyqO5QIvFlmlSFfK7+9CakXvZTnCt7SdGLeqM8jkpgbQb8N1p6d3LOELuyruwtCErP5yr1z
-YcKqbvi360et8NQOz35OD32UmuLeW+Vu3ic+Hs/x8zcaQFcMH7lI0wvWDzfvRiSgrK+oYivsm/TF
-P2PzO6lcuSKfr4CIx8kRncw2LY9MxyBoS1jTRPE35M/5CS0IqxYaDF2WWE53xN/E/BflIb9U33a0
-LynjnHFI9vmQHgrbN39z5LWqGk2gX6W/2W0c3MpQ3kS+MRnjqwtZfbzkBakk/99Mz7cwDLvcdkra
-uAGKQjTtn80ftyqQTmEjAFqphaLZgpruAYO35PBYrRqIywkhlk3gUjllcDOI3Gwv0bJoAc+g31H4
-zVMvpHKGKIW+OYusevd/nfh+dv98bcIO5QU64r7tZhaicuuOau1ClDYMA910bLhQ27YnCqGimfYq
-sgBl9Bc9qG8rz8nDMlPWcQ9qDuYzZwl++cJ5CMHlxyvvgYUEhhud7ibL5egRuqzjfRTk6w2RlYek
-pXKcAc1qFsMdcKyVH1WwlaQiypypyqGAfCr+2NmKupEyNx6UuHnZ2rnikjRZnfiBfUNHylua3WwX
-WePKMMszPywRBPJbe9320YtKfDrvmfQC3PxtHMzN9kjcUyVBktw75LFtpePQa3DK9F1/y3lLotBb
-06e2GUrAKps31ryFnoCQ/+2vCSsmJmPkL2TqDKQk763Z42B7ahNS+fMSCbuY5WhXfcEsSJI4ZB8t
-68qHdMqnbFLiYXacCTUoKjvU6Mvr0DPtVBr5BDhNnV1yykWoFr8NtzQeriuRJVwCE7m7peawcJ/K
-IfICfryRWd8Z7ZDPEOs6262hTJ8TQ9d1ZGdjyre62tyLq9FKEVSGHgjBXmQO5aXz9tI2d8OuWAIs
-Q0kWnqJm9IiMR9PXAMwKlE5kFRi7DUsGwmrzXwTDcdC9WhfR6YWRGfunp8+P0mxfXpJ2T92BU+Kh
-fX2n25cu2YlLaO9XnDnRwP5871tQClnj0AuceH9+rVp5pF1Li9N1ApH0+CmonXxSx9fjEh2tNl/I
-K7X34mR7lS4gbmWOMOeIQMyiOMvkZOIPNATNlZHXCHnPk4R6sTB22JOpdqN7HDxTJzJu2hRWbs06
-DX3bfY44JsJV9O5y/WUAy0zx5YIRu6Eirtk3I/8FTt6lyzKM3oXI3FAyQMs69ZVwscnOYO+BD6XO
-srluqjLKwBa7xT5UbYK6LBsgsFjYWT5uP24uTeH37Pnr/u8RXoEcQ4D/Oa/9Taq6XDOEYkvEA14f
-jtivrZ+WTjPW6pPdmhuciAYdoBFfrQwQ6mA/vHP1IpsycDWGJga4SBK+FedVvZCVGG3ej9NY2Qe/
-UOZ1e9Ui5tnuxlyDN43ObNg0JyAWiUWnLW8nGbvzzr6ywvC5xjvNkypFMmFtxySKtKy0YogQrDqM
-DxL+3naK+B1w4QEvzcX7pQ62mjg76e/cUZIC0KxfiP3NJUsbVFt9AfgESuS9ckdgo6WQEzuNKIqe
-V+kYwvB0/jt8X0Be5vP1toRYU8G0AP+ewhbkn6/dq/H88a4oNzbNjfNm9eGxqQZ30AsTQZv2XebR
-mxMqn+gzeJMFajXUkRgvelp0t15I3FWTHhvm5r53WlPqMeEuWhQGMLkveTMAwuN7V6gUKTX7n9ev
-SVQrXNze2JUY5rks5qWGUyAQvIDquF4eETHXZ/ySW6U+bde8G1JnsKYUd/Uz+IAm5oBjAleeYPEy
-R96XYU1sYR4FjH9xMWNjX+uP75gLgMbkb2nfymljyWYf5UO+BAss0+kVKeZiseTOUmhRiaRKrbi8
-EXjpeOoka6pozhlvIRxvovUbmuLeGnW4k0+XVFRadJNc2EwAHrpnS7sOiG0ve3siFY7CG1WgDm7n
-MrYi6j4Lc4pMc7vTiKx9h8nYAC5tXnsFWN27z8pypP9LYDmnH61MQAa4dfOZrFESSsaLGfq6etSN
-oPumJZULm6ZUhoNdl7ezrEficYkFLoGHvVSdG5EyFMJobgNQVUfs0P4iNKxkg4+gis4hKYnWPcg3
-VWUTvha34UkXr0tsh4x4K/eEZBT/mwbIrKNw36zb0FbNmKwaH0xJEAqN+/izFTH/XhQKvif43Flp
-57JkmcALqsOYU6jP+9lPXEE9eTn7KupENg51AcF+yFFu7O7HIvnDjWZq8TSszsz7aNJtfVSDREeZ
-7/XpeIhh97j0ny1c64mG5bhXnV6yKJEfA88wGc7QwDFClgmhFjsuL6CJf4nX+Pwj3fIgWhbXYE5r
-7QQwdc0oI4peHCKw6J8eMF4NG/o99fm+UhTCAu9tMqs1zrXvcX/8s4mNLAG9Guhxr2jBAJQgC+3f
-C8MWH5rWoqCIvngHdxOdS2BOjbP/Uf/GP7LZEqZGwYwOOJg/AtY7Q02juj+agiXgQwy+jLe+sPC7
-6iAMvXXRGC4FHKIiaEKJRFpFsuvydnU6Bv5YRCi/YK/C3640PVCaGF4mNgTibYiuGeP2tTJJmL5b
-sgKjPqBhq0oowIvQJLUipwe0trZF+BJ+REGNein1nzGKfx3Gi6RVTFvlSqhl5YIoxYWOylAkfDBR
-fIA9kCYr7oQXkZc/CRarzBGRVj6X6+91S697ltUpa6+ByEuV/6W3G4R2CYIE8mJZsTwgnje5L6cP
-g4AG/VROWcCq9bSX9jnLcpkQqLL9LQ1Fk4wbsDvX/3dVab+4FG6l/Y46UJMzdraQQmATEuiVA/m4
-28G1lG1UGbyjHfNizPOrvC9U4jkbzpV4hCP25/O7WVanXkrI+fFlZyBNRbcTx7AzZBvJAvvpe31v
-ch395ihkTySRGaefTVz3QQpGNf6A1LUOBI4r80LLhAAtPVhKxF3RBApkuyfC07McmNHbCgAT6XDC
-JTcZBU0FRzOjg3UKbPSpDvq+0wnDw4h2mWqu+8MvDDOtJJVzDmRTZBEkuJRt+TXSDBe5hSIH05sc
-fcNNUDL0a7j9M6FjJqnx+2pYwYZSwXDSKeyNnjQkjzXSYlw7g7skMxeS0+NTIztjN7Oi3mWH4o6t
-+IIarSwU4xGb6DEGW8wkBRdVXOIFThW13th+Qe25QnZqiLfFLB7ZyO4LJ+/8M7cVhDdhxw/ySoan
-3I6o843bEYhB9vyUh8zz3QmFIdFNHuHYxYXKBuULdkDV91VQOZuVLDArxVi8O2SiQmE0D0onLJKA
-kMnmVjtQHnXqKhF3rQ5Qonrm9QUO+hIKV7YhX4GRxh62D6dLFW4LSs+wGJT40E3KAWxdHsFh0KHc
-rRWDPikGGqeC6WdX+EfkRSjXz8TdHkkhgTe226AETYCKasBib3aGGxyg8UxQrVuJrzaAxt93OTKC
-A1B8eu9xGiZ30SoJ4CUhshodhJu0HvTn27odGnxcla3X7ohq7VmwaMyN6u2Qq5kWdxcpqUHKjIWe
-bYl2I84JLwN0ksq6ckAe5jWpY25XfYbeT3T28yxT6Ud78JGcCjZqP8YxK26S6CFWcugIgjMvZNI6
-+d51mW/RA3MR9cbxHO/d+kOlWm2GsYeSqzyTalZioAz2ndh3Ys+a6aEPZBDToFmiFIwEOegZPfVO
-Bw0uCOLk/gjasoSh7JArRw8iSpzizq+YeEg/hVxjkkEYHM88T0M6y4W9mUpIc9JBn/5LLE29543V
-fGkvHpkamR6NlU8qfKJHcrvg2reo0oJKVeBYNMyE29ECb5NHoPraCVHPDi6lmoJ94WCjtxxJKPrs
-5OtRwERjOlDYpVyRiFbzpFHPqFsCX44hDNRLHu4z0EURSd3N0wV08sjms35V1GqFVZPbanT+c2wU
-PCXpwtl0vVFh9Baq2ptouvbxJZW1cP1fhCm32Jq47h8xwVVDU3MpXrVknZ/SW6fTy9ovhwer7DI7
-K9Y38Itr9KG/1vIkl1Vv1GlXcAykW5YFKfxohht9D23/kOAqI4SZrJ4iXPugtnkX9qlhw2RR11uh
-soHvinrTdr9P44/KCUr28Tr8U8XFNfLU+2efxGCMgvOCL8Dl9H5C5m8fs/vBmcHpXDde8gbm+wHe
-Pm0G
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_QueryToken
+{
+    /**
+     * Token types.
+     */
+    const TT_WORD                 = 0;  // Word
+    const TT_PHRASE               = 1;  // Phrase (one or several quoted words)
+    const TT_FIELD                = 2;  // Field name in 'field:word', field:<phrase> or field:(<subquery>) pairs
+    const TT_FIELD_INDICATOR      = 3;  // ':'
+    const TT_REQUIRED             = 4;  // '+'
+    const TT_PROHIBITED           = 5;  // '-'
+    const TT_FUZZY_PROX_MARK      = 6;  // '~'
+    const TT_BOOSTING_MARK        = 7;  // '^'
+    const TT_RANGE_INCL_START     = 8;  // '['
+    const TT_RANGE_INCL_END       = 9;  // ']'
+    const TT_RANGE_EXCL_START     = 10; // '{'
+    const TT_RANGE_EXCL_END       = 11; // '}'
+    const TT_SUBQUERY_START       = 12; // '('
+    const TT_SUBQUERY_END         = 13; // ')'
+    const TT_AND_LEXEME           = 14; // 'AND' or 'and'
+    const TT_OR_LEXEME            = 15; // 'OR'  or 'or'
+    const TT_NOT_LEXEME           = 16; // 'NOT' or 'not'
+    const TT_TO_LEXEME            = 17; // 'TO'  or 'to'
+    const TT_NUMBER               = 18; // Number, like: 10, 0.8, .64, ....
+
+
+    /**
+     * Returns all possible lexeme types.
+     * It's used for syntax analyzer state machine initialization
+     *
+     * @return array
+     */
+    public static function getTypes()
+    {
+        return array(   self::TT_WORD,
+                        self::TT_PHRASE,
+                        self::TT_FIELD,
+                        self::TT_FIELD_INDICATOR,
+                        self::TT_REQUIRED,
+                        self::TT_PROHIBITED,
+                        self::TT_FUZZY_PROX_MARK,
+                        self::TT_BOOSTING_MARK,
+                        self::TT_RANGE_INCL_START,
+                        self::TT_RANGE_INCL_END,
+                        self::TT_RANGE_EXCL_START,
+                        self::TT_RANGE_EXCL_END,
+                        self::TT_SUBQUERY_START,
+                        self::TT_SUBQUERY_END,
+                        self::TT_AND_LEXEME,
+                        self::TT_OR_LEXEME,
+                        self::TT_NOT_LEXEME,
+                        self::TT_TO_LEXEME,
+                        self::TT_NUMBER
+                     );
+    }
+
+
+    /**
+     * TokenCategories
+     */
+    const TC_WORD           = 0;   // Word
+    const TC_PHRASE         = 1;   // Phrase (one or several quoted words)
+    const TC_NUMBER         = 2;   // Nubers, which are used with syntax elements. Ex. roam~0.8
+    const TC_SYNTAX_ELEMENT = 3;   // +  -  ( )  [ ]  { }  !  ||  && ~ ^
+
+
+    /**
+     * Token type.
+     *
+     * @var integer
+     */
+    public $type;
+
+    /**
+     * Token text.
+     *
+     * @var integer
+     */
+    public $text;
+
+    /**
+     * Token position within query.
+     *
+     * @var integer
+     */
+    public $position;
+
+
+    /**
+     * IndexReader constructor needs token type and token text as a parameters.
+     *
+     * @param integer $tokenCategory
+     * @param string  $tokText
+     * @param integer $position
+     */
+    public function __construct($tokenCategory, $tokenText, $position)
+    {
+        $this->text     = $tokenText;
+        $this->position = $position + 1; // Start from 1
+
+        switch ($tokenCategory) {
+            case self::TC_WORD:
+                if (  strtolower($tokenText) == 'and') {
+                    $this->type = self::TT_AND_LEXEME;
+                } else if (strtolower($tokenText) == 'or') {
+                    $this->type = self::TT_OR_LEXEME;
+                } else if (strtolower($tokenText) == 'not') {
+                    $this->type = self::TT_NOT_LEXEME;
+                } else if (strtolower($tokenText) == 'to') {
+                    $this->type = self::TT_TO_LEXEME;
+                } else {
+                    $this->type = self::TT_WORD;
+                }
+                break;
+
+            case self::TC_PHRASE:
+                $this->type = self::TT_PHRASE;
+                break;
+
+            case self::TC_NUMBER:
+                $this->type = self::TT_NUMBER;
+                break;
+
+            case self::TC_SYNTAX_ELEMENT:
+                switch ($tokenText) {
+                    case ':':
+                        $this->type = self::TT_FIELD_INDICATOR;
+                        break;
+
+                    case '+':
+                        $this->type = self::TT_REQUIRED;
+                        break;
+
+                    case '-':
+                        $this->type = self::TT_PROHIBITED;
+                        break;
+
+                    case '~':
+                        $this->type = self::TT_FUZZY_PROX_MARK;
+                        break;
+
+                    case '^':
+                        $this->type = self::TT_BOOSTING_MARK;
+                        break;
+
+                    case '[':
+                        $this->type = self::TT_RANGE_INCL_START;
+                        break;
+
+                    case ']':
+                        $this->type = self::TT_RANGE_INCL_END;
+                        break;
+
+                    case '{':
+                        $this->type = self::TT_RANGE_EXCL_START;
+                        break;
+
+                    case '}':
+                        $this->type = self::TT_RANGE_EXCL_END;
+                        break;
+
+                    case '(':
+                        $this->type = self::TT_SUBQUERY_START;
+                        break;
+
+                    case ')':
+                        $this->type = self::TT_SUBQUERY_END;
+                        break;
+
+                    case '!':
+                        $this->type = self::TT_NOT_LEXEME;
+                        break;
+
+                    case '&&':
+                        $this->type = self::TT_AND_LEXEME;
+                        break;
+
+                    case '||':
+                        $this->type = self::TT_OR_LEXEME;
+                        break;
+
+                    default:
+                        require_once 'Zend/Search/Lucene/Exception.php';
+                        throw new Zend_Search_Lucene_Exception('Unrecognized query syntax lexeme: \'' . $tokenText . '\'');
+                }
+                break;
+
+            case self::TC_NUMBER:
+                $this->type = self::TT_NUMBER;
+
+            default:
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Unrecognized lexeme type: \'' . $tokenCategory . '\'');
+        }
+    }
+}

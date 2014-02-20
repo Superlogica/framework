@@ -1,36 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-6w2Bh/KVZHK=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_File
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_Zf_TestApplicationControllerFile extends Zend_Tool_Project_Context_Filesystem_File
+{
+    
+    /**
+     * @var string
+     */
+    protected $_forControllerName = '';
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'TestApplicationControllerFile';
+    }
+    
+    /**
+     * init()
+     *
+     * @return Zend_Tool_Project_Context_Zf_TestApplicationControllerFile
+     */
+    public function init()
+    {
+        $this->_forControllerName = $this->_resource->getAttribute('forControllerName');
+        $this->_filesystemName = ucfirst($this->_forControllerName) . 'ControllerTest.php';
+        parent::init();
+        return $this;
+    }
+    
+    /**
+     * getContents()
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+
+        $filter = new Zend_Filter_Word_DashToCamelCase();
+        
+        $className = $filter->filter($this->_forControllerName) . 'ControllerTest';
+        
+        $codeGenFile = new Zend_CodeGenerator_Php_File(array(
+            'requiredFiles' => array(
+                'PHPUnit/Framework/TestCase.php'
+                ),
+            'classes' => array(
+                new Zend_CodeGenerator_Php_Class(array(
+                    'name' => $className,
+                    'extendedClass' => 'PHPUnit_Framework_TestCase',
+                    'methods' => array(
+                        new Zend_CodeGenerator_Php_Method(array(
+                            'name' => 'setUp',
+                            'body' => '        /* Setup Routine */'
+                            )),
+                        new Zend_CodeGenerator_Php_Method(array(
+                            'name' => 'tearDown',
+                            'body' => '        /* Tear Down Routine */'
+                            ))
+                        )
+                    ))
+                )
+            ));
+
+        return $codeGenFile->generate();
+    }
+    
+}

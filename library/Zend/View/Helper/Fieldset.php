@@ -1,33 +1,79 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-CncclXbo4IrthA7W8Wi=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Fieldset.php 11301 2008-09-08 20:09:10Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_View_Helper_FormElement */
+require_once 'Zend/View/Helper/FormElement.php';
+
+/**
+ * Helper for rendering fieldsets
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_Fieldset extends Zend_View_Helper_FormElement
+{
+    /**
+     * Render HTML form
+     *
+     * @param  string $name Form name
+     * @param  string $content Form content
+     * @param  array $attribs HTML form attributes
+     * @return string
+     */
+    public function fieldset($name, $content, $attribs = null)
+    {
+        $info = $this->_getInfo($name, $content, $attribs);
+        extract($info);
+
+        // get legend
+        $legend = '';
+        if (isset($attribs['legend'])) {
+            $legendString = trim($attribs['legend']);
+            if (!empty($legendString)) {
+                $legend = '<legend>' 
+                        . (($escape) ? $this->view->escape($legendString) : $legendString)
+                        . '</legend>' . PHP_EOL;
+            }
+            unset($attribs['legend']);
+        }
+
+        // get id
+        if (!empty($id)) {
+            $id = ' id="' . $this->view->escape($id) . '"';
+        } else {
+            $id = '';
+        }
+
+        // render fieldset
+        $xhtml = '<fieldset'
+               . $id
+               . $this->_htmlAttribs($attribs)
+               . '>'
+               . $legend
+               . $content
+               . '</fieldset>';
+
+        return $xhtml;
+    }
+}

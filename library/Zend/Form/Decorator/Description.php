@@ -1,62 +1,199 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Description
+ *
+ * Accepts the options:
+ * - separator: separator to use between label and content (defaults to PHP_EOL)
+ * - placement: whether to append or prepend label to content (defaults to prepend)
+ * - tag: if set, used to wrap the label in an additional HTML tag
+ * - class: if set, override default class used with HTML tag
+ * - escape: whether or not to escape description (true by default)
+ *
+ * Any other options passed will be used as HTML attributes of the HTML tag used.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Description.php 12328 2008-11-06 16:49:03Z matthew $
+ */
+class Zend_Form_Decorator_Description extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Whether or not to escape the description
+     * @var bool
+     */
+    protected $_escape;
+
+    /**
+     * Default placement: append
+     * @var string
+     */
+    protected $_placement = 'APPEND';
+
+    /**
+     * HTML tag with which to surround description
+     * @var string
+     */
+    protected $_tag;
+
+    /**
+     * Set HTML tag with which to surround description
+     * 
+     * @param  string $tag 
+     * @return Zend_Form_Decorator_Description
+     */
+    public function setTag($tag)
+    {
+        $this->_tag = (string) $tag;
+        return $this;
+    }
+
+    /**
+     * Get HTML tag, if any, with which to surround description
+     * 
+     * @return string
+     */
+    public function getTag()
+    {
+        if (null === $this->_tag) {
+            $tag = $this->getOption('tag');
+            if (null !== $tag) {
+                $this->removeOption('tag');
+            } else {
+                $tag = 'p';
+            }
+
+            $this->setTag($tag);
+            return $tag;
+        }
+
+        return $this->_tag;
+    }
+
+    /**
+     * Get class with which to define description
+     *
+     * Defaults to 'hint'
+     * 
+     * @return string
+     */
+    public function getClass()
+    {
+        $class = $this->getOption('class');
+        if (null === $class) {
+            $class = 'hint';
+            $this->setOption('class', $class);
+        }
+
+        return $class;
+    }
+
+    /**
+     * Set whether or not to escape description
+     * 
+     * @param  bool $flag 
+     * @return Zend_Form_Decorator_Description
+     */
+    public function setEscape($flag)
+    {
+        $this->_escape = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Get escape flag
+     * 
+     * @return true
+     */
+    public function getEscape()
+    {
+        if (null === $this->_escape) {
+            if (null !== ($escape = $this->getOption('escape'))) {
+                $this->setEscape($escape);
+                $this->removeOption('escape');
+            } else {
+                $this->setEscape(true);
+            }
+        }
+
+        return $this->_escape;
+    }
+
+    /**
+     * Render a description
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $description = $element->getDescription();
+        $description = trim($description);
+
+        if (!empty($description) && (null !== ($translator = $element->getTranslator()))) {
+            $description = $translator->translate($description);
+        }
+
+        if (empty($description)) {
+            return $content;
+        }
+
+        $separator = $this->getSeparator();
+        $placement = $this->getPlacement();
+        $tag       = $this->getTag();
+        $class     = $this->getClass();
+        $escape    = $this->getEscape();
+
+        $options   = $this->getOptions();
+
+        if ($escape) {
+            $description = $view->escape($description);
+        }
+
+        if (!empty($tag)) {
+            require_once 'Zend/Form/Decorator/HtmlTag.php';
+            $options['tag'] = $tag;
+            $decorator = new Zend_Form_Decorator_HtmlTag($options);
+            $description = $decorator->render($description);
+        }
+
+        switch ($placement) {
+            case self::PREPEND:
+                return $description . $separator . $content;
+            case self::APPEND:
+            default:
+                return $content . $separator . $description;
+        }
+    }
+}

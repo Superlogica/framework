@@ -1,33 +1,112 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-r/tnRJBz8gg3ol+L/W==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Message.php 9099 2008-03-30 19:35:47Z thomas $
+ */
+
+
+/**
+ * Zend_Mail_Part
+ */
+require_once 'Zend/Mail/Part.php';
+
+/**
+ * Zend_Mail_Message_Interface
+ */
+require_once 'Zend/Mail/Message/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Message extends Zend_Mail_Part implements Zend_Mail_Message_Interface
+{
+    /**
+     * flags for this message
+     * @var array
+     */
+    protected $_flags = array();
+
+    /**
+     * Public constructor
+     *
+     * In addition to the parameters of Zend_Mail_Part::__construct() this constructor supports:
+     * - file  filename or file handle of a file with raw message content
+     * - flags array with flags for message, keys are ignored, use constants defined in Zend_Mail_Storage
+     *
+     * @param  string $rawMessage  full message with or without headers
+     * @throws Zend_Mail_Exception
+     */
+    public function __construct(array $params)
+    {
+        if (isset($params['file'])) {
+            if (!is_resource($params['file'])) {
+                $params['raw'] = @file_get_contents($params['file']);
+                if ($params['raw'] === false) {
+                    /**
+                     * @see Zend_Mail_Exception
+                     */
+                    require_once 'Zend/Mail/Exception.php';
+                    throw new Zend_Mail_Exception('could not open file');
+                }
+            } else {
+                $params['raw'] = stream_get_contents($params['file']);
+            }
+        }
+
+        if (!empty($params['flags'])) {
+            // set key and value to the same value for easy lookup
+            $this->_flags = array_combine($params['flags'], $params['flags']);
+        }
+
+        parent::__construct($params);
+    }
+
+    /**
+     * return toplines as found after headers
+     *
+     * @return string toplines
+     */
+    public function getTopLines()
+    {
+        return $this->_topLines;
+    }
+
+    /**
+     * check if flag is set
+     *
+     * @param mixed $flag a flag name, use constants defined in Zend_Mail_Storage
+     * @return bool true if set, otherwise false
+     */
+    public function hasFlag($flag)
+    {
+        return isset($this->_flags[$flag]);
+    }
+
+    /**
+     * get all set flags
+     *
+     * @return array array with flags, key and value are the same for easy lookup
+     */
+    public function getFlags()
+    {
+        return $this->_flags;
+    }
+}

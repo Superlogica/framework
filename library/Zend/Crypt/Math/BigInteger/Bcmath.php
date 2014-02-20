@@ -1,60 +1,203 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-p65BtvfOW2ncCGVxjD38UXi=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage Math
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Crypt_Math_BigInteger_Interface
+ */
+require_once 'Zend/Crypt/Math/BigInteger/Interface.php';
+
+/**
+ * Support for arbitrary precision mathematics in PHP.
+ *
+ * Zend_Crypt_Math_BigInteger_Bcmath is a wrapper across the PHP BCMath
+ * extension.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Crypt_Math_BigInteger_Bcmath implements Zend_Crypt_Math_BigInteger_Interface
+{
+
+    /**
+     * Initialise a big integer into an extension specific type. This is not
+     * applicable to BCMath.
+     * @param string $operand
+     * @param int $base
+     * @return string
+     */
+    public function init($operand, $base = 10)
+    {
+        return $operand;
+    }
+
+    /**
+     * Adds two arbitrary precision numbers
+     *
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function add($left_operand, $right_operand)
+    {
+        return bcadd($left_operand, $right_operand);
+    }
+
+    /**
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function subtract($left_operand, $right_operand)
+    {
+        return bcsub($left_operand, $right_operand);
+    }
+
+    /**
+     * Compare two big integers and returns result as an integer where 0 means
+     * both are identical, 1 that left_operand is larger, or -1 that
+     * right_operand is larger.
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return int
+     */
+    public function compare($left_operand, $right_operand)
+    {
+        return bccomp($left_operand, $right_operand);
+    }
+
+    /**
+     * Divide two big integers and return result or NULL if the denominator
+     * is zero.
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string|null
+     */
+    public function divide($left_operand, $right_operand)
+    {
+        return bcdiv($left_operand, $right_operand);
+    }
+
+    /**
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function modulus($left_operand, $modulus)
+    {
+        return bcmod($left_operand, $modulus);
+    }
+
+    /**
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function multiply($left_operand, $right_operand)
+    {
+        return bcmul($left_operand, $right_operand);
+    }
+
+    /**
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function pow($left_operand, $right_operand)
+    {
+        return bcpow($left_operand, $right_operand);
+    }
+
+    /**
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function powmod($left_operand, $right_operand, $modulus)
+    {
+        return bcpowmod($left_operand, $right_operand, $modulus);
+    }
+
+    /**
+     * @param string $left_operand
+     * @param string $right_operand
+     * @return string
+     */
+    public function sqrt($operand)
+    {
+        return bcsqrt($operand);
+    }
+
+
+    public function binaryToInteger($operand)
+    {
+        $result = '0';
+        while (strlen($operand)) {
+            $ord = ord(substr($operand, 0, 1));
+            $result = bcadd(bcmul($result, 256), $ord);
+            $operand = substr($operand, 1);
+        }
+        return $result;
+    }
+
+
+    public function integerToBinary($operand)
+    {
+        $cmp = bccomp($operand, 0);
+        $return = '';
+        if ($cmp == 0) {
+            return (chr(0));
+        }
+        while (bccomp($operand, 0) > 0) {
+            $return = chr(bcmod($operand, 256)) . $return;
+            $operand = bcdiv($operand, 256);
+        }
+        if (ord($return[0]) > 127) {
+            $return = chr(0) . $return;
+        }
+        return $return;
+    }
+
+    /**public function integerToBinary($operand)
+    {
+        $return = '';
+        while(bccomp($operand, '0')) {
+            $return .= chr(bcmod($operand, '256'));
+            $operand = bcdiv($operand, '256');
+        }
+        return $return;
+    }**/ // Prior version for referenced offset
+
+
+    public function hexToDecimal($operand)
+    {
+        $return = '0';
+        while(strlen($hex)) {
+            $hex = hexdec(substr($operand, 0, 4));
+            $dec = bcadd(bcmul($return, 65536), $hex);
+            $operand = substr($operand, 4);
+        }
+        return $return;
+    }
+
+}

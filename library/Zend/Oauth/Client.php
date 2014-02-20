@@ -1,122 +1,339 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Client.php 23076 2010-10-10 21:37:20Z padraic $
+ */
+
+/** Zend_Oauth */
+require_once 'Zend/Oauth.php';
+
+/** Zend_Http_Client */
+require_once 'Zend/Http/Client.php';
+
+/** Zend_Oauth_Http_Utility */
+require_once 'Zend/Oauth/Http/Utility.php';
+
+/** Zend_Oauth_Config */
+require_once 'Zend/Oauth/Config.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Oauth_Client extends Zend_Http_Client
+{
+    /**
+     * Flag to indicate that the client has detected the server as supporting
+     * OAuth 1.0a
+     */
+    public static $supportsRevisionA = false;
+
+    /**
+     * Holds the current OAuth Configuration set encapsulated in an instance
+     * of Zend_Oauth_Config; it's not a Zend_Config instance since that level
+     * of abstraction is unnecessary and doesn't let me escape the accessors
+     * and mutators anyway!
+     *
+     * @var Zend_Oauth_Config
+     */
+    protected $_config = null;
+
+    /**
+     * True if this request is being made with data supplied by
+     * a stream object instead of a raw encoded string.
+     *
+     * @var bool
+     */
+    protected $_streamingRequest = null;
+
+    /**
+     * Constructor; creates a new HTTP Client instance which itself is
+     * just a typical Zend_Http_Client subclass with some OAuth icing to
+     * assist in automating OAuth parameter generation, addition and
+     * cryptographioc signing of requests.
+     *
+     * @param  array $oauthOptions
+     * @param  string $uri
+     * @param  array|Zend_Config $config
+     * @return void
+     */
+    public function __construct($oauthOptions, $uri = null, $config = null)
+    {
+        if (!isset($config['rfc3986_strict'])) {
+            $config['rfc3986_strict'] = true;
+        }
+        parent::__construct($uri, $config);
+        $this->_config = new Zend_Oauth_Config;
+        if ($oauthOptions !== null) {
+            if ($oauthOptions instanceof Zend_Config) {
+                $oauthOptions = $oauthOptions->toArray();
+            }
+            $this->_config->setOptions($oauthOptions);
+        }
+    }
+
+    /**
+     * Return the current connection adapter
+     *
+     * @return Zend_Http_Client_Adapter_Interface|string $adapter
+     */
+    public function getAdapter()
+    {
+        return $this->adapter;
+    }
+
+   /**
+     * Load the connection adapter
+     *
+     * @param Zend_Http_Client_Adapter_Interface $adapter
+     * @return void
+     */
+    public function setAdapter($adapter)
+    {
+        if ($adapter == null) {
+            $this->adapter = $adapter;
+        } else {
+              parent::setAdapter($adapter);
+        }
+    }
+
+    /**
+     * Set the streamingRequest variable which controls whether we are
+     * sending the raw (already encoded) POST data from a stream source.
+     *
+     * @param boolean $value The value to set.
+     * @return void
+     */
+    public function setStreamingRequest($value)
+    {
+        $this->_streamingRequest = $value;
+    }
+
+    /**
+     * Check whether the client is set to perform streaming requests.
+     *
+     * @return boolean True if yes, false otherwise.
+     */
+    public function getStreamingRequest()
+    {
+        if ($this->_streamingRequest) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Prepare the request body (for POST and PUT requests)
+     *
+     * @return string
+     * @throws Zend_Http_Client_Exception
+     */
+    protected function _prepareBody()
+    {
+        if($this->_streamingRequest) {
+            $this->setHeaders(self::CONTENT_LENGTH,
+                $this->raw_post_data->getTotalSize());
+            return $this->raw_post_data;
+        }
+        else {
+            return parent::_prepareBody();
+        }
+    }
+
+    /**
+     * Clear all custom parameters we set.
+     *
+     * @return Zend_Http_Client
+     */
+    public function resetParameters($clearAll = false)
+    {
+        $this->_streamingRequest = false;
+        return parent::resetParameters($clearAll);
+    }
+
+    /**
+     * Set the raw (already encoded) POST data from a stream source.
+     *
+     * This is used to support POSTing from open file handles without
+     * caching the entire body into memory. It is a wrapper around
+     * Zend_Http_Client::setRawData().
+     *
+     * @param string $data The request data
+     * @param string $enctype The encoding type
+     * @return Zend_Http_Client
+     */
+    public function setRawDataStream($data, $enctype = null)
+    {
+        $this->_streamingRequest = true;
+        return $this->setRawData($data, $enctype);
+    }
+
+    /**
+     * Same as Zend_Http_Client::setMethod() except it also creates an
+     * Oauth specific reference to the method type.
+     * Might be defunct and removed in a later iteration.
+     *
+     * @param  string $method
+     * @return Zend_Http_Client
+     */
+    public function setMethod($method = self::GET)
+    {
+        if ($method == self::GET) {
+            $this->setRequestMethod(self::GET);
+        } elseif($method == self::POST) {
+            $this->setRequestMethod(self::POST);
+        } elseif($method == self::PUT) {
+            $this->setRequestMethod(self::PUT);
+        }  elseif($method == self::DELETE) {
+            $this->setRequestMethod(self::DELETE);
+        }   elseif($method == self::HEAD) {
+            $this->setRequestMethod(self::HEAD);
+        }
+        return parent::setMethod($method);
+    }
+
+    /**
+     * Same as Zend_Http_Client::request() except just before the request is
+     * executed, we automatically append any necessary OAuth parameters and
+     * sign the request using the relevant signature method.
+     *
+     * @param  string $method
+     * @return Zend_Http_Response
+     */
+    public function request($method = null)
+    {
+        if ($method !== null) {
+            $this->setMethod($method);
+        }
+        $this->prepareOauth();
+        return parent::request();
+    }
+
+    /**
+     * Performs OAuth preparation on the request before sending.
+     *
+     * This primarily means taking a request, correctly encoding and signing
+     * all parameters, and applying the correct OAuth scheme to the method
+     * being used.
+     *
+     * @return void
+     * @throws Zend_Oauth_Exception If POSTBODY scheme requested, but GET request method used; or if invalid request scheme provided
+     */
+    public function prepareOauth()
+    {
+        $requestScheme = $this->getRequestScheme();
+        $requestMethod = $this->getRequestMethod();
+        $query = null;
+        if ($requestScheme == Zend_Oauth::REQUEST_SCHEME_HEADER) {
+            $oauthHeaderValue = $this->getToken()->toHeader(
+                $this->getUri(true),
+                $this->_config,
+                $this->_getSignableParametersAsQueryString()
+            );
+            $this->setHeaders('Authorization', $oauthHeaderValue);
+        } elseif ($requestScheme == Zend_Oauth::REQUEST_SCHEME_POSTBODY) {
+            if ($requestMethod == self::GET) {
+                require_once 'Zend/Oauth/Exception.php';
+                throw new Zend_Oauth_Exception(
+                    'The client is configured to'
+                    . ' pass OAuth parameters through a POST body but request method'
+                    . ' is set to GET'
+                );
+            }
+            $raw = $this->getToken()->toQueryString(
+                $this->getUri(true),
+                $this->_config,
+                $this->_getSignableParametersAsQueryString()
+            );
+            $this->setRawData($raw, 'application/x-www-form-urlencoded');
+            $this->paramsPost = array();
+        } elseif ($requestScheme == Zend_Oauth::REQUEST_SCHEME_QUERYSTRING) {
+            $params = array();
+            $query = $this->getUri()->getQuery();
+            if ($query) {
+                $queryParts = explode('&', $this->getUri()->getQuery());
+                foreach ($queryParts as $queryPart) {
+                    $kvTuple = explode('=', $queryPart);
+                    $params[urldecode($kvTuple[0])] =
+                        (array_key_exists(1, $kvTuple) ? urldecode($kvTuple[1]) : NULL);
+                }
+            }
+            if (!empty($this->paramsPost)) {
+                $params = array_merge($params, $this->paramsPost);
+                $query  = $this->getToken()->toQueryString(
+                    $this->getUri(true), $this->_config, $params
+                );
+            }
+            $query = $this->getToken()->toQueryString(
+                $this->getUri(true), $this->_config, $params
+            );
+            $this->getUri()->setQuery($query);
+            $this->paramsGet = array();
+        } else {
+            require_once 'Zend/Oauth/Exception.php';
+            throw new Zend_Oauth_Exception('Invalid request scheme: ' . $requestScheme);
+        }
+    }
+
+    /**
+     * Collect all signable parameters into a single array across query string
+     * and POST body. These are returned as a properly formatted single
+     * query string.
+     *
+     * @return string
+     */
+    protected function _getSignableParametersAsQueryString()
+    {
+        $params = array();
+            if (!empty($this->paramsGet)) {
+                $params = array_merge($params, $this->paramsGet);
+                $query  = $this->getToken()->toQueryString(
+                    $this->getUri(true), $this->_config, $params
+                );
+            }
+            if (!empty($this->paramsPost)) {
+                $params = array_merge($params, $this->paramsPost);
+                $query  = $this->getToken()->toQueryString(
+                    $this->getUri(true), $this->_config, $params
+                );
+            }
+            return $params;
+    }
+
+    /**
+     * Simple Proxy to the current Zend_Oauth_Config method. It's that instance
+     * which holds all configuration methods and values this object also presents
+     * as it's API.
+     *
+     * @param  string $method
+     * @param  array $args
+     * @return mixed
+     * @throws Zend_Oauth_Exception if method does not exist in config object
+     */
+    public function __call($method, array $args)
+    {
+        if (!method_exists($this->_config, $method)) {
+            require_once 'Zend/Oauth/Exception.php';
+            throw new Zend_Oauth_Exception('Method does not exist: ' . $method);
+        }
+        return call_user_func_array(array($this->_config,$method), $args);
+    }
+}

@@ -1,33 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Manifest_Metadata
+ */
+require_once 'Zend/Tool/Framework/Manifest/Metadata.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Metadata_Dynamic implements Zend_Tool_Framework_Metadata_Interface
+{
+    
+    /**
+     * @var string
+     */
+    protected $_type = 'Dynamic';
+    
+    /**
+     * @var array
+     */
+    protected $_dynamicAttributes = array();
+    
+    /**
+     * __isset()
+     * 
+     * Check if an attrbute is set
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function __isset($name)
+    {
+        return isset($this->_dynamicAttributes[$name]);
+    }
+    
+    /**
+     * __unset()
+     *
+     * @param string $name
+     * @return null
+     */
+    public function __unset($name)
+    {
+        unset($this->_dynamicAttributes[$name]);
+        return;
+    }
+    
+    /**
+     * __get() - Get a property via property call $metadata->foo
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        if (method_exists($this, 'get' . $name)) {
+            return $this->{'get' . $name}();
+        } elseif (array_key_exists($name, $this->_dynamicAttributes)) {
+            return ;
+        } else {
+            require_once 'Zend/Tool/Framework/Registry/Exception.php';
+            throw new Zend_Tool_Framework_Registry_Exception('Property ' . $name . ' was not located in this metadata.');
+        }
+    }
+    
+    /**
+     * __set() - Set a property via the magic set $metadata->foo = 'foo'
+     *
+     * @param string $name
+     * @param mixed $value
+     */
+    public function __set($name, $value)
+    {
+        if (method_exists($this, 'set' . $name)) {
+            $this->{'set' . $name}($value);
+            return;
+        } else {
+            require_once 'Zend/Tool/Framework/Registry/Exception.php';
+            throw new Zend_Tool_Framework_Registry_Exception('Property ' . $name . ' was not located in this registry.');            
+        }
+    }
+    
+}

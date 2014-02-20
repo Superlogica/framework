@@ -1,75 +1,256 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-kr3jrSonyRPkaqiJ
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Docs
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata
+ */
+require_once 'Zend/Gdata.php';
+
+/**
+ * @see Zend_Gdata_Docs_DocumentListFeed
+ */
+require_once 'Zend/Gdata/Docs/DocumentListFeed.php';
+
+/**
+ * @see Zend_Gdata_Docs_DocumentListEntry
+ */
+require_once 'Zend/Gdata/Docs/DocumentListEntry.php';
+
+/**
+ * Service class for interacting with the Google Document List data API
+ * @link http://code.google.com/apis/documents/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Docs
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Docs extends Zend_Gdata
+{
+
+    const DOCUMENTS_LIST_FEED_URI = 'http://docs.google.com/feeds/documents/private/full';
+    const AUTH_SERVICE_NAME = 'writely';
+
+    protected $_defaultPostUri = self::DOCUMENTS_LIST_FEED_URI;
+
+    private static $SUPPORTED_FILETYPES = array(
+      'CSV'=>'text/csv',
+      'DOC'=>'application/msword',
+      'ODS'=>'application/vnd.oasis.opendocument.spreadsheet',
+      'ODT'=>'application/vnd.oasis.opendocument.text',
+      'RTF'=>'application/rtf',
+      'SXW'=>'application/vnd.sun.xml.writer',
+      'TXT'=>'text/plain',
+      'XLS'=>'application/vnd.ms-excel');
+
+    /**
+     * Create Gdata_Docs object
+     *
+     * @param Zend_Http_Client $client (optional) The HTTP client to use when
+     *          when communicating with the Google servers.
+     * @param string $applicationId The identity of the app in the form of Company-AppName-Version
+     */
+    public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
+    {
+        $this->registerPackage('Zend_Gdata_Docs');
+        parent::__construct($client, $applicationId);
+        $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
+    }
+
+    /**
+     * Looks up the mime type based on the file name extension. For example,
+     * calling this method with 'csv' would return 
+     * 'text/comma-separated-values'. The Mime type is sent as a header in 
+     * the upload HTTP POST request.
+     *
+     * @param string $fileExtension 
+     * @return string The mime type to be sent to the server to tell it how the
+     *          multipart mime data should be interpreted.
+     */
+    public static function lookupMimeType($fileExtension) {
+      return self::$SUPPORTED_FILETYPES[strtoupper($fileExtension)];
+    }
+
+    /**
+     * Retreive feed object containing entries for the user's documents.
+     *
+     * @param mixed $location The location for the feed, as a URL or Query
+     * @return Zend_Gdata_Docs_DocumentListFeed
+     */
+    public function getDocumentListFeed($location = null)
+    {
+        if ($location === null) {
+            $uri = self::DOCUMENTS_LIST_FEED_URI;
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getFeed($uri, 'Zend_Gdata_Docs_DocumentListFeed');
+    }
+
+    /**
+     * Retreive entry object representing a single document.
+     *
+     * @param mixed $location The location for the entry, as a URL or Query
+     * @return Zend_Gdata_Docs_DocumentListEntry
+     */
+    public function getDocumentListEntry($location = null)
+    {
+        if ($location === null) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Location must not be null');
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getEntry($uri, 'Zend_Gdata_Docs_DocumentListEntry');
+    }
+
+    /**
+     * Retreive entry object representing a single document.
+     *
+     * This method builds the URL where this item is stored using the type
+     * and the id of the document.
+     * @param string $docId The URL key for the document. Examples: 
+     *     dcmg89gw_62hfjj8m, pKq0CzjiF3YmGd0AIlHKqeg
+     * @param string $docType The type of the document as used in the Google
+     *     Document List URLs. Examples: document, spreadsheet, presentation
+     * @return Zend_Gdata_Docs_DocumentListEntry
+     */
+    public function getDoc($docId, $docType) {
+        $location = 'http://docs.google.com/feeds/documents/private/full/' . 
+            $docType . '%3A' . $docId;
+        return $this->getDocumentListEntry($location);
+    }
+
+    /**
+     * Retreive entry object for the desired word processing document.
+     *
+     * @param string $id The URL id for the document. Example: 
+     *     dcmg89gw_62hfjj8m
+     */
+    public function getDocument($id) {
+      return $this->getDoc($id, 'document');
+    }
+    
+    /**
+     * Retreive entry object for the desired spreadsheet.
+     *
+     * @param string $id The URL id for the document. Example: 
+     *     pKq0CzjiF3YmGd0AIlHKqeg
+     */
+    public function getSpreadsheet($id) {
+      return $this->getDoc($id, 'spreadsheet');
+    }
+    
+    /**
+     * Retreive entry object for the desired presentation.
+     *
+     * @param string $id The URL id for the document. Example: 
+     *     dcmg89gw_21gtrjcn
+     */
+    public function getPresentation($id) {
+      return $this->getDoc($id, 'presentation');
+    }
+
+    /**
+     * Upload a local file to create a new Google Document entry. 
+     *
+     * @param string $fileLocation The full or relative path of the file to
+     *         be uploaded.
+     * @param string $title The name that this document should have on the 
+     *         server. If set, the title is used as the slug header in the
+     *         POST request. If no title is provided, the location of the 
+     *         file will be used as the slug header in the request. If no 
+     *         mimeType is provided, this method attempts to determine the
+     *         mime type based on the slugHeader by looking for .doc, 
+     *         .csv, .txt, etc. at the end of the file name.
+     *         Example value: 'test.doc'.
+     * @param string $mimeType Describes the type of data which is being sent
+     *         to the server. This must be one of the accepted mime types 
+     *         which are enumerated in SUPPORTED_FILETYPES.
+     * @param string $uri (optional) The URL to which the upload should be 
+     *         made.
+     *         Example: 'http://docs.google.com/feeds/documents/private/full'.
+     * @return Zend_Gdata_Docs_DocumentListEntry The entry for the newly 
+     *         created Google Document.
+     */
+    public function uploadFile($fileLocation, $title=null, $mimeType=null, 
+                               $uri=null)
+    {
+        // Set the URI to which the file will be uploaded.
+        if ($uri === null) {
+            $uri = $this->_defaultPostUri;
+        }
+        
+        // Create the media source which describes the file.
+        $fs = $this->newMediaFileSource($fileLocation);
+        if ($title !== null) {
+            $slugHeader = $title;
+        } else {
+            $slugHeader = $fileLocation;
+        }
+        
+        // Set the slug header to tell the Google Documents server what the 
+        // title of the document should be and what the file extension was 
+        // for the original file.
+        $fs->setSlug($slugHeader);
+
+        // Set the mime type of the data.
+        if ($mimeType === null) {
+          $slugHeader =  $fs->getSlug();
+          $filenameParts = explode('.', $slugHeader);
+          $fileExtension = end($filenameParts);
+          $mimeType = self::lookupMimeType($fileExtension);
+        }
+        
+        // Set the mime type for the upload request.
+        $fs->setContentType($mimeType);
+        
+        // Send the data to the server.
+        return $this->insertDocument($fs, $uri);
+    }
+
+    /**
+     * Inserts an entry to a given URI and returns the response as an Entry.
+     *
+     * @param mixed  $data The Zend_Gdata_Docs_DocumentListEntry or media 
+     *         source to post. If it is a DocumentListEntry, the mediaSource
+     *         should already have been set. If $data is a mediaSource, it 
+     *         should have the correct slug header and mime type.
+     * @param string $uri POST URI
+     * @param string $className (optional) The class of entry to be returned. 
+     *         The default is a 'Zend_Gdata_Docs_DocumentListEntry'.
+     * @return Zend_Gdata_Docs_DocumentListEntry The entry returned by the 
+     *     service after insertion.
+     */
+    public function insertDocument($data, $uri, 
+        $className='Zend_Gdata_Docs_DocumentListEntry')
+    {
+        return $this->insertEntry($data, $uri, $className);
+    }
+
+}

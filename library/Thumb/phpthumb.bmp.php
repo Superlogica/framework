@@ -1,562 +1,878 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/////////////////////////////////////////////////////////////////
+/// getID3() by James Heinrich <info@getid3.org>               //
+//  available at http://getid3.sourceforge.net                 //
+//            or http://www.getid3.org                         //
+/////////////////////////////////////////////////////////////////
+// See readme.txt for more details                             //
+/////////////////////////////////////////////////////////////////
+//                                                             //
+// module.graphic.bmp.php                                      //
+// module for analyzing BMP Image files                        //
+// dependencies: NONE                                          //
+//                                                            ///
+/////////////////////////////////////////////////////////////////
+//                                                             //
+// Modified for use in phpThumb() - James Heinrich 2004.07.27  //
+//                                                             //
+/////////////////////////////////////////////////////////////////
+
+
+class phpthumb_bmp {
+
+	function phpthumb_bmp() {
+		return true;
+	}
+
+	function phpthumb_bmp2gd(&$BMPdata, $truecolor=true) {
+		$ThisFileInfo = array();
+		if ($this->getid3_bmp($BMPdata, $ThisFileInfo, true, true)) {
+			$gd = $this->PlotPixelsGD($ThisFileInfo['bmp'], $truecolor);
+			return $gd;
+		}
+		return false;
+	}
+
+	function phpthumb_bmpfile2gd($filename, $truecolor=true) {
+		if ($fp = @fopen($filename, 'rb')) {
+			$BMPdata = fread($fp, filesize($filename));
+			fclose($fp);
+			return $this->phpthumb_bmp2gd($BMPdata, $truecolor);
+		}
+		return false;
+	}
+
+	function GD2BMPstring(&$gd_image) {
+		$imageX = ImageSX($gd_image);
+		$imageY = ImageSY($gd_image);
+
+		$BMP = '';
+		for ($y = ($imageY - 1); $y >= 0; $y--) {
+			$thisline = '';
+			for ($x = 0; $x < $imageX; $x++) {
+				$argb = phpthumb_functions::GetPixelColor($gd_image, $x, $y);
+				$thisline .= chr($argb['blue']).chr($argb['green']).chr($argb['red']);
+			}
+			while (strlen($thisline) % 4) {
+				$thisline .= "\x00";
+			}
+			$BMP .= $thisline;
+		}
+
+		$bmpSize = strlen($BMP) + 14 + 40;
+		// BITMAPFILEHEADER [14 bytes] - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_62uq.asp
+		$BITMAPFILEHEADER  = 'BM';                                                           // WORD    bfType;
+		$BITMAPFILEHEADER .= phpthumb_functions::LittleEndian2String($bmpSize, 4); // DWORD   bfSize;
+		$BITMAPFILEHEADER .= phpthumb_functions::LittleEndian2String(       0, 2); // WORD    bfReserved1;
+		$BITMAPFILEHEADER .= phpthumb_functions::LittleEndian2String(       0, 2); // WORD    bfReserved2;
+		$BITMAPFILEHEADER .= phpthumb_functions::LittleEndian2String(      54, 4); // DWORD   bfOffBits;
+
+		// BITMAPINFOHEADER - [40 bytes] http://msdn.microsoft.com/library/en-us/gdi/bitmaps_1rw2.asp
+		$BITMAPINFOHEADER  = phpthumb_functions::LittleEndian2String(      40, 4); // DWORD  biSize;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String( $imageX, 4); // LONG   biWidth;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String( $imageY, 4); // LONG   biHeight;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(       1, 2); // WORD   biPlanes;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(      24, 2); // WORD   biBitCount;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(       0, 4); // DWORD  biCompression;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(       0, 4); // DWORD  biSizeImage;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(    2835, 4); // LONG   biXPelsPerMeter;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(    2835, 4); // LONG   biYPelsPerMeter;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(       0, 4); // DWORD  biClrUsed;
+		$BITMAPINFOHEADER .= phpthumb_functions::LittleEndian2String(       0, 4); // DWORD  biClrImportant;
+
+		return $BITMAPFILEHEADER.$BITMAPINFOHEADER.$BMP;
+	}
+
+	function getid3_bmp(&$BMPdata, &$ThisFileInfo, $ExtractPalette=false, $ExtractData=false) {
+
+	    // shortcuts
+	    $ThisFileInfo['bmp']['header']['raw'] = array();
+	    $thisfile_bmp                         = &$ThisFileInfo['bmp'];
+	    $thisfile_bmp_header                  = &$thisfile_bmp['header'];
+	    $thisfile_bmp_header_raw              = &$thisfile_bmp_header['raw'];
+
+		// BITMAPFILEHEADER [14 bytes] - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_62uq.asp
+		// all versions
+		// WORD    bfType;
+		// DWORD   bfSize;
+		// WORD    bfReserved1;
+		// WORD    bfReserved2;
+		// DWORD   bfOffBits;
+
+		$offset = 0;
+		$overalloffset = 0;
+		$BMPheader = substr($BMPdata, $overalloffset, 14 + 40);
+		$overalloffset += (14 + 40);
+
+		$thisfile_bmp_header_raw['identifier']  = substr($BMPheader, $offset, 2);
+		$offset += 2;
+
+		if ($thisfile_bmp_header_raw['identifier'] != 'BM') {
+			$ThisFileInfo['error'][] = 'Expecting "BM" at offset '.intval(@$ThisFileInfo['avdataoffset']).', found "'.$thisfile_bmp_header_raw['identifier'].'"';
+			unset($ThisFileInfo['fileformat']);
+			unset($ThisFileInfo['bmp']);
+			return false;
+		}
+
+		$thisfile_bmp_header_raw['filesize']    = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+		$offset += 4;
+		$thisfile_bmp_header_raw['reserved1']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+		$offset += 2;
+		$thisfile_bmp_header_raw['reserved2']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+		$offset += 2;
+		$thisfile_bmp_header_raw['data_offset'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+		$offset += 4;
+		$thisfile_bmp_header_raw['header_size'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+		$offset += 4;
+
+
+		// check if the hardcoded-to-1 "planes" is at offset 22 or 26
+		$planes22 = $this->LittleEndian2Int(substr($BMPheader, 22, 2));
+		$planes26 = $this->LittleEndian2Int(substr($BMPheader, 26, 2));
+		if (($planes22 == 1) && ($planes26 != 1)) {
+			$thisfile_bmp['type_os']      = 'OS/2';
+			$thisfile_bmp['type_version'] = 1;
+		} elseif (($planes26 == 1) && ($planes22 != 1)) {
+			$thisfile_bmp['type_os']      = 'Windows';
+			$thisfile_bmp['type_version'] = 1;
+		} elseif ($thisfile_bmp_header_raw['header_size'] == 12) {
+			$thisfile_bmp['type_os']      = 'OS/2';
+			$thisfile_bmp['type_version'] = 1;
+		} elseif ($thisfile_bmp_header_raw['header_size'] == 40) {
+			$thisfile_bmp['type_os']      = 'Windows';
+			$thisfile_bmp['type_version'] = 1;
+		} elseif ($thisfile_bmp_header_raw['header_size'] == 84) {
+			$thisfile_bmp['type_os']      = 'Windows';
+			$thisfile_bmp['type_version'] = 4;
+		} elseif ($thisfile_bmp_header_raw['header_size'] == 100) {
+			$thisfile_bmp['type_os']      = 'Windows';
+			$thisfile_bmp['type_version'] = 5;
+		} else {
+			$ThisFileInfo['error'][] = 'Unknown BMP subtype (or not a BMP file)';
+			unset($ThisFileInfo['fileformat']);
+			unset($ThisFileInfo['bmp']);
+			return false;
+		}
+
+		$ThisFileInfo['fileformat']                  = 'bmp';
+		$ThisFileInfo['video']['dataformat']         = 'bmp';
+		$ThisFileInfo['video']['lossless']           = true;
+		$ThisFileInfo['video']['pixel_aspect_ratio'] = (float) 1;
+
+		if ($thisfile_bmp['type_os'] == 'OS/2') {
+
+			// OS/2-format BMP
+			// http://netghost.narod.ru/gff/graphics/summary/os2bmp.htm
+
+			// DWORD  Size;             /* Size of this structure in bytes */
+			// DWORD  Width;            /* Bitmap width in pixels */
+			// DWORD  Height;           /* Bitmap height in pixel */
+			// WORD   NumPlanes;        /* Number of bit planes (color depth) */
+			// WORD   BitsPerPixel;     /* Number of bits per pixel per plane */
+
+			$thisfile_bmp_header_raw['width']          = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+			$offset += 2;
+			$thisfile_bmp_header_raw['height']         = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+			$offset += 2;
+			$thisfile_bmp_header_raw['planes']         = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+			$offset += 2;
+			$thisfile_bmp_header_raw['bits_per_pixel'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+			$offset += 2;
+
+			$ThisFileInfo['video']['resolution_x']    = $thisfile_bmp_header_raw['width'];
+			$ThisFileInfo['video']['resolution_y']    = $thisfile_bmp_header_raw['height'];
+			$ThisFileInfo['video']['codec']           = 'BI_RGB '.$thisfile_bmp_header_raw['bits_per_pixel'].'-bit';
+			$ThisFileInfo['video']['bits_per_sample'] = $thisfile_bmp_header_raw['bits_per_pixel'];
+
+			if ($thisfile_bmp['type_version'] >= 2) {
+				// DWORD  Compression;      /* Bitmap compression scheme */
+				// DWORD  ImageDataSize;    /* Size of bitmap data in bytes */
+				// DWORD  XResolution;      /* X resolution of display device */
+				// DWORD  YResolution;      /* Y resolution of display device */
+				// DWORD  ColorsUsed;       /* Number of color table indices used */
+				// DWORD  ColorsImportant;  /* Number of important color indices */
+				// WORD   Units;            /* Type of units used to measure resolution */
+				// WORD   Reserved;         /* Pad structure to 4-byte boundary */
+				// WORD   Recording;        /* Recording algorithm */
+				// WORD   Rendering;        /* Halftoning algorithm used */
+				// DWORD  Size1;            /* Reserved for halftoning algorithm use */
+				// DWORD  Size2;            /* Reserved for halftoning algorithm use */
+				// DWORD  ColorEncoding;    /* Color model used in bitmap */
+				// DWORD  Identifier;       /* Reserved for application use */
+
+				$thisfile_bmp_header_raw['compression']      = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['bmp_data_size']    = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['resolution_h']     = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['resolution_v']     = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['colors_used']      = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['colors_important'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['resolution_units'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+				$offset += 2;
+				$thisfile_bmp_header_raw['reserved1']        = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+				$offset += 2;
+				$thisfile_bmp_header_raw['recording']        = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+				$offset += 2;
+				$thisfile_bmp_header_raw['rendering']        = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+				$offset += 2;
+				$thisfile_bmp_header_raw['size1']            = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['size2']            = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['color_encoding']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['identifier']       = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+
+				$thisfile_bmp_header['compression']          = $this->BMPcompressionOS2Lookup($thisfile_bmp_header_raw['compression']);
+
+				$ThisFileInfo['video']['codec'] = $thisfile_bmp_header['compression'].' '.$thisfile_bmp_header_raw['bits_per_pixel'].'-bit';
+			}
+
+		} elseif ($thisfile_bmp['type_os'] == 'Windows') {
+
+			// Windows-format BMP
+
+			// BITMAPINFOHEADER - [40 bytes] http://msdn.microsoft.com/library/en-us/gdi/bitmaps_1rw2.asp
+			// all versions
+			// DWORD  biSize;
+			// LONG   biWidth;
+			// LONG   biHeight;
+			// WORD   biPlanes;
+			// WORD   biBitCount;
+			// DWORD  biCompression;
+			// DWORD  biSizeImage;
+			// LONG   biXPelsPerMeter;
+			// LONG   biYPelsPerMeter;
+			// DWORD  biClrUsed;
+			// DWORD  biClrImportant;
+
+			$thisfile_bmp_header_raw['width']            = $this->LittleEndian2Int(substr($BMPheader, $offset, 4), true);
+			$offset += 4;
+			$thisfile_bmp_header_raw['height']           = $this->LittleEndian2Int(substr($BMPheader, $offset, 4), true);
+			$offset += 4;
+			$thisfile_bmp_header_raw['planes']           = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+			$offset += 2;
+			$thisfile_bmp_header_raw['bits_per_pixel']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 2));
+			$offset += 2;
+			$thisfile_bmp_header_raw['compression']      = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+			$offset += 4;
+			$thisfile_bmp_header_raw['bmp_data_size']    = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+			$offset += 4;
+			$thisfile_bmp_header_raw['resolution_h']     = $this->LittleEndian2Int(substr($BMPheader, $offset, 4), true);
+			$offset += 4;
+			$thisfile_bmp_header_raw['resolution_v']     = $this->LittleEndian2Int(substr($BMPheader, $offset, 4), true);
+			$offset += 4;
+			$thisfile_bmp_header_raw['colors_used']      = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+			$offset += 4;
+			$thisfile_bmp_header_raw['colors_important'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+			$offset += 4;
+
+			$thisfile_bmp_header['compression'] = $this->BMPcompressionWindowsLookup($thisfile_bmp_header_raw['compression']);
+			$ThisFileInfo['video']['resolution_x']    = $thisfile_bmp_header_raw['width'];
+			$ThisFileInfo['video']['resolution_y']    = $thisfile_bmp_header_raw['height'];
+			$ThisFileInfo['video']['codec']           = $thisfile_bmp_header['compression'].' '.$thisfile_bmp_header_raw['bits_per_pixel'].'-bit';
+			$ThisFileInfo['video']['bits_per_sample'] = $thisfile_bmp_header_raw['bits_per_pixel'];
+
+			if (($thisfile_bmp['type_version'] >= 4) || ($thisfile_bmp_header_raw['compression'] == 3)) {
+				// should only be v4+, but BMPs with type_version==1 and BI_BITFIELDS compression have been seen
+				$BMPheader .= substr($BMPdata, $overalloffset, 44);
+				$overalloffset += 44;
+
+				// BITMAPV4HEADER - [44 bytes] - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_2k1e.asp
+				// Win95+, WinNT4.0+
+				// DWORD        bV4RedMask;
+				// DWORD        bV4GreenMask;
+				// DWORD        bV4BlueMask;
+				// DWORD        bV4AlphaMask;
+				// DWORD        bV4CSType;
+				// CIEXYZTRIPLE bV4Endpoints;
+				// DWORD        bV4GammaRed;
+				// DWORD        bV4GammaGreen;
+				// DWORD        bV4GammaBlue;
+				$thisfile_bmp_header_raw['red_mask']     = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['green_mask']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['blue_mask']    = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['alpha_mask']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['cs_type']      = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['ciexyz_red']   =                         substr($BMPheader, $offset, 4);
+				$offset += 4;
+				$thisfile_bmp_header_raw['ciexyz_green'] =                         substr($BMPheader, $offset, 4);
+				$offset += 4;
+				$thisfile_bmp_header_raw['ciexyz_blue']  =                         substr($BMPheader, $offset, 4);
+				$offset += 4;
+				$thisfile_bmp_header_raw['gamma_red']    = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['gamma_green']  = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['gamma_blue']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+
+				$thisfile_bmp_header['ciexyz_red']   = $this->FixedPoint2_30(strrev($thisfile_bmp_header_raw['ciexyz_red']));
+				$thisfile_bmp_header['ciexyz_green'] = $this->FixedPoint2_30(strrev($thisfile_bmp_header_raw['ciexyz_green']));
+				$thisfile_bmp_header['ciexyz_blue']  = $this->FixedPoint2_30(strrev($thisfile_bmp_header_raw['ciexyz_blue']));
+			}
+
+			if ($thisfile_bmp['type_version'] >= 5) {
+				$BMPheader .= substr($BMPdata, $overalloffset, 16);
+				$overalloffset += 16;
+
+				// BITMAPV5HEADER - [16 bytes] - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_7c36.asp
+				// Win98+, Win2000+
+				// DWORD        bV5Intent;
+				// DWORD        bV5ProfileData;
+				// DWORD        bV5ProfileSize;
+				// DWORD        bV5Reserved;
+				$thisfile_bmp_header_raw['intent']              = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['profile_data_offset'] = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['profile_data_size']   = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+				$thisfile_bmp_header_raw['reserved3']           = $this->LittleEndian2Int(substr($BMPheader, $offset, 4));
+				$offset += 4;
+			}
+
+		} else {
+
+			$ThisFileInfo['error'][] = 'Unknown BMP format in header.';
+			return false;
+
+		}
+
+		if ($ExtractPalette || $ExtractData) {
+			$PaletteEntries = 0;
+			if ($thisfile_bmp_header_raw['bits_per_pixel'] < 16) {
+				$PaletteEntries = pow(2, $thisfile_bmp_header_raw['bits_per_pixel']);
+			} elseif (isset($thisfile_bmp_header_raw['colors_used']) && ($thisfile_bmp_header_raw['colors_used'] > 0) && ($thisfile_bmp_header_raw['colors_used'] <= 256)) {
+				$PaletteEntries = $thisfile_bmp_header_raw['colors_used'];
+			}
+			if ($PaletteEntries > 0) {
+				$BMPpalette = substr($BMPdata, $overalloffset, 4 * $PaletteEntries);
+				$overalloffset += 4 * $PaletteEntries;
+
+				$paletteoffset = 0;
+				for ($i = 0; $i < $PaletteEntries; $i++) {
+					// RGBQUAD          - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_5f8y.asp
+					// BYTE    rgbBlue;
+					// BYTE    rgbGreen;
+					// BYTE    rgbRed;
+					// BYTE    rgbReserved;
+					$blue  = $this->LittleEndian2Int(substr($BMPpalette, $paletteoffset++, 1));
+					$green = $this->LittleEndian2Int(substr($BMPpalette, $paletteoffset++, 1));
+					$red   = $this->LittleEndian2Int(substr($BMPpalette, $paletteoffset++, 1));
+					if (($thisfile_bmp['type_os'] == 'OS/2') && ($thisfile_bmp['type_version'] == 1)) {
+						// no padding byte
+					} else {
+						$paletteoffset++; // padding byte
+					}
+					$thisfile_bmp['palette'][$i] = (($red << 16) | ($green << 8) | ($blue));
+				}
+			}
+		}
+
+		if ($ExtractData) {
+			$RowByteLength = ceil(($thisfile_bmp_header_raw['width'] * ($thisfile_bmp_header_raw['bits_per_pixel'] / 8)) / 4) * 4; // round up to nearest DWORD boundry
+
+			$BMPpixelData = substr($BMPdata, $thisfile_bmp_header_raw['data_offset'], $thisfile_bmp_header_raw['height'] * $RowByteLength);
+			$overalloffset = $thisfile_bmp_header_raw['data_offset'] + ($thisfile_bmp_header_raw['height'] * $RowByteLength);
+
+			$pixeldataoffset = 0;
+			switch (@$thisfile_bmp_header_raw['compression']) {
+
+				case 0: // BI_RGB
+					switch ($thisfile_bmp_header_raw['bits_per_pixel']) {
+						case 1:
+							for ($row = ($thisfile_bmp_header_raw['height'] - 1); $row >= 0; $row--) {
+								for ($col = 0; $col < $thisfile_bmp_header_raw['width']; $col = $col) {
+									$paletteindexbyte = ord($BMPpixelData{$pixeldataoffset++});
+									for ($i = 7; $i >= 0; $i--) {
+										$paletteindex = ($paletteindexbyte & (0x01 << $i)) >> $i;
+										$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$paletteindex];
+										$col++;
+									}
+								}
+								while (($pixeldataoffset % 4) != 0) {
+									// lines are padded to nearest DWORD
+									$pixeldataoffset++;
+								}
+							}
+							break;
+
+						case 4:
+							for ($row = ($thisfile_bmp_header_raw['height'] - 1); $row >= 0; $row--) {
+								for ($col = 0; $col < $thisfile_bmp_header_raw['width']; $col = $col) {
+									$paletteindexbyte = ord($BMPpixelData{$pixeldataoffset++});
+									for ($i = 1; $i >= 0; $i--) {
+										$paletteindex = ($paletteindexbyte & (0x0F << (4 * $i))) >> (4 * $i);
+										$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$paletteindex];
+										$col++;
+									}
+								}
+								while (($pixeldataoffset % 4) != 0) {
+									// lines are padded to nearest DWORD
+									$pixeldataoffset++;
+								}
+							}
+							break;
+
+						case 8:
+							for ($row = ($thisfile_bmp_header_raw['height'] - 1); $row >= 0; $row--) {
+								for ($col = 0; $col < $thisfile_bmp_header_raw['width']; $col++) {
+									$paletteindex = ord($BMPpixelData{$pixeldataoffset++});
+									$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$paletteindex];
+								}
+								while (($pixeldataoffset % 4) != 0) {
+									// lines are padded to nearest DWORD
+									$pixeldataoffset++;
+								}
+							}
+							break;
+
+						case 24:
+							for ($row = ($thisfile_bmp_header_raw['height'] - 1); $row >= 0; $row--) {
+								for ($col = 0; $col < $thisfile_bmp_header_raw['width']; $col++) {
+									$thisfile_bmp['data'][$row][$col] = (ord($BMPpixelData{$pixeldataoffset+2}) << 16) | (ord($BMPpixelData{$pixeldataoffset+1}) << 8) | ord($BMPpixelData{$pixeldataoffset});
+									$pixeldataoffset += 3;
+								}
+								while (($pixeldataoffset % 4) != 0) {
+									// lines are padded to nearest DWORD
+									$pixeldataoffset++;
+								}
+							}
+							break;
+
+						case 32:
+							for ($row = ($thisfile_bmp_header_raw['height'] - 1); $row >= 0; $row--) {
+								for ($col = 0; $col < $thisfile_bmp_header_raw['width']; $col++) {
+									$thisfile_bmp['data'][$row][$col] = (ord($BMPpixelData{$pixeldataoffset+3}) << 24) | (ord($BMPpixelData{$pixeldataoffset+2}) << 16) | (ord($BMPpixelData{$pixeldataoffset+1}) << 8) | ord($BMPpixelData{$pixeldataoffset});
+									$pixeldataoffset += 4;
+								}
+								while (($pixeldataoffset % 4) != 0) {
+									// lines are padded to nearest DWORD
+									$pixeldataoffset++;
+								}
+							}
+							break;
+
+						case 16:
+							// ?
+							break;
+
+						default:
+							$ThisFileInfo['error'][] = 'Unknown bits-per-pixel value ('.$thisfile_bmp_header_raw['bits_per_pixel'].') - cannot read pixel data';
+							break;
+					}
+					break;
+
+
+				case 1: // BI_RLE8 - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_6x0u.asp
+					switch ($thisfile_bmp_header_raw['bits_per_pixel']) {
+						case 8:
+							$pixelcounter = 0;
+							while ($pixeldataoffset < strlen($BMPpixelData)) {
+								$firstbyte  = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+								$secondbyte = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+								if ($firstbyte == 0) {
+
+									// escaped/absolute mode - the first byte of the pair can be set to zero to
+									// indicate an escape character that denotes the end of a line, the end of
+									// a bitmap, or a delta, depending on the value of the second byte.
+									switch ($secondbyte) {
+										case 0:
+											// end of line
+											// no need for special processing, just ignore
+											break;
+
+										case 1:
+											// end of bitmap
+											$pixeldataoffset = strlen($BMPpixelData); // force to exit loop just in case
+											break;
+
+										case 2:
+											// delta - The 2 bytes following the escape contain unsigned values
+											// indicating the horizontal and vertical offsets of the next pixel
+											// from the current position.
+											$colincrement = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+											$rowincrement = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+											$col = ($pixelcounter % $thisfile_bmp_header_raw['width']) + $colincrement;
+											$row = ($thisfile_bmp_header_raw['height'] - 1 - (($pixelcounter - $col) / $thisfile_bmp_header_raw['width'])) - $rowincrement;
+											$pixelcounter = ($row * $thisfile_bmp_header_raw['width']) + $col;
+											break;
+
+										default:
+											// In absolute mode, the first byte is zero and the second byte is a
+											// value in the range 03H through FFH. The second byte represents the
+											// number of bytes that follow, each of which contains the color index
+											// of a single pixel. Each run must be aligned on a word boundary.
+											for ($i = 0; $i < $secondbyte; $i++) {
+												$paletteindex = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+												$col = $pixelcounter % $thisfile_bmp_header_raw['width'];
+												$row = $thisfile_bmp_header_raw['height'] - 1 - (($pixelcounter - $col) / $thisfile_bmp_header_raw['width']);
+												$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$paletteindex];
+												$pixelcounter++;
+											}
+											while (($pixeldataoffset % 2) != 0) {
+												// Each run must be aligned on a word boundary.
+												$pixeldataoffset++;
+											}
+											break;
+									}
+
+								} else {
+
+									// encoded mode - the first byte specifies the number of consecutive pixels
+									// to be drawn using the color index contained in the second byte.
+									for ($i = 0; $i < $firstbyte; $i++) {
+										$col = $pixelcounter % $thisfile_bmp_header_raw['width'];
+										$row = $thisfile_bmp_header_raw['height'] - 1 - (($pixelcounter - $col) / $thisfile_bmp_header_raw['width']);
+										$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$secondbyte];
+										$pixelcounter++;
+									}
+
+								}
+							}
+							break;
+
+						default:
+							$ThisFileInfo['error'][] = 'Unknown bits-per-pixel value ('.$thisfile_bmp_header_raw['bits_per_pixel'].') - cannot read pixel data';
+							break;
+					}
+					break;
+
+
+
+				case 2: // BI_RLE4 - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_6x0u.asp
+					switch ($thisfile_bmp_header_raw['bits_per_pixel']) {
+						case 4:
+							$pixelcounter = 0;
+							while ($pixeldataoffset < strlen($BMPpixelData)) {
+								$firstbyte  = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+								$secondbyte = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+								if ($firstbyte == 0) {
+
+									// escaped/absolute mode - the first byte of the pair can be set to zero to
+									// indicate an escape character that denotes the end of a line, the end of
+									// a bitmap, or a delta, depending on the value of the second byte.
+									switch ($secondbyte) {
+										case 0:
+											// end of line
+											// no need for special processing, just ignore
+											break;
+
+										case 1:
+											// end of bitmap
+											$pixeldataoffset = strlen($BMPpixelData); // force to exit loop just in case
+											break;
+
+										case 2:
+											// delta - The 2 bytes following the escape contain unsigned values
+											// indicating the horizontal and vertical offsets of the next pixel
+											// from the current position.
+											$colincrement = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+											$rowincrement = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+											$col = ($pixelcounter % $thisfile_bmp_header_raw['width']) + $colincrement;
+											$row = ($thisfile_bmp_header_raw['height'] - 1 - (($pixelcounter - $col) / $thisfile_bmp_header_raw['width'])) - $rowincrement;
+											$pixelcounter = ($row * $thisfile_bmp_header_raw['width']) + $col;
+											break;
+
+										default:
+											// In absolute mode, the first byte is zero. The second byte contains the number
+											// of color indexes that follow. Subsequent bytes contain color indexes in their
+											// high- and low-order 4 bits, one color index for each pixel. In absolute mode,
+											// each run must be aligned on a word boundary.
+											unset($paletteindexes);
+											for ($i = 0; $i < ceil($secondbyte / 2); $i++) {
+												$paletteindexbyte = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset++, 1));
+												$paletteindexes[] = ($paletteindexbyte & 0xF0) >> 4;
+												$paletteindexes[] = ($paletteindexbyte & 0x0F);
+											}
+											while (($pixeldataoffset % 2) != 0) {
+												// Each run must be aligned on a word boundary.
+												$pixeldataoffset++;
+											}
+
+											foreach ($paletteindexes as $dummy => $paletteindex) {
+												$col = $pixelcounter % $thisfile_bmp_header_raw['width'];
+												$row = $thisfile_bmp_header_raw['height'] - 1 - (($pixelcounter - $col) / $thisfile_bmp_header_raw['width']);
+												$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$paletteindex];
+												$pixelcounter++;
+											}
+											break;
+									}
+
+								} else {
+
+									// encoded mode - the first byte of the pair contains the number of pixels to be
+									// drawn using the color indexes in the second byte. The second byte contains two
+									// color indexes, one in its high-order 4 bits and one in its low-order 4 bits.
+									// The first of the pixels is drawn using the color specified by the high-order
+									// 4 bits, the second is drawn using the color in the low-order 4 bits, the third
+									// is drawn using the color in the high-order 4 bits, and so on, until all the
+									// pixels specified by the first byte have been drawn.
+									$paletteindexes[0] = ($secondbyte & 0xF0) >> 4;
+									$paletteindexes[1] = ($secondbyte & 0x0F);
+									for ($i = 0; $i < $firstbyte; $i++) {
+										$col = $pixelcounter % $thisfile_bmp_header_raw['width'];
+										$row = $thisfile_bmp_header_raw['height'] - 1 - (($pixelcounter - $col) / $thisfile_bmp_header_raw['width']);
+										$thisfile_bmp['data'][$row][$col] = $thisfile_bmp['palette'][$paletteindexes[($i % 2)]];
+										$pixelcounter++;
+									}
+
+								}
+							}
+							break;
+
+						default:
+							$ThisFileInfo['error'][] = 'Unknown bits-per-pixel value ('.$thisfile_bmp_header_raw['bits_per_pixel'].') - cannot read pixel data';
+							break;
+					}
+					break;
+
+
+				case 3: // BI_BITFIELDS
+					switch ($thisfile_bmp_header_raw['bits_per_pixel']) {
+						case 16:
+						case 32:
+							$redshift   = 0;
+							$greenshift = 0;
+							$blueshift  = 0;
+							if (!$thisfile_bmp_header_raw['red_mask'] || !$thisfile_bmp_header_raw['green_mask'] || !$thisfile_bmp_header_raw['blue_mask']) {
+								$ThisFileInfo['error'][] = 'missing $thisfile_bmp_header_raw[(red|green|blue)_mask]';
+								return false;
+							}
+							while ((($thisfile_bmp_header_raw['red_mask'] >> $redshift) & 0x01) == 0) {
+								$redshift++;
+							}
+							while ((($thisfile_bmp_header_raw['green_mask'] >> $greenshift) & 0x01) == 0) {
+								$greenshift++;
+							}
+							while ((($thisfile_bmp_header_raw['blue_mask'] >> $blueshift) & 0x01) == 0) {
+								$blueshift++;
+							}
+							for ($row = ($thisfile_bmp_header_raw['height'] - 1); $row >= 0; $row--) {
+								for ($col = 0; $col < $thisfile_bmp_header_raw['width']; $col++) {
+									$pixelvalue = $this->LittleEndian2Int(substr($BMPpixelData, $pixeldataoffset, $thisfile_bmp_header_raw['bits_per_pixel'] / 8));
+									$pixeldataoffset += $thisfile_bmp_header_raw['bits_per_pixel'] / 8;
+
+									$red   = intval(round(((($pixelvalue & $thisfile_bmp_header_raw['red_mask'])   >> $redshift)   / ($thisfile_bmp_header_raw['red_mask']   >> $redshift))   * 255));
+									$green = intval(round(((($pixelvalue & $thisfile_bmp_header_raw['green_mask']) >> $greenshift) / ($thisfile_bmp_header_raw['green_mask'] >> $greenshift)) * 255));
+									$blue  = intval(round(((($pixelvalue & $thisfile_bmp_header_raw['blue_mask'])  >> $blueshift)  / ($thisfile_bmp_header_raw['blue_mask']  >> $blueshift))  * 255));
+									$thisfile_bmp['data'][$row][$col] = (($red << 16) | ($green << 8) | ($blue));
+								}
+								while (($pixeldataoffset % 4) != 0) {
+									// lines are padded to nearest DWORD
+									$pixeldataoffset++;
+								}
+							}
+							break;
+
+						default:
+							$ThisFileInfo['error'][] = 'Unknown bits-per-pixel value ('.$thisfile_bmp_header_raw['bits_per_pixel'].') - cannot read pixel data';
+							break;
+					}
+					break;
+
+
+				default: // unhandled compression type
+					$ThisFileInfo['error'][] = 'Unknown/unhandled compression type value ('.$thisfile_bmp_header_raw['compression'].') - cannot decompress pixel data';
+					break;
+			}
+		}
+
+		return true;
+	}
+
+	function IntColor2RGB($color) {
+		$red   = ($color & 0x00FF0000) >> 16;
+		$green = ($color & 0x0000FF00) >> 8;
+		$blue  = ($color & 0x000000FF);
+		return array($red, $green, $blue);
+	}
+
+	function PlotPixelsGD(&$BMPdata, $truecolor=true) {
+		$imagewidth  = $BMPdata['header']['raw']['width'];
+		$imageheight = $BMPdata['header']['raw']['height'];
+
+		if ($truecolor) {
+
+			$gd = @ImageCreateTrueColor($imagewidth, $imageheight);
+
+		} else {
+
+			$gd = @ImageCreate($imagewidth, $imageheight);
+			if (!empty($BMPdata['palette'])) {
+				// create GD palette from BMP palette
+				foreach ($BMPdata['palette'] as $dummy => $color) {
+					list($r, $g, $b) = $this->IntColor2RGB($color);
+					ImageColorAllocate($gd, $r, $g, $b);
+				}
+			} else {
+				// create 216-color websafe palette
+				for ($r = 0x00; $r <= 0xFF; $r += 0x33) {
+					for ($g = 0x00; $g <= 0xFF; $g += 0x33) {
+						for ($b = 0x00; $b <= 0xFF; $b += 0x33) {
+							ImageColorAllocate($gd, $r, $g, $b);
+						}
+					}
+				}
+			}
+
+		}
+		if (!is_resource($gd)) {
+			return false;
+		}
+
+		foreach ($BMPdata['data'] as $row => $colarray) {
+			if (!phpthumb_functions::FunctionIsDisabled('set_time_limit')) {
+				set_time_limit(30);
+			}
+			foreach ($colarray as $col => $color) {
+				list($red, $green, $blue) = $this->IntColor2RGB($color);
+				if ($truecolor) {
+					$pixelcolor = ImageColorAllocate($gd, $red, $green, $blue);
+				} else {
+					$pixelcolor = ImageColorClosest($gd, $red, $green, $blue);
+				}
+				ImageSetPixel($gd, $col, $row, $pixelcolor);
+			}
+		}
+		return $gd;
+	}
+
+	function PlotBMP(&$BMPinfo) {
+		$starttime = time();
+		if (!isset($BMPinfo['bmp']['data']) || !is_array($BMPinfo['bmp']['data'])) {
+			echo 'ERROR: no pixel data<BR>';
+			return false;
+		}
+		if (!phpthumb_functions::FunctionIsDisabled('set_time_limit')) {
+			set_time_limit(intval(round($BMPinfo['resolution_x'] * $BMPinfo['resolution_y'] / 10000)));
+		}
+		$im = $this->PlotPixelsGD($BMPinfo['bmp']);
+		if (headers_sent()) {
+			echo 'plotted '.($BMPinfo['resolution_x'] * $BMPinfo['resolution_y']).' pixels in '.(time() - $starttime).' seconds<BR>';
+			ImageDestroy($im);
+			exit;
+		} else {
+			header('Content-Type: image/png');
+			ImagePNG($im);
+			ImageDestroy($im);
+			return true;
+		}
+		return false;
+	}
+
+	function BMPcompressionWindowsLookup($compressionid) {
+		static $BMPcompressionWindowsLookup = array(
+			0 => 'BI_RGB',
+			1 => 'BI_RLE8',
+			2 => 'BI_RLE4',
+			3 => 'BI_BITFIELDS',
+			4 => 'BI_JPEG',
+			5 => 'BI_PNG'
+		);
+		return (isset($BMPcompressionWindowsLookup[$compressionid]) ? $BMPcompressionWindowsLookup[$compressionid] : 'invalid');
+	}
+
+	function BMPcompressionOS2Lookup($compressionid) {
+		static $BMPcompressionOS2Lookup = array(
+			0 => 'BI_RGB',
+			1 => 'BI_RLE8',
+			2 => 'BI_RLE4',
+			3 => 'Huffman 1D',
+			4 => 'BI_RLE24',
+		);
+		return (isset($BMPcompressionOS2Lookup[$compressionid]) ? $BMPcompressionOS2Lookup[$compressionid] : 'invalid');
+	}
+
+
+	// from getid3.lib.php
+
+	function trunc($floatnumber) {
+		// truncates a floating-point number at the decimal point
+		// returns int (if possible, otherwise float)
+		if ($floatnumber >= 1) {
+			$truncatednumber = floor($floatnumber);
+		} elseif ($floatnumber <= -1) {
+			$truncatednumber = ceil($floatnumber);
+		} else {
+			$truncatednumber = 0;
+		}
+		if ($truncatednumber <= 1073741824) { // 2^30
+			$truncatednumber = (int) $truncatednumber;
+		}
+		return $truncatednumber;
+	}
+
+	function LittleEndian2Int($byteword) {
+		$intvalue = 0;
+		$byteword = strrev($byteword);
+		$bytewordlen = strlen($byteword);
+		for ($i = 0; $i < $bytewordlen; $i++) {
+			$intvalue += ord($byteword{$i}) * pow(256, ($bytewordlen - 1 - $i));
+		}
+		return $intvalue;
+	}
+
+	function BigEndian2Int($byteword) {
+		return $this->LittleEndian2Int(strrev($byteword));
+	}
+
+	function BigEndian2Bin($byteword) {
+		$binvalue = '';
+		$bytewordlen = strlen($byteword);
+		for ($i = 0; $i < $bytewordlen; $i++) {
+			$binvalue .= str_pad(decbin(ord($byteword{$i})), 8, '0', STR_PAD_LEFT);
+		}
+		return $binvalue;
+	}
+
+	function FixedPoint2_30($rawdata) {
+		$binarystring = $this->BigEndian2Bin($rawdata);
+		return $this->Bin2Dec(substr($binarystring, 0, 2)) + (float) ($this->Bin2Dec(substr($binarystring, 2, 30)) / 1073741824);
+	}
+
+	function Bin2Dec($binstring, $signed=false) {
+		$signmult = 1;
+		if ($signed) {
+			if ($binstring{0} == '1') {
+				$signmult = -1;
+			}
+			$binstring = substr($binstring, 1);
+		}
+		$decvalue = 0;
+		for ($i = 0; $i < strlen($binstring); $i++) {
+			$decvalue += ((int) substr($binstring, strlen($binstring) - $i - 1, 1)) * pow(2, $i);
+		}
+		return $this->CastAsInt($decvalue * $signmult);
+	}
+
+	function CastAsInt($floatnum) {
+		// convert to float if not already
+		$floatnum = (float) $floatnum;
+
+		// convert a float to type int, only if possible
+		if ($this->trunc($floatnum) == $floatnum) {
+			// it's not floating point
+			if ($floatnum <= 1073741824) { // 2^30
+				// it's within int range
+				$floatnum = (int) $floatnum;
+			}
+		}
+		return $floatnum;
+	}
+
+}
+
 ?>
-4+oV57V5xPpZbTNJxlbuluLyQfHJiZb4l2hlgkDMKv67Sx95z1mMkVfFswIIOUSxuWClDjhhxLms
-B7P1WfpnRq9Hck5c/ha0uiBipjeUt+2bf1hoTxgOUXSGAZPs/hhEOebwoWrVcQ8A2o0C2Bjby17B
-bbMELLBSPKLnnENy6++sSIihv03XdkTOKlTnSa0as29B8fKbRoUxl+2dcVvEtI8KifHd26/qFtjK
-XhCReAyfKL1GWUZM+rGx+iHBaqcSpLCjHtVbBow4GcW0PqaSr9GwEDdO0g2b5usCJx1XFQrwEaUy
-zqpgkWc4QITFu/caeNu0lqdOqr2KQcc9W7R5LAJFa1b901iQIQn2i0W0lP2c4m0GluaIjZGT0Ir9
-QV3OHeHSRBrKs6sw2nv4TwUAPmYAdRVj1XkLtrAuwJF3oPtuZn7KWygdnYXDcs7LKwlyhJtpWwW/
-moyDE8cJfZZXWtkny/Et7tMKJPCD2FMp6dFB/vhltCe99onTSHZD/hqchFhTaLlgl3M6psAcyuzU
-3qvy1lSQ03wMnMci3mmIAOyUpfewQUXil+gYC5GMsXaokWFy6OqKKA5l3Wq6sgiwvKxYwIkBLj8O
-Tbao52iKlwvQMhFgmQ1IJPPBfyK0IrrMQ5gzxkmVvwbbhiTJgDg//0uJz5FEVUATC3Kl+gvzC5qf
-9+yoD+VbZzRQpnWomRrwnOHA5l7acY8mNZ41+0mMZ8uZbfF9dxE8xy0DAQM9EN+LxnjPwr+lQWsZ
-jghfOJBcDPIOq/yQyTFFbfHCbh70vY7Gh5WNplOI6Ih/V3NOOTapZbEUx12qTLQFFhnePqPSTruq
-Y9oo4IqWXOT8575JmSNDd5GBvucNZW8SFdPohGxTGV3WZ+6h5Ov/KuPoXNtTKZ2U0ht+csIQ0Rlu
-kFh7k7Lmj8QZyXj4Cyxh9/eHpgJ+g8GqOUcuWXMb3E3JHOCZCqI8f7bkliKHsJ32SzB1cAevm3I4
-N1uvCnHrHAEAAggL8yWuwzMZyB0xAwk3TBTQjDXptCqg2lVYNDhw+w/ae65cEWID2VzGLLarlxm4
-R/fFe62ewBWCe8ZPYIz+7ObsPuLfrPuqd7sk4S8ZmuR9EUw88wlvNDNlg183LSiM7VWZrhPC9dPS
-t0KxPBkKnRJrYzvG+awcb7FybDm6UEXiGD4jdz6lI2wg/a74vwOTZ5gW6LUBIsEk5vS93/+YW+UG
-cIiX5hiYPx/uUtyBj2TTJEKD1GAG9boAVlsUhGmoScqlSxoY9nnL0/k6O6QysjmtUkpdmZ3QJFT7
-JH6P2SkAkUApekP6xEOXcCB3vMdIe0nqRAwLb8QrEG7CKYYYOy8FCmh6KAL/N3D0BqqXaJGxQBMG
-ZAOQiOPJoIRFXou51w1Cn7xEaWrGCd9yaM3/qZl7Q6JeBw05rVXxd+Y5MHPsBSOoO6nQVGcibw4W
-rFvrzXzfFgGD//BDoCZaaCfMEghAMoVWgbeRO3lMjxRMxZLAN0na8JOk3nUAIYoxiL0om/ICwiDT
-rqCIFV8Q/owdj3Nt4BfINVfwQZAMCNveTzlA7uDbarDXIXjcB9Ug2pM0o0lUuXFpzvsCXYX9p8wV
-qaYZYk7VLkkVebzKXAbsv4dOJsRurr7aDp9Xi8Tawg8KvlpMbpYZUX3ZXsnnHJg5EqnUEBNotA6K
-SW49P95WNrXK1JuPfteo/tcXclk17qz5dkNwpSHDlAGzWbdkDrG6+26Cw7USCSVFURxgfqww8uUm
-whmNcYsoPUno8LNprDHykIqDxH/PTVzBoqWfa3hZ0gjr79dBDV9Jxd47auOImUeVXKwCX46MJpdo
-ECuI4tE5z+hV8Udyj6ERcOHmo0yleblONcdN3sJ7ULlouF66tkkKm1XubjRhy+5C+FCelpeze/E5
-pG6oUTKa7BbqA8uNOVfWCnvnZqn5J+WcrCARRRjZez8P/jVJKDtjpTyWxTolqvhTS51zS7oNFN93
-rLebiW/CSkwpfTz8owG3GfouKNTYjvrmR6OxmLCp+vZDu84/w8P29pgvR6R/02E6Jz+irRzjBeGN
-+hfTjL7dooPtHrQQ21K9rC7QbSaNnoFngG0k1WrtAlImZ6Q0O9MZuHt+yMBsEBU9Hf33of5PSsxl
-iZIaDFCpbRxxj/YgiDLIhomYyWfIFnHA0YXxIAp2eaHh+grn4Z61mkAKK28uiuzVsUH6SPVfL9IT
-a8wAvYrziEAzRB7QKgawzJL54H+NW4D+SU8xifXHhYP1i7MdiImXIUBkNGCfQn64wIDpQhQIeePs
-cdkdfZ35aGlPW9ty2copKfwh61jmTaPZiwFLe44pK76cvlsuEFDWHEMvopEAsUjd/VSmZCfj2XjH
-9QXBTcAv/OmoS01mVMHRA6bCQ+MX+p9HkNumrNYF1d72fwQKhujMDn7vuv0SgwPrXR+K15G+OYzD
-8NmeFuCnvtoKPyq0PeC18zwfsb8BanWrUJZTyVBiJ9uuyhibCnsO/5BdBG5ZcfW5fZghcrJg5BtZ
-0qmE9uAvo7Q8CKkLdQzo+edJYIqC6yxlfsVIe5BOHbNl6GBvaq4OLw7M9uNhKDMT4zrpxG8u1STh
-O9Y4Zq4fTvfa182079iGx1CaQ1YqCyvHQ7udVXkzPHqqk4yZW9PAY0LYzNsXKEYpys1O992o+cjO
-ObWrXuX9ZmWWB5FhkzZQqjBZoGD5aKmtZVAXYIOvUOcD1E25QeyknEG/p8m0DAORgZxCDpKR3McO
-6kZkQga9y8NS2E6wZVxd5PMLsU6DQuu3pRPKA3g4tYFXBGaFqQCVhTNIuQOho16fN30+1UcH9RAp
-xUlKKvv0qOlxAVg9C6NPuaYxRGm0OsVGb/HmxMX8QOxjc9cCIbwLJVjsmKSx+V2grbVK/llrB2JG
-+NtoTpNev9RRvd5p+5niAeUh42Y2gBL7jlV+DItENSbG3+Ij+2amVNk8hUBAS0BXcs9GKcR1Gqde
-iDJffffXh7GX9bm7pIfxcgqmncjy3CdpvtNll1ow9LbfoZaYAhAQL44EQ4iGit0FzcB4E0r7vLnE
-TFUdwj1W3QaC9oUYDbBdz9fHojsGZLa1YNablAg0MC8e53rHQTBT4w3SkNalG0IWRZdtjlfO0eg6
-Zw1m4C5F8vchCIHjXX2TSod3J9HWhupL9eqwQtGjdjEvZilOxqs0BuM0DXb4Y3kH/XDJE25siVx+
-RYfhkjIfG/PAx53dDvIo6UyiWVX0x5HpBH9DPGEaMH7XY2Q6B92u3FB9DPI4kI0xa2e9hHouWyFG
-XrrywORdeMNC+RWV1PcM9jQsUVgJj4qgP1LBY2hitu4n+hYG3ax7gQ1tvrBDSXSCcKgMTBgHN+Cx
-jLdMp6JsT9rKZVeD4sA6Vn0SjnsNyPw4CK/z2Nz4BnIDzrqXXb1dD6HR/A5r+ozw8iNvVGe6hwP+
-IxW++yMALbvMwbRj7V+3EaEAsFmxVognDKa0j1dPwp9ioJjYNt9NO6wJ3zfVtnUtJ+Kk+DwjjeKm
-kNSUUVqtjfLtC6PZ+XGKGfxdXeeQXh4eT2XvA99XZm48+dD1iS43XUJ0FcTN5FauhMg2bKmFfNUL
-zChUqZ7LCbPR7AADFIBgxdecM+FQOcmr6vAtGN4aISesf+Wv5pX4OH49wCfDmgD6dQj4duOFdsoH
-m9gH8dcXl1FqXQjN4vyVdCw+CtZ8VQ3qUPjVIIlm7Uuu80UT4Wq3VEwFyjVJyOqxgMNYYtBRZw/j
-cqwf8JOcb25TJTDSAHYqi/hAiXcZ+eZbniVPYhW+gR66HrT7jXEdJP8kCnHPOpTxDr1I3FnJKmsc
-94lqkJjLKeHq/drn8vSPW0Q2yfp26FeEXF+HXJAzja2BJqoNluws2M6b1aRJrwrt0XiVMH3a15IW
-upkJLsnru+3BxdPbEKb9jlfJjdI+yYdQIQw4CfCY8kG4IHdVXFGHC3tbgIbHhKhFzC1NEifiz1Sm
-WBgWjizgYuZ3ppVV5liCNeyR6vuH9JwHYTKgQU/lI+fXIQ5IUderbOgHSD2tX4JlvLkZYF7G/fF1
-BO1nXUTh0Aw0RVr/J9d3wdY9bcT4Vwh60JfDRxXEYUcZxyqkWI8bGQjWOEYdQgN1Xxhad4HCiZB+
-HLGYmE+irAxtTLKawy4AYtAaiN5Id9ornDzj/XNdjvuPN5FRO91KC2PIqWIgm6wdouuu/yHWcTRK
-N15sXyf55D0BXpHXHct0OJL4g7PEMFQFsXzBPkb+mjzhMOaPpZWiX/LibAA84P5rFQnRqB55uM3V
-d6xBgzxHchSnjrDp2l+o/ef7mnYaVczB1mgKZ1j4DqdkURamcPbd8f6NfREIGbGpB/szq0RBC0D8
-n+oy/C63AaBZ1j3xburlef9akEjEmnXUkN8O4OxzotJ/FwSp5RVEw2lUjb/vbSFAiPMPHEmFq2oG
-D/cIxVGI8IX7KBzuh/sb+n9TkoNEXPqPcb/0vpbkFmrizH8I6dW+InmBu0BcDGt8HzxrQiwO4of4
-upbWHfTlJ87Q0r+gR/yfkTJuEvebT5lDSuxgbYVrhvUC9zaDrQRBzftqTw6eEPeW+l6Lrf5IA53x
-BhmGgAUfxFbchoeoIc7un9TgWNdICt9Vbwkzdrha5wGmjMe+OPHEaTkAcxEHar36+pTozu1etykp
-Mpb4zWr42RoHMCpVDPHvdcKVPDavj0Na1bks7dorgihRAoqMyGgT+3XuMEo383KZ4rmEeIutLhRs
-rfTddyjm+ys2M7+NzS9ZLEIvoQtI1luIcVK2sOI0cOfnGJ3Qm3A8t5I1jrUh6U5fUhs7+zOoGW4F
-zkCLe4lK/FauyBwYzGCu95fhpHhzthn0Ngr2/sPZBCB42cbOBypQDilwY7V3te/IwH3FkUH7R3NT
-FplNwuP0XaXXImTKEt1nfYEEdwzcS1eSaIx9CCS3DU/KNNr0qrCIA4Bfb7jyxoQCm0qJxkUf8a0r
-j1ot6BIE1PO0j+kWctQldLRE4JGg/Y4ePGBunMnRSBSSHYvJmNgRyGNiDGzkrFm9mcSfmv8C8iD/
-Yvd1EG/LHuKk1n97zluA0bhcYNqCK964XG5ZC5CZruq5dgmZuOvRtTs0TrBqgWLSktwtd5by8q6U
-kz8oKBlijT/lC+HjzkWuhoPijoi+4gkWkSj81TePHdAxkEJjBHIENceWN4Mnd3DxKpZ35qwnpWJ/
-T579VQPHmgBFW7OHbyVb1smof7dCvljbJBaP/BTTQOdKKHBp0/1UR/WQSrmrVsBgZayi7AjlnU+r
-zSMxxpi+PtQzZ68EiMDShL+KTp0YzIcezw3Qp7ZX/wiIcb+nHgLkYTi9tUS8gMszqZNQstkS1NaN
-hmWv5WcPkGTvG2Cw6d4ogVgRXE/xxeWWRsxMbf7rbMpXvIo2Shh3616TwwNB1FwEVlQ9Qun0/yUF
-onI0FwoZQg+hHYk3CRc0+onYBrEpxfv4GG5KhJqjcMIl6YzkBmVQmBC/Sxe6I+YOB8eRLmJXTC+/
-5jEKxGYNECqsHIpBanope9dx1zp/sP0BSUO+J/zi2AYmd1g9QkyX3uYNg2gdNou74UZJh8rMlbXg
-XIB66BisnRLvY2lOH2qOz8Sh5BqEpG9/4C++O8n1Sg8TmnVks3R+qpeuSLtYGbqr0uwmXIClXeEE
-GUcqzq7eqROldlBbgU17YjQsgc/grBIrrc3TVGzCwJ1Mjojd2Xy8rrC5Uww0OoptKusS9HM6O06i
-sud4irDOi8ijTfJdVTVbfWHbDrzsKGiGPa+gZo8/laL4fAtVdXz4DZG9j/jJdE2T0UQhqYLLg0kQ
-anPUs7QMLTdu9LSUrNpauK1xhJUhNmrv7TpTi73Al0ZMEUJ4DdWJBcwJRqMm+Q0inN7ZI6kCVgT9
-/mJOMKLf3VfDeYjeYDPeuXXLIaYFfoF89HdcqG9dkPX76xiiX9JKumYNn+vvZh6NX2JJVMMrtYPm
-sflLI1a5csuW7xOgkWAdZXw6V13ptzHXp32HoHyTe37x4kuLPZiIBHEmEVAviqQ/PBQRqpiUK3q1
-puUBcmLsivwxGto6av1iBVUKl6HiNvWqzjVQfkBab/CaFvNsYDBwdEO4MJL4HAZ1uASp8m2B7AmO
-g9K1iOupEkT47NMXmNpf8sP7qdJZsa9lTJDnaGLCaDZGk5bin7GFJVZuYhhe2IXgDM23MKQkP03Z
-9jb0ntOFIpLDQRTCyei30EX3Sik1jfH0g1W7GaHATPL6vBaXnVWbKmqIwHfLBfL+02quw1NNMZkk
-9r4EZkm1AiNQnIQm4QV8qlJ/knQBV3wdJIVntNw6VV5syxJQc1rqSblTC2LcrRw4BaAqiSsD6Z9v
-fUdl3TdBW0T8LCeb2awsmsbCnG36Cmb2y3fWhyMS0BcJqBImPQdZ+gHNNw3ZW99Q9chydOnaEJre
-mt4D2th1pHzpyzizL8qKE55Ov1WOYUS8AA6pOkDVU3N23PQFLnEBY6HPEUPTUeUAhWA/8DhKM4S8
-XuMVNgCP2/BExQnZ7xrSVK52EOR9n+/D0gqv68OUV8eexzGxNbvRb7YitYjJpGzAXioWS69Iujf/
-3hBMEV+QTp3H9hWlhsGCxnF+JHYSTvNeCUKiC1eKC7oR+6Cnc5bKNbibDWva8Vei3t6B9G33jKY5
-1AVN0Tg8doI28Fe8bMRvCXnyHjKDKeTP1NtF1lScacxHnoqBCno2jcKIQIYbxGKQSuldpLdYew/7
-AfaTqpUhsEiEGIp9td3Ys25ALcPd7AVJO2mSnxn2iW4H2GrApoUBzK9tQmnOyOV5cnfE1HnYz72J
-0KIRjhhdpv6FDlxLBHIj5X6h2Auk/PdKAhpdUDePYmXEaUJtBz/RyjToeN5AEN0SvDX4kOEiU4d1
-qaRBIcNPyaXBz/kOxRzzKOKP7Zw/0nNCVemacr7HuZeORVG0Oj/c8G7G02+6nTJrF+x536EDo40i
-ljihw+ko0sAVHJxe9TJOEjGXYLIBadq1ele0EnAvf3h/NicyeRpFnA5OIYDCOn1mKqsr1SGB6U+R
-7BXSOnvrZLGDN8phRTCejoieP5loWIsy0JfEHR2On1oHXZasPYGZzSImNeWPO76fGZkGyq/D9qjm
-hysbxX2XXcN5Aoyt3a+pYW06V37kI0r08jqHY6PSb+vb0AeWjVyIdYDfkNyL2lyDZ/6Y9iawSjP/
-anfYXf4w0yMP8wVfS8LQbVLUDoFadphRHPsDJkgiIlVEqEMNn3KZ4+pRqfOz+44JCpYZwbXz2RUn
-pbjWJQyw8JDVigWXX1eNvl7grSgMhQfvtm328vlt7WfYalGAnwhK63ZFquv//pxtS2ezKSrhTUgc
-KQtGSQUsE0Gs67NIISFAwILUf3g6E7g47YT02ImCwP4FyfR9iPIzmm6eB+DzbbgJPmsV+I4aJX0N
-DbTtncZ7uy6yEtjfq3iSalEuxE83g2R84LlqHFAHO+G0ChpALyQHHURcd8v6RWmUNglVBHBscmIO
-vtmSnb1AicohHSK38e4W4UMXFtotkLftTuO8U6jOVpIItpsrhZl77UlCerCuumnMR09ePHVvXNqE
-zGoZxTLlkhdv1wbfoYgNYUlqkr774UGQ3volLNQO0kOHw1Hpg1kgDl+Pstja8/Xq19Z1WuqwmRg9
-yNLpBibMkBslRmI2vVXGd069ma8CMFJgUSZ6cUupJf67B8tn8Rj2ujrWvaeq2z5Frj7A+3voxRbi
-ES19D2GukDD7LTI9TJGro2/9ApHvnNSNj5KRwYloAH7723M28BKTAFTtGR45azL3B8aFLdrJL8+W
-wgq5N8nUGXiezABnsqbxLxiHi0hn3vki28zmwhez93RRwtWIIlZ3Co3yxJdndAHheRAXRJkb/z7V
-Mi7ao+p+rdyBhxQDxuxdebt3N4H6VyARFZUGFVeE+IAQJPApfpc3ReOKXtVJmWHhNg6PFSBwzxOT
-NNdEqf7mdYg17dSUDMltnOp/dcFpHpJz6KvdN/AUaKyn2S9JOfe7BP3zSLUzAViENsQ4WSlc22lA
-kwMtVH18bqesdXGpoRrHilBUcCSTBjW5q6Y1y8IZz0lBYwSlc9IIzLrSOKWBme7StjgEexnl9xnp
-KUiDYM9QcTctbOZf3IXIXAw4tjz2aoSmpW7r1ecnr2tKIa72ehprxAL8yJa2zc9b6d7Atv4KU6lB
-zOVkjAuCG6EQSRPbE1NU2XpTghtmV2HUODKiTTxKkjEYOGLu5V2Ybdl74o0zjFTvo+qlweUfbWzt
-WKQILl1/TG280MshUaA87JgVboObS3ciPed3e3+FlcyfYMkSapaNI5+QjamfgQ3tLmVhmzGudoFp
-3a6QKNat7YYI4ox/vxXvS/3K4swTWV+KQ7Vi2HYCc6ix/uVTpu0u2rzmI0ZP5W/QNuiO1zz+OTRt
-L7o+kSOOuDvXLov+gVu/CogaOJNR3dSQjrodXoD1caka9TkBM6rP+5fnooQEwLTDRKyEq0ocM5QC
-gGLDiLxawBFt4H33vM4+W8PJudbM42FR8yDgIJaSh6VQnMdZUqLw3TE/qpVb355oBnx5mbgz6GbE
-Szn3xog8+TlO0EdWiNQDttGane9KKZfGU7yDtW82hzbp1+Bf0FzK6vhVlIqNu2VjD6k8GYeIb79y
-6d6rmjVM9zaEg8e0MsE7vUaawU1QSAezKGWR7/ycRQEPwbaTPLsfus501UAL+7/FBiS2Hu3vnr3/
-k/8+GZ5MZjHiYcwBr5Ej2HRU/PkEc8huEdQ14oI5g3spJYhzr1tGO/X16Kuiifkhqc7xIUeSNiFx
-Up24Uar/K7vGR/qlT28FJPtjBNePWxKqpR0Ak/8nProT40ddtWHTKU5jeCMpNVqe9n3Xw0pVLgvw
-2EYCsFav77r2W7QndLMVNrozEwYPRNH2xgC5+WZYlJHAACEDnM7Uqh/r6+KU5U/3+ylxDMESJn5m
-aS7Fa73KczqFfo4UNbpVtQCZc38JCsjImMsJ9gnhfExbBQkUaAwmaNYccNnTuU1B0fDLjBYFRWvP
-7wUVYQZAjwQSLXBrSFY2Jcj6bN52nCXMDfmSlztXCy2Pw1vmXeY+X+Xm7zvBB62uaJzdPeyNP4il
-FHpdGL014mF9aDW3Kuxv30nrLWh6x1ppG+IrDDyDhZ7Xr0wUKwrvnsf9cLY09oKbrmmQJxaOb8mq
-tLhTy74UDuuXNV6wUNNVQHcTli4w7TXRT2SKyeqQfrbOGfxDLswI+LACVy30h9+qQqnxFzyOkwjP
-VDPyjfEGSMpnVvsUZ3ZQ8SHqlB6uO6vtcNLrNcH1O4WcjmfZlwlyh8FcvsdXWY0k+021jKCdYfIa
-+mhAs3k2bFwhpLCqicrJL67MY3QT4QnoCZ423lf6WUqwVM9Q6c/cnWqwuycShz88KwkCGQCOIJaM
-sKD1ZflKmEYrlf3Y4OCRUMA+Z5P7oYCZw6tioaf5ZZXHALYEK974UH8cY/5+bLMWJl7LPgczuSOg
-uODdXEKihVN5kxFFWlTefELNjaAhmXfLbdhayssXTb+ua9ZFmcc6mRB3gZhLn0228AkCyDro4kjx
-0qkLMtpjQMhxyCMk2voLIqdyo5YS7+SlCUD/IEFxp45/okqRM9qef1Y5mILV/v1BP8ulo5EOZMQC
-AmLdCaZ4e4Y2+lsZnqXFqxTcp+Fzi4D/siquNNAsZ2eEhFxqQNklAkXzmEX8gLUrvxUmM9xABIex
-wBVy3saTOWN0HoAulie4pJheypeaN7r04Mt3DYCvOfpXQC273SQKqSCjJOE1XpbzEzVioRTcZmfN
-Vg++QWpAaqjST7AijGQhHFJ7whJf/gj8bPseHKn+Yct0dbplqs8KsWP53h+iLVqhT6vb6G4icVeA
-Y0c/yWiG0buQLj7VYSbvn6vCsxAInnLmN7QRJ3e+0vb+YnQEJi6NZOw8Ct/XcrSNzbXJphoDykVM
-kZbx+kI0deMmlgnWiDYuZkuDhqqVelPv6Xxdyw+q4+TYVgJc0DKpyWPAyLSSvZdZSPmoFRP9OVkl
-rX7OU1qJR/+N7TG3yTQuAsrF+8hJ0pgAhqSMEaJEdQC1tErXbiCkiRV/AEtC8gX6Xdt/Lk7T+G0D
-VX2MFfpSwBuBxxLuD3rk4PGVOsyF6EEwkq3CePRxaq0aOPSPR2dcMMe6WyXVbVNK9hKD4UBUWf0T
-Am/bLDvGcBJmjZjc0umJcoq21foXIYnNuuZ/jVEhmQiMiK/u5xrnxhS4xYDXG0nYFRAqhuuCOX21
-lCCTPyVTKjwEVfpAIhuDfmNInvuUPdORkeXH9K1BGHIRU1mf8RZ9cQ093UOpipuCoTBdm23ViRkD
-LHe59Nf2sl4HZxQWk3v+4oBSX5L+678f4ryZQSfDqxIf5cp4NFcNHGd4HJ0qAzcD8Ka9Yls+fcUr
-L9bYTBf1j1mOAffp3HS/o2hY3O8gCm/ah0vQshl+JRDRNW/ODK+JDmLs/32mnU055MwKR8ChrO7m
-JiyQ1JleSentDT5fu57VWzRJoc6XAYJ98E0Pjxi4cTw+N5AMj3CTQg1Dl4+ndqiHtQFkyVPi3pMk
-7BDai/Btv+TCWeb9d3Jpo6AY00S5113DjPRbrI2o93NRNY09IvIvYP5HefTPXeMbD70RwmoBb4xr
-K6gQK0ERsvSQXA6e24i4xX3iNg2Tn9IqZefZnK0lXwqZQiZBmYZ0+OLArQYxXlt3rLLc4w+B3e2H
-yBix/ijTn97SytBtKX9nL616s0h5vHDWTTT0pIjavZ/kip+sl8pv7fygNGMpP9G9b9DD1tRBDNhD
-Za4up+MZ9tydmnTK3xei37Etahk3YtDAvyfgOfM8dSFrdKwDKskjEXIOFN0TxLd9dPOsj4kttkWA
-RYMUcDpPGDs36D3mlu9/NV2HrHvOt0LgmqqOR67KzpzmHtWWwI00CKdyR2H2JlWkj0piW3eN1RXv
-dip3W2MHETx8yJLSw0OekP6WCEk14f+D6KdbUbL1I5MT+nY/l3rYTutas7xCVIeFC/tNxSyC4uWU
-AT1/9eFlE1eBP+sGCsUKOJKLYQBuks+1CxoBsqlhAtfdvJRc+XzHOvW9TIyoUR2It9NCo5qJ+FY5
-4CPNNH0RkuhFAlz8de6g/3CeY0ABY9RoHxaz1SFpRXN0tQfoh8qjRFBkAiQy4+Wu0VAGqQB5yPqS
-OFclWUfll81LAX/lXCuS3EfbfDMRH5H3Hlmj8iRp8Au1wbC36ZIxzixhfePAx2n1MqMRbfIswUuA
-TubbnzxdlnXtvyuaFqQ3osL1+1ZYkyZb7+H6GD51fJdUeIbGKv+PmTmXUnFr/Olxw38uf8sZq0hV
-95Gq9j0PQ8WP7KwBRCw8W0qdVmf9i+vhGUkWQYAZViNLNbMaU/l4X8oEhlafHRImCIpMxjZDKAkR
-wDR7yd2ZSrNyKNv2/NpYzB+BncQG5iu6lvysVPA2gga44qmevCRugpXDN9jpbH+ei1a6rq2x0em0
-ImpShXqTc9ISXqvAvfGu/t0JTGl+hESsnum+hQ6X80uoqMyG4xBryyG3r/04HgExM4u40VWh2THd
-Qs/zI1esJVyD253/Ulj3YIgMmUgmouOkmQI6Gs8oGhRKrdCeFTAtH/lHIBvl4yqu6uAOoe6FRt9F
-iAZLJ7srdmPudg4ejEIEhUznFO+Cf0Y+0uXjy5Hd/vo8Jd42vQLsvoElTl4VolBUfmbt9KY/Yiy6
-Mqn0Gyc1e5BQUCTcQkOSkMo7Li+G1HHraEmKfaTFEemEljoqo0/wSTWStV46WSl8qZRJkyktBt6I
-rrQPjJcxXTD/bqmJsJM6URg+yqr0hQ0lC0UK/jkqsf66xDeq977Y/x8TIGHCANTCZSdwQiO51DZZ
-M+AJ7+unrzAHKJ4nD2Kap38MfOAObh11A6XtGznp+UtUiktSuAGNdFEvsl/3Vum7rY1DGUVXlciR
-8+207pCSDOG1HpJ6/SnB/gj08kSqFiNMtnRO59cpofsVADLuVj7iybOGhqV42QbcQMDqct7WzOuB
-/Dp16zNGXvTyVTFXE/8Dr1KWQAaMWPZxDODssshqBZur6M07HdyehxvpK0n/qdiz5HP3Ou+dcLnE
-1mlq5OxDeQ3+0XZcS6+sYkGf78sOyS0KX7cZx8dHt0/+mYttH13IlHffKyzw1CehwribLn5+cb13
-31BXhUD3JivbeHnKByeezRG5KTmcUF/am8r6xLTWBFx6yAF7CW0f1DtxxzJcIktPgR1Vdvf8YawC
-x+60GBbcja5gVzZp03Uxd14C5POrhGmmctF7kYQrU0Dbj3hP99wl7kixwUqoYtW1rQtsP8+0dn7o
-2P2Syo0l70thCfQqXqBhkl7B2oDd0MbPVaCPUXCNf+DegEvHRCkTtfTGequMdNgQ0fc9q7hABV+5
-w5R27C2ymBmKYP5u+ngKFwEzQeShtQmoDdpSBJw7qpviX9JBHSiW3Bankwm5MjTtwmypbclkFWAu
-SjjMd94aEcParzJFvPPtn4aCSpv+kUb2HqtKE78buUmBUPbzapUrQnrFFVYJZoHWwSKhj7snf5LD
-44IVPCb73D2qEMVhRzfdwgyWKo0swP9pBYsx0QZpmffaXHR2WpLuRFJW7dVehxw31AA3qg8ClR2t
-mRpJvLHQ79N9hFo2/hSLIxJ0DJ4/CHo6o2RQWpy+DPFJilBmDTlAi/jD/G7WxCM9pNIlcgZ7BgEV
-Dq3sTM6KhpANCwWVeXnbgVzsi6CHUJvDLiTlW48lhlaq6pi9OFAcu3xSogFsXzGbQkTNZoUgRUAC
-pyTecelZGKgKO0ECqJVlCnxr9lEtuRk+jfDnjQH6RGZjKT8WGIo8Ory0DxAChZtOpLks+exBeaA8
-T2QA5iSawt9yN6mFKpbkkAX2+uMdCWGNDMN/KMVzSnZqRobAIj6cub0SWwnCZholEO/2JotPHVmY
-ycn7i5qMEfNqz6wWrthgLIGzNBngjP+geXENLlH4N7vJGhPQmp5j8SJz5SR9zLgp11ODCAAbQ3dl
-AtEO0HbIhvKRABIlHSQdSrmzHKucHCLW2Pm4p8xa47c9vrDvB77vxIYfogIQ2/p3NFlkaBT3Cxeh
-VkEDSNwU3yOr5uXjrjE4MmTlW/chsV+0duDwjWyUpSehZY1wITIJGL0eI10Kw/2rlWD7lTdgKIoz
-xrGQLH/sYEm93xSnoSLqDf9nUm4TtKg/Z69OjBi3T/absGxtFqrhwOZE2CAehI+e48cQhX2B55nf
-f8Ja1RHWoy17bRp/BjzhHXloCztZ42RVUZCV8ymncowYmY82ks6BRCX9no9smtO+AZ7wI0wz6O70
-S3ICJjjGbodo5MlOAMmQHrahIOKRjgIa0onHPnVzWhvU+PIjR2hOAD8tZMpOXDvK+LpQDSxG9fBb
-6qGXZ8FnuOv5bZ7Quqlxfcm5geednmwCz5DtljV14CFegOCS2B7bzdsx+YO8AsJNNm9NQxsZjmmb
-bXfzlWXEHYDz/uFoeYUsjuo7XMF2S00qBO07lnkwqmCpuhsHPoQKn3C5n2/1T4EfIGsf1GTuwOZ4
-m4RRrNuQP6j8oP9yi96ue7yYcFxlMyj62Isp7A/w3y4J/sxvkd/XJXrDSA5IE+TVhS7nFM3iHDke
-NiFC2piZzfTBTReTHN1/GHAN3E0XHpu6hp/17KqeiZIVEiLXHhNz+UdvnV2mw9DBdai7Ay+bP7Eu
-3cqqQZMi//0aO3QqbyuR9FScMI1IZOw7o1ZJG7awV754hG3xdcuZasvweIYfGpNVeUNzBvjOKziK
-vz5JmiECpedE80XTPeUYkO0SFSu/mzC1Jl6GRSSO0fUpgcEoaBUfclTE6LH6qbeZlGmTXlVf8bxF
-4GS+tLmf0HR5t+lO/RZdtDCj417SYhGN23fDwrblkH76+ndQjLzMtXKfH1+bFq870PN14qmjR0fk
-XlaHlp/+CEKSpR6fgBBYBY8lIKvu3U5X7cY5TroFqG9jFwZTHAt/EvLP6nzdUmueOndPhWYChQ6c
-ylHxBx5K5kpb2Pt/Ot5AwEGd2BFuGHOGXrjPf2QgNHn+NfjNWZXi7XG7zRMh5+IggnFpGsNFwDZ/
-GlwwP0EOXQfb713A5Y3VQ8xz6waQb5sF604eXz5UAs1HVwd+3NX2GrQ4P6pg1kD4LgnX2L5YFWPX
-ZZ8a39epmgAdzGr3vyvtZ39qCCLmIk/zjWO3qkaKOxVNTpX3cv/Z24HFieWwh6bKZn+w+Hv2gwaW
-zN4M4flr7omfrfukddzfV06pacm17xn3GqfHtnTAR0gV6745cQ0jtLsHGqO6JElbQnvcXeroydBy
-YqF2dc7OhKuJE3/oXHROEqWxxXiUGDoMC93YI6l+dicL3wlPz+B01df1aUn+Gc/pQyF4+6KhSKpX
-F/BiQxqcEsfM6WveEYxpuN7XkAXIiuNDDkXM6F5krqM9EZCEQxNMXrOHWwgqjkJmqf9mSQT17K9m
-jn0uOwQ6R1WqYV/9L675sZx3xReOA8pKfNIMxSXkpraAtVSElxdhR7WPiI55R09B9NJxjdANelbw
-jCJ/44wwoZKlCYvwkTv/MbbUeHKtVT1EUmE+rQpqpvW9JfjSZVHBhBPoc21YGw4HguqxT+aK1qOM
-oFmV6hc6CtTk1Gl28u9x+BzTNAB4YVt1enAKSlT53zih823YYscg3zgaZRwAc5NktlLglWgSQCoi
-sUKYCrkigrA5eirUdzWdI4yaWq8Nl05FPi3uo/kDRXFIUSdjipU4tklTzahIW+9gGRSjtb2T5ox7
-l1IeA11BoKuiqWuuxRv8kZUYQxQd9/o7mV0E8RvQWsbgV9M4/b+SJHHuQ60A+nQM3Nd+Hq7aiPMK
-N2FErm9eNa9UbW/Xnx52p2EWAVgXgkRuhjfTeHUMMBS/yvo0UxwDChbETQem5B5EGnxVFlNUsfY6
-lENhNl48QI0P46BN2RxXFYx9hjCDL/4LJvz047xs4RLe2PAgFcE6/jFXuB0JG+FUDxYbY2QNyUVF
-p2w//lUktRZVi4xczj/ebK3yvsZRdZgfbByIHRevEIqdJl2MrO4Vjdoa914lIOrMQ92ClxwHzHcJ
-kroxdn8xZk5EcNInfvAHcnsZmelSLL89E1bKPc9J4m2JG4Cvd+vvnn/4OPXJg4iKvt+EDLg/NzPM
-3vAwRl5TrSn4vUwEw5HAFsHN3aMOU5f+wXOL2i4Qqbs4w9b0bZ6+hoCiI1ISrYuXId+JQIopoit3
-wGE3TZ3l2oRV89ClISuEOfPB8oai+tTNJ9KE6fUH2CGtQrl47wgDIxHTyxY+k9P+wNTfJpcVBTvR
-sCIrx3JVVtgF27UZW697dnvbr1vU4MezCNXXMzjVlzigeXA5wxGAUkcZKJFRzq/CSRzBnLLLz0eh
-6MW4xVmaOzmhtRZEQkG6q2+iYh70Tv8dS6HEqPW/+bmaqMbqvK3AXHCSHBh1WpxtxjOV/vRGMPb3
-dPuYPQ1+tjh6/KJ9RGlhXM4eZSIZ3uF6G4/qMRgFsgG4DOJmoIhwck/l9UJEZzeawCAzRfsSFgBz
-bsitb6PhpI1pFsxQf6vOHh1+4VDzPCDSC7R0VDXrq0udgsuo/rdmq8upTE7/fQ9Yb897NimQPsLv
-2eAxzOiprxDq3ErZtgv/lRTvXsNgHyHaO5P3cZb1q3vo9tQjSUiop0Y7875WQdNURlFr3DXfot/2
-D153n2jfANZHvTCA+DhXExv/V6IktO+wsh+hB7+DRPGfbf1sxpqf32RxU5aojNXzX0Rwud4rrThx
-lsAOlEG7aGdNvO5ntLq9CK44PekLjavxWxhPnZS6+5gqqpX5plqhD6B7Sztsc4M9+xEyqUvqQOe+
-7Yrb4rXD5H3jrRPQl11nkcXZZ+96mVsTJKX+5eGhuf2+yUNfj3XtuJIOou4I+EPGYX8pbqj/n+UB
-+7Ef6jw9c9ictZiwj5FflzWYrmFKI6Yb9eEBB5sqxOuR+sgGPXf2Wo6CqbCc579IVvANIos5tcKe
-1ZTUGxp9GL5rvHwWq32oOwWGl3SQtubAx8vO/uL59l9lwuC45F/kLhmh/m0S9VYeloS9r14KTTN+
-TerJodAZudYEt5wDnjPmBNIpdM0vrZBzpC0jKBSndKcj7uGtET0LLyIBYOipA4rbrZKrf0Iycs1P
-7Ji8ySdpUWiv+gP6friTgQhYILXVsT1WRdwJCIBYP2Ma7cm9koOGV7NtTqf0U6e+ER53mbDZgjZa
-2+QS35PK2uTLK7KPv3yItvhJProo8viltF8B3U/asgFiviyJewLKLyhlg/zi37LxaG4JTFf605Qc
-AyOQmkOIJ1VaqNO4UagPdno3OQ1ft3HyDVyYDuYdGd+Fu/CedXLjPgwAk/ul4OKvi3ksOCvG6bh/
-pPncXB/WWbWUunwE6mElYeJux/aYSIrOERXwAzwUVEfrwwlCn8A5Ao7hUjV5HSCeAlno8n6GSD39
-kgD9CjawW7QpzjedQGcq6AVX4+kmpKNgBUBJ88HEna2eE71OWrdVLTVeO9zgCLctNcZSjtS/1+oP
-KADBBtbqsX0cI0nr8q7gE+MePSlp/KGI1pzofI64daNRvLGdXytJHQjiWzMH304dZgeBakVcYBek
-BaNpVdI90NmV9ZbHHpy/JATEY0EMYTyWFbm814t9VFR9/IVhAfuIaJIk2uKaWsh63GfqPzLtk7sa
-PfjcciEyH7VvMf4l2anSpi+p9UzKpzXbnWfSPoUfLyJdg3Txpxvxwg0TdCwscODFMdTTDPRWu7s6
-dVOqzg7jv5sbiFI7OqVNgoTVv/UoGB6WPB1b1vXa5lfSztumZIGbPG31IBgCUdgo5IcebVqkA04l
-ARliDCrAlFKfzkaWPspwS1zozKOhXqP66BLGybWnOra6cEFmozb41s+xaToWzrbPkqDANqqzKcBd
-Max/X1Nvqg1m5pF40xu/pxrD+WLvl3dzJ8CG00/B2S2xiuRouiflQAukcHWd46bMMOW0k6Eay6CK
-yMyhq8egyw5arye0FVbEnClrhVrbBhOJrgI6JJjz+H1wWWtOtOSORBnWG62p4hjbx4GXNmz7yyRm
-g6LE9B/QuFH1YMFG0jps8524vvZp6g7bSt9Fi5roqc8dPd1llfMSX8xCFXGEfy4Ul0Si07pfOY2s
-MugsLkyRCvuqSpirRjwfGGIBlmisBDv1frzJI16qAKkNCr/+/c5qV+l5wxnGA5EfJU91TE/ve/kI
-/Bt8iDmx7PpcrT9uY9CiIcTzQS+OTMHrBurQG0lpG7X4G2FFcRTEfaDWQFmp0x4L8cIeVxshCoHU
-SWM/JWHS+Jr7vh2/e4q4u/IenwzqO0GJzbVsMVJg8/CqL48hbwy1LRHm6or8vV6w4gUIwKk7TfHj
-i/b65u+CYXXg8UIDmroAJJ74emsite1tX8rJR/6Lr0RSsW4Y8OzFc1hYn5pbJovkht0Ti2hfBael
-wDgDPflC3uVYGDia/unvVwu8ACe3fVlrdyOH7Rk6/brfJcDgTLhEiySJktpGhKicf1k7a2EbLPvy
-UZ1x6gmlNtw0C9vwV7T9js2QWIe4b014qv926LcgdUan5UiMgrpOhHH/O/X1vuFtz+FA76OWPRiP
-SSuWqWv3Emk94F4CXC9SOffT/quFTojr8vR1Utp3ggmcqIPtBzxJZ/Pg6+KqUciR7vrbJ4XPw+I/
-xLo06x/sRnawRrZWhFlfO0mJk8gXT9HUP6pR3SYdg3/xqr3SVqb/kroMwvn/MPnc41dODSDIlnez
-zal7//SmijEW45nsdBp07htpK/z9ByoJKcUey2Tti5c3xIcqgVN2eZBKvUt10xTwbX3U45Dv8/ma
-eXqRs4IpQKOe3WGlA8xvrEaqVZkmkgSQWdYxfitkiE+FqYXrNrSfD3ItUdkkz/ddSVUGv7MxT/do
-ssjnji+Gl1e/LFyYq9c1vWfXuFIIhCAW1w6dyWt89WEhtsE5HSxz1ucelAYMmdg8hPZpOKvDskgT
-tOo1CJByWWJ6LzG9P65p4FKGRXgmILPORZb+/YdYCWf8/jbn/T+RcR20HzKrY/ISSOnPEXQhH61E
-zoe/atGtWz29ulK2BJWB2u9XGSmiA9HSE7MyaCE8BqNQ6VOA2NvKtjaTpV51GgS2pXjn7YJWAqMZ
-9nh9gBThy/EybKFVSybM2wov3YB3t0QItfvV5GQ/iK8rXMSBH6LTaumPfjS16uj+z3OMq+IwodK6
-BPgAiDN7ABtunty4qYgq7r0i2q5GFlY02g7WDM16InAn+F6dck/5N1nxxpfEWpWeZs6JSd7/RyVU
-mFZLeFUDB9qReUpzG+2P9gDoK4huN4H5y1VomzyELNRMDiSV4gIcScMYk+BBxO7G2KeWxw6JOuUZ
-gaDDhfogHk/dOSofYjyAynFBe2yir6xCLaJ7WdrEC2xdkBVTOQ2UZE+9wymwBpItO4GUoyceK9sx
-s/C5xPhhFcwT//uL27XPxVM3cCfbSXGN/XDz9cwP6vIQPlxOO7HlfIb3ngvzJXwKHsRdknTqXNJm
-pJyZ6HLcUK9jlOmTeyScgX4Ux89kmxMewlNku8qcjCWV/SIYvvHy4RESp4+r1SuU1uc3qUlWq5Md
-O7WAWg4mQeUNeSirj/bULsoiOAQvM+T5Wafg+YtVtJskn5xpX9Yyq7iYbbUMlbHCLfOVVKfNXfOk
-mcUjRJhNue8Innzq5ybnNLoAqe/rhXYu+kbMI+OFDKRy1IGZKF2VgqfYB590Xz6ookq68Catp+Eh
-sG2S96lyn76ER7SbUHvw8YPcer2e0UXN5ZhoZIes/pr2nFjArmPDWyTvslWukIBzVLM123IH2qDs
-OhZtoghRylf1PeCajJLTwzdpYox1bRl2G8WEDrxoyCysrS1vq/R9mPgYuVBsCa9EOlhcxfni9P2S
-yDdXSgaYzKkRY/fG3FXBEcRoHjnGbpWz0f3zTAuecyGd/A6Pj85ml13R7TndncVPapXojKCZT+Hu
-rm/pL9jXfbKnHLZPoaNkRlHWa3PkDlqvulqkDLgkpRDMCYd852OFGjesqSNYHKW0thuNI8aoM5Bf
-uHYULzQXgZ+GXt/BnbX3JAPrNBQgbzuso12AQr1wbohi5gmmd+svMxJsapSHNpMSspPMst5fwqHf
-IaAJMN2k6GjuNW1N8aNiHHV/oCZ2PUKUazdg97xCzfW+DjfGGzTT7fv2S9bFuoCCBq3WC07P0HFB
-CHgQXdWYrrPQRt1nGhxRhNC7E/mtga62CpMqQhXn4vw+2RDOSO3WPHTs+UOCDkqJMq9rU4mgQzIl
-Y2y160OzlQNH4umis/UaZN9tC41eD766Vx/qo6J9x/JfE1XlMvErJL05KPSKgZJhuas6uQFcPiQB
-55eEiuJTg9Cbjkz9SBi90DWU+WVKhR9TmhOZz7IZleIsENsuP/xbn0k5PoAgtDOBxGkzpncI7uud
-ie+rEU3hGhMstiwou6wvSIv4yqYEMrLqH/GtqQDj2uYFAq0SjQsiVjji/8dQLXGbIgYSJP0pxw37
-cUloS4C88t93m4B/WAgX9LJYaEPLbQxRCfSHUhx03Y5vjdiwWsJXCz0OBQ4row3i/d7cB02YogOz
-pqL87QSOCCduS1CTOVuUGz9VEtsdpAqmq4k8DxeDi7YibvlEDZ4modLhntCf6FQ6D7J9nloxBd3o
-JRvMFeWAbeld17Si77g6/YfDE3ePrDugLWlnlFFDby0+IaWPv5ZSED3VYWwIkE0L+W0SJNBZWAz1
-TfsEa2IrZVnLcWS2JSjKJQR/IYB6fOYMZ6CRcYwYy1rXB0ovNehHTP0py2RCHuID4jjEBCLVwZtB
-bTM/PtJyavTjNhEm5s375qvVKRl0HgeZfLWAtaht+6hYS4fIocsX60eDMjCDM8hR0TXScFK1FYZ2
-YqOH3Y2rzv8NLwjuN+P2gWiY+xRCfE7hh87ruaLV1CGcto4ORNWEyR3gZ9FPDu06JSDcNI6Uhu8j
-BOzOWQqTjSv4lZLVXspbkG0/wEgCYPmS4st3T3CW0b96VZFsAw+Sxv6rucjiXHn/VMB7NSAcpoRc
-lGOjNI7ntDDCOtfqRea3vwEh3NvbYf4FmxnoAsPbz0IEZYMLbsaorZy3xLDP1hq09nIf9GCIrrO/
-ZItz8wtxu51fWU17j5azh9yXJMU7c6rHvsBK+ralkGKuCB9Lc//WW/zyusYKsHfs7GF6DPPhvYWi
-pdTB/qVtBgaS1jfrPTD9gYCKRiNKlXuZzCSDh5Wzs6sQ3HndBSqiDBnUlqQamkgMIc/greVrwDc7
-HFLDDyaBmqti6toBu4phZ1NCX6QGm6oGksw3rH+wOy6bu+9jkym0go5EQ+gFGFYCSOnvajO8xMMw
-5cxMtMAyw3Oxoo8pHSZ/b5qiVHxqdSJpdbrxyzcDMXp9QERc8cy2X+YzGO7/uErmIpDD0T+DXMHU
-JKNing0QkVB1BAus4u9kF/JNsO+IW8+PskfGVsl8heYj5fWj64o0cT8BJi5ZHrHX2MbELf335/oe
-Olt5eOcZ2HInzSjI/kZjKbtgQJtGpDet8I4TN6B4ZCr84j8MzI9hra8cIUKtvgcaBVWSlbgJKvCX
-rcdAgeS4kvXVSBxY86++REbnpFLpdhsVDwlm1mQQ5UxdqWRHeqoJfxvk7IFLLerVYtLGFYBIScGL
-bq2A+hl4UKu4fAOkga0i+jlw5F4vFxdxp7I1TMZklgqnMeXae5es1y8DsWmVfhrzlEvyb/53E2m4
-4586QBHMhZJdxAbFyHg+lPK4DLxNKtdcOGOKGK3Ocg1k8VSYCZAmDsQ7KQlc8DZJYkd2Wf0L2kpr
-aZcpPhE/IgsCLuxENmWYuHbfT9l+Uv+IUK3hmhxTzX+tptKYowKJSS3yLdZvMsqs2HvK9KP8ebwJ
-P2iTwHf4cMIpoNpPviaRTAZLGlphNX+4gcb+6mK3MXIB7NGw5YF6bkiqNoiWL5I4IdxsQDVTR541
-pGLlXlC7YPMn2udx7y5OL1QUxttONeF/CNu9tleZRJwBYdzm/hL5zGhodIPpAE+ZIu4+vAOARlIi
-yr95i0dCESzB0LC2qPLawnAVIApNvzt70oWRFr9ZsBOuR3B7ofsg7egE3aVbaBRJKiDK2aDx79Nh
-k44Ljo875cbGzEuL5x/s0aGazMqhkoPBwOjEMl/9Ybotec9YRKToLqOcl+rEkNZTV+5xL29l1BAo
-eJbsMCO2i5Acixumzi6Y7Iatvg7EYS9njKqWJqtVmvH6K04+asuwuWUoInx0YtwuZxHcLzf1ha41
-VJP11QFvrG9bQaFuTSuk5hmY/A7tPBvxsQdbRSM6amQIvrjneVgicWYQwWGl/eI15fA1Dc5KSGRz
-plR9gYDST4sXr6zFaIAJULbKhAGxRGVlHVuiSX1wWXGKP2VUsIJmDkWi+H3ayEEG8mbp3jwkFtHC
-2wo5o7kKCi8flVVKBS2D/U5hjadoTE0MVdnYJkouYDXTp9R9sDrRqJZkeamLybD111cVe50Yj3vt
-x3kYD4lPERQTdhFV993A37t56JqqbuYXla7t9BF4ctTrRJfZuZ0DE4lEE67OTKghvVqa6X0vUsgL
-OjMPzuFz8t1U8iTfbkmkI4XW8uLmdfwZlf/pgARgauiY8cWEj3zYBJN//TMQBW7Ko3+jBOomEW5E
-96+7sDru584Qw0+IDHyzdV4svQ05jn7md+uiKAa3Qrt1f61eYrnD71MsvDzEIKhtdZ1dVwl4rT+r
-t6GArc7ib5o+jm6/PExBlg+uowQLs8viiyNGqrcnX/pfqacYGHPAqpVLDMVrN76+V9usjIcGLtB8
-rxq55RLP7d2DacVU//VDBYXlVSQWAjJ0nnY1w7BBgc/pnqugTkIK8dr8xqU1m0UneO+zkO9udbVV
-X8UrQOmdRpEJc+rA+vcmu7TUntSYgAyHHmvVGPJi2hXGu2ulvYPeUpdDGjqiE40kdmGhUPtLbnwK
-ZUrwumH2amW7pSBxjorjMUGNpuCXaLVDvLEpHl+0r+AJ+fj8jLpFNpiKGWiXkcQwn2YD2u24YYBJ
-aEBytM5epG4MTC//zj069NHoIhAvZIwzzbcCUSAVoSoo+s0uyIWWr/sfPU3KPkY2eHV98Yh2XULo
-PS9Gbl41rU1Tk0sWW5LjRdvVUCqUsTjwHQNYHTOwMHD372L7vlXkVHqGo8z3LGFnwqdN2WFbxoce
-Jt2uaMT4ZboZilp0JYLvRfXu/G1wlqtitaSbH6v6V5uOLVoctQXN2htKh+3w10d16iSRqmw/dPVE
-JWxPEtqSYYibb/rasCcF9ewtEI3oW7omsDap7WMdUXiDn5oS3beQHdapHDKVHi2cIgFmf1B/jf1J
-vqObvgFUWJ5nHOqBV20+2MMbER5EUv0Z1uiXDmbBiy6wsM+gKiyGaEhEtMUCF/O5LHPIPdVcCLoQ
-HaVo6pwTgtAukZgZM2JtXi+02IdQ0nmMqGlFJBLWI020tAX06Y6DkpYtgGBYtDkT/eOKhyFoTp/G
-xACKYMT1rVaDqMfzKxecpjhDkAvigGsDvhbvDvCAZOuKNnCpCPwYSbmQkHnSWZOFR5EYZ+AO1OC/
-Wzlq1pZVFXgYtA6AE9E4DbBKHoh3JjWf2+6/83/sYL6ydbNShVf0zGP4TJBCvHkhQoTqABip9eKk
-yvcsCLQwSpNkH3hcyIIi42UZu3q//vxK9KJEFaLk3ff374sPnmRPVgGwFUYHLf1xbBapGNcExSHI
-bxpZYQ0nHPi0ZWmtVzJdBeg0Y0ioNMjOhB/Avh8YeeV+Zn8FgOMhIRfNvy3mCTnSXbJU4j2BEkjV
-IHReNb3BpmP1Ho9opQAL1HlHBRjcDKWf+dPfO3vwxbLt5FHZysX7BerYIQlg7ubkBWPfRzZmxchm
-5tabu0qh6RiJIUO38kd9//OM9tLJJehELgfC/o4MsKOP9DL2Z15vKQoYkICUSRHCFnQJuEUKtMxX
-+fWnPhY+l5Xq184h/WRQrPUR2SnIrW9Le+t7KiSVFG9alhk4RFgmB8COZjlvgCFefFflubNZ4kjJ
-1SFaOCHDaxmFlpaPalBXS+CngEQH4zORtF/2o4dXaJKVOkXS9UmEpQrNwVbFYe/QvKStD5Lt132I
-NAg3/KBNdAyuTPo5fBlrwjjo057UN7p7yMz7siulEcleDd4mITwzkWZ4HowXZ1Mxhv4UHvPvrzrg
-GxaL0arE/BCO3aCq+8ZImiu0AvY9aNRSVolEkEBEFpdayXts4OO4uulCgHD8t0cKyq+ja4vVSV6E
-CWjaJJ9XOVk1VfqEhK4qjrAs9sR0QFEQU6S97XcXZm0JESIvS/GRAj0BtUfwdXMerGcLNc3Ixe6z
-7PLZ3ZLNzAJBOWOwinw186QsZzKUd7F+KjKJy99lf6NCTI7/44Y3DrRP0Knujz/IcTtNBdzDxIB9
-R7yJaLE7NWuUJ1VfwNB2XqM7tnwWmV/G2SmpVImaJSka95zIaceb1HxmBsJbzwEuwu3uuoj0Gbca
-1xtYnP7cWrHHxHpw487oEvudlnhsc82J76RtkAS9Kpx5FYmiMAfv8V/kZ8zS2l/D2efDMdeBEbAw
-JgGTpdP0jvXU3ir4EmZkS6VkRfm9k8CHImnOShMS6RK2EzBlFQtohle5+QmEE7fYZBbTJ9WFO/Ck
-TVaFk1Q+1EV55xdLqKePTM2utV2CNiPAo+lN+2Fr4YBEaiBa1JcSxd5RNySgTshaSuxM+7Z3Espp
-AhOrcLPsUR4miUedYsc2gUHyZBRMejfCI/Eoi8+3YXMzlbbyR44FRsp9nTdWYyvU+IRttO8iMH0k
-h0eTO2WhfoeDnzC/PV3UFoUylZL9k7gC/eR4HzbqIK+2yNnMUFBGPFO1KdaKWN7ujbCUeAoQS7zf
-9L2niHNSkeOUtEs1ro80ltIwQMXep65xaLBKHAvwYz7DVFE6jX1R7h3/9rXPKrU6aKsCKRedQvOR
-bBYIUHNtUpjwfRnqG4MPFIzDcunnxUj3OmhnIzEQrVujQ7jypOR7wVTz18jB4csvnOA6HIk1kSXg
-U0ZwH8lHGruuwAQMiNU74skNl35cIoMtZGtzBBvJMai+MZF/mta7vCbNAYid9xfcBl6V18sRufRv
-NdULWtaxxsaEZJM3oor2WDtcm+zIDkjNYMxvJbIcCzo2ryPghmkr8P5AVHkKhiM4BNXkiSSYm93I
-xydckEkxqwa/MbrJJbBUKF23bQbSVZTFcu3fXvdB3gkUWN1PGxnXIIzxl4HFzQFhjKqBGOGFKtM4
-pv3i+1XZ0aeN4TYA22NP8vNf6ImlIFnYK1OVBEgMGuMe4zZH0xePiT0x5Qi+9w/zUtxSBDIenDfj
-IzIT2zaueEt9D8ZeYQvKHSsEBgmm2LAs2DroqgCxzJaTFYZv/JqLmuSVE1htXyeuYpwNyxGxBe4+
-7e2M1L8sR8kK/jY0a2WYpmmnFOfRNRSZVHPTG3HIIFPhp6WP1J4quaolXBq2ekoVx8XqILx82vEn
-pkN57wId2NVhJwejzkH0BHl+dpCo2zCR4J8eLSt/0PM7HPQxsClmZiJnNaeKU8/DRleauj5t1Gm4
-E3sSxPrlhTjh0sJQo7nyBAg6ZHsrP7UeXSXixckWdGlEYIyZT+sU9HiUZeLkuRWOSBsKE0Nm6Gyn
-WzDNg/7dgPLlYk4VSCqsn4dqK3Wj/q1oaE5R1qydRgkPLxVgYpYJtkapxMk0kaMUzWX4nFLUbJH7
-B9AUJNTwx3cp6R1SsexDK64/wPS4IUNcOymsLNyighUb3+cqk7XuXwm9WxLo1LUBoYYV7XU8PSDs
-8Cam+m6f3EIFdCFHZ1ZDP/mtpvx4JUSTpARNODGpvgBaDzhMgXs2OevezvZjXxEHP12s8rHlos0w
-+wp4QVKc/Y9GPaCiWVDyCYJ2g6JtnpG5OrZBlaLmD7d9tUUcxIshTUbQtZZy8tEIzJkT2ORb/4GG
-jQM7n1MzlT7ILXpJ9xybotHvE1UoD99YMGRZ3YECkaMHlvsiu5I/1oJ4ehpOJwcLt1jYbVe5DDq1
-g1iu3bzOOOj7xWQwmsnGdmIaVKEkC+EuFMY0nYWskaT1TOxfdAxlCx9h92xM7NGmq1RKMxRpwfBw
-JX2tNMihqqxgXdOItN/e53qL/LXKbCqY9oD93oFoqYsD0AImt+GwQq47l8cwI+/gW4T0jyO9Z0r+
-Ums74nkZ98gv+hbnC+ZurTj34P90UqqcNxemSKur+f0syDUrA4LMfckjWzPt3IiV4Km4g/YHsqJS
-y58MuUNVcz7oVZRuyXf4GCRFOZxJVSo0RhcSExCWcbX/MSWUCuz5kezcOqNtgPZrdjU6ZnCQMa5N
-PxrACQRJ2g9PQDj2VJ7VTJk0v239EzxQY/mfwLar9ChfDF8IQsvAi5VKa87ZVz8VTyeE7t1AjdrU
-XO6N0loEPv8OUCPi5gJP4893dMg0x9LP5rNG3qufAyFSwSRuIXFWGWXIguQUBvTVsjG9BaKztpdI
-TKGGokSKrjmVPbZ2Et+hczHKreJaHhNW4i80VcYS704Cx9gIGiH29sNUNEEHlxLgGe6Hp4m/BHWT
-UvsefG9wGMTtV18wj8un4opVDXWgHs/PT7AoXtdmCCZuDVtQ5OuC8U5mn5ca9+xn4mFHUdx8yQp0
-GIPnn8EheOnEfyQToZONGurX+aZHPAHvuHpZOIaM1YM4gTIktx2+B4N8Zro2lVKcNlJiZhU00krH
-DMIudLYLlcAldpxphvYg1uiMd4zJU/tYSFZ+7daZ4+TiXiGTEFh9t74lcR30gwi8aYTdvRlBG+sh
-q5GGT37j2MwcQ4wZKx8Du11M3KbMqFERFL87xxlC5pEt/N3xQF+hpM0QjXhlp0MGWLkCZjME8yTM
-4QBsOsyH/3cNCiQgUz+jqx8Y4IAz/ymnW4+JeDklyvuUbpuBRH9B4Gcife30QUFUO8xGgchlmDh1
-loRQ9azkZyfz5XxLiGQL5jmWU0YtAImIQ6ThYrF5v3wmDcOQMG4LPyw2Pa9mwBdCW5kd/MzWq2LK
-ScwW/cqzWUE8zvb+Qh/L58JPSAvx1XTdWMq8S0dIJp6KaNqA5vurbJ/YfCVIZmkY+78N/vZEsueC
-NdzQbtbRs40vL1mox4BTwrmtauiJFT3vrOS4iAarfj0uh72cf9+D8Euar3PLEwybxVYNvuwfKt7T
-o6sZgSqKZVXl/+5MT6jlXmGqecLWMkDeufSe40YZgIrZq/zmvit8FJ/EcoQbVXKcjatq9Dygcz5r
-/sGniFDYBg5DrT+5uwAW/ixZrEkIdJQl8qyBeobQGxk/s/zvpoE8/rq2DGfGLe22klfL/JQC/Gla
-YFjKT/zNgqWeQmf/qE89uNoEVnirzw6YGqODZTE9r9OmJnviaU2J6hgsf4jgA8y8QSgoUGXVo2MM
-OcRVt5EsDds04C2l1oeokLU54vqzinBsRUscqnHb5R1eMWoK1s693hPtR8/ZfHmExuVAeDRtS6Dc
-BLOVibzHWhEDonobuZzWOC0Lvp3QWbTyABlmvwaxUz2BP5945od/ThtKr+UZ0lx3YnoD41iLhlC3
-5oa10NpXFg04fXAQNx5XWdjCDrURG7oGvx/jb5XDe/uR0fu7R7KH1mVpIyxIY+s6afnhRKzmrg+w
-ue4J+o2EEl3sxeTk9jR0pCs98/AiDluNy17TE0xlEmPc1wcHCblWZeJRvRxJJ0UBG+NuimdXBx1M
-mVeR9H1cRN7pSUpprtRFzfSOpJte4+CSUqGn4qQFvOYxrYsDrzDLEWJNwDO9IZEGMSyUMN0gmsq3
-D9DFP1JnUMsv6PkrWRQSg2KMReEfSG2AFxHNldO9euwwoOx575GQtcVZJLiP+PMNqRJZUO6J/U4u
-NfFJDeXutFnvH/ynYAOTKqB3XDysnjNTBvO2b+7cUa/m3MHjOgMlCKpCX5+X2VPahziombquEYXO
-9XBNiRUDSe2aqLZ4UsUoKsn5FUJ2QH583lVTjzWKsTdmHewe3Z/3tGPgIpG2qPCXLJZHGA3FVcwa
-A0oEWyCxTyc+sXCZchJFOvoihb9rFmiZeD0fyLDchYdhxmfym+HpeA3qPYci4ugMWowwRlAltvKu
-bY0SqwKeLg3scKOeoGMiHuBczlXlY93RYorz2aSDDqZJ801WSap1ROk3YIVnKGvYC6ccWk5bZ3I2
-/NLbn7eovfswq+Ok3cFB04MtwGxziSfNIx7eWHgoQGiu8/DJ0bXHyZ58HlMVUT+15EeIVw3BmrIq
-HCaZ4oFS8U/rs7ZWswHu5Mm+YwFCihviEHhoUlKl1AwlLNwP61MddaVWjrMDsQTmEBq+QsJSGP1i
-okeO9UPo0E4Qcfst1XLGrPaUcnxBMRkii5syOsWL9Aj5+Cx5Qgxk34SKMUAo2lga5zZIP58nTSY0
-LLycJzhsYDMFUWlkxhe/19laUg5rYh/bbWjWyauhIkXVU0ybyMwqbjo7LsvvW6UAOYNtbEnxpBkb
-iLQPzg7fI1C6I/KjV8ywZZJtQ4pT/t7pMWL/oUKfnXxfLUVJrYdypdYDUsx9MdpcWzzqYwVNaO5b
-0uaCeOKTImX287EK6WurmaN/EHmf8VhjWHeGqoN+HCumX73TwDZRVkMAjNUmM16SOdMf+A1Ln1w3
-/uLi1CNwtsSLcF7EF+NTy77mMDQVhKFyvBHhP1vSPyCBsVZt4YEnbfQ3/KBHKzDRL40JoSqrRRO8
-gzHYcIwmmvvg8UphGeRrCW9xxM4fxN7tiwYb65PZRm7+v/v993eqRu7dkUy7wFH5s5xFzZ/glCYt
-I9tUiIq9WljlGixbyOnpbKK6V5yrMznsZgrYx1yTkktI1zqkCuQmqDA8kTMiufSUuqTuIB8MPL98
-yM9XAABr/tvpUrgi3oSpKLV6EcVeR3wkp4/RimxjfZyPDpGO95ugzfAGO2xvQ//VgJkTdDKujjq6
-IVOoX3KRO+SIQq4k+zmeLRYqRLe+0MEAoMtavJtOdAVbKXA0MdNTchB+yILCNUP3MMSgCoXB6Izd
-d/Sdfi4TLeyt4HitULPvxY3S9e06WcbAduYqp0Bo6wEb7VhrbuyrXDe4E4x28CrD3e4wpL6X8hrY
-KDvjnXMWMrg9AG1qtTbI20iMaM2t3YbMUi4pMBFnbvwoAUC6+ttVEuB1m7JomqUGTYHMWDrweqmd
-/XDxRrPD0H+x9XRL9nbYKKTUT2m/No+bYm8JyVudYnEjD6PMpyBsWF37slzOu2HoaSvDdzrUpdrb
-SR3u9aGEB/oiZIQ7JBfLKY4iS0Rad8tD2ZVrD9uteTP7kov0o2Dyz+SMIr7GqCHIa7VtiVdEhcKp
-9LS+Lx/+uzubATiX2SpOUdxrnpLAKohKuvqv0hVJfPMelkQjyNECOw+TGmv010OWkIIg9xrunExB
-oMLiz8WAmLsEAFFS4/8HoWUCvGoEPlLBuqBoxDL5k3gPAw73im7moXhGiFGunwPPezGhKd5Do5Fr
-OOF+hogmUm0Ng+xhlUXhlUlSk4x7zy9dp8cvN7FAW1aS79tZDbJtJSi34q6CiUAJbOfK29PBbnu3
-fsGCvYim0eK16YxMw0oddjZRBZzQ3iBI0sSx0FNyh5VH3YWz93LBXJ9trG0LvHrzAHR/8dJxUeoH
-dKEWzOVfc3IL9xXpYUZhrdxdvuP+X6TxPEzQiTAg1ImUR/YfU0jGw6pkGDPIWAfQFpz61YuLbAbv
-DXIauVfgsGc9c1382r+Jjlw7HHaafx2KfA4bE7X90mLmBxoBe/XO5S8p0rh+Axk1aC9KbFX9JX0N
-zN//zRDKTR4NLS20+VwMSCWp8JEz1Cfunhft49+nxNm6VNvrXxCQ8vCnrUkcuTkuXK4oGMs2prQF
-OSotOhJwHuAeVrJl+h2M3Xo6i3c2ZpL2tD4sC8ACG87lZDDCRmjDFgvQt3XdDjal0cmYYNDsClc2
-uO6HgqtUeoae/8Er7hAziu2B5diHI82zCl0J8ucTrL0KptlrLobhUsP+TKMRJ3zk4rhVBhUTT41Y
-jB3h2WImXrero3YB3ogCGjAahfF7tsItyaT3niXZ4t0Gg6ILYaML/Xp3ZWYBVbfRj0VSRMIrQFBP
-knGYrCW7cchB6GLXT10JcVWc6QYUnqe0hf3Kr3i1YuRxtgXv0OY0HtwdpmcBatvIb2mURhtMehOW
-Oy0Px+yiP6yKaBq26MOUjs6AQOCw0zpF+UNiSjeSPDr9QxompPlW4TcJ21Zuxutdqxq3CgplE40D
-9qKt8V5fwzdggCCTvN/l74m3a1IivNcG1EMOK4qUo+5hOjLROTA/htsBKq8d1a2VQ9jSabaq/uJt
-yHDfpL+b9uJ7mzR7P59UEfmMMZQHKOW0HCrVscraYKKSnSJqAYqvYG7yORbEDyen4iMBPnNhkDjg
-IOHqAOvreSdZshnoGKDNV3BK18p30tljWsrVrMKb66yKElhsPEVWtVuLoh32KHkRZtzyON9Bdzjl
-osXLN3CZgVki2elZamxa2DBw7WgRYW50LgVlHvL4trBYyDhzp+DTEPbbJhIzo0NgqK2OBJ8P0FlQ
-Fs0Yi8oIM2IzPSbaxS4jhZ/oXQP9BoKXYLAhZvsC+lo5+BlzDep2XVv1bUWabvh3xPqmRjDRSMwF
-YpbmWOLbw3WcQ/mEPQIGqjLQyGxtHQ7AacV/i9Lx7A2eFYoCjVOKyvvqvABHovRa36MBt4y6B3Sf
-7tgUnyi2+YsTa+FHeKD4/imUXSqri5YXFKMyrTRfqvrop6qCo1wWZ/lmd2DmptJkJzj6FwFR24Px
-DVgzqs97w4auDp/DGaIHjBtGN2o1vIyZoiy9ytcFioaYb8nO50q950C86n5Nq25DG2MSx77ZOSsA
-MF/44ZHh3kfVEXoyWrNj7qP0fZiXWQrD7WCFqxlboFnV98ChsuOZaCpPBVB33tSQIj5d0rpdsjOC
-gJYdrL+dAvgHBMm4VkQBiQiaE4aVHBxwBQ/0hhXaa7Aus96Pz+om95m4YDyhdAhOIBTreibp9Hmn
-pP/9o5EJWf8GbdDYPZvVYnWjtEatqvXpYqjIXM1bQL3pUJ6UR4YZe4T8SPS6ScWnon2erLgZIulQ
-4vyEnWGqcycvBP12dJ2laoyVTnFtgxs938pEUa7QbMqumQCB/JesAUcom2Lagp2lEKcu/RLO3FYF
-3paPd/z1y9Zssrhi+t4YUzcyc/djn8KvPNYFSHCNzftWGXoGYexK8jFv2Wkcm49KJv8uIldcc+mh
-gAEzubEqCFWHAnnCB8V4jO7FsF8r1QsAxxrYUw3HLxLt42dtlqirPAhxiXzgbjiZEOgFTZ/dZov5
-Ui69RNcmm205/u+VkOvQAKQbk/6l5Bk1dBlR8f2tQu8C1Lto63huZBuZA+Xvld40YgSeySHHZy4k
-P2cynGiNRTrwf4fb90qWdJOHDiLCjVls/bTo6Wc3dmpDeWSpG40EaaldOdPnYvHXvOVovM1XmTou
-yiYB9JtEOGHux35lNmttIE1UcJN3XxFvciQc1FtidxvIz5s2wxdmUUkC4DjDD+/k5ubpGZciaXHe
-39T/gWnO7D6TKHR+GRWlJ1u+Dy+2tkyg5RqhtaLdvGhMAqc7s3hP7ruRXIJ6di5fCOBpa20szmZb
-Nc3GSx1oyYDrm2YDiOiOBhM8mhMuyey2g9Uc9dv3Ql2+EPuo7GbjfPS0KX9JV/P+PWqZV/SBR66C
-yhJeJHaQMZCJWJeYqDy4SizcEMq29sTQ9htR6loN5pdJ1PJsu0jJQj51aIUYsvhCKAs6d3r+ezdf
-bKKhWeeWPWnDYXqz3vwiSArS/7ASYCTY4IwU8S3AFS1XWjV4PMQM7UYmRPJqfayuBvvu7bwOzvNZ
-bMA34LTQ2X4LOtXVQR3YzFfmCml2K8z/cwysdGozyV7HyRIs7Wo+p0n6Wtsahht1mWyPX089+Swb
-Xs5CCLTiCog2v5NIlF3um5+PfeIib1FaAoF0YbEvpUIoNVDbdSgscXGhSNgeCfanR5/cyf2BLYvz
-kobkVlflXC/9F/t1eNs9uJeIyGOgucJCImlVsAtlZ+yFuYQAv0brAtB/vpP1El/JqAwFJVQu16AP
-bZiY+fvtDEgLjzsGoPM5lKSX7KV1fU99Ogb9x7m/wte6X7y1JSH5zQKujC8VtYPyNPhAW5+c+rVL
-rUMMMIRZ141E7w6nuRJIxBD49wAy11Us+vZqOB9AmVVqndFxsp6TRQB6xNxKPuUFXBw2aqQitTTu
-Axy2DMhGw1ctFg9qrQjTjGPg3i+ope62AvFUn+s6EFBujxN2kynR/BxuHXIgR9m8Hkxb2Tn0utLV
-ZfuV7DdMT2V25DV4JmOlj9MZYxyZtbCCI24Mqt3I77l8ZaE+yJiUROkqO8VP8pDwY5rCGjbh11F/
-Zeu2TG6CQ0NDgyX5nZyfPdz8GlgPBqtKWr57KF6T+AM7v1cceErrwBfCtzNVExthBEGOVmBraq9J
-xjpx5agxug0lUIeEZcMV4+YUwAoQ4axPRrkdaeYvTxmhGTBKqHo4ycVx+dcClknF2LH/cX0Sq8jS
-2W29z5PLaBdTzDM50kkJmdoN9zBwjjcUo0w9KirkjrQ1GbKis4DHQfSsfJ16mhD1qFofAyHGZVan
-QK7AuHqstTpQnMpENQAyPOG30bTrn5FcfaYJSpftMFHQQBAzVrGbkOc2k+/Y33Yf15oxGqQsot4p
-x+0988qm1x0FQhuYHqRpTY2/VQvwJP31pNQenARo19jIqVmh9wN+3MUHclTkdo8gb7R/Ax6HNGrF
-8nc1u2DfrEdYJmEYMp0O4kg7jf1xp33wgaP22he/NjWkoIsrqfpiVfuwnU0J689kz6L3vow8va5U
-AhOXp9o7zz2IUg6aPGrin5oakTWAgpPAupfvltEu+dltZJPqZQd0C2zIiOdHFZAz+1We6FU82xWe
-g+KXWBMqKzf8JXWaG23jSpcpJp2tndLjG6YmEry1Q2DGim0tC6xwD80imHpuBFjwfsogRTWOb2lU
-usXfpliFTU2wLOzlZIQktLQARONom2XtEgQ0C8MdFKak+onRztdy99vLKGulUfLfb1I0WFHJOlZ0
-OCYr7YpSn1IOMM1o+bIseACxKhUsCGt+abDkWHq8ricrEtVDaKfzTgXpefKMV982nZTf1JeVKkLx
-I+gPdL8FVJBBfhsyFKHkP2xqhQV03PaUnyAkxbWOwv96LT0XFmNrtSEoC8Yxxvn9uiS1tNUZeLig
-6VXxEiN//Tv9BpVAbi1KennMZ2TdrccTfIhMcBZ0aAlzkcZaMLcl1e3uYZATaMbwhv3HC2w4BR+N
-YHEfT3WlMvJQY8zGihsNiiecMXO+mZTKIWH0KJvj/wR4zIPHdsmha3hxgP0vgRFYdgKcnWxqqmp9
-FqS2FdKegk8xs4znytgUjo1y0n8VcySN4M83zCdj1usu48GOc0mH6n2Zb1Yk7NYs5ymCK86wwrPS
-/mvzLyCdaMFa9Oj2t2qRFGsAszAd/jSj+9k3JkqgOWHncLwXUvZVK4j9sW1A6vjNEX73DsUKPRA6
-DswekSnoPIGcSaRxGdrm1zG2FaluCODzFN+JJ9x8qq2ea/tonzhGrVDrsIDcrZbWUPRTnvd40Udx
-fu6YgNAjlZM7QIw/A8NuBDxTct9dnX695GEKGr68zqOLNxocbQGCS8VKUWPJNFEdhwqi4Q3Ug3I7
-bcKHqdXfVWFzPvPMwvTdoQkFKOtCz0qZ67kFMHZfCMdYFayXI0W7xCHJV6aJcB7bqQVf0CqtX3NJ
-LhhgMEFpUB0tYl+bOumJcl2hqDnyxEkoXz0RyB+18q9jL99fzG6QL8I2dQFxFU1Ks06wQqpVXrYZ
-9HZ7emHpXLzfyIBItGauBkCZAeGiSfdEgwTgDbBh/gi9pnQLbKhCL/AhJ/ALEv0S2RXOSfeFTlQL
-2f+pFIIiO0XkUwm38SYKEH/QG6vPERBgKIj9S1oYcaUkjqWkdJMx4MZuNlRcWhd9WIVSvnNOU8Z/
-MZW6FgqMJQtQhfHvKXtWAITz0S8Sv4ejmCxV1vstiUzaRULKc24ToiMSlv9NH08K5uHu54kifAG1
-Kz3kU3GsiObwFHAf2iS7MA+5QQjsjyUYCNd0e8z/Mk/nOnLbAuNFXqVcIUsVZ8atTeQx/QEeTeUe
-5D27uQgIqn/ADu9xBc9h/yqmhbOizZKJZGpu8Sm+KJ3crinEx4yFdE5tvYanuahJccpxPn/zlIpk
-dnn74Aml5azhSzMXuV06u6FmnD8+yMyfI15NBHuQZ1QpaXOdYd/gOVov03JZKwcu7/z0p0Eh+ssR
-eKBpGQsr7ORh7j/FUp3gNfbz8kf99Pr49WmrraPQ00I9hu0jp8vcV0vFf34N+2K7Fd42jOyzQ8Ib
-s7bt7w5p9rfAlzZYe558py8C/lFlrVOCmw/5fTbw3F6OfdykugVqacJR60gofsbRizodhEOYkhd+
-JaU9+EQwXW3OKy75ouP0Ipd+0lwUmcKQJPMJSw2dGfmLl7j7QZicrnbFiLV/C1ztWddC9Orh2FXi
-J9y6eZ8NxLMNfDlPWaAYzFKwsBnrh6Y8t2r3euy0Lmsfb+WrDZ4ECX6kFzGQdK/29hKX1bIYzihG
-eI1krAcnGZaRAVdIjup88A5xYnxd9wdMp1aU5On6VtJMD8ZBAMm1xxwzzZwoU3yNTzWJ8gmYAJ7v
-0ZRb3+5zrdW1p6DnhmZmDpTniTv57hwfbvwG/3Qf2gdCZaTuhRyc5SwgELFGO4jWIDVDqJ2Sq8EC
-hQWf0UfckUyc20cgHq+WOskfm6va57VnfTQq23kW/I/0xWSh4FSL0KtjwYiGn7GOMpuLngASWSJR
-SiNBV7hpU714/eOMGKEX1lyCL/1k7ENtPBTiebaZCUWiQEMB725OQXvuNu4L16FvmAT9qpaXnHGX
-9Ttrk1lO3539SWZSAl6TaIIJZWjYU3PIUkpcWOL5RjzCJwBoJIoHW7+MNNdPfhP4iTURw/WLm6mB
-7i9WJfW56yKULkNI/FHhhOKOciSi1c8WmdFlQJHmKma+CPbFTVq1Keh7Nu+uZyNUyvbrONi3nA1F
-qREBplJpw5WlSZQI2qPXPFLz51OTEifyLGf/KMK+9M6qZQCgJ5jD2fMPhWOc+mqVuDknb4uZMrDq
-/3zIMgxjJsnCu7kDOOWrt6oZD8aC0PIa1apZPGhiMKQ9XcJ1l0YY+da1Odv4l1pYx0jlBBSeio2z
-jGmRx0AIleDR/aoku0uF3m7hXy+fP9ZeaP5SmGoqGjGE43JL79ZLaKy9oAYBETQn/+BsJJ6ZdE1c
-wI1PQ028RvA0W6n9FkfwfzOma9OMBKR6U4aBrx62R//IjOH1VxZUQ03s5M2YvaS13a4/xmJanesQ
-jCB6cBvkdmTdF/DayVanVgcp2EnOzSP5k/sllOKx31ooLN2r/Mpg7d/X3L8pszAhMX6XgzrrN9R2
-sSD3p/j0n7jsGYyBXKLQODUJwMmHuI0PWO79AzNuoRiclQPyzmWK6e8+Pi0ro5p6FK2ojTLNqSUJ
-6SoW/d3cQvLIrysg1rWHNPU7RKF/QYhyZMKCYVSakPSS57LvBaTDOAf/0ytU4MLbm+UIaxzds0MJ
-eUIRZFoIK7RSEXr78WaXthNqPvTvd8I+vXzJv1yTXjHzY9X5ArfltcDr5j/h3Ild+DCh7Ps6t4uZ
-PxgrzJSANgthn8zWnGuNgC+z0hHvwcu8Hiib/XfSl8e+ODEbqfXRMafWGaY0fD7wPfGWP32V9YuX
-lAn1/l9wLoCxaEdJlWc3CUwCCfi1/6bOEfuwpd/Z9wqRsx4P179LqRicbS7ONj8wLeMw4B1Oe25i
-If+hUGDwKlqQe4EJkT3IG5jOc9TrqH9Mt/06CA0i5Kt1uoyC3jzdhiy6QSfbDhs+J/zv3sOMnmsx
-SxygC3F7Bws0mQZBTp58rQm3VlbRf7ERvOJFFVg+01f85bAlFepIAIw0BCULE4VojQUIuxoV3BE/
-uOOwxEx0MiMrWs1oQVTBiK6OYHBh/ow6Q7k86P2SgXwSYuYa7ympTXV7m7R6v2FubBefGEfiNtcT
-qDhyBWVQ+hFPLAb2sP4F4bhe/aNx4G+fCWaEk7MJH1kL7HyXX/zAMdBLEd8neEwtLrLgWGryduqk
-pOMr+myegVJrBN+LbCyPjlAH2a7S0MU6/rCoSKYhnHKXfHrmNn4DcvnuSd3l/kZkx9dzI0LJdN9W
-skNxqumo3mK8jvo4b6W38brrH2LC/rcD91DWwhcGny/4yEt06oe/VKlapZVUB69ZTeyWoTGJVaxg
-fRizQ9yLvtG4r0m23rDscimX6nfU1VufEbjki3F2t4G35cKh7x5yC91qllz8NtCxp22kAxEfzrgy
-mgBPHuMH8Z7mh2j0xXlwcYp9O21bAMqdJ93q6L9oIuO2rkMQb/cbmTd6oQoSCFJABdLHyeYNg+35
-aLEJ1CHXhaWNWMM+oPNPlMKVfm8PITeE7Ihkul4QOvQx+2eZ14j5GqvxC3aX5+qVZtspVlo36P0/
-mJg10zzMav0cyq9t7+wZS9Srmrk/8K2VkmY8gxELmpvdTZXDRAXDKDgipFOFzmrs80ChC06/fBRU
-+44DMWn0nYk/HzkKN/Vluufd9O4RfanfgnFGCxTnTVDsVRbezeDc7aawCer67LNgRaD1it2MIMr9
-DoDrJW0NZqYWNueL4vDrwEEi+UMGHnJB1uGb6oc7jLIHWt6lWLNvy5cnGY6iOb2p6RjgcJcVVbAF
-djLPYJd5a6Gh9gIy5W/c72DN67aLm2/2szrn4ghSMTEHhjSvED1RpWJLBXTARWYV2eHh1/uvLmu4
-51siRZU+dbVvmWWSPvdnjhdyBDgtiJRac1d0LtT+a5hoLljYU5IE3zjrP8ZC3FbMSjWDLw4iRXWD
-VK6Lo3DIhmU/Ps1KaQsDUldZVX8eQTz3g7+0VV++UMO9EKYoHRcu8yc5HDYXwuC1jp6jBqJSmdKG
-kTdHSZ5FE1LQswn0AtmIg9W6EaJeNXSINi8gBQH45jYWOiej1tZfYPIEGcKwj+gEdeiDQ7GHmYlh
-/qb7RLdt49M3FgntGLk56OfTAhpv5Z+eNie5nzndPdhN5kyqMsPuFYYFOrD7Ja6qEvzcUZ9SKQCB
-LyV9WY5oFwOdP3WdKK9Bigz+W9OxlDUjC5kE7YVciofcynGqRZ3NXJyo0Y25PmbhcvXgbkmkg3Gu
-d2ls/XPZg8Vb59PU5hAMCvvbhl6A/BQdw0MMj7zXoYxOoXsE4IhQ7zJPPIxZZRG3EdOpiGRVWJ9h
-/xSgm4B9ADQGv/7wOTJPUJ5csCc3vsVe/eFjkZWQwUCphRTRyiRhoBkX8F4KZ0rX5H7rCqLGE+x/
-eSGE4irso5+B3KNeK8ATZFXzLa8R5H+GHe61IJwGqznoMD6nI4clV0eup9R0YRRmyG1hMX5Eyu5I
-vWj5CGUxCZkN6SpzqxrDBxQmAPpxmK6ZGg/1dhwS2uSa3P3PQa5x2DVrOM6iCwhSAg0oTIQrOhPo
-abo/G3gylOZrrXe1X1TPvKQchm8Y/MRThZ/Zt2pJxXOimGGRWSo+ZCPL5wis+bvRW5un48NXHOk7
-9i4u9ud1CeL0eYomKbXgPeYdEiQGEQcow9eeqMxzu+WkBTmzfUCR47RqTKD2WwuYvgQvOx+2F/FG
-ZSVl7Yr44qdRHVGAGdZGmaVtTQM6Ku/bXolnnR+ka583letpElN0tSXZhmBxOkT9wMUkZPswR0U+
-V3P7PhObFfHH2ucAJLHRaK2p+q4HBEDp94qq6slwDPro+GM9lFrku2iUt4WW7yATKilmyixzfnXz
-swPnegZ3p/jw35nbilq1Q7JqHYRQJlGuGB9CIS3zICHsmh4Owjo04npJD6jyk+FzLVZKicD3WWO+
-39x69DWCXp6YTmqPWxtdUf+BgiLB5/M75UplCQeBClzSNGqkmL8lt5kGHZa9PsiuPrUDPkehLuvx
-3m5UKl+/3y+T31VQHE9u/FYBYL2CgpR22c8S6YrGPvk1FSR9lLcS2uT34wYNlKOQ/G9g8oKh36J6
-CPZ+2t6WDIInH4vsvNavcAxRxUKFL2ucEY9L1GKdWCx/micC2JjzW9C0Tpc7op+yqIG8kLya+AqK
-m77i2DJ0SiCxyDe/gbupOmyRQVcbPT7wYudrG8bcvqfJyd2239H1TSBFvdpkGq03LhB8AJLxuYnQ
-ga1b2/S1N/Xf+2E1qGQuCoteQrWFbi9xzddDK3+chgjAaCNTDKIseyZjh6aLqYMU1WQ7/eZWgh/B
-1EijIgT92H09t8Wg+fuQEpI9PhkzJkXugYY6nHQjwurdSdMKunBwO7G9otZckxY8iCD6mzKuFO/N
-FeO5rC2/NhBSR/zLtAQh4uQvA9k46zUkVWwHfXpE2W6vNl20eOplYdYrH1oCSqSL3M2FPygjGXKR
-uz82BxWMCPbN0LO0SCbLPJjftoJJa7p+hL5B3jNfVpdyB8Tl58o0yywht+hH4Ccs9bCTs/vXr2fV
-fLIpxCeVmXmj3xH6kQ8vKfK+waSaVyTZuIJxTmygPucMMCwGw6/SlD16YxIJWorkIcu+E4Z+hSl7
-u6Afy6CXaFNkIeQczYYy5xLuBubQR07MBmw8DTiToTq5DDmgMaM0Xr11GxuxowgwYrCDE4ppCYze
-nHTt0Mn4Yo//CL9tZvcIlTPo4nq7UhJMd3Kf5QcwS+TavSC5o0JL11v1ESzObazwxuMwOBN6NBBt
-S+RZM/kUdBfmKOvHqYQjIlxjInxQlZkCxaQT2Rzl7t1b42IS3bajsD6utjxpG5S7wPsRXCWr5YRw
-60mqQyvaeuRAYOhW0ykJKkAzRpiLdUHuvc9d0GN4WzWG3MZHQxE93BrURlAFM2ZTrLXAA6skTLiF
-cM3LtnPnSbJHw+9+kHv+ABGST/47SCoturb7xrr8yUssHeNUSZtXFhp9VzqQxkaLbor9FL52QV8C
-1fGrekbNDyZW+BpcuMarx2+ENb7zdMgZggW1a7xSHg5NlaH7R9Afy9x1VjlGP7X43ukIkKBGagVC
-2sPvbexnJqZ8ZKpzCMODwuCADbniOJU3LehTb4HcptAF6tuwhF9QrrzKn7eZWkB7UjzLWmiLo4i7
-gmYTlfBqPHq/qju+klEq6UDa1DrE2/x5NHP9oIZEzmJwsiYEa49NZhHT1IbDDbS9gr6gGcJc+qve
-hLkZpn0sWHI7tG844Opy16mVkC5153IybpLutz8Eg2jZD4eQRNxNK8b/PCV6xT2M8+vnej/yH5yh
-GP9nwcETyMma4ptM6Y75ZwMc8Aht/IZOMCF/0zdakTuXtHYtUUAqd7tNBtthuv0fMiJhz5bIJwA8
-/Vyt3N3G+yk+dk84/oJoIRtzx7nh1KmWtpebryC6wYfXFY/a8CHwi4vhQG//BeyEHAyXvbL3WBRJ
-9Ag1b4wk4T2DFqalPCZw3gixb/rN0/64obkMfeyiOyUTi+bRUZPi18zlrJeqFSN/3R+7wIz/7qV1
-d4ZsWBtEECS6334zOtzQHx9ODlvanKY13a17+aNDMbJ0oTYvZpIeUlWDaCeod3xPnXZMKdpgR9T6
-CrTneca+P7y08SnXYMMBFWQNoRzxwDCX8d6uSlsdQZcgBJSw3bVgMGCKoA0T7EEvdx0wH3OTf5zC
-T3ZnLyBEBF358xexMZuT7dBKyc3IGUc172fkfUH/XOva/fJlbPtUONR/91zzhSl0CGxomMtBGnDt
-TxrzIg6Jtsr27cknIAUrjqiWic+E7npkW2bCC1hmMmgp2fseXp4Zucr9DX5tTpuze7iDw+OBW0PD
-+KVg1sYWhDozgSXBer6oMvJHcuHjP4aOUX3NvrHP7gBnKL9b1Lc2hJCgwIGvkA4TVcj/hrkD0wD6
-RLUsjWtdCk6Y80Ys2kFnCeW17OW1O6siSeukb4uq3Vu9NkMEm9PnJG1Vrvu3efhSGJqSKzF5Eo4n
-fOO7kgvOPePmvq/D4ebwmz+Z0xZybGRGjDEJvopC1Ci8/Od6iEicqFvHibjweP9hapONsvUR6iua
-JFPNPqm4FcQIKclVUo2s6qnv+KBaHvNL3rmALM3ueYrhkGRGBMRSDsziPMFnQviiVaz9vcKM39eN
-/6cBAk9kEWxJN3aJCYOe2f1TXjUIIF3kl/UkCSyom6xTqCNxnPCPDPMw7rE4lbx2+orqAMYN/6J1
-/wHWYWsZW1J3f6sG9Af5dZSLZWsjgOKIPhV2H2d41uK6Ga8T9uhGV7NG2nrra9XL3u5yQlcpDtJj
-rU6LTsF12NXAeRC4IcQsjzfjbnnxXZ2Fn+EuVeoT1+LB5bMH+KUGH2eWPMnAtwgVdTM4btDUhgVM
-4Xn2mapUOtx4h9SEGCju5+7bTDYl/0mGxsE+Vo1bLqSWAOZlC3B8AyVTcV2+jnrTJm7d37IZe3Mq
-0ooEywB09Kb7yQGmlYeSsFddcgZCile41w/I9wgqJ/ZsXWN/yjXIQXl+L9EsNf4TxGAiKzTDiE4e
-zOF1GjNYTMGzCidDwzETLH09sznTG0dSCcTkaFbVU8D6RBfZMSc/E7bmkui+ULqOxS9vYh3omk3t
-Ch5cxV2Spgyu07uRVGhX1LBPTo7w4HjJTX8ZrI8V4HHlqJa2FRkD0VhzVl5oAeJNHIZ7Kgy0A6sG
-uwbFi3yCUY7v5HjupSF/yxjAMsigNZxLW0f6YHkUbfP0VFnKQfz15IpsoE9+MlPBPx3EeQ1KxVis
-gfLSrKKgf6u2qQEtrG9ho/mjicE/57FjBK77OGCtmrAyRLMX+VPBpjNZfeynnG1kyX/S/hJk5Lxp
-ZV+WIv8rXptr0b6cahQe3qVvhl/mexksSueHk8Cf4iSHG1kZmMcPS7CTqLQgVUZNGyCLqrrH9VBb
-HSfPtHkRfqKn718UOswFgNumIZfBjJBuS0VMLdYTwim1xgUjgUvMaszZp3wNDK7axAtPL6Jz2DdB
-DlJc7pveDf+rIce5pBASxOlwhM9X27u7P6P7hgo/e5FwNWgsTIHh81+eaHgzHW+J+WEzzE9TdIP+
-OEXg6GTzkGGkByEepaLthyIbhl1bCrDtys2G9qCtPH2rtmU8MFjOM7qqGnw60PLyNbmX5bMrS5N9
-ddx8IV/awS1qGCAXVONF8sF1hnpV+QLRhmbAG6hQQU6HnSH2K6j7sd8IVp55LFfd7E/urX7fsA6v
-vNeU0H+bg5LNui4SwhsMi6MFo/y4kICDlCx4lBBFHdgtgYTax0XoplrKhM4X1coJxTRbQBO5CGW3
-/kXkrWkLkmD2WbvNwOTSqlFKrkt7nDn3x3DY77kOkFhznOAgGGuV4VJgXD7QbSkfNu9HaqOMaAXI
-gVb/HUPmCI0bw6ETNRNfens2gzaJyTUD20Ts2QWgoiKlDLDoC/2lg0YLbmh3Pj9gKm2SDEwOdW8k
-kG/58rTs6wMGBKRMnofy4bpZnz/HzID2NSqayVm1NbDYAvCMHdEtxLbVqQpso9xJfvkJ6BGXvULD
-AR9peqFX7NOJQB6fCj3Cg2/rtDU2ssOrPGPyghZX1b8gqVwfVR2r0+MBTrGUkhY5oUE6Xi0WogDa
-n5ZaFG8DP9FOEaL9M3xTsvWUlQI6SoUN9Aos5YL8Wj77rrcfuXjkL+KfGPycs21+A19fl1UjNJDJ
-70oSnyjFo/6FHMh+gDufU7WKWuS29FiA1TYgBCq48gK+CB+9lYwt1asZQNf+jBMDHQzGBmcdzYD5
-XlJOTne71uM/FkamDACVd8iz8S0KANZdtZzc1GWUvc0cEzLpw90zXxTK/j3DP6WQ1U/xi2oquRjf
-bYr1H8VkAWMER0lFA1pFquOBpR72i/d2j23soF09yrY8ZnfbJ4oSt5A0D4ksD8rt6y/4bZvfcAC2
-W4xXS4JTiPx0imykSNMc7y0QMuuofSNEQrtjhs/qgJKK3BYUgeB1N2xorpVrW00RyP6v0/n4Yi19
-dIH2nyAu9/yA8aJrjfzqqKZkZegOemBvpiiPse2weY8FDDly/+jhch5i7aJhzaRv+vhLEIYYu3dj
-QyoxRDnxXDDC4kAJxYaB7QESXGaZBrkB/vaE7ZvRVNwEGAYrzCpQkZZ7cvZL2woA94JTd3b6BoQo
-BUcu4R6LqJqqoSzvBv2iefq5QDoTKQiJRwof5dNdbP3U65zYSi7zqsoLV3cG5lytETzlyek6Uoqn
-g3iJeYsb9xM+GSlKLsuG06BZ3e8gy6jt/aQAFNyjO/UVTmVXFXjuXE3fj6/I42Sh6b8LgtEmfMTl
-sm7kQ13kCBS2acCcSn8dkftDLtJjv5ZLwMv0X+jdeepJqjbQzTUnkgfXzUHP82aTSOUhqYmSuxEH
-jmmGlAEWXPOTcCyclsCgtCwjbzXRPN3fOYaOth1mkM5gExscgX/wKVb7xL5ukazrtJKOlg+I8+6J
-r2nMOMhCw4FuIJ8lv8g6dUYpqmeBHTJMWrBhTs3Th2fvuWzgNy1H1vqxW+GcG8Ua5g9y0Pz/dnhs
-cj7norELqEZVFb0h+Ec8t24U/vNy1HmXDQotXw+z8/rz9gcfz7JXPTWteDirleyzs0PUCblVpzaY
-e/uBGQh+mkjkou/wi/Moa5542zsO/zeUU1w7IKz4Hzq/5RJdcKHt4Eis/JwpR4hgpMtp3mmhxH8R
-v0idoB60k9ZDmVJHKdTynX5YOETVY+lDSJ7B8+4kl1ncy+aZt49TdrRjolLegmysxZakZw+ZXyXr
-BcgnIiA0BdBqRQREnQuNsG+BklUEaqderzNa3JkYHnH7tZOWG54mgFa1Lbd1MFcry30GtdVWdHnF
-94IxIGZGuDuzb//D8lpCG6HqNLHsSeNwVTIb1DiNeZ30w3NLcj14ejpmjx+lSMSVz3RB9+jbpvWq
-D8MuxcLg/f9XTVS8Hi1uEm2TQt9ge8VQ881wfLEtbZzfPFMyjbdLVVYoZMe46T8n7oB8yyf5JdvK
-RYN8c2DgSNGADBdPwgPGlI0/TrhsAySxwEotmbi5p9PiZgcGDwu9MO/Xyu1jmIy7lo17bPfdUuv/
-7klNaxNOB73d5Cl+Uzpzx1qtmpiE7fYRfsJNcprR/x/lGkFauc1rBu1VG5uN78Y+Fk5Aeip1Wi/f
-40GHP9d55r3JCN7Q4P/qQidBFgCld8jjf8Oj9r/Dy9csou0qdwed35CtQT57GsUwR311O3xBjvdX
-DXmeghgQ9kCLm8T1c5iLBCbyhqxvbFKwP0PlRdnJkZ24tpeJelCXLVrVUUJ+htj9Tp2DhMXIw9fF
-TzN8DAf5B/EKFGXYp1sef9huhxmj3oo1sraT4919r59ojjYlVNlRa1w1MKWI40119KKq8O9u2aSN
-kuYqVTB9oWpDXdD/8P5GtLTh9d4M4P66hRbNQOdKDhglG0z68JYqtksDh87kQ366cbV3t8zjuzsk
-gplPHwIzJ5+i094OoagaswYcNFfr9x8q+3vhUHh5bJWrsrhnTb9ggQtX5vG5+fPEfD6FqR6MWzzG
-idDVZJDMxJDVYfwXhH+tYF4AQUKJ7yvogiihCfzwPyrmEQckrL0OUq1dSncNz5SEpiVDFmZ+xA5y
-0KAovgr+Evp1zr6PedN523r4iasHNgjg1ydOteks2i40ieutFWGKwhgswuK5i8WYSYf51CVTf4fe
-2Z5gu98Wyg6aH07GX8jCNP4SNz9fLyoqVdc26eztMQaCnwph0vy0mNonrMOYl6ABxA14+RcIPY2k
-8bdm0CfYC/WoilgMiBxkrfS7JeoFkChfVkDUA1BjasP2RmgwTDmCpMH16+INFz58RODUbAKcUNGg

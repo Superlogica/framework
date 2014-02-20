@@ -1,59 +1,242 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5FyOiaRQPH2x7MH+q/d79GYeFqhYxrGQUUW9DYbwoW2kOvgVhQ9bwcDv8pWFQCtKrUsQZjee
-tAU65vg4WZzrvZ3ODdGwtQ7ot0EzWvS5plmDfq4TQbOMlcG2IWg6gddIElTHWix8Xgfa7ZFsH0/e
-SroC6KsoJu9L5nFtBMJRVtpzeUMkKpLV7tF2ZnqMAOuh7pBv+nl+DJ38RFPHE3BRFur/sVbWKIz9
-/B53mJ6c+6ma3Enuz7A2sCHBaqcSpLCjHtVbBow4GcYBO8y2ekLZRbX3Qp/LbaphV/+lMbWSybVL
-wfsxXCRRllAP8WOnhGZQ6/IX46UTf85M8AXoQ8Nh5v926e7Hh6ENwm4+trP5VjrkD5egnPASVajz
-CYM3EldmfQwcJEORX0thfdLsWQPc4KPSnh+E1G1tzXyJTEq5xZJ+tgE1GQV/kGPkZgT75l9Kyfn6
-71OYfPztbJt1W2vdbc3qkteXuEtDjM+wXv3PJkPJg/u7pG38MqEL85kVBVWanJXA2j+P0C1eeIHI
-wgWBJ5nVDEtmQl1YuFAhdEHhJ0ZtNGEUhP/yW+FnZ6mv9esR3GCARSDr6nEtIqhdkyNCfuJ07r9f
-xfy6BKndxeBu8h1zqijd0P7bige/1TUsR/6wdsqKh1cQlERH07XFgoi8rfE1hfp4aClwGg8sYuym
-KiEElRLRg/KjHw+eRkRBKub59yK6+E6hHjRssb5snogZHgnbnVJW65HbMO1O3hB+/MpzMwEXylKe
-9FAVQBP4tLE2wjnS269ilMOSB1q7aVJD0JbBTyxuLWDNeSyswdNsNCUmo3WL6oxC2qxqVs1+vExh
-2YJPmySNmq8vybXmhKT7AZ46HZKbXiLTiHKcLtMj+s6KumDCCg0zWYOLPjvIo3emyjF6U41JcgIk
-ggtdToDfcFKRYhhMHE96t8a/nfGpxmbDNYHu3CGsOIjlBrO9siwI5pHUhZ2ACeWQc9BuXm12iGh/
-ZHVIMMSp06aiEgarbYdZE5QnGPd0sjSsDgr1CUzU/wiIEAUaM1Xv+79uTskXVyT4FIYPFOVvB3G8
-XG3fUU1d30e5R9WfjaE9bKgo9xnMr+0HO0q9Ju2S/yK/XSqW7qmsGD0rFu5B/oMO0sLno8W3AiE9
-9Z+8XJUUg6CxXU8IvlATAjjuPMtOWNiXeq2RroymhafDzuS8Rw4pmst+eurtxx6MxY80t9R0YPJC
-l5KhESmBXnQNesHNhsIIazfvLRtgeSsuJv/wM/tfnO4eqOEcXncFdTkk5UH49via33GiwWHaD9sl
-aPz19+bPIEwgU+HV+FIAfCC6RlrQS6p+GjOTDyroNG0bOt9skdrqIN96OaiWDAPlZVXn0acyu7o3
-6j2fhToI85EfNoKR60/pegfrUtyLebLNQCeCSjJAGUaMeGLjdCNq4rkQr5g9qPnr9UecmVPNMTiM
-88U/kwyXJRpuZkf/OcaQixqvYih/BOeJ7tE0yZjK8cWrX5UDJUkvLGT9QThiy9lZWpEmp6275YGj
-7zvxgiae90s6VoFT8DJfWJLYsq7WBAfwPvuY/Wb/n63x0evtCFWgOl3u20EsRa6Sa7WglVyaifDZ
-PGxGb6qibqbICMP0HmaACMiJxrmMtx03WW5cvjlhzCL9HLLSCXnfEZLmk1MMftz4QHpnUF8bwjTH
-VJep/zlCvQARgOyq3GNwLnDYbn/n9/GUn+5ZcALdhYoJA3WQnspwwaKFSP01vzqIcfENnaNb9Fwq
-UBzO6KiI/grpd3hPA5SrUuJEOYMpw5uh8Caz7+RyKrW1/0eCbktdo8BprLSv2ClsKgc2FIRLJ7sV
-YyO5jMMwe+lOdzLfRtx8+Pd4pVSzBTM3/HA71jJPGIyRXF2q5RV0NOEvUoDFSZCH/M4qgWHaYTFb
-AAN1TsNlRdpwvCvtbxODihNaGs/N3GtgO0tdBDug7SsVgGCMyrn9aIGsAC3ZA2CNJiFdOUepArnt
-XZJpoRhedRrOltdIQ5pdnB1CbJLuTFYQki3hNExW5ta6vm866DKtcJqe+C/47rBIbVsQ6WGfGhF2
-d4Pvh4BUzwKaEtz+kq2TZaTwgvKmEnq4K3GGxKMzWxatXzj3l8xA4Honn3Pr28dn9RXkniG/HQmV
-fmocldhJ22dA73rGoKtH5iPMceJBS3ht1U4SlhQFoXfUU06CUstJXUALDqPpnJ0ALfg7tKAY4Yp5
-yNtMwKn6MqOOJkMZRfAt0vQO0zLmhGD+g6ApDzEdzFLJ77EAyU4c6ykXhVjUgfx/aBePNzrt8lus
-uxN6v5yah7ZAViIrl3MrrKZHwRyOs9EE5f0xMQ2/mb9Dh/W83WXJ2q0DYbiCDRh5a7Vlcm0DkVmY
-qBBY8NnUAGkmAnKGfBZj961hU8bKNLwi+v2mXeF4g4nFOiP2fU+8xIfmtV7xjok2pDptRYlLOR70
-QfxjOPKA+Ei1Ey9D+CVX+z23NY7+9PCwv2bzJembcHrv20wJJRm7+7BJGjigXrBmB0rFdmF3HeZY
-ZTrndP5PB+4EnkCpjZrO0z6IMMvwxwaQtFZsK7mSDbU4k/qS2kUuFu0eEfAmNIec90d6XTlrcH05
-P94C/y2BUUvrhi6X76FUwlNiXmkxNudRIw+wW/1sjlFNuWubARZPXlPGJvAeKYUCO73eOEE6h48V
-fpuVxO1tzRxs/EB5iJHtdHahc1ehQgCxamKwW+BosyP9eLQm9MVQMiz8Um1lX+hSRGEn2dBHw4g9
-fsqwx8WbNwcYMFyrsrRMdpu/vWwX2jXJsGv9TFld/kg0GcZjTI+JjEqTcoWIurzHIDQJfHxMOHzl
-A6ET4ag8YwyLD/7P31bw5Du+CM07KF0ISopu+EnNprpR4+nd8kSrhKLyN01MyvWzrbHsV3bmKOsL
-hTcbgYTBcR8m3uygVtT/sOKwwDHXengpDHuuKcD28K5JCIOsTIxPaBMZA86u0DuZmRR0JGLVFIQ7
-KRpkAVJquVwUdFurkOFP6ANOJCkq03iVyTgebHLsEM81UncspkE3c7nKmoEJCuexDBpEfbyTXVJ6
-xT/5w1oztNWEfcGH0RQ2x0Ri1q3/Ehwa0oYYku0NZmEnQHWnl3wY4vujRnjcxP0On2vcokAa+EOm
-BNuDPH9Gwx72Qqq0/wmsdimDNXQtgLHRvS5JhkBfDwT+46hMe+mW/10E8qPSRfX3xLu+Dbivwrtk
-pDlq36S1kg6MovZAJ2tVCiVteveOoP+Xs94r6PIrRQaQ1WQkaeU831ySBB4riE3408S1iz/a7zZB
-FddwhF8tgCMZHLG8OFt65Aw31HFQMONG+d4OAlO+ZKJCr1vQJBN/qfpmrrtZZr5drxBmh0qroiuJ
-rqY1zptu5o5pX1e0NxAMgKljijsbpwkP1ElvPVn2fyXrhFPsUHFdu3xhMwsVhIWlVNyP88oP3R4m
-mVR0S5FC4+5f0SfJxdzc+3JVjiQH6WSbdquc1YlLGrEzKLDv/MNkVvwHbYlLjPmEXYsD/O0hBp0w
-hYujHuTrSJduOHtJypSnBSQZuXeB4sMWc34xCdkNchgyUpyDuSyUG+0W96+Sy4+2zihtdT2hb8ko
-DjUeQFbWdUnUV+F46G2k6nMoH2Ag1uBZiUQWe6PW6f5wzfoe/FOiriwRLtkvCf28WDu03AhBShUi
-oqajAzp0FGLxZYhiKklAzBZ2AhfkaweapEkQ92QVfehAzZDk2/5hI3eBtC8fOlJ1yRIrHuNyhrFy
-15OY/e8FV4j+s1w7q2u6THNXI4DelGWzoA+qqNkOLHZrg6JcRgil+d6x0UAPTHlRDidIJ1a8xrud
-9oU2bDIDVup1rYVPbPjq3++gjNix3v2w5MsBiVQS3QNk/6QgCV20i8v4CNqR1R5bxd6pFPSqU+eM
-s+mLlAGsMX1lAMA3tul71DegiOH3IB3WCIq2W5eAsWx2LIQB6eC+cbH/hYhU5TMXZgP+WBe2W5Az
-zUgrwoqUca3ke/9rZ7wi1A5DWOVkiMGJADG82nUVjvAzBVWsnp/A2z38b5kz1jh2e91cTnkvdVeq
-DfQNu6PEnN790JGSLB9Psd4mGqxubvEnEUhyuc+X7Nt0jMO2slYQH+kyJP/qwlDFq26yox7Xhbjg
-R+3Dk7GcaEceVvN01zVHycDllbfQ8WPAomErl0tCUVPKiQ0qJglZRpToVHlCWaWsc5/qH5CKzVxt
-B+BOnb7zR1lsE6Lgc4SQsLjX277mrHK3QKYOzlR2aJLHxdBGbdnw4StlNLAvnM5QcRdlokwm
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Author.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Technorati_Utils
+ */
+require_once 'Zend/Service/Technorati/Utils.php';
+
+
+/**
+ * Represents a weblog Author object. It usually belongs to a Technorati account.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_Author
+{
+    /**
+     * Author first name
+     *
+     * @var     string
+     * @access  protected
+     */
+    protected $_firstName;
+
+    /**
+     * Author last name
+     *
+     * @var     string
+     * @access  protected
+     */
+    protected $_lastName;
+    
+    /**
+     * Technorati account username
+     *
+     * @var     string
+     * @access  protected
+     */
+    protected $_username;
+    
+    /**
+     * Technorati account description
+     *
+     * @var     string
+     * @access  protected
+     */
+    protected $_description;
+
+    /**
+     * Technorati account biography
+     *
+     * @var     string
+     * @access  protected
+     */
+    protected $_bio;
+
+    /**
+     * Technorati account thumbnail picture URL, if any
+     *
+     * @var     null|Zend_Uri_Http
+     * @access  protected
+     */
+    protected $_thumbnailPicture;
+
+
+    /**
+     * Constructs a new object from DOM Element.
+     *
+     * @param   DomElement $dom the ReST fragment for this object
+     */
+    public function __construct(DomElement $dom)
+    {
+        $xpath = new DOMXPath($dom->ownerDocument);
+
+        $result = $xpath->query('./firstname/text()', $dom);
+        if ($result->length == 1) $this->setFirstName($result->item(0)->data);
+        
+        $result = $xpath->query('./lastname/text()', $dom);
+        if ($result->length == 1) $this->setLastName($result->item(0)->data);
+        
+        $result = $xpath->query('./username/text()', $dom);
+        if ($result->length == 1) $this->setUsername($result->item(0)->data);
+        
+        $result = $xpath->query('./description/text()', $dom);
+        if ($result->length == 1) $this->setDescription($result->item(0)->data);
+        
+        $result = $xpath->query('./bio/text()', $dom);
+        if ($result->length == 1) $this->setBio($result->item(0)->data);
+
+        $result = $xpath->query('./thumbnailpicture/text()', $dom);
+        if ($result->length == 1) $this->setThumbnailPicture($result->item(0)->data);
+    }
+    
+
+    /**
+     * Returns Author first name.
+     * 
+     * @return  string  Author first name
+     */
+    public function getFirstName() {
+        return $this->_firstName;
+    }
+
+    /**
+     * Returns Author last name.
+     * 
+     * @return  string  Author last name
+     */
+    public function getLastName() {
+        return $this->_lastName;
+    }
+
+    /**
+     * Returns Technorati account username.
+     * 
+     * @return  string  Technorati account username
+     */
+    public function getUsername() {
+        return $this->_username;
+    }
+
+    /**
+     * Returns Technorati account description.
+     * 
+     * @return  string  Technorati account description
+     */
+    public function getDescription() {
+        return $this->_description;
+    }
+
+    /**
+     * Returns Technorati account biography.
+     * 
+     * @return  string  Technorati account biography
+     */
+    public function getBio() {
+        return $this->_bio;
+    }
+
+    /**
+     * Returns Technorati account thumbnail picture.
+     * 
+     * @return  null|Zend_Uri_Http  Technorati account thumbnail picture
+     */
+    public function getThumbnailPicture() {
+        return $this->_thumbnailPicture;
+    }
+
+
+    /**
+     * Sets author first name.
+     * 
+     * @param   string $input   first Name input value 
+     * @return  Zend_Service_Technorati_Author  $this instance
+     */
+    public function setFirstName($input) {
+        $this->_firstName = (string) $input;
+        return $this;
+    }
+
+    /**
+     * Sets author last name.
+     * 
+     * @param   string $input   last Name input value 
+     * @return  Zend_Service_Technorati_Author  $this instance
+     */
+    public function setLastName($input) {
+        $this->_lastName = (string) $input;
+        return $this;
+    }
+
+    /**
+     * Sets Technorati account username.
+     * 
+     * @param   string $input   username input value 
+     * @return  Zend_Service_Technorati_Author  $this instance
+     */
+    public function setUsername($input) {
+        $this->_username = (string) $input;
+        return $this;
+    }
+
+    /**
+     * Sets Technorati account biography.
+     * 
+     * @param   string $input   biography input value
+     * @return  Zend_Service_Technorati_Author  $this instance
+     */
+    public function setBio($input) {
+        $this->_bio = (string) $input;
+        return $this;
+    }
+
+    /**
+     * Sets Technorati account description.
+     * 
+     * @param   string $input   description input value
+     * @return  Zend_Service_Technorati_Author  $this instance
+     */
+    public function setDescription($input) {
+        $this->_description = (string) $input;
+        return $this;
+    }
+
+    /**
+     * Sets Technorati account thumbnail picture.
+     * 
+     * @param   string|Zend_Uri_Http $input thumbnail picture URI
+     * @return  Zend_Service_Technorati_Author  $this instance
+     * @throws  Zend_Service_Technorati_Exception if $input is an invalid URI
+     *          (via Zend_Service_Technorati_Utils::normalizeUriHttp)
+     */
+    public function setThumbnailPicture($input) {
+        $this->_thumbnailPicture = Zend_Service_Technorati_Utils::normalizeUriHttp($input);
+        return $this;
+    }
+
+}

@@ -1,47 +1,132 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Bi6ARFiOFQTnGNYP
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Filter_Interface */
+require_once 'Zend/Pdf/Filter/Interface.php';
+
+
+/**
+ * AsciiHex stream filter
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Filter_AsciiHex implements Zend_Pdf_Filter_Interface
+{
+    /**
+     * Encode data
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public static function encode($data, $params = null)
+    {
+        return bin2hex($data) . '>';
+    }
+
+    /**
+     * Decode data
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public static function decode($data, $params = null)
+    {
+        $output  = '';
+        $oddCode = true;
+        $commentMode = false;
+
+        for ($count = 0; $count < strlen($data)  &&  $data[$count] != '>'; $count++) {
+            $charCode = ord($data[$count]);
+
+            if ($commentMode) {
+                if ($charCode == 0x0A  || $charCode == 0x0D ) {
+                    $commentMode = false;
+                }
+
+                continue;
+            }
+
+            switch ($charCode) {
+                //Skip white space
+                case 0x00: // null character
+                    // fall through to next case
+                case 0x09: // Tab
+                    // fall through to next case
+                case 0x0A: // Line feed
+                    // fall through to next case
+                case 0x0C: // Form Feed
+                    // fall through to next case
+                case 0x0D: // Carriage return
+                    // fall through to next case
+                case 0x20: // Space
+                    // Do nothing
+                    break;
+
+                case 0x25: // '%'
+                    // Switch to comment mode
+                    $commentMode = true;
+                    break;
+
+                default:
+                    if ($charCode >= 0x30 /*'0'*/ && $charCode <= 0x39 /*'9'*/) {
+                        $code = $charCode - 0x30;
+                    } else if ($charCode >= 0x41 /*'A'*/ && $charCode <= 0x46 /*'F'*/) {
+                        $code = $charCode - 0x37/*0x41 - 0x0A*/;
+                    } else if ($charCode >= 0x61 /*'a'*/ && $charCode <= 0x66 /*'f'*/) {
+                        $code = $charCode - 0x57/*0x61 - 0x0A*/;
+                    } else {
+                        throw new Zend_Pdf_Exception('Wrong character in a encoded stream');
+                    }
+
+                    if ($oddCode) {
+                        // Odd pass. Store hex digit for next pass
+                        // Scope of $hexCodeHigh variable is whole function
+                        $hexCodeHigh = $code;
+                    } else {
+                        // Even pass.
+                        // Add decoded character to the output
+                        // ($hexCodeHigh is stored in previous pass)
+                        $output .= chr($hexCodeHigh*16 + $code);
+                    }
+                    $oddCode = !$oddCode;
+
+                    break;
+            }
+        }
+
+        /* Check that stream is terminated by End Of Data marker */
+        if ($data[$count] != '>') {
+            throw new Zend_Pdf_Exception('Wrong encoded stream End Of Data marker.');
+        }
+
+        /* Last '0' character is omitted */
+        if (!$oddCode) {
+            $output .= chr($hexCodeHigh*16);
+        }
+
+        return $output;
+    }
+}

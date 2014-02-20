@@ -1,39 +1,105 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-6nlULEWKEwZjPPs/
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: UiWidgetPane.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "UiWidget.php";
+
+/**
+ * jQuery Pane Base class, adds captureStart/captureEnd functionality for panes.
+ *
+ * @uses 	   ZendX_JQuery_View_Helper_JQuery_Container
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class ZendX_JQuery_View_Helper_UiWidgetPane extends ZendX_JQuery_View_Helper_UiWidget
+{
+    /**
+     * Capture Lock information
+     *
+     * @var array
+     */
+    protected $_captureLock = array();
+
+    /**
+     * Current capture additional information
+     *
+     * @var array
+     */
+    protected $_captureInfo = array();
+
+    /**
+     * Begin capturing content for layout container
+     *
+     * @param  string $id
+     * @param  string $name
+     * @param  array  $options
+     * @return void
+     */
+    public function captureStart($id, $name, array $options=array())
+    {
+        if (array_key_exists($id, $this->_captureLock)) {
+            require_once 'ZendX/JQuery/View/Exception.php';
+            throw new ZendX_JQuery_View_Exception(sprintf('Lock already exists for id "%s"', $id));
+        }
+
+        $this->_captureLock[$id] = true;
+        $this->_captureInfo[$id] = array(
+            'name'  => $name,
+            'options' => $options,
+        );
+
+        return ob_start();
+    }
+
+    /**
+     * Finish capturing content for layout container
+     *
+     * @param  string $id
+     * @return string
+     */
+    public function captureEnd($id)
+    {
+        if (!array_key_exists($id, $this->_captureLock)) {
+            require_once 'ZendX/JQuery/View/Exception.php';
+            throw new ZendX_JQuery_View_Exception(sprintf('No capture lock exists for id "%s"; nothing to capture', $id));
+        }
+
+        $content = ob_get_clean();
+        extract($this->_captureInfo[$id]);
+        unset($this->_captureLock[$id], $this->_captureInfo[$id]);
+        return $this->_addPane($id, $name, $content, $options);
+    }
+
+    /**
+     * Add an additional pane to the current Widget Container
+     *
+     * @param string $id
+     * @param string $name
+     * @param string $content
+     * @param array  $options
+     */
+    abstract protected function _addPane($id, $name, $content, array $options=array());
+}

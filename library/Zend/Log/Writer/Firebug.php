@@ -1,52 +1,187 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Writer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Log */
+require_once 'Zend/Log.php';
+
+/** Zend_Log_Writer_Abstract */
+require_once 'Zend/Log/Writer/Abstract.php';
+
+/** Zend_Log_Formatter_Firebug */
+require_once 'Zend/Log/Formatter/Firebug.php';
+
+/** Zend_Wildfire_Plugin_FirePhp */
+require_once 'Zend/Wildfire/Plugin/FirePhp.php';
+
+/**
+ * Writes log messages to the Firebug Console via FirePHP.
+ * 
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Writer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
+{
+
+    /**
+     * Maps logging priorities to logging display styles
+     * @var array
+     */
+    protected $_priorityStyles = array(Zend_Log::EMERG  => Zend_Wildfire_Plugin_FirePhp::ERROR,
+                                       Zend_Log::ALERT  => Zend_Wildfire_Plugin_FirePhp::ERROR,
+                                       Zend_Log::CRIT   => Zend_Wildfire_Plugin_FirePhp::ERROR,
+                                       Zend_Log::ERR    => Zend_Wildfire_Plugin_FirePhp::ERROR,
+                                       Zend_Log::WARN   => Zend_Wildfire_Plugin_FirePhp::WARN,
+                                       Zend_Log::NOTICE => Zend_Wildfire_Plugin_FirePhp::INFO,
+                                       Zend_Log::INFO   => Zend_Wildfire_Plugin_FirePhp::INFO,
+                                       Zend_Log::DEBUG  => Zend_Wildfire_Plugin_FirePhp::LOG);
+    
+    /**
+     * The default logging style for un-mapped priorities
+     * @var string
+     */    
+    protected $_defaultPriorityStyle = Zend_Wildfire_Plugin_FirePhp::LOG;
+    
+    /**
+     * Flag indicating whether the log writer is enabled
+     * @var boolean
+     */
+    protected $_enabled = true;
+    
+    /**
+     * Class constructor
+     */
+    public function __construct()
+    {
+        if (php_sapi_name()=='cli') {
+            $this->setEnabled(false);
+        }
+        
+        $this->_formatter = new Zend_Log_Formatter_Firebug();
+    }
+    
+    /**
+     * Enable or disable the log writer.
+     * 
+     * @param boolean $enabled Set to TRUE to enable the log writer 
+     * @return boolean The previous value.
+     */
+    public function setEnabled($enabled)
+    {
+        $previous = $this->_enabled;
+        $this->_enabled = $enabled;
+        return $previous;
+    }
+    
+    /**
+     * Determine if the log writer is enabled.
+     * 
+     * @return boolean Returns TRUE if the log writer is enabled.
+     */
+    public function getEnabled()
+    {
+        return $this->_enabled;
+    }
+    
+    /**
+     * Set the default display style for user-defined priorities
+     * 
+     * @param string $style The default log display style
+     * @return string Returns previous default log display style
+     */    
+    public function setDefaultPriorityStyle($style)
+    {
+        $previous = $this->_defaultPriorityStyle;
+        $this->_defaultPriorityStyle = $style;
+        return $previous;
+    }
+    
+    /**
+     * Get the default display style for user-defined priorities
+     * 
+     * @return string Returns the default log display style
+     */    
+    public function getDefaultPriorityStyle()
+    {
+        return $this->_defaultPriorityStyle;
+    }
+    
+    /**
+     * Set a display style for a logging priority
+     * 
+     * @param int $priority The logging priority
+     * @param string $style The logging display style
+     * @return string|boolean The previous logging display style if defined or TRUE otherwise
+     */
+    public function setPriorityStyle($priority, $style)
+    {
+        $previous = true;
+        if (array_key_exists($priority,$this->_priorityStyles)) {
+            $previous = $this->_priorityStyles[$priority];
+        }
+        $this->_priorityStyles[$priority] = $style;
+        return $previous;
+    }
+
+    /**
+     * Get a display style for a logging priority
+     * 
+     * @param int $priority The logging priority
+     * @return string|boolean The logging display style if defined or FALSE otherwise
+     */
+    public function getPriorityStyle($priority)
+    {
+        if (array_key_exists($priority,$this->_priorityStyles)) {
+            return $this->_priorityStyles[$priority];
+        }
+        return false;
+    }
+
+    /**
+     * Log a message to the Firebug Console.
+     *
+     * @param array $event The event data
+     * @return void
+     */
+    protected function _write($event)
+    {
+        if (!$this->getEnabled()) {
+            return;
+        }
+      
+        if (array_key_exists($event['priority'],$this->_priorityStyles)) {
+            $type = $this->_priorityStyles[$event['priority']];
+        } else {
+            $type = $this->_defaultPriorityStyle;
+        }
+        
+        $message = $this->_formatter->format($event);
+        
+        $label = isset($event['firebugLabel'])?$event['firebugLabel']:null;
+
+        Zend_Wildfire_Plugin_FirePhp::getInstance()->send($message,
+                                                          $label,
+                                                          $type,
+                                                          array('traceOffset'=>6));
+    }
+}

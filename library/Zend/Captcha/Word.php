@@ -1,102 +1,373 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV57PH5ibr3klk59I3wXrrs5hzmRRZICz+LvAiv+sFL0uTlr41uMYpnJFWK73berHqciEXghgr
-dpyRwZMlNk4qkhueq5VwCsXjGmbJjtUle7ARxWmSCg5DnfgmimbTeLED/ll93YvleZy86xYJcErJ
-LFlz6LQ3om/psnxFN1anXv3FpLsHMcZoEbRtIXOgwsN2Fyb9GVpE5o9j0MxiL5jprEEeWc9RqFKW
-WT9cotksN7DZKJ6X1AAVn4kJIPpDKor7T+KlBeH2Q3za7WGdMZFEq/VqU+r+q9bN/oFOOzSsKZL1
-5PluIxcEukTLJLuwfd3nHS73jiY3FoLoYpf/LY/nlulp+GeIzwJIfJfLxZOqJcm+CTzZeoPjrxTi
-k+sg4ZIznWiiJCPTze0xKfQ6RuN5doRla56zqs5sT+hVy383yla8oRpa6pu+3Z1qWUgU3V/H9rli
-iEBhOZIXiXdHtigRaw0NWEobTlMcesZ4/nwTisF/odmV54AL4vM97O1FUdhGdrCQIZNyQqvqX0Nx
-Z3gZ8TNrqZ4Ern9vPGifpLZ62XKIuWteDsZpIlR8KzcRkflEH2fOsEJXxUQ3GF9BpeNbNTpVd1DJ
-eYHqjIIvr5rhh+ld6Lf3WaOa+2J/gnhMEz0vzjJcmqul3qPIs1qGQ5dY674nG2u5ZdRawb3PzazY
-dXn61OBmfywkSAfNcv4OJHn9MzQ57Yha/wG7eDLtPtOPEWW58K65Xte6uVOpYmVtJZktyU5VtCKm
-ASBOxSYMQdbALgq1QsVoIdfBVKKWVgXyHbTU+MOHjpqWZX9IUhr4p5Q0HGl6FauYJrmjJtJwZBch
-PaYnFXl22CcszHICgGQyYiMrkqdqOlRIK5vDUsze66OrtBlP14pUaKguvmiuQbIa2f9tKqCXziAP
-x4abeeKN+4mLK4VXZMe+TihBcagwq8q81OwYoq8I8uABO5NxR2sBKatjoreF9LzPCJFCEWptHJjt
-dqBsbdymiGS6qZG00iNTl5H/yHqn2vIgBi/Ar3BDd39L54QrWPbzJp1ZL0+H2G7BCy3sOxwmfqM0
-D+GV1e2CuN76SO0sYBzJzRenjB6ZTGwjiDDrnsb79MEuTA1wLfUWuLWgOsLZfaYDNayaX9WBRXwN
-3hNlUY6e1Tv1MAQIwJXv3kLWx/Nzli/r7nk88yXsLLdj0Cem0gqp5m4+Iex+uaRQc+FTjqdtHaSH
-AR0wHFxNLUKE7aJhQ0Kd9gFFg8i5dc3OweFm9Ek4dH/ZsCZBupHBYPmgaAQMIiiIZz2+bkhd0o2t
-RH7132GdogevO0Anmlr0s7L1OvoBRIDgtmz69mFRoiAnWvPrpmBOrYPmAgtsc5PJAlswCAn/CsSk
-ljDMxMZiXeymNmk9dH3EBxv0lqpLglIchNfo2+wPZHrYlbmbqsKYUV9F8Byq4C1UoZBK5UoNGlLL
-UTSCHuaT8ODOXp7tyl8kdpz+E9TLX4hHOwxuBI6eg46elwR18f6R+dmZlpTfrYo3JMn/kAwQ2zEh
-B48w/ElmyNGr021Lg1pJkEB36yqOwnPpHfwhr5U3UAXUomTYTDXrngWHksvpGm07MVBz80ccTkup
-De+iCgAhEuMouINIVuP81CDyGe6AwHiVJPA0vsL/doUMvMf37B8EWaj103VXYP2kRUUyWPGjTIst
-r9dfOkD1gvzgq8dVvfcPKKiIDonOHtAwIJjfppL/yg4Oev7EfunzN0TvXrTTANpa5dUHFeNqkZ3f
-Gd9f/aU4pORXkxQTRgO3gkWGCIGU/VKw8zmn3TODl7oQOGVynVChfvC0QOY/0w3CX3Vt9DTr4Ypa
-+F8jjGUSDlwIQ+k1uytF09bWoMC87O9aeCkLEa1pcuA15hqYzfzwEc95zXsT8akKzHdnsQd/o3qM
-Nh+6kE3JVoUfYVoGZTeLH+GKKxZ6IqdFdUZbrgolgcvFiPML5y+R9txDQda3lc6J3EqauX+3PjDA
-u06tpKvkR6lplAIp3niSmUQGyRZ7UgFrkWEEemGL9VyHC7RLgh1RhDTaWZkd1gY17D7KEgK7AI3N
-rAKh21pTuj7ZgZeLpuuajqoiRbeqzpb5ngulmKquT4VxJzaK4S5YNufL36+5iXWUtELhCMD+JROu
-G6QE0Lqq9qiZ21rjM1sWscJr3xC9hg9zcSf7MS5KNjIIkxNTVBtEP6dQo0nDHHm1+vTZ+E/IzX9a
-Khd+/OpyHqRxND52Zy0ltKz8Ofm66et8Zs00djkZtqVEnYC7bDx9PruoIvcSVZtmhvsLGvz5esiz
-pSyELaaZs+WqpBBpVf6XH0Qa9kEU9MS14AL3K/tjFNbQB/9RrNRHzshcueXzbeAf3RWcyHFI9BOR
-crqGA4sjKvaxNo8Pgdxe2f3n3SgYbgOAZeZsRWUcK8JZhVPHFe5rUCI9bBcGlXGotda/VR5/8iJs
-joTU10FqywPBycZj1NlTrXEAfN57t58amRVj0Ah4P9qDOWtvAOZKukoK74fUbm9AsNPlmZ/TY/1q
-Q8Pe0TfUydXJJqYwhiaZv9VcOQLzxa2Z18upFW2Bh/SR9Wf3IvleE7U189x4x21fxcMku50g8NEC
-e/aTdkceIg5qqI9UJ4NmvEdNHzvpRSuJbuhHAIhDL+NosUV9AGXDRU5hBv4/vbY36vWj+JbZe2mm
-UOUjHKkwDuPo6iAvTyk95dyPexAxx5YBgOg8oebHgJM6mISeiW5Uf+iK+qCBPWi+bCGLs9FPv3w3
-sNFpYDQrIr8l4l3JafVMqhXi0E3gJjbMSsYYXD2i5vvyQVXI8WIDlfNwaYXYmP5lOnyQuww9rj4u
-1CvL31mDIBSZu4yP0r+T3ZYJ6AmLLPE8NlpRiNRaxAG2ExulJr3KE5BHAq61cU2XhIKMImPrP/nm
-IzZILLdaZvRSNkxltYuw7OSSWmL229UcNlxXYFPIKCTAHLW2tmCzu3YK4nFbHJRrTNpUOCaNHQcM
-X3JCmhYl/Ytn8J1FOmymrmTNUzc6zSbMQqWFgj6mKBrQSmpP5ZCkP1BroDTm8hSR+h6Kvg774giV
-ELe8FhXj3XWwhTmZo4w1QgjP0IYLKZiCAb2lvtZ1oepj+TG9U2n1H5po7NZ34VVoeMGp8eGGJlAw
-zZ1ZmNikA0MzXmZe0JSDHzAKZm0xDFPoxHPguW3PEv2VfUFX3jtXjh/svHysfxkEQLjdPNr0kL07
-SXcaWlldmzzJGHt4itXhNE4oAIAP0WH/ofg+/OqfC/KR7MKiQZWkPti3XIqiVpHu6SBvIB1e48VQ
-s6k0vJQR2dBsLCIxWZT2+hkb9gEUyDo4rnsgx0wZjJ8VslxM/Twtrvja0YiRUTZPqHph9R1RBNDE
-aFP7J+1IAzhr4a9FZJYMdhXKZF6uaJsJ+fJu5yIiWZTG6VYqCdCpZBoLydGiohMBVhOfgZNn9JY/
-yB5gkRiHJTl9hnXnlXjTFKjkRuTrX/vEMLepr9BqnxM+sC5i1n5VUHvqAhOkbkcS7RKZrJkzKs1l
-2TVrYD+Ku1JXkrH85TKjbfapVOwDGcPQ8CQNIAhf0mFpIbxtmgZn1NNbvFml6K3piZCXEJu55PEj
-j/28enJYE7FPOfaoJVuBVh8GyO0RWEwwUJ7kVMoX3VYNIWMth2aJMw/SG8vxep9dxOieWWSZ3hLd
-bnpd26ubJ6SpfDwdMlSmbvO3Ya8YHGHt0zhxplll3fsZG8CY2F/jC3PWCiTlyJuPu2k94zzXYGzZ
-RQd3HZ90qL3NJLyJLPOJyqjQ2+WWLp4G+cC7rFoVwfyaHnW763EI0iT4d9XnP/V1LJV1UwakTW1N
-sUwXkr8Ou+MT51r0kJPp8iR6OF8BzpXi0mzYw8HtEtLJG6iUICIYr3toban9uo/NnVQzXlp7ZAgN
-iFFd9P8TSYlzMgGuw1m+GrDCYy1op7Vl/uY5W0hHWVU+rB6mClfbfZB/qjcAMtLv1G8rI1tM+Sja
-6P0bx5i02+siLSe5EUmSjTODTCNNLOBPwAMaTH9bcRJxXCMydhpRcHXqV8dY+NxxH/MnqNtLEP8Y
-On3rDotchmwcxzU52nHeCSA4+NxfIL3Ibzaa4fnYlIL1JmbqCuDbBK9teUXH1zsNVhKAc/X1l0n5
-JfTnxPZOcZFaJImCI4BuVk9bvIO3Lc6Wp/3Ugda1Ig0O/ev2wKNsjUdQcQI0w8O5Y9is7PDsausx
-13SNnh+3qQlZEgCk7ZVutzGPQSMr5xjh7h7HWBgFvPUWKHQHcvGBZFHOvHBs6LWa8r1NJPrTUJFT
-XErUccDYNGsV0zUSJ3QWLUR3TtwbIJwJDNkdVCCRgHDWQvVLsgDGt0z3eNtHDgI+LqMhhFa2lHbJ
-gQF2E1RPVd6jOHnTec2XhLSl/MTrG31jKHYp4ERQkFAvecLpEp9L4ilCpEWRbz/gQWiBVowhSzS4
-7U2yXcXwxrEzpwUhU2lJC21FUP6NuBnrDY6uMiHsf6kBNcy6MPF/LO/oQI0c/u8g3sVZrLk5Pyqz
-FejTAPXivPIrn6zQlZbEwoEND9mAIdWl5r5HvG+awOkfA2Iz5ITuCATFkdzBHWEIEdb15mBcqwUl
-hB9PlPcTTWguZUz9z9c8qwqNxLQLwCG4s2a/DoAvx/znc/FbO9tril4k4NYSU5sdFcPb/tX3aOF6
-NFdI37LNRNch2PFYD65p0i0QtRFLwa3rSZwfpxeawB7I2z10jVFnIT4bSzOE689TRSSS74G7BYuB
-OC5dt42GHgIxFgDT93Bcp1umIv81lUeaCBO/BRx4JXrLIs6i9mGO5QUnLOWT/RApUNb9RUjgELiC
-M61qz4CVK0lOtxGS44pkc3B/6ZVL+sOKZIGe090F0f+1eGM8FuTvh0nnb0ACxhIprZcDBAXm6r1A
-UoJge7rNE/++nAonPwjP0y0X6Ua55WY7oXoFRcK6bRAtOB4AZEXtgl61O/qkMHazwitLhiVQqKtJ
-drV1Ign6BhpyRRfEaj35cBJfIOX+R0bOo37Nzr4QUFf1RhY/PfT+c8dS6oDh1nUkl9OXb8mcqxg6
-JdqXWm4FXGAeINaBTh/CbPjvg6rBMvZlRul+36BrEQ+L8U4Ixjno8lRe8jPnO5yb9pwFz0YNUkP8
-P9KPW9VUp6jI35NRXCUrXZwJUD9aGxIuQOOY/Ab+DneHRzKWWzBASodQSCypRlybkkPBIdYYvIxo
-pNPNds29EMDlFVl+cs5JhQfe3k3DDqkNuFXEuwIxcTlrjSineLCGjM463K3pfiJzC07f9QdmSb5d
-ZGgE1wB2CPMs++Xidk2iyeHuJYHjf1gpWou8e/mLkjBJU9Esu/CBb+hvje8ZK+eiUNuwYoO/iAqu
-IURuN5TAypXJ3AF+E8ud5+eOxh6q1mEiZDRgUJkiU5f0MP8bvIyfIrg+lt4iz5clwuPCxTgiq1DN
-A6EcczLbcFaZ3UL6eK5VS2uTuakZeQ+9hxIbAnG/ZH9WPNq1WNQECHgX+eFHQRslYziFAkat6mDf
-6yaVaVo4X+Uj7QGgUX2g6NmIgUhAJy3rT9QaHfRvW+IUxLDvZngD7xX9rXZyDpIJ6CqIRsuXH3S/
-4O8Vj/kDjB2ghBPW/JjcImx6Nq2i5aT7V1A89FXm/LLVVcxu/vrkLaUnxy6NXM6VDCqx4MaO6Xc+
-vRTjwymbW4zsE3xeLRM5dlwHiN/c0ObNUvTjuQwbybWJa3IuxmZyHTP8KseqzFGMW5xYZ6mW76hH
-oepkIm3mnJ7bKj0NnvB8ZpAI7IimT/JoNjGxUrcgKYOmcFkEUL4r/htDwRHllHkUPe/QT8C9XOZa
-oGL79+8C4T0iwexJY/bz93KEqQyKT1jpl+lCsI+5yYRGAmmFXQTwB5avGrPVx+hJgCwdG2/gjSUy
-DZgScm8SB0oKc+L6YotfYPVK70WOOzE8Bi92XQAAatczDYZzvzjnSwAP/qyO/YMRaIPz50WiNYKM
-ectusu8OmFCNfJfKsaPCU8+z0uUx7MAp5uz0IC/QmD6700AjRRpEB/xQSMngLQlXBk+nwS8V0eNM
-o30kVx3BjjFIX0B3VYxarCKaw68glXEj3VmJUsvLXw77npvwVR8zUQ9PBbTvfb+B7YpSH3R++zPk
-+Fyzu7vEPmE6+nTc/IOV6cyJHf+s+GFH1NVOqnB7ZNlyE3PaYxbEZUHAsjR4azSOdR6L7ZgKBrv+
-83HOZrbL5E56LTgGe3NmJnPP9qWdDuHucWFUCui1kD1TMm0EYUkOUzTteVr+12WKQKxODOqaEgPd
-1kKv8tOFnvm2Q0sEejYmYAnJnBTm3RoBhspV5nbIHS0zf++o7NSWfw2Px52x7A8hc3+os3YwzO/2
-+P/RIYu2V5LZ540r3Rd26D2uVJPB1ZFDapkL2zf5yV/3vQeVxuZ8hWT26kJjjH+oT+DLVnrvasjR
-Sxj12MYyOh4mE5EM8Y9hnUzYeWlzZjJpcSod6bgeUrdJ2VzG+ThxN5t0B+o40x1t+Rh+AKzOdrIK
-f7OqsrHd4gcJpsBk1pRFC/DufLjjw4NK7nix3WiviyJpBNzm08V+5VXw5EkjCUIeLtSNzabpP+4W
-OiqRD/xjRV63LzLEO2WXoy+QqrZIdbQ+Ze1VdWYbam2+O4HJfxJAYSRugeBQNceRrV2bP3SJGjeF
-br6RsZSPG/TA1IL/69LHFq5RoXWPcQywskTgOT3ghPSCMHeS6AulAr/UdTsl8dShA+HELA7YTsz8
-S5jtVvaGDuXXiu/a8p5wAt/pToLJy0KOKVpzXLrl3KNLwRkK1Pk5Z2S3NIKUAR6tZ9K1sUw97wPj
-Q1yaxqOs10YH1usDw5fShHA5c08CAfawqYyoCKIgYg2VAUQPz/pHji00AxUu4wiHsQv3TKv8IXm+
-GSM28kv1H1TRvucshQs4ikPz+S8c8cceFi/PaObYbyaT2KSqumx9q9mIiZN/rvP9w/kUO7EnfIn2
-UQJDo1I1QO47xth0QhZkK/8NYOetUm2io6kpCvYWK+LqnDBDVb3/aHqfDT5+hLpUqPyeaL9tQLQz
-r6V45wGAFb/xUzYTPmNffitDZaFhWETqudmLkQ0UUMQFIhQsUVzJWCGY84CQ167KY8KCZyTuQGKq
-fCFoDqxG9jKHSfYq5vPuznpIsmO+/gQafuXyjtPdZKGRcOy+0cB+jwpnpvFp6BEw7JaM6YyN0Q2a
-iv55WNU9aoeLyc5hTnQn3kZKi/bOuPOr7c7G+AQYZAY0JUWsnx0OSae5GLQMn7Wmwcg6zAWCwTzv
-QjgHTsXZXHarHqRsfQWIJgyAkvO44ONYfwFcBMq2BJT7m5RCPUbci0haeOO0TCH1HolnnY27aFBU
-Rzm0rku+cAYuMFK7fs2kM+nO7ZOq6WyKPdYwBtyHGktb7jSGiGPrNMtGWwMmAt6MGBSkAUBZiB5G
-zO4p+IffayFIPOJJTpir1LJh8Yoq4shkWNwKfVpNlqXH/MQDpygX3oGngERr8EYO2sanZRgtB7e6
-2/M9vMw/Sz4ENwJKxY7YmDd0yHPzlfbV2+y=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Captcha_Base */
+require_once 'Zend/Captcha/Base.php';
+
+/**
+ * Word-based captcha adapter
+ *
+ * Generates random word which user should recognise
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+abstract class Zend_Captcha_Word extends Zend_Captcha_Base
+{
+    /**#@+
+     * @var array Character sets
+     */
+    static $V  = array("a", "e", "i", "o", "u", "y");
+    static $VN = array("a", "e", "i", "o", "u", "y","2","3","4","5","6","7","8","9");
+    static $C  = array("b","c","d","f","g","h","j","k","m","n","p","q","r","s","t","u","v","w","x","z");
+    static $CN = array("b","c","d","f","g","h","j","k","m","n","p","q","r","s","t","u","v","w","x","z","2","3","4","5","6","7","8","9");
+    /**#@-*/
+
+    /**
+     * Random session ID
+     *
+     * @var string
+     */
+    protected $_id;
+
+    /**
+     * Generated word
+     *
+     * @var string
+     */
+    protected $_word;
+
+    /**
+     * Session
+     *
+     * @var Zend_Session_Namespace
+     */
+    protected $_session;
+
+    /**
+     * Class name for sessions
+     *
+     * @var string
+     */
+    protected $_sessionClass = 'Zend_Session_Namespace';
+
+    /**
+     * Should the numbers be used or only letters
+     *
+     * @var boolean
+     */
+    protected $_useNumbers = true;
+
+    /**
+     * Should both cases be used or only lowercase
+     *
+     * @var boolean
+     */
+    // protected $_useCase = false;
+
+    /**
+     * Session lifetime for the captcha data
+     *
+     * @var integer
+     */
+    protected $_timeout = 300;
+
+    /**#@+
+     * Error codes
+     * @const string
+     */
+    const MISSING_VALUE = 'missingValue';
+    const MISSING_ID    = 'missingID';
+    const BAD_CAPTCHA   = 'badCaptcha';
+    /**#@-*/
+
+    /**
+     * Error messages
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::MISSING_VALUE => 'Empty captcha value',
+        self::MISSING_ID    => 'Captcha ID field is missing',
+        self::BAD_CAPTCHA   => 'Captcha value is wrong',
+    );
+
+    /**
+     * Length of the word to generate
+     *
+     * @var integer
+     */
+    protected $_wordlen = 8;
+
+    /**
+     * Retrieve session class to utilize
+     *
+     * @return string
+     */
+    public function getSessionClass()
+    {
+        return $this->_sessionClass;
+    }
+
+    /**
+     * Set session class for persistence
+     *
+     * @param  string $_sessionClass
+     * @return Zend_Captcha_Word
+     */
+    public function setSessionClass($_sessionClass)
+    {
+        $this->_sessionClass = $_sessionClass;
+        return $this;
+    }
+
+    /**
+     * Retrieve word length to use when genrating captcha
+     *
+     * @return integer
+     */
+    public function getWordlen()
+    {
+        return $this->_wordlen;
+    }
+
+    /**
+     * Set word length of captcha
+     *
+     * @param integer $wordlen
+     * @return Zend_Captcha_Word
+     */
+    public function setWordlen($wordlen)
+    {
+        $this->_wordlen = $wordlen;
+        return $this;
+    }
+
+    /**
+     * Retrieve captcha ID
+     *
+     * @return string
+     */
+    public function getId ()
+    {
+        if (null === $this->_id) {
+            $this->_setId($this->_generateRandomId());
+        }
+        return $this->_id;
+    }
+
+    /**
+     * Set captcha identifier
+     *
+     * @param string $id
+     * return Zend_Captcha_Word
+     */
+    protected function _setId ($id)
+    {
+        $this->_id = $id;
+        return $this;
+    }
+
+    /**
+     * Set timeout for session token
+     *
+     * @param  int $ttl
+     * @return Zend_Captcha_Word
+     */
+    public function setTimeout($ttl)
+    {
+        $this->_timeout = (int) $ttl;
+        return $this;
+    }
+
+    /**
+     * Get session token timeout
+     *
+     * @return int
+     */
+    public function getTimeout()
+    {
+        return $this->_timeout;
+    }
+
+    /**
+     * Get session object
+     *
+     * @return Zend_Session_Namespace
+     */
+    public function getSession()
+    {
+        if (!isset($this->_session) || (null === $this->_session)) {
+            $id = $this->getId();
+            if (!class_exists($this->_sessionClass)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($this->_sessionClass);
+            }
+            $this->_session = new $this->_sessionClass('Zend_Form_Captcha_' . $id);
+            $this->_session->setExpirationHops(1, null, true);
+            $this->_session->setExpirationSeconds($this->getTimeout());
+        }
+        return $this->_session;
+    }
+
+    /**
+     * Set session namespace object
+     *
+     * @param  Zend_Session_Namespace $session
+     * @return Zend_Captcha_Word
+     */
+    public function setSession(Zend_Session_Namespace $session)
+    {
+        $this->_session = $session;
+        return $this;
+    }
+
+    /**
+     * Get captcha word
+     *
+     * @return string
+     */
+    public function getWord()
+    {
+        if (empty($this->_word)) {
+            $session     = $this->getSession();
+            $this->_word = $session->word;
+        }
+        return $this->_word;
+    }
+
+    /**
+     * Set captcha word
+     *
+     * @param  string $word
+     * @return Zend_Captcha_Word
+     */
+    protected function _setWord($word)
+    {
+        $session       = $this->getSession();
+        $session->word = $word;
+        $this->_word   = $word;
+        return $this;
+    }
+
+    /**
+     * Generate new random word
+     *
+     * @return string
+     */
+    protected function _generateWord()
+    {
+        $word       = '';
+        $wordLen    = $this->getWordLen();
+        $vowels     = $this->_useNumbers ? self::$VN : self::$V;
+        $consonants = $this->_useNumbers ? self::$CN : self::$C;
+
+        for ($i=0; $i < $wordLen; $i = $i + 2) {
+            // generate word with mix of vowels and consonants
+            $consonant = $consonants[array_rand($consonants)];
+            $vowel     = $vowels[array_rand($vowels)];
+            $word     .= $consonant . $vowel;
+        }
+
+        if (strlen($word) > $wordLen) {
+            $word = substr($word, 0, $wordLen);
+        }
+
+        return $word;
+    }
+
+    /**
+     * Generate new session ID and new word
+     *
+     * @return string session ID
+     */
+    public function generate()
+    {
+        $this->_session = null;
+        $id             = $this->_generateRandomId();
+        $this->_setId($id);
+        $word           = $this->_generateWord();
+        $this->_setWord($word);
+        return $id;
+    }
+
+    protected function _generateRandomId()
+    {
+        return md5(mt_rand(0, 1000) . microtime(true));
+    }
+
+    /**
+     * Validate the word
+     *
+     * @see    Zend_Validate_Interface::isValid()
+     * @param  mixed $value
+     * @return boolean
+     */
+    public function isValid($value, $context = null)
+    {
+        if (!is_array($value) && !is_array($context)) {
+            $this->_error(self::MISSING_VALUE);
+            return false;
+        }
+        if (!is_array($value) && is_array($context)) {
+            $value = $context;
+        }
+
+        $name = $this->getName();
+
+        if (isset($value[$name])) {
+            $value = $value[$name];
+        }
+
+        if (!isset($value['input'])) {
+            $this->_error(self::MISSING_VALUE);
+            return false;
+        }
+        $input = strtolower($value['input']);
+        $this->_setValue($input);
+
+        if (!isset($value['id'])) {
+            $this->_error(self::MISSING_ID);
+            return false;
+        }
+
+        $this->_id = $value['id'];
+        if ($input !== $this->getWord()) {
+            $this->_error(self::BAD_CAPTCHA);
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Get captcha decorator
+     *
+     * @return string
+     */
+    public function getDecorator()
+    {
+        return "Captcha_Word";
+    }
+}

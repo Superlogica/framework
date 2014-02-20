@@ -1,39 +1,81 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource_Font_CidFont */
+require_once 'Zend/Pdf/Resource/Font/CidFont.php';
+
+/** Zend_Pdf_Resource_Font_FontDescriptor */
+require_once 'Zend/Pdf/Resource/Font/FontDescriptor.php';
+
+
+/**
+ * Type 2 CIDFonts implementation
+ *
+ * For Type 2, the CIDFont program is actually a TrueType font program, which has
+ * no native notion of CIDs. In a TrueType font program, glyph descriptions are
+ * identified by glyph index values. Glyph indices are internal to the font and are not
+ * defined consistently from one font to another. Instead, a TrueType font program
+ * contains a 'cmap' table that provides mappings directly from character codes to
+ * glyph indices for one or more predefined encodings.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Resource_Font_CidFont_TrueType extends Zend_Pdf_Resource_Font_CidFont
+{
+    /**
+     * Object constructor
+     * 
+     * @todo Joing this class with Zend_Pdf_Resource_Font_Simple_Parsed_TrueType 
+     *
+     * @param Zend_Pdf_FileParser_Font_OpenType_TrueType $fontParser Font parser
+     *   object containing parsed TrueType file.
+     * @param integer $embeddingOptions Options for font embedding.
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct(Zend_Pdf_FileParser_Font_OpenType_TrueType $fontParser, $embeddingOptions)
+    {
+        parent::__construct($fontParser, $embeddingOptions);
+
+        $this->_fontType = Zend_Pdf_Font::TYPE_CIDFONT_TYPE_2;
+
+        $this->_resource->Subtype  = new Zend_Pdf_Element_Name('CIDFontType2');
+        
+        $fontDescriptor = Zend_Pdf_Resource_Font_FontDescriptor::factory($this, $fontParser, $embeddingOptions);
+        $this->_resource->FontDescriptor = $this->_objectFactory->newObject($fontDescriptor);
+
+        /* Prepare CIDToGIDMap */
+        // Initialize 128K string of null characters (65536 2 byte integers)
+        $cidToGidMapData = str_repeat("\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 8192);
+        // Fill the index
+        $charGlyphs = $this->_cmap->getCoveredCharactersGlyphs();
+        foreach ($charGlyphs as $charCode => $glyph) {
+            $cidToGidMapData[$charCode*2    ] = chr($glyph >> 8);
+            $cidToGidMapData[$charCode*2 + 1] = chr($glyph & 0xFF);
+        }
+        // Store CIDToGIDMap within compressed stream object
+        $cidToGidMap = $this->_objectFactory->newStreamObject($cidToGidMapData);
+        $cidToGidMap->dictionary->Filter = new Zend_Pdf_Element_Name('FlateDecode');
+        $this->_resource->CIDToGIDMap = $cidToGidMap;
+    }
+
+}

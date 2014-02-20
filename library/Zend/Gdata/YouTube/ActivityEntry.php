@@ -1,70 +1,231 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-RSE2Rc5kUW76hXVXh8u=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Health
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_VideoId
+ */
+require_once 'Zend/Gdata/YouTube/Extension/VideoId.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Username
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Username.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Rating
+ */
+require_once 'Zend/Gdata/Extension/Rating.php';
+
+/**
+ * A concrete class for working with YouTube user activity entries.
+ *
+ * @link http://code.google.com/apis/youtube/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_ActivityEntry extends Zend_Gdata_Entry
+{
+    const ACTIVITY_CATEGORY_SCHEME =
+        'http://gdata.youtube.com/schemas/2007/userevents.cat';
+
+    /**
+     * The classname for individual user activity entry elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_YouTube_ActivityEntry';
+
+    /**
+     * The ID of the video that was part of the activity
+     *
+     * @var Zend_Gdata_YouTube_VideoId
+     */
+    protected $_videoId = null;
+
+    /**
+     * The username for the user that was part of the activity
+     *
+     * @var Zend_Gdata_YouTube_Username
+     */
+    protected $_username = null;
+
+    /**
+     * The rating element that was part of the activity
+     *
+     * @var Zend_Gdata_Extension_Rating
+     */
+    protected $_rating = null;
+
+    /**
+     * Constructs a new Zend_Gdata_YouTube_ActivityEntry object.
+     * @param DOMElement $element (optional) The DOMElement on which to
+     * base this object.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_videoId !== null) {
+          $element->appendChild($this->_videoId->getDOM(
+              $element->ownerDocument));
+        }
+        if ($this->_username !== null) {
+          $element->appendChild($this->_username->getDOM(
+              $element->ownerDocument));
+        }
+        if ($this->_rating !== null) {
+          $element->appendChild($this->_rating->getDOM(
+              $element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('yt') . ':' . 'videoid':
+                $videoId = new Zend_Gdata_YouTube_Extension_VideoId();
+                $videoId->transferFromDOM($child);
+                $this->_videoId = $videoId;
+                break;
+            case $this->lookupNamespace('yt') . ':' . 'username':
+                $username = new Zend_Gdata_YouTube_Extension_Username();
+                $username->transferFromDOM($child);
+                $this->_username = $username;
+                break;
+            case $this->lookupNamespace('gd') . ':' . 'rating':
+                $rating = new Zend_Gdata_Extension_Rating();
+                $rating->transferFromDOM($child);
+                $this->_rating = $rating;
+                break;
+            default:
+                parent::takeChildFromDOM($child);
+                break;
+        }
+    }
+
+    /**
+     * Returns the video ID for this activity entry.
+     *
+     * @return null|Zend_Gdata_YouTube_Extension_VideoId
+     */
+    public function getVideoId()
+    {
+        return $this->_videoId;
+    }
+
+    /**
+     * Returns the username for this activity entry.
+     *
+     * @return null|Zend_Gdata_YouTube_Extension_Username
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Returns the rating for this activity entry.
+     *
+     * @return null|Zend_Gdata_YouTube_Extension_Rating
+     */
+    public function getRating()
+    {
+        return $this->_rating;
+    }
+
+    /**
+     * Return the value of the rating for this video entry.
+     *
+     * Convenience method to save needless typing.
+     *
+     * @return integer|null The value of the rating that was created, if found.
+     */
+    public function getRatingValue()
+    {
+        $rating = $this->_rating;
+        if ($rating) {
+            return $rating->getValue();
+        }
+        return null;
+    }
+
+    /**
+     * Return the activity type that was performed.
+     *
+     * Convenience method that inspects category where scheme is
+     * http://gdata.youtube.com/schemas/2007/userevents.cat.
+     *
+     * @return string|null The activity category if found.
+     */
+    public function getActivityType()
+    {
+        $categories = $this->getCategory();
+        foreach($categories as $category) {
+            if ($category->getScheme() == self::ACTIVITY_CATEGORY_SCHEME) {
+                return $category->getTerm();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Convenience method to quickly get access to the author of the activity
+     *
+     * @return string The author of the activity
+     */
+    public function getAuthorName()
+    {
+        $authors = $this->getAuthor();
+        return $authors[0]->getName()->getText();
+    }
+}

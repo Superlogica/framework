@@ -1,112 +1,362 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Fct1omfA/m387UI3pFEdMqnLF+IeARKZw2ijHQGS2iLiXtQE63gjcppglh02a+zrkE9Axms
-ZYQKtaWeBxjcdW5f6kwnz2BsO8IZytolp3d0RtNUa/6jnxXhaffP82ugiexFAX8nPcBgIOUYYgWs
-nZ8doQThUC4wTWXAsgrwtn/zEI1bAm8Xko1b/mWOwlyH7v+Y6Rj+l2DcuAUCU/S7/uB6GmnIZM0T
-22T2TR1NSXKnLOlLu0Von4kJIPpDKor7T+KlBeH2QFXUolj6vwL4VEKrvTMM0lD2/o/XW2fgswsg
-OIri1vDL6qFOh0UAlZAiYbUKBnUAofJKJQZ1szTUbXlVsLNjAW6uC1U3ZJTdit4J5W11xslLXe9T
-5YGMr2WcqUEg0CKHswYwdjm+4LbPIqBXxSq4WvRyupHoqu+7jxjM+PP23dHbJ1UnDUEyzpfBVjBX
-9bNHSp9TI1COdhc6gTbkf31oURmZw3/Gi+UCQl1Mi97t2uk2h0CrMbVXDLuFfFeIsfKJaTWYwz/3
-vEyLBnO7axE8Q/bT6pAt2HZvyWdTeMhOs/SovSQNvu67kj6Ozqj4xaE62J/XPJ5PWzuJ3N+J98Cs
-z6N0O8ZfnIjw3NNeb6kA+Ihp9LapT+bdod2lB1/zcU+AXIFdfcGnRK6oncDkwnNfVMg4uLxEZizP
-cGaik0BF1Th37mUYlXahcHPE1ts5SWTY5AkECtB3nbM8eYRPyeMEEuWPT+oCrPbpCjIjQKUtOvID
-1W6cZUDcUMBu9LR6lw4odUYfY99HktpRVf8vDli6Mta8oSm2n4h1LAGstgG+nib93A4nfZtOt4pW
-rEtnRDjCXgkOkWDTEg2SGVEJhme1gfjPJ3gAJsqPPOGjqQ02SfE4AxhVaCeibQAvqvDtFfwDT8IS
-hF/WesrhQS7uDvm5ANImK1Yz6F6cm5iV9/9Okifo16+0vtap4e4d77nAZvBLAqZUFWVGFTBVJf4l
-7W7gChr5zDKcoC0mHK0tC28leIZeqYzv1y4JVnXBKSPkTgmQoF0PG1pZwvmNt31zlN7BrDBHGW28
-FntC5FP8Mjskxb2T3i0WPqdBWGjq7fCT0y9SpIh2CRUL8Qi3PPWsAWlEs3UDV46hecwb2gKvqHYH
-zIzET4weElYzf2hylFeccU1JRybFDbnqe8qCO70rZb1IRNB3LbXuV/ZOjO6tvy0QBsCPRdc50nPx
-Cp7su6D0j+jw9h6/Su5sJMEysX0NA3cRvA9ByNivN8wuCiMPDIrfyPOkKhgDB/p4QDfQ2Pt7BYPD
-x9bxgJTDgDhNkhlk+1yPAsA6P9zDY3cz+obOFu89/sp3pGLlB1oSKOfBCImQPUwAkmXntBc3oTwm
-NJjRLhDWtsBT+cTXgewe9Ux1Op03r3xOkSxKuLyduK2Ff05pO6Xp1OR+coxIFcSE+GG0a+wlYKxe
-Kp2Qu77rrGvgZMsAu/3oiSqDLd6uxnsBcXntRoA7wlDuuIJWr9Z7uveVZBHBfVHlG9SkTsLBx/U2
-3+PHLjxRYOQyx6FCVBVnpOT/Yik85c7ZvPEMa9w9EviFgU2iLnA2oY1lgjxFMhCPWpC+JMwAwTiz
-QKj53g6Zf0eGK1QT1GNi5YCkN2LrRzhzTjVAPyk2h5dc9PBH2vqiqWoP5tQPReRx7j2FC15zLOFi
-O1cIFGYTf4lkXw6WebOfzaOdobZeG0YfGQaOdtC8aHG2YhS7nzi6Q3xKDWAxet/7+iFvtPXk69oP
-JmgYSCFHoVUrAbwJCTlk41F0Aak0vwH0qlWhSEna3uZ53QK5X0heebWJDUQMV4Xh0Hu2jGFv2E+j
-IbTsol388uwus6grc0O1BVBiKUScgAKtjvHTtv6WE2vr9usPY2Ti+KND5x6uAdrMfM33Lu7Noqo5
-0WD7A493wxvPOkgkz6vHLjI9J7ltIGgqi6BhrnXo6aN259AVCfhIWrwX9hCm3mRGZSrPSGQ34Lvu
-8EadPDRqZTiFzAYCbCfVzIMfgN9261FcjvgYpumG637UAavm7k4uVsnlEeK6uBcz3t92C7hGnquA
-A7nC7TGQtGQTagJtj8+47DjRgczuWGOm0fyPwM0PlEfbr6H7XEVb0ajGTB+gIz67bYBvp6PSXO+A
-y12ms+J+o+eB2/j4wAQ8A4yEnSF64t845QYrvnMTmdNH4tZnaX4X1lHtYDZDWxKnymgFQ7AaaDpd
-NYTkxzKXaemjyBJuuKw9fman+LPa9D3KeiVyvIp9oANrpjNl97DH/hPGvarX8381BQNdoqBEAhG5
-UnSp3vXyOJXjgpMCVzpkM7ssWDNJ6CYB1zv5d0U4vgRYYeuVh85pDmtebJXnYd4qKy3fQ7DG9634
-TJbaUnAbTG5r1bFyyKyK7fNv2uvLGfRvc3L5A3aJa05bpKaSAxGjnvsiX4rFMp8lyG4CjjGA/ePo
-+talrIBXK+dMUdIho5vRaOChICm7BogLc6hF1xZvZAZafHYLsofT/SlSGuVyys2JByd35xfmNbwK
-NLeRByie0KbC6MJ0DEM0W2x6ecQhLgWZQFTpLgtVNIo6xk0ey9TMViINQMSmBFtVYsHkQGk0S4UC
-Y4eb0gJvcLMShoA3M3Ovjlh2T71gZuiMbpaFl2ABotkBUmEuHRI1Pi1mCunRxEyJbIgMUEUmr4e6
-NGzynN7qdEAOw4Mlt9xQdGtBxIYy1YhZy6/1Xc2FbMQTAP7yT48xvmKP31iC7O38V597EoksiPdI
-cxPuLeEsrra498kOxxbGaCI6oGoEMDv7HJaWnZxYd3BHuWEhYpLwfyfwbgtgbtNmGbTV9nu3VC4c
-l5eqnvJ60xiebrjEz80XZNfcbxV7jiJN3c2g4CzH+BQKc6aZcz75alXGLl3jzr0E12WMbGCR07jZ
-TG4MlpKLEN14q+ykqwzzyJ0pxPkmwNLLm+h4MntYCslcG4BPnjbhYcbPhi1AYxuTG4a9xrpep0pu
-5mgH5zv0VF/Th4qvHZ/8vtrM4Os26hUfK/k39o+rLSc8I2vUdplLEAXR9KsLTxRYyPOR5J7RW2Jd
-s7Ikna4i6YAlg5kCCtE30572c2tDI/yJ+EURXszNQxgU229A2Wi6Mw21Bpsd6zmI7lzIJ5csp1a+
-I+SpwvnLPNI/V4ORm8FZC+M/z0lW18qUGje0PNpBp+c6EsKv5tei/uXQXWQ/WiRqVrFIfNC8YGLM
-414+lxVmrqpycz7nukjHgqBmxb4VrBmLw6P5xFz+e2b2RyjkGmsYD/wrWY4krpsbZuujzSM8pjld
-EnDRfJdRQPDnDqv6GawLN4bzwIhZP/WonWSZtX3iwrh35Z6IyGCSq666ykinKAaY/k5V6c1y2YGA
-ABwam+hqV3Zr29oCqZWShov4krhxREiThHBW/v92vcUFboqaO3kVPABdzpP65pxUVsvCR8Mj+olq
-kY1XpBkhs5LnGzTcRFdj1WY1QFvyodoZ4AYi0onzKe4wiSYDtEaM47GX3IZFyVK33mYeuFO7q0LA
-rdXQ8EpvwgpeKdEsXawcyoSsMeiiA2Dd6HjcTL43vBgRFmG3rJN0mSwnchRv9OmcGIAFkMqhQm0A
-4N0u7L1NgbABTYy5r0pox55wBZhiCmEm8YlfWRPIRmc4knqEyS12QhExlo6lsxOap50rfThscqeV
-08eKyVhDZpDA0+/ihZqH2PnCkRWUQZzNzXcmBQnUBP7FvnlQLokkd1bJ/lZEAhjIeIDJTZZV3jHf
-uiuA2tLG9VtUb61eG0tlEY5thVE4Ut3bOeRIsHJ/VYEPCNr9xSPfSlHmnawAuBWlphyFamzuFcIW
-YjApXVNlE4sGkG5VzxplOPwDz1JKiQMMqnGCMNrrL6nsuIlpVokYPghTpKVdJa6XESC7VpjEbR66
-+HJDkR7+o4LNU0mvPWyC1o71aVjMqOBdwv1oqaIl4mmVePMQ239IAtVPly9+XPJ3fSLNi433HQ/J
-p2Qm7YjyyJX1J43mb0D3YgSv/Z98Xd1CaF1SAsDd6ZanPc+wVIeq+xyBQkUg0KWoR+5UHyIv6hoC
-Lrtv31PyqqU+3+ul/w7rCNdOYs59hpcPqStnGm2jUl8j1V7q/pPv7iOV6zJQgS0fDN+s0zsG9YTJ
-QKpAZqxPUPF4bn2zSaTtI7AoABGprMS9QuilABqGxvankjvF1cpIwsR++eUMjdZKST7kKjBJ2UvM
-CfG3xrQ63wzNkStoAg1iOsEs8XKrYGn4ia5iDhtBL2KuTTERhxHOaXEQzUXmf2FzaKVpFXODYJC/
-g/nVR4mgXH26ezQoXV/tOgZePJB1drYDOX2flY5KIIggokkdQIRULP9tTsr3Zk6d26ZIzX7zOUr7
-iDoF2Wrw1PpWQvbODdf5WRfdSgyeEXfovJMNyhn70KKqgRSkj3h1LbD2A68hMlTh2zrIj5pH4W2x
-DUbZ6ygNkf2oZCMBeTWGlnz45bC2Yy3q8IUyXdq3YhbFGnXRCk5MhKYGGl+J7+CvieG2jP7ELlsU
-T0zhva7IplLV+d3cdrOlb8sJf9wCqhHix5LVIfSLY+Gsl0dZBwKpCS2A332FXKG8oT+JTdTOPao4
-InGHZcV4KAjsYSX6uUhBs8qV1MEK93Chy8WKinT8YevAbyWUACva5WUB2u3DHelx0fGSmOyf40Qa
-eqX55Mp3hd3bVPC0J7GfG/TpDxrq40WbIlVzRBY1MlTmXhIElk8YgqbflurDL8DPpjwyn8FNAw+D
-WStqpnzLpnfifebEvSSN5Uo2R/gW7NR8X93Ok4RTFY9AIx9qJOXSeEHLMJhTX3+wNL9P3oGqOkhS
-V3zRPU+VIAlOs9WDgZe/Nnp/8P0Wd0c5C+mslBCBXFl6JWWfkY+WuhhaziQZGCMSl/TFObo/otO5
-gu9Wycgd/HEBj5hg0wjqZak94FXiI8ZJw9RSq+xIXtagvSdxyaI+GPJfc9yZK3OEtdATeIVHbLFh
-NRWp1+XC6NGST97u0P9TE9a/8cyNO+5tXQHWJyy5yZPXUJLWuJC8jbAA8jJHrRk/I4XRG0dSQn2b
-qDKqK7vhPuLxFGt5yn+0BD3S6bHHZxkH4Sa8jUAfmtI7gmo34RI8eDQJhk1Jb23M1wV5IZCZpPrO
-5qgmqIFELw4hwTAkXO8PFzGeYvk8AEYqJmP0UAc2q8i/piYKmvhCpEdop+0rQV/a8P/H7iCv4vmu
-OGsyLysyIwRscc1xcEoJ+pr+lLDDV+8Ro7b/RDEdv+yD5OA/zz7AGptFGayZmHPjZfdHjdtxK90X
-H3ZWue1XRq0KaBnY32YuwPvKgRfBLobqQW9lOTUyVWz+9HF+hVxD9Zd0NhYtABebASyiLQJJvOCu
-LtxbnKoaVWAWOFUjqjc4y/7xnKzSIA5wVWG0UnKHpb6l11OcXHrSE1kXKWVulUZpBhz2lvypXrq8
-xWbsjg2q1WmhQ53mv4NZB8fXGzW0Xg7c2yfz0NmZGOwSW1r8q5R6y2+ZW7Sx3bBvn6ioISUHloZB
-TzbEk7irYHkj6sgoXE6efYiI0shkIvAo0uHPRCGPnUROSjjzny/4g9I0WPQKeKYJURcvDJXH2+Fm
-lMHDyCU06rWE/a5B4OUEJHW93ejEVhPh/nuZ7laRKYu8uWJUgUsyg0mHPNZ1wyBMCN/jmOfWmt6w
-EJzc3l4tBRJcmPiZCNyO76yJstpQM7d6Yp2CevsKN0SVlI8iyHf7sWxL/Zk320bIt/SpxZf31ynR
-aobsulehjPDKYOw43dhisSobic8QgeP0NljR+pGBBpjl7pSRDlBP/XRji2dIzPFqcSmaU27pvTsj
-wP/kFgfL4P/vPTVpsQbJx8dEGoE/qtHKX1Ev5F3gcXLvI5PGggBbXMuTlA3bQ2JMv/dphIX5yNq4
-YekQkPqQK1FXQdNBVYoGlhW7O0OERjhjDBTjaD0WKr2csu39m1WzXse7if9XCKM102gly7W0IXvg
-faAJ21CHKuiXQlnAr1lqGhu8xAD3RCZDbIeXWG6TM4WQgvepgjnSeX4uTK2Pr5ozdwZHBoOBhadp
-W6nB6CHO8r6DZWcMOrUnrj/ZxCtJhprySFKpqelNA7d1Mk6UeajTnhqC/0fMx4xUvEOFl5d66v4x
-ZMHCzzUkRtbKocE2dt0+16+26rQhlN7cnLUca3RDxuETzniw8m1YIwunot9TPcRTqNUea5n6eKJF
-sISYLu8IWVh+YeFms7Jka2dHHgfKg3vaSCNLjVzjXjLQSB0Z+/taP3UVfr4rTSOuDNS2Pfc29c00
-lrLqB/pEDOz3ir/2yRLJxnKzI0B6clzffSJlox8kYuPICJ0FrTDlX6GLnsAbK0yOJWwsh2rn+2A5
-1XR3oafNiSChSRzpiO0CRI2R2scCxj67cIa+vHP79nqQ+cOjQVpgqTe7u09nuYNSkkipJ+H5tAPj
-uVllgiXlOy5OyyYy0sBsVgKuj2XCmNE547iise4zZHMnKm+39IcM+A8AZ93mLt6PziGdBBWhP99h
-ePYDbMmoK2DJn7x3s7v1cTfRCAhqtGI5+qacAGKV4R+9kWPUZrpn2BKqQd1zKaIozgdRvX4dNc5e
-dDIMnJCm66OzgPh6YN1I/tal5KMbQ07Vtr+Jn50oZfP0oWD4izyZNZ2ShsbaHhucY6VWtW6nMLk3
-6lJi/sPzSYz/tx41f+/1rbLaURFs4rKahvqvY0Mg0Lv9NIPLg6ZrWQauX349JiorHYB3yj+SBIol
-VstMomuTn7BlkAFUJObOTFjNYMxx9ygGjXlhZ21qFxmiiK+5lGhF8HZcfNrpRSRkXOPnRenK5o/u
-nkm+RIhjq7zjtDX43fXa/aj3nf4WIIQhhUN7zNzPBgJ4TSlsXf1tPa3anLqUQlQzzjW2K3u7SFNO
-KucPVeH0B3wLz5b17Q6EB2elM3vFfRcHIJ7P5hdIM0sCQeJu5TLrbeUMBdZ/TIlfDpWeQdXoTaZP
-fhNRNEr9//OBEz4vfsugJKH5P4zbVvJie8XkalTkcMe+ujO4pigr0XfU1rS0U+obpnQpAQXlXaxL
-r7ZLn4IJdOvb6O68kC8iEurufmb7d1Xwy21AKsObtkmf+HBnJAM145A/zR7EAfYYkXg3DJJvh+2s
-iAJiACXUSOnEDm3+LuQB2QB4vPll8ACVXmR5mdV3KOqaeEVKT/rejWVgaOWr0moXnq1BKmfoEgkF
-tevH16BiWO39RlU7r9qwpHLJbWx+HSQc6pXeQB7R5/N1uL/RIhBOm60SQiAwlUDzxZEqOQ8p6y8x
-Xu5ZPS3Q+ZS6T2BEI07m1Fze8I/BXPrZ4Lmp0B70bLFdne3UHdQQwEmpc06DiaJgDUr6dSEHAhlk
-TH+DxDCjoVWNufFd2KI+s2fgfUJ3Dbr66oVB1TWfWtslt5xymuqwWH/GdfHtt3sDAHNvVrcx9RIQ
-V/Z1dpX0p1H1zmAvGljfotWJEK7YHtlVUHbI2d1VMxHCP2ls5FwiqKr2wYlyMdQxH6MQcw6vFs2E
-aCR7ArkSapBeMEnPR9dXRbdAE2JRdGpgvmgWtSLAsmDkILFfMFXIREWUxJrP+e+5fS5oN7wRf+zw
-7VbKH7qu/zMQr/emRmbE7wv+my0SMmpP+G06fgGqT3szr2byZWkNGjPvCVvOSrH3A/pHadk9g6f9
-lVfwySW16mmfFLuTngTiHFTncQXpO5UB6N8a3zVFJJ3FG8Non/XNT9Iz8uh7DfDqAu7QE1MgwEWD
-fFGzCavvBR/TOo8gzn/gYienPc8WgvwocprM26X54NzkICw2bfPl2tZlrzzoHpAOOanVzzRSqTiz
-7/wsXCxlZ3hKw0LRYfBJmzWaaPV29MRcvYAsVYu8tWdZQQbJhzyI5gmC13ULm3Dx0J04RVb5eeH9
-vRy6fSAPwik6xB7EbvSPgVTvWDoaDM6TrHCFv2hAAjECa04hSxfpoVJ7U+TBqlCKtnYkVbDG6ZQH
-hc8oIF9p6iTJOTpVUCPNbIXwYv/sPYr8mragOvg3BUeALxxm0Bd8j/sNOEIWMIGtlvZvAU4ukTjQ
-WHuqgFq1y4THCGYM7CuHagZqIpcs8+ZX7dHwHrHUseSGc3MHKirlZTeDfj0ch/tSdorSC9tlN1Jx
-alDMkrk49ykVNvbCTrbWgayvGRPFh+RJkYr09FWYQbM20kJ20n6WtxW7DKEdGwKo2fiLizyQwPij
-FJaqEiYx0UpBBATGyq3ibgm5oQBJg6ARJO7RYT6sqZ5T9AH3ueXLsIPDDDXQSEU7ycmCLDT53Dok
-LB4TtT+MA/ZvKDidlH0uw4ZaDMGE33zVqSi+7lgZPs1lVkttex+hs8hj/0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Storage_Directory */
+require_once 'Zend/Search/Lucene/Storage/Directory.php';
+
+/** Zend_Search_Lucene_Storage_File_Filesystem */
+require_once 'Zend/Search/Lucene/Storage/File/Filesystem.php';
+
+
+/**
+ * FileSystem implementation of Directory abstraction.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Storage_Directory_Filesystem extends Zend_Search_Lucene_Storage_Directory
+{
+    /**
+     * Filesystem path to the directory
+     *
+     * @var string
+     */
+    protected $_dirPath = null;
+
+    /**
+     * Cache for Zend_Search_Lucene_Storage_File_Filesystem objects
+     * Array: filename => Zend_Search_Lucene_Storage_File object
+     *
+     * @var array
+     * @throws Zend_Search_Lucene_Exception
+     */
+    protected $_fileHandlers;
+
+    /**
+     * Default file permissions
+     *
+     * @var integer
+     */
+    protected static $_defaultFilePermissions = 0666;
+
+
+    /**
+     * Get default file permissions
+     *
+     * @return integer
+     */
+    public static function getDefaultFilePermissions()
+    {
+        return self::$_defaultFilePermissions;
+    }
+
+    /**
+     * Set default file permissions
+     *
+     * @param integer $mode
+     */
+    public static function setDefaultFilePermissions($mode)
+    {
+        self::$_defaultFilePermissions = $mode;
+    }
+
+
+    /**
+     * Utility function to recursive directory creation
+     *
+     * @param string $dir
+     * @param integer $mode
+     * @param boolean $recursive
+     * @return boolean
+     */
+
+    public static function mkdirs($dir, $mode = 0777, $recursive = true)
+    {
+        if (($dir === null) || $dir === '') {
+            return false;
+        }
+        if (is_dir($dir) || $dir === '/') {
+            return true;
+        }
+        if (self::mkdirs(dirname($dir), $mode, $recursive)) {
+            return mkdir($dir, $mode);
+        }
+        return false;
+    }
+
+
+    /**
+     * Object constructor
+     * Checks if $path is a directory or tries to create it.
+     *
+     * @param string $path
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function __construct($path)
+    {
+        if (!is_dir($path)) {
+            if (file_exists($path)) {
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Path exists, but it\'s not a directory');
+            } else {
+                if (!self::mkdirs($path)) {
+                    require_once 'Zend/Search/Lucene/Exception.php';
+                    throw new Zend_Search_Lucene_Exception("Can't create directory '$path'.");
+                }
+            }
+        }
+        $this->_dirPath = $path;
+        $this->_fileHandlers = array();
+    }
+
+
+    /**
+     * Closes the store.
+     *
+     * @return void
+     */
+    public function close()
+    {
+        foreach ($this->_fileHandlers as $fileObject) {
+            $fileObject->close();
+        }
+
+        $this->_fileHandlers = array();
+    }
+
+
+    /**
+     * Returns an array of strings, one for each file in the directory.
+     *
+     * @return array
+     */
+    public function fileList()
+    {
+        $result = array();
+
+        $dirContent = opendir( $this->_dirPath );
+        while (($file = readdir($dirContent)) !== false) {
+            if (($file == '..')||($file == '.'))   continue;
+
+            if( !is_dir($this->_dirPath . '/' . $file) ) {
+                $result[] = $file;
+            }
+        }
+        closedir($dirContent);
+
+        return $result;
+    }
+
+    /**
+     * Creates a new, empty file in the directory with the given $filename.
+     *
+     * @param string $filename
+     * @return Zend_Search_Lucene_Storage_File
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function createFile($filename)
+    {
+        if (isset($this->_fileHandlers[$filename])) {
+            $this->_fileHandlers[$filename]->close();
+        }
+        unset($this->_fileHandlers[$filename]);
+        $this->_fileHandlers[$filename] = new Zend_Search_Lucene_Storage_File_Filesystem($this->_dirPath . '/' . $filename, 'w+b');
+
+        // Set file permissions, but don't care about any possible failures, since file may be already
+        // created by anther user which has to care about right permissions
+        @chmod($this->_dirPath . '/' . $filename, self::$_defaultFilePermissions);
+
+        return $this->_fileHandlers[$filename];
+    }
+
+
+    /**
+     * Removes an existing $filename in the directory.
+     *
+     * @param string $filename
+     * @return void
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function deleteFile($filename)
+    {
+        if (isset($this->_fileHandlers[$filename])) {
+            $this->_fileHandlers[$filename]->close();
+        }
+        unset($this->_fileHandlers[$filename]);
+
+        global $php_errormsg;
+        $trackErrors = ini_get('track_errors'); ini_set('track_errors', '1');
+        if (!@unlink($this->_dirPath . '/' . $filename)) {
+            ini_set('track_errors', $trackErrors);
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Can\'t delete file: ' . $php_errormsg);
+        }
+        ini_set('track_errors', $trackErrors);
+    }
+
+    /**
+     * Purge file if it's cached by directory object
+     *
+     * Method is used to prevent 'too many open files' error
+     *
+     * @param string $filename
+     * @return void
+     */
+    public function purgeFile($filename)
+    {
+        if (isset($this->_fileHandlers[$filename])) {
+            $this->_fileHandlers[$filename]->close();
+        }
+        unset($this->_fileHandlers[$filename]);
+    }
+
+
+    /**
+     * Returns true if a file with the given $filename exists.
+     *
+     * @param string $filename
+     * @return boolean
+     */
+    public function fileExists($filename)
+    {
+        return isset($this->_fileHandlers[$filename]) ||
+               file_exists($this->_dirPath . '/' . $filename);
+    }
+
+
+    /**
+     * Returns the length of a $filename in the directory.
+     *
+     * @param string $filename
+     * @return integer
+     */
+    public function fileLength($filename)
+    {
+        if (isset( $this->_fileHandlers[$filename] )) {
+            return $this->_fileHandlers[$filename]->size();
+        }
+        return filesize($this->_dirPath .'/'. $filename);
+    }
+
+
+    /**
+     * Returns the UNIX timestamp $filename was last modified.
+     *
+     * @param string $filename
+     * @return integer
+     */
+    public function fileModified($filename)
+    {
+        return filemtime($this->_dirPath .'/'. $filename);
+    }
+
+
+    /**
+     * Renames an existing file in the directory.
+     *
+     * @param string $from
+     * @param string $to
+     * @return void
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function renameFile($from, $to)
+    {
+        global $php_errormsg;
+
+        if (isset($this->_fileHandlers[$from])) {
+            $this->_fileHandlers[$from]->close();
+        }
+        unset($this->_fileHandlers[$from]);
+
+        if (isset($this->_fileHandlers[$to])) {
+            $this->_fileHandlers[$to]->close();
+        }
+        unset($this->_fileHandlers[$to]);
+
+        if (file_exists($this->_dirPath . '/' . $to)) {
+            if (!unlink($this->_dirPath . '/' . $to)) {
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Delete operation failed');
+            }
+        }
+
+        $trackErrors = ini_get('track_errors');
+        ini_set('track_errors', '1');
+
+        $success = @rename($this->_dirPath . '/' . $from, $this->_dirPath . '/' . $to);
+        if (!$success) {
+            ini_set('track_errors', $trackErrors);
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception($php_errormsg);
+        }
+
+        ini_set('track_errors', $trackErrors);
+
+        return $success;
+    }
+
+
+    /**
+     * Sets the modified time of $filename to now.
+     *
+     * @param string $filename
+     * @return void
+     */
+    public function touchFile($filename)
+    {
+        return touch($this->_dirPath .'/'. $filename);
+    }
+
+
+    /**
+     * Returns a Zend_Search_Lucene_Storage_File object for a given $filename in the directory.
+     *
+     * If $shareHandler option is true, then file handler can be shared between File Object
+     * requests. It speed-ups performance, but makes problems with file position.
+     * Shared handler are good for short atomic requests.
+     * Non-shared handlers are useful for stream file reading (especial for compound files).
+     *
+     * @param string $filename
+     * @param boolean $shareHandler
+     * @return Zend_Search_Lucene_Storage_File
+     */
+    public function getFileObject($filename, $shareHandler = true)
+    {
+        $fullFilename = $this->_dirPath . '/' . $filename;
+
+        if (!$shareHandler) {
+            return new Zend_Search_Lucene_Storage_File_Filesystem($fullFilename);
+        }
+
+        if (isset( $this->_fileHandlers[$filename] )) {
+            $this->_fileHandlers[$filename]->seek(0);
+            return $this->_fileHandlers[$filename];
+        }
+
+        $this->_fileHandlers[$filename] = new Zend_Search_Lucene_Storage_File_Filesystem($fullFilename);
+        return $this->_fileHandlers[$filename];
+    }
+}
+

@@ -1,334 +1,1109 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vuCmpx8vlCz6FJq=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_FileParser_Font */
+require_once 'Zend/Pdf/FileParser/Font.php';
+
+/** Zend_Pdf_Cmap */
+require_once 'Zend/Pdf/Cmap.php';
+
+
+/**
+ * Abstract base class for OpenType font file parsers.
+ *
+ * TrueType was originally developed by Apple and was adopted as the default
+ * font format for the Microsoft Windows platform. OpenType is an extension of
+ * TrueType, developed jointly by Microsoft and Adobe, which adds support for
+ * PostScript font data.
+ *
+ * This abstract parser class forms the foundation for concrete subclasses which
+ * extract either TrueType or PostScript font data from the file.
+ *
+ * All OpenType files use big-endian byte ordering.
+ *
+ * The full TrueType and OpenType specifications can be found at:
+ * <ul>
+ *  <li>{@link http://developer.apple.com/textfonts/TTRefMan/}
+ *  <li>{@link http://www.microsoft.com/typography/OTSPEC/}
+ *  <li>{@link http://partners.adobe.com/public/developer/opentype/index_spec.html}
+ * </ul>
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_FileParser_Font_OpenType extends Zend_Pdf_FileParser_Font
+{
+  /**** Instance Variables ****/
+
+
+    /**
+     * Stores the scaler type (font type) for the font file. See
+     * {@link _readScalerType()}.
+     * @var integer
+     */
+    protected $_scalerType = 0;
+
+    /**
+     * Stores the byte offsets to the various information tables.
+     * @var array
+     */
+    protected $_tableDirectory = array();
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Semi-Concrete Class Implementation */
+
+    /**
+     * Verifies that the font file is in the expected format.
+     *
+     * NOTE: This method should be overridden in subclasses to check the
+     * specific format and set $this->_isScreened!
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    public function screen()
+    {
+        if ($this->_isScreened) {
+            return;
+        }
+        $this->_readScalerType();
+    }
+
+    /**
+     * Reads and parses the font data from the file on disk.
+     *
+     * NOTE: This method should be overridden in subclasses to add type-
+     * specific parsing and set $this->isParsed.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    public function parse()
+    {
+        if ($this->_isParsed) {
+            return;
+        }
+
+        /* Screen the font file first, if it hasn't been done yet.
+        */
+        $this->screen();
+
+        /* Start by reading the table directory.
+         */
+        $this->_parseTableDirectory();
+
+        /* Then parse all of the required tables.
+         */
+        $this->_parseHeadTable();
+        $this->_parseNameTable();
+        $this->_parsePostTable();
+        $this->_parseHheaTable();
+        $this->_parseMaxpTable();
+        $this->_parseOs2Table();
+        $this->_parseHmtxTable();
+        $this->_parseCmapTable();
+
+        /* If present, parse the optional tables.
+         */
+        /**
+         * @todo Add parser for kerning pairs.
+         * @todo Add parser for ligatures.
+         * @todo Add parser for other useful hinting tables.
+         */
+    }
+
+
+
+  /**** Internal Methods ****/
+
+
+  /* Parser Methods */
+
+    /**
+     * Parses the OpenType table directory.
+     *
+     * The table directory contains the identifier, checksum, byte offset, and
+     * length of each of the information tables housed in the font file.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseTableDirectory()
+    {
+        $this->moveToOffset(4);
+
+        $tableCount = $this->readUInt(2);
+        $this->_debugLog('%d tables', $tableCount);
+
+        /* Sanity check, in case we're not actually reading a OpenType file and
+         * the first four bytes coincidentally matched an OpenType signature in
+         * screen() above.
+         *
+         * There are at minimum 7 required tables: cmap, head, hhea, hmtx, maxp,
+         * name, and post. In the current OpenType standard, only 32 table types
+         * are defined, so use 50 as a practical limit.
+         */
+        if (($tableCount < 7) || ($tableCount > 50)) {
+            throw new Zend_Pdf_Exception('Table count not within expected range',
+                                         Zend_Pdf_Exception::BAD_TABLE_COUNT);
+        }
+
+        /* Skip the next 6 bytes, which contain values to aid a binary search.
+         */
+        $this->skipBytes(6);
+
+        /* The directory contains four values: the name of the table, checksum,
+         * offset to the table from the beginning of the font, and actual data
+         * length of the table.
+         */
+        for ($tableIndex = 0; $tableIndex < $tableCount; $tableIndex++) {
+            $tableName = $this->readBytes(4);
+
+            /* We ignore the checksum here for two reasons: First, the PDF viewer
+             * will do this later anyway; Second, calculating the checksum would
+             * require unsigned integers, which PHP does not currently provide.
+             * We may revisit this in the future.
+             */
+            $this->skipBytes(4);
+
+            $tableOffset = $this->readUInt(4);
+            $tableLength = $this->readUInt(4);
+            $this->_debugLog('%s offset: 0x%x; length: %d', $tableName, $tableOffset, $tableLength);
+
+            /* Sanity checks for offset and length values.
+             */
+            $fileSize = $this->_dataSource->getSize();
+            if (($tableOffset < 0) || ($tableOffset > $fileSize)) {
+                throw new Zend_Pdf_Exception("Table offset ($tableOffset) not within expected range",
+                                             Zend_Pdf_Exception::INDEX_OUT_OF_RANGE);
+            }
+            if (($tableLength < 0) || (($tableOffset + $tableLength) > $fileSize)) {
+                throw new Zend_Pdf_Exception("Table length ($tableLength) not within expected range",
+                                             Zend_Pdf_Exception::INDEX_OUT_OF_RANGE);
+            }
+
+            $this->_tableDirectory[$tableName]['offset'] = $tableOffset;
+            $this->_tableDirectory[$tableName]['length'] = $tableLength;
+        }
+    }
+
+
+    /**
+     * Parses the OpenType head (Font Header) table.
+     *
+     * The head table contains global information about the font such as the
+     * revision number and global metrics.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseHeadTable()
+    {
+        $this->_jumpToTable('head');
+
+        /* We can read any version 1 table.
+         */
+        $tableVersion = $this->_readTableVersion(1, 1);
+
+        /* Skip the font revision number and checksum adjustment.
+         */
+        $this->skipBytes(8);
+
+        $magicNumber = $this->readUInt(4);
+        if ($magicNumber != 0x5f0f3cf5) {
+            throw new Zend_Pdf_Exception('Wrong magic number. Expected: 0x5f0f3cf5; actual: '
+                                       . sprintf('%x', $magicNumber),
+                                         Zend_Pdf_Exception::BAD_MAGIC_NUMBER);
+        }
+
+        /* Most of the flags we ignore, but there are a few values that are
+         * useful for our layout routines.
+         */
+        $flags = $this->readUInt(2);
+        $this->baselineAtZero    = $this->isBitSet(0, $flags);
+        $this->useIntegerScaling = $this->isBitSet(3, $flags);
+
+        $this->unitsPerEm = $this->readUInt(2);
+        $this->_debugLog('Units per em: %d', $this->unitsPerEm);
+
+        /* Skip creation and modification date/time.
+         */
+        $this->skipBytes(16);
+
+        $this->xMin = $this->readInt(2);
+        $this->yMin = $this->readInt(2);
+        $this->xMax = $this->readInt(2);
+        $this->yMax = $this->readInt(2);
+        $this->_debugLog('Font bounding box: %d %d %d %d',
+                         $this->xMin, $this->yMin, $this->xMax, $this->yMax);
+
+        /* The style bits here must match the fsSelection bits in the OS/2
+         * table, if present.
+         */
+        $macStyleBits = $this->readUInt(2);
+        $this->isBold   = $this->isBitSet(0, $macStyleBits);
+        $this->isItalic = $this->isBitSet(1, $macStyleBits);
+
+        /* We don't need the remainder of data in this table: smallest readable
+         * size, font direction hint, indexToLocFormat, and glyphDataFormat.
+         */
+    }
+
+
+    /**
+     * Parses the OpenType name (Naming) table.
+     *
+     * The name table contains all of the identifying strings associated with
+     * the font such as its name, copyright, trademark, license, etc.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseNameTable()
+    {
+        $this->_jumpToTable('name');
+        $baseOffset = $this->_tableDirectory['name']['offset'];
+
+        /* The name table begins with a short header, followed by each of the
+         * fixed-length name records, followed by the variable-length strings.
+         */
+
+        /* We only understand version 0 tables.
+         */
+        $tableFormat = $this->readUInt(2);
+        if ($tableFormat != 0) {
+            throw new Zend_Pdf_Exception("Unable to read format $tableFormat table",
+                                         Zend_Pdf_Exception::DONT_UNDERSTAND_TABLE_VERSION);
+        }
+        $this->_debugLog('Format %d table', $tableFormat);
+
+        $nameCount = $this->readUInt(2);
+        $this->_debugLog('%d name strings', $nameCount);
+
+        $storageOffset = $this->readUInt(2) + $baseOffset;
+        $this->_debugLog('Storage offset: 0x%x', $storageOffset);
+
+        /* Scan the name records for those we're interested in. We'll skip over
+         * encodings and languages we don't understand or support. Prefer the
+         * Microsoft Unicode encoding for a given name/language combination, but
+         * use Mac Roman if nothing else is available. We will extract the
+         * actual strings later.
+         */
+        $nameRecords = array();
+        for ($nameIndex = 0; $nameIndex < $nameCount; $nameIndex++) {
+
+            $platformID = $this->readUInt(2);
+            $encodingID = $this->readUInt(2);
+
+            if (! ( (($platformID == 3) && ($encodingID == 1)) ||    // Microsoft Unicode
+                    (($platformID == 1) && ($encodingID == 0))       // Mac Roman
+                   ) ) {
+                $this->skipBytes(8);    // Not a supported encoding. Move on.
+                continue;
+            }
+
+            $languageID = $this->readUInt(2);
+            $nameID     = $this->readUInt(2);
+            $nameLength = $this->readUInt(2);
+            $nameOffset = $this->readUInt(2);
+
+            $languageCode = $this->_languageCodeForPlatform($platformID, $languageID);
+            if ($languageCode === null) {
+                $this->_debugLog('Skipping languageID: 0x%x; platformID %d', $languageID, $platformID);
+                continue;    // Not a supported language. Move on.
+            }
+
+            $this->_debugLog('Adding nameID: %d; languageID: 0x%x; platformID: %d; offset: 0x%x (0x%x); length: %d',
+                             $nameID, $languageID, $platformID, $baseOffset + $nameOffset, $nameOffset, $nameLength);
+
+            /* Entries in the name table are sorted by platform ID. If an entry
+             * exists for both Mac Roman and Microsoft Unicode, the Unicode entry
+             * will prevail since it is processed last.
+             */
+            $nameRecords[$nameID][$languageCode] = array('platform' => $platformID,
+                                                         'offset'   => $nameOffset,
+                                                         'length'   => $nameLength );
+        }
+
+        /* Now go back and extract the interesting strings.
+         */
+        $fontNames = array();
+        foreach ($nameRecords as $name => $languages) {
+            foreach ($languages as $language => $attributes) {
+                $stringOffset = $storageOffset + $attributes['offset'];
+                $this->moveToOffset($stringOffset);
+                if ($attributes['platform'] == 3) {
+                    $string = $this->readStringUTF16($attributes['length']);
+                } else {
+                    $string = $this->readStringMacRoman($attributes['length']);
+                }
+                $fontNames[$name][$language] = $string;
+            }
+        }
+
+        $this->names = $fontNames;
+    }
+
+
+    /**
+     * Parses the OpenType post (PostScript Information) table.
+     *
+     * The post table contains additional information required for using the font
+     * on PostScript printers. It also contains the preferred location and
+     * thickness for an underline, which is used by our layout code.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parsePostTable()
+    {
+        $this->_jumpToTable('post');
+
+        /* We can read versions 1-4 tables.
+         */
+        $tableVersion = $this->_readTableVersion(1, 4);
+
+        $this->italicAngle = $this->readFixed(16, 16);
+
+        $this->underlinePosition = $this->readInt(2);
+        $this->underlineThickness = $this->readInt(2);
+
+        $fixedPitch = $this->readUInt(4);
+        $this->isMonospaced = ($fixedPitch !== 0);
+
+        /* Skip over PostScript virtual memory usage.
+         */
+        $this->skipBytes(16);
+
+        /* The format of the remainder of this table is dependent on the table
+         * version. However, since it contains glyph ordering information and
+         * PostScript names which we don't use, move on. (This may change at
+         * some point in the future though...)
+         */
+    }
+
+
+    /**
+     * Parses the OpenType hhea (Horizontal Header) table.
+     *
+     * The hhea table contains information used for horizontal layout. It also
+     * contains some vertical layout information for Apple systems. The vertical
+     * layout information for the PDF file is usually taken from the OS/2 table.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseHheaTable()
+    {
+        $this->_jumpToTable('hhea');
+
+        /* We can read any version 1 table.
+         */
+        $tableVersion = $this->_readTableVersion(1, 1);
+
+        /* The typographic ascent, descent, and line gap values are Apple-
+         * specific. Similar values exist in the OS/2 table. We'll use these
+         * values unless better values are found in OS/2.
+         */
+        $this->ascent = $this->readInt(2);
+        $this->descent = $this->readInt(2);
+        $this->lineGap = $this->readInt(2);
+
+        /* The descent value is supposed to be negative--it's the distance
+         * relative to the baseline. However, some fonts improperly store a
+         * positive value in this field. If a positive value is found, flip the
+         * sign and record a warning in the debug log that we did this.
+         */
+        if ($this->descent > 0) {
+            $this->_debugLog('Warning: Font should specify negative descent. Actual: %d; Using %d',
+                             $this->descent, -$this->descent);
+            $this->descent = -$this->descent;
+        }
+
+        /* Skip over advance width, left and right sidebearing, max x extent,
+         * caret slope rise, run, and offset, and the four reserved fields.
+         */
+        $this->skipBytes(22);
+
+        /* These values are needed to read the hmtx table.
+         */
+        $this->metricDataFormat = $this->readInt(2);
+        $this->numberHMetrics = $this->readUInt(2);
+        $this->_debugLog('hmtx data format: %d; number of metrics: %d',
+                         $this->metricDataFormat, $this->numberHMetrics);
+    }
+
+
+    /**
+     * Parses the OpenType hhea (Horizontal Header) table.
+     *
+     * The hhea table contains information used for horizontal layout. It also
+     * contains some vertical layout information for Apple systems. The vertical
+     * layout information for the PDF file is usually taken from the OS/2 table.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseMaxpTable()
+    {
+        $this->_jumpToTable('maxp');
+
+        /* We don't care about table version.
+         */
+        $this->_readTableVersion(0, 1);
+
+        /* The number of glyphs in the font.
+         */
+        $this->numGlyphs = $this->readUInt(2);
+        $this->_debugLog('number of glyphs: %d', $this->numGlyphs);
+
+        // Skip other maxp table entries (if presented with table version 1.0)...
+    }
+
+
+    /**
+     * Parses the OpenType OS/2 (OS/2 and Windows Metrics) table.
+     *
+     * The OS/2 table contains additional metrics data that is required to use
+     * the font on the OS/2 or Microsoft Windows platforms. It is not required
+     * for Macintosh fonts, so may not always be present. When available, we use
+     * this table to determine most of the vertical layout and stylistic
+     * information and for the font.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseOs2Table()
+    {
+        if (! $this->numberHMetrics) {
+            throw new Zend_Pdf_Exception("hhea table must be parsed prior to calling this method",
+                                         Zend_Pdf_Exception::PARSED_OUT_OF_ORDER);
+        }
+
+        try {
+            $this->_jumpToTable('OS/2');
+        } catch (Zend_Pdf_Exception $exception) {
+            /* This table is not always present. If missing, use default values.
+             */
+            if ($exception->getCode() == Zend_Pdf_Exception::REQUIRED_TABLE_NOT_FOUND) {
+                $this->_debugLog('No OS/2 table found. Using default values');
+                $this->fontWeight = Zend_Pdf_Font::WEIGHT_NORMAL;
+                $this->fontWidth = Zend_Pdf_Font::WIDTH_NORMAL;
+                $this->isEmbeddable = true;
+                $this->isSubsettable = true;
+                $this->strikeThickness = $this->unitsPerEm * 0.05;
+                $this->strikePosition  = $this->unitsPerEm * 0.225;
+                $this->isSerifFont      = false;    // the style of the font is unknown
+                $this->isSansSerifFont  = false;
+                $this->isOrnamentalFont = false;
+                $this->isScriptFont     = false;
+                $this->isSymbolicFont   = false;
+                $this->isAdobeLatinSubset = false;
+                $this->vendorID = '';
+                $this->xHeight = 0;
+                $this->capitalHeight = 0;
+                return;
+            } else {
+                /* Something else went wrong. Throw this exception higher up the chain.
+                 */
+                throw $exception;
+            }
+        }
+
+        /* Version 0 tables are becoming rarer these days. They are only found
+         * in older fonts.
+         *
+         * Version 1 formally defines the Unicode character range bits and adds
+         * two new fields to the end of the table.
+         *
+         * Version 2 defines several additional flags to the embedding bits
+         * (fsType field) and five new fields to the end of the table.
+         *
+         * Versions 2 and 3 are structurally identical. There are only two
+         * significant differences between the two: First, in version 3, the
+         * average character width (xAvgCharWidth field) is calculated using all
+         * non-zero width glyphs in the font instead of just the Latin lower-
+         * case alphabetic characters; this doesn't affect us. Second, in
+         * version 3, the embedding bits (fsType field) have been made mutually
+         * exclusive; see additional discusson on this below.
+         *
+         * We can understand all four of these table versions.
+         */
+        $tableVersion = $this->readUInt(2);
+        if (($tableVersion < 0) || ($tableVersion > 3)) {
+            throw new Zend_Pdf_Exception("Unable to read version $tableVersion table",
+                                         Zend_Pdf_Exception::DONT_UNDERSTAND_TABLE_VERSION);
+        }
+        $this->_debugLog('Version %d table', $tableVersion);
+
+        $this->averageCharWidth = $this->readInt(2);
+
+        /* Indicates the visual weight and aspect ratio of the characters. Used
+         * primarily to logically sort fonts in lists. Also used to help choose
+         * a more appropriate substitute font when necessary. See the WEIGHT_
+         * and WIDTH_ constants defined in Zend_Pdf_Font.
+         */
+        $this->fontWeight = $this->readUInt(2);
+        $this->fontWidth  = $this->readUInt(2);
+
+        /* Describes the font embedding licensing rights. We can only embed and
+         * subset a font when given explicit permission.
+         *
+         * NOTE: We always interpret these bits according to the rules defined
+         * in version 3 of this table, regardless of the actual version. This
+         * means we will perform our checks in order from the most-restrictive
+         * to the least.
+         */
+        $embeddingFlags = $this->readUInt(2);
+        $this->_debugLog('Embedding flags: %d', $embeddingFlags);
+        if ($this->isBitSet(9, $embeddingFlags)) {
+            /* Only bitmaps may be embedded. We don't have the ability to strip
+             * outlines from fonts yet, so this means no embed.
+             */
+            $this->isEmbeddable = false;
+        } else if ($this->isBitSet(1, $embeddingFlags)) {
+            /* Restricted license embedding. We currently don't have any way to
+             * enforce this, so interpret this as no embed. This may be revised
+             * in the future...
+             */
+            $this->isEmbeddable = false;
+        } else {
+            /* The remainder of the bit settings grant us permission to embed
+             * the font. There may be additional usage rights granted or denied
+             * but those only affect the PDF viewer application, not our code.
+             */
+            $this->isEmbeddable = true;
+        }
+        $this->_debugLog('Font ' . ($this->isEmbeddable ? 'may' : 'may not') . ' be embedded');
+        $isSubsettable = $this->isBitSet($embeddingFlags, 8);
+
+        /* Recommended size and offset for synthesized subscript characters.
+         */
+        $this->subscriptXSize = $this->readInt(2);
+        $this->subscriptYSize = $this->readInt(2);
+        $this->subscriptXOffset = $this->readInt(2);
+        $this->subscriptYOffset = $this->readInt(2);
+
+        /* Recommended size and offset for synthesized superscript characters.
+         */
+        $this->superscriptXSize = $this->readInt(2);
+        $this->superscriptYSize = $this->readInt(2);
+        $this->superscriptXOffset = $this->readInt(2);
+        $this->superscriptYOffset = $this->readInt(2);
+
+        /* Size and vertical offset for the strikethrough.
+         */
+        $this->strikeThickness = $this->readInt(2);
+        $this->strikePosition  = $this->readInt(2);
+
+        /* Describes the class of font: serif, sans serif, script. etc. These
+         * values are defined here:
+         *   http://www.microsoft.com/OpenType/OTSpec/ibmfc.htm
+         */
+        $familyClass = ($this->readUInt(2) >> 8);    // don't care about subclass
+        $this->_debugLog('Font family class: %d', $familyClass);
+        $this->isSerifFont      = ((($familyClass >= 1) && ($familyClass <= 5)) ||
+                                   ($familyClass == 7));
+        $this->isSansSerifFont  = ($familyClass == 8);
+        $this->isOrnamentalFont = ($familyClass == 9);
+        $this->isScriptFont     = ($familyClass == 10);
+        $this->isSymbolicFont   = ($familyClass == 12);
+
+        /* Skip over the PANOSE number. The interesting values for us overlap
+         * with the font family class defined above.
+         */
+        $this->skipBytes(10);
+
+        /* The Unicode range is made up of four 4-byte unsigned long integers
+         * which are used as bitfields covering a 128-bit range. Each bit
+         * represents a Unicode code block. If the bit is set, this font at
+         * least partially covers the characters in that block.
+         */
+        $unicodeRange1 = $this->readUInt(4);
+        $unicodeRange2 = $this->readUInt(4);
+        $unicodeRange3 = $this->readUInt(4);
+        $unicodeRange4 = $this->readUInt(4);
+        $this->_debugLog('Unicode ranges: 0x%x 0x%x 0x%x 0x%x',
+                        $unicodeRange1, $unicodeRange2, $unicodeRange3, $unicodeRange4);
+
+        /* The Unicode range is currently only used to decide if the character
+         * set covered by the font is a subset of the Adobe Latin set, meaning
+         * it only has the basic latin set. If it covers any other characters,
+         * even any of the extended latin characters, it is considered symbolic
+         * to PDF and must be described differently in the Font Descriptor.
+         */
+        /**
+         * @todo Font is recognized as Adobe Latin subset font if it only contains
+         * Basic Latin characters (only bit 0 of Unicode range bits is set).
+         * Actually, other Unicode subranges like General Punctuation (bit 31) also
+         * fall into Adobe Latin characters. So this code has to be modified.
+         */
+        $this->isAdobeLatinSubset = (($unicodeRange1 == 1) && ($unicodeRange2 == 0) &&
+                                      ($unicodeRange3 == 0) && ($unicodeRange4 == 0));
+        $this->_debugLog(($this->isAdobeLatinSubset ? 'Is' : 'Is not') . ' a subset of Adobe Latin');
+
+        $this->vendorID = $this->readBytes(4);
+
+        /* Skip the font style bits. We use the values found in the 'head' table.
+         * Also skip the first Unicode and last Unicode character indicies. Our
+         * cmap implementation does not need these values.
+         */
+        $this->skipBytes(6);
+
+        /* Typographic ascender, descender, and line gap. These values are
+         * preferred to those in the 'hhea' table.
+         */
+        $this->ascent = $this->readInt(2);
+        $this->descent = $this->readInt(2);
+        $this->lineGap = $this->readInt(2);
+
+        /* The descent value is supposed to be negative--it's the distance
+         * relative to the baseline. However, some fonts improperly store a
+         * positive value in this field. If a positive value is found, flip the
+         * sign and record a warning in the debug log that we did this.
+         */
+        if ($this->descent > 0) {
+            $this->_debugLog('Warning: Font should specify negative descent. Actual: %d; Using %d',
+                             $this->descent, -$this->descent);
+            $this->descent = -$this->descent;
+        }
+
+        /* Skip over Windows-specific ascent and descent.
+         */
+        $this->skipBytes(4);
+
+        /* Versions 0 and 1 tables do not contain the x or capital height
+         * fields. Record zero for unknown.
+         */
+        if ($tableVersion < 2) {
+            $this->xHeight = 0;
+            $this->capitalHeight = 0;
+        } else {
+
+            /* Skip over the Windows code page coverages. We are only concerned
+             * with Unicode coverage.
+             */
+            $this->skipBytes(8);
+
+            $this->xHeight = $this->readInt(2);
+            $this->capitalHeight = $this->readInt(2);
+
+            /* Ignore the remaining fields in this table. They are Windows-specific.
+             */
+        }
+        /**
+         * @todo Obtain the x and capital heights from the 'glyf' table if they
+         *   haven't been supplied here instead of storing zero.
+         */
+    }
+
+
+    /**
+     * Parses the OpenType hmtx (Horizontal Metrics) table.
+     *
+     * The hmtx table contains the horizontal metrics for every glyph contained
+     * within the font. These are the critical values for horizontal layout of
+     * text.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseHmtxTable()
+    {
+        $this->_jumpToTable('hmtx');
+
+        if (! $this->numberHMetrics) {
+            throw new Zend_Pdf_Exception("hhea table must be parsed prior to calling this method",
+                                         Zend_Pdf_Exception::PARSED_OUT_OF_ORDER);
+        }
+
+        /* We only understand version 0 tables.
+         */
+        if ($this->metricDataFormat != 0) {
+            throw new Zend_Pdf_Exception("Unable to read format $this->metricDataFormat table.",
+                                         Zend_Pdf_Exception::DONT_UNDERSTAND_TABLE_VERSION);
+        }
+
+        /* The hmtx table has no header. For each glpyh in the font, it contains
+         * the glyph's advance width and its left side bearing. We don't use the
+         * left side bearing.
+         */
+        $glyphWidths = array();
+        for ($i = 0; $i < $this->numberHMetrics; $i++) {
+            $glyphWidths[$i] = $this->readUInt(2);
+            $this->skipBytes(2);
+        }
+        /* Populate last value for the rest of array
+         */
+        while (count($glyphWidths) < $this->numGlyphs) {
+            $glyphWidths[] = end($glyphWidths);
+        }
+        $this->glyphWidths = $glyphWidths;
+
+        /* There is an optional table of left side bearings which is sometimes
+         * used for monospaced fonts. We don't use the left side bearing, so
+         * we can safely ignore it.
+         */
+    }
+
+
+    /**
+     * Parses the OpenType cmap (Character to Glyph Mapping) table.
+     *
+     * The cmap table provides the maps from character codes to font glyphs.
+     * There are usually at least two character maps in a font: Microsoft Unicode
+     * and Macintosh Roman. For very complex fonts, there may also be mappings
+     * for the characters in the Unicode Surrogates Area, which are UCS-4
+     * characters.
+     *
+     * @todo Need to rework the selection logic for picking a subtable. We should
+     *   have an explicit list of preferences, followed by a list of those that
+     *   are tolerable. Most specifically, since everything above this layer deals
+     *   in Unicode, we need to be sure to only accept format 0 MacRoman tables.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _parseCmapTable()
+    {
+        $this->_jumpToTable('cmap');
+        $baseOffset = $this->_tableDirectory['cmap']['offset'];
+
+        /* We only understand version 0 tables.
+         */
+        $tableVersion = $this->readUInt(2);
+        if ($tableVersion != 0) {
+            throw new Zend_Pdf_Exception("Unable to read version $tableVersion table",
+                                         Zend_Pdf_Exception::DONT_UNDERSTAND_TABLE_VERSION);
+        }
+        $this->_debugLog('Version %d table', $tableVersion);
+
+        $subtableCount = $this->readUInt(2);
+        $this->_debugLog('%d subtables', $subtableCount);
+
+        /* Like the name table, there may be many different encoding subtables
+         * present. Ideally, we are looking for an acceptable Unicode table.
+         */
+        $subtables = array();
+        for ($subtableIndex = 0; $subtableIndex < $subtableCount; $subtableIndex++) {
+
+            $platformID = $this->readUInt(2);
+            $encodingID = $this->readUInt(2);
+
+            if (! ( (($platformID == 0) && ($encodingID == 3)) ||    // Unicode 2.0 or later
+                    (($platformID == 0) && ($encodingID == 0)) ||    // Unicode
+                    (($platformID == 3) && ($encodingID == 1)) ||    // Microsoft Unicode
+                    (($platformID == 1) && ($encodingID == 0))       // Mac Roman
+                   ) ) {
+                $this->_debugLog('Unsupported encoding: platformID: %d; encodingID: %d; skipping',
+                                 $platformID, $encodingID);
+                $this->skipBytes(4);
+                continue;
+            }
+
+            $subtableOffset = $this->readUInt(4);
+            if ($subtableOffset < 0) {    // Sanity check for 4-byte unsigned on 32-bit platform
+                $this->_debugLog('Offset 0x%x out of range for platformID: %d; skipping',
+                                 $subtableOffset, $platformID);
+                continue;
+            }
+
+            $this->_debugLog('Found subtable; platformID: %d; encodingID: %d; offset: 0x%x (0x%x)',
+                             $platformID, $encodingID, $baseOffset + $subtableOffset, $subtableOffset);
+
+            $subtables[$platformID][$encodingID][] = $subtableOffset;
+        }
+
+        /* In preferred order, find a subtable to use.
+         */
+        $offsets = array();
+
+        /* Unicode 2.0 or later semantics
+         */
+        if (isset($subtables[0][3])) {
+            foreach ($subtables[0][3] as $offset) {
+                $offsets[] = $offset;
+            }
+        }
+
+        /* Unicode default semantics
+         */
+        if (isset($subtables[0][0])) {
+            foreach ($subtables[0][0] as $offset) {
+                $offsets[] = $offset;
+            }
+        }
+
+        /* Microsoft Unicode
+         */
+        if (isset($subtables[3][1])) {
+            foreach ($subtables[3][1] as $offset) {
+                $offsets[] = $offset;
+            }
+        }
+
+        /* Mac Roman.
+         */
+        if (isset($subtables[1][0])) {
+            foreach ($subtables[1][0] as $offset) {
+                $offsets[] = $offset;
+            }
+        }
+
+        $cmapType = -1;
+
+        foreach ($offsets as $offset) {
+            $cmapOffset = $baseOffset + $offset;
+            $this->moveToOffset($cmapOffset);
+            $format = $this->readUInt(2);
+            $language = -1;
+            switch ($format) {
+                case 0x0:
+                    $cmapLength = $this->readUInt(2);
+                    $language = $this->readUInt(2);
+                    if ($language != 0) {
+                        $this->_debugLog('Type 0 cmap tables must be language-independent;'
+                                         . ' language: %d; skipping', $language);
+                        continue;
+                    }
+                    break;
+
+                case 0x4:    // break intentionally omitted
+                case 0x6:
+                    $cmapLength = $this->readUInt(2);
+                    $language = $this->readUInt(2);
+                    if ($language != 0) {
+                        $this->_debugLog('Warning: cmap tables must be language-independent - this font'
+                                         . ' may not work properly; language: %d', $language);
+                    }
+                    break;
+
+                case 0x2:    // break intentionally omitted
+                case 0x8:    // break intentionally omitted
+                case 0xa:    // break intentionally omitted
+                case 0xc:
+                    $this->_debugLog('Format: 0x%x currently unsupported; skipping', $format);
+                    continue;
+                    //$this->skipBytes(2);
+                    //$cmapLength = $this->readUInt(4);
+                    //$language = $this->readUInt(4);
+                    //if ($language != 0) {
+                    //    $this->_debugLog('Warning: cmap tables must be language-independent - this font'
+                    //                     . ' may not work properly; language: %d', $language);
+                    //}
+                    //break;
+
+                default:
+                    $this->_debugLog('Unknown subtable format: 0x%x; skipping', $format);
+                    continue;
+            }
+            $cmapType = $format;
+            break;
+        }
+        if ($cmapType == -1) {
+            throw new Zend_Pdf_Exception('Unable to find usable cmap table',
+                                         Zend_Pdf_Exception::CANT_FIND_GOOD_CMAP);
+        }
+
+        /* Now extract the subtable data and create a Zend_Pdf_FontCmap object.
+         */
+        $this->_debugLog('Using cmap type %d; offset: 0x%x; length: %d',
+                         $cmapType, $cmapOffset, $cmapLength);
+        $this->moveToOffset($cmapOffset);
+        $cmapData = $this->readBytes($cmapLength);
+        $this->cmap = Zend_Pdf_Cmap::cmapWithTypeData($cmapType, $cmapData);
+    }
+
+
+    /**
+     * Reads the scaler type from the header of the OpenType font file and
+     * returns it as an unsigned long integer.
+     *
+     * The scaler type defines the type of font: OpenType font files may contain
+     * TrueType or PostScript outlines. Throws an exception if the scaler type
+     * is not recognized.
+     *
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _readScalerType()
+    {
+        if ($this->_scalerType != 0) {
+            return $this->_scalerType;
+        }
+
+        $this->moveToOffset(0);
+
+        $this->_scalerType = $this->readUInt(4);
+
+        switch ($this->_scalerType) {
+            case 0x00010000:    // version 1.0 - Windows TrueType signature
+                $this->_debugLog('Windows TrueType signature');
+                break;
+
+            case 0x74727565:    // 'true' - Macintosh TrueType signature
+                $this->_debugLog('Macintosh TrueType signature');
+                break;
+
+            case 0x4f54544f:    // 'OTTO' - the CFF signature
+                $this->_debugLog('PostScript CFF signature');
+                break;
+
+            case 0x74797031:    // 'typ1'
+                throw new Zend_Pdf_Exception('Unsupported font type: PostScript in sfnt wrapper',
+                                             Zend_Pdf_Exception::WRONG_FONT_TYPE);
+
+            default:
+                throw new Zend_Pdf_Exception('Not an OpenType font file',
+                                             Zend_Pdf_Exception::WRONG_FONT_TYPE);
+        }
+        return $this->_scalerType;
+    }
+
+    /**
+     * Validates a given table's existence, then sets the file pointer to the
+     * start of that table.
+     *
+     * @param string $tableName
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _jumpToTable($tableName)
+    {
+        if (empty($this->_tableDirectory[$tableName])) {    // do not allow NULL or zero
+            throw new Zend_Pdf_Exception("Required table '$tableName' not found!",
+                                         Zend_Pdf_Exception::REQUIRED_TABLE_NOT_FOUND);
+        }
+        $this->_debugLog("Parsing $tableName table...");
+        $this->moveToOffset($this->_tableDirectory[$tableName]['offset']);
+    }
+
+    /**
+     * Reads the fixed 16.16 table version number and checks for compatibility.
+     * If the version is incompatible, throws an exception. If it is compatible,
+     * returns the version number.
+     *
+     * @param float $minVersion Minimum compatible version number.
+     * @param float $maxVertion Maximum compatible version number.
+     * @return float Table version number.
+     * @throws Zend_Pdf_Exception
+     */
+    protected function _readTableVersion($minVersion, $maxVersion)
+    {
+        $tableVersion = $this->readFixed(16, 16);
+        if (($tableVersion < $minVersion) || ($tableVersion > $maxVersion)) {
+            throw new Zend_Pdf_Exception("Unable to read version $tableVersion table",
+                                         Zend_Pdf_Exception::DONT_UNDERSTAND_TABLE_VERSION);
+        }
+        $this->_debugLog('Version %.2f table', $tableVersion);
+        return $tableVersion;
+    }
+
+    /**
+     * Utility method that returns ISO 639 two-letter language codes from the
+     * TrueType platform and language ID. Returns NULL for languages that are
+     * not supported.
+     *
+     * @param integer $platformID
+     * @param integer $encodingID
+     * @return string | null
+     */
+    protected function _languageCodeForPlatform($platformID, $languageID)
+    {
+        if ($platformID == 3) {    // Microsoft encoding.
+            /* The low-order bytes specify the language, the high-order bytes
+             * specify the dialect. We just care about the language. For the
+             * complete list, see:
+             *   http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+             */
+            $languageID &= 0xff;
+            switch ($languageID) {
+                case 0x09:
+                    return 'en';
+                case 0x0c:
+                    return 'fr';
+                case 0x07:
+                    return 'de';
+                case 0x10:
+                    return 'it';
+                case 0x13:
+                    return 'nl';
+                case 0x1d:
+                    return 'sv';
+                case 0x0a:
+                    return 'es';
+                case 0x06:
+                    return 'da';
+                case 0x16:
+                    return 'pt';
+                case 0x14:
+                    return 'no';
+                case 0x0d:
+                    return 'he';
+                case 0x11:
+                    return 'ja';
+                case 0x01:
+                    return 'ar';
+                case 0x0b:
+                    return 'fi';
+                case 0x08:
+                    return 'el';
+
+                default:
+                    return null;
+            }
+
+        } else if ($platformID == 1) {    // Macintosh encoding.
+            switch ($languageID) {
+                case 0:
+                    return 'en';
+                case 1:
+                    return 'fr';
+                case 2:
+                    return 'de';
+                case 3:
+                    return 'it';
+                case 4:
+                    return 'nl';
+                case 5:
+                    return 'sv';
+                case 6:
+                    return 'es';
+                case 7:
+                    return 'da';
+                case 8:
+                    return 'pt';
+                case 9:
+                    return 'no';
+                case 10:
+                    return 'he';
+                case 11:
+                    return 'ja';
+                case 12:
+                    return 'ar';
+                case 13:
+                    return 'fi';
+                case 14:
+                    return 'el';
+
+                default:
+                    return null;
+            }
+
+        } else {    // Unknown encoding.
+            return null;
+        }
+    }
+
+}

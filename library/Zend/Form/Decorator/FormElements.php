@@ -1,68 +1,126 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-0ro/7R7uzjq4bvUgKBsXhA5CMG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_FormElements
+ *
+ * Render all form elements registered with current form
+ *
+ * Accepts following options:
+ * - separator: Separator to use between elements
+ *
+ * Any other options passed will be used as HTML attributes of the form tag.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: FormElements.php 13988 2009-02-05 20:55:38Z thomas $
+ */
+class Zend_Form_Decorator_FormElements extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Merges given two belongsTo (array notation) strings
+     *
+     * @param  string $baseBelongsTo
+     * @param  string $belongsTo
+     * @return string
+     */
+    public function mergeBelongsTo($baseBelongsTo, $belongsTo)
+    {
+        $endOfArrayName = strpos($belongsTo, '[');
+
+        if ($endOfArrayName === false) {
+            return $baseBelongsTo . '[' . $belongsTo . ']';
+        }
+
+        $arrayName = substr($belongsTo, 0, $endOfArrayName);
+
+        return $baseBelongsTo . '[' . $arrayName . ']' . substr($belongsTo, $endOfArrayName);
+    }
+
+    /**
+     * Render form elements
+     *
+     * @param  string $content
+     * @return string
+     */
+    public function render($content)
+    {
+        $form    = $this->getElement();
+        if ((!$form instanceof Zend_Form) && (!$form instanceof Zend_Form_DisplayGroup)) {
+            return $content;
+        }
+
+        $belongsTo      = ($form instanceof Zend_Form) ? $form->getElementsBelongTo() : null;
+        $elementContent = '';
+        $separator      = $this->getSeparator();
+        $translator     = $form->getTranslator();
+        $items          = array();
+        $view           = $form->getView();
+        foreach ($form as $item) {
+            $item->setView($view)
+                 ->setTranslator($translator);
+            if ($item instanceof Zend_Form_Element) {
+                $item->setBelongsTo($belongsTo);
+            } elseif (!empty($belongsTo) && ($item instanceof Zend_Form)) {
+                if ($item->isArray()) {
+                    $name = $this->mergeBelongsTo($belongsTo, $item->getElementsBelongTo());
+                    $item->setElementsBelongTo($name, true);
+                } else {
+                    $item->setElementsBelongTo($belongsTo, true);
+                }
+            } elseif (!empty($belongsTo) && ($item instanceof Zend_Form_DisplayGroup)) {
+                foreach ($item as $element) {
+                    $element->setBelongsTo($belongsTo);
+                }
+            }
+
+            $items[] = $item->render();
+
+            if (($item instanceof Zend_Form_Element_File)
+                || (($item instanceof Zend_Form) 
+                    && (Zend_Form::ENCTYPE_MULTIPART == $item->getEnctype()))
+                || (($item instanceof Zend_Form_DisplayGroup)
+                    && (Zend_Form::ENCTYPE_MULTIPART == $item->getAttrib('enctype')))
+            ) {
+                if ($form instanceof Zend_Form) {
+                    $form->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
+                } elseif ($form instanceof Zend_Form_DisplayGroup) {
+                    $form->setAttrib('enctype', Zend_Form::ENCTYPE_MULTIPART);
+                }
+            }
+        }
+        $elementContent = implode($separator, $items);
+
+        switch ($this->getPlacement()) {
+            case self::PREPEND:
+                return $elementContent . $separator . $content;
+            case self::APPEND:
+            default:
+                return $content . $separator . $elementContent;
+        }
+    }
+}

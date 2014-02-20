@@ -1,29 +1,83 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5D6fMb6PSRzcS1pFSfoqMF65ocRDOFEeDvwiBQTKcET4WNW3TWxAtaXq3Xzm2qv83jM8Uh2D
-84S61KOuyjDTYdcJHwBd57HW0MSB0VZEDzNlUPR1TnR+vCHJ0XKH9wVT8OEQKHSx1UfiVK+7sPRf
-VZXAsk3UOjdz1fszsXalY85Z5DY8swQqBvNSPDmtsyicVloPWYwmFkgNPKNRel+nc/y7xnTAtBIT
-f9ZkstcG042Td8Cr5OBqn4kJIPpDKor7T+KlBeH2QDfYoiBhlNBYiZVJUjM6X/b2BbrIrNuRgN/8
-ZTVDdTdvArINw1F9zzF3LW4m3Qe4XIO7cGhHVJGxtjMdjbgHucs2pHxGYuPekDp9JuQB5+YfUrcP
-noarX8cot9aNmGIqdIcY7f97Vz4mKwtZRvqEWQpuGYFPFLlgrUcaisQ/1TQIK18pbZ4/9CYC0KnK
-Gj19Wd6hWeS4Js4dxFdTJxKCOrezeTQvkW6BuEmUgI+GKBx61GJCupxcJSuADLWPOJ/QcYz3d2AU
-jN6Sv7Qjh+seFKn3ZUqvdpMM6dzJChkvGcy9fqgQsCBb4ySBlbx5fCJOuLwS/ii7oG/2gmVnWUoH
-n/H/q6oMcinmalymsmIVVllH66PNHY0jYdZaj2a767ej1+G28GQQZjnsp/BPgnaANkz93b4WfvcS
-o324Y1Rr7/SuHjXBW38nOf1AOeUK/YLnjmpzvfnEujO/Ui0kWgMSVWZ2406AacoPsj3P4MHV/nnx
-PbCbyJGtG47yqmA0AdtxYl1Fydsy28/QCHNp8TfCHTSFKu18XRqeBT0zgFVtSsw8W5WtGaEOI5y+
-aSz62eEbcZ72vM2xJl264d8ifJVwV8tDE39By4T2fkmsorEY59Qgq2bBky58j9lJk8MntKiDgLGd
-g7fXZIkI+K8sfolG9BqwLmiXCqoYx8oaFIHsvtrzIcqSPvAHZgvf194T5JhSM1i5a5BULwJwNlgY
-x6awRQuUPFy/2o+DNV8Fq1f3CpjOfzFBG7OLMdXtuD1YgAn0JMisYYsxuyRJe4Gj//3aA5l+2VSV
-Q/T4jdHsFIvceO0t2XOM2sdvgVui8rgjVf1xWL9sh5EGwT3Up0ybBD9i0L757u2rvOsN6gF9Zvd+
-OTkIYrGrnkLnvwDoAxqvcpfFI80D8+iIspftrEYzrWBkhDwD/uGlj+sqLPu1sUOBPceeVtCjmMD0
-teT5Jeo7JewVhlptMKl1X5V1R2WUT9WJ1qKgSAMG4T/BxE7jXJ02SKyTv11/gWhXZuU6sKujvXJz
-1yVW4ejgeJDxts1KbHpx5N+vQ13imL7Rvkw12SLO66sZmq47/x4iSMLIM5NTcMznpsXq1a95j79V
-AyFZrO5tSZOAI400hjjruybM0wvoD5+eW3D0+5q7WX2LCf4UuzeaT7FJY5QV1Sc+t3qNn3DiJ0k4
-k2QyYCA1BvcSBbxpkQvH3AvfsUz6poKu88TMpD36PNnnagUaZtMGFsbaZAppNlPTPnJdmEXapArA
-PUGY2EWDZuuHXjvqBfMmsRylx4N5JUtELabYM2TCdrqH4cdu7Nmzy2Jo3JrSGw9RHZ1zX7Y99vI9
-uf3L4RxWXMVYRusrZz3dpliToqts8Jq5pYedOq4EaxZyGhZm0Z8gLjL3rZ3kgyhHEqB8LsVHgZH0
-9g12XZeYLsYx5PMPm9u3j8VE0TMvV5HRtIHpeFmaMlWPL82X8GygQN5+vdolkLfw9lfT1lmkX9i/
-UAjlKhwRwmJ7d70/cJLpQuQpRa7Hs6jdDYSH9Z9mcGfU1p2hvAXY2yvSctBZjUVwZAbIHQsAzX3U
-iUJPQmSmgDmQxDTj7O5U5yl8kD8evQSt2nJI9MwO1KpaCJdIBNg8lzWlDJXT4IMz/q8aZR0GKu2+
-F+ZUWdG3lM/ZHHYRqPOCLJRIX5jbdyhoHhvjMSFI
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: LinkSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Simpy_Link
+ */
+require_once 'Zend/Service/Simpy/Link.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_LinkSet implements IteratorAggregate
+{
+    /**
+     * List of links
+     *
+     * @var array of Zend_Service_Simpy_Link objects
+     */
+    protected $_links;
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMDocument $doc Parsed response from a GetLinks operation
+     * @return void
+     */
+    public function __construct(DOMDocument $doc)
+    {
+        $xpath = new DOMXPath($doc);
+        $list = $xpath->query('//links/link');
+        $this->_links = array();
+
+        for ($x = 0; $x < $list->length; $x++) {
+            $this->_links[$x] = new Zend_Service_Simpy_Link($list->item($x));
+        }
+    }
+
+    /**
+     * Returns an iterator for the link set
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->_links);
+    }
+
+    /**
+     * Returns the number of links in the set
+     *
+     * @return int
+     */
+    public function getLength()
+    {
+        return count($this->_links);
+    }
+}

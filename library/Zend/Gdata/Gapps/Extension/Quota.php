@@ -1,38 +1,141 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Gapps
+ */
+require_once 'Zend/Gdata/Gapps.php';
+
+/**
+ * Represents the apps:quota element used by the Apps data API. This is
+ * used to indicate the amount of storage space available to a user. Quotas
+ * may not be able to be set, depending on the domain used. This class
+ * is usually contained within an instance of Zend_Gdata_Gapps_UserEntry.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_Extension_Quota extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'apps';
+    protected $_rootElement = 'quota';
+
+    /**
+     * The amount of storage space available to the user in megabytes.
+     *
+     * @var integer
+     */
+    protected $_limit = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Gapps_Extension_Quota object.
+     *
+     * @param string $limit (optional) The limit, in bytes, for this quota.
+     */
+    public function __construct($limit = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
+        parent::__construct();
+        $this->_limit = $limit;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_limit !== null) {
+            $element->setAttribute('limit', $this->_limit);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'limit':
+            $this->_limit = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's limit attribute.
+     *
+     * @see setLimit
+     * @return string The requested attribute.
+     */
+    public function getLimit()
+    {
+        return $this->_limit;
+    }
+
+    /**
+     * Set the value for this element's limit attribute. This is the amount
+     * of storage space, in bytes, that should be made available to
+     * the associated user.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Quota Provides a fluent interface.
+     */
+    public function setLimit($value)
+    {
+        $this->_limit = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     */
+    public function __toString()
+    {
+        return $this->getLimit();
+    }
+
+}

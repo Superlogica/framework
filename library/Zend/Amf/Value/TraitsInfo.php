@@ -1,33 +1,153 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-pbEPe6K5U8rBna2kEyPxQ0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Amf_Value_TraitsInfo 
+ * 
+ * @package    Zend_Amf
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Value_TraitsInfo
+{
+    /**
+     * @var string Class name
+     */
+    protected $_className;
+
+    /**
+     * @var bool Whether or not this is a dynamic class
+     */
+    protected $_dynamic;
+
+    /**
+     * @var bool Whether or not the class is externalizable
+     */
+    protected $_externalizable;
+
+    /**
+     * @var array Class properties
+     */
+    protected $_properties;
+
+    /**
+     * Used to keep track of all class traits of an AMF3 object
+     *
+     * @param  string $className
+     * @param  boolean $dynamic
+     * @param  boolean $externalizable
+     * @param  boolean $properties
+     * @return void
+     */
+    public function __construct($className, $dynamic=false, $externalizable=false, $properties=null)
+    {
+        $this->_className      = $className;
+        $this->_dynamic        = $dynamic;
+        $this->_externalizable = $externalizable;
+        $this->_properties     = $properties;
+    }
+
+    /**
+     * Test if the class is a dynamic class
+     *
+     * @return boolean
+     */
+    public function isDynamic()
+    {
+        return $this->_dynamic;
+    }
+
+    /**
+     * Test if class is externalizable
+     *
+     * @return boolean
+     */
+    public function isExternalizable()
+    {
+        return $this->_externalizable;
+    }
+
+    /**
+     * Return the number of properties in the class
+     *
+     * @return int
+     */
+    public function length()
+    {
+        return count($this->_properties);
+    }
+
+    /**
+     * Return the class name
+     *
+     * @return string
+     */
+    public function getClassName()
+    {
+        return $this->_className;
+    }
+
+    /**
+     * Add an additional property
+     *
+     * @param  string $name
+     * @return Zend_Amf_Value_TraitsInfo
+     */
+    public function addProperty($name)
+    {
+        $this->_properties[] = $name;
+        return $this;
+    }
+
+    /**
+     * Add all properties of the class.
+     *
+     * @param  array $props
+     * @return Zend_Amf_Value_TraitsInfo
+     */
+    public function addAllProperties(array $props)
+    {
+        $this->_properties = $props;
+        return $this;
+    }
+
+    /**
+     * Get the property at a given index
+     *
+     * @param  int $index
+     * @return string
+     */
+    public function getProperty($index)
+    {
+        return $this->_properties[(int) $index];
+    }
+
+    /**
+     * Return all properties of the class.
+     *
+     * @return array
+     */
+    public function getAllProperties()
+    {
+        return $this->_properties;
+    }
+}

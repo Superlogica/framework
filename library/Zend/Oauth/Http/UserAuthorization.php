@@ -1,30 +1,78 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: UserAuthorization.php 20217 2010-01-12 16:01:57Z matthew $
+ */
+
+/** Zend_Oauth_Http */
+require_once 'Zend/Oauth/Http.php';
+
+/** Zend_Uri_Http */
+require_once 'Zend/Uri/Http.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Oauth_Http_UserAuthorization extends Zend_Oauth_Http
+{
+    /**
+     * Generate a redirect URL from the allowable parameters and configured
+     * values.
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        $params = $this->assembleParams();
+        $uri    = Zend_Uri_Http::fromString($this->_consumer->getUserAuthorizationUrl());
+
+        $uri->setQuery(
+            $this->_httpUtility->toEncodedQueryString($params)
+        );
+
+        return $uri->getUri();
+    }
+
+    /**
+     * Assemble all parameters for inclusion in a redirect URL.
+     *
+     * @return array
+     */
+    public function assembleParams()
+    {
+        $params = array(
+            'oauth_token' => $this->_consumer->getLastRequestToken()->getToken(),
+        );
+
+        if (!Zend_Oauth_Client::$supportsRevisionA) {
+            $callback = $this->_consumer->getCallbackUrl();
+            if (!empty($callback)) {
+                $params['oauth_callback'] = $callback;
+            }
+        }
+
+        if (!empty($this->_parameters)) {
+            $params = array_merge($params, $this->_parameters);
+        }
+
+        return $params;
+    }
+}

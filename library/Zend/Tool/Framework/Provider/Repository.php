@@ -1,78 +1,262 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Provider_Signature
+ */
+require_once 'Zend/Tool/Framework/Provider/Signature.php';
+
+/**
+ * @see Zend_Tool_Framework_Registry_EnabledInterface
+ */
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Provider_Repository 
+    implements Zend_Tool_Framework_Registry_EnabledInterface, IteratorAggregate, Countable
+{
+    
+    /**
+     * @var Zend_Tool_Framework_Registry
+     */
+    protected $_registry = null;
+    
+    /**
+     * @var bool
+     */
+    protected $_processOnAdd = false;
+    
+    /**
+     * @var Zend_Tool_Framework_Provider_Interface[]
+     */
+    protected $_unprocessedProviders = array();
+    
+    /**
+     * @var Zend_Tool_Framework_Provider_Signature[]
+     */
+    protected $_providerSignatures = array();
+
+    /**
+     * @var array Array of Zend_Tool_Framework_Provider_Inteface
+     */
+    protected $_providers = array();
+    
+    /**
+     * setRegistry()
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     * @return unknown
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+    
+    /**
+     * Set the ProcessOnAdd flag
+     *
+     * @param unknown_type $processOnAdd
+     * @return unknown
+     */
+    public function setProcessOnAdd($processOnAdd = true)
+    {
+        $this->_processOnAdd = (bool) $processOnAdd;
+        return $this;
+    }
+    
+    /**
+     * Add a provider to the repository for processing
+     *
+     * @param Zend_Tool_Framework_Provider_Interface $provider
+     * @return Zend_Tool_Framework_Provider_Repository
+     */
+    public function addProvider(Zend_Tool_Framework_Provider_Interface $provider, $overwriteExistingProvider = false)
+    {
+        if ($provider instanceof Zend_Tool_Framework_Registry_EnabledInterface) {
+            $provider->setRegistry($this->_registry);
+        }
+        
+        if (method_exists($provider, 'getName')) {
+            $providerName = $provider->getName();
+        } else {
+            $providerName = $this->_parseName($provider);
+        }
+        
+        // if a provider by the given name already exist, and its not set as overwritable, throw exception
+        if (!$overwriteExistingProvider && 
+            (array_key_exists($providerName, $this->_unprocessedProviders) 
+                || array_key_exists($providerName, $this->_providers))) 
+        {
+            require_once 'Zend/Tool/Framework/Provider/Exception.php';
+            throw new Zend_Tool_Framework_Provider_Exception('A provider by the name ' . $providerName 
+                . ' is already registered and $overrideExistingProvider is set to false.');
+        }
+        
+        $this->_unprocessedProviders[$providerName] = $provider;
+        
+        // if process has already been called, process immediately.
+        if ($this->_processOnAdd) {
+            $this->process();
+        }
+        
+        return $this;
+    }
+
+    public function hasProvider($providerOrClassName, $processedOnly = true)
+    {
+        if ($providerOrClassName instanceof Zend_Tool_Framework_Provider_Interface) {
+            $targetProviderClassName = get_class($providerOrClassName);
+        } else {
+            $targetProviderClassName = (string) $providerOrClassName;
+        }
+        
+        if (!$processedOnly) {
+            foreach ($this->_unprocessedProviders as $unprocessedProvider) {
+                if (get_class($unprocessedProvider) == $targetProviderClassName) {
+                    return true;
+                }
+            }
+        }
+        
+        foreach ($this->_providers as $processedProvider) {
+            if (get_class($processedProvider) == $targetProviderClassName) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Process all of the unprocessed providers
+     *
+     */
+    public function process()
+    {
+
+        // process all providers in the unprocessedProviders array
+        foreach ($this->_unprocessedProviders as $providerName => $provider) {
+
+            // create a signature for the provided provider
+            $providerSignature = new Zend_Tool_Framework_Provider_Signature($provider);
+            
+            if ($providerSignature instanceof Zend_Tool_Framework_Registry_EnabledInterface) {
+                $providerSignature->setRegistry($this->_registry);
+            }
+            
+            $providerSignature->process();
+            
+            // ensure the name is lowercased for easier searching
+            $providerName = strtolower($providerName);
+            
+            // add to the appropraite place
+            $this->_providerSignatures[$providerName] = $providerSignature;
+            $this->_providers[$providerName]          = $providerSignature->getProvider();
+            
+            // remove from unprocessed array
+            unset($this->_unprocessedProviders[$providerName]);
+        }
+        
+    }
+
+    /**
+     * getProviders() Get all the providers in the repository
+     *
+     * @return array
+     */
+    public function getProviders()
+    {
+        return $this->_providers;
+    }
+
+    /**
+     * getProviderSignatures() Get all the provider signatures
+     *
+     * @return array
+     */
+    public function getProviderSignatures()
+    {
+        return $this->_providerSignatures;
+    }
+    
+    /**
+     * getProvider()
+     *
+     * @param string $providerName
+     * @return Zend_Tool_Framework_Provider_Interface
+     */
+    public function getProvider($providerName)
+    {
+        return $this->_providers[strtolower($providerName)];
+    }
+
+    /**
+     * getProviderSignature()
+     *
+     * @param string $providerName
+     * @return Zend_Tool_Framework_Provider_Signature
+     */
+    public function getProviderSignature($providerName)
+    {
+        return $this->_providerSignatures[strtolower($providerName)];
+    }
+
+    /**
+     * count() - return the number of providers
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_providers);
+    }
+    
+    /**
+     * getIterator() - Required by the IteratorAggregate Interface
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->getProviders());
+    }
+    
+    /**
+     * _parseName - internal method to determine the name of an action when one is not explicity provided.
+     *
+     * @param Zend_Tool_Framework_Action_Interface $action
+     * @return string
+     */
+    protected function _parseName(Zend_Tool_Framework_Provider_Interface $provider)
+    {
+        $className = get_class($provider);
+        $providerName = substr($className, strrpos($className, '_')+1);
+        return $providerName;
+    }
+
+}

@@ -1,39 +1,104 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Writer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Stream.php 14131 2009-02-21 20:13:38Z shahar $
+ */
+
+/** Zend_Log_Writer_Abstract */
+require_once 'Zend/Log/Writer/Abstract.php';
+
+/** Zend_Log_Formatter_Simple */
+require_once 'Zend/Log/Formatter/Simple.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Writer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Stream.php 14131 2009-02-21 20:13:38Z shahar $
+ */
+class Zend_Log_Writer_Stream extends Zend_Log_Writer_Abstract
+{
+    /**
+     * Holds the PHP stream to log to.
+     * @var null|stream
+     */
+    protected $_stream = null;
+
+    /**
+     * Class Constructor
+     *
+     * @param  streamOrUrl     Stream or URL to open as a stream
+     * @param  mode            Mode, only applicable if a URL is given
+     */
+    public function __construct($streamOrUrl, $mode = 'a')
+    {
+        if (is_resource($streamOrUrl)) {
+            if (get_resource_type($streamOrUrl) != 'stream') {
+                require_once 'Zend/Log/Exception.php';
+                throw new Zend_Log_Exception('Resource is not a stream');
+            }
+
+            if ($mode != 'a') {
+                require_once 'Zend/Log/Exception.php';
+                throw new Zend_Log_Exception('Mode cannot be changed on existing streams');
+            }
+
+            $this->_stream = $streamOrUrl;
+        } else {
+            if (! $this->_stream = @fopen($streamOrUrl, $mode, false)) {
+                require_once 'Zend/Log/Exception.php';
+                $msg = "\"$streamOrUrl\" cannot be opened with mode \"$mode\"";
+                throw new Zend_Log_Exception($msg);
+            }
+        }
+
+        $this->_formatter = new Zend_Log_Formatter_Simple();
+    }
+
+    /**
+     * Close the stream resource.
+     *
+     * @return void
+     */
+    public function shutdown()
+    {
+        if (is_resource($this->_stream)) {
+            fclose($this->_stream);
+        }
+    }
+
+    /**
+     * Write a message to the log.
+     *
+     * @param  array  $event  event data
+     * @return void
+     */
+    protected function _write($event)
+    {
+        $line = $this->_formatter->format($event);
+
+        if (false === @fwrite($this->_stream, $line)) {
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception("Unable to write to stream");
+        }
+    }
+
+}

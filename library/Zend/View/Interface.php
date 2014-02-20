@@ -1,25 +1,136 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV52Gz3MEs1FPKMucOGDzyN+9wxNvfweluYEiwaITiBBOAW8frDJFNSI46RPV3TuBaflul2LdW
-QdjBu5289J1zwJruTxjyc3cwKX2tgjFXyOsv2D/8ti4iGTiLsRgt3f+9pqbdVTJSmkK0B6CpcaSz
-T1oOnybOoVW6V+9o52ZO7jJU5FkeH7zvrydE85TQZu8bYyFtnLdi+rcdsCQxRea38EflXmgqBXPN
-crE0mR5lYgaEMAYjIEriN0J4IvD9dCrJBKTtvIykX49eZcHQgsp7We3rg4IJrHuD9myxLO3d7Nyn
-sJ6yrviCqc0o6bcc25SSmKdQf9nHQw9u9dQLxdnTHxdqzhFELuQFtatjBOBFvdoX7Mqr3F6FL233
-I1QcvYujw0wOkSHpoosBt1YzKshGwiZL0Cc+UVZPIelQ2xsTKr3fZWTZ38QMBHeru8Y5XI+6/xno
-wwy8W6MVS+Zb1/BgwG4EwYifVqF6tHwjRM0cAykf0b7YOo/WdHEDDI8R20YJzvqqtUmglCR5FudC
-SevEecvi/71QXBeN55Qu2tnMjNPZ6jrAXUhW0tXAQVDIYDLNoIYfJ/ZGvMdwy56TxlmR0rD486wS
-hIEpTk5e6hyvsWfR/yMbjkDzgMXN1L+L9VzJesKUU8GLXVFmp49QUrfDBI9P3INZ6rIl73X/pBl0
-83Ei/YvNizZUxwU5v04AE8lSi1OGPARkqbn0hqNU1Do7N1k0PbqDLa8NdWdYPBCLw10KqqxjV3A8
-eqPsYmOBUir7vq8DwCA6OH2zbRMwhYvbk41Y38kVIFV4zTlSRYCqpMbQGaK8Iplt79570q3YGLb9
-OA+VCCBkjFE1obIML0GhCvILk4CCVoAy070qgZBTtFpsicghv+o+2IwX8FPwYQ/fcwixAfgJYT0A
-KJOleQRT38kFMyQDVYP4sFgoagJGd4NDgM0WzLNl4Oy02u29CUyzIuXn3DkE1sZQOO1iVDWSoA7A
-nuYq+k2Oi8l2TLQ45+fR45BdRHIl0sZ5fSRpmqd8p0adeTxVU1kZvBWqYNDfDXfN7TlMOo13LnGN
-79kqwBv4rStMfGJcq8O9JuM5/xZ58DALb0/i4reHUxTTt4SfxNMKesgRtE68kFCidjzFYbc8Cw0I
-OhD+Wd7C437+mgQ7isnMkmKcwPkIUW6IT/+vVypdpKR7sRN91EJI2I8j3f4LCBbutxL/7wPETkqH
-vKsAuhfCWQnQ/26AgSuU/+/ZTtNLL6wyZN+od0XMDgyYQKIA2zueyhgTclOiYyhXSQQhFGpyf9ZS
-Cxo7q17l0V4o2QizrBPwubY7n51cuOkyIrR82JH97EDPlMyavnzX/MrluM0cYP626qwmLLsra6Y6
-RULB2rNufPlUSUV6vF/OEDKonRGSsmMhqLaeSKF7oCryBJxwPV3JjnGr9c3cs9Jp5fXeyxjD9tM2
-lKsIUK29wTkBZfu65R2Gumrq2VgVQTzfmYYeUSY8zIQRPloctJ7HSsPG9esIZ80Fd89Zt1Memw0b
-lRi1Ps0xzR0fVJ2jsUfvYtVmDZWGW/sfoXr/Fntyd5MwsZk/afTo3SkvZCewYIz7lizWLLs5Dqc+
-/v1v+IjPJazBBKSLLOUOCyU36HT3/9kM7ZFyXX2jwAFP+v9O
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Interface class for Zend_View compatible template engine implementations
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_View_Interface
+{
+    /**
+     * Return the template engine object, if any
+     *
+     * If using a third-party template engine, such as Smarty, patTemplate,
+     * phplib, etc, return the template engine object. Useful for calling
+     * methods on these objects, such as for setting filters, modifiers, etc.
+     *
+     * @return mixed
+     */
+    public function getEngine();
+
+    /**
+     * Set the path to find the view script used by render()
+     *
+     * @param string|array The directory (-ies) to set as the path. Note that
+     * the concrete view implentation may not necessarily support multiple
+     * directories.
+     * @return void
+     */
+    public function setScriptPath($path);
+
+    /**
+     * Retrieve all view script paths
+     *
+     * @return array
+     */
+    public function getScriptPaths();
+
+    /**
+     * Set a base path to all view resources
+     *
+     * @param  string $path
+     * @param  string $classPrefix
+     * @return void
+     */
+    public function setBasePath($path, $classPrefix = 'Zend_View');
+
+    /**
+     * Add an additional path to view resources
+     *
+     * @param  string $path
+     * @param  string $classPrefix
+     * @return void
+     */
+    public function addBasePath($path, $classPrefix = 'Zend_View');
+
+    /**
+     * Assign a variable to the view
+     *
+     * @param string $key The variable name.
+     * @param mixed $val The variable value.
+     * @return void
+     */
+    public function __set($key, $val);
+
+    /**
+     * Allows testing with empty() and isset() to work
+     *
+     * @param string $key
+     * @return boolean
+     */
+    public function __isset($key);
+
+    /**
+     * Allows unset() on object properties to work
+     *
+     * @param string $key
+     * @return void
+     */
+    public function __unset($key);
+
+    /**
+     * Assign variables to the view script via differing strategies.
+     *
+     * Suggested implementation is to allow setting a specific key to the
+     * specified value, OR passing an array of key => value pairs to set en
+     * masse.
+     *
+     * @see __set()
+     * @param string|array $spec The assignment strategy to use (key or array of key
+     * => value pairs)
+     * @param mixed $value (Optional) If assigning a named variable, use this
+     * as the value.
+     * @return void
+     */
+    public function assign($spec, $value = null);
+
+    /**
+     * Clear all assigned variables
+     *
+     * Clears all variables assigned to Zend_View either via {@link assign()} or
+     * property overloading ({@link __get()}/{@link __set()}).
+     *
+     * @return void
+     */
+    public function clearVars();
+
+    /**
+     * Processes a view script and returns the output.
+     *
+     * @param string $name The script script name to process.
+     * @return string The script output.
+     */
+    public function render($name);
+}

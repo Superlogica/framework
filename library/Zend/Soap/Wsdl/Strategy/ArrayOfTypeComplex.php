@@ -1,68 +1,134 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-pQzs9y/GF/uupBgzHRmPZiyR
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Wsdl
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once "Zend/Soap/Wsdl/Strategy/DefaultComplexType.php";
+
+class Zend_Soap_Wsdl_Strategy_ArrayOfTypeComplex extends Zend_Soap_Wsdl_Strategy_DefaultComplexType
+{
+    protected $_inProcess = array();
+
+    /**
+     * Add an ArrayOfType based on the xsd:complexType syntax if type[] is detected in return value doc comment.
+     *
+     * @param string $type
+     * @return string tns:xsd-type
+     */
+    public function addComplexType($type)
+    {
+        if(in_array($type, $this->_inProcess)) {
+            require_once "Zend/Soap/Wsdl/Exception.php";
+            throw new Zend_Soap_Wsdl_Exception("Infinite recursion, cannot nest '".$type."' into itsself.");
+        }
+        $this->_inProcess[$type] = $type;
+
+        $nestingLevel = $this->_getNestedCount($type);
+
+        if($nestingLevel > 1) {
+            require_once "Zend/Soap/Wsdl/Exception.php";
+            throw new Zend_Soap_Wsdl_Exception(
+                "ArrayOfTypeComplex cannot return nested ArrayOfObject deeper than ".
+                "one level. Use array object properties to return deep nested data.
+            ");
+        }
+
+        $singularType = $this->_getSingularPhpType($type);
+
+        if(!class_exists($singularType)) {
+            require_once "Zend/Soap/Wsdl/Exception.php";
+            throw new Zend_Soap_Wsdl_Exception(sprintf(
+                "Cannot add a complex type %s that is not an object or where ".
+                "class could not be found in 'DefaultComplexType' strategy.", $type
+            ));
+        }
+
+        if($nestingLevel == 1) {
+            // The following blocks define the Array of Object structure
+            $xsdComplexTypeName = $this->_addArrayOfComplexType($singularType, $type);
+        } else {
+            $xsdComplexTypeName = $singularType;
+        }
+
+        // The array for the objects has been created, now build the object definition:
+        if(!in_array($singularType, $this->getContext()->getTypes())) {
+            parent::addComplexType($singularType);
+        }
+
+        unset($this->_inProcess[$type]);
+        return "tns:".$xsdComplexTypeName;
+    }
+
+    protected function _addArrayOfComplexType($singularType, $type)
+    {
+        $dom = $this->getContext()->toDomDocument();
+
+        $xsdComplexTypeName = $this->_getXsdComplexTypeName($singularType);
+
+        if(!in_array($xsdComplexTypeName, $this->getContext()->getTypes())) {
+            $complexType = $dom->createElement('xsd:complexType');
+            $complexType->setAttribute('name', $xsdComplexTypeName);
+
+            $complexContent = $dom->createElement("xsd:complexContent");
+            $complexType->appendChild($complexContent);
+
+            $xsdRestriction = $dom->createElement("xsd:restriction");
+            $xsdRestriction->setAttribute('base', 'soap-enc:Array');
+            $complexContent->appendChild($xsdRestriction);
+
+            $xsdAttribute = $dom->createElement("xsd:attribute");
+            $xsdAttribute->setAttribute("ref", "soap-enc:arrayType");
+            $xsdAttribute->setAttribute("wsdl:arrayType", sprintf("tns:%s[]", $singularType));
+            $xsdRestriction->appendChild($xsdAttribute);
+
+            $this->getContext()->getSchema()->appendChild($complexType);
+            $this->getContext()->addType($xsdComplexTypeName);
+        }
+
+        return $xsdComplexTypeName;
+    }
+
+    protected function _getXsdComplexTypeName($type)
+    {
+        return sprintf('ArrayOf%s', $type);
+    }
+
+    /**
+     * From a nested defintion with type[], get the singular PHP Type
+     *
+     * @param  string $type
+     * @return string
+     */
+    protected function _getSingularPhpType($type)
+    {
+        return str_replace("[]", "", $type);
+    }
+
+    /**
+     * Return the array nesting level based on the type name
+     *
+     * @param  string $type
+     * @return integer
+     */
+    protected function _getNestedCount($type)
+    {
+        return substr_count($type, "[]");
+    }
+}

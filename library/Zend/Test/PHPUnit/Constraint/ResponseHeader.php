@@ -1,140 +1,378 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-+PaVQT4IfYEr3RpeWm==
+<?php
+/** PHPUnit_Framework_Constraint */
+require_once 'PHPUnit/Framework/Constraint.php';
+
+/**
+ * Response header PHPUnit Constraint
+ * 
+ * @uses       PHPUnit_Framework_Constraint
+ * @package    Zend_Test
+ * @subpackage PHPUnit
+ * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ */
+class Zend_Test_PHPUnit_Constraint_ResponseHeader extends PHPUnit_Framework_Constraint
+{
+    /**#@+
+     * @const string Assertion type constants
+     */
+    const ASSERT_RESPONSE_CODE   = 'assertResponseCode';
+    const ASSERT_HEADER          = 'assertHeader';
+    const ASSERT_HEADER_CONTAINS = 'assertHeaderContains';
+    const ASSERT_HEADER_REGEX    = 'assertHeaderRegex';
+    /**#@-*/
+
+    /**
+     * Current assertion type
+     * @var string
+     */
+    protected $_assertType      = null;
+
+    /**
+     * Available assertion types
+     * @var array
+     */
+    protected $_assertTypes     = array(
+        self::ASSERT_RESPONSE_CODE,
+        self::ASSERT_HEADER,
+        self::ASSERT_HEADER_CONTAINS,
+        self::ASSERT_HEADER_REGEX,
+    );
+
+    /**
+     * @var int Response code
+     */
+    protected $_code              = 200;
+
+    /**
+     * @var string Header
+     */
+    protected $_header            = null;
+
+    /**
+     * @var string pattern against which to compare header content
+     */
+    protected $_match             = null;
+
+    /**
+     * Whether or not assertion is negated
+     * @var bool
+     */
+    protected $_negate            = false;
+
+    /**
+     * Constructor; setup constraint state
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * Indicate negative match
+     * 
+     * @param  bool $flag 
+     * @return void
+     */
+    public function setNegate($flag = true)
+    {
+        $this->_negate = $flag;
+    }
+
+    /**
+     * Evaluate an object to see if it fits the constraints
+     * 
+     * @param  Zend_Controller_Response_Abstract $other String to examine
+     * @param  null|string Assertion type
+     * @return bool
+     */
+    public function evaluate($other, $assertType = null)
+    {
+        if (!$other instanceof Zend_Controller_Response_Abstract) {
+            require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+            throw new Zend_Test_PHPUnit_Constraint_Exception('Header constraint assertions require a response object');
+        }
+
+        if (strstr($assertType, 'Not')) {
+            $this->setNegate(true);
+            $assertType = str_replace('Not', '', $assertType);
+        }
+
+        if (!in_array($assertType, $this->_assertTypes)) {
+            require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+            throw new Zend_Test_PHPUnit_Constraint_Exception(sprintf('Invalid assertion type "%s" provided to %s constraint', $assertType, __CLASS__));
+        }
+
+        $this->_assertType = $assertType;
+
+        $response = $other;
+        $argv     = func_get_args();
+        $argc     = func_num_args();
+
+        switch ($assertType) {
+            case self::ASSERT_RESPONSE_CODE:
+                if (3 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('No response code provided against which to match');
+                }
+                $this->_code = $code = $argv[2];
+                return ($this->_negate)
+                    ? $this->_notCode($response, $code)
+                    : $this->_code($response, $code);
+            case self::ASSERT_HEADER:
+                if (3 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('No header provided against which to match');
+                }
+                $this->_header = $header = $argv[2];
+                return ($this->_negate)
+                    ? $this->_notHeader($response, $header)
+                    : $this->_header($response, $header);
+            case self::ASSERT_HEADER_CONTAINS:
+                if (4 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('Both a header name and content to match are required for ' . __FUNCTION__);
+                }
+                $this->_header = $header = $argv[2];
+                $this->_match  = $match  = $argv[3];
+                return ($this->_negate)
+                    ? $this->_notHeaderContains($response, $header, $match)
+                    : $this->_headerContains($response, $header, $match);
+            case self::ASSERT_HEADER_REGEX:
+                if (4 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('Both a header name and content to match are required for ' . __FUNCTION__);
+                }
+                $this->_header = $header = $argv[2];
+                $this->_match  = $match  = $argv[3];
+                return ($this->_negate)
+                    ? $this->_notHeaderRegex($response, $header, $match)
+                    : $this->_headerRegex($response, $header, $match);
+            default:
+                require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                throw new Zend_Test_PHPUnit_Constraint_Exception('Invalid assertion type ' . __FUNCTION__);
+        }
+    }
+
+    /**
+     * Report Failure
+     * 
+     * @see    PHPUnit_Framework_Constraint for implementation details
+     * @param  mixed $other 
+     * @param  string $description Additional message to display
+     * @param  bool $not 
+     * @return void
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function fail($other, $description, $not = false)
+    {
+        require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+        switch ($this->_assertType) {
+            case self::ASSERT_RESPONSE_CODE:
+                $failure = 'Failed asserting response code "%s"';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting response code IS NOT "%s"';
+                }
+                $failure = sprintf($failure, $this->_code);
+                break;
+            case self::ASSERT_HEADER:
+                $failure = 'Failed asserting response header "%s" found';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting response response header "%s" WAS NOT found';
+                }
+                $failure = sprintf($failure, $this->_header);
+                break;
+            case self::ASSERT_HEADER_CONTAINS:
+                $failure = 'Failed asserting response header "%s" exists and contains "%s"';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting response header "%s" DOES NOT CONTAIN "%s"';
+                }
+                $failure = sprintf($failure, $this->_header, $this->_match);
+                break;
+            case self::ASSERT_HEADER_REGEX:
+                $failure = 'Failed asserting response header "%s" exists and matches regex "%s"';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting response header "%s" DOES NOT MATCH regex "%s"';
+                }
+                $failure = sprintf($failure, $this->_header, $this->_match);
+                break;
+            default:
+                throw new Zend_Test_PHPUnit_Constraint_Exception('Invalid assertion type ' . __FUNCTION__);
+        }
+
+        if (!empty($description)) {
+            $failure = $description . "\n" . $failure;
+        }
+
+        throw new Zend_Test_PHPUnit_Constraint_Exception($failure);
+    }
+
+    /**
+     * Complete implementation
+     * 
+     * @return string
+     */
+    public function toString()
+    {
+        return '';
+    }
+
+    /**
+     * Compare response code for positive match
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  int $code 
+     * @return bool
+     */
+    protected function _code(Zend_Controller_Response_Abstract $response, $code)
+    {
+        $test = $this->_getCode($response);
+        return ($test == $code);
+    }
+
+    /**
+     * Compare response code for negative match
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  int $code 
+     * @return bool
+     */
+    protected function _notCode(Zend_Controller_Response_Abstract $response, $code)
+    {
+        $test = $this->_getCode($response);
+        return ($test != $code);
+    }
+
+    /**
+     * Retrieve response code
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @return int
+     */
+    protected function _getCode(Zend_Controller_Response_Abstract $response)
+    {
+        $test = $response->getHttpResponseCode();
+        if (null === $test) {
+            $test = 200;
+        }
+        return $test;
+    }
+
+    /**
+     * Positive check for response header presence
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @return bool
+     */
+    protected function _header(Zend_Controller_Response_Abstract $response, $header)
+    {
+        return (null !== $this->_getHeader($response, $header));
+    }
+
+    /**
+     * Negative check for response header presence
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @return bool
+     */
+    protected function _notHeader(Zend_Controller_Response_Abstract $response, $header)
+    {
+        return (null === $this->_getHeader($response, $header));
+    }
+
+    /**
+     * Retrieve response header
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @return string|null
+     */
+    protected function _getHeader(Zend_Controller_Response_Abstract $response, $header)
+    {
+        $headers = $response->sendHeaders();
+        $header  = strtolower($header);
+        if (array_key_exists($header, $headers)) {
+            return $headers[$header];
+        }
+        return null;
+    }
+
+    /**
+     * Positive check for header contents matching pattern
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @param  string $match 
+     * @return bool
+     */
+    protected function _headerContains(Zend_Controller_Response_Abstract $response, $header, $match)
+    {
+        if (null === ($fullHeader = $this->_getHeader($response, $header))) {
+            return false;
+        }
+
+        $contents = str_replace($header . ': ', '', $fullHeader);
+
+        return (strstr($contents, $match));
+    }
+
+    /**
+     * Negative check for header contents matching pattern
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @param  string $match 
+     * @return bool
+     */
+    protected function _notHeaderContains(Zend_Controller_Response_Abstract $response, $header, $match)
+    {
+        if (null === ($fullHeader = $this->_getHeader($response, $header))) {
+            return true;
+        }
+
+        $contents = str_replace($header . ': ', '', $fullHeader);
+
+        return (!strstr($contents, $match));
+    }
+
+    /**
+     * Positive check for header contents matching regex
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @param  string $pattern 
+     * @return bool
+     */
+    protected function _headerRegex(Zend_Controller_Response_Abstract $response, $header, $pattern)
+    {
+        if (null === ($fullHeader = $this->_getHeader($response, $header))) {
+            return false;
+        }
+
+        $contents = str_replace($header . ': ', '', $fullHeader);
+
+        return preg_match($pattern, $contents);
+    }
+
+    /**
+     * Negative check for header contents matching regex
+     * 
+     * @param  Zend_Controller_Response_Abstract $response 
+     * @param  string $header 
+     * @param  string $pattern 
+     * @return bool
+     */
+    protected function _notHeaderRegex(Zend_Controller_Response_Abstract $response, $header, $pattern)
+    {
+        if (null === ($fullHeader = $this->_getHeader($response, $header))) {
+            return true;
+        }
+
+        $contents = str_replace($header . ': ', '', $fullHeader);
+
+        return !preg_match($pattern, $contents);
+    }
+}

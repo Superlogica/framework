@@ -1,34 +1,126 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV53AVBak8P9DiGIcxQDPMOXkfVDBVwjhr9RAiz7BNOP0d5tIB/Q+qK8RuzD1zf8Qvxa2zMBZY
-sE8+HKcxZLROKfyEz+kFszMuQTPlpI/1GACttXlHP8BQR+kS3B8T0zaj7BrhxQSwE+TfAevvNPEx
-WcGTJI0Tr2+lDWz9YzE9VLEI1+uqFfmOxKhHRwHTMOZVavzBsmkWJMq/fE1SNazAuc3SL6uHWTLE
-ZSrGjBxzpvZOj/9kldIDn4kJIPpDKor7T+KlBeH2Q5zdr1D9A0pMtnwhazLE+UKcU3eerD6wQJdS
-Tq+kwZ9TXxrzVp26SMrtXXxeSnHKvjj/WrclPxIHqdR4WhMi5EmeujWwBQbJn7UbOLVZoFT5qk/l
-YCEGsn/mZqtN9PwSiL6pVA0HMpMttN7zkgSCXf5UWYqQerQ9Di4gMlHOnwfDite049YWg9ghLuR+
-MeQggP7AfQ+1kYfqMl7TBFjbTefFYMSmYUXroHxf0zmohCz3hRHVIi8hzLc+YxnXal/QhQmAG/Sw
-4v/0HeWpWODEq131BTUuPBD17KdbI5T0Ro2tKFcqvtBD8NPBBSDRpYTvpf4Ago2CiR7FkiwSwyY2
-tGwbED3uHzYSoPH3EVAt8LpNdn50u03/EfBEiRyEkKAks1yi7abcQliIqKphx/eBxoIRxt6WEHiJ
-+L6hbBQ2JrRilGoU/66SacO4O/+JdvQRy0uH+NQXjqAV4IKIEw4/5sJhlMoFY0A2G38EN5HKOavL
-cP68/q1r2a3QBPjawhj8O3tb7Gc88ak1P3EL4i6jmBpM8BwSNzegMZAUIz8xqHxPz58DaSo/aWdI
-uVbBy6lhv96hsI0Xi8Eyb5zs7z+rUHX7ec84U3E5G7NP4N7kdSN9dws2ilQOEkempH3JmWib9pj7
-hNoR71DWs7uftm/V0BAjizet7Jkiw90pIqvrArcQjzvOhAoJZxgb/vkUL3FfqGS4t3/R3Vz1cfrC
-dxzwMPDphbxGgWV9LoCsuu1l4yfQ8HjBGon6moSGtOUcy4J/9uKHvCw7lZVB87LArHfusJd2JrHC
-FjxEgSm9aSfTRWCnGoLAbs75mHeSHIPMXAxjaoJfcLhWv/+P+K2sRx4QWjmcQcewCVlvwNNu2iMv
-HHZ/naciPytK2r+sfJD8CGSLrqswLh9MAXLdYC7imMzLG7iour0od4T3uTG/xXvB0mITzyG+CQ7z
-9mVxiJ1SqynfcfTMbk+QlaGu+h/ReI/by1/RJZKx9OoVZcTuOq+XneNhJEB5KFDwEjSxPOP+5rY8
-TbZddp36sJEH9kXzl6lcxhj7n+wgT153TPHOVH27JfDktY9qm3rnDmTjRm6CBBsm3/+/XuX/T22X
-LUSjzPJV/WewYkma2PVXasAza62ipUs5ERtXN2TehV/ixsav7V755NApcIEHR5yw9ZTvXMvxObhg
-8nk11w9fPtfjHWqiP7lFaQ2QRpa5HJGxeAIe9OEyD8dYEIMLEwZUkI0g7E3dWzSiMgaJziG4SwmX
-Ey0PTY/uu+asLEBs/vzSQLfNJOWMbWji3rMKBeV8PYlpqKs8xhlzsQ369AwPXJBbO/UShMtGQD08
-6Xv/URWITjN5pWtjP5ISDxVY/dTXupu2YnrR4rHKP+85S6J+G+c8jwjTcDOgmOi2HpGouVxp7XPo
-2OHCGSpT8zD6EbriczeXJlL2VAzn/TZkhWrV36/1dwDo/tbwtA+O0mtFDdDeBWTJZWTCxxWeAo5y
-85+2YcVJzV/kv7rMbTISFabJeHKp58AmNjFzQt3FyIRn95z6viPxTR/KCx71+DdEHA6a5p6GH6Vc
-bXbOZ0zwp0LCQG6qEZYwFY0/RMqSm/pRkVFJXmC/xOkowCQdkeMvnTuSQyt3HJjzP/3TG0huimlW
-RBREMWcspWo8CEE1Tu+tKgvIT7o2bvjHePtsiPiGDdHatTbC7KlM+Xksq+3AKUnqEi0YLXJPyXXH
-BxPurwveO5v6frqrCnOzMad9xQvmbWCzXX2eZhNv32m2kPk4uzxq8j6JGxZX0vckvoISjuSG7/Po
-oqXNNrnywgArTXKXgzGVITxxpend74Db6S2th/v3xtPXv3z8BhhVbU8Y1PUD/uIhJjWoYR0+5ujJ
-YL2QhIoO57gRxklnskEOv7e1sC5ciD6NH4DWLggHOve3d3XG1yM7s8W26fYGmMfi1wD8vDcszTSk
-A/tU9ypx0MyIXjGdN8YxDgWNOVIfNMjMaj1hdMD3TcEpKAy9Z0uqMfFfOD/5MyWlcYrXk8yU4UV8
-VJRNXphy6vWfmXHVwzpM2q9U+XPC3YIxscZWne1cDO737FJTnuvEBwuRe7O4edG=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_FileParserDataSource */
+require_once 'Zend/Pdf/FileParserDataSource.php';
+
+
+/**
+ * Concrete subclass of {@link Zend_Pdf_FileParserDataSource} that provides an
+ * interface to binary strings.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_FileParserDataSource_String extends Zend_Pdf_FileParserDataSource
+{
+  /**** Instance Variables ****/
+
+
+    /**
+     * The string to parse.
+     * @var string
+     */
+    protected $_string = '';
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Concrete Class Implementation */
+
+    /**
+     * Object constructor.
+     *
+     * Verifies that the string is not empty.
+     *
+     * @param string $string String to parse.
+     */
+    public function __construct($string)
+    {
+        if (empty($string)) {
+            throw new Zend_Pdf_Exception('String is empty',
+                                         Zend_Pdf_Exception::PARAMETER_VALUE_OUT_OF_RANGE);
+        }
+        $this->_size = strlen($string);
+        $this->_string = $string;
+    }
+
+    /**
+     * Object destructor.
+     */
+    public function __destruct()
+    {
+        $this->_string = '';
+    }
+
+    /**
+     * Returns the specified number of raw bytes from the string at the byte
+     * offset of the current read position.
+     *
+     * Advances the read position by the number of bytes read.
+     *
+     * Throws an exception if there is insufficient data to completely fulfill
+     * the request.
+     *
+     * @param integer $byteCount Number of bytes to read.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readBytes($byteCount)
+    {
+        if (($this->_offset + $byteCount) > $this->_size) {
+            throw new Zend_Pdf_Exception("Insufficient data to read $byteCount bytes",
+                                         Zend_Pdf_Exception::INSUFFICIENT_DATA);
+        }
+        $bytes = substr($this->_string, $this->_offset, $byteCount);
+        $this->_offset += $byteCount;
+        return $bytes;
+    }
+
+    /**
+     * Returns the entire string.
+     *
+     * Preserves the current read position.
+     *
+     * @return string
+     */
+    public function readAllBytes()
+    {
+        return $this->_string;
+    }
+
+
+  /* Object Magic Methods */
+
+    /**
+     * Returns a string containing the parsed string's length.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return "String ($this->_size bytes)";
+    }
+
+}

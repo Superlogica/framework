@@ -1,60 +1,259 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Element_Xhtml */
+require_once 'Zend/Form/Element/Xhtml.php';
+
+/**
+ * CSRF form protection
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Hash.php 11332 2008-09-10 16:35:45Z matthew $
+ */
+class Zend_Form_Element_Hash extends Zend_Form_Element_Xhtml
+{
+    /**
+     * Use formHidden view helper by default
+     * @var string
+     */
+    public $helper = 'formHidden';
+
+    /**
+     * Actual hash used.
+     * 
+     * @var mixed
+     */
+    protected $_hash;
+
+    /**
+     * Salt for CSRF token
+     * @var string
+     */
+    protected $_salt = 'salt';
+
+    /**
+     * @var Zend_Session_Namespace
+     */
+    protected $_session;
+
+    /**
+     * TTL for CSRF token
+     * @var int
+     */
+    protected $_timeout = 300;
+
+    /**
+     * Constructor
+     *
+     * Creates session namespace for CSRF token, and adds validator for CSRF 
+     * token.
+     * 
+     * @param  string|array|Zend_Config $spec 
+     * @param  array|Zend_Config $options 
+     * @return void
+     */
+    public function __construct($spec, $options = null)
+    {
+        parent::__construct($spec, $options);
+
+        $this->setAllowEmpty(false)
+             ->setRequired(true)
+             ->initCsrfValidator();
+    }
+
+    /**
+     * Set session object
+     * 
+     * @param  Zend_Session_Namespace $session 
+     * @return Zend_Form_Element_Hash
+     */
+    public function setSession($session)
+    {
+        $this->_session = $session;
+        return $this;
+    }
+
+    /**
+     * Get session object
+     *
+     * Instantiate session object if none currently exists
+     * 
+     * @return Zend_Session_Namespace
+     */
+    public function getSession()
+    {
+        if (null === $this->_session) {
+            require_once 'Zend/Session/Namespace.php';
+            $this->_session = new Zend_Session_Namespace($this->getSessionName());
+        }
+        return $this->_session;
+    }
+
+    /**
+     * Initialize CSRF validator
+     *
+     * Creates Session namespace, and initializes CSRF token in session. 
+     * Additionally, adds validator for validating CSRF token.
+     * 
+     * @return Zend_Form_Element_Hash
+     */
+    public function initCsrfValidator()
+    {
+        $session = $this->getSession();
+        if (isset($session->hash)) {
+            $rightHash = $session->hash;
+        } else {
+            $rightHash = null;
+        }
+
+        $this->addValidator('Identical', true, array($rightHash));
+        return $this;
+    }
+
+    /**
+     * Salt for CSRF token
+     *
+     * @param  string $salt
+     * @return Zend_Form_Element_Hash
+     */
+    public function setSalt($salt)
+    {
+        $this->_salt = (string) $salt;
+        return $this;
+    }
+
+    /**
+     * Retrieve salt for CSRF token
+     *
+     * @return string
+     */
+    public function getSalt()
+    {
+        return $this->_salt;
+    }
+
+    /**
+     * Retrieve CSRF token
+     *
+     * If no CSRF token currently exists, generates one.
+     * 
+     * @return string
+     */
+    public function getHash()
+    {
+        if (null === $this->_hash) {
+            $this->_generateHash();
+        }
+        return $this->_hash;
+    }
+
+    /**
+     * Get session namespace for CSRF token
+     *
+     * Generates a session namespace based on salt, element name, and class.
+     * 
+     * @return string
+     */
+    public function getSessionName()
+    {
+        return __CLASS__ . '_' . $this->getSalt() . '_' . $this->getName();
+    }
+
+    /**
+     * Set timeout for CSRF session token
+     * 
+     * @param  int $ttl 
+     * @return Zend_Form_Element_Hash
+     */
+    public function setTimeout($ttl)
+    {
+        $this->_timeout = (int) $ttl;
+        return $this;
+    }
+
+    /**
+     * Get CSRF session token timeout
+     * 
+     * @return int
+     */
+    public function getTimeout()
+    {
+        return $this->_timeout;
+    }
+
+    /**
+     * Override getLabel() to always be empty
+     * 
+     * @return null
+     */
+    public function getLabel()
+    {
+        return null;
+    }
+
+    /**
+     * Initialize CSRF token in session
+     * 
+     * @return void
+     */
+    public function initCsrfToken()
+    {
+        $session = $this->getSession();
+        $session->setExpirationHops(1, null, true);
+        $session->setExpirationSeconds($this->getTimeout());
+        $session->hash = $this->getHash();
+    }
+
+    /**
+     * Render CSRF token in form
+     * 
+     * @param  Zend_View_Interface $view 
+     * @return string
+     */
+    public function render(Zend_View_Interface $view = null)
+    {
+        $this->initCsrfToken();
+        return parent::render($view);
+    }
+
+    /**
+     * Generate CSRF token
+     *
+     * Generates CSRF token and stores both in {@link $_hash} and element 
+     * value.
+     * 
+     * @return void
+     */
+    protected function _generateHash()
+    {
+        $this->_hash = md5(
+            mt_rand(1,1000000) 
+            .  $this->getSalt() 
+            .  $this->getName() 
+            .  mt_rand(1,1000000)
+        );
+        $this->setValue($this->_hash);
+    }
+}

@@ -1,47 +1,221 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-5/zcizzRD2y=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Docs
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_Query
+ */
+require_once('Zend/Gdata/Query.php');
+
+/**
+ * Assists in constructing queries for Google Document List documents
+ *
+ * @link http://code.google.com/apis/gdata/spreadsheets/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Docs
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Docs_Query extends Zend_Gdata_Query
+{
+
+    /**
+     * The base URL for retrieving a document list
+     *
+     * @var string
+     */
+    const DOCUMENTS_LIST_FEED_URI = 'http://docs.google.com/feeds/documents';
+
+    /**
+     * The generic base URL used by some inherited methods
+     *
+     * @var string
+     */
+    protected $_defaultFeedUri = self::DOCUMENTS_LIST_FEED_URI;
+
+    /**
+     * The visibility to be used when querying for the feed. A request for a 
+     * feed with private visbility requires the user to be authenricated. 
+     * Private is the only avilable visibility for the documents list.
+     *
+     * @var string
+     */
+    protected $_visibility = 'private';
+
+    /**
+     * The projection determines how much detail should be given in the
+     * result of the query. Full is the only valid projection for the
+     * documents list.
+     *
+     * @var string
+     */
+    protected $_projection = 'full';
+
+    /**
+     * Constructs a new instance of a Zend_Gdata_Docs_Query object.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Sets the projection for this query. Common values for projection 
+     * include 'full'.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Docs_Query Provides a fluent interface
+     */
+    public function setProjection($value)
+    {
+        $this->_projection = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the visibility for this query. Common values for visibility
+     * include 'private'.
+     *
+     * @return Zend_Gdata_Docs_Query Provides a fluent interface
+     */
+    public function setVisibility($value)
+    {
+        $this->_visibility = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the projection for this query.
+     *
+     * @return string projection
+     */
+    public function getProjection()
+    {
+        return $this->_projection;
+    }
+
+    /**
+     * Gets the visibility for this query.
+     *
+     * @return string visibility
+     */
+    public function getVisibility()
+    {
+        return $this->_visibility;
+    }
+
+    /**
+     * Sets the title attribute for this query. The title parameter is used
+     * to restrict the results to documents whose titles either contain or 
+     * completely match the title.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Docs_Query Provides a fluent interface
+     */
+    public function setTitle($value)
+    {
+        if ($value !== null) {
+            $this->_params['title'] = $value;
+        } else {
+            unset($this->_params['title']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the title attribute for this query.
+     *
+     * @return string title
+     */
+    public function getTitle()
+    {
+        if (array_key_exists('title', $this->_params)) {
+            return $this->_params['title'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Sets the title-exact attribute for this query.
+     * If title-exact is set to true, the title query parameter will be used
+     * in an exact match. Only documents with a title identical to the
+     * title parameter will be returned.
+     *
+     * @param boolean $value Use either true or false
+     * @return Zend_Gdata_Docs_Query Provides a fluent interface
+     */
+    public function setTitleExact($value)
+    {
+        if ($value) {
+            $this->_params['title-exact'] = $value;
+        } else {
+            unset($this->_params['title-exact']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the title-exact attribute for this query.
+     *
+     * @return string title-exact
+     */
+    public function getTitleExact()
+    {
+        if (array_key_exists('title-exact', $this->_params)) {
+            return $this->_params['title-exact'];
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Gets the full query URL for this query.
+     *
+     * @return string url
+     */
+    public function getQueryUrl()
+    {
+        $uri = $this->_defaultFeedUri;
+
+        if ($this->_visibility !== null) {
+            $uri .= '/' . $this->_visibility;
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php';
+            throw new Zend_Gdata_App_Exception(
+                'A visibility must be provided for cell queries.');
+        }
+
+        if ($this->_projection !== null) {
+            $uri .= '/' . $this->_projection;
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php';
+            throw new Zend_Gdata_App_Exception(
+                'A projection must be provided for cell queries.');
+        }
+
+        $uri .= $this->getQueryString();
+        return $uri;
+    }
+
+}

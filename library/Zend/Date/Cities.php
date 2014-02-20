@@ -1,98 +1,322 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Date
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: DateObject.php 2511 2006-12-26 22:54:37Z bkarwin $
+ */
+
+/**
+ * Additional data for sunset/sunrise calculations
+ *
+ * Holds the geographical data for all capital cities and many others worldwide
+ * Original data from http://www.fallingrain.com/world/
+ *
+ * @category   Zend
+ * @package    Zend_Date
+ * @subpackage Zend_Date_Cities
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Date_Cities
+{
+    /**
+     * Array Collection of known cities
+     *
+     * The array contains 'latitude' and 'longitude' for every known city
+     *
+     * @var Array
+     */
+    public static $cities = array(
+        'Abidjan'       => array('latitude' =>    5.3411111, 'longitude' =>   -4.0280556),
+        'Abu Dhabi'     => array('latitude' =>   24.4666667, 'longitude' =>   54.3666667),
+        'Abuja'       => array('latitude' =>    9.1758333, 'longitude' =>    7.1808333),
+        'Accra'       => array('latitude' =>    5.55,      'longitude' =>   -0.2166667),
+        'Adamstown'   => array('latitude' =>  -25.0666667, 'longitude' => -130.0833333),
+        'Addis Ababa' => array('latitude' =>    9.0333333, 'longitude' =>   38.7),
+        'Adelaide'    => array('latitude' =>  -34.9333333, 'longitude' =>  138.6),
+        'Algiers'     => array('latitude' =>   36.7630556, 'longitude' =>    3.0505556),
+        'Alofi'       => array('latitude' =>  -19.0166667, 'longitude' => -169.9166667),
+        'Amman'       => array('latitude' =>   31.95,      'longitude' =>   35.9333333),
+        'Amsterdam'        => array('latitude' =>   52.35,      'longitude' =>    4.9166667),
+        'Andorra la Vella' => array('latitude' => 42.5,    'longitude' =>    1.5166667),
+        'Ankara'      => array('latitude' =>   39.9272222, 'longitude' =>   32.8644444),
+        'Antananarivo' => array('latitude' => -18.9166667, 'longitude' =>   47.5166667),
+        'Apia'        => array('latitude' =>  -13.8333333, 'longitude' => -171.7333333),
+        'Ashgabat'    => array('latitude' =>   37.95,      'longitude' =>   58.3833333),
+        'Asmara'      => array('latitude' =>   15.3333333, 'longitude' =>   38.9333333),
+        'Astana'      => array('latitude' =>   51.1811111, 'longitude' =>   71.4277778),
+        'Asunción'    => array('latitude' =>  -25.2666667, 'longitude' =>  -57.6666667),
+        'Athens'      => array('latitude' =>   37.9833333, 'longitude' =>   23.7333333),
+        'Auckland'    => array('latitude' =>  -36.8666667, 'longitude' =>  174.7666667),
+        'Avarua'      => array('latitude' =>  -21.2,       'longitude' => -159.7666667),
+        'Baghdad'     => array('latitude' =>   33.3386111, 'longitude' =>   44.3938889),
+        'Baku'        => array('latitude' =>   40.3952778, 'longitude' =>   49.8822222),
+        'Bamako'      => array('latitude' =>   12.65,      'longitude' =>   -8),
+        'Bandar Seri Begawan' => array('latitude' => 4.8833333, 'longitude' => 114.9333333),
+        'Bankok'      => array('latitude' =>   13.5833333, 'longitude' =>  100.2166667),
+        'Bangui'      => array('latitude' =>    4.3666667, 'longitude' =>   18.5833333),
+        'Banjul'      => array('latitude' =>   13.4530556, 'longitude' =>  -16.5775),
+        'Basel'       => array('latitude' =>   47.5666667, 'longitude' =>    7.6),
+        'Basseterre'  => array('latitude' =>   17.3,       'longitude' =>  -62.7166667),
+        'Beijing'     => array('latitude' =>   39.9288889, 'longitude' =>  116.3883333),
+        'Beirut'      => array('latitude' =>   33.8719444, 'longitude' =>   35.5097222),
+        'Belgrade'    => array('latitude' =>   44.8186111, 'longitude' =>   20.4680556),
+        'Belmopan'    => array('latitude' =>   17.25,      'longitude' =>  -88.7666667),
+        'Berlin'      => array('latitude' =>   52.5166667, 'longitude' =>   13.4),
+        'Bern'        => array('latitude' =>   46.9166667, 'longitude' =>    7.4666667),
+        'Bishkek'     => array('latitude' =>   42.8730556, 'longitude' =>   74.6002778),
+        'Bissau'      => array('latitude' =>   11.85,      'longitude' =>  -15.5833333),
+        'Bloemfontein' => array('latitude' => -29.1333333, 'longitude' =>   26.2),
+        'Bogotá'      => array('latitude' =>    4.6,       'longitude' =>  -74.0833333),
+        'Brasilia'    => array('latitude' =>  -15.7833333, 'longitude' =>  -47.9166667),
+        'Bratislava'  => array('latitude' =>   48.15,      'longitude' =>   17.1166667),
+        'Brazzaville' => array('latitude' =>   -4.2591667, 'longitude' =>   15.2847222),
+        'Bridgetown'  => array('latitude' =>   13.1,       'longitude' =>  -59.6166667),
+        'Brisbane'    => array('latitude' =>  -27.5,       'longitude' =>  153.0166667),
+        'Brussels'    => array('latitude' =>  50.8333333,  'longitude' =>    4.3333333),
+        'Bucharest'   => array('latitude' =>  44.4333333,  'longitude' =>   26.1),
+        'Budapest'    => array('latitude' =>  47.5,        'longitude' =>   19.0833333),
+        'Buenos Aires' => array('latitude' => -34.5875,    'longitude' =>  -58.6725),
+        'Bujumbura'   => array('latitude' =>   -3.3761111, 'longitude' =>   29.36),
+        'Cairo'       => array('latitude' =>   30.05,      'longitude' =>   31.25),
+        'Calgary'     => array('latitude' =>   51.0833333, 'longitude' => -114.0833333),
+        'Canberra'    => array('latitude' =>  -35.2833333, 'longitude' =>  149.2166667),
+        'Cape Town'   => array('latitude' =>  -33.9166667, 'longitude' =>   18.4166667),
+        'Caracas'     => array('latitude' =>   10.5,       'longitude' =>  -66.9166667),
+        'Castries'    => array('latitude' =>   14,         'longitude' =>  -61),
+        'Charlotte Amalie' => array('latitude' => 18.34389, 'longitude' => -64.93111),
+        'Chicago'     => array('latitude' =>   41.85,      'longitude' =>  -87.65),
+        'Chisinau'    => array('latitude' =>   47.055556,  'longitude' =>   28.8575),
+        'Cockburn Town' => array('latitude' => 21.4666667, 'longitude' =>  -71.1333333),
+        'Colombo'     => array('latitude' =>    6.9319444, 'longitude' =>   79.8477778),
+        'Conakry'     => array('latitude' =>    9.5091667, 'longitude' =>  -13.7122222),
+        'Copenhagen'  => array('latitude' =>   55.6666667, 'longitude' =>   12.5833333),
+        'Cotonou'     => array('latitude' =>    6.35,      'longitude' =>    2.4333333),
+        'Dakar'       => array('latitude' =>   14.6708333, 'longitude' =>  -17.4380556),
+        'Damascus'    => array('latitude' =>   33.5,       'longitude' =>   36.3),
+        'Dar es Salaam' => array('latitude' => -6.8,       'longitude' =>   39.2833333),
+        'Dhaka'       => array('latitude' =>   23.7230556, 'longitude' =>   90.4086111),
+        'Dili'        => array('latitude' =>   -8.5586111, 'longitude' =>  125.5736111),
+        'Djibouti'    => array('latitude' =>   11.595,     'longitude' =>   43.1480556),
+        'Dodoma'      => array('latitude' =>   -6.1833333, 'longitude' =>   35.75),
+        'Doha'        => array('latitude' =>   25.2866667, 'longitude' =>   51.5333333),
+        'Dubai'       => array('latitude' =>   25.2522222, 'longitude' =>   55.28),
+        'Dublin'      => array('latitude' =>   53.3330556, 'longitude' =>   -6.2488889),
+        'Dushanbe'    => array('latitude' =>   38.56,      'longitude' =>   68.7738889 ),
+        'Fagatogo'    => array('latitude' =>  -14.2825,    'longitude' => -170.69),
+        'Fongafale'   => array('latitude' =>   -8.5166667, 'longitude' =>  179.2166667),
+        'Freetown'    => array('latitude' =>    8.49,      'longitude' =>  -13.2341667),
+        'Gaborone'    => array('latitude' =>  -24.6463889, 'longitude' =>   25.9119444),
+        'Geneva'      => array('latitude' =>   46.2,       'longitude' =>    6.1666667),
+        'George Town' => array('latitude' =>   19.3,       'longitude' =>  -81.3833333),
+        'Georgetown'  => array('latitude' =>    6.8,       'longitude' =>  -58.1666667),
+        'Gibraltar'   => array('latitude' =>   36.1333333, 'longitude' =>   -5.35),
+        'Glasgow'     => array('latitude' =>   55.8333333, 'longitude' =>   -4.25),
+        'Guatemala la Nueva' => array('latitude' => 14.6211111, 'longitude' => -90.5269444),
+        'Hagatna'     => array('latitude' =>   13.47417,   'longitude' =>  144.74778),
+        'The Hague'   => array('latitude' =>   52.0833333, 'longitude' =>    4.3),
+        'Hamilton'    => array('latitude' =>   32.2941667, 'longitude' =>  -64.7838889),
+        'Hanoi'       => array('latitude' =>   21.0333333, 'longitude' =>  105.85),
+        'Harare'      => array('latitude' =>  -17.8177778, 'longitude' =>   31.0447222),
+        'Havana'      => array('latitude' =>   23.1319444, 'longitude' =>  -82.3641667),
+        'Helsinki'    => array('latitude' =>   60.1755556, 'longitude' =>   24.9341667),
+        'Honiara'     => array('latitude' =>   -9.4333333, 'longitude' =>  159.95),
+        'Islamabad'   => array('latitude' =>   30.8486111, 'longitude' =>   72.4944444),
+        'Istanbul'    => array('latitude' =>   41.0186111, 'longitude' =>   28.9647222),
+        'Jakarta'     => array('latitude' =>   -6.1744444, 'longitude' =>  106.8294444),
+        'Jamestown'   => array('latitude' =>  -15.9333333, 'longitude' =>   -5.7166667),
+        'Jerusalem'   => array('latitude' =>   31.7666667, 'longitude' =>   35.2333333),
+        'Johannesburg' => array('latitude' => -26.2,       'longitude' =>   28.0833333),
+        'Kabul'       => array('latitude' =>   34.5166667, 'longitude' =>   69.1833333),
+        'Kampala'     => array('latitude' =>    0.3155556, 'longitude' =>   32.5655556),
+        'Kathmandu'   => array('latitude' =>   27.7166667, 'longitude' =>   85.3166667),
+        'Khartoum'    => array('latitude' =>   15.5880556, 'longitude' =>   32.5341667),
+        'Kigali'      => array('latitude' =>   -1.9536111, 'longitude' =>   30.0605556),
+        'Kingston'    => array('latitude' =>  -29.05,      'longitude' =>  167.95),
+        'Kingstown'   => array('latitude' =>   13.1333333, 'longitude' =>  -61.2166667),
+        'Kinshasa'    => array('latitude' =>   -4.3,       'longitude' =>   15.3),
+        'Kolkata'     => array('latitude' =>   22.5697222, 'longitude' =>   88.3697222),
+        'Kuala Lumpur' => array('latitude' =>   3.1666667, 'longitude' =>  101.7),
+        'Kuwait City' => array('latitude' =>   29.3697222, 'longitude' =>   47.9783333),
+        'Kiev'        => array('latitude' =>   50.4333333, 'longitude' =>   30.5166667),
+        'La Paz'      => array('latitude' =>  -16.5,       'longitude' =>  -68.15),
+        'Libreville'  => array('latitude' =>    0.3833333, 'longitude' =>    9.45),
+        'Lilongwe'    => array('latitude' =>  -13.9833333, 'longitude' =>   33.7833333),
+        'Lima'        => array('latitude' =>  -12.05,      'longitude' =>  -77.05),
+        'Lisbon'      => array('latitude' =>   38.7166667, 'longitude' =>   -9.1333333),
+        'Ljubljana'   => array('latitude' =>   46.0552778, 'longitude' =>   14.5144444),
+        'Lobamba'     => array('latitude' =>  -26.4666667, 'longitude' =>   31.2),
+        'Lomé'        => array('latitude' =>    9.7166667, 'longitude' =>   38.3),
+        'London'      => array('latitude' =>   51.5,       'longitude' =>   -0.1166667),
+        'Los Angeles' => array('latitude' =>   34.05222,   'longitude' => -118.24278),
+        'Luanda'      => array('latitude' =>   -8.8383333, 'longitude' =>   13.2344444),
+        'Lusaka'      => array('latitude' =>  -15.4166667, 'longitude' =>   28.2833333),
+        'Luxembourg'  => array('latitude' =>   49.6116667, 'longitude' =>    6.13),
+        'Madrid'      => array('latitude' =>   40.4,       'longitude' =>   -3.6833333),
+        'Majuro'      => array('latitude' =>    7.1,       'longitude' =>  171.3833333),
+        'Malabo'      => array('latitude' =>    3.75,      'longitude' =>    8.7833333),
+        'Managua'     => array('latitude' =>   12.1508333, 'longitude' =>  -86.2683333),
+        'Manama'      => array('latitude' =>   26.2361111, 'longitude' =>   50.5830556),
+        'Manila'      => array('latitude' =>   14.6041667, 'longitude' =>  120.9822222),
+        'Maputo'      => array('latitude' =>  -25.9652778, 'longitude' =>   32.5891667),
+        'Maseru'      => array('latitude' =>  -29.3166667, 'longitude' =>   27.4833333),
+        'Mbabane'     => array('latitude' =>  -26.3166667, 'longitude' =>   31.1333333),
+        'Melbourne'   => array('latitude' =>  -37.8166667, 'longitude' =>  144.9666667),
+        'Melekeok'    => array('latitude' =>    7.4933333, 'longitude' =>  134.6341667),
+        'Mexiko City' => array('latitude' =>   19.4341667, 'longitude' =>  -99.1386111),
+        'Minsk'       => array('latitude' =>   53.9,       'longitude' =>   27.5666667),
+        'Mogadishu'   => array('latitude' =>    2.0666667, 'longitude' =>   45.3666667),
+        'Monaco'      => array('latitude' =>   43.7333333, 'longitude' =>    7.4166667),
+        'Monrovia'    => array('latitude' =>    6.3105556, 'longitude' =>  -10.8047222),
+        'Montevideo'  => array('latitude' =>  -34.8580556, 'longitude' =>  -56.1708333),
+        'Montreal'    => array('latitude' =>   45.5,       'longitude' =>  -73.5833333),
+        'Moroni'      => array('latitude' =>  -11.7041667, 'longitude' =>   43.2402778),
+        'Moscow'      => array('latitude' =>   55.7522222, 'longitude' =>   37.6155556),
+        'Muscat'      => array('latitude' =>   23.6133333, 'longitude' =>   58.5933333),
+        'Nairobi'     => array('latitude' =>   -1.3166667, 'longitude' =>   36.8333333),
+        'Nassau'      => array('latitude' =>   25.0833333, 'longitude' =>  -77.35),
+        'N´Djamena'   => array('latitude' =>   12.1130556, 'longitude' =>   15.0491667),
+        'New Dehli'   => array('latitude' =>   28.6,       'longitude' =>   77.2),
+        'New York'    => array('latitude' =>   40.71417,   'longitude' =>  -74.00639),
+        'Newcastle'   => array('latitude' =>  -32.9166667, 'longitude' =>  151.75),
+        'Niamey'      => array('latitude' =>   13.6666667, 'longitude' =>    1.7833333),
+        'Nicosia'     => array('latitude' =>   35.1666667, 'longitude' =>   33.3666667),
+        'Nouakchott'  => array('latitude' =>   18.0863889, 'longitude' =>  -15.9752778),
+        'Noumea'      => array('latitude' =>  -22.2666667, 'longitude' =>  166.45),
+        'Nuku´alofa'  => array('latitude' =>  -21.1333333, 'longitude' => -175.2),
+        'Nuuk'        => array('latitude' =>   64.1833333, 'longitude' =>  -51.75),
+        'Oranjestad'  => array('latitude' =>   12.5166667, 'longitude' =>  -70.0333333),
+        'Oslo'        => array('latitude' =>   59.9166667, 'longitude' =>   10.75),
+        'Ouagadougou' => array('latitude' =>   12.3702778, 'longitude' =>   -1.5247222),
+        'Palikir'     => array('latitude' =>    6.9166667, 'longitude' =>  158.15),
+        'Panama City' => array('latitude' =>    8.9666667, 'longitude' =>  -79.5333333),
+        'Papeete'     => array('latitude' =>  -17.5333333, 'longitude' => -149.5666667),
+        'Paramaribo'  => array('latitude' =>    5.8333333, 'longitude' =>  -55.1666667),
+        'Paris'       => array('latitude' =>   48.8666667, 'longitude' =>    2.3333333),
+        'Perth'       => array('latitude' =>  -31.9333333, 'longitude' =>  115.8333333),
+        'Phnom Penh'  => array('latitude' =>   11.55,      'longitude' =>  104.9166667),
+        'Podgorica'   => array('latitude' =>   43.7752778, 'longitude' =>   19.6827778),
+        'Port Louis'  => array('latitude' =>  -20.1666667, 'longitude' =>   57.5),
+        'Port Moresby' => array('latitude' =>  -9.4647222, 'longitude' =>  147.1925),
+        'Port-au-Prince' => array('latitude' => 18.5391667, 'longitude' => -72.335),
+        'Port of Spain' => array('latitude' => 10.6666667, 'longitude' =>  -61.5),
+        'Porto-Novo'  => array('latitude' =>    6.4833333, 'longitude' =>    2.6166667),
+        'Prague'      => array('latitude' =>   50.0833333, 'longitude' =>   14.4666667),
+        'Praia'       => array('latitude' =>   14.9166667, 'longitude' =>  -23.5166667),
+        'Pretoria'    => array('latitude' =>  -25.7069444, 'longitude' =>   28.2294444),
+        'Pyongyang'   => array('latitude' =>   39.0194444, 'longitude' =>  125.7547222),
+        'Quito'       => array('latitude' =>   -0.2166667, 'longitude' =>  -78.5),
+        'Rabat'       => array('latitude' =>   34.0252778, 'longitude' =>   -6.8361111),
+        'Reykjavik'   => array('latitude' =>   64.15,      'longitude' =>  -21.95),
+        'Riga'        => array('latitude' =>   56.95,      'longitude' =>   24.1),
+        'Rio de Janero' => array('latitude' => -22.9,      'longitude' =>  -43.2333333),
+        'Road Town'   => array('latitude' =>   18.4166667, 'longitude' =>  -64.6166667),
+        'Rome'        => array('latitude' =>   41.9,       'longitude' =>   12.4833333),
+        'Roseau'      => array('latitude' =>   15.3,       'longitude' =>  -61.4),
+        'Rotterdam'   => array('latitude' =>   51.9166667, 'longitude' =>    4.5),
+        'Salvador'    => array('latitude' =>  -12.9833333, 'longitude' =>  -38.5166667),
+        'San José'    => array('latitude' =>    9.9333333, 'longitude' =>  -84.0833333),
+        'San Juan'    => array('latitude' =>   18.46833,   'longitude' =>  -66.10611),
+        'San Marino'  => array('latitude' =>   43.5333333, 'longitude' =>   12.9666667),
+        'San Salvador' => array('latitude' =>  13.7086111, 'longitude' =>  -89.2030556),
+        'Sanaá'       => array('latitude' =>   15.3547222, 'longitude' =>   44.2066667),
+        'Santa Cruz'  => array('latitude' =>  -17.8,       'longitude' =>  -63.1666667),
+        'Santiago'    => array('latitude' =>  -33.45,      'longitude' =>  -70.6666667),
+        'Santo Domingo' => array('latitude' => 18.4666667, 'longitude' =>  -69.9),
+        'Sao Paulo'   => array('latitude' =>  -23.5333333, 'longitude' =>  -46.6166667),
+        'Sarajevo'    => array('latitude' =>   43.85,      'longitude' =>   18.3833333),
+        'Seoul'       => array('latitude' =>   37.5663889, 'longitude' =>  126.9997222),
+        'Shanghai'    => array('latitude' =>   31.2222222, 'longitude' =>  121.4580556),
+        'Sydney'      => array('latitude' =>  -33.8833333, 'longitude' =>  151.2166667),
+        'Singapore'   => array('latitude' =>    1.2930556, 'longitude' =>  103.8558333),
+        'Skopje'      => array('latitude' =>   42,         'longitude' =>   21.4333333),
+        'Sofia'       => array('latitude' =>   42.6833333, 'longitude' =>   23.3166667),
+        'St. George´s' => array('latitude' =>  12.05,      'longitude' =>  -61.75),
+        'St. John´s'  => array('latitude' =>   17.1166667, 'longitude' =>  -61.85),
+        'Stanley'     => array('latitude' =>  -51.7,       'longitude' =>  -57.85),
+        'Stockholm'   => array('latitude' =>   59.3333333, 'longitude' =>   18.05),
+        'Suva'        => array('latitude' =>  -18.1333333, 'longitude' =>  178.4166667),
+        'Taipei'      => array('latitude' =>   25.0166667, 'longitude' =>  121.45),
+        'Tallinn'     => array('latitude' =>   59.4338889, 'longitude' =>   24.7280556),
+        'Tashkent'    => array('latitude' =>   41.3166667, 'longitude' =>   69.25),
+        'Tbilisi'     => array('latitude' =>   41.725,     'longitude' =>   44.7908333),
+        'Tegucigalpa' => array('latitude' =>   14.1,       'longitude' =>  -87.2166667),
+        'Tehran'      => array('latitude' =>   35.6719444, 'longitude' =>   51.4244444),
+        'The Hague'   => array('latitude' =>   52.0833333, 'longitude' =>    4.3),
+        'Thimphu'     => array('latitude' =>   27.4833333, 'longitude' =>   89.6),
+        'Tirana'      => array('latitude' =>   41.3275,    'longitude' =>   19.8188889),
+        'Tiraspol'    => array('latitude' =>   46.8402778, 'longitude' =>   29.6433333),
+        'Tokyo'       => array('latitude' =>   35.685,     'longitude' =>  139.7513889),
+        'Toronto'     => array('latitude' =>   43.6666667, 'longitude' =>  -79.4166667),
+        'Tórshavn'    => array('latitude' =>   62.0166667, 'longitude' =>   -6.7666667),
+        'Tripoli'     => array('latitude' =>   32.8925,    'longitude' =>   13.18),
+        'Tunis'       => array('latitude' =>   36.8027778, 'longitude' =>   10.1797222),
+        'Ulaanbaatar' => array('latitude' =>   47.9166667, 'longitude' =>  106.9166667),
+        'Vaduz'       => array('latitude' =>   47.1333333, 'longitude' =>    9.5166667),
+        'Valletta'    => array('latitude' =>   35.8997222, 'longitude' =>   14.5147222),
+        'Valparaiso'  => array('latitude' =>  -33.0477778, 'longitude' =>  -71.6011111),
+        'Vancouver'   => array('latitude' =>   49.25,      'longitude' => -123.1333333),
+        'Vatican City' => array('latitude' =>  41.9,       'longitude' =>   12.4833333),
+        'Victoria'    => array('latitude' =>   -4.6166667, 'longitude' =>   55.45),
+        'Vienna'      => array('latitude' =>   48.2,       'longitude' =>   16.3666667),
+        'Vientaine'   => array('latitude' =>   17.9666667, 'longitude' =>  102.6),
+        'Vilnius'     => array('latitude' =>   54.6833333, 'longitude' =>   25.3166667),
+        'Warsaw'      => array('latitude' =>   52.25,      'longitude' =>   21),
+        'Washington dc' => array('latitude' => 38.895,     'longitude' =>  -77.03667),
+        'Wellington'  => array('latitude' =>  -41.3,       'longitude' =>  174.7833333),
+        'Willemstad'  => array('latitude' =>   12.1,       'longitude' =>  -68.9166667),
+        'Windhoek'    => array('latitude' =>  -22.57,      'longitude' =>   17.0836111),
+        'Yamoussoukro' => array('latitude' =>   6.8166667, 'longitude' =>   -5.2833333),
+        'Yaoundé'     => array('latitude' =>    3.8666667, 'longitude' =>   11.5166667),
+        'Yerevan'     => array('latitude' =>   40.1811111, 'longitude' =>   44.5136111),
+        'Zürich'      => array('latitude' =>   47.3666667, 'longitude' =>    8.55),
+        'Zagreb'      => array('latitude' =>   45.8,       'longitude' =>   16)
+    );
+
+    /**
+     * Returns the location from the selected city
+     *
+     * @param  string $city    City to get location for
+     * @param  string $horizon Horizon to use :
+     *                         default: effective
+     *                         others are civil, nautic, astronomic
+     * @return array
+     * @throws Zend_Date_Exception When city is unknown
+     */
+    public static function City($city, $horizon = false)
+    {
+        foreach (self::$cities as $key => $value) {
+            if (strtolower($key) === strtolower($city)) {
+                $return            = $value;
+                $return['horizon'] = $horizon;
+                return $return;
+            }
+        }
+        require_once 'Zend/Date/Exception.php';
+        throw new Zend_Date_Exception('unknown city');
+    }
+
+    /**
+     * Return a list with all known cities
+     *
+     * @return array
+     */
+    public static function getCityList()
+    {
+        return array_keys(self::$cities);
+    }
+}

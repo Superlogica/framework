@@ -1,87 +1,223 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Tool/Project/Profile/FileParser/Interface.php';
+require_once 'Zend/Tool/Project/Context/Repository.php';
+require_once 'Zend/Tool/Project/Profile.php';
+require_once 'Zend/Tool/Project/Profile/Resource.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Profile_FileParser_Xml implements Zend_Tool_Project_Profile_FileParser_Interface
+{
+    
+    /**
+     * @var Zend_Tool_Project_Profile
+     */
+    protected $_profile = null;
+    
+    /**
+     * @var Zend_Tool_Project_Context_Repository
+     */
+    protected $_contextRepository = null;
+
+    /**
+     * __construct()
+     *
+     */
+    public function __construct()
+    {
+        $this->_contextRepository = Zend_Tool_Project_Context_Repository::getInstance();
+    }
+    
+    /**
+     * serialize()
+     * 
+     * create an xml string from the provided profile
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @return string
+     */
+    public function serialize(Zend_Tool_Project_Profile $profile)
+    {
+
+        $profile = clone $profile;
+        
+        $this->_profile = $profile;
+        $xmlElement = new SimpleXMLElement('<projectProfile />');
+
+        self::_serializeRecurser($profile, $xmlElement);            
+        
+        $doc = new DOMDocument('1.0');
+        $doc->formatOutput = true;
+        $domnode = dom_import_simplexml($xmlElement);
+        $domnode = $doc->importNode($domnode, true);
+        $domnode = $doc->appendChild($domnode);
+        
+        return $doc->saveXML();
+    }
+    
+    /**
+     * unserialize() 
+     * 
+     * Create a structure in the object $profile from the structure specficied
+     * in the xml string provided
+     * 
+     * @param string xml data
+     * @param Zend_Tool_Project_Profile The profile to use as the top node
+     * @return Zend_Tool_Project_Profile
+     */
+    public function unserialize($data, Zend_Tool_Project_Profile $profile)
+    {
+        if ($data == null) {
+            throw new Exception('contents not available to unserialize.');
+        }
+
+        $this->_profile = $profile;
+        
+        $xmlDataIterator = new SimpleXMLIterator($data);
+
+        if ($xmlDataIterator->getName() != 'projectProfile') {
+            throw new Exception('Profiles must start with a projectProfile node');
+        }
+
+        
+        $this->_unserializeRecurser($xmlDataIterator);
+        
+        $this->_lazyLoadContexts();
+        
+        return $this->_profile;
+        
+    }
+
+    /**
+     * _serializeRecurser()
+     * 
+     * This method will be used to traverse the depths of the structure
+     * when *serializing* an xml structure into a string
+     *
+     * @param array $resources
+     * @param SimpleXmlElement $xmlNode
+     */
+    protected function _serializeRecurser($resources, SimpleXmlElement $xmlNode)
+    {
+        // @todo find a better way to handle concurrency.. if no clone, _position in node gets messed up
+        //if ($resources instanceof Zend_Tool_Project_Profile_Resource) {
+        //    $resources = clone $resources;
+        //}
+        
+        foreach ($resources as $resource) {
+            
+            if ($resource->isDeleted()) {
+                continue;
+            }
+            
+            $resourceName = $resource->getContext()->getName();
+            $resourceName[0] = strtolower($resourceName[0]);
+            
+            $newNode = $xmlNode->addChild($resourceName);
+
+            //$reflectionClass = new ReflectionClass($resource->getContext());
+
+            if ($resource->isEnabled() == false) {
+                $newNode->addAttribute('enabled', 'false');
+            }
+            
+            foreach ($resource->getPersistentAttributes() as $paramName => $paramValue) {
+                $newNode->addAttribute($paramName, $paramValue);
+            }
+
+            if ($resource->hasChildren()) {
+                self::_serializeRecurser($resource, $newNode);
+            }
+            
+        }
+
+    }
+    
+    
+    /**
+     * _unserializeRecurser()
+     * 
+     * This method will be used to traverse the depths of the structure
+     * as needed to *unserialize* the profile from an xmlIterator
+     *
+     * @param SimpleXMLIterator $xmlIterator
+     * @param Zend_Tool_Project_Profile_Resource $resource
+     */
+    protected function _unserializeRecurser(SimpleXMLIterator $xmlIterator, Zend_Tool_Project_Profile_Resource $resource = null)
+    {
+        
+        foreach ($xmlIterator as $resourceName => $resourceData) {
+            
+            $contextName = $resourceName;
+            $subResource = new Zend_Tool_Project_Profile_Resource($contextName);
+            $subResource->setProfile($this->_profile);
+
+            if ($resourceAttributes = $resourceData->attributes()) {
+                $attributes = array();
+                foreach ($resourceAttributes as $attrName => $attrValue) {
+                    $attributes[$attrName] = (string) $attrValue;
+                }
+                $subResource->setAttributes($attributes);
+            }
+            
+            if ($resource) {
+                $resource->append($subResource, false);
+            } else {
+                $this->_profile->append($subResource);
+            }
+
+            if ($this->_contextRepository->isOverwritableContext($contextName) == false) {
+                $subResource->initializeContext();
+            }
+            
+            if ($xmlIterator->hasChildren()) {
+                self::_unserializeRecurser($xmlIterator->getChildren(), $subResource);
+            }
+        }
+    }
+    
+    /**
+     * _lazyLoadContexts()
+     *
+     * This method will call initializeContext on the resources in a profile
+     * @todo determine if this method belongs inside the profile
+     * 
+     */
+    protected function _lazyLoadContexts()
+    {
+        
+        foreach ($this->_profile as $topResource) {
+            $rii = new RecursiveIteratorIterator($topResource, RecursiveIteratorIterator::SELF_FIRST);
+            foreach ($rii as $resource) {
+                $resource->initializeContext();
+            }
+        }
+
+    }
+    
+}

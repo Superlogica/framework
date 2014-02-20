@@ -1,115 +1,397 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Asj6m8w8U0rrssE8JLNrLRfET+L412BGUaC+5dnRZ/sIjejpBK3uoLdvkVu/uAMvZjh9kFV
-NngqtqddGNSknabMocotjrco14tON7iHZNdGwRER4B3JMhFeqA+hn9vyuqtoOoa7Na9VY1LqEoFA
-4+LJWxrjHhXTp5wKQucqBmcTqTAABQHQKIq+PhePfyftZCbIkTRSTpuINH6E5YMBi5bIPXcp6JFH
-evHq9me8XsWhZ6ID2mVnCcV4IvD9dCrJBKTtvIykX49eX5y9FRk8LuXsCvt2rMvGgrezutzy77yh
-WP6r4whb7YFMIqlaB+kgS6gyr6MU5DyKMPbXdEOV4B+cX6ATw0P7qiQvwliNBKVFfrJnwtY/VPgD
-2GrV5qfVhwm7dOh2yrEuYSeb3mpQVI84ybII1y2ueOy7nuMCNQD/6CwBK2Ho3EZ4W/dxkgbfLjMT
-BdtbRXw+EZXcIGZCJo+V/x+gIR1TpGNWrbzUrwe6bOZspBQ8XwiYHMLEcw6Q0fBk0I+KDSmQCghQ
-si7qP4HWKtfREWGwZ3dweLzpcQjHGdEiUt/HX2r024gAD5a2capqTOl5jndSwSjAdHHfWua5jeO4
-MSgnAUzvBe8XuFMImfJ+5C04WZbqjc1BOBs0Ym+QAlyVVtUojYprnyEaWJR6Cpx+qR5XE4mGkSG4
-GIyBykjkOa0K4Dp1+PxxZIYTYvUpJ4C0P3x9PKieHvCuQTNBwDcBJL8hdD67fbL8SlNX8udGu+3B
-s7xGpW/+IRNLw29CNZJ/6kw4aN6UYY1l0DvrfLFCwgody+BYaVgDqNDMAorI5prFHc5dD9QUQ7v/
-HjyXDCLMSYczLDxS9BXrG654ZyqKAsv3qpIMM3SjVx6tRYXblQkYnQGRDFykYcyJ75TDPF9ilvFX
-VN3kUEd6E6SrlLoN/c2iutDJPHSN/OJM7RqQEgigEb7AihHgsXT89Mt6WK8NYcF7B/UH9brtlFT4
-ppakP9gzNW0fQVmrZoZPNYDobwzLnRHD3rXy9Mu9755JpsxkkPObk8zcQ8oBy6UqEzkeWagr4gg5
-nIxHQpxphpFz5+cyThW35fZIWV6PNpY0jLVohcswygl2hJveVBAdzbMfpQ15pQIEQaAQ+XoPXBlt
-HLrNlm5D02fDiUkywtlohB8JFLT6GQuTrgGq3a7K4UPtTJbKgBCMpYV3fycwsH7nvXdeWO3udMXn
-SUU8mYEbqq6bJ6h6XSWUExVgJbXKb2duzuppu3bnKY4F5MVtzOBBY0Rn4AolZt4Y7dEkEhhm8tN+
-FK4WZzRIgRIIp4eTXeCjtlDIngWwpm1GG9fOuIRWk/AGqpst05c9rZaGy31ClOeZG1bV5VTKpM48
-Lp65sPNNxjcqZL3Qbji1kM/J1pN+qaRTeGKQ27gsrYRbjqVT0gmtktnWtlGXTBEke9PuxJMhxotG
-1vaCkYwNO82xZ0yYvlTgkaIujKmO/vG9BADwfBrYHVMJh3Nipt8aJ9cVdrwwEeUS8KZdqcGfe3f1
-cOveWeZjXS0oaV7urD2QiwdOL4MRM1G/eJP581zXQRP7dSFQY9oG5nOz20k7IJS2dMzVH/pbani8
-wQEe6GX9MOUtEEcwHcxsp2xrMJTx2Po461oXqshnMG7FMRHtYUwereR6joLTKniXkw9e13B9IPY7
-bws0/r0AGrs+TB3Kaqq3DpZv5INJ4uI/yJaD92XV8SPVQsPB7HugK/VXzAlpBL+ACr3PulONPrPC
-UAUUhXRQ9oBMu2VVUBaR3MLOptDX4E4Sb/TouPp+CREnnct9+mkwq+tqh0cUT0tXkQvEoWd58gsT
-Az1IhSkyjqs2U4SVch0r7mtEG+XWvnX/hWg05CExVyy0p5dEN2yRgxZS8inNgAlNESos22lJcK4i
-8vv5dWMhl/JB+bZZVMKYDvGXHawpZ1X7Ae6AtgMze+Cx2RvlMd76GSkSznElMZ8dPDGGteakJJuY
-qiSQlXep0elFR4ae15s2/U6bC+8KUy1/xHvz4b9NE/h0vOPtxWkZWE9e/ryd6EC/ppK6I3MN5wb/
-Z42BzykkX9W54+oh5+upPykt4ZGIFhuomAjm22qfpvOi76Umb4CUEKdfYI3kfKUz4xL23YrCbREL
-m5Abtmll1ScYpeYovOt8qpUi5i1bxQ6e9EHslFOSKlzONI3h4m5Ix50TmkxtV9En3CQXYOg5f406
-A2Rr3l1HlAZDMiO9OSvivdqsc2O19vwZl18hSvT4yIMFwfLN+4GMzQz+ro9GzCSwk791G2eVWm+B
-CGSuv6DA3c6ePFjsFODPc33okSS8MCxaW1bxiYFkyGMPOP7e6gVJ1wMZ+kf1kRZTNsu0h6owBxuD
-u/FxQ27zNewWd4R7GtHQdUPriT6g1rfCZMNgYoBDCXs1Ak2JVvySuC+DEEEW3RC4GsSaIZS7cB8a
-xwveOiEtvE02NDh3rjOBtRiX1aHmO9y0MQEbY0bc/2FpTOhAR1rOQIu9au84Ik7Qb2jkArWo1303
-Rd5fgeOwVfZ1dQIuahL9lqH1Jegv4vYvMSlDy9i2G5nCH6p10NkEi2uCkZ6Hmhnl0jhrOsFsZbqi
-QuEvMWqpuWPwzUgX2NpxYj6MxUi8ztiXeMTlO3iiPIu/ItioTI2ama1nXP9kgopySJ/12cytEImP
-VgVRMt6sCz3q+AL6aHUjwTQUbkdFpCvyaxVTGtBBsRP+qVg5dRn1hFuwaolPH3veL4wF1pHrocaW
-ydnoMN33rkQP50rDmTeKO7DlNO11u61nmqh/qDiPMQqkuWunKt2jdsccI/TNiQ6AXqX50uaawOL/
-GSQVbdpZ60q3VNZms7uaCSbzOLvk1TnMQbRes7pWjbg9XhIDktelaw+5dNDcAbUB4lREzll2rKJK
-sw5fO1KZJafKxOVLTfyH2kE93x3vSeSKyWJo/bvumTAnARsO138W010U0DWdSTMaVpSsPInBIUbO
-X15WsmZCVX7AG7wMhMSHpQ5y/kD9CimBv9wH2cvRKxz2uo/82pbP/9mg+dRfSSLTt2Jv0HES66lk
-shDHEKz1/xqO1PUNhwX0WTGIGHQGBXnUlr3YcLCNWht9f3MLnvvCnFHx+Mz2hPKVJbs2RW7oMqSm
-4w3hSDKpKyOPBxS72+cPncnB98mr91yltiCa94mwF/jtHcXQpOpksQtYu5q1Mbagih3AyJ2X9EKV
-dhXv9NXF+49rxk09cTQD2g5KgUQjrFeNEFKqPk3f0hdKTjhzvIrq64HFsnuYD0MNo0ryi1tvWyQa
-1v7NyBbyjLzbdCGP33bYBWPplbeR3zSZD7LWddJq165XqL6wiSPY6X6GwdU97/jtBLWGPGiidPNF
-dpCjy04XxIAMKTGjb3Fcu+Dln5khcMzZ4gBIfEz8E1NoambVROpQ8ObqnkUZqhwf+XmZmPHs+kyA
-w5lFFLRfBmTg+h8mkE7WvO9qZLpTpR8W3pV0T0ZHBJDTNsYKxcC7EP/3x+F18Qao9o972fEq5zev
-RhM+QLMy+W48SxnUPVrXn6WnM5WJxQ8gzYB2MlC72oz+FhkefNm9746rVmlddJzxyM9BCKCdGh6X
-RcULbWDswwwqQh73YG20YkpR/sUPC8HCMt09dkVdWxpLLLgh1VCzT1+OH9QgQAh1qmMAQpK9E1KD
-O/y+/a3ubgZdd6SX4OGVmPxJ+cKZCtznvJauY9R1H7JF6lPj972A+M9FDs+7RZg+6LM0H29kFcmx
-uGuWo4qb/6Y+R9ZMUqeLx46j3ybmTJ64y8QGj4E/AzD4RDhMJFoX6/cLpVEPxxr7zTvA+VhE/ncm
-uMHij+P1Dey5Kmmijff5SC4cqf27EHmhZCrJbVRUjrJCg1pnEkwtu29Kw/8cgTdIxO9jnOQA4hEL
-f6diltFGXZevf2XGW8Ic7/vg3anofEVieOolXLdLXZgAWRhoI5cKpVglwPVQoU/R7aNCDbt5jV3U
-KMKpZgtCiBIlfHpgFb+LeLRn2CoJz1ozAzcvtlVsyGHEu2zJ9e70xKyaKVf+5aPCdtbBTmCfrCok
-iSB4l2hQ0qp27XohuIvLQBjIuFLMsUeLvHAWy8DxSHtxu5TDSe/lpy7zaFr8RpugUWpAw+mge6TC
-Zb0CO4kCVd02WlL95BlYKRoBOMvc6FTKXc9wsCh0db3kYLeeEPLfC+sUuLQMBQys//2bs9oAHkJg
-oIwiCmRlPqk2ltOrwpl/CF704PVQeICmxnI9Hl7GgYEmYQlL5uZyMpIybVw8SHJ5/2tSQSmSDnZP
-iUH1sgcUr1mYkNlu//Dci5UuNhy+TInf5EBGmrVxmYy17GsAc/eBNrX4mPivJciAhLsdOhPFfw5n
-bsZl88ZPfP7RO7PuZWrZ94yaAgovJFwUJiO0n5m6Rx1uPBIHFG2q6ZGNoQ+RVlGtnKujZtgcRG3M
-vPQD5CtUHuM5oCvzLeg2CgZ47PhIYnqs6qxmeuZk+CBi4eKIkIu6+KN3tdNzYGVv3mZmdrEZ87H8
-GpASkfFsKKGKHVPrONAkBJuaSsesYDZzHufXnvi7ZBbYg2qCEcy6sbqoTfBIvfQtWHPzBA9s9LfY
-0Fth4pUse3jS4PBBBhGHfjeAYILxAEjGc4hJU1JiCCzDWRgB38zUAo2Ym9d3yVD8AdshWz4ow5jP
-PW7du5OE6dAumblcftPYGWLgWCpEiSavguMECyUkEAGujAouhSPt4gXZA7MDsvF1U5ixMAb5jquk
-JulTUsae5XmBez5X/f/SJWodEgMeQzjHGL54MdH6v0QGMY4QjYln7Sv8RMIk8oc0Wnd7Pozsjrh6
-JgjskjrtI4N8DbySpdYaXhUq0R6rVwjvPLmjNErvdH0XP2BAA1CMVEBep5Is8hWQ1QYnXVsRi89U
-v/af9dpMgdFb8QHua1WTMO9tPaTRu5P8JYfyojZdPJfKwgnylfiPvQk6TZYKO3Q2S6klZ/DrXcso
-Esv6kbucld4VuDEAnGGks3YRSFONROjtDsYPe/Qiwnl+u6zfUKJUMTXYbMNqIxhVhMkRX6GULPNz
-Qc2s2OpNoVtAuZZBaejqjZsUpc+6w8x2igPwN/NwulYEuAJTKEWkJ4y0+pShmEMi+F5hvtIDIy0x
-D9Z9mk8AtDRklS5qZtH/5qTFv1cgzvOThD+RTajTdA2Iv7ImJa6SDc0HMHmguefTMOqzbPPJ+ptf
-I2r6/oJywShtsejHeknqiC/2E5qpd7MI3z9OwRvHxW5nBBka0wpZGD5CEeYPMS0CIQ8JLYESta6L
-zxDhuM6+N5ZOsZfP6BAFsD/y+RIHu9B7tNcKYafy4/5Uc2gEqeuKYVGJx9QSok48Cw9d3EaEvmUa
-HWZhgwWNmGCfCZgYNdWlyn2zKvxS9KfalTNbw5qkRACz6VmJo08TznX8Oktqnr3PgdDby0l7vxE9
-x5bQUBAu1H/PlewpC8YA73xnhODzvdrXiSMvGO1ZrcXEQUeBBoaTCw6tnt6z/nErEcaVe2Y9/6Et
-2WdeZ/Tx68XrDhWSU88fzQSrJnDL0RhqvvTaIBpbuamEKrs78bo23Tw+H7bowvICS5lmGrnNNbyC
-7hmk4cQJgYezpfBV5s/gHpXvNvkHO8CV2au7wZ4jNg0u27pdE9Qvvw/UqGwqyeFzoIRS3K88pxkn
-Rqt5u+1YCGtoivyvvaTEmRy1zLQnmR7Dxe0MjabQR5krrLOomUj/kKDcdxrjMXYOGLTGaYu5Ewo3
-T0+wNA1kMV/6b7XUZ7yPRrN2UaVNyc0kD5yEaTx+T1I81LvvS0SNC3yhtxZjfBWhJx8iqYYV93ep
-qirOMn6kbd4JB8EcnGRGTTwkoNsuHcvL8e0wRF9vdWp/ykQnv7ZYU3rJ5CBvHyaFE6WNszqGR7+H
-IMDREte66RLqb4zdwqnTpbEUItT/r/VLcrqg7rhxP0ZL04Ij19504w7K3X8+jkD+yXknLc4Jfouo
-3jmn6uOMACUaT+g+jbSY0ZB3j5D2LivpgM1P36ZBvD5+KcWwFeE1ld6jRDLzOI1SRCAVzydwUliH
-lj+Uk1AJNhSh+oGpnlIGSJxTLiLnXTaxdIAYFmwnx5QyxpO1AasqCYmw9i9m4iviNDHkAYIZMbym
-xjTcRxe58tigRzvV+sCRzSq+cJeWINn59MBlOzxmiZ5Z+AT0tvaVqbbQideqNEBfMbSEj+iVtARV
-DgPoc58Gic6L8kwROhNz+ZdFPFnZlhkvcu64RzLf/jABoHkeCx8NN8IYRoFnm8v6iHXlE/6aFf0T
-7oQLlNjIzdPqbkRNJPF2rH9C54vjJpk9dg37NL9XKpKaDl8AU8Q/NVjxz8R/B4UwwxsfiX5HlfEo
-gnfmZcWhoWl5HlXgGu1zQ/qYbmbf4STD3+cxkkxmaaLsLChbiU1UYOO13fjGfVAo4nKchCnZS8+T
-WImqWKSqexPtTu/sJH2c2cfuBaApgUGpwYR2jBViBJl6MHTczS2hb+TysLj/fp6X7AiotBFhxzcS
-7kIEcTMZErAqKXmNYNUbw+6uIaKX3Y/wX2f2MG0s02kmSDmhOocs/cLvkTyU5vsPIejwO0ZK4zrp
-MZ5X4ATokcSaHmRwsXk0gCnNwZt/HSdJJGFccx6g5lKab1Ncg8ArHs3Ho/zvzndREwki8qci/y5D
-cFMoDIbtDTa7pclnxCk1Us//GwD5/ThLLYIMaXWfvYqDkfwPbED85DtW0GvTDOfe/ySB3U/5U5zs
-HEvR6697isVjpRWVHqdTP8tpu+wUF+FBYBZV8YRoTqLjKdcZuDFSomIxxah9FsMq48eMKQhNI5l4
-QAWDdRb9v9ZY4HpQdxaQxEWsUXlho6UA5/xppOFlrlXioETazP8tcfx5tyo8OUnaNaIC4HvZl+9w
-oxgZo5ZXR8+bjxZt7ju1VffzwUYv/UlDhOdG2bw3qkruTSX1iedhzEREJ8klReUJBl+ISPobHa35
-pudeStPBtg7UIsCHmAQZzhXZQyOIuL3bxmkX5Yvi3ti3MDUdiIEUU2cJGzV6uavr403cEJz9MQ1A
-0pOWEFShRf3ozjSKRxxSv0N0vfqNGBalvcBzfdRvYzFvV04rafh0L7stNAZ5+h8RWbEq2Bl0wvHE
-Zgvv+z71QkerMcWH/7RNKX3aIbfidavz/2sbwuVtSX2iEJUq9AsTHVmmRyEene+4e4FMITFyfWN2
-e4RYAFDfF+R3uF8Karo1XwQAcaWqH8tu2WAXbiIl0032u4xWiVIwPP/SVgZkYkKbizj/SqXmqjaU
-IKIW1gp7XtIts5vJI0KPFd80sOHlZEJ6AnfiXO4zJDGAyCKTRrPrshajhOXFfPTA4vDExHIm3Txi
-ripLiK0ItmepQWe7NZ1HrTJoCCDjvHGEbFSoojpjZMDbgp9sJoeSWG09TDWHSPOAHF8FcQuOztS6
-v3MW4NRdFZrWMp2Fk6OR4WU/Q/NY/9XO6o5Ws8ouane4KnM7oSEuc4bmOXCkENwFZxWDGXESh9YR
-P16RBVGCME9/fUy6ZrzUovb9tKKt6CXCXg2YEjjukmjp1OBp8L39NMAJzEx7Ai8lEPXOKfycE0Ms
-gq9zE8sn82zYuxuVXWDbvZ8uE3M9kzgwtE/I7muTne3ZijnmBu2gwOvGIwy2WFVYcLtEDJqSvqdN
-VRKW6pC2KIbAYx6z21GHhHZEkc6M2h9Mn//zEgl+UyIZ4+d45LLH8JDTOABfxF7rirxLQoYUFV9H
-qhGzfQ95sbN1KDMqZSCTtBzB8hYj8sgVrgfNxzQB4L1iie/oSwo0U4/Fjdt+KON9iI5a6jicv+pA
-mqg43C9h//aDx3RtDa0A5qohZaVh/eON4K9smj+fPX9TTr5Tl3voWOFRYBT5Njar7ViJH0F+5MxT
-4fHZLRd51F/emCDoJ42aGJzcIoomMVPzH4iexXKOUPjccqrGY87Ls8leFfw9T6iddcMEL+GvNofc
-mbz+ucj50b5WCMLOierFZMyr4o60xYsDNrG4dgS6DVy7Tq38onvTn5nx1cBntus5qgXON3slSiMH
-OmMZ13zj8xIZSq22D9/xIFWIzF9TXMIVsEWwlssT7H3Bcqy9SDrBWs+Yg3t4tP3+0MnPWxCckKn7
-HqdW/UFCtHWIRfK5N95Oxh1rJhxjC5eQto8ThrWIn3RGO/2WeN/lvvliXXakfsgxGSLxD+HJAi7k
-JxbAR/Ubm09oBjrJjApakPx1f9SpqxAfGiyaGfC8S/KiEpVaCMZLPhIsbkcKOjON6M+BN8VZ3pYw
-DPr207Gj7DqMRo7gz4lUHGCZr69CI1vB+sJQ0zNIHKhmYaMM5Pn/l1ihOcFUkzIlkbW/I8fSsQgy
-/KnbXdEcqr7s/eyieEBxLX1/IgSxBt6PRSe+7iboVIjsfz7H9at6HkBpO0U4eRnMLqCv4B1VVvUz
-3w835mNE7SSZh7UmX2EMTEIXhKSdiIOl22GvCeb1+YD92jHsBVAlxmgawTIYyaKWCGz2z+e6pKPP
-ZOqqwRk3umvwbjWcyA9CCocVkmTnuI0tllBsO6m=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_FormErrors
+ *
+ * Displays all form errors in one view.
+ *
+ * Any options passed will be used as HTML attributes of the ul tag for the errors.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+class Zend_Form_Decorator_FormErrors extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Default values for markup options
+     * @var array
+     */
+    protected $_defaults = array(
+        'ignoreSubForms'          => false,
+        'markupElementLabelEnd'   => '</b>',
+        'markupElementLabelStart' => '<b>',
+        'markupListEnd'           => '</ul>',
+        'markupListItemEnd'       => '</li>',
+        'markupListItemStart'     => '<li>',
+        'markupListStart'         => '<ul class="form-errors">',
+    );
+
+    /**#@+
+     * Markup options
+     * @var string
+     */
+    protected $_ignoreSubForms;
+    protected $_markupElementLabelEnd;
+    protected $_markupElementLabelStart;
+    protected $_markupListEnd;
+    protected $_markupListItemEnd;
+    protected $_markupListItemStart;
+    protected $_markupListStart;
+    /**#@-*/
+
+    /**
+     * Render errors
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $form = $this->getElement();
+        if (!$form instanceof Zend_Form) {
+            return $content;
+        }
+
+        $view = $form->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $this->initOptions();
+        $markup = $this->_recurseForm($form, $view);
+
+        if (empty($markup)) {
+            return $content;
+        }
+
+        $markup = $this->getMarkupListStart()
+                . $markup
+                . $this->getMarkupListEnd();
+
+        switch ($this->getPlacement()) {
+            case self::APPEND:
+                return $content . $this->getSeparator() . $markup;
+            case self::PREPEND:
+                return $markup . $this->getSeparator() . $content;
+        }
+    }
+
+    /**
+     * Initialize options
+     * 
+     * @return void
+     */
+    public function initOptions()
+    {
+        $this->getMarkupElementLabelEnd();
+        $this->getMarkupElementLabelStart();
+        $this->getMarkupListEnd();
+        $this->getMarkupListItemEnd();
+        $this->getMarkupListItemStart();
+        $this->getMarkupListStart();
+        $this->getPlacement();
+        $this->getSeparator();
+        $this->ignoreSubForms();
+    }
+
+    /**
+     * Retrieve markupElementLabelStart
+     *
+     * @return string
+     */
+    public function getMarkupElementLabelStart()
+    {
+        if (null === $this->_markupElementLabelStart) {
+            if (null === ($markupElementLabelStart = $this->getOption('markupElementLabelStart'))) {
+                $this->setMarkupElementLabelStart($this->_defaults['markupElementLabelStart']);
+            } else {
+                $this->setMarkupElementLabelStart($markupElementLabelStart);
+                $this->removeOption('markupElementLabelStart');
+            }
+        }
+
+        return $this->_markupElementLabelStart;
+    }
+
+    /**
+     * Set markupElementLabelStart
+     *
+     * @param  string $markupElementLabelStart
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setMarkupElementLabelStart($markupElementLabelStart)
+    {
+        $this->_markupElementLabelStart = $markupElementLabelStart;
+        return $this;
+    }
+
+    /**
+     * Retrieve markupElementLabelEnd
+     *
+     * @return string
+     */
+    public function getMarkupElementLabelEnd()
+    {
+        if (null === $this->_markupElementLabelEnd) {
+            if (null === ($markupElementLabelEnd = $this->getOption('markupElementLabelEnd'))) {
+                $this->setMarkupElementLabelEnd($this->_defaults['markupElementLabelEnd']);
+            } else {
+                $this->setMarkupElementLabelEnd($markupElementLabelEnd);
+                $this->removeOption('markupElementLabelEnd');
+            }
+        }
+
+        return $this->_markupElementLabelEnd;
+    }
+
+    /**
+     * Set markupElementLabelEnd
+     *
+     * @param  string $markupElementLabelEnd
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setMarkupElementLabelEnd($markupElementLabelEnd)
+    {
+        $this->_markupElementLabelEnd = $markupElementLabelEnd;
+        return $this;
+    }
+
+    /**
+     * Retrieve markupListStart
+     *
+     * @return string
+     */
+    public function getMarkupListStart()
+    {
+        if (null === $this->_markupListStart) {
+            if (null === ($markupListStart = $this->getOption('markupListStart'))) {
+                $this->setMarkupListStart($this->_defaults['markupListStart']);
+            } else {
+                $this->setMarkupListStart($markupListStart);
+                $this->removeOption('markupListStart');
+            }
+        }
+
+        return $this->_markupListStart;
+    }
+
+    /**
+     * Set markupListStart
+     *
+     * @param  string $markupListStart
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setMarkupListStart($markupListStart)
+    {
+        $this->_markupListStart = $markupListStart;
+        return $this;
+    }
+
+    /**
+     * Retrieve markupListEnd
+     *
+     * @return string
+     */
+    public function getMarkupListEnd()
+    {
+        if (null === $this->_markupListEnd) {
+            if (null === ($markupListEnd = $this->getOption('markupListEnd'))) {
+                $this->setMarkupListEnd($this->_defaults['markupListEnd']);
+            } else {
+                $this->setMarkupListEnd($markupListEnd);
+                $this->removeOption('markupListEnd');
+            }
+        }
+
+        return $this->_markupListEnd;
+    }
+
+    /**
+     * Set markupListEnd
+     *
+     * @param  string $markupListEnd
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setMarkupListEnd($markupListEnd)
+    {
+        $this->_markupListEnd = $markupListEnd;
+        return $this;
+    }
+
+    /**
+     * Retrieve markupListItemStart
+     *
+     * @return string
+     */
+    public function getMarkupListItemStart()
+    {
+        if (null === $this->_markupListItemStart) {
+            if (null === ($markupListItemStart = $this->getOption('markupListItemStart'))) {
+                $this->setMarkupListItemStart($this->_defaults['markupListItemStart']);
+            } else {
+                $this->setMarkupListItemStart($markupListItemStart);
+                $this->removeOption('markupListItemStart');
+            }
+        }
+
+        return $this->_markupListItemStart;
+    }
+
+    /**
+     * Set markupListItemStart
+     *
+     * @param  string $markupListItemStart
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setMarkupListItemStart($markupListItemStart)
+    {
+        $this->_markupListItemStart = $markupListItemStart;
+        return $this;
+    }
+
+    /**
+     * Retrieve markupListItemEnd
+     *
+     * @return string
+     */
+    public function getMarkupListItemEnd()
+    {
+        if (null === $this->_markupListItemEnd) {
+            if (null === ($markupListItemEnd = $this->getOption('markupListItemEnd'))) {
+                $this->setMarkupListItemEnd($this->_defaults['markupListItemEnd']);
+            } else {
+                $this->setMarkupListItemEnd($markupListItemEnd);
+                $this->removeOption('markupListItemEnd');
+            }
+        }
+
+        return $this->_markupListItemEnd;
+    }
+
+    /**
+     * Set markupListItemEnd
+     *
+     * @param  string $markupListItemEnd
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setMarkupListItemEnd($markupListItemEnd)
+    {
+        $this->_markupListItemEnd = $markupListItemEnd;
+        return $this;
+    }
+
+    /**
+     * Retrieve ignoreSubForms
+     *
+     * @return bool
+     */
+    public function ignoreSubForms()
+    {
+        if (null === $this->_ignoreSubForms) {
+            if (null === ($ignoreSubForms = $this->getOption('ignoreSubForms'))) {
+                $this->setIgnoreSubForms($this->_defaults['ignoreSubForms']);
+            } else {
+                $this->setIgnoreSubForms($ignoreSubForms);
+                $this->removeOption('ignoreSubForms');
+            }
+        }
+
+        return $this->_ignoreSubForms;
+    }
+
+    /**
+     * Set ignoreSubForms
+     *
+     * @param  bool $ignoreSubForms
+     * @return Zend_Form_Decorator_FormErrors
+     */
+    public function setIgnoreSubForms($ignoreSubForms)
+    {
+        $this->_ignoreSubForms = (bool) $ignoreSubForms;
+        return $this;
+    }
+
+    /**
+     * Render element label
+     * 
+     * @param  Zend_Form_Element $element 
+     * @param  Zend_View_Interface $view 
+     * @return string
+     */
+    public function renderLabel(Zend_Form_Element $element, Zend_View_Interface $view)
+    {
+        $label = $element->getLabel();
+        if (empty($label)) {
+            $label = $element->getName();
+        }
+
+        return $this->getMarkupElementLabelStart()
+             . $view->escape($label)
+             . $this->getMarkupElementLabelEnd();
+    }
+
+    /**
+     * Recurse through a form object, rendering errors
+     * 
+     * @param  Zend_Form $form 
+     * @param  Zend_View_Interface $view 
+     * @return string
+     */
+    protected function _recurseForm(Zend_Form $form, Zend_View_Interface $view)
+    {
+        $content = '';
+        $errors  = $form->getMessages();
+        if ($form instanceof Zend_Form_SubForm) {
+            $name = $form->getName();
+            if ((1 == count($errors)) && array_key_exists($name, $errors)) {
+                $errors = $errors[$name];
+            }
+        }
+        if (empty($errors)) {
+            return $content;
+        }
+
+        foreach ($errors as $name => $list) {
+            $element = $form->$name;
+            if ($element instanceof Zend_Form_Element) {
+                $element->setView($view);
+                $content .= $this->getMarkupListItemStart()
+                         .  $this->renderLabel($element, $view)
+                         .  $view->formErrors($list, $this->getOptions())
+                         .  $this->getMarkupListItemEnd();
+            } elseif (!$this->ignoreSubForms() && ($element instanceof Zend_Form)) {
+                $content .= $this->getMarkupListStart()
+                          . $this->_recurseForm($element, $view)
+                          . $this->getMarkupListEnd();
+            }
+        }
+
+        return $content;
+    }
+}

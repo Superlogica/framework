@@ -1,34 +1,164 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-7jaoW1HYGnp5lvplGEb95XRfRgSCj57fqXa=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_Dijit */
+require_once 'Zend/Dojo/Form/Element/Dijit.php';
+
+/**
+ * TextBox dijit
+ * 
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: TextBox.php 10003 2008-07-09 02:40:49Z matthew $
+ */
+class Zend_Dojo_Form_Element_TextBox extends Zend_Dojo_Form_Element_Dijit
+{
+    /**
+     * Use TextBox dijit view helper
+     * @var string
+     */
+    public $helper = 'TextBox';
+
+    /**
+     * Set lowercase flag
+     *
+     * @param  bool $lowercase
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setLowercase($flag)
+    {
+        $this->setDijitParam('lowercase', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve lowercase flag
+     *
+     * @return bool
+     */
+    public function getLowercase()
+    {
+        if (!$this->hasDijitParam('lowercase')) {
+            return false;
+        }
+        return $this->getDijitParam('lowercase');
+    }
+
+    /**
+     * Set propercase flag
+     *
+     * @param  bool $propercase
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setPropercase($flag)
+    {
+        $this->setDijitParam('propercase', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve propercase flag
+     *
+     * @return bool
+     */
+    public function getPropercase()
+    {
+        if (!$this->hasDijitParam('propercase')) {
+            return false;
+        }
+        return $this->getDijitParam('propercase');
+    }
+
+    /**
+     * Set uppercase flag
+     *
+     * @param  bool $uppercase
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setUppercase($flag)
+    {
+        $this->setDijitParam('uppercase', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve uppercase flag
+     *
+     * @return bool
+     */
+    public function getUppercase()
+    {
+        if (!$this->hasDijitParam('uppercase')) {
+            return false;
+        }
+        return $this->getDijitParam('uppercase');
+    }
+
+    /**
+     * Set trim flag
+     *
+     * @param  bool $trim
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setTrim($flag)
+    {
+        $this->setDijitParam('trim', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve trim flag
+     *
+     * @return bool
+     */
+    public function getTrim()
+    {
+        if (!$this->hasDijitParam('trim')) {
+            return false;
+        }
+        return $this->getDijitParam('trim');
+    }
+
+    /**
+     * Set maxLength
+     *
+     * @param  int $length
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setMaxLength($length)
+    {
+        $this->setDijitParam('maxLength', (int) $length);
+        return $this;
+    }
+
+    /**
+     * Retrieve maxLength
+     *
+     * @return int|null
+     */
+    public function getMaxLength()
+    {
+        return $this->getDijitParam('maxLength');
+    }
+}

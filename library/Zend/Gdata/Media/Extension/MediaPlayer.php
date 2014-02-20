@@ -1,51 +1,177 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-XciuNdNGx/zT+LkzWT0ndW==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * Represents the media:player element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Media_Extension_MediaPlayer extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'player';
+    protected $_rootNamespace = 'media';
+
+    /**
+     * @var string
+     */
+    protected $_url = null;
+
+    /**
+     * @var int
+     */
+    protected $_width = null;
+
+    /**
+     * @var int
+     */
+    protected $_height = null;
+
+    /**
+     * Constructs a new MediaPlayer element
+     *
+     * @param string $url
+     * @param int $width
+     * @param int $height
+     */
+    public function __construct($url = null, $width = null, $height = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
+        parent::__construct();
+        $this->_url = $url;
+        $this->_width = $width;
+        $this->_height = $height;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_url !== null) {
+            $element->setAttribute('url', $this->_url);
+        }
+        if ($this->_width !== null) {
+            $element->setAttribute('width', $this->_width);
+        }
+        if ($this->_height !== null) {
+            $element->setAttribute('height', $this->_height);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'url':
+            $this->_url = $attribute->nodeValue;
+            break;
+        case 'width':
+            $this->_width = $attribute->nodeValue;
+            break;
+        case 'height':
+            $this->_height = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->_url;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaPlayer Provides a fluent interface
+     */
+    public function setUrl($value)
+    {
+        $this->_url = $value;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->_width;
+    }
+
+    /**
+     * @param int $value
+     * @return Zend_Gdata_Media_Extension_MediaPlayer Provides a fluent interface
+     */
+    public function setWidth($value)
+    {
+        $this->_width = $value;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->_height;
+    }
+
+    /**
+     * @param int $value
+     * @return Zend_Gdata_Media_Extension_MediaPlayer Provides a fluent interface
+     */
+    public function setHeight($value)
+    {
+        $this->_height = $value;
+        return $this;
+    }
+
+}

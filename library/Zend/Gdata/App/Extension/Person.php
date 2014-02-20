@@ -1,63 +1,162 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-2Uq6WNdKpSVvhgbk9Mc+
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Name
+ */
+require_once 'Zend/Gdata/App/Extension/Name.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Email
+ */
+require_once 'Zend/Gdata/App/Extension/Email.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Uri
+ */
+require_once 'Zend/Gdata/App/Extension/Uri.php';
+
+/**
+ * Base class for people (currently used by atom:author, atom:contributor)
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Gdata_App_Extension_Person extends Zend_Gdata_App_Extension
+{
+
+    protected $_rootElement = null;
+    protected $_name = null;
+    protected $_email = null;
+    protected $_uri = null;
+
+    public function __construct($name = null, $email = null, $uri = null)
+    {
+        parent::__construct();
+        $this->_name = $name;
+        $this->_email = $email;
+        $this->_uri = $uri;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_name != null) {
+            $element->appendChild($this->_name->getDOM($element->ownerDocument));
+        }
+        if ($this->_email != null) {
+            $element->appendChild($this->_email->getDOM($element->ownerDocument));
+        }
+        if ($this->_uri != null) {
+            $element->appendChild($this->_uri->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('atom') . ':' . 'name':
+            $name = new Zend_Gdata_App_Extension_Name();
+            $name->transferFromDOM($child);
+            $this->_name = $name;
+            break;
+        case $this->lookupNamespace('atom') . ':' . 'email':
+            $email = new Zend_Gdata_App_Extension_Email();
+            $email->transferFromDOM($child);
+            $this->_email = $email;
+            break;
+        case $this->lookupNamespace('atom') . ':' . 'uri':
+            $uri = new Zend_Gdata_App_Extension_Uri();
+            $uri->transferFromDOM($child);
+            $this->_uri = $uri;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * @return Zend_Gdata_App_Extension_Name
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * @param Zend_Gdata_App_Extension_Name $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setName($value)
+    {
+        $this->_name = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_App_Extension_Email
+     */
+    public function getEmail()
+    {
+        return $this->_email;
+    }
+
+    /**
+     * @param Zend_Gdata_App_Extension_Email $value
+     * @return Zend_Gdata_App_Extension_Person Provides a fluent interface
+     */
+    public function setEmail($value)
+    {
+        $this->_email = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_App_Extension_Uri
+     */
+    public function getUri()
+    {
+        return $this->_uri;
+    }
+
+    /**
+     * @param Zend_Gdata_App_Extension_Uri $value
+     * @return Zend_Gdata_App_Extension_Person Provides a fluent interface
+     */
+    public function setUri($value)
+    {
+        $this->_uri = $value;
+        return $this;
+    }
+
+}

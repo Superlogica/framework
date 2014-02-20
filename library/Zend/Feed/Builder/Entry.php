@@ -1,76 +1,297 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Entry.php 15382 2009-05-07 13:28:14Z alexander $
+ */
+
+
+/**
+ * An entry of a custom build feed
+ *
+ * Classes implementing the Zend_Feed_Builder_Interface interface
+ * uses this class to describe an entry of a feed
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Builder_Entry extends ArrayObject
+{
+    /**
+     * Create a new builder entry
+     *
+     * @param  string $title
+     * @param  string $link
+     * @param  string $description short version of the entry, no html
+     * @return void
+     */
+    public function __construct($title, $link, $description)
+    {
+        $this->offsetSet('title', $title);
+        $this->offsetSet('link', $link);
+        $this->offsetSet('description', $description);
+        $this->setLastUpdate(time());
+    }
+
+    /**
+     * Read only properties accessor
+     *
+     * @param  string $name property to read
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        if (!$this->offsetExists($name)) {
+            return NULL;
+        }
+
+        return $this->offsetGet($name);
+    }
+
+    /**
+     * Write properties accessor
+     *
+     * @param  string $name name of the property to set
+     * @param  mixed $value value to set
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->offsetSet($name, $value);
+    }
+
+    /**
+     * Isset accessor
+     *
+     * @param  string $key
+     * @return boolean
+     */
+    public function __isset($key)
+    {
+        return $this->offsetExists($key);
+    }
+
+    /**
+     * Unset accessor
+     *
+     * @param  string $key
+     * @return void
+     */
+    public function __unset($key)
+    {
+        if ($this->offsetExists($key)) {
+            $this->offsetUnset($key);
+        }
+    }
+
+    /**
+     * Sets the author of the entry
+     *
+     * @param  string $author
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setAuthor($author)
+    {
+        $this->offsetSet('author', $author);
+        return $this;
+    }
+
+    /**
+     * Sets the id/guid of the entry
+     *
+     * @param  string $id
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setId($id)
+    {
+        $this->offsetSet('guid', $id);
+        return $this;
+    }
+
+    /**
+     * Sets the full html content of the entry
+     *
+     * @param  string $content
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setContent($content)
+    {
+        $this->offsetSet('content', $content);
+        return $this;
+    }
+
+    /**
+     * Timestamp of the update date
+     *
+     * @param  int $lastUpdate
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setLastUpdate($lastUpdate)
+    {
+        $this->offsetSet('lastUpdate', $lastUpdate);
+        return $this;
+    }
+
+    /**
+     * Sets the url of the commented page associated to the entry
+     *
+     * @param  string $comments
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setCommentsUrl($comments)
+    {
+        $this->offsetSet('comments', $comments);
+        return $this;
+    }
+
+    /**
+     * Sets the url of the comments feed link
+     *
+     * @param  string $commentRss
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setCommentsRssUrl($commentRss)
+    {
+        $this->offsetSet('commentRss', $commentRss);
+        return $this;
+    }
+
+    /**
+     * Defines a reference to the original source
+     *
+     * @param  string $title
+     * @param  string $url
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setSource($title, $url)
+    {
+        $this->offsetSet('source', array('title' => $title,
+                                         'url' => $url));
+        return $this;
+    }
+
+    /**
+     * Sets the categories of the entry
+     * Format of the array:
+     * <code>
+     * array(
+     *   array(
+     *         'term' => 'first category label',
+     *         'scheme' => 'url that identifies a categorization scheme' // optional
+     *        ),
+     *   // second category and so one
+     * )
+     * </code>
+     *
+     * @param  array $categories
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function setCategories(array $categories)
+    {
+        foreach ($categories as $category) {
+            $this->addCategory($category);
+        }
+        return $this;
+    }
+
+    /**
+     * Add a category to the entry
+     *
+     * @param  array $category see Zend_Feed_Builder_Entry::setCategories() for format
+     * @return Zend_Feed_Builder_Entry
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function addCategory(array $category)
+    {
+        if (empty($category['term'])) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception("you have to define the name of the category");
+        }
+
+        if (!$this->offsetExists('category')) {
+            $categories = array($category);
+        } else {
+            $categories = $this->offsetGet('category');
+            $categories[] = $category;
+        }
+        $this->offsetSet('category', $categories);
+        return $this;
+    }
+
+    /**
+     * Sets the enclosures of the entry
+     * Format of the array:
+     * <code>
+     * array(
+     *   array(
+     *         'url' => 'url of the linked enclosure',
+     *         'type' => 'mime type of the enclosure' // optional
+     *         'length' => 'length of the linked content in octets' // optional
+     *        ),
+     *   // second enclosure and so one
+     * )
+     * </code>
+     *
+     * @param  array $enclosures
+     * @return Zend_Feed_Builder_Entry
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setEnclosures(array $enclosures)
+    {
+        foreach ($enclosures as $enclosure) {
+            if (empty($enclosure['url'])) {
+                /**
+                 * @see Zend_Feed_Builder_Exception
+                 */
+                require_once 'Zend/Feed/Builder/Exception.php';
+                throw new Zend_Feed_Builder_Exception("you have to supply an url for your enclosure");
+            }
+            $type = isset($enclosure['type']) ? $enclosure['type'] : '';
+            $length = isset($enclosure['length']) ? $enclosure['length'] : '';
+            $this->addEnclosure($enclosure['url'], $type, $length);
+        }
+        return $this;
+    }
+
+    /**
+     * Add an enclosure to the entry
+     *
+     * @param  string $url
+     * @param  string $type
+     * @param  string $length
+     * @return Zend_Feed_Builder_Entry
+     */
+    public function addEnclosure($url, $type = '', $length = '')
+    {
+        if (!$this->offsetExists('enclosure')) {
+            $enclosure = array();
+        } else {
+            $enclosure = $this->offsetGet('enclosure');
+        }
+        $enclosure[] = array('url' => $url,
+                             'type' => $type,
+                             'length' => $length);
+        $this->offsetSet('enclosure', $enclosure);
+        return $this;
+    }
+}

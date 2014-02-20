@@ -1,35 +1,106 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Nirvanix
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+ 
+/**
+ * @see Zend_Http_Client
+ */
+require_once 'Zend/Http/Client.php';
+
+/**
+ * This class allows Nirvanix authentication credentials to be specified
+ * in one place and provides a factory for returning convenience wrappers
+ * around the Nirvanix web service namespaces.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Nirvanix
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Nirvanix
+{
+    /**
+     * Options to pass to namespace proxies
+     * @param array
+     */
+    protected $_options;
+
+    /**
+     * Class constructor.  Authenticates with Nirvanix to receive a 
+     * sessionToken, which is then passed to each future request.
+     *
+     * @param  array  $authParams  Authentication POST parameters.  This
+     *                             should have keys "username", "password",
+     *                             and "appKey".
+     * @param  array  $options     Options to pass to namespace proxies
+     */
+    public function __construct($authParams, $options = array())
+    {
+        // merge options with default options
+        $defaultOptions = array('defaults'   => array(),
+                                'httpClient' => new Zend_Http_Client(),
+                                'host'       => 'http://services.nirvanix.com');
+        $this->_options = array_merge($defaultOptions, $options);
+
+        // login and save sessionToken to default POST params
+        $resp = $this->getService('Authentication')->login($authParams);
+        $this->_options['defaults']['sessionToken'] = (string)$resp->SessionToken;
+    }    
+
+    /**
+     * Nirvanix divides its service into namespaces, with each namespace
+     * providing different functionality.  This is a factory method that
+     * returns a preconfigured Zend_Service_Nirvanix_Namespace_Base proxy.
+     *
+     * @param  string  $namespace  Name of the namespace
+     * @return Zend_Service_Nirvanix_Namespace_Base
+     */
+    public function getService($namespace, $options = array())
+    {
+        switch ($namespace) {
+            case 'IMFS':
+                $class = 'Zend_Service_Nirvanix_Namespace_Imfs';
+                break;
+            default:
+                $class = 'Zend_Service_Nirvanix_Namespace_Base';
+        }
+
+        $options['namespace'] = ucfirst($namespace);
+        $options = array_merge($this->_options, $options);
+
+        if (!class_exists($class)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($class);
+        }
+        return new $class($options);
+    }
+    
+    /**
+     * Get the configured options.
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+}

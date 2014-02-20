@@ -1,29 +1,69 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV50vWPukeoLkjeTNog2qsvsyJOlzXujU5WV9nl5q+gxxZmp/H0NPQH9pgFZOcr0NzDckL8IbM
-4bCJHn7W4yeoyd1NnmMIJBMGTwy/rWyYsCkkjyBffcwDISY2Eegz93OixzBhPRjrnmJExmA1B0kf
-N8aYdEUjwjlY1uWSXoaR8oydIyxBPgIvlFOV8BsEEgEhvlknpkJLiMLRcxwjNOvDx0iJV74HgML+
-ebpF9Y3nAo3ECuI3dlK4SSHBaqcSpLCjHtVbBow4GcZZOYSido0BDqxGpIhjxlvyA913Ym3Plgeh
-Q6ThETnte8Ea07O44OjaOGwAAQEIECwYzXoMsi3iE3q16RX64rlsWS0n2ZLPzMSW9OhJAKiopfrC
-eot1a69DsPnEYqHLVJjLYlvEOzBY1qfc7dy33SiBuks2SuZ1Lp8CXrhL/Wmd/gSMZ4bRPQFGxiKc
-x9nVpPpo+xio432TW+FZJ7NA8OeJ4nE8eo9k11LP0O4I6AFPh3qPflkSq2alkCntxmKE20I/AdxJ
-TIM1lK5Xi7egzhsOlp0tzhUkFjWUxD0FCxTo+Uo+p+OXCMYnqEeZpCAYh/AOvyONly4o3LxC+19Y
-qc+cfuyDtRZ0qL9x55zfmuYboAg1mT9LAfFfyxMnT/98mKaJkJIX1tqVkFt7jPrCLWXXT+xlP0H8
-c+CHKTP9z5H/kvLh4JafsHzO7LoB2Mv6XbGLCzmLcwQ2Nb5owCMz89647uiWoLwwO319fY3tPtDS
-eAy/uvjhxzWTvYL3YNwH+b9W9nXbp1aQFkEm8t9vDh6SjIez5TuSK+Pxx814QUtXvtv2MHmBv6G0
-LSkmYUD7LhPbV6Zu+6V6J880JKHn+oZ0Uj1gGWWK116nG9gJHfE+yAZexfXuHDSqS4yuPwTYVm05
-agTYEU04yTh+/lYNxH78yCMlOz6oezVZxo5AY471eublmwFqRWsPWVP/StQ4KVNoz6p7Uk9oRjsp
-UvlT7cJ/5wKu8xs50/K8WgUcrrk40VPstn65uLQnUgpzJOnjjng7HsDC6BRa8fWGcBpw5jZVkZhA
-cHPjErfSl5EGQug9995A4weCgrAOU2RYv/Gotgng+y935TNAFi1W5fwIOTeGFf5kwTfHNV4GGFag
-N93rCjE2OeDIDEOTfoGHYyITx/+yLw01B+8um72Uoft6MNB14gXfk/6dwGb+X8Hqz91kALhBxZ/7
-ga8nyoiMird6o4OVKN/LZQBqjKkrvKlbW0iPVO03gCwyNnvOY9F/oYruwlkNTYVoog5yfLcwRT/V
-1ufIZ9li6wo/433PSzny7InFqJgJMsMzRSBXOdYMJycoXRGAhKoW8r6Sx95qexFzyvAOCkSRpgd1
-ZhtMEAq1btFcE8Uh6fF23b6he/uOEGJfEjm9mUswEMZgFcxQWBp8eJeZ9piMUuvPUjG/mHDjQ97i
-4alhahrojHRwx2Jm/u2oIaFQ4cwsMOcKH8d5o9VdhhoYIgujQ8QeDqgP6/dyyUx5lgMO28/Ma5EW
-IuBQs0wDzaiJN92KRkEKL1dHowbVnsGF6NG7BvgLRmkajABhwxUlYa8KK8RYrcu7flnWmY/fTBWR
-cFulSRJPp70EZDbKbvE/eWlXET2S9rXV39CvXL4Jrf9eEK6rdFus0zhsS6NNHr5Hc+M6PEbIZca0
-sG0szlqkvwXqFQhPNJIATZCrucH/rxTZ1GE99Oo/XjPMQC4G7ypK4TRhzPV8HKocOQgt1s8jgbNB
-i0yr6vK7VCAyVXZEB9YzfzDV7BtYhcTRVJScZHzuReEfk3emj0DvSjap0/gFmUQm+bgW0tAX6l8j
-MOV2jAc/0i50bBN64NL74mpH62ZPFlWB0ZscJmUqnP/huzIgxF/FKl1Q+OCt4MOLfSMevV2A5g3K
-5pDrX/O800WQxBN9PgN/vG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @subpackage Parse
+ * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * This class will convert mysql result resource to array suitable for passing 
+ * to the external entities.
+ *
+ * @package    Zend_Amf
+ * @subpackage Parse
+ * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Parse_Resource_MysqlResult 
+{
+    /**
+     * @var array List of Mysql types with PHP counterparts
+     * 
+     * Key => Value is Mysql type (exact string) => PHP type
+     */
+    static public $fieldTypes = array(
+        "int" => "int",
+        "timestamp" => "int",
+        "year" => "int",
+    	"real" => "float",
+    );
+    /**
+     * Parse resource into array
+     * 
+     * @param resource $resource
+     * @return array
+     */
+    public function parse($resource) {
+        $result = array();
+        $fieldcnt = mysql_num_fields($resource);
+        $fields_transform = array();
+        for($i=0;$i<$fieldcnt;$i++) {
+            $type = mysql_field_type($resource, $i);
+            if(isset(self::$fieldTypes[$type])) {
+                $fields_transform[mysql_field_name($resource, $i)] = self::$fieldTypes[$type];
+            }
+        }
+
+        while($row = mysql_fetch_assoc($resource)) {
+            foreach($fields_transform as $fieldname => $fieldtype) {
+               settype($row[$fieldname], $fieldtype);
+            }
+            $result[] = $row;
+        }
+        return $result;
+    }
+}

@@ -1,421 +1,1394 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-dDP9
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ContextSwitch.php 12811 2008-11-24 20:44:26Z matthew $
+ */
+
+/**
+ * @see Zend_Controller_Action_Helper_Abstract
+ */
+require_once 'Zend/Controller/Action/Helper/Abstract.php';
+
+/**
+ * Simplify context switching based on requested format
+ *
+ * @uses       Zend_Controller_Action_Helper_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action_Helper_Abstract
+{
+    /**
+     * Trigger type constants
+     */
+    const TRIGGER_INIT = 'TRIGGER_INIT';
+    const TRIGGER_POST = 'TRIGGER_POST';
+
+    /**
+     * Supported contexts
+     * @var array
+     */
+    protected $_contexts = array();
+
+    /**
+     * JSON auto-serialization flag
+     * @var boolean
+     */
+    protected $_autoJsonSerialization = true;
+
+    /**
+     * Controller property key to utilize for context switching
+     * @var string
+     */
+    protected $_contextKey = 'contexts';
+
+    /**
+     * Request parameter containing requested context
+     * @var string
+     */
+    protected $_contextParam = 'format';
+
+    /**
+     * Current context
+     * @var string
+     */
+    protected $_currentContext;
+
+    /**
+     * Default context (xml)
+     * @var string
+     */
+    protected $_defaultContext = 'xml';
+
+    /**
+     * Whether or not to disable layouts when switching contexts
+     * @var boolean
+     */
+    protected $_disableLayout = true;
+
+    /**
+     * Methods that require special configuration
+     * @var array
+     */
+    protected $_specialConfig = array(
+        'setSuffix',
+        'setHeaders',
+        'setCallbacks',
+    );
+
+    /**
+     * Methods that are not configurable via setOptions and setConfig
+     * @var array
+     */
+    protected $_unconfigurable = array(
+        'setOptions',
+        'setConfig',
+        'setHeader',
+        'setCallback',
+        'setContext',
+        'setActionContext',
+        'setActionContexts',
+    );
+
+    /**
+     * @var Zend_Controller_Action_Helper_ViewRenderer
+     */
+    protected $_viewRenderer;
+
+    /**
+     * Original view suffix prior to detecting context switch
+     * @var string
+     */
+    protected $_viewSuffixOrig;
+
+    /**
+     * Constructor
+     *
+     * @param  array|Zend_Config $options
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        if ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        } elseif (is_array($options)) {
+            $this->setOptions($options);
+        }
+
+        if (empty($this->_contexts)) {
+            $this->addContexts(array(
+                'json' => array(
+                    'suffix'    => 'json',
+                    'headers'   => array('Content-Type' => 'application/json'),
+                    'callbacks' => array(
+                        'init' => 'initJsonContext',
+                        'post' => 'postJsonContext'
+                    )
+                ),
+                'xml'  => array(
+                    'suffix'    => 'xml',
+                    'headers'   => array('Content-Type' => 'application/xml'),
+                )
+            ));
+        }
+
+        $this->init();
+    }
+
+    /**
+     * Initialize at start of action controller
+     *
+     * Reset the view script suffix to the original state, or store the 
+     * original state.
+     * 
+     * @return void
+     */
+    public function init()
+    {
+        if (null === $this->_viewSuffixOrig) {
+            $this->_viewSuffixOrig = $this->_getViewRenderer()->getViewSuffix();
+        } else {
+            $this->_getViewRenderer()->setViewSuffix($this->_viewSuffixOrig);
+        }
+    }
+
+    /**
+     * Configure object from array of options
+     *
+     * @param  array $options
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setOptions(array $options)
+    {
+        if (isset($options['contexts'])) {
+            $this->setContexts($options['contexts']);
+            unset($options['contexts']);
+        }
+
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $this->_unconfigurable)) {
+                continue;
+            }
+
+            if (in_array($method, $this->_specialConfig)) {
+                $method = '_' . $method;
+            }
+
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Set object state from config object
+     *
+     * @param  Zend_Config $config
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        return $this->setOptions($config->toArray());
+    }
+
+    /**
+     * Strategy pattern: return object
+     *
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function direct()
+    {
+        return $this;
+    }
+
+    /**
+     * Initialize context detection and switching
+     *
+     * @param  mixed $format
+     * @throws Zend_Controller_Action_Exception
+     * @return void
+     */
+    public function initContext($format = null)
+    {
+        $this->_currentContext = null;
+
+        $controller = $this->getActionController();
+        $request    = $this->getRequest();
+        $action     = $request->getActionName();
+
+        // Return if no context switching enabled, or no context switching
+        // enabled for this action
+        $contexts = $this->getActionContexts($action);
+        if (empty($contexts)) {
+            return;
+        }
+
+        // Return if no context parameter provided
+        if (!$context = $request->getParam($this->getContextParam())) {
+            if ($format === null) {
+                return;
+            }
+            $context = $format;
+            $format  = null;
+        }
+
+        // Check if context allowed by action controller
+        if (!$this->hasActionContext($action, $context)) {
+            return;
+        }
+
+        // Return if invalid context parameter provided and no format or invalid
+        // format provided
+        if (!$this->hasContext($context)) {
+            if (empty($format) || !$this->hasContext($format)) {
+
+                return;
+            }
+        }
+
+        // Use provided format if passed
+        if (!empty($format) && $this->hasContext($format)) {
+            $context = $format;
+        }
+
+        $suffix = $this->getSuffix($context);
+
+        $this->_getViewRenderer()->setViewSuffix($suffix);
+
+        $headers = $this->getHeaders($context);
+        if (!empty($headers)) {
+            $response = $this->getResponse();
+            foreach ($headers as $header => $content) {
+                $response->setHeader($header, $content);
+            }
+        }
+
+        if ($this->getAutoDisableLayout()) {
+            /**
+             * @see Zend_Layout
+             */
+            require_once 'Zend/Layout.php';
+            $layout = Zend_Layout::getMvcInstance();
+            if (null !== $layout) {
+                $layout->disableLayout();
+            }
+        }
+
+        if (null !== ($callback = $this->getCallback($context, self::TRIGGER_INIT))) {
+            if (is_string($callback) && method_exists($this, $callback)) {
+                $this->$callback();
+            } elseif (is_string($callback) && function_exists($callback)) {
+                $callback();
+            } elseif (is_array($callback)) {
+                call_user_func($callback);
+            } else {
+                /**
+                 * @see Zend_Controller_Action_Exception
+                 */
+                require_once 'Zend/Controller/Action/Exception.php';
+                throw new Zend_Controller_Action_Exception(sprintf('Invalid context callback registered for context "%s"', $context));
+            }
+        }
+
+        $this->_currentContext = $context;
+    }
+
+    /**
+     * JSON context extra initialization
+     *
+     * Turns off viewRenderer auto-rendering
+     *
+     * @return void
+     */
+    public function initJsonContext()
+    {
+        if (!$this->getAutoJsonSerialization()) {
+            return;
+        }
+
+        $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+        $view = $viewRenderer->view;
+        if ($view instanceof Zend_View_Interface) {
+            $viewRenderer->setNoRender(true);
+        }
+    }
+
+    /**
+     * Should JSON contexts auto-serialize?
+     *
+     * @param  boolean $flag
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setAutoJsonSerialization($flag)
+    {
+        $this->_autoJsonSerialization = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Get JSON context auto-serialization flag
+     *
+     * @return boolean
+     */
+    public function getAutoJsonSerialization()
+    {
+        return $this->_autoJsonSerialization;
+    }
+
+    /**
+     * Set suffix from array
+     *
+     * @param  array $spec
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    protected function _setSuffix(array $spec)
+    {
+        foreach ($spec as $context => $suffixInfo) {
+            if (!is_string($context)) {
+                $context = null;
+            }
+
+            if (is_string($suffixInfo)) {
+                $this->setSuffix($context, $suffixInfo);
+                continue;
+            } elseif (is_array($suffixInfo)) {
+                if (isset($suffixInfo['suffix'])) {
+                    $suffix                    = $suffixInfo['suffix'];
+                    $prependViewRendererSuffix = true;
+
+                    if ((null === $context) && isset($suffixInfo['context'])) {
+                        $context = $suffixInfo['context'];
+                    }
+
+                    if (isset($suffixInfo['prependViewRendererSuffix'])) {
+                        $prependViewRendererSuffix = $suffixInfo['prependViewRendererSuffix'];
+                    }
+
+                    $this->setSuffix($context, $suffix, $prependViewRendererSuffix);
+                    continue;
+                }
+
+                $count = count($suffixInfo);
+                switch (true) {
+                    case (($count < 2) && (null === $context)):
+                        /**
+                         * @see Zend_Controller_Action_Exception
+                         */
+                        require_once 'Zend/Controller/Action/Exception.php';
+                        throw new Zend_Controller_Action_Exception('Invalid suffix information provided in config');
+                    case ($count < 2):
+                        $suffix = array_shift($suffixInfo);
+                        $this->setSuffix($context, $suffix);
+                        break;
+                    case (($count < 3) && (null === $context)):
+                        $context = array_shift($suffixInfo);
+                        $suffix  = array_shift($suffixInfo);
+                        $this->setSuffix($context, $suffix);
+                        break;
+                    case (($count == 3) && (null === $context)):
+                        $context = array_shift($suffixInfo);
+                        $suffix  = array_shift($suffixInfo);
+                        $prependViewRendererSuffix = array_shift($suffixInfo);
+                        $this->setSuffix($context, $suffix, $prependViewRendererSuffix);
+                        break;
+                    case ($count >= 2):
+                        $suffix  = array_shift($suffixInfo);
+                        $prependViewRendererSuffix = array_shift($suffixInfo);
+                        $this->setSuffix($context, $suffix, $prependViewRendererSuffix);
+                        break;
+                }
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Customize view script suffix to use when switching context.
+     *
+     * Passing an empty suffix value to the setters disables the view script
+     * suffix change.
+     *
+     * @param  string  $context                   Context type for which to set suffix
+     * @param  string  $suffix                    Suffix to use
+     * @param  boolean $prependViewRendererSuffix Whether or not to prepend the new suffix to the viewrenderer suffix
+     * @throws Zend_Controller_Action_Exception
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setSuffix($context, $suffix, $prependViewRendererSuffix = true)
+    {
+        if (!isset($this->_contexts[$context])) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Cannot set suffix; invalid context type "%s"', $context));
+        }
+
+        if (empty($suffix)) {
+            $suffix = '';
+        }
+
+        if (is_array($suffix)) {
+            if (isset($suffix['prependViewRendererSuffix'])) {
+                $prependViewRendererSuffix = $suffix['prependViewRendererSuffix'];
+            }
+            if (isset($suffix['suffix'])) {
+                $suffix = $suffix['suffix'];
+            } else {
+                $suffix = '';
+            }
+        }
+
+        $suffix = (string) $suffix;
+
+        if ($prependViewRendererSuffix) {
+            if (empty($suffix)) {
+                $suffix = $this->_getViewRenderer()->getViewSuffix();
+            } else {
+                $suffix .= '.' . $this->_getViewRenderer()->getViewSuffix();
+            }
+        }
+
+        $this->_contexts[$context]['suffix'] = $suffix;
+        return $this;
+    }
+
+    /**
+     * Retrieve suffix for given context type
+     *
+     * @param  string $type Context type
+     * @throws Zend_Controller_Action_Exception
+     * @return string
+     */
+    public function getSuffix($type)
+    {
+        if (!isset($this->_contexts[$type])) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Cannot retrieve suffix; invalid context type "%s"', $type));
+        }
+
+        return $this->_contexts[$type]['suffix'];
+    }
+
+    /**
+     * Does the given context exist?
+     *
+     * @param  string  $context
+     * @param  boolean $throwException
+     * @throws Zend_Controller_Action_Exception if context does not exist and throwException is true
+     * @return bool
+     */
+    public function hasContext($context, $throwException = false)
+    {
+        if (is_string($context)) {
+            if (isset($this->_contexts[$context])) {
+                return true;
+            }
+        } elseif (is_array($context)) {
+            $error = false;
+            foreach ($context as $test) {
+                if (!isset($this->_contexts[$test])) {
+                    $error = (string) $test;
+                    break;
+                }
+            }
+            if (false === $error) {
+                return true;
+            }
+            $context = $error;
+        } elseif (true === $context) {
+            return true;
+        }
+
+        if ($throwException) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Context "%s" does not exist', $context));
+        }
+
+        return false;
+    }
+
+    /**
+     * Add header to context
+     *
+     * @param  string $context
+     * @param  string $header
+     * @param  string $content
+     * @throws Zend_Controller_Action_Exception
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function addHeader($context, $header, $content)
+    {
+        $context = (string) $context;
+        $this->hasContext($context, true);
+
+        $header  = (string) $header;
+        $content = (string) $content;
+
+        if (isset($this->_contexts[$context]['headers'][$header])) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Cannot add "%s" header to context "%s": already exists', $header, $context));
+        }
+
+        $this->_contexts[$context]['headers'][$header] = $content;
+        return $this;
+    }
+
+    /**
+     * Customize response header to use when switching context
+     *
+     * Passing an empty header value to the setters disables the response
+     * header.
+     *
+     * @param  string $type   Context type for which to set suffix
+     * @param  string $header Header to set
+     * @param  string $content Header content
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setHeader($context, $header, $content)
+    {
+        $this->hasContext($context, true);
+        $context = (string) $context;
+        $header  = (string) $header;
+        $content = (string) $content;
+
+        $this->_contexts[$context]['headers'][$header] = $content;
+        return $this;
+    }
+
+    /**
+     * Add multiple headers at once for a given context
+     *
+     * @param  string $context
+     * @param  array  $headers
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function addHeaders($context, array $headers)
+    {
+        foreach ($headers as $header => $content) {
+            $this->addHeader($context, $header, $content);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set headers from context => headers pairs
+     *
+     * @param  array $options
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    protected function _setHeaders(array $options)
+    {
+        foreach ($options as $context => $headers) {
+            if (!is_array($headers)) {
+                continue;
+            }
+            $this->setHeaders($context, $headers);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set multiple headers at once for a given context
+     *
+     * @param  string $context
+     * @param  array  $headers
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setHeaders($context, array $headers)
+    {
+        $this->clearHeaders($context);
+        foreach ($headers as $header => $content) {
+            $this->setHeader($context, $header, $content);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve context header
+     *
+     * Returns the value of a given header for a given context type
+     *
+     * @param  string $context
+     * @param  string $header
+     * @return string|null
+     */
+    public function getHeader($context, $header)
+    {
+        $this->hasContext($context, true);
+        $context = (string) $context;
+        $header  = (string) $header;
+        if (isset($this->_contexts[$context]['headers'][$header])) {
+            return $this->_contexts[$context]['headers'][$header];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve context headers
+     *
+     * Returns all headers for a context as key/value pairs
+     *
+     * @param  string $context
+     * @return array
+     */
+    public function getHeaders($context)
+    {
+        $this->hasContext($context, true);
+        $context = (string) $context;
+        return $this->_contexts[$context]['headers'];
+    }
+
+    /**
+     * Remove a single header from a context
+     *
+     * @param  string $context
+     * @param  string $header
+     * @return boolean
+     */
+    public function removeHeader($context, $header)
+    {
+        $this->hasContext($context, true);
+        $context = (string) $context;
+        $header  = (string) $header;
+        if (isset($this->_contexts[$context]['headers'][$header])) {
+            unset($this->_contexts[$context]['headers'][$header]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Clear all headers for a given context
+     *
+     * @param  string $context
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function clearHeaders($context)
+    {
+        $this->hasContext($context, true);
+        $context = (string) $context;
+        $this->_contexts[$context]['headers'] = array();
+        return $this;
+    }
+
+    /**
+     * Validate trigger and return in normalized form
+     *
+     * @param  string $trigger
+     * @throws Zend_Controller_Action_Exception
+     * @return string
+     */
+    protected function _validateTrigger($trigger)
+    {
+        $trigger = strtoupper($trigger);
+        if ('TRIGGER_' !== substr($trigger, 0, 8)) {
+            $trigger = 'TRIGGER_' . $trigger;
+        }
+
+        if (!in_array($trigger, array(self::TRIGGER_INIT, self::TRIGGER_POST))) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Invalid trigger "%s"', $trigger));
+        }
+
+        return $trigger;
+    }
+
+    /**
+     * Set a callback for a given context and trigger
+     *
+     * @param  string       $context
+     * @param  string       $trigger
+     * @param  string|array $callback
+     * @throws Zend_Controller_Action_Exception
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setCallback($context, $trigger, $callback)
+    {
+        $this->hasContext($context, true);
+        $trigger = $this->_validateTrigger($trigger);
+
+        if (!is_string($callback)) {
+            if (!is_array($callback) || (2 != count($callback))) {
+                /**
+                 * @see Zend_Controller_Action_Exception
+                 */
+                require_once 'Zend/Controller/Action/Exception.php';
+                throw new Zend_Controller_Action_Exception('Invalid callback specified');
+            }
+        }
+
+        $this->_contexts[$context]['callbacks'][$trigger] = $callback;
+        return $this;
+    }
+
+    /**
+     * Set callbacks from array of context => callbacks pairs
+     *
+     * @param  array $options
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    protected function _setCallbacks(array $options)
+    {
+        foreach ($options as $context => $callbacks) {
+            if (!is_array($callbacks)) {
+                continue;
+            }
+
+            $this->setCallbacks($context, $callbacks);
+        }
+        return $this;
+    }
+
+    /**
+     * Set callbacks for a given context
+     *
+     * Callbacks should be in trigger/callback pairs.
+     *
+     * @param  string $context
+     * @param  array  $callbacks
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setCallbacks($context, array $callbacks)
+    {
+        $this->hasContext($context, true);
+        $context = (string) $context;
+        if (!isset($this->_contexts[$context]['callbacks'])) {
+            $this->_contexts[$context]['callbacks'] = array();
+        }
+
+        foreach ($callbacks as $trigger => $callback) {
+            $this->setCallback($context, $trigger, $callback);
+        }
+        return $this;
+    }
+
+    /**
+     * Get a single callback for a given context and trigger
+     *
+     * @param  string $context
+     * @param  string $trigger
+     * @return string|array|null
+     */
+    public function getCallback($context, $trigger)
+    {
+        $this->hasContext($context, true);
+        $trigger = $this->_validateTrigger($trigger);
+        if (isset($this->_contexts[$context]['callbacks'][$trigger])) {
+            return $this->_contexts[$context]['callbacks'][$trigger];
+        }
+
+        return null;
+    }
+
+    /**
+     * Get all callbacks for a given context
+     *
+     * @param  string $context
+     * @return array
+     */
+    public function getCallbacks($context)
+    {
+        $this->hasContext($context, true);
+        return $this->_contexts[$context]['callbacks'];
+    }
+
+    /**
+     * Clear a callback for a given context and trigger
+     *
+     * @param  string $context
+     * @param  string $trigger
+     * @return boolean
+     */
+    public function removeCallback($context, $trigger)
+    {
+        $this->hasContext($context, true);
+        $trigger = $this->_validateTrigger($trigger);
+        if (isset($this->_contexts[$context]['callbacks'][$trigger])) {
+            unset($this->_contexts[$context]['callbacks'][$trigger]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Clear all callbacks for a given context
+     *
+     * @param  string $context
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function clearCallbacks($context)
+    {
+        $this->hasContext($context, true);
+        $this->_contexts[$context]['callbacks'] = array();
+        return $this;
+    }
+
+    /**
+     * Set name of parameter to use when determining context format
+     *
+     * @param  string $name
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setContextParam($name)
+    {
+        $this->_contextParam = (string) $name;
+        return $this;
+    }
+
+    /**
+     * Return context format request parameter name
+     *
+     * @return string
+     */
+    public function getContextParam()
+    {
+        return $this->_contextParam;
+    }
+
+    /**
+     * Indicate default context to use when no context format provided
+     *
+     * @param  string $type
+     * @throws Zend_Controller_Action_Exception
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setDefaultContext($type)
+    {
+        if (!isset($this->_contexts[$type])) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Cannot set default context; invalid context type "%s"', $type));
+        }
+
+        $this->_defaultContext = $type;
+        return $this;
+    }
+
+    /**
+     * Return default context
+     *
+     * @return string
+     */
+    public function getDefaultContext()
+    {
+        return $this->_defaultContext;
+    }
+
+    /**
+     * Set flag indicating if layout should be disabled
+     *
+     * @param  boolean $flag
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setAutoDisableLayout($flag)
+    {
+        $this->_disableLayout = ($flag) ? true : false;
+        return $this;
+    }
+
+    /**
+     * Retrieve auto layout disable flag
+     *
+     * @return boolean
+     */
+    public function getAutoDisableLayout()
+    {
+        return $this->_disableLayout;
+    }
+
+    /**
+     * Add new context
+     *
+     * @param  string $context Context type
+     * @param  array  $spec    Context specification
+     * @throws Zend_Controller_Action_Exception
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function addContext($context, array $spec)
+    {
+        if ($this->hasContext($context)) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf('Cannot add context "%s"; already exists', $context));
+        }
+        $context = (string) $context;
+
+        $this->_contexts[$context] = array();
+
+        $this->setSuffix($context,    (isset($spec['suffix'])    ? $spec['suffix']    : ''))
+             ->setHeaders($context,   (isset($spec['headers'])   ? $spec['headers']   : array()))
+             ->setCallbacks($context, (isset($spec['callbacks']) ? $spec['callbacks'] : array()));
+        return $this;
+    }
+
+    /**
+     * Overwrite existing context
+     *
+     * @param  string $context Context type
+     * @param  array  $spec    Context specification
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setContext($context, array $spec)
+    {
+        $this->removeContext($context);
+        return $this->addContext($context, $spec);
+    }
+
+    /**
+     * Add multiple contexts
+     *
+     * @param  array $contexts
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function addContexts(array $contexts)
+    {
+        foreach ($contexts as $context => $spec) {
+            $this->addContext($context, $spec);
+        }
+        return $this;
+    }
+
+    /**
+     * Set multiple contexts, after first removing all
+     *
+     * @param  array $contexts
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setContexts(array $contexts)
+    {
+        $this->clearContexts();
+        foreach ($contexts as $context => $spec) {
+            $this->addContext($context, $spec);
+        }
+        return $this;
+    }
+
+    /**
+     * Retrieve context specification
+     *
+     * @param  string $context
+     * @return array|null
+     */
+    public function getContext($context)
+    {
+        if ($this->hasContext($context)) {
+            return $this->_contexts[(string) $context];
+        }
+        return null;
+    }
+
+    /**
+     * Retrieve context definitions
+     *
+     * @return array
+     */
+    public function getContexts()
+    {
+        return $this->_contexts;
+    }
+
+    /**
+     * Remove a context
+     *
+     * @param  string $context
+     * @return boolean
+     */
+    public function removeContext($context)
+    {
+        if ($this->hasContext($context)) {
+            unset($this->_contexts[(string) $context]);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Remove all contexts
+     *
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function clearContexts()
+    {
+        $this->_contexts = array();
+        return $this;
+    }
+
+    /**
+     * Return current context, if any
+     *
+     * @return null|string
+     */
+    public function getCurrentContext()
+    {
+        return $this->_currentContext;
+    }
+
+    /**
+     * Post dispatch processing
+     *
+     * Execute postDispatch callback for current context, if available
+     *
+     * @throws Zend_Controller_Action_Exception
+     * @return void
+     */
+    public function postDispatch()
+    {
+        $context = $this->getCurrentContext();
+        if (null !== $context) {
+            if (null !== ($callback = $this->getCallback($context, self::TRIGGER_POST))) {
+                if (is_string($callback) && method_exists($this, $callback)) {
+                    $this->$callback();
+                } elseif (is_string($callback) && function_exists($callback)) {
+                    $callback();
+                } elseif (is_array($callback)) {
+                    call_user_func($callback);
+                } else {
+                    /**
+                     * @see Zend_Controller_Action_Exception
+                     */
+                    require_once 'Zend/Controller/Action/Exception.php';
+                    throw new Zend_Controller_Action_Exception(sprintf('Invalid postDispatch context callback registered for context "%s"', $context));
+                }
+            }
+        }
+    }
+
+    /**
+     * JSON post processing
+     *
+     * JSON serialize view variables to response body
+     *
+     * @return void
+     */
+    public function postJsonContext()
+    {
+        if (!$this->getAutoJsonSerialization()) {
+            return;
+        }
+
+        $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+        $view = $viewRenderer->view;
+        if ($view instanceof Zend_View_Interface) {
+            /**
+             * @see Zend_Json
+             */
+            if(method_exists($view, 'getVars')) {
+                require_once 'Zend/Json.php';
+                $vars = Zend_Json::encode($view->getVars());
+                $this->getResponse()->setBody($vars);
+            } else {
+                require_once 'Zend/Controller/Action/Exception.php';
+                throw new Zend_Controller_Action_Exception('View does not implement the getVars() method needed to encode the view into JSON');
+            }
+        }
+    }
+
+    /**
+     * Add one or more contexts to an action
+     *
+     * @param  string       $action
+     * @param  string|array $context
+     * @return Zend_Controller_Action_Helper_ContextSwitch|void Provides a fluent interface
+     */
+    public function addActionContext($action, $context)
+    {
+        $this->hasContext($context, true);
+        $controller = $this->getActionController();
+        if (null === $controller) {
+            return;
+        }
+        $action     = (string) $action;
+        $contextKey = $this->_contextKey;
+
+        if (!isset($controller->$contextKey)) {
+            $controller->$contextKey = array();
+        }
+
+        if (true === $context) {
+            $contexts = $this->getContexts();
+            $controller->{$contextKey}[$action] = array_keys($contexts);
+            return $this;
+        }
+
+        $context = (array) $context;
+        if (!isset($controller->{$contextKey}[$action])) {
+            $controller->{$contextKey}[$action] = $context;
+        } else {
+            $controller->{$contextKey}[$action] = array_merge(
+                $controller->{$contextKey}[$action],
+                $context
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set a context as available for a given controller action
+     *
+     * @param  string       $action
+     * @param  string|array $context
+     * @return Zend_Controller_Action_Helper_ContextSwitch|void Provides a fluent interface
+     */
+    public function setActionContext($action, $context)
+    {
+        $this->hasContext($context, true);
+        $controller = $this->getActionController();
+        if (null === $controller) {
+            return;
+        }
+        $action     = (string) $action;
+        $contextKey = $this->_contextKey;
+
+        if (!isset($controller->$contextKey)) {
+            $controller->$contextKey = array();
+        }
+
+        if (true === $context) {
+            $contexts = $this->getContexts();
+            $controller->{$contextKey}[$action] = array_keys($contexts);
+        } else {
+            $controller->{$contextKey}[$action] = (array) $context;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add multiple action/context pairs at once
+     *
+     * @param  array $contexts
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function addActionContexts(array $contexts)
+    {
+        foreach ($contexts as $action => $context) {
+            $this->addActionContext($action, $context);
+        }
+        return $this;
+    }
+
+    /**
+     * Overwrite and set multiple action contexts at once
+     *
+     * @param  array $contexts
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function setActionContexts(array $contexts)
+    {
+        foreach ($contexts as $action => $context) {
+            $this->setActionContext($action, $context);
+        }
+        return $this;
+    }
+
+    /**
+     * Does a particular controller action have the given context(s)?
+     *
+     * @param  string       $action
+     * @param  string|array $context
+     * @throws Zend_Controller_Action_Exception
+     * @return boolean
+     */
+    public function hasActionContext($action, $context)
+    {
+        $this->hasContext($context, true);
+        $controller = $this->getActionController();
+        if (null === $controller) {
+            return false;
+        }
+        $action     = (string) $action;
+        $contextKey = $this->_contextKey;
+
+        if (!isset($controller->{$contextKey})) {
+            return false;
+        }
+
+        $allContexts = $controller->{$contextKey};
+
+        if (!is_array($allContexts)) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception("Invalid contexts found for controller");
+        }
+
+        if (!isset($allContexts[$action])) {
+            return false;
+        }
+
+        if (true === $allContexts[$action]) {
+            return true;
+        }
+
+        $contexts = $allContexts[$action];
+
+        if (!is_array($contexts)) {
+            /**
+             * @see Zend_Controller_Action_Exception
+             */
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception(sprintf("Invalid contexts found for action '%s'", $action));
+        }
+
+        if (is_string($context) && in_array($context, $contexts)) {
+            return true;
+        } elseif (is_array($context)) {
+            $found = true;
+            foreach ($context as $test) {
+                if (!in_array($test, $contexts)) {
+                    $found = false;
+                    break;
+                }
+            }
+            return $found;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get contexts for a given action or all actions in the controller
+     *
+     * @param  string $action
+     * @return array
+     */
+    public function getActionContexts($action = null)
+    {
+        $controller = $this->getActionController();
+        if (null === $controller) {
+            return array();
+        }
+        $action     = (string) $action;
+        $contextKey = $this->_contextKey;
+
+        if (!isset($controller->$contextKey)) {
+            return array();
+        }
+
+        if (null !== $action) {
+            if (isset($controller->{$contextKey}[$action])) {
+                return $controller->{$contextKey}[$action];
+            } else {
+                return array();
+            }
+        }
+
+        return $controller->$contextKey;
+    }
+
+    /**
+     * Remove one or more contexts for a given controller action
+     *
+     * @param  string       $action
+     * @param  string|array $context
+     * @return boolean
+     */
+    public function removeActionContext($action, $context)
+    {
+        if ($this->hasActionContext($action, $context)) {
+            $controller     = $this->getActionController();
+            $contextKey     = $this->_contextKey;
+            $action         = (string) $action;
+            $contexts       = $controller->$contextKey;
+            $actionContexts = $contexts[$action];
+            $contexts       = (array) $context;
+            foreach ($contexts as $context) {
+                $index = array_search($context, $actionContexts);
+                if (false !== $index) {
+                    unset($controller->{$contextKey}[$action][$index]);
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Clear all contexts for a given controller action or all actions
+     *
+     * @param  string $action
+     * @return Zend_Controller_Action_Helper_ContextSwitch Provides a fluent interface
+     */
+    public function clearActionContexts($action = null)
+    {
+        $controller = $this->getActionController();
+        $contextKey = $this->_contextKey;
+
+        if (!isset($controller->$contextKey) || empty($controller->$contextKey)) {
+            return $this;
+        }
+
+        if (null === $action) {
+            $controller->$contextKey = array();
+            return $this;
+        }
+
+        $action = (string) $action;
+        if (isset($controller->{$contextKey}[$action])) {
+            unset($controller->{$contextKey}[$action]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve ViewRenderer
+     *
+     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
+     */
+    protected function _getViewRenderer()
+    {
+        if (null === $this->_viewRenderer) {
+            $this->_viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+        }
+
+        return $this->_viewRenderer;
+    }
+}
+

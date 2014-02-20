@@ -1,226 +1,778 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_View_Helper_Navigation_HelperAbstract
+ */
+require_once 'Zend/View/Helper/Navigation/HelperAbstract.php';
+
+/**
+ * Helper for printing <link> elements
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_Navigation_Links
+    extends Zend_View_Helper_Navigation_HelperAbstract
+{
+    /**#@+
+     * Constants used for specifying which link types to find and render
+     *
+     * @var int
+     */
+    const RENDER_ALTERNATE  = 0x0001;
+    const RENDER_STYLESHEET = 0x0002;
+    const RENDER_START      = 0x0004;
+    const RENDER_NEXT       = 0x0008;
+    const RENDER_PREV       = 0x0010;
+    const RENDER_CONTENTS   = 0x0020;
+    const RENDER_INDEX      = 0x0040;
+    const RENDER_GLOSSARY   = 0x0080;
+    const RENDER_COPYRIGHT  = 0x0100;
+    const RENDER_CHAPTER    = 0x0200;
+    const RENDER_SECTION    = 0x0400;
+    const RENDER_SUBSECTION = 0x0800;
+    const RENDER_APPENDIX   = 0x1000;
+    const RENDER_HELP       = 0x2000;
+    const RENDER_BOOKMARK   = 0x4000;
+    const RENDER_CUSTOM     = 0x8000;
+    const RENDER_ALL        = 0xffff;
+    /**#@+**/
+
+    /**
+     * Maps render constants to W3C link types
+     *
+     * @var array
+     */
+    protected static $_RELATIONS = array(
+        self::RENDER_ALTERNATE  => 'alternate',
+        self::RENDER_STYLESHEET => 'stylesheet',
+        self::RENDER_START      => 'start',
+        self::RENDER_NEXT       => 'next',
+        self::RENDER_PREV       => 'prev',
+        self::RENDER_CONTENTS   => 'contents',
+        self::RENDER_INDEX      => 'index',
+        self::RENDER_GLOSSARY   => 'glossary',
+        self::RENDER_COPYRIGHT  => 'copyright',
+        self::RENDER_CHAPTER    => 'chapter',
+        self::RENDER_SECTION    => 'section',
+        self::RENDER_SUBSECTION => 'subsection',
+        self::RENDER_APPENDIX   => 'appendix',
+        self::RENDER_HELP       => 'help',
+        self::RENDER_BOOKMARK   => 'bookmark'
+    );
+
+    /**
+     * The helper's render flag
+     *
+     * @see render()
+     * @see setRenderFlag()
+     * @var int
+     */
+    protected $_renderFlag = self::RENDER_ALL;
+
+    /**
+     * Root container
+     *
+     * Used for preventing methods to traverse above the container given to
+     * the {@link render()} method.
+     *
+     * @see _findRoot()
+     *
+     * @var Zend_Navigation_Container
+     */
+    protected $_root;
+
+    /**
+     * View helper entry point:
+     * Retrieves helper and optionally sets container to operate on
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               operate on
+     * @return Zend_View_Helper_Navigation_Links     fluent interface, returns
+     *                                               self
+     */
+    public function links(Zend_Navigation_Container $container = null)
+    {
+        if (null !== $container) {
+            $this->setContainer($container);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Magic overload: Proxy calls to {@link findRelation()} or container
+     *
+     * Examples of finder calls:
+     * <code>
+     * // METHOD                  // SAME AS
+     * $h->findRelNext($page);    // $h->findRelation($page, 'rel', 'next')
+     * $h->findRevSection($page); // $h->findRelation($page, 'rev', 'section');
+     * $h->findRelFoo($page);     // $h->findRelation($page, 'rel', 'foo');
+     * </code>
+     *
+     * @param  string $method             method name
+     * @param  array  $arguments          method arguments
+     * @throws Zend_Navigation_Exception  if method does not exist in container
+     */
+    public function __call($method, array $arguments = array())
+    {
+        if (@preg_match('/find(Rel|Rev)(.+)/', $method, $match)) {
+            return $this->findRelation($arguments[0],
+                                       strtolower($match[1]),
+                                       strtolower($match[2]));
+        }
+
+        return parent::__call($method, $arguments);
+    }
+
+    // Accessors:
+
+    /**
+     * Sets the helper's render flag
+     *
+     * The helper uses the bitwise '&' operator against the hex values of the
+     * render constants. This means that the flag can is "bitwised" value of
+     * the render constants. Examples:
+     * <code>
+     * // render all links except glossary
+     * $flag = Zend_View_Helper_Navigation_Links:RENDER_ALL ^
+     *         Zend_View_Helper_Navigation_Links:RENDER_GLOSSARY;
+     * $helper->setRenderFlag($flag);
+     *
+     * // render only chapters and sections
+     * $flag = Zend_View_Helper_Navigation_Links:RENDER_CHAPTER |
+     *         Zend_View_Helper_Navigation_Links:RENDER_SECTION;
+     * $helper->setRenderFlag($flag);
+     *
+     * // render only relations that are not native W3C relations
+     * $helper->setRenderFlag(Zend_View_Helper_Navigation_Links:RENDER_CUSTOM);
+     *
+     * // render all relations (default)
+     * $helper->setRenderFlag(Zend_View_Helper_Navigation_Links:RENDER_ALL);
+     * </code>
+     *
+     * Note that custom relations can also be rendered directly using the
+     * {@link renderLink()} method.
+     *
+     * @param  int $renderFlag                    render flag
+     * @return Zend_View_Helper_Navigation_Links  fluent interface, returns self
+     */
+    public function setRenderFlag($renderFlag)
+    {
+        $this->_renderFlag = (int) $renderFlag;
+        return $this;
+    }
+
+    /**
+     * Returns the helper's render flag
+     *
+     * @return int  render flag
+     */
+    public function getRenderFlag()
+    {
+        return $this->_renderFlag;
+    }
+
+    // Finder methods:
+
+    /**
+     * Finds all relations (forward and reverse) for the given $page
+     *
+     * The form of the returned array:
+     * <code>
+     * // $page denotes an instance of Zend_Navigation_Page
+     * $returned = array(
+     *     'rel' => array(
+     *         'alternate' => array($page, $page, $page),
+     *         'start'     => array($page),
+     *         'next'      => array($page),
+     *         'prev'      => array($page),
+     *         'canonical' => array($page)
+     *     ),
+     *     'rev' => array(
+     *         'section'   => array($page)
+     *     )
+     * );
+     * </code>
+     *
+     * @param  Zend_Navigation_Page $page  page to find links for
+     * @return array                       related pages
+     */
+    public function findAllRelations(Zend_Navigation_Page $page,
+                                     $flag = null)
+    {
+        if (!is_int($flag)) {
+            $flag = self::RENDER_ALL;
+        }
+
+        $result = array('rel' => array(), 'rev' => array());
+        $native = array_values(self::$_RELATIONS);
+
+        foreach (array_keys($result) as $rel) {
+            $meth = 'getDefined' . ucfirst($rel);
+            $types = array_merge($native, array_diff($page->$meth(), $native));
+
+            foreach ($types as $type) {
+                if (!$relFlag = array_search($type, self::$_RELATIONS)) {
+                    $relFlag = self::RENDER_CUSTOM;
+                }
+                if (!($flag & $relFlag)) {
+                    continue;
+                }
+                if ($found = $this->findRelation($page, $rel, $type)) {
+                    if (!is_array($found)) {
+                        $found = array($found);
+                    }
+                    $result[$rel][$type] = $found;
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Finds relations of the given $rel=$type from $page
+     *
+     * This method will first look for relations in the page instance, then
+     * by searching the root container if nothing was found in the page.
+     *
+     * @param  Zend_Navigation_Page $page       page to find relations for
+     * @param  string              $rel         relation, "rel" or "rev"
+     * @param  string              $type        link type, e.g. 'start', 'next'
+     * @return Zend_Navigaiton_Page|array|null  page(s), or null if not found
+     * @throws Zend_View_Exception              if $rel is not "rel" or "rev"
+     */
+    public function findRelation(Zend_Navigation_Page $page, $rel, $type)
+    {
+        if (!in_array($rel, array('rel', 'rev'))) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception(sprintf(
+                'Invalid argument: $rel must be "rel" or "rev"; "%s" given',
+                $rel));
+        }
+
+        if (!$result = $this->_findFromProperty($page, $rel, $type)) {
+            $result = $this->_findFromSearch($page, $rel, $type);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Finds relations of given $type for $page by checking if the
+     * relation is specified as a property of $page
+     *
+     * @param  Zend_Navigation_Page $page       page to find relations for
+     * @param  string              $rel         relation, 'rel' or 'rev'
+     * @param  string              $type        link type, e.g. 'start', 'next'
+     * @return Zend_Navigation_Page|array|null  page(s), or null if not found
+     */
+    protected function _findFromProperty(Zend_Navigation_Page $page, $rel, $type)
+    {
+        $method = 'get' . ucfirst($rel);
+        if ($result = $page->$method($type)) {
+            if ($result = $this->_convertToPages($result)) {
+                if (!is_array($result)) {
+                    $result = array($result);
+                }
+
+                foreach ($result as $key => $page) {
+                    if (!$this->accept($page)) {
+                        unset($result[$key]);
+                    }
+                }
+
+                return count($result) == 1 ? $result[0] : $result;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Finds relations of given $rel=$type for $page by using the helper to
+     * search for the relation in the root container
+     *
+     * @param  Zend_Navigation_Page $page  page to find relations for
+     * @param  string              $rel    relation, 'rel' or 'rev'
+     * @param  string              $type   link type, e.g. 'start', 'next', etc
+     * @return array|null                  array of pages, or null if not found
+     */
+    protected function _findFromSearch(Zend_Navigation_Page $page, $rel, $type)
+    {
+        $found = null;
+
+        $method = 'search' . ucfirst($rel) . ucfirst($type);
+        if (method_exists($this, $method)) {
+            $found = $this->$method($page);
+        }
+
+        return $found;
+    }
+
+    // Search methods:
+
+    /**
+     * Searches the root container for the forward 'start' relation of the given
+     * $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to the first document in a collection of documents. This link type
+     * tells search engines which document is considered by the author to be the
+     * starting point of the collection.
+     *
+     * @param  Zend_Navigation_Page $page  page to find relation for
+     * @return Zend_Navigation_Page|null   page or null
+     */
+    public function searchRelStart(Zend_Navigation_Page $page)
+    {
+        $found = $this->_findRoot($page);
+        if (!$found instanceof Zend_Navigation_Page) {
+            $found->rewind();
+            $found = $found->current();
+        }
+
+        if ($found === $page || !$this->accept($found)) {
+            $found = null;
+        }
+
+        return $found;
+    }
+
+    /**
+     * Searches the root container for the forward 'next' relation of the given
+     * $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to the next document in a linear sequence of documents. User
+     * agents may choose to preload the "next" document, to reduce the perceived
+     * load time.
+     *
+     * @param  Zend_Navigation_Page $page  page to find relation for
+     * @return Zend_Navigation_Page|null   page(s) or null
+     */
+    public function searchRelNext(Zend_Navigation_Page $page)
+    {
+        $found = null;
+        $break = false;
+        $iterator = new RecursiveIteratorIterator($this->_findRoot($page),
+                RecursiveIteratorIterator::SELF_FIRST);
+        foreach ($iterator as $intermediate) {
+            if ($intermediate === $page) {
+                // current page; break at next accepted page
+                $break = true;
+                continue;
+            }
+
+            if ($break && $this->accept($intermediate)) {
+                $found = $intermediate;
+                break;
+            }
+        }
+
+        return $found;
+    }
+
+    /**
+     * Searches the root container for the forward 'prev' relation of the given
+     * $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to the previous document in an ordered series of documents. Some
+     * user agents also support the synonym "Previous".
+     *
+     * @param  Zend_Navigation_Page $page  page to find relation for
+     * @return Zend_Navigation_Page|null   page or null
+     */
+    public function searchRelPrev(Zend_Navigation_Page $page)
+    {
+        $found = null;
+        $prev = null;
+        $iterator = new RecursiveIteratorIterator(
+                $this->_findRoot($page),
+                RecursiveIteratorIterator::SELF_FIRST);
+        foreach ($iterator as $intermediate) {
+            if (!$this->accept($intermediate)) {
+                continue;
+            }
+            if ($intermediate === $page) {
+                $found = $prev;
+                break;
+            }
+
+            $prev = $intermediate;
+        }
+
+        return $found;
+    }
+
+    /**
+     * Searches the root container for forward 'chapter' relations of the given
+     * $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to a document serving as a chapter in a collection of documents.
+     *
+     * @param  Zend_Navigation_Page $page       page to find relation for
+     * @return Zend_Navigation_Page|array|null  page(s) or null
+     */
+    public function searchRelChapter(Zend_Navigation_Page $page)
+    {
+        $found = array();
+
+        // find first level of pages
+        $root = $this->_findRoot($page);
+
+        // find start page(s)
+        $start = $this->findRelation($page, 'rel', 'start');
+        if (!is_array($start)) {
+            $start = array($start);
+        }
+
+        foreach ($root as $chapter) {
+            // exclude self and start page from chapters
+            if ($chapter !== $page &&
+                !in_array($chapter, $start) &&
+                $this->accept($chapter)) {
+                $found[] = $chapter;
+            }
+        }
+
+        switch (count($found)) {
+            case 0:
+                return null;
+            case 1:
+                return $found[0];
+            default:
+                return $found;
+        }
+    }
+
+    /**
+     * Searches the root container for forward 'section' relations of the given
+     * $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to a document serving as a section in a collection of documents.
+     *
+     * @param  Zend_Navigation_Page $page       page to find relation for
+     * @return Zend_Navigation_Page|array|null  page(s) or null
+     */
+    public function searchRelSection(Zend_Navigation_Page $page)
+    {
+        $found = array();
+
+        // check if given page has pages and is a chapter page
+        if ($page->hasPages() && $this->_findRoot($page)->hasPage($page)) {
+            foreach ($page as $section) {
+                if ($this->accept($section)) {
+                    $found[] = $section;
+                }
+            }
+        }
+
+        switch (count($found)) {
+            case 0:
+                return null;
+            case 1:
+                return $found[0];
+            default:
+                return $found;
+        }
+    }
+
+    /**
+     * Searches the root container for forward 'subsection' relations of the
+     * given $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to a document serving as a subsection in a collection of
+     * documents.
+     *
+     * @param  Zend_Navigation_Page $page       page to find relation for
+     * @return Zend_Navigation_Page|array|null  page(s) or null
+     */
+    public function searchRelSubsection(Zend_Navigation_Page $page)
+    {
+        $found = array();
+
+        if ($page->hasPages()) {
+            // given page has child pages, loop chapters
+            foreach ($this->_findRoot($page) as $chapter) {
+                // is page a section?
+                if ($chapter->hasPage($page)) {
+                    foreach ($page as $subsection) {
+                        if ($this->accept($subsection)) {
+                            $found[] = $subsection;
+                        }
+                    }
+                }
+            }
+        }
+
+        switch (count($found)) {
+            case 0:
+                return null;
+            case 1:
+                return $found[0];
+            default:
+                return $found;
+        }
+    }
+
+    /**
+     * Searches the root container for the reverse 'section' relation of the
+     * given $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to a document serving as a section in a collection of documents.
+     *
+     * @param  Zend_Navigation_Page $page  page to find relation for
+     * @return Zend_Navigation_Page|null   page(s) or null
+     */
+    public function searchRevSection(Zend_Navigation_Page $page)
+    {
+        $found = null;
+
+        if ($parent = $page->getParent()) {
+            if ($parent instanceof Zend_Navigation_Page &&
+                $this->_findRoot($page)->hasPage($parent)) {
+                $found = $parent;
+            }
+        }
+
+        return $found;
+    }
+
+    /**
+     * Searches the root container for the reverse 'section' relation of the
+     * given $page
+     *
+     * From {@link http://www.w3.org/TR/html4/types.html#type-links}:
+     * Refers to a document serving as a subsection in a collection of
+     * documents.
+     *
+     * @param  Zend_Navigation_Page $page  page to find relation for
+     * @return Zend_Navigation_Page|null   page(s) or null
+     */
+    public function searchRevSubsection(Zend_Navigation_Page $page)
+    {
+        $found = null;
+
+        if ($parent = $page->getParent()) {
+            if ($parent instanceof Zend_Navigation_Page) {
+                $root = $this->_findRoot($page);
+                foreach ($root as $chapter) {
+                    if ($chapter->hasPage($parent)) {
+                        $found = $parent;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return $found;
+    }
+
+    // Util methods:
+
+    /**
+     * Returns the root container of the given page
+     *
+     * When rendering a container, the render method still store the given
+     * container as the root container, and unset it when done rendering. This
+     * makes sure finder methods will not traverse above the container given
+     * to the render method.
+     *
+     * @param  Zend_Navigaiton_Page $page  page to find root for
+     * @return Zend_Navigation_Container   the root container of the given page
+     */
+    protected function _findRoot(Zend_Navigation_Page $page)
+    {
+        if ($this->_root) {
+            return $this->_root;
+        }
+
+        $root = $page;
+
+        while ($parent = $page->getParent()) {
+            $root = $parent;
+            if ($parent instanceof Zend_Navigation_Page) {
+                $page = $parent;
+            } else {
+                break;
+            }
+        }
+
+        return $root;
+    }
+
+    /**
+     * Converts a $mixed value to an array of pages
+     *
+     * @param  mixed $mixed                     mixed value to get page(s) from
+     * @param  bool  $recursive                 whether $value should be looped
+     *                                          if it is an array or a config
+     * @return Zend_Navigation_Page|array|null  empty if unable to convert
+     */
+    protected function _convertToPages($mixed, $recursive = true)
+    {
+        if (is_object($mixed)) {
+            if ($mixed instanceof Zend_Navigation_Page) {
+                // value is a page instance; return directly
+                return $mixed;
+            } elseif ($mixed instanceof Zend_Navigation_Container) {
+                // value is a container; return pages in it
+                $pages = array();
+                foreach ($mixed as $page) {
+                    $pages[] = $page;
+                }
+                return $pages;
+            } elseif ($mixed instanceof Zend_Config) {
+                // convert config object to array and extract
+                return $this->_convertToPages($mixed->toArray(), $recursive);
+            }
+        } elseif (is_string($mixed)) {
+            // value is a string; make an URI page
+            return Zend_Navigation_Page::factory(array(
+                'type' => 'uri',
+                'uri'  => $mixed
+            ));
+        } elseif (is_array($mixed) && !empty($mixed)) {
+            if ($recursive && is_numeric(key($mixed))) {
+                // first key is numeric; assume several pages
+                $pages = array();
+                foreach ($mixed as $value) {
+                    if ($value = $this->_convertToPages($value, false)) {
+                        $pages[] = $value;
+                    }
+                }
+                return $pages;
+            } else {
+                // pass array to factory directly
+                try {
+                    $page = Zend_Navigation_Page::factory($mixed);
+                    return $page;
+                } catch (Exception $e) {
+                }
+            }
+        }
+
+        // nothing found
+        return null;
+    }
+
+    // Render methods:
+
+    /**
+     * Renders the given $page as a link element, with $attrib = $relation
+     *
+     * @param  Zend_Navigation_Page $page      the page to render the link for
+     * @param  string               $attrib    the attribute to use for $type,
+     *                                         either 'rel' or 'rev'
+     * @param  string               $relation  relation type, muse be one of;
+     *                                         alternate, appendix, bookmark,
+     *                                         chapter, contents, copyright,
+     *                                         glossary, help, home, index, next,
+     *                                         prev, section, start, stylesheet,
+     *                                         subsection
+     * @return string                          rendered link element
+     * @throws Zend_View_Exception             if $attrib is invalid
+     */
+    public function renderLink(Zend_Navigation_Page $page, $attrib, $relation)
+    {
+        if (!in_array($attrib, array('rel', 'rev'))) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception(sprintf(
+                    'Invalid relation attribute "%s", must be "rel" or "rev"',
+                    $attrib));
+        }
+
+        if (!$href = $page->getHref()) {
+            return '';
+        }
+
+        // TODO: add more attribs
+        // http://www.w3.org/TR/html401/struct/links.html#h-12.2
+        $attribs = array(
+            $attrib  => $relation,
+            'href'   => $href,
+            'title'  => $page->getLabel()
+        );
+
+        return '<link' .
+               $this->_htmlAttribs($attribs) .
+               $this->getClosingBracket();
+    }
+
+    // Zend_View_Helper_Navigation_Helper:
+
+    /**
+     * Renders helper
+     *
+     * Implements {@link Zend_View_Helper_Navigation_Helper::render()}.
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               render. Default is to
+     *                                               render the container
+     *                                               registered in the helper.
+     * @return string                                helper output
+     */
+    public function render(Zend_Navigation_Container $container = null)
+    {
+        if (null === $container) {
+            $container = $this->getContainer();
+        }
+
+        if ($active = $this->findActive($container)) {
+            $active = $active['page'];
+        } else {
+            // no active page
+            return '';
+        }
+
+        $output = '';
+        $indent = $this->getIndent();
+        $this->_root = $container;
+
+        $result = $this->findAllRelations($active, $this->getRenderFlag());
+        foreach ($result as $attrib => $types) {
+            foreach ($types as $relation => $pages) {
+                foreach ($pages as $page) {
+                    if ($r = $this->renderLink($page, $attrib, $relation)) {
+                        $output .= $indent . $r . self::EOL;
+                    }
+                }
+            }
+        }
+
+        $this->_root = null;
+
+        // return output (trim last newline by spec)
+        return strlen($output) ? rtrim($output, self::EOL) : '';
+    }
+}

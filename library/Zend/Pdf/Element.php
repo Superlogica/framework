@@ -1,43 +1,159 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vFDw
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+/** Zend_Pdf_Element_Object */
+require_once 'Zend/Pdf/Element/Object.php';
+
+
+/**
+ * PDF file element implementation
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Element
+{
+    const TYPE_BOOL        = 1;
+    const TYPE_NUMERIC     = 2;
+    const TYPE_STRING      = 3;
+    const TYPE_NAME        = 4;
+    const TYPE_ARRAY       = 5;
+    const TYPE_DICTIONARY  = 6;
+    const TYPE_STREAM      = 7;
+    const TYPE_NULL        = 11;
+
+    /**
+     * Reference to the top level indirect object, which contains this element.
+     *
+     * @var Zend_Pdf_Element_Object
+     */
+    private $_parentObject = null;
+
+    /**
+     * Return type of the element.
+     * See ZPdfPDFConst for possible values
+     *
+     * @return integer
+     */
+    abstract public function getType();
+
+    /**
+     * Convert element to a string, which can be directly
+     * written to a PDF file.
+     *
+     * $factory parameter defines operation context.
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    abstract public function toString($factory = null);
+
+
+    /**
+     * Set top level parent indirect object.
+     *
+     * @param Zend_Pdf_Element_Object $parent
+     */
+    public function setParentObject(Zend_Pdf_Element_Object &$parent)
+    {
+        $this->_parentObject = &$parent;
+    }
+
+
+    /**
+     * Get top level parent indirect object.
+     *
+     * @return Zend_Pdf_Element_Object
+     */
+    public function getParentObject()
+    {
+        return $this->_parentObject;
+    }
+
+
+    /**
+     * Mark object as modified, to include it into new PDF file segment.
+     *
+     * We don't automate this action to keep control on PDF update process.
+     * All new objects are treated as "modified" automatically.
+     */
+    public function touch()
+    {
+        if ($this->_parentObject !== null) {
+            $this->_parentObject->touch();
+        }
+    }
+
+    /**
+     * Clean up resources, used by object
+     */
+    public function cleanUp()
+    {
+        // Do nothing
+    }
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return mixed
+     */
+    public function toPhp()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Convert PHP value into PDF element.
+     *
+     * @param mixed $input
+     * @return Zend_Pdf_Element
+     */
+    public static function phpToPdf($input)
+    {
+        if (is_numeric($input)) {
+            return new Zend_Pdf_Element_Numeric($input);
+        } else if (is_bool($input)) {
+            return new Zend_Pdf_Element_Boolean($input);
+        } else if (is_array($input)) {
+            $pdfElementsArray = array();
+            $isDictionary = false;
+
+            foreach ($input as $key => $value) {
+                if (is_string($key)) {
+                    $isDictionary = true;
+                }
+                $pdfElementsArray[$key] = Zend_Pdf_Element::phpToPdf($value);
+            }
+
+            if ($isDictionary) {
+                return new Zend_Pdf_Element_Dictionary($pdfElementsArray);
+            } else {
+                return new Zend_Pdf_Element_Array($pdfElementsArray);
+            }
+        } else {
+            return new Zend_Pdf_Element_String((string)$input);
+        }
+    }
+}
+

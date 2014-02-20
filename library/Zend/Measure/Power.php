@@ -1,45 +1,188 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-D2fGPW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Power.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling power conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Power
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Power extends Zend_Measure_Abstract
+{
+    const STANDARD = 'WATT';
+
+    const ATTOWATT                               = 'ATTOWATT';
+    const BTU_PER_HOUR                           = 'BTU_PER_HOUR';
+    const BTU_PER_MINUTE                         = 'BTU_PER_MINUTE';
+    const BTU_PER_SECOND                         = 'BTU_PER_SECOND';
+    const CALORIE_PER_HOUR                       = 'CALORIE_PER_HOUR';
+    const CALORIE_PER_MINUTE                     = 'CALORIE_PER_MINUTE';
+    const CALORIE_PER_SECOND                     = 'CALORIE_PER_SECOND';
+    const CENTIWATT                              = 'CENTIWATT';
+    const CHEVAL_VAPEUR                          = 'CHEVAL_VAPEUR';
+    const CLUSEC                                 = 'CLUSEC';
+    const DECIWATT                               = 'DECIWATT';
+    const DEKAWATT                               = 'DEKAWATT';
+    const DYNE_CENTIMETER_PER_HOUR               = 'DYNE_CENTIMETER_PER_HOUR';
+    const DYNE_CENTIMETER_PER_MINUTE             = 'DYNE_CENTIMETER_PER_MINUTE';
+    const DYNE_CENTIMETER_PER_SECOND             = 'DYNE_CENTIMETER_PER_SECOND';
+    const ERG_PER_HOUR                           = 'ERG_PER_HOUR';
+    const ERG_PER_MINUTE                         = 'ERG_PER_MINUTE';
+    const ERG_PER_SECOND                         = 'ERG_PER_SECOND';
+    const EXAWATT                                = 'EXAWATT';
+    const FEMTOWATT                              = 'FEMTOWATT';
+    const FOOT_POUND_FORCE_PER_HOUR              = 'FOOT_POUND_FORCE_PER_HOUR';
+    const FOOT_POUND_FORCE_PER_MINUTE            = 'FOOT_POUND_FORCE_PER_MINUTE';
+    const FOOT_POUND_FORCE_PER_SECOND            = 'FOOT_POUND_FORCE_PER_SECOND';
+    const FOOT_POUNDAL_PER_HOUR                  = 'FOOT_POUNDAL_PER_HOUR';
+    const FOOT_POUNDAL_PER_MINUTE                = 'FOOT_POUNDAL_PER_MINUTE';
+    const FOOT_POUNDAL_PER_SECOND                = 'FOOT_POUNDAL_PER_SECOND';
+    const GIGAWATT                               = 'GIGAWATT';
+    const GRAM_FORCE_CENTIMETER_PER_HOUR         = 'GRAM_FORCE_CENTIMETER_PER_HOUR';
+    const GRAM_FORCE_CENTIMETER_PER_MINUTE       = 'GRAM_FORCE_CENTIMETER_PER_MINUTE';
+    const GRAM_FORCE_CENTIMETER_PER_SECOND       = 'GRAM_FORCE_CENTIMETER_PER_SECOND';
+    const HECTOWATT                              = 'HECTOWATT';
+    const HORSEPOWER_INTERNATIONAL               = 'HORSEPOWER_INTERNATIONAL';
+    const HORSEPOWER_ELECTRIC                    = 'HORSEPOWER_ELECTRIC';
+    const HORSEPOWER                             = 'HORSEPOWER';
+    const HORSEPOWER_WATER                       = 'HORSEPOWER_WATER';
+    const INCH_OUNCE_FORCE_REVOLUTION_PER_MINUTE = 'INCH_OUNCH_FORCE_REVOLUTION_PER_MINUTE';
+    const JOULE_PER_HOUR                         = 'JOULE_PER_HOUR';
+    const JOULE_PER_MINUTE                       = 'JOULE_PER_MINUTE';
+    const JOULE_PER_SECOND                       = 'JOULE_PER_SECOND';
+    const KILOCALORIE_PER_HOUR                   = 'KILOCALORIE_PER_HOUR';
+    const KILOCALORIE_PER_MINUTE                 = 'KILOCALORIE_PER_MINUTE';
+    const KILOCALORIE_PER_SECOND                 = 'KILOCALORIE_PER_SECOND';
+    const KILOGRAM_FORCE_METER_PER_HOUR          = 'KILOGRAM_FORCE_METER_PER_HOUR';
+    const KILOGRAM_FORCE_METER_PER_MINUTE        = 'KILOGRAM_FORCE_METER_PER_MINUTE';
+    const KILOGRAM_FORCE_METER_PER_SECOND        = 'KILOGRAM_FORCE_METER_PER_SECOND';
+    const KILOPOND_METER_PER_HOUR                = 'KILOPOND_METER_PER_HOUR';
+    const KILOPOND_METER_PER_MINUTE              = 'KILOPOND_METER_PER_MINUTE';
+    const KILOPOND_METER_PER_SECOND              = 'KILOPOND_METER_PER_SECOND';
+    const KILOWATT                               = 'KILOWATT';
+    const MEGAWATT                               = 'MEGAWATT';
+    const MICROWATT                              = 'MICROWATT';
+    const MILLION_BTU_PER_HOUR                   = 'MILLION_BTU_PER_HOUR';
+    const MILLIWATT                              = 'MILLIWATT';
+    const NANOWATT                               = 'NANOWATT';
+    const NEWTON_METER_PER_HOUR                  = 'NEWTON_METER_PER_HOUR';
+    const NEWTON_METER_PER_MINUTE                = 'NEWTON_METER_PER_MINUTE';
+    const NEWTON_METER_PER_SECOND                = 'NEWTON_METER_PER_SECOND';
+    const PETAWATT                               = 'PETAWATT';
+    const PFERDESTAERKE                          = 'PFERDESTAERKE';
+    const PICOWATT                               = 'PICOWATT';
+    const PONCELET                               = 'PONCELET';
+    const POUND_SQUARE_FOOR_PER_CUBIC_SECOND     = 'POUND_SQUARE_FOOT_PER_CUBIC_SECOND';
+    const TERAWATT                               = 'TERAWATT';
+    const TON_OF_REFRIGERATION                   = 'TON_OF_REFRIGERATION';
+    const WATT                                   = 'WATT';
+    const YOCTOWATT                              = 'YOCTOWATT';
+    const YOTTAWATT                              = 'YOTTAWATT';
+    const ZEPTOWATT                              = 'ZEPTOWATT';
+    const ZETTAWATT                              = 'ZETTAWATT';
+
+    /**
+     * Calculations for all power units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'ATTOWATT'                    => array('1.0e-18',           'aW'),
+        'BTU_PER_HOUR'                => array('0.29307197',        'BTU/h'),
+        'BTU_PER_MINUTE'              => array('17.5843182',        'BTU/m'),
+        'BTU_PER_SECOND'              => array('1055.059092',       'BTU/s'),
+        'CALORIE_PER_HOUR'            => array(array('' => '11630', '*' => '1.0e-7'),    'cal/h'),
+        'CALORIE_PER_MINUTE'          => array(array('' => '697800', '*' => '1.0e-7'),   'cal/m'),
+        'CALORIE_PER_SECOND'          => array(array('' => '41868000', '*' => '1.0e-7'), 'cal/s'),
+        'CENTIWATT'                   => array('0.01',              'cW'),
+        'CHEVAL_VAPEUR'               => array('735.49875',         'cv'),
+        'CLUSEC'                      => array('0.0000013332237',   'clusec'),
+        'DECIWATT'                    => array('0.1',               'dW'),
+        'DEKAWATT'                    => array('10',                'daW'),
+        'DYNE_CENTIMETER_PER_HOUR'    => array(array('' => '1.0e-7','/' => '3600'), 'dyn cm/h'),
+        'DYNE_CENTIMETER_PER_MINUTE'  => array(array('' => '1.0e-7','/' => '60'),   'dyn cm/m'),
+        'DYNE_CENTIMETER_PER_SECOND'  => array('1.0e-7',            'dyn cm/s'),
+        'ERG_PER_HOUR'                => array(array('' => '1.0e-7','/' => '3600'), 'erg/h'),
+        'ERG_PER_MINUTE'              => array(array('' => '1.0e-7','/' => '60'),   'erg/m'),
+        'ERG_PER_SECOND'              => array('1.0e-7',            'erg/s'),
+        'EXAWATT'                     => array('1.0e+18',           'EW'),
+        'FEMTOWATT'                   => array('1.0e-15',           'fW'),
+        'FOOT_POUND_FORCE_PER_HOUR'   => array(array('' => '1.3558179', '/' => '3600'), 'ft lb/h'),
+        'FOOT_POUND_FORCE_PER_MINUTE' => array(array('' => '1.3558179', '/' => '60'),   'ft lb/m'),
+        'FOOT_POUND_FORCE_PER_SECOND' => array('1.3558179',         'ft lb/s'),
+        'FOOT_POUNDAL_PER_HOUR'       => array(array('' => '0.04214011','/' => '3600'), 'ft pdl/h'),
+        'FOOT_POUNDAL_PER_MINUTE'     => array(array('' => '0.04214011', '/' => '60'),  'ft pdl/m'),
+        'FOOT_POUNDAL_PER_SECOND'     => array('0.04214011',        'ft pdl/s'),
+        'GIGAWATT'                    => array('1.0e+9',            'GW'),
+        'GRAM_FORCE_CENTIMETER_PER_HOUR' => array(array('' => '0.0000980665','/' => '3600'), 'gf cm/h'),
+        'GRAM_FORCE_CENTIMETER_PER_MINUTE' => array(array('' => '0.0000980665','/' => '60'), 'gf cm/m'),
+        'GRAM_FORCE_CENTIMETER_PER_SECOND' => array('0.0000980665', 'gf cm/s'),
+        'HECTOWATT'                   => array('100',               'hW'),
+        'HORSEPOWER_INTERNATIONAL'    => array('745.69987',         'hp'),
+        'HORSEPOWER_ELECTRIC'         => array('746',               'hp'),
+        'HORSEPOWER'                  => array('735.49875',         'hp'),
+        'HORSEPOWER_WATER'            => array('746.043',           'hp'),
+        'INCH_OUNCH_FORCE_REVOLUTION_PER_MINUTE' => array('0.00073948398',    'in ocf/m'),
+        'JOULE_PER_HOUR'              => array(array('' => '1', '/' => '3600'), 'J/h'),
+        'JOULE_PER_MINUTE'            => array(array('' => '1', '/' => '60'),   'J/m'),
+        'JOULE_PER_SECOND'            => array('1',                 'J/s'),
+        'KILOCALORIE_PER_HOUR'        => array('1.163',             'kcal/h'),
+        'KILOCALORIE_PER_MINUTE'      => array('69.78',             'kcal/m'),
+        'KILOCALORIE_PER_SECOND'      => array('4186.8',            'kcal/s'),
+        'KILOGRAM_FORCE_METER_PER_HOUR' => array(array('' => '9.80665', '/' => '3600'), 'kgf m/h'),
+        'KILOGRAM_FORCE_METER_PER_MINUTE' => array(array('' => '9.80665', '/' => '60'), 'kfg m/m'),
+        'KILOGRAM_FORCE_METER_PER_SECOND' => array('9.80665',       'kfg m/s'),
+        'KILOPOND_METER_PER_HOUR'     => array(array('' => '9.80665', '/' => '3600'), 'kp/h'),
+        'KILOPOND_METER_PER_MINUTE'   => array(array('' => '9.80665', '/' => '60'),   'kp/m'),
+        'KILOPOND_METER_PER_SECOND'   => array('9.80665',           'kp/s'),
+        'KILOWATT'                    => array('1000',              'kW'),
+        'MEGAWATT'                    => array('1000000',           'MW'),
+        'MICROWATT'                   => array('0.000001',          'µW'),
+        'MILLION_BTU_PER_HOUR'        => array('293071.07',         'mio BTU/h'),
+        'MILLIWATT'                   => array('0.001',             'mM'),
+        'NANOWATT'                    => array('1.0e-9',            'nN'),
+        'NEWTON_METER_PER_HOUR'       => array(array('' => '1', '/' => '3600'), 'Nm/h'),
+        'NEWTON_METER_PER_MINUTE'     => array(array('' => '1', '/' => '60'),   'Nm/m'),
+        'NEWTON_METER_PER_SECOND'     => array('1',                 'Nm/s'),
+        'PETAWATT'                    => array('1.0e+15',           'PW'),
+        'PFERDESTAERKE'               => array('735.49875',         'PS'),
+        'PICOWATT'                    => array('1.0e-12',           'pW'),
+        'PONCELET'                    => array('980.665',           'p'),
+        'POUND_SQUARE_FOOT_PER_CUBIC_SECOND' => array('0.04214011', 'lb ft²/s³'),
+        'TERAWATT'                    => array('1.0e+12',           'TW'),
+        'TON_OF_REFRIGERATION'        => array('3516.85284',        'RT'),
+        'WATT'                        => array('1',                 'W'),
+        'YOCTOWATT'                   => array('1.0e-24',           'yW'),
+        'YOTTAWATT'                   => array('1.0e+24',           'YW'),
+        'ZEPTOWATT'                   => array('1.0e-21',           'zW'),
+        'ZETTAWATT'                   => array('1.0e+21',           'ZW'),
+        'STANDARD'                    => 'WATT'
+    );
+}

@@ -1,29 +1,139 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5BeaXrP73NoP2f4ITSDQ0KO+DS/0hyqcavYi3tSdPGH9cb6J3viAYaoNv+PBKGCYSAOP5fwI
-xNz9rkjoD7OdLLGqAkCkRYAcuw2ao1mxQzbLbLxYJCBDxKVot1MaO6csDkt55MXIq+OSPC/p39hW
-PWBho4XdGMoW8LL+mpMnTOH5J0nbIpq8pjLa4omzXwM4E1aBS5/1KCwCGSkas9eYyJUblnDfzYQu
-nV8EKndp/egQjvVZZwM4n4kJIPpDKor7T+KlBeH2Q9XSixKm4bkuLiA24TMEe/9ikkCBH+PVAQt0
-yc2JFsebS/pMdF4QrtyXPlYWwEA3pYyjIRTj77rmLgv7/XDuCUijatxmaF2BgnFSLVi0cwX+HSdE
-2UvHTakcUCH6J19aEH5uVQs8QWsl4S2UynxxdtHpQYm3UjG06jEWhhY9YLTn2Rxl+nAY3UMVK+Q6
-JxZRyRoR6veNrpN/iDjBpfzYPI9Fs8prZbjK8UwOIm3tUQEsz1vuDVtdf7t89U3qHnt0HyfI8y2P
-bE05j072Ruod8KHRauCL99n23HSwx8NOK1Hoymgf3pxQuH5LZ+7I3kklPUUIvEsYmHCLObeKE37X
-ChmrvDumNEzXvh3bH9vArx1faHaE8tqBrfAUm/1DmnO16T2TPGK6luUyhZa9XJHFxDxDeUHxVRo2
-LEXa94TlMeaRKRxGnxNXN8Miz4nCM0xe2TDaZJIDtK04jMNVhpkQaPTTCafObtPq2XlxtP9Awiqt
-q+ckZkGLQ71hqNi3mAbezdCZ3lF+wGU1gfodMfBsPmG0I+FrrEGbJMK7sKXzGnmH2KylzoEPIUN/
-IZTcw77llK6iw0U+OTI79hBpydO6HGu0jAfscD4trPgkD/PZZSLbij/Skp1Y/K1C5XchzWRKmyQn
-GH15rHN9lzGdx8gB+d9Cq/RUqLP2DL9/KVm5SFwEROnbCPjtClqMUFs9OGhpw32CE8qC9DNWmUoV
-87iIE7im4ZFIiPDsSWw+z8HepVzPgArp8z5RNxp3gFqhqSjN+dJxVzoU+3k16SY/E2Zj3Nm7U29g
-hBGMu+BKjtBNXNrXLY3qDIqiHe4s8iIC9fIm47y6p+kBMvGJl/wKmj+Wl3KiuQNWb0g26myUcrJ7
-pD20y3vpD3ir5mg07YQ3mLrmstA8aSWL1BMTTPa3hCT+kMCXyOh6LQ4EVxgIx4Ktc49dVEfZdxA5
-pMFCfatmTUWhJxLqPyWlfP+ZwQyswbJbQZCZZCMR8Qv54xu1yLDkgsfRyboTRRUqMbV60jDf+NuM
-sYh0qvaAvm8p/px+jG6BKLxoEJ6cr6PCLUaB47A9/YPb/wKjXgntlNcd7OaXWRboHxFgG+21q7aB
-KiLxNmtV6X9s04jk2e2224pSsIJlkrK8DAtsktkAnUH3lpav4RvDrwYubKxkKF1v935CwWnc6Gch
-G5xNvZKL4XvL6vQ9ugFyJc48KX8hNtYEF/OEE0lgMau+AoTko5uWFdsCc2A4eg2X7XYsSh5S3gjr
-+Bhh2oZf2VKWVXWtqBvaxAORLozAJkLgKb/C+IYvNSn05BGVWKBK5cN2zMDOsK2z44H0v+5Xwulo
-lxBjD7e1S+RmxUAWLpKoS0KnYmtzSgYSbfNAYobXOe1Xup0PHYQMU5bmgcw5HN5pZn6v1Wj2V/Vt
-MKdXh3+jMH1go52cC36JoOy1YAITP8hepjRr7q6HeLCiVIMUOE8flZhtzIrPbNQVdL5f2f9PUpNG
-NXqG16deInzDBuAItWpaPlKVuNfD2xiQeiNArp8eYTGBli4owznve4yeGo3MOQJY7lLD7J2+z204
-PzO7L6NL5oy6C1ryhIt2x5EqnBPPTjpLEoOr9IfLZ2L1X2A6Jsiw85XEiS8VTTUrLjON8nMAnR/B
-JffSmLaQoX2fLrIizG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Query */
+require_once 'Zend/Search/Lucene/Search/Query.php';
+
+/** Zend_Search_Lucene_Search_Weight_Empty */
+require_once 'Zend/Search/Lucene/Search/Weight/Empty.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Query_Empty extends Zend_Search_Lucene_Search_Query
+{
+    /**
+     * Re-write query into primitive queries in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function rewrite(Zend_Search_Lucene_Interface $index)
+    {
+        return $this;
+    }
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function optimize(Zend_Search_Lucene_Interface $index)
+    {
+        // "Empty" query is a primitive query and don't need to be optimized
+        return $this;
+    }
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     */
+    public function createWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        return new Zend_Search_Lucene_Search_Weight_Empty();
+    }
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     */
+    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
+    {
+        // Do nothing
+    }
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     */
+    public function matchedDocs()
+    {
+        return array();
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     */
+    public function score($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        return 0;
+    }
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     */
+    public function getQueryTerms()
+    {
+        return array();
+    }
+
+    /**
+     * Query specific matches highlighting
+     *
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
+     */
+    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
+    {
+        // Do nothing
+    }
+
+    /**
+     * Print a query
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return '<EmptyQuery>';
+    }
+}
+

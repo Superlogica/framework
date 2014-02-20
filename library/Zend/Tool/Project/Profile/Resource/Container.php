@@ -1,125 +1,405 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Profile_Resource_SearchConstraints
+ */
+require_once 'Zend/Tool/Project/Profile/Resource/SearchConstraints.php';
+
+/**
+ * This class is an iterator that will iterate only over enabled resources
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Profile_Resource_Container implements RecursiveIterator, Countable
+{
+    
+    /**
+     * @var array
+     */
+    protected $_subResources = array();
+    
+    /**
+     * @var int
+     */
+    protected $_position = 0;
+
+    /**
+     * @var bool
+     */
+    protected $_appendable = true;
+
+    /**
+     * Finder method to be able to find resources by context name
+     * and attributes.  Example usage:
+     * 
+     * <code>
+     * 
+     * </code>
+     *
+     * @param Zend_Tool_Project_Profile_Resource_SearchConstraints|string|array $searchParameters
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function search($matchSearchConstraints, $nonMatchSearchConstraints = null)
+    {
+        if (!$matchSearchConstraints instanceof Zend_Tool_Project_Profile_Resource_SearchConstraints) {
+            $matchSearchConstraints = new Zend_Tool_Project_Profile_Resource_SearchConstraints($matchSearchConstraints);
+        }
+                
+        $this->rewind();
+        
+        /**
+         * @todo This should be re-written with better support for a filter iterator, its the way to go
+         */
+        
+        if ($nonMatchSearchConstraints) {
+            $filterIterator = new Zend_Tool_Project_Profile_Iterator_ContextFilter($this, array('denyNames' => $nonMatchSearchConstraints));
+            $riIterator = new RecursiveIteratorIterator($filterIterator, RecursiveIteratorIterator::SELF_FIRST);
+        } else {
+            $riIterator = new RecursiveIteratorIterator($this, RecursiveIteratorIterator::SELF_FIRST);
+        }
+        
+        $foundResource     = false;
+        $currentConstraint = $matchSearchConstraints->getConstraint();
+        $foundDepth        = 0;
+        
+        foreach ($riIterator as $currentResource) {
+        
+            // if current depth is less than found depth, end
+            if ($riIterator->getDepth() < $foundDepth) {
+                break;
+            }
+            
+            if (strtolower($currentResource->getName()) == strtolower($currentConstraint->name)) {
+
+                $paramsMatch = true;
+                
+                // @todo check to ensure params match (perhaps)
+                if (count($currentConstraint->params) > 0) {
+                    $currentResourceAttributes = $currentResource->getAttributes();
+                    if (!is_array($currentConstraint->params)) {
+                        require_once 'Zend/Tool/Project/Profile/Exception.php';
+                        throw new Zend_Tool_Project_Profile_Exception('Search parameter specifics must be in the form of an array for key "' 
+                            . $currentConstraint->name .'"');      
+                    }
+                    foreach ($currentConstraint->params as $paramName => $paramValue) {
+                        if (!isset($currentResourceAttributes[$paramName]) || $currentResourceAttributes[$paramName] != $paramValue) {
+                            $paramsMatch = false;
+                            break;
+                        }
+                    }
+                }
+                
+                if ($paramsMatch) {
+                    $foundDepth = $riIterator->getDepth();
+                    
+                    if (($currentConstraint = $matchSearchConstraints->getConstraint()) == null) {
+                        $foundResource = $currentResource;
+                        break;
+                    }
+                }
+
+            }
+            
+        }
+        
+        return $foundResource;
+    }
+    
+    /**
+     * createResourceAt()
+     *
+     * @param array|Zend_Tool_Project_Profile_Resource_SearchConstraints $appendResourceOrSearchConstraints
+     * @param string $context
+     * @param array $attributes
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function createResourceAt($appendResourceOrSearchConstraints, $context, Array $attributes = array())
+    {
+        if (!$appendResourceOrSearchConstraints instanceof Zend_Tool_Project_Profile_Resource_Container) {
+            if (($parentResource = $this->search($appendResourceOrSearchConstraints)) == false) {
+                require_once 'Zend/Tool/Project/Profile/Exception.php';
+                throw new Zend_Tool_Project_Profile_Exception('No node was found to append to.');
+            }
+        } else {
+            $parentResource = $appendResourceOrSearchConstraints;
+        }
+        
+        return $parentResource->createResource($context, $attributes);
+    }
+    
+    /**
+     * createResource()
+     * 
+     * Method to create a resource with a given context with specific attributes
+     *
+     * @param string $context
+     * @param array $attributes
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function createResource($context, Array $attributes = array())
+    {
+        if (is_string($context)) {
+            $contextRegistry = Zend_Tool_Project_Context_Repository::getInstance();
+            if ($contextRegistry->hasContext($context)) {
+                $context = $contextRegistry->getContext($context);
+            } else {
+                require_once 'Zend/Tool/Project/Profile/Exception.php';
+                throw new Zend_Tool_Project_Profile_Exception('Context by name ' . $context . ' was not found in the context registry.');  
+            }
+        } elseif (!$context instanceof Zend_Tool_Project_Context_Interface) {
+            require_once 'Zend/Tool/Project/Profile/Exception.php';
+            throw new Zend_Tool_Project_Profile_Exception('Context must be of type string or Zend_Tool_Project_Context_Interface.');  
+        }
+        
+        $newResource = new Zend_Tool_Project_Profile_Resource($context);
+        
+        if ($attributes) {
+            $newResource->setAttributes($attributes);
+        }
+        
+        /**
+         * Interesting logic here:
+         * 
+         * First set the parentResource (this will also be done inside append).  This will allow
+         * the initialization routine to change the appendability of the parent resource.  This
+         * is important to allow specific resources to be appendable by very specific sub-resources. 
+         */
+        $newResource->setParentResource($this);
+        $newResource->initializeContext();
+        $this->append($newResource);
+
+        return $newResource;
+    }
+    
+    /**
+     * setAttributes()
+     * 
+     * persist the attributes if the resource will accept them
+     *
+     * @param array $attributes
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function setAttributes(Array $attributes)
+    {
+        foreach ($attributes as $attrName => $attrValue) {
+            $setMethod = 'set' . $attrName;
+            if (method_exists($this, $setMethod)) {
+                $this->{$setMethod}($attrValue);
+            } else {
+                $this->setAttribute($attrName, $attrValue);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * getAttributes()
+     *
+     * @return array
+     */
+    public function getAttributes()
+    {
+        return $this->_attributes;
+    }
+    
+    /**
+     * setAttribute()
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function setAttribute($name, $value)
+    {
+        $this->_attributes[$name] = $value;
+        return $this;
+    }
+    
+    /**
+     * getAttribute()
+     *
+     * @param string $name
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function getAttribute($name)
+    {
+        return (array_key_exists($name, $this->_attributes)) ? $this->_attributes[$name] : null;
+    }
+
+    /**
+     * setAppendable()
+     *
+     * @param bool $appendable
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function setAppendable($appendable)
+    {
+        $this->_appendable = (bool) $appendable;
+        return $this;
+    }
+    
+    /**
+     * isAppendable()
+     *
+     * @return bool
+     */
+    public function isAppendable()
+    {
+        return $this->_appendable;
+    }
+    
+    /**
+     * setParentResource()
+     *
+     * @param Zend_Tool_Project_Profile_Resource_Container $parentResource
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function setParentResource(Zend_Tool_Project_Profile_Resource_Container $parentResource)
+    {
+        $this->_parentResource = $parentResource;
+        return $this;
+    }
+    
+    /**
+     * getParentResource()
+     *
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function getParentResource()
+    {
+        return $this->_parentResource;
+    }
+    
+    /**
+     * append()
+     *
+     * @param Zend_Tool_Project_Profile_Resource_Container $resource
+     * @return Zend_Tool_Project_Profile_Resource_Container
+     */
+    public function append(Zend_Tool_Project_Profile_Resource_Container $resource)
+    {
+        if (!$this->isAppendable()) {
+            throw new Exception('Resource by name ' . (string) $this . ' is not appendable');
+        }
+        array_push($this->_subResources, $resource);
+        $resource->setParentResource($this);
+        
+        return $this;
+    }
+    
+    /**
+     * current() - required by RecursiveIterator
+     *
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function current()
+    {
+        return current($this->_subResources);
+    }
+    
+    /**
+     * key() - required by RecursiveIterator
+     *
+     * @return int
+     */
+    public function key()
+    {
+        return key($this->_subResources);
+    }
+    
+    /**
+     * next() - required by RecursiveIterator
+     *
+     * @return bool
+     */
+    public function next()
+    {
+        return next($this->_subResources);
+    }
+    
+    /**
+     * rewind() - required by RecursiveIterator
+     *
+     * @return bool
+     */
+    public function rewind()
+    {
+        return reset($this->_subResources);
+    }
+    
+    /**
+     * valid() - - required by RecursiveIterator
+     *
+     * @return bool
+     */
+    public function valid()
+    {
+        return (bool) $this->current();
+    }
+    
+    /**
+     * hasChildren()
+     *
+     * @return bool
+     */
+    public function hasChildren()
+    {
+        return (count($this->_subResources > 0)) ? true : false;
+    }
+    
+    /**
+     * getChildren()
+     *
+     * @return array
+     */
+    public function getChildren()
+    {
+        return $this->current();
+    }
+    
+    /**
+     * count()
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_subResources);
+    }
+    
+    /**
+     * __clone()
+     *
+     */
+    public function __clone()
+    {
+        $this->rewind();
+        foreach ($this->_subResources as $index => $resource) {
+            $this->_subResources[$index] = clone $resource;
+        }
+    }
+    
+}

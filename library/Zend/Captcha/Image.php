@@ -1,192 +1,594 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Image.php 14290 2009-03-13 12:40:14Z alexander $
+ */
+
+/** Zend_Captcha_Word */
+require_once 'Zend/Captcha/Word.php';
+
+/**
+ * Image-based captcha element
+ *
+ * Generates image displaying random word
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Captcha_Image extends Zend_Captcha_Word
+{
+    /**
+     * Directory for generated images
+     *
+     * @var string
+     */
+    protected $_imgDir = "./images/captcha/";
+
+    /**
+     * URL for accessing images
+     *
+     * @var string
+     */
+    protected $_imgUrl = "/images/captcha/";
+
+    /**
+     * Image's alt tag content
+     *
+     * @var string
+     */
+    protected $_imgAlt = "";
+
+    /**
+     * Image suffix (including dot)
+     *
+     * @var string
+     */
+    protected $_suffix = ".png";
+
+    /**
+     * Image width
+     *
+     * @var int
+     */
+    protected $_width = 200;
+
+    /**
+     * Image height
+     *
+     * @var int
+     */
+    protected $_height = 50;
+
+    /**
+     * Font size
+     *
+     * @var int
+     */
+    protected $_fsize = 24;
+
+    /**
+     * Image font file
+     *
+     * @var string
+     */
+    protected $_font;
+
+    /**
+     * Image to use as starting point
+     * Default is blank image. If ptovided, should be PNG image.
+     *
+     * @var string
+     */
+    protected $_startImage;
+    /**
+     * How frequently to execute garbage collection
+     *
+     * @var int
+     */
+    protected $_gcFreq = 10;
+
+    /**
+     * How long to keep generated images
+     *
+     * @var int
+     */
+    protected $_expiration = 600;
+
+    /**
+     * Number of noise dots on image
+     * Used twice - before and after transform
+     *
+     * @var int
+     */
+    protected $_dotNoiseLevel = 100;
+    /**
+     * Number of noise lines on image
+     * Used twice - before and after transform
+     *
+     * @var int
+     */
+    protected $_lineNoiseLevel = 5;
+    /**
+     * @return string
+     */
+    public function getImgAlt ()
+    {
+        return $this->_imgAlt;
+    }
+    /**
+     * @return string
+     */
+    public function getStartImage ()
+    {
+        return $this->_startImage;
+    }
+    /**
+     * @return int
+     */
+    public function getDotNoiseLevel ()
+    {
+        return $this->_dotNoiseLevel;
+    }
+    /**
+     * @return int
+     */
+    public function getLineNoiseLevel ()
+    {
+        return $this->_lineNoiseLevel;
+    }
+    /**
+     * Get captcha expiration
+     *
+     * @return int
+     */
+    public function getExpiration()
+    {
+        return $this->_expiration;
+    }
+
+    /**
+     * Get garbage collection frequency
+     *
+     * @return int
+     */
+    public function getGcFreq()
+    {
+        return $this->_gcFreq;
+    }
+    /**
+     * Get font to use when generating captcha
+     *
+     * @return string
+     */
+    public function getFont()
+    {
+        return $this->_font;
+    }
+
+    /**
+     * Get font size
+     *
+     * @return int
+     */
+    public function getFontSize()
+    {
+        return $this->_fsize;
+    }
+
+    /**
+     * Get captcha image height
+     *
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->_height;
+    }
+
+    /**
+     * Get captcha image directory
+     *
+     * @return string
+     */
+    public function getImgDir()
+    {
+        return $this->_imgDir;
+    }
+    /**
+     * Get captcha image base URL
+     *
+     * @return string
+     */
+    public function getImgUrl()
+    {
+        return $this->_imgUrl;
+    }
+    /**
+     * Get captcha image file suffix
+     *
+     * @return string
+     */
+    public function getSuffix()
+    {
+        return $this->_suffix;
+    }
+    /**
+     * Get captcha image width
+     *
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->_width;
+    }
+    /**
+     * @param string $startImage
+     */
+    public function setStartImage ($startImage)
+    {
+        $this->_startImage = $startImage;
+        return $this;
+    }
+    /**
+     * @param int $dotNoiseLevel
+     */
+    public function setDotNoiseLevel ($dotNoiseLevel)
+    {
+        $this->_dotNoiseLevel = $dotNoiseLevel;
+        return $this;
+    }
+   /**
+     * @param int $lineNoiseLevel
+     */
+    public function setLineNoiseLevel ($lineNoiseLevel)
+    {
+        $this->_lineNoiseLevel = $lineNoiseLevel;
+        return $this;
+    }
+
+    /**
+     * Set captcha expiration
+     *
+     * @param int $expiration
+     * @return Zend_Captcha_Image
+     */
+    public function setExpiration($expiration)
+    {
+        $this->_expiration = $expiration;
+        return $this;
+    }
+
+    /**
+     * Set garbage collection frequency
+     *
+     * @param int $gcFreq
+     * @return Zend_Captcha_Image
+     */
+    public function setGcFreq($gcFreq)
+    {
+        $this->_gcFreq = $gcFreq;
+        return $this;
+    }
+
+    /**
+     * Set captcha font
+     *
+     * @param  string $font
+     * @return Zend_Captcha_Image
+     */
+    public function setFont($font)
+    {
+        $this->_font = $font;
+        return $this;
+    }
+
+    /**
+     * Set captcha font size
+     *
+     * @param  int $fsize
+     * @return Zend_Captcha_Image
+     */
+    public function setFontSize($fsize)
+    {
+        $this->_fsize = $fsize;
+        return $this;
+    }
+
+    /**
+     * Set captcha image height
+     *
+     * @param  int $height
+     * @return Zend_Captcha_Image
+     */
+    public function setHeight($height)
+    {
+        $this->_height = $height;
+        return $this;
+    }
+
+    /**
+     * Set captcha image storage directory
+     *
+     * @param  string $imgDir
+     * @return Zend_Captcha_Image
+     */
+    public function setImgDir($imgDir)
+    {
+        $this->_imgDir = rtrim($imgDir, "/\\") . '/';
+        return $this;
+    }
+
+    /**
+     * Set captcha image base URL
+     *
+     * @param  string $imgUrl
+     * @return Zend_Captcha_Image
+     */
+    public function setImgUrl($imgUrl)
+    {
+        $this->_imgUrl = rtrim($imgUrl, "/\\") . '/';
+        return $this;
+    }
+    /**
+     * @param string $imgAlt
+     */
+    public function setImgAlt ($imgAlt)
+    {
+        $this->_imgAlt = $imgAlt;
+        return $this;
+    }
+
+    /**
+     * Set captch image filename suffix
+     *
+     * @param  string $suffix
+     * @return Zend_Captcha_Image
+     */
+    public function setSuffix($suffix)
+    {
+        $this->_suffix = $suffix;
+        return $this;
+    }
+
+    /**
+     * Set captcha image width
+     *
+     * @param  int $width
+     * @return Zend_Captcha_Image
+     */
+    public function setWidth($width)
+    {
+        $this->_width = $width;
+        return $this;
+    }
+
+    /**
+     * Generate random frequency
+     *
+     * @return float
+     */
+    protected function _randomFreq()
+    {
+        return mt_rand(700000, 1000000) / 15000000;
+    }
+
+    /**
+     * Generate random phase
+     *
+     * @return float
+     */
+    protected function _randomPhase()
+    {
+        // random phase from 0 to pi
+        return mt_rand(0, 3141592) / 1000000;
+    }
+
+    /**
+     * Generate random character size
+     *
+     * @return int
+     */
+    protected function _randomSize()
+    {
+        return mt_rand(300, 700) / 100;
+    }
+
+    /**
+     * Generate captcha
+     *
+     * @return string captcha ID
+     */
+    public function generate()
+    {
+        $id = parent::generate();
+        $this->_generateImage($id, $this->getWord());
+
+        if (mt_rand(1, $this->getGcFreq()) == 1) {
+            $this->_gc();
+        }
+        return $id;
+    }
+
+    /**
+     * Generate image captcha
+     *
+     * Override this function if you want different image generator
+     * Wave transform from http://www.captcha.ru/captchas/multiwave/
+     *
+     * @param string $id Captcha ID
+     * @param string $word Captcha word
+     */
+    protected function _generateImage($id, $word)
+    {
+        if (!extension_loaded("gd")) {
+            require_once 'Zend/Captcha/Exception.php';
+            throw new Zend_Captcha_Exception("Image CAPTCHA requires GD extension");
+        }
+
+        if (!function_exists("imagepng")) {
+            require_once 'Zend/Captcha/Exception.php';
+            throw new Zend_Captcha_Exception("Image CAPTCHA requires PNG support");
+        }
+
+        if (!function_exists("imageftbbox")) {
+            require_once 'Zend/Captcha/Exception.php';
+            throw new Zend_Captcha_Exception("Image CAPTCHA requires FT fonts support");
+        }
+
+        $font = $this->getFont();
+
+        if (empty($font)) {
+            require_once 'Zend/Captcha/Exception.php';
+            throw new Zend_Captcha_Exception("Image CAPTCHA requires font");
+        }
+
+        $w     = $this->getWidth();
+        $h     = $this->getHeight();
+        $fsize = $this->getFontSize();
+
+        $img_file   = $this->getImgDir() . $id . $this->getSuffix();
+        if(empty($this->_startImage)) {
+            $img        = imagecreatetruecolor($w, $h);
+        } else {
+            $img = imagecreatefrompng($this->_startImage);
+            if(!$img) {
+                require_once 'Zend/Captcha/Exception.php';
+                throw new Zend_Captcha_Exception("Can not load start image");
+            }
+            $w = imagesx($img);
+            $h = imagesy($img);
+        }
+        $text_color = imagecolorallocate($img, 0, 0, 0);
+        $bg_color   = imagecolorallocate($img, 255, 255, 255);
+        imagefilledrectangle($img, 0, 0, $w-1, $h-1, $bg_color);
+        $textbox = imageftbbox($fsize, 0, $font, $word);
+        $x = ($w - ($textbox[2] - $textbox[0])) / 2;
+        $y = ($h - ($textbox[7] - $textbox[1])) / 2;
+        imagefttext($img, $fsize, 0, $x, $y, $text_color, $font, $word);
+
+       // generate noise
+        for ($i=0; $i<$this->_dotNoiseLevel; $i++) {
+           imagefilledellipse($img, mt_rand(0,$w), mt_rand(0,$h), 2, 2, $text_color);
+        }
+        for($i=0; $i<$this->_lineNoiseLevel; $i++) {
+           imageline($img, mt_rand(0,$w), mt_rand(0,$h), mt_rand(0,$w), mt_rand(0,$h), $text_color);
+        }
+
+        // transformed image
+        $img2     = imagecreatetruecolor($w, $h);
+        $bg_color = imagecolorallocate($img2, 255, 255, 255);
+        imagefilledrectangle($img2, 0, 0, $w-1, $h-1, $bg_color);
+        // apply wave transforms
+        $freq1 = $this->_randomFreq();
+        $freq2 = $this->_randomFreq();
+        $freq3 = $this->_randomFreq();
+        $freq4 = $this->_randomFreq();
+
+        $ph1 = $this->_randomPhase();
+        $ph2 = $this->_randomPhase();
+        $ph3 = $this->_randomPhase();
+        $ph4 = $this->_randomPhase();
+
+        $szx = $this->_randomSize();
+        $szy = $this->_randomSize();
+
+        for ($x = 0; $x < $w; $x++) {
+            for ($y = 0; $y < $h; $y++) {
+                $sx = $x + (sin($x*$freq1 + $ph1) + sin($y*$freq3 + $ph3)) * $szx;
+                $sy = $y + (sin($x*$freq2 + $ph2) + sin($y*$freq4 + $ph4)) * $szy;
+
+                if ($sx < 0 || $sy < 0 || $sx >= $w - 1 || $sy >= $h - 1) {
+                    continue;
+                } else {
+                    $color    = (imagecolorat($img, $sx, $sy) >> 16)         & 0xFF;
+                    $color_x  = (imagecolorat($img, $sx + 1, $sy) >> 16)     & 0xFF;
+                    $color_y  = (imagecolorat($img, $sx, $sy + 1) >> 16)     & 0xFF;
+                    $color_xy = (imagecolorat($img, $sx + 1, $sy + 1) >> 16) & 0xFF;
+                }
+                if ($color == 255 && $color_x == 255 && $color_y == 255 && $color_xy == 255) {
+                    // ignore background
+                    continue;
+                } elseif ($color == 0 && $color_x == 0 && $color_y == 0 && $color_xy == 0) {
+                    // transfer inside of the image as-is
+                    $newcolor = 0;
+                } else {
+                    // do antialiasing for border items
+                    $frac_x  = $sx-floor($sx);
+                    $frac_y  = $sy-floor($sy);
+                    $frac_x1 = 1-$frac_x;
+                    $frac_y1 = 1-$frac_y;
+
+                    $newcolor = $color    * $frac_x1 * $frac_y1
+                              + $color_x  * $frac_x  * $frac_y1
+                              + $color_y  * $frac_x1 * $frac_y
+                              + $color_xy * $frac_x  * $frac_y;
+                }
+                imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newcolor, $newcolor, $newcolor));
+            }
+        }
+
+        // generate noise
+        for ($i=0; $i<$this->_dotNoiseLevel; $i++) {
+            imagefilledellipse($img2, mt_rand(0,$w), mt_rand(0,$h), 2, 2, $text_color);
+        }
+        for ($i=0; $i<$this->_lineNoiseLevel; $i++) {
+           imageline($img2, mt_rand(0,$w), mt_rand(0,$h), mt_rand(0,$w), mt_rand(0,$h), $text_color);
+        }
+
+        imagepng($img2, $img_file);
+        imagedestroy($img);
+        imagedestroy($img2);
+    }
+
+    /**
+     * Remove old files from image directory
+     *
+     */
+    protected function _gc()
+    {
+        $expire = time() - $this->getExpiration();
+        $imgdir = $this->getImgDir();
+        if(!$imgdir || strlen($imgdir) < 2) {
+            // safety guard
+            return;
+        }
+        foreach (new DirectoryIterator($imgdir) as $file) {
+            if (!$file->isDot() && !$file->isDir()) {
+                if ($file->getMTime() < $expire) {
+                    unlink($file->getPathname());
+                }
+            }
+        }
+    }
+
+    /**
+     * Display the captcha
+     *
+     * @param Zend_View_Interface $view
+     * @param mixed $element
+     * @return string
+     */
+    public function render(Zend_View_Interface $view, $element = null)
+    {
+        return '<img alt="'.$this->getImgAlt().'" src="' . $this->getImgUrl() . $this->getId() . $this->getSuffix() . '"/><br/>';
+    }
+}

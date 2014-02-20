@@ -1,29 +1,93 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Client_Response_ContentDecorator_Interface
+ */
+require_once 'Zend/Tool/Framework/Client/Response/ContentDecorator/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Client_Response_ContentDecorator_Separator 
+    implements Zend_Tool_Framework_Client_Response_ContentDecorator_Interface  
+{
+    
+    /**
+     * @var string
+     */
+    protected $_separator = PHP_EOL;
+    
+    /**
+     * getName() - name of the decorator
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'separator';
+    }
+
+    /**
+     * setSeparator()
+     *
+     * @param string $separator
+     * @return Zend_Tool_Framework_Client_Response_ContentDecorator_Separator
+     */
+    public function setSeparator($separator)
+    {
+        $this->_separator = $separator;
+        return $this;
+    }
+    
+    /**
+     * getSeparator()
+     *
+     * @return string
+     */
+    public function getSeparator()
+    {
+        return $this->_separator;
+    }
+    
+    public function decorate($content, $decoratorValue)
+    {
+        $run = 1;
+        if (is_bool($decoratorValue) && $decoratorValue === false) {
+            return $content;
+        }
+        
+        if (is_int($decoratorValue)) {
+            $run = $decoratorValue;
+        }
+        
+        for ($i = 0; $i < $run; $i++) {
+            $content .= $this->_separator;
+        }
+        
+        return $content;
+    }
+    
+}

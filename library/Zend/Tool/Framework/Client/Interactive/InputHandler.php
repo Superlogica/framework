@@ -1,33 +1,49 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-KDxDHYJPqF246glC71eoBVYclpdOFzq=
+<?php
+
+class Zend_Tool_Framework_Client_Interactive_InputHandler
+{
+    
+    /**
+     * @var Zend_Tool_Framework_Client_Interactive_InputInterface
+     */
+    protected $_client = null;
+    
+    protected $_inputRequest = null;
+    
+    public function setClient(Zend_Tool_Framework_Client_Interactive_InputInterface $client)
+    {
+        $this->_client = $client;
+        return $this;
+    }
+    
+    public function setInputRequest($inputRequest)
+    {
+        if (is_string($inputRequest)) {
+            require_once 'Zend/Tool/Framework/Client/Interactive/InputRequest.php';
+            $inputRequest = new Zend_Tool_Framework_Client_Interactive_InputRequest($inputRequest);
+        } elseif (!$inputRequest instanceof Zend_Tool_Framework_Client_Interactive_InputRequest) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('promptInteractive() requires either a string or an instance of Zend_Tool_Framework_Client_Interactive_InputRequest.');
+        }
+        
+        $this->_inputRequest = $inputRequest;
+        return $this;
+    }
+    
+    public function handle()
+    {
+        $inputResponse = $this->_client->handleInteractiveInputRequest($this->_inputRequest);
+        
+        if (is_string($inputResponse)) {
+            require_once 'Zend/Tool/Framework/Client/Interactive/InputResponse.php';
+            $inputResponse = new Zend_Tool_Framework_Client_Interactive_InputResponse($inputResponse); 
+        } elseif (!$inputResponse instanceof Zend_Tool_Framework_Client_Interactive_InputResponse) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('The registered $_interactiveCallback for the client must either return a string or an instance of Zend_Tool_Framework_Client_Interactive_InputResponse.');
+        }
+        
+        return $inputResponse;
+    }
+    
+    
+}

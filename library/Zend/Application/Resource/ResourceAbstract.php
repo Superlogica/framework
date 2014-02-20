@@ -1,50 +1,159 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ResourceAbstract.php 15556 2009-05-12 14:45:23Z matthew $
+ */
+
+/**
+ * @see Zend_Application_Resource_Resource
+ */
+require_once 'Zend/Application/Resource/Resource.php';
+
+/**
+ * Abstract class for bootstrap resources
+ *
+ * @uses       Zend_Application_Resource_Resource
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Application_Resource_ResourceAbstract implements Zend_Application_Resource_Resource
+{
+    /**
+     * Parent bootstrap
+     * 
+     * @var Zend_Application_Bootstrap_Bootstrapper
+     */
+    protected $_bootstrap;
+
+    /**
+     * Options for the resource
+     * 
+     * @var array
+     */
+    protected $_options = array();
+
+    /**
+     * Option keys to skip when calling setOptions()
+     *
+     * @var array
+     */
+    protected $_skipOptions = array(
+        'options',
+        'config',
+    );
+
+    /**
+     * Create a instance with options
+     *
+     * @param mixed $options
+     */
+    public function __construct($options = null)
+    {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } else if ($options instanceof Zend_Config) {
+            $this->setOptions($options->toArray());
+        }
+    }
+
+    /**
+     * Set options from array
+     *
+     * @param  array $options Configuration for resource
+     * @return Zend_Application_Resource_ResourceAbstract
+     */
+    public function setOptions(array $options)
+    {
+        foreach ($options as $key => $value) {
+            if (in_array(strtolower($key), $this->_skipOptions)) {
+                continue;
+            }
+
+            $method = 'set' . strtolower($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+            if ('bootstrap' == $key) {
+                unset($options[$key]);
+            }
+        }
+        
+        $this->_options = $this->mergeOptions($this->_options, $options);
+
+        return $this;
+    }
+
+    /**
+     * Retrieve resource options
+     * 
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Merge options recursively
+     * 
+     * @param  array $array1 
+     * @param  mixed $array2 
+     * @return array
+     */
+    public function mergeOptions(array $array1, $array2 = null)
+    {
+        if (is_array($array2)) {
+            foreach ($array2 as $key => $val) {
+                if (is_array($array2[$key])) {
+                    $array1[$key] = (array_key_exists($key, $array1) && is_array($array1[$key]))
+                                  ? $this->mergeOptions($array1[$key], $array2[$key]) 
+                                  : $array2[$key];
+                } else {
+                    $array1[$key] = $val;
+                }
+            }
+        }
+        return $array1;
+    }
+
+    /**
+     * Set the bootstrap to which the resource is attached
+     * 
+     * @param  Zend_Application_Bootstrap_Bootstrapper $bootstrap 
+     * @return Zend_Application_Resource_Resource
+     */
+    public function setBootstrap(Zend_Application_Bootstrap_Bootstrapper $bootstrap)
+    {
+        $this->_bootstrap = $bootstrap;
+        return $this;
+    }
+
+    /**
+     * Retrieve the bootstrap to which the resource is attached
+     * 
+     * @return null|Zend_Application_Bootstrap_Bootstrapper
+     */
+    public function getBootstrap()
+    {
+        return $this->_bootstrap;
+    }
+}

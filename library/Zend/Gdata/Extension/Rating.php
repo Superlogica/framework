@@ -1,62 +1,239 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * Implements the gd:rating element
+ *
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_Rating extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'rating';
+    protected $_min = null;
+    protected $_max = null;
+    protected $_numRaters = null;
+    protected $_average = null;
+    protected $_value = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Extension_Rating object.
+     *
+     * @param integer $average (optional) Average rating.
+     * @param integer $min (optional) Minimum rating.
+     * @param integer $max (optional) Maximum rating.
+     * @param integer $numRaters (optional) Number of raters.
+     * @param integer $value (optional) The value of the rating.
+     */
+    public function __construct($average = null, $min = null,
+            $max = null, $numRaters = null, $value = null)
+    {
+        parent::__construct();
+        $this->_average = $average;
+        $this->_min = $min;
+        $this->_max = $max;
+        $this->_numRaters = $numRaters;
+        $this->_value = $value;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_min !== null) {
+            $element->setAttribute('min', $this->_min);
+        }
+        if ($this->_max !== null) {
+            $element->setAttribute('max', $this->_max);
+        }
+        if ($this->_numRaters !== null) {
+            $element->setAttribute('numRaters', $this->_numRaters);
+        }
+        if ($this->_average !== null) {
+            $element->setAttribute('average', $this->_average);
+        }
+        if ($this->_value !== null) {
+            $element->setAttribute('value', $this->_value);
+        }
+
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+            case 'min':
+                $this->_min = $attribute->nodeValue;
+                break;
+            case 'max':
+                $this->_max = $attribute->nodeValue;
+                break;
+            case 'numRaters':
+                $this->_numRaters = $attribute->nodeValue;
+                break;
+            case 'average':
+                $this->_average = $attribute->nodeValue;
+                break;
+            case 'value':
+                $this->_value = $attribute->nodeValue;
+            default:
+                parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's min attribute.
+     *
+     * @return integer The requested attribute.
+     */
+    public function getMin()
+    {
+        return $this->_min;
+    }
+
+    /**
+     * Set the value for this element's min attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Rating The element being modified.
+     */
+    public function setMin($value)
+    {
+        $this->_min = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's numRaters attribute.
+     *
+     * @return integer The requested attribute.
+     */
+    public function getNumRaters()
+    {
+        return $this->_numRaters;
+    }
+
+    /**
+     * Set the value for this element's numRaters attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Rating The element being modified.
+     */
+    public function setNumRaters($value)
+    {
+        $this->_numRaters = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's average attribute.
+     *
+     * @return integer The requested attribute.
+     */
+    public function getAverage()
+    {
+        return $this->_average;
+    }
+
+    /**
+     * Set the value for this element's average attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Rating The element being modified.
+     */
+    public function setAverage($value)
+    {
+        $this->_average = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's max attribute.
+     *
+     * @return integer The requested attribute.
+     */
+    public function getMax()
+    {
+        return $this->_max;
+    }
+
+    /**
+     * Set the value for this element's max attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Rating The element being modified.
+     */
+    public function setMax($value)
+    {
+        $this->_max = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's value attribute.
+     *
+     * @return integer The requested attribute.
+     */
+    public function getValue()
+    {
+        return $this->_value;
+    }
+
+    /**
+     * Set the value for this element's value attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Rating The element being modified.
+     */
+    public function setValue($value)
+    {
+        $this->_value = $value;
+        return $this;
+    }
+
+}

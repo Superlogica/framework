@@ -1,65 +1,209 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_ProgressBar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ProgressBar.php 14519 2009-03-27 20:45:32Z dasprid $
+ */
+
+/**
+ * Zend_ProgressBar offers an interface for multiple enviroments.
+ *
+ * @category  Zend
+ * @package   Zend_ProgressBar
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_ProgressBar
+{
+    /**
+     * Min value
+     *
+     * @var float
+     */
+    protected $_min;
+
+    /**
+     * Max value
+     *
+     * @var float
+     */
+    protected $_max;
+
+    /**
+     * Current value
+     *
+     * @var float
+     */
+    protected $_current;
+
+    /**
+     * Start time of the progressbar, required for ETA
+     *
+     * @var integer
+     */
+    protected $_startTime;
+
+    /**
+     * Current status text
+     *
+     * @var string
+     */
+    protected $_statusText = null;
+
+    /**
+     * Adapter for the output
+     *
+     * @var Zend_ProgressBar_Adapter
+     */
+    protected $_adapter;
+
+    /**
+     * Namespace for keeping the progressbar persistent
+     *
+     * @var string
+     */
+    protected $_persistenceNamespace = null;
+
+    /**
+     * Create a new progressbar backend.
+     *
+     * @param  Zend_ProgressBar_Adapter $adapter
+     * @param  float                    $min
+     * @param  float                    $max
+     * @param  string                   $persistenceNamespace
+     * @throws Zend_ProgressBar_Exception When $min is greater than $max
+     */
+    public function __construct(Zend_ProgressBar_Adapter $adapter, $min = 0, $max = 100, $persistenceNamespace = null)
+    {
+        // Check min/max values and set them
+        if ($min > $max) {
+            require_once 'Zend/ProgressBar/Exception.php';
+            throw new Zend_ProgressBar_Exception('$max must be greater than $min');
+        }
+
+        $this->_min     = (float) $min;
+        $this->_max     = (float) $max;
+        $this->_current = (float) $min;
+
+        // See if we have to open a session namespace
+        if ($persistenceNamespace !== null) {
+            require_once 'Zend/Session/Namespace.php';
+
+            $this->_persistenceNamespace = new Zend_Session_Namespace($persistenceNamespace);
+        }
+
+        // Set adapter
+        $this->_adapter = $adapter;
+
+        // Track the start time
+        $this->_startTime = time();
+
+        // See If a persistenceNamespace exists and handle accordingly
+        if ($this->_persistenceNamespace !== null) {
+            if (isset($this->_persistenceNamespace->isSet)) {
+                $this->_startTime  = $this->_persistenceNamespace->startTime;
+                $this->_current    = $this->_persistenceNamespace->current;
+                $this->_statusText = $this->_persistenceNamespace->statusText;
+            } else {
+                $this->_persistenceNamespace->isSet      = true;
+                $this->_persistenceNamespace->startTime  = $this->_startTime;
+                $this->_persistenceNamespace->current    = $this->_current;
+                $this->_persistenceNamespace->statusText = $this->_statusText;
+            }
+        } else {
+            $this->update();
+        }
+    }
+
+    /**
+     * Get the current adapter
+     *
+     * @return Zend_ProgressBar_Adapter
+     */
+    public function getAdapter()
+    {
+        return $this->_adapter;
+    }
+
+    /**
+     * Update the progressbar
+     *
+     * @param  float  $value
+     * @param  string $text
+     * @return void
+     */
+    public function update($value = null, $text = null)
+    {
+        // Update value if given
+        if ($value !== null) {
+            $this->_current = min($this->_max, max($this->_min, $value));
+        }
+
+        // Update text if given
+        if ($text !== null) {
+            $this->_statusText = $text;
+        }
+
+        // See if we have to update a namespace
+        if ($this->_persistenceNamespace !== null) {
+            $this->_persistenceNamespace->current    = $this->_current;
+            $this->_persistenceNamespace->statusText = $this->_statusText;
+        }
+
+        // Calculate percent
+        if ($this->_min === $this->_max) {
+            $percent = false;
+        } else {
+            $percent = (float) ($this->_current - $this->_min) / ($this->_max - $this->_min);
+        }
+
+        // Calculate ETA
+        $timeTaken = time() - $this->_startTime;
+
+        if ($percent === .0 || $percent === false) {
+            $timeRemaining = null;
+        } else {
+            $timeRemaining = round(((1 / $percent) * $timeTaken) - $timeTaken);
+        }
+
+        // Poll the adapter
+        $this->_adapter->notify($this->_current, $this->_max, $percent, $timeTaken, $timeRemaining, $this->_statusText);
+    }
+
+    /**
+     * Update the progressbar to the next value
+     *
+     * @param  string $text
+     * @return void
+     */
+    public function next($diff = 1, $text = null)
+    {
+        $this->update(max($this->_min, min($this->_max, $this->_current + $diff)), $text);
+    }
+
+    /**
+     * Call the adapters finish() behaviour
+     *
+     * @return void
+     */
+    public function finish()
+    {
+        if ($this->_persistenceNamespace !== null) {
+            unset($this->_persistenceNamespace->isSet);
+        }
+
+        $this->_adapter->finish();
+    }
+}

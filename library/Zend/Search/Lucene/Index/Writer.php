@@ -1,361 +1,879 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter */
+require_once 'Zend/Search/Lucene/Index/SegmentWriter/DocumentWriter.php';
+
+/** Zend_Search_Lucene_Index_SegmentInfo */
+require_once 'Zend/Search/Lucene/Index/SegmentInfo.php';
+
+/** Zend_Search_Lucene_Index_SegmentMerger */
+require_once 'Zend/Search/Lucene/Index/SegmentMerger.php';
+
+/** Zend_Search_Lucene_LockManager */
+require_once 'Zend/Search/Lucene/LockManager.php';
+
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Index_Writer
+{
+    /**
+     * @todo Implement Analyzer substitution
+     * @todo Implement Zend_Search_Lucene_Storage_DirectoryRAM and Zend_Search_Lucene_Storage_FileRAM to use it for
+     *       temporary index files
+     * @todo Directory lock processing
+     */
+
+    /**
+     * Number of documents required before the buffered in-memory
+     * documents are written into a new Segment
+     *
+     * Default value is 10
+     *
+     * @var integer
+     */
+    public $maxBufferedDocs = 10;
+
+    /**
+     * Largest number of documents ever merged by addDocument().
+     * Small values (e.g., less than 10,000) are best for interactive indexing,
+     * as this limits the length of pauses while indexing to a few seconds.
+     * Larger values are best for batched indexing and speedier searches.
+     *
+     * Default value is PHP_INT_MAX
+     *
+     * @var integer
+     */
+    public $maxMergeDocs = PHP_INT_MAX;
+
+    /**
+     * Determines how often segment indices are merged by addDocument().
+     *
+     * With smaller values, less RAM is used while indexing,
+     * and searches on unoptimized indices are faster,
+     * but indexing speed is slower.
+     *
+     * With larger values, more RAM is used during indexing,
+     * and while searches on unoptimized indices are slower,
+     * indexing is faster.
+     *
+     * Thus larger values (> 10) are best for batch index creation,
+     * and smaller values (< 10) for indices that are interactively maintained.
+     *
+     * Default value is 10
+     *
+     * @var integer
+     */
+    public $mergeFactor = 10;
+
+    /**
+     * File system adapter.
+     *
+     * @var Zend_Search_Lucene_Storage_Directory
+     */
+    private $_directory = null;
+
+
+    /**
+     * Changes counter.
+     *
+     * @var integer
+     */
+    private $_versionUpdate = 0;
+
+    /**
+     * List of the segments, created by index writer
+     * Array of Zend_Search_Lucene_Index_SegmentInfo objects
+     *
+     * @var array
+     */
+    private $_newSegments = array();
+
+    /**
+     * List of segments to be deleted on commit
+     *
+     * @var array
+     */
+    private $_segmentsToDelete = array();
+
+    /**
+     * Current segment to add documents
+     *
+     * @var Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter
+     */
+    private $_currentSegment = null;
+
+    /**
+     * Array of Zend_Search_Lucene_Index_SegmentInfo objects for this index.
+     *
+     * It's a reference to the corresponding Zend_Search_Lucene::$_segmentInfos array
+     *
+     * @var array Zend_Search_Lucene_Index_SegmentInfo
+     */
+    private $_segmentInfos;
+
+    /**
+     * Index target format version
+     *
+     * @var integer
+     */
+    private $_targetFormatVersion;
+
+    /**
+     * List of indexfiles extensions
+     *
+     * @var array
+     */
+    private static $_indexExtensions = array('.cfs' => '.cfs',
+                                             '.cfx' => '.cfx',
+                                             '.fnm' => '.fnm',
+                                             '.fdx' => '.fdx',
+                                             '.fdt' => '.fdt',
+                                             '.tis' => '.tis',
+                                             '.tii' => '.tii',
+                                             '.frq' => '.frq',
+                                             '.prx' => '.prx',
+                                             '.tvx' => '.tvx',
+                                             '.tvd' => '.tvd',
+                                             '.tvf' => '.tvf',
+                                             '.del' => '.del',
+                                             '.sti' => '.sti' );
+
+
+    /**
+     * Create empty index
+     *
+     * @param Zend_Search_Lucene_Storage_Directory $directory
+     * @param integer $generation
+     * @param integer $nameCount
+     */
+    public static function createIndex(Zend_Search_Lucene_Storage_Directory $directory, $generation, $nameCount)
+    {
+        if ($generation == 0) {
+            // Create index in pre-2.1 mode
+            foreach ($directory->fileList() as $file) {
+                if ($file == 'deletable' ||
+                    $file == 'segments'  ||
+                    isset(self::$_indexExtensions[ substr($file, strlen($file)-4)]) ||
+                    preg_match('/\.f\d+$/i', $file) /* matches <segment_name>.f<decimal_nmber> file names */) {
+                        $directory->deleteFile($file);
+                    }
+            }
+
+            $segmentsFile = $directory->createFile('segments');
+            $segmentsFile->writeInt((int)0xFFFFFFFF);
+
+            // write version (is initialized by current time
+            // $segmentsFile->writeLong((int)microtime(true));
+            $version = microtime(true);
+            $segmentsFile->writeInt((int)($version/((double)0xFFFFFFFF + 1)));
+            $segmentsFile->writeInt((int)($version & 0xFFFFFFFF));
+
+            // write name counter
+            $segmentsFile->writeInt($nameCount);
+            // write segment counter
+            $segmentsFile->writeInt(0);
+
+            $deletableFile = $directory->createFile('deletable');
+            // write counter
+            $deletableFile->writeInt(0);
+        } else {
+            $genFile = $directory->createFile('segments.gen');
+
+            $genFile->writeInt((int)0xFFFFFFFE);
+            // Write generation two times
+            $genFile->writeLong($generation);
+            $genFile->writeLong($generation);
+
+            $segmentsFile = $directory->createFile(Zend_Search_Lucene::getSegmentFileName($generation));
+            $segmentsFile->writeInt((int)0xFFFFFFFD);
+
+            // write version (is initialized by current time
+            // $segmentsFile->writeLong((int)microtime(true));
+            $version = microtime(true);
+            $segmentsFile->writeInt((int)($version/((double)0xFFFFFFFF + 1)));
+            $segmentsFile->writeInt((int)($version & 0xFFFFFFFF));
+
+            // write name counter
+            $segmentsFile->writeInt($nameCount);
+            // write segment counter
+            $segmentsFile->writeInt(0);
+        }
+    }
+
+    /**
+     * Open the index for writing
+     *
+     * @param Zend_Search_Lucene_Storage_Directory $directory
+     * @param array $segmentInfos
+     * @param integer $targetFormatVersion
+     * @param Zend_Search_Lucene_Storage_File $cleanUpLock
+     */
+    public function __construct(Zend_Search_Lucene_Storage_Directory $directory, &$segmentInfos, $targetFormatVersion)
+    {
+        $this->_directory           = $directory;
+        $this->_segmentInfos        = &$segmentInfos;
+        $this->_targetFormatVersion = $targetFormatVersion;
+    }
+
+    /**
+     * Adds a document to this index.
+     *
+     * @param Zend_Search_Lucene_Document $document
+     */
+    public function addDocument(Zend_Search_Lucene_Document $document)
+    {
+        if ($this->_currentSegment === null) {
+            $this->_currentSegment =
+                new Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter($this->_directory, $this->_newSegmentName());
+        }
+        $this->_currentSegment->addDocument($document);
+
+        if ($this->_currentSegment->count() >= $this->maxBufferedDocs) {
+            $this->commit();
+        }
+
+        $this->_maybeMergeSegments();
+
+        $this->_versionUpdate++;
+    }
+
+
+    /**
+     * Check if we have anything to merge
+     *
+     * @return boolean
+     */
+    private function _hasAnythingToMerge()
+    {
+        $segmentSizes = array();
+        foreach ($this->_segmentInfos as $segName => $segmentInfo) {
+            $segmentSizes[$segName] = $segmentInfo->count();
+        }
+
+        $mergePool   = array();
+        $poolSize    = 0;
+        $sizeToMerge = $this->maxBufferedDocs;
+        asort($segmentSizes, SORT_NUMERIC);
+        foreach ($segmentSizes as $segName => $size) {
+            // Check, if segment comes into a new merging block
+            while ($size >= $sizeToMerge) {
+                // Merge previous block if it's large enough
+                if ($poolSize >= $sizeToMerge) {
+                    return true;
+                }
+                $mergePool   = array();
+                $poolSize    = 0;
+
+                $sizeToMerge *= $this->mergeFactor;
+
+                if ($sizeToMerge > $this->maxMergeDocs) {
+                    return false;
+                }
+            }
+
+            $mergePool[] = $this->_segmentInfos[$segName];
+            $poolSize += $size;
+        }
+
+        if ($poolSize >= $sizeToMerge) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Merge segments if necessary
+     */
+    private function _maybeMergeSegments()
+    {
+        if (Zend_Search_Lucene_LockManager::obtainOptimizationLock($this->_directory) === false) {
+            return;
+        }
+
+        if (!$this->_hasAnythingToMerge()) {
+            Zend_Search_Lucene_LockManager::releaseOptimizationLock($this->_directory);
+            return;
+        }
+
+        // Update segments list to be sure all segments are not merged yet by another process
+        //
+        // Segment merging functionality is concentrated in this class and surrounded
+        // by optimization lock obtaining/releasing.
+        // _updateSegments() refreshes segments list from the latest index generation.
+        // So only new segments can be added to the index while we are merging some already existing
+        // segments.
+        // Newly added segments will be also included into the index by the _updateSegments() call
+        // either by another process or by the current process with the commit() call at the end of _mergeSegments() method.
+        // That's guaranteed by the serialisation of _updateSegments() execution using exclusive locks.
+        $this->_updateSegments();
+
+        // Perform standard auto-optimization procedure
+        $segmentSizes = array();
+        foreach ($this->_segmentInfos as $segName => $segmentInfo) {
+            $segmentSizes[$segName] = $segmentInfo->count();
+        }
+
+        $mergePool   = array();
+        $poolSize    = 0;
+        $sizeToMerge = $this->maxBufferedDocs;
+        asort($segmentSizes, SORT_NUMERIC);
+        foreach ($segmentSizes as $segName => $size) {
+            // Check, if segment comes into a new merging block
+            while ($size >= $sizeToMerge) {
+                // Merge previous block if it's large enough
+                if ($poolSize >= $sizeToMerge) {
+                    $this->_mergeSegments($mergePool);
+                }
+                $mergePool   = array();
+                $poolSize    = 0;
+
+                $sizeToMerge *= $this->mergeFactor;
+
+                if ($sizeToMerge > $this->maxMergeDocs) {
+                    Zend_Search_Lucene_LockManager::releaseOptimizationLock($this->_directory);
+                    return;
+                }
+            }
+
+            $mergePool[] = $this->_segmentInfos[$segName];
+            $poolSize += $size;
+        }
+
+        if ($poolSize >= $sizeToMerge) {
+            $this->_mergeSegments($mergePool);
+        }
+
+        Zend_Search_Lucene_LockManager::releaseOptimizationLock($this->_directory);
+    }
+
+    /**
+     * Merge specified segments
+     *
+     * $segments is an array of SegmentInfo objects
+     *
+     * @param array $segments
+     */
+    private function _mergeSegments($segments)
+    {
+        $newName = $this->_newSegmentName();
+        $merger = new Zend_Search_Lucene_Index_SegmentMerger($this->_directory,
+                                                             $newName);
+        foreach ($segments as $segmentInfo) {
+            $merger->addSource($segmentInfo);
+            $this->_segmentsToDelete[$segmentInfo->getName()] = $segmentInfo->getName();
+        }
+
+        $newSegment = $merger->merge();
+        if ($newSegment !== null) {
+            $this->_newSegments[$newSegment->getName()] = $newSegment;
+        }
+
+        $this->commit();
+    }
+
+    /**
+     * Update segments file by adding current segment to a list
+     *
+     * @throws Zend_Search_Lucene_Exception
+     */
+    private function _updateSegments()
+    {
+        // Get an exclusive index lock
+        Zend_Search_Lucene_LockManager::obtainWriteLock($this->_directory);
+
+        // Write down changes for the segments
+        foreach ($this->_segmentInfos as $segInfo) {
+            $segInfo->writeChanges();
+        }
+
+
+        $generation = Zend_Search_Lucene::getActualGeneration($this->_directory);
+        $segmentsFile   = $this->_directory->getFileObject(Zend_Search_Lucene::getSegmentFileName($generation), false);
+        $newSegmentFile = $this->_directory->createFile(Zend_Search_Lucene::getSegmentFileName(++$generation), false);
+
+        try {
+            $genFile = $this->_directory->getFileObject('segments.gen', false);
+        } catch (Zend_Search_Lucene_Exception $e) {
+            if (strpos($e->getMessage(), 'is not readable') !== false) {
+                $genFile = $this->_directory->createFile('segments.gen');
+            } else {
+                throw $e;
+            }
+        }
+
+        $genFile->writeInt((int)0xFFFFFFFE);
+        // Write generation (first copy)
+        $genFile->writeLong($generation);
+
+        try {
+            // Write format marker
+            if ($this->_targetFormatVersion == Zend_Search_Lucene::FORMAT_2_1) {
+                $newSegmentFile->writeInt((int)0xFFFFFFFD);
+            } else if ($this->_targetFormatVersion == Zend_Search_Lucene::FORMAT_2_3) {
+                $newSegmentFile->writeInt((int)0xFFFFFFFC);
+            }
+
+            // Read src file format identifier
+            $format = $segmentsFile->readInt();
+            if ($format == (int)0xFFFFFFFF) {
+                $srcFormat = Zend_Search_Lucene::FORMAT_PRE_2_1;
+            } else if ($format == (int)0xFFFFFFFD) {
+                $srcFormat = Zend_Search_Lucene::FORMAT_2_1;
+            } else if ($format == (int)0xFFFFFFFC) {
+                $srcFormat = Zend_Search_Lucene::FORMAT_2_3;
+            } else {
+                throw new Zend_Search_Lucene_Exception('Unsupported segments file format');
+            }
+
+            // $version = $segmentsFile->readLong() + $this->_versionUpdate;
+            // Process version on 32-bit platforms
+            $versionHigh = $segmentsFile->readInt();
+            $versionLow  = $segmentsFile->readInt();
+            $version = $versionHigh * ((double)0xFFFFFFFF + 1) +
+                       (($versionLow < 0)? (double)0xFFFFFFFF - (-1 - $versionLow) : $versionLow);
+            $version += $this->_versionUpdate;
+            $this->_versionUpdate = 0;
+            $newSegmentFile->writeInt((int)($version/((double)0xFFFFFFFF + 1)));
+            $newSegmentFile->writeInt((int)($version & 0xFFFFFFFF));
+
+            // Write segment name counter
+            $newSegmentFile->writeInt($segmentsFile->readInt());
+
+            // Get number of segments offset
+            $numOfSegmentsOffset = $newSegmentFile->tell();
+            // Write dummy data (segment counter)
+            $newSegmentFile->writeInt(0);
+
+            // Read number of segemnts
+            $segmentsCount = $segmentsFile->readInt();
+
+            $segments = array();
+            for ($count = 0; $count < $segmentsCount; $count++) {
+                $segName = $segmentsFile->readString();
+                $segSize = $segmentsFile->readInt();
+
+                if ($srcFormat == Zend_Search_Lucene::FORMAT_PRE_2_1) {
+                    // pre-2.1 index format
+                    $delGenHigh        = 0;
+                    $delGenLow         = 0;
+                    $hasSingleNormFile = false;
+                    $numField          = (int)0xFFFFFFFF;
+                    $isCompoundByte    = 0;
+                    $docStoreOptions   = null;
+                } else {
+                    //$delGen          = $segmentsFile->readLong();
+                    $delGenHigh        = $segmentsFile->readInt();
+                    $delGenLow         = $segmentsFile->readInt();
+
+                    if ($srcFormat == Zend_Search_Lucene::FORMAT_2_3) {
+                        $docStoreOffset = $segmentsFile->readInt();
+
+                        if ($docStoreOffset != -1) {
+                            $docStoreSegment        = $segmentsFile->readString();
+                            $docStoreIsCompoundFile = $segmentsFile->readByte();
+
+                            $docStoreOptions = array('offset'     => $docStoreOffset,
+                                                     'segment'    => $docStoreSegment,
+                                                     'isCompound' => ($docStoreIsCompoundFile == 1));
+                        } else {
+                            $docStoreOptions = null;
+                        }
+                    } else {
+                        $docStoreOptions = null;
+                    }
+
+                    $hasSingleNormFile = $segmentsFile->readByte();
+                    $numField          = $segmentsFile->readInt();
+
+                    $normGens = array();
+                    if ($numField != (int)0xFFFFFFFF) {
+                        for ($count1 = 0; $count1 < $numField; $count1++) {
+                            $normGens[] = $segmentsFile->readLong();
+                        }
+                    }
+                    $isCompoundByte    = $segmentsFile->readByte();
+                }
+
+                if (!in_array($segName, $this->_segmentsToDelete)) {
+                    // Load segment if necessary
+                    if (!isset($this->_segmentInfos[$segName])) {
+                        if (PHP_INT_SIZE > 4) {
+                        	// 64-bit system
+                        	$delGen = $delGenHigh << 32  |
+                        	          $delGenLow;
+                        } else {
+                        	$delGen = $delGenHigh * ((double)0xFFFFFFFF + 1) +
+                                         (($delGenLow < 0)? (double)0xFFFFFFFF - (-1 - $delGenLow) : $delGenLow);
+                        }
+                        if ($isCompoundByte == 0xFF) {
+                            // The segment is not a compound file
+                            $isCompound = false;
+                        } else if ($isCompoundByte == 0x00) {
+                            // The status is unknown
+                            $isCompound = null;
+                        } else if ($isCompoundByte == 0x01) {
+                            // The segment is a compound file
+                            $isCompound = true;
+                        }
+
+                        $this->_segmentInfos[$segName] =
+                                    new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
+                                                                             $segName,
+                                                                             $segSize,
+                                                                             $delGen,
+                                                                             $docStoreOptions,
+                                                                             $hasSingleNormFile,
+                                                                             $isCompound);
+                    } else {
+                        // Retrieve actual deletions file generation number
+                        $delGen = $this->_segmentInfos[$segName]->getDelGen();
+
+                        if ($delGen >= 0) {
+                            if (PHP_INT_SIZE > 4) {
+                                // 64-bit system
+                                $delGenHigh = $delGen >> 32  & 0xFFFFFFFF;
+                                $delGenLow  = $delGen        & 0xFFFFFFFF;
+                            } else {
+                                $delGenHigh = (int)($delGen/((double)0xFFFFFFFF + 1));
+                                $delGenLow  =(int)($delGen & 0xFFFFFFFF);
+                            }
+                        } else {
+                            $delGenHigh = $delGenLow = (int)0xFFFFFFFF;
+                        }
+                    }
+
+                    $newSegmentFile->writeString($segName);
+                    $newSegmentFile->writeInt($segSize);
+                    $newSegmentFile->writeInt($delGenHigh);
+                    $newSegmentFile->writeInt($delGenLow);
+                    if ($this->_targetFormatVersion == Zend_Search_Lucene::FORMAT_2_3) {
+                        if ($docStoreOptions !== null) {
+                            $newSegmentFile->writeInt($docStoreOffset);
+                            $newSegmentFile->writeString($docStoreSegment);
+                            $newSegmentFile->writeByte($docStoreIsCompoundFile);
+                        } else {
+                            // Set DocStoreOffset to -1
+                            $newSegmentFile->writeInt((int)0xFFFFFFFF);
+                        }
+                    } else if ($docStoreOptions !== null) {
+                        // Release index write lock
+                        Zend_Search_Lucene_LockManager::releaseWriteLock($this->_directory);
+
+                        throw new Zend_Search_Lucene_Exception('Index conversion to lower format version is not supported.');
+                    }
+
+                    $newSegmentFile->writeByte($hasSingleNormFile);
+                    $newSegmentFile->writeInt($numField);
+                    if ($numField != (int)0xFFFFFFFF) {
+                        foreach ($normGens as $normGen) {
+                            $newSegmentFile->writeLong($normGen);
+                        }
+                    }
+                    $newSegmentFile->writeByte($isCompoundByte);
+
+                    $segments[$segName] = $segSize;
+                }
+            }
+            $segmentsFile->close();
+
+            $segmentsCount = count($segments) + count($this->_newSegments);
+
+            foreach ($this->_newSegments as $segName => $segmentInfo) {
+                $newSegmentFile->writeString($segName);
+                $newSegmentFile->writeInt($segmentInfo->count());
+
+                // delete file generation: -1 (there is no delete file yet)
+                $newSegmentFile->writeInt((int)0xFFFFFFFF);$newSegmentFile->writeInt((int)0xFFFFFFFF);
+                if ($this->_targetFormatVersion == Zend_Search_Lucene::FORMAT_2_3) {
+                    // docStoreOffset: -1 (segment doesn't use shared doc store)
+                    $newSegmentFile->writeInt((int)0xFFFFFFFF);
+                }
+                // HasSingleNormFile
+                $newSegmentFile->writeByte($segmentInfo->hasSingleNormFile());
+                // NumField
+                $newSegmentFile->writeInt((int)0xFFFFFFFF);
+                // IsCompoundFile
+                $newSegmentFile->writeByte($segmentInfo->isCompound() ? 1 : -1);
+
+                $segments[$segmentInfo->getName()] = $segmentInfo->count();
+                $this->_segmentInfos[$segName] = $segmentInfo;
+            }
+            $this->_newSegments = array();
+
+            $newSegmentFile->seek($numOfSegmentsOffset);
+            $newSegmentFile->writeInt($segmentsCount);  // Update segments count
+            $newSegmentFile->close();
+        } catch (Exception $e) {
+            /** Restore previous index generation */
+            $generation--;
+            $genFile->seek(4, SEEK_SET);
+            // Write generation number twice
+            $genFile->writeLong($generation); $genFile->writeLong($generation);
+
+            // Release index write lock
+            Zend_Search_Lucene_LockManager::releaseWriteLock($this->_directory);
+
+            // Throw the exception
+            throw $e;
+        }
+
+        // Write generation (second copy)
+        $genFile->writeLong($generation);
+
+
+        // Check if another update or read process is not running now
+        // If yes, skip clean-up procedure
+        if (Zend_Search_Lucene_LockManager::escalateReadLock($this->_directory)) {
+            /**
+             * Clean-up directory
+             */
+            $filesToDelete = array();
+            $filesTypes    = array();
+            $filesNumbers  = array();
+
+            // list of .del files of currently used segments
+            // each segment can have several generations of .del files
+            // only last should not be deleted
+            $delFiles = array();
+
+            foreach ($this->_directory->fileList() as $file) {
+                if ($file == 'deletable') {
+                    // 'deletable' file
+                    $filesToDelete[] = $file;
+                    $filesTypes[]    = 0; // delete this file first, since it's not used starting from Lucene v2.1
+                    $filesNumbers[]  = 0;
+                } else if ($file == 'segments') {
+                    // 'segments' file
+                    $filesToDelete[] = $file;
+                    $filesTypes[]    = 1; // second file to be deleted "zero" version of segments file (Lucene pre-2.1)
+                    $filesNumbers[]  = 0;
+                } else if (preg_match('/^segments_[a-zA-Z0-9]+$/i', $file)) {
+                    // 'segments_xxx' file
+                    // Check if it's not a just created generation file
+                    if ($file != Zend_Search_Lucene::getSegmentFileName($generation)) {
+                        $filesToDelete[] = $file;
+                        $filesTypes[]    = 2; // first group of files for deletions
+                        $filesNumbers[]  = (int)base_convert(substr($file, 9), 36, 10); // ordered by segment generation numbers
+                    }
+                } else if (preg_match('/(^_([a-zA-Z0-9]+))\.f\d+$/i', $file, $matches)) {
+                    // one of per segment files ('<segment_name>.f<decimal_number>')
+                    // Check if it's not one of the segments in the current segments set
+                    if (!isset($segments[$matches[1]])) {
+                        $filesToDelete[] = $file;
+                        $filesTypes[]    = 3; // second group of files for deletions
+                        $filesNumbers[]  = (int)base_convert($matches[2], 36, 10); // order by segment number
+                    }
+                } else if (preg_match('/(^_([a-zA-Z0-9]+))(_([a-zA-Z0-9]+))\.del$/i', $file, $matches)) {
+                    // one of per segment files ('<segment_name>_<del_generation>.del' where <segment_name> is '_<segment_number>')
+                    // Check if it's not one of the segments in the current segments set
+                    if (!isset($segments[$matches[1]])) {
+                        $filesToDelete[] = $file;
+                        $filesTypes[]    = 3; // second group of files for deletions
+                        $filesNumbers[]  = (int)base_convert($matches[2], 36, 10); // order by segment number
+                    } else {
+                        $segmentNumber = (int)base_convert($matches[2], 36, 10);
+                        $delGeneration = (int)base_convert($matches[4], 36, 10);
+                        if (!isset($delFiles[$segmentNumber])) {
+                            $delFiles[$segmentNumber] = array();
+                        }
+                        $delFiles[$segmentNumber][$delGeneration] = $file;
+                    }
+                } else if (isset(self::$_indexExtensions[substr($file, strlen($file)-4)])) {
+                    // one of per segment files ('<segment_name>.<ext>')
+                    $segmentName = substr($file, 0, strlen($file) - 4);
+                    // Check if it's not one of the segments in the current segments set
+                    if (!isset($segments[$segmentName])  &&
+                        ($this->_currentSegment === null  ||  $this->_currentSegment->getName() != $segmentName)) {
+                        $filesToDelete[] = $file;
+                        $filesTypes[]    = 3; // second group of files for deletions
+                        $filesNumbers[]  = (int)base_convert(substr($file, 1 /* skip '_' */, strlen($file)-5), 36, 10); // order by segment number
+                    }
+                }
+            }
+
+            $maxGenNumber = 0;
+            // process .del files of currently used segments
+            foreach ($delFiles as $segmentNumber => $segmentDelFiles) {
+                ksort($delFiles[$segmentNumber], SORT_NUMERIC);
+                array_pop($delFiles[$segmentNumber]); // remove last delete file generation from candidates for deleting
+
+                end($delFiles[$segmentNumber]);
+                $lastGenNumber = key($delFiles[$segmentNumber]);
+                if ($lastGenNumber > $maxGenNumber) {
+                    $maxGenNumber = $lastGenNumber;
+                }
+            }
+            foreach ($delFiles as $segmentNumber => $segmentDelFiles) {
+                foreach ($segmentDelFiles as $delGeneration => $file) {
+                        $filesToDelete[] = $file;
+                        $filesTypes[]    = 4; // third group of files for deletions
+                        $filesNumbers[]  = $segmentNumber*$maxGenNumber + $delGeneration; // order by <segment_number>,<del_generation> pair
+                }
+            }
+
+            // Reorder files for deleting
+            array_multisort($filesTypes,    SORT_ASC, SORT_NUMERIC,
+                            $filesNumbers,  SORT_ASC, SORT_NUMERIC,
+                            $filesToDelete, SORT_ASC, SORT_STRING);
+
+            foreach ($filesToDelete as $file) {
+                try {
+                    /** Skip shared docstore segments deleting */
+                    /** @todo Process '.cfx' files to check if them are already unused */
+                    if (substr($file, strlen($file)-4) != '.cfx') {
+                        $this->_directory->deleteFile($file);
+                    }
+                } catch (Zend_Search_Lucene_Exception $e) {
+                    if (strpos($e->getMessage(), 'Can\'t delete file') === false) {
+                        // That's not "file is under processing or already deleted" exception
+                        // Pass it through
+                        throw $e;
+                    }
+                }
+            }
+
+            // Return read lock into the previous state
+            Zend_Search_Lucene_LockManager::deEscalateReadLock($this->_directory);
+        } else {
+            // Only release resources if another index reader is running now
+            foreach ($this->_segmentsToDelete as $segName) {
+                foreach (self::$_indexExtensions as $ext) {
+                    $this->_directory->purgeFile($segName . $ext);
+                }
+            }
+        }
+
+        // Clean-up _segmentsToDelete container
+        $this->_segmentsToDelete = array();
+
+
+        // Release index write lock
+        Zend_Search_Lucene_LockManager::releaseWriteLock($this->_directory);
+
+        // Remove unused segments from segments list
+        foreach ($this->_segmentInfos as $segName => $segmentInfo) {
+            if (!isset($segments[$segName])) {
+                unset($this->_segmentInfos[$segName]);
+            }
+        }
+    }
+
+    /**
+     * Commit current changes
+     */
+    public function commit()
+    {
+        if ($this->_currentSegment !== null) {
+            $newSegment = $this->_currentSegment->close();
+            if ($newSegment !== null) {
+                $this->_newSegments[$newSegment->getName()] = $newSegment;
+            }
+            $this->_currentSegment = null;
+        }
+
+        $this->_updateSegments();
+    }
+
+
+    /**
+     * Merges the provided indexes into this index.
+     *
+     * @param array $readers
+     * @return void
+     */
+    public function addIndexes($readers)
+    {
+        /**
+         * @todo implementation
+         */
+    }
+
+    /**
+     * Merges all segments together into new one
+     *
+     * Returns true on success and false if another optimization or auto-optimization process
+     * is running now
+     *
+     * @return boolean
+     */
+    public function optimize()
+    {
+        if (Zend_Search_Lucene_LockManager::obtainOptimizationLock($this->_directory) === false) {
+            return false;
+        }
+
+        // Update segments list to be sure all segments are not merged yet by another process
+        //
+        // Segment merging functionality is concentrated in this class and surrounded
+        // by optimization lock obtaining/releasing.
+        // _updateSegments() refreshes segments list from the latest index generation.
+        // So only new segments can be added to the index while we are merging some already existing
+        // segments.
+        // Newly added segments will be also included into the index by the _updateSegments() call
+        // either by another process or by the current process with the commit() call at the end of _mergeSegments() method.
+        // That's guaranteed by the serialisation of _updateSegments() execution using exclusive locks.
+        $this->_updateSegments();
+
+        $this->_mergeSegments($this->_segmentInfos);
+
+        Zend_Search_Lucene_LockManager::releaseOptimizationLock($this->_directory);
+
+        return true;
+    }
+
+    /**
+     * Get name for new segment
+     *
+     * @return string
+     */
+    private function _newSegmentName()
+    {
+        Zend_Search_Lucene_LockManager::obtainWriteLock($this->_directory);
+
+        $generation = Zend_Search_Lucene::getActualGeneration($this->_directory);
+        $segmentsFile = $this->_directory->getFileObject(Zend_Search_Lucene::getSegmentFileName($generation), false);
+
+        $segmentsFile->seek(12); // 12 = 4 (int, file format marker) + 8 (long, index version)
+        $segmentNameCounter = $segmentsFile->readInt();
+
+        $segmentsFile->seek(12); // 12 = 4 (int, file format marker) + 8 (long, index version)
+        $segmentsFile->writeInt($segmentNameCounter + 1);
+
+        // Flash output to guarantee that wrong value will not be loaded between unlock and
+        // return (which calls $segmentsFile destructor)
+        $segmentsFile->flush();
+
+        Zend_Search_Lucene_LockManager::releaseWriteLock($this->_directory);
+
+        return '_' . base_convert($segmentNameCounter, 10, 36);
+    }
+
+}

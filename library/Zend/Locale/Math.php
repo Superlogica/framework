@@ -1,116 +1,299 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-NwrhwEEYpVNBXm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Locale
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Math.php 14041 2009-02-10 21:49:38Z thomas $
+ */
+
+
+/**
+ * Utility class for proxying math function to bcmath functions, if present,
+ * otherwise to PHP builtin math operators, with limited detection of overflow conditions.
+ * Sampling of PHP environments and platforms suggests that at least 80% to 90% support bcmath.
+ * Thus, this file should be as light as possible.
+ *
+ * @category   Zend
+ * @package    Zend_Locale
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Locale_Math
+{
+    // support unit testing without using bcmath functions
+    public static $_bcmathDisabled = false;
+
+    public static $add   = array('Zend_Locale_Math', 'Add');
+    public static $sub   = array('Zend_Locale_Math', 'Sub');
+    public static $pow   = array('Zend_Locale_Math', 'Pow');
+    public static $mul   = array('Zend_Locale_Math', 'Mul');
+    public static $div   = array('Zend_Locale_Math', 'Div');
+    public static $comp  = array('Zend_Locale_Math', 'Comp');
+    public static $sqrt  = array('Zend_Locale_Math', 'Sqrt');
+    public static $mod   = array('Zend_Locale_Math', 'Mod');
+    public static $scale = 'bcscale';
+
+    public static function isBcmathDisabled()
+    {
+        return self::$_bcmathDisabled;
+    }
+
+    /**
+     * Surprisingly, the results of this implementation of round()
+     * prove better than the native PHP round(). For example, try:
+     *   round(639.795, 2);
+     *   round(267.835, 2);
+     *   round(0.302515, 5);
+     *   round(0.36665, 4);
+     * then try:
+     *   Zend_Locale_Math::round('639.795', 2);
+     */
+    public static function round($op1, $precision = 0)
+    {
+        if (self::$_bcmathDisabled) {
+            return self::normalize(round($op1, $precision));
+        }
+        $op1 = trim(self::normalize($op1));
+        $length = strlen($op1);
+        if (($decPos = strpos($op1, '.')) === false) {
+            $op1 .= '.0';
+            $decPos = $length;
+            $length += 2;
+        }
+        if ($precision < 0 && abs($precision) > $decPos) {
+            return '0';
+        }
+        $digitsBeforeDot = $length - ($decPos + 1);
+        if ($precision >= ($length - ($decPos + 1))) {
+            return $op1;
+        }
+        if ($precision === 0) {
+            $triggerPos = 1;
+            $roundPos   = -1;
+        } elseif ($precision > 0) {
+            $triggerPos = $precision + 1;
+            $roundPos   = $precision;
+        } else {
+            $triggerPos = $precision;
+            $roundPos   = $precision -1;
+        }
+        $triggerDigit = $op1[$triggerPos + $decPos];
+        if ($precision < 0) {
+            // zero fill digits to the left of the decimal place
+            $op1 = substr($op1, 0, $decPos + $precision) . str_pad('', abs($precision), '0');
+        }
+        if ($triggerDigit >= '5') {
+            if ($roundPos + $decPos == -1) {
+                return str_pad('1', $decPos + 1, '0');
+            }
+            $roundUp = str_pad('', $length, '0');
+            $roundUp[$decPos] = '.';
+            $roundUp[$roundPos + $decPos] = '1';
+            return bcadd($op1, $roundUp, $precision);
+        } elseif ($precision >= 0) {
+            return substr($op1, 0, $decPos + ($precision ? $precision + 1: 0));
+        }
+        return (string) $op1;
+    }
+
+    /**
+     * Normalizes an input to standard english notation
+     * Fixes a problem of BCMath with setLocale which is PHP related
+     *
+     * @param   integer  $value  Value to normalize
+     * @return  string           Normalized string without BCMath problems
+     */
+    public static function normalize($value)
+    {
+        $convert = localeconv();
+        $value = str_replace($convert['thousands_sep'], "",(string) $value);
+        $value = str_replace($convert['positive_sign'], "", $value);
+        $value = str_replace($convert['decimal_point'], ".",$value);
+        if (!empty($convert['negative_sign']) and (strpos($value, $convert['negative_sign']))) {
+            $value = str_replace($convert['negative_sign'], "", $value);
+            $value = "-" . $value;
+        }
+
+        return $value;
+    }
+
+    /**
+     * Localizes an input from standard english notation
+     * Fixes a problem of BCMath with setLocale which is PHP related
+     *
+     * @param   integer  $value  Value to normalize
+     * @return  string           Normalized string without BCMath problems
+     */
+    public static function localize($value)
+    {
+        $convert = localeconv();
+        $value = str_replace(".", $convert['decimal_point'], (string) $value);
+        if (!empty($convert['negative_sign']) and (strpos($value, "-"))) {
+            $value = str_replace("-", $convert['negative_sign'], $value);
+        }
+        return $value;
+    }
+
+    /**
+     * Changes exponential numbers to plain string numbers
+     * Fixes a problem of BCMath with numbers containing exponents
+     *
+     * @param integer $value Value to erase the exponent
+     * @param integer $scale (Optional) Scale to use
+     * @return string
+     */
+    public static function exponent($value, $scale = null)
+    {
+        if (!extension_loaded('bcmath')) {
+            return $value;
+        }
+
+        $split = explode('e', $value);
+        if (count($split) == 1) {
+            $split = explode('E', $value);
+        }
+
+        if (count($split) > 1) {
+            $value = bcmul($split[0], bcpow(10, $split[1], $scale), $scale);
+        }
+
+        return $value;
+    }
+
+    /**
+     * BCAdd - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Add($op1, $op2, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        $op2 = self::exponent($op2, $scale);
+        return bcadd($op1, $op2, $scale);
+    }
+
+    /**
+     * BCSub - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Sub($op1, $op2, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        $op2 = self::exponent($op2, $scale);
+        return bcsub($op1, $op2, $scale);
+    }
+
+    /**
+     * BCPow - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Pow($op1, $op2, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        $op2 = self::exponent($op2, $scale);
+        return bcpow($op1, $op2, $scale);
+    }
+
+    /**
+     * BCMul - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Mul($op1, $op2, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        $op2 = self::exponent($op2, $scale);
+        return bcmul($op1, $op2, $scale);
+    }
+
+    /**
+     * BCDiv - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Div($op1, $op2, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        $op2 = self::exponent($op2, $scale);
+        return bcdiv($op1, $op2, $scale);
+    }
+
+    /**
+     * BCSqrt - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Sqrt($op1, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        return bcsqrt($op1, $scale);
+    }
+
+    /**
+     * BCMod - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @return string
+     */
+    public static function Mod($op1, $op2)
+    {
+        $op1 = self::exponent($op1);
+        $op2 = self::exponent($op2);
+        return bcmod($op1, $op2);
+    }
+
+    /**
+     * BCComp - fixes a problem of BCMath and exponential numbers
+     *
+     * @param  string  $op1
+     * @param  string  $op2
+     * @param  integer $scale
+     * @return string
+     */
+    public static function Comp($op1, $op2, $scale = null)
+    {
+        $op1 = self::exponent($op1, $scale);
+        $op2 = self::exponent($op2, $scale);
+        return bccomp($op1, $op2, $scale);
+    }
+}
+
+if ((defined('TESTS_ZEND_LOCALE_BCMATH_ENABLED') && !TESTS_ZEND_LOCALE_BCMATH_ENABLED)
+    || !extension_loaded('bcmath')) {
+    require_once 'Zend/Locale/Math/PhpMath.php';
+    Zend_Locale_Math_PhpMath::disable();
+}

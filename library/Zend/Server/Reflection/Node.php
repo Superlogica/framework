@@ -1,51 +1,201 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Node Tree class for Zend_Server reflection operations
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Reflection
+ * @version $Id: Node.php 12618 2008-11-13 15:23:05Z alexander $
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Server_Reflection_Node
+{
+    /**
+     * Node value
+     * @var mixed
+     */
+    protected $_value = null;
+
+    /**
+     * Array of child nodes (if any)
+     * @var array
+     */
+    protected $_children = array();
+
+    /**
+     * Parent node (if any)
+     * @var Zend_Server_Reflection_Node
+     */
+    protected $_parent = null;
+
+    /**
+     * Constructor
+     *
+     * @param mixed $value
+     * @param Zend_Server_Reflection_Node $parent Optional
+     * @return Zend_Server_Reflection_Node
+     */
+    public function __construct($value, Zend_Server_Reflection_Node $parent = null)
+    {
+        $this->_value = $value;
+        if (null !== $parent) {
+            $this->setParent($parent, true);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set parent node
+     *
+     * @param Zend_Server_Reflection_Node $node
+     * @param boolean $new Whether or not the child node is newly created
+     * and should always be attached
+     * @return void
+     */
+    public function setParent(Zend_Server_Reflection_Node $node, $new = false)
+    {
+        $this->_parent = $node;
+
+        if ($new) {
+            $node->attachChild($this);
+            return;
+        }
+    }
+
+    /**
+     * Create and attach a new child node
+     *
+     * @param mixed $value
+     * @access public
+     * @return Zend_Server_Reflection_Node New child node
+     */
+    public function createChild($value)
+    {
+        $child = new self($value, $this);
+
+        return $child;
+    }
+
+    /**
+     * Attach a child node
+     *
+     * @param Zend_Server_Reflection_Node $node
+     * @return void
+     */
+    public function attachChild(Zend_Server_Reflection_Node $node)
+    {
+        $this->_children[] = $node;
+
+        if ($node->getParent() !== $this) {
+            $node->setParent($this);
+        }
+    }
+
+    /**
+     * Return an array of all child nodes
+     *
+     * @return array
+     */
+    public function getChildren()
+    {
+        return $this->_children;
+    }
+
+    /**
+     * Does this node have children?
+     *
+     * @return boolean
+     */
+    public function hasChildren()
+    {
+        return count($this->_children) > 0;
+    }
+
+    /**
+     * Return the parent node
+     *
+     * @return null|Zend_Server_Reflection_Node
+     */
+    public function getParent()
+    {
+        return $this->_parent;
+    }
+
+    /**
+     * Return the node's current value
+     *
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->_value;
+    }
+
+    /**
+     * Set the node value
+     *
+     * @param mixed $value
+     * @return void
+     */
+    public function setValue($value)
+    {
+        $this->_value = $value;
+    }
+
+    /**
+     * Retrieve the bottommost nodes of this node's tree
+     *
+     * Retrieves the bottommost nodes of the tree by recursively calling
+     * getEndPoints() on all children. If a child is null, it returns the parent
+     * as an end point.
+     *
+     * @return array
+     */
+    public function getEndPoints()
+    {
+        $endPoints = array();
+        if (!$this->hasChildren()) {
+            return $endPoints;
+        }
+
+        foreach ($this->_children as $child) {
+            $value = $child->getValue();
+
+            if (null === $value) {
+                $endPoints[] = $this;
+            } elseif ((null !== $value)
+                && $child->hasChildren())
+            {
+                $childEndPoints = $child->getEndPoints();
+                if (!empty($childEndPoints)) {
+                    $endPoints = array_merge($endPoints, $childEndPoints);
+                }
+            } elseif ((null !== $value) && !$child->hasChildren()) {
+                $endPoints[] = $child;
+            }
+        }
+
+        return $endPoints;
+    }
+}

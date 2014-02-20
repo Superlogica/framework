@@ -1,70 +1,168 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Extension_Reminder
+ */
+require_once 'Zend/Gdata/Extension/Reminder.php';
+
+/**
+ * Represents the gd:when element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_When extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'when';
+    protected $_reminders = array();
+    protected $_startTime = null;
+    protected $_valueString = null;
+    protected $_endTime = null;
+
+    public function __construct($startTime = null, $endTime = null,
+            $valueString = null, $reminders = null)
+    {
+        parent::__construct();
+        $this->_startTime = $startTime;
+        $this->_endTime = $endTime;
+        $this->_valueString = $valueString;
+        $this->_reminders = $reminders;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_startTime !== null) {
+            $element->setAttribute('startTime', $this->_startTime);
+        }
+        if ($this->_endTime !== null) {
+            $element->setAttribute('endTime', $this->_endTime);
+        }
+        if ($this->_valueString !== null) {
+            $element->setAttribute('valueString', $this->_valueString);
+        }
+        if ($this->_reminders !== null) {
+            foreach ($this->_reminders as $reminder) {
+                $element->appendChild(
+                        $reminder->getDOM($element->ownerDocument));
+            }
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gd') . ':' . 'reminder';
+                $reminder = new Zend_Gdata_Extension_Reminder();
+                $reminder->transferFromDOM($child);
+                $this->_reminders[] = $reminder;
+                break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+            case 'startTime':
+                $this->_startTime = $attribute->nodeValue;
+                break;
+            case 'endTime':
+                $this->_endTime = $attribute->nodeValue;
+                break;
+            case 'valueString':
+                $this->_valueString = $attribute->nodeValue;
+                break;
+            default:
+                parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    public function __toString()
+    {
+        if ($this->_valueString)
+            return $this->_valueString;
+        else {
+            return 'Starts: ' . $this->getStartTime() . ' ' .
+                   'Ends: ' .  $this->getEndTime();
+        }
+    }
+
+    public function getStartTime()
+    {
+        return $this->_startTime;
+    }
+
+    public function setStartTime($value)
+    {
+        $this->_startTime = $value;
+        return $this;
+    }
+
+    public function getEndTime()
+    {
+        return $this->_endTime;
+    }
+
+    public function setEndTime($value)
+    {
+        $this->_endTime = $value;
+        return $this;
+    }
+
+    public function getValueString()
+    {
+        return $this->_valueString;
+    }
+
+    public function setValueString($value)
+    {
+        $this->_valueString = $value;
+        return $this;
+    }
+
+    public function getReminders()
+    {
+        return $this->_reminders;
+    }
+
+    public function setReminders($value)
+    {
+        $this->_reminders = $value;
+        return $this;
+    }
+
+}

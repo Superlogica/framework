@@ -1,69 +1,170 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-i8WuoC54VIqjpTUE00FBDg6yCiCD+m==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Extension_EntryLink
+ */
+require_once 'Zend/Gdata/Extension/EntryLink.php';
+
+/**
+ * Data model class to represent a location (gd:where element)
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_Where extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'where';
+    protected $_label = null;
+    protected $_rel = null;
+    protected $_valueString = null;
+    protected $_entryLink = null;
+
+    public function __construct($valueString = null, $label = null, $rel = null, $entryLink = null)
+    {
+        parent::__construct();
+        $this->_valueString = $valueString;
+        $this->_label = $label;
+        $this->_rel = $rel;
+        $this->_entryLink = $entryLink;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_label !== null) {
+            $element->setAttribute('label', $this->_label);
+        }
+        if ($this->_rel !== null) {
+            $element->setAttribute('rel', $this->_rel);
+        }
+        if ($this->_valueString !== null) {
+            $element->setAttribute('valueString', $this->_valueString);
+        }
+        if ($this->entryLink !== null) {
+            $element->appendChild($this->_entryLink->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'label':
+            $this->_label = $attribute->nodeValue;
+            break;
+        case 'rel':
+            $this->_rel = $attribute->nodeValue;
+            break;
+        case 'valueString':
+            $this->_valueString = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('gd') . ':' . 'entryLink':
+            $entryLink = new Zend_Gdata_Extension_EntryLink();
+            $entryLink->transferFromDOM($child);
+            $this->_entryLink = $entryLink;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    public function __toString()
+    {
+        if ($this->_valueString != null) {
+            return $this->_valueString;
+        }
+        else {
+            return parent::__toString();
+        }
+    }
+
+    public function getLabel()
+    {
+        return $this->_label;
+    }
+
+    public function setLabel($value)
+    {
+        $this->_label = $value;
+        return $this;
+    }
+
+    public function getRel()
+    {
+        return $this->_rel;
+    }
+
+    public function setRel($value)
+    {
+        $this->_rel = $value;
+        return $this;
+    }
+
+    public function getValueString()
+    {
+        return $this->_valueString;
+    }
+
+    public function setValueString($value)
+    {
+        $this->_valueString = $value;
+        return $this;
+    }
+
+    public function getEntryLink()
+    {
+        return $this->_entryLink;
+    }
+
+    public function setEntryLink($value)
+    {
+        $this->_entryLink = $value;
+        return $this;
+    }
+
+}

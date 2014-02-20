@@ -1,57 +1,154 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-O/aG
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Image
+ *
+ * Accepts the options:
+ * - separator: separator to use between image and content (defaults to PHP_EOL)
+ * - placement: whether to append or prepend label to content (defaults to append)
+ * - tag: if set, used to wrap the label in an additional HTML tag
+ *
+ * Any other options passed will be used as HTML attributes of the image tag.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Image.php 10008 2008-07-09 16:52:08Z matthew $
+ */
+class Zend_Form_Decorator_Image extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Attributes that should not be passed to helper
+     * @var array
+     */
+    protected $_attribBlacklist = array('helper', 'placement', 'separator', 'tag');
+
+    /**
+     * Default placement: append
+     * @var string
+     */
+    protected $_placement = 'APPEND';
+
+    /**
+     * HTML tag with which to surround image
+     * @var string
+     */
+    protected $_tag;
+
+    /**
+     * Set HTML tag with which to surround label
+     * 
+     * @param  string $tag 
+     * @return Zend_Form_Decorator_Image
+     */
+    public function setTag($tag)
+    {
+        $this->_tag = (string) $tag;
+        return $this;
+    }
+
+    /**
+     * Get HTML tag, if any, with which to surround label
+     * 
+     * @return void
+     */
+    public function getTag()
+    {
+        if (null === $this->_tag) {
+            $tag = $this->getOption('tag');
+            if (null !== $tag) {
+                $this->removeOption('tag');
+                $this->setTag($tag);
+            }
+            return $tag;
+        }
+
+        return $this->_tag;
+    }
+
+    /**
+     * Get attributes to pass to image helper
+     * 
+     * @return array
+     */
+    public function getAttribs()
+    {
+        $attribs = $this->getOptions();
+
+        if (null !== ($element = $this->getElement())) {
+            $attribs['alt'] = $element->getLabel();
+            $attribs = array_merge($attribs, $element->getAttribs());
+        }
+
+        foreach ($this->_attribBlacklist as $key) {
+            if (array_key_exists($key, $attribs)) {
+                unset($attribs[$key]);
+            }
+        }
+
+        return $attribs;
+    }
+
+    /**
+     * Render a form image
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $tag           = $this->getTag();
+        $placement     = $this->getPlacement();
+        $separator     = $this->getSeparator();
+        $name          = $element->getFullyQualifiedName();
+        $attribs       = $this->getAttribs();
+        $attribs['id'] = $element->getId();
+
+        $image = $view->formImage($name, $element->getImageValue(), $attribs); 
+
+        if (null !== $tag) {
+            require_once 'Zend/Form/Decorator/HtmlTag.php';
+            $decorator = new Zend_Form_Decorator_HtmlTag();
+            $decorator->setOptions(array('tag' => $tag));
+            $image = $decorator->render($image);
+        }
+
+        switch ($placement) {
+            case self::PREPEND:
+                return $image . $separator . $content;
+            case self::APPEND:
+            default:
+                return $content . $separator . $image;
+        }
+    }
+}

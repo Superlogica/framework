@@ -1,71 +1,267 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Hu39CP1HtjWBgRtd/nsstG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * Server methods metadata
+ *
+ * @todo       Implement iterator
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Server_Definition implements Countable, Iterator
+{
+    /**
+     * @var array Array of Zend_Server_Method_Definition objects
+     */
+    protected $_methods = array();
+
+    /**
+     * @var bool Whether or not overwriting existing methods is allowed
+     */
+    protected $_overwriteExistingMethods = false;
+
+    /**
+     * Constructor
+     * 
+     * @param  null|array $methods 
+     * @return void
+     */
+    public function __construct($methods = null)
+    {
+        if (is_array($methods)) {
+            $this->setMethods($methods);
+        }
+    }
+
+    /**
+     * Set flag indicating whether or not overwriting existing methods is allowed
+     * 
+     * @param mixed $flag 
+     * @return void
+     */
+    public function setOverwriteExistingMethods($flag)
+    {
+        $this->_overwriteExistingMethods = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Add method to definition
+     * 
+     * @param  array|Zend_Server_Method_Definition $method 
+     * @param  null|string $name 
+     * @return Zend_Server_Definition
+     * @throws Zend_Server_Exception if duplicate or invalid method provided
+     */
+    public function addMethod($method, $name = null)
+    {
+        if (is_array($method)) {
+            require_once 'Zend/Server/Method/Definition.php';
+            $method = new Zend_Server_Method_Definition($method);
+        } elseif (!$method instanceof Zend_Server_Method_Definition) {
+            require_once 'Zend/Server/Exception.php';
+            throw new Zend_Server_Exception('Invalid method provided');
+        }
+
+        if (is_numeric($name)) {
+            $name = null;
+        }
+        if (null !== $name) {
+            $method->setName($name);
+        } else {
+            $name = $method->getName();
+        }
+        if (null === $name) {
+            require_once 'Zend/Server/Exception.php';
+            throw new Zend_Server_Exception('No method name provided');
+        }
+
+        if (!$this->_overwriteExistingMethods && array_key_exists($name, $this->_methods)) {
+            require_once 'Zend/Server/Exception.php';
+            throw new Zend_Server_Exception(sprintf('Method by name of "%s" already exists', $name));
+        }
+        $this->_methods[$name] = $method;
+        return $this;
+    }
+
+    /**
+     * Add multiple methods
+     * 
+     * @param  array $methods Array of Zend_Server_Method_Definition objects or arrays
+     * @return Zend_Server_Definition
+     */
+    public function addMethods(array $methods)
+    {
+        foreach ($methods as $key => $method) {
+            $this->addMethod($method, $key);
+        }
+        return $this;
+    }
+
+    /**
+     * Set all methods at once (overwrite)
+     * 
+     * @param  array $methods Array of Zend_Server_Method_Definition objects or arrays
+     * @return Zend_Server_Definition
+     */
+    public function setMethods(array $methods)
+    {
+        $this->clearMethods();
+        $this->addMethods($methods);
+        return $this;
+    }
+
+    /**
+     * Does the definition have the given method?
+     * 
+     * @param  string $method 
+     * @return bool
+     */
+    public function hasMethod($method)
+    {
+        return array_key_exists($method, $this->_methods);
+    }
+
+    /**
+     * Get a given method definition
+     * 
+     * @param  string $method 
+     * @return null|Zend_Server_Method_Definition
+     */
+    public function getMethod($method)
+    {
+        if ($this->hasMethod($method)) {
+            return $this->_methods[$method];
+        }
+        return false;
+    }
+
+    /**
+     * Get all method definitions
+     * 
+     * @return array Array of Zend_Server_Method_Definition objects
+     */
+    public function getMethods()
+    {
+        return $this->_methods;
+    }
+
+    /**
+     * Remove a method definition
+     * 
+     * @param  string $method 
+     * @return Zend_Server_Definition
+     */
+    public function removeMethod($method)
+    {
+        if ($this->hasMethod($method)) {
+            unset($this->_methods[$method]);
+        }
+        return $this;
+    }
+
+    /**
+     * Clear all method definitions
+     * 
+     * @return Zend_Server_Definition
+     */
+    public function clearMethods()
+    {
+        $this->_methods = array();
+        return $this;
+    }
+
+    /**
+     * Cast definition to an array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        $methods = array();
+        foreach ($this->getMethods() as $key => $method) {
+            $methods[$key] = $method->toArray();
+        }
+        return $methods;
+    }
+
+    /**
+     * Countable: count of methods
+     * 
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_methods);
+    }
+
+    /**
+     * Iterator: current item
+     * 
+     * @return mixed
+     */
+    public function current()
+    {
+        return current($this->_methods);
+    }
+
+    /**
+     * Iterator: current item key
+     * 
+     * @return int|string
+     */
+    public function key()
+    {
+        return key($this->_methods);
+    }
+
+    /**
+     * Iterator: advance to next method
+     * 
+     * @return void
+     */
+    public function next()
+    {
+        return next($this->_methods);
+    }
+
+    /**
+     * Iterator: return to first method
+     * 
+     * @return void
+     */
+    public function rewind()
+    {
+        return reset($this->_methods);
+    }
+
+    /**
+     * Iterator: is the current index valid?
+     * 
+     * @return bool
+     */
+    public function valid()
+    {
+        return (bool) $this->current();
+    }
+}

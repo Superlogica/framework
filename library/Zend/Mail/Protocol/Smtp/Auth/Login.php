@@ -1,30 +1,98 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-H85ZD+qazl6/4N88N0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Login.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Mail_Protocol_Smtp
+ */
+require_once 'Zend/Mail/Protocol/Smtp.php';
+
+
+/**
+ * Performs LOGIN authentication
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Protocol_Smtp_Auth_Login extends Zend_Mail_Protocol_Smtp
+{
+    /**
+     * LOGIN username
+     *
+     * @var string
+     */
+    protected $_username;
+
+
+    /**
+     * LOGIN password
+     *
+     * @var string
+     */
+    protected $_password;
+
+
+    /**
+     * Constructor.
+     *
+     * @param  string $host   (Default: 127.0.0.1)
+     * @param  int    $port   (Default: null)
+     * @param  array  $config Auth-specific parameters
+     * @return void
+     */
+    public function __construct($host = '127.0.0.1', $port = null, $config = null)
+    {
+        if (is_array($config)) {
+            if (isset($config['username'])) {
+                $this->_username = $config['username'];
+            }
+            if (isset($config['password'])) {
+                $this->_password = $config['password'];
+            }
+        }
+
+        parent::__construct($host, $port, $config);
+    }
+
+
+    /**
+     * Perform LOGIN authentication with supplied credentials
+     *
+     * @return void
+     */
+    public function auth()
+    {
+        // Ensure AUTH has not already been initiated.
+        parent::auth();
+
+        $this->_send('AUTH LOGIN');
+        $this->_expect(334);
+        $this->_send(base64_encode($this->_username));
+        $this->_expect(334);
+        $this->_send(base64_encode($this->_password));
+        $this->_expect(235);
+        $this->_auth = true;
+    }
+}

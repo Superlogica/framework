@@ -1,72 +1,259 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 12507 2008-11-10 16:29:09Z matthew $
+ */
+
+
+/**
+ * @see Zend_Feed_Element
+ */
+require_once 'Zend/Feed/Element.php';
+
+
+/**
+ * The Zend_Feed_Abstract class is an abstract class representing feeds.
+ *
+ * Zend_Feed_Abstract implements two core PHP 5 interfaces: ArrayAccess and
+ * Iterator. In both cases the collection being treated as an array is
+ * considered to be the entry collection, such that iterating over the
+ * feed takes you through each of the feed.s entries.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator
+{
+    /**
+     * Current index on the collection of feed entries for the
+     * Iterator implementation.
+     *
+     * @var integer
+     */
+    protected $_entryIndex = 0;
+
+    /**
+     * Cache of feed entries.
+     *
+     * @var array
+     */
+    protected $_entries;
+
+    /**
+     * Feed constructor
+     *
+     * The Zend_Feed_Abstract constructor takes the URI of a feed or a
+     * feed represented as a string and loads it as XML.
+     *
+     * @param  string $uri The full URI of the feed to load, or NULL if not retrieved via HTTP or as an array.
+     * @param  string $string The feed as a string, or NULL if retrieved via HTTP or as an array.
+     * @param  Zend_Feed_Builder_Interface $builder The feed as a builder instance or NULL if retrieved as a string or via HTTP.
+     * @return void
+     * @throws Zend_Feed_Exception If loading the feed failed.
+     */
+    public function __construct($uri = null, $string = null, Zend_Feed_Builder_Interface $builder = null)
+    {
+        if ($uri !== null) {
+            // Retrieve the feed via HTTP
+            $client = Zend_Feed::getHttpClient();
+            $client->setUri($uri);
+            $response = $client->request('GET');
+            if ($response->getStatus() !== 200) {
+                /** 
+                 * @see Zend_Feed_Exception
+                 */
+                require_once 'Zend/Feed/Exception.php';
+                throw new Zend_Feed_Exception('Feed failed to load, got response code ' . $response->getStatus());
+            }
+            $this->_element = $response->getBody();
+            $this->__wakeup();
+        } elseif ($string !== null) {
+            // Retrieve the feed from $string
+            $this->_element = $string;
+            $this->__wakeup();
+        } else {
+            // Generate the feed from the array
+            $header = $builder->getHeader();
+            $this->_element = new DOMDocument('1.0', $header['charset']);
+            $root = $this->_mapFeedHeaders($header);
+            $this->_mapFeedEntries($root, $builder->getEntries());
+            $this->_element = $root;
+            $this->_buildEntryCache();
+        }
+    }
+
+
+    /**
+     * Load the feed as an XML DOMDocument object
+     *
+     * @return void
+     * @throws Zend_Feed_Exception
+     */
+    public function __wakeup()
+    {
+        @ini_set('track_errors', 1);
+        $doc = new DOMDocument;
+        $status = @$doc->loadXML($this->_element);
+        @ini_restore('track_errors');
+
+        if (!$status) {
+            // prevent the class to generate an undefined variable notice (ZF-2590)
+            if (!isset($php_errormsg)) {
+                if (function_exists('xdebug_is_enabled')) {
+                    $php_errormsg = '(error message not available, when XDebug is running)';
+                } else {
+                    $php_errormsg = '(error message not available)';
+                }
+            }
+            
+            /** 
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception("DOMDocument cannot parse XML: $php_errormsg");
+        }
+
+        $this->_element = $doc;
+    }
+
+
+    /**
+     * Prepare for serialiation
+     *
+     * @return array
+     */
+    public function __sleep()
+    {
+        $this->_element = $this->saveXML();
+
+        return array('_element');
+    }
+
+
+    /**
+     * Cache the individual feed elements so they don't need to be
+     * searched for on every operation.
+     *
+     * @return void
+     */
+    protected function _buildEntryCache()
+    {
+        $this->_entries = array();
+        foreach ($this->_element->childNodes as $child) {
+            if ($child->localName == $this->_entryElementName) {
+                $this->_entries[] = $child;
+            }
+        }
+    }
+
+
+    /**
+     * Get the number of entries in this feed object.
+     *
+     * @return integer Entry count.
+     */
+    public function count()
+    {
+        return count($this->_entries);
+    }
+
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_entryIndex = 0;
+    }
+
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return mixed The current row, or null if no rows.
+     */
+    public function current()
+    {
+        return new $this->_entryClassName(
+            null,
+            $this->_entries[$this->_entryIndex]);
+    }
+
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return mixed The current row number (starts at 0), or NULL if no rows
+     */
+    public function key()
+    {
+        return $this->_entryIndex;
+    }
+
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return mixed The next row, or null if no more rows.
+     */
+    public function next()
+    {
+        ++$this->_entryIndex;
+    }
+
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return boolean Whether the iteration is valid
+     */
+    public function valid()
+    {
+        return 0 <= $this->_entryIndex && $this->_entryIndex < $this->count();
+    }
+
+    /**
+     * Generate the header of the feed when working in write mode
+     *
+     * @param  array $array the data to use
+     * @return DOMElement root node
+     */
+    abstract protected function _mapFeedHeaders($array);
+
+    /**
+     * Generate the entries of the feed when working in write mode
+     *
+     * @param  DOMElement $root the root node to use
+     * @param  array $array the data to use
+     * @return DOMElement root node
+     */
+    abstract protected function _mapFeedEntries(DOMElement $root, $array);
+
+    /**
+     * Send feed to a http client with the correct header
+     *
+     * @throws Zend_Feed_Exception if headers have already been sent
+     * @return void
+     */
+    abstract public function send();
+}

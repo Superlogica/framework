@@ -1,29 +1,103 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: GetInfoResult.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * Represents a single Technorati GetInfo query result object.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_GetInfoResult
+{
+    /**
+     * Technorati author
+     *
+     * @var     Zend_Service_Technorati_Author
+     * @access  protected
+     */
+    protected $_author;
+
+    /**
+     * A list of weblogs claimed by this author
+     *
+     * @var     array
+     * @access  protected
+     */
+    protected $_weblogs = array();
+
+
+    /**
+     * Constructs a new object object from DOM Document.
+     *
+     * @param   DomDocument $dom the ReST fragment for this object
+     */
+    public function __construct(DomDocument $dom)
+    {
+        $xpath = new DOMXPath($dom);
+
+        /**
+         * @see Zend_Service_Technorati_Author
+         */
+        require_once 'Zend/Service/Technorati/Author.php';
+
+        $result = $xpath->query('//result');
+        if ($result->length == 1) {
+            $this->_author = new Zend_Service_Technorati_Author($result->item(0));
+        }
+
+        /**
+         * @see Zend_Service_Technorati_Weblog
+         */
+        require_once 'Zend/Service/Technorati/Weblog.php';
+
+        $result = $xpath->query('//item/weblog');
+        if ($result->length >= 1) {
+            foreach ($result as $weblog) {
+                $this->_weblogs[] = new Zend_Service_Technorati_Weblog($weblog);
+            }
+        }
+    }
+
+
+    /**
+     * Returns the author associated with queried username.
+     * 
+     * @return  Zend_Service_Technorati_Author
+     */
+    public function getAuthor() {
+        return $this->_author;
+    }
+
+    /**
+     * Returns the collection of weblogs authored by queried username.
+     * 
+     * @return  array of Zend_Service_Technorati_Weblog
+     */
+    public function getWeblogs() {
+        return $this->_weblogs;
+    }
+
+}

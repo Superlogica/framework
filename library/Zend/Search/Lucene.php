@@ -1,436 +1,1521 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-X2nKcAbdTLq9me8KiuHb+hJcRbF5
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Document */
+require_once 'Zend/Search/Lucene/Document.php';
+
+/** Zend_Search_Lucene_Document_Html */
+require_once 'Zend/Search/Lucene/Document/Html.php';
+
+/** Zend_Search_Lucene_Document_Docx */
+require_once 'Zend/Search/Lucene/Document/Docx.php';
+
+/** Zend_Search_Lucene_Document_Pptx */
+require_once 'Zend/Search/Lucene/Document/Pptx.php';
+
+/** Zend_Search_Lucene_Document_Xlsx */
+require_once 'Zend/Search/Lucene/Document/Xlsx.php';
+
+/** Zend_Search_Lucene_Storage_Directory_Filesystem */
+require_once 'Zend/Search/Lucene/Storage/Directory/Filesystem.php';
+
+/** Zend_Search_Lucene_Storage_File_Memory */
+require_once 'Zend/Search/Lucene/Storage/File/Memory.php';
+
+/** Zend_Search_Lucene_Index_Term */
+require_once 'Zend/Search/Lucene/Index/Term.php';
+
+/** Zend_Search_Lucene_Index_TermInfo */
+require_once 'Zend/Search/Lucene/Index/TermInfo.php';
+
+/** Zend_Search_Lucene_Index_SegmentInfo */
+require_once 'Zend/Search/Lucene/Index/SegmentInfo.php';
+
+/** Zend_Search_Lucene_Index_FieldInfo */
+require_once 'Zend/Search/Lucene/Index/FieldInfo.php';
+
+/** Zend_Search_Lucene_Index_Writer */
+require_once 'Zend/Search/Lucene/Index/Writer.php';
+
+/** Zend_Search_Lucene_Search_QueryParser */
+require_once 'Zend/Search/Lucene/Search/QueryParser.php';
+
+/** Zend_Search_Lucene_Search_QueryHit */
+require_once 'Zend/Search/Lucene/Search/QueryHit.php';
+
+/** Zend_Search_Lucene_Search_Similarity */
+require_once 'Zend/Search/Lucene/Search/Similarity.php';
+
+/** Zend_Search_Lucene_Index_TermsPriorityQueue */
+require_once 'Zend/Search/Lucene/Index/TermsPriorityQueue.php';
+
+/** Zend_Search_Lucene_TermStreamsPriorityQueue */
+require_once 'Zend/Search/Lucene/TermStreamsPriorityQueue.php';
+
+/** Zend_Search_Lucene_Index_DocsFilter */
+require_once 'Zend/Search/Lucene/Index/DocsFilter.php';
+
+/** Zend_Search_Lucene_LockManager */
+require_once 'Zend/Search/Lucene/LockManager.php';
+
+/** Zend_Search_Lucene_Interface */
+require_once 'Zend/Search/Lucene/Interface.php';
+
+/** Zend_Search_Lucene_Proxy */
+require_once 'Zend/Search/Lucene/Proxy.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene implements Zend_Search_Lucene_Interface
+{
+    /**
+     * Default field name for search
+     *
+     * Null means search through all fields
+     *
+     * @var string
+     */
+    private static $_defaultSearchField = null;
+
+    /**
+     * Result set limit
+     *
+     * 0 means no limit
+     *
+     * @var integer
+     */
+    private static $_resultSetLimit = 0;
+
+    /**
+     * Terms per query limit
+     *
+     * 0 means no limit
+     *
+     * @var integer
+     */
+    private static $_termsPerQueryLimit = 1024;
+
+    /**
+     * File system adapter.
+     *
+     * @var Zend_Search_Lucene_Storage_Directory
+     */
+    private $_directory = null;
+
+    /**
+     * File system adapter closing option
+     *
+     * @var boolean
+     */
+    private $_closeDirOnExit = true;
+
+    /**
+     * Writer for this index, not instantiated unless required.
+     *
+     * @var Zend_Search_Lucene_Index_Writer
+     */
+    private $_writer = null;
+
+    /**
+     * Array of Zend_Search_Lucene_Index_SegmentInfo objects for this index.
+     *
+     * @var array Zend_Search_Lucene_Index_SegmentInfo
+     */
+    private $_segmentInfos = array();
+
+    /**
+     * Number of documents in this index.
+     *
+     * @var integer
+     */
+    private $_docCount = 0;
+
+    /**
+     * Flag for index changes
+     *
+     * @var boolean
+     */
+    private $_hasChanges = false;
+
+
+    /**
+     * Signal, that index is already closed, changes are fixed and resources are cleaned up
+     *
+     * @var boolean
+     */
+    private $_closed = false;
+
+    /**
+     * Number of references to the index object
+     *
+     * @var integer
+     */
+    private $_refCount = 0;
+
+    /**
+     * Current segment generation
+     *
+     * @var integer
+     */
+    private $_generation;
+
+    const FORMAT_PRE_2_1 = 0;
+    const FORMAT_2_1     = 1;
+    const FORMAT_2_3     = 2;
+
+
+    /**
+     * Index format version
+     *
+     * @var integer
+     */
+    private $_formatVersion;
+
+    /**
+     * Create index
+     *
+     * @param mixed $directory
+     * @return Zend_Search_Lucene_Interface
+     */
+    public static function create($directory)
+    {
+        return new Zend_Search_Lucene_Proxy(new Zend_Search_Lucene($directory, true));
+    }
+
+    /**
+     * Open index
+     *
+     * @param mixed $directory
+     * @return Zend_Search_Lucene_Interface
+     */
+    public static function open($directory)
+    {
+        return new Zend_Search_Lucene_Proxy(new Zend_Search_Lucene($directory, false));
+    }
+
+    /** Generation retrieving counter */
+    const GENERATION_RETRIEVE_COUNT = 10;
+
+    /** Pause between generation retrieving attempts in milliseconds */
+    const GENERATION_RETRIEVE_PAUSE = 50;
+
+    /**
+     * Get current generation number
+     *
+     * Returns generation number
+     * 0 means pre-2.1 index format
+     * -1 means there are no segments files.
+     *
+     * @param Zend_Search_Lucene_Storage_Directory $directory
+     * @return integer
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public static function getActualGeneration(Zend_Search_Lucene_Storage_Directory $directory)
+    {
+        /**
+         * Zend_Search_Lucene uses segments.gen file to retrieve current generation number
+         *
+         * Apache Lucene index format documentation mentions this method only as a fallback method
+         *
+         * Nevertheless we use it according to the performance considerations
+         *
+         * @todo check if we can use some modification of Apache Lucene generation determination algorithm
+         *       without performance problems
+         */
+
+        require_once 'Zend/Search/Lucene/Exception.php';
+        try {
+            for ($count = 0; $count < self::GENERATION_RETRIEVE_COUNT; $count++) {
+                // Try to get generation file
+                $genFile = $directory->getFileObject('segments.gen', false);
+
+                $format = $genFile->readInt();
+                if ($format != (int)0xFFFFFFFE) {
+                    throw new Zend_Search_Lucene_Exception('Wrong segments.gen file format');
+                }
+
+                $gen1 = $genFile->readLong();
+                $gen2 = $genFile->readLong();
+
+                if ($gen1 == $gen2) {
+                    return $gen1;
+                }
+
+                usleep(self::GENERATION_RETRIEVE_PAUSE * 1000);
+            }
+
+            // All passes are failed
+            throw new Zend_Search_Lucene_Exception('Index is under processing now');
+        } catch (Zend_Search_Lucene_Exception $e) {
+            if (strpos($e->getMessage(), 'is not readable') !== false) {
+                try {
+                    // Try to open old style segments file
+                    $segmentsFile = $directory->getFileObject('segments', false);
+
+                    // It's pre-2.1 index
+                    return 0;
+                } catch (Zend_Search_Lucene_Exception $e) {
+                    if (strpos($e->getMessage(), 'is not readable') !== false) {
+                        return -1;
+                    } else {
+                        throw $e;
+                    }
+                }
+            } else {
+                throw $e;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * Get segments file name
+     *
+     * @param integer $generation
+     * @return string
+     */
+    public static function getSegmentFileName($generation)
+    {
+        if ($generation == 0) {
+            return 'segments';
+        }
+
+        return 'segments_' . base_convert($generation, 10, 36);
+    }
+
+    /**
+     * Get index format version
+     *
+     * @return integer
+     */
+    public function getFormatVersion()
+    {
+        return $this->_formatVersion;
+    }
+
+    /**
+     * Set index format version.
+     * Index is converted to this format at the nearest upfdate time
+     *
+     * @param int $formatVersion
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function setFormatVersion($formatVersion)
+    {
+        if ($formatVersion != self::FORMAT_PRE_2_1  &&
+            $formatVersion != self::FORMAT_2_1  &&
+            $formatVersion != self::FORMAT_2_3) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Unsupported index format');
+        }
+
+        $this->_formatVersion = $formatVersion;
+    }
+
+    /**
+     * Read segments file for pre-2.1 Lucene index format
+     *
+     * @throws Zend_Search_Lucene_Exception
+     */
+    private function _readPre21SegmentsFile()
+    {
+        $segmentsFile = $this->_directory->getFileObject('segments');
+
+        $format = $segmentsFile->readInt();
+
+        if ($format != (int)0xFFFFFFFF) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Wrong segments file format');
+        }
+
+        // read version
+        // $segmentsFile->readLong();
+        $segmentsFile->readInt(); $segmentsFile->readInt();
+
+        // read segment name counter
+        $segmentsFile->readInt();
+
+        $segments = $segmentsFile->readInt();
+
+        $this->_docCount = 0;
+
+        // read segmentInfos
+        for ($count = 0; $count < $segments; $count++) {
+            $segName = $segmentsFile->readString();
+            $segSize = $segmentsFile->readInt();
+            $this->_docCount += $segSize;
+
+            $this->_segmentInfos[$segName] =
+                                new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
+                                                                         $segName,
+                                                                         $segSize);
+        }
+
+        // Use 2.1 as a target version. Index will be reorganized at update time.
+        $this->_formatVersion = self::FORMAT_2_1;
+    }
+
+    /**
+     * Read segments file
+     *
+     * @throws Zend_Search_Lucene_Exception
+     */
+    private function _readSegmentsFile()
+    {
+        $segmentsFile = $this->_directory->getFileObject(self::getSegmentFileName($this->_generation));
+
+        $format = $segmentsFile->readInt();
+
+        if ($format == (int)0xFFFFFFFC) {
+            $this->_formatVersion = self::FORMAT_2_3;
+        } else if ($format == (int)0xFFFFFFFD) {
+            $this->_formatVersion = self::FORMAT_2_1;
+        } else {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Unsupported segments file format');
+        }
+
+        // read version
+        // $segmentsFile->readLong();
+        $segmentsFile->readInt(); $segmentsFile->readInt();
+
+        // read segment name counter
+        $segmentsFile->readInt();
+
+        $segments = $segmentsFile->readInt();
+
+        $this->_docCount = 0;
+
+        // read segmentInfos
+        for ($count = 0; $count < $segments; $count++) {
+            $segName = $segmentsFile->readString();
+            $segSize = $segmentsFile->readInt();
+
+            // 2.1+ specific properties
+            //$delGen          = $segmentsFile->readLong();
+            $delGenHigh        = $segmentsFile->readInt();
+            $delGenLow         = $segmentsFile->readInt();
+            if ($delGenHigh == (int)0xFFFFFFFF  && $delGenLow == (int)0xFFFFFFFF) {
+                $delGen = -1; // There are no deletes
+            } else {
+                $delGen = ($delGenHigh << 32) | $delGenLow;
+            }
+
+            if ($this->_formatVersion == self::FORMAT_2_3) {
+                $docStoreOffset = $segmentsFile->readInt();
+
+                if ($docStoreOffset != -1) {
+                    $docStoreSegment        = $segmentsFile->readString();
+                    $docStoreIsCompoundFile = $segmentsFile->readByte();
+
+                    $docStoreOptions = array('offset'     => $docStoreOffset,
+                                             'segment'    => $docStoreSegment,
+                                             'isCompound' => ($docStoreIsCompoundFile == 1));
+                } else {
+                    $docStoreOptions = null;
+                }
+            } else {
+                $docStoreOptions = null;
+            }
+
+            $hasSingleNormFile = $segmentsFile->readByte();
+            $numField          = $segmentsFile->readInt();
+
+            $normGens = array();
+            if ($numField != (int)0xFFFFFFFF) {
+                for ($count1 = 0; $count1 < $numField; $count1++) {
+                    $normGens[] = $segmentsFile->readLong();
+                }
+
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Separate norm files are not supported. Optimize index to use it with Zend_Search_Lucene.');
+            }
+
+            $isCompoundByte     = $segmentsFile->readByte();
+
+            if ($isCompoundByte == 0xFF) {
+                // The segment is not a compound file
+                $isCompound = false;
+            } else if ($isCompoundByte == 0x00) {
+                // The status is unknown
+                $isCompound = null;
+            } else if ($isCompoundByte == 0x01) {
+                // The segment is a compound file
+                $isCompound = true;
+            }
+
+            $this->_docCount += $segSize;
+
+            $this->_segmentInfos[$segName] =
+                                new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
+                                                                         $segName,
+                                                                         $segSize,
+                                                                         $delGen,
+                                                                         $docStoreOptions,
+                                                                         $hasSingleNormFile,
+                                                                         $isCompound);
+        }
+    }
+
+    /**
+     * Opens the index.
+     *
+     * IndexReader constructor needs Directory as a parameter. It should be
+     * a string with a path to the index folder or a Directory object.
+     *
+     * @param mixed $directory
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function __construct($directory = null, $create = false)
+    {
+        if ($directory === null) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Exception('No index directory specified');
+        }
+
+        if ($directory instanceof Zend_Search_Lucene_Storage_Directory_Filesystem) {
+            $this->_directory      = $directory;
+            $this->_closeDirOnExit = false;
+        } else {
+            $this->_directory      = new Zend_Search_Lucene_Storage_Directory_Filesystem($directory);
+            $this->_closeDirOnExit = true;
+        }
+
+        $this->_segmentInfos = array();
+
+        // Mark index as "under processing" to prevent other processes from premature index cleaning
+        Zend_Search_Lucene_LockManager::obtainReadLock($this->_directory);
+
+        $this->_generation = self::getActualGeneration($this->_directory);
+
+        if ($create) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            try {
+                Zend_Search_Lucene_LockManager::obtainWriteLock($this->_directory);
+            } catch (Zend_Search_Lucene_Exception $e) {
+                Zend_Search_Lucene_LockManager::releaseReadLock($this->_directory);
+
+                if (strpos($e->getMessage(), 'Can\'t obtain exclusive index lock') === false) {
+                    throw $e;
+                } else {
+                    throw new Zend_Search_Lucene_Exception('Can\'t create index. It\'s under processing now');
+                }
+            }
+
+            if ($this->_generation == -1) {
+                // Directory doesn't contain existing index, start from 1
+                $this->_generation = 1;
+                $nameCounter = 0;
+            } else {
+                // Directory contains existing index
+                $segmentsFile = $this->_directory->getFileObject(self::getSegmentFileName($this->_generation));
+                $segmentsFile->seek(12); // 12 = 4 (int, file format marker) + 8 (long, index version)
+
+                $nameCounter = $segmentsFile->readInt();
+                $this->_generation++;
+            }
+
+            Zend_Search_Lucene_Index_Writer::createIndex($this->_directory, $this->_generation, $nameCounter);
+
+            Zend_Search_Lucene_LockManager::releaseWriteLock($this->_directory);
+        }
+
+        if ($this->_generation == -1) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Index doesn\'t exists in the specified directory.');
+        } else if ($this->_generation == 0) {
+            $this->_readPre21SegmentsFile();
+        } else {
+            $this->_readSegmentsFile();
+        }
+    }
+
+    /**
+     * Close current index and free resources
+     */
+    private function _close()
+    {
+        if ($this->_closed) {
+            // index is already closed and resources are cleaned up
+            return;
+        }
+
+        $this->commit();
+
+        // Release "under processing" flag
+        Zend_Search_Lucene_LockManager::releaseReadLock($this->_directory);
+
+        if ($this->_closeDirOnExit) {
+            $this->_directory->close();
+        }
+
+        $this->_directory    = null;
+        $this->_writer       = null;
+        $this->_segmentInfos = null;
+
+        $this->_closed = true;
+    }
+
+    /**
+     * Add reference to the index object
+     *
+     * @internal
+     */
+    public function addReference()
+    {
+        $this->_refCount++;
+    }
+
+    /**
+     * Remove reference from the index object
+     *
+     * When reference count becomes zero, index is closed and resources are cleaned up
+     *
+     * @internal
+     */
+    public function removeReference()
+    {
+        $this->_refCount--;
+
+        if ($this->_refCount == 0) {
+            $this->_close();
+        }
+    }
+
+    /**
+     * Object destructor
+     */
+    public function __destruct()
+    {
+        $this->_close();
+    }
+
+    /**
+     * Returns an instance of Zend_Search_Lucene_Index_Writer for the index
+     *
+     * @return Zend_Search_Lucene_Index_Writer
+     */
+    private function _getIndexWriter()
+    {
+        if (!$this->_writer instanceof Zend_Search_Lucene_Index_Writer) {
+            $this->_writer = new Zend_Search_Lucene_Index_Writer($this->_directory, $this->_segmentInfos, $this->_formatVersion);
+        }
+
+        return $this->_writer;
+    }
+
+
+    /**
+     * Returns the Zend_Search_Lucene_Storage_Directory instance for this index.
+     *
+     * @return Zend_Search_Lucene_Storage_Directory
+     */
+    public function getDirectory()
+    {
+        return $this->_directory;
+    }
+
+
+    /**
+     * Returns the total number of documents in this index (including deleted documents).
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        return $this->_docCount;
+    }
+
+    /**
+     * Returns one greater than the largest possible document number.
+     * This may be used to, e.g., determine how big to allocate a structure which will have
+     * an element for every document number in an index.
+     *
+     * @return integer
+     */
+    public function maxDoc()
+    {
+        return $this->count();
+    }
+
+    /**
+     * Returns the total number of non-deleted documents in this index.
+     *
+     * @return integer
+     */
+    public function numDocs()
+    {
+        $numDocs = 0;
+
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            $numDocs += $segmentInfo->numDocs();
+        }
+
+        return $numDocs;
+    }
+
+    /**
+     * Checks, that document is deleted
+     *
+     * @param integer $id
+     * @return boolean
+     * @throws Zend_Search_Lucene_Exception    Exception is thrown if $id is out of the range
+     */
+    public function isDeleted($id)
+    {
+        if ($id >= $this->_docCount) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Document id is out of the range.');
+        }
+
+        $segmentStartId = 0;
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            if ($segmentStartId + $segmentInfo->count() > $id) {
+                break;
+            }
+
+            $segmentStartId += $segmentInfo->count();
+        }
+
+        return $segmentInfo->isDeleted($id - $segmentStartId);
+    }
+
+    /**
+     * Set default search field.
+     *
+     * Null means, that search is performed through all fields by default
+     *
+     * Default value is null
+     *
+     * @param string $fieldName
+     */
+    public static function setDefaultSearchField($fieldName)
+    {
+        self::$_defaultSearchField = $fieldName;
+    }
+
+    /**
+     * Get default search field.
+     *
+     * Null means, that search is performed through all fields by default
+     *
+     * @return string
+     */
+    public static function getDefaultSearchField()
+    {
+        return self::$_defaultSearchField;
+    }
+
+    /**
+     * Set result set limit.
+     *
+     * 0 (default) means no limit
+     *
+     * @param integer $limit
+     */
+    public static function setResultSetLimit($limit)
+    {
+        self::$_resultSetLimit = $limit;
+    }
+
+    /**
+     * Get result set limit.
+     *
+     * 0 means no limit
+     *
+     * @return integer
+     */
+    public static function getResultSetLimit()
+    {
+        return self::$_resultSetLimit;
+    }
+
+    /**
+     * Set terms per query limit.
+     *
+     * 0 means no limit
+     *
+     * @param integer $limit
+     */
+    public static function setTermsPerQueryLimit($limit)
+    {
+        self::$_termsPerQueryLimit = $limit;
+    }
+
+    /**
+     * Get result set limit.
+     *
+     * 0 (default) means no limit
+     *
+     * @return integer
+     */
+    public static function getTermsPerQueryLimit()
+    {
+        return self::$_termsPerQueryLimit;
+    }
+
+    /**
+     * Retrieve index maxBufferedDocs option
+     *
+     * maxBufferedDocs is a minimal number of documents required before
+     * the buffered in-memory documents are written into a new Segment
+     *
+     * Default value is 10
+     *
+     * @return integer
+     */
+    public function getMaxBufferedDocs()
+    {
+        return $this->_getIndexWriter()->maxBufferedDocs;
+    }
+
+    /**
+     * Set index maxBufferedDocs option
+     *
+     * maxBufferedDocs is a minimal number of documents required before
+     * the buffered in-memory documents are written into a new Segment
+     *
+     * Default value is 10
+     *
+     * @param integer $maxBufferedDocs
+     */
+    public function setMaxBufferedDocs($maxBufferedDocs)
+    {
+        $this->_getIndexWriter()->maxBufferedDocs = $maxBufferedDocs;
+    }
+
+    /**
+     * Retrieve index maxMergeDocs option
+     *
+     * maxMergeDocs is a largest number of documents ever merged by addDocument().
+     * Small values (e.g., less than 10,000) are best for interactive indexing,
+     * as this limits the length of pauses while indexing to a few seconds.
+     * Larger values are best for batched indexing and speedier searches.
+     *
+     * Default value is PHP_INT_MAX
+     *
+     * @return integer
+     */
+    public function getMaxMergeDocs()
+    {
+        return $this->_getIndexWriter()->maxMergeDocs;
+    }
+
+    /**
+     * Set index maxMergeDocs option
+     *
+     * maxMergeDocs is a largest number of documents ever merged by addDocument().
+     * Small values (e.g., less than 10,000) are best for interactive indexing,
+     * as this limits the length of pauses while indexing to a few seconds.
+     * Larger values are best for batched indexing and speedier searches.
+     *
+     * Default value is PHP_INT_MAX
+     *
+     * @param integer $maxMergeDocs
+     */
+    public function setMaxMergeDocs($maxMergeDocs)
+    {
+        $this->_getIndexWriter()->maxMergeDocs = $maxMergeDocs;
+    }
+
+    /**
+     * Retrieve index mergeFactor option
+     *
+     * mergeFactor determines how often segment indices are merged by addDocument().
+     * With smaller values, less RAM is used while indexing,
+     * and searches on unoptimized indices are faster,
+     * but indexing speed is slower.
+     * With larger values, more RAM is used during indexing,
+     * and while searches on unoptimized indices are slower,
+     * indexing is faster.
+     * Thus larger values (> 10) are best for batch index creation,
+     * and smaller values (< 10) for indices that are interactively maintained.
+     *
+     * Default value is 10
+     *
+     * @return integer
+     */
+    public function getMergeFactor()
+    {
+        return $this->_getIndexWriter()->mergeFactor;
+    }
+
+    /**
+     * Set index mergeFactor option
+     *
+     * mergeFactor determines how often segment indices are merged by addDocument().
+     * With smaller values, less RAM is used while indexing,
+     * and searches on unoptimized indices are faster,
+     * but indexing speed is slower.
+     * With larger values, more RAM is used during indexing,
+     * and while searches on unoptimized indices are slower,
+     * indexing is faster.
+     * Thus larger values (> 10) are best for batch index creation,
+     * and smaller values (< 10) for indices that are interactively maintained.
+     *
+     * Default value is 10
+     *
+     * @param integer $maxMergeDocs
+     */
+    public function setMergeFactor($mergeFactor)
+    {
+        $this->_getIndexWriter()->mergeFactor = $mergeFactor;
+    }
+
+    /**
+     * Performs a query against the index and returns an array
+     * of Zend_Search_Lucene_Search_QueryHit objects.
+     * Input is a string or Zend_Search_Lucene_Search_Query.
+     *
+     * @param mixed $query
+     * @return array Zend_Search_Lucene_Search_QueryHit
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function find($query)
+    {
+        if (is_string($query)) {
+            $query = Zend_Search_Lucene_Search_QueryParser::parse($query);
+        }
+
+        if (!$query instanceof Zend_Search_Lucene_Search_Query) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Query must be a string or Zend_Search_Lucene_Search_Query object');
+        }
+
+        $this->commit();
+
+        $hits   = array();
+        $scores = array();
+        $ids    = array();
+
+        $query = $query->rewrite($this)->optimize($this);
+
+        $query->execute($this);
+
+        $topScore = 0;
+
+        foreach ($query->matchedDocs() as $id => $num) {
+            $docScore = $query->score($id, $this);
+            if( $docScore != 0 ) {
+                $hit = new Zend_Search_Lucene_Search_QueryHit($this);
+                $hit->id = $id;
+                $hit->score = $docScore;
+
+                $hits[]   = $hit;
+                $ids[]    = $id;
+                $scores[] = $docScore;
+
+                if ($docScore > $topScore) {
+                    $topScore = $docScore;
+                }
+            }
+
+            if (self::$_resultSetLimit != 0  &&  count($hits) >= self::$_resultSetLimit) {
+                break;
+            }
+        }
+
+        if (count($hits) == 0) {
+            // skip sorting, which may cause a error on empty index
+            return array();
+        }
+
+        if ($topScore > 1) {
+            foreach ($hits as $hit) {
+                $hit->score /= $topScore;
+            }
+        }
+
+        if (func_num_args() == 1) {
+            // sort by scores
+            array_multisort($scores, SORT_DESC, SORT_NUMERIC,
+                            $ids,    SORT_ASC,  SORT_NUMERIC,
+                            $hits);
+        } else {
+            // sort by given field names
+
+            $argList    = func_get_args();
+            $fieldNames = $this->getFieldNames();
+            $sortArgs   = array();
+
+            require_once 'Zend/Search/Lucene/Exception.php';
+            for ($count = 1; $count < count($argList); $count++) {
+                $fieldName = $argList[$count];
+
+                if (!is_string($fieldName)) {
+                    throw new Zend_Search_Lucene_Exception('Field name must be a string.');
+                }
+
+                if (!in_array($fieldName, $fieldNames)) {
+                    throw new Zend_Search_Lucene_Exception('Wrong field name.');
+                }
+
+                $valuesArray = array();
+                foreach ($hits as $hit) {
+                    try {
+                        $value = $hit->getDocument()->getFieldValue($fieldName);
+                    } catch (Zend_Search_Lucene_Exception $e) {
+                        if (strpos($e->getMessage(), 'not found') === false) {
+                            throw $e;
+                        } else {
+                            $value = null;
+                        }
+                    }
+
+                    $valuesArray[] = $value;
+                }
+
+                $sortArgs[] = $valuesArray;
+
+                if ($count + 1 < count($argList)  &&  is_integer($argList[$count+1])) {
+                    $count++;
+                    $sortArgs[] = $argList[$count];
+
+                    if ($count + 1 < count($argList)  &&  is_integer($argList[$count+1])) {
+                        $count++;
+                        $sortArgs[] = $argList[$count];
+                    } else {
+                        if ($argList[$count] == SORT_ASC  || $argList[$count] == SORT_DESC) {
+                            $sortArgs[] = SORT_REGULAR;
+                        } else {
+                            $sortArgs[] = SORT_ASC;
+                        }
+                    }
+                } else {
+                    $sortArgs[] = SORT_ASC;
+                    $sortArgs[] = SORT_REGULAR;
+                }
+            }
+
+            // Sort by id's if values are equal
+            $sortArgs[] = $ids;
+            $sortArgs[] = SORT_ASC;
+            $sortArgs[] = SORT_NUMERIC;
+
+            // Array to be sorted
+            $sortArgs[] = &$hits;
+
+            // Do sort
+            call_user_func_array('array_multisort', $sortArgs);
+        }
+
+        return $hits;
+    }
+
+
+    /**
+     * Returns a list of all unique field names that exist in this index.
+     *
+     * @param boolean $indexed
+     * @return array
+     */
+    public function getFieldNames($indexed = false)
+    {
+        $result = array();
+        foreach( $this->_segmentInfos as $segmentInfo ) {
+            $result = array_merge($result, $segmentInfo->getFields($indexed));
+        }
+        return $result;
+    }
+
+
+    /**
+     * Returns a Zend_Search_Lucene_Document object for the document
+     * number $id in this index.
+     *
+     * @param integer|Zend_Search_Lucene_Search_QueryHit $id
+     * @return Zend_Search_Lucene_Document
+     * @throws Zend_Search_Lucene_Exception    Exception is thrown if $id is out of the range
+     */
+    public function getDocument($id)
+    {
+        if ($id instanceof Zend_Search_Lucene_Search_QueryHit) {
+            /* @var $id Zend_Search_Lucene_Search_QueryHit */
+            $id = $id->id;
+        }
+
+        if ($id >= $this->_docCount) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Document id is out of the range.');
+        }
+
+        $segmentStartId = 0;
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            if ($segmentStartId + $segmentInfo->count() > $id) {
+                break;
+            }
+
+            $segmentStartId += $segmentInfo->count();
+        }
+
+        $fdxFile = $segmentInfo->openCompoundFile('.fdx');
+        $fdxFile->seek(($id-$segmentStartId)*8, SEEK_CUR);
+        $fieldValuesPosition = $fdxFile->readLong();
+
+        $fdtFile = $segmentInfo->openCompoundFile('.fdt');
+        $fdtFile->seek($fieldValuesPosition, SEEK_CUR);
+        $fieldCount = $fdtFile->readVInt();
+
+        $doc = new Zend_Search_Lucene_Document();
+        for ($count = 0; $count < $fieldCount; $count++) {
+            $fieldNum = $fdtFile->readVInt();
+            $bits = $fdtFile->readByte();
+
+            $fieldInfo = $segmentInfo->getField($fieldNum);
+
+            if (!($bits & 2)) { // Text data
+                $field = new Zend_Search_Lucene_Field($fieldInfo->name,
+                                                      $fdtFile->readString(),
+                                                      'UTF-8',
+                                                      true,
+                                                      $fieldInfo->isIndexed,
+                                                      $bits & 1 );
+            } else {            // Binary data
+                $field = new Zend_Search_Lucene_Field($fieldInfo->name,
+                                                      $fdtFile->readBinary(),
+                                                      '',
+                                                      true,
+                                                      $fieldInfo->isIndexed,
+                                                      $bits & 1,
+                                                      true );
+            }
+
+            $doc->addField($field);
+        }
+
+        return $doc;
+    }
+
+
+    /**
+     * Returns true if index contain documents with specified term.
+     *
+     * Is used for query optimization.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @return boolean
+     */
+    public function hasTerm(Zend_Search_Lucene_Index_Term $term)
+    {
+        foreach ($this->_segmentInfos as $segInfo) {
+            if ($segInfo->getTermInfo($term) instanceof Zend_Search_Lucene_Index_TermInfo) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Returns IDs of all documents containing term.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return array
+     */
+    public function termDocs(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
+    {
+        $subResults = array();
+        $segmentStartDocId = 0;
+
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            $subResults[] = $segmentInfo->termDocs($term, $segmentStartDocId, $docsFilter);
+
+            $segmentStartDocId += $segmentInfo->count();
+        }
+
+        if (count($subResults) == 0) {
+            return array();
+        } else if (count($subResults) == 0) {
+            // Index is optimized (only one segment)
+            // Do not perform array reindexing
+            return reset($subResults);
+        } else {
+            $result = call_user_func_array('array_merge', $subResults);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns documents filter for all documents containing term.
+     *
+     * It performs the same operation as termDocs, but return result as
+     * Zend_Search_Lucene_Index_DocsFilter object
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return Zend_Search_Lucene_Index_DocsFilter
+     */
+    public function termDocsFilter(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
+    {
+        $segmentStartDocId = 0;
+        $result = new Zend_Search_Lucene_Index_DocsFilter();
+
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            $subResults[] = $segmentInfo->termDocs($term, $segmentStartDocId, $docsFilter);
+
+            $segmentStartDocId += $segmentInfo->count();
+        }
+
+        if (count($subResults) == 0) {
+            return array();
+        } else if (count($subResults) == 0) {
+            // Index is optimized (only one segment)
+            // Do not perform array reindexing
+            return reset($subResults);
+        } else {
+            $result = call_user_func_array('array_merge', $subResults);
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Returns an array of all term freqs.
+     * Result array structure: array(docId => freq, ...)
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return integer
+     */
+    public function termFreqs(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
+    {
+        $result = array();
+        $segmentStartDocId = 0;
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            $result += $segmentInfo->termFreqs($term, $segmentStartDocId, $docsFilter);
+
+            $segmentStartDocId += $segmentInfo->count();
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns an array of all term positions in the documents.
+     * Result array structure: array(docId => array(pos1, pos2, ...), ...)
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return array
+     */
+    public function termPositions(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
+    {
+        $result = array();
+        $segmentStartDocId = 0;
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            $result += $segmentInfo->termPositions($term, $segmentStartDocId, $docsFilter);
+
+            $segmentStartDocId += $segmentInfo->count();
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Returns the number of documents in this index containing the $term.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @return integer
+     */
+    public function docFreq(Zend_Search_Lucene_Index_Term $term)
+    {
+        $result = 0;
+        foreach ($this->_segmentInfos as $segInfo) {
+            $termInfo = $segInfo->getTermInfo($term);
+            if ($termInfo !== null) {
+                $result += $termInfo->docFreq;
+            }
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Retrive similarity used by index reader
+     *
+     * @return Zend_Search_Lucene_Search_Similarity
+     */
+    public function getSimilarity()
+    {
+        return Zend_Search_Lucene_Search_Similarity::getDefault();
+    }
+
+
+    /**
+     * Returns a normalization factor for "field, document" pair.
+     *
+     * @param integer $id
+     * @param string $fieldName
+     * @return float
+     */
+    public function norm($id, $fieldName)
+    {
+        if ($id >= $this->_docCount) {
+            return null;
+        }
+
+        $segmentStartId = 0;
+        foreach ($this->_segmentInfos as $segInfo) {
+            if ($segmentStartId + $segInfo->count() > $id) {
+                break;
+            }
+
+            $segmentStartId += $segInfo->count();
+        }
+
+        if ($segInfo->isDeleted($id - $segmentStartId)) {
+            return 0;
+        }
+
+        return $segInfo->norm($id - $segmentStartId, $fieldName);
+    }
+
+    /**
+     * Returns true if any documents have been deleted from this index.
+     *
+     * @return boolean
+     */
+    public function hasDeletions()
+    {
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            if ($segmentInfo->hasDeletions()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Deletes a document from the index.
+     * $id is an internal document id
+     *
+     * @param integer|Zend_Search_Lucene_Search_QueryHit $id
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function delete($id)
+    {
+        if ($id instanceof Zend_Search_Lucene_Search_QueryHit) {
+            /* @var $id Zend_Search_Lucene_Search_QueryHit */
+            $id = $id->id;
+        }
+
+        if ($id >= $this->_docCount) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Document id is out of the range.');
+        }
+
+        $segmentStartId = 0;
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            if ($segmentStartId + $segmentInfo->count() > $id) {
+                break;
+            }
+
+            $segmentStartId += $segmentInfo->count();
+        }
+        $segmentInfo->delete($id - $segmentStartId);
+
+        $this->_hasChanges = true;
+    }
+
+
+
+    /**
+     * Adds a document to this index.
+     *
+     * @param Zend_Search_Lucene_Document $document
+     */
+    public function addDocument(Zend_Search_Lucene_Document $document)
+    {
+        $this->_getIndexWriter()->addDocument($document);
+        $this->_docCount++;
+
+        $this->_hasChanges = true;
+    }
+
+
+    /**
+     * Update document counter
+     */
+    private function _updateDocCount()
+    {
+        $this->_docCount = 0;
+        foreach ($this->_segmentInfos as $segInfo) {
+            $this->_docCount += $segInfo->count();
+        }
+    }
+
+    /**
+     * Commit changes resulting from delete() or undeleteAll() operations.
+     *
+     * @todo undeleteAll processing.
+     */
+    public function commit()
+    {
+        if ($this->_hasChanges) {
+            $this->_getIndexWriter()->commit();
+
+            $this->_updateDocCount();
+
+            $this->_hasChanges = false;
+        }
+    }
+
+
+    /**
+     * Optimize index.
+     *
+     * Merges all segments into one
+     */
+    public function optimize()
+    {
+        // Commit changes if any changes have been made
+        $this->commit();
+
+        if (count($this->_segmentInfos) > 1 || $this->hasDeletions()) {
+            $this->_getIndexWriter()->optimize();
+            $this->_updateDocCount();
+        }
+    }
+
+
+    /**
+     * Returns an array of all terms in this index.
+     *
+     * @return array
+     */
+    public function terms()
+    {
+        $result = array();
+
+        $segmentInfoQueue = new Zend_Search_Lucene_Index_TermsPriorityQueue();
+
+        foreach ($this->_segmentInfos as $segmentInfo) {
+            $segmentInfo->resetTermsStream();
+
+            // Skip "empty" segments
+            if ($segmentInfo->currentTerm() !== null) {
+                $segmentInfoQueue->put($segmentInfo);
+            }
+        }
+
+        while (($segmentInfo = $segmentInfoQueue->pop()) !== null) {
+            if ($segmentInfoQueue->top() === null ||
+                $segmentInfoQueue->top()->currentTerm()->key() !=
+                            $segmentInfo->currentTerm()->key()) {
+                // We got new term
+                $result[] = $segmentInfo->currentTerm();
+            }
+
+            if ($segmentInfo->nextTerm() !== null) {
+                // Put segment back into the priority queue
+                $segmentInfoQueue->put($segmentInfo);
+            }
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Terms stream priority queue object
+     *
+     * @var Zend_Search_Lucene_TermStreamsPriorityQueue
+     */
+    private $_termsStream = null;
+
+    /**
+     * Reset terms stream.
+     */
+    public function resetTermsStream()
+    {
+    	if ($this->_termsStream === null) {
+            $this->_termsStream = new Zend_Search_Lucene_TermStreamsPriorityQueue($this->_segmentInfos);
+    	} else {
+    		$this->_termsStream->resetTermsStream();
+    	}
+    }
+
+    /**
+     * Skip terms stream up to specified term preffix.
+     *
+     * Prefix contains fully specified field info and portion of searched term
+     *
+     * @param Zend_Search_Lucene_Index_Term $prefix
+     */
+    public function skipTo(Zend_Search_Lucene_Index_Term $prefix)
+    {
+        $this->_termsStream->skipTo($prefix);
+    }
+
+    /**
+     * Scans terms dictionary and returns next term
+     *
+     * @return Zend_Search_Lucene_Index_Term|null
+     */
+    public function nextTerm()
+    {
+        return $this->_termsStream->nextTerm();
+    }
+
+    /**
+     * Returns term in current position
+     *
+     * @return Zend_Search_Lucene_Index_Term|null
+     */
+    public function currentTerm()
+    {
+        return $this->_termsStream->currentTerm();
+    }
+
+    /**
+     * Close terms stream
+     *
+     * Should be used for resources clean up if stream is not read up to the end
+     */
+    public function closeTermsStream()
+    {
+        $this->_termsStream->closeTermsStream();
+        $this->_termsStream = null;
+    }
+
+
+    /*************************************************************************
+    @todo UNIMPLEMENTED
+    *************************************************************************/
+    /**
+     * Undeletes all documents currently marked as deleted in this index.
+     *
+     * @todo Implementation
+     */
+    public function undeleteAll()
+    {}
+}

@@ -1,47 +1,144 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_ViewScript
+ *
+ * Render a view script as a decorator
+ *
+ * Accepts the options:
+ * - separator: separator to use between view script content and provided content (defaults to PHP_EOL)
+ * - placement: whether to append or prepend view script content to provided content (defaults to prepend)
+ * - viewScript: view script to use
+ *
+ * The view script is rendered as a partial; the element being decorated is 
+ * passed in as the 'element' variable:
+ * <code>
+ * // in view script:
+ * echo $this->element->getLabel();
+ * </code>
+ *
+ * Any options other than separator, placement, and viewScript are passed to 
+ * the partial as local variables.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ViewScript.php 8651 2008-03-07 20:24:34Z matthew $
+ */
+class Zend_Form_Decorator_ViewScript extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Default placement: append
+     * @var string
+     */
+    protected $_placement = 'APPEND';
+
+    /**
+     * View script to render
+     * @var string
+     */
+    protected $_viewScript;
+
+    /**
+     * Set view script
+     * 
+     * @param  string $script 
+     * @return Zend_Form_Decorator_ViewScript
+     */
+    public function setViewScript($script)
+    {
+        $this->_viewScript = (string) $script;
+        return $this;
+    }
+
+    /**
+     * Get view script
+     * 
+     * @return string|null
+     */
+    public function getViewScript()
+    {
+        if (null === $this->_viewScript) {
+            if (null !== ($element = $this->getElement())) {
+                if (null !== ($viewScript = $element->getAttrib('viewScript'))) {
+                    $this->setViewScript($viewScript);
+                    return $viewScript;
+                }
+            }
+
+            if (null !== ($viewScript = $this->getOption('viewScript'))) {
+                $this->setViewScript($viewScript)
+                     ->removeOption('viewScript');
+            }
+        }
+
+        return $this->_viewScript;
+    }
+
+    /**
+     * Render a view script
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $viewScript = $this->getViewScript();
+        if (empty($viewScript)) {
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception('No view script registered with ViewScript decorator');
+        }
+
+        $separator = $this->getSeparator();
+        $placement = $this->getPlacement();
+
+        $vars              = $this->getOptions();
+        $vars['element']   = $element;
+        $vars['content']   = $content;
+        $vars['decorator'] = $this;
+
+        $renderedContent = $view->partial($viewScript, $vars);
+
+        // Get placement again to see if it has changed
+        $placement = $this->getPlacement();
+
+        switch ($placement) {
+            case self::PREPEND:
+                return $renderedContent . $separator . $content;
+            case self::APPEND:
+                return $content . $separator . $renderedContent;
+            default:
+                return $renderedContent;
+        }
+    }
+}

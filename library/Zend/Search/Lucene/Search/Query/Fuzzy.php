@@ -1,208 +1,487 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Query */
+require_once 'Zend/Search/Lucene/Search/Query.php';
+
+/** Zend_Search_Lucene_Search_Query_MultiTerm */
+require_once 'Zend/Search/Lucene/Search/Query/MultiTerm.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Query_Fuzzy extends Zend_Search_Lucene_Search_Query
+{
+    /** Default minimum similarity */
+    const DEFAULT_MIN_SIMILARITY = 0.5;
+
+    /**
+     * Maximum number of matched terms.
+     * Apache Lucene defines this limitation as boolean query maximum number of clauses:
+     * org.apache.lucene.search.BooleanQuery.getMaxClauseCount()
+     */
+    const MAX_CLAUSE_COUNT = 1024;
+
+    /**
+     * Array of precalculated max distances
+     *
+     * keys are integers representing a word size
+     */
+    private $_maxDistances = array();
+
+    /**
+     * Base searching term.
+     *
+     * @var Zend_Search_Lucene_Index_Term
+     */
+    private $_term;
+
+    /**
+     * A value between 0 and 1 to set the required similarity
+     *  between the query term and the matching terms. For example, for a
+     *  _minimumSimilarity of 0.5 a term of the same length
+     *  as the query term is considered similar to the query term if the edit distance
+     *  between both terms is less than length(term)*0.5
+     *
+     * @var float
+     */
+    private $_minimumSimilarity;
+
+    /**
+     * The length of common (non-fuzzy) prefix
+     *
+     * @var integer
+     */
+    private $_prefixLength;
+
+    /**
+     * Matched terms.
+     *
+     * Matched terms list.
+     * It's filled during the search (rewrite operation) and may be used for search result
+     * post-processing
+     *
+     * Array of Zend_Search_Lucene_Index_Term objects
+     *
+     * @var array
+     */
+    private $_matches = null;
+
+    /**
+     * Matched terms scores
+     *
+     * @var array
+     */
+    private $_scores = null;
+
+    /**
+     * Array of the term keys.
+     * Used to sort terms in alphabetical order if terms have the same socres
+     *
+     * @var array
+     */
+    private $_termKeys = null;
+
+    /**
+     * Default non-fuzzy prefix length
+     *
+     * @var integer
+     */
+    private static $_defaultPrefixLength = 3;
+
+    /**
+     * Zend_Search_Lucene_Search_Query_Wildcard constructor.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param float   $minimumSimilarity
+     * @param integer $prefixLength
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function __construct(Zend_Search_Lucene_Index_Term $term, $minimumSimilarity = self::DEFAULT_MIN_SIMILARITY, $prefixLength = null)
+    {
+        if ($minimumSimilarity < 0) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('minimumSimilarity cannot be less than 0');
+        }
+        if ($minimumSimilarity >= 1) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('minimumSimilarity cannot be greater than or equal to 1');
+        }
+        if ($prefixLength < 0) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('prefixLength cannot be less than 0');
+        }
+
+        $this->_term              = $term;
+        $this->_minimumSimilarity = $minimumSimilarity;
+        $this->_prefixLength      = ($prefixLength !== null)? $prefixLength : self::$_defaultPrefixLength;
+    }
+
+    /**
+     * Get default non-fuzzy prefix length
+     *
+     * @return integer
+     */
+    public static function getDefaultPrefixLength()
+    {
+        return self::$_defaultPrefixLength;
+    }
+
+    /**
+     * Set default non-fuzzy prefix length
+     *
+     * @param integer $defaultPrefixLength
+     */
+    public static function setDefaultPrefixLength($defaultPrefixLength)
+    {
+        self::$_defaultPrefixLength = $defaultPrefixLength;
+    }
+
+    /**
+     * Calculate maximum distance for specified word length
+     *
+     * @param integer $prefixLength
+     * @param integer $termLength
+     * @param integer $length
+     * @return integer
+     */
+    private function _calculateMaxDistance($prefixLength, $termLength, $length)
+    {
+        $this->_maxDistances[$length] = (int) ((1 - $this->_minimumSimilarity)*(min($termLength, $length) + $prefixLength));
+        return $this->_maxDistances[$length];
+    }
+
+    /**
+     * Re-write query into primitive queries in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function rewrite(Zend_Search_Lucene_Interface $index)
+    {
+        $this->_matches  = array();
+        $this->_scores   = array();
+        $this->_termKeys = array();
+
+        if ($this->_term->field === null) {
+            // Search through all fields
+            $fields = $index->getFieldNames(true /* indexed fields list */);
+        } else {
+            $fields = array($this->_term->field);
+        }
+
+        $prefix           = Zend_Search_Lucene_Index_Term::getPrefix($this->_term->text, $this->_prefixLength);
+        $prefixByteLength = strlen($prefix);
+        $prefixUtf8Length = Zend_Search_Lucene_Index_Term::getLength($prefix);
+
+        $termLength       = Zend_Search_Lucene_Index_Term::getLength($this->_term->text);
+
+        $termRest         = substr($this->_term->text, $prefixByteLength);
+        // we calculate length of the rest in bytes since levenshtein() is not UTF-8 compatible
+        $termRestLength   = strlen($termRest);
+
+        $scaleFactor = 1/(1 - $this->_minimumSimilarity);
+
+        $maxTerms = Zend_Search_Lucene::getTermsPerQueryLimit();
+        foreach ($fields as $field) {
+            $index->resetTermsStream();
+
+            if ($prefix != '') {
+                $index->skipTo(new Zend_Search_Lucene_Index_Term($prefix, $field));
+
+                while ($index->currentTerm() !== null          &&
+                       $index->currentTerm()->field == $field  &&
+                       substr($index->currentTerm()->text, 0, $prefixByteLength) == $prefix) {
+                    // Calculate similarity
+                    $target = substr($index->currentTerm()->text, $prefixByteLength);
+
+                    $maxDistance = isset($this->_maxDistances[strlen($target)])?
+                                       $this->_maxDistances[strlen($target)] :
+                                       $this->_calculateMaxDistance($prefixUtf8Length, $termRestLength, strlen($target));
+
+                    if ($termRestLength == 0) {
+                        // we don't have anything to compare.  That means if we just add
+                        // the letters for current term we get the new word
+                        $similarity = (($prefixUtf8Length == 0)? 0 : 1 - strlen($target)/$prefixUtf8Length);
+                    } else if (strlen($target) == 0) {
+                        $similarity = (($prefixUtf8Length == 0)? 0 : 1 - $termRestLength/$prefixUtf8Length);
+                    } else if ($maxDistance < abs($termRestLength - strlen($target))){
+                        //just adding the characters of term to target or vice-versa results in too many edits
+                        //for example "pre" length is 3 and "prefixes" length is 8.  We can see that
+                        //given this optimal circumstance, the edit distance cannot be less than 5.
+                        //which is 8-3 or more precisesly abs(3-8).
+                        //if our maximum edit distance is 4, then we can discard this word
+                        //without looking at it.
+                        $similarity = 0;
+                    } else {
+                        $similarity = 1 - levenshtein($termRest, $target)/($prefixUtf8Length + min($termRestLength, strlen($target)));
+                    }
+
+                    if ($similarity > $this->_minimumSimilarity) {
+                        $this->_matches[]  = $index->currentTerm();
+                        $this->_termKeys[] = $index->currentTerm()->key();
+                        $this->_scores[]   = ($similarity - $this->_minimumSimilarity)*$scaleFactor;
+
+                        if ($maxTerms != 0  &&  count($this->_matches) > $maxTerms) {
+                            require_once 'Zend/Search/Lucene/Exception.php';
+                            throw new Zend_Search_Lucene_Exception('Terms per query limit is reached.');
+                        }
+                    }
+
+                    $index->nextTerm();
+                }
+            } else {
+                $index->skipTo(new Zend_Search_Lucene_Index_Term('', $field));
+
+                while ($index->currentTerm() !== null  &&  $index->currentTerm()->field == $field) {
+                    // Calculate similarity
+                    $target = $index->currentTerm()->text;
+
+                    $maxDistance = isset($this->_maxDistances[strlen($target)])?
+                                       $this->_maxDistances[strlen($target)] :
+                                       $this->_calculateMaxDistance(0, $termRestLength, strlen($target));
+
+                    if ($maxDistance < abs($termRestLength - strlen($target))){
+                        //just adding the characters of term to target or vice-versa results in too many edits
+                        //for example "pre" length is 3 and "prefixes" length is 8.  We can see that
+                        //given this optimal circumstance, the edit distance cannot be less than 5.
+                        //which is 8-3 or more precisesly abs(3-8).
+                        //if our maximum edit distance is 4, then we can discard this word
+                        //without looking at it.
+                        $similarity = 0;
+                    } else {
+                        $similarity = 1 - levenshtein($termRest, $target)/min($termRestLength, strlen($target));
+                    }
+
+                    if ($similarity > $this->_minimumSimilarity) {
+                        $this->_matches[]  = $index->currentTerm();
+                        $this->_termKeys[] = $index->currentTerm()->key();
+                        $this->_scores[]   = ($similarity - $this->_minimumSimilarity)*$scaleFactor;
+
+                        if ($maxTerms != 0  &&  count($this->_matches) > $maxTerms) {
+                            require_once 'Zend/Search/Lucene/Exception.php';
+                            throw new Zend_Search_Lucene_Exception('Terms per query limit is reached.');
+                        }
+                    }
+
+                    $index->nextTerm();
+                }
+            }
+
+            $index->closeTermsStream();
+        }
+
+        if (count($this->_matches) == 0) {
+            return new Zend_Search_Lucene_Search_Query_Empty();
+        } else if (count($this->_matches) == 1) {
+            return new Zend_Search_Lucene_Search_Query_Term(reset($this->_matches));
+        } else {
+            $rewrittenQuery = new Zend_Search_Lucene_Search_Query_Boolean();
+
+            array_multisort($this->_scores,   SORT_DESC, SORT_NUMERIC,
+                            $this->_termKeys, SORT_ASC,  SORT_STRING,
+                            $this->_matches);
+
+            $termCount = 0;
+            foreach ($this->_matches as $id => $matchedTerm) {
+                $subquery = new Zend_Search_Lucene_Search_Query_Term($matchedTerm);
+                $subquery->setBoost($this->_scores[$id]);
+
+                $rewrittenQuery->addSubquery($subquery);
+
+                $termCount++;
+                if ($termCount >= self::MAX_CLAUSE_COUNT) {
+                    break;
+                }
+            }
+
+            return $rewrittenQuery;
+        }
+    }
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function optimize(Zend_Search_Lucene_Interface $index)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Fuzzy query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function getQueryTerms()
+    {
+        if ($this->_matches === null) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Search or rewrite operations have to be performed before.');
+        }
+
+        return $this->_matches;
+    }
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function createWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Fuzzy query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Fuzzy query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function matchedDocs()
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Fuzzy query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function score($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Fuzzy query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Query specific matches highlighting
+     *
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
+     */
+    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
+    {
+        $words = array();
+
+        $prefix           = Zend_Search_Lucene_Index_Term::getPrefix($this->_term->text, $this->_prefixLength);
+        $prefixByteLength = strlen($prefix);
+        $prefixUtf8Length = Zend_Search_Lucene_Index_Term::getLength($prefix);
+
+        $termLength       = Zend_Search_Lucene_Index_Term::getLength($this->_term->text);
+
+        $termRest         = substr($this->_term->text, $prefixByteLength);
+        // we calculate length of the rest in bytes since levenshtein() is not UTF-8 compatible
+        $termRestLength   = strlen($termRest);
+
+        $scaleFactor = 1/(1 - $this->_minimumSimilarity);
+
+
+        $docBody = $highlighter->getDocument()->getFieldUtf8Value('body');
+        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($docBody, 'UTF-8');
+        foreach ($tokens as $token) {
+        	$termText = $token->getTermText();
+
+        	if (substr($termText, 0, $prefixByteLength) == $prefix) {
+                // Calculate similarity
+                $target = substr($termText, $prefixByteLength);
+
+                $maxDistance = isset($this->_maxDistances[strlen($target)])?
+                                   $this->_maxDistances[strlen($target)] :
+                                   $this->_calculateMaxDistance($prefixUtf8Length, $termRestLength, strlen($target));
+
+                if ($termRestLength == 0) {
+                    // we don't have anything to compare.  That means if we just add
+                    // the letters for current term we get the new word
+                    $similarity = (($prefixUtf8Length == 0)? 0 : 1 - strlen($target)/$prefixUtf8Length);
+                } else if (strlen($target) == 0) {
+                    $similarity = (($prefixUtf8Length == 0)? 0 : 1 - $termRestLength/$prefixUtf8Length);
+                } else if ($maxDistance < abs($termRestLength - strlen($target))){
+                    //just adding the characters of term to target or vice-versa results in too many edits
+                    //for example "pre" length is 3 and "prefixes" length is 8.  We can see that
+                    //given this optimal circumstance, the edit distance cannot be less than 5.
+                    //which is 8-3 or more precisesly abs(3-8).
+                    //if our maximum edit distance is 4, then we can discard this word
+                    //without looking at it.
+                    $similarity = 0;
+                } else {
+                    $similarity = 1 - levenshtein($termRest, $target)/($prefixUtf8Length + min($termRestLength, strlen($target)));
+                }
+
+                if ($similarity > $this->_minimumSimilarity) {
+                    $words[] = $termText;
+                }
+            }
+        }
+
+        $highlighter->highlight($words);
+    }
+
+    /**
+     * Print a query
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        // It's used only for query visualisation, so we don't care about characters escaping
+        return (($this->_term->field === null)? '' : $this->_term->field . ':')
+             . $this->_term->text . '~'
+             . (($this->_minimumSimilarity != self::DEFAULT_MIN_SIMILARITY)? round($this->_minimumSimilarity, 4) : '')
+             . (($this->getBoost() != 1)? '^' . round($this->getBoost(), 4) : '');
+    }
+}
+

@@ -1,120 +1,101 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>phpThumb :: sample photo gallery demo</title>
+</head>
+<body>
+This is a demo of how you can use <a href="http://phpthumb.sourceforge.net">phpThumb()</a> in an image gallery.<br>
+<hr>
+<?php
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+///                                                         //
+// phpThumb.demo.gallery.php                                //
+// James Heinrich <info@silisoftware.com>                   //
+//                                                          //
+// Demo showing basic usage of phpThumb in a photo gallery  //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
+
+$docroot = realpath((getenv('DOCUMENT_ROOT') && preg_match('#^'.preg_quote(realpath(getenv('DOCUMENT_ROOT'))).'#', realpath(__FILE__))) ? getenv('DOCUMENT_ROOT') : str_replace(dirname(@$_SERVER['PHP_SELF']), '', str_replace(DIRECTORY_SEPARATOR, '/', dirname(__FILE__))));
+$basedir = '/demo/images/';                         // webroot-relative path to main images directory (only this and subdirectories of this will be displayed)
+$thumb   = '/demo/phpThumb.php';                    // webroot-relative path to "phpThumb.php"
+$popup   = '/demo/demo/phpThumb.demo.showpic.php';  // webroot-relative path to "phpThumb.demo.showpic.php" (only used if $use_popup == true)
+$thumbnailsize = 120;                               // size of thumbnails in pixels when browsing gallery
+$displaysize   = 480;                               // size of large image display (popup or plain image) after clicking on thumbnail
+$use_popup     = true;                              // if true, open large image in self-resizing popup window; if false, display larger image in main window
+
+//////////////////////////////////////////////////////////////
+
+$dirlimit = realpath($docroot.'/'.$basedir);
+
+$captionfile = $docroot.'/'.$basedir.(@$_REQUEST['dir'] ? $_REQUEST['dir'].'/' : '').'captions.txt';
+if (file_exists($captionfile)) {
+	$filecontents = file($captionfile);
+	foreach ($filecontents as $key => $value) {
+		@list($photo, $caption) = explode("\t", $value);
+		$CAPTIONS[$photo] = $caption;
+	}
+}
+
+if (!empty($_REQUEST['pic'])) {
+
+	$alt = @$CAPTIONS[$_REQUEST['pic']] ? $CAPTIONS[$_REQUEST['pic']] : $_REQUEST['pic'];
+	echo '<img src="'.$thumb.'?src='.htmlentities(urlencode($basedir.@$_REQUEST['dir'].'/'.$_REQUEST['pic']).'&w='.$displaysize.'&h='.$displaysize).'" border="0" alt="'.htmlentities($alt).'"><br>';
+	echo '<div align="center">'.htmlentities(@$CAPTIONS[$_REQUEST['pic']]).'</div>';
+
+} else {
+
+	$currentdir = realpath($docroot.'/'.$basedir.@$_REQUEST['dir']);
+	if (!preg_match('#^'.preg_quote($dirlimit).'#', $currentdir)) {
+		echo 'Cannot browse to "'.htmlentities($currentdir).'"<br>';
+	} elseif ($dh = @opendir($currentdir)) {
+		$folders = array();
+		$pictures = array();
+		while ($file = readdir($dh)) {
+			if (is_dir($currentdir.'/'.$file) && ($file{0} != '.')) {
+				$folders[] = $file;
+			} elseif (preg_match('#\\.(jpe?g|gif|png|bmp|tiff?)$#i', $file)) {
+				$pictures[] = $file;
+			}
+		}
+		closedir($dh);
+		if (preg_match('#^'.preg_quote($dirlimit).'#', realpath($currentdir.'/..'))) {
+			echo '<a href="'.htmlentities($_SERVER['PHP_SELF'].'?dir='.urlencode($_REQUEST['dir'].'/..'), ENT_QUOTES).'">Parent directory</a><br>';
+		}
+		if (!empty($folders)) {
+			echo '<ul>';
+			rsort($folders);
+			foreach ($folders as $dummy => $folder) {
+				echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?dir='.urlencode(@$_REQUEST['dir'].'/'.$folder), ENT_QUOTES).'">'.htmlentities($folder).'</a></li>';
+			}
+			echo '</ul>';
+		}
+		if (!empty($pictures)) {
+			foreach ($pictures as $file) {
+				$alt = (@$CAPTIONS[$file] ? $CAPTIONS[$file] : $file);
+				echo '<table style="float: left;">'.(!empty($CAPTIONS[$file]) ? '<caption align="bottom">'.htmlentities($CAPTIONS[$file]).'</caption>' : '').'<tbody><tr><td>';
+				if ($use_popup) {
+					echo '<a title="'.htmlentities($alt, ENT_QUOTES).'" href="#" onClick="window.open(\''.$popup.'?src='.htmlentities($basedir.@$_REQUEST['dir'].'/'.$file.'&w='.$displaysize.'&h='.$displaysize.'&title='.urlencode(@$CAPTIONS[$file] ? $CAPTIONS[$file] : $file)).'\', \'showpic\', \'width='.$displaysize.',height='.$displaysize.',resizable=no,status=no,menubar=no,toolbar=no,scrollbars=no\'); return false;">';
+				} else {
+					echo '<a title="'.htmlentities($alt, ENT_QUOTES).'" href="'.$_SERVER['PHP_SELF'].'?dir='.htmlentities(urlencode(@$_REQUEST['dir']).'&pic='.urlencode($file)).'">';
+				}
+				echo '<img src="'.$thumb.'?src='.htmlentities(urlencode($basedir.@$_REQUEST['dir'].'/'.$file).'&zc=1&w='.$thumbnailsize.'&h='.$thumbnailsize).'" border="1" width="'.$thumbnailsize.'" height="'.$thumbnailsize.'" alt="'.htmlentities($alt).'">';
+				echo '</a></td></tr></tbody></table>';
+			}
+			echo '<br clear="all">';
+		} else {
+			echo '<i>No pictures in "'.htmlentities(str_replace(realpath($docroot), '', realpath($docroot.'/'.$basedir.@$_REQUEST['dir']))).'"</i>';
+		}
+	} else {
+		echo 'failed to open "'.htmlentities($basedir).'"';
+	}
+
+}
 ?>
-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
-XOsVHGwxSVQ6HRFgKJLntfupaQW7UA7Y
+</body>
+</html>

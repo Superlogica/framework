@@ -1,62 +1,188 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_FileParserDataSource */
+require_once 'Zend/Pdf/FileParserDataSource.php';
+
+
+/**
+ * Concrete subclass of {@link Zend_Pdf_FileParserDataSource} that provides an
+ * interface to filesystem objects.
+ *
+ * Note that this class cannot be used for other sources that may be supported
+ * by {@link fopen()} (through URL wrappers). It may be used for local
+ * filesystem objects only.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_FileParserDataSource_File extends Zend_Pdf_FileParserDataSource
+{
+  /**** Instance Variables ****/
+
+
+    /**
+     * Fully-qualified path to the file.
+     * @var string
+     */
+    protected $_filePath = '';
+
+    /**
+     * File resource handle .
+     * @var resource
+     */
+    protected $_fileResource = null;
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Concrete Class Implementation */
+
+    /**
+     * Object constructor.
+     *
+     * Validates the path to the file, ensures that it is readable, then opens
+     * it for reading.
+     *
+     * Throws an exception if the file is missing or cannot be opened.
+     *
+     * @param string $filePath Fully-qualified path to the file.
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($filePath)
+    {
+        if (! (is_file($filePath) || is_link($filePath))) {
+            throw new Zend_Pdf_Exception("Invalid file path: $filePath",
+                                         Zend_Pdf_Exception::BAD_FILE_PATH);
+        }
+        if (! is_readable($filePath)) {
+            throw new Zend_Pdf_Exception("File is not readable: $filePath",
+                                         Zend_Pdf_Exception::NOT_READABLE);
+        }
+        if (($this->_size = @filesize($filePath)) === false) {
+            throw new Zend_Pdf_Exception("Error while obtaining file size: $filePath",
+                                         Zend_Pdf_Exception::CANT_GET_FILE_SIZE);
+        }
+        if (($this->_fileResource = @fopen($filePath, 'rb')) === false) {
+            throw new Zend_Pdf_Exception("Cannot open file for reading: $filePath",
+                                         Zend_Pdf_Exception::CANT_OPEN_FILE);
+        }
+        $this->_filePath = $filePath;
+    }
+
+    /**
+     * Object destructor.
+     *
+     * Closes the file if it had been successfully opened.
+     */
+    public function __destruct()
+    {
+        if (is_resource($this->_fileResource)) {
+            @fclose($this->_fileResource);
+        }
+    }
+
+    /**
+     * Returns the specified number of raw bytes from the file at the byte
+     * offset of the current read position.
+     *
+     * Advances the read position by the number of bytes read.
+     *
+     * Throws an exception if an error was encountered while reading the file or
+     * if there is insufficient data to completely fulfill the request.
+     *
+     * @param integer $byteCount Number of bytes to read.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readBytes($byteCount)
+    {
+        $bytes = @fread($this->_fileResource, $byteCount);
+        if ($bytes === false) {
+            throw new Zend_Pdf_Exception('Unexpected error while reading file',
+                                         Zend_Pdf_Exception::ERROR_DURING_READ);
+        }
+        if (strlen($bytes) != $byteCount) {
+            throw new Zend_Pdf_Exception("Insufficient data to read $byteCount bytes",
+                                         Zend_Pdf_Exception::INSUFFICIENT_DATA);
+        }
+        $this->_offset += $byteCount;
+        return $bytes;
+    }
+
+    /**
+     * Returns the entire contents of the file as a string.
+     *
+     * Preserves the current file seek position.
+     *
+     * @return string
+     */
+    public function readAllBytes()
+    {
+        return file_get_contents($this->_filePath);
+    }
+
+
+  /* Object Magic Methods */
+
+    /**
+     * Returns the full filesystem path of the file.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->_filePath;
+    }
+
+
+  /* Primitive Methods */
+
+    /**
+     * Seeks the file read position to the specified byte offset.
+     *
+     * Throws an exception if the file pointer cannot be moved or if it is
+     * moved beyond EOF (end of file).
+     *
+     * @param integer $offset Destination byte offset.
+     * @throws Zend_Pdf_Exception
+     */
+    public function moveToOffset($offset)
+    {
+        if ($this->_offset == $offset) {
+            return;    // Not moving; do nothing.
+        }
+        parent::moveToOffset($offset);
+        $result = @fseek($this->_fileResource, $offset, SEEK_SET);
+        if ($result !== 0) {
+            throw new Zend_Pdf_Exception('Error while setting new file position',
+                                         Zend_Pdf_Exception::CANT_SET_FILE_POSITION);
+        }
+        if (feof($this->_fileResource)) {
+            throw new Zend_Pdf_Exception('Moved beyond the end of the file',
+                                         Zend_Pdf_Exception::MOVE_BEYOND_END_OF_FILE);
+        }
+    }
+
+}

@@ -1,131 +1,500 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-JrRypZGJIpASvjU+OixWio5x+qz+fLvp3f0=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Navigation
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Navigation_Container
+ *
+ * Container class for Zend_Navigation_Page classes.
+ *
+ * @category  Zend
+ * @package   Zend_Navigation
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Navigation_Container implements RecursiveIterator, Countable
+{
+    /**
+     * Contains sub pages
+     *
+     * @var array
+     */
+    protected $_pages = array();
+
+    /**
+     * An index that contains the order in which to iterate pages
+     *
+     * @var array
+     */
+    protected $_index = array();
+
+    /**
+     * Whether index is dirty and needs to be re-arranged
+     *
+     * @var bool
+     */
+    protected $_dirtyIndex = false;
+
+    // Internal methods:
+
+    /**
+     * Sorts the page index according to page order
+     *
+     * @return void
+     */
+    protected function _sort()
+    {
+        if ($this->_dirtyIndex) {
+            $newIndex = array();
+            $index = 0;
+
+            foreach ($this->_pages as $hash => $page) {
+                $order = $page->getOrder();
+                if ($order === null) {
+                    $newIndex[$hash] = $index;
+                    $index++;
+                } else {
+                    $newIndex[$hash] = $order;
+                }
+            }
+
+            asort($newIndex);
+            $this->_index = $newIndex;
+            $this->_dirtyIndex = false;
+        }
+    }
+
+    // Public methods:
+
+    /**
+     * Notifies container that the order of pages are updated
+     *
+     * @return void
+     */
+    public function notifyOrderUpdated()
+    {
+        $this->_dirtyIndex = true;
+    }
+
+    /**
+     * Adds a page to the container
+     *
+     * This method will inject the container as the given page's parent by
+     * calling {@link Zend_Navigation_Page::setParent()}.
+     *
+     * @param  Zend_Navigation_Page|array|Zend_Config $page  page to add
+     * @return Zend_Navigation_Container                     fluent interface,
+     *                                                       returns self
+     * @throws Zend_Navigation_Exception                     if page is invalid
+     */
+    public function addPage($page)
+    {
+        if ($page === $this) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                'A page cannot have itself as a parent');
+        }
+
+        if (is_array($page) || $page instanceof Zend_Config) {
+            require_once 'Zend/Navigation/Page.php';
+            $page = Zend_Navigation_Page::factory($page);
+        } elseif (!$page instanceof Zend_Navigation_Page) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $page must be an instance of ' .
+                    'Zend_Navigation_Page or Zend_Config, or an array');
+        }
+
+        $hash = $page->hashCode();
+
+        if (array_key_exists($hash, $this->_index)) {
+            // page is already in container
+            return $this;
+        }
+
+        // adds page to container and sets dirty flag
+        $this->_pages[$hash] = $page;
+        $this->_index[$hash] = $page->getOrder();
+        $this->_dirtyIndex = true;
+
+        // inject self as page parent
+        $page->setParent($this);
+
+        return $this;
+    }
+
+    /**
+     * Adds several pages at once
+     *
+     * @param  array|Zend_Config $pages   pages to add
+     * @return Zend_Navigation_Container  fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if $pages is not array or Zend_Config
+     */
+    public function addPages($pages)
+    {
+        if ($pages instanceof Zend_Config) {
+            $pages = $pages->toArray();
+        }
+
+        if (!is_array($pages)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $pages must be an array or an ' .
+                    'instance of Zend_Config');
+        }
+
+        foreach ($pages as $page) {
+            $this->addPage($page);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets pages this container should have, removing existing pages
+     *
+     * @param  array $pages               pages to set
+     * @return Zend_Navigation_Container  fluent interface, returns self
+     */
+    public function setPages(array $pages)
+    {
+        $this->removePages();
+        return $this->addPages($pages);
+    }
+
+    /**
+     * Returns pages in the container
+     *
+     * @return array  array of Zend_Navigation_Page instances
+     */
+    public function getPages()
+    {
+        return $this->_pages;
+    }
+
+    /**
+     * Removes the given page from the container
+     *
+     * @param  Zend_Navigation_Page|int $page  page to remove, either a page
+     *                                         instance or a specific page order
+     * @return bool                            whether the removal was
+     *                                         successful
+     */
+    public function removePage($page)
+    {
+        if ($page instanceof Zend_Navigation_Page) {
+            $hash = $page->hashCode();
+        } elseif (is_int($page)) {
+            $this->_sort();
+            if (!$hash = array_search($page, $this->_index)) {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+        if (isset($this->_pages[$hash])) {
+            unset($this->_pages[$hash]);
+            unset($this->_index[$hash]);
+            $this->_dirtyIndex = true;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Removes all pages in container
+     *
+     * @return Zend_Navigation_Container  fluent interface, returns self
+     */
+    public function removePages()
+    {
+        $this->_pages = array();
+        $this->_index = array();
+        return $this;
+    }
+
+    /**
+     * Checks if the container has the given page
+     *
+     * @param  Zend_Navigation_Page $page       page to look for
+     * @param  bool                 $recursive  [optional] whether to search
+     *                                          recursively. Default is false.
+     * @return bool                             whether page is in container
+     */
+    public function hasPage(Zend_Navigation_Page $page, $recursive = false)
+    {
+        if (array_key_exists($page->hashCode(), $this->_index)) {
+            return true;
+        } elseif ($recursive) {
+            foreach ($this->_pages as $childPage) {
+                if ($childPage->hasPage($page, true)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Returns true if container contains any pages
+     *
+     * @return bool  whether container has any pages
+     */
+    public function hasPages()
+    {
+        return count($this->_index) > 0;
+    }
+
+    /**
+     * Returns a child page matching $property == $value, or null if not found
+     *
+     * @param  string $property           name of property to match against
+     * @param  mixed  $value              value to match property against
+     * @return Zend_Navigation_Page|null  matching page or null
+     */
+    public function findOneBy($property, $value)
+    {
+        $iterator = new RecursiveIteratorIterator($this,
+                            RecursiveIteratorIterator::SELF_FIRST);
+
+        foreach ($iterator as $page) {
+            if ($page->get($property) == $value) {
+                return $page;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Returns all child pages matching $property == $value, or an empty array
+     * if no pages are found
+     *
+     * @param  string $property  name of property to match against
+     * @param  mixed  $value     value to match property against
+     * @return array             array containing only Zend_Navigation_Page
+     *                           instances
+     */
+    public function findAllBy($property, $value)
+    {
+        $found = array();
+
+        $iterator = new RecursiveIteratorIterator($this,
+                            RecursiveIteratorIterator::SELF_FIRST);
+
+        foreach ($iterator as $page) {
+            if ($page->get($property) == $value) {
+                $found[] = $page;
+            }
+        }
+
+        return $found;
+    }
+
+    /**
+     * Returns page(s) matching $property == $value
+     *
+     * @param  string $property  name of property to match against
+     * @param  mixed  $value     value to match property against
+     * @param  bool   $all       [optional] whether an array of all matching
+     *                           pages should be returned, or only the first.
+     *                           If true, an array will be returned, even if not
+     *                           matching pages are found. If false, null will
+     *                           be returned if no matching page is found.
+     *                           Default is false.
+     * @return Zend_Navigation_Page|null  matching page or null
+     */
+    public function findBy($property, $value, $all = false)
+    {
+        if ($all) {
+            return $this->findAllBy($property, $value);
+        } else {
+            return $this->findOneBy($property, $value);
+        }
+    }
+
+    /**
+     * Magic overload: Proxy calls to finder methods
+     *
+     * Examples of finder calls:
+     * <code>
+     * // METHOD                    // SAME AS
+     * $nav->findByLabel('foo');    // $nav->findOneBy('label', 'foo');
+     * $nav->findOneByLabel('foo'); // $nav->findOneBy('label', 'foo');
+     * $nav->findAllByClass('foo'); // $nav->findAllBy('class', 'foo');
+     * </code>
+     *
+     * @param  string $method             method name
+     * @param  array  $arguments          method arguments
+     * @throws Zend_Navigation_Exception  if method does not exist
+     */
+    public function __call($method, $arguments)
+    {
+        if (@preg_match('/(find(?:One|All)?By)(.+)/', $method, $match)) {
+            return $this->{$match[1]}($match[2], $arguments[0]);
+        }
+
+        require_once 'Zend/Navigation/Exception.php';
+        throw new Zend_Navigation_Exception(sprintf(
+                'Bad method call: Unknown method %s::%s',
+                get_class($this),
+                $method));
+    }
+
+    /**
+     * Returns an array representation of all pages in container
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        $pages = array();
+
+        foreach ($this->_pages as $page) {
+            $pages[] = $page->toArray();
+        }
+
+        return $pages;
+    }
+
+    // RecursiveIterator interface:
+
+    /**
+     * Returns current page
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return Zend_Navigation_Page       current page or null
+     * @throws Zend_Navigation_Exception  if the index is invalid
+     */
+    public function current()
+    {
+        $this->_sort();
+        current($this->_index);
+        $hash = key($this->_index);
+
+        if (isset($this->_pages[$hash])) {
+            return $this->_pages[$hash];
+        } else {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Corruption detected in container; ' .
+                    'invalid key found in internal iterator');
+        }
+    }
+
+    /**
+     * Returns hash code of current page
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return string  hash code of current page
+     */
+    public function key()
+    {
+        $this->_sort();
+        return key($this->_index);
+    }
+
+    /**
+     * Moves index pointer to next page in the container
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return void
+     */
+    public function next()
+    {
+        $this->_sort();
+        next($this->_index);
+    }
+
+    /**
+     * Sets index pointer to first page in the container
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_sort();
+        reset($this->_index);
+    }
+
+    /**
+     * Checks if container index is valid
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return bool
+     */
+    public function valid()
+    {
+        $this->_sort();
+        return current($this->_index) !== false;
+    }
+
+    /**
+     * Proxy to hasPages()
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return bool  whether container has any pages
+     */
+    public function hasChildren()
+    {
+        return $this->hasPages();
+    }
+
+    /**
+     * Returns the child container.
+     *
+     * Implements RecursiveIterator interface.
+     *
+     * @return Zend_Navigation_Page|null
+     */
+    public function getChildren()
+    {
+        $hash = key($this->_index);
+
+        if (isset($this->_pages[$hash])) {
+            return $this->_pages[$hash];
+        }
+
+        return null;
+    }
+
+    // Countable interface:
+
+    /**
+     * Returns number of pages in container
+     *
+     * Implements Countable interface.
+     *
+     * @return int  number of pages in the container
+     */
+    public function count()
+    {
+        return count($this->_index);
+    }
+}

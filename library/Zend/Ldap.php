@@ -1,289 +1,759 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV58S5fHKfb1rQ8FemDZI6LnGWfe5DS5Uw4Tmwme2FwUSsfT107RfCpmeJmYujUHyx1NrsHxe1
-/hDZiuTNExAyKrq1JFOkdPMv5GUYOWsOvQGsj6bbgQ1nQIzT0bTBGS79t3BN5RQ+lC8Jxw7U+GZB
-le/Uadid/rJf4nSjDcoXnTPDUYX8ouMQXd8ucrhUEsfpaghjhty46BHCY4kzlNgpl7DSfvdpHqzk
-dhJ5IsPsIOi9dwoXDETnFSHBaqcSpLCjHtVbBow4GcWrNKWROp2894/XLphLrbb2KV+NLG4+RVgA
-mbYF9V4sAUZ6ekDzv1901Mly7bHFJMzYFMNK/FUnxKMRDhgV9RGBvANs/CeSDC4FsExO77Uu6+oH
-bRVAHXTXapLrtdZ+qzgomhBNPafwTB01hCWKZvqxwh1W3+j7axsQSfueV0Wrsa8dWG1/7uECeBQU
-pdc2TR9BGlH+7UQQsKGZiQwyaqh5xWb78vlekSn+6Bf0eKZESgG5G1gYrkV8OSa9GJXovi5X2edB
-roEcEG8o0Br5ilaDvJRVWwU79ii7RLcgIUEjn+p+ubK5SHW5dxATgyU+Z1etk2EjQdM2kpLg34IU
-NJz2Cdm2OlcmAPV8KvCp0/TeJTacJhhckfkoOH00Ecn5b/HEnpKRFMcMHV+0VuBAU2/6lpNxlAPi
-S4tMYHkPhgYFUBs+Q1oyctJcOfkqsxQDfkNovn3rmyszQPctul8YYvypv8Ot8x0wdWcF7hL3MP2t
-ETA7gsRNZ4+bJhZ3Lu+eX4ypaIGe3YetAYjNXeIjJHgfO8wiFsUUslumWDw5puOMrZramFizm/VC
-AqVjSnz+hO63vhNYvkGvz8qLGspdCBy5K1RBVHAfIMtjwPWaIme30Bv0p2nWo1742NdTfMvp7fQX
-GcVMzARCoghT7Wa6STnWUh9yaWMTooaZNjof0sFrvnnyCq6GTdGwGtOCk7DEcZGWp3WWtH2uFboc
-EllXLx5DkDGZGWZMPGxhcQC1yVtPHjQAz2vJXJyL/O4ZGOSbs6lfRJj8BVkFkNdRdRCKhig7waJf
-7wru5pw5B0yNMw6eoovdHk3Lk+sJ1B1uV2ap0VrgfNiSIGL6GTKT7B1Ve3O+EmeRaYP/kBhOSv+a
-QMqgwiTP4OwMJwRodbjTBnxbYa8CYkeDiafiGuRfK50uPTmrIW0ddAt24fd9zoEluzQ5Tk52igqc
-LdbJNcbrmxnAzf2W9KPFf+Qg8WMgszmhXA8QbrELD2tIu9m+SP1CTb96I7vxkExgwbmmn9lEzhFH
-j56h7e8u6FyGn8fVsZkDiPT0HAnpW6IjYzV4Al/EWrOfU1rQVq6voUGEsm/hvuQ2+6wDDgnaWpPe
-ygqOETk20j29XLApu9cNjF3DojANVwCJipk6p/N1n2yi2HhUut7k3BLlLY7hom68tQNK6tGIF/MJ
-OzEHj0NpOC5LpNVPuW2pHVA+aJ1zqYMLBBM5RTPiurdFR4gp3M8SwkpumFeHfREHHj+xlWHpgFcW
-H4BtrPhdI7iit/j9sAU0uwT4vb98uumJHeHpt5wLWp+QDem+rfmQ4EDLziGIBDDiAzR3EH5NeDrZ
-kds8/J2n1WAY6FNQAwG36sL0O0QWr4G2LfWnkGmVt7om5HEPhAMyONODue2yy9MhGjLc9HYJmVS3
-/rwM1GJkQ3z/hSwlXH9bSxT6ykxUWg+nnNuYDlW0LF2822iIQiwMOfN63O86DFWUhzWpNjB9hDeD
-hS/k304KeJwj697zkjodUh2D3loCHi4RCZBckX6ELe33iIdCQ+wO9oN6ASLKD0uNxxhZc8r8tyUz
-9GIiA5d9EourZX1vQ2tADw2hG/Yiq5fQ833ZWVTDjDS4OTH3OCYiYhnymEN/dKWS1hQAIK5PiStY
-qKMcxkejz14/tcCwfBTW6/3MBjZTG5Y2p+xXkUGcevaCs9pXSBS4/idBGidNIOgpPlwmTWR0erVh
-puMEF/3rjztD8HMPxOwCULYQf1NwetUtdmMybWd/Pkc84ZhpSdwX3u8NwJfAWxhz++HnSuTL8ebt
-dJhRBbirb3KhE/D4qS+siL0Ho6qSR0MB243v6lvz8/Eyirc5J8GdFJzLgX7aIwHojdYfDyfrGqGo
-0ueKs1nfCHDU23EGfTSJQnt5d1ie4FMDmg1glerqdK9+BFkOP37D76tlPu46Fs+//db2I4dL4CM/
-jHTCxWDhbz6msQhPTVgCofvX5vwnpKhh0Z5CQLQOt/xG+f9rarLdItie/ER9Ldd9PFJQsTnjijXJ
-BvUfACIkFo1uy4XFdKHa78eGTmD2L1nLGGGTDJPYt9Pzcm6EUpLNyxiwSxiHhtzbCeggWU2zTT24
-6q5iQ6iLoCdbC0S5XaLbNby8uIiOAtHtyN3ANRwctPpxHjJoGMhPCDJaML3V3DE9d+b7TSK82gLX
-QL18Ne3j8P5l/PiR1BtTClPtV+um3rkiC6hdOi+fU3/qvgMKKDw6prm90nS4cSGDfF8j23kKSbg5
-Lh2ppSDvStB1IbAyEvdRYqmQBrd2CXKW37s3WSwhbBaGswtjtLuHFSVcDcvActIoavX/DP02SUgG
-n3h0sZelOeiuAxSbLe6aIc3xoSmgEKtre7vlaLSaz40sZrAORy2KUiOVogIjRpWdLxYLEyCHuQ5a
-q8JbaV7X2WmsoX5OA6JzafE9K+K1QebFqgpX+fjMT+Lh/rqd5pH0lhHt2teKiIhSDoPIef2Cfez6
-2ORdrg4f65B5RRyn785/foh8grVn1Rrkcpki2LstjCsL7f5+4hSFqKuIs8m1Ckxk5DaSAuTWEt0F
-4otrrsLlhk/I59lw+gDAg7pkehoN4YNZkNdUxCQ+RhORzomAWLaUpz6Dwi1bVxEkuwU06vsJYt4S
-u27FTkuFi4QNPaSx09PPP1XpHf6g00S4nz6S1Bk+Wk3IvETfYSx42ezB9C675lXDN+ZB0FLf7VOV
-7xUJ1Y8YR9jW8gTojdGSKaiRAqQEd/0Z/Rcd4y/XJLGZLPU3r/GQK73IInpcA0eC8mf6q6kECcKD
-hdJliXYYT8NDTZJbgVeH7OzW1pX6TdUPBCqRKrYcvUO0f4guACDotbclKHY58nhLSS66jchXDUmD
-JYLjQfqq+33UMr71fbyAO/pj2sf884VGjj03v6hTTCaRsndoHhK4dNd2FqivAF0Uoy//ETOwG8Qw
-SLvB3uP6tEpvPyEk5EjhtSlYINjc11HcUmcalGCNVuqPnLyhaEt6n57AH7XYNeJXIm3R6JuNc3yi
-ND229i6yFPo32AOM3kmL6kSgU3R8twUhWKFHd8J8k2bzs1OnpcxD4sD1Jz0BQDdOGMOziMA1V6JZ
-KvRmAJjEgX8UTJjNuI5x+22+77HoFy+FdgBalbEXAD04O7hUQl/W2M5/SdZ9URiS3tn6Jis23dQ8
-ePPF/0544jzKvrzJzWjyaa/+VYjaxroMZFh3Ob2bl84HAIotvPH18qnh9SfaR1dK5UIZfc0nlb7w
-8k5mUamSJ5FPCSo2ZUfLU41dw7Nuexd7/lDj/RYNw4aprzELc+TlRa/ItSxQHaQfDr/hFYiUo/KN
-jSueKhRq6iE3ud2PAlehLAT5X2ir6GL9ZVYTERuxYvSkJyt1M31VPQjembI+3MFjBZZKjprJ4gWI
-6yBQ8cu2xWo3OBH5wyXGogoa3T2iZAheCjKZVQH+dHhqqPKXkMUGhrQJ9kxbcBqAHiBTJPYR8J3n
-RW6IL3JkS1HR/m3h2yOuDrHLZfOTH43Zzcm06ud11XRxnDYHnEKxJmmzJ8lQksM+M2imR54Tmf/o
-QySBbaLDOCUx/qgzt9Cntuj2+bABQXCjQI4AbpNcvKsve99jRY/3JaB44EH14yiIt2kjcI24N6M4
-0HbE0LZE0CdHpknCtv6wzjvXjHFUQ77UVODf+5khfJ7dKFpuslRU/KgozSNRNhtTbiwsSs+8mm2q
-3DGK7A1814cwksE+iqsC0LHiIj9MnHauLyKxih2G2gQYNjto00Zj+sbHY+gR99FaV/gWhNvgbTiT
-qostsRo4TsrrQVMDeMdUcuiwfOY1MOOvhdjKlsQySNXF/R+V2sV/Jmwb+RWSiZjrh5j8ucaoQjx4
-i4WMI+j2laBicoyMC+nRx2NM2ZvR9BCqwJzs0F6AOaxQd4EwpRvO3m94gxlDAh0fgQXAFk+0p/H5
-eEslpCtHAwRytMR4muboKXYV0sIrOYevY3xc6E0xwZlIOsLK73Q9v0nBSfg39etjJI6nxrFJ80m5
-saXih2G5epIeTVaXfEjJuD+wYVChE9E3M5Kk8+t0JiRe+SfYSy6sGgotjT1QQmqre1gkSAKsI4y5
-27anErXk85cKqryY7auT9fs3smJpG6lTQJ+2Edjm9X7mub99b80TDFWJvYchvir91Ueg5ga0j6FY
-fmgI9Wxfr14o0v+FB9AbqrqZ5sCIq3JFqA3cy2NGxwf7kzVOiXwc/UrgU9CNq9iqN+U4m/erHXeL
-IRyUex8fen/QAlmr5c31YTNiuY7EEAT1oaYaauO1rg9ZEuyOFye2nBVv7QMNuHsItpwif9dVKzuo
-liOxnrI4AlfPDTurG4F4dENpC1SdgvRIIfV/3UlmL8nNnCsRj9gRCTv+tlMoM/i88z134OhnKHw3
-FIjB87CvFQuuDBQicLft5zE4fNt00h+pVl1OyynfbohrX3Q3FeteuFNLngHZDEa8MWTBFxzCtSvU
-ot/T6c0l68ylDQ+rx0vpcG/8dfxSY/H84zjEkiUq3ii5Ac42md2Q9bnryBsEXtbhBh+qaGU0CIwX
-UCZqphNXPy0c5KyXrrhWzRyY6OtwH2qdRSTZJGXqGyXF6DMXk6gZvpdqyE39/ruR1HmlqmqBjHMe
-2T6R5YBneRAKyIN95yGU202+RzbFPSNWiw0YEWIPIMc4UGaU794zGI+Pzo+ICSYQxD7aBwFOW0Nh
-+PGbk3yemSCRlZwDvaf/Ay8n7b+ll6y6kILtaOjZM9J8W4/UR/nxPt8fa5aKLyY9mgNqDG0+4c9K
-InZuKQaxDAZ9MbiMn+809M6IGXHLfOJPSaRzPhrDIpvR1VXMJJieW3ZOMU6XG9fgahFN9LWGUnS8
-fC+tnYZ3RnML9X8Nh1EWPKNRurri/+gZYYgg4UShCtXOWwLwsMmr5Xt4y731FeIJLjVitkVwqUHT
-hvZmsfYyQOdKkYYsBQ3tTelmC1gLa/1CLHAWMIVAJfqhoCbDkSFJhmBQNSlopLr4MkEzxXV7alju
-V4uBbqqJpGFJjlhnymku+HbDSz9AowTz/KuZXH/FaQWTGL9lOmngG9YUf+BNKkQThL7s5OWJOS1W
-KbujWy05jdyRUC/YqN87C5y65jf28+Sso3E3+UeIGtcS4muhyopsftm71eDVgEbhJ/0emVCjYCdH
-YnRThbZEFat2bYt8w5DNiUhMu3ROJlAKJn9XxMrBoV1mgh/XE6pSBo1RudRmL7Y9KYirVw5BHNQf
-dJhLHqpjzg4szv5rKIY4YR3MBnTx5x/hunC1k0ngz2AIchSPAJJkWwSnCHdtrOIBOYTxir/1Xh1Q
-dasrAObzVH/u7Fyxt+lo1hkhic8qYI+Ko2SjqtcK7MPGFc52aM5C5e7Pb2Wzh4hbEjzwYKI1HZWD
-ubl7+g4+pvxxpoDrisoo1bU4rFJ+VCOOkrosLg9S8ciKsiZT5/ebJn7hy+lWN4oadK+N3hAi/bQh
-GqovXwnNJLupzMlrX253llH/Qj8PgnNmSW5ZeTRdci/QQ0dl8DdKFwOHo9/aNtRWBF/DiL04SssS
-fmljpzVg6IVyctT1nivG/1+1Sz0z+Ew9t4EbIDZkktOT1YlYRJNTx+AQ3yeHanA2Wogyo15uMN0T
-8YU76qH5T7mlncYSyj1KqlqXO6QQy93igVxnu7Ghdt7bd8Rsj614rh5gahkYKljkmTAWO5EJjoFH
-dWLUGIvFjz1bdhjOHNdPlgUFUmvXwheedDsyJPvSH8ueNUYZ8IB5A/nNrCFqhVdebMRuQTCKLsW3
-anYz9CkKl8HgYITPobLV6U0pHt/qiJEB3biF9Z6GYdMmZG6xKQGXe3h74cnRRR5jHilkAjqXncSf
-8CBXDB2HWrChEuO9NpB01fg8P3GcsfuhAw/sQN8U/uERDqxZGfh0EiCz3pDdi1L+/eLuV/vCcWPu
-bxnspHLIbCSSKblsz2Z1Di9q86P9RlBxElG2Ml5kGFILWEPep+0xthgOYC0NLkn8rQS8VzjfBswc
-ht20oZTAdWu5q81Wn7IC9wXzdhucgCrr4Aan+LJeMy3OT3A88boJkcHDtWzOa+qDSHrRO9RI0EOm
-kIUviEoEeM0A8myNk2tUCXOplWg+Ie2/MQO2Rtp2kxS4ML8uCbivxyt1CUxpMbAqCatoxGvACpWP
-s0HS39vK/upXzZZDfkBmw4f3rpWrCDcddlXtwaestjQbz+YktB+MP3unZxao7ga51LkGHhJtqPq/
-UhM93dwCLs5FmwWu9VzuTb9MYLE3p8BGFV3+4waOEbFUIcp/LI1nOGocaSriq0kab0rDJm/5FoW6
-RzwXMaULEvAJwWylGNcGH2QonRJQb0X2X/5Vj/4NvXSfngIlePOYngxeWGNDmH16uanNWae9vm3R
-HiUwtCWudRDE6uiqASTEB113CPaYSTGFRarKyXpygAXOWCyhA5IScm4ttkYBZJh9Xfn/JNUvOC0C
-4qfHtsMmDeUcUl5LFvpaFvmqeax6UVh8wD/7mKhMwI3T9DZII8GUmG3gRToo2bbDLo6Gy/YAc+OT
-csaBFms/xwxsB+gfC4G66yE6W8FyEksDEPeeXQSqB/QdV36VllLyt4THcrkR0HLmwGG3L6HH5R4e
-vzFP16Ay0L9SgJEBBTkKYsxT3TeOboS6LMkaKHWnK68FMdhTkoPxYRJbDkYlZhqWrcu5kxNpRECL
-7mwWYi/mRnl3SBXJGiQZCTxbYIDzQ2/WoE5jG4ZSICLfWSnrI6crb380XNVMR4spUByqtPnvGUII
-KRR3WoSbqW2EXpeBmTM2uonn6Ycqxu4X2zZOipET8DE3YO9MLiP+knXz32C4lH9nYblqh9MB9MFd
-DWra7YkAis8Wqx77RtEZlSyNJva3fycH+d2uomFaax9Cq83sN35IRsuO96NhCVVMAqQ5dnU8tqvn
-xdtCDxzH1sfZ4MIEotbvyalBeP+s0FnNDVvry8hVaJzfmRbDBwWM3KnLLUJKmsOLK/a+jE3qdnYt
-5ClT+gL9wkDs7eUf59MGbRHPOhxLqYmrxTAH5HhBe8et55yaCnr5Lb0jmmAXQIRcadfNWJ/nYEpE
-AKOziuN2wbTq5SYEj0ULWJIfXxFbl8G0Dzz841H5HfUns4NYKSUzxCSfGV5HoZYcT46Cuu4EqPP9
-3+ejyGKiNhc0K7wAlUuSVyt6ydiVC5pqP81Gj4zgxXNv+7x1MLWtOJRYZ+KxFYevMHz/AY9Y27I7
-9smg3CvuDFTMnx4j1UMLgPlVrZDAGQ3HwHc037Sva6g4w751EfJfpbPyGn9GZy0OdkR0eoWg0ZrL
-cccHhPEz+WFDn/gAfYOCnsHijffrbC27jyOvq5zaQMraXGbdBH5+eSXzQ5cIdPETGPDHNdsmsEGS
-cWSWPLI5fHUuGS5aFKfXnTAsSSNoTR9cXG/1eziuC+R/hE2QozYhG2hcUyOf/+kON9cUVYVN0wqB
-s13CvOF1XGi4RMQlX2bDaZkCz7/n/TnkcvUZPEZWmrmbd8av+c0JxtQgfEf8IGScTtukjwKZoSq4
-SU+N29+eoXXC524xmV0ESBrl+TqbSzNer6R8yaX38V++aGCVhsOlryPcgM2QuFYEADb5ZhuvEMjV
-HWe2No9L6Z3GLnmiIbS/sb93CZc9L0Zl/y6e3PtJFn2URj685qTtscqkoQFXIrkBGAAksy4ElZ2m
-htZ8JUQyizfdbUvLL/b4TsrIs0qUqsGc55v+EC1wa2eMRsV02L0e6uIQJW7nb/Tu0ewtAmaYaCBL
-V0KBYQ1Ztoc8EKk/ETKTwVdj8KuapvW0HOH+ILyLuF4AXXV3kUjNvz2X23rB/GfT+9vAQt5gEWUw
-5kRXRaTwHzOnxc82OJwpKSVwy0nhmVWVpC7e8koSYQj3rhVOfefd8Ss0ys5SDo7KZMQK7pyzNrnS
-ainVxBGWOMuZqrEq9joDn+KsZ4GHurz25C7+njhqFmLmWrZ9v//mHb2+dKV2Dy763795XIHVmBSu
-KTRfB2KeASn7mZ0z0KlKXlKQjbi8t2D2cFzvk7+XuT5e542QK1vhSWkAuagIllpCpzbQrZCKYCnV
-h2xHbLUc0tYifgWRbScSH/bRUw9heeED2GhV6DLqbNQFQFlo2l0eyYZYs8dxzfzHU/3vuVnbZ+SE
-nEuHpzhedBaTPp2FwqlBLezcdKsECq8NVPm8Nu6E77NWazmg0wJxQdC1nj6u1qRYqEkXLaxy0/En
-VzT3Qs2TWh8SPjZlobomtPdqJY8Bv1eWbI8MANQWKh48wBJjWBKs6vvveD+mOoIu0HQgRk6ySU7Z
-nJgoEkcLEYoclOuUztR5mpOkdMkgl70n2x4mNKEiGf/oTHpP681G80wawOe7LO1nB/m/jGhrLtQn
-0s4g/LlvKIe++IbUbgeTwt76CMxRu+ClD13lF+f+mRUSbcq+nEoay2KRTHKgTpT/e9AslSElo8av
-kB0lwYqMbKJx88VjBVWfu5CVBMO08Q7Krd7lbogLVPpw4iV3FzmXFP4K4XN1TqH+SWZ3jLOurmqV
-Q5Iwr3MdseZ+dIiCELkC3fJ3bUCbS1K8wMSl7JBUvx2NXL0FwOSuODcizsOnhvyJNzt1lPC2w/tO
-SWLIu8fYbkuqJHzLRb5k7CvEIkNxTN4o/yDSMjgjkbRpskdZfnFErNpur+WlV29IQvfqGwH74KMe
-mpZnmXTj9NqdZBmNe2O3luvMgsl/AP7fSP6YpMiWJySZJp2YorHuOB/I/WiqXSLQ1TRQ3hSnu+WT
-zjAF3fMI6CihTTjVL9qkPTPigjD+XJKBPJdsZiZnDb/2q97n+xVqeYf51Bfdv3ShqprjCVpnB3Zz
-MPfP1S2N+lC8GHFAnAVY0ZEFG2GYqlLB/1S79rTueQnoWfFzJT50BEHAGrO9pBBHCafn0oM01Mgr
-GmzpXvxAKdfXXzm6RdeH6o9k8kh2mxTSSvLzfeLHRMX1jmPmx6CUSTfWjxjH6GSH63yH14DNmuoe
-H0R0Zz8VDreVYMymH4NoerM6UxXXBIaCK7/axqw2ci7oJ5w1Qayij7QxZuc87cBJ1mBhM4nXIIEo
-0RNbDAS1/sds70bE++6u0RLSj3ithrO8R1OVgLAFjJlepboiBKwUJ57TJbXuA0xjhDEy3NcyoeyO
-FQIk3/ZwymGDqvwh4eQyVnVaBxuS8bYuCiOuWuLTJ3t1mKmUTCrUHYWfFkGStI6JpovQTMqU7i4V
-/r0F0vCZ9xRJW69bhOBDvDYrIUhp710ej7bJttloUXUPCDh9V/tXQFLj1yGYZbdKTcV+tNnpwGBD
-PkzAk25hJ8KP5A26n0FI+4KwtpKRWxeQnl/l5Zx8AkwuSZqLbpb09jg1AzXbH0yS62NZV+ULauNj
-DYT9kjV61fsjrGSuZ632kwKNVPMaA1/HI8aAmpw4fEY25c+CWgto6jrFWuaYGWaRzz1MMAApt+VB
-66yq0QeeeSNvQFbInFYkUS6a4lRh8dF2x9yjLlh95AezaJqlANyVUIJb7jqGAcgqyalBXt1duIuS
-izei5YqS8LPUXVqesK88R7AX8V4VNQ/gLyPpYhU1FSE1e7/UrJuPqCrMlwD8LLtr3/aapkZcM5u/
-q5ZPWwYFwWrohQenC0/XvD0V7Sf0Sciq6W/1GajAYjA6CqxpTqvd3BL9re88GhAnFJ1udnQoVhFE
-Z6XY1yicB7K6gR4zQavnpizjx/n6fp0h4+YSkqexjE08TpUcZi3wkStXW7U4Q7sat0FNf2OJNPJU
-abXs/eLadW8KUl+N+l7ahWGt0PG7d8J5t8GBsC1uYe++OXZLWUV3v8kMTwk8nNm4bAzrPQRcGY5s
-vLn5h2KGEpU1O2WK2WiYepbadUwzJn5fm2f1BwiJDAhVM52Tge8reTXZmUDjZHgvMoiRJweY4g5o
-5wO1PmfB6ZDIQMvmIBDPO2LtdyrmJeW/J9bs0ClfQkypOgDNmixr9rc3yBoQKj8SAbGextia27vK
-luUV5ZgzM1t8fb0PUAOmYlm/c8gm0oYL13EGMrb58839O6sNnCw4/f6fB2rBHZcFQqqBhLFI406Q
-nLqOU2021LhVzK4RwjLsyrlY+jmAwx4c67s8FnGdsMR6ulPH8U1P7d6gFYJJ/n8fmNt/h5YLKIOi
-ZDMMO0xAh7AunK7UHvbg36RbKRhxmagno88+PgWgZktaDTflCrYsMy53oCvZgGFoe7EKXRPTeOU4
-ikWB9Hkfw2TC9rFUp291ywlP0njQc4kRVuRTzahP/f0SxrkXNbS834f8xC6HBEaGsYX5b3wvBr90
-AlHRG36CFbnvook7EdSAQen1ERrxccJZTmfvBaxgAPJNucX9OYRl/ab6TmT4Yrg1NmFdUws/feQl
-CLjSgxIxXPPbEKlRE+fB7IJEgkEWkTGR22Bkq9n2QnIBexHXEm1qX4vUKPmNLuYFMbLclZRjL6oy
-uw7H1nVk4cbftV9I8B5mg1akiymk6oiPGY2Ny6cPpZ48wlQsVf8eXjtdufsAmq/XFUZk618LExVC
-pYFc+oIRQPcnAT23XZHFMsPGYN2KKNA1QG/51kaagzVOCk15wCeSYshlzgwCYnjDtA849FXn5OgO
-Hk5yyVoAs4DalQSixfBXO4BPhBnORJiLKPShmLI915xDjJdUnMViCwO0owukXGBKRwL4EO82hBST
-G0fzKYqXWaJaJTG9PANLqhMVLM0+okCOgN97VmGKAiiieCmKX/eSk77vsXomsvx3ewD8ikko3A2q
-rC/bn+/eK3Hg0tHmm5cZCzRnf7zGSGwvihcq2Am2yyJXwPmBTzsqutPqioKQeQtfI3h4Dtz1qOqn
-Q5B7FIJO2WbSBzLwyZcH+EnvvGp++/ZgFilmGa+SrOIfi1Ao7SSoyCgCcNVjL2eXGJsEY96ePgOp
-UJTbEB4Pwxt5lAdiZOEBaiGwnru/ZonYSjk/veVIBW/LCPzbfD/F+RUunE4ApkrVhg9pyohmpdGu
-ArODmw/6rcCxy2IKgnlGjtlmeAzQqOpCpaLejgNsiou1YF+XNeMWCq5GAAcOwjANAp9U7YEXg5KZ
-+Q5utqkuVnF/e7YUL9WDiJ7p1Sx4z5QbPKWVoiNoHMcDBI/bBQKwuZNMOy4dFa9+ZmChdn7QKXrA
-m3C8NV1PW4YxgH7Ylqkql5vAWq99ta9qVbyTRseGrt3P/t7kBufggaoKBNsOU8RXMSqNq5qf6CO6
-vC858JfIqrrITiOSbDeqDAiKLHLUc23YYqFwEslGh0Oi+dZbVg3EbtK/+oAA6NZAlDmaxxclzclS
-JBnGJwkNYxfb6lzDXuDig01uyfpQEPb+uOaL/ZlB9lyPktclbBPyX+BL6B1oR0NFtZBQ7+BA4QYO
-fcfOGlbQ5KeUngtl642+k9AtqnQvhg/dl3ZNPexU0DOwUfefofTLFUlvkjh1oapw7JN0NrFEKtAp
-kf2k/L+Q3Sy2Ry2f+LFt0hHDawqHrv1/KYNWUWI/AXJWBp8sk9tcakAPBq/d6//K5fOgAYNDdeaF
-xJMNbMChDqovRiQiuhh4mv8XNVtTuh6MVyIWGfPc92LZ+xoRC5cuqkGw6Xtwy2vJq5Wj61Xl4LO1
-I8X1lPM4ekU8CboE5vgQZk4TH8bWerLx4Gh+bvz76Rjrx5o3nDQOfFEkgetJFIC7wkip3or/H9o7
-1MMOOxIzCB2QebFtyBBMq2dnHeOqR4iBT+PMMchcA+ek65NrNHjrK0rFqKllksxI6zKqMirnflIP
-7elI/aIaGP4W4azIgIRfNBYMHHYwfqaseQLTnnG45z+WqlhLUM29etHuh+/4S53ytoqKKTW7zYtG
-FRiEY2DsY5PjbzHMSK1Ig2pbyZjd/nj4KUKHJaXTlxZKz53nKUAYXTav/xtFKLp4Jq+hPERMR7LU
-KhDInWtKadhPGQxpbd41qRIka+CoFtt4jy92gZDnumg8pI27sEima8SLRDlNmHI/Yr+ssx/lacWK
-eYMj9WBTQAgcOPKcPqDE+GoKCyc/w2Q9n9251A0K/t1dyhQmfeFMbOxF1x4Dqz27fCRxecdRs6hW
-f2YSCoRaiYFzTXB6GJ8dx4Bawn634FSrXpyrakc2oaKO/luJrFNteXPzez2kzPh4XyrftSeEk29V
-0cgYUi8pc0pIntenlm3HdHk7Iwwar2cGiL3VelDmN81hp4jA2uoaYieryAinUvvuB2jWN1FY622q
-A5NiSmpTKlcxYP8siIl/L2QCtWdRLzKMO1T5XbIS5JgfC/ApAqgN25npZ38E2PMbi+irTM1t8t1+
-SeAePdCfIUtCgYuXO7cLjhTNkQXKVs7o67jPhv4YIimOEUx8ZRC2b3kxCSXgO3wYUFsaZ90PoHO0
-SoG0dAzE4jec0ddHIkJhrLz+1DrJXx+FZRQB8hfcpfEyeWaggRpMhUBPAQtZRXCNuuURhY5/bT0V
-MxXdWF4xbcjAjuliasGjm1AlR/55R1C63BJY8z5f7LbIU30bT+ZFeeY8hqoWYkmipCwXi2msGhSx
-Vud/yOUctPF2RFP+HoGVH1FdRMSm+RJgFhywqZbpB3E1QeF/Z9w4ipRHEOmH9swtz5oYs6WUatED
-jltLCMReYirUnPR6W9ovXFEEyoC4IbxfqDVrZ28uwWPWjt2vVGE40/ytHnr16iPVh1gT3i83B+vi
-A5flSxcOVHipdcDWB7aXbzYRSxAHvG4AvHIdxJYkt/2qS9zxrfwKKjqcQ6u2UBCWTEuE+mrQvZKF
-oeTri1EKNop+U+NIsPb+9puAlURgSSldFOf1bf7MwMaIddFayIJfWQdE9bquVdjpYjlbBkvXG87q
-ZhhmXCOVGU+hnmvEnUshEilOS/KpCuTQUoMiGYdAp4uzfd/ooxDkvpbSV/KmjNAt8WQbHRdNcsKi
-reXf8n98cpGq3LbFhMS9AT0SyWubrNGDgg+BSTA5LKvUp/FaNAfD//sNcGtT+0OeoOJfdAPu7rrO
-HKUf9mlrTNkyHQ8GNVQKinc5+Q8pEFYPsi/fITTc+fwX2K8ip9a+4dYBEp+bKSnK16lONjEjjVSJ
-gNYMYrZ2/TlDbwJGgA8jxi4pS8FJldpajjK/+7iZi9iez5+n9QG9gF8RsJFFAt20WoEAtfqsBKqU
-KUhNQTan54PeE9nzxQD6E8WFvQliIoueZQbvLAEjf2hXeTFhsI3lNYz2gL91nQ+1/6cBAsp5w/B3
-rA/tGLwkQtUXTQydSVWdqGRQw58cp5bQSWXESXbLXphq3K01PscrYZb0aJ3NrB1RcCfx5EQFP7N/
-j5q6mRiUL7KBFWbXoxgcZqC21EGmsbfYFNujwOrMuD2zAUCsSmubNcxc0lCqXpQWt3v29T15+GRz
-LK12/PVQTq8Bhu5jsxJM+VvVzQGLp2eJ7EHybooaS8GWIaLwa/h4+7TYTP912ONyZdyOczi2tfUV
-IPsthFsgBIL4LB6HaMMKHQDhbGhLSSvMJ9Lsl1lVQ4Fvs6c8SXcq990kxlgJYqBB5JC/KovIWQeh
-ca27Q/bTicYj7bnXPG8ABz1ey0jv/1kru2JMbpExoLd0wfu/7LLE7fNfJDupsGPbCFOo1pSFSiwO
-RiKq5/cgM2TBFb3oFs2o5bGM/VS8nzn9X72xMIvf585n/GbjgI8b0iWdBX3cfGh/wbeiuiRMe9Es
-LKki76UKq3iBVbI8bbne4e9BcQKIq9uJPYV82Sv8ZWk9BL0WuvTaEwTiwfj4jQzC6nEOmpJ2O+KQ
-zwy24vXHzkqrEP5ovVNytvR5yFfJIc3mWS4r9H9hlBdKt9B40kxXti4/+qw8FaNtbHWSIPSwHgJy
-bix6KquG+SczEqXl4uEJDscTCp0+OF556cV2NqQzmgi7+axHyMCDc7w3Uab8Ro4Vu48YQQutSy5q
-CX54POJPqRnIWbduhJGAoththSrva3+nKnLg4qN4WX7d7HC9t8aspvRQp3dWWJiA1MiFwTU/OsLO
-VIOFG4wtKdJyvulD0yNPCmIKxWYcC7k4HG/OR2EELbKjE948k2RWSE5C4+mHTGiM6p5ES430XoVQ
-5bzvgzHo90JtsbsF42k+zXUNYUH9gW1KnHzvjjTtG3Uv9i1+mzPOt9wqew4B2h4tV710lKrpXUN6
-0QcXzYoT8kLk8Vf9s7Vfj1DA2xeoi+q+kVwh05Rjbpf5cG8gEtAgTfbvYS7iaTdmiz+Hf1fwtbji
-uN5jE5ftxZQbGFLx+ViPT/D7TOZMa3X6T5X8VNpZtEQDp1ydpqvYwP8huRUjV3enSAhdKN2YoSwy
-aegeVnjNhV8EWd6ITNoPDLN6h6SFmggoInRpFdruh04KH3B/+uJ8zwhyCxSoumjBBcYWrG9XtNW4
-fzX2JXYH/hMNenx/4n67H9ICAlhRfKuEgAuIlBTxdbRdWJbyf0xB1N3H0pUnrrTiyOkAr3tTVJAC
-lG2yPVwP+1ucEie5SrgmvZA2rWeW98NbkRdVmof3iMkZnYNjdmj5Xr0rUH79VZrMa27OhPg60Rga
-x7KZktzVX16agMfjMmdj742y2LnxH/hj/O5HqZ7BhQfpMg2utV2iclFdi2UJ6eoaRJxyMnk26cfa
-q3jG7SkHeYBBvgv/bC7FKQHuL9SFYoHNVzo+fMQGm41etn0R8dqXqF3U0Q+jVq2neAeo8BNY66De
-ZcbOqiRlG6q1AUy4LPkAewWBG9uM60y5sN/FhF/cdZJqcDpYVG1A+mKTG1LeqpyjoQhnaUXFrR3a
-x686qznHwCL+HbAPI5sbBjoE6d7TmWkUPeOMJUpbkxlpOP1JcHgGz0fvRhEjHzs7gZ6erkJl6rGi
-zoByWBngaGcQ8zvzkaOltiFapDNOYpvbAizmsANAbR3xLw6QHjEcpA9v1zQ/jDzr/8nqclb/174I
-EJhN95BJpyVb97IZcbt+N7y9lfRsgWOurGy3btaxsDHyjLb/nJMRJSXqM93krdWJn0DIoxca65kj
-Ldlzjdl3bYZgFZgVLMNxbxlru7D9mOKJe3ZKLcFNEBSBpvYYGJvV/tDY28bJVt2y+CFRragRUKmS
-7LhYWyIDtgNWyz7uK2cSqjFBT+96KhROJBJuqgU7FNRvBpDck2mN3kD8e1EAw1GlPpbGfGT7QIS7
-Aje5NRnWJgSKlhmir4tSHmtRMbGB7couPZVQx1DjbUgKcsjH6A6s3+dznR0Wza8/H289c4Bf5vX+
-NQckpJ+8yJunAm9z1Ja4vD04p/MX/C2UQcnIeo5blhnoKCEhvwTscxPhY9j+SDNYezMhaJ3zjLnU
-k1QzXZC7UBorUDYvCT+AO6PRGIzEM4EIBOVQg50PZHdN7jdzdkFApyBuIlOpULcAN6MRDknW0HB3
-QFvJLg9xRDqeDol/R5RRwuFTK2CYemqKNMB79Y6YCugXC/35uHtCZn8iQzT/0M/lDcX72A1ES3Q7
-kS8whO+C4uhv3nVWHL1ZPZ6OVwn2toZ3H74tj21kUBaNs3a95GLN0+5aGqJEJTqAIuiiuOkjhIpI
-9ouH+gOGcl+ZkRt3sDkDjPLAq5mmmjAvs9SdlvyVQ70NDEG1qJ28cFAaUwLLZr5yXQNPiSz77nK2
-Lh3Zo0NsxcqtsQ60WKVHfzpkqWuKfWfUKadx3p/LWIg5+0HKLW5ead4e+7k2jk8M8LXXuLkONNU+
-HlSLurrzEQ3WVyUvXc+KVQgugA5LCnfaPG+tsk3EIO7SOotJfw8mVF/NrKjQL4Konod23PvTzOw9
-MdL5Xigxqt7MnHcmWWYsS/rRzO2ee+R/o++RbBKsPzU0oCSqhk/lci4jk1XL4fG/bMQoQyCx7GxL
-4Am9KIwMYLikBundmQyzvXNzxNDUi6jsutE3bjyg4jNYxxQ5rv+Nv7GWeUyYYKkucdgimCtpiCSe
-xiwmSR2jA/btZY8psh+FDqo/fZ0/wt0VWn44Km2oKW9orZ2qQcgnP7uvnslBz/9AWr3UU1hx8h4a
-QO8dN/KB9Jlw2Q1lCD06hzoBM97lpc3BvvRrdMOs1Xb/pXhlog1ptYAC1u+q7iz1gZ7EWKiY0aZL
-vB81BXUmqfHisxPLD3HNUAEibEj0L0NZ3hA8iWVHV3KK1NKHuIyzZRHiQrJP8pAvPJMeDvu5WA4e
-RHOcp/ba8f2Lz3X3Pb4layysEkjfNPvKP5iFrmVJvIqMY8bVPiuE4YsA+rpxoegQMxeEQebMeLnD
-SsMwncRzKqCqhjFZiTssCJFSvagNqPZ0NdSbZh0lqoIt3ep10qcspoq+sEstOYa+r/iC5fQgnpz3
-WoS+01Shoh/Rdd8W9W/o03w3Q/RHPPVEK8jW57Y1aFKWmrx7Tz+YzcnKLpecnjPYkDP/tDpj8Uzk
-bSNnFvQU+CIU58W4h5wnx4h0IxMWn5LV1FQBbXDUKfum3muLNVIIUungDLfeNdrnW6E/PiruYfT8
-iHHuX/hqGdxMyR+URkQ3GPX3FwNu98rbT4gDJ00/abfsO/HmZLisdzm3gv0+nxB+qQitUZsp3b+X
-kD/dKQYZewM+n4JpLM4Qjx8KuxZH60tpi0H0vC/c8vXe5r6fcjfAd6YtIqaetW5HjBf03B3ca0H4
-EnTClV+o4lPxiasVUxoU38TP95Colhqvtr0oiXah6GLH7SIm6PH0jKlWUjjQvXx3+US4h0Nf4JqK
-RjsXMMkgHix/ScxGNBY3zJy/+2ZUyfYeaB9PMs4l2Ix4TcKXGXP+KB7p8bOlci5Y2Tgj/Zt+MOrF
-IXF5Ibc8iGJxUQnMNB7UM4nDDs+xic9O9y7iog9q7udROX6JsYCRaE2ORwIpirDpu4NRaf+WdvX2
-t9SheBJJ2YQwVZtfj6gIPvb8+qbue7zldHN81qPsHaWXGi2X0HyYjS1OhFweeR3FnI2o4nZETU8R
-8k2OBHCj+mBZrVzYowgE1SZLDm/XuOl4HZJUj/aHh7VXIAu3Ye1W63t0Z05MAf6tSUiRc21NB+nX
-1ijFSkl2doOBYt9RgMB/ZGxznU7EMyUaTBP4sIjaeeCQye1cNOz9fNMQIkoNprmXX/Cl0TMFxWWx
-g/1VA8mt7U5vEDtl9jOr4MBrP438umD5JqtPGUGCmWPr06w7OutrucIF/K2UKnng48948kTQZENK
-0zmjZg+Sh0q19NwXD11V139pW0KcQVCcyzedpq9zcGESIUBuIizfJG23cYDzUHw5Zas4jUYH/KBH
-MFpQYQ55Xrd154gSF+E5dJ8WPS8pgrfJwoSImmF8ZdiYzw6cGaYmjdRlp2DIQ47NeuULZ+M7Oadf
-G6PWZ1ABh0R2wcwmfw8f6jZOt+S2aLc/+qe8vfPCpGMDpZrmOL65zHUHbKPdwcPqrR0cINao/rNR
-zKRaNNs9njmU737Y8fLuw1GIFdPIxonZTat871uHjylreRrLspXExT1F+pCM5ApHLy4JXzyW55o2
-lew9ObCRv7rZuBCDquFjEKv/m/1Dkr2Kg0xbqSdTjMFNvr3/2/3ZeUdTnHYP9p4+zWgVxD1LblFQ
-k3uaBtUgfdn9y5/T6+t7xqrakmX/zrdi/PenrkLcbLEBWkXvlaGuc2TMj1y3PzDP+6wY5pTYDzRv
-ChfoKeoro/0EnxJaQRow/E6CgdcphQ/tDoKqCHE+vZueuv3aVZNoU+OVoVYrBqBJW8Yry2AcanE+
-KWOOQz2jDyusNkIEeGVH+lQ/atySM7V6SvVbUY4XSJLJYgEFuKRs0uH+qsz9lKt3gLFl7xga3EmT
-rnzttobR5tYFOSoM0fJRR9nh+C+IOHw7xkQO+PHW8GRo7yWW+Mr6ucYtlayliA3RTY5cGxDaOWtW
-D60F5vxoGNCYp4rO+NilpKDh3JdFNWm3TX+IbkBUEUasRN8kjAfUpD4bGZxRCuYoSknW+hTua+TU
-a0yYqKNk4YJB5mBVTdW50Gy8ZoWtyz1inq0ZHaXxRyP8KFfHnQqi0KtQReKR+DvH7XPhXjMpmlBr
-OSAr+P3OSmEPWIz122ddqNH4L0SzWJjIWd5DmhbNir0dQSr9IuXZ5ZRkBLedAY+/lGPi+7taPZEp
-Jq3yt2L6PptKRKbTdT413XjIGwpprLzpm9RxwoqWM7Dtk6YuS0pekkIMMkVb72Os2OqjOFYdNBcF
-VWNc3+AHfjQFuCP/fqI1YfQjAyipvSQNFPkuSuUI7PFYufa2I/ugl9uMq0ICSFyC3hXSuqhYEHnO
-9KT5Z6/OoXSqe0BYNEMQECW3fOcoylgHDaOMh+HBGObSu9fQ4AC9tE1/wRUVakq4WUB2wNxkyuFd
-00FdlSdadBEg7BgvrrBfEge3wzyfXZe1SII1POZqpIs8bz7frGls+yh+apaSZtMTwGPP2q7xgshU
-9N8pLQtQQKknH8M0sH+thNUo4opSnsbCAbNq2Il0I6nVRQI3PUZ6hqUr1BX6sJVsaRjKYSlsuee9
-V9+nCQtW9jBil8bMtU1RVIEf4lZ6Wo2MemyQeRQWi2tjFSNmL0cwQ/QJHfeQeQ5xvyIHMg+FPLeJ
-ER8ig3qUvlmkT2e8D2GtSxZPG2Z/KAL6tXzYP13FGmG7vSWuwbYGI7K/PEcFPLErH3IlHzB4GLjr
-QAjKG5kfF+gj6aM5JNd97Hr04291Yu8PwpaHxow8LuyCpv37j2vFu/Ol/XiCRKmsHuJIqnko9N7y
-WyDQvCJA3xQMyGfniXUERkJTtnKAdYuZp9XaTjl0nMs/dRXcAFo/f8/Rm01QeEerkxZgxn+Pydop
-m4ZLuJ3Xs3djsVOa+mZUQuYikM3zZJ53ccbkbPt9UziTenMpGmJZNiFVsb76pp++JaWhcQ5tS6Wx
-LvMnwNiNpDAxN+S9+cvEojS2WILgkTInKJTpTLFc+DUlVvmKiw3TFkSMIzHNxnt71Iz37i+V/bin
-tdEwiWXzgiQz4VAEFwSK8K07kC4dnV772Ym+fxqP+s9sQ5klVSOVk8MZUfRkiGxZDS0qrEw4bZrG
-VjnktbyEAv4OoAJcWu0rzZG6QxQ01V0YyJjdVnLM1Otgf+geDA8kbHRSYJENTl1eGAy1UB+1KIRR
-9N0GwPnZ24LsJWJdcx1PYdXADXWkaOt8vUwm225GUr0gLjJoMp9c9N89VIcpsO8/ikKmCVbm6+kx
-IriqfTr1tqDRHk68VKea5nSJOTQteUYQScyuztxx0ZNgXGTV1SW4XP/51tY+B7TgUB123Pyu5MHh
-hzT0l9EWsbYf5KBFkZTz9+J6KAn4d8GWTePN1A5ehV2Nwn8nr85ZVRkJDQxDx6+qy5veX1L8imjU
-sgOLirnxjFwYbFmX14HtJ/uVu2zR20Qks9KTIf9xPSWcAwk6y8QhKr+vwU3zX0ciBJ7MpMxeKmRv
-QwNi/ETeKRC0AypLYAHHVb1bsUzek/caDUiqLStRmDg6h0MkkBbGMfyTrW0PK9UTSpTTUF3sJoZL
-Wm7Af1aV4q5SFt7iYHdYoNo9mV728KIBhc0iigBjogUqzpAU/QzwW3fsuWzRKDvldqklMIOZhF0s
-wVlDf+FWHiXhUiZ/tdF4D/ws7CpWE6OLsnknQSIhx2+38mz1U5tQbw0Du8HCnzWa7G2aYC5nZTUc
-6xRnPrD0jEyQ7ZsVl884RdNla8P9zmThxmyGS4pa93GrPN7OU00KlCXn5cIv2yHdhalm8etQ2eZ6
-UqtH8Ixi9llyElMFxPDlTRvMizgaTmJ6aFJFm5Wam+tmZQtp4lbT98/B8c+Gyp/DuMNJLFy0nBu6
-a2wA7nfto8Lnl6ET4VakFyq/YjtvfPTlaMVIqUUdDIPxpuJXssRfT8lL3bWfJNlBbDsEOIVogibd
-bpz5E4kKGRMA54Z2lvw7k5u03zvRsoFiEaXygMe2uH7D2krLiFmPsOJ2VTLAYZ8/Ksfd5fUfoWf5
-73xlbTcTLJ8xvWIVKn0NoBjaM/fYKN1D4ah8IL0J1U7zx5XUC/yx6/iI0tRNq+8GO95VU2Kb2Bm1
-BQ0IMce/zMyAQGcfSu/5qlxnJvIusGs3tEcEXwNFQ+aupi9YZ3Ym2WLELVgz9Ol50yZ7OAgMMtZ0
-osyOZbrWr0pfU6jwSgw4ubLHW9P6EOQ/QTmRBBEJN0LABGCaI7xcTnhw/upqYypDYbsJabCFCFrf
-VaB22vbhTKO0jzCgV8trUra1w5oa+QTzZTf4SXiJb6DzvOYhYOsTdeDs3hXIDM6ho2Ig1Sy0BXoK
-abyI1oFGKG5W4Y49r0+CKGqclWK79EEcBLIeo+kJn9gO/AAEnrArzetfFJO/2IsLHEwFNRKIo/3Y
-LsmK8kqFibakIRM/YmbFwisgZarDrf3i0MmNBSqkhgfV9twkPwHM3w2zQ2TX3qYZFbIEEbJrwYnJ
-6A59TGw8UmVirNs5Tps3dV7b1lz/R+IjKS2EkI6rde/UjIiur6hVN6+EaofBNcAZArULgSmEof+M
-lOMzhB5j5gAx75zTZwp/fEqx5QXuTOsoAX7uwAeDv/+fiilFtcFc2YWx3DwOGKMFI7p/wDGG8Bb8
-l1NI9q0N1lxx+cAkniLsGkiN94BF7bSa44geWALp8Fc3IW14Wm/bJw0KzAQjBbrecJzTh9Ol66SY
-aga3g7UgEONJI2NgQKIus4EP22zDrCU28eA0+4ShyT2C4De5EzApjnGBz19W1TCbhwLejzcKJHeM
-td3KqCGqDNgB4obtTPyZvLSYCh4Vn9hmVWEe/ZAURqO3bTE5XkiU0QIU43/I6aEHtFG89B4LTLe4
-zl1hvR3Q36kKUiz8vUwdGqA5APNqw7FRp8quJx1T66PESfdZEHTIYPjBxL9tXvqWdZFnakdr6JN1
-K/t/iNOC/JMiRZFWTVCmVOX0JGhlQ8xOcxrh2wSxm+DwSScJ1leTzM8CWZWut1XdKuInSrcQSxMv
-ysOWgZwEvs7+iyuqzw0nQ9Ec9W1BoXI8Gx/nY0ENT58C06vozu4T6jCucNXqU6Kn/4+tn0s3EDnu
-ZnU5wWXAf9gW9DlF3OHVD14qaC6duY8L0K0NFVyt+31vKXM0Q96TbBBxsYoqGonZVxaUwetIkg6h
-LnBpKRRmeATrVMqBTqxQciqZ7vXzVlM/iWnG9g1ZEv0BQjEWe1DZNq+U1BZdneb0YiM/fIHBi8oo
-7IwaVt3qk8oUo2nTl+5OWRJE191ujc+2JX42kH66WHm6QptapKFoc2W3KuUs3zIsHOQ79Fv3qwbB
-KMA5QQ1U4aecnNjhCHLHFYnDcfkhebURAFmlfMKIqAlamvF4+WBWvGZMAaLlAFJeGA3oS2BG5aKi
-ededBV2jMC6gS2gmV5wFQ25qJ34oNAaCcLtL+S7bJac48CBgAtedAixrOUBoLmhimBLKUC+64TzT
-SeW/ySyhU3AA1j3UuooZcFXISqo8f6xVa7gTK23iBdR4AyU0/nvsMJxihGWIUkKxFdw6wcZ1RsRC
-VU0s3s99M66CR7HHzVCB1uR3vuzLlec4e6jYbl/6xWva6P3Hnn6471akv0xH42iT4gdK+SZ0fJfy
-afrNFItXxzs7Dwk+97ID9DOh/ERVtBlgGdi21qC5AGuthTjRbkJM7oMlmnKW/47FW5cTymCoGV2m
-h0MUTJI0CQpKQhkpVLFuSL4UBatI0Tv+COytOuBtxXBW8N+41w4meTAaIOLPCd+YzpKNxG==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Ldap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Ldap.php 11765 2008-10-09 01:53:43Z miallen $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Ldap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Ldap
+{
+
+    const ACCTNAME_FORM_DN        = 1;
+    const ACCTNAME_FORM_USERNAME  = 2;
+    const ACCTNAME_FORM_BACKSLASH = 3;
+    const ACCTNAME_FORM_PRINCIPAL = 4;
+
+    /**
+     * String used with ldap_connect for error handling purposes.
+     *
+     * @var string
+     */
+    private $_connectString;
+
+    /**
+     * The raw LDAP extension resource.
+     *
+     * @var resource
+     */
+    protected $_resource = null;
+
+    /**
+     * @param  string $str The string to escape.
+     * @return string The escaped string
+     */
+    public static function filterEscape($str)
+    {
+        $ret = '';
+        $len = strlen($str);
+        for ($si = 0; $si < $len; $si++) {
+            $ch = $str[$si];
+            $ord = ord($ch);
+            if ($ord < 0x20 || $ord > 0x7e || strstr('*()\/', $ch)) {
+                $ch = '\\' . dechex($ord);
+            }
+            $ret .= $ch;
+        }
+        return $ret;
+    }
+
+    /**
+     * @param  string $dn   The DN to parse
+     * @param  array  $keys An optional array to receive DN keys (e.g. CN, OU, DC, ...)
+     * @param  array  $vals An optional array to receive DN values
+     * @return bool   True if the DN was successfully parsed or false if the string is not a valid DN.
+     */
+    public static function explodeDn($dn, array &$keys = null, array &$vals = null)
+    {
+        /* This is a classic state machine parser. Each iteration of the
+         * loop processes one character. State 1 collects the key. When equals (=)
+         * is encountered the state changes to 2 where the value is collected
+         * until a comma (,) or semicolon (;) is encountered after which we switch back
+         * to state 1. If a backslash (\) is encountered, state 3 is used to collect the
+         * following character without engaging the logic of other states.
+         */
+        $key = null;
+        $slen = strlen($dn);
+        $state = 1;
+        $ko = $vo = 0;
+        for ($di = 0; $di <= $slen; $di++) {
+            $ch = $di == $slen ? 0 : $dn[$di];
+            switch ($state) {
+                case 1: // collect key
+                    if ($ch === '=') {
+                        $key = trim(substr($dn, $ko, $di - $ko));
+                        if ($keys !== null) {
+                            $keys[] = $key; 
+                        }
+                        $state = 2;
+                        $vo = $di + 1;
+                    } else if ($ch === ',' || $ch === ';') {
+                        return false;
+                    }
+                    break;
+                case 2: // collect value
+                    if ($ch === '\\') {
+                        $state = 3;
+                    } else if ($ch === ',' || $ch === ';' || $ch === 0) {
+                        if ($vals !== null) {
+                            $vals[] = trim(substr($dn, $vo, $di - $vo));
+                        }
+                        $state = 1;
+                        $ko = $di + 1;
+                    } else if ($ch === '=') {
+                        return false;
+                    }
+                    break;
+                case 3: // escaped
+                    $state = 2;
+                    break;
+            }
+        }
+
+        return $state === 1 && $ko > 0; 
+    }
+
+    /**
+     * @param  array $options Options used in connecting, binding, etc.
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        $this->setOptions($options);
+    }
+
+    /**
+     * Sets the options used in connecting, binding, etc.
+     *
+     * Valid option keys:
+     *  host
+     *  port
+     *  useSsl
+     *  username
+     *  password
+     *  bindRequiresDn
+     *  baseDn
+     *  accountCanonicalForm
+     *  accountDomainName
+     *  accountDomainNameShort
+     *  accountFilterFormat
+     *  allowEmptyPassword
+     *  useStartTls
+     *  optRefferals
+     *
+     * @param  array $options Options used in connecting, binding, etc.
+     * @return Zend_Ldap Provides a fluent interface
+     * @throws Zend_Ldap_Exception
+     */
+    public function setOptions(array $options)
+    {
+        $permittedOptions = array(
+            'host'                      => null,
+            'port'                      => null,
+            'useSsl'                    => null,
+            'username'                  => null,
+            'password'                  => null,
+            'bindRequiresDn'            => null,
+            'baseDn'                    => null,
+            'accountCanonicalForm'      => null,
+            'accountDomainName'         => null,
+            'accountDomainNameShort'    => null,
+            'accountFilterFormat'       => null,
+            'allowEmptyPassword'        => null,
+            'useStartTls'               => null,
+            'optReferrals'              => null,
+        );
+
+        $diff = array_diff_key($options, $permittedOptions);
+        if ($diff) {
+            list($key, $val) = each($diff);
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, "Unknown Zend_Ldap option: $key");
+        }
+
+        foreach ($permittedOptions as $key => $val) {
+            if (!array_key_exists($key, $options)) {
+                $options[$key] = null;
+            } else {
+                /* Enforce typing. This eliminates issues like Zend_Config_Ini
+                 * returning '1' as a string (ZF-3163).
+                 */
+                switch ($key) {
+                    case 'port':
+                    case 'accountCanonicalForm':
+                        $options[$key] = (int)$options[$key];
+                        break;
+                    case 'useSsl':
+                    case 'bindRequiresDn':
+                    case 'allowEmptyPassword':
+                    case 'useStartTls':
+                    case 'optReferrals':
+                        $val = $options[$key];
+                        $options[$key] = $val === true ||
+                                $val === '1' ||
+                                strcasecmp($val, 'true') == 0;
+                        break;
+                }
+            }
+        }
+
+        $this->_options = $options;
+
+        return $this;
+    }
+
+    /**
+     * @return array The current options.
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * @return resource The raw LDAP extension resource.
+     */
+    public function getResource()
+    {
+        /**
+         * @todo by reference?
+         */
+        return $this->_resource;
+    }
+
+    /**
+     * @return string The hostname of the LDAP server being used to authenticate accounts
+     */
+    protected function _getHost()
+    {
+        return $this->_options['host'];
+    }
+
+    /**
+     * @return int The port of the LDAP server or 0 to indicate that no port value is set
+     */
+    protected function _getPort()
+    {
+        if ($this->_options['port'])
+            return $this->_options['port'];
+        return 0;
+    }
+
+    /**
+     * @return string The default acctname for binding
+     */
+    protected function _getUsername()
+    {
+        return $this->_options['username'];
+    }
+
+    /**
+     * @return string The default password for binding
+     */
+    protected function _getPassword()
+    {
+        return $this->_options['password'];
+    }
+
+    /**
+     * @return boolean The default SSL / TLS encrypted transport control
+     */
+    protected function _getUseSsl()
+    {
+        return $this->_options['useSsl'];
+    }
+
+    /**
+     * @return string The default base DN under which objects of interest are located
+     */
+    protected function _getBaseDn()
+    {
+        return $this->_options['baseDn'];
+    }
+
+    /**
+     * @return string Either ACCTNAME_FORM_BACKSLASH, ACCTNAME_FORM_PRINCIPAL or ACCTNAME_FORM_USERNAME indicating the form usernames should be canonicalized to.
+     */
+    protected function _getAccountCanonicalForm()
+    {
+        /* Account names should always be qualified with a domain. In some scenarios
+         * using non-qualified account names can lead to security vulnerabilities. If
+         * no account canonical form is specified, we guess based in what domain
+         * names have been supplied.
+         */
+
+        $accountCanonicalForm = $this->_options['accountCanonicalForm'];
+        if (!$accountCanonicalForm) {
+            $accountDomainName = $this->_options['accountDomainName'];
+            $accountDomainNameShort = $this->_options['accountDomainNameShort'];
+            if ($accountDomainNameShort) {
+                $accountCanonicalForm = Zend_Ldap::ACCTNAME_FORM_BACKSLASH;
+            } else if ($accountDomainName) {
+                $accountCanonicalForm = Zend_Ldap::ACCTNAME_FORM_PRINCIPAL;
+            } else {
+                $accountCanonicalForm = Zend_Ldap::ACCTNAME_FORM_USERNAME;
+            }
+        }
+
+        return $accountCanonicalForm;
+    }
+
+
+    /**
+     * @return string A format string for building an LDAP search filter to match an account
+     */
+    protected function _getAccountFilterFormat()
+    {
+        return $this->_options['accountFilterFormat'];
+    }
+
+    /**
+     * @return string The LDAP search filter for matching directory accounts
+     */
+    protected function _getAccountFilter($acctname)
+    {
+        $this->_splitName($acctname, $dname, $aname);
+        $accountFilterFormat = $this->_getAccountFilterFormat();
+        $aname = Zend_Ldap::filterEscape($aname);
+        if ($accountFilterFormat)
+            return sprintf($accountFilterFormat, $aname);
+        if (!$this->_options['bindRequiresDn']) {
+            // is there a better way to detect this?
+            return "(&(objectClass=user)(sAMAccountName=$aname))";
+        }
+        return "(&(objectClass=posixAccount)(uid=$aname))";
+    }
+
+    /**
+     * @param string $name The name to split
+     * @param string $dname The resulting domain name (this is an out parameter)
+     * @param string $aname The resulting account name (this is an out parameter)
+     */
+    protected function _splitName($name, &$dname, &$aname)
+    {
+        $dname = NULL;
+        $aname = $name;
+
+        $pos = strpos($name, '@');
+        if ($pos) {
+            $dname = substr($name, $pos + 1);
+            $aname = substr($name, 0, $pos);
+        } else {
+            $pos = strpos($name, '\\');
+            if ($pos) {
+                $dname = substr($name, 0, $pos);
+                $aname = substr($name, $pos + 1);
+            }
+        }
+    }
+
+    /**
+     * @param string $acctname The name of the account
+     * @return string The DN of the specified account
+     * @throws Zend_Ldap_Exception
+     */
+    protected function _getAccountDn($acctname)
+    {
+        if (Zend_Ldap::explodeDn($acctname))
+            return $acctname;
+        $acctname = $this->getCanonicalAccountName($acctname, Zend_Ldap::ACCTNAME_FORM_USERNAME);
+        $acct = $this->_getAccount($acctname, array('dn'));
+        return $acct['dn'];
+    }
+
+    /**
+     * @param string $dname The domain name to check
+     * @return bool
+     */
+    protected function _isPossibleAuthority($dname)
+    {
+        if ($dname === null)
+            return true;
+        $accountDomainName = $this->_options['accountDomainName'];
+        $accountDomainNameShort = $this->_options['accountDomainNameShort'];
+        if ($accountDomainName === null && $accountDomainNameShort === null)
+            return true;
+        if (strcasecmp($dname, $accountDomainName) == 0)
+            return true;
+        if (strcasecmp($dname, $accountDomainNameShort) == 0)
+            return true;
+        return false;
+    }
+
+    /**
+     * @param string $acctname The name to canonicalize
+     * @param int $type The desired form of canonicalization
+     * @return string The canonicalized name in the desired form
+     * @throws Zend_Ldap_Exception
+     */
+    public function getCanonicalAccountName($acctname, $form = 0)
+    {
+        $this->_splitName($acctname, $dname, $uname);
+
+        if (!$this->_isPossibleAuthority($dname)) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null,
+                    "Binding domain is not an authority for user: $acctname",
+                    Zend_Ldap_Exception::LDAP_X_DOMAIN_MISMATCH);
+        }
+
+        if ($form === Zend_Ldap::ACCTNAME_FORM_DN)
+            return $this->_getAccountDn($acctname);
+
+        if (!$uname) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, "Invalid account name syntax: $acctname");
+        }
+
+        $uname = strtolower($uname);
+
+        if ($form === 0)
+            $form = $this->_getAccountCanonicalForm();
+
+        switch ($form) {
+            case Zend_Ldap::ACCTNAME_FORM_USERNAME:
+                return $uname;
+            case Zend_Ldap::ACCTNAME_FORM_BACKSLASH:
+                $accountDomainNameShort = $this->_options['accountDomainNameShort'];
+                if (!$accountDomainNameShort) {
+                    /**
+                     * @see Zend_Ldap_Exception
+                     */
+                    require_once 'Zend/Ldap/Exception.php';
+                    throw new Zend_Ldap_Exception(null, 'Option required: accountDomainNameShort');
+                }
+                return "$accountDomainNameShort\\$uname";
+            case Zend_Ldap::ACCTNAME_FORM_PRINCIPAL:
+                $accountDomainName = $this->_options['accountDomainName'];
+                if (!$accountDomainName) {
+                    /**
+                     * @see Zend_Ldap_Exception
+                     */
+                    require_once 'Zend/Ldap/Exception.php';
+                    throw new Zend_Ldap_Exception(null, 'Option required: accountDomainName');
+                }
+                return "$uname@$accountDomainName";
+            default:
+                /**
+                 * @see Zend_Ldap_Exception
+                 */
+                require_once 'Zend/Ldap/Exception.php';
+                throw new Zend_Ldap_Exception(null, "Unknown canonical name form: $form");
+        }
+    }
+
+    /**
+     * @param array $attrs An array of names of desired attributes
+     * @return array An array of the attributes representing the account
+     * @throws Zend_Ldap_Exception
+     */
+    private function _getAccount($acctname, array $attrs = null)
+    {
+        $baseDn = $this->_getBaseDn();
+        if (!$baseDn) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, 'Base DN not set');
+        }
+
+        $accountFilter = $this->_getAccountFilter($acctname);
+        if (!$accountFilter) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, 'Invalid account filter');
+        }
+
+        if (!is_resource($this->_resource))
+            $this->bind();
+
+        $resource = $this->_resource;
+        $str = $accountFilter;
+        $code = 0;
+
+        /**
+         * @todo break out search operation into simple function (private for now)
+         */
+
+        if (!extension_loaded('ldap')) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, 'LDAP extension not loaded');
+        }
+
+        $result = @ldap_search($resource,
+                        $baseDn,
+                        $accountFilter,
+                        $attrs);
+        if (is_resource($result) === true) {
+            $count = @ldap_count_entries($resource, $result);
+            if ($count == 1) {
+                $entry = @ldap_first_entry($resource, $result);
+                if ($entry) {
+                    $acct = array('dn' => @ldap_get_dn($resource, $entry));
+                    $name = @ldap_first_attribute($resource, $entry, $berptr);
+                    while ($name) {
+                        $data = @ldap_get_values_len($resource, $entry, $name);
+                        $acct[$name] = $data;
+                        $name = @ldap_next_attribute($resource, $entry, $berptr);
+                    }
+                    @ldap_free_result($result);
+                    return $acct;
+                }
+            } else if ($count == 0) {
+                /**
+                 * @see Zend_Ldap_Exception
+                 */
+                require_once 'Zend/Ldap/Exception.php';
+                $code = Zend_Ldap_Exception::LDAP_NO_SUCH_OBJECT;
+            } else {
+
+                /**
+                 * @todo limit search to 1 record and remove some of this logic?
+                 */
+
+                $resource = null;
+                $str = "$accountFilter: Unexpected result count: $count";
+                /**
+                 * @see Zend_Ldap_Exception
+                 */
+                require_once 'Zend/Ldap/Exception.php';
+                $code = Zend_Ldap_Exception::LDAP_OPERATIONS_ERROR;
+            }
+            @ldap_free_result($result);
+        }
+
+        /**
+         * @see Zend_Ldap_Exception
+         */
+        require_once 'Zend/Ldap/Exception.php';
+        throw new Zend_Ldap_Exception($resource, $str, $code);
+    }
+
+    /**
+     * @return Zend_Ldap Provides a fluent interface
+     */
+    public function disconnect()
+    {
+        if (is_resource($this->_resource)) {
+            if (!extension_loaded('ldap')) {
+                /**
+                 * @see Zend_Ldap_Exception
+                 */
+                require_once 'Zend/Ldap/Exception.php';
+                throw new Zend_Ldap_Exception(null, 'LDAP extension not loaded');
+            }
+            @ldap_unbind($this->_resource);
+        }
+        $this->_resource = null;
+        return $this;
+    }
+
+    /**
+     * @param string $host The hostname of the LDAP server to connect to
+     * @param int $port The port number of the LDAP server to connect to
+     * @return Zend_Ldap Provides a fluent interface
+     * @throws Zend_Ldap_Exception
+     */
+    public function connect($host = null, $port = 0, $useSsl = false)
+    {
+        if ($host === null)
+            $host = $this->_getHost();
+        if ($port === 0)
+            $port = $this->_getPort();
+        if ($useSsl === false)
+            $useSsl = $this->_getUseSsl();
+
+        if (!$host) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, 'A host parameter is required');
+        }
+
+        /* To connect using SSL it seems the client tries to verify the server
+         * certificate by default. One way to disable this behavior is to set
+         * 'TLS_REQCERT never' in OpenLDAP's ldap.conf and restarting Apache. Or,
+         * if you really care about the server's cert you can put a cert on the
+         * web server.
+         */
+        $url = $useSsl ? "ldaps://$host" : "ldap://$host";
+        if ($port) {
+            $url .= ":$port";
+        }
+
+        /* Because ldap_connect doesn't really try to connect, any connect error
+         * will actually occur during the ldap_bind call. Therefore, we save the
+         * connect string here for reporting it in error handling in bind().
+         */
+        $this->_connectString = $url;
+
+        $this->disconnect();
+
+        if (!extension_loaded('ldap')) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+            throw new Zend_Ldap_Exception(null, 'LDAP extension not loaded');
+        }
+
+        /* Only OpenLDAP 2.2 + supports URLs so if SSL is not requested, just
+         * use the old form.
+         */
+        $resource = $useSsl ? @ldap_connect($url) : @ldap_connect($host, $port);
+
+        if (is_resource($resource) === true) {
+
+            $this->_resource = $resource;
+
+            $optReferrals = $this->_options['optReferrals'] ? 1 : 0;
+
+            if (@ldap_set_option($resource, LDAP_OPT_PROTOCOL_VERSION, 3) &&
+                        @ldap_set_option($resource, LDAP_OPT_REFERRALS, $optReferrals)) {
+                if ($useSsl ||
+                            $this->_options['useStartTls'] !== true ||
+                            @ldap_start_tls($resource)) {
+                    return $this;
+                }
+            }
+
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+
+            $zle = new Zend_Ldap_Exception($resource, "$host:$port");
+            $this->disconnect();
+            throw $zle;
+        }
+        /**
+         * @see Zend_Ldap_Exception
+         */
+        require_once 'Zend/Ldap/Exception.php';
+        throw new Zend_Ldap_Exception("Failed to connect to LDAP server: $host:$port");
+    }
+
+    /**
+     * @param string $username The username for authenticating the bind
+     * @param string $password The password for authenticating the bind
+     * @return Zend_Ldap Provides a fluent interface
+     * @throws Zend_Ldap_Exception
+     */
+    public function bind($username = null, $password = null)
+    {
+        $moreCreds = true;
+
+        if ($username === null) {
+            $username = $this->_getUsername();
+            $password = $this->_getPassword();
+            $moreCreds = false;
+        }
+
+        if ($username === NULL) {
+            /* Perform anonymous bind
+             */
+            $password = NULL;
+        } else {
+            /* Check to make sure the username is in DN form.
+             */
+            if (!Zend_Ldap::explodeDn($username)) {
+                if ($this->_options['bindRequiresDn']) {
+                    /* moreCreds stops an infinite loop if _getUsername does not
+                     * return a DN and the bind requires it
+                     */
+                    if ($moreCreds) {
+                        try {
+                            $username = $this->_getAccountDn($username);
+                        } catch (Zend_Ldap_Exception $zle) {
+                            /**
+                             * @todo Temporary measure to deal with exception thrown for ldap extension not loaded
+                             */
+                            if (strpos($zle->getMessage(), 'LDAP extension not loaded') !== false) {
+                                throw $zle;
+                            }
+                            // end temporary measure
+                            switch ($zle->getCode()) {
+                                case Zend_Ldap_Exception::LDAP_NO_SUCH_OBJECT:
+                                case Zend_Ldap_Exception::LDAP_X_DOMAIN_MISMATCH:
+                                    throw $zle;
+                            }
+                            throw new Zend_Ldap_Exception(null,
+                                        'Failed to retrieve DN for account: ' . $zle->getMessage(),
+                                        Zend_Ldap_Exception::LDAP_OPERATIONS_ERROR);
+                        }
+                    } else {
+                        /**
+                         * @see Zend_Ldap_Exception
+                         */
+                        require_once 'Zend/Ldap/Exception.php';
+                        throw new Zend_Ldap_Exception(null, 'Binding requires username in DN form');
+                    }
+                } else {
+                    $username = $this->getCanonicalAccountName($username,
+                                Zend_Ldap::ACCTNAME_FORM_PRINCIPAL);
+                }
+            }
+        }
+
+        if (!is_resource($this->_resource))
+            $this->connect();
+
+        if ($username !== null &&
+                    $password === '' &&
+                    $this->_options['allowEmptyPassword'] !== true) {
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+
+            $zle = new Zend_Ldap_Exception(null,
+                    'Empty password not allowed - see allowEmptyPassword option.');
+        } else {
+            if (@ldap_bind($this->_resource, $username, $password))
+                return $this;
+
+            $message = $username === null ? $this->_connectString : $username;
+
+            /**
+             * @see Zend_Ldap_Exception
+             */
+            require_once 'Zend/Ldap/Exception.php';
+    
+            switch (Zend_Ldap_Exception::getLdapCode($this)) {
+                case Zend_Ldap_Exception::LDAP_SERVER_DOWN:
+                    /* If the error is related to establishing a connection rather than binding,
+                     * the connect string is more informative than the username.
+                     */
+                    $message = $this->_connectString;
+            }
+    
+            $zle = new Zend_Ldap_Exception($this->_resource, $message);
+        }
+        $this->disconnect();
+        throw $zle;
+    }
+}

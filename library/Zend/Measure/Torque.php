@@ -1,21 +1,82 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51FchjQGC1CPULqxzTlu5dIkVJAQc3XQ3FS5tveiOZ/PY39UpB/OYTnyOMbssbHxw+5qcBqs
-AjPdHee9dKFE4o0IAIPaxoBTHACpVI0YhDOEeelCbaBxs8sz3+QMXHMMVGn3PPyGRtfqLtehw2HU
-JvPgPqftLyVj4lZbm2w6D6SHelchwEfi92FQaYxP3KxJknBpkiJKumvSdqYplPPS4wVNwycZ5tUc
-CkkN7V27QQh64DS1OAE2k9J4IvD9dCrJBKTtvIykX49eMs9hCaZUA9oIWYp0rGwPs6vDjPQJSCPd
-OPb1SbeIOcAiuuLpyfGWiC/BPhyRHV/52vGCDd3mgyoAOGC1jvTXCUNDj2RaUp3TyYe7UcLYgvDA
-v8avRUGPcS7FUINHPxYEuYMn7iX34s9S6c8LM9mC+IxcYnMEgVmh5zfQnllfpE6WxRxrx2A5E5Gq
-oLZShe/iOLM24DsIorAWdrIBFukimlNrWedh2ULgZB82X7/MacDvKbuJLgtCBXXJfNjcJOsWhXJ6
-pa4T/Vnsf7cNq7aG7dXcyJ10rY9oySmoTZuPNrYKeSlKY9wUzhJV8DRj1G8MtWhGyg4JzeffhIbo
-fQ8Z69KD9EVBQxgaUF21e05uIzpNSAqtVh24rr1nAjlz9+x2y/dts+UAfZbXL/n4pTYOwHweVDii
-gu7FaOmmWAt365pKCB9+OR/D9WVQSXgK+YnIBVPQqM27gebARjMedh5msp2crKFvE1akHgdYMKh/
-he33JRKmIGZEHniKDY0bTAsNt4ez1VrRvxMZRAiOu0oNuusdkGXCooMzDcOwdf9EDx4wVKd1+/G2
-A3aqoHcH/XWEmSUZjAvvudqdt6C36GJYuCmkZOBBuvuhQqv4b+30+myrGTZ7lYrJqfFoKIJ0i8L0
-DE4pa/xbbvU6rOOQnXn5IXzl3RTtMojCBC2xRdWuGSCp1W0ZfSRpEmV6rlqB1p5Ng0JmXwHDpGim
-9kRwJUTKRvW0RtRv4m2EQq1GXXH+i9ZJIwXXCKqtOvqsvAPPjzgta4DipuZUwXZOGABMZiHDvyhU
-oQCL0FSxAfqAqxeP2HVH7WWiRq6aJlH361uSItYFpV1py7CjuqWQZnrWB38c93r+ZVnepXCLdr8/
-HlcLcDrQ7bc/dc5P3+E2pCWLKTclzjYZExXHHtdnTyOdPxXhpZDrofrxLJZGeor2NTQnmLowmRsw
-i2K2FpI2xB3VrEArR4IAcBqQ/u7Pzi1ERoGMgh30zW2nX+cz0xTkeChu4Pz+1zVeXE8dhFzDcjvN
-dl6XIbbnwqoymYCxn7zu9w4DZrSdZwyVXY2+
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Torque.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling torque conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Torque
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Torque extends Zend_Measure_Abstract
+{
+    const STANDARD = 'NEWTON_METER';
+
+    const DYNE_CENTIMETER     = 'DYNE_CENTIMETER';
+    const GRAM_CENTIMETER     = 'GRAM_CENTIMETER';
+    const KILOGRAM_CENTIMETER = 'KILOGRAM_CENTIMETER';
+    const KILOGRAM_METER      = 'KILOGRAM_METER';
+    const KILONEWTON_METER    = 'KILONEWTON_METER';
+    const KILOPOND_METER      = 'KILOPOND_METER';
+    const MEGANEWTON_METER    = 'MEGANEWTON_METER';
+    const MICRONEWTON_METER   = 'MICRONEWTON_METER';
+    const MILLINEWTON_METER   = 'MILLINEWTON_METER';
+    const NEWTON_CENTIMETER   = 'NEWTON_CENTIMETER';
+    const NEWTON_METER        = 'NEWTON_METER';
+    const OUNCE_FOOT          = 'OUNCE_FOOT';
+    const OUNCE_INCH          = 'OUNCE_INCH';
+    const POUND_FOOT          = 'POUND_FOOT';
+    const POUNDAL_FOOT        = 'POUNDAL_FOOT';
+    const POUND_INCH          = 'POUND_INCH';
+
+    /**
+     * Calculations for all torque units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'DYNE_CENTIMETER'     => array('0.0000001',          'dyncm'),
+        'GRAM_CENTIMETER'     => array('0.0000980665',       'gcm'),
+        'KILOGRAM_CENTIMETER' => array('0.0980665',          'kgcm'),
+        'KILOGRAM_METER'      => array('9.80665',            'kgm'),
+        'KILONEWTON_METER'    => array('1000',               'kNm'),
+        'KILOPOND_METER'      => array('9.80665',            'kpm'),
+        'MEGANEWTON_METER'    => array('1000000',            'MNm'),
+        'MICRONEWTON_METER'   => array('0.000001',           'µNm'),
+        'MILLINEWTON_METER'   => array('0.001',              'mNm'),
+        'NEWTON_CENTIMETER'   => array('0.01',               'Ncm'),
+        'NEWTON_METER'        => array('1',                  'Nm'),
+        'OUNCE_FOOT'          => array('0.084738622',        'ozft'),
+        'OUNCE_INCH'          => array(array('' => '0.084738622', '/' => '12'), 'ozin'),
+        'POUND_FOOT'          => array(array('' => '0.084738622', '*' => '16'), 'lbft'),
+        'POUNDAL_FOOT'        => array('0.0421401099752144', 'plft'),
+        'POUND_INCH'          => array(array('' => '0.084738622', '/' => '12', '*' => '16'), 'lbin'),
+        'STANDARD'            => 'NEWTON_METER'
+    );
+}

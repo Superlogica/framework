@@ -1,37 +1,113 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Writer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Db.php 14336 2009-03-16 21:12:38Z wil $
+ */
+
+/** Zend_Log_Writer_Abstract */
+require_once 'Zend/Log/Writer/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Log
+ * @subpackage Writer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Db.php 14336 2009-03-16 21:12:38Z wil $
+ */
+class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
+{
+    /**
+     * Database adapter instance
+     * @var Zend_Db_Adapter
+     */
+    private $_db;
+
+    /**
+     * Name of the log table in the database
+     * @var string
+     */
+    private $_table;
+
+    /**
+     * Relates database columns names to log data field keys.
+     *
+     * @var null|array
+     */
+    private $_columnMap;
+
+    /**
+     * Class constructor
+     *
+     * @param Zend_Db_Adapter $db   Database adapter instance
+     * @param string $table         Log table in database
+     * @param array $columnMap
+     */
+    public function __construct($db, $table, $columnMap = null)
+    {
+        $this->_db    = $db;
+        $this->_table = $table;
+        $this->_columnMap = $columnMap;
+    }
+
+    /**
+     * Formatting is not possible on this writer
+     */
+    public function setFormatter($formatter)
+    {
+        require_once 'Zend/Log/Exception.php';
+        throw new Zend_Log_Exception(get_class() . ' does not support formatting');
+    }
+
+    /**
+     * Remove reference to database adapter
+     *
+     * @return void
+     */
+    public function shutdown()
+    {
+        $this->_db = null;
+    }
+
+    /**
+     * Write a message to the log.
+     *
+     * @param  array  $event  event data
+     * @return void
+     */
+    protected function _write($event)
+    {
+        if ($this->_db === null) {
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception('Database adapter is null');
+        }
+
+        if ($this->_columnMap === null) {
+            $dataToInsert = $event;
+        } else {
+            $dataToInsert = array();
+            foreach ($this->_columnMap as $columnName => $fieldKey) {
+                $dataToInsert[$columnName] = $event[$fieldKey];
+            }
+        }
+
+        $this->_db->insert($this->_table, $dataToInsert);
+    }
+
+}

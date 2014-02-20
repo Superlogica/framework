@@ -1,125 +1,287 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Z9XCLN0rz2ZfSqgWX5ox7KovUm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Module.php 15461 2009-05-09 15:54:21Z dasprid $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Router_Route_Abstract */
+require_once 'Zend/Controller/Router/Route/Abstract.php';
+
+/**
+ * Module Route
+ *
+ * Default route for module functionality
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @see        http://manuals.rubyonrails.com/read/chapter/65
+ */
+class Zend_Controller_Router_Route_Module extends Zend_Controller_Router_Route_Abstract
+{
+    /**
+     * URI delimiter
+     */
+    const URI_DELIMITER = '/';
+
+    /**
+     * Default values for the route (ie. module, controller, action, params)
+     * @var array
+     */
+    protected $_defaults;
+
+    protected $_values      = array();
+    protected $_moduleValid = false;
+    protected $_keysSet     = false;
+
+    /**#@+
+     * Array keys to use for module, controller, and action. Should be taken out of request.
+     * @var string
+     */
+    protected $_moduleKey     = 'module';
+    protected $_controllerKey = 'controller';
+    protected $_actionKey     = 'action';
+    /**#@-*/
+
+    /**
+     * @var Zend_Controller_Dispatcher_Interface
+     */
+    protected $_dispatcher;
+
+    /**
+     * @var Zend_Controller_Request_Abstract
+     */
+    protected $_request;
+
+    public function getVersion() {
+        return 1;
+    }
+
+    /**
+     * Instantiates route based on passed Zend_Config structure
+     */
+    public static function getInstance(Zend_Config $config)
+    {
+        $frontController = Zend_Controller_Front::getInstance();
+        
+        $defs       = ($config->defaults instanceof Zend_Config) ? $config->defaults->toArray() : array();
+        $dispatcher = $frontController->getDispatcher();
+        $request    = $frontController->getRequest();
+        
+        return new self($defs, $dispatcher, $request);
+    }
+
+    /**
+     * Constructor
+     *
+     * @param array $defaults Defaults for map variables with keys as variable names
+     * @param Zend_Controller_Dispatcher_Interface $dispatcher Dispatcher object
+     * @param Zend_Controller_Request_Abstract $request Request object
+     */
+    public function __construct(array $defaults = array(),
+                Zend_Controller_Dispatcher_Interface $dispatcher = null,
+                Zend_Controller_Request_Abstract $request = null)
+    {
+        $this->_defaults = $defaults;
+
+        if (isset($request)) {
+            $this->_request = $request;
+        }
+
+        if (isset($dispatcher)) {
+            $this->_dispatcher = $dispatcher;
+        }
+    }
+
+    /**
+     * Set request keys based on values in request object
+     *
+     * @return void
+     */
+    protected function _setRequestKeys()
+    {
+        if (null !== $this->_request) {
+            $this->_moduleKey     = $this->_request->getModuleKey();
+            $this->_controllerKey = $this->_request->getControllerKey();
+            $this->_actionKey     = $this->_request->getActionKey();
+        }
+
+        if (null !== $this->_dispatcher) {
+            $this->_defaults += array(
+                $this->_controllerKey => $this->_dispatcher->getDefaultControllerName(),
+                $this->_actionKey     => $this->_dispatcher->getDefaultAction(),
+                $this->_moduleKey     => $this->_dispatcher->getDefaultModule()
+            );
+        }
+
+        $this->_keysSet = true;
+    }
+
+    /**
+     * Matches a user submitted path. Assigns and returns an array of variables
+     * on a successful match.
+     *
+     * If a request object is registered, it uses its setModuleName(),
+     * setControllerName(), and setActionName() accessors to set those values.
+     * Always returns the values as an array.
+     *
+     * @param string $path Path used to match against this routing map
+     * @return array An array of assigned values or a false on a mismatch
+     */
+    public function match($path, $partial = false)
+    {
+        $this->_setRequestKeys();
+
+        $values = array();
+        $params = array();
+        
+        if (!$partial) {
+            $path = trim($path, self::URI_DELIMITER);
+        } else {
+            $matchedPath = $path;
+        }
+
+        if ($path != '') {
+            $path = explode(self::URI_DELIMITER, $path);
+
+            if ($this->_dispatcher && $this->_dispatcher->isValidModule($path[0])) {
+                $values[$this->_moduleKey] = array_shift($path);
+                $this->_moduleValid = true;
+            }
+
+            if (count($path) && !empty($path[0])) {
+                $values[$this->_controllerKey] = array_shift($path);
+            }
+
+            if (count($path) && !empty($path[0])) {
+                $values[$this->_actionKey] = array_shift($path);
+            }
+
+            if ($numSegs = count($path)) {
+                for ($i = 0; $i < $numSegs; $i = $i + 2) {
+                    $key = urldecode($path[$i]);
+                    $val = isset($path[$i + 1]) ? urldecode($path[$i + 1]) : null;
+                    $params[$key] = (isset($params[$key]) ? (array_merge((array) $params[$key], array($val))): $val);
+                }
+            }
+        }
+        
+        if ($partial) {
+            $this->setMatchedPath($matchedPath);
+        }
+
+        $this->_values = $values + $params;
+
+        return $this->_values + $this->_defaults;
+    }
+
+    /**
+     * Assembles user submitted parameters forming a URL path defined by this route
+     *
+     * @param array $data An array of variable and value pairs used as parameters
+     * @param bool $reset Weither to reset the current params
+     * @return string Route path with user submitted parameters
+     */
+    public function assemble($data = array(), $reset = false, $encode = true, $partial = false)
+    {
+        if (!$this->_keysSet) {
+            $this->_setRequestKeys();
+        }
+
+        $params = (!$reset) ? $this->_values : array();
+
+        foreach ($data as $key => $value) {
+            if ($value !== null) {
+                $params[$key] = $value;
+            } elseif (isset($params[$key])) {
+                unset($params[$key]);
+            }
+        }
+
+        $params += $this->_defaults;
+
+        $url = '';
+
+        if ($this->_moduleValid || array_key_exists($this->_moduleKey, $data)) {
+            if ($params[$this->_moduleKey] != $this->_defaults[$this->_moduleKey]) {
+                $module = $params[$this->_moduleKey];
+            }
+        }
+        unset($params[$this->_moduleKey]);
+
+        $controller = $params[$this->_controllerKey];
+        unset($params[$this->_controllerKey]);
+
+        $action = $params[$this->_actionKey];
+        unset($params[$this->_actionKey]);
+
+        foreach ($params as $key => $value) {
+            if (is_array($value)) {
+                foreach ($value as $arrayValue) {
+                    if ($encode) $arrayValue = urlencode($arrayValue);
+                    $url .= '/' . $key;
+                    $url .= '/' . $arrayValue;
+                }
+            } else {
+                if ($encode) $value = urlencode($value);
+                $url .= '/' . $key;
+                $url .= '/' . $value;
+            }
+        }
+
+        if (!empty($url) || $action !== $this->_defaults[$this->_actionKey]) {
+            if ($encode) $action = urlencode($action);
+            $url = '/' . $action . $url;
+        }
+
+        if (!empty($url) || $controller !== $this->_defaults[$this->_controllerKey]) {
+            if ($encode) $controller = urlencode($controller);
+            $url = '/' . $controller . $url;
+        }
+
+        if (isset($module)) {
+            if ($encode) $module = urlencode($module);
+            $url = '/' . $module . $url;
+        }
+
+        return ltrim($url, self::URI_DELIMITER);
+    }
+
+    /**
+     * Return a single parameter of route's defaults
+     *
+     * @param string $name Array key of the parameter
+     * @return string Previously set default
+     */
+    public function getDefault($name) {
+        if (isset($this->_defaults[$name])) {
+            return $this->_defaults[$name];
+        }
+    }
+
+    /**
+     * Return an array of defaults
+     *
+     * @return array Route defaults
+     */
+    public function getDefaults() {
+        return $this->_defaults;
+    }
+
+}

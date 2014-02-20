@@ -1,39 +1,112 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-3zQcJDg3zJ6FewLQl1rxONi=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * Resource for setting navigation structure
+ *
+ * @uses       Zend_Application_Resource_ResourceAbstract
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @author     Dolf Schimmel
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Application_Resource_Navigation 
+    extends Zend_Application_Resource_ResourceAbstract
+{
+    const DEFAULT_REGISTRY_KEY = 'Zend_Navigation';
+
+    /**
+     * @var Zend_Navigation
+     */
+    protected $_container;
+
+    /**
+     * Defined by Zend_Application_Resource_Resource
+     *
+     * @return Zend_Navigation
+     */
+    public function init()
+    {
+        if (!$this->_container) {
+            $options = $this->getOptions();
+            $pages = isset($options['pages']) ? $options['pages'] : array();
+            $this->_container = new Zend_Navigation($pages);
+        }
+
+        $this->store();
+        return $this->_container;
+    }
+
+    /**
+     * Stores navigation container in registry or Navigation view helper
+     *
+     * @return void
+     */
+    public function store()
+    {
+        $options = $this->getOptions();
+        if (isset($options['storage']['registry']) &&
+            $options['storage']['registry'] == true) {
+            $this->_storeRegistry();
+        } else {
+            $this->_storeHelper();
+        }
+    }
+
+    /**
+     * Stores navigation container in the registry
+     *
+     * @return void
+     */
+    protected function _storeRegistry()
+    {
+        $options = $this->getOptions();
+        $key = !is_numeric($options['storage']['registry']['key'])
+             ?  $options['storage']['registry']['key']
+             : self::DEFAULT_REGISTRY_KEY;
+        Zend_Registry::set($key,$this->getContainer());
+    }
+
+    /**
+     * Stores navigation container in the Navigation helper
+     *
+     * @return void
+     */
+    protected function _storeHelper()
+    {
+        $this->getBootstrap()->bootstrap('view');
+        $view = $this->getBootstrap()->getPluginResource('view')->getView();
+        $view->getHelper('navigation')->navigation($this->getContainer());
+    }
+
+    /**
+     * Returns navigation container
+     *
+     * @return Zend_Navigation
+     */
+    public function getContainer()
+    {
+        return $this->_container;
+    }
+}

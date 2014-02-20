@@ -1,35 +1,73 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Word-based captcha decorator
+ * 
+ * Adds hidden field for ID and text input field for captcha text
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+class Zend_Form_Decorator_Captcha_Word extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Render captcha
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $name = $element->getFullyQualifiedName();
+
+        $hiddenName = $name . '[id]';
+        $textName   = $name . '[input]';
+
+        $placement = $this->getPlacement();
+        $separator = $this->getSeparator();
+
+        $hidden = $view->formHidden($hiddenName, $element->getValue(), $element->getAttribs());
+        $text   = $view->formText($textName, '', $element->getAttribs());
+        switch ($placement) {
+            case 'PREPEND':
+                $content = $hidden . $separator . $text . $separator . $content;
+                break;
+            case 'APPEND':
+            default:
+                $content = $content . $separator . $hidden . $separator . $text;
+        }
+        return $content;
+    }
+}

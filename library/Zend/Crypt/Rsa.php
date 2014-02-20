@@ -1,114 +1,298 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage Rsa
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Crypt_Rsa_Key_Private
+ */
+require_once 'Zend/Crypt/Rsa/Key/Private.php';
+
+/**
+ * @see Zend_Crypt_Rsa_Key_Public
+ */
+require_once 'Zend/Crypt/Rsa/Key/Public.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Crypt_Rsa
+{
+
+    const BINARY = 'binary';
+    const BASE64 = 'base64';
+
+    protected $_privateKey = null;
+
+    protected $_publicKey = null;
+
+    /**
+     * @var string
+     */
+    protected $_pemString = null;
+
+    protected $_pemPath = null;
+
+    protected $_certificateString = null;
+
+    protected $_certificatePath = null;
+
+    protected $_hashAlgorithm = OPENSSL_ALGO_SHA1;
+
+    protected $_passPhrase = null;
+
+    public function __construct(array $options = null)
+    {
+        if (isset($options)) {
+            $this->setOptions($options);
+        }
+    }
+
+    public function setOptions(array $options)
+    {
+        if (isset($options['passPhrase'])) {
+            $this->_passPhrase = $options['passPhrase'];
+        }
+        foreach ($options as $option=>$value) {
+            switch ($option) {
+                case 'pemString':
+                    $this->setPemString($value);
+                    break;
+                case 'pemPath':
+                    $this->setPemPath($value);
+                    break;
+                case 'certificateString':
+                    $this->setCertificateString($value);
+                    break;
+                case 'certificatePath':
+                    $this->setCertificatePath($value);
+                    break;
+                case 'hashAlgorithm':
+                    $this->setHashAlgorithm($value);
+                    break;
+            }
+        }
+    }
+
+    public function getPrivateKey()
+    {
+        return $this->_privateKey;
+    }
+
+    public function getPublicKey()
+    {
+        return $this->_publicKey;
+    }
+
+    /**
+     * @param string $data
+     * @param Zend_Crypt_Rsa_Key_Private $privateKey
+     * @param string $format
+     * @return string
+     */
+    public function sign($data, Zend_Crypt_Rsa_Key_Private $privateKey = null, $format = null)
+    {
+        $signature = '';
+        if (isset($privateKey)) {
+            $opensslKeyResource = $privateKey->getOpensslKeyResource();
+        } else {
+            $opensslKeyResource = $this->_privateKey->getOpensslKeyResource();
+        }
+        $result = openssl_sign(
+            $data, $signature,
+            $opensslKeyResource,
+            $this->getHashAlgorithm()
+        );
+        if ($format == self::BASE64) {
+            return base64_encode($signature);
+        }
+        return $signature;
+    }
+
+    /**
+     * @param string $data
+     * @param string $signature
+     * @param string $format
+     * @return string
+     */
+    public function verifySignature($data, $signature, $format = null)
+    {
+        if ($format == self::BASE64) {
+            $signature = base64_decode($signature);
+        }
+        $result = openssl_verify($data, $signature,
+            $this->getPublicKey()->getOpensslKeyResource(),
+            $this->getHashAlgorithm());
+        return $result;
+    }
+
+    /**
+     * @param string $data
+     * @param Zend_Crypt_Rsa_Key $key
+     * @param string $format
+     * @return string
+     */
+    public function encrypt($data, Zend_Crypt_Rsa_Key $key, $format = null)
+    {
+        $encrypted = '';
+        $function = 'openssl_public_encrypt';
+        if ($key instanceof Zend_Crypt_Rsa_Key_Private) {
+            $function = 'openssl_private_encrypt';
+        }
+        $function($data, $encrypted, $key->getOpensslKeyResource());
+        if ($format == self::BASE64) {
+            return base64_encode($encrypted);
+        }
+        return $encrypted;
+    }
+
+    /**
+     * @param string $data
+     * @param Zend_Crypt_Rsa_Key $key
+     * @param string $format
+     * @return string
+     */
+    public function decrypt($data, Zend_Crypt_Rsa_Key $key, $format = null)
+    {
+        $decrypted = '';
+        if ($format == self::BASE64) {
+            $data = base64_decode($data);
+        }
+        $function = 'openssl_private_decrypt';
+        if ($key instanceof Zend_Crypt_Rsa_Key_Public) {
+            $function = 'openssl_public_decrypt';
+        }
+        $function($data, $decrypted, $key->getOpensslKeyResource());
+        return $decrypted;
+    }
+
+    public function generateKeys(array $configargs = null)
+    {
+        $config = null;
+        $passPhrase = null;
+        if (!is_null($configargs)) {
+            if (isset($configargs['passPhrase'])) {
+                $passPhrase = $configargs['passPhrase'];
+                unset($configargs['passPhrase']);
+            }
+            $config = $this->_parseConfigArgs($configargs);
+        }
+        $privateKey = null;
+        $publicKey = null;
+        $resource = openssl_pkey_new($config);
+        // above fails on PHP 5.3
+        openssl_pkey_export($resource, $private, $passPhrase);
+        $privateKey = new Zend_Crypt_Rsa_Key_Private($private, $passPhrase);
+        $details = openssl_pkey_get_details($resource);
+        $publicKey = new Zend_Crypt_Rsa_Key_Public($details['key']);
+        $return = new ArrayObject(array(
+           'privateKey'=>$privateKey,
+           'publicKey'=>$publicKey
+        ), ArrayObject::ARRAY_AS_PROPS);
+        return $return;
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setPemString($value)
+    {
+        $this->_pemString = $value;
+        $this->_privateKey = new Zend_Crypt_Rsa_Key_Private($this->_pemString, $this->_passPhrase);
+        $this->_publicKey = $this->_privateKey->getPublicKey();
+    }
+
+    public function setPemPath($value)
+    {
+        $this->_pemPath = $value;
+        $this->setPemString(file_get_contents($this->_pemPath));
+    }
+
+    public function setCertificateString($value)
+    {
+        $this->_certificateString = $value;
+        $this->_publicKey = new Zend_Crypt_Rsa_Key_Public($this->_certificateString, $this->_passPhrase);
+    }
+
+    public function setCertificatePath($value)
+    {
+        $this->_certificatePath = $value;
+        $this->setCertificateString(file_get_contents($this->_certificatePath));
+    }
+
+    public function setHashAlgorithm($name)
+    {
+        switch ($name) {
+            case 'md2':
+                $this->_hashAlgorithm = OPENSSL_ALGO_MD2;
+                break;
+            case 'md4':
+                $this->_hashAlgorithm = OPENSSL_ALGO_MD4;
+                break;
+            case 'md5':
+                $this->_hashAlgorithm = OPENSSL_ALGO_MD5;
+                break;
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getPemString()
+    {
+        return $this->_pemString;
+    }
+
+    public function getPemPath()
+    {
+        return $this->_pemPath;
+    }
+
+    public function getCertificateString()
+    {
+        return $this->_certificateString;
+    }
+
+    public function getCertificatePath()
+    {
+        return $this->_certificatePath;
+    }
+
+    public function getHashAlgorithm()
+    {
+        return $this->_hashAlgorithm;
+    }
+
+    protected function _parseConfigArgs(array $config = null)
+    {
+        $configs = array();
+        if (isset($config['privateKeyBits'])) {
+            $configs['private_key_bits'] = $config['privateKeyBits'];
+        }
+        if (!empty($configs)) {
+            return $configs;
+        }
+        return null;
+    }
+
+}

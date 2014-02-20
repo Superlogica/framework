@@ -1,66 +1,246 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+
+/**
+ * PDF file 'string' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_String extends Zend_Pdf_Element
+{
+    /**
+     * Object value
+     *
+     * @var string
+     */
+    public $value;
+
+    /**
+     * Object constructor
+     *
+     * @param string $val
+     */
+    public function __construct($val)
+    {
+        $this->value   = (string)$val;
+    }
+
+
+    /**
+     * Return type of the element.
+     *
+     * @return integer
+     */
+    public function getType()
+    {
+        return Zend_Pdf_Element::TYPE_STRING;
+    }
+
+
+    /**
+     * Return object as string
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        return '(' . self::escape((string)$this->value) . ')';
+    }
+
+
+    /**
+     * Escape string according to the PDF rules
+     *
+     * @param string $inStr
+     * @return string
+     */
+    public static function escape($inStr)
+    {
+        $outStr = '';
+        $lastNL = 0;
+
+        for ($count = 0; $count < strlen($inStr); $count++) {
+            if (strlen($outStr) - $lastNL > 128)  {
+                $outStr .= "\\\n";
+                $lastNL = strlen($outStr);
+            }
+
+            $nextCode = ord($inStr[$count]);
+            switch ($nextCode) {
+                // "\n" - line feed (LF)
+                case 10:
+                    $outStr .= '\\n';
+                    break;
+
+                // "\r" - carriage return (CR)
+                case 13:
+                    $outStr .= '\\r';
+                    break;
+
+                // "\t" - horizontal tab (HT)
+                case 9:
+                    $outStr .= '\\t';
+                    break;
+
+                // "\b" - backspace (BS)
+                case 8:
+                    $outStr .= '\\b';
+                    break;
+
+                // "\f" - form feed (FF)
+                case 12:
+                    $outStr .= '\\f';
+                    break;
+
+                // '(' - left paranthesis
+                case 40:
+                    $outStr .= '\\(';
+                    break;
+
+                // ')' - right paranthesis
+                case 41:
+                    $outStr .= '\\)';
+                    break;
+
+                // '\' - backslash
+                case 92:
+                    $outStr .= '\\\\';
+                    break;
+
+                default:
+                    // Don't use non-ASCII characters escaping
+                    // if ($nextCode >= 32 && $nextCode <= 126 ) {
+                    //     // Visible ASCII symbol
+                    //     $outStr .= $inStr[$count];
+                    // } else {
+                    //     $outStr .= sprintf('\\%03o', $nextCode);
+                    // }
+                    $outStr .= $inStr[$count];
+
+                    break;
+            }
+        }
+
+        return $outStr;
+    }
+
+
+    /**
+     * Unescape string according to the PDF rules
+     *
+     * @param string $inStr
+     * @return string
+     */
+    public static function unescape($inStr)
+    {
+        $outStr = '';
+
+        for ($count = 0; $count < strlen($inStr); $count++) {
+            if ($inStr[$count] != '\\' || $count == strlen($inStr)-1)  {
+                $outStr .= $inStr[$count];
+            } else { // Escape sequence
+                switch ($inStr{++$count}) {
+                    // '\\n' - line feed (LF)
+                    case 'n':
+                        $outStr .= "\n";
+                        break;
+
+                    // '\\r' - carriage return (CR)
+                    case 'r':
+                        $outStr .= "\r";
+                        break;
+
+                    // '\\t' - horizontal tab (HT)
+                    case 't':
+                        $outStr .= "\t";
+                        break;
+
+                    // '\\b' - backspace (BS)
+                    case 'b':
+                        $outStr .= "\x08";
+                        break;
+
+                    // '\\f' - form feed (FF)
+                    case 'f':
+                        $outStr .= "\x0C";
+                        break;
+
+                    // '\\(' - left paranthesis
+                    case '(':
+                        $outStr .= '(';
+                        break;
+
+                    // '\\)' - right paranthesis
+                    case ')':
+                        $outStr .= ')';
+                        break;
+
+                    // '\\\\' - backslash
+                    case '\\':
+                        $outStr .= '\\';
+                        break;
+
+                    // "\\\n" or "\\\n\r"
+                    case "\n":
+                        // skip new line symbol
+                        if ($inStr[$count+1] == "\r") {
+                            $count++;
+                        }
+                        break;
+
+                    default:
+                        if (ord($inStr[$count]) >= ord('0') &&
+                            ord($inStr[$count]) <= ord('9')) {
+                            // Character in octal representation
+                            // '\\xxx'
+                            $nextCode = '0' . $inStr[$count];
+
+                            if (ord($inStr[$count+1]) >= ord('0') &&
+                                ord($inStr[$count+1]) <= ord('9')) {
+                                $nextCode .= $inStr{++$count};
+
+                                if (ord($inStr[$count+1]) >= ord('0') &&
+                                    ord($inStr[$count+1]) <= ord('9')) {
+                                    $nextCode .= $inStr{++$count};
+                                }
+                            }
+
+                            $outStr .= chr($nextCode);
+                        } else {
+                            $outStr .= $inStr[$count];
+                        }
+                        break;
+                }
+            }
+        }
+
+        return $outStr;
+    }
+
+}

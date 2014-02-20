@@ -1,29 +1,69 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Et69BQrBfsvL7EnbT+MieMQ8ZxPuaMUVvgidGedbh/BnHNJLdcVsh7xMp+jjhjHugnihtFR
-ma4Aa6GnrLPM4cAPiVP8GtT2VzQvjMucPDc05xGl2F5OcSoKrauCQcC3SZraT6YYm9JVuDO+3Z5R
-T3lyx6yAorUdus483TVDw0alWSpwV7pjgmD+T5d+H7Zmbq6L8ICBREIf3CA/rCCmvop+WGUrkt4w
-WjSMakpyuFedh9JWwuzIn4kJIPpDKor7T+KlBeH2Q2jdkvBMI8Hr+4sv5TK65Ar+IHV68+x+NwvV
-7qdwKEhacJyGQ/ZMT1Hp52MTkPJmgO5Uy2uoJblsDL+5cqkrkL2tRmrwLAEbkfFC9M1rTNIo/tRC
-berCD8Q1JEAUybArbhuwmTCFM2ZH8qBjhs5cgXzyFPMHXdfcmwxco4C07QTpLaIwNNo/Wfp8+oBk
-/8p5OQNvyugNbBzom76iMVgTUMz48VmQhjzYLS76wxNEKN4oRAHXUmTLnWr9Agj3YipVWUdZTSgV
-kDb4mrQbRKxkXIPMNkOoNCBX56mHGgLwiMEbhnPtluzUojI3JU5H33ul4N3mc++rKp+2kuV6g12l
-ly2XXFtz12S1nDUiX4EPgIMkmFdiubt/98avntLIs8grtZY5kdTK/IDsGpWSs+IBgQZ/k3jJo3kn
-+elwy8pjnCEXAbUgBrHne5DMvTtMHVoIpL+9ExVf6UApVUIy0b5x8PrIzrbJKcXzxkxtfvU7Xr2v
-AbPiGpCvgZfUww4Xv91MbGUmcJ9hFJjT4UCjubt8DQHqPh4KZKjGOsV3oTHRy6BuK71+VPkhrSum
-1RhIsMtMUUQPuFHQuLA8jQ9YWca/WLdzj3qE4FR6u5BXxP425OFqTzo1ljW2Zl9o3NNqv9XXhPYo
-jOHPti+WG8aSjk1XrrxaQL/vhSZWvOSeYnW1FGowmEvUwKwSpQ8wRmDzjVBtqatwNOj80l+q97Rm
-JIeq+M4vaFQfVNDD9lygU+IT76LI8uYaDU+CHVmhrkioutErFT9Rtl5GH+qLvwKF5R8lZrzZRrtJ
-rO0M0Bby3R0j22KGYI7cfbykXInRCkvr7db9s32zovtvdX7eqFEFa9znBdYaVI8zLAYXoMk32eZW
-nhDArVKvV/r/jKr/1YWfMzp6WvLpVzRzyboXfxZqxj5YVjPWlxj+kfh3ASmWRXsSNm0KVPP1Wv+C
-v/CNnyQI/d+U75dEZ1V1WIsjZ68s55VHQJWMXPPEXfO57h/R2Gdg7WdGn2dbXeT75d1pGTV3VzfT
-qwGc6JFSkIUf/PNsTWkY5rBgaDBVeUL5eG4SW1TkP8P9vrD3FeEuNWlK0GZVgefUL3ZvY/t3aVA5
-I2SHWMoqoTnuLwBTt9NUrYmdEzE50Kdkj0cI9512D8bIYIh2tzejpXGCsCgxI1SJIfMLPMTllE0e
-HEjRq4PStirs3QZve25VQD906F1osWF7jzek52nsjdxnxemlr1tyWqO0pkU3WDPBasiTosSkU7Fc
-i/J+zEgpozgQRKtZJH4sXK0pNQKehyvOmWsd65Aw5UDV+4MppLWq7uBAtihJQ1cUPE4P+qJGLA+E
-X4didVUJrsnKF/EHrgSeyoIq3wUVtQrzThzB8iQ6W4Prqqks4kjCdyN2k9DsUpRuMN9sXMKwBdQE
-zMwAe1amCAiRMk7LHjU4oHYNwjze0Raei3si6oBCmy42y6UGmlJZUPfQIQ7c58TnLQ/ZN3MxhNNG
-vn/9uMIhFrccYrzV9k2uZUMVaLaQJn8hj2zunYKHMUAAJxixHG3X+0J2TZUcvf/z0XqKfvrZDQ8B
-Evgbraf57oeheKX3dkUHG9NZJ7mfoAfHWnOsGvQoGHeOwRoEsOlhSBEFv9ajbK4+CYE9f4rwkCuG
-1B8WSJcg
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Errors
+ *
+ * Any options passed will be used as HTML attributes of the ul tag for the errors.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Errors.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+class Zend_Form_Decorator_Errors extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Render errors
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $errors = $element->getMessages();
+        if (empty($errors)) {
+            return $content;
+        }
+
+        $separator = $this->getSeparator();
+        $placement = $this->getPlacement();
+        $errors    = $view->formErrors($errors, $this->getOptions()); 
+
+        switch ($placement) {
+            case self::APPEND:
+                return $content . $separator . $errors;
+            case self::PREPEND:
+                return $errors . $separator . $content;
+        }
+    }
+}

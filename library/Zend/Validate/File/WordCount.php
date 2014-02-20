@@ -1,37 +1,101 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_File_Count
+ */
+require_once 'Zend/Validate/File/Count.php';
+
+/**
+ * Validator for counting all words in a file
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_WordCount extends Zend_Validate_File_Count
+{
+    /**#@+
+     * @const string Error constants
+     */
+    const TOO_MUCH  = 'fileWordCountTooMuch';
+    const TOO_LESS  = 'fileWordCountTooLess';
+    const NOT_FOUND = 'fileWordCountNotFound';
+    /**#@-*/
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::TOO_MUCH => "Too much words, maximum '%max%' are allowed but '%count%' were counted",
+        self::TOO_LESS => "Too less words, minimum '%min%' are expected but '%count%' were counted",
+        self::NOT_FOUND => "The file '%value%' could not be found"
+    );
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the counted words are at least min and
+     * not bigger than max (when max is not null).
+     *
+     * @param  string $value Filename to check for word count
+     * @param  array  $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_FOUND);
+        }
+
+        $content = file_get_contents($value);
+        $this->_count = str_word_count($content);
+        if (($this->_max !== null) && ($this->_count > $this->_max)) {
+            return $this->_throw($file, self::TOO_MUCH);
+        }
+
+        if (($this->_min !== null) && ($this->_count < $this->_min)) {
+            return $this->_throw($file, self::TOO_LESS);
+        }
+
+        return true;
+    }
+
+    /**
+     * Throws an error of the given type
+     *
+     * @param  string $file
+     * @param  string $errorType
+     * @return false
+     */
+    protected function _throw($file, $errorType)
+    {
+        if ($file !== null) {
+            $this->_value = $file['name'];
+        }
+
+        $this->_error($errorType);
+        return false;
+    }
+}

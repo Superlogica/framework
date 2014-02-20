@@ -1,82 +1,182 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract class for extension
+ */
+require_once 'Zend/View/Helper/FormElement.php';
+
+
+/**
+ * Helper to generate a set of radio button elements
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_FormRadio extends Zend_View_Helper_FormElement
+{
+    /**
+     * Input type to use
+     * @var string
+     */
+    protected $_inputType = 'radio';
+
+    /**
+     * Whether or not this element represents an array collection by default
+     * @var bool
+     */
+    protected $_isArray = false;
+
+    /**
+     * Generates a set of radio button elements.
+     *
+     * @access public
+     *
+     * @param string|array $name If a string, the element name.  If an
+     * array, all other parameters are ignored, and the array elements
+     * are extracted in place of added parameters.
+     *
+     * @param mixed $value The radio value to mark as 'checked'.
+     *
+     * @param array $options An array of key-value pairs where the array
+     * key is the radio value, and the array value is the radio text.
+     *
+     * @param array|string $attribs Attributes added to each radio.
+     *
+     * @return string The radio buttons XHTML.
+     */
+    public function formRadio($name, $value = null, $attribs = null,
+        $options = null, $listsep = "<br />\n")
+    {
+
+        $info = $this->_getInfo($name, $value, $attribs, $options, $listsep);
+        extract($info); // name, value, attribs, options, listsep, disable
+
+        // retrieve attributes for labels (prefixed with 'label_' or 'label')
+        $label_attribs = array();
+        foreach ($attribs as $key => $val) {
+            $tmp    = false;
+            $keyLen = strlen($key);
+            if ((6 < $keyLen) && (substr($key, 0, 6) == 'label_')) {
+                $tmp = substr($key, 6);
+            } elseif ((5 < $keyLen) && (substr($key, 0, 5) == 'label')) {
+                $tmp = substr($key, 5);
+            }
+
+            if ($tmp) {
+                // make sure first char is lowercase
+                $tmp[0] = strtolower($tmp[0]);
+                $label_attribs[$tmp] = $val;
+                unset($attribs[$key]);
+            }
+        }
+
+        $labelPlacement = 'append';
+        foreach ($label_attribs as $key => $val) {
+            switch (strtolower($key)) {
+                case 'placement':
+                    unset($label_attribs[$key]);
+                    $val = strtolower($val);
+                    if (in_array($val, array('prepend', 'append'))) {
+                        $labelPlacement = $val;
+                    }
+                    break;
+            }
+        }
+
+        // the radio button values and labels
+        $options = (array) $options;
+
+        // build the element
+        $xhtml = '';
+        $list  = array();
+
+        // should the name affect an array collection?
+        $name = $this->view->escape($name);
+        if ($this->_isArray && ('[]' != substr($name, -2))) {
+            $name .= '[]';
+        }
+
+        // ensure value is an array to allow matching multiple times
+        $value = (array) $value;
+
+        // XHTML or HTML end tag?
+        $endTag = ' />';
+        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
+            $endTag= '>';
+        }
+
+        // add radio buttons to the list.
+        require_once 'Zend/Filter/Alnum.php';
+        $filter = new Zend_Filter_Alnum();
+        foreach ($options as $opt_value => $opt_label) {
+
+            // Should the label be escaped?
+            if ($escape) {
+                $opt_label = $this->view->escape($opt_label);
+            }
+
+            // is it disabled?
+            $disabled = '';
+            if (true === $disable) {
+                $disabled = ' disabled="disabled"';
+            } elseif (is_array($disable) && in_array($opt_value, $disable)) {
+                $disabled = ' disabled="disabled"';
+            }
+
+            // is it checked?
+            $checked = '';
+            if (in_array($opt_value, $value)) {
+                $checked = ' checked="checked"';
+            }
+
+            // generate ID
+            $optId = $id . '-' . $filter->filter($opt_value);
+
+            // Wrap the radios in labels
+            $radio = '<label'
+                    . $this->_htmlAttribs($label_attribs) . ' for="' . $optId . '">'
+                    . (('prepend' == $labelPlacement) ? $opt_label : '')
+                    . '<input type="' . $this->_inputType . '"'
+                    . ' name="' . $name . '"'
+                    . ' id="' . $optId . '"'
+                    . ' value="' . $this->view->escape($opt_value) . '"'
+                    . $checked
+                    . $disabled
+                    . $this->_htmlAttribs($attribs)
+                    . $endTag
+                    . (('append' == $labelPlacement) ? $opt_label : '')
+                    . '</label>';
+
+            // add to the array of radio buttons
+            $list[] = $radio;
+        }
+
+        // done!
+        $xhtml .= implode($listsep, $list);
+
+        return $xhtml;
+    }
+}

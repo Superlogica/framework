@@ -1,50 +1,115 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Modules.php 15523 2009-05-11 14:07:22Z matthew $
+ */
+
+/**
+ * Module bootstrapping resource
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Application_Resource_Modules extends Zend_Application_Resource_ResourceAbstract
+{
+    /**
+     * @var ArrayObject
+     */
+    protected $_bootstraps;
+
+    /**
+     * Constructor
+     * 
+     * @param  mixed $options 
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        $this->_bootstraps = new ArrayObject(array(), ArrayObject::ARRAY_AS_PROPS);
+        parent::__construct($options);
+    }
+
+    /**
+     * Initialize modules
+     *
+     * @return array
+     * @throws Zend_Application_Resource_Exception When bootstrap class was not found
+     */
+    public function init()
+    {
+        $bootstrap = $this->getBootstrap();
+        $bootstrap->bootstrap('FrontController');
+        $front = $bootstrap->getResource('FrontController');
+
+        $modules = $front->getControllerDirectory();
+        $default = $front->getDefaultModule();
+        foreach (array_keys($modules) as $module) {
+            if ($module === $default) {
+                continue;
+            }
+
+            $bootstrapClass = $this->_formatModuleName($module) . '_Bootstrap';
+            if (!class_exists($bootstrapClass)) {
+                $bootstrapPath  = $front->getModuleDirectory($module) . '/Bootstrap.php';
+                if (file_exists($bootstrapPath)) {
+                    include_once $bootstrapPath;
+                    if (!class_exists($bootstrapClass, false)) {
+                        throw new Zend_Application_Resource_Exception('Bootstrap file found for module "' . $module . '" but bootstrap class "' . $bootstrapClass . '" not found');
+                    }
+                } else {
+                    continue;
+                }
+            }
+
+            $moduleBootstrap = new $bootstrapClass($bootstrap);
+            $moduleBootstrap->bootstrap();
+            $this->_bootstraps[$module] = $moduleBootstrap;
+        }
+
+        return $this->_bootstraps;
+    }
+
+    /**
+     * Get bootstraps that have been run
+     * 
+     * @return ArrayObject
+     */
+    public function getExecutedBootstraps()
+    {
+        return $this->_bootstraps;
+    }
+
+    /**
+     * Format a module name to the module class prefix
+     * 
+     * @param  string $name 
+     * @return string
+     */
+    protected function _formatModuleName($name)
+    {
+        $name = strtolower($name);
+        $name = str_replace(array('-', '.'), ' ', $name);
+        $name = ucwords($name);
+        $name = str_replace(' ', '', $name);
+        return $name;
+    }
+}

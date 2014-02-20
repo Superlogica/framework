@@ -1,26 +1,27 @@
-!odMbo!
-3rjbL0GOgx4hGEsTBRcbKW400000000037cBjq63Q8DQ9IpLFsxCbGpdvHdxvNacBbRfzd1+uVOH
-VaSBR0chKNZbiSnB0oovmuQNabGlMplPuDydDXrpAjL9XHLM/XDZK1Hi/revzBuwEFGpP2V7Omvl
-+I5KuDECh4L9EwSFaDpTL53oGZB/34MknEd5GDbaoqqwEeV7i0zAXv+UUbe0YXcyd7H/YNXfMjno
-U5A4/jt9azIpjMc7aBfuh3fwsvNzGQFX1HwOU/XXnnaOqTnn3HoQnGgOLhmKwKQAga1JwkmsYesf
-cFkFk4q5lVFUBuaLKki6OcszTz8GitTMr4LQz3itGeZUqR7GXQbg1lJiD7BBiQPY/QtKG6r28m8F
-tBmEvUQCUh9npYK1RMFUHRQHGaGJrnGXH31sXZFrwu1a/Un99iBXaLD/rws/7/QyjOJtnGUykG/j
-XRF26Dgsxt6rRvnMeiEDhX8xA0Yqz/nFacJf0Bs2cLxmsJMbQT6zJ2+NqGOAdKvQpQQMnFJTmsJR
-5Lz4Hq5BJqBCO14WwcyrJ7/lqjFTxazEVyk0Bu60IMCeoMQoaWQUuuKreq4JR0KLMdUTThZfKIXr
-px8Qd2ZNfk9Vb6jtRHfF+fOU7aGKk7brjbeQAG2Fw5o58CKjplKo6Bb4NArrmQFUqvRLjQ0+/XTo
-QZOovN6OOelQckYEPjq9xdPlJHO1tm+Z7WuxyEISfwvltCcGNo7LUieJqzYG4HpwxEEPWPe3kpbG
-0dLvQWWLxfmjJsPwSlvHNDtKIa/HEUQ4Ys3drgE371/pm6sM/P3t9yJPb4j4F+2RuXhk/YGfMOM2
-Xzj5WfSmcOT0jHAp5NKPTAx17ftTw2/CDe5G+/Ico2QQLrNzpO4WvGQ/OeY6r0hYSttqqwl8NU+r
-BvnIB180vXQpQ0uXtJd34Y03St4jckzqJa+sE5+GLZN93ZehyakgY1nsLpioLFED3Ei0Ysdu+b7O
-3aSA/6GCJO1tsBNQQ9t5bmivtYl9RmGHDLX7m36+wIdqt5rNI4pnIqw+KLYF1KfskUc9+e/NPCRZ
-0mHPEe8+b+VeXWX+eAt4lXXPf0hMs22jcQyJtbXAuovd+4hVoj5pXlIGk3NQNi/KDQ5WaFKSrezF
-NYmmLTwPeq2nfyi0c+aiIt3EZdIYa928XLQk9EXGzbiTcXIW8/GZnP8k3cI7E4uzyJL9QeSTZlNh
-5SGPJmiReeXLgtwmWnMFJeMxI8eElWL3w6vBIXbHgtzFs1mazLo/KEj4x5wPK7Pas24AZcOKHI55
-8kK7bO5nzTNBJNxTey9I3cALKkQD5MnpSbLDPdpUYDLSjzyxnuJRFM+t7+VWRH5iE82Yv3bXXjuA
-ZCOoMgCgXtmcWzx+ob6whEWiSGDy3LJgOYfQgCy2Isz6QtLz4JqKGUd3Yw3zuo//OpNfniFc4fDW
-VNO1Vm1PLsjotlWXKXlgvgr0XYcc6hku0pRqVcBhYYpmjYt7moY5vbS3fvh/Z8IBBx/j6SYsBn/i
-ehn7MIwCVHOPKjSuZuHbSOkD5i8fnWvch+XZQbP3OKBUyVdDRBqUOaLaYIgBIcYQe+vPN8f3gBy6
-/68uYAGt9xQxqkOC4Oa3V/AkN1IP0A0KzZmozPiMpMZ/Tutk8M1iLUE7l4mgUeaD1X65UswgIYuc
-ozWVd97M006hTstVJQdhZG8+pg24p5nthMtdZrxxl1/1pEsbh5/QrXFk9bkyZXJK36XxLM6bNxPd
-48LpsRNOkKL+d2L3/g7B+S4RaKQsEgXGkGgOavX4oJvrYrVLtwTUGF/D4rcFOngDy+wyA+8v5F3C
-jmgpINA8EbRRBI4bYnhuZvtCKNGSB8YaX6w/w5W=
+                 phpThumb() Commercial License
+                 =============================
+
+phpThumb() is licensed under the "GNU Public License" (GPL) and/or the
+"phpThumb() Commercial License" (pTCL). This document describes the pTCL.
+
+---------------------------------------------------------------------
+
+The license is non-exclusively granted to a single person or company,
+per payment of the license fee, for the lifetime of that person or
+company. The license is non-transferrable.
+
+The pTCL grants the licensee the right to use phpThumb() in commercial
+closed-source projects. Modifications may be made to phpThumb() with no
+obligation to release the modified source code. phpThumb() (or pieces
+thereof) may be included in any number of projects authored (in whole
+or in part) by the licensee.
+
+The licensee may use any version of phpThumb(), past, present or future,
+as is most convenient. This license does not entitle the licensee to
+receive any technical support, updates or bugfixes, except as such are
+made publicly available to all phpThumb() users.
+
+The licensee may not sub-license phpThumb() itself, meaning that any
+commercially released product containing all or parts of phpThumb() must
+have added functionality beyond what is available in phpThumb();
+phpThumb() itself may not be re-licensed by the licensee.

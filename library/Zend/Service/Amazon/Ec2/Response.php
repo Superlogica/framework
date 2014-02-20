@@ -1,38 +1,139 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV58KarU4f3oxM89D0mZZFwnirRo80WE6G6wsiLEP6OUYhmuqW20wcVVDmkMPmgDiGwi/undvy
-mEZ1V4qLgb8/5udApwX/dDNqyDT00am6QgBF+GgIEuv2pb1cxxKRTjBHEten8nUAcRWbhfp62lxO
-nSTjqlAXqn7CnRvUeOEveaJSsL3EAkbcUQLPUaYYVYRnv+hztUixcHKEuBmbluuiCOGkj0eMzi76
-5WWwdLt0tAj95IpLIkUrn4kJIPpDKor7T+KlBeH2Q7vc8l4bfbOnPnR0czNMyFvu1RZBrDPQc4Ku
-FMtB6jKHqr1XJ4FPE68quRc5RsYDAJw9sJcwJNTc8M6TGiBBNf3Fowt6rPyn6K+E3dT7PyOzGJV5
-3V1RJasOCJCic8rS94g0eYBJWxvcTMjb6g2pr/NKlOHaz+oz1r6M3sOc83h1x7ukFZtR9s+Jh12E
-aE+s1qijW/GjphtRejwVXfMUSF0t+R6TG7bbOPu3dQW4nDn1pNF3YykOx7lwVA6BlyJS6B3ld0Nx
-f5Vrl8HZfliwVJClW6bvQYbO5d8fY9ZAh8MJRaeQG9V5z6u2Fbhgsw0NsUQBpZOU1w3vVneWl0Rq
-idH4EeC0/mIGmM64vUidkkSrMrjcdtid151MFMafX+P3QuYxcL2Ifmy7nGQsxMjzxXstz7pFU046
-L9HRzq00Qv90kEWjckQ9vnJL7gbgALSiTUkuj52Wtl734heY0l5bQH64994qimD/Xkg1D5IWA5GI
-kUb/k2WLx+KEzlrE0UJ9eALh90IgHK31nfcQgPrma+VsK0NHDF5LXY37np0cY2b6q1HwdYXckyJw
-Aun+PtJ9/OXjG2k9e7sEUL0+6NZ0Y0gU2DVT9GSOxrWFfhQiG9KXrmsajUnaCqt2gtm4jsiFAMa0
-o2ls2wRShEAGG2etKWsIDWOWBUD3MHlkBKxEzB0dDnhmts+VBvyqnmnZ4iW50WvF367Ls1DGTLth
-+SPp2VyK3N0H/Wwu84ro3tT8rcFl4S/VNGgxdovbSe7pP3r6RGvIrXZj/sh9L/8Pks9cHaDQQWDR
-q7fe8ZrurxWmncHHJXaL9aR1kHmlJxLE9QHLuDrrVpbOIzUYSRcjBHjaP1L7vs5eQ02/VC3HG1Y6
-KARxg/4RrbJI2ah9mYACtvzRx45DWfbeqH+QKKV2mDgHFzAm6tSwrU28JpZOL35wfCr3Vb5ZI7jE
-WHHK1fPgkKjyRnGhf/6k587bL0TN7XQYERodtRCcTK/XpmTzoTWpamvetrLz9rioDc+q+AE2GmOY
-evvwQHgHkP7vmzrkDufuFaD8J8CPP1Be1GPQ60QkUDOZdxy5iNePDpC+paeS4JH1SrZ1a+Lb+1ea
-Xzu+q0fLQKpzoD/zRWgtIqVxO14N1NOMVClFQgF6iAT/jxAhN54GqiFQS5DiUiXnXmVtnCwYgCpa
-9qdmjZkAx8UDxGBq4Ob7ClvvNgTWuiqXngbJSFRDYEPOewh3vjDNk0xumy4qNIg6qYcy2wQJ+A5k
-McKEnz24fnV86ztAMoD6a4B4yqlz+8FhObyta9IhlKeEin2uCxBGeD0aqzocCclS2pDqyH2lxExv
-NVFtpc0AHbp5+J3mgcBmgAyS+gD73QD1ks0OzMez6eMIxYUw4yo9AoNJoo20cmzXMbc/xPONo8Q5
-/9lcoguGtGN/j/hTsSNHcLNPo+xI9nrqLxzWeU5QPVuagACI+v2abG19/UsHjhyac+phfafuJqUf
-nqL65u0Vcrt6hdGRj+DAZx2oLyZjCF5rEcIT4tkcSkwr60QEHl6UAnfnJPCEgBojxwAoBIfhnYhw
-uzs5XTIlaI8mRNCKw/jqYfQNtEGCzX04p2z6XIOuCdh7TtWOaUg/Icio7ueAgHaOoEo+64GMUsHT
-AyrW3heE5dAZvDRsEwQ6YjeBX4fGhaV6/VqG7g1KdPA4LzWlKDxnsOI4sxZZHaULSLeZ6C/+AKZ5
-yPQsZm8iCXlSZbqfzQ0UQljOGZjim64RGYEwbtAA6ScHQPrK2l/6crlhkEF46usanXOlUyXtFYca
-sP+Ki9q0e2311oW1zctcJsBWI9eD5ONXg1/suno+J37sxM9w1Lkb3psG/IrO1XsJ4YW6nLDvmpqP
-LQpSe7drQ3bnUeuqnYx7IHjTRWmrDy9N+K5wbuD58JkKBI9R+TFjrmLGz0CWhQOIvIrxqPsn9h3T
-TewE7n9WLAYRYc24RRgm/rFh0fmKgr5pfj5MoArK19HhjEeFlDNUw4XXskCCbnLszayKFOtTAN5e
-xDy0Ms8kfhYhGV8egjI3ELF1fIBFaxjPqA9b5F15W1pNWpzwN4PDov8h2aGfU+/wqliOpAehwhQ+
-+5Khy+Sf0kOx39G4q5SjG2aNXLuchPjTJujsse6QvCF3jEv7D1s7MIojo3PW3EczYqDchfkJSFZ0
-sMxDtxvE0c328ErppbXV8UCUjuUnK95CQK8iAoPtBvRyoCNAuHgprYrwMTvEYUetbgbzDzh/S/QV
-+wFofmrpenSmylX/tU1gL6pDOj3XMjHJleQPeGa+w2pLT0CMHTFk7cp6soPf+PhlaIIhZoP91eA3
-+aZceudGRWmVHGny4eG4P5nl1f+ZY5RfJW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Http/Response.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Response {
+    /**
+     * XML namespace used for EC2 responses.
+     */
+    const XML_NAMESPACE = 'http://ec2.amazonaws.com/doc/2008-12-01/';
+
+    /**
+     * The original HTTP response
+     *
+     * This contains the response body and headers.
+     *
+     * @var Zend_Http_Response
+     */
+    private $_httpResponse = null;
+
+    /**
+     * The response document object
+     *
+     * @var DOMDocument
+     */
+    private $_document = null;
+
+    /**
+     * The response XPath
+     *
+     * @var DOMXPath
+     */
+    private $_xpath = null;
+
+    /**
+     * Last error code
+     *
+     * @var integer
+     */
+    private $_errorCode = 0;
+
+    /**
+     * Last error message
+     *
+     * @var string
+     */
+    private $_errorMessage = '';
+
+    /**
+     * Creates a new high-level EC2 response object
+     *
+     * @param Zend_Http_Response $httpResponse the HTTP response.
+     */
+    public function __construct(Zend_Http_Response $httpResponse)
+    {
+        $this->_httpResponse = $httpResponse;
+    }
+
+    /**
+     * Gets the XPath object for this response
+     *
+     * @return DOMXPath the XPath object for response.
+     */
+    public function getXPath()
+    {
+        if ($this->_xpath === null) {
+            $document = $this->getDocument();
+            if ($document === false) {
+                $this->_xpath = false;
+            } else {
+                $this->_xpath = new DOMXPath($document);
+                $this->_xpath->registerNamespace('ec2',
+                    self::XML_NAMESPACE);
+            }
+        }
+
+        return $this->_xpath;
+    }
+
+    /**
+     * Gets the document object for this response
+     *
+     * @return DOMDocument the DOM Document for this response.
+     */
+    public function getDocument()
+    {
+        try {
+            $body = $this->_httpResponse->getBody();
+        } catch (Zend_Http_Exception $e) {
+            $body = false;
+        }
+
+        if ($this->_document === null) {
+            if ($body !== false) {
+                // turn off libxml error handling
+                $errors = libxml_use_internal_errors();
+
+                $this->_document = new DOMDocument();
+                if (!$this->_document->loadXML($body)) {
+                    $this->_document = false;
+                }
+
+                // reset libxml error handling
+                libxml_clear_errors();
+                libxml_use_internal_errors($errors);
+            } else {
+                $this->_document = false;
+            }
+        }
+
+        return $this->_document;
+    }
+}

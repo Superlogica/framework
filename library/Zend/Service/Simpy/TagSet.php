@@ -1,29 +1,83 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV54uZ5bJe2EkRuPQ3Tv6ltaLAxaL529QzSOEiT3u1UalSfN9mYV38GMBEIauQIF+HMbpQ+QFt
-6BH+v11TpVlSph/YeGh/a1tFi6KGZPsocKIt+SHQiEl8AAY7fLJUNWd5YEfqp9pPxDzm4Vap5qUX
-QIccr873WOZsk6hrMdrmByty7jux0sNf8+TsMTSv5QwdlFAY4Cg1o4125eGpf9TdKzHdDqR+Vpc6
-/J13zPmqgxcQJ0sJnqtJn4kJIPpDKor7T+KlBeH2Q3jeJIyWgUUtHHrOtjLkq/n7jJsr3ZQbOhVk
-anuavpvII8pWnIa/fHbF3Qfwh2zfAo27iSYnAdDCidIdw02ijCIFP7r1M+R94Ue96KEPsLaEOw+o
-RWwqjJZXreu9ETz62L0X5O/eEYpDTfyZvFJhaaohAZBZYWvjZ7ZQY5kyxxEzTTnFniXmBce+//US
-sy39GQNyoM7Wjm/iFGZNk4Wcnow8XZk8A09wb0Ml148/5SkrkFdvFG8fm0ThGNvrCoffhvB7Xrjz
-5QM7us8aDHKRiBft8HouniwlJg8hvPSjeZ7bo1wPVn1VyTQEIAt3vmg/WeT799PMg4EsZk6rZz+T
-KdAwzL2U4KMNPkgbd5dNNdtV9uT9j0xRgIxaN+JUXbG/4U6GhJTnwVNohWhfELROP7+edZTEu2oY
-NAF6fQU272yYgmeWDqPdItg21TGBa6xhh3MV/XB7NA8GKJ0v0bBC0KQRgCNZat/zgnGUgWKJmnyu
-GpPqmsP3DWIw0aKXGXbcmDNpLeuJmgm0mf13vzM9mNyjNtxen7k1BzSfYvR5JURqHGoFaRIMeRc5
-/BxXhPBKYI0rCrGTvhqXoqbzO/ooD7JPFp1e32rLLsEgq/NlVDcP420OuyEpTpx4I826q+SKZrV/
-3yeaHj4eUKL8uKsIwhEQCZMMbGdpHgt8EiaiZlL56dYmJXtdQmqlG0EFCkfAZsIEzEEg9UcENLzl
-TMicbD/msD7t7U26WZakMUCFU/09UbGiIJzxDk5DGbqXqMueR90js+xQDuOsV/e2ItwDqs6V7kYD
-6ReMRljRAA5n9UhdYSJhoIto7NlKpKvOxKc3tDLZhN+VbJuIL8WMPR7yNkXWHpHQbdP5dPMh9Gn7
-Qrtaq50UW/2RVtk5g2s62DqMAYJydrDihSwbTvXEJ63ILxIXiIsWY+MEO4lqcRs0IZuVjdPvfqoh
-kk51w6sfY00sC3/FiTy+U7+prdLQczD9xtq2IRD0KoFnigj3mdw7ouDxm4VGmd4z+JRavCCnwz88
-Dq/C7qQz+Scr0sd0lm0wPy3LunWjptNautUfmuiCD6TgjNHhav8BMo7SZCi5fWMnrHJunCPkSo+n
-v5mDw9Y9FLFelrqsk+IiCluobGF1lsPHj3h5Y/wGHzdkvyPLYy/mO7vJdw1WB7Qby5J+iy72Jyuu
-WS6h/sd+fs94ERdtRxdU6Ld1+LgAcbSYk3AgmzL0Act4gorYU7xDBf3iJ70HNNIttxJsxYyjKBNi
-XqUbZOPvuouFQt/Yk8ku3cjXj+VOo/IXLHcdz6v0nETetzmUxe6gjbm8WmMtxiTAGW//0+ts2KEF
-Mi28QCsF2KKlMLIurkTxmb0r/V78ytfr/8FMCz+Ym0RLJQBJ/Lz+r6CPJGxt+5yVhfMvQt8JZbYz
-Ap+LnInnjpcStJyVMXAh4XZzRQvjm3zEVI0awIh1Eh+4IfJ2f8vEM28Aav+DNeSQAg9ArCLd+PXz
-dAEhSWf/lERyNNN3KTob+aDPhZW8jwWMQZQ6wLZ84Vdz8jjlVfpgHVIPUJjd5pbgpEUAXaFiJWd0
-p5lhiTtgYpSwJgm5V3HmfAo29GzbW8LYlJEqsSYSQX0pyO+ZVgBkXXouN2Y3v8dlZCre2tgQZVSP
-kSS8eTJBoesoVYgjsMchH0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: TagSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Simpy_Tag
+ */
+require_once 'Zend/Service/Simpy/Tag.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_TagSet implements IteratorAggregate
+{
+    /**
+     * List of tags
+     *
+     * @var array of Zend_Service_Simpy_Tag objects
+     */
+    protected $_tags;
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMDocument $doc Parsed response from a GetTags operation
+     * @return void
+     */
+    public function __construct(DOMDocument $doc)
+    {
+        $xpath = new DOMXPath($doc);
+        $list = $xpath->query('//tags/tag');
+        $this->_tags = array();
+
+        for ($x = 0; $x < $list->length; $x++) {
+            $this->_tags[$x] = new Zend_Service_Simpy_Tag($list->item($x));
+        }
+    }
+
+    /**
+     * Returns an iterator for the tag set
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->_tags);
+    }
+
+    /**
+     * Returns the number of tags in the set
+     *
+     * @return int
+     */
+    public function getLength()
+    {
+        return count($this->_tags);
+    }
+}

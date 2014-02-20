@@ -1,184 +1,497 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-I+vetPxV/MTD3u+RQ3c/ZxJDoW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: InfoCard.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_EncryptedData
+ */
+require_once 'Zend/InfoCard/Xml/EncryptedData.php';
+
+/**
+ * Zend_InfoCard_Xml_Assertion
+ */
+require_once 'Zend/InfoCard/Xml/Assertion.php';
+
+/**
+ * Zend_InfoCard_Cipher
+ */
+require_once 'Zend/InfoCard/Cipher.php';
+
+/**
+ * Zend_InfoCard_Xml_Security
+ */
+require_once 'Zend/InfoCard/Xml/Security.php';
+
+/**
+ * Zend_InfoCard_Adapter_Interface
+ */
+require_once 'Zend/InfoCard/Adapter/Interface.php';
+
+/**
+ * Zend_InfoCard_Claims
+ */
+require_once 'Zend/InfoCard/Claims.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard
+{
+    /**
+     * URI for XML Digital Signature SHA1 Digests
+     */
+    const DIGEST_SHA1        = 'http://www.w3.org/2000/09/xmldsig#sha1';
+
+    /**
+     * An array of certificate pair files and optional passwords for them to search
+     * when trying to determine which certificate was used to encrypt the transient key
+     *
+     * @var Array
+     */
+    protected $_keyPairs;
+
+    /**
+     * The instance to use to decrypt public-key encrypted data
+     *
+     * @var Zend_InfoCard_Cipher_Pki_Interface
+     */
+    protected $_pkiCipherObj;
+
+    /**
+     * The instance to use to decrypt symmetric encrypted data
+     *
+     * @var Zend_InfoCard_Cipher_Symmetric_Interface
+     */
+    protected $_symCipherObj;
+
+    /**
+     * The InfoCard Adapter to use for callbacks into the application using the component
+     * such as when storing assertions, etc.
+     *
+     * @var Zend_InfoCard_Adapter_Interface
+     */
+    protected $_adapter;
+
+
+    /**
+     * InfoCard Constructor
+     *
+     * @throws Zend_InfoCard_Exception
+     */
+    public function __construct()
+    {
+        $this->_keyPairs = array();
+
+        if(!extension_loaded('mcrypt')) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Use of the Zend_InfoCard component requires the mcrypt extension to be enabled in PHP");
+        }
+
+        if(!extension_loaded('openssl')) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Use of the Zend_InfoCard component requires the openssl extension to be enabled in PHP");
+        }
+    }
+
+    /**
+     * Sets the adapter uesd for callbacks into the application using the component, used
+     * when doing things such as storing / retrieving assertions, etc.
+     *
+     * @param Zend_InfoCard_Adapter_Interface $a The Adapter instance
+     * @return Zend_InfoCard The instnace
+     */
+    public function setAdapter(Zend_InfoCard_Adapter_Interface $a)
+    {
+        $this->_adapter = $a;
+        return $this;
+    }
+
+    /**
+     * Retrieves the adapter used for callbacks into the application using the component.
+     * If no adapter was set then an instance of Zend_InfoCard_Adapter_Default is used
+     *
+     * @return Zend_InfoCard_Adapter_Interface The Adapter instance
+     */
+    public function getAdapter()
+    {
+        if($this->_adapter === null) {
+            require_once 'Zend/InfoCard/Adapter/Default.php';
+            $this->setAdapter(new Zend_InfoCard_Adapter_Default());
+        }
+
+        return $this->_adapter;
+    }
+
+    /**
+     * Gets the Public Key Cipher object used in this instance
+     *
+     * @return Zend_InfoCard_Cipher_Pki_Interface
+     */
+    public function getPkiCipherObject()
+    {
+        return $this->_pkiCipherObj;
+    }
+
+    /**
+     * Sets the Public Key Cipher Object used in this instance
+     *
+     * @param Zend_InfoCard_Cipher_Pki_Interface $cipherObj
+     * @return Zend_InfoCard
+     */
+    public function setPkiCipherObject(Zend_InfoCard_Cipher_Pki_Interface $cipherObj)
+    {
+        $this->_pkiCipherObj = $cipherObj;
+        return $this;
+    }
+
+    /**
+     * Get the Symmetric Cipher Object used in this instance
+     *
+     * @return Zend_InfoCard_Cipher_Symmetric_Interface
+     */
+    public function getSymCipherObject()
+    {
+        return $this->_symCipherObj;
+    }
+
+    /**
+     * Sets the Symmetric Cipher Object used in this instance
+     *
+     * @param Zend_InfoCard_Cipher_Symmetric_Interface $cipherObj
+     * @return Zend_InfoCard
+     */
+    public function setSymCipherObject($cipherObj)
+    {
+        $this->_symCipherObj = $cipherObj;
+        return $this;
+    }
+
+    /**
+     * Remove a Certificate Pair by Key ID from the search list
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param string $key_id The Certificate Key ID returned from adding the certificate pair
+     * @return Zend_InfoCard
+     */
+    public function removeCertificatePair($key_id)
+    {
+
+        if(!key_exists($key_id, $this->_keyPairs)) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Attempted to remove unknown key id: $key_id");
+        }
+
+        unset($this->_keyPairs[$key_id]);
+        return $this;
+    }
+
+    /**
+     * Add a Certificate Pair to the list of certificates searched by the component
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param string $private_key_file The path to the private key file for the pair
+     * @param string $public_key_file The path to the certificate / public key for the pair
+     * @param string $type (optional) The URI for the type of key pair this is (default RSA with OAEP padding)
+     * @param string $password (optional) The password for the private key file if necessary
+     * @return string A key ID representing this key pair in the component
+     */
+    public function addCertificatePair($private_key_file, $public_key_file, $type = Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P, $password = null)
+    {
+        if(!file_exists($private_key_file) ||
+           !file_exists($public_key_file)) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Could not locate the public and private certificate pair files: $private_key_file, $public_key_file");
+        }
+
+        if(!is_readable($private_key_file) ||
+           !is_readable($public_key_file)) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Could not read the public and private certificate pair files (check permissions): $private_key_file, $public_key_file");
+        }
+
+        $key_id = md5($private_key_file.$public_key_file);
+
+        if(key_exists($key_id, $this->_keyPairs)) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Attempted to add previously existing certificate pair: $private_key_file, $public_key_file");
+        }
+
+        switch($type) {
+            case Zend_InfoCard_Cipher::ENC_RSA:
+            case Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P:
+                $this->_keyPairs[$key_id] = array('private' => $private_key_file,
+                                'public'      => $public_key_file,
+                                'type_uri'    => $type);
+
+                if($password !== null) {
+                    $this->_keyPairs[$key_id]['password'] = $password;
+                } else {
+                    $this->_keyPairs[$key_id]['password'] = null;
+                }
+
+                return $key_id;
+                break;
+            default:
+                require_once 'Zend/InfoCard/Exception.php';
+                throw new Zend_InfoCard_Exception("Invalid Certificate Pair Type specified: $type");
+        }
+    }
+
+    /**
+     * Return a Certificate Pair from a key ID
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param string $key_id The Key ID of the certificate pair in the component
+     * @return array An array containing the path to the private/public key files,
+     *               the type URI and the password if provided
+     */
+    public function getCertificatePair($key_id)
+    {
+        if(key_exists($key_id, $this->_keyPairs)) {
+            return $this->_keyPairs[$key_id];
+        }
+
+        require_once 'Zend/InfoCard/Exception.php';
+        throw new Zend_InfoCard_Exception("Invalid Certificate Pair ID provided: $key_id");
+    }
+
+    /**
+     * Retrieve the digest of a given public key / certificate using the provided digest
+     * method
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param string $key_id The certificate key id in the component
+     * @param string $digestMethod The URI of the digest method to use (default SHA1)
+     * @return string The digest value in binary format
+     */
+    protected function _getPublicKeyDigest($key_id, $digestMethod = self::DIGEST_SHA1)
+    {
+        $certificatePair = $this->getCertificatePair($key_id);
+
+        $temp = file($certificatePair['public']);
+        unset($temp[count($temp)-1]);
+        unset($temp[0]);
+        $certificateData = base64_decode(implode("\n", $temp));
+
+        switch($digestMethod) {
+            case self::DIGEST_SHA1:
+                $digest_retval = sha1($certificateData, true);
+                break;
+            default:
+                require_once 'Zend/InfoCard/Exception.php';
+                throw new Zend_InfoCard_Exception("Invalid Digest Type Provided: $digestMethod");
+        }
+
+        return $digest_retval;
+    }
+
+    /**
+     * Find a certificate pair based on a digest of its public key / certificate file
+     *
+     * @param string $digest The digest value of the public key wanted in binary form
+     * @param string $digestMethod The URI of the digest method used to calculate the digest
+     * @return mixed The Key ID of the matching certificate pair or false if not found
+     */
+    protected function _findCertifiatePairByDigest($digest, $digestMethod = self::DIGEST_SHA1)
+    {
+
+        foreach($this->_keyPairs as $key_id => $certificate_data) {
+
+            $cert_digest = $this->_getPublicKeyDigest($key_id, $digestMethod);
+
+            if($cert_digest == $digest) {
+                return $key_id;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Extracts the Signed Token from an EncryptedData block
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param string $strXmlToken The EncryptedData XML block
+     * @return string The XML of the Signed Token inside of the EncryptedData block
+     */
+    protected function _extractSignedToken($strXmlToken)
+    {
+        $encryptedData = Zend_InfoCard_Xml_EncryptedData::getInstance($strXmlToken);
+
+        // Determine the Encryption Method used to encrypt the token
+
+        switch($encryptedData->getEncryptionMethod()) {
+            case Zend_InfoCard_Cipher::ENC_AES128CBC:
+            case Zend_InfoCard_Cipher::ENC_AES256CBC:
+                break;
+            default:
+                require_once 'Zend/InfoCard/Exception.php';
+                throw new Zend_InfoCard_Exception("Unknown Encryption Method used in the secure token");
+        }
+
+        // Figure out the Key we are using to decrypt the token
+
+        $keyinfo = $encryptedData->getKeyInfo();
+
+        if(!($keyinfo instanceof Zend_InfoCard_Xml_KeyInfo_XmlDSig)) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Expected a XML digital signature KeyInfo, but was not found");
+        }
+
+
+        $encryptedKey = $keyinfo->getEncryptedKey();
+
+        switch($encryptedKey->getEncryptionMethod()) {
+            case Zend_InfoCard_Cipher::ENC_RSA:
+            case Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P:
+                break;
+            default:
+                require_once 'Zend/InfoCard/Exception.php';
+                throw new Zend_InfoCard_Exception("Unknown Key Encryption Method used in secure token");
+        }
+
+        $securityTokenRef = $encryptedKey->getKeyInfo()->getSecurityTokenReference();
+
+        $key_id = $this->_findCertifiatePairByDigest($securityTokenRef->getKeyReference());
+
+        if(!$key_id) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Unable to find key pair used to encrypt symmetric InfoCard Key");
+        }
+
+        $certificate_pair = $this->getCertificatePair($key_id);
+
+        // Santity Check
+
+        if($certificate_pair['type_uri'] != $encryptedKey->getEncryptionMethod()) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Certificate Pair which matches digest is not of same algorithm type as document, check addCertificate()");
+        }
+
+        $PKcipher = Zend_InfoCard_Cipher::getInstanceByURI($encryptedKey->getEncryptionMethod());
+
+        $base64DecodeSupportsStrictParam = version_compare(PHP_VERSION, '5.2.0', '>=');
+
+        if ($base64DecodeSupportsStrictParam) {
+            $keyCipherValueBase64Decoded = base64_decode($encryptedKey->getCipherValue(), true);
+        } else {
+            $keyCipherValueBase64Decoded = base64_decode($encryptedKey->getCipherValue());
+        }
+
+        $symmetricKey = $PKcipher->decrypt(
+            $keyCipherValueBase64Decoded,
+            file_get_contents($certificate_pair['private']),
+            $certificate_pair['password']
+            );
+
+        $symCipher = Zend_InfoCard_Cipher::getInstanceByURI($encryptedData->getEncryptionMethod());
+
+        if ($base64DecodeSupportsStrictParam) {
+            $dataCipherValueBase64Decoded = base64_decode($encryptedData->getCipherValue(), true);
+        } else {
+            $dataCipherValueBase64Decoded = base64_decode($encryptedData->getCipherValue());
+        }
+
+        $signedToken = $symCipher->decrypt($dataCipherValueBase64Decoded, $symmetricKey);
+
+        return $signedToken;
+    }
+
+    /**
+     * Process an input Infomation Card EncryptedData block sent from the client,
+     * validate it, and return the claims contained within it on success or an error message on error
+     *
+     * @param string $strXmlToken The XML token sent to the server from the client
+     * @return Zend_Infocard_Claims The Claims object containing the claims, or any errors which occurred
+     */
+    public function process($strXmlToken)
+    {
+
+        $retval = new Zend_InfoCard_Claims();
+
+        require_once 'Zend/InfoCard/Exception.php';
+        try {
+            $signedAssertionsXml = $this->_extractSignedToken($strXmlToken);
+        } catch(Zend_InfoCard_Exception $e) {
+            $retval->setError('Failed to extract assertion document');
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_PROCESSING_FAILURE);
+            return $retval;
+        }
+
+        try {
+            $assertions = Zend_InfoCard_Xml_Assertion::getInstance($signedAssertionsXml);
+        } catch(Zend_InfoCard_Exception $e) {
+            $retval->setError('Failure processing assertion document');
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_PROCESSING_FAILURE);
+            return $retval;
+        }
+
+        if(!($assertions instanceof Zend_InfoCard_Xml_Assertion_Interface)) {
+            throw new Zend_InfoCard_Exception("Invalid Assertion Object returned");
+        }
+
+        if(!($reference_id = Zend_InfoCard_Xml_Security::validateXMLSignature($assertions->asXML()))) {
+            $retval->setError("Failure Validating the Signature of the assertion document");
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
+            return $retval;
+        }
+
+        // The reference id should be locally scoped as far as I know
+        if($reference_id[0] == '#') {
+            $reference_id = substr($reference_id, 1);
+        } else {
+            $retval->setError("Reference of document signature does not reference the local document");
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
+            return $retval;
+        }
+
+        // Make sure the signature is in reference to the same document as the assertions
+        if($reference_id != $assertions->getAssertionID()) {
+            $retval->setError("Reference of document signature does not reference the local document");
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
+        }
+
+        // Validate we haven't seen this before and the conditions are acceptable
+        $conditions = $this->getAdapter()->retrieveAssertion($assertions->getAssertionURI(), $assertions->getAssertionID());
+
+        if($conditions === false) {
+            $conditions = $assertions->getConditions();
+        }
+
+
+        if(is_array($condition_error = $assertions->validateConditions($conditions))) {
+            $retval->setError("Conditions of assertion document are not met: {$condition_error[1]} ({$condition_error[0]})");
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
+        }
+
+        $attributes = $assertions->getAttributes();
+
+        $retval->setClaims($attributes);
+
+        if($retval->getCode() == 0) {
+            $retval->setCode(Zend_InfoCard_Claims::RESULT_SUCCESS);
+        }
+
+        return $retval;
+    }
+}

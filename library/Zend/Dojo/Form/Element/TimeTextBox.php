@@ -1,39 +1,152 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-fQVlkf8QZ/pehr+cb7gqcm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_DateTextBox */
+require_once 'Zend/Dojo/Form/Element/DateTextBox.php';
+
+/**
+ * TimeTextBox dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_DateTextBox
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: TimeTextBox.php 10079 2008-07-14 10:56:37Z matthew $
+ */
+class Zend_Dojo_Form_Element_TimeTextBox extends Zend_Dojo_Form_Element_DateTextBox
+{
+    /**
+     * Use TimeTextBox dijit view helper
+     * @var string
+     */
+    public $helper = 'TimeTextBox';
+
+    /**
+     * Validate ISO 8601 time format
+     * 
+     * @param  string $format 
+     * @return true
+     * @throws Zend_Form_Element_Exception
+     */
+    protected function _validateIso8601($format)
+    {
+        if (!preg_match('/^T\d{2}:\d{2}:\d{2}$/', $format)) {
+            require_once 'Zend/Form/Element/Exception.php';
+            throw new Zend_Form_Element_Exception(sprintf('Invalid format "%s" provided; must match T:00:00:00 format', $format));
+        }
+        return true;
+    }
+
+    /**
+     * Set time format pattern
+     *
+     * @param  string $pattern
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setTimePattern($pattern)
+    {
+        $this->setConstraint('timePattern', (string) $pattern);
+        return $this;
+    }
+
+    /**
+     * Retrieve time format pattern
+     *
+     * @return string|null
+     */
+    public function getTimePattern()
+    {
+        return $this->getConstraint('timePattern');
+    }
+
+    /**
+     * Set clickableIncrement
+     *
+     * @param  string $format
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setClickableIncrement($format)
+    {
+        $format = (string) $format;
+        $this->_validateIso8601($format);
+        $this->setConstraint('clickableIncrement', $format);
+        return $this;
+    }
+
+    /**
+     * Retrieve clickableIncrement
+     *
+     * @return string|null
+     */
+    public function getClickableIncrement()
+    {
+        return $this->getConstraint('clickableIncrement');
+    }
+
+    /**
+     * Set visibleIncrement
+     *
+     * @param  string $format
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setVisibleIncrement($format)
+    {
+        $format = (string) $format;
+        $this->_validateIso8601($format);
+        $this->setConstraint('visibleIncrement', $format);
+        return $this;
+    }
+
+    /**
+     * Retrieve visibleIncrement
+     *
+     * @return string|null
+     */
+    public function getVisibleIncrement()
+    {
+        return $this->getConstraint('visibleIncrement');
+    }
+
+    /**
+     * Set visibleRange
+     *
+     * @param  string $format
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setVisibleRange($format)
+    {
+        $format = (string) $format;
+        $this->_validateIso8601($format);
+        $this->setConstraint('visibleRange', $format);
+        return $this;
+    }
+
+    /**
+     * Retrieve visibleRange
+     *
+     * @return string|null
+     */
+    public function getVisibleRange()
+    {
+        return $this->getConstraint('visibleRange');
+    }
+}

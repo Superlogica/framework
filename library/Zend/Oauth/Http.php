@@ -1,85 +1,266 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-+V+c/b600g1QrAKZaRAkFfrVEG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Http.php 23484 2010-12-10 03:57:59Z mjh_ca $
+ */
+
+/** Zend_Oauth_Http_Utility */
+require_once 'Zend/Oauth/Http/Utility.php';
+
+/** Zend_Uri_Http */
+require_once 'Zend/Uri/Http.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Oauth_Http
+{
+    /**
+     * Array of all custom service parameters to be sent in the HTTP request
+     * in addition to the usual OAuth parameters.
+     *
+     * @var array
+     */
+    protected $_parameters = array();
+
+    /**
+     * Reference to the Zend_Oauth_Consumer instance in use.
+     *
+     * @var string
+     */
+    protected $_consumer = null;
+
+    /**
+     * OAuth specifies three request methods, this holds the current preferred
+     * one which by default uses the Authorization Header approach for passing
+     * OAuth parameters, and a POST body for non-OAuth custom parameters.
+     *
+     * @var string
+     */
+    protected $_preferredRequestScheme = null;
+
+    /**
+     * Request Method for the HTTP Request.
+     *
+     * @var string
+     */
+    protected $_preferredRequestMethod = Zend_Oauth::POST;
+
+    /**
+     * Instance of the general Zend_Oauth_Http_Utility class.
+     *
+     * @var Zend_Oauth_Http_Utility
+     */
+    protected $_httpUtility = null;
+
+    /**
+     * Constructor
+     *
+     * @param  Zend_Oauth_Consumer $consumer
+     * @param  null|array $parameters
+     * @param  null|Zend_Oauth_Http_Utility $utility
+     * @return void
+     */
+    public function __construct(
+        Zend_Oauth_Consumer $consumer,
+        array $parameters = null,
+        Zend_Oauth_Http_Utility $utility = null
+    ) {
+        $this->_consumer = $consumer;
+        $this->_preferredRequestScheme = $this->_consumer->getRequestScheme();
+        if ($parameters !== null) {
+            $this->setParameters($parameters);
+        }
+        if ($utility !== null) {
+            $this->_httpUtility = $utility;
+        } else {
+            $this->_httpUtility = new Zend_Oauth_Http_Utility;
+        }
+    }
+
+    /**
+     * Set a preferred HTTP request method.
+     *
+     * @param  string $method
+     * @return Zend_Oauth_Http
+     */
+    public function setMethod($method)
+    {
+        if (!in_array($method, array(Zend_Oauth::POST, Zend_Oauth::GET))) {
+            require_once 'Zend/Oauth/Exception.php';
+            throw new Zend_Oauth_Exception('invalid HTTP method: ' . $method);
+        }
+        $this->_preferredRequestMethod = $method;
+        return $this;
+    }
+
+    /**
+     * Preferred HTTP request method accessor.
+     *
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->_preferredRequestMethod;
+    }
+
+    /**
+     * Mutator to set an array of custom parameters for the HTTP request.
+     *
+     * @param  array $customServiceParameters
+     * @return Zend_Oauth_Http
+     */
+    public function setParameters(array $customServiceParameters)
+    {
+        $this->_parameters = $customServiceParameters;
+        return $this;
+    }
+
+    /**
+     * Accessor for an array of custom parameters.
+     *
+     * @return array
+     */
+    public function getParameters()
+    {
+        return $this->_parameters;
+    }
+
+    /**
+     * Return the Consumer instance in use.
+     *
+     * @return Zend_Oauth_Consumer
+     */
+    public function getConsumer()
+    {
+        return $this->_consumer;
+    }
+
+    /**
+     * Commence a request cycle where the current HTTP method and OAuth
+     * request scheme set an upper preferred HTTP request style and where
+     * failures generate a new HTTP request style further down the OAuth
+     * preference list for OAuth Request Schemes.
+     * On success, return the Request object that results for processing.
+     *
+     * @param  array $params
+     * @return Zend_Http_Response
+     * @throws Zend_Oauth_Exception on HTTP request errors
+     * @todo   Remove cycling?; Replace with upfront do-or-die configuration
+     */
+    public function startRequestCycle(array $params)
+    {
+        $response = null;
+        $body     = null;
+        $status   = null;
+        try {
+            $response = $this->_attemptRequest($params);
+        } catch (Zend_Http_Client_Exception $e) {
+            require_once 'Zend/Oauth/Exception.php';
+            throw new Zend_Oauth_Exception('Error in HTTP request', null, $e);
+        }
+        if ($response !== null) {
+            $body   = $response->getBody();
+            $status = $response->getStatus();
+        }
+        if ($response === null // Request failure/exception
+            || $status == 500  // Internal Server Error
+            || $status == 400  // Bad Request
+            || $status == 401  // Unauthorized
+            || empty($body)    // Missing token
+        ) {
+            $this->_assessRequestAttempt($response);
+            $response = $this->startRequestCycle($params);
+        }
+        return $response;
+    }
+
+    /**
+     * Return an instance of Zend_Http_Client configured to use the Query
+     * String scheme for an OAuth driven HTTP request.
+     *
+     * @param array $params
+     * @param string $url
+     * @return Zend_Http_Client
+     */
+    public function getRequestSchemeQueryStringClient(array $params, $url)
+    {
+        $client = Zend_Oauth::getHttpClient();
+        $client->setUri($url);
+        $client->getUri()->setQuery(
+            $this->_httpUtility->toEncodedQueryString($params)
+        );
+        $client->setMethod($this->_preferredRequestMethod);
+        return $client;
+    }
+
+    /**
+     * Manages the switch from OAuth request scheme to another lower preference
+     * scheme during a request cycle.
+     *
+     * @param  Zend_Http_Response
+     * @return void
+     * @throws Zend_Oauth_Exception if unable to retrieve valid token response
+     */
+    protected function _assessRequestAttempt(Zend_Http_Response $response = null)
+    {
+        switch ($this->_preferredRequestScheme) {
+            case Zend_Oauth::REQUEST_SCHEME_HEADER:
+                $this->_preferredRequestScheme = Zend_Oauth::REQUEST_SCHEME_POSTBODY;
+                break;
+            case Zend_Oauth::REQUEST_SCHEME_POSTBODY:
+                $this->_preferredRequestScheme = Zend_Oauth::REQUEST_SCHEME_QUERYSTRING;
+                break;
+            default:
+                require_once 'Zend/Oauth/Exception.php';
+                throw new Zend_Oauth_Exception(
+                    'Could not retrieve a valid Token response from Token URL:'
+                    . ($response !== null
+                        ? PHP_EOL . $response->getBody()
+                        : ' No body - check for headers')
+                );
+        }
+    }
+
+    /**
+     * Generates a valid OAuth Authorization header based on the provided
+     * parameters and realm.
+     *
+     * @param  array $params
+     * @param  string $realm
+     * @return string
+     */
+    protected function _toAuthorizationHeader(array $params, $realm = null)
+    {
+        $headerValue = array();
+        $headerValue[] = 'OAuth realm="' . $realm . '"';
+        foreach ($params as $key => $value) {
+            if (!preg_match("/^oauth_/", $key)) {
+                continue;
+            }
+            $headerValue[] = Zend_Oauth_Http_Utility::urlEncode($key)
+                           . '="'
+                           . Zend_Oauth_Http_Utility::urlEncode($value)
+                           . '"';
+        }
+        return implode(",", $headerValue);
+    }
+}

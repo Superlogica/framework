@@ -1,139 +1,379 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/** PHPUnit_Framework_Constraint */
+require_once 'PHPUnit/Framework/Constraint.php';
+
+/** Zend_Dom_Query */
+require_once 'Zend/Dom/Query.php';
+
+/**
+ * Zend_Dom_Query-based PHPUnit Constraint
+ * 
+ * @uses       PHPUnit_Framework_Constraint
+ * @package    Zend_Test
+ * @subpackage PHPUnit
+ * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ */
+class Zend_Test_PHPUnit_Constraint_DomQuery extends PHPUnit_Framework_Constraint
+{
+    /**#@+
+     * @const string Assertion type constants
+     */
+    const ASSERT_QUERY            = 'assertQuery';
+    const ASSERT_CONTENT_CONTAINS = 'assertQueryContentContains';
+    const ASSERT_CONTENT_REGEX    = 'assertQueryContentRegex';
+    const ASSERT_CONTENT_COUNT    = 'assertQueryCount';
+    const ASSERT_CONTENT_COUNT_MIN= 'assertQueryCountMin';
+    const ASSERT_CONTENT_COUNT_MAX= 'assertQueryCountMax';
+    /**#@-*/
+
+    /**
+     * Current assertion type
+     * @var string
+     */
+    protected $_assertType        = null;
+
+    /**
+     * Available assertion types
+     * @var array
+     */
+    protected $_assertTypes       = array(
+        self::ASSERT_QUERY,
+        self::ASSERT_CONTENT_CONTAINS,
+        self::ASSERT_CONTENT_REGEX,
+        self::ASSERT_CONTENT_COUNT,
+        self::ASSERT_CONTENT_COUNT_MIN,
+        self::ASSERT_CONTENT_COUNT_MAX,
+    );
+
+    /**
+     * Content being matched
+     * @var string
+     */
+    protected $_content           = null;
+
+    /**
+     * Whether or not assertion is negated
+     * @var bool
+     */
+    protected $_negate            = false;
+
+    /**
+     * CSS selector or XPath path to select against
+     * @var string
+     */
+    protected $_path              = null;
+
+    /**
+     * Whether or not to use XPath when querying
+     * @var bool
+     */
+    protected $_useXpath          = false;
+
+    /**
+     * Constructor; setup constraint state
+     * 
+     * @param  string $path CSS selector path
+     * @return void
+     */
+    public function __construct($path)
+    {
+        $this->_path = $path;
+    }
+
+    /**
+     * Indicate negative match
+     * 
+     * @param  bool $flag 
+     * @return void
+     */
+    public function setNegate($flag = true)
+    {
+        $this->_negate = $flag;
+    }
+
+    /**
+     * Whether or not path is a straight XPath expression
+     * 
+     * @param  bool $flag 
+     * @return Zend_Test_PHPUnit_Constraint_DomQuery
+     */
+    public function setUseXpath($flag = true)
+    {
+        $this->_useXpath = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Evaluate an object to see if it fits the constraints
+     * 
+     * @param  string $other String to examine
+     * @param  null|string Assertion type
+     * @return bool
+     */
+    public function evaluate($other, $assertType = null)
+    {
+        if (strstr($assertType, 'Not')) {
+            $this->setNegate(true);
+            $assertType = str_replace('Not', '', $assertType);
+        }
+
+        if (strstr($assertType, 'Xpath')) {
+            $this->setUseXpath(true);
+            $assertType = str_replace('Xpath', 'Query', $assertType);
+        }
+
+        if (!in_array($assertType, $this->_assertTypes)) {
+            require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+            throw new Zend_Test_PHPUnit_Constraint_Exception(sprintf('Invalid assertion type "%s" provided to %s constraint', $assertType, __CLASS__));
+        }
+
+        $this->_assertType = $assertType;
+
+        $method   = $this->_useXpath ? 'queryXpath' : 'query';
+        $domQuery = new Zend_Dom_Query($other);
+        $result   = $domQuery->$method($this->_path);
+        $argv     = func_get_args();
+        $argc     = func_num_args();
+
+        switch ($assertType) {
+            case self::ASSERT_CONTENT_CONTAINS:
+                if (3 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('No content provided against which to match');
+                }
+                $this->_content = $content = $argv[2];
+                return ($this->_negate)
+                    ? $this->_notMatchContent($result, $content)
+                    : $this->_matchContent($result, $content);
+            case self::ASSERT_CONTENT_REGEX:
+                if (3 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('No pattern provided against which to match');
+                }
+                $this->_content = $content = $argv[2];
+                return ($this->_negate)
+                    ? $this->_notRegexContent($result, $content)
+                    : $this->_regexContent($result, $content);
+            case self::ASSERT_CONTENT_COUNT:
+            case self::ASSERT_CONTENT_COUNT_MIN:
+            case self::ASSERT_CONTENT_COUNT_MAX:
+                if (3 > $argc) {
+                    require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+                    throw new Zend_Test_PHPUnit_Constraint_Exception('No count provided against which to compare');
+                }
+                $this->_content = $content = $argv[2];
+                return $this->_countContent($result, $content, $assertType);
+            case self::ASSERT_QUERY:
+            default:
+                if ($this->_negate) {
+                    return (0 == count($result));
+                } else {
+                    return (0 != count($result));
+                }
+        }
+    }
+
+    /**
+     * Report Failure
+     * 
+     * @see    PHPUnit_Framework_Constraint for implementation details
+     * @param  mixed $other CSS selector path
+     * @param  string $description 
+     * @param  bool $not 
+     * @return void
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function fail($other, $description, $not = false)
+    {
+        require_once 'Zend/Test/PHPUnit/Constraint/Exception.php';
+        switch ($this->_assertType) {
+            case self::ASSERT_CONTENT_CONTAINS:
+                $failure = 'Failed asserting node denoted by %s CONTAINS content "%s"';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting node DENOTED BY %s DOES NOT CONTAIN content "%s"';
+                }
+                $failure = sprintf($failure, $other, $this->_content);
+                break;
+            case self::ASSERT_CONTENT_REGEX:
+                $failure = 'Failed asserting node denoted by %s CONTAINS content MATCHING "%s"';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting node DENOTED BY %s DOES NOT CONTAIN content MATCHING "%s"';
+                }
+                $failure = sprintf($failure, $other, $this->_content);
+                break;
+            case self::ASSERT_CONTENT_COUNT:
+                $failure = 'Failed asserting node DENOTED BY %s OCCURS EXACTLY %d times';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting node DENOTED BY %s DOES NOT OCCUR EXACTLY %d times';
+                }
+                $failure = sprintf($failure, $other, $this->_content);
+                break;
+            case self::ASSERT_CONTENT_COUNT_MIN:
+                $failure = 'Failed asserting node DENOTED BY %s OCCURS AT LEAST %d times';
+                $failure = sprintf($failure, $other, $this->_content);
+                break;
+            case self::ASSERT_CONTENT_COUNT_MAX:
+                $failure = 'Failed asserting node DENOTED BY %s OCCURS AT MOST %d times';
+                $failure = sprintf($failure, $other, $this->_content);
+                break;
+            case self::ASSERT_QUERY:
+            default:
+                $failure = 'Failed asserting node DENOTED BY %s EXISTS';
+                if ($this->_negate) {
+                    $failure = 'Failed asserting node DENOTED BY %s DOES NOT EXIST';
+                }
+                $failure = sprintf($failure, $other);
+                break;
+        }
+
+        if (!empty($description)) {
+            $failure = $description . "\n" . $failure;
+        }
+
+        throw new Zend_Test_PHPUnit_Constraint_Exception($failure);
+    }
+
+    /**
+     * Complete implementation
+     * 
+     * @return string
+     */
+    public function toString()
+    {
+        return '';
+    }
+
+    /**
+     * Check to see if content is matched in selected nodes
+     * 
+     * @param  Zend_Dom_Query_Result $result 
+     * @param  string $match Content to match
+     * @return bool
+     */
+    protected function _matchContent($result, $match)
+    {
+        if (0 == count($result)) {
+            return false;
+        }
+
+        foreach ($result as $node) {
+            $content = $this->_getNodeContent($node);
+            if (strstr($content, $match)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Check to see if content is NOT matched in selected nodes
+     * 
+     * @param  Zend_Dom_Query_Result $result 
+     * @param  string $match 
+     * @return bool
+     */
+    protected function _notMatchContent($result, $match)
+    {
+        if (0 == count($result)) {
+            return true;
+        }
+
+        foreach ($result as $node) {
+            $content = $this->_getNodeContent($node);
+            if (strstr($content, $match)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Check to see if content is matched by regex in selected nodes
+     * 
+     * @param  Zend_Dom_Query_Result $result 
+     * @param  string $pattern
+     * @return bool
+     */
+    protected function _regexContent($result, $pattern)
+    {
+        if (0 == count($result)) {
+            return false;
+        }
+
+        foreach ($result as $node) {
+            $content = $this->_getNodeContent($node);
+            if (preg_match($pattern, $content)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Check to see if content is NOT matched by regex in selected nodes
+     * 
+     * @param  Zend_Dom_Query_Result $result 
+     * @param  string $pattern
+     * @return bool
+     */
+    protected function _notRegexContent($result, $pattern)
+    {
+        if (0 == count($result)) {
+            return true;
+        }
+
+        foreach ($result as $node) {
+            $content = $this->_getNodeContent($node);
+            if (preg_match($pattern, $content)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Determine if content count matches criteria
+     * 
+     * @param  Zend_Dom_Query_Result $result 
+     * @param  int $test Value against which to test
+     * @param  string $type assertion type
+     * @return boolean
+     */
+    protected function _countContent($result, $test, $type)
+    {
+        $count = count($result);
+
+        switch ($type) {
+            case self::ASSERT_CONTENT_COUNT:
+                return ($this->_negate)
+                    ? ($test != $count)
+                    : ($test == $count);
+            case self::ASSERT_CONTENT_COUNT_MIN:
+                return ($count >= $test);
+            case self::ASSERT_CONTENT_COUNT_MAX:
+                return ($count <= $test);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Get node content, minus node markup tags
+     * 
+     * @param  DOMNode $node 
+     * @return string
+     */
+    protected function _getNodeContent(DOMNode $node)
+    {
+        $doc     = $node->ownerDocument;
+        $content = $doc->saveXML($node);
+        $tag     = $node->nodeName;
+        $regex   = '|</?' . $tag . '[^>]*>|';
+        return preg_replace($regex, '', $content);
+    }
+}

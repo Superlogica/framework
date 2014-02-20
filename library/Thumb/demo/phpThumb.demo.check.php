@@ -1,423 +1,553 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+///                                                         //
+// phpThumb.demo.check.php                                  //
+// James Heinrich <info@silisoftware.com>                   //
+//                                                          //
+// Configuration analyzer for phpThumb settings and server  //
+// settings that may affect phpThumb performance            //
+// Live demo is at http://phpthumb.sourceforge.net/demo/    //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
+
+$ServerInfo['gd_string']  = 'unknown';
+$ServerInfo['gd_numeric'] = 0;
+//ob_start();
+if (!include_once('../phpthumb.functions.php')) {
+	ob_end_flush();
+	die('failed to include_once("../phpthumb.functions.php")');
+}
+if (!include_once('../phpthumb.class.php')) {
+	//ob_end_flush();
+	die('failed to include_once("../phpthumb.class.php")');
+}
+//ob_end_clean();
+$phpThumb = new phpThumb();
+if (include_once('../phpThumb.config.php')) {
+	foreach ($PHPTHUMB_CONFIG as $key => $value) {
+		$keyname = 'config_'.$key;
+		$phpThumb->setParameter($keyname, $value);
+	}
+}
+
+$ServerInfo['gd_string']  = phpthumb_functions::gd_version(true);
+$ServerInfo['gd_numeric'] = phpthumb_functions::gd_version(false);
+$ServerInfo['im_version'] = $phpThumb->ImageMagickVersion();
+$gd_info                  = gd_info();
+
 ?>
-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
-CVkes0==
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>phpThumb configuration analyzer</title>
+	<link rel="stylesheet" type="text/css" href="/style.css" title="style sheet">
+</head>
+<body style="background-color: #CCCCCC;">
+
+This demo analyzes your settings (phpThumb.config.php and server/PHP) for <a href="http://phpthumb.sourceforge.net"><b>phpThumb()</b></a>.<br>
+<br>
+<table border="1">
+	<tr><th colspan="8">&lt;-- bad . . . . . good --&gt;</th></tr>
+	<tr>
+		<td style="background-color: red;"       >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: orange;"    >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: yellow;"    >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: olive;"     >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: darkgreen;" >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: green;"     >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: lightgreen;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="background-color: lime;"      >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</table>
+<table border="1" cellspacing="0" cellpadding="2">
+<tr style="background-color: #EEEEEE;"><th>Setting</th><th colspan="2">Value</th><th>Comments</th></tr>
+<?php
+
+$versions['raw'] = array(
+	'latest' => phpthumb_functions::SafeURLread('http://phpthumb.sourceforge.net/?latestversion=1', $dummy),
+	'this'   => $phpThumb->phpthumb_version,
+);
+foreach ($versions['raw'] as $key => $value) {
+	preg_match('#^([0-9\\.]+)\\-?(([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2}))?#i', $value, $matches);
+	@list($huge, $major, $minor) = @explode('.', @$matches[1]);
+	@list($year, $month, $day, $hour, $min) = @$matches[3];
+	$versions['base'][$key]  = $matches[1];
+	$versions['huge'][$key]  = $huge;
+	$versions['major'][$key] = $major;
+	$versions['minor'][$key] = $minor;
+	$versions['stamp'][$key] = $matches[2];
+	$versions['year'][$key]  = $year;
+	$versions['month'][$key] = $month;
+	$versions['day'][$key]   = $day;
+	$versions['hour'][$key]  = $hour;
+	$versions['min'][$key]   = $min;
+	$versions['date'][$key]  = @mktime($hour, $min, 0, $month, $day, $year);
+}
+
+$downloadlatest = 'Download the latest version from <a href="http://phpthumb.sourceforge.net">http://phpthumb.sourceforge.net</a>';
+echo '<tr><th nowrap>Latest phpThumb version:</th><th colspan="2">'.$versions['raw']['latest'].'</th><td>'.$downloadlatest.'</td></tr>';
+echo '<tr><th nowrap>This phpThumb version:</th><th colspan="2" style="background-color: ';
+
+if (!$versions['base']['latest']) {
+	// failed to get latest version number
+	echo 'white';
+	$message = 'Latest version unknown.<br>'.$downloadlatest;
+} elseif (phpthumb_functions::version_compare_replacement($versions['base']['this'], $versions['base']['latest'], '>')) {
+	// new than latest, must be beta version
+	echo 'lightblue';
+	$message = 'This must be a pre-release beta version. Please report bugs to <a href="mailto:info@silisoftware.com">info@silisoftware.com</a>';
+} elseif (($versions['base']['latest'] == $versions['base']['this']) && ($versions['stamp']['this'] > $versions['stamp']['latest'])) {
+	// new than latest, must be beta version
+	echo 'lightblue';
+	$message = 'You must be using a pre-release beta version. Please report bugs to <a href="mailto:info@silisoftware.com">info@silisoftware.com</a>';
+} elseif ($versions['base']['latest'] == $versions['base']['this']) {
+	// latest version
+	echo 'lime';
+	$message = 'You are using the latest released version.';
+} elseif ($versions['huge']['latest'].$versions['major']['latest'] == $versions['huge']['this'].$versions['major']['this']) {
+	echo 'olive';
+	$message = 'One (or more) minor version(s) have been released since this version.<br>'.$downloadlatest;
+} elseif (floatval($versions['huge']['latest'].str_pad($versions['major']['latest'], 2, '0', STR_PAD_LEFT)) < floatval($versions['huge']['this'].str_pad($t_major, 2, '0', STR_PAD_LEFT))) {
+	echo 'yellow';
+	$message = 'One (or more) major version(s) have been released since this version, you really should upgrade.<br>'.$downloadlatest;
+} else {
+	echo 'orange';
+	$message = 'Fundamental changes have been made since this version.<br>'.$downloadlatest;
+}
+echo ';">'.$phpThumb->phpthumb_version;
+echo '</th><td>'.$message.'.<br></td></tr>';
+
+
+echo '<tr><th>phpThumb.config.php:</th><th colspan="2" style="background-color: ';
+if (file_exists('../phpThumb.config.php') && !file_exists('../phpThumb.config.php.default')) {
+	echo 'lime;">"phpThumb.config.php" exists and "phpThumb.config.php.default" does not';
+} elseif (file_exists('../phpThumb.config.php') && file_exists('../phpThumb.config.php.default')) {
+	echo 'yellow;">"phpThumb.config.php" and "phpThumb.config.php.default" both exist';
+} elseif (!file_exists('../phpThumb.config.php') && file_exists('../phpThumb.config.php.default')) {
+	echo 'yellow;">rename "phpThumb.config.php.default" to "phpThumb.config.php"';
+} else {
+	echo 'yellow;">"phpThumb.config.php" not found (nor "phpThumb.config.php")';
+}
+echo '</th><td>"phpThumb.config.php.default" that comes in the distribution must be renamed to "phpThumb.config.php" before phpThumb.php can be used. Avoid having both files present to minimize confusion.</td></tr>';
+
+
+echo '<tr><th>cache directory:</th><th colspan="2">';
+$orig_config_cache_directory = $phpThumb->config_cache_directory;
+$phpThumb->setCacheDirectory();
+echo '<div style="background-color: '.(     is_dir($phpThumb->config_cache_directory) ? 'lime;">exists'   : 'red;">does NOT exist').'</div>';
+echo '<div style="background-color: '.(is_readable($phpThumb->config_cache_directory) ? 'lime;">readable' : 'red;">NOT readable'  ).'</div>';
+echo '<div style="background-color: '.(is_writable($phpThumb->config_cache_directory) ? 'lime;">writable' : 'red;">NOT writable'  ).'</div>';
+echo '</th><td>Original: "'.htmlentities($orig_config_cache_directory).'"<br>Resolved: "'.htmlentities($phpThumb->config_cache_directory).'"<br>Must exist and be both readable and writable by PHP.</td></tr>';
+
+
+echo '<tr><th>cache write test:</th><th colspan="2">';
+$phpThumb->rawImageData = 'phpThumb.demo.check.php_cachetest';
+$phpThumb->SetCacheFilename();
+echo '<div>'.htmlentities($phpThumb->cache_filename ? implode(' / ', preg_split('#[/\\\\]#', $phpThumb->cache_filename)) : 'NO CACHE FILENAME RESOLVED').'</div>';
+echo '<div>directory '.(is_dir(dirname($phpThumb->cache_filename)) ? 'exists' : 'does NOT exist').' (before EnsureDirectoryExists())</div>';
+phpthumb_functions::EnsureDirectoryExists(dirname($phpThumb->cache_filename));
+echo '<div style="background-color: '.(is_dir(dirname($phpThumb->cache_filename)) ? 'lime;">directory exists' : 'red;">directory does NOT exist').' (after EnsureDirectoryExists())</div>';
+if ($fp = @fopen($phpThumb->cache_filename, 'wb')) {
+	fwrite($fp, 'this is a test from '.__FILE__);
+	fclose($fp);
+	echo '<div style="background-color: lime;">write test succeeded</div>';
+
+	$old_perms = substr(sprintf('%o', fileperms($phpThumb->cache_filename)), -4);
+	@chmod($phpThumb->cache_filename, 0644);
+	clearstatcache();
+	$new_perms = substr(sprintf('%o', fileperms($phpThumb->cache_filename)), -4);
+	echo '<div style="background-color: '.(($new_perms == '0644') ? 'lime' : (($new_perms > '0644') ? 'orange' : 'red')).';">chmod($phpThumb->cache_filename, 0644) from "'.htmlentities($old_perms).'" resulted in permissions "'.htmlentities($new_perms).'"</div>';
+
+	if (@unlink($phpThumb->cache_filename)) {
+		echo '<div style="background-color: lime;">delete test succeeded</div>';
+	} else {
+		echo '<div style="background-color: red;">delete test FAILED</div>';
+	}
+	$phpThumb->CleanUpCacheDirectory();
+} else {
+	echo '<div style="background-color: red;">write test FAILED</div>';
+}
+//echo '</th><td>Original: "'.htmlentities($orig_config_cache_directory).'"<br>Resolved: "'.htmlentities($phpThumb->config_cache_directory).'"<br>Must exist and be both readable and writable by PHP.</td></tr>';
+echo '</th><td>Created and deletes a sample cache file to see if you actually have create/delete permission.<br>If <i>Safe Mode</i> is enabled this is often broken.</td></tr>';
+
+
+echo '<tr><th>temp directory:</th><th colspan="2">';
+$orig_config_temp_directory = $phpThumb->config_temp_directory;
+echo $phpThumb->phpThumb_tempnam();
+echo '<div style="background-color: '.(     is_dir($phpThumb->config_temp_directory) ? 'lime;">exists'   : 'red;">does NOT exist').'</div>';
+echo '<div style="background-color: '.(is_readable($phpThumb->config_temp_directory) ? 'lime;">readable' : 'red;">NOT readable'  ).'</div>';
+echo '<div style="background-color: '.(is_writable($phpThumb->config_temp_directory) ? 'lime;">writable' : 'red;">NOT writable'  ).'</div>';
+echo '</th><td>Original: "'.htmlentities($orig_config_temp_directory).'"<br>Resolved: "'.htmlentities($phpThumb->config_temp_directory).'"<br>Must exist and be both readable and writable by PHP.</td></tr>';
+
+
+echo '<tr><th>PHP version:</th><th colspan="2" style="background-color: ';
+if (phpthumb_functions::version_compare_replacement(phpversion(), '5.0.0', '>=')) {
+	echo 'lime';
+} elseif (phpthumb_functions::version_compare_replacement(phpversion(), '4.4.2', '=')) {
+	echo 'darkgreen';
+} elseif (phpthumb_functions::version_compare_replacement(phpversion(), '4.3.3', '>=')) {
+	echo 'lightgreen';
+} elseif (phpthumb_functions::version_compare_replacement(phpversion(), '4.2.0', '>=')) {
+	echo 'green';
+} elseif (phpthumb_functions::version_compare_replacement(phpversion(), '4.1.0', '>=')) {
+	echo 'yellow';
+} elseif (phpthumb_functions::version_compare_replacement(phpversion(), '4.0.6', '>=')) {
+	echo 'orange';
+} else {
+	echo 'red';
+}
+echo ';">'.phpversion();
+echo '</th><td>PHP5 is ideal (support for numerous built-in filters which are much faster than my code).<br>PHP v4.4.2 contains a bug in fopen over HTTP (phpThumb has a workaround)<br>PHP v4.3.2+ supports ImageSaveAlpha which is required for proper PNG/ICO output.<br>ImageRotate requires PHP v4.3.0+ (but buggy before v4.3.3).<br>EXIF thumbnail extraction requires PHP v4.2.0+.<br>Most things will work back to PHP v4.1.0, and mostly (perhaps buggy) back to v4.0.6, but no guarantees for any version older than that.</td></tr>';
+
+
+echo '<tr><th>GD version:</th><th colspan="2" style="background-color: ';
+if ($ServerInfo['gd_numeric'] >= 2) {
+	if (!empty($ServerInfo['gd_string']) && preg_match('#bundled#i', $ServerInfo['gd_string'])) {
+		echo 'lime';
+	} else {
+		echo 'yellow';
+	}
+} elseif (!empty($ServerInfo['im_version'])) {
+	echo 'orange';
+} else {
+	echo 'red';
+}
+echo ';">'.(!empty($ServerInfo['gd_string']) ? $ServerInfo['gd_string'] : 'n/a');
+echo '</th><td>GD2-bundled version is ideal.<br>GD2 (non-bundled) is second choice, but there are a number of bugs in the non-bundled version. ImageRotate is only available in the bundled version of GD2.<br>GD1 will also (mostly) work, at much-reduced image quality and several features disabled. phpThumb can perform most operations with ImageMagick only, even if GD is not available.</td></tr>';
+
+
+$IMreleaseDate = 0;
+if (preg_match('# ([0-9]{2})/([0-9]{2})/([0-9]{2}) #', $ServerInfo['im_version'], $matches)) {
+	list($dummy, $m, $d, $y) = $matches;
+	if ($y < 70) {
+		$y += 2000;
+	} elseif ($y < 100) {
+		$y += 1900;
+	}
+	$IMreleaseDate = mktime(12, 0, 0, $m, $d, $y);
+} elseif (preg_match('# ([0-9]{4})\\-([0-9]{2})\\-([0-9]{2}) #', $ServerInfo['im_version'], $matches)) {
+	list($dummy, $y, $m, $d) = $matches;
+	$IMreleaseDate = mktime(12, 0, 0, $m, $d, $y);
+}
+$IMversionAge = time() - $IMreleaseDate;
+echo '<tr><th>ImageMagick version:</th><th colspan="2" style="background-color: ';
+if ($ServerInfo['im_version']) {
+	if ($IMversionAge < (86400 * 365 * 1)) {
+		echo 'lime';
+	} elseif ($IMversionAge < (86400 * 365 * 2)) {
+		echo 'lightgreen';
+	} elseif ($IMversionAge < (86400 * 365 * 3)) {
+		echo 'green';
+	} elseif ($IMversionAge < (86400 * 365 * 4)) {
+		echo 'darkgreen';
+	} else {
+		echo 'olive';
+	}
+} elseif (!empty($ServerInfo['gd_string'])) {
+	echo 'orange';
+} else {
+	echo 'red';
+}
+echo ';">';
+echo '<div style="color: navy; font-family: monospace;">'.htmlentities($phpThumb->config_imagemagick_path);
+echo ' <span style="cursor: help;" title="file_exists"                  >['.intval(                            @file_exists($phpThumb->config_imagemagick_path)).']</span> ';
+echo ' <span style="cursor: help;" title="file_exists_ignoreopenbasedir">['.intval($phpThumb->file_exists_ignoreopenbasedir($phpThumb->config_imagemagick_path)).']</span> ';
+echo ' <span style="cursor: help;" title="is_file"                      >['.intval(                                @is_file($phpThumb->config_imagemagick_path)).']</span> ';
+echo ' <span style="cursor: help;" title="is_readable"                  >['.intval(                            @is_readable($phpThumb->config_imagemagick_path)).']</span> ';
+echo ' <span style="cursor: help;" title="is_executable"                >['.intval(                          @is_executable($phpThumb->config_imagemagick_path)).']</span> ';
+echo '</div>';
+echo '<div style="color: blue; font-family: monospace;">'.htmlentities($phpThumb->ImageMagickCommandlineBase()).'</div>';
+echo ($ServerInfo['im_version'] ? $ServerInfo['im_version'] : 'n/a');
+echo ($IMreleaseDate ? '<br><br>This version of ImageMagick is '.NiceTimeFormatting($IMversionAge).' old<br>(see <a href="http://www.imagemagick.org/">www.imagemagick.org</a> for new versions)' : '');
+echo '</th><td>ImageMagick is faster than GD, can process larger images without PHP memory_limit issues, can resize animated GIFs. phpThumb can perform most operations with ImageMagick only, even if GD is not available.</td></tr>';
+
+
+echo '<tr><th>ImageMagick features:</th>';
+if ($ServerInfo['im_version']) {
+	$GDfeatures['red']    = array('help', 'thumbnail', 'resize', 'crop', 'repage', 'coalesce', 'gravity', 'background', 'interlace', 'flatten', 'border', 'bordercolor', 'dither', 'quality');
+	$GDfeatures['orange'] = array('version', 'blur', 'colorize', 'colors', 'colorspace', 'contrast', 'contrast-stretch', 'edge', 'emboss', 'fill', 'flip', 'flop', 'gamma', array('gaussian','gaussian-blur'), 'level', 'modulate', 'monochrome', 'negate', 'normalize', 'rotate', 'sepia-tone', 'threshold', 'unsharp');
+	echo '<th colspan="2">|';
+	foreach ($GDfeatures as $missingcolor => $features) {
+		foreach ($features as $dummy => $feature) {
+			$foundOneThatWorks = false;
+			if (is_array($feature)) {
+				// sometimes feature names change, e.g. "gaussian" -> "gaussian-blur". They won't both exist in the same version of ImageMagick, but as long as one of them does then the feature will work
+				foreach ($feature as $alternate_feature_name) {
+					if ($phpThumb->ImageMagickSwitchAvailable($alternate_feature_name)) {
+						$foundOneThatWorks = true;
+						$feature = $alternate_feature_name;
+						break;
+					}
+				}
+			} else {
+				$foundOneThatWorks = $phpThumb->ImageMagickSwitchAvailable($feature);
+			}
+			echo '| <span style="background-color: '.($foundOneThatWorks ? 'lime' : $missingcolor).';">'.htmlentities($feature).'</span> |';
+		}
+	}
+	echo '|</th>';
+} else {
+	echo '<th colspan="2" style="background-color: orange;">ImageMagick not found</th>';
+}
+echo '<td>All of these parameters may be called by phpThumb, depending on parameters used.  Green means the feature is available; red means a critical feature is missing; orange means an optional filter/feature is missing.</td></tr>';
+
+
+echo '<tr><th>ImageMagick formats:</th>';
+if ($ServerInfo['im_version']) {
+	echo '<td colspan="2"><div style="width: 100%; height: 200px; overflow: auto; font-family: monospace; white-space: pre; background-color: #FFFFFF;">'.htmlentities($phpThumb->ImageMagickFormatsList()).'</div></td>';
+} else {
+	echo '<th colspan="2" style="background-color: orange;">ImageMagick not found</th>';
+}
+echo '<td>ImageMagick can only read/write formats as listed here. You may need to recompile ImageMagick if you need to use a format not listed</td></tr>';
+
+echo '<tr><th>GD features:</th><th colspan="2">';
+$GDfeatures['red']    = array('JPEG Support', 'JPG Support', 'PNG Support'); // older versions would report "JPG Support", newer versions report "JPEG Support"
+$GDfeatures['orange'] = array('GIF Read Support', 'GIF Create Support', 'FreeType Support');
+foreach ($GDfeatures as $missingcolor => $features) {
+	foreach ($features as $dummy => $feature) {
+		if (isset($gd_info[$feature])) {
+			echo '<div style="background-color: '.($gd_info[$feature] ? 'lime' : $missingcolor).';">'.htmlentities($feature).'</div>';
+		}
+	}
+}
+echo '</th><td>PNG support is required for watermarks, overlays, calls to ImageMagick and other internal operations.<br>JPG support is obviously quite useful, but ImageMagick can substitute<br>GIF read support can be bypassed with ImageMagick and/or internal GIF routines.<br>GIF create support can be bypassed with ImageMagick (if no filters are applied)<br>FreeType support is needed for TTF overlays.</td></tr>';
+
+
+echo '<tr><th>GD extension "EXIF"</th><th colspan="2" style="background-color: ';
+if (extension_loaded('exif')) {
+	echo 'lime';
+} elseif (!empty($ServerInfo['gd_string'])) {
+	echo 'orange';
+}
+echo ';">'.(extension_loaded('exif') ? 'TRUE' : 'FALSE');
+echo '</th><td>EXIF extension required for auto-rotate images. Also required to extract EXIF thumbnail to use as source if source image is too large for PHP memory_limit and ImageMagick is unavailable.</td></tr>';
+
+
+echo '<tr><th>php_sapi_name()</th><th colspan="2" style="background-color: ';
+$php_sapi_name = strtolower(function_exists('php_sapi_name') ? php_sapi_name() : '');
+if (!$php_sapi_name || (preg_match('#~#', dirname($_SERVER['PHP_SELF'])) && ($php_sapi_name != 'apache'))) {
+	echo 'red';
+} elseif ($php_sapi_name == 'cgi-fcgi') {
+	echo 'orange';
+} elseif ($php_sapi_name == 'cgi') {
+	echo 'yellow';
+} elseif ($php_sapi_name == 'apache') {
+	echo 'lime';
+} else {
+	echo 'green';
+}
+echo ';">'.htmlentities($php_sapi_name).'</th>';
+echo '<td>SAPI mode preferred to CGI mode. FCGI mode has unconfirmed strange behavior (notably more than one space in "wmt" filter text causes errors). If not working in "apache" (SAPI) mode, <i>apache_lookup_uri()</i> will not work.</td></tr>';
+
+
+echo '<tr><th>Server Software</th><th colspan="2" style="background-color: ';
+$server_software = getenv('SERVER_SOFTWARE');
+if (!$server_software) {
+	echo 'red';
+} elseif (preg_match('#^Apache/([0-9\\.]+)#i', $server_software, $matches)) {
+	if (phpthumb_functions::version_compare_replacement($matches[1], '2.0.0', '>=')) {
+		echo 'lightgreen';
+	} else {
+		echo 'lime';
+	}
+} else {
+	echo 'darkgreen';
+}
+echo ';">'.$server_software.'</th>';
+echo '<td>Apache v1.x has the fewest compatability problems. IIS has numerous annoyances. Apache v2.x is broken when lookup up <i>/~user/filename.jpg</i> style relative filenames using <i>apache_lookup_uri()</i>.</td></tr>';
+
+
+echo '<tr><th>curl_version:</th><th colspan="2" style="background-color: ';
+$curl_version = (function_exists('curl_version') ? curl_version() : '');
+if (is_array($curl_version)) {
+	$curl_version = @$curl_version['version'];
+}
+if ($curl_version) {
+	echo 'lime';
+} else {
+	echo 'yellow';
+}
+echo ';">'.$curl_version.'</th>';
+echo '<td>Best if available. HTTP source images will be unavailable if CURL unavailable and <i>allow_url_fopen</i> is also disabled.</td></tr>';
+
+echo '<tr style="background-color: #EEEEEE;"><th colspan="4">&nbsp;</th></tr>';
+echo '<tr style="background-color: #EEEEEE;"><th>function_exists:</th><th colspan="2">Value</th><th>Comments</th></tr>';
+
+$FunctionsExist = array(
+	'ImageRotate'           => array('orange',     'required for "ra" and "ar" filters.'),
+	'exif_read_data'        => array('yellow',     'required for "ar" filter.'),
+	'exif_thumbnail'        => array('yellow',     'required to extract EXIF thumbnails.'),
+	'memory_get_usage'      => array('lightgreen', 'mostly used for troubleshooting.'),
+	'version_compare'       => array('darkgreen',  'available in PHP v4.1.0+, internal workaround available'),
+	'file_get_contents'     => array('darkgreen',  'available in PHP v4.3.0+, internal workaround available'),
+	'file_put_contents'     => array('darkgreen',  'available in PHP v5.0.0+, internal workaround available'),
+	'is_executable'         => array('yellow',     'available in PHP3, except only PHP5 for Windows. poor internal workaround available'),
+	'gd_info'               => array('olive',      'available in PHP v4.3.0+ (with bundled GD2), internal workaround available'),
+	'ImageTypes'            => array('red',        'required for GD image output.'),
+	'ImageCreateFromJPEG'   => array('orange',     'required for JPEG source images using GD.'),
+	'ImageCreateFromGIF'    => array('yellow',     'useful for GIF source images using GD.'),
+	'ImageCreateFromPNG'    => array('orange',     'required for PNG source images using GD and other source image formats using ImageMagick.'),
+	'ImageCreateFromWBMP'   => array('yellow',     'required for WBMP source images using GD.'),
+	'ImageCreateFromString' => array('orange',     'required for HTTP and non-file image sources.'),
+	'ImageCreateTrueColor'  => array('orange',     'required for all non-ImageMagick filters.'),
+	'ImageIsTrueColor'      => array('olive',      'available in PHP v4.3.2+ with GD v2.0.1+'),
+	'ImageFilter'           => array('yellow',     'PHP5 only. Required for some filters (but most can use ImageMagick instead)'),
+);
+foreach ($FunctionsExist as $function => $details) {
+	list($color, $description) = $details;
+	echo '<tr><th>'.$function.'</th><th colspan="2" style="background-color: ';
+	if (function_exists(strtolower($function))) {
+		echo 'lime;">TRUE';
+	} else {
+		echo $color.';">FALSE';
+	}
+	echo '</th><td>'.htmlentities($description).'</td></tr>';
+}
+
+
+echo '<tr style="background-color: #EEEEEE;"><th colspan="4">&nbsp;</th></tr>';
+echo '<tr style="background-color: #EEEEEE;"><th>Setting</th><th>Master Value</th><th>Local Value</th><th>Comments</th></tr>';
+
+
+$SettingFeatures = array(
+	'magic_quotes_runtime' => array('red',    'lime',   'This setting is evil. Turn it off.'),
+	'magic_quotes_gpc'     => array('yellow', 'lime',   'This setting is bad. Turn it off, if possible. phpThumb will attempt to work around it if it is enabled.'),
+	'safe_mode'            => array('orange', 'lime',   'Best if off. Calls to ImageMagick will be disabled if safe_mode is set to prevent writing temp files (limiting max image resolution, no animated GIF resize). Raw image data sources (e.g. from MySQL database) may not work. Temp files may be disabled. Features will be limited. If disabled in Master but enabled in Local, edit httpd.conf and set (php_admin_value safe_mode "Off") between <VirtualHost> tags'),
+	'allow_url_fopen'      => array('lime',   'yellow', 'Best if on. HTTP source images will be unavailable if disabled and CURL is unavailable.'),
+);
+
+foreach ($SettingFeatures as $feature => $FeaturesDetails) {
+	list($color_true, $color_false, $reason) = $FeaturesDetails;
+	echo '<tr><th>'.$feature.':</th>';
+	echo '<th style="background-color: '.(@get_cfg_var($feature)                      ? $color_true : $color_false).';">'.$phpThumb->phpThumbDebugVarDump((bool) @get_cfg_var($feature)).'</th>';
+	echo '<th style="background-color: '.(preg_match('#(1|ON)#i', @ini_get($feature)) ? $color_true : $color_false).';">'.$phpThumb->phpThumbDebugVarDump((bool) preg_match('#(1|ON)#i', ini_get($feature))).'</th>';
+	echo '<td>'.htmlentities($reason).'</td></tr>';
+}
+
+$MissingFunctionSeverity = array(
+	'shell_exec' => 'red',
+	'system'     => 'red',
+	'passthru'   => 'red',
+	'exec'       => 'red',
+	'curl_exec'  => 'orange',
+);
+$DisabledFunctions[0] = explode(',', @get_cfg_var('disable_functions'));
+$DisabledFunctions[1] = explode(',',     @ini_get('disable_functions'));
+echo '<tr><th>disable_functions:</th>';
+for ($i = 0; $i <= 1; $i++) {
+	foreach ($DisabledFunctions[$i] as $key => $value) {
+		if (!empty($MissingFunctionSeverity[$value])) {
+			$DisabledFunctions[$i][$key] = '<span style="background-color: '.$MissingFunctionSeverity[$value].';">'.$value.'</span>';
+		}
+	}
+	$disabled_functions = implode(', ', $DisabledFunctions[$i]);
+	echo '<th style="background-color: '.($disabled_functions ? 'yellow' : 'lime').';">';
+	echo '</th>';
+}
+echo '<td>Best if nothing disabled. Calls to ImageMagick will be prevented if exec+system+shell_exec+passthru are disabled.</td></tr>';
+
+
+echo '<tr><th>memory_limit:</th><th style="background-color: ';
+$memory_limit = @get_cfg_var('memory_limit');
+if (!$memory_limit) {
+	echo 'lime';
+} elseif ($memory_limit >= 32) {
+	echo 'lime';
+} elseif ($memory_limit >= 24) {
+	echo 'lightgreen';
+} elseif ($memory_limit >= 16) {
+	echo 'green';
+} elseif ($memory_limit >= 12) {
+	echo 'darkgreen';
+} elseif ($memory_limit >= 8) {
+	echo 'olive';
+} elseif ($memory_limit >= 4) {
+	echo 'yellow';
+} elseif ($memory_limit >= 2) {
+	echo 'orange';
+} else {
+	echo 'red';
+}
+echo ';">'.($memory_limit ? $memory_limit : '<i>unlimited</i>').'</th><th style="background-color: ';
+$memory_limit = @ini_get('memory_limit');
+if (!$memory_limit) {
+	echo 'lime';
+} elseif ($memory_limit >= 32) {
+	echo 'lime';
+} elseif ($memory_limit >= 24) {
+	echo 'lightgreen';
+} elseif ($memory_limit >= 16) {
+	echo 'green';
+} elseif ($memory_limit >= 12) {
+	echo 'darkgreen';
+} elseif ($memory_limit >= 8) {
+	echo 'olive';
+} elseif ($memory_limit >= 4) {
+	echo 'yellow';
+} elseif ($memory_limit >= 2) {
+	echo 'orange';
+} else {
+	echo 'red';
+}
+echo ';">'.($memory_limit ? $memory_limit : '<i>unlimited</i>').'</th>';
+echo '<td>The higher the better. Divide by 5 to get maximum megapixels of source image that can be thumbnailed (without ImageMagick).'.($memory_limit ? ' Your setting ('.$memory_limit.') allows images up to approximately '.number_format($memory_limit / 5, 1).' megapixels' : '').'</td></tr>';
+
+echo '</table>';
+
+
+function NiceTimeFormatting($seconds, $precision=1, $returnparts=false) {
+	$sign = (($seconds < 0) ? -1 : 1);
+	$seconds = abs($seconds);
+	do {
+		if ($seconds < 100) {
+			$value = number_format($seconds, 0);
+			$unit  = 'second'.(($seconds > 1) ? 's' : '');
+			break;
+		}
+		$minutes = $seconds / 60;
+		if ($minutes < 60) {
+			$value = number_format($minutes, $precision);
+			$unit  = 'minutes';
+			break;
+		}
+		$hours = $seconds / 3600;
+		if ($hours < 24) {
+			$value = number_format($hours, $precision);
+			$unit  = 'hours';
+			break;
+		}
+		$days = $seconds / 86400;
+		if ($days < 60) {
+			$value = number_format($days, $precision);
+			$unit  = 'days';
+			break;
+		}
+		$months = $seconds / (30 * 86400);
+		if ($months < 12) {
+			$value = number_format($months, $precision);
+			$unit  = 'months';
+			break;
+		}
+		$years = $seconds / (365 * 86400);
+		if (true) {
+			$value = number_format($years, $precision);
+			$unit  = 'years';
+			break;
+		}
+	} while (false);
+	$value *= $sign;
+	if ($returnparts) {
+		return array($value, $unit);
+	}
+	return $value.' '.$unit;
+}
+
+?>
+</body>
+</html>

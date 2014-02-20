@@ -1,53 +1,183 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-LfA8jTDxfB/c6wuQ
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Uri
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Uri.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+/**
+ * Abstract class for all Zend_Uri handlers
+ *
+ * @category  Zend
+ * @package   Zend_Uri
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Uri
+{
+    /**
+     * Scheme of this URI (http, ftp, etc.)
+     *
+     * @var string
+     */
+    protected $_scheme = '';
+
+    /**
+     * Global configuration array
+     *
+     * @var array
+     */
+    static protected $_config = array(
+        'allow_unwise' => false
+    );
+    
+    /**
+     * Return a string representation of this URI.
+     *
+     * @see    getUri()
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getUri();
+    }
+
+    /**
+     * Convenience function, checks that a $uri string is well-formed
+     * by validating it but not returning an object.  Returns TRUE if
+     * $uri is a well-formed URI, or FALSE otherwise.
+     *
+     * @param  string $uri The URI to check
+     * @return boolean
+     */
+    public static function check($uri)
+    {
+        try {
+            $uri = self::factory($uri);
+        } catch (Exception $e) {
+            return false;
+        }
+
+        return $uri->valid();
+    }
+
+    /**
+     * Create a new Zend_Uri object for a URI.  If building a new URI, then $uri should contain
+     * only the scheme (http, ftp, etc).  Otherwise, supply $uri with the complete URI.
+     *
+     * @param  string $uri The URI form which a Zend_Uri instance is created
+     * @throws Zend_Uri_Exception When an empty string was supplied for the scheme
+     * @throws Zend_Uri_Exception When an illegal scheme is supplied
+     * @throws Zend_Uri_Exception When the scheme is not supported
+     * @return Zend_Uri
+     * @link   http://www.faqs.org/rfcs/rfc2396.html
+     */
+    public static function factory($uri = 'http')
+    {
+        // Separate the scheme from the scheme-specific parts
+        $uri            = explode(':', $uri, 2);
+        $scheme         = strtolower($uri[0]);
+        $schemeSpecific = isset($uri[1]) === true ? $uri[1] : '';
+
+        if (strlen($scheme) === 0) {
+            require_once 'Zend/Uri/Exception.php';
+            throw new Zend_Uri_Exception('An empty string was supplied for the scheme');
+        }
+
+        // Security check: $scheme is used to load a class file, so only alphanumerics are allowed.
+        if (ctype_alnum($scheme) === false) {
+            require_once 'Zend/Uri/Exception.php';
+            throw new Zend_Uri_Exception('Illegal scheme supplied, only alphanumeric characters are permitted');
+        }
+
+        /**
+         * Create a new Zend_Uri object for the $uri. If a subclass of Zend_Uri exists for the
+         * scheme, return an instance of that class. Otherwise, a Zend_Uri_Exception is thrown.
+         */
+        switch ($scheme) {
+            case 'http':
+                // Break intentionally omitted
+            case 'https':
+                $className = 'Zend_Uri_Http';
+                break;
+
+            case 'mailto':
+                // TODO
+            default:
+                require_once 'Zend/Uri/Exception.php';
+                throw new Zend_Uri_Exception("Scheme \"$scheme\" is not supported");
+                break;
+        }
+
+        if (!class_exists($className)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($className);
+        }
+        $schemeHandler = new $className($scheme, $schemeSpecific);
+
+        return $schemeHandler;
+    }
+
+    /**
+     * Get the URI's scheme
+     *
+     * @return string|false Scheme or false if no scheme is set.
+     */
+    public function getScheme()
+    {
+        if (empty($this->_scheme) === false) {
+            return $this->_scheme;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Set global configuration options
+     *
+     * @param array $config
+     */
+    static public function setConfig(array $config)
+    {
+        foreach ($config as $k => $v) {
+            self::$_config[$k] = $v;
+        }
+    }
+    
+    /**
+     * Zend_Uri and its subclasses cannot be instantiated directly.
+     * Use Zend_Uri::factory() to return a new Zend_Uri object.
+     *
+     * @param string $scheme         The scheme of the URI
+     * @param string $schemeSpecific The scheme-specific part of the URI
+     */
+    abstract protected function __construct($scheme, $schemeSpecific = '');
+
+    /**
+     * Return a string representation of this URI.
+     *
+     * @return string
+     */
+    abstract public function getUri();
+
+    /**
+     * Returns TRUE if this URI is valid, or FALSE otherwise.
+     *
+     * @return boolean
+     */
+    abstract public function valid();
+}

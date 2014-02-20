@@ -1,56 +1,155 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Fieldset
+ *
+ * Any options passed will be used as HTML attributes of the fieldset tag.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Fieldset.php 10689 2008-08-05 17:00:54Z matthew $
+ */
+class Zend_Form_Decorator_Fieldset extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Attribs that should be removed prior to rendering
+     * @var array
+     */
+    public $stripAttribs = array(
+        'action',
+        'enctype',
+        'helper',
+        'method',
+        'name',
+    );
+
+    /**
+     * Fieldset legend
+     * @var string
+     */
+    protected $_legend;
+
+    /**
+     * Default placement: surround content
+     * @var string
+     */
+    protected $_placement = null;
+
+    /**
+     * Get options
+     *
+     * Merges in element attributes as well.
+     * 
+     * @return array
+     */
+    public function getOptions()
+    {
+        $options = parent::getOptions();
+        if (null !== ($element = $this->getElement())) {
+            $attribs = $element->getAttribs();
+            $options = array_merge($options, $attribs);
+            $this->setOptions($options);
+        }
+        return $options;
+    }
+
+    /**
+     * Set legend
+     * 
+     * @param  string $value 
+     * @return Zend_Form_Decorator_Fieldset
+     */
+    public function setLegend($value)
+    {
+        $this->_legend = (string) $value;
+        return $this;
+    }
+
+    /**
+     * Get legend
+     * 
+     * @return string
+     */
+    public function getLegend()
+    {
+        $legend = $this->_legend;
+        if ((null === $legend) && (null !== ($element = $this->getElement()))) {
+            if (method_exists($element, 'getLegend')) {
+                $legend = $element->getLegend();
+                $this->setLegend($legend);
+            }
+        }
+        if ((null === $legend) && (null !== ($legend = $this->getOption('legend')))) {
+            $this->setLegend($legend);
+            $this->removeOption('legend');
+        }
+
+        return $legend;
+    }
+
+    /**
+     * Render a fieldset
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $legend        = $this->getLegend();
+        $attribs       = $this->getOptions();
+        $name          = $element->getFullyQualifiedName();
+
+        $id = $element->getId();
+        if (!empty($id)) {
+            $attribs['id'] = 'fieldset-' . $id;
+        }
+
+        if (null !== $legend) {
+            if (null !== ($translator = $element->getTranslator())) {
+                $legend = $translator->translate($legend);
+            }
+
+            $attribs['legend'] = $legend;
+        }
+
+        foreach (array_keys($attribs) as $attrib) {
+            $testAttrib = strtolower($attrib);
+            if (in_array($testAttrib, $this->stripAttribs)) {
+                unset($attribs[$attrib]);
+            }
+        }
+
+        return $view->fieldset($name, $content, $attribs);
+    }
+}

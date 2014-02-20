@@ -1,199 +1,644 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV56L+KoFBuQSKXgt60Da5VF42bDL2tPAIbAkiAwiUKf4A99FLeQX6Jpe3KZUHq8U8E4F39Rm2
-1HthwFBBUkV4nq6Raq/xFoPpzTjqm0RfycwBYDr+dK4TJjBTny56uDMOpP21RuYRRijzQQkZXCnF
-NoJSRekjB+09sDCx4kR0K30D5G2NqNldTeluVJXY9BGSRHFY8uRaInydlW1GwQMbU8jkhVj7ydDs
-VpDsvZ/A1tG5/6BiNHVdn4kJIPpDKor7T+KlBeH2Q3HZpFxKD5kbY7Wo2jNcBUT7/p/Q2RMEfKy5
-ZRypUC9OAobBTKmRzlnJFXy2n/OgkJznwj0Izk7YO/lcw9l6y04IlrxMFJxC5q8fi0nCSXxXfaFM
-B1ijpRVSVAxc2wv83A/6qOteWJ2tX7R2XQiCXrXspbnqUS/tvwl6zhczoMmMnQmxJYDD+Tvx6HVu
-fI5KaDQt3MoNNWDZPdgDJ3+sfNreTn/0OC435fbc+rqGMrXE/sTTGKg+M6HrK1JoDcCbxUXDDAM7
-5a2bLgED4OVMnF1mTZESsELjNTypJjdm165xvIXZo+YTrW1bUSYjMMtSOxPRgGHCeEBfRkBWdyvx
-2NfKYlZd9BMHbtf/poLtWn9/c1wOi1VkzmHvRlBbD7HQWR3C9ROATCJ9qVvZXscOEjOCvjK3x86Z
-R5FWFL94iC58nFeLdLu1ZNhuDelQ1mliGk+ISWzktXagvMm70ETtRgV2AYenXENbZuFUUHfyskr0
-VAZ+6TxvyPPtJsoCAMP77RVtPR4T/pE6SVPfQ774mUqIgtoCar4UX4OPHc+IuolFlkkWhvzTSwnI
-powUGXnc53y2J4r/bQ4e8T2IEUIkmmLYG2ZRIPVIOsjMBPNaKA8hohb0Mw2n0M2mgGs0vA0SiKOw
-FNTT11NFSqxyuWiuJ7f8kPXCIA+UToToETaQYa/0oFCB6DlUOjST+r3TaOjzIxlWDYHVE5Cbb9l6
-8Gd0vZY6QLcPbrW5/vZHbN5dJ7Upt4shIATKDo/s/VhX4rDojpuOQHXO/a37Kw4g+sWMFQIys8MT
-otz78ap1ZeY4hNN0xB1MgvV4oZR59PZwH8kSvi4l7AVC2rDIRj1EB//44cU24zN7lM0Rp7wq/H7I
-7qoCj5DOZ/qHkEkZDPWSsjfraXMwzDRWTavPdDqRhEXvOjw1RbjoWs1nxBWo6iDpPhrjZtVUuBVU
-TezQ2gbEpso7vjlbj/ArmEzIvzTiV4JgG3tgZowLWe4HyKerZiGbxGSUlzYaEuErIDPZX7f978Kc
-Xz7VHxpIfGLKPPiKV30Kksf9QAjYZGvfEsk9n5i23IKM/zECQ3G3O5poiqRhA8sI3L7xdJ2bh5KV
-GGFaW2si20cQ4kzKyniZ0hWAHPX/UJWm3Wg6ifaxyH/1IVcrOQ1uhnrAgU4g95STgb208g3yVU3Q
-435WVf0+Ax3LKRPtZHh/gXINWXVmKGM6jUFkst0YqSoPWoT5YM72yjMevMQLP7+zerla/zPAU4Fs
-CZKgrjf2BCuUG0HZq5vW0bHiM58neASZq7yJUXtAIQaIKqVPRcrFMO6R6OZwIgh38vrwqyurFYUK
-NfAtB2A+To/9Am9SbNtLVtJJksICTSsddLU+eWq4i6MvqkhtAwcx8sITQJMMaCuIo8R6AJN4+Tlo
-qPoh473YoPsSsvulfOCr0shVdxRfyWIvQt5ExN4i3fBNP6SlCG2bNkgnNEQWf1kNh5LkDxIZnPZL
-/OAv97NnWr2Je2/kg12T7ACBvo8rMzAL2IoZlDEm/qs9qopMP7xuPRC19VVRJhfgmGVTUgNDNabX
-35UhZ7s/HwhkoMhlDfIV2Ua6glFyIQTtKuKEhTYmKpQrHwuspF1L++RVUUxazyrhNebukC9sVySP
-sa1S2d8dUfH9geozPPHxKOH60H81qvDI8rDcTVJQNlXteuzwT9FoKIRK8KnOJXdl8hGapdZ/H6Cx
-0cR2Bv2i3Xm8oZuqdz7Xyg9jd0mvK1+yFMB2/hSsFiRPNVbkNV+Td/87rXXmIpMYDUnAeYmnahg+
-8ifnmoTc1ctO99v/TI+LL31gZW2SzlL+PWU8loxy0LyQJKF0bBZ6zCOwB0O87e1qRvpWcxcOMwbQ
-Z2XQfUPmXNfrJTEg2nKTkn0iJVPFDJ/XJsuMQMOR66v6pj1hgYvcIq1b7akbJOcKji+kagP3s4De
-I2au5KkMW9PbfPs9jnmuzlrz/DoOSBtLZf2N7npBfzydiSGsuguEDBxKvxzezDesIxlWA1F95UyS
-bbbm95cijX7MMG1t36L3WqHMJgKX/xIBgHQXnOgGBZUNCZ9bD55CwO8UcQKU/Tg29RT4ix/C9bBj
-2pj1GF4kl7K6S2GhUkU804CUxKjZTX5GjExZB5mlu9cflSTuhBMS+pLZUKFnuAdbpoLGVOjoLVS8
-wXQ9GVVVyOP7KJLXydzamNaazCGWG2RYRqle3Up6nVnUclDVlVzKXj+rX1wQs2XL8ZFY4J/CJOHW
-9010iSLWzLE6PdM6GX7QLT82jnVDpS5wxxfkpSIuQJlb5Nrq4wue8vHAid7Bw1XcidCs1SGFnbvA
-CJ9+vuSckaWF+/HGevc+cvGRzXJhZWJg2e4AX5RYaFVe80N2eC8f6ukHzcdNty+4xSAcfWzf83xG
-6Y3eWIoR/v1nU4Vr6k5x4s0G7HO8Q+IxrOZkjHkuLVYLrmW7lvsnQ4bwjqiinFWtl9pAkQz/XMEb
-G10J2LdiwO2XVxUSa/Mw2HXnELJ/5OhoNXWCXNIpnoMBz00SrU/1+8wRodnaVYWPAKSHVQ25RHpg
-UIW0r5jc6O0ZGmpk8E+ngnnN42lh5063noyL4n1tKAoBiGEMdtvNE0vmYxI8PQi7ZzGrajfyzyxM
-3cZRja3X7JYWXIlzsNyc5uoDBypkj6uWmZ7SxM76rfdfaCGI02tB99CNV06Eiv/7zgVph0N0NLn0
-J+1QJDqVdSLJsssRD5IdoYvQS74LWxNAmree9bnqroc4UMCbuRvUJGvTJPjbw8EkoFuhWItWriek
-Njwl33/7ZwSGcnurbWhanLS9+WGDqSKQglEoOa7Xt7pvjkGY81gOIo8PPF+wKBzVq0NeBJ9C44Y9
-jL4Czmhx8NJcgLH4XatjsBjuceewUqJN3XoTRY4m7IW/Hk2uaOAsPhqBlj/Mc1HgajJ4k32xespA
-0oT74hrE9a/9Pu+70Mv8A77UOpE5to9L1RHpoKFDblU1lWjxYWnSEjyB2cgO8anaPsJV660nfuOo
-qrO/Xk6MbMphB5y8pnaNO2/X0O3ykhNnNoWnd6Y9c5qG/a0gg6XRIn4b8J1Nf+RBW6CDGBubpZPT
-5ke2b8NuQor03k4a1EtRUs+sqksKtU/tmYbhaXkdf0N2hsmXPJZ7T0XUUOWVGPAIOYCW6EhqqJTp
-lBah/xLqOsusggl16mIzJdFqr4JWjwfyrt/p/vCG6y7hWkSEINga6hSO8ZTHU1NJ+YFqBFNHMccJ
-HlhcsJrf0ySFPsPDKmUwk3uvi72S78qk/vzxtPMcjZ0KpmPbMylMp/aHW5uSAFwGKJDxDlOd74cK
-9ZOYV5o5b/UepQgaO+r6RfkIWiff5lqQupdF/58WFboWwyY6TJPIYCiFmUeOabEiIUqvJ8DeL2Hz
-L77V4eqMzrLxplKc5Une/MGx/zdbfXhgH01soNvkzPVo3//6So2O+dH2jPioQkIKyuTfrAkmjrHL
-pwIu+Ln9xGzNeCHmOOm7YNNR/mSJA45wgqQJNWCK038/KU7vSJTj6tZmKVvR7vIOVr9dtmyKmBMR
-pGQBaP4JE13EK/2+GGSGOQxLz3CbyWDhmjACM7POKLtmL1iqmlsDalDBlvt1y9bdQBD2f71mPni7
-mdrqKXh0wbF7xhpDQaTgvd8mo7fgYG+c6udbLX8tI7ZlzUEcPe48bt7YecRJB9pMW04vibuVSawF
-KOAaRxsQNKYqcrDYIgfaJbf1Xl3WDiksVBxkXzwShd++OqB/gaH7EsGMj440D4hW3TlI5mBkH8oi
-wHVu9xkNzOUEISn6dh5EkOKs2Dl+nvgZnRTM1+5oCMXwhuguOWudm520Syep2CKC6byg+MUMeAk8
-pZelKEjMFSixA5s0m7B3bsjS84jQBVzHNzIWgQtYaJLbq4KwLWQV3eVRBKsLykAERc2ad0HVOcri
-Q7U4zT3ED2p/5SFNznHhWLdP2NFugGPqQkZbSpgHm9FTa4wp2qFuzqRnl1Nny3jzyGRW+gcoDjAt
-s+s1d1bVq982d++CdsJW9SnxaIqgsKdK2eaYzcMPvCpKAgOsMRRbWmMOBvG6hntdtZyqxW8GhbI3
-QnsO58wlTqpYbhSFJ1/r58x3Uc+KgX0L0sC+zX2GPPziihJs+n+vw9tvL3DfLzvqX1mdCv+ED4xV
-0M2dOYauVxQcFVTnYeblP46Rb+7Wh1cHQdvL5oRGjkEBmMustZPN/ofNV17QZPRFj27ZgwxSJHqH
-OsqNysYjgwDNzT/fOpKSdz7sDBY1Ely3mtcFj1OATh7p3EATaFKDd8l+45gXXMFdUgFzK6FRpEIm
-Tgpm2QBGq/imtZTw1DDLQ3Tq82bsZgbQwh0FW3WchHwuE5tbFtQvSyUpMQ2oD+Nf51FLEJWuia6S
-wKTADFQZ09tcC7Y2ktMf81YXj52n2Mgg/7afP68i7Hu7olyYO/5YK5k2ozvk4/0aqPBUdsssGN4j
-AtXurhl7Ym/f0fiwk7Yu9AQvNMRWpqYaDntolqHb828knbQzNfKimsEeisE652rpT9rGVfgg8P+s
-eWlKmDrNO5Bj8o//7m+enOb1x/bP7lWICUEtPk2IsAPjqo9YfmnhDMYoPIpdsycwtw6jWlCjQFBM
-LVJQFIeiV5j8NilNQETSYK1bflJCjTZaJ/b+dJdg5psJ0H7tlsL0UH9YnAFPppCCVHEUnVcC3p5J
-xsMCJM5l8yfugyzQfRPhjUzg+IIcicjSZY6djsnjYGPlRTCG/FgMyQ4I8VZXe4SxaEJRg5/icm0q
-UifvdZsyB/srrG1BDFTZuLENgguiG0cYr9kji3EUmXxRTMRVeoKLlOvSX4YsMqwhhdv5G/dXhNVP
-r86kZqbmt5EjnQAPfCPqGoRim+sYslpvPMI2bck/5DuHDbvu2UbCUpk47g5UbeLD06c4NvDhXbFt
-D/NlE1R90B/nX+d6ic3WA3vt+BeTVbxNYJwi4l4FKbVbkU+l8JlZVaf732e1zOf8HQAumcjG1oHH
-z4/Y7DrRpQmo154leUxNLiiThseCSGtKMYpVyF8uuiH/7H3EkBnAibMtmiwS0pw9l1hgx4+sbUud
-HdHse+JIhZKVcOfs8ghMPp2WZ4J2HcpBxxVC9PzicgBX9e0sAfbDGP6ehO/mcFeg/jKHKc0cIuQA
-BoK7pUU3/gCQZqc44fR3WAir3r+bZcdsKfDB1tX+y5sfEUxAw/QVGps5i20VGL0FEHSmOE4SOqCc
-FUHkWTqhvY4pV2wVYvESivv4UtmxAj8pfyTB1KgYs5yaqtdYP296SUwfmyXErN2MOgPGNLgN2LrJ
-6CMDIrLxpTMIe11LutU5mu+/jYMJHGwSj2R3yTLnwsJCzLnYt7PV1MJOgOPhVVPSdQgkBX+qzrMa
-AkhrHaquqa3TQhJeCC1hNdVQ3ifHgdPGmsc46GltpEmnxyvYi/SESIMJ3wze1n2pXoKOA0YIvl9R
-7AfMq5vhftOVUZqgRNdZ4wR7na6L7cKgJLT2mcFnmQ/9zavIQIRKn3sVxz8C4g2qDRhNat8MFd5k
-uCkBWzgIPuFTkPinJ4SsRBy2pVRx8BKiUm41Ynga+9Vu49EJWIvbcPoBTFR5KkZmdzQLA2nfLRpH
-qh7919Ll5eLz30hsmFUM6pIWrei4Smm61oYXQOEK3N2+v8V9BzpVUuXl0z9xM0BjCSn4h7sM7S7Y
-WRXYAg++1VNizPxfOzhLGgNF8VEj1vmBTQwYl5Xte4HGR3Oj/W8ZfHg/GPxNx/ZeCbvnU5AyO0j6
-rQ08rXv/Tx59Ao15L4lW14Aqwh32z65oNOHdEKfkV04Na5JCgX6lgC+Qur33rqfOrtQFb4vSE5bh
-+berUTZ8PsrfhZhUgMZyu5MrU7bmf6Y4ariNOf0GkN6VzFpBXikTI1gMfnSjxn0Peff7dTsuxffY
-zQ92wWUqX2h8E6RXpgbQYDHrpHmno/r1J4Te/pWR5pNTzd2XmbPv9A5DmZl9cSfGINgDo3zlkg3R
-9YD7SyFBEUFDxMDwi23CQ2NoPJq0vXbe9PaOzDtc7SE1AR09KBH9kpBIeWFaUL5v6l1LXKQlLPnE
-5npaCtcry+mhr4C4XrHYKZXCJeBs/SkkiS0xd5Dgcq/n/qGACKBuFlvHdhu/3KpmFMU6yXpFzHQd
-6zJZgcDHlv/MAfmtKx0wMewlqsIcszGn7jAXsh62y7g7sfspiFH9fF/34LfwgoaKffIsU7eO4wqV
-aBQ8Urqofx3cpf62XvZDu0RKlXAwEkufWrWcRx/nnWy6exYIaSinaUIlNcST0TTXGOx5JDQMWHhE
-bD/sVm9v6Rq3285u4qrgMTTTjps+Xn96ConqrMrB5k/cyMUOo9pfUcz/4PZlR7xOAchJRfQsp4Ne
-pvdbMTQNKnPvOqLDYtdQDxxntQ7uNq0X5iSkiaZDykYcJFprsDjn5GHnOoPjZQpLeKnDOzOOeagk
-yd6Ff8fhwPzpSjnu5CoAm5stvuAMyT3Xx5nxLiz0sW+qShns5c1ZrKna7IwkYh+dRRvUPx38+zRD
-UWTf3hBmGJDvcqaUXsgA2s/e0f76HFmJm+OUiv1c9U18ibwQCGymkGaTR7S8zuD+DDmcdx5vBriz
-GY2Rq8OqKjrI5q7uGKSBFP88z61pUE19teNN+Q5gDIKKhVuVbME56sLr1Wp5AA35B6Yt+V1884YN
-OVbUqWq1qp0DJyUtbTnhhVmkyIAT0vWcGwOtKGZUfFAOjIUPnFIFRvYdiOnuU/OMnm+U58+QIicR
-SSa09vdCea6G86/cCJ0g+iCJiN9gN9wWmY9NbNsS8czbjBxEHrTZsmgwqA2+Laf0Df0Ql+cdWd5g
-yfsEfrxjxWe0PlVcRNeOfCilzJuKnI8HhcEAqUZ3ep40+4FScalIczxEpSAxg/V6UIAJzSlow1i4
-IUbfahOAm123pTokLS5VAmYbYt0oAvCAmPIRJJAxZg1v0KEBRRWIs/in5l/xxeDWceJYzIxr4QGM
-v4ZvlznXJh1ZypfIxwJil0tIeqP8796DXXP164bdiLAsQYdO4K5X96tapeqAAjvpvSfOL+siX0Ov
-HlJ7Y7N6scuu2MPQfOXqAejy4cdL4HWE8l20/Z/RAPtWKRq4aryaUsw9e1apSieRyl6vkh8B5h+n
-cuEACvW9N/IABe+kr0N2g8RXmt7iLK9VMeCv8naBV/X5EoX5VhcXZO78Jg8fgBpV3eDcc8ssZKm5
-a3LxqRFJsM82ptof/lm9HqapTwcA+ASdtkxSiFNOCJWbJSfKQs76S5zItXF3urSusOLtgQe81Brd
-ytcmhv5XOdNuq1saWUhGiollxpK4EhUfCuFh9mi/qclN4yCq9pKPoae+iFd4pxtlVI4Yb2UE6hTU
-sgPYBjKYxAy+C3hWccJ4arMQzTZoIuQ9gHvJttvXHe79AEH/ilaLda4cd2WXHY6AkcPkcRT1avaH
-g3We33I1uUQA6oORgQNfphK6N+mHoyowodEFuzSYTLCQCGon4GYTHZx8UC4+bmVhgN5CeuHdc9Tp
-X9eV6K8pYMPVatOBX9xhEucmrQsXYoHgAqQ5w0gI8bNsZhxhtkCDWL7vhuqvGPE6jazHmbYAqXjZ
-vC798+9EaCm/FYHECU07yQLpjp8tsIPXy6pfZSjyImkRj7Jjm5dlCR9HC25/OAhHWy6zjbTM3rA/
-wIsxA0S1BCj2H0D1ntGSQTQtTqidBfRiPsYmnfODIPfK3R3ybE5bLG/DhbhGsvsT7B0Q+HG8RR+n
-jmeKxES5gBlxf7wTHK6SdUN/Bc3p+E5t4TOJXKeV4sfhAsA1LQ6NmtEpNc2jN+xsBqyk3G8Zu2Gj
-iFyIQ+HZk8wOovgHVEOeG3U6u/h9j33ystOpcVkxCx7iLLtGM4L4HN32TtQNQREsATsTC0wmM6O2
-fP7jjvqaPTtO5FMHCO4OqqFJti8NVfOMJFPzqncr+z1uKfBjvqIK1mxcW9q8C6RPMWRdktpkqZ9V
-wWWWaU4npT0IwBCcJvXhy7gMzea58lV52ja0HJCoAqU7dFNuUYRCvNetbfANebi7q7Xj47m7IANg
-+8vhegl1Xer7T2+D0mHyTFQ7wTwkgF49+bKfD4VQUkm/+FVPjmFAekjUoyEsOdKNuDtTdPtgShSC
-37sX53fBP/iYw+JRQogPVlaEUnGOHswsp78EqDEEOQ1mTv+IfnDmlEW5MQuuWrHKHFxqMWeHbmzi
-zwppCoUgu23vZzvCrXBm7W6RjMiGwlp5yOJ7A74m6o+HZx2/DO1r0r9M5jXHaXLydp2dPSMMJ0xr
-NhqzpZeCAgr9m63GW+CXau48VCUCkUfT4VLoDops6b+4OzoL/hdMrB9MI9PTBydXuV2x/dWepcYY
-BakCYm8wAUYz4tk3E3VKuKScDThAb2SDWMSb45h/wD8bpsVTVpfClsKj22rpLfh0XM0xdYP774qN
-z9cT2NXmOx/WLWmApVuolwt0zf22Eg5crpFmE1oqUOktLRfUXraCIxGVXRzw8+Bt+IHE7kEDrSwP
-b9xAtECABjJf3Nzo5SDa3izOCUIt9TzSfknje/XARN5W3jb1zYXjjjW9yYhx9xfyohRp59CcDd27
-VGBOu9qPwNw6IvOGAbwUbozerESXgPjltfSXoVAQlg+LbU2JD4SU6HwCcnGhn1O4kBtrX76ZzO4a
-B+1COWYBvtEIr+sH309MnkDFeOAWb2IcoG4HmuVZUjv2KJPQVI564LL0P5nfgYXgu0WsMWPJqoyu
-Gl+vVbtmwHB2MWkx9/msBqZB1IDxrKl70wbZ56bJGmjIsgg9e9zmmIj3JfrcIJxRK354ogKBvg/m
-Q3SfNmrZpKvAVA+ps/ln5eCB2n03Q41ma/ffMCeIXix44hE4QDTz25FyXQkS2rG5bwNTPfF5cV/N
-MHCuD3aO9nAyDZ1pGPMD+fy/+8HF+3tAvdNwetoOaP3ASLjn6WVa1r44bRKSQ7I8Ad6k0jGnmMqe
-qaD2FiY2U7XpaQQov/kQety0fdMtmSJf1W/DWzKayhYHMcY3zaC8+zPViHV3XMTh2F2/LuCtBWzj
-TZjpWBydmNDi1rOwgzHg1tivzxHVsj78Up1DL4Sz5W7VAhn7fQhK01tKK2eFAbccHZvcEXMTPZte
-zPJEcl9bzdKA7lxxXgTKXZYQuBKVlN1VTyvwNthPYQekzTq1hkPDN+6FsZrooF41+pvYsbqRXZwT
-ztVbTIk1tWP3ZXwJS5GSMwdLbdDzo7HTvG7LBG8geGZVOwnfE8vOzJ+u2hOpULAoGj5wwMlvjfGj
-la0g/JAC5rKY5tmIvpSNtDck6A4HijGinsKRLjiF56nbwFWByUU0ZB2RCGrzTSGYLi/E0aOeDNG0
-cQM8nQuUKuLZOIbrCYriR598XJrA3TVIbyS+XbGd9Vg5g/J0cHPMxTT9GBMbKY/gK6caFvtVE3kL
-5Fq8Er+z8KeZU6OsElVTwaNkBxw+QPs5Z4arxY6JFkFq3gUNK4PgJmfDIzjm9Hq4L4nEAYTo7/l2
-hapvbq9lCt3p+6b8iFU6uHg6C8gyYwcdTKB0OYnVBJ3XPLACXUJGHOvSCdi3Dqb7ZuFzR4CgKaiE
-VciKz9MdeNtbeFsgb0RXI9lRPDcsinNvyJkpTYWFym4ZrnhpsysICPeAdbpveI/qBKmf6cWcSZOY
-NAKRX5OnjOELXSAeplvnXcnfLCmLHN0fdw1AGLtCO/1198RwDg5j7QF9WNkr+Or0bJMhZ6eL21uY
-RRSoGCWzCkqJlmMFI0wj+4Cag8gweEdDFjOW3F2ie2IWd39l3IGj6YZAOnB+JnmrAzlgHgLAhlX6
-LY4dZZxpVR9MpmKSpTrar7+DI5+gruToVTSA0CiAvhnC8ZOmI4HRIaeOl5SzcP5pOPhkvHFrfNl2
-a3WpwRejt+jq6GZmpIHMTwfBNu8Z+zpcNYJqL92O9UBy3QeJW0Vhu2SoYkk/idnISb1lVhYJE1CP
-rK+jpuQdXYWJEC8FJfYYodUmsVgJ0qdeab0nUP9xxxqVfTNel0DpHkOdbumdOVuZUTUavuIL6HLW
-EbvSKBeROrZaBa+29oQaUNYyCtEV0Gmlu9LAWfTl5Mfpm/NaGeAeSv75dUErlY9UFoJa/Vb42IIc
-BwC4nkip4A+i18YofRO25PpZlzz5XsRvMfsHgGznK57+PdxsqO8cOkdM0fvpDwoI+sd02i9oOVBM
-D0FIU2Ywa48iGXCwY/fb/pAKzkF9lhP4Elevuvm9cdTmk8y+QPuDNYs2K9KrOtlHSwPbQ+9QEOwF
-Knsom4ODPoeCkVlDPFq7Rxu29IffkpPuuqFYTNnf9O832grGwQr3G8MrM6daktQEg+Vl4ybUBcqu
-ESPU5QD6JLq6Clxk5LG+UIwFiDgLCcQ27JxY+st5hUAj860mgKfMimzyLzCawnyTQwIvseCoddKK
-N/hxEIurlubxGjvY/G3Tl1EZ+drazITJGV2/umHBrNbB4l5ZjWXfxl0g5w+lgWTg26Y4+VEi8grI
-40v3L/5vb2zohztFkrOWS91jppUP6DsYwpKwDgxgESnXgsCJXuEkP4F2J8AgUUdSVAIKe8VK+/ib
-4BbTxt+VPqrj8ktmV/pHN60weYKGXyAzV/edfocGNrM6rA3msIrlGeVYRqaM16HRolX4GvPytuMd
-zuQ3twVQmHNhiELXBMPSwDi0SvErkE4rngKG3+jrOveV5Ivm/q2Y1h5QvD7XDyh4Q6IK82dzNoWS
-2xggZvqpIYpff42jYLhZ5RjxggCMzK3C4sF7q7vqWcm3AD1rQa3GTtsGRxOlwaSDEXki2WEgp1nq
-nArioBAA9Hp3O/6AxTLMkHvrtYOKc6+dFJk0Z6mbjE1jKiH10fbK0fC5V7Bl22+csUM4nCYJARri
-FkyLfcpNGxYkW1DPBCc9sQzFyN3l1nzXW+NyUrm1xfm9fux0xe1dD/nI1elnCv1ZYBmD0a/jY1uG
-4/67sgBDq3IAXa/RsAlUGWOXz/HUny0bDab1CLTy2/S67w6t7Sk7ymcAwAkeaj3NCGAg4VN7lrTD
-0DzV8s1/gLzB0OB1tc93EojYaUj3Nr+zC20u4syED3W66EXSCm3j5KPWtGuIKPUOcftlEwBAPWSY
-dtMkvIHPcLPYj0VPBVufQ4CcXRXhlgQ+63yLNaD2sVMBJWmiZrvkXdk690CUloeW1q507mtCSLTt
-ht2PuNkHLPTfczyC/Z1tG/hc/p6v4qYEqeggow4Wppua18rTy+NgggsSjMcsVZygNq+Hb1Lr4yFu
-ivfEMtDScEJVD0ThLR2whfyD2xaiN4LbvLY29N7nLk5gbsOZP8qZG/kBnpM/FN+XfeFvMXE41u94
-XjJacsh9j/okxoIzHGCMQEZC6U1xYxat+1duRdo1Y9A+SjkV+UhwUj1tPviVPoWl0+UiNHD2ozeh
-ICG3rHX36rObLMzVs3idpS6ri/TvYMZWaZakAyGhpJ88ljOvwZhz+cLhpt5v+kEIPOiNSMLbJg/m
-Z0mbn4U+Ps77ExTNUXfcVWEnr+SpFbVg5ZYfaDRA3VeneubdoQnNLlyMjBvt12wixN+OLt/3fugw
-10T2shwFPKnLWSNyYQxpfzPLvemZiuSZABEjhL7a0Ib/T2E0+SOqpRy6JrNGh0FL2M4VH50bmph8
-VQoeXVXTwSb+X/KADdb1xPRS/DBj7RAZY+jb6eHk0kbteaQJdrmDpetFHr94ah0V82WmnsdBsAwB
-vNsaaadzjY0o4+3KXaUGJKRlnjznWTxR88hUAhtXVGXr3gjMzvo4wzmJAGMyfQYj0sJFPIy1KrES
-tJ0c73Q2clH5ebK0MFIYIKTdgbc1NNFhkOcdlKTKNlNsE7S6keZl2GezUqWh0qRqkVhjs/IyQczq
-DXuALOEylHQg13OA4koDpQaK+bIf+SOto9EwvpguVOgW25vTLM+HSW2Ol8PIZLvP7LIDRYL5+aRU
-TcTyyJYzH3ubYa7a7PeXQ9yGr+5lqrEWYk1QP5hAvO1r5IyO3+ffVS5wZA+Ovre7a3G9oYkhpxfg
-UYOkz0RV+2JNzSwSfQ16Y4i1ZRS4BEzY8uCTpwiw769iWgbC0pFVN7/HumUPczkzM4qL0YLmd+uu
-ouGxPm7r3Vi5G/uzK4ATw7YWFY3GqxhiOWZjtRIXaQUduNgZoW5X+UdtPRjUvQ94Snfn/W7vSbeQ
-fIIAf8lIpiHwtfi81LLkcx3JM3W3AFMLgk6ZZpOW1ydZYuSCkSOnFTnx4QF2eXZ/7D9VEOvrfX1O
-a2mKDxsiqZatT1ByX/r6NLJ0zeB7YMcUAqdEDyI9WmITLeedK56i5PYBG+dKiDM/eI+WKJbyXtQr
-ldzEPVs4cgofPzJGOnkplfDp0daT5rf0qfoVoSfTJ90xSOn0PJYTLAFojV1wZnHIuFjWlOfmoX4v
-KS0usYhq5SX66JDjSgrpU/3DuTTrgeOw7sEs5kOT/VyOd9b03ERO3vwgdEMY7tNQoqX1ypsdTljV
-gGU9M4ES0YfEJg6b8IxMYGMxuKTRO3GRIlItp4oJm14dXkbkOKG/mjaSci+MJpLINzRI9krCzGO4
-eM6aUdDQ8tjC22CNegG7vDSaOJPBKKPKmrgOAqRdw0oPx1CbfHpoLSoxrSWeE3hdWGkaN+YpThar
-x2NREqdxFGQGZwlpyW8B4FU1fJso3KyLdbg5fo3G3GD4N1SQYLOO7ZEKURHP0aRciuUMFWUIlrVL
-iM5vb5o0aZ9bRxDal9607U+inRYiWmko6b1QUn+GW+2alSdxCAug/SEgZ999z1BtkUsXu1WvoMTq
-R03RlATA0lguTq2JGgmFRD+ii27HN4v/Bz/2mzUjbzSib/ChDv5eJSSE8KW33zF+e6oBUsacC6PY
-UQT3e1tTO7xnn0KW0uRy5xum3lrCT5NnY783LPrLAXLpHSuYhUNeBqxW4nYcoeeG7IxKY/yJoXwe
-pD8+FmOlbknWtzVEj/8/FqB0OalOX8B/bhGKn0UThTu24SOTiODqg/uaBqf8ObFw6ixG6OKL3kcV
-0O4gB3rrD2Jad1mvbF//SJrCwmExhkdj49QQABPTZrDAV0/XgmvepVdWvsp7aHL58EoK5c4hRIoT
-KQguMfRYxJ9KGotHmT7NGcsIxmIULqKu7FMRcJQeswAF3BEUtQ/3jEJHTdP3KgwBO85R7tn5ib/7
-w1Tzivw9/C/UNUQxJiZUE34el+MIWHZu0agVyMUJSXCq3DlYBgWv+PT6k8JLXGRDbczPv7XuDu2H
-NNz8JG08taWlrm3D/ua8Xh1ZtStCYH2TZDCxV5cyeTatb8Z4RFUzgn6ktJeCU9qXpL52taZqXQ/i
-+i292rzUFtDSUCx+ixT/n9XmFsiY9RfxWOjBuAUwTGbqKEFO/sqTIrcELnHaTy21U7THqpB8QZeh
-7fdYMPnq7HT+ik8MQqI83A/b1s+7hp0HWrf+zxqak7Cceg9KoMxslWxWLQlj7Tsh/fIGcEW55BTj
-fcv5c4O31SQ8CuKpnYWdZuHOYCDjslfckjZ0vyYApha7Jb38nqf1obpJRpM4j/oPl6CABSWwQzPP
-xj/2/8Ev4pVCqaIlG3EMuek66PAQOS2Rgnm/l4NdtzNHfMs2a5KjSZMYMa4e6WoTcIakInUuR9xD
-EFh73VS5P/zAcOvv6AwesjjEWSmjdRmCRFfNNyGlrJEU6Dxb4Rdk0G6Ne10X7gmP4WBrCCR0q7dp
-/vO506Pt1YbMig1kCuI0o76NAUyesIlTK6u7/psbCyb9jqu3bW9ia5Xw4njMcKi0TADZzBgk2PkL
-QRjMf9694iOqBfVbPpcYcFiuNSK+bhpduNagpchiUtHg07Y4uhWpHi5CVMNulDoJe3azn5kM5YoU
-sRxJxo/CEpgaeNcxzAGVxXJhbmf7bDbetKEjTxpqbTF0oRnxx3qnfIaUzDvbWcfoB9WruYT+sK/g
-/8nhnFAFkYeDrhR0z6irByYFdXfAhp3y+2cKQzV4UrboqFaI/rAesiGHA4Iqr0g0Aj3+7vBu9o3k
-9102hVBbzL3gI5sBRTqN7FYLtdLT8wzHuT9YGJOfEdzShZuxtQd6dYCIAG5XZazksUkQ69NEYiqf
-sp1nfURiOskrpaGXmz/LQ9EPGzOPsooQX0JLeYiMOOu20msx6QAfxWeglHDECwnqNRaLQ2ipJB1X
-C+Ub3rbBnrZZEBfRVSn7fHWb89kp49mmBTyb/DKZ+8udI8JDGc89O20j8C9JQK9lW4z2Ck61OgzU
-bA5bDwItvhfpSD5nbTfou427p6jdimQmXlZOh2uH+gQ5OO4fha4KfKlNWWqqXkBzsFrRUReNZHci
-5qD/kknS4JC87/ws92xv+YwJfb7CzzRJpwzxqeCCtG+yS+P7wnKdrjjYnmVQNe3AMVpxwUVYjOm+
-BehoPHTBVHtqdvJNjnSXxA082lkMj7nrfBgD3dJH1hxvZMRdWHiwksDwSzYAEIT0ZXD4l/YWvxZo
-P5Blj9l6HUi5aSPyodubp3D+HxRT35WYYt7G/za8Gi68sljUHPOHN81vgnkp/iGd2z8AF+OQE1qr
-Ig5drw05TqLx5yqxqleuwt3pqlxb1wDBI2ic5+CY37U1Y4iRf7m88rFe7kPuHxpszocrLfIEemWF
-23K=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Imap.php 12519 2008-11-10 18:41:24Z alexander $
+ */
+
+
+/**
+ * @see Zend_Mail_Storage_Abstract
+ */
+require_once 'Zend/Mail/Storage/Abstract.php';
+
+/**
+ * @see Zend_Mail_Protocol_Imap
+ */
+require_once 'Zend/Mail/Protocol/Imap.php';
+
+/**
+ * @see Zend_Mail_Storage_Writable_Interface
+ */
+require_once 'Zend/Mail/Storage/Writable/Interface.php';
+
+/**
+ * @see Zend_Mail_Storage_Folder_Interface
+ */
+require_once 'Zend/Mail/Storage/Folder/Interface.php';
+
+/**
+ * @see Zend_Mail_Storage_Folder
+ */
+require_once 'Zend/Mail/Storage/Folder.php';
+
+/**
+ * @see Zend_Mail_Message
+ */
+require_once 'Zend/Mail/Message.php';
+
+/**
+ * @see Zend_Mail_Storage
+ */
+require_once 'Zend/Mail/Storage.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Storage_Imap extends Zend_Mail_Storage_Abstract
+                             implements Zend_Mail_Storage_Folder_Interface, Zend_Mail_Storage_Writable_Interface
+{
+    // TODO: with an internal cache we could optimize this class, or create an extra class with
+    // such optimizations. Especially the various fetch calls could be combined to one cache call
+
+    /**
+     * protocol handler
+     * @var null|Zend_Mail_Protocol_Imap
+     */
+    protected $_protocol;
+
+    /**
+     * name of current folder
+     * @var string
+     */
+    protected $_currentFolder = '';
+
+    /**
+     * imap flags to constants translation
+     * @var array
+     */
+    protected static $_knownFlags = array('\Passed'   => Zend_Mail_Storage::FLAG_PASSED,
+                                          '\Answered' => Zend_Mail_Storage::FLAG_ANSWERED,
+                                          '\Seen'     => Zend_Mail_Storage::FLAG_SEEN,
+                                          '\Deleted'  => Zend_Mail_Storage::FLAG_DELETED,
+                                          '\Draft'    => Zend_Mail_Storage::FLAG_DRAFT,
+                                          '\Flagged'  => Zend_Mail_Storage::FLAG_FLAGGED);
+
+    /**
+     * map flags to search criterias
+     * @var array
+     */
+    protected static $_searchFlags = array('\Recent'   => 'RECENT',
+                                           '\Answered' => 'ANSWERED',
+                                           '\Seen'     => 'SEEN',
+                                           '\Deleted'  => 'DELETED',
+                                           '\Draft'    => 'DRAFT',
+                                           '\Flagged'  => 'FLAGGED');
+
+    /**
+     * Count messages all messages in current box
+     *
+     * @return int number of messages
+     * @throws Zend_Mail_Storage_Exception
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function countMessages($flags = null)
+    {
+        if (!$this->_currentFolder) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('No selected folder to count');
+        }
+
+        if ($flags === null) {
+            return count($this->_protocol->search(array('ALL')));
+        }
+    
+        $params = array();
+        foreach ((array)$flags as $flag) {
+            if (isset(self::$_searchFlags[$flag])) {
+                $params[] = self::$_searchFlags[$flag];
+            } else {
+                $params[] = 'KEYWORD';
+                $params[] = $this->_protocol->escapeString($flag);
+            }
+        }
+        return count($this->_protocol->search($params));
+    }
+
+    /**
+     * get a list of messages with number and size
+     *
+     * @param int $id number of message
+     * @return int|array size of given message of list with all messages as array(num => size)
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function getSize($id = 0)
+    {
+        if ($id) {
+            return $this->_protocol->fetch('RFC822.SIZE', $id);
+        }
+        return $this->_protocol->fetch('RFC822.SIZE', 1, INF);
+    }
+
+    /**
+     * Fetch a message
+     *
+     * @param int $id number of message
+     * @return Zend_Mail_Message
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function getMessage($id)
+    {
+        $data = $this->_protocol->fetch(array('FLAGS', 'RFC822.HEADER'), $id);
+        $header = $data['RFC822.HEADER'];
+
+        $flags = array();
+        foreach ($data['FLAGS'] as $flag) {
+            $flags[] = isset(self::$_knownFlags[$flag]) ? self::$_knownFlags[$flag] : $flag;
+        }
+
+        return new $this->_messageClass(array('handler' => $this, 'id' => $id, 'headers' => $header, 'flags' => $flags));
+    }
+
+    /*
+     * Get raw header of message or part
+     *
+     * @param  int               $id       number of message
+     * @param  null|array|string $part     path to part or null for messsage header
+     * @param  int               $topLines include this many lines with header (after an empty line)
+     * @param  int $topLines include this many lines with header (after an empty line)
+     * @return string raw header
+     * @throws Zend_Mail_Protocol_Exception
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getRawHeader($id, $part = null, $topLines = 0)
+    {
+        if ($part !== null) {
+            // TODO: implement
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('not implemented');
+        }
+
+        // TODO: toplines
+        return $this->_protocol->fetch('RFC822.HEADER', $id);
+    }
+
+    /*
+     * Get raw content of message or part
+     *
+     * @param  int               $id   number of message
+     * @param  null|array|string $part path to part or null for messsage content
+     * @return string raw content
+     * @throws Zend_Mail_Protocol_Exception
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getRawContent($id, $part = null)
+    {
+        if ($part !== null) {
+            // TODO: implement
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('not implemented');
+        }
+
+        return $this->_protocol->fetch('RFC822.TEXT', $id);
+    }
+
+    /**
+     * create instance with parameters
+     * Supported paramters are
+     *   - user username
+     *   - host hostname or ip address of IMAP server [optional, default = 'localhost']
+     *   - password password for user 'username' [optional, default = '']
+     *   - port port for IMAP server [optional, default = 110]
+     *   - ssl 'SSL' or 'TLS' for secure sockets
+     *   - folder select this folder [optional, default = 'INBOX']
+     *
+     * @param  array $params mail reader specific parameters
+     * @throws Zend_Mail_Storage_Exception
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function __construct($params)
+    {
+        if (is_array($params)) {
+            $params = (object)$params;
+        }
+
+        $this->_has['flags'] = true;
+
+        if ($params instanceof Zend_Mail_Protocol_Imap) {
+            $this->_protocol = $params;
+            try {
+                $this->selectFolder('INBOX');
+            } catch(Zend_Mail_Storage_Exception $e) {
+                /**
+                 * @see Zend_Mail_Storage_Exception
+                 */
+                require_once 'Zend/Mail/Storage/Exception.php';
+                throw new Zend_Mail_Storage_Exception('cannot select INBOX, is this a valid transport?');
+            }
+            return;
+        }
+
+        if (!isset($params->user)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('need at least user in params');
+        }
+
+        $host     = isset($params->host)     ? $params->host     : 'localhost';
+        $password = isset($params->password) ? $params->password : '';
+        $port     = isset($params->port)     ? $params->port     : null;
+        $ssl      = isset($params->ssl)      ? $params->ssl      : false;
+
+        $this->_protocol = new Zend_Mail_Protocol_Imap();
+        $this->_protocol->connect($host, $port, $ssl);
+        if (!$this->_protocol->login($params->user, $password)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot login, user or password wrong');
+        }
+        $this->selectFolder(isset($params->folder) ? $params->folder : 'INBOX');
+    }
+
+    /**
+     * Close resource for mail lib. If you need to control, when the resource
+     * is closed. Otherwise the destructor would call this.
+     *
+     * @return null
+     */
+    public function close()
+    {
+        $this->_currentFolder = '';
+        $this->_protocol->logout();
+    }
+
+    /**
+     * Keep the server busy.
+     *
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function noop()
+    {
+        if (!$this->_protocol->noop()) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('could not do nothing');
+        }
+    }
+
+    /**
+     * Remove a message from server. If you're doing that from a web enviroment
+     * you should be careful and use a uniqueid as parameter if possible to
+     * identify the message.
+     *
+     * @param   int $id number of message
+     * @return  null
+     * @throws  Zend_Mail_Storage_Exception
+     */
+    public function removeMessage($id)
+    {
+        if (!$this->_protocol->store(array(Zend_Mail_Storage::FLAG_DELETED), $id, null, '+')) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot set deleted flag');
+        }
+        // TODO: expunge here or at close? we can handle an error here better and are more fail safe
+        if (!$this->_protocol->expunge()) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('message marked as deleted, but could not expunge');
+        }
+    }
+
+    /**
+     * get unique id for one or all messages
+     *
+     * if storage does not support unique ids it's the same as the message number
+     *
+     * @param int|null $id message number
+     * @return array|string message number for given message or all messages as array
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getUniqueId($id = null)
+    {
+        if ($id) {
+            return $this->_protocol->fetch('UID', $id);
+        }
+
+        return $this->_protocol->fetch('UID', 1, INF);
+    }
+
+    /**
+     * get a message number from a unique id
+     *
+     * I.e. if you have a webmailer that supports deleting messages you should use unique ids
+     * as parameter and use this method to translate it to message number right before calling removeMessage()
+     *
+     * @param string $id unique id
+     * @return int message number
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getNumberByUniqueId($id)
+    {
+        // TODO: use search to find number directly
+        $ids = $this->getUniqueId();
+        foreach ($ids as $k => $v) {
+            if ($v == $id) {
+                return $k;
+            }
+        }
+
+        /**
+         * @see Zend_Mail_Storage_Exception
+         */
+        require_once 'Zend/Mail/Storage/Exception.php';
+        throw new Zend_Mail_Storage_Exception('unique id not found');
+    }
+
+
+    /**
+     * get root folder or given folder
+     *
+     * @param  string $rootFolder get folder structure for given folder, else root
+     * @return Zend_Mail_Storage_Folder root or wanted folder
+     * @throws Zend_Mail_Storage_Exception
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function getFolders($rootFolder = null)
+    {
+        $folders = $this->_protocol->listMailbox((string)$rootFolder);
+        if (!$folders) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('folder not found');
+        }
+
+        ksort($folders, SORT_STRING);
+        $root = new Zend_Mail_Storage_Folder('/', '/', false);
+        $stack = array(null);
+        $folderStack = array(null);
+        $parentFolder = $root;
+        $parent = '';
+
+        foreach ($folders as $globalName => $data) {
+            do {
+                if (!$parent || strpos($globalName, $parent) === 0) {
+                    $pos = strrpos($globalName, $data['delim']);
+                    if ($pos === false) {
+                        $localName = $globalName;
+                    } else {
+                        $localName = substr($globalName, $pos + 1);
+                    }
+                    $selectable = !$data['flags'] || !in_array('\\Noselect', $data['flags']);
+
+                    array_push($stack, $parent);
+                    $parent = $globalName . $data['delim'];
+                    $folder = new Zend_Mail_Storage_Folder($localName, $globalName, $selectable);
+                    $parentFolder->$localName = $folder;
+                    array_push($folderStack, $parentFolder);
+                    $parentFolder = $folder;
+                    break;
+                } else if ($stack) {
+                    $parent = array_pop($stack);
+                    $parentFolder = array_pop($folderStack);
+                }
+            } while ($stack);
+            if (!$stack) {
+                /**
+                 * @see Zend_Mail_Storage_Exception
+                 */
+                require_once 'Zend/Mail/Storage/Exception.php';
+                throw new Zend_Mail_Storage_Exception('error while constructing folder tree');
+            }
+        }
+
+        return $root;
+    }
+
+    /**
+     * select given folder
+     *
+     * folder must be selectable!
+     *
+     * @param  Zend_Mail_Storage_Folder|string $globalName global name of folder or instance for subfolder
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function selectFolder($globalName)
+    {
+        $this->_currentFolder = $globalName;
+        if (!$this->_protocol->select($this->_currentFolder)) {
+            $this->_currentFolder = '';
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot change folder, maybe it does not exist');
+        }
+    }
+
+
+    /**
+     * get Zend_Mail_Storage_Folder instance for current folder
+     *
+     * @return Zend_Mail_Storage_Folder instance of current folder
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getCurrentFolder()
+    {
+        return $this->_currentFolder;
+    }
+
+    /**
+     * create a new folder
+     *
+     * This method also creates parent folders if necessary. Some mail storages may restrict, which folder
+     * may be used as parent or which chars may be used in the folder name
+     *
+     * @param  string                          $name         global name of folder, local name if $parentFolder is set
+     * @param  string|Zend_Mail_Storage_Folder $parentFolder parent folder for new folder, else root folder is parent
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function createFolder($name, $parentFolder = null)
+    {
+        // TODO: we assume / as the hierarchy delim - need to get that from the folder class!
+        if ($parentFolder instanceof Zend_Mail_Storage_Folder) {
+            $folder = $parentFolder->getGlobalName() . '/' . $name;
+        } else if ($parentFolder != null) {
+            $folder = $parentFolder . '/' . $name;
+        } else {
+            $folder = $name;
+        }
+
+        if (!$this->_protocol->create($folder)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot create folder');
+        }
+    }
+
+    /**
+     * remove a folder
+     *
+     * @param  string|Zend_Mail_Storage_Folder $name      name or instance of folder
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function removeFolder($name)
+    {
+        if ($name instanceof Zend_Mail_Storage_Folder) {
+            $name = $name->getGlobalName();
+        }
+
+        if (!$this->_protocol->delete($name)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot delete folder');
+        }
+    }
+
+    /**
+     * rename and/or move folder
+     *
+     * The new name has the same restrictions as in createFolder()
+     *
+     * @param  string|Zend_Mail_Storage_Folder $oldName name or instance of folder
+     * @param  string                          $newName new global name of folder
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function renameFolder($oldName, $newName)
+    {
+        if ($oldName instanceof Zend_Mail_Storage_Folder) {
+            $oldName = $oldName->getGlobalName();
+        }
+
+        if (!$this->_protocol->rename($oldName, $newName)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot rename folder');
+        }
+    }
+
+    /**
+     * append a new message to mail storage
+     *
+     * @param  string                                     $message message as string or instance of message class
+     * @param  null|string|Zend_Mail_Storage_Folder       $folder  folder for new message, else current folder is taken
+     * @param  null|array                                 $flags   set flags for new message, else a default set is used
+     * @throws Zend_Mail_Storage_Exception
+     */
+     // not yet * @param string|Zend_Mail_Message|Zend_Mime_Message $message message as string or instance of message class
+    public function appendMessage($message, $folder = null, $flags = null)
+    {
+        if ($folder === null) {
+            $folder = $this->_currentFolder;
+        }
+
+        if ($flags === null) {
+            $flags = array(Zend_Mail_Storage::FLAG_SEEN);
+        }
+
+        // TODO: handle class instances for $message
+        if (!$this->_protocol->append($folder, $message, $flags)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot create message, please check if the folder exists and your flags');
+        }
+    }
+
+    /**
+     * copy an existing message
+     *
+     * @param  int                             $id     number of message
+     * @param  string|Zend_Mail_Storage_Folder $folder name or instance of targer folder
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function copyMessage($id, $folder)
+    {
+        if (!$this->_protocol->copy($folder, $id)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot copy message, does the folder exist?');
+        }
+    }
+
+    /**
+     * move an existing message
+     *
+     * NOTE: imap has no native move command, thus it's emulated with copy and delete
+     *
+     * @param  int                             $id     number of message
+     * @param  string|Zend_Mail_Storage_Folder $folder name or instance of targer folder
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function moveMessage($id, $folder) {
+        $this->copyMessage($id, $folder);
+        $this->removeMessage($id);
+    }
+
+    /**
+     * set flags for message
+     *
+     * NOTE: this method can't set the recent flag.
+     *
+     * @param  int   $id    number of message
+     * @param  array $flags new flags for message
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function setFlags($id, $flags)
+    {
+        if (!$this->_protocol->store($flags, $id)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('cannot set flags, have you tried to set the recent flag or special chars?');
+        }
+    }
+}
+

@@ -1,30 +1,94 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-+TOOskholzgUC3vYlDiUlZQ33gK=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * The namespace decorator enables object chaining to permit
+ * calling XML-RPC namespaced functions like "foo.bar.baz()"
+ * as "$remote->foo->bar->baz()".
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Client_ServerProxy
+{
+    /**
+     * @var Zend_XmlRpc_Client
+     */
+    private $_client = null;
+
+    /**
+     * @var string
+     */
+    private $_namespace = '';
+
+
+    /**
+     * @var array of Zend_XmlRpc_Client_ServerProxy
+     */
+    private $_cache = array();
+
+
+    /**
+     * Class constructor
+     *
+     * @param string             $namespace
+     * @param Zend_XmlRpc_Client $client
+     */
+    public function __construct($client, $namespace = '')
+    {
+        $this->_namespace = $namespace;
+        $this->_client    = $client;
+    }
+
+
+    /**
+     * Get the next successive namespace
+     *
+     * @param string $name
+     * @return Zend_XmlRpc_Client_ServerProxy
+     */
+    public function __get($namespace)
+    {
+        $namespace = ltrim("$this->_namespace.$namespace", '.');
+        if (!isset($this->_cache[$namespace])) {
+            $this->_cache[$namespace] = new $this($this->_client, $namespace);
+        }
+        return $this->_cache[$namespace];
+    }
+
+
+    /**
+     * Call a method in this namespace.
+     *
+     * @param  string $methodN
+     * @param  array $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        $method = ltrim("$this->_namespace.$method", '.');
+        return $this->_client->call($method, $args);
+    }
+}

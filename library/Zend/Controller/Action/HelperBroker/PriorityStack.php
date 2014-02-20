@@ -1,85 +1,280 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Action_HelperBroker_PriorityStack implements IteratorAggregate, ArrayAccess, Countable
+{
+
+    /** @protected */
+    protected $_helpersByPriority = array();
+    protected $_helpersByNameRef  = array();
+    protected $_nextDefaultPriority = 1;
+    
+    /**
+     * Magic property overloading for returning helper by name
+     *
+     * @param string $helperName    The helper name
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function __get($helperName)
+    {
+        if (!array_key_exists($helperName, $this->_helpersByNameRef)) {
+            return false;
+        }
+        
+        return $this->_helpersByNameRef[$helperName];
+    }
+    
+    /**
+     * Magic property overloading for returning if helper is set by name
+     *
+     * @param string $helperName    The helper name
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function __isset($helperName)
+    {
+        return array_key_exists($helperName, $this->_helpersByNameRef);
+    }
+    
+    /**
+     * Magic property overloading for unsetting if helper is exists by name
+     *
+     * @param string $helperName    The helper name
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function __unset($helperName)
+    {
+        return $this->offsetUnset($helperName);
+    }
+    
+    /**
+     * push helper onto the stack
+     *
+     * @param Zend_Controller_Action_Helper_Abstract $helper
+     * @return Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    public function push(Zend_Controller_Action_Helper_Abstract $helper)
+    {
+        $this->offsetSet($this->getNextFreeHigherPriority(), $helper);
+        return $this;
+    }
+    
+    /**
+     * Return something iterable
+     *
+     * @return array
+     */
+    public function getIterator()
+    {
+        return new ArrayObject($this->_helpersByPriority);
+    }
+    
+    /**
+     * offsetExists()
+     *
+     * @param int|string $priorityOrHelperName 
+     * @return Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    public function offsetExists($priorityOrHelperName)
+    {
+        if (is_string($priorityOrHelperName)) {
+            return array_key_exists($priorityOrHelperName, $this->_helpersByNameRef);
+        } else {
+            return array_key_exists($priorityOrHelperName, $this->_helpersByPriority);
+        }
+    }
+    
+    /**
+     * offsetGet()
+     *
+     * @param int|string $priorityOrHelperName
+     * @return Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    public function offsetGet($priorityOrHelperName)
+    {
+        if (!$this->offsetExists($priorityOrHelperName)) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('A helper with priority ' . $priority . ' does not exist.');
+        }
+        
+        if (is_string($priorityOrHelperName)) {
+            return $this->_helpersByNameRef[$priorityOrHelperName];
+        } else {
+            return $this->_helpersByPriority[$priorityOrHelperName];
+        }
+    }
+    
+    /**
+     * offsetSet()
+     *
+     * @param int $priority
+     * @param Zend_Controller_Action_Helper_Abstract $helper
+     * @return Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    public function offsetSet($priority, $helper)
+    {
+        $priority = (int) $priority;
+
+        if (!$helper instanceof Zend_Controller_Action_Helper_Abstract) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('$helper must extend Zend_Controller_Action_Helper_Abstract.');
+        }
+        
+        if (array_key_exists($helper->getName(), $this->_helpersByNameRef)) {
+            // remove any object with the same name to retain BC compailitbility
+            // @todo At ZF 2.0 time throw an exception here.
+            $this->offsetUnset($helper->getName());
+        }
+        
+        if (array_key_exists($priority, $this->_helpersByPriority)) {
+            $priority = $this->getNextFreeHigherPriority($priority);  // ensures LIFO
+            trigger_error("A helper with the same priority already exists, reassigning to $priority", E_USER_WARNING);
+        }
+        
+        $this->_helpersByPriority[$priority] = $helper;
+        $this->_helpersByNameRef[$helper->getName()] = $helper;
+
+        if ($priority == ($nextFreeDefault = $this->getNextFreeHigherPriority($this->_nextDefaultPriority))) {
+            $this->_nextDefaultPriority = $nextFreeDefault;
+        }
+        
+        krsort($this->_helpersByPriority);  // always make sure priority and LIFO are both enforced
+        return $this;
+    }
+    
+    /**
+     * offsetUnset()
+     *
+     * @param int|string $priorityOrHelperName Priority integer or the helper name
+     * @return Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    public function offsetUnset($priorityOrHelperName)
+    {
+        if (!$this->offsetExists($priorityOrHelperName)) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('A helper with priority or name ' . $priorityOrHelperName . ' does not exist.');
+        }
+        
+        if (is_string($priorityOrHelperName)) {
+            $helperName = $priorityOrHelperName;
+            $helper = $this->_helpersByNameRef[$helperName];
+            $priority = array_search($helper, $this->_helpersByPriority, true);
+        } else {
+            $priority = $priorityOrHelperName;
+            $helperName = $this->_helpersByPriority[$priorityOrHelperName]->getName();
+        }
+        
+        unset($this->_helpersByNameRef[$helperName]);
+        unset($this->_helpersByPriority[$priority]);
+        return $this;
+    }
+    
+    /**
+     * return the count of helpers
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_helpersByPriority);
+    }
+    
+    /**
+     * Find the next free higher priority.  If an index is given, it will
+     * find the next free highest priority after it.
+     *
+     * @param int $indexPriority OPTIONAL
+     * @return int
+     */
+    public function getNextFreeHigherPriority($indexPriority = null)
+    {
+        if ($indexPriority == null) {
+            $indexPriority = $this->_nextDefaultPriority;
+        }
+        
+        $priorities = array_keys($this->_helpersByPriority);
+
+        while (in_array($indexPriority, $priorities)) {
+            $indexPriority++;
+        }
+        
+        return $indexPriority;
+    }
+    
+    /**
+     * Find the next free lower priority.  If an index is given, it will
+     * find the next free lower priority before it.
+     *
+     * @param int $indexPriority
+     * @return int
+     */
+    public function getNextFreeLowerPriority($indexPriority = null)
+    {
+        if ($indexPriority == null) {
+            $indexPriority = $this->_nextDefaultPriority;
+        }
+        
+        $priorities = array_keys($this->_helpersByPriority);
+
+        while (in_array($indexPriority, $priorities)) {
+            $indexPriority--;
+        }
+        
+        return $indexPriority;        
+    }
+    
+    /**
+     * return the highest priority
+     *
+     * @return int
+     */
+    public function getHighestPriority()
+    {
+        return max(array_keys($this->_helpersByPriority));
+    }
+    
+    /**
+     * return the lowest priority
+     *
+     * @return int
+     */
+    public function getLowestPriority()
+    {
+        return min(array_keys($this->_helpersByPriority));
+    }
+    
+    /**
+     * return the helpers referenced by name
+     *
+     * @return array
+     */
+    public function getHelpersByName()
+    {
+        return $this->_helpersByNameRef;
+    }
+    
+}

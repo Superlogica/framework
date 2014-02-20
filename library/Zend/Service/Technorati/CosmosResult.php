@@ -1,31 +1,152 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CosmosResult.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/** 
+ * @see Zend_Service_Technorati_Result 
+ */
+require_once 'Zend/Service/Technorati/Result.php';
+
+
+/**
+ * Represents a single Technorati Cosmos query result object. 
+ * It is never returned as a standalone object, 
+ * but it always belongs to a valid Zend_Service_Technorati_CosmosResultSet object.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_CosmosResult extends Zend_Service_Technorati_Result
+{
+    /**
+     * Technorati weblog object that links queried URL.
+     * 
+     * @var     Zend_Service_Technorati_Weblog
+     * @access  protected
+     */
+    protected $_weblog;
+
+    /**
+     * The nearest permalink tracked for queried URL.
+     * 
+     * @var     Zend_Uri_Http
+     * @access  protected
+     */
+    protected $_nearestPermalink;
+
+    /**
+     * The excerpt of the blog/page linking queried URL.
+     * 
+     * @var     string
+     * @access  protected
+     */
+    protected $_excerpt;
+
+    /**
+     * The the datetime the link was created.
+     * 
+     * @var     Zend_Date
+     * @access  protected
+     */
+    protected $_linkCreated;
+
+    /**
+     * The URL of the specific link target page
+     * 
+     * @var     Zend_Uri_Http
+     * @access  protected
+     */
+    protected $_linkUrl;
+
+
+    /**
+     * Constructs a new object object from DOM Element.
+     *
+     * @param   DomElement $dom the ReST fragment for this object
+     */
+    public function __construct(DomElement $dom)
+    {
+        $this->_fields = array( '_nearestPermalink' => 'nearestpermalink',
+                                '_excerpt'          => 'excerpt',
+                                '_linkCreated'      => 'linkcreated',
+                                '_linkUrl'          => 'linkurl');
+        parent::__construct($dom);
+
+        // weblog object field
+        $this->_parseWeblog();
+        
+        // filter fields
+        $this->_nearestPermalink = Zend_Service_Technorati_Utils::normalizeUriHttp($this->_nearestPermalink);
+        $this->_linkUrl = Zend_Service_Technorati_Utils::normalizeUriHttp($this->_linkUrl);
+        $this->_linkCreated = Zend_Service_Technorati_Utils::normalizeDate($this->_linkCreated);
+    }
+
+    /**
+     * Returns the weblog object that links queried URL.
+     * 
+     * @return  Zend_Service_Technorati_Weblog
+     */
+    public function getWeblog() {
+        return $this->_weblog;
+    }
+
+    /**
+     * Returns the nearest permalink tracked for queried URL.
+     * 
+     * @return  Zend_Uri_Http
+     */
+    public function getNearestPermalink() {
+        return $this->_nearestPermalink;
+    }
+
+    /**
+     * Returns the excerpt of the blog/page linking queried URL.
+     * 
+     * @return  string
+     */
+    public function getExcerpt() {
+        return $this->_excerpt;
+    }
+    
+    /**
+     * Returns the datetime the link was created.
+     * 
+     * @return  Zend_Date
+     */
+    public function getLinkCreated() {
+        return $this->_linkCreated;
+    }
+    
+    /**
+     * If queried URL is a valid blog,
+     * returns the URL of the specific link target page.
+     * 
+     * @return  Zend_Uri_Http
+     */
+    public function getLinkUrl() {
+        return $this->_linkUrl;
+    }
+    
+}

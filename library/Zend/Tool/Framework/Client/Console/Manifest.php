@@ -1,74 +1,209 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Manifest_MetadataManifestable
+ */
+require_once 'Zend/Tool/Framework/Manifest/MetadataManifestable.php';
+
+/**
+ * @see Zend_Filter
+ */
+require_once 'Zend/Filter.php';
+
+/**
+ * @see Zend_Filter_Word_CamelCaseToDash
+ */
+require_once 'Zend/Filter/Word/CamelCaseToDash.php';
+
+/**
+ * @see Zend_Filter_StringToLower
+ */
+require_once 'Zend/Filter/StringToLower.php';
+
+/**
+ * @see Zend_Tool_Framework_Metadata_Tool
+ */
+require_once 'Zend/Tool/Framework/Metadata/Tool.php';
+
+/**
+ * @see Zend_Tool_Framework_Registry_EnabledInterface
+ */
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * Zend_Tool_Framework_Client_ConsoleClient_Manifest
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Client_Console_Manifest
+    implements Zend_Tool_Framework_Registry_EnabledInterface, 
+               Zend_Tool_Framework_Manifest_MetadataManifestable
+{
+
+    /**
+     * @var Zend_Tool_Framework_Registry_Interface
+     */
+    protected $_registry = null;
+    
+    /**
+     * setRegistry() - Required for the Zend_Tool_Framework_Registry_EnabledInterface interface
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     * @return Zend_Tool_Framework_Client_Console_Manifest
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+    
+    /**
+     * getMetadata() is required by the Manifest Interface.
+     * 
+     * These are the following metadatas that will be setup:
+     * 
+     * actionName
+     *   - metadata for actions
+     *   - value will be a dashed name for the action named in 'actionName'
+     * providerName
+     *   - metadata for providers
+     *   - value will be a dashed-name for the provider named in 'providerName'
+     * providerSpecialtyNames
+     *   - metadata for providers
+     * actionableMethodLongParameters
+     *   - metadata for providers
+     * actionableMethodShortParameters
+     *   - metadata for providers
+     *
+     * @return array Array of Metadatas
+     */
+    public function getMetadata()
+    {
+        $metadatas = array();
+        
+        // setup the camelCase to dashed filter to use since cli expects dashed named
+        $ccToDashedFilter = new Zend_Filter();
+        $ccToDashedFilter
+            ->addFilter(new Zend_Filter_Word_CamelCaseToDash())
+            ->addFilter(new Zend_Filter_StringToLower());
+        
+        // get the registry to get the action and provider repository
+        $actionRepository   = $this->_registry->getActionRepository();
+        $providerRepository = $this->_registry->getProviderRepository();
+        
+        // loop through all actions and create a metadata for each
+        foreach ($actionRepository->getActions() as $action) {
+            // each action metadata will be called
+            $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
+                'name'            => 'actionName',
+                'value'           => $ccToDashedFilter->filter($action->getName()),
+                'reference'       => $action,
+                'actionName'      => $action->getName(),
+                'clientName'      => 'console',
+                'clientReference' => $this->_registry->getClient()
+                ));
+        }
+
+        foreach ($providerRepository->getProviderSignatures() as $providerSignature) {
+
+            // create the metadata for the provider's cliProviderName
+            $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
+                'name'            => 'providerName',
+                'value'           => $ccToDashedFilter->filter($providerSignature->getName()),
+                'reference'       => $providerSignature,
+                'clientName'      => 'console',
+                'providerName'    => $providerSignature->getName(),
+                'clientReference' => $this->_registry->getClient()
+                ));
+
+            // create the metadatas for the per provider specialites in providerSpecaltyNames
+            foreach ($providerSignature->getSpecialties() as $specialty) {
+                                
+                $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
+                    'name'            => 'specialtyName',
+                    'value'           =>  $ccToDashedFilter->filter($specialty),
+                    'reference'       => $providerSignature,
+                    'clientName'      => 'console',
+                    'providerName'    => $providerSignature->getName(),
+                    'specialtyName'   => $specialty,
+                    'clientReference' => $this->_registry->getClient()
+                    ));                
+                
+            }
+
+            // $actionableMethod is keyed by the methodName (but not used)
+            foreach ($providerSignature->getActionableMethods() as $actionableMethodData) {
+                
+                $methodLongParams  = array();
+                $methodShortParams = array();
+                
+                // $actionableMethodData get both the long and short names
+                foreach ($actionableMethodData['parameterInfo'] as $parameterInfoData) {
+                    
+                    // filter to dashed
+                    $methodLongParams[$parameterInfoData['name']] = $ccToDashedFilter->filter($parameterInfoData['name']);
+                    
+                    // simply lower the character, (its only 1 char after all)
+                    $methodShortParams[$parameterInfoData['name']] = strtolower($parameterInfoData['name'][0]);
+                    
+                }
+
+                // create metadata for the long name cliActionableMethodLongParameters
+                $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
+                    'name'            => 'actionableMethodLongParams',
+                    'value'           => $methodLongParams,
+                    'clientName'      => 'console',
+                    'providerName'    => $providerSignature->getName(),
+                    'specialtyName'   => $actionableMethodData['specialty'],
+                    'actionName'      => $actionableMethodData['actionName'],
+                    'reference'       => &$actionableMethodData,
+                    'clientReference' => $this->_registry->getClient()
+                    ));
+                    
+                // create metadata for the short name cliActionableMethodShortParameters
+                $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
+                    'name'            => 'actionableMethodShortParams',
+                    'value'           => $methodShortParams,
+                    'clientName'      => 'console',
+                    'providerName'    => $providerSignature->getName(),
+                    'specialtyName'   => $actionableMethodData['specialty'],
+                    'actionName'      => $actionableMethodData['actionName'],
+                    'reference'       => &$actionableMethodData,
+                    'clientReference' => $this->_registry->getClient()
+                    ));
+
+            }
+
+        }
+        
+        return $metadatas;
+    }
+    
+    public function getIndex()
+    {
+        return 10000;
+    }
+    
+}

@@ -1,77 +1,289 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Plugins
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Plugin_Abstract */
+require_once 'Zend/Controller/Plugin/Abstract.php';
+
+/**
+ * Handle exceptions that bubble up based on missing controllers, actions, or
+ * application errors, and forward to an error handler.
+ *
+ * @uses       Zend_Controller_Plugin_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Plugins
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ErrorHandler.php 23484 2010-12-10 03:57:59Z mjh_ca $
+ */
+class Zend_Controller_Plugin_ErrorHandler extends Zend_Controller_Plugin_Abstract
+{
+    /**
+     * Const - No controller exception; controller does not exist
+     */
+    const EXCEPTION_NO_CONTROLLER = 'EXCEPTION_NO_CONTROLLER';
+
+    /**
+     * Const - No action exception; controller exists, but action does not
+     */
+    const EXCEPTION_NO_ACTION = 'EXCEPTION_NO_ACTION';
+
+    /**
+     * Const - No route exception; no routing was possible
+     */
+    const EXCEPTION_NO_ROUTE = 'EXCEPTION_NO_ROUTE';
+
+    /**
+     * Const - Other Exception; exceptions thrown by application controllers
+     */
+    const EXCEPTION_OTHER = 'EXCEPTION_OTHER';
+
+    /**
+     * Module to use for errors; defaults to default module in dispatcher
+     * @var string
+     */
+    protected $_errorModule;
+
+    /**
+     * Controller to use for errors; defaults to 'error'
+     * @var string
+     */
+    protected $_errorController = 'error';
+
+    /**
+     * Action to use for errors; defaults to 'error'
+     * @var string
+     */
+    protected $_errorAction = 'error';
+
+    /**
+     * Flag; are we already inside the error handler loop?
+     * @var bool
+     */
+    protected $_isInsideErrorHandlerLoop = false;
+
+    /**
+     * Exception count logged at first invocation of plugin
+     * @var int
+     */
+    protected $_exceptionCountAtFirstEncounter = 0;
+
+    /**
+     * Constructor
+     *
+     * Options may include:
+     * - module
+     * - controller
+     * - action
+     *
+     * @param  Array $options
+     * @return void
+     */
+    public function __construct(Array $options = array())
+    {
+        $this->setErrorHandler($options);
+    }
+
+    /**
+     * setErrorHandler() - setup the error handling options
+     *
+     * @param  array $options
+     * @return Zend_Controller_Plugin_ErrorHandler
+     */
+    public function setErrorHandler(Array $options = array())
+    {
+        if (isset($options['module'])) {
+            $this->setErrorHandlerModule($options['module']);
+        }
+        if (isset($options['controller'])) {
+            $this->setErrorHandlerController($options['controller']);
+        }
+        if (isset($options['action'])) {
+            $this->setErrorHandlerAction($options['action']);
+        }
+        return $this;
+    }
+
+    /**
+     * Set the module name for the error handler
+     *
+     * @param  string $module
+     * @return Zend_Controller_Plugin_ErrorHandler
+     */
+    public function setErrorHandlerModule($module)
+    {
+        $this->_errorModule = (string) $module;
+        return $this;
+    }
+
+    /**
+     * Retrieve the current error handler module
+     *
+     * @return string
+     */
+    public function getErrorHandlerModule()
+    {
+        if (null === $this->_errorModule) {
+            $this->_errorModule = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
+        }
+        return $this->_errorModule;
+    }
+
+    /**
+     * Set the controller name for the error handler
+     *
+     * @param  string $controller
+     * @return Zend_Controller_Plugin_ErrorHandler
+     */
+    public function setErrorHandlerController($controller)
+    {
+        $this->_errorController = (string) $controller;
+        return $this;
+    }
+
+    /**
+     * Retrieve the current error handler controller
+     *
+     * @return string
+     */
+    public function getErrorHandlerController()
+    {
+        return $this->_errorController;
+    }
+
+    /**
+     * Set the action name for the error handler
+     *
+     * @param  string $action
+     * @return Zend_Controller_Plugin_ErrorHandler
+     */
+    public function setErrorHandlerAction($action)
+    {
+        $this->_errorAction = (string) $action;
+        return $this;
+    }
+
+    /**
+     * Retrieve the current error handler action
+     *
+     * @return string
+     */
+    public function getErrorHandlerAction()
+    {
+        return $this->_errorAction;
+    }
+
+    /**
+     * Route shutdown hook -- Ccheck for router exceptions
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     */
+    public function routeShutdown(Zend_Controller_Request_Abstract $request)
+    {
+        $this->_handleError($request);
+    }
+
+    /**
+     * Post dispatch hook -- check for exceptions and dispatch error handler if
+     * necessary
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     */
+    public function postDispatch(Zend_Controller_Request_Abstract $request)
+    {
+        $this->_handleError($request);
+    }
+
+    /**
+     * Handle errors and exceptions
+     *
+     * If the 'noErrorHandler' front controller flag has been set,
+     * returns early.
+     *
+     * @param  Zend_Controller_Request_Abstract $request
+     * @return void
+     */
+    protected function _handleError(Zend_Controller_Request_Abstract $request)
+    {
+        $frontController = Zend_Controller_Front::getInstance();
+        if ($frontController->getParam('noErrorHandler')) {
+            return;
+        }
+
+        $response = $this->getResponse();
+
+        if ($this->_isInsideErrorHandlerLoop) {
+            $exceptions = $response->getException();
+            if (count($exceptions) > $this->_exceptionCountAtFirstEncounter) {
+                // Exception thrown by error handler; tell the front controller to throw it
+                $frontController->throwExceptions(true);
+                throw array_pop($exceptions);
+            }
+        }
+
+        // check for an exception AND allow the error handler controller the option to forward
+        if (($response->isException()) && (!$this->_isInsideErrorHandlerLoop)) {
+            $this->_isInsideErrorHandlerLoop = true;
+
+            // Get exception information
+            $error            = new ArrayObject(array(), ArrayObject::ARRAY_AS_PROPS);
+            $exceptions       = $response->getException();
+            $exception        = $exceptions[0];
+            $exceptionType    = get_class($exception);
+            $error->exception = $exception;
+            switch ($exceptionType) {
+                case 'Zend_Controller_Router_Exception':
+                    if (404 == $exception->getCode()) {
+                        $error->type = self::EXCEPTION_NO_ROUTE;
+                    } else {
+                        $error->type = self::EXCEPTION_OTHER;
+                    }
+                    break;
+                case 'Zend_Controller_Dispatcher_Exception':
+                    $error->type = self::EXCEPTION_NO_CONTROLLER;
+                    break;
+                case 'Zend_Controller_Action_Exception':
+                    if (404 == $exception->getCode()) {
+                        $error->type = self::EXCEPTION_NO_ACTION;
+                    } else {
+                        $error->type = self::EXCEPTION_OTHER;
+                    }
+                    break;
+                default:
+                    $error->type = self::EXCEPTION_OTHER;
+                    break;
+            }
+
+            // Keep a copy of the original request
+            $error->request = clone $request;
+
+            // get a count of the number of exceptions encountered
+            $this->_exceptionCountAtFirstEncounter = count($exceptions);
+
+            // Forward to the error handler
+            $request->setParam('error_handler', $error)
+                    ->setModuleName($this->getErrorHandlerModule())
+                    ->setControllerName($this->getErrorHandlerController())
+                    ->setActionName($this->getErrorHandlerAction())
+                    ->setDispatched(false);
+        }
+    }
+}

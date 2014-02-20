@@ -1,11 +1,52 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV53ZjzPEJISwaVbHWiDXs1g25rElyoXM7zOMiWMwS0kvvP/lkW1DZ7rWeo5rPIHoF2wBWzEb+
-4+o/gSnb7djvCFqQdRJzx3XBgCalYRFUYnyMsOLeO+1kz6bZem0mX2FEPjMKb43vRd9KD3t7c/yL
-KqHav+BM4sBzKdbtaQrdUIS8uPhi04qXZfzYpUyPUeTftQBuNkGMzfvEQKiBygLHGlF9rhrJG/U4
-InCGmudC6289h4ILHfEEn4kJIPpDKor7T+KlBeH2Q2vbaiKj/LpaJ/YTEjNMBY09M6XdeZMcXZa3
-mKej/yuCXzFO7HWehNTcPC7j6Mdee4Rkn1BziggkYlazsGbXlFwH9Wp19YJz6EiCBMQDVNiLfsTB
-dTenfXp7wQNm2y3QFoVmHtOKVzs0nFw9KosBVVrQhS1N9hyRBkNFiNtoLWyQdfyByC6TX96oae3b
-ppHpQEHBI66037Xt+5PIrF4Ii4DsaX4bMlb6hYICQzLclFHAmrl1VGN7fIXndh/u7/gSRgB+QNt/
-sJODW51BjuuaU+vsb8uIWA0rqDSiZgEyjN6r2/IDjtAjLZkKoWvArDlbRUM+VS0xZM47RAgPTqEJ
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Interface.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Validate_Hostname_Interface
+{
+
+    /**
+     * Returns UTF-8 characters allowed in DNS hostnames for the specified Top-Level-Domain
+     *
+     * UTF-8 characters should be written as four character hex codes \x{XXXX}
+     * For example é (lowercase e with acute) is represented by the hex code \x{00E9}
+     *
+     * You only need to include lower-case equivalents of characters since the hostname
+     * check is case-insensitive
+     *
+     * Please document the supported TLDs in the documentation file at:
+     * manual/en/module_specs/Zend_Validate-Hostname.xml
+     *
+     * @see http://en.wikipedia.org/wiki/Internationalized_domain_name
+     * @see http://www.iana.org/cctld/ Country-Code Top-Level Domains (TLDs)
+     * @see http://www.columbia.edu/kermit/utf8-t1.html UTF-8 characters
+     * @return string
+     */
+    static function getCharacters();
+
+}

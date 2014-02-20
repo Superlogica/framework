@@ -1,29 +1,140 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Query */
+require_once 'Zend/Search/Lucene/Search/Query.php';
+
+/** Zend_Search_Lucene_Search_Weight_Empty */
+require_once 'Zend/Search/Lucene/Search/Weight/Empty.php';
+
+
+/**
+ * The insignificant query returns empty result, but doesn't limit result set as a part of other queries
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Query_Insignificant extends Zend_Search_Lucene_Search_Query
+{
+    /**
+     * Re-write query into primitive queries in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function rewrite(Zend_Search_Lucene_Interface $index)
+    {
+        return $this;
+    }
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function optimize(Zend_Search_Lucene_Interface $index)
+    {
+        return $this;
+    }
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     */
+    public function createWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        return new Zend_Search_Lucene_Search_Weight_Empty();
+    }
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     */
+    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
+    {
+        // Do nothing
+    }
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     */
+    public function matchedDocs()
+    {
+        return array();
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     */
+    public function score($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        return 0;
+    }
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     */
+    public function getQueryTerms()
+    {
+        return array();
+    }
+
+    /**
+     * Query specific matches highlighting
+     *
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
+     */
+    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
+    {
+        // Do nothing
+    }
+
+    /**
+     * Print a query
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return '<InsignificantQuery>';
+    }
+}
+

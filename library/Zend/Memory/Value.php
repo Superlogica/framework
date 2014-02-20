@@ -1,36 +1,174 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-CKLKUt72Dz7G04XJlqECudu14AYVBxTq
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * String value object
+ *
+ * It's an OO string wrapper.
+ * Used to intercept string updates.
+ *
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @todo       also implement Countable for PHP 5.1 but not yet to stay 5.0 compatible
+ */
+class Zend_Memory_Value implements ArrayAccess {
+    /**
+     * Value
+     *
+     * @var string
+     */
+    private $_value;
+
+    /**
+     * Container
+     *
+     * @var Zend_Memory_Container_Interface
+     */
+    private $_container;
+
+    /**
+     * Boolean flag which signals to trace value modifications
+     *
+     * @var boolean
+     */
+    private $_trace;
+
+
+    /**
+     * Object constructor
+     *
+     * @param string $value
+     * @param Zend_Memory_Container_Movable $container
+     */
+    public function __construct($value, Zend_Memory_Container_Movable $container)
+    {
+        $this->_container = $container;
+
+        $this->_value = (string)$value;
+
+        /**
+         * Object is marked as just modified by memory manager
+         * So we don't need to trace followed object modifications and
+         * object is processed (and marked as traced) when another
+         * memory object is modified.
+         *
+         * It reduces overall numberr of calls necessary to modification trace
+         */
+        $this->_trace = false;
+    }
+
+
+    /**
+     * ArrayAccess interface method
+     * returns true if string offset exists
+     *
+     * @param integer $offset
+     * @return boolean
+     */
+    public function offsetExists($offset)
+    {
+        return $offset >= 0  &&  $offset < strlen($this->_value);
+    }
+
+    /**
+     * ArrayAccess interface method
+     * Get character at $offset position
+     *
+     * @param integer $offset
+     * @return string
+     */
+    public function offsetGet($offset)
+    {
+        return $this->_value[$offset];
+    }
+
+    /**
+     * ArrayAccess interface method
+     * Set character at $offset position
+     *
+     * @param integer $offset
+     * @param string $char
+     */
+    public function offsetSet($offset, $char)
+    {
+        $this->_value[$offset] = $char;
+
+        if ($this->_trace) {
+            $this->_trace = false;
+            $this->_container->processUpdate();
+        }
+    }
+
+    /**
+     * ArrayAccess interface method
+     * Unset character at $offset position
+     *
+     * @param integer $offset
+     */
+    public function offsetUnset($offset)
+    {
+        unset($this->_value[$offset]);
+
+        if ($this->_trace) {
+            $this->_trace = false;
+            $this->_container->processUpdate();
+        }
+    }
+
+
+    /**
+     * To string conversion
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->_value;
+    }
+
+
+    /**
+     * Get string value reference
+     *
+     * _Must_ be used for value access before PHP v 5.2
+     * or _may_ be used for performance considerations
+     *
+     * @internal
+     * @return string
+     */
+    public function &getRef()
+    {
+        return $this->_value;
+    }
+
+    /**
+     * Start modifications trace
+     *
+     * _Must_ be used for value access before PHP v 5.2
+     * or _may_ be used for performance considerations
+     *
+     * @internal
+     */
+    public function startTrace()
+    {
+        $this->_trace = true;
+    }
+}

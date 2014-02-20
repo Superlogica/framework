@@ -1,36 +1,127 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element_Dictionary */
+require_once 'Zend/Pdf/Element/Dictionary.php';
+
+
+/**
+ * PDF file trailer
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Trailer
+{
+    private static $_allowedKeys = array('Size', 'Prev', 'Root', 'Encrypt', 'Info', 'ID', 'Index', 'W', 'XRefStm', 'DocChecksum');
+
+    /**
+     * Trailer dictionary.
+     *
+     * @var Zend_Pdf_Element_Dictionary
+     */
+    private $_dict;
+
+    /**
+     * Check if key is correct
+     *
+     * @param string $key
+     * @throws Zend_Pdf_Exception
+     */
+    private function _checkDictKey($key)
+    {
+        if ( !in_array($key, self::$_allowedKeys) ) {
+            /** @todo Make warning (log entry) instead of an exception */
+            throw new Zend_Pdf_Exception("Unknown trailer dictionary key: '$key'.");
+        }
+    }
+
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Pdf_Element_Dictionary $dict
+     */
+    public function __construct(Zend_Pdf_Element_Dictionary $dict)
+    {
+        $this->_dict   = $dict;
+
+        foreach ($this->_dict->getKeys() as $dictKey) {
+            $this->_checkDictKey($dictKey);
+        }
+    }
+
+    /**
+     * Get handler
+     *
+     * @param string $property
+     * @return mixed
+     */
+    public function __get($property)
+    {
+        return $this->_dict->$property;
+    }
+
+    /**
+     * Set handler
+     *
+     * @param string $property
+     * @param  mixed $value
+     */
+    public function __set($property, $value)
+    {
+        $this->_checkDictKey($property);
+        $this->_dict->$property = $value;
+    }
+
+    /**
+     * Return string trailer representation
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "trailer\n" . $this->_dict->toString() . "\n";
+    }
+
+
+    /**
+     * Get length of source PDF
+     *
+     * @return string
+     */
+    abstract public function getPDFLength();
+
+    /**
+     * Get PDF String
+     *
+     * @return string
+     */
+    abstract public function getPDFString();
+
+    /**
+     * Get header of free objects list
+     * Returns object number of last free object
+     *
+     * @return integer
+     */
+    abstract public function getLastFreeObject();
+}

@@ -1,40 +1,116 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-XV9cKvcPUGxi0glCZ9Ix
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @version    $Id: Socket.php 8064 2008-02-16 10:58:39Z thomas $
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+require_once 'Zend/Http/Client/Adapter/Socket.php';
+
+/**
+ * Overrides the traditional socket-based adapter class for Zend_Http_Client to 
+ * enable logging of requests.  All requests are logged to a location specified
+ * in the config as $config['logfile'].  Requests and responses are logged after
+ * they are sent and received/processed, thus an error could prevent logging.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_App_LoggingHttpClientAdapterSocket extends Zend_Http_Client_Adapter_Socket
+{
+
+    /**
+     * The file handle for writing logs
+     *
+     * @var resource|null
+     */
+    protected $log_handle = null;
+
+    /**
+     * Log the given message to the log file.  The log file is configured
+     * as the config param 'logfile'.  This method opens the file for
+     * writing if necessary.
+     *
+     * @param string $message The message to log
+     */
+    protected function log($message)
+    {
+        if ($this->log_handle == null) {
+            $this->log_handle = fopen($this->config['logfile'], 'a');
+        }
+        fwrite($this->log_handle, $message);
+    }
+
+    /**
+     * Connect to the remote server
+     *
+     * @param string  $host
+     * @param int     $port
+     * @param boolean $secure
+     * @param int     $timeout
+     */
+    public function connect($host, $port = 80, $secure = false)
+    {
+        $this->log("Connecting to: ${host}:${port}");
+        return parent::connect($host, $port, $secure);
+    }
+
+    /**
+     * Send request to the remote server
+     *
+     * @param string        $method
+     * @param Zend_Uri_Http $uri
+     * @param string        $http_ver
+     * @param array         $headers
+     * @param string        $body
+     * @return string Request as string
+     */
+    public function write($method, $uri, $http_ver = '1.1', $headers = array(), $body = '')
+    {
+        $request = parent::write($method, $uri, $http_ver, $headers, $body);
+        $this->log("\n\n" . $request);
+        return $request;
+    }
+
+    /**
+     * Read response from server
+     *
+     * @return string
+     */
+    public function read()
+    {
+        $response = parent::read();
+        $this->log("${response}\n\n");
+        return $response;
+    }
+
+    /**
+     * Close the connection to the server
+     *
+     */
+    public function close()
+    {
+        $this->log("Closing socket\n\n");
+        parent::close();
+    }
+
+}

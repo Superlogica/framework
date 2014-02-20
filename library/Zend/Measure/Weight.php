@@ -1,93 +1,480 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Weight.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling weight conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Weigth
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Weight extends Zend_Measure_Abstract
+{
+    const STANDARD = 'KILOGRAM';
+
+    const ARRATEL                 = 'ARRATEL';
+    const ARTEL                   = 'ARTEL';
+    const ARROBA_PORTUGUESE       = 'ARROBA_PORTUGUESE';
+    const ARROBA                  = 'ARROBA';
+    const AS_                     = 'AS_';
+    const ASS                     = 'ASS';
+    const ATOMIC_MASS_UNIT_1960   = 'ATOMIC_MASS_UNIT_1960';
+    const ATOMIC_MASS_UNIT_1973   = 'ATOMIC_MASS_UNIT_1973';
+    const ATOMIC_MASS_UNIT_1986   = 'ATOMIC_MASS_UNIT_1986';
+    const ATOMIC_MASS_UNIT        = 'ATOMIC_MASS_UNIT';
+    const AVOGRAM                 = 'AVOGRAM';
+    const BAG                     = 'BAG';
+    const BAHT                    = 'BAHT';
+    const BALE                    = 'BALE';
+    const BALE_US                 = 'BALE_US';
+    const BISMAR_POUND            = 'BISMAR_POUND';
+    const CANDY                   = 'CANDY';
+    const CARAT_INTERNATIONAL     = 'CARAT_INTERNATIONAL';
+    const CARAT                   = 'CARAT';
+    const CARAT_UK                = 'CARAT_UK';
+    const CARAT_US_1913           = 'CARAT_US_1913';
+    const CARGA                   = 'CARGA';
+    const CATTI                   = 'CATTI';
+    const CATTI_JAPANESE          = 'CATTI_JAPANESE';
+    const CATTY                   = 'CATTY';
+    const CATTY_JAPANESE          = 'CATTY_JAPANESE';
+    const CATTY_THAI              = 'CATTY_THAI';
+    const CENTAL                  = 'CENTAL';
+    const CENTIGRAM               = 'CENTIGRAM';
+    const CENTNER                 = 'CENTNER';
+    const CENTNER_RUSSIAN         = 'CENTNER_RUSSIAN';
+    const CHALDER                 = 'CHALDER';
+    const CHALDRON                = 'CHALDRON';
+    const CHIN                    = 'CHIN';
+    const CHIN_JAPANESE           = 'CHIN_JAPANESE';
+    const CLOVE                   = 'CLOVE';
+    const CRITH                   = 'CRITH';
+    const DALTON                  = 'DALTON';
+    const DAN                     = 'DAN';
+    const DAN_JAPANESE            = 'DAN_JAPANESE';
+    const DECIGRAM                = 'DECIGRAM';
+    const DECITONNE               = 'DECITONNE';
+    const DEKAGRAM                = 'DEKAGRAM';
+    const DEKATONNE               = 'DEKATONNE';
+    const DENARO                  = 'DENARO';
+    const DENIER                  = 'DENIER';
+    const DRACHME                 = 'DRACHME';
+    const DRAM                    = 'DRAM';
+    const DRAM_APOTHECARIES       = 'DRAM_APOTHECARIES';
+    const DYNE                    = 'DYNE';
+    const ELECTRON                = 'ELECTRON';
+    const ELECTRONVOLT            = 'ELECTRONVOLT';
+    const ETTO                    = 'ETTO';
+    const EXAGRAM                 = 'EXAGRAM';
+    const FEMTOGRAM               = 'FEMTOGRAM';
+    const FIRKIN                  = 'FIRKIN';
+    const FLASK                   = 'FLASK';
+    const FOTHER                  = 'FOTHER';
+    const FOTMAL                  = 'FOTMAL';
+    const FUNT                    = 'FUNT';
+    const FUNTE                   = 'FUNTE';
+    const GAMMA                   = 'GAMMA';
+    const GIGAELECTRONVOLT        = 'GIGAELECTRONVOLT';
+    const GIGAGRAM                = 'GIGAGRAM';
+    const GIGATONNE               = 'GIGATONNE';
+    const GIN                     = 'GIN';
+    const GIN_JAPANESE            = 'GIN_JAPANESE';
+    const GRAIN                   = 'GRAIN';
+    const GRAM                    = 'GRAM';
+    const GRAN                    = 'GRAN';
+    const GRANO                   = 'GRANO';
+    const GRANI                   = 'GRANI';
+    const GROS                    = 'GROS';
+    const HECTOGRAM               = 'HECTOGRAM';
+    const HUNDRETWEIGHT           = 'HUNDRETWEIGHT';
+    const HUNDRETWEIGHT_US        = 'HUNDRETWEIGHT_US';
+    const HYL                     = 'HYL';
+    const JIN                     = 'JIN';
+    const JUPITER                 = 'JUPITER';
+    const KATI                    = 'KATI';
+    const KATI_JAPANESE           = 'KATI_JAPANESE';
+    const KEEL                    = 'KEEL';
+    const KEG                     = 'KEG';
+    const KILODALTON              = 'KILODALTON';
+    const KILOGRAM                = 'KILOGRAM';
+    const KILOGRAM_FORCE          = 'KILOGRAM_FORCE';
+    const KILOTON                 = 'KILOTON';
+    const KILOTON_US              = 'KILOTON_US';
+    const KILOTONNE               = 'KILOTONNE';
+    const KIN                     = 'KIN';
+    const KIP                     = 'KIP';
+    const KOYAN                   = 'KOYAN';
+    const KWAN                    = 'KWAN';
+    const LAST_GERMANY            = 'LAST_GERMANY';
+    const LAST                    = 'LAST';
+    const LAST_WOOL               = 'LAST_WOOL';
+    const LB                      = 'LB';
+    const LBS                     = 'LBS';
+    const LIANG                   = 'LIANG';
+    const LIBRA_ITALIAN           = 'LIBRE_ITALIAN';
+    const LIBRA_SPANISH           = 'LIBRA_SPANISH';
+    const LIBRA_PORTUGUESE        = 'LIBRA_PORTUGUESE';
+    const LIBRA_ANCIENT           = 'LIBRA_ANCIENT';
+    const LIBRA                   = 'LIBRA';
+    const LIVRE                   = 'LIVRE';
+    const LONG_TON                = 'LONG_TON';
+    const LOT                     = 'LOT';
+    const MACE                    = 'MACE';
+    const MAHND                   = 'MAHND';
+    const MARC                    = 'MARC';
+    const MARCO                   = 'MARCO';
+    const MARK                    = 'MARK';
+    const MARK_GERMAN             = 'MARK_GERMANY';
+    const MAUND                   = 'MAUND';
+    const MAUND_PAKISTAN          = 'MAUND_PAKISTAN';
+    const MEGADALTON              = 'MEGADALTON';
+    const MEGAGRAM                = 'MEGAGRAM';
+    const MEGATONNE               = 'MEGATONNE';
+    const MERCANTILE_POUND        = 'MERCANTILE_POUND';
+    const METRIC_TON              = 'METRIC_TON';
+    const MIC                     = 'MIC';
+    const MICROGRAM               = 'MICROGRAM';
+    const MILLIDALTON             = 'MILLIDALTON';
+    const MILLIER                 = 'MILLIER';
+    const MILLIGRAM               = 'MILLIGRAM';
+    const MILLIMASS_UNIT          = 'MILLIMASS_UNIT';
+    const MINA                    = 'MINA';
+    const MOMME                   = 'MOMME';
+    const MYRIAGRAM               = 'MYRIAGRAM';
+    const NANOGRAM                = 'NANOGRAM';
+    const NEWTON                  = 'NEWTON';
+    const OBOL                    = 'OBOL';
+    const OBOLOS                  = 'OBOLOS';
+    const OBOLUS                  = 'OBOLUS';
+    const OBOLOS_ANCIENT          = 'OBOLOS_ANCIENT';
+    const OBOLUS_ANCIENT          = 'OBOLUS_ANCIENT';
+    const OKA                     = 'OKA';
+    const ONCA                    = 'ONCA';
+    const ONCE                    = 'ONCE';
+    const ONCIA                   = 'ONCIA';
+    const ONZA                    = 'ONZA';
+    const ONS                     = 'ONS';
+    const OUNCE                   = 'OUNCE';
+    const OUNCE_FORCE             = 'OUNCE_FORCE';
+    const OUNCE_TROY              = 'OUNCE_TROY';
+    const PACKEN                  = 'PACKEN';
+    const PENNYWEIGHT             = 'PENNYWEIGHT';
+    const PETAGRAM                = 'PETAGRAM';
+    const PFUND                   = 'PFUND';
+    const PICOGRAM                = 'PICOGRAM';
+    const POINT                   = 'POINT';
+    const POND                    = 'POND';
+    const POUND                   = 'POUND';
+    const POUND_FORCE             = 'POUND_FORCE';
+    const POUND_METRIC            = 'POUND_METRIC';
+    const POUND_TROY              = 'POUND_TROY';
+    const PUD                     = 'PUD';
+    const POOD                    = 'POOD';
+    const PUND                    = 'PUND';
+    const QIAN                    = 'QIAN';
+    const QINTAR                  = 'QINTAR';
+    const QUARTER                 = 'QUARTER';
+    const QUARTER_US              = 'QUARTER_US';
+    const QUARTER_TON             = 'QUARTER_TON';
+    const QUARTERN                = 'QUARTERN';
+    const QUARTERN_LOAF           = 'QUARTERN_LOAF';
+    const QUINTAL_FRENCH          = 'QUINTAL_FRENCH';
+    const QUINTAL                 = 'QUINTAL';
+    const QUINTAL_PORTUGUESE      = 'QUINTAL_PORTUGUESE';
+    const QUINTAL_SPAIN           = 'QUINTAL_SPAIN';
+    const REBAH                   = 'REBAH';
+    const ROTL                    = 'ROTL';
+    const ROTEL                   = 'ROTEL';
+    const ROTTLE                  = 'ROTTLE';
+    const RATEL                   = 'RATEL';
+    const SACK                    = 'SACK';
+    const SCRUPLE                 = 'SCRUPLE';
+    const SEER                    = 'SEER';
+    const SEER_PAKISTAN           = 'SEER_PAKISTAN';
+    const SHEKEL                  = 'SHEKEL';
+    const SHORT_TON               = 'SHORT_TON';
+    const SLINCH                  = 'SLINCH';
+    const SLUG                    = 'SLUG';
+    const STONE                   = 'STONE';
+    const TAEL                    = 'TAEL';
+    const TAHIL_JAPANESE          = 'TAHIL_JAPANESE';
+    const TAHIL                   = 'TAHIL';
+    const TALENT                  = 'TALENT';
+    const TAN                     = 'TAN';
+    const TECHNISCHE_MASS_EINHEIT = 'TECHNISCHE_MASS_EINHEIT';
+    const TERAGRAM                = 'TERAGRAM';
+    const TETRADRACHM             = 'TETRADRACHM';
+    const TICAL                   = 'TICAL';
+    const TOD                     = 'TOD';
+    const TOLA                    = 'TOLA';
+    const TOLA_PAKISTAN           = 'TOLA_PAKISTAN';
+    const TON_UK                  = 'TON_UK';
+    const TON                     = 'TON';
+    const TON_US                  = 'TON_US';
+    const TONELADA_PORTUGUESE     = 'TONELADA_PORTUGUESE';
+    const TONELADA                = 'TONELADA';
+    const TONNE                   = 'TONNE';
+    const TONNEAU                 = 'TONNEAU';
+    const TOVAR                   = 'TOVAR';
+    const TROY_OUNCE              = 'TROY_OUNCE';
+    const TROY_POUND              = 'TROY_POUND';
+    const TRUSS                   = 'TRUSS';
+    const UNCIA                   = 'UNCIA';
+    const UNZE                    = 'UNZE';
+    const VAGON                   = 'VAGON';
+    const YOCTOGRAM               = 'YOCTOGRAM';
+    const YOTTAGRAM               = 'YOTTAGRAM';
+    const ZENTNER                 = 'ZENTNER';
+    const ZEPTOGRAM               = 'ZEPTOGRAM';
+    const ZETTAGRAM               = 'ZETTAGRAM';
+
+    /**
+     * Calculations for all weight units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'ARRATEL'               => array('0.5',            'arratel'),
+        'ARTEL'                 => array('0.5',            'artel'),
+        'ARROBA_PORTUGUESE'     => array('14.69',          'arroba'),
+        'ARROBA'                => array('11.502',         '@'),
+        'AS_'                   => array('0.000052',       'as'),
+        'ASS'                   => array('0.000052',       'ass'),
+        'ATOMIC_MASS_UNIT_1960' => array('1.6603145e-27',  'amu'),
+        'ATOMIC_MASS_UNIT_1973' => array('1.6605655e-27',  'amu'),
+        'ATOMIC_MASS_UNIT_1986' => array('1.6605402e-27',  'amu'),
+        'ATOMIC_MASS_UNIT'      => array('1.66053873e-27', 'amu'),
+        'AVOGRAM'               => array('1.6605402e-27',  'avogram'),
+        'BAG'                   => array('42.63768278',    'bag'),
+        'BAHT'                  => array('0.015',          'baht'),
+        'BALE'                  => array('326.5865064',    'bl'),
+        'BALE_US'               => array('217.7243376',    'bl'),
+        'BISMAR_POUND'          => array('5.993',          'bismar pound'),
+        'CANDY'                 => array('254',            'candy'),
+        'CARAT_INTERNATIONAL'   => array('0.0002',         'ct'),
+        'CARAT'                 => array('0.0002',         'ct'),
+        'CARAT_UK'              => array('0.00025919564',  'ct'),
+        'CARAT_US_1913'         => array('0.0002053',      'ct'),
+        'CARGA'                 => array('140',            'carga'),
+        'CATTI'                 => array('0.604875',       'catti'),
+        'CATTI_JAPANESE'        => array('0.594',          'catti'),
+        'CATTY'                 => array('0.5',            'catty'),
+        'CATTY_JAPANESE'        => array('0.6',            'catty'),
+        'CATTY_THAI'            => array('0.6',            'catty'),
+        'CENTAL'                => array('45.359237',      'cH'),
+        'CENTIGRAM'             => array('0.00001',        'cg'),
+        'CENTNER'               => array('50',             'centner'),
+        'CENTNER_RUSSIAN'       => array('100',            'centner'),
+        'CHALDER'               => array('2692.52',        'chd'),
+        'CHALDRON'              => array('2692.52',        'chd'),
+        'CHIN'                  => array('0.5',            'chin'),
+        'CHIN_JAPANESE'         => array('0.6',            'chin'),
+        'CLOVE'                 => array('3.175',          'clove'),
+        'CRITH'                 => array('0.000089885',    'crith'),
+        'DALTON'                => array('1.6605402e-27',  'D'),
+        'DAN'                   => array('50',             'dan'),
+        'DAN_JAPANESE'          => array('60',             'dan'),
+        'DECIGRAM'              => array('0.0001',         'dg'),
+        'DECITONNE'             => array('100',            'dt'),
+        'DEKAGRAM'              => array('0.01',           'dag'),
+        'DEKATONNE'             => array('10000',          'dat'),
+        'DENARO'                => array('0.0011',         'denaro'),
+        'DENIER'                => array('0.001275',       'denier'),
+        'DRACHME'               => array('0.0038',         'drachme'),
+        'DRAM'                  => array(array('' => '0.45359237', '/' => '256'), 'dr'),
+        'DRAM_APOTHECARIES'     => array('0.0038879346',   'dr'),
+        'DYNE'                  => array('1.0197162e-6',   'dyn'),
+        'ELECTRON'              => array('9.109382e-31',   'e−'),
+        'ELECTRONVOLT'          => array('1.782662e-36',   'eV'),
+        'ETTO'                  => array('0.1',            'hg'),
+        'EXAGRAM'               => array('1.0e+15',        'Eg'),
+        'FEMTOGRAM'             => array('1.0e-18',        'fg'),
+        'FIRKIN'                => array('25.40117272',    'fir'),
+        'FLASK'                 => array('34.7',           'flask'),
+        'FOTHER'                => array('979.7595192',    'fother'),
+        'FOTMAL'                => array('32.65865064',    'fotmal'),
+        'FUNT'                  => array('0.4095',         'funt'),
+        'FUNTE'                 => array('0.4095',         'funte'),
+        'GAMMA'                 => array('0.000000001',    'gamma'),
+        'GIGAELECTRONVOLT'      => array('1.782662e-27',   'GeV'),
+        'GIGAGRAM'              => array('1000000',        'Gg'),
+        'GIGATONNE'             => array('1.0e+12',        'Gt'),
+        'GIN'                   => array('0.6',            'gin'),
+        'GIN_JAPANESE'          => array('0.594',          'gin'),
+        'GRAIN'                 => array('0.00006479891',  'gr'),
+        'GRAM'                  => array('0.001',          'g'),
+        'GRAN'                  => array('0.00082',        'gran'),
+        'GRANO'                 => array('0.00004905',     'grano'),
+        'GRANI'                 => array('0.00004905',     'grani'),
+        'GROS'                  => array('0.003824',       'gros'),
+        'HECTOGRAM'             => array('0.1',            'hg'),
+        'HUNDRETWEIGHT'         => array('50.80234544',    'cwt'),
+        'HUNDRETWEIGHT_US'      => array('45.359237',      'cwt'),
+        'HYL'                   => array('9.80665',        'hyl'),
+        'JIN'                   => array('0.5',            'jin'),
+        'JUPITER'               => array('1.899e+27',      'jupiter'),
+        'KATI'                  => array('0.5',            'kati'),
+        'KATI_JAPANESE'         => array('0.6',            'kati'),
+        'KEEL'                  => array('21540.19446656', 'keel'),
+        'KEG'                   => array('45.359237',      'keg'),
+        'KILODALTON'            => array('1.6605402e-24',  'kD'),
+        'KILOGRAM'              => array('1',              'kg'),
+        'KILOGRAM_FORCE'        => array('1',              'kgf'),
+        'KILOTON'               => array('1016046.9088',   'kt'),
+        'KILOTON_US'            => array('907184.74',      'kt'),
+        'KILOTONNE'             => array('1000000',        'kt'),
+        'KIN'                   => array('0.6',            'kin'),
+        'KIP'                   => array('453.59237',      'kip'),
+        'KOYAN'                 => array('2419',           'koyan'),
+        'KWAN'                  => array('3.75',           'kwan'),
+        'LAST_GERMANY'          => array('2000',           'last'),
+        'LAST'                  => array('1814.36948',     'last'),
+        'LAST_WOOL'             => array('1981.29147216',  'last'),
+        'LB'                    => array('0.45359237',     'lb'),
+        'LBS'                   => array('0.45359237',     'lbs'),
+        'LIANG'                 => array('0.05',           'liang'),
+        'LIBRE_ITALIAN'         => array('0.339',          'lb'),
+        'LIBRA_SPANISH'         => array('0.459',          'lb'),
+        'LIBRA_PORTUGUESE'      => array('0.459',          'lb'),
+        'LIBRA_ANCIENT'         => array('0.323',          'lb'),
+        'LIBRA'                 => array('1',              'lb'),
+        'LIVRE'                 => array('0.4895',         'livre'),
+        'LONG_TON'              => array('1016.0469088',   't'),
+        'LOT'                   => array('0.015',          'lot'),
+        'MACE'                  => array('0.003778',       'mace'),
+        'MAHND'                 => array('0.9253284348',   'mahnd'),
+        'MARC'                  => array('0.24475',        'marc'),
+        'MARCO'                 => array('0.23',           'marco'),
+        'MARK'                  => array('0.2268',         'mark'),
+        'MARK_GERMANY'          => array('0.2805',         'mark'),
+        'MAUND'                 => array('37.3242',        'maund'),
+        'MAUND_PAKISTAN'        => array('40',             'maund'),
+        'MEGADALTON'            => array('1.6605402e-21',  'MD'),
+        'MEGAGRAM'              => array('1000',           'Mg'),
+        'MEGATONNE'             => array('1.0e+9',         'Mt'),
+        'MERCANTILE_POUND'      => array('0.46655',        'lb merc'),
+        'METRIC_TON'            => array('1000',           't'),
+        'MIC'                   => array('1.0e-9',         'mic'),
+        'MICROGRAM'             => array('1.0e-9',         '�g'),
+        'MILLIDALTON'           => array('1.6605402e-30',  'mD'),
+        'MILLIER'               => array('1000',           'millier'),
+        'MILLIGRAM'             => array('0.000001',       'mg'),
+        'MILLIMASS_UNIT'        => array('1.6605402e-30',  'mmu'),
+        'MINA'                  => array('0.499',          'mina'),
+        'MOMME'                 => array('0.00375',        'momme'),
+        'MYRIAGRAM'             => array('10',             'myg'),
+        'NANOGRAM'              => array('1.0e-12',        'ng'),
+        'NEWTON'                => array('0.101971621',    'N'),
+        'OBOL'                  => array('0.0001',         'obol'),
+        'OBOLOS'                => array('0.0001',         'obolos'),
+        'OBOLUS'                => array('0.0001',         'obolus'),
+        'OBOLOS_ANCIENT'        => array('0.0005',         'obolos'),
+        'OBOLUS_ANCIENT'        => array('0.00057',        'obolos'),
+        'OKA'                   => array('1.28',           'oka'),
+        'ONCA'                  => array('0.02869',        'onca'),
+        'ONCE'                  => array('0.03059',        'once'),
+        'ONCIA'                 => array('0.0273',         'oncia'),
+        'ONZA'                  => array('0.02869',        'onza'),
+        'ONS'                   => array('0.1',            'ons'),
+        'OUNCE'                 => array(array('' => '0.45359237', '/' => '16'),    'oz'),
+        'OUNCE_FORCE'           => array(array('' => '0.45359237', '/' => '16'),    'ozf'),
+        'OUNCE_TROY'            => array(array('' => '65.31730128', '/' => '2100'), 'oz'),
+        'PACKEN'                => array('490.79',         'packen'),
+        'PENNYWEIGHT'           => array(array('' => '65.31730128', '/' => '42000'), 'dwt'),
+        'PETAGRAM'              => array('1.0e+12',        'Pg'),
+        'PFUND'                 => array('0.5',            'pfd'),
+        'PICOGRAM'              => array('1.0e-15',        'pg'),
+        'POINT'                 => array('0.000002',       'pt'),
+        'POND'                  => array('0.5',            'pond'),
+        'POUND'                 => array('0.45359237',     'lb'),
+        'POUND_FORCE'           => array('0.4535237',      'lbf'),
+        'POUND_METRIC'          => array('0.5',            'lb'),
+        'POUND_TROY'            => array(array('' => '65.31730128', '/' => '175'), 'lb'),
+        'PUD'                   => array('16.3',           'pud'),
+        'POOD'                  => array('16.3',           'pood'),
+        'PUND'                  => array('0.5',            'pund'),
+        'QIAN'                  => array('0.005',          'qian'),
+        'QINTAR'                => array('50',             'qintar'),
+        'QUARTER'               => array('12.70058636',    'qtr'),
+        'QUARTER_US'            => array('11.33980925',    'qtr'),
+        'QUARTER_TON'           => array('226.796185',     'qtr'),
+        'QUARTERN'              => array('1.587573295',    'quartern'),
+        'QUARTERN_LOAF'         => array('1.81436948',     'quartern-loaf'),
+        'QUINTAL_FRENCH'        => array('48.95',          'q'),
+        'QUINTAL'               => array('100',            'q'),
+        'QUINTAL_PORTUGUESE'    => array('58.752',         'q'),
+        'QUINTAL_SPAIN'         => array('45.9',           'q'),
+        'REBAH'                 => array('0.2855',         'rebah'),
+        'ROTL'                  => array('0.5',            'rotl'),
+        'ROTEL'                 => array('0.5',            'rotel'),
+        'ROTTLE'                => array('0.5',            'rottle'),
+        'RATEL'                 => array('0.5',            'ratel'),
+        'SACK'                  => array('165.10762268',   'sack'),
+        'SCRUPLE'               => array(array('' => '65.31730128', '/' => '50400'), 's'),
+        'SEER'                  => array('0.933105',       'seer'),
+        'SEER_PAKISTAN'         => array('1',              'seer'),
+        'SHEKEL'                => array('0.01142',        'shekel'),
+        'SHORT_TON'             => array('907.18474',      'st'),
+        'SLINCH'                => array('175.126908',     'slinch'),
+        'SLUG'                  => array('14.593903',      'slug'),
+        'STONE'                 => array('6.35029318',     'st'),
+        'TAEL'                  => array('0.03751',        'tael'),
+        'TAHIL_JAPANESE'        => array('0.03751',        'tahil'),
+        'TAHIL'                 => array('0.05',           'tahil'),
+        'TALENT'                => array('30',             'talent'),
+        'TAN'                   => array('50',             'tan'),
+        'TECHNISCHE_MASS_EINHEIT' => array('9.80665',      'TME'),
+        'TERAGRAM'              => array('1.0e+9',         'Tg'),
+        'TETRADRACHM'           => array('0.014',          'tetradrachm'),
+        'TICAL'                 => array('0.0164',         'tical'),
+        'TOD'                   => array('12.70058636',    'tod'),
+        'TOLA'                  => array('0.0116638125',   'tola'),
+        'TOLA_PAKISTAN'         => array('0.0125',         'tola'),
+        'TON_UK'                => array('1016.0469088',   't'),
+        'TON'                   => array('1000',           't'),
+        'TON_US'                => array('907.18474',      't'),
+        'TONELADA_PORTUGUESE'   => array('793.15',         'tonelada'),
+        'TONELADA'              => array('919.9',          'tonelada'),
+        'TONNE'                 => array('1000',           't'),
+        'TONNEAU'               => array('979',            'tonneau'),
+        'TOVAR'                 => array('128.8',          'tovar'),
+        'TROY_OUNCE'            => array(array('' => '65.31730128', '/' => '2100'), 'troy oz'),
+        'TROY_POUND'            => array(array('' => '65.31730128', '/' => '175'),  'troy lb'),
+        'TRUSS'                 => array('25.40117272',    'truss'),
+        'UNCIA'                 => array('0.0272875',      'uncia'),
+        'UNZE'                  => array('0.03125',        'unze'),
+        'VAGON'                 => array('10000',          'vagon'),
+        'YOCTOGRAM'             => array('1.0e-27',        'yg'),
+        'YOTTAGRAM'             => array('1.0e+21',        'Yg'),
+        'ZENTNER'               => array('50',             'Ztr'),
+        'ZEPTOGRAM'             => array('1.0e-24',        'zg'),
+        'ZETTAGRAM'             => array('1.0e+18',        'Zg'),
+        'STANDARD'              => 'KILOGRAM'
+    );
+}

@@ -1,50 +1,167 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV55oBQCC5LL7rn3dzu07CL2PSaUm/klLcM/8ZAKVKxhUZJTXIwmUL9Abek1OzsG8T8t9ol2Dp
-mfT84zT5CdRgSVaBl5nxruKSAIVHcGJZer/SHi5fAFyN5Sy+PtOxmlWP2UhAP+IhyY0B2MjYKFGP
-TjLLULx3kxb/v/fz6MWNEDofAfno7CnV+60ldQ/aS79UEXQod372cl3Pxf7UZWwPl7mnLvKi17aQ
-TW+gfMuKPnpWZXPqag8xZUF4IvD9dCrJBKTtvIykX49eOM0cMn4+7+ZyKL6GxQx6Xs3/VWfCe6/T
-GjiY0qb+VIuPl30L8lAB9RlQfS6qSZWPVIUJ3BaNDaYKpPdPKCP0E+vmejFpGd2RMB5pPSJjfbsj
-eMUSeMubLSE8sCnCd9wWyjE2f0ju7Yw5cgwppvAk90dFRqOu55PQYtRkmCpsuK0E1C7jrT9rm3RS
-odx+JoJc3w4z0Kamgsme7BSBrgSEmJIxNUwn8yxg0Xg+lkPS6CJJUYw+fThfmaQpdCHiVojyWzvl
-WalKh8UtBtUti/KJ7kb2jhS3zu3sCZ1h23YWkekhR2R11gidwTmpMHgl4EPUdqawpQla0KMAUBnw
-C57c8mX/CWnJyM+pPypYqmMdO7y59arfbiM36iRJIIIKgPnM1qwkh8vOBMSACkZpjLxNyVTW5ltx
-ulMbpdl6m6tnD4x1UvqHNp09/sCufu6h59gy/EYBHqYKqKjn6ObMBxSenuOOVB7l7/ZN7bGYPvQU
-RQaWjx3Iu3ZhCjr3D8fH5BEMUa81PA+E2je3movAz7jnAr/bM8THB6gx1iGD/c6XCF1J+xFMS1/h
-yBVwUoHVyQYleQMtMsrtU0zfZ+y/8Yp6owSQzJNw89jjFyjrQE+pQQ4AuHSevIlM4ks9+dBnhBHq
-ypl+FM2egItI+FNQ+zq6jJVc1ww9T3cYyuuuS0uT4t9BJClfzftPgN9EvaxtfT+rM7b1//GzLTl0
-1jGrobcZy5/nCX5u62eQhGnq1PmAkhcFYINhjDUrMLw6E/IZAputkxljqlFEv9YXDY+k2pe2BKJg
-vEbbZ2DfxgKBuaknpMCmj78ogl8ChsMVJ3MT8ZftqAyhYPIaM+Ikqs+neop6cNJuDQ1+LddiJxB1
-ELZwZqwdmGFJhbloRkNjhKJinolvdW/0E5+IlJTZ/V6pfwxj2+q95lE1IJsvBeko1raoMSc17uHS
-SqOMshV9TMPTc0DQI9cRiYxBwDtWXB5vvy0rEVtgdnw6XR2Q7bynDzRtUYOnvCs8ue3T07H01rjV
-Yeb7Wp+x3dMozZ0WHMvRYWRfJKBy5pzmctxz363PqrSQBGylDBOL+CH+qQ741mcd9IhAtCV+e8dl
-eeMN5t/ag1sR7bLMgnw72NE0TPbHpZIB4F21zJaap6SpR+IkyKm5Et3zsMC3R4p7GZA3eh09BIxc
-IIVnNOSTvahv1ve95W52dA2eQaK5lptmhJdxGxuFCam6vsopTUAypmZNTZkNN9TwQdJCayMNcxbv
-pCeNCORzOKh/xuEIScLQPMCbPIFaFxbCo4fr2p7pNVyl3cLHA/CWCKNfvfOHgDN+tvGteslVxFYx
-/mNR5c2DDshqcElOu9J9AfkgyOQSGaCzy+wZEGhnJFrSwoKcK000QwIDZdkmIcywkUH3D21+ccl9
-dBfzlGCrDlDj3OebagBWHPrK3onddAhA3AUHI3+a+oyHBw+/2E6cgci4NaudZZWJcItedtHUylLB
-Tj+C9/YrQJTOgwJtwiuQOKZLuSYl0ZFyPibErHpW33FltZ5nbjE/ALNEQ7uJKQGXy+M7JDupIsf3
-cftlzPc9nXcEq0cMdUq4Zeh7lyFohfTdDfewA0VVaN6wUp9ByonHdMOghKqnbM6XVuBGuxmAPWV9
-Rl2oowidJ8bXMpz25g68DOyqLm+ncVCf2rEnGh9+ZvIQaxB30KtpZpL4EBTTfiiR0Wfjs2b9KnvF
-5tiKPFgAa83kv6N3SMnEomNbiy+7GcgMCICBSz3S+4cvK33a2G9ysTnTngkgvUEl6yim2Xg12RMW
-V+wXJOkf7L6RTaP0JHzCY94MUKNqcs4+bCBrtb59HYel4ya4Ae1TLINX9ID1ktNlV/TbTW9Dcc7w
-4hwDDNbuYa36IlqDh5fxLXGMyaH+cZjx7tq1YU/I7h5xjUOniHyijIEzCKq0AFbpcHEKsEEdb0ZV
-FHwa5twWJiuA7llkDeKWVfV1og7bMETbzMhYuyE8+wJE/1c6KZyhvjp9VjOAIbSpr45Rt/llWDsY
-Yv1gD4dbKhA0V8GbkQMDtjkWkfhkhctRtNrtgMUSX78b1/EUy9PleTV69kMQsgciWBs41bm1ZaVj
-M7idolyrQEbYYCI8jJtuH/HUsLOlpE1l9PKaEEXrMNEEorP6C2dvNJyRHZ1EjzhHdv/YWabtxMQ4
-YHIfoUy1s/5xWSYaOnYfegr1Z3PrRhI5eYSrY0F62XPSJEe2ppSKL0zTR02jbv8T8H54TCE/ZVca
-3P0Yh3PcRUWDy1DmICwfwXy9jESLSKr9S09vY0h1nQYvfSoyAFxSN2jag/MGFeUzjLGeolMJHtzX
-bUGwHovYWrcl+yLWyOfma00b2v9dCtAQWb1C9n0vC8LNSwPPOSRB4hNlcTw5nDJb0EjXN/8DK1SS
-taAZh0/cB+ZKn0M1XJ2qvBJ9CYBzvauwxtvKX4N47J/kZjgTlZS6hNSiRt2RPF/7ARFSEWQjbXQZ
-0ESgCOf4SwdaeRqrAON4+rdo3aQIJIYPJQoafX3PcInIqgonKAL22ME3bIPfENh24bS963tHh0wf
-lmuk6xcrScTurfQ+UQsmaVHePML9wNpW6Vioo917/gdkGbXjjj8FS5h5qUPQe3IblTcqRlc4YnRS
-GLJ9AWXPeDvHDZVVjHxuD9qX8ZZoHfFsPnPjWQXNvO0luxUEir16cLRN8xvqfqcGLKajdqEq38JD
-Hytj8W0ECncpcReKsh+7kkUgQaSgfstvBQYCSML4tABoBvK8ZvdWIVQ+usYRoQ9izgCxcfdZKGrl
-TiVoX7PlzyiaH3339uHKrw4tZpueufaSMe3Su1inXPrZIEc1mm/RW8mzH0Bb29RzIqDMjd8hRY5p
-GZGExbnApekZAkdAplysVioKwxMVxgdsc+BJtEFILp4N8khw0HEu57a6th0QtzVmnMRvppTscwfX
-0Ihwrt+bhpxYV92e2y4ryV+QcZb4G8lPtrl9HExAVCoBWf1tJtfM2LGJIQWONBxnbwTtR+gM3DZd
-9RkGbduhYLJaURtJHtVOhn6GKyvJV/IgQTV1swEO3eVyAwLwcI2OQ28TLzvtScRFimQ5vYcypsQa
-J41QEV65wHKTdsZXFTn/NkcjslrBLYzbJJT6k65JPdGa5uOYt+jxJaQF93MTyPjy5qnoEGF17GF9
-JPfr/4qUmXj/mrV77/+ngHxOd20m7IhSqFJQb1DO4eA+4KchkqPdV4VH0WwCFhs8Sfw5lw+DCFAk
-P3J/shJ4CRP36VCaTbXfLyD2N7gCx1azlPFeGL8RbgdN2maNLkyVjcvDsXUp21OhZA/tl5xDtFC=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: File.php 8862 2008-03-16 15:36:00Z thomas $
+ */
+
+
+/**
+ * @see Zend_Auth_Adapter_Http_Resolver_Interface
+ */
+require_once 'Zend/Auth/Adapter/Http/Resolver/Interface.php';
+
+
+/**
+ * HTTP Authentication File Resolver
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Auth_Adapter_Http_Resolver_File implements Zend_Auth_Adapter_Http_Resolver_Interface
+{
+    /**
+     * Path to credentials file
+     *
+     * @var string
+     */
+    protected $_file;
+
+    /**
+     * Constructor
+     *
+     * @param  string $path Complete filename where the credentials are stored
+     * @return void
+     */
+    public function __construct($path = '')
+    {
+        if (!empty($path)) {
+            $this->setFile($path);
+        }
+    }
+
+    /**
+     * Set the path to the credentials file
+     *
+     * @param  string $path
+     * @throws Zend_Auth_Adapter_Http_Resolver_Exception
+     * @return Zend_Auth_Adapter_Http_Resolver_File Provides a fluent interface
+     */
+    public function setFile($path)
+    {
+        if (empty($path) || !is_readable($path)) {
+            /**
+             * @see Zend_Auth_Adapter_Http_Resolver_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
+            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Path not readable: ' . $path);
+        }
+        $this->_file = $path;
+
+        return $this;
+    }
+
+    /**
+     * Returns the path to the credentials file
+     *
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->_file;
+    }
+
+    /**
+     * Resolve credentials
+     *
+     * Only the first matching username/realm combination in the file is
+     * returned. If the file contains credentials for Digest authentication,
+     * the returned string is the password hash, or h(a1) from RFC 2617. The
+     * returned string is the plain-text password for Basic authentication.
+     *
+     * The expected format of the file is:
+     *   username:realm:sharedSecret
+     *
+     * That is, each line consists of the user's username, the applicable
+     * authentication realm, and the password or hash, each delimited by
+     * colons.
+     *
+     * @param  string $username Username
+     * @param  string $realm    Authentication Realm
+     * @throws Zend_Auth_Adapter_Http_Resolver_Exception
+     * @return string|false User's shared secret, if the user is found in the
+     *         realm, false otherwise.
+     */
+    public function resolve($username, $realm)
+    {
+        if (empty($username)) {
+            /**
+             * @see Zend_Auth_Adapter_Http_Resolver_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
+            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Username is required');
+        } else if (!ctype_print($username) || strpos($username, ':') !== false) {
+            /**
+             * @see Zend_Auth_Adapter_Http_Resolver_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
+            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Username must consist only of printable characters, '
+                                                              . 'excluding the colon');
+        }
+        if (empty($realm)) {
+            /**
+             * @see Zend_Auth_Adapter_Http_Resolver_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
+            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Realm is required');
+        } else if (!ctype_print($realm) || strpos($realm, ':') !== false) {
+            /**
+             * @see Zend_Auth_Adapter_Http_Resolver_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
+            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Realm must consist only of printable characters, '
+                                                              . 'excluding the colon.');
+        }
+
+        // Open file, read through looking for matching credentials
+        $fp = @fopen($this->_file, 'r');
+        if (!$fp) {
+            /**
+             * @see Zend_Auth_Adapter_Http_Resolver_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
+            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Unable to open password file: ' . $this->_file);
+        }
+
+        // No real validation is done on the contents of the password file. The
+        // assumption is that we trust the administrators to keep it secure.
+        while (($line = fgetcsv($fp, 512, ':')) !== false) {
+            if ($line[0] == $username && $line[1] == $realm) {
+                $password = $line[2];
+                fclose($fp);
+                return $password;
+            }
+        }
+
+        fclose($fp);
+        return false;
+    }
+}

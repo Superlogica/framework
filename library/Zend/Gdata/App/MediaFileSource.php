@@ -1,39 +1,145 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_MediaData
+ */
+require_once 'Zend/Gdata/App/BaseMediaSource.php';
+
+/**
+ * Concrete class to use a file handle as an attachment within a MediaEntry.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_App_MediaFileSource extends Zend_Gdata_App_BaseMediaSource
+{
+    /**
+     * The filename which is represented
+     *
+     * @var string 
+     */
+    protected $_filename = null;
+
+    /**
+     * The content type for the file attached (example image/png)
+     *
+     * @var string
+     */
+    protected $_contentType = null;
+    
+    /**
+     * Create a new Zend_Gdata_App_MediaFileSource object.
+     *
+     * @param string $filename The name of the file to read from.
+     */
+    public function __construct($filename)
+    {
+        $this->setFilename($filename);
+    }
+    
+    /**
+     * Return the MIME multipart representation of this MediaEntry.
+     *
+     * @return string
+     * @throws Zend_Gdata_App_IOException
+     */
+    public function encode()
+    {
+        if ($this->getFilename() !== null && 
+            is_readable($this->getFilename())) {
+
+            // Retrieves the file, using the include path
+            $fileHandle = fopen($this->getFilename(), 'r', true);
+            $result = fread($fileHandle, filesize($this->getFilename()));
+            if ($result === false) {
+                require_once 'Zend/Gdata/App/IOException.php';
+                throw new Zend_Gdata_App_IOException("Error reading file - " .
+                        $this->getFilename() . '. Read failed.');
+            }
+            fclose($fileHandle);
+            return $result;
+        } else {
+            require_once 'Zend/Gdata/App/IOException.php';
+            throw new Zend_Gdata_App_IOException("Error reading file - " . 
+                    $this->getFilename() . '. File is not readable.');
+        }
+    }
+    
+    /**
+     * Get the filename associated with this reader.
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->_filename;
+    }
+
+    /**
+     * Set the filename which is to be read.
+     * 
+     * @param string $value The desired file handle.
+     * @return Zend_Gdata_App_MediaFileSource Provides a fluent interface.
+     */
+    public function setFilename($value)
+    {
+        $this->_filename = $value;
+        return $this;
+    }
+   
+    /** 
+     * The content type for the file attached (example image/png)
+     *
+     * @return string The content type
+     */
+    public function getContentType()
+    {
+        return $this->_contentType;
+    }
+
+    /** 
+     * Set the content type for the file attached (example image/png)
+     *
+     * @param string $value The content type
+     * @return Zend_Gdata_App_MediaFileSource Provides a fluent interface
+     */
+    public function setContentType($value)
+    {
+        $this->_contentType = $value;
+        return $this;
+    }
+    
+    /**
+     * Alias for getFilename().
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getFilename();
+    }
+    
+}

@@ -1,48 +1,125 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-28gzBdezBG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Entry.php 3941 2007-03-14 21:36:13Z darby $
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/App/Extension/Link.php';
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Calendar/Extension/WebContent.php';
+
+
+/**
+ * Specialized Link class for use with Calendar. Enables use of gCal extension elements.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Calendar_Extension_Link extends Zend_Gdata_App_Extension_Link
+{
+
+    protected $_webContent = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Calendar_Extension_Link object.
+     * @see Zend_Gdata_App_Extension_Link#__construct
+     * @param Zend_Gdata_Calendar_Extension_Webcontent $webContent
+     */
+    public function __construct($href = null, $rel = null, $type = null,
+            $hrefLang = null, $title = null, $length = null, $webContent = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
+        parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
+        $this->_webContent = $webContent;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_webContent != null) {
+            $element->appendChild($this->_webContent->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('gCal') . ':' . 'webContent':
+            $webContent = new Zend_Gdata_Calendar_Extension_WebContent();
+            $webContent->transferFromDOM($child);
+            $this->_webContent = $webContent;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Get the value for this element's WebContent attribute.
+     *
+     * @return Zend_Gdata_Calendar_Extension_Webcontent The WebContent value
+     */
+    public function getWebContent()
+    {
+        return $this->_webContent;
+    }
+
+    /**
+     * Set the value for this element's WebContent attribute.
+     *
+     * @param Zend_Gdata_Calendar_Extension_WebContent $value The desired value for this attribute.
+     * @return Zend_Calendar_Extension_Link The element being modified.  Provides a fluent interface.
+     */
+    public function setWebContent($value)
+    {
+        $this->_webContent = $value;
+        return $this;
+    }
+
+
+}
+

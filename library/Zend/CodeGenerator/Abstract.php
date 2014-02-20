@@ -1,37 +1,147 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-j+jWn3Xt6OE0qeH8uzcShkiN/e3qoXcxza/62m==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @subpackage PHP
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_CodeGenerator_Abstract
+{
+
+    /**
+     * @var string
+     */
+    protected $_sourceContent = null;
+    
+    /**
+     * @var bool
+     */
+    protected $_isSourceDirty = true;
+    
+    /**
+     * __construct()
+     *
+     * @param array $options
+     */
+    public function __construct($options = array())
+    {
+        $this->_init();
+        if ($options != null) {
+            // use Zend_Config objects if provided
+            if ($options instanceof Zend_Config) {
+                $options = $options->toArray();
+            }
+            // pass arrays to setOptions
+            if (is_array($options)) {
+                $this->setOptions($options);
+            }
+        }
+        $this->_prepare();
+    }
+    
+    /**
+     * setConfig()
+     *
+     * @param Zend_Config $config
+     * @return Zend_CodeGenerator_Abstract
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        $this->setOptions($config->toArray());
+        return $this;
+    }
+    
+    /**
+     * setOptions()
+     *
+     * @param array $options
+     * @return Zend_CodeGenerator_Abstract
+     */
+    public function setOptions(Array $options)
+    {
+        foreach ($options as $optionName => $optionValue) {
+            $methodName = 'set' . $optionName;
+            if (method_exists($this, $methodName)) {
+                $this->{$methodName}($optionValue);
+            }
+        }
+        return $this;
+    }
+    
+    /**
+     * setSourceContent()
+     *
+     * @param string $sourceContent
+     */
+    public function setSourceContent($sourceContent)
+    {
+        $this->_sourceContent = $sourceContent;
+        return;
+    }
+    
+    /**
+     * getSourceContent()
+     *
+     * @return string
+     */
+    public function getSourceContent()
+    {
+        return $this->_sourceContent;
+    }
+    
+    /**
+     * _init() - this is called before the constuctor
+     *
+     */
+    protected function _init()
+    {
+        
+    }
+    
+    /**
+     * _prepare() - this is called at construction completion
+     *
+     */
+    protected function _prepare()
+    {
+        
+    }
+    
+    /**
+     * generate() - must be implemented by the child
+     *
+     */
+    abstract public function generate();
+    
+    /**
+     * __toString() - casting to a string will in turn call generate()
+     *
+     * @return string
+     */
+    final public function __toString()
+    {
+        return $this->generate();
+    }
+
+}

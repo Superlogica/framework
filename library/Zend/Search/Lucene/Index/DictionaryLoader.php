@@ -1,149 +1,265 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Dictionary loader
+ *
+ * It's a dummy class which is created to encapsulate non-good structured code.
+ * Manual "method inlining" is performed to increase dictionary index loading operation
+ * which is major bottelneck for search performance.
+ *
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Index_DictionaryLoader
+{
+    /**
+     * Dictionary index loader.
+     *
+     * It takes a string which is actually <segment_name>.tii index file data and
+     * returns two arrays - term and tremInfo lists.
+     *
+     * See Zend_Search_Lucene_Index_SegmintInfo class for details
+     *
+     * @param string $data
+     * @return array
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public static function load($data)
+    {
+        $termDictionary = array();
+        $termInfos      = array();
+        $pos = 0;
+
+        // $tiVersion = $tiiFile->readInt();
+        $tiVersion = ord($data[0]) << 24 | ord($data[1]) << 16 | ord($data[2]) << 8  | ord($data[3]);
+        $pos += 4;
+        if ($tiVersion != (int)0xFFFFFFFE /* pre-2.1 format */ &&
+            $tiVersion != (int)0xFFFFFFFD /* 2.1+ format    */) {
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Wrong TermInfoIndexFile file format');
+        }
+
+        // $indexTermCount = $tiiFile->readLong();
+        if (PHP_INT_SIZE > 4) {
+            $indexTermCount = ord($data[$pos]) << 56  |
+                              ord($data[$pos+1]) << 48  |
+                              ord($data[$pos+2]) << 40  |
+                              ord($data[$pos+3]) << 32  |
+                              ord($data[$pos+4]) << 24  |
+                              ord($data[$pos+5]) << 16  |
+                              ord($data[$pos+6]) << 8   |
+                              ord($data[$pos+7]);
+        } else {
+            if ((ord($data[$pos])            != 0) ||
+                (ord($data[$pos+1])          != 0) ||
+                (ord($data[$pos+2])          != 0) ||
+                (ord($data[$pos+3])          != 0) ||
+                ((ord($data[$pos+4]) & 0x80) != 0)) {
+                    require_once 'Zend/Search/Lucene/Exception.php';
+                    throw new Zend_Search_Lucene_Exception('Largest supported segment size (for 32-bit mode) is 2Gb');
+                 }
+
+            $indexTermCount = ord($data[$pos+4]) << 24  |
+                              ord($data[$pos+5]) << 16  |
+                              ord($data[$pos+6]) << 8   |
+                              ord($data[$pos+7]);
+        }
+        $pos += 8;
+
+        //                  $tiiFile->readInt();  // IndexInterval
+        $pos += 4;
+
+        // $skipInterval   = $tiiFile->readInt();
+        $skipInterval = ord($data[$pos]) << 24 | ord($data[$pos+1]) << 16 | ord($data[$pos+2]) << 8  | ord($data[$pos+3]);
+        $pos += 4;
+        if ($indexTermCount < 1) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Wrong number of terms in a term dictionary index');
+        }
+
+        if ($tiVersion == (int)0xFFFFFFFD /* 2.1+ format */) {
+            /* Skip MaxSkipLevels value */
+            $pos += 4;
+        }
+
+        $prevTerm     = '';
+        $freqPointer  =  0;
+        $proxPointer  =  0;
+        $indexPointer =  0;
+        for ($count = 0; $count < $indexTermCount; $count++) {
+            //$termPrefixLength = $tiiFile->readVInt();
+            $nbyte = ord($data[$pos++]);
+            $termPrefixLength = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $termPrefixLength |= ($nbyte & 0x7F) << $shift;
+            }
+
+            // $termSuffix       = $tiiFile->readString();
+            $nbyte = ord($data[$pos++]);
+            $len = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $len |= ($nbyte & 0x7F) << $shift;
+            }
+            if ($len == 0) {
+                $termSuffix = '';
+            } else {
+                $termSuffix = substr($data, $pos, $len);
+                $pos += $len;
+                for ($count1 = 0; $count1 < $len; $count1++ ) {
+                    if (( ord($termSuffix[$count1]) & 0xC0 ) == 0xC0) {
+                        $addBytes = 1;
+                        if (ord($termSuffix[$count1]) & 0x20 ) {
+                            $addBytes++;
+
+                            // Never used for Java Lucene created index.
+                            // Java2 doesn't encode strings in four bytes
+                            if (ord($termSuffix[$count1]) & 0x10 ) {
+                                $addBytes++;
+                            }
+                        }
+                        $termSuffix .= substr($data, $pos, $addBytes);
+                        $pos += $addBytes;
+                        $len += $addBytes;
+
+                        // Check for null character. Java2 encodes null character
+                        // in two bytes.
+                        if (ord($termSuffix[$count1]) == 0xC0 &&
+                            ord($termSuffix[$count1+1]) == 0x80   ) {
+                            $termSuffix[$count1] = 0;
+                            $termSuffix = substr($termSuffix,0,$count1+1)
+                                        . substr($termSuffix,$count1+2);
+                        }
+                        $count1 += $addBytes;
+                    }
+                }
+            }
+
+            // $termValue        = Zend_Search_Lucene_Index_Term::getPrefix($prevTerm, $termPrefixLength) . $termSuffix;
+            $pb = 0; $pc = 0;
+            while ($pb < strlen($prevTerm)  &&  $pc < $termPrefixLength) {
+                $charBytes = 1;
+                if ((ord($prevTerm[$pb]) & 0xC0) == 0xC0) {
+                    $charBytes++;
+                    if (ord($prevTerm[$pb]) & 0x20 ) {
+                        $charBytes++;
+                        if (ord($prevTerm[$pb]) & 0x10 ) {
+                            $charBytes++;
+                        }
+                    }
+                }
+
+                if ($pb + $charBytes > strlen($data)) {
+                    // wrong character
+                    break;
+                }
+
+                $pc++;
+                $pb += $charBytes;
+            }
+            $termValue = substr($prevTerm, 0, $pb) . $termSuffix;
+
+            // $termFieldNum     = $tiiFile->readVInt();
+            $nbyte = ord($data[$pos++]);
+            $termFieldNum = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $termFieldNum |= ($nbyte & 0x7F) << $shift;
+            }
+
+            // $docFreq          = $tiiFile->readVInt();
+            $nbyte = ord($data[$pos++]);
+            $docFreq = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $docFreq |= ($nbyte & 0x7F) << $shift;
+            }
+
+            // $freqPointer     += $tiiFile->readVInt();
+            $nbyte = ord($data[$pos++]);
+            $vint = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $vint |= ($nbyte & 0x7F) << $shift;
+            }
+            $freqPointer += $vint;
+
+            // $proxPointer     += $tiiFile->readVInt();
+            $nbyte = ord($data[$pos++]);
+            $vint = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $vint |= ($nbyte & 0x7F) << $shift;
+            }
+            $proxPointer += $vint;
+
+            if( $docFreq >= $skipInterval ) {
+                // $skipDelta = $tiiFile->readVInt();
+                $nbyte = ord($data[$pos++]);
+                $vint = $nbyte & 0x7F;
+                for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                    $nbyte = ord($data[$pos++]);
+                    $vint |= ($nbyte & 0x7F) << $shift;
+                }
+                $skipDelta = $vint;
+            } else {
+                $skipDelta = 0;
+            }
+
+            // $indexPointer += $tiiFile->readVInt();
+            $nbyte = ord($data[$pos++]);
+            $vint = $nbyte & 0x7F;
+            for ($shift=7; ($nbyte & 0x80) != 0; $shift += 7) {
+                $nbyte = ord($data[$pos++]);
+                $vint |= ($nbyte & 0x7F) << $shift;
+            }
+            $indexPointer += $vint;
+
+
+            // $this->_termDictionary[] =  new Zend_Search_Lucene_Index_Term($termValue, $termFieldNum);
+            $termDictionary[] = array($termFieldNum, $termValue);
+
+            $termInfos[] =
+                 // new Zend_Search_Lucene_Index_TermInfo($docFreq, $freqPointer, $proxPointer, $skipDelta, $indexPointer);
+                 array($docFreq, $freqPointer, $proxPointer, $skipDelta, $indexPointer);
+
+            $prevTerm = $termValue;
+        }
+
+        // Check special index entry mark
+        if ($termDictionary[0][0] != (int)0xFFFFFFFF) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Wrong TermInfoIndexFile file format');
+        } else if (PHP_INT_SIZE > 4){
+            // Treat 64-bit 0xFFFFFFFF as -1
+            $termDictionary[0][0] = -1;
+        }
+
+        return array(&$termDictionary, &$termInfos);
+    }
+}
+

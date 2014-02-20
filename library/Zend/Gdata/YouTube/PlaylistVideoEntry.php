@@ -1,43 +1,131 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-IUrZ80==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_YouTube_VideoEntry
+ */
+require_once 'Zend/Gdata/YouTube/VideoEntry.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Position
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Position.php';
+
+/**
+ * Represents the YouTube video playlist flavor of an Atom entry
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_PlaylistVideoEntry extends Zend_Gdata_YouTube_VideoEntry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_YouTube_PlaylistVideoEntry';
+
+    /**
+     * Position of the entry in the feed, as specified by the user
+     *
+     * @var Zend_Gdata_YouTube_Extension_Position
+     */
+    protected $_position = null;
+
+    /**
+     * Creates a Playlist video entry, representing an individual video
+     * in a list of videos contained within a specific playlist
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_position !== null) {
+            $element->appendChild($this->_position->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('yt') . ':' . 'position':
+            $position = new Zend_Gdata_YouTube_Extension_Position();
+            $position->transferFromDOM($child);
+            $this->_position = $position;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+
+    /**
+     * Sets the array of embedded feeds related to the video
+     *
+     * @param Zend_Gdata_YouTube_Extension_Position $position
+     *     The position of the entry in the feed, as specified by the user.
+     * @return Zend_Gdata_YouTube_PlaylistVideoEntry Provides a fluent interface
+     */
+    public function setPosition($position = null)
+    {
+        $this->_position = $position;
+        return $this;
+    }
+
+    /**
+     * Returns the position of the entry in the feed, as specified by the user
+     *
+     * @return Zend_Gdata_YouTube_Extension_Position The position
+     */
+    public function getPosition()
+    {
+        return $this->_position;
+    }
+
+}

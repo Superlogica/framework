@@ -1,75 +1,215 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Text_Table
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Row.php 12529 2008-11-10 21:05:43Z dasprid $
+ */
+
+/**
+ * Row class for Zend_Text_Table
+ *
+ * @category  Zend
+ * @package   Zend_Text_Table
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Text_Table_Row
+{
+    /**
+     * List of all columns
+     *
+     * @var array
+     */
+    protected $_columns = array();
+
+    /**
+     * Temporary stored column widths
+     *
+     * @var array
+     */
+    protected $_columnWidths = null;
+
+    /**
+     * Create a new column and append it to the row
+     *
+     * @param  string $content
+     * @param  array  $options 
+     * @return Zend_Text_Table_Row
+     */
+    public function createColumn($content, array $options = null)
+    {
+        $align    = null;
+        $colSpan  = null;
+        $encoding = null;
+        
+        if ($options !== null) {
+            extract($options, EXTR_IF_EXISTS);
+        }
+               
+        require_once 'Zend/Text/Table/Column.php';
+        
+        $column = new Zend_Text_Table_Column($content, $align, $colSpan, $encoding);
+        
+        $this->appendColumn($column);
+        
+        return $this;
+    }
+    
+    /**
+     * Append a column to the row
+     *
+     * @param  Zend_Text_Table_Column $column The column to append to the row
+     * @return Zend_Text_Table_Row
+     */
+    public function appendColumn(Zend_Text_Table_Column $column)
+    {
+        $this->_columns[] = $column;
+        
+        return $this;
+    }
+    
+    /**
+     * Get a column by it's index
+     * 
+     * Returns null, when the index is out of range
+     *
+     * @param  integer $index
+     * @return Zend_Text_Table_Column|null
+     */
+    public function getColumn($index)
+    {
+        if (!isset($this->_columns[$index])) {
+            return null;
+        }
+        
+        return $this->_columns[$index];
+    }
+    
+    /**
+     * Get all columns of the row
+     *
+     * @return array
+     */
+    public function getColumns()
+    {
+        return $this->_columns;
+    }
+
+    /**
+     * Get the widths of all columns, which were rendered last
+     *
+     * @throws Zend_Text_Table_Exception When no columns were rendered yet
+     * @return integer
+     */
+    public function getColumnWidths()
+    {
+        if ($this->_columnWidths === null) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('No columns were rendered yet');
+        }
+
+        return $this->_columnWidths;
+    }
+
+    /**
+     * Render the row
+     *
+     * @param  array                               $columnWidths Width of all columns
+     * @param  Zend_Text_Table_Decorator_Interface $decorator    Decorator for the row borders
+     * @param  integer                             $padding      Padding for the columns
+     * @throws Zend_Text_Table_Exception When there are too many columns 
+     * @return string
+     */
+    public function render(array $columnWidths,
+                           Zend_Text_Table_Decorator_Interface $decorator,
+                           $padding = 0)
+    {
+        // Prepare an array to store all column widths
+        $this->_columnWidths = array();
+
+        // If there is no single column, create a column which spans over the
+        // entire row
+        if (count($this->_columns) === 0) {
+            require_once 'Zend/Text/Table/Column.php';
+            $this->appendColumn(new Zend_Text_Table_Column(null, null, count($columnWidths)));
+        }
+        
+        // First we have to render all columns, to get the maximum height
+        $renderedColumns = array();
+        $maxHeight       = 0;
+        $colNum          = 0;
+        foreach ($this->_columns as $column) {
+            // Get the colspan of the column
+            $colSpan = $column->getColSpan();
+
+            // Verify if there are enough column widths defined
+            if (($colNum + $colSpan) > count($columnWidths)) {
+                require_once 'Zend/Text/Table/Exception.php';
+                throw new Zend_Text_Table_Exception('Too many columns');
+            }
+
+            // Calculate the column width
+            $columnWidth = ($colSpan - 1 + array_sum(array_slice($columnWidths,
+                                                                 $colNum,
+                                                                 $colSpan)));
+
+            // Render the column and split it's lines into an array
+            $result = explode("\n", $column->render($columnWidth, $padding));
+
+            // Store the width of the rendered column
+            $this->_columnWidths[] = $columnWidth;
+
+            // Store the rendered column and calculate the new max height
+            $renderedColumns[] = $result;
+            $maxHeight         = max($maxHeight, count($result));
+
+            // Set up the internal column number
+            $colNum += $colSpan;
+        }
+
+        // If the row doesnt contain enough columns to fill the entire row, fill
+        // it with an empty column
+        if ($colNum < count($columnWidths)) {
+            $remainingWidth = (count($columnWidths) - $colNum - 1) +
+                               array_sum(array_slice($columnWidths,
+                                                     $colNum));
+            $renderedColumns[] = array(str_repeat(' ', $remainingWidth));
+
+            $this->_columnWidths[] = $remainingWidth;
+        }
+
+        // Add each single column line to the result
+        $result = '';
+        for ($line = 0; $line < $maxHeight; $line++) {
+            $result .= $decorator->getVertical();
+
+            foreach ($renderedColumns as $renderedColumn) {
+                if (isset($renderedColumn[$line]) === true) {
+                    $result .= $renderedColumn[$line];
+                } else {
+                    $result .= str_repeat(' ', strlen($renderedColumn[0]));
+                }
+
+                $result .= $decorator->getVertical();
+            }
+
+            $result .= "\n";
+        }
+
+        return $result;
+    }
+}

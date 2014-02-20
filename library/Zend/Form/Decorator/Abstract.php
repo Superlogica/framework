@@ -1,65 +1,254 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-iRtAI3FT
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Interface */
+require_once 'Zend/Form/Decorator/Interface.php';
+
+/**
+ * Zend_Form_Decorator_Abstract
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 8892 2008-03-18 19:47:46Z thomas $
+ */
+abstract class Zend_Form_Decorator_Abstract implements Zend_Form_Decorator_Interface
+{
+    /**
+     * Placement constants
+     */
+    const APPEND  = 'APPEND';
+    const PREPEND = 'PREPEND';
+
+    /**
+     * Default placement: append
+     * @var string
+     */
+    protected $_placement = 'APPEND';
+
+    /** 
+     * @var Zend_Form_Element|Zend_Form
+     */
+    protected $_element;
+
+    /**
+     * Decorator options
+     * @var array
+     */
+    protected $_options = array();
+
+    /**
+     * Separator between new content and old
+     * @var string
+     */
+    protected $_separator = PHP_EOL;
+
+    /**
+     * Constructor
+     * 
+     * @param  array|Zend_Config $options 
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } elseif ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        }
+    }
+
+    /**
+     * Set options
+     * 
+     * @param  array $options 
+     * @return Zend_Form_Decorator_Abstract
+     */
+    public function setOptions(array $options)
+    {
+        $this->_options = $options;
+        return $this;
+    }
+
+    /**
+     * Set options from config object
+     * 
+     * @param  Zend_Config $config 
+     * @return Zend_Form_Decorator_Abstract
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        return $this->setOptions($config->toArray());
+    }
+
+    /**
+     * Set option
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return Zend_Form_Decorator_Abstract
+     */
+    public function setOption($key, $value)
+    {
+        $this->_options[(string) $key] = $value;
+        return $this;
+    }
+
+    /**
+     * Get option
+     * 
+     * @param  string $key 
+     * @return mixed
+     */
+    public function getOption($key)
+    {
+        $key = (string) $key;
+        if (isset($this->_options[$key])) {
+            return $this->_options[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve options
+     * 
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Remove single option
+     * 
+     * @param mixed $key 
+     * @return void
+     */
+    public function removeOption($key)
+    {
+        if (null !== $this->getOption($key)) {
+            unset($this->_options[$key]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Clear all options
+     * 
+     * @return Zend_Form_Decorator_Abstract
+     */
+    public function clearOptions()
+    {
+        $this->_options = array();
+        return $this;
+    }
+
+    /**
+     * Set current form element
+     * 
+     * @param  Zend_Form_Element|Zend_Form $element 
+     * @return Zend_Form_Decorator_Abstract
+     * @throws Zend_Form_Decorator_Exception on invalid element type
+     */
+    public function setElement($element)
+    {
+        if ((!$element instanceof Zend_Form_Element)
+            && (!$element instanceof Zend_Form)
+            && (!$element instanceof Zend_Form_DisplayGroup))
+        {
+            require_once 'Zend/Form/Decorator/Exception.php';
+            throw new Zend_Form_Decorator_Exception('Invalid element type passed to decorator');
+        }
+
+        $this->_element = $element;
+        return $this;
+    }
+
+    /**
+     * Retrieve current element
+     * 
+     * @return Zend_Form_Element|Zend_Form
+     */
+    public function getElement()
+    {
+        return $this->_element;
+    }
+
+    /**
+     * Determine if decorator should append or prepend content
+     * 
+     * @return string
+     */
+    public function getPlacement()
+    {
+        $placement = $this->_placement;
+        if (null !== ($placementOpt = $this->getOption('placement'))) {
+            $placementOpt = strtoupper($placementOpt);
+            switch ($placementOpt) {
+                case self::APPEND:
+                case self::PREPEND:
+                    $placement = $this->_placement = $placementOpt;
+                    break;
+                case false:
+                    $placement = $this->_placement = null;
+                    break;
+                default:
+                    break;
+            }
+            $this->removeOption('placement');
+        }
+
+        return $placement;
+    }
+
+    /**
+     * Retrieve separator to use between old and new content
+     * 
+     * @return string
+     */
+    public function getSeparator()
+    {
+        $separator = $this->_separator;
+        if (null !== ($separatorOpt = $this->getOption('separator'))) {
+            $separator = $this->_separator = (string) $separatorOpt;
+            $this->removeOption('separator');
+        }
+        return $separator;
+    }
+
+    /**
+     * Decorate content and/or element
+     * 
+     * @param  string $content
+     * @return string
+     * @throws Zend_Dorm_Decorator_Exception when unimplemented
+     */
+    public function render($content)
+    {
+        require_once 'Zend/Form/Decorator/Exception.php';
+        throw new Zend_Form_Decorator_Exception('render() not implemented');
+    }
+}

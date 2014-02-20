@@ -1,56 +1,194 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Photos
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Photos_Extension_Id
+ */
+require_once 'Zend/Gdata/Photos/Extension/Id.php';
+
+/**
+ * @see Zend_Gdata_Photos_Extension_PhotoId
+ */
+require_once 'Zend/Gdata/Photos/Extension/PhotoId.php';
+
+/**
+ * @see Zend_Gdata_Photos_Extension_Weight
+ */
+require_once 'Zend/Gdata/Photos/Extension/Weight.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Category
+ */
+require_once 'Zend/Gdata/App/Extension/Category.php';
+
+/**
+ * Data model class for a Comment Entry.
+ *
+ * To transfer user entries to and from the servers, including
+ * creating new entries, refer to the service class,
+ * Zend_Gdata_Photos.
+ *
+ * This class represents <atom:entry> in the Google Data protocol.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Photos
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Photos_CommentEntry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_Photos_CommentEntry';
+
+    /**
+     * gphoto:id element
+     *
+     * @var Zend_Gdata_Photos_Extension_Id
+     */
+    protected $_gphotoId = null;
+
+    /**
+     * gphoto:photoid element, differs from gphoto:id as this is an
+     * actual identification number unique exclusively to photo entries,
+     * whereas gphoto:id can refer to all gphoto objects
+     *
+     * @var Zend_Gdata_Photos_Extension_PhotoId
+     */
+    protected $_gphotoPhotoId = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Photos::$namespaces);
+        parent::__construct($element);
+
+        $category = new Zend_Gdata_App_Extension_Category(
+            'http://schemas.google.com/photos/2007#comment',
+            'http://schemas.google.com/g/2005#kind');
+        $this->setCategory(array($category));
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_gphotoId !== null) {
+            $element->appendChild($this->_gphotoId->getDOM($element->ownerDocument));
+        }
+        if ($this->_gphotoPhotoId !== null) {
+            $element->appendChild($this->_gphotoPhotoId->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gphoto') . ':' . 'id';
+                $id = new Zend_Gdata_Photos_Extension_Id();
+                $id->transferFromDOM($child);
+                $this->_gphotoId = $id;
+                break;
+            case $this->lookupNamespace('gphoto') . ':' . 'photoid';
+                $photoid = new Zend_Gdata_Photos_Extension_PhotoId();
+                $photoid->transferFromDOM($child);
+                $this->_gphotoPhotoId = $photoid;
+                break;
+            default:
+                parent::takeChildFromDOM($child);
+                break;
+        }
+    }
+
+    /**
+     * Get the value for this element's gphoto:photoid attribute.
+     *
+     * @see setGphotoPhotoId
+     * @return string The requested attribute.
+     */
+    public function getGphotoPhotoId()
+    {
+        return $this->_gphotoPhotoId;
+    }
+
+    /**
+     * Set the value for this element's gphoto:photoid attribute.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Photos_Extension_PhotoId The element being modified.
+     */
+    public function setGphotoPhotoId($value)
+    {
+        $this->_gphotoPhotoId = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's gphoto:id attribute.
+     *
+     * @see setGphotoId
+     * @return string The requested attribute.
+     */
+    public function getGphotoId()
+    {
+        return $this->_gphotoId;
+    }
+
+    /**
+     * Set the value for this element's gphoto:id attribute.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Photos_Extension_Id The element being modified.
+     */
+    public function setGphotoId($value)
+    {
+        $this->_gphotoId = $value;
+        return $this;
+    }
+}

@@ -1,57 +1,203 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5CvyJqSwmxDery/QPBLGOn5n/qeTzaO/F/r46vcHq1oZCgNZn/GB562s9CHvU3ujFq5/J861
-vW2wiJzgwS6ycaHOGn7hdWpzzTMFhasvCzXqbIJrVuVEn+OD4oGKiSUrPtM4WvcJe4exrtBoYRJf
-45O5cMvuFThEKFxVSiSPAECgxgH3QqqA7kox1X5tfH2IKWiG7MbflOCXPIGCJrr7HgMvMZGzfVEF
-eCuOLIonMoDXY3eJaKSt0CHBaqcSpLCjHtVbBow4GcYaN9aYjGp/DkzFYjZLDkKS3l+C4Ucjuiq0
-NFk306CEhuZiUkt1KieLUNCniUIWX7ebupQnz4Duo1tX79hPQDQCqhAZZgk7pDhburpui75iqWA1
-niaEGcIKawY4rvLMcG1gHCCbnOirUge1IfQTgAX/+N8F7s8SNPd6TyT3PPjVOTZdQjqU7pRwPsXr
-Y1Dg1PvFKU4+jM71czJsOlCoa8pTgQudOSY4fHX14BqeaS2wzLVClXlwIrLofVKfFrWVfDZ1rD1e
-HprF4oyKC4OoRJcPvo3LXPjjB9qJ21GAGa7/6CuDHA1TseXGjSfdX6TNCtJloeoOUHn+uHUy0F5Q
-XCPZIkJatR4NDBq7xdZ3VU0dUuiADX3E8XZpbLkkTYo0joAG5JCvzbmSrncMuyk70NtVFKlfqHxy
-cvTUWVeW4Fhj8F+nq2tVyQ/vkuer7gsde8MpajXEkiW2+echRiXuqrNyhkiQGEnekF9hxsTo1HEJ
-Vc5xfrRFzkg/por6SFR1s4ZBuiFxnFbzpdXZ8o5lcspKUsJLpx4FBy2hafN1Viohbli3CQjN90wG
-e0zat7ZlT4ADtwdN3QTGCI3y19V5e/kXcla6oaOfXGoLuy68D5cJdKUtnUB83jRfMzA3I9urTNtA
-YxphoA4+plIH/AX17kW9GWMpH/WAvgqYMPxUQ1ek9EuztnBZDE3aTrfKm6iXkkSTRN02lXYqnWEk
-SWxMci3JAysP7b3gNj9o+rl0v7SU9oH3qWvMFrMCiIT1paD9VcApXycLn0CALyEpRGZ4mB6LOLiE
-x/Bv2hxeZbn1IJBr13kjDLrrAeno0o7ZKa8tIiPQLZwxzMdTnRJtd6MWQuh1536ty1OvOM7SLDH1
-gbZ0dZqeb7Z1Zk8xvNbBMfZ5xMKMBFCtkH474aS7KfcV9tpWt8orwzde99FGxtkcf5HF7fZjEPQT
-wYNRWtaxK0yCQ9r39Xl7FZgRz1d2NJggbdFXx5LyYI8nEP+VXRHlwV8FeVykCZWPHX581qN69kD8
-tkdHHv896zX26XKueII+VBWbtHN3MhetR+67qouNKjb5oG490xiaBBkvQ27y97ztcetJGOikvHd2
-Pn6r0mLvN/o2EnjKuBIA0Cn0hpQKxyJ/j0WIYxo3IGxnuo885uRRFLgKUWgMQhePIacnTm1KMUrU
-oRwh+YTjD2V6B8XxhfNurOQ7xEA6gFhNEg+g7C7dsHVrQP11T92hGP6Es8ZWoHbQRv0vm+1TtcVI
-Vg+9bYOME4C6GxXRpKn8CdgvFncP2D8x7xqDOqt06XwMaYDuC1pHNtUaKq7FS94WxQRC1NgPOluP
-8YgurpTt8Kc1k0i03yHHNPTR7bUwaW5/9S8biwabgqmXC2LMw6jbkFLuA64rtsYPuqVn/+7km1HJ
-0c/t99vzib6YIWiw2K7xDqXadON9iw/qIatBi/rQ7iwX8Y7ljqKFCwmMXwYFzdNI68wNtlyxFNaE
-uF2E/2eDxP0Na0KcKW+i3iY6zg2RCZOmvAsCfvMnbteFvZWd9+B0bQaM2xyC40fe6YK6BfNgOk6J
-4/x1IBuJ+SVJechNNofuVuNtdHM2j9AcVbwhWzEEDkwErIkNftXqWLN0b6UsPaxNbKnhGR3isSum
-L+muEuJds90C3NMB+5sTA2aiy4roJwDdU+yX9eYf+TUt7WgQJE9Xp/cmb4mV2CX0pZJleXLo0Ncl
-46mWzE29/LyV5dJGx6V1HrjlpZWBOAmTyMet+IoIk9oZFyeToAxOTI2gz/xNVfjOcFNyvHrtGq9x
-2XJ43qRf0RgolFPReKI//rWxeaTsalGKAbIbuBDBpCYv48xttstXf5rdYDPtLvuKpeTOyEkrkxbm
-cCpg++vvPKf4sPCQe/rWAU4b4nQKpPsPJv1I/CGfQ1ZiJCUWts/PVRQE0k7cQAJGC9YfYPwxm7R9
-Fx0fInLVmFSqovZdseaA0jkayW6/FSfd5L1R7Z8cqXquIdZQTDl2lDw0eWTKhU9xMBClGrt/3+3r
-gUWzbba5ASxSM28n2ANFzWLk4tAgnCSmxFPIzRHvWG+zFYviK8UaAxCTL7PK7whpWbJUXi4CwpBx
-P1IKwWADlHpctZ5DQEz8KV/we3Z59zuC5W9b7uxPJ5fZmmTS/1HeYvA99Jeb059e08YaRroiuXsG
-0ba56YC7HhIujTbijQSrb+R1ZQGH60HrtgaQrWglQTHqCVAn/0sOuQ4cRrp81NI0ZgfN4uM/Rr3J
-hDbsoQtv/1HoxO/PXyBYgecKJRwr/O2TZ5TxtrSqsT9KIrX8SjPlehHdRszHyBBKTRv4QP38qY0m
-eGFK0kfoCyDp+yGSCo8fhsNkcILcQbxjVCwrHXXr/6xhKH9Qu2is6Z1f1Mb4xGm8wk7x953dIyCr
-urCRlLC3fdye6qCAzARmAWIjPYiCw8AtlN2T3N3n+gCztpAY6zoYzGVa/6CWC4RPt46/i5InzxCT
-TESHB6fk1TJZ8Nb2xgqUqqGtKU7deo2itTKqvheNc+tRPSKdde0+JCvK23xhurlyDGQP6B8ztGt7
-wXCuCdMIdgCttXeP7/rp4v32+EvSYcVPZtg8wiKtR8qpDmfwNzuNwGeNUq4qrEZquY77rO59/nTy
-R0FzFHNBYX30OvBpgP4X56PticnU87GS/HMPRvEDfA6K8g6TYw3zyy4qloN37LNLN4DxUSAGOUc0
-gBbsHHrQ8pXVgWHAA8haXkSbLyU6KPilpGOSEK6kV6Tfo5qRQ9dGpZi/cjGxqF9xIgk3eM42UmWT
-JV2cY4KSwzVjlq8WEEfkzOsewIl/9aG3vNfDscVZwhZLOU8GZe7qE1WW4ZzvHnHBEu+F5pcfax4C
-aISUYodwaytICbpma+ktvD8E2R0ihcSg6u2CmPFFx9/LVTKGvWO3WGtTG8VNzUIMkVaaIYMQV5xV
-zSADPVc1gJZzBnamgif1aoZG4ZVUdIv1x2WSlF+BzIM5dXCNXzJvtz6MT+mzg/KBzKflO81xQBlN
-aS1bD06EkOFKzfu3+QCmLJQz1JSQhyLrKgTkO22Cirr98gZD8QmCTp1F9FdoerB6c/718Luw/HdB
-8pSZA6gahpzhxG29kLPmU3wBe0NiX01Wd1V1baZ036VyBx+KWgDII1mJRMjGHIr852C3PXrb/CfE
-TAYxq5xmhpEev0PBI9sFX7o0hjA3Ys1GtL1PwfH+48KvFRrp0m8QzUUJ3SjhT2yAKNv6FQTMNCV/
-4n5b/a5vc0Gvu8OipwISnaGx1apWJIRRCd8uOsIij3w0cZVFQs6GHADWNM7Aw0nNE/qAhvyFghcQ
-q9jFIiG42H9ZnFD5BgfQC6Fot0LXY6XDvtyvYvycycr3blYb19zSGIUcQnJhkeD/SyiJa7e/LMiC
-xQug9r5I5Ifd4iK+cqFeNR/WbRXoZmHbaAvJC8gUxFIZGZVV/Z+ZGFMtgLEXgVuLx/AfJOmvYYaM
-zcX3kL7oP711rNFFh0l7Ud1WylzdHuHuuLXF1ebSRVtTD8/z1aZB+sZ50jy8ZNMBtDPah2vgV2sM
-vwLrgXJQOIjZdK/9jdDckn+xVtnfWL8ayk0CndDtJI6Ec7CEGcI1KfUANGrEWCREJT8zIEE6dMmk
-JKOoIVREQ4FmtxipJW8unpQad7ZAub+bumz1o1QKsAJA98qTc8nJ6MVWzWhI7eoT7sMSHV2optHT
-hp7vh+bvZGLwH/TscjQTWsJnCoOkkyzQam/n1x5+wtvD8Hjs29W0OlbVwfwIgcdDC+zFeoBJkYWP
-sTs4ixLOXYm8M/tQufMNkGgK+hepnjDgQ0zqs9ckpdTHoDgqkBDjWZga
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * This class is an iterator that will iterate only over enabled resources
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Profile_Iterator_ContextFilter extends RecursiveFilterIterator
+{
+    
+    /**
+     * @var array 
+     */
+    protected $_acceptTypes = array();
+    
+    /**
+     * @var array 
+     */
+    protected $_denyTypes   = array();
+    
+    /**
+     * @var array 
+     */
+    protected $_acceptNames = array();
+    
+    /**
+     * @var array 
+     */
+    protected $_denyNames   = array();
+    
+    /**
+     * @var array 
+     */
+    protected $_rawOptions = array();
+    
+    /**
+     * __construct()
+     *
+     * @param RecursiveIterator $iterator
+     * @param array $options
+     */
+    public function __construct(RecursiveIterator $iterator, $options = array())
+    {
+        parent::__construct($iterator);
+        $this->_rawOptions = $options;
+        if ($options) {
+            $this->setOptions($options);
+        }
+    }
+    
+    /**
+     * setOptions()
+     *
+     * @param array $options
+     */
+    public function setOptions(Array $options)
+    {
+        foreach ($options as $optionName => $optionValue) {
+            if (substr($optionName, -1, 1) != 's') {
+                $optionName .= 's';
+            }
+            if (method_exists($this, 'set' . $optionName)) {
+                $this->{'set' . $optionName}($optionValue);
+            }
+        }
+    }
+    
+    /**
+     * setAcceptTypes()
+     *
+     * @param array|string $acceptTypes
+     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
+     */
+    public function setAcceptTypes($acceptTypes)
+    {
+        if (!is_array($acceptTypes)) {
+            $acceptTypes = array($acceptTypes);
+        }
+        
+        $this->_acceptTypes = $acceptTypes;
+        return $this;
+    }
+    
+    /**
+     * setDenyTypes()
+     *
+     * @param array|string $denyTypes
+     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
+     */
+    public function setDenyTypes($denyTypes)
+    {
+        if (!is_array($denyTypes)) {
+            $denyTypes = array($denyTypes);
+        }
+        
+        $this->_denyTypes = $denyTypes;
+        return $this;
+    }
+    
+    /**
+     * setAcceptNames()
+     *
+     * @param array|string $acceptNames
+     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
+     */
+    public function setAcceptNames($acceptNames)
+    {
+        if (!is_array($acceptNames)) {
+            $acceptNames = array($acceptNames);
+        }
+        
+        $this->_acceptNames = $acceptNames;
+        return $this;
+    }
+    
+    /**
+     * setDenyNames()
+     *
+     * @param array|string $denyNames
+     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
+     */
+    public function setDenyNames($denyNames)
+    {
+        if (!is_array($denyNames)) {
+            $denyNames = array($denyNames);
+        }
+        
+        $this->_denyNames = $denyNames;
+        return $this;
+    }
+    
+    /**
+     * accept() is required by teh RecursiveFilterIterator
+     *
+     * @return bool
+     */
+    public function accept()
+    {
+        $currentItem = $this->current();
+        
+        if (in_array($currentItem->getName(), $this->_acceptNames)) {
+            return true;
+        } elseif (in_array($currentItem->getName(), $this->_denyNames)) {
+            return false;
+        }
+        
+        foreach ($this->_acceptTypes as $acceptType) {
+            if ($currentItem->getContent() instanceof $acceptType) {
+                return true;
+            }
+        }
+        
+        foreach ($this->_denyTypes as $denyType) {
+            if ($currentItem->getContext() instanceof $denyType) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    /**
+     * getChildren()
+     * 
+     * This is here due to a bug/design issue in PHP
+     * @link 
+     *
+     * @return unknown
+     */
+    function getChildren()
+    {
+
+        if (empty($this->ref)) {
+            $this->ref = new ReflectionClass($this);
+        }
+
+        return $this->ref->newInstance($this->getInnerIterator()->getChildren(), $this->_rawOptions);
+    }
+    
+}

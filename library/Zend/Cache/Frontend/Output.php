@@ -1,40 +1,105 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Jvi51xmWKsWet8Ii0NEMOW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Core
+ */
+require_once 'Zend/Cache/Core.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Frontend_Output extends Zend_Cache_Core
+{
+
+    private $_idStack = array();
+
+    /**
+     * Constructor
+     *
+     * @param  array $options Associative array of options
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        parent::__construct($options);
+        $this->_idStack = array();
+    }
+
+    /**
+     * Start the cache
+     *
+     * @param  string  $id                     Cache id
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @param  boolean $echoData               If set to true, datas are sent to the browser if the cache is hit (simpy returned else)
+     * @return mixed True if the cache is hit (false else) with $echoData=true (default) ; string else (datas)
+     */
+    public function start($id, $doNotTestCacheValidity = false, $echoData = true)
+    {
+        $data = $this->load($id, $doNotTestCacheValidity);
+        if ($data !== false) {
+            if ( $echoData ) {
+                echo($data);
+                return true;
+            } else {
+                return $data;
+            }
+        }
+        ob_start();
+        ob_implicit_flush(false);
+        $this->_idStack[] = $id;
+        return false;
+    }
+
+    /**
+     * Stop the cache
+     *
+     * @param  array   $tags             Tags array
+     * @param  int     $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @param  string  $forcedDatas      If not null, force written datas with this
+     * @param  boolean $echoData         If set to true, datas are sent to the browser
+     * @param  int     $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends
+     * @return void
+     */
+    public function end($tags = array(), $specificLifetime = false, $forcedDatas = null, $echoData = true, $priority = 8)
+    {
+        if ($forcedDatas === null) {
+            $data = ob_get_contents();
+            ob_end_clean();
+        } else {
+            $data =& $forcedDatas;
+        }
+        $id = array_pop($this->_idStack);
+        if ($id === null) {
+            Zend_Cache::throwException('use of end() without a start()');
+        }
+        $this->save($data, $id, $tags, $specificLifetime, $priority);
+        if ($echoData) {
+            echo($data);
+        }
+    }
+
+}

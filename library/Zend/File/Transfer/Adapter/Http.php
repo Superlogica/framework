@@ -1,187 +1,442 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-OQkCZh7JvcTEuN7iG3UtL/s1tcfM48MXoT57aW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_File_Transfer
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+require_once 'Zend/File/Transfer/Adapter/Abstract.php';
+
+/**
+ * File transfer adapter class for the HTTP protocol
+ *
+ * @category  Zend
+ * @package   Zend_File_Transfer
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_File_Transfer_Adapter_Http extends Zend_File_Transfer_Adapter_Abstract
+{
+    protected static $_callbackApc            = 'apc_fetch';
+    protected static $_callbackUploadProgress = 'uploadprogress_get_info';
+
+    /**
+     * Constructor for Http File Transfers
+     *
+     * @param array $options OPTIONAL Options to set
+     */
+    public function __construct($options = array())
+    {
+        if (ini_get('file_uploads') == false) {
+            require_once 'Zend/File/Transfer/Exception.php';
+            throw new Zend_File_Transfer_Exception('File uploads are not allowed in your php config!');
+        }
+
+        $this->_files = $this->_prepareFiles($_FILES);
+        $this->addValidator('Upload', false, $this->_files);
+
+        if (is_array($options)) {
+            $this->setOptions($options);
+        }
+    }
+
+    /**
+     * Sets a validator for the class, erasing all previous set
+     *
+     * @param  string|array $validator Validator to set
+     * @param  string|array $files     Files to limit this validator to
+     * @return Zend_File_Transfer_Adapter
+     */
+    public function setValidators(array $validators, $files = null)
+    {
+        $this->clearValidators();
+        return $this->addValidators($validators, $files);
+    }
+
+    /**
+     * Remove an individual validator
+     *
+     * @param  string $name
+     * @return Zend_File_Transfer_Adapter_Abstract
+     */
+    public function removeValidator($name)
+    {
+        if ($name == 'Upload') {
+            return $this;
+        }
+
+        return parent::removeValidator($name);
+    }
+
+    /**
+     * Remove an individual validator
+     *
+     * @param  string $name
+     * @return Zend_File_Transfer_Adapter_Abstract
+     */
+    public function clearValidators()
+    {
+        parent::clearValidators();
+        $this->addValidator('Upload', false, $this->_files);
+
+        return $this;
+    }
+
+    /**
+     * Send the file to the client (Download)
+     *
+     * @param  string|array $options Options for the file(s) to send
+     * @return void
+     * @throws Zend_File_Transfer_Exception Not implemented
+     */
+    public function send($options = null)
+    {
+        require_once 'Zend/File/Transfer/Exception.php';
+        throw new Zend_File_Transfer_Exception('Method not implemented');
+    }
+
+    /**
+     * Checks if the files are valid
+     *
+     * @param  string|array $files (Optional) Files to check
+     * @return boolean True if all checks are valid
+     */
+    public function isValid($files = null)
+    {
+        // Workaround for a PHP error returning empty $_FILES when form data exceeds php settings
+        if (empty($this->_files) && ($_SERVER['CONTENT_LENGTH'] > 0)) {
+            if (is_array($files)) {
+                $files = current($files);
+            }
+
+            $temp = array($files => array(
+                'name'  => $files,
+                'error' => 1));
+            $validator = $this->_validators['Zend_Validate_File_Upload'];
+            $validator->setFiles($temp)
+                      ->isValid($files, null);
+            $this->_messages += $validator->getMessages();
+            return false;
+        }
+
+        return parent::isValid($files);
+    }
+
+    /**
+     * Receive the file from the client (Upload)
+     *
+     * @param  string|array $files (Optional) Files to receive
+     * @return bool
+     */
+    public function receive($files = null)
+    {
+        if (!$this->isValid($files)) {
+            return false;
+        }
+
+        $check = $this->_getFiles($files);
+        foreach ($check as $file => $content) {
+            if (!$content['received']) {
+                $directory   = '';
+                $destination = $this->getDestination($file);
+                if ($destination !== null) {
+                    $directory = $destination . DIRECTORY_SEPARATOR;
+                }
+
+                $filename = $directory . $content['name'];
+                $rename   = $this->getFilter('Rename');
+                if ($rename !== null) {
+                    $filename = $rename->getNewName($content['tmp_name']);
+                    $key      = array_search(get_class($rename), $this->_files[$file]['filters']);
+                    unset($this->_files[$file]['filters'][$key]);
+                }
+
+                // Should never return false when it's tested by the upload validator
+                if (!move_uploaded_file($content['tmp_name'], $filename)) {
+                    if ($content['options']['ignoreNoFile']) {
+                        $this->_files[$file]['received'] = true;
+                        $this->_files[$file]['filtered'] = true;
+                        continue;
+                    }
+
+                    $this->_files[$file]['received'] = false;
+                    return false;
+                }
+
+                if ($rename !== null) {
+                    $this->_files[$file]['destination'] = dirname($filename);
+                    $this->_files[$file]['name']        = basename($filename);
+                }
+
+                $this->_files[$file]['tmp_name'] = $filename;
+                $this->_files[$file]['received'] = true;
+            }
+
+            if (!$content['filtered']) {
+                if (!$this->_filter($file)) {
+                    $this->_files[$file]['filtered'] = false;
+                    return false;
+                }
+
+                $this->_files[$file]['filtered'] = true;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Checks if the file was already sent
+     *
+     * @param  string|array $file Files to check
+     * @return bool
+     * @throws Zend_File_Transfer_Exception Not implemented
+     */
+    public function isSent($files = null)
+    {
+        require_once 'Zend/File/Transfer/Exception.php';
+        throw new Zend_File_Transfer_Exception('Method not implemented');
+    }
+
+    /**
+     * Checks if the file was already received
+     *
+     * @param  string|array $files (Optional) Files to check
+     * @return bool
+     */
+    public function isReceived($files = null)
+    {
+        $files = $this->_getFiles($files, false, true);
+        if (empty($files)) {
+            return false;
+        }
+
+        foreach ($files as $content) {
+            if ($content['received'] !== true) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Checks if the file was already filtered
+     *
+     * @param  string|array $files (Optional) Files to check
+     * @return bool
+     */
+    public function isFiltered($files = null)
+    {
+        $files = $this->_getFiles($files, false, true);
+        if (empty($files)) {
+            return false;
+        }
+
+        foreach ($files as $content) {
+            if ($content['filtered'] !== true) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Has a file been uploaded ?
+     *
+     * @param  array|string|null $file
+     * @return bool
+     */
+    public function isUploaded($files = null)
+    {
+        $files = $this->_getFiles($files, false, true);
+        if (empty($files)) {
+            return false;
+        }
+
+        foreach ($files as $file) {
+            if (empty($file['name'])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Returns the actual progress of file up-/downloads
+     *
+     * @param  string $id The upload to get the progress for
+     * @return array|null
+     */
+    public static function getProgress($id = null)
+    {
+        if (!function_exists('apc_fetch') and !function_exists('uploadprogress_get_info')) {
+            require_once 'Zend/File/Transfer/Exception.php';
+            throw new Zend_File_Transfer_Exception('Wether APC nor uploadprogress extension installed');
+        }
+
+        $session = 'Zend_File_Transfer_Adapter_Http_ProgressBar';
+        $status  = array(
+            'total'    => 0,
+            'current'  => 0,
+            'rate'     => 0,
+            'message'  => '',
+            'done'     => false
+        );
+
+        if (is_array($id)) {
+            if (isset($id['progress'])) {
+                $adapter = $id['progress'];
+            }
+
+            if (isset($id['session'])) {
+                $session = $id['session'];
+            }
+
+            if (isset($id['id'])) {
+                $id = $id['id'];
+            } else {
+                unset($id);
+            }
+        }
+
+        if (!empty($id) && (($id instanceof Zend_ProgressBar_Adapter) || ($id instanceof Zend_ProgressBar))) {
+            $adapter = $id;
+            unset($id);
+        }
+
+        if (empty($id)) {
+            if (!isset($_GET['progress_key'])) {
+                $status['message'] = 'No upload in progress';
+                $status['done']    = true;
+            } else {
+                $id = $_GET['progress_key'];
+            }
+        }
+
+        if (!empty($id)) {
+            if (self::isApcAvailable()) {
+
+                $call = call_user_func(self::$_callbackApc, 'upload_' . $id);
+                if (is_array($call)) {
+                    $status = $call + $status;
+                }
+            } else if (self::isUploadProgressAvailable()) {
+                $call = call_user_func(self::$_callbackUploadProgress, $id);
+                if (is_array($call)) {
+                    $status = $call + $status;
+                    $status['total']   = $status['bytes_total'];
+                    $status['current'] = $status['bytes_uploaded'];
+                    $status['rate']    = $status['speed_average'];
+                    if ($status['total'] == $status['current']) {
+                        $status['done'] = true;
+                    }
+                }
+            }
+
+            if (!is_array($call)) {
+                $status['done']    = true;
+                $status['message'] = 'Failure while retrieving the upload progress';
+            } else if (!empty($status['cancel_upload'])) {
+                $status['done']    = true;
+                $status['message'] = 'The upload has been canceled';
+            } else {
+                $status['message'] = self::_toByteString($status['current']) . " - " . self::_toByteString($status['total']);
+            }
+
+            $status['id'] = $id;
+        }
+
+        if (isset($adapter) && isset($status['id'])) {
+            if ($adapter instanceof Zend_ProgressBar_Adapter) {
+                require_once 'Zend/ProgressBar.php';
+                $adapter = new Zend_ProgressBar($adapter, 0, $status['total'], $session);
+            }
+
+            if (!($adapter instanceof Zend_ProgressBar)) {
+                require_once 'Zend/File/Transfer/Exception.php';
+                throw new Zend_File_Transfer_Exception('Unknown Adapter given');
+            }
+
+            if ($status['done']) {
+                $adapter->finish();
+            } else {
+                $adapter->update($status['current'], $status['message']);
+            }
+
+            $status['progress'] = $adapter;
+        }
+
+        return $status;
+    }
+
+    /**
+     * Checks the APC extension for progress information
+     *
+     * @return boolean
+     */
+    public static function isApcAvailable()
+    {
+        return (bool) ini_get('apc.enabled') && (bool) ini_get('apc.rfc1867') && is_callable(self::$_callbackApc);
+    }
+
+    /**
+     * Checks the UploadProgress extension for progress information
+     *
+     * @return boolean
+     */
+    public static function isUploadProgressAvailable()
+    {
+        return is_callable(self::$_callbackUploadProgress);
+    }
+
+    /**
+     * Prepare the $_FILES array to match the internal syntax of one file per entry
+     *
+     * @param  array $files
+     * @return array
+     */
+    protected function _prepareFiles(array $files = array())
+    {
+        $result = array();
+        foreach ($files as $form => $content) {
+            if (is_array($content['name'])) {
+                foreach ($content as $param => $file) {
+                    foreach ($file as $number => $target) {
+                        $result[$form . '_' . $number . '_'][$param]      = $target;
+                        $result[$form . '_' . $number . '_']['options']   = $this->_options;
+                        $result[$form . '_' . $number . '_']['validated'] = false;
+                        $result[$form . '_' . $number . '_']['received']  = false;
+                        $result[$form . '_' . $number . '_']['filtered']  = false;
+                        $result[$form]['multifiles'][$number] = $form . '_' . $number . '_';
+                        $result[$form]['name'] = $form;
+                    }
+                }
+            } else {
+                $result[$form]              = $content;
+                $result[$form]['options']   = $this->_options;
+                $result[$form]['validated'] = false;
+                $result[$form]['received']  = false;
+                $result[$form]['filtered']  = false;
+            }
+        }
+
+        return $result;
+    }
+}

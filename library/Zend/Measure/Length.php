@@ -1,130 +1,674 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Length.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling length conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Length
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Length extends Zend_Measure_Abstract
+{
+    const STANDARD = 'METER';
+
+    const AGATE                 = 'AGATE';
+    const ALEN_DANISH           = 'ALEN_DANISH';
+    const ALEN                  = 'ALEN';
+    const ALEN_SWEDISH          = 'ALEN_SWEDISH';
+    const ANGSTROM              = 'ANGSTROM';
+    const ARMS                  = 'ARMS';
+    const ARPENT_CANADIAN       = 'ARPENT_CANADIAN';
+    const ARPENT                = 'ARPENT';
+    const ARSHEEN               = 'ARSHEEN';
+    const ARSHIN                = 'ARSHIN';
+    const ARSHIN_IRAQ           = 'ARSHIN_IRAQ';
+    const ASTRONOMICAL_UNIT     = 'ASTRONOMICAL_UNIT';
+    const ATTOMETER             = 'ATTOMETER';
+    const BAMBOO                = 'BAMBOO';
+    const BARLEYCORN            = 'BARLEYCORN';
+    const BEE_SPACE             = 'BEE_SPACE';
+    const BICRON                = 'BICRON';
+    const BLOCK_US_EAST         = 'BLOCK_US_EAST';
+    const BLOCK_US_WEST         = 'BLOCK_US_WEST';
+    const BLOCK_US_SOUTH        = 'BLOCK_US_SOUTH';
+    const BOHR                  = 'BOHR';
+    const BRACCIO               = 'BRACCIO';
+    const BRAZA_ARGENTINA       = 'BRAZA_ARGENTINA';
+    const BRAZA                 = 'BRAZA';
+    const BRAZA_US              = 'BRAZA_US';
+    const BUTTON                = 'BUTTON';
+    const CABLE_US              = 'CABLE_US';
+    const CABLE_UK              = 'CABLE_UK';
+    const CALIBER               = 'CALIBER';
+    const CANA                  = 'CANA';
+    const CAPE_FOOT             = 'CAPE_FOOT';
+    const CAPE_INCH             = 'CAPE_INCH';
+    const CAPE_ROOD             = 'CAPE_ROOD';
+    const CENTIMETER            = 'CENTIMETER';
+    const CHAIN                 = 'CHAIN';
+    const CHAIN_ENGINEER        = 'CHAIN_ENGINEER';
+    const CHIH                  = 'CHIH';
+    const CHINESE_FOOT          = 'CHINESE_FOOT';
+    const CHINESE_INCH          = 'CHINESE_INCH';
+    const CHINESE_MILE          = 'CHINESE_MILE';
+    const CHINESE_YARD          = 'CHINESE_YARD';
+    const CITY_BLOCK_US_EAST    = 'CITY_BLOCK_US_EAST';
+    const CITY_BLOCK_US_WEST    = 'CITY_BLOCK_US_WEST';
+    const CITY_BLOCK_US_SOUTH   = 'CITY_BLOCK_US_SOUTH';
+    const CLICK                 = 'CLICK';
+    const CUADRA                = 'CUADRA';
+    const CUADRA_ARGENTINA      = 'CUADRA_ARGENTINA';
+    const CUBIT_EGYPT           = 'Length:CUBIT_EGYPT';
+    const CUBIT_ROYAL           = 'CUBIT_ROYAL';
+    const CUBIT_UK              = 'CUBIT_UK';
+    const CUBIT                 = 'CUBIT';
+    const CUERDA                = 'CUERDA';
+    const DECIMETER             = 'DECIMETER';
+    const DEKAMETER             = 'DEKAMETER';
+    const DIDOT_POINT           = 'DIDOT_POINT';
+    const DIGIT                 = 'DIGIT';
+    const DIRAA                 = 'DIRAA';
+    const DONG                  = 'DONG';
+    const DOUZIEME_WATCH        = 'DOUZIEME_WATCH';
+    const DOUZIEME              = 'DOUZIEME';
+    const DRA_IRAQ              = 'DRA_IRAQ';
+    const DRA                   = 'DRA';
+    const EL                    = 'EL';
+    const ELL                   = 'ELL';
+    const ELL_SCOTTISH          = 'ELL_SCOTTISH';
+    const ELLE                  = 'ELLE';
+    const ELLE_VIENNA           = 'ELLE_VIENNA';
+    const EM                    = 'EM';
+    const ESTADIO_PORTUGAL      = 'ESTADIO_PORTUGAL';
+    const ESTADIO               = 'ESTADIO';
+    const EXAMETER              = 'EXAMETER';
+    const FADEN_AUSTRIA         = 'FADEN_AUSTRIA';
+    const FADEN                 = 'FADEN';
+    const FALL                  = 'FALL';
+    const FALL_SCOTTISH         = 'FALL_SCOTTISH';
+    const FATHOM                = 'FATHOM';
+    const FATHOM_ANCIENT        = 'FATHOM_ANCIENT';
+    const FAUST                 = 'FAUST';
+    const FEET_OLD_CANADIAN     = 'FEET_OLD_CANADIAN';
+    const FEET_EGYPT            = 'FEET_EGYPT';
+    const FEET_FRANCE           = 'FEET_FRANCE';
+    const FEET                  = 'FEET';
+    const FEET_IRAQ             = 'FEET_IRAQ';
+    const FEET_NETHERLAND       = 'FEET_NETHERLAND';
+    const FEET_ITALIC           = 'FEET_ITALIC';
+    const FEET_SURVEY           = 'FEET_SURVEY';
+    const FEMTOMETER            = 'FEMTOMETER';
+    const FERMI                 = 'FERMI';
+    const FINGER                = 'FINGER';
+    const FINGERBREADTH         = 'FINGERBREADTH';
+    const FIST                  = 'FIST';
+    const FOD                   = 'FOD';
+    const FOOT_EGYPT            = 'FOOT_EGYPT';
+    const FOOT_FRANCE           = 'FOOT_FRANCE';
+    const FOOT                  = 'FOOT';
+    const FOOT_IRAQ             = 'FOOT_IRAQ';
+    const FOOT_NETHERLAND       = 'FOOT_NETHERLAND';
+    const FOOT_ITALIC           = 'FOOT_ITALIC';
+    const FOOT_SURVEY           = 'FOOT_SURVEY';
+    const FOOTBALL_FIELD_CANADA = 'FOOTBALL_FIELD_CANADA';
+    const FOOTBALL_FIELD_US     = 'FOOTBALL_FIELD_US';
+    const FOOTBALL_FIELD        = 'FOOTBALL_FIELD';
+    const FURLONG               = 'FURLONG';
+    const FURLONG_SURVEY        = 'FURLONG_SURVEY';
+    const FUSS                  = 'FUSS';
+    const GIGAMETER             = 'GIGAMETER';
+    const GIGAPARSEC            = 'GIGAPARSEC';
+    const GNATS_EYE             = 'GNATS_EYE';
+    const GOAD                  = 'GOAD';
+    const GRY                   = 'GRY';
+    const HAIRS_BREADTH         = 'HAIRS_BREADTH';
+    const HAND                  = 'HAND';
+    const HANDBREADTH           = 'HANDBREADTH';
+    const HAT                   = 'HAT';
+    const HECTOMETER            = 'HECTOMETER';
+    const HEER                  = 'HEER';
+    const HIRO                  = 'HIRO';
+    const HUBBLE                = 'HUBBLE';
+    const HVAT                  = 'HVAT';
+    const INCH                  = 'INCH';
+    const IRON                  = 'IRON';
+    const KEN                   = 'KEN';
+    const KERAT                 = 'KERAT';
+    const KILOFOOT              = 'KILOFOOT';
+    const KILOMETER             = 'KILOMETER';
+    const KILOPARSEC            = 'KILOPARSEC';
+    const KILOYARD              = 'KILOYARD';
+    const KIND                  = 'KIND';
+    const KLAFTER               = 'KLAFTER';
+    const KLAFTER_SWISS         = 'KLAFTER_SWISS';
+    const KLICK                 = 'KLICK';
+    const KYU                   = 'KYU';
+    const LAP_ANCIENT           = 'LAP_ANCIENT';
+    const LAP                   = 'LAP';
+    const LAP_POOL              = 'LAP_POOL';
+    const LEAGUE_ANCIENT        = 'LEAGUE_ANCIENT';
+    const LEAGUE_NAUTIC         = 'LEAGUE_NAUTIC';
+    const LEAGUE_UK_NAUTIC      = 'LEAGUE_UK_NAUTIC';
+    const LEAGUE                = 'LEAGUE';
+    const LEAGUE_US             = 'LEAGUE_US';
+    const LEAP                  = 'LEAP';
+    const LEGOA                 = 'LEGOA';
+    const LEGUA                 = 'LEGUA';
+    const LEGUA_US              = 'LEGUA_US';
+    const LEGUA_SPAIN_OLD       = 'LEGUA_SPAIN_OLD';
+    const LEGUA_SPAIN           = 'LEGUA_SPAIN';
+    const LI_ANCIENT            = 'LI_ANCIENT';
+    const LI_IMPERIAL           = 'LI_IMPERIAL';
+    const LI                    = 'LI';
+    const LIEUE                 = 'LIEUE';
+    const LIEUE_METRIC          = 'LIEUE_METRIC';
+    const LIEUE_NAUTIC          = 'LIEUE_NAUTIC';
+    const LIGHT_SECOND          = 'LIGHT_SECOND';
+    const LIGHT_MINUTE          = 'LIGHT_MINUTE';
+    const LIGHT_HOUR            = 'LIGHT_HOUR';
+    const LIGHT_DAY             = 'LIGHT_DAY';
+    const LIGHT_YEAR            = 'LIGHT_YEAR';
+    const LIGNE                 = 'LIGNE';
+    const LIGNE_SWISS           = 'LIGNE_SWISS';
+    const LINE                  = 'LINE';
+    const LINE_SMALL            = 'LINE_SMALL';
+    const LINK                  = 'LINK';
+    const LINK_ENGINEER         = 'LINK_ENGINEER';
+    const LUG                   = 'LUG';
+    const LUG_GREAT             = 'LUG_GREAT';
+    const MARATHON              = 'MARATHON';
+    const MARK_TWAIN            = 'MARK_TWAIN';
+    const MEGAMETER             = 'MEGAMETER';
+    const MEGAPARSEC            = 'MEGAPARSEC';
+    const MEILE_AUSTRIAN        = 'MEILE_AUSTRIAN';
+    const MEILE                 = 'MEILE';
+    const MEILE_GERMAN          = 'MEILE_GERMAN';
+    const METER                 = 'METER';
+    const METRE                 = 'METRE';
+    const METRIC_MILE           = 'METRIC_MILE';
+    const METRIC_MILE_US        = 'METRIC_MILE_US';
+    const MICROINCH             = 'MICROINCH';
+    const MICROMETER            = 'MICROMETER';
+    const MICROMICRON           = 'MICROMICRON';
+    const MICRON                = 'MICRON';
+    const MIGLIO                = 'MIGLIO';
+    const MIIL                  = 'MIIL';
+    const MIIL_DENMARK          = 'MIIL_DENMARK';
+    const MIIL_SWEDISH          = 'MIIL_SWEDISH';
+    const MIL                   = 'MIL';
+    const MIL_SWEDISH           = 'MIL_SWEDISH';
+    const MILE_UK               = 'MILE_UK';
+    const MILE_IRISH            = 'MILE_IRISH';
+    const MILE                  = 'MILE';
+    const MILE_NAUTIC           = 'MILE_NAUTIC';
+    const MILE_NAUTIC_UK        = 'MILE_NAUTIC_UK';
+    const MILE_NAUTIC_US        = 'MILE_NAUTIC_US';
+    const MILE_ANCIENT          = 'MILE_ANCIENT';
+    const MILE_SCOTTISH         = 'MILE_SCOTTISH';
+    const MILE_STATUTE          = 'MILE_STATUTE';
+    const MILE_US               = 'MILE_US';
+    const MILHA                 = 'MILHA';
+    const MILITARY_PACE         = 'MILITARY_PACE';
+    const MILITARY_PACE_DOUBLE  = 'MILITARY_PACE_DOUBLE';
+    const MILLA                 = 'MILLA';
+    const MILLE                 = 'MILLE';
+    const MILLIARE              = 'MILLIARE';
+    const MILLIMETER            = 'MILLIMETER';
+    const MILLIMICRON           = 'MILLIMICRON';
+    const MKONO                 = 'MKONO';
+    const MOOT                  = 'MOOT';
+    const MYRIAMETER            = 'MYRIAMETER';
+    const NAIL                  = 'NAIL';
+    const NANOMETER             = 'NANOMETER';
+    const NANON                 = 'NANON';
+    const PACE                  = 'PACE';
+    const PACE_ROMAN            = 'PACE_ROMAN';
+    const PALM_DUTCH            = 'PALM_DUTCH';
+    const PALM_UK               = 'PALM_UK';
+    const PALM                  = 'PALM';
+    const PALMO_PORTUGUESE      = 'PALMO_PORTUGUESE';
+    const PALMO                 = 'PALMO';
+    const PALMO_US              = 'PALMO_US';
+    const PARASANG              = 'PARASANG';
+    const PARIS_FOOT            = 'PARIS_FOOT';
+    const PARSEC                = 'PARSEC';
+    const PE                    = 'PE';
+    const PEARL                 = 'PEARL';
+    const PERCH                 = 'PERCH';
+    const PERCH_IRELAND         = 'PERCH_IRELAND';
+    const PERTICA               = 'PERTICA';
+    const PES                   = 'PES';
+    const PETAMETER             = 'PETAMETER';
+    const PICA                  = 'PICA';
+    const PICOMETER             = 'PICOMETER';
+    const PIE_ARGENTINA         = 'PIE_ARGENTINA';
+    const PIE_ITALIC            = 'PIE_ITALIC';
+    const PIE                   = 'PIE';
+    const PIE_US                = 'PIE_US';
+    const PIED_DE_ROI           = 'PIED_DE_ROI';
+    const PIK                   = 'PIK';
+    const PIKE                  = 'PIKE';
+    const POINT_ADOBE           = 'POINT_ADOBE';
+    const POINT                 = 'POINT';
+    const POINT_DIDOT           = 'POINT_DIDOT';
+    const POINT_TEX             = 'POINT_TEX';
+    const POLE                  = 'POLE';
+    const POLEGADA              = 'POLEGADA';
+    const POUCE                 = 'POUCE';
+    const PU                    = 'PU';
+    const PULGADA               = 'PULGADA';
+    const PYGME                 = 'PYGME';
+    const Q                     = 'Q';
+    const QUADRANT              = 'QUADRANT';
+    const QUARTER               = 'QUARTER';
+    const QUARTER_CLOTH         = 'QUARTER_CLOTH';
+    const QUARTER_PRINT         = 'QUARTER_PRINT';
+    const RANGE                 = 'RANGE';
+    const REED                  = 'REED';
+    const RI                    = 'RI';
+    const RIDGE                 = 'RIDGE';
+    const RIVER                 = 'RIVER';
+    const ROD                   = 'ROD';
+    const ROD_SURVEY            = 'ROD_SURVEY';
+    const ROEDE                 = 'ROEDE';
+    const ROOD                  = 'ROOD';
+    const ROPE                  = 'ROPE';
+    const ROYAL_FOOT            = 'ROYAL_FOOT';
+    const RUTE                  = 'RUTE';
+    const SADZHEN               = 'SADZHEN';
+    const SAGENE                = 'SAGENE';
+    const SCOTS_FOOT            = 'SCOTS_FOOT';
+    const SCOTS_MILE            = 'SCOTS_MILE';
+    const SEEMEILE              = 'SEEMEILE';
+    const SHACKLE               = 'SHACKLE';
+    const SHAFTMENT             = 'SHAFTMENT';
+    const SHAFTMENT_ANCIENT     = 'SHAFTMENT_ANCIENT';
+    const SHAKU                 = 'SHAKU';
+    const SIRIOMETER            = 'SIRIOMETER';
+    const SMOOT                 = 'SMOOT';
+    const SPAN                  = 'SPAN';
+    const SPAT                  = 'SPAT';
+    const STADIUM               = 'STADIUM';
+    const STEP                  = 'STEP';
+    const STICK                 = 'STICK';
+    const STORY                 = 'STORY';
+    const STRIDE                = 'STRIDE';
+    const STRIDE_ROMAN          = 'STRIDE_ROMAN';
+    const TENTHMETER            = 'TENTHMETER';
+    const TERAMETER             = 'TERAMETER';
+    const THOU                  = 'THOU';
+    const TOISE                 = 'TOISE';
+    const TOWNSHIP              = 'TOWNSHIP';
+    const T_SUN                 = 'T_SUN';
+    const TU                    = 'TU';
+    const TWAIN                 = 'TWAIN';
+    const TWIP                  = 'TWIP';
+    const U                     = 'U';
+    const VARA_CALIFORNIA       = 'VARA_CALIFORNIA';
+    const VARA_MEXICAN          = 'VARA_MEXICAN';
+    const VARA_PORTUGUESE       = 'VARA_PORTUGUESE';
+    const VARA_AMERICA          = 'VARA_AMERICA';
+    const VARA                  = 'VARA';
+    const VARA_TEXAS            = 'VARA_TEXAS';
+    const VERGE                 = 'VERGE';
+    const VERSHOK               = 'VERSHOK';
+    const VERST                 = 'VERST';
+    const WAH                   = 'WAH';
+    const WERST                 = 'WERST';
+    const X_UNIT                = 'X_UNIT';
+    const YARD                  = 'YARD';
+    const YOCTOMETER            = 'YOCTOMETER';
+    const YOTTAMETER            = 'YOTTAMETER';
+    const ZEPTOMETER            = 'ZEPTOMETER';
+    const ZETTAMETER            = 'ZETTAMETER';
+    const ZOLL                  = 'ZOLL';
+    const ZOLL_SWISS            = 'ZOLL_SWISS';
+
+    /**
+     * Calculations for all length units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'AGATE'           => array(array('' => '0.0254', '/' => '72'), 'agate'),
+        'ALEN_DANISH'     => array('0.6277',           'alen'),
+        'ALEN'            => array('0.6',              'alen'),
+        'ALEN_SWEDISH'    => array('0.5938',           'alen'),
+        'ANGSTROM'        => array('1.0e-10',          'Å'),
+        'ARMS'            => array('0.7',              'arms'),
+        'ARPENT_CANADIAN' => array('58.47',            'arpent'),
+        'ARPENT'          => array('58.471308',        'arpent'),
+        'ARSHEEN'         => array('0.7112',           'arsheen'),
+        'ARSHIN'          => array('1.04',             'arshin'),
+        'ARSHIN_IRAQ'     => array('74.5',             'arshin'),
+        'ASTRONOMICAL_UNIT' => array('149597870691',   'AU'),
+        'ATTOMETER'       => array('1.0e-18',          'am'),
+        'BAMBOO'          => array('3.2',              'bamboo'),
+        'BARLEYCORN'      => array('0.0085',           'barleycorn'),
+        'BEE_SPACE'       => array('0.0065',           'bee space'),
+        'BICRON'          => array('1.0e-12',          '��'),
+        'BLOCK_US_EAST'   => array('80.4672',          'block'),
+        'BLOCK_US_WEST'   => array('100.584',          'block'),
+        'BLOCK_US_SOUTH'  => array('160.9344',         'block'),
+        'BOHR'            => array('52.918e-12',       'a�'),
+        'BRACCIO'         => array('0.7',              'braccio'),
+        'BRAZA_ARGENTINA' => array('1.733',            'braza'),
+        'BRAZA'           => array('1.67',             'braza'),
+        'BRAZA_US'        => array('1.693',            'braza'),
+        'BUTTON'          => array('0.000635',         'button'),
+        'CABLE_US'        => array('219.456',          'cable'),
+        'CABLE_UK'        => array('185.3184',         'cable'),
+        'CALIBER'         => array('0.0254',           'cal'),
+        'CANA'            => array('2',                'cana'),
+        'CAPE_FOOT'       => array('0.314858',         'cf'),
+        'CAPE_INCH'       => array(array('' => '0.314858','/' => '12'), 'ci'),
+        'CAPE_ROOD'       => array('3.778296',         'cr'),
+        'CENTIMETER'      => array('0.01',             'cm'),
+        'CHAIN'           => array(array('' => '79200','/' => '3937'),  'ch'),
+        'CHAIN_ENGINEER'  => array('30.48',            'ch'),
+        'CHIH'            => array('0.35814',          "ch'ih"),
+        'CHINESE_FOOT'    => array('0.371475',         'ft'),
+        'CHINESE_INCH'    => array('0.0371475',        'in'),
+        'CHINESE_MILE'    => array('557.21',           'mi'),
+        'CHINESE_YARD'    => array('0.89154',          'yd'),
+        'CITY_BLOCK_US_EAST'  => array('80.4672',      'block'),
+        'CITY_BLOCK_US_WEST'  => array('100.584',      'block'),
+        'CITY_BLOCK_US_SOUTH' => array('160.9344',     'block'),
+        'CLICK'           => array('1000',             'click'),
+        'CUADRA'          => array('84',               'cuadra'),
+        'CUADRA_ARGENTINA'=> array('130',              'cuadra'),
+        'Length:CUBIT_EGYPT'      => array('0.45',             'cubit'),
+        'CUBIT_ROYAL'     => array('0.5235',           'cubit'),
+        'CUBIT_UK'        => array('0.4572',           'cubit'),
+        'CUBIT'           => array('0.444',            'cubit'),
+        'CUERDA'          => array('21',               'cda'),
+        'DECIMETER'       => array('0.1',              'dm'),
+        'DEKAMETER'       => array('10',               'dam'),
+        'DIDOT_POINT'     => array('0.000377',         'didot point'),
+        'DIGIT'           => array('0.019',            'digit'),
+        'DIRAA'           => array('0.58',             ''),
+        'DONG'            => array(array('' => '7','/' => '300'), 'dong'),
+        'DOUZIEME_WATCH'  => array('0.000188',         'douzi�me'),
+        'DOUZIEME'        => array('0.00017638888889', 'douzi�me'),
+        'DRA_IRAQ'        => array('0.745',            'dra'),
+        'DRA'             => array('0.7112',           'dra'),
+        'EL'              => array('0.69',             'el'),
+        'ELL'             => array('1.143',            'ell'),
+        'ELL_SCOTTISH'    => array('0.945',            'ell'),
+        'ELLE'            => array('0.6',              'ellen'),
+        'ELLE_VIENNA'     => array('0.7793',           'ellen'),
+        'EM'              => array('0.0042175176',     'em'),
+        'ESTADIO_PORTUGAL'=> array('261',              'estadio'),
+        'ESTADIO'         => array('174',              'estadio'),
+        'EXAMETER'        => array('1.0e+18',          'Em'),
+        'FADEN_AUSTRIA'   => array('1.8965',           'faden'),
+        'FADEN'           => array('1.8',              'faden'),
+        'FALL'            => array('6.858',            'fall'),
+        'FALL_SCOTTISH'   => array('5.67',             'fall'),
+        'FATHOM'          => array('1.8288',           'fth'),
+        'FATHOM_ANCIENT'  => array('1.829',            'fth'),
+        'FAUST'           => array('0.10536',          'faust'),
+        'FEET_OLD_CANADIAN' => array('0.325',          'ft'),
+        'FEET_EGYPT'      => array('0.36',             'ft'),
+        'FEET_FRANCE'     => array('0.3248406',        'ft'),
+        'FEET'            => array('0.3048',           'ft'),
+        'FEET_IRAQ'       => array('0.316',            'ft'),
+        'FEET_NETHERLAND' => array('0.28313',          'ft'),
+        'FEET_ITALIC'     => array('0.296',            'ft'),
+        'FEET_SURVEY'     => array(array('' => '1200', '/' => '3937'), 'ft'),
+        'FEMTOMETER'      => array('1.0e-15',          'fm'),
+        'FERMI'           => array('1.0e-15',          'f'),
+        'FINGER'          => array('0.1143',           'finger'),
+        'FINGERBREADTH'   => array('0.01905',          'fingerbreadth'),
+        'FIST'            => array('0.1',              'fist'),
+        'FOD'             => array('0.3141',           'fod'),
+        'FOOT_EGYPT'      => array('0.36',             'ft'),
+        'FOOT_FRANCE'     => array('0.3248406',        'ft'),
+        'FOOT'            => array('0.3048',           'ft'),
+        'FOOT_IRAQ'       => array('0.316',            'ft'),
+        'FOOT_NETHERLAND' => array('0.28313',          'ft'),
+        'FOOT_ITALIC'     => array('0.296',            'ft'),
+        'FOOT_SURVEY'     => array(array('' => '1200', '/' => '3937'), 'ft'),
+        'FOOTBALL_FIELD_CANADA' => array('100.584',    'football field'),
+        'FOOTBALL_FIELD_US'     => array('91.44',      'football field'),
+        'FOOTBALL_FIELD'  => array('109.728',          'football field'),
+        'FURLONG'         => array('201.168',          'fur'),
+        'FURLONG_SURVEY'  => array(array('' => '792000', '/' => '3937'), 'fur'),
+        'FUSS'            => array('0.31608',          'fuss'),
+        'GIGAMETER'       => array('1.0e+9',           'Gm'),
+        'GIGAPARSEC'      => array('30.85678e+24',     'Gpc'),
+        'GNATS_EYE'       => array('0.000125',         "gnat's eye"),
+        'GOAD'            => array('1.3716',           'goad'),
+        'GRY'             => array('0.000211667',      'gry'),
+        'HAIRS_BREADTH'   => array('0.0001',           "hair's breadth"),
+        'HAND'            => array('0.1016',           'hand'),
+        'HANDBREADTH'     => array('0.08',             "hand's breadth"),
+        'HAT'             => array('0.5',              'hat'),
+        'HECTOMETER'      => array('100',              'hm'),
+        'HEER'            => array('73.152',           'heer'),
+        'HIRO'            => array('1.818',            'hiro'),
+        'HUBBLE'          => array('9.4605e+24',       'hubble'),
+        'HVAT'            => array('1.8965',           'hvat'),
+        'INCH'            => array('0.0254',           'in'),
+        'IRON'            => array(array('' => '0.0254', '/' => '48'), 'iron'),
+        'KEN'             => array('1.818',            'ken'),
+        'KERAT'           => array('0.0286',           'kerat'),
+        'KILOFOOT'        => array('304.8',            'kft'),
+        'KILOMETER'       => array('1000',             'km'),
+        'KILOPARSEC'      => array('3.0856776e+19',    'kpc'),
+        'KILOYARD'        => array('914.4',            'kyd'),
+        'KIND'            => array('0.5',              'kind'),
+        'KLAFTER'         => array('1.8965',           'klafter'),
+        'KLAFTER_SWISS'   => array('1.8',              'klafter'),
+        'KLICK'           => array('1000',             'klick'),
+        'KYU'             => array('0.00025',          'kyu'),
+        'LAP_ANCIENT'     => array('402.336',          ''),
+        'LAP'             => array('400',              'lap'),
+        'LAP_POOL'        => array('100',              'lap'),
+        'LEAGUE_ANCIENT'  => array('2275',             'league'),
+        'LEAGUE_NAUTIC'   => array('5556',             'league'),
+        'LEAGUE_UK_NAUTIC'=> array('5559.552',         'league'),
+        'LEAGUE'          => array('4828',             'league'),
+        'LEAGUE_US'       => array('4828.0417',        'league'),
+        'LEAP'            => array('2.0574',           'leap'),
+        'LEGOA'           => array('6174.1',           'legoa'),
+        'LEGUA'           => array('4200',             'legua'),
+        'LEGUA_US'        => array('4233.4',           'legua'),
+        'LEGUA_SPAIN_OLD' => array('4179.4',           'legua'),
+        'LEGUA_SPAIN'     => array('6680',             'legua'),
+        'LI_ANCIENT'      => array('500',              'li'),
+        'LI_IMPERIAL'     => array('644.65',           'li'),
+        'LI'              => array('500',              'li'),
+        'LIEUE'           => array('3898',             'lieue'),
+        'LIEUE_METRIC'    => array('4000',             'lieue'),
+        'LIEUE_NAUTIC'    => array('5556',             'lieue'),
+        'LIGHT_SECOND'    => array('299792458',        'light second'),
+        'LIGHT_MINUTE'    => array('17987547480',      'light minute'),
+        'LIGHT_HOUR'      => array('1079252848800',    'light hour'),
+        'LIGHT_DAY'       => array('25902068371200',   'light day'),
+        'LIGHT_YEAR'      => array('9460528404879000', 'ly'),
+        'LIGNE'           => array('0.0021167',        'ligne'),
+        'LIGNE_SWISS'     => array('0.002256',         'ligne'),
+        'LINE'            => array('0.0021167',        'li'),
+        'LINE_SMALL'      => array('0.000635',         'li'),
+        'LINK'            => array(array('' => '792','/' => '3937'), 'link'),
+        'LINK_ENGINEER'   => array('0.3048',           'link'),
+        'LUG'             => array('5.0292',           'lug'),
+        'LUG_GREAT'       => array('6.4008',           'lug'),
+        'MARATHON'        => array('42194.988',        'marathon'),
+        'MARK_TWAIN'      => array('3.6576074',        'mark twain'),
+        'MEGAMETER'       => array('1000000',          'Mm'),
+        'MEGAPARSEC'      => array('3.085677e+22',     'Mpc'),
+        'MEILE_AUSTRIAN'  => array('7586',             'meile'),
+        'MEILE'           => array('7412.7',           'meile'),
+        'MEILE_GERMAN'    => array('7532.5',           'meile'),
+        'METER'           => array('1',                'm'),
+        'METRE'           => array('1',                'm'),
+        'METRIC_MILE'     => array('1500',             'metric mile'),
+        'METRIC_MILE_US'  => array('1600',             'metric mile'),
+        'MICROINCH'       => array('2.54e-08',         '�in'),
+        'MICROMETER'      => array('0.000001',         '�m'),
+        'MICROMICRON'     => array('1.0e-12',          '��'),
+        'MICRON'          => array('0.000001',         '�'),
+        'MIGLIO'          => array('1488.6',           'miglio'),
+        'MIIL'            => array('7500',             'miil'),
+        'MIIL_DENMARK'    => array('7532.5',           'miil'),
+        'MIIL_SWEDISH'    => array('10687',            'miil'),
+        'MIL'             => array('0.0000254',        'mil'),
+        'MIL_SWEDISH'     => array('10000',            'mil'),
+        'MILE_UK'         => array('1609',             'mi'),
+        'MILE_IRISH'      => array('2048',             'mi'),
+        'MILE'            => array('1609.344',         'mi'),
+        'MILE_NAUTIC'     => array('1852',             'mi'),
+        'MILE_NAUTIC_UK'  => array('1853.184',         'mi'),
+        'MILE_NAUTIC_US'  => array('1852',             'mi'),
+        'MILE_ANCIENT'    => array('1520',             'mi'),
+        'MILE_SCOTTISH'   => array('1814',             'mi'),
+        'MILE_STATUTE'    => array('1609.344',         'mi'),
+        'MILE_US'         => array(array('' => '6336000','/' => '3937'), 'mi'),
+        'MILHA'           => array('2087.3',           'milha'),
+        'MILITARY_PACE'   => array('0.762',            'mil. pace'),
+        'MILITARY_PACE_DOUBLE' => array('0.9144',      'mil. pace'),
+        'MILLA'           => array('1392',             'milla'),
+        'MILLE'           => array('1949',             'mille'),
+        'MILLIARE'        => array('0.001478',         'milliare'),
+        'MILLIMETER'      => array('0.001',            'mm'),
+        'MILLIMICRON'     => array('1.0e-9',           'm�'),
+        'MKONO'           => array('0.4572',           'mkono'),
+        'MOOT'            => array('0.0762',           'moot'),
+        'MYRIAMETER'      => array('10000',            'mym'),
+        'NAIL'            => array('0.05715',          'nail'),
+        'NANOMETER'       => array('1.0e-9',           'nm'),
+        'NANON'           => array('1.0e-9',           'nanon'),
+        'PACE'            => array('1.524',            'pace'),
+        'PACE_ROMAN'      => array('1.48',             'pace'),
+        'PALM_DUTCH'      => array('0.10',             'palm'),
+        'PALM_UK'         => array('0.075',            'palm'),
+        'PALM'            => array('0.2286',           'palm'),
+        'PALMO_PORTUGUESE'=> array('0.22',             'palmo'),
+        'PALMO'           => array('0.20',             'palmo'),
+        'PALMO_US'        => array('0.2117',           'palmo'),
+        'PARASANG'        => array('6000',             'parasang'),
+        'PARIS_FOOT'      => array('0.3248406',        'paris foot'),
+        'PARSEC'          => array('3.0856776e+16',    'pc'),
+        'PE'              => array('0.33324',          'p�'),
+        'PEARL'           => array('0.001757299',      'pearl'),
+        'PERCH'           => array('5.0292',           'perch'),
+        'PERCH_IRELAND'   => array('6.4008',           'perch'),
+        'PERTICA'         => array('2.96',             'pertica'),
+        'PES'             => array('0.2967',           'pes'),
+        'PETAMETER'       => array('1.0e+15',          'Pm'),
+        'PICA'            => array('0.0042175176',     'pi'),
+        'PICOMETER'       => array('1.0e-12',          'pm'),
+        'PIE_ARGENTINA'   => array('0.2889',           'pie'),
+        'PIE_ITALIC'      => array('0.298',            'pie'),
+        'PIE'             => array('0.2786',           'pie'),
+        'PIE_US'          => array('0.2822',           'pie'),
+        'PIED_DE_ROI'     => array('0.3248406',        'pied de roi'),
+        'PIK'             => array('0.71',             'pik'),
+        'PIKE'            => array('0.71',             'pike'),
+        'POINT_ADOBE'     => array(array('' => '0.3048', '/' => '864'), 'pt'),
+        'POINT'           => array('0.00035',          'pt'),
+        'POINT_DIDOT'     => array('0.000377',         'pt'),
+        'POINT_TEX'       => array('0.0003514598035',  'pt'),
+        'POLE'            => array('5.0292',           'pole'),
+        'POLEGADA'        => array('0.02777',          'polegada'),
+        'POUCE'           => array('0.02707',          'pouce'),
+        'PU'              => array('1.7907',           'pu'),
+        'PULGADA'         => array('0.02365',          'pulgada'),
+        'PYGME'           => array('0.346',            'pygme'),
+        'Q'               => array('0.00025',          'q'),
+        'QUADRANT'        => array('10001300',         'quad'),
+        'QUARTER'         => array('402.336',          'Q'),
+        'QUARTER_CLOTH'   => array('0.2286',           'Q'),
+        'QUARTER_PRINT'   => array('0.00025',          'Q'),
+        'RANGE'           => array(array('' => '38016000','/' => '3937'), 'range'),
+        'REED'            => array('2.679',            'reed'),
+        'RI'              => array('3927',             'ri'),
+        'RIDGE'           => array('6.1722',           'ridge'),
+        'RIVER'           => array('2000',             'river'),
+        'ROD'             => array('5.0292',           'rd'),
+        'ROD_SURVEY'      => array(array('' => '19800', '/' => '3937'), 'rd'),
+        'ROEDE'           => array('10',               'roede'),
+        'ROOD'            => array('3.7783',           'rood'),
+        'ROPE'            => array('3.7783',           'rope'),
+        'ROYAL_FOOT'      => array('0.3248406',        'royal foot'),
+        'RUTE'            => array('3.75',             'rute'),
+        'SADZHEN'         => array('2.1336',           'sadzhen'),
+        'SAGENE'          => array('2.1336',           'sagene'),
+        'SCOTS_FOOT'      => array('0.30645',          'scots foot'),
+        'SCOTS_MILE'      => array('1814.2',           'scots mile'),
+        'SEEMEILE'        => array('1852',             'seemeile'),
+        'SHACKLE'         => array('27.432',           'shackle'),
+        'SHAFTMENT'       => array('0.15124',          'shaftment'),
+        'SHAFTMENT_ANCIENT' => array('0.165',          'shaftment'),
+        'SHAKU'           => array('0.303',            'shaku'),
+        'SIRIOMETER'      => array('1.4959787e+17',    'siriometer'),
+        'SMOOT'           => array('1.7018',           'smoot'),
+        'SPAN'            => array('0.2286',           'span'),
+        'SPAT'            => array('1.0e+12',          'spat'),
+        'STADIUM'         => array('185',              'stadium'),
+        'STEP'            => array('0.762',            'step'),
+        'STICK'           => array('3.048',            'stk'),
+        'STORY'           => array('3.3',              'story'),
+        'STRIDE'          => array('1.524',            'stride'),
+        'STRIDE_ROMAN'    => array('1.48',             'stride'),
+        'TENTHMETER'      => array('1.0e-10',          'tenth-meter'),
+        'TERAMETER'       => array('1.0e+12',          'Tm'),
+        'THOU'            => array('0.0000254',        'thou'),
+        'TOISE'           => array('1.949',            'toise'),
+        'TOWNSHIP'        => array(array('' => '38016000','/' => '3937'), 'twp'),
+        'T_SUN'           => array('0.0358',           "t'sun"),
+        'TU'              => array('161130',           'tu'),
+        'TWAIN'           => array('3.6576074',        'twain'),
+        'TWIP'            => array('0.000017639',      'twip'),
+        'U'               => array('0.04445',          'U'),
+        'VARA_CALIFORNIA' => array('0.83820168',       'vara'),
+        'VARA_MEXICAN'    => array('0.83802',          'vara'),
+        'VARA_PORTUGUESE' => array('1.10',             'vara'),
+        'VARA_AMERICA'    => array('0.864',            'vara'),
+        'VARA'            => array('0.83587',          'vara'),
+        'VARA_TEXAS'      => array('0.84666836',       'vara'),
+        'VERGE'           => array('0.9144',           'verge'),
+        'VERSHOK'         => array('0.04445',          'vershok'),
+        'VERST'           => array('1066.8',           'verst'),
+        'WAH'             => array('2',                'wah'),
+        'WERST'           => array('1066.8',           'werst'),
+        'X_UNIT'          => array('1.0020722e-13',    'Xu'),
+        'YARD'            => array('0.9144',           'yd'),
+        'YOCTOMETER'      => array('1.0e-24',          'ym'),
+        'YOTTAMETER'      => array('1.0e+24',          'Ym'),
+        'ZEPTOMETER'      => array('1.0e-21',          'zm'),
+        'ZETTAMETER'      => array('1.0e+21',          'Zm'),
+        'ZOLL'            => array('0.02634',          'zoll'),
+        'ZOLL_SWISS'      => array('0.03',             'zoll'),
+        'STANDARD'        => 'METER'
+    );
+}

@@ -1,34 +1,81 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-tE9duG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Request_Http */
+require_once 'Zend/Controller/Request/Http.php';
+
+/** Zend_Uri */
+require_once 'Zend/Uri.php';
+
+/**
+ * Zend_Controller_Request_Apache404
+ *
+ * HTTP request object for use with Zend_Controller family. Extends basic HTTP
+ * request object to allow for two edge cases when using Apache:
+ * - Using Apache's 404 handler instead of mod_rewrite to direct requests
+ * - Using the PT flag in rewrite rules
+ *
+ * In each case, the URL to check against is found in REDIRECT_URL, not
+ * REQUEST_URI.
+ *
+ * @uses       Zend_Controller_Request_Http
+ * @package    Zend_Controller
+ * @subpackage Request
+ */
+class Zend_Controller_Request_Apache404 extends Zend_Controller_Request_Http
+{
+    public function setRequestUri($requestUri = null)
+    {
+        $parseUriGetVars = false;
+        if ($requestUri === null) {
+            if (isset($_SERVER['HTTP_X_REWRITE_URL'])) { // check this first so IIS will catch
+                $requestUri = $_SERVER['HTTP_X_REWRITE_URL'];
+            } elseif (isset($_SERVER['REDIRECT_URL'])) {  // Check if using mod_rewrite
+                $requestUri = $_SERVER['REDIRECT_URL'];
+                if (isset($_SERVER['REDIRECT_QUERYSTRING'])) {
+                    $parseUriGetVars = $_SERVER['REDIRECT_QUERYSTRING'];
+                }
+            } elseif (isset($_SERVER['REQUEST_URI'])) {
+                $requestUri = $_SERVER['REQUEST_URI'];
+            } elseif (isset($_SERVER['ORIG_PATH_INFO'])) { // IIS 5.0, PHP as CGI
+                $requestUri = $_SERVER['ORIG_PATH_INFO'];
+                if (!empty($_SERVER['QUERY_STRING'])) {
+                    $requestUri .= '?' . $_SERVER['QUERY_STRING'];
+                }
+            } else {
+                return $this;
+            }
+        } elseif (!is_string($requestUri)) {
+            return $this;
+        } else {
+            if (false !== ($pos = strpos($requestUri, '?'))) {
+                $parseUriGetVars = substr($requestUri, $pos + 1);
+            }
+        }
+
+        if ($parseUriGetVars) {
+            // Set GET items, if available
+            parse_str($parseUriGetVars, $_GET);
+        }
+
+        $this->_requestUri = $requestUri;
+        return $this;
+    }
+}

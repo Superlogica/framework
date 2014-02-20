@@ -1,155 +1,400 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-UF81eGkj4IeGiOmT5BnEOcDb
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_TimeSync
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Ntp.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Zend_TimeSync_Protocol
+ */
+require_once 'Zend/TimeSync/Protocol.php';
+
+/**
+ * NTP Protocol handling class
+ *
+ * @category  Zend
+ * @package   Zend_TimeSync
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_TimeSync_Ntp extends Zend_TimeSync_Protocol
+{
+    /**
+     * NTP port number (123) assigned by the Internet Assigned Numbers Authority
+     *
+     * @var integer
+     */
+    protected $_port = 123;
+
+    /**
+     * NTP class constructor, sets the timeserver and port number
+     *
+     * @param string  $timeserver Adress of the timeserver to connect to
+     * @param integer $port       (Optional) Port for this timeserver
+     */
+    public function __construct($timeserver, $port = 123)
+    {
+        $this->_timeserver = 'udp://' . $timeserver;
+        if ($port !== null) {
+            $this->_port = $port;
+        }
+    }
+
+    /**
+     * Prepare local timestamp for transmission in our request packet
+     *
+     * NTP timestamps are represented as a 64-bit fixed-point number, in
+     * seconds relative to 0000 UT on 1 January 1900.  The integer part is
+     * in the first 32 bits and the fraction part in the last 32 bits
+     *
+     * @return string
+     */
+    protected function _prepare()
+    {
+        $frac   = microtime();
+        $fracba = ($frac & 0xff000000) >> 24;
+        $fracbb = ($frac & 0x00ff0000) >> 16;
+        $fracbc = ($frac & 0x0000ff00) >> 8;
+        $fracbd = ($frac & 0x000000ff);
+
+        $sec   = (time() + 2208988800);
+        $secba = ($sec & 0xff000000) >> 24;
+        $secbb = ($sec & 0x00ff0000) >> 16;
+        $secbc = ($sec & 0x0000ff00) >> 8;
+        $secbd = ($sec & 0x000000ff);
+
+        // Flags
+        $nul       = chr(0x00);
+        $nulbyte   = $nul . $nul . $nul . $nul;
+        $ntppacket = chr(0xd9) . $nul . chr(0x0a) . chr(0xfa);
+
+        /*
+         * Root delay
+         *
+         * Indicates the total roundtrip delay to the primary reference
+         * source at the root of the synchronization subnet, in seconds
+         */
+        $ntppacket .= $nul . $nul . chr(0x1c) . chr(0x9b);
+
+        /*
+         * Clock Dispersion
+         *
+         * Indicates the maximum error relative to the primary reference source at the
+         * root of the synchronization subnet, in seconds
+         */
+        $ntppacket .= $nul . chr(0x08) . chr(0xd7) . chr(0xff);
+
+        /*
+         * ReferenceClockID
+         *
+         * Identifying the particular reference clock
+         */
+        $ntppacket .= $nulbyte;
+
+        /*
+         * The local time, in timestamp format, at the peer when its latest NTP message
+         * was sent. Contanis an integer and a fractional part
+         */
+        $ntppacket .= chr($secba)  . chr($secbb)  . chr($secbc)  . chr($secbd);
+        $ntppacket .= chr($fracba) . chr($fracbb) . chr($fracbc) . chr($fracbd);
+
+        /*
+         * The local time, in timestamp format, at the peer. Contains an integer
+         * and a fractional part.
+         */
+        $ntppacket .= $nulbyte;
+        $ntppacket .= $nulbyte;
+
+        /*
+         * This is the local time, in timestamp format, when the latest NTP message from
+         * the peer arrived. Contanis an integer and a fractional part.
+         */
+        $ntppacket .= $nulbyte;
+        $ntppacket .= $nulbyte;
+
+        /*
+         * The local time, in timestamp format, at which the
+         * NTP message departed the sender. Contanis an integer
+         * and a fractional part.
+         */
+        $ntppacket .= chr($secba)  . chr($secbb)  . chr($secbc)  . chr($secbd);
+        $ntppacket .= chr($fracba) . chr($fracbb) . chr($fracbc) . chr($fracbd);
+
+        return $ntppacket;
+    }
+
+    /**
+     * Reads the data returned from the timeserver
+     *
+     * This will return an array with binary data listing:
+     *
+     * @return array
+     * @throws Zend_TimeSync_Exception When timeserver can not be connected
+     */
+    protected function _read()
+    {
+        $flags = ord(fread($this->_socket, 1));
+        $info  = stream_get_meta_data($this->_socket);
+
+        if ($info['timed_out'] === true) {
+            fclose($this->_socket);
+            throw new Zend_TimeSync_Exception('could not connect to ' .
+                "'$this->_timeserver' on port '$this->_port', reason: 'server timed out'");
+        }
+
+        $result = array(
+            'flags'          => $flags,
+            'stratum'        => ord(fread($this->_socket, 1)),
+            'poll'           => ord(fread($this->_socket, 1)),
+            'precision'      => ord(fread($this->_socket, 1)),
+            'rootdelay'      => ord(fread($this->_socket, 4)),
+            'rootdispersion' => ord(fread($this->_socket, 4)),
+            'referenceid'    => ord(fread($this->_socket, 4)),
+            'referencestamp' => ord(fread($this->_socket, 4)),
+            'referencemicro' => ord(fread($this->_socket, 4)),
+            'originatestamp' => ord(fread($this->_socket, 4)),
+            'originatemicro' => ord(fread($this->_socket, 4)),
+            'receivestamp'   => ord(fread($this->_socket, 4)),
+            'receivemicro'   => ord(fread($this->_socket, 4)),
+            'transmitstamp'  => ord(fread($this->_socket, 4)),
+            'transmitmicro'  => ord(fread($this->_socket, 4)),
+            'clientreceived' => 0
+        );
+
+        $this->_disconnect();
+
+        return $result;
+    }
+
+    /**
+     * Sends the NTP packet to the server
+     *
+     * @param  string $data Data to send to the timeserver
+     * @return void
+     */
+    protected function _write($data)
+    {
+        $this->_connect();
+
+        fwrite($this->_socket, $data);
+        stream_set_timeout($this->_socket, Zend_TimeSync::$options['timeout']);
+    }
+
+    /**
+     * Extracts the binary data returned from the timeserver
+     *
+     * @param  string|array $binary Data returned from the timeserver
+     * @return integer Difference in seconds
+     */
+    protected function _extract($binary)
+    {
+        /*
+         * Leap Indicator bit 1100 0000
+         *
+         * Code warning of impending leap-second to be inserted at the end of
+         * the last day of the current month.
+         */
+        $leap = ($binary['flags'] & 0xc0) >> 6;
+        switch($leap) {
+            case 0:
+                $this->_info['leap'] = '0 - no warning';
+                break;
+
+            case 1:
+                $this->_info['leap'] = '1 - last minute has 61 seconds';
+                break;
+
+            case 2:
+                $this->_info['leap'] = '2 - last minute has 59 seconds';
+                break;
+
+            default:
+                $this->_info['leap'] = '3 - not syncronised';
+                break;
+        }
+
+        /*
+         * Version Number bit 0011 1000
+         *
+         * This should be 3 (RFC 1305)
+         */
+        $this->_info['version'] = ($binary['flags'] & 0x38) >> 3;
+
+        /*
+         * Mode bit 0000 0111
+         *
+         * Except in broadcast mode, an NTP association is formed when two peers
+         * exchange messages and one or both of them create and maintain an
+         * instantiation of the protocol machine, called an association.
+         */
+        $mode = ($binary['flags'] & 0x07);
+        switch($mode) {
+            case 1:
+                $this->_info['mode'] = 'symetric active';
+                break;
+
+            case 2:
+                $this->_info['mode'] = 'symetric passive';
+                break;
+
+            case 3:
+                $this->_info['mode'] = 'client';
+                break;
+
+            case 4:
+                $this->_info['mode'] = 'server';
+                break;
+
+            case 5:
+                $this->_info['mode'] = 'broadcast';
+                break;
+
+            default:
+                $this->_info['mode'] = 'reserved';
+                break;
+        }
+
+        $ntpserviceid = 'Unknown Stratum ' . $binary['stratum'] . ' Service';
+
+        /*
+         * Reference Clock Identifier
+         *
+         * Identifies the particular reference clock.
+         */
+        $refid = strtoupper($binary['referenceid']);
+        switch($binary['stratum']) {
+            case 0:
+                if (substr($refid, 0, 3) === 'DCN') {
+                    $ntpserviceid = 'DCN routing protocol';
+                } else if (substr($refid, 0, 4) === 'NIST') {
+                    $ntpserviceid = 'NIST public modem';
+                } else if (substr($refid, 0, 3) === 'TSP') {
+                    $ntpserviceid = 'TSP time protocol';
+                } else if (substr($refid, 0, 3) === 'DTS') {
+                    $ntpserviceid = 'Digital Time Service';
+                }
+                break;
+
+            case 1:
+                if (substr($refid, 0, 4) === 'ATOM') {
+                    $ntpserviceid = 'Atomic Clock (calibrated)';
+                } else if (substr($refid, 0, 3) === 'VLF') {
+                    $ntpserviceid = 'VLF radio';
+                } else if ($refid === 'CALLSIGN') {
+                    $ntpserviceid = 'Generic radio';
+                } else if (substr($refid, 0, 4) === 'LORC') {
+                    $ntpserviceid = 'LORAN-C radionavigation';
+                } else if (substr($refid, 0, 4) === 'GOES') {
+                    $ntpserviceid = 'GOES UHF environment satellite';
+                } else if (substr($refid, 0, 3) === 'GPS') {
+                    $ntpserviceid = 'GPS UHF satellite positioning';
+                }
+                break;
+
+            default:
+                $ntpserviceid  = ord(substr($binary['referenceid'], 0, 1));
+                $ntpserviceid .= '.';
+                $ntpserviceid .= ord(substr($binary['referenceid'], 1, 1));
+                $ntpserviceid .= '.';
+                $ntpserviceid .= ord(substr($binary['referenceid'], 2, 1));
+                $ntpserviceid .= '.';
+                $ntpserviceid .= ord(substr($binary['referenceid'], 3, 1));
+                break;
+        }
+
+        $this->_info['ntpid'] = $ntpserviceid;
+
+        /*
+         * Stratum
+         *
+         * Indicates the stratum level of the local clock
+         */
+        switch($binary['stratum']) {
+            case 0:
+                $this->_info['stratum'] = 'undefined';
+                break;
+
+            case 1:
+                $this->_info['stratum'] = 'primary reference';
+                break;
+
+            default:
+                $this->_info['stratum'] = 'secondary reference';
+                break;
+        }
+
+        /*
+         * Indicates the total roundtrip delay to the primary reference source at the
+         * root of the synchronization subnet, in seconds.
+         *
+         * Both positive and negative values, depending on clock precision and skew, are
+         * possible.
+         */
+        $this->_info['rootdelay']     = $binary['rootdelay'] >> 15;
+        $this->_info['rootdelayfrac'] = ($binary['rootdelay'] << 17) >> 17;
+
+        /*
+         * Indicates the maximum error relative to the primary reference source at the
+         * root of the synchronization subnet, in seconds.
+         *
+         * Only positive values greater than zero are possible.
+         */
+        $this->_info['rootdispersion']     = $binary['rootdispersion'] >> 15;
+        $this->_info['rootdispersionfrac'] = ($binary['rootdispersion'] << 17) >> 17;
+
+        /*
+         * The local time, in timestamp format, at the peer
+         * when its latest NTP message was sent.
+         */
+        $original  = (float) $binary['originatestamp'];
+        $original += (float) ($binary['originatemicro'] / 4294967296);
+
+        /*
+         * The local time, in timestamp format, when the latest
+         * NTP message from the peer arrived.
+         */
+        $received  = (float) $binary['receivestamp'];
+        $received += (float) ($binary['receivemicro'] / 4294967296);
+
+        /*
+         * The local time, in timestamp format, at which the
+         * NTP message departed the sender.
+         */
+        $transmit  = (float) $binary['transmitstamp'];
+        $transmit += (float) ($binary['transmitmicro'] / 4294967296);
+
+        /*
+         * The roundtrip delay of the peer clock relative to the local clock
+         * over the network path between them, in seconds.
+         *
+         * Note that this variable can take on both positive and negative values,
+         * depending on clock precision and skew-error accumulation.
+         */
+        $roundtrip                = ($binary['clientreceived'] - $original);
+        $roundtrip               -= ($transmit - $received);
+        $this->_info['roundtrip'] = ($roundtrip / 2);
+
+        // The offset of the peer clock relative to the local clock, in seconds.
+        $offset                = ($received - $original + $transmit - $binary['clientreceived']);
+        $this->_info['offset'] = ($offset / 2);
+
+        $time = (time() - $this->_info['offset']);
+
+        return $time;
+    }
+}

@@ -1,60 +1,224 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Interface
+ */
+require_once 'Zend/Tool/Project/Context/Interface.php';
+
+/**
+ * @see Zend_Reflection_File
+ */
+require_once 'Zend/Reflection/File.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_Zf_ActionMethod implements Zend_Tool_Project_Context_Interface 
+{
+    
+    /**
+     * @var Zend_Tool_Project_Profile_Resource
+     */
+    protected $_resource = null;
+    
+    /**
+     * @var Zend_Tool_Project_Profile_Resource
+     */
+    protected $_controllerResource = null;
+    
+    /**
+     * @var string
+     */
+    protected $_controllerPath = '';
+
+    /**
+     * @var string
+     */
+    protected $_actionName = null;
+    
+    /**
+     * init()
+     *
+     * @return Zend_Tool_Project_Context_Zf_ActionMethod
+     */
+    public function init()
+    {
+        $this->_actionName = $this->_resource->getAttribute('actionName');
+        
+        $this->_resource->setAppendable(false);
+        $this->_controllerResource = $this->_resource->getParentResource();
+        if (!$this->_controllerResource->getContext() instanceof Zend_Tool_Project_Context_Zf_ControllerFile) {
+            require_once 'Zend/Tool/Project/Context/Exception.php';
+            throw new Zend_Tool_Project_Context_Exception('ActionMethod must be a sub resource of a ControllerFile');
+        }
+        // make the ControllerFile node appendable so we can tack on the actionMethod.
+        $this->_resource->getParentResource()->setAppendable(true);
+        
+        $this->_controllerPath = $this->_controllerResource->getContext()->getPath();
+        
+        /*
+         * This code block is now commented, its doing to much for init()
+         *
+        if ($this->_controllerPath != '' && self::hasActionMethod($this->_controllerPath, $this->_actionName)) {
+            require_once 'Zend/Tool/Project/Context/Exception.php';
+            throw new Zend_Tool_Project_Context_Exception('An action named ' . $this->_actionName . 'Action already exists in this controller');
+        }
+        */
+        
+        return $this;
+    }
+    
+    /**
+     * getPersistentAttributes
+     *
+     * @return array
+     */
+    public function getPersistentAttributes()
+    {
+        return array(
+            'actionName' => $this->getActionName()
+            );
+    }
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ActionMethod';
+    }
+    
+    /**
+     * setResource()
+     *
+     * @param Zend_Tool_Project_Profile_Resource $resource
+     * @return Zend_Tool_Project_Context_Zf_ActionMethod
+     */
+    public function setResource(Zend_Tool_Project_Profile_Resource $resource)
+    {
+        $this->_resource = $resource;
+        return $this;
+    }
+    
+    /**
+     * setActionName()
+     *
+     * @param string $actionName
+     * @return Zend_Tool_Project_Context_Zf_ActionMethod
+     */
+    public function setActionName($actionName)
+    {
+        $this->_actionName = $actionName;
+        return $this;
+    }
+    
+    /**
+     * getActionName()
+     *
+     * @return string
+     */
+    public function getActionName()
+    {
+        return $this->_actionName;
+    }
+    
+    /**
+     * create()
+     *
+     * @return Zend_Tool_Project_Context_Zf_ActionMethod
+     */
+    public function create()
+    {
+        if (self::createActionMethod($this->_controllerPath, $this->_actionName) === false) {
+            require_once 'Zend/Tool/Project/Context/Exception.php';
+            throw new Zend_Tool_Project_Context_Exception(
+                'Could not create action within controller ' . $this->_controllerPath 
+                . ' with action name ' . $this->_actionName
+                );
+        }
+        return $this;
+    }
+    
+    /**
+     * delete()
+     *
+     * @return Zend_Tool_Project_Context_Zf_ActionMethod
+     */
+    public function delete()
+    {
+        // @todo do this
+        return $this;
+    }
+    
+    /**
+     * createAcionMethod()
+     *
+     * @param string $controllerPath
+     * @param string $actionName
+     * @param string $body
+     * @return true
+     */
+    public static function createActionMethod($controllerPath, $actionName, $body = '        // action body')
+    {
+        if (!file_exists($controllerPath)) {
+            return false;
+        }
+        
+        $controllerCodeGenFile = Zend_CodeGenerator_Php_File::fromReflectedFileName($controllerPath, true, true);
+        $controllerCodeGenFile->getClass()->setMethod(array(
+            'name' => $actionName . 'Action',
+            'body' => $body
+            ));
+        
+        file_put_contents($controllerPath, $controllerCodeGenFile->generate());
+        return true;
+    }
+    
+    /**
+     * hasActionMethod()
+     *
+     * @param string $controllerPath
+     * @param string $actionName
+     * @return bool
+     */
+    public static function hasActionMethod($controllerPath, $actionName)
+    {
+        if (!file_exists($controllerPath)) {
+            return false;
+        }
+            
+        $controllerCodeGenFile = Zend_CodeGenerator_Php_File::fromReflectedFileName($controllerPath, true, true);
+        return $controllerCodeGenFile->getClass()->hasMethod($actionName . 'Action');
+    }
+    
+}

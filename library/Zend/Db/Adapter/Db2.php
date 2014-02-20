@@ -1,274 +1,830 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-MxzoKjwy5I3830cZHuXvNl8vpnsbg551Y0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ *
+ */
+
+/**
+ * @see Zend_Db
+ */
+require_once 'Zend/Db.php';
+
+/**
+ * @see Zend_Db_Adapter_Abstract
+ */
+require_once 'Zend/Db/Adapter/Abstract.php';
+
+/**
+ * @see Zend_Db_Statement_Db2
+ */
+require_once 'Zend/Db/Statement/Db2.php';
+
+
+/**
+ * @package    Zend_Db
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
+{
+    /**
+     * User-provided configuration.
+     *
+     * Basic keys are:
+     *
+     * username   => (string)  Connect to the database as this username.
+     * password   => (string)  Password associated with the username.
+     * host       => (string)  What host to connect to (default 127.0.0.1)
+     * dbname     => (string)  The name of the database to user
+     * protocol   => (string)  Protocol to use, defaults to "TCPIP"
+     * port       => (integer) Port number to use for TCP/IP if protocol is "TCPIP"
+     * persistent => (boolean) Set TRUE to use a persistent connection (db2_pconnect)
+     * os         => (string)  This should be set to 'i5' if the db is on an os400/i5
+     * schema     => (string)  The default schema the connection should use
+     *
+     * @var array
+     */
+    protected $_config = array(
+        'dbname'       => null,
+        'username'     => null,
+        'password'     => null,
+        'host'         => 'localhost',
+        'port'         => '50000',
+        'protocol'     => 'TCPIP',
+        'persistent'   => false,
+        'os'           => null,
+        'schema'       => null
+    );
+
+    /**
+     * Execution mode
+     *
+     * @var int execution flag (DB2_AUTOCOMMIT_ON or DB2_AUTOCOMMIT_OFF)
+     */
+    protected $_execute_mode = DB2_AUTOCOMMIT_ON;
+
+    /**
+     * Default class name for a DB statement.
+     *
+     * @var string
+     */
+    protected $_defaultStmtClass = 'Zend_Db_Statement_Db2';
+    protected $_isI5 = false;
+
+    /**
+     * Keys are UPPERCASE SQL datatypes or the constants
+     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
+     *
+     * Values are:
+     * 0 = 32-bit integer
+     * 1 = 64-bit integer
+     * 2 = float or decimal
+     *
+     * @var array Associative array of datatypes to values 0, 1, or 2.
+     */
+    protected $_numericDataTypes = array(
+        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
+        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
+        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE,
+        'INTEGER'            => Zend_Db::INT_TYPE,
+        'SMALLINT'           => Zend_Db::INT_TYPE,
+        'BIGINT'             => Zend_Db::BIGINT_TYPE,
+        'DECIMAL'            => Zend_Db::FLOAT_TYPE,
+        'NUMERIC'            => Zend_Db::FLOAT_TYPE
+    );
+
+    /**
+     * Creates a connection resource.
+     *
+     * @return void
+     */
+    protected function _connect()
+    {
+        if (is_resource($this->_connection)) {
+            // connection already exists
+            return;
+        }
+
+        if (!extension_loaded('ibm_db2')) {
+            /**
+             * @see Zend_Db_Adapter_Db2_Exception
+             */
+            require_once 'Zend/Db/Adapter/Db2/Exception.php';
+            throw new Zend_Db_Adapter_Db2_Exception('The IBM DB2 extension is required for this adapter but the extension is not loaded');
+        }
+
+        $this->_determineI5();
+        if ($this->_config['persistent']) {
+            // use persistent connection
+            $conn_func_name = 'db2_pconnect';
+        } else {
+            // use "normal" connection
+            $conn_func_name = 'db2_connect';
+        }
+
+        if (!isset($this->_config['driver_options']['autocommit'])) {
+            // set execution mode
+            $this->_config['driver_options']['autocommit'] = &$this->_execute_mode;
+        }
+
+        if (isset($this->_config['options'][Zend_Db::CASE_FOLDING])) {
+            $caseAttrMap = array(
+                Zend_Db::CASE_NATURAL => DB2_CASE_NATURAL,
+                Zend_Db::CASE_UPPER   => DB2_CASE_UPPER,
+                Zend_Db::CASE_LOWER   => DB2_CASE_LOWER
+            );
+            $this->_config['driver_options']['DB2_ATTR_CASE'] = $caseAttrMap[$this->_config['options'][Zend_Db::CASE_FOLDING]];
+        }
+
+        if ($this->_config['host'] !== 'localhost' && !$this->_isI5) {
+            // if the host isn't localhost, use extended connection params
+            $dbname = 'DRIVER={IBM DB2 ODBC DRIVER}' .
+                     ';DATABASE=' . $this->_config['dbname'] .
+                     ';HOSTNAME=' . $this->_config['host'] .
+                     ';PORT='     . $this->_config['port'] .
+                     ';PROTOCOL=' . $this->_config['protocol'] .
+                     ';UID='      . $this->_config['username'] .
+                     ';PWD='      . $this->_config['password'] .';';
+            $this->_connection = $conn_func_name(
+                $dbname,
+                null,
+                null,
+                $this->_config['driver_options']
+            );
+        } else {
+            // host is localhost, so use standard connection params
+            $this->_connection = $conn_func_name(
+                $this->_config['dbname'],
+                $this->_config['username'],
+                $this->_config['password'],
+                $this->_config['driver_options']
+            );
+        }
+
+        // check the connection
+        if (!$this->_connection) {
+            /**
+             * @see Zend_Db_Adapter_Db2_Exception
+             */
+            require_once 'Zend/Db/Adapter/Db2/Exception.php';
+            throw new Zend_Db_Adapter_Db2_Exception(db2_conn_errormsg(), db2_conn_error());
+        }
+    }
+
+    /**
+     * Test if a connection is active
+     *
+     * @return boolean
+     */
+    public function isConnected()
+    {
+        return ((bool) (is_resource($this->_connection)
+                     && get_resource_type($this->_connection) == 'DB2 Connection'));
+    }
+
+    /**
+     * Force the connection to close.
+     *
+     * @return void
+     */
+    public function closeConnection()
+    {
+        if ($this->isConnected()) {
+            db2_close($this->_connection);
+        }
+        $this->_connection = null;
+    }
+
+    /**
+     * Returns an SQL statement for preparation.
+     *
+     * @param string $sql The SQL statement with placeholders.
+     * @return Zend_Db_Statement_Db2
+     */
+    public function prepare($sql)
+    {
+        $this->_connect();
+        $stmtClass = $this->_defaultStmtClass;
+        if (!class_exists($stmtClass)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($stmtClass);
+        }
+        $stmt = new $stmtClass($this, $sql);
+        $stmt->setFetchMode($this->_fetchMode);
+        return $stmt;
+    }
+
+    /**
+     * Gets the execution mode
+     *
+     * @return int the execution mode (DB2_AUTOCOMMIT_ON or DB2_AUTOCOMMIT_OFF)
+     */
+    public function _getExecuteMode()
+    {
+        return $this->_execute_mode;
+    }
+
+    /**
+     * @param integer $mode
+     * @return void
+     */
+    public function _setExecuteMode($mode)
+    {
+        switch ($mode) {
+            case DB2_AUTOCOMMIT_OFF:
+            case DB2_AUTOCOMMIT_ON:
+                $this->_execute_mode = $mode;
+                db2_autocommit($this->_connection, $mode);
+                break;
+            default:
+                /**
+                 * @see Zend_Db_Adapter_Db2_Exception
+                 */
+                require_once 'Zend/Db/Adapter/Db2/Exception.php';
+                throw new Zend_Db_Adapter_Db2_Exception("execution mode not supported");
+                break;
+        }
+    }
+
+    /**
+     * Quote a raw string.
+     *
+     * @param string $value     Raw string
+     * @return string           Quoted string
+     */
+    protected function _quote($value)
+    {
+        if (is_int($value) || is_float($value)) {
+            return $value;
+        }
+        /**
+         * Use db2_escape_string() if it is present in the IBM DB2 extension.
+         * But some supported versions of PHP do not include this function,
+         * so fall back to default quoting in the parent class.
+         */
+        if (function_exists('db2_escape_string')) {
+            return "'" . db2_escape_string($value) . "'";
+        }
+        return parent::_quote($value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getQuoteIdentifierSymbol()
+    {
+        $this->_connect();
+        $info = db2_server_info($this->_connection);
+        if ($info) {
+            $identQuote = $info->IDENTIFIER_QUOTE_CHAR;
+        } else {
+            // db2_server_info() does not return result on some i5 OS version
+            if ($this->_isI5) {
+                $identQuote ="'";
+            }
+        }
+        return $identQuote;
+    }
+
+    /**
+     * Returns a list of the tables in the database.
+     * @param string $schema OPTIONAL
+     * @return array
+     */
+    public function listTables($schema = null)
+    {
+        $this->_connect();
+
+        if ($schema === null && $this->_config['schema'] != null) {
+            $schema = $this->_config['schema'];
+        }
+
+        $tables = array();
+
+        if (!$this->_isI5) {
+            if ($schema) {
+                $stmt = db2_tables($this->_connection, null, $schema);
+            } else {
+                $stmt = db2_tables($this->_connection);
+            }
+            while ($row = db2_fetch_assoc($stmt)) {
+                $tables[] = $row['TABLE_NAME'];
+            }
+        } else {
+            $tables = $this->_i5listTables($schema);
+        }
+
+        return $tables;
+    }
+
+
+    /**
+     * Returns the column descriptions for a table.
+     *
+     * The return value is an associative array keyed by the column name,
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME      => string; name of database or schema
+     * TABLE_NAME       => string;
+     * COLUMN_NAME      => string; column name
+     * COLUMN_POSITION  => number; ordinal position of column in table
+     * DATA_TYPE        => string; SQL datatype name of column
+     * DEFAULT          => string; default expression of column, null if none
+     * NULLABLE         => boolean; true if column can have nulls
+     * LENGTH           => number; length of CHAR/VARCHAR
+     * SCALE            => number; scale of NUMERIC/DECIMAL
+     * PRECISION        => number; precision of NUMERIC/DECIMAL
+     * UNSIGNED         => boolean; unsigned property of an integer type
+     *                     DB2 not supports UNSIGNED integer.
+     * PRIMARY          => boolean; true if column is part of the primary key
+     * PRIMARY_POSITION => integer; position of column in primary key
+     * IDENTITY         => integer; true if column is auto-generated with unique values
+     *
+     * @param string $tableName
+     * @param string $schemaName OPTIONAL
+     * @return array
+     */
+    public function describeTable($tableName, $schemaName = null)
+    {
+        // Ensure the connection is made so that _isI5 is set
+        $this->_connect();
+
+        if ($schemaName === null && $this->_config['schema'] != null) {
+            $schemaName = $this->_config['schema'];
+        }
+        
+        if (!$this->_isI5) {
+
+            $sql = "SELECT DISTINCT c.tabschema, c.tabname, c.colname, c.colno,
+                c.typename, c.default, c.nulls, c.length, c.scale,
+                c.identity, tc.type AS tabconsttype, k.colseq
+                FROM syscat.columns c
+                LEFT JOIN (syscat.keycoluse k JOIN syscat.tabconst tc
+                ON (k.tabschema = tc.tabschema
+                    AND k.tabname = tc.tabname
+                    AND tc.type = 'P'))
+                ON (c.tabschema = k.tabschema
+                    AND c.tabname = k.tabname
+                    AND c.colname = k.colname)
+                WHERE "
+                . $this->quoteInto('UPPER(c.tabname) = UPPER(?)', $tableName);
+
+            if ($schemaName) {
+               $sql .= $this->quoteInto(' AND UPPER(c.tabschema) = UPPER(?)', $schemaName);
+            }
+
+            $sql .= " ORDER BY c.colno";
+
+        } else {
+
+            // DB2 On I5 specific query
+            $sql = "SELECT DISTINCT C.TABLE_SCHEMA, C.TABLE_NAME, C.COLUMN_NAME, C.ORDINAL_POSITION,
+                C.DATA_TYPE, C.COLUMN_DEFAULT, C.NULLS ,C.LENGTH, C.SCALE, LEFT(C.IDENTITY,1),
+                LEFT(tc.TYPE, 1) AS tabconsttype, k.COLSEQ
+                FROM QSYS2.SYSCOLUMNS C     
+                LEFT JOIN (QSYS2.syskeycst k JOIN QSYS2.SYSCST tc
+                    ON (k.TABLE_SCHEMA = tc.TABLE_SCHEMA
+                      AND k.TABLE_NAME = tc.TABLE_NAME
+                      AND LEFT(tc.type,1) = 'P'))                  
+                    ON (C.TABLE_SCHEMA = k.TABLE_SCHEMA
+                       AND C.TABLE_NAME = k.TABLE_NAME
+                       AND C.COLUMN_NAME = k.COLUMN_NAME)                          
+                WHERE "
+                 . $this->quoteInto('UPPER(C.TABLE_NAME) = UPPER(?)', $tableName);
+
+            if ($schemaName) {
+                $sql .= $this->quoteInto(' AND UPPER(C.TABLE_SCHEMA) = UPPER(?)', $schemaName);
+            }
+
+            $sql .= " ORDER BY C.ORDINAL_POSITION FOR FETCH ONLY";
+        }
+
+        $desc = array();
+        $stmt = $this->query($sql);
+
+        /**
+         * To avoid case issues, fetch using FETCH_NUM
+         */
+        $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
+
+        /**
+         * The ordering of columns is defined by the query so we can map
+         * to variables to improve readability
+         */
+        $tabschema      = 0;
+        $tabname        = 1;
+        $colname        = 2;
+        $colno          = 3;
+        $typename       = 4;
+        $default        = 5;
+        $nulls          = 6;
+        $length         = 7;
+        $scale          = 8;
+        $identityCol    = 9;
+        $tabconstType   = 10;
+        $colseq         = 11;
+
+        foreach ($result as $key => $row) {
+            list ($primary, $primaryPosition, $identity) = array(false, null, false);
+            if ($row[$tabconstType] == 'P') {
+                $primary = true;
+                $primaryPosition = $row[$colseq];
+            }
+            /**
+             * In IBM DB2, an column can be IDENTITY
+             * even if it is not part of the PRIMARY KEY.
+             */
+            if ($row[$identityCol] == 'Y') {
+                $identity = true;
+            }
+
+            // only colname needs to be case adjusted
+            $desc[$this->foldCase($row[$colname])] = array(
+                'SCHEMA_NAME'      => $this->foldCase($row[$tabschema]),
+                'TABLE_NAME'       => $this->foldCase($row[$tabname]),
+                'COLUMN_NAME'      => $this->foldCase($row[$colname]),
+                'COLUMN_POSITION'  => (!$this->_isI5) ? $row[$colno]+1 : $row[$colno],
+                'DATA_TYPE'        => $row[$typename],
+                'DEFAULT'          => $row[$default],
+                'NULLABLE'         => (bool) ($row[$nulls] == 'Y'),
+                'LENGTH'           => $row[$length],
+                'SCALE'            => $row[$scale],
+                'PRECISION'        => ($row[$typename] == 'DECIMAL' ? $row[$length] : 0),
+                'UNSIGNED'         => false,
+                'PRIMARY'          => $primary,
+                'PRIMARY_POSITION' => $primaryPosition,
+                'IDENTITY'         => $identity
+            );
+        }
+
+        return $desc;
+    }
+
+    /**
+     * Return the most recent value from the specified sequence in the database.
+     * This is supported only on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2).  Other RDBMS brands return null.
+     *
+     * @param string $sequenceName
+     * @return string
+     */
+    public function lastSequenceId($sequenceName)
+    {
+        $this->_connect();
+
+        if (!$this->_isI5) {
+            $quotedSequenceName = $this->quoteIdentifier($sequenceName, true);
+            $sql = 'SELECT PREVVAL FOR ' . $quotedSequenceName . ' AS VAL FROM SYSIBM.SYSDUMMY1';
+        } else {
+            $quotedSequenceName = $sequenceName;
+            $sql = 'SELECT PREVVAL FOR ' . $this->quoteIdentifier($sequenceName, true) . ' AS VAL FROM QSYS2.QSQPTABL';
+        }
+
+        $value = $this->fetchOne($sql);
+        return (string) $value;
+    }
+
+    /**
+     * Generate a new value from the specified sequence in the database, and return it.
+     * This is supported only on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2).  Other RDBMS brands return null.
+     *
+     * @param string $sequenceName
+     * @return string
+     */
+    public function nextSequenceId($sequenceName)
+    {
+        $this->_connect();
+        $sql = 'SELECT NEXTVAL FOR '.$this->quoteIdentifier($sequenceName, true).' AS VAL FROM SYSIBM.SYSDUMMY1';
+        $value = $this->fetchOne($sql);
+        return (string) $value;
+    }
+
+    /**
+     * Gets the last ID generated automatically by an IDENTITY/AUTOINCREMENT column.
+     *
+     * As a convention, on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2), this method forms the name of a sequence
+     * from the arguments and returns the last id generated by that sequence.
+     * On RDBMS brands that support IDENTITY/AUTOINCREMENT columns, this method
+     * returns the last value generated for such a column, and the table name
+     * argument is disregarded.
+     *
+     * The IDENTITY_VAL_LOCAL() function gives the last generated identity value
+     * in the current process, even if it was for a GENERATED column.
+     *
+     * @param string $tableName OPTIONAL
+     * @param string $primaryKey OPTIONAL
+     * @param string $idType OPTIONAL used for i5 platform to define sequence/idenity unique value
+     * @return string
+     */
+
+    public function lastInsertId($tableName = null, $primaryKey = null, $idType = null)
+    {
+        $this->_connect();
+
+        if ($this->_isI5) {
+            return (string) $this->_i5LastInsertId($tableName, $idType);
+        }
+
+        if ($tableName !== null) {
+            $sequenceName = $tableName;
+            if ($primaryKey) {
+                $sequenceName .= "_$primaryKey";
+            }
+            $sequenceName .= '_seq';
+            return $this->lastSequenceId($sequenceName);
+        }
+
+        $sql = 'SELECT IDENTITY_VAL_LOCAL() AS VAL FROM SYSIBM.SYSDUMMY1';
+        $value = $this->fetchOne($sql);
+        return (string) $value;
+    }
+
+    /**
+     * Begin a transaction.
+     *
+     * @return void
+     */
+    protected function _beginTransaction()
+    {
+        $this->_setExecuteMode(DB2_AUTOCOMMIT_OFF);
+    }
+
+    /**
+     * Commit a transaction.
+     *
+     * @return void
+     */
+    protected function _commit()
+    {
+        if (!db2_commit($this->_connection)) {
+            /**
+             * @see Zend_Db_Adapter_Db2_Exception
+             */
+            require_once 'Zend/Db/Adapter/Db2/Exception.php';
+            throw new Zend_Db_Adapter_Db2_Exception(
+                db2_conn_errormsg($this->_connection),
+                db2_conn_error($this->_connection));
+        }
+
+        $this->_setExecuteMode(DB2_AUTOCOMMIT_ON);
+    }
+
+    /**
+     * Rollback a transaction.
+     *
+     * @return void
+     */
+    protected function _rollBack()
+    {
+        if (!db2_rollback($this->_connection)) {
+            /**
+             * @see Zend_Db_Adapter_Db2_Exception
+             */
+            require_once 'Zend/Db/Adapter/Db2/Exception.php';
+            throw new Zend_Db_Adapter_Db2_Exception(
+                db2_conn_errormsg($this->_connection),
+                db2_conn_error($this->_connection));
+        }
+        $this->_setExecuteMode(DB2_AUTOCOMMIT_ON);
+    }
+
+    /**
+     * Set the fetch mode.
+     *
+     * @param integer $mode
+     * @return void
+     * @throws Zend_Db_Adapter_Db2_Exception
+     */
+    public function setFetchMode($mode)
+    {
+        switch ($mode) {
+            case Zend_Db::FETCH_NUM:   // seq array
+            case Zend_Db::FETCH_ASSOC: // assoc array
+            case Zend_Db::FETCH_BOTH:  // seq+assoc array
+            case Zend_Db::FETCH_OBJ:   // object
+                $this->_fetchMode = $mode;
+                break;
+            case Zend_Db::FETCH_BOUND:   // bound to PHP variable
+                /**
+                 * @see Zend_Db_Adapter_Db2_Exception
+                 */
+                require_once 'Zend/Db/Adapter/Db2/Exception.php';
+                throw new Zend_Db_Adapter_Db2_Exception('FETCH_BOUND is not supported yet');
+                break;
+            default:
+                /**
+                 * @see Zend_Db_Adapter_Db2_Exception
+                 */
+                require_once 'Zend/Db/Adapter/Db2/Exception.php';
+                throw new Zend_Db_Adapter_Db2_Exception("Invalid fetch mode '$mode' specified");
+                break;
+        }
+    }
+
+    /**
+     * Adds an adapter-specific LIMIT clause to the SELECT statement.
+     *
+     * @param string $sql
+     * @param integer $count
+     * @param integer $offset OPTIONAL
+     * @return string
+     */
+    public function limit($sql, $count, $offset = 0)
+    {
+        $count = intval($count);
+        if ($count <= 0) {
+            /**
+             * @see Zend_Db_Adapter_Db2_Exception
+             */
+            require_once 'Zend/Db/Adapter/Db2/Exception.php';
+            throw new Zend_Db_Adapter_Db2_Exception("LIMIT argument count=$count is not valid");
+        }
+
+        $offset = intval($offset);
+        if ($offset < 0) {
+            /**
+             * @see Zend_Db_Adapter_Db2_Exception
+             */
+            require_once 'Zend/Db/Adapter/Db2/Exception.php';
+            throw new Zend_Db_Adapter_Db2_Exception("LIMIT argument offset=$offset is not valid");
+        }
+
+        if ($offset == 0) {
+            $limit_sql = $sql . " FETCH FIRST $count ROWS ONLY";
+            return $limit_sql;
+        }
+
+        /**
+         * DB2 does not implement the LIMIT clause as some RDBMS do.
+         * We have to simulate it with subqueries and ROWNUM.
+         * Unfortunately because we use the column wildcard "*",
+         * this puts an extra column into the query result set.
+         */
+        $limit_sql = "SELECT z2.*
+            FROM (
+                SELECT ROW_NUMBER() OVER() AS \"ZEND_DB_ROWNUM\", z1.*
+                FROM (
+                    " . $sql . "
+                ) z1
+            ) z2
+            WHERE z2.zend_db_rownum BETWEEN " . ($offset+1) . " AND " . ($offset+$count);
+        return $limit_sql;
+    }
+
+    /**
+     * Check if the adapter supports real SQL parameters.
+     *
+     * @param string $type 'positional' or 'named'
+     * @return bool
+     */
+    public function supportsParameters($type)
+    {
+        if ($type == 'positional') {
+            return true;
+        }
+
+        // if its 'named' or anything else
+        return false;
+    }
+
+    /**
+     * Retrieve server version in PHP style
+     *
+     * @return string
+     */
+    public function getServerVersion()
+    {
+        $this->_connect();
+        $server_info = db2_server_info($this->_connection);
+        if ($server_info !== false) {
+            $version = $server_info->DBMS_VER;
+            if ($this->_isI5) {
+                $version = (int) substr($version, 0, 2) . '.' . (int) substr($version, 2, 2) . '.' . (int) substr($version, 4);
+            }
+            return $version;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Return whether or not this is running on i5
+     *
+     * @return bool
+     */
+    public function isI5()
+    {
+        if ($this->_isI5 === null) {
+            $this->_determineI5();
+        }
+
+        return (bool) $this->_isI5;
+    }
+
+    /**
+     * Check the connection parameters according to verify
+     * type of used OS
+     *
+     *  @return void
+     */
+    protected function _determineI5()
+    {
+        // first us the compiled flag.
+        $this->_isI5 = (php_uname('s') == 'OS400') ? true : false;
+
+        // if this is set, then us it
+        if (isset($this->_config['os'])){
+            if (strtolower($this->_config['os']) === 'i5') {
+                $this->_isI5 = true;
+            } else {
+                // any other value passed in, its null
+                $this->_isI5 = false;
+            }
+        }
+
+    }
+
+    /**
+     * Db2 On I5 specific method
+     *
+     * Returns a list of the tables in the database .
+     * Used only for DB2/400.
+     *
+     * @return array
+     */
+    protected function _i5listTables($schema = null)
+    {
+        //list of i5 libraries.
+        $tables = array();
+        if ($schema) {
+            $tablesStatement = db2_tables($this->_connection, null, $schema);
+            while ($rowTables = db2_fetch_assoc($tablesStatement) ) {
+                if ($rowTables['TABLE_NAME'] !== null) {
+                    $tables[] = $rowTables['TABLE_NAME'];
+                }
+            }
+        } else {
+            $schemaStatement = db2_tables($this->_connection);
+            while ($schema = db2_fetch_assoc($schemaStatement)) {
+                if ($schema['TABLE_SCHEM'] !== null) {
+                    // list of the tables which belongs to the selected library
+                    $tablesStatement = db2_tables($this->_connection, NULL, $schema['TABLE_SCHEM']);
+                    if (is_resource($tablesStatement)) {
+                        while ($rowTables = db2_fetch_assoc($tablesStatement) ) {
+                            if ($rowTables['TABLE_NAME'] !== null) {
+                                $tables[] = $rowTables['TABLE_NAME'];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return $tables;
+    }
+
+    protected function _i5LastInsertId($objectName = null, $idType = null)
+    {
+
+        if ($objectName === null) {
+            $sql = 'SELECT IDENTITY_VAL_LOCAL() AS VAL FROM QSYS2.QSQPTABL';
+            $value = $this->fetchOne($sql);
+            return $value;
+        }
+
+        if (strtoupper($idType) === 'S'){
+            //check i5_lib option
+            $sequenceName = $objectName;
+            return $this->lastSequenceId($sequenceName);
+        }
+
+            //returns last identity value for the specified table
+        //if (strtoupper($idType) === 'I') {
+        $tableName = $objectName;
+        return $this->fetchOne('SELECT IDENTITY_VAL_LOCAL() from ' . $this->quoteIdentifier($tableName));
+    }
+
+}
+
+

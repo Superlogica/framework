@@ -1,137 +1,376 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Ac54nWZdeYYedQ7WFOO+
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Abstract.php 12060 2008-10-21 17:23:55Z thomas $
+ */
+
+/**
+ * @see Zend_Locale
+ */
+require_once 'Zend/Locale.php';
+
+/**
+ * @see Zend_Locale_Math
+ */
+require_once 'Zend/Locale/Math.php';
+
+/**
+ * @see Zend_Locale_Format
+ */
+require_once 'Zend/Locale/Format.php';
+
+/**
+ * Abstract class for all measurements
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Abstract
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Measure_Abstract
+{
+    /**
+     * Plain value in standard unit
+     *
+     * @var string $_value
+     */
+    protected $_value;
+
+    /**
+     * Original type for this unit
+     *
+     * @var string $_type
+     */
+    protected $_type;
+
+    /**
+     * Locale identifier
+     *
+     * @var string $_locale
+     */
+    protected $_locale = null;
+
+    /**
+     * Unit types for this measurement
+     */
+    protected $_units = array();
+
+    /**
+     * Zend_Measure_Abstract is an abstract class for the different measurement types
+     *
+     * @param  $value  mixed  - Value as string, integer, real or float
+     * @param  $type   type   - OPTIONAL a Zend_Measure_Area Type
+     * @param  $locale locale - OPTIONAL a Zend_Locale Type
+     * @throws Zend_Measure_Exception
+     */
+    public function __construct($value, $type = null, $locale = null)
+    {
+        if (($type !== null) and (Zend_Locale::isLocale($type, null, false))) {
+            $locale = $type;
+            $type = null;
+        }
+
+        if (empty($locale)) {
+            require_once 'Zend/Registry.php';
+            if (Zend_Registry::isRegistered('Zend_Locale') === true) {
+                $locale = Zend_Registry::get('Zend_Locale');
+            }
+        }
+
+        if ($locale === null) {
+            $locale = new Zend_Locale();
+        }
+
+        if (!Zend_Locale::isLocale($locale, true, false)) {
+            if (!Zend_Locale::isLocale($locale, false, false)) {
+                require_once 'Zend/Measure/Exception.php';
+                throw new Zend_Measure_Exception("Language (" . (string) $locale . ") is unknown");
+            }
+
+            $locale = new Zend_Locale($locale);
+        }
+
+        $this->_locale = (string) $locale;
+
+        if ($type === null) {
+            $type = $this->_units['STANDARD'];
+        }
+
+        if (isset($this->_units[$type]) === false) {
+            require_once 'Zend/Measure/Exception.php';
+            throw new Zend_Measure_Exception("Type ($type) is unknown");
+        }
+
+        $this->setValue($value, $type, $this->_locale);
+    }
+
+    /**
+     * Returns the internal value
+     *
+     * @param integer $round (Optional) Rounds the value to an given precision,
+     *                                  Default is 2, -1 returns without rounding
+     */
+    public function getValue($round = 2)
+    {
+        if ($round < 0) {
+            return $this->_value;
+        }
+
+        return Zend_Locale_Math::round($this->_value, $round);
+    }
+
+    /**
+     * Set a new value
+     *
+     * @param  integer|string      $value   Value as string, integer, real or float
+     * @param  string              $type    OPTIONAL A Zend_Measure_Acceleration Type
+     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing numbers
+     * @throws Zend_Measure_Exception
+     */
+    public function setValue($value, $type = null, $locale = null)
+    {
+        if (($type !== null) and (Zend_Locale::isLocale($type, null, false))) {
+            $locale = $type;
+            $type = null;
+        }
+
+        if ($locale === null) {
+            $locale = $this->_locale;
+        }
+
+        if (!Zend_Locale::isLocale($locale, true, false)) {
+            if (!Zend_Locale::isLocale($locale, false, false)) {
+                require_once 'Zend/Measure/Exception.php';
+                throw new Zend_Measure_Exception("Language (" . (string) $locale . ") is unknown");
+            }
+
+            $locale = new Zend_Locale($locale);
+        }
+
+        $locale = (string) $locale;
+        if ($type === null) {
+            $type = $this->_units['STANDARD'];
+        }
+
+        if (empty($this->_units[$type])) {
+            require_once 'Zend/Measure/Exception.php';
+            throw new Zend_Measure_Exception("Type ($type) is unknown");
+        }
+
+        try {
+            $value = Zend_Locale_Format::getNumber($value, array('locale' => $locale));
+        } catch(Exception $e) {
+            require_once 'Zend/Measure/Exception.php';
+            throw new Zend_Measure_Exception($e->getMessage());
+        }
+
+        $this->_value = $value;
+        $this->setType($type);
+    }
+
+    /**
+     * Returns the original type
+     *
+     * @return type
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+
+    /**
+     * Set a new type, and convert the value
+     *
+     * @param  string  $type  New type to set
+     * @throws Zend_Measure_Exception
+     */
+    public function setType($type)
+    {
+        if (empty($this->_units[$type])) {
+            require_once 'Zend/Measure/Exception.php';
+            throw new Zend_Measure_Exception("Type ($type) is unknown");
+        }
+
+        if (empty($this->_type)) {
+            $this->_type = $type;
+        } else {
+
+            // Convert to standard value
+            $value = $this->getValue(-1);
+            if (is_array($this->_units[$this->getType()][0])) {
+                foreach ($this->_units[$this->getType()][0] as $key => $found) {
+                    switch ($key) {
+                        case "/":
+                            if ($found != 0) {
+                                $value = @call_user_func(Zend_Locale_Math::$div, $value, $found, 25);
+                            }
+                            break;
+                        case "+":
+                            $value = call_user_func(Zend_Locale_Math::$add, $value, $found, 25);
+                            break;
+                        case "-":
+                            $value = call_user_func(Zend_Locale_Math::$sub, $value, $found, 25);
+                            break;
+                        default:
+                            $value = call_user_func(Zend_Locale_Math::$mul, $value, $found, 25);
+                            break;
+                    }
+                }
+            } else {
+                $value = call_user_func(Zend_Locale_Math::$mul, $value, $this->_units[$this->getType()][0], 25);
+            }
+            
+            // Convert to expected value
+            if (is_array($this->_units[$type][0])) {
+                foreach (array_reverse($this->_units[$type][0]) as $key => $found) {
+                    switch ($key) {
+                        case "/":
+                            $value = call_user_func(Zend_Locale_Math::$mul, $value, $found, 25);
+                            break;
+                        case "+":
+                            $value = call_user_func(Zend_Locale_Math::$sub, $value, $found, 25);
+                            break;
+                        case "-":
+                            $value = call_user_func(Zend_Locale_Math::$add, $value, $found, 25);
+                            break;
+                        default:
+                            if ($found != 0) {
+                                $value = @call_user_func(Zend_Locale_Math::$div, $value, $found, 25);
+                            }
+                            break;
+                    }
+                }
+            } else {
+                $value = @call_user_func(Zend_Locale_Math::$div, $value, $this->_units[$type][0], 25);
+            }
+
+            $this->_value = $value;
+            $this->_type = $type;
+        }
+    }
+
+    /**
+     * Compare if the value and type is equal
+     *
+     * @param  Zend_Measure_Detailtype  $object  object to compare
+     * @return boolean
+     */
+    public function equals($object)
+    {
+        if ((string) $object == $this->toString()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Returns a string representation
+     *
+     * @param  integer  $round  OPTIONAL rounds the value to an given exception
+     * @return string
+     */
+    public function toString($round = -1)
+    {
+        return $this->getValue($round) . ' ' . $this->_units[$this->getType()][1];
+    }
+
+    /**
+     * Returns a string representation
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
+    /**
+     * Returns the conversion list
+     *
+     * @return array
+     */
+    public function getConversionList()
+    {
+        return $this->_units;
+    }
+
+    /**
+     * Alias function for setType returning the converted unit
+     *
+     * @param $type   type
+     * @param $round  integer  OPTIONAL rounds the value to a given precision
+     * @return string
+     */
+    public function convertTo($type, $round = 2)
+    {
+        $this->setType($type);
+        return $this->toString($round);
+    }
+
+    /**
+     * Adds an unit to another one
+     *
+     * @param $object  object of same unit type
+     * @return  Zend_Measure object
+     */
+    public function add($object)
+    {
+        $object->setType($this->getType());
+        $value  = $this->getValue(-1) + $object->getValue(-1);
+
+        $this->setValue($value, $this->getType(), $this->_locale);
+        return $this;
+    }
+
+    /**
+     * Substracts an unit from another one
+     *
+     * @param $object  object of same unit type
+     * @return  Zend_Measure object
+     */
+    public function sub($object)
+    {
+        $object->setType($this->getType());
+        $value  = $this->getValue(-1) - $object->getValue(-1);
+
+        $this->setValue($value, $this->getType(), $this->_locale);
+        return $this;
+    }
+
+    /**
+     * Compares two units
+     *
+     * @param $object  object of same unit type
+     * @return boolean
+     */
+    public function compare($object)
+    {
+        $object->setType($this->getType());
+        $value  = $this->getValue(-1) - $object->getValue(-1);
+
+        if ($value < 0) {
+            return -1;
+        } else if ($value > 0) {
+            return 1;
+        }
+
+        return 0;
+    }
+}

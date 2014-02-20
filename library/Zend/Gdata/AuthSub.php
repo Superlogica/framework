@@ -1,85 +1,245 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_HttpClient
+ */
+require_once 'Zend/Gdata/HttpClient.php';
+
+/**
+ * Zend_Version
+ */
+require_once 'Zend/Version.php';
+
+/**
+ * Wrapper around Zend_Http_Client to facilitate Google's "Account Authentication
+ * Proxy for Web-Based Applications".
+ *
+ * @see http://code.google.com/apis/accounts/AuthForWebApps.html
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_AuthSub
+{
+
+    const AUTHSUB_REQUEST_URI      = 'https://www.google.com/accounts/AuthSubRequest';
+
+    const AUTHSUB_SESSION_TOKEN_URI = 'https://www.google.com/accounts/AuthSubSessionToken';
+
+    const AUTHSUB_REVOKE_TOKEN_URI  = 'https://www.google.com/accounts/AuthSubRevokeToken';
+
+    const AUTHSUB_TOKEN_INFO_URI    = 'https://www.google.com/accounts/AuthSubTokenInfo';
+
+     /**
+      * Creates a URI to request a single-use AuthSub token.
+      *
+      * @param string $next (required) URL identifying the service to be 
+      *                     accessed.
+      *  The resulting token will enable access to the specified service only.
+      *  Some services may limit scope further, such as read-only access.
+      * @param string $scope (required) URL identifying the service to be 
+      *                      accessed.  The resulting token will enable 
+      *                      access to the specified service only.
+      *                      Some services may limit scope further, such 
+      *                      as read-only access.
+      * @param int $secure (optional) Boolean flag indicating whether the 
+      *                    authentication transaction should issue a secure 
+      *                    token (1) or a non-secure token (0). Secure tokens
+      *                    are available to registered applications only.
+      * @param int $session (optional) Boolean flag indicating whether 
+      *                     the one-time-use  token may be exchanged for 
+      *                     a session token (1) or not (0).
+      * @param string $request_uri (optional) URI to which to direct the 
+      *                            authentication request.
+      */
+     public static function getAuthSubTokenUri($next, $scope, $secure=0, $session=0, 
+                                               $request_uri = self::AUTHSUB_REQUEST_URI)
+     {
+         $querystring = '?next=' . urlencode($next)
+             . '&scope=' . urldecode($scope)
+             . '&secure=' . urlencode($secure)
+             . '&session=' . urlencode($session);
+         return $request_uri . $querystring;
+     }
+
+
+    /**
+     * Upgrades a single use token to a session token
+     *
+     * @param string $token The single use token which is to be upgraded
+     * @param Zend_Http_Client $client (optional) HTTP client to use to 
+     *                                 make the request
+     * @param string $request_uri (optional) URI to which to direct 
+     *                            the session token upgrade
+     * @return string The upgraded token value
+     * @throws Zend_Gdata_App_AuthException
+     * @throws Zend_Gdata_App_HttpException
+     */
+    public static function getAuthSubSessionToken(
+            $token, $client = null, 
+            $request_uri = self::AUTHSUB_SESSION_TOKEN_URI)
+    {
+        $client = self::getHttpClient($token, $client);
+   
+        if ($client instanceof Zend_Gdata_HttpClient) { 
+            $filterResult = $client->filterHttpRequest('GET', $request_uri);
+            $url = $filterResult['url'];
+            $headers = $filterResult['headers'];
+            $client->setHeaders($headers);
+            $client->setUri($url);
+        } else {
+            $client->setUri($request_uri);
+        }
+
+        try {
+            $response = $client->request('GET');
+        } catch (Zend_Http_Client_Exception $e) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
+        }
+
+        // Parse Google's response
+        if ($response->isSuccessful()) {
+            $goog_resp = array();
+            foreach (explode("\n", $response->getBody()) as $l) {
+                $l = chop($l);
+                if ($l) {
+                    list($key, $val) = explode('=', chop($l), 2);
+                    $goog_resp[$key] = $val;
+                }
+            }
+            return $goog_resp['Token'];
+        } else {
+            require_once 'Zend/Gdata/App/AuthException.php';
+            throw new Zend_Gdata_App_AuthException(
+                    'Token upgrade failed. Reason: ' . $response->getBody());
+        }
+    }
+
+    /**
+     * Revoke a token
+     *
+     * @param string $token The token to revoke
+     * @param Zend_Http_Client $client (optional) HTTP client to use to make the request
+     * @param string $request_uri (optional) URI to which to direct the revokation request
+     * @return boolean Whether the revokation was successful
+     * @throws Zend_Gdata_App_HttpException
+     */
+    public static function AuthSubRevokeToken($token, $client = null,
+                                              $request_uri = self::AUTHSUB_REVOKE_TOKEN_URI)
+    {
+        $client = self::getHttpClient($token, $client);
+ 
+        if ($client instanceof Zend_Gdata_HttpClient) {
+            $filterResult = $client->filterHttpRequest('GET', $request_uri);
+            $url = $filterResult['url'];
+            $headers = $filterResult['headers'];
+            $client->setHeaders($headers);
+            $client->setUri($url);
+            $client->resetParameters();
+        } else {
+            $client->setUri($request_uri);
+        }
+
+        ob_start();
+        try {
+            $response = $client->request('GET');
+        } catch (Zend_Http_Client_Exception $e) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
+        }
+        ob_end_clean();
+        // Parse Google's response
+        if ($response->isSuccessful()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * get token information
+     *
+     * @param string $token The token to retrieve information about
+     * @param Zend_Http_Client $client (optional) HTTP client to use to 
+     *                                 make the request
+     * @param string $request_uri (optional) URI to which to direct 
+     *                            the information request
+     */
+    public static function getAuthSubTokenInfo(
+            $token, $client = null, $request_uri = self::AUTHSUB_TOKEN_INFO_URI)
+    {
+        $client = self::getHttpClient($token, $client);
+
+        if ($client instanceof Zend_Gdata_HttpClient) {
+            $filterResult = $client->filterHttpRequest('GET', $request_uri);
+            $url = $filterResult['url'];
+            $headers = $filterResult['headers'];
+            $client->setHeaders($headers);
+            $client->setUri($url);
+        } else {
+            $client->setUri($request_uri);
+        }
+
+        ob_start();
+        try {
+            $response = $client->request('GET');
+        } catch (Zend_Http_Client_Exception $e) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
+        }
+        ob_end_clean();
+        return $response->getBody();
+    }
+
+    /**
+     * Retrieve a HTTP client object with AuthSub credentials attached
+     * as the Authorization header
+     *
+     * @param string $token The token to retrieve information about
+     * @param Zend_Gdata_HttpClient $client (optional) HTTP client to use to make the request
+     */
+    public static function getHttpClient($token, $client = null)
+    {
+        if ($client == null) {
+            $client = new Zend_Gdata_HttpClient();
+        }
+        if (!$client instanceof Zend_Http_Client) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_HttpException('Client is not an instance of Zend_Http_Client.');
+        }
+        $useragent = 'Zend_Framework_Gdata/' . Zend_Version::VERSION;
+        $client->setConfig(array(
+                'strictredirects' => true,
+                'useragent' => $useragent
+            )
+        );
+        $client->setAuthSubToken($token);
+        return $client;
+    }
+
+}

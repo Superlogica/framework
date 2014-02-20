@@ -1,49 +1,215 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Link.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_Link
+{
+    /**
+     * Private access type
+     *
+     * @var string
+     */
+    const ACCESSTYPE_PRIVATE = '0';
+
+    /**
+     * Public access type
+     *
+     * @var string
+     */
+    const ACCESSTYPE_PUBLIC  = '1';
+
+    /**
+     * Access type assigned to the link
+     *
+     * @var string
+     */
+    protected $_accessType;
+
+    /**
+     * URL of the link
+     *
+     * @var string
+     */
+    protected $_url;
+
+    /**
+     * Date of the last modification made to the link
+     *
+     * @var string
+     */
+    protected $_modDate;
+
+    /**
+     * Date the link was added
+     *
+     * @var string
+     */
+    protected $_addDate;
+
+    /**
+     * Title assigned to the link
+     *
+     * @var string
+     */
+    protected $_title;
+
+    /**
+     * Nickname assigned to the link
+     *
+     * @var string
+     */
+    protected $_nickname;
+
+    /**
+     * Tags assigned to the link
+     *
+     * @var array
+     */
+    protected $_tags;
+
+    /**
+     * Note assigned to the link
+     *
+     * @var string
+     */
+    protected $_note;
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMNode $node Individual <link> node from a parsed response from
+     *                       a GetLinks operation
+     * @return void
+     */
+    public function __construct($node)
+    {
+        $this->_accessType = $node->attributes->getNamedItem('accessType')->nodeValue;
+
+        $doc = new DOMDocument();
+        $doc->appendChild($doc->importNode($node, true));
+        $xpath = new DOMXPath($doc);
+
+        $this->_url = $xpath->evaluate('/link/url')->item(0)->nodeValue;
+        $this->_modDate = $xpath->evaluate('/link/modDate')->item(0)->nodeValue;
+        $this->_addDate = $xpath->evaluate('/link/addDate')->item(0)->nodeValue;
+        $this->_title = $xpath->evaluate('/link/title')->item(0)->nodeValue;
+        $this->_nickname = $xpath->evaluate('/link/nickname')->item(0)->nodeValue;
+        $this->_note = $xpath->evaluate('/link/note')->item(0)->nodeValue;
+
+        $list = $xpath->query('/link/tags/tag');
+        $this->_tags = array();
+
+        for ($x = 0; $x < $list->length; $x++) {
+            $this->_tags[$x] = $list->item($x)->nodeValue;
+        }
+    }
+
+    /**
+     * Returns the access type assigned to the link
+     *
+     * @see ACCESSTYPE_PRIVATE
+     * @see ACCESSTYPE_PUBLIC
+     * @return string
+     */
+    public function getAccessType()
+    {
+        return $this->_accessType;
+    }
+
+    /**
+     * Returns the URL of the link
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->_url;
+    }
+
+    /**
+     * Returns the date of the last modification made to the link
+     *
+     * @return string
+     */
+    public function getModDate()
+    {
+        return $this->_modDate;
+    }
+
+    /**
+     * Returns the date the link was added
+     *
+     * @return string
+     */
+    public function getAddDate()
+    {
+        return $this->_addDate;
+    }
+
+    /**
+     * Returns the title assigned to the link
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * Returns the nickname assigned to the link
+     *
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->_nickname;
+    }
+
+    /**
+     * Returns the tags assigned to the link
+     *
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->_tags;
+    }
+
+    /**
+     * Returns the note assigned to the link
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->_note;
+    }
+}

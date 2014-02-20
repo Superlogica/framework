@@ -1,59 +1,155 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+
+/**
+ * An Amazon EC2 interface to allocate, associate, describe and release Elastic IP address
+ * from your account.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Elasticip extends Zend_Service_Amazon_Ec2_Abstract
+{
+    /**
+     * Acquires an elastic IP address for use with your account
+     *
+     * @return string                           Returns the newly Allocated IP Address
+     */
+    public function allocate()
+    {
+        $params = array();
+        $params['Action'] = 'AllocateAddress';
+
+        $response = $this->sendRequest($params);
+
+        $xpath = $response->getXPath();
+        $ip = $xpath->evaluate('string(//ec2:publicIp/text())');
+
+        return $ip;
+    }
+
+    /**
+     * Lists elastic IP addresses assigned to your account.
+     *
+     * @param string|array $publicIp            Elastic IP or list of addresses to describe.
+     * @return array
+     */
+    public function describe($publicIp = null)
+    {
+        $params = array();
+        $params['Action'] = 'DescribeAddresses';
+
+        if(is_array($publicIp) && !empty($publicIp)) {
+            foreach($publicIp as $k=>$name) {
+                $params['PublicIp.' . ($k+1)] = $name;
+            }
+        } elseif($publicIp) {
+            $params['PublicIp.1'] = $publicIp;
+        }
+
+        $response = $this->sendRequest($params);
+
+        $xpath  = $response->getXPath();
+        $nodes  = $xpath->query('//ec2:item');
+
+        $return = array();
+        foreach ($nodes as $k => $node) {
+            $item = array();
+            $item['publicIp']  = $xpath->evaluate('string(ec2:publicIp/text())', $node);
+            $item['instanceId']   = $xpath->evaluate('string(ec2:instanceId/text())', $node);
+
+            $return[] = $item;
+            unset($item);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Releases an elastic IP address that is associated with your account
+     *
+     * @param string $publicIp                  IP address that you are releasing from your account.
+     * @return boolean
+     */
+    public function release($publicIp)
+    {
+        $params = array();
+        $params['Action'] = 'ReleaseAddress';
+        $params['PublicIp'] = $publicIp;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($return === "true");
+    }
+
+    /**
+     * Associates an elastic IP address with an instance
+     *
+     * @param string $instanceId                The instance to which the IP address is assigned
+     * @param string $publicIp                  IP address that you are assigning to the instance.
+     * @return boolean
+     */
+    public function associate($instanceId, $publicIp)
+    {
+        $params = array();
+        $params['Action'] = 'AssociateAddress';
+        $params['PublicIp'] = $publicIp;
+        $params['InstanceId'] = $instanceId;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($return === "true");
+    }
+
+    /**
+     * Disassociates the specified elastic IP address from the instance to which it is assigned.
+     * This is an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error.
+     *
+     * @param string $publicIp                  IP address that you are disassociating from the instance.
+     * @return boolean
+     */
+    public function disassocate($publicIp)
+    {
+        $params = array();
+        $params['Action'] = 'DisssociateAddress';
+        $params['PublicIp'] = $publicIp;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($return === "true");
+    }
+
+}

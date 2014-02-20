@@ -1,342 +1,781 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-J3sIXZauUOYgPPCx0qWBgPdTMTGZfV+V77PZ
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @subpackage Zend_OpenId_Provider
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Provider.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * @see Zend_OpenId
+ */
+require_once "Zend/OpenId.php";
+
+/**
+ * @see Zend_OpenId_Extension
+ */
+require_once "Zend/OpenId/Extension.php";
+
+/**
+ * OpenID provider (server) implementation
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @subpackage Zend_OpenId_Provider
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_OpenId_Provider
+{
+
+    /**
+     * Reference to an implementation of storage object
+     *
+     * @var Zend_OpenId_Provider_Storage $_storage
+     */
+    private $_storage;
+
+    /**
+     * Reference to an implementation of user object
+     *
+     * @var Zend_OpenId_Provider_User $_user
+     */
+    private $_user;
+
+    /**
+     * Time to live of association session in secconds
+     *
+     * @var integer $_sessionTtl
+     */
+    private $_sessionTtl;
+
+    /**
+     * URL to peform interactive user login
+     *
+     * @var string $_loginUrl
+     */
+    private $_loginUrl;
+
+    /**
+     * URL to peform interactive validation of consumer by user
+     *
+     * @var string $_trustUrl
+     */
+    private $_trustUrl;
+
+    /**
+     * The OP Endpoint URL
+     *
+     * @var string $_opEndpoint
+     */
+    private $_opEndpoint;
+
+    /**
+     * Constructs a Zend_OpenId_Provider object with given parameters.
+     *
+     * @param string $loginUrl is an URL that provides login screen for
+     *  end-user (by default it is the same URL with additional GET variable
+     *  openid.action=login)
+     * @param string $trustUrl is an URL that shows a question if end-user
+     *  trust to given consumer (by default it is the same URL with additional
+     *  GET variable openid.action=trust)
+     * @param Zend_OpenId_Provider_User $user is an object for communication
+     *  with User-Agent and store information about logged-in user (it is a
+     *  Zend_OpenId_Provider_User_Session object by default)
+     * @param Zend_OpenId_Provider_Storage $storage is an object for keeping
+     *  persistent database (it is a Zend_OpenId_Provider_Storage_File object
+     *  by default)
+     * @param integer $sessionTtl is a default time to live for association
+     *   session in seconds (1 hour by default). Consumer must reestablish
+     *   association after that time.
+     */
+    public function __construct($loginUrl = null,
+                                $trustUrl = null,
+                                Zend_OpenId_Provider_User $user = null,
+                                Zend_OpenId_Provider_Storage $storage = null,
+                                $sessionTtl = 3600)
+    {
+        if ($loginUrl === null) {
+            $loginUrl = Zend_OpenId::selfUrl() . '?openid.action=login';
+        } else {
+            $loginUrl = Zend_OpenId::absoluteUrl($loginUrl);
+        }
+        $this->_loginUrl = $loginUrl;
+        if ($trustUrl === null) {
+            $trustUrl = Zend_OpenId::selfUrl() . '?openid.action=trust';
+        } else {
+            $trustUrl = Zend_OpenId::absoluteUrl($trustUrl);
+        }
+        $this->_trustUrl = $trustUrl;
+        if ($user === null) {
+            require_once "Zend/OpenId/Provider/User/Session.php";
+            $this->_user = new Zend_OpenId_Provider_User_Session();
+        } else {
+            $this->_user = $user;
+        }
+        if ($storage === null) {
+            require_once "Zend/OpenId/Provider/Storage/File.php";
+            $this->_storage = new Zend_OpenId_Provider_Storage_File();
+        } else {
+            $this->_storage = $storage;
+        }
+        $this->_sessionTtl = $sessionTtl;
+    }
+
+    /**
+     * Sets the OP Endpoint URL
+     *
+     * @param string $url the OP Endpoint URL
+     * @return null
+     */
+    public function setOpEndpoint($url)
+    {
+        $this->_opEndpoint = $url;
+    }
+
+    /**
+     * Registers a new user with given $id and $password
+     * Returns true in case of success and false if user with given $id already
+     * exists
+     *
+     * @param string $id user identity URL
+     * @param string $password encoded user password
+     * @return bool
+     */
+    public function register($id, $password)
+    {
+        if (!Zend_OpenId::normalize($id) || empty($id)) {
+            return false;
+        }
+        return $this->_storage->addUser($id, md5($id.$password));
+    }
+
+    /**
+     * Returns true if user with given $id exists and false otherwise
+     *
+     * @param string $id user identity URL
+     * @return bool
+     */
+    public function hasUser($id) {
+        if (!Zend_OpenId::normalize($id)) {
+            return false;
+        }
+        return $this->_storage->hasUser($id);
+    }
+
+    /**
+     * Performs login of user with given $id and $password
+     * Returns true in case of success and false otherwise
+     *
+     * @param string $id user identity URL
+     * @param string $password user password
+     * @return bool
+     */
+    public function login($id, $password)
+    {
+        if (!Zend_OpenId::normalize($id)) {
+            return false;
+        }
+        if (!$this->_storage->checkUser($id, md5($id.$password))) {
+            return false;
+        }
+        $this->_user->setLoggedInUser($id);
+        return true;
+    }
+
+    /**
+     * Performs logout. Clears information about logged in user.
+     *
+     * @return void
+     */
+    public function logout()
+    {
+        $this->_user->delLoggedInUser();
+        return true;
+    }
+
+    /**
+     * Returns identity URL of current logged in user or false
+     *
+     * @return mixed
+     */
+    public function getLoggedInUser() {
+        return $this->_user->getLoggedInUser();
+    }
+
+    /**
+     * Retrieve consumer's root URL from request query.
+     * Returns URL or false in case of failure
+     *
+     * @param array $params query arguments
+     * @return mixed
+     */
+    public function getSiteRoot($params)
+    {
+        $version = 1.1;
+        if (isset($params['openid_ns']) &&
+            $params['openid_ns'] == Zend_OpenId::NS_2_0) {
+            $version = 2.0;
+        }
+        if ($version >= 2.0 && isset($params['openid_realm'])) {
+            $root = $params['openid_realm'];
+        } else if ($version < 2.0 && isset($params['openid_trust_root'])) {
+            $root = $params['openid_trust_root'];
+        } else if (isset($params['openid_return_to'])) {
+            $root = $params['openid_return_to'];
+        } else {
+            return false;
+        }
+        if (Zend_OpenId::normalizeUrl($root) && !empty($root)) {
+            return $root;
+        }
+        return false;
+    }
+
+    /**
+     * Allows consumer with given root URL to authenticate current logged
+     * in user. Returns true on success and false on error.
+     *
+     * @param string $root root URL
+     * @param mixed $extensions extension object or array of extensions objects
+     * @return bool
+     */
+    public function allowSite($root, $extensions=null)
+    {
+        $id = $this->getLoggedInUser();
+        if ($id === false) {
+            return false;
+        }
+        if ($extensions !== null) {
+            $data = array();
+            Zend_OpenId_Extension::forAll($extensions, 'getTrustData', $data);
+        } else {
+            $data = true;
+        }
+        $this->_storage->addSite($id, $root, $data);
+        return true;
+    }
+
+    /**
+     * Prohibit consumer with given root URL to authenticate current logged
+     * in user. Returns true on success and false on error.
+     *
+     * @param string $root root URL
+     * @return bool
+     */
+    public function denySite($root)
+    {
+        $id = $this->getLoggedInUser();
+        if ($id === false) {
+            return false;
+        }
+        $this->_storage->addSite($id, $root, false);
+        return true;
+    }
+
+    /**
+     * Delete consumer with given root URL from known sites of current logged
+     * in user. Next time this consumer will try to authenticate the user,
+     * Provider will ask user's confirmation.
+     * Returns true on success and false on error.
+     *
+     * @param string $root root URL
+     * @return bool
+     */
+    public function delSite($root)
+    {
+        $id = $this->getLoggedInUser();
+        if ($id === false) {
+            return false;
+        }
+        $this->_storage->addSite($id, $root, null);
+        return true;
+    }
+
+    /**
+     * Returns list of known consumers for current logged in user or false
+     * if he is not logged in.
+     *
+     * @return mixed
+     */
+    public function getTrustedSites()
+    {
+        $id = $this->getLoggedInUser();
+        if ($id === false) {
+            return false;
+        }
+        return $this->_storage->getTrustedSites($id);
+    }
+
+    /**
+     * Handles HTTP request from consumer
+     *
+     * @param array $params GET or POST variables. If this parameter is omited
+     *  or set to null, then $_GET or $_POST superglobal variable is used
+     *  according to REQUEST_METHOD.
+     * @param mixed $extensions extension object or array of extensions objects
+     * @param Zend_Controller_Response_Abstract $response an optional response
+     *  object to perform HTTP or HTML form redirection
+     * @return mixed
+     */
+    public function handle($params=null, $extensions=null,
+                           Zend_Controller_Response_Abstract $response = null)
+    {
+        if ($params === null) {
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $params = $_GET;
+            } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $params = $_POST;
+            } else {
+                return false;
+            }
+        }
+        $version = 1.1;
+        if (isset($params['openid_ns']) &&
+            $params['openid_ns'] == Zend_OpenId::NS_2_0) {
+            $version = 2.0;
+        }
+        if (isset($params['openid_mode'])) {
+            if ($params['openid_mode'] == 'associate') {
+                $response = $this->_associate($version, $params);
+                $ret = '';
+                foreach ($response as $key => $val) {
+                    $ret .= $key . ':' . $val . "\n";
+                }
+                return $ret;
+            } else if ($params['openid_mode'] == 'checkid_immediate') {
+                $ret = $this->_checkId($version, $params, 1, $extensions, $response);
+                if (is_bool($ret)) return $ret;
+                if (!empty($params['openid_return_to'])) {
+                    Zend_OpenId::redirect($params['openid_return_to'], $ret, $response);
+                }
+                return true;
+            } else if ($params['openid_mode'] == 'checkid_setup') {
+                $ret = $this->_checkId($version, $params, 0, $extensions, $response);
+                if (is_bool($ret)) return $ret;
+                if (!empty($params['openid_return_to'])) {
+                    Zend_OpenId::redirect($params['openid_return_to'], $ret, $response);
+                }
+                return true;
+            } else if ($params['openid_mode'] == 'check_authentication') {
+                $response = $this->_checkAuthentication($version, $params);
+                $ret = '';
+                foreach ($response as $key => $val) {
+                    $ret .= $key . ':' . $val . "\n";
+                }
+                return $ret;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Generates a secret key for given hash function, returns RAW key or false
+     * if function is not supported
+     *
+     * @param string $func hash function (sha1 or sha256)
+     * @return mixed
+     */
+    protected function _genSecret($func)
+    {
+        if ($func == 'sha1') {
+            $macLen = 20; /* 160 bit */
+        } else if ($func == 'sha256') {
+            $macLen = 32; /* 256 bit */
+        } else {
+            return false;
+        }
+        return Zend_OpenId::randomBytes($macLen);
+    }
+
+    /**
+     * Processes association request from OpenID consumerm generates secret
+     * shared key and send it back using Diffie-Hellman encruption.
+     * Returns array of variables to push back to consumer.
+     *
+     * @param float $version OpenID version
+     * @param array $params GET or POST request variables
+     * @return array
+     */
+    protected function _associate($version, $params)
+    {
+        $ret = array();
+
+        if ($version >= 2.0) {
+            $ret['ns'] = Zend_OpenId::NS_2_0;
+        }
+
+        if (isset($params['openid_assoc_type']) &&
+            $params['openid_assoc_type'] == 'HMAC-SHA1') {
+            $macFunc = 'sha1';
+        } else if (isset($params['openid_assoc_type']) &&
+            $params['openid_assoc_type'] == 'HMAC-SHA256' &&
+            $version >= 2.0) {
+            $macFunc = 'sha256';
+        } else {
+            $ret['error'] = 'Wrong "openid.assoc_type"';
+            $ret['error-code'] = 'unsupported-type';
+            return $ret;
+        }
+
+        $ret['assoc_type'] = $params['openid_assoc_type'];
+
+        $secret = $this->_genSecret($macFunc);
+
+        if (empty($params['openid_session_type']) ||
+            $params['openid_session_type'] == 'no-encryption') {
+            $ret['mac_key'] = base64_encode($secret);
+        } else if (isset($params['openid_session_type']) &&
+            $params['openid_session_type'] == 'DH-SHA1') {
+            $dhFunc = 'sha1';
+        } else if (isset($params['openid_session_type']) &&
+            $params['openid_session_type'] == 'DH-SHA256' &&
+            $version >= 2.0) {
+            $dhFunc = 'sha256';
+        } else {
+            $ret['error'] = 'Wrong "openid.session_type"';
+            $ret['error-code'] = 'unsupported-type';
+            return $ret;
+        }
+
+        if (isset($params['openid_session_type'])) {
+            $ret['session_type'] = $params['openid_session_type'];
+        }
+
+        if (isset($dhFunc)) {
+            if (empty($params['openid_dh_consumer_public'])) {
+                $ret['error'] = 'Wrong "openid.dh_consumer_public"';
+                return $ret;
+            }
+            if (empty($params['openid_dh_gen'])) {
+                $g = pack('H*', Zend_OpenId::DH_G);
+            } else {
+                $g = base64_decode($params['openid_dh_gen']);
+            }
+            if (empty($params['openid_dh_modulus'])) {
+                $p = pack('H*', Zend_OpenId::DH_P);
+            } else {
+                $p = base64_decode($params['openid_dh_modulus']);
+            }
+
+            $dh = Zend_OpenId::createDhKey($p, $g);
+            $dh_details = Zend_OpenId::getDhKeyDetails($dh);
+
+            $sec = Zend_OpenId::computeDhSecret(
+                base64_decode($params['openid_dh_consumer_public']), $dh);
+            if ($sec === false) {
+                $ret['error'] = 'Wrong "openid.session_type"';
+                $ret['error-code'] = 'unsupported-type';
+                return $ret;
+            }
+            $sec = Zend_OpenId::digest($dhFunc, $sec);
+            $ret['dh_server_public'] = base64_encode(
+                Zend_OpenId::btwoc($dh_details['pub_key']));
+            $ret['enc_mac_key']      = base64_encode($secret ^ $sec);
+        }
+
+        $handle = uniqid();
+        $expiresIn = $this->_sessionTtl;
+
+        $ret['assoc_handle'] = $handle;
+        $ret['expires_in'] = $expiresIn;
+
+        $this->_storage->addAssociation($handle,
+            $macFunc, $secret, time() + $expiresIn);
+
+        return $ret;
+    }
+
+    /**
+     * Performs authentication (or authentication check).
+     *
+     * @param float $version OpenID version
+     * @param array $params GET or POST request variables
+     * @param bool $immediate enables or disables interaction with user
+     * @param mixed $extensions extension object or array of extensions objects
+     * @param Zend_Controller_Response_Abstract $response
+     * @return array
+     */
+    protected function _checkId($version, $params, $immediate, $extensions=null,
+        Zend_Controller_Response_Abstract $response = null)
+    {
+        $ret = array();
+
+        if ($version >= 2.0) {
+            $ret['openid.ns'] = Zend_OpenId::NS_2_0;
+        }
+        $root = $this->getSiteRoot($params);
+        if ($root === false) {
+            return false;
+        }
+
+        if (isset($params['openid_identity']) &&
+            !$this->_storage->hasUser($params['openid_identity'])) {
+            $ret['openid.mode'] = ($immediate && $version >= 2.0) ? 'setup_needed': 'cancel';
+            return $ret;
+        }
+
+        /* Check if user already logged in into the server */
+        if (!isset($params['openid_identity']) ||
+            $this->_user->getLoggedInUser() !== $params['openid_identity']) {
+            $params2 = array();
+            foreach ($params as $key => $val) {
+                if (strpos($key, 'openid_ns_') === 0) {
+                    $key = 'openid.ns.' . substr($key, strlen('openid_ns_'));
+                } else if (strpos($key, 'openid_sreg_') === 0) {
+                    $key = 'openid.sreg.' . substr($key, strlen('openid_sreg_'));
+                } else if (strpos($key, 'openid_') === 0) {
+                    $key = 'openid.' . substr($key, strlen('openid_'));
+                }
+                $params2[$key] = $val;
+            }
+            if ($immediate) {
+                $params2['openid.mode'] = 'checkid_setup';
+                $ret['openid.mode'] = ($version >= 2.0) ? 'setup_needed': 'id_res';
+                $ret['openid.user_setup_url'] = $this->_loginUrl
+                    . (strpos($this->_loginUrl, '?') === false ? '?' : '&')
+                    . Zend_OpenId::paramsToQuery($params2);
+                return $ret;
+            } else {
+                /* Redirect to Server Login Screen */
+                Zend_OpenId::redirect($this->_loginUrl, $params2, $response);
+                return true;
+            }
+        }
+
+        if (!Zend_OpenId_Extension::forAll($extensions, 'parseRequest', $params)) {
+            $ret['openid.mode'] = ($immediate && $version >= 2.0) ? 'setup_needed': 'cancel';
+            return $ret;
+        }
+
+        /* Check if user trusts to the consumer */
+        $trusted = null;
+        $sites = $this->_storage->getTrustedSites($params['openid_identity']);
+        if (isset($params['openid_return_to'])) {
+            $root = $params['openid_return_to'];
+        }
+        if (isset($sites[$root])) {
+            $trusted = $sites[$root];
+        } else {
+            foreach ($sites as $site => $t) {
+                if (strpos($root, $site) === 0) {
+                    $trusted = $t;
+                    break;
+                } else {
+                    /* OpenID 2.0 (9.2) check for realm wild-card matching */
+                    $n = strpos($site, '://*.');
+                    if ($n != false) {
+                        $regex = '/^'
+                               . preg_quote(substr($site, 0, $n+3), '/')
+                               . '[A-Za-z1-9_\.]+?'
+                               . preg_quote(substr($site, $n+4), '/')
+                               . '/';
+                        if (preg_match($regex, $root)) {
+                            $trusted = $t;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (is_array($trusted)) {
+            if (!Zend_OpenId_Extension::forAll($extensions, 'checkTrustData', $trusted)) {
+                $trusted = null;
+            }
+        }
+
+        if ($trusted === false) {
+            $ret['openid.mode'] = 'cancel';
+            return $ret;
+        } else if ($trusted === null) {
+            /* Redirect to Server Trust Screen */
+            $params2 = array();
+            foreach ($params as $key => $val) {
+                if (strpos($key, 'openid_ns_') === 0) {
+                    $key = 'openid.ns.' . substr($key, strlen('openid_ns_'));
+                } else if (strpos($key, 'openid_sreg_') === 0) {
+                    $key = 'openid.sreg.' . substr($key, strlen('openid_sreg_'));
+                } else if (strpos($key, 'openid_') === 0) {
+                    $key = 'openid.' . substr($key, strlen('openid_'));
+                }
+                $params2[$key] = $val;
+            }
+            if ($immediate) {
+                $params2['openid.mode'] = 'checkid_setup';
+                $ret['openid.mode'] = ($version >= 2.0) ? 'setup_needed': 'id_res';
+                $ret['openid.user_setup_url'] = $this->_trustUrl
+                    . (strpos($this->_trustUrl, '?') === false ? '?' : '&')
+                    . Zend_OpenId::paramsToQuery($params2);
+                return $ret;
+            } else {
+                Zend_OpenId::redirect($this->_trustUrl, $params2, $response);
+                return true;
+            }
+        }
+
+        return $this->_respond($version, $ret, $params, $extensions);
+    }
+
+    /**
+     * Perepares information to send back to consumer's authentication request,
+     * signs it using shared secret and send back through HTTP redirection
+     *
+     * @param array $params GET or POST request variables
+     * @param mixed $extensions extension object or array of extensions objects
+     * @param Zend_Controller_Response_Abstract $response an optional response
+     *  object to perform HTTP or HTML form redirection
+     * @return bool
+     */
+    public function respondToConsumer($params, $extensions=null,
+                           Zend_Controller_Response_Abstract $response = null)
+    {
+        $version = 1.1;
+        if (isset($params['openid_ns']) &&
+            $params['openid_ns'] == Zend_OpenId::NS_2_0) {
+            $version = 2.0;
+        }
+        $ret = array();
+        if ($version >= 2.0) {
+            $ret['openid.ns'] = Zend_OpenId::NS_2_0;
+        }
+        $ret = $this->_respond($version, $ret, $params, $extensions);
+        if (!empty($params['openid_return_to'])) {
+            Zend_OpenId::redirect($params['openid_return_to'], $ret, $response);
+        }
+        return true;
+    }
+
+    /**
+     * Perepares information to send back to consumer's authentication request
+     * and signs it using shared secret.
+     *
+     * @param float $version OpenID protcol version
+     * @param array $ret arguments to be send back to consumer
+     * @param array $params GET or POST request variables
+     * @param mixed $extensions extension object or array of extensions objects
+     * @return array
+     */
+    protected function _respond($version, $ret, $params, $extensions=null)
+    {
+        if (empty($params['openid_assoc_handle']) ||
+            !$this->_storage->getAssociation($params['openid_assoc_handle'],
+                $macFunc, $secret, $expires)) {
+            /* Use dumb mode */
+            if (!empty($params['openid_assoc_handle'])) {
+                $ret['openid.invalidate_handle'] = $params['openid_assoc_handle'];
+            }
+            $macFunc = $version >= 2.0 ? 'sha256' : 'sha1';
+            $secret = $this->_genSecret($macFunc);
+            $handle = uniqid();
+            $expiresIn = $this->_sessionTtl;
+            $this->_storage->addAssociation($handle,
+                $macFunc, $secret, time() + $expiresIn);
+            $ret['openid.assoc_handle'] = $handle;
+        } else {
+            $ret['openid.assoc_handle'] = $params['openid_assoc_handle'];
+        }
+        if (isset($params['openid_return_to'])) {
+            $ret['openid.return_to'] = $params['openid_return_to'];
+        }
+        if (isset($params['openid_claimed_id'])) {
+            $ret['openid.claimed_id'] = $params['openid_claimed_id'];
+        }
+        if (isset($params['openid_identity'])) {
+            $ret['openid.identity'] = $params['openid_identity'];
+        }
+
+        if ($version >= 2.0) {
+            if (!empty($this->_opEndpoint)) {
+                $ret['openid.op_endpoint'] = $this->_opEndpoint;
+            } else {
+                $ret['openid.op_endpoint'] = Zend_OpenId::selfUrl();
+            }
+        }
+        $ret['openid.response_nonce'] = gmdate('Y-m-d\TH:i:s\Z') . uniqid();
+        $ret['openid.mode'] = 'id_res';
+
+        Zend_OpenId_Extension::forAll($extensions, 'prepareResponse', $ret);
+
+        $signed = '';
+        $data = '';
+        foreach ($ret as $key => $val) {
+            if (strpos($key, 'openid.') === 0) {
+                $key = substr($key, strlen('openid.'));
+                if (!empty($signed)) {
+                    $signed .= ',';
+                }
+                $signed .= $key;
+                $data .= $key . ':' . $val . "\n";
+            }
+        }
+        $signed .= ',signed';
+        $data .= 'signed:' . $signed . "\n";
+        $ret['openid.signed'] = $signed;
+
+        $ret['openid.sig'] = base64_encode(
+            Zend_OpenId::hashHmac($macFunc, $data, $secret));
+
+        return $ret;
+    }
+
+    /**
+     * Performs authentication validation for dumb consumers
+     * Returns array of variables to push back to consumer.
+     * It MUST contain 'is_valid' variable with value 'true' or 'false'.
+     *
+     * @param float $version OpenID version
+     * @param array $params GET or POST request variables
+     * @return array
+     */
+    protected function _checkAuthentication($version, $params)
+    {
+        $ret = array();
+        if ($version >= 2.0) {
+            $ret['ns'] = Zend_OpenId::NS_2_0;
+        }
+        $ret['openid.mode'] = 'id_res';
+
+        if (empty($params['openid_assoc_handle']) ||
+            empty($params['openid_signed']) ||
+            empty($params['openid_sig']) ||
+            !$this->_storage->getAssociation($params['openid_assoc_handle'],
+                $macFunc, $secret, $expires)) {
+            $ret['is_valid'] = 'false';
+            return $ret;
+        }
+
+        $signed = explode(',', $params['openid_signed']);
+        $data = '';
+        foreach ($signed as $key) {
+            $data .= $key . ':';
+            if ($key == 'mode') {
+                $data .= "id_res\n";
+            } else {
+                $data .= $params['openid_' . strtr($key,'.','_')]."\n";
+            }
+        }
+        if (base64_decode($params['openid_sig']) ===
+            Zend_OpenId::hashHmac($macFunc, $data, $secret)) {
+            $ret['is_valid'] = 'true';
+        } else {
+            $ret['is_valid'] = 'false';
+        }
+        return $ret;
+    }
+}

@@ -1,42 +1,185 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-qBC9hp9c3sWO4SyGxpEIdVczxiKgv0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Gapps_Query
+ */
+require_once('Zend/Gdata/Gapps/Query.php');
+
+/**
+ * Assists in constructing queries for Google Apps nickname entries. 
+ * Instances of this class can be provided in many places where a URL is 
+ * required.
+ * 
+ * For information on submitting queries to a server, see the Google Apps
+ * service class, Zend_Gdata_Gapps.
+ * 
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_NicknameQuery extends Zend_Gdata_Gapps_Query
+{
+
+    /**
+     * If not null, indicates the name of the nickname entry which 
+     * should be returned by this query.
+     * 
+     * @var string
+     */
+    protected $_nickname = null;
+
+    /**
+     * Create a new instance.
+     * 
+     * @param string $domain (optional) The Google Apps-hosted domain to use 
+     *          when constructing query URIs.
+     * @param string $nickname (optional) Value for the nickname 
+     *          property.
+     * @param string $username (optional) Value for the username 
+     *          property.
+     * @param string $startNickname (optional) Value for the 
+     *          startNickname property.
+     */
+    public function __construct($domain = null, $nickname = null, 
+            $username = null, $startNickname = null)
+    {
+        parent::__construct($domain);
+        $this->setNickname($nickname);
+        $this->setUsername($username);
+        $this->setStartNickname($startNickname);
+    }
+
+    /**
+     * Set the nickname to query for. When set, only users with a nickname 
+     * matching this value will be returned in search results. Set to 
+     * null to disable filtering by username.
+     * 
+     * @param string $value The nickname to filter search results by, or null 
+     *          to  disable.
+     */
+     public function setNickname($value)
+     {
+         $this->_nickname = $value;
+     }
+
+    /**
+     * Get the nickname to query for. If no nickname is set, null will be 
+     * returned.
+     * 
+     * @see setNickname
+     * @return string The nickname to filter search results by, or null if 
+     *              disabled.
+     */
+    public function getNickname()
+    {
+        return $this->_nickname;
+    }
+
+    /**
+     * Set the username to query for. When set, only users with a username 
+     * matching this value will be returned in search results. Set to 
+     * null to disable filtering by username.
+     * 
+     * @param string $value The username to filter search results by, or null 
+     *          to disable.
+     */
+    public function setUsername($value)
+    {
+        if ($value !== null) {
+            $this->_params['username'] = $value;
+        }
+        else {
+            unset($this->_params['username']);
+        }
+    }
+
+    /**
+     * Get the username to query for. If no username is set, null will be 
+     * returned.
+     * 
+     * @see setUsername
+     * @return string The username to filter search results by, or null if 
+     *              disabled.
+     */
+    public function getUsername()
+    {
+        if (array_key_exists('username', $this->_params)) {
+            return $this->_params['username'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Set the first nickname which should be displayed when retrieving 
+     * a list of nicknames.
+     * 
+     * @param string $value The first nickname to be returned, or null to 
+     *              disable.
+     */
+    public function setStartNickname($value)
+    {
+        if ($value !== null) {
+            $this->_params['startNickname'] = $value;
+        } else {
+            unset($this->_params['startNickname']);
+        }
+    }
+
+    /**
+     * Get the first nickname which should be displayed when retrieving 
+     * a list of nicknames.
+     * 
+     * @return string The first nickname to be returned, or null to 
+     *              disable.
+     */
+    public function getStartNickname()
+    {
+        if (array_key_exists('startNickname', $this->_params)) {
+            return $this->_params['startNickname'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Returns the URL generated for this query, based on it's current 
+     * parameters.
+     * 
+     * @return string A URL generated based on the state of this query.
+     */
+    public function getQueryUrl()
+    {
+        
+        $uri = $this->getBaseUrl();
+        $uri .= Zend_Gdata_Gapps::APPS_NICKNAME_PATH;
+        if ($this->_nickname !== null) {
+            $uri .= '/' . $this->_nickname;
+        }
+        $uri .= $this->getQueryString();
+        return $uri;
+    }
+
+}

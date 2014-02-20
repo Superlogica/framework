@@ -1,31 +1,73 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-SXrz3W2Dpinb+SaWijQJ5E4=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: ColorPicker.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "ZendX/JQuery/View/Helper/UiWidget.php";
+
+/**
+ * jQuery Color Picker View Helper
+ *
+ * @uses 	   Zend_View_Helper_FormText
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_ColorPicker extends ZendX_JQuery_View_Helper_UiWidget
+{
+	/**
+	 * Render a Color Picker in an FormText field.
+	 *
+	 * @link   http://docs.jquery.com/UI/ColorPicker
+	 * @param  string $id
+	 * @param  string $value
+	 * @param  array  $params
+	 * @param  array  $attribs
+	 * @return string
+	 */
+    public function colorPicker($id, $value='', array $params=array(), array $attribs=array())
+    {
+	    $attribs = $this->_prepareAttributes($id, $value, $attribs);
+
+	    if(strlen($value) >= 6) {
+	        $params['color'] = $value;
+	    }
+
+	    if(count($params) > 0) {
+            $params = ZendX_JQuery::encodeJson($params);
+	    } else {
+	        $params = "{}";
+	    }
+
+        $js = sprintf('%s("#%s").colorpicker(%s);',
+            ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
+            $attribs['id'],
+            $params
+        );
+
+        $this->jquery->addOnLoad($js);
+
+	    return $this->view->formText($id, $value, $attribs);
+    }
+}

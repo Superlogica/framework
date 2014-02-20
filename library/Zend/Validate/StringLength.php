@@ -1,62 +1,223 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: StringLength.php 13277 2008-12-15 19:52:00Z thomas $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_StringLength extends Zend_Validate_Abstract
+{
+    const TOO_SHORT = 'stringLengthTooShort';
+    const TOO_LONG  = 'stringLengthTooLong';
+
+    /**
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::TOO_SHORT => "'%value%' is less than %min% characters long",
+        self::TOO_LONG  => "'%value%' is greater than %max% characters long"
+    );
+
+    /**
+     * @var array
+     */
+    protected $_messageVariables = array(
+        'min' => '_min',
+        'max' => '_max'
+    );
+
+    /**
+     * Minimum length
+     *
+     * @var integer
+     */
+    protected $_min;
+
+    /**
+     * Maximum length
+     *
+     * If null, there is no maximum length
+     *
+     * @var integer|null
+     */
+    protected $_max;
+
+    /**
+     * Encoding to use
+     *
+     * @var string|null
+     */
+    protected $_encoding;
+
+    /**
+     * Sets validator options
+     *
+     * @param  integer $min
+     * @param  integer $max
+     * @return void
+     */
+    public function __construct($min = 0, $max = null, $encoding = null)
+    {
+        $this->setMin($min);
+        $this->setMax($max);
+        $this->setEncoding($encoding);
+    }
+
+    /**
+     * Returns the min option
+     *
+     * @return integer
+     */
+    public function getMin()
+    {
+        return $this->_min;
+    }
+
+    /**
+     * Sets the min option
+     *
+     * @param  integer $min
+     * @throws Zend_Validate_Exception
+     * @return Zend_Validate_StringLength Provides a fluent interface
+     */
+    public function setMin($min)
+    {
+        if (null !== $this->_max && $min > $this->_max) {
+            /**
+             * @see Zend_Validate_Exception
+             */
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("The minimum must be less than or equal to the maximum length, but $min >"
+                                            . " $this->_max");
+        }
+        $this->_min = max(0, (integer) $min);
+        return $this;
+    }
+
+    /**
+     * Returns the max option
+     *
+     * @return integer|null
+     */
+    public function getMax()
+    {
+        return $this->_max;
+    }
+
+    /**
+     * Sets the max option
+     *
+     * @param  integer|null $max
+     * @throws Zend_Validate_Exception
+     * @return Zend_Validate_StringLength Provides a fluent interface
+     */
+    public function setMax($max)
+    {
+        if (null === $max) {
+            $this->_max = null;
+        } else if ($max < $this->_min) {
+            /**
+             * @see Zend_Validate_Exception
+             */
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("The maximum must be greater than or equal to the minimum length, but "
+                                            . "$max < $this->_min");
+        } else {
+            $this->_max = (integer) $max;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the actual encoding
+     *
+     * @return string
+     */
+    public function getEncoding()
+    {
+        return $this->_encoding;
+    }
+
+    /**
+     * Sets a new encoding to use
+     *
+     * @param string $encoding
+     * @return Zend_Validate_StringLength
+     */
+    public function setEncoding($encoding = null)
+    {
+        if ($encoding !== null) {
+            $orig   = iconv_get_encoding('internal_encoding');
+            $result = iconv_set_encoding('internal_encoding', $encoding);
+            if (!$result) {
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception('Given encoding not supported on this OS!');
+            }
+
+            iconv_set_encoding('internal_encoding', $orig);
+        }
+
+        $this->_encoding = $encoding;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the string length of $value is at least the min option and
+     * no greater than the max option (when the max option is not null).
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $valueString = (string) $value;
+        $this->_setValue($valueString);
+        if ($this->_encoding !== null) {
+            $length = iconv_strlen($valueString, $this->_encoding);
+        } else {
+            $length = iconv_strlen($valueString);
+        }
+
+        if ($length < $this->_min) {
+            $this->_error(self::TOO_SHORT);
+        }
+
+        if (null !== $this->_max && $this->_max < $length) {
+            $this->_error(self::TOO_LONG);
+        }
+
+        if (count($this->_messages)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}

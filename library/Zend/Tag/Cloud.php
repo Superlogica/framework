@@ -1,114 +1,410 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-o89AY9U//zd2FoJCHATx+g4kkH+U
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tag
+ * @subpackage Cloud
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Cloud.php 15457 2009-05-09 15:19:13Z dasprid $
+ */
+
+/**
+ * @see Zend_Tag_Item
+ */
+require_once 'Zend/Tag/Item.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tag
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tag_Cloud
+{
+    /**
+     * Decorator for the cloud
+     *
+     * @var Zend_Tag_Cloud_Decorator_Cloud
+     */
+    protected $_cloudDecorator = null;
+
+    /**
+     * Decorator for the tags
+     *
+     * @var Zend_Tag_Cloud_Decorator_Tag
+     */
+    protected $_tagDecorator = null;
+
+    /**
+     * List of all tags
+     *
+     * @var Zend_Tag_ItemList
+     */
+    protected $_tags = null;
+
+    /**
+     * Plugin loader for decorators
+     *
+     * @var Zend_Loader_PluginLoader
+     */
+    protected $_pluginLoader = null;
+
+    /**
+     * Option keys to skip when calling setOptions()
+     *
+     * @var array
+     */
+    protected $_skipOptions = array(
+        'options',
+        'config',
+    );
+
+    /**
+     * Create a new tag cloud with options
+     *
+     * @param mixed $options
+     */
+    public function __construct($options = null)
+    {
+        if ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        }
+
+        if (is_array($options)) {
+            $this->setOptions($options);
+        }
+    }
+    
+    /**
+     * Set options from Zend_Config
+     *
+     * @param  Zend_Config $config
+     * @return Zend_Tag_Cloud
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        $this->setOptions($config->toArray());
+        
+        return $this;
+    }
+
+    /**
+     * Set options from array
+     *
+     * @param  array $options Configuration for Zend_Tag_Cloud
+     * @return Zend_Tag_Cloud
+     */
+    public function setOptions(array $options)
+    {
+        if (isset($options['prefixPath'])) {
+            $this->addPrefixPaths($options['prefixPath']);
+            unset($options['prefixPath']);
+        }
+        
+        foreach ($options as $key => $value) {
+            if (in_array(strtolower($key), $this->_skipOptions)) {
+                continue;
+            }
+
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the tags for the tag cloud.
+     *
+     * $tags should be an array containing single tags as array. Each tag
+     * array should at least contain the keys 'title' and 'weight'. Optionally
+     * you may supply the key 'url', to which the tag links to. Any additional
+     * parameter in the array is silently ignored and can be used by custom
+     * decorators.
+     *
+     * @param  array $tags
+     * @return Zend_Tag_Cloud
+     */
+    public function setTags(array $tags)
+    {
+        // Validate and cleanup the tags
+        $itemList = $this->getItemList();
+        
+        foreach ($tags as $tag) {
+            if ($tag instanceof Zend_Tag_Taggable) {
+                $itemList[] = $tag;
+            } else if (is_array($tag)) {
+                $itemList[] = new Zend_Tag_Item($tag);
+            } else {
+                require_once 'Zend/Tag/Cloud/Exception.php';
+                throw new Zend_Tag_Cloud_Exception('Tag must be an instance of Zend_Tag_Taggable or an array');
+            }
+        }
+
+        return $this;
+    }
+    
+    /**
+     * Append a single tag to the cloud
+     *
+     * @param  Zend_Tag_Taggable|array $tag
+     * @return Zend_Tag_Cloud
+     */
+    public function appendTag($tag)
+    {
+        $tags = $this->getItemList();
+        if ($tag instanceof Zend_Tag_Taggable) {
+            $tags[] = $tag;   
+        } else if (is_array($tag)) {
+            $tags[] = new Zend_Tag_Item($tag);
+        } else {
+            require_once 'Zend/Tag/Cloud/Exception.php';
+            throw new Zend_Tag_Cloud_Exception('Tag must be an instance of Zend_Tag_Taggable or an array');
+        }
+        
+        return $this;
+    }
+    
+    /**
+     * Set the item list
+     *
+     * @param  Zend_Tag_ItemList $itemList
+     * @return Zend_Tag_Cloud
+     */
+    public function setItemList(Zend_Tag_ItemList $itemList)
+    {
+        $this->_tags = $itemList;
+        return $this;
+    }
+
+    /**
+     * Retrieve the item list
+     *
+     * If item list is undefined, creates one.
+     * 
+     * @return Zend_Tag_ItemList
+     */
+    public function getItemList()
+    {
+        if (null === $this->_tags) {
+            require_once 'Zend/Tag/ItemList.php';
+            $this->setItemList(new Zend_Tag_ItemList());
+        }
+        return $this->_tags;
+    }
+
+    /**
+     * Set the decorator for the cloud
+     *
+     * @param  mixed $decorator
+     * @return Zend_Tag_Cloud
+     */
+    public function setCloudDecorator($decorator)
+    {
+        $options = null;
+
+        if (is_array($decorator)) {
+            if (isset($decorator['options'])) {
+                $options = $decorator['options'];
+            }
+
+            if (isset($decorator['decorator'])) {
+                $decorator = $decorator['decorator'];
+            }
+        }
+
+        if (is_string($decorator)) {
+            $classname = $this->getPluginLoader()->load($decorator);
+            $decorator = new $classname($options);
+        }
+
+        if (!($decorator instanceof Zend_Tag_Cloud_Decorator_Cloud)) {
+            require_once 'Zend/Tag/Cloud/Exception.php';
+            throw new Zend_Tag_Cloud_Exception('Decorator is no instance of Zend_Tag_Cloud_Decorator_Cloud');
+        }
+
+        $this->_cloudDecorator = $decorator;
+
+        return $this;
+    }
+
+    /**
+     * Get the decorator for the cloud
+     *
+     * @return Zend_Tag_Cloud_Decorator_Cloud
+     */
+    public function getCloudDecorator()
+    {
+        if (null === $this->_cloudDecorator) {
+            $this->setCloudDecorator('htmlCloud');
+        }
+        return $this->_cloudDecorator;
+    }
+
+    /**
+     * Set the decorator for the tags
+     *
+     * @param  mixed $decorator
+     * @return Zend_Tag_Cloud
+     */
+    public function setTagDecorator($decorator)
+    {
+        $options = null;
+
+        if (is_array($decorator)) {
+            if (isset($decorator['options'])) {
+                $options = $decorator['options'];
+            }
+
+            if (isset($decorator['decorator'])) {
+                $decorator = $decorator['decorator'];
+            }
+        }
+
+        if (is_string($decorator)) {
+            $classname = $this->getPluginLoader()->load($decorator);
+            $decorator = new $classname($options);
+        }
+
+        if (!($decorator instanceof Zend_Tag_Cloud_Decorator_Tag)) {
+            require_once 'Zend/Tag/Cloud/Exception.php';
+            throw new Zend_Tag_Cloud_Exception('Decorator is no instance of Zend_Tag_Cloud_Decorator_Tag');
+        }
+
+        $this->_tagDecorator = $decorator;
+
+        return $this;
+    }
+
+    /**
+     * Get the decorator for the tags
+     *
+     * @return Zend_Tag_Cloud_Decorator_Tag
+     */
+    public function getTagDecorator()
+    {
+        if (null === $this->_tagDecorator) {
+            $this->setTagDecorator('htmlTag');
+        }
+        return $this->_tagDecorator;
+    }
+
+    /**
+     * Set plugin loaders for use with decorators
+     * 
+     * @param  Zend_Loader_PluginLoader_Interface $loader 
+     * @return Zend_Tag_Cloud
+     */
+    public function setPluginLoader(Zend_Loader_PluginLoader_Interface $loader)
+    {
+        $this->_pluginLoader = $loader;
+        return $this;
+    }
+    
+    /**
+     * Get the plugin loader for decorators
+     *
+     * @return Zend_Loader_PluginLoader
+     */
+    public function getPluginLoader()
+    {
+        if ($this->_pluginLoader === null) {
+            $prefix     = 'Zend_Tag_Cloud_Decorator_';
+            $pathPrefix = 'Zend/Tag/Cloud/Decorator/';
+
+            require_once 'Zend/Loader/PluginLoader.php';
+            $this->_pluginLoader = new Zend_Loader_PluginLoader(array($prefix => $pathPrefix));
+        }
+
+        return $this->_pluginLoader;
+    }
+    
+    /**
+     * Add many prefix paths at once
+     * 
+     * @param  array $paths 
+     * @return Zend_Tag_Cloud
+     */
+    public function addPrefixPaths(array $paths)
+    {
+        if (isset($paths['prefix']) && isset($paths['path'])) {
+            return $this->addPrefixPath($paths['prefix'], $paths['path']);
+        } 
+        
+        foreach ($paths as $path) {
+            if (!isset($path['prefix']) || !isset($path['path'])) {
+                continue;
+            }
+            
+            $this->addPrefixPath($path['prefix'], $path['path']);
+        }
+        
+        return $this;
+    }
+    
+    /**
+     * Add prefix path for plugin loader
+     *
+     * @param  string $prefix
+     * @param  string $path 
+     * @return Zend_Tag_Cloud
+     */
+    public function addPrefixPath($prefix, $path) 
+    {
+        $loader = $this->getPluginLoader();
+        $loader->addPrefixPath($prefix, $path);
+        
+        return $this;
+    }
+
+    /**
+     * Render the tag cloud
+     *
+     * @return string
+     */
+    public function render()
+    {
+        $tags = $this->getItemList();
+        
+        if (count($tags) === 0) {
+            return '';
+        }
+        
+        $tagsResult  = $this->getTagDecorator()->render($tags);
+        $cloudResult = $this->getCloudDecorator()->render($tagsResult);
+
+        return $cloudResult;
+    }
+
+    /**
+     * Render the tag cloud
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        try {
+            $result = $this->render();
+            return $result;
+        } catch (Exception $e) {
+            $message = "Exception caught by tag cloud: " . $e->getMessage()
+                     . "\nStack Trace:\n" . $e->getTraceAsString();
+            trigger_error($message, E_USER_WARNING);
+            return '';
+        }
+    }
+}

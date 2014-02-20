@@ -1,83 +1,253 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-nFpPcdqjekD42XW=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Rest
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Service_Abstract */
+require_once 'Zend/Service/Abstract.php';
+
+/** Zend_Rest_Client_Result */
+require_once 'Zend/Rest/Client/Result.php';
+
+/** Zend_Uri */
+require_once 'Zend/Uri.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Rest
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Rest_Client extends Zend_Service_Abstract
+{
+    /**
+     * Data for the query
+     * @var array
+     */
+    protected $_data = array();
+
+     /**
+     * Zend_Uri of this web service
+     * @var Zend_Uri_Http
+     */
+    protected $_uri = null;
+
+    /**
+     * Constructor
+     *
+     * @param string|Zend_Uri_Http $uri URI for the web service
+     * @return void
+     */
+    public function __construct($uri = null)
+    {
+        if (!empty($uri)) {
+            $this->setUri($uri);
+        }
+    }
+
+    /**
+     * Set the URI to use in the request
+     *
+     * @param string|Zend_Uri_Http $uri URI for the web service
+     * @return Zend_Rest_Client
+     */
+    public function setUri($uri)
+    {
+        if ($uri instanceof Zend_Uri_Http) {
+            $this->_uri = $uri;
+        } else {
+            $this->_uri = Zend_Uri::factory($uri);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve the current request URI object
+     *
+     * @return Zend_Uri_Http
+     */
+    public function getUri()
+    {
+        return $this->_uri;
+    }
+
+    /**
+     * Call a remote REST web service URI and return the Zend_Http_Response object
+     *
+     * @param  string $path            The path to append to the URI
+     * @throws Zend_Rest_Client_Exception
+     * @return void
+     */
+    final private function _prepareRest($path)
+    {
+        // Get the URI object and configure it
+        if (!$this->_uri instanceof Zend_Uri_Http) {
+            require_once 'Zend/Rest/Client/Exception.php';
+            throw new Zend_Rest_Client_Exception('URI object must be set before performing call');
+        }
+
+        $uri = $this->_uri->getUri();
+
+        if ($path[0] != '/' && $uri[strlen($uri)-1] != '/') {
+            $path = '/' . $path;
+        }
+
+        $this->_uri->setPath($path);
+
+        /**
+         * Get the HTTP client and configure it for the endpoint URI.  Do this each time
+         * because the Zend_Http_Client instance is shared among all Zend_Service_Abstract subclasses.
+         */
+        self::getHttpClient()->resetParameters()->setUri($this->_uri);
+    }
+
+    /**
+     * Performs an HTTP GET request to the $path.
+     *
+     * @param string $path
+     * @param array  $query Array of GET parameters
+     * @return Zend_Http_Response
+     */
+    final public function restGet($path, array $query = null)
+    {
+        $this->_prepareRest($path);
+        $client = self::getHttpClient();
+        $client->setParameterGet($query);
+        return $client->request('GET');
+    }
+
+    /**
+     * Perform a POST or PUT
+     *
+     * Performs a POST or PUT request. Any data provided is set in the HTTP
+     * client. String data is pushed in as raw POST data; array or object data
+     * is pushed in as POST parameters.
+     *
+     * @param mixed $method
+     * @param mixed $data
+     * @return Zend_Http_Response
+     */
+    protected function _performPost($method, $data = null)
+    {
+        $client = self::getHttpClient();
+        if (is_string($data)) {
+            $client->setRawData($data);
+        } elseif (is_array($data) || is_object($data)) {
+            $client->setParameterPost((array) $data);
+        }
+        return $client->request($method);
+    }
+
+    /**
+     * Performs an HTTP POST request to $path.
+     *
+     * @param string $path
+     * @param mixed $data Raw data to send
+     * @return Zend_Http_Response
+     */
+    final public function restPost($path, $data = null)
+    {
+        $this->_prepareRest($path);
+        return $this->_performPost('POST', $data);
+    }
+
+    /**
+     * Performs an HTTP PUT request to $path.
+     *
+     * @param string $path
+     * @param mixed $data Raw data to send in request
+     * @return Zend_Http_Response
+     */
+    final public function restPut($path, $data = null)
+    {
+        $this->_prepareRest($path);
+        return $this->_performPost('PUT', $data);
+    }
+
+    /**
+     * Performs an HTTP DELETE request to $path.
+     *
+     * @param string $path
+     * @return Zend_Http_Response
+     */
+    final public function restDelete($path)
+    {
+        $this->_prepareRest($path);
+        return self::getHttpClient()->request('DELETE');
+    }
+
+    /**
+     * Method call overload
+     *
+     * Allows calling REST actions as object methods; however, you must
+     * follow-up by chaining the request with a request to an HTTP request
+     * method (post, get, delete, put):
+     * <code>
+     * $response = $rest->sayHello('Foo', 'Manchu')->get();
+     * </code>
+     *
+     * Or use them together, but in sequential calls:
+     * <code>
+     * $rest->sayHello('Foo', 'Manchu');
+     * $response = $rest->get();
+     * </code>
+     *
+     * @param string $method Method name
+     * @param array $args Method args
+     * @return Zend_Rest_Client_Result|Zend_Rest_Client Zend_Rest_Client if using
+     * a remote method, Zend_Rest_Client_Result if using an HTTP request method
+     */
+    public function __call($method, $args)
+    {
+        $methods = array('post', 'get', 'delete', 'put');
+
+        if (in_array(strtolower($method), $methods)) {
+            if (!isset($args[0])) {
+                $args[0] = $this->_uri->getPath();
+            }
+            $this->_data['rest'] = 1;
+            $data = array_slice($args, 1) + $this->_data;
+            $response = $this->{'rest' . $method}($args[0], $data);
+            $this->_data = array();//Initializes for next Rest method.
+            return new Zend_Rest_Client_Result($response->getBody());
+        } else {
+            // More than one arg means it's definitely a Zend_Rest_Server
+            if (sizeof($args) == 1) {
+                // Uses first called function name as method name
+                if (!isset($this->_data['method'])) {
+                    $this->_data['method'] = $method;
+                    $this->_data['arg1']  = $args[0];
+                }
+                $this->_data[$method]  = $args[0];
+            } else {
+                $this->_data['method'] = $method;
+                if (sizeof($args) > 0) {
+                    foreach ($args as $key => $arg) {
+                        $key = 'arg' . $key;
+                        $this->_data[$key] = $arg;
+                    }
+                }
+            }
+            return $this;
+        }
+    }
+}

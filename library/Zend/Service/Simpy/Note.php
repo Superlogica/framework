@@ -1,51 +1,215 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Note.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_Note
+{
+    /**
+     * Private access type
+     *
+     * @var string
+     */
+    const ACCESSTYPE_PRIVATE = 'private';
+
+    /**
+     * Public access type
+     *
+     * @var string
+     */
+    const ACCESSTYPE_PUBLIC  = 'public';
+
+    /**
+     * Access type assigned to the note
+     *
+     * @var string
+     */
+    protected $_accessType;
+
+    /**
+     * ID of the note
+     *
+     * @var int
+     */
+    protected $_id;
+
+    /**
+     * URI of the note
+     *
+     * @var string
+     */
+    protected $_uri;
+
+    /**
+     * Date of the last modification made to the note
+     *
+     * @var string
+     */
+    protected $_modDate;
+
+    /**
+     * Date the note was added
+     *
+     * @var string
+     */
+    protected $_addDate;
+
+    /**
+     * Title of to the note
+     *
+     * @var string
+     */
+    protected $_title;
+
+    /**
+     * Tags assigned to the note
+     *
+     * @var array
+     */
+    protected $_tags;
+
+    /**
+     * Description of the note
+     *
+     * @var string
+     */
+    protected $_description;
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMNode $node Individual <link> node from a parsed response from
+     *                       a GetLinks operation
+     * @return void
+     */
+    public function __construct($node)
+    {
+        $this->_accessType = $node->attributes->getNamedItem('accessType')->nodeValue;
+
+        $doc = new DOMDocument();
+        $doc->appendChild($doc->importNode($node, true));
+        $xpath = new DOMXPath($doc);
+
+        $this->_uri = $xpath->evaluate('/note/uri')->item(0)->nodeValue;
+        $this->_id = substr($this->_uri, strrpos($this->_uri, '=') + 1);
+        $this->_modDate = trim($xpath->evaluate('/note/modDate')->item(0)->nodeValue);
+        $this->_addDate = trim($xpath->evaluate('/note/addDate')->item(0)->nodeValue);
+        $this->_title = $xpath->evaluate('/note/title')->item(0)->nodeValue;
+        $this->_description = $xpath->evaluate('/note/description')->item(0)->nodeValue;
+
+        $list = $xpath->query('/note/tags/tag');
+        $this->_tags = array();
+
+        for ($x = 0; $x < $list->length; $x++) {
+            $this->_tags[$x] = $list->item($x)->nodeValue;
+        }
+    }
+
+    /**
+     * Returns the access type assigned to the note
+     *
+     * @see    ACCESSTYPE_PRIVATE
+     * @see    ACCESSTYPE_PUBLIC
+     * @return string
+     */
+    public function getAccessType()
+    {
+        return $this->_accessType;
+    }
+
+    /**
+     * Returns the ID of the note
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /**
+     * Returns the URI of the note
+     *
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->_uri;
+    }
+
+    /**
+     * Returns the date of the last modification made to the note
+     *
+     * @return string
+     */
+    public function getModDate()
+    {
+        return $this->_modDate;
+    }
+
+    /**
+     * Returns the date the note was added
+     *
+     * @return string
+     */
+    public function getAddDate()
+    {
+        return $this->_addDate;
+    }
+
+    /**
+     * Returns the title assigned to the note
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * Returns the tags assigned to the note
+     *
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->_tags;
+    }
+
+    /**
+     * Returns the description assigned to the note
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+}

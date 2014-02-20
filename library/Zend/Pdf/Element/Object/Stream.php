@@ -1,173 +1,409 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element_Object */
+require_once 'Zend/Pdf/Element/Object.php';
+
+/** Zend_Pdf_Element_Stream */
+require_once 'Zend/Pdf/Element/Stream.php';
+
+/** Zend_Pdf_Filter_Ascii85 */
+require_once 'Zend/Pdf/Filter/Ascii85.php';
+
+/** Zend_Pdf_Filter_AsciiHex */
+require_once 'Zend/Pdf/Filter/AsciiHex.php';
+
+/** Zend_Pdf_Filter_Compression_Flate */
+require_once 'Zend/Pdf/Filter/Compression/Flate.php';
+
+/** Zend_Pdf_Filter_Compression_Lzw */
+require_once 'Zend/Pdf/Filter/Compression/Lzw.php';
+
+/** Zend_Pdf_ElementFactory */
+require_once 'Zend/Pdf/ElementFactory.php';
+
+
+/**
+ * PDF file 'stream object' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Object_Stream extends Zend_Pdf_Element_Object
+{
+    /**
+     * StreamObject dictionary
+     * Required enries:
+     * Length
+     *
+     * @var Zend_Pdf_Element_Dictionary
+     */
+    private $_dictionary;
+
+    /**
+     * Flag which signals, that stream is decoded
+     *
+     * @var boolean
+     */
+    private $_streamDecoded;
+
+    /**
+     * Stored original stream object dictionary.
+     * Used to decode stream during an access time.
+     *
+     * The only properties, which affect decoding, are sored here.
+     *
+     * @var array|null
+     */
+    private $_originalDictionary = null;
+
+    /**
+     * Object constructor
+     *
+     * @param mixed $val
+     * @param integer $objNum
+     * @param integer $genNum
+     * @param Zend_Pdf_ElementFactory $factory
+     * @param Zend_Pdf_Element_Dictionary|null $dictionary
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($val, $objNum, $genNum, Zend_Pdf_ElementFactory $factory, $dictionary = null)
+    {
+        parent::__construct(new Zend_Pdf_Element_Stream($val), $objNum, $genNum, $factory);
+
+        if ($dictionary === null) {
+            $this->_dictionary    = new Zend_Pdf_Element_Dictionary();
+            $this->_dictionary->Length = new Zend_Pdf_Element_Numeric(strlen( $val ));
+            $this->_streamDecoded = true;
+        } else {
+            $this->_dictionary    = $dictionary;
+            $this->_streamDecoded = false;
+        }
+    }
+
+
+    /**
+     * Store original dictionary information in $_originalDictionary class member.
+     * Used to store information and to normalize filters information before defiltering.
+     *
+     */
+    private function _storeOriginalDictionary()
+    {
+        $this->_originalDictionary = array();
+
+        $this->_originalDictionary['Filter']      = array();
+        $this->_originalDictionary['DecodeParms'] = array();
+        if ($this->_dictionary->Filter === null) {
+            // Do nothing.
+        } else if ($this->_dictionary->Filter->getType() == Zend_Pdf_Element::TYPE_ARRAY) {
+            foreach ($this->_dictionary->Filter->items as $id => $filter) {
+                $this->_originalDictionary['Filter'][$id]      = $filter->value;
+                $this->_originalDictionary['DecodeParms'][$id] = array();
+
+                if ($this->_dictionary->DecodeParms !== null ) {
+                    if ($this->_dictionary->DecodeParms->items[$id] !== null &&
+                        $this->_dictionary->DecodeParms->items[$id]->value !== null ) {
+                        foreach ($this->_dictionary->DecodeParms->items[$id]->getKeys() as $paramKey) {
+                            $this->_originalDictionary['DecodeParms'][$id][$paramKey] =
+                                  $this->_dictionary->DecodeParms->items[$id]->$paramKey->value;
+                        }
+                    }
+                }
+            }
+        } else if ($this->_dictionary->Filter->getType() != Zend_Pdf_Element::TYPE_NULL) {
+            $this->_originalDictionary['Filter'][0]      = $this->_dictionary->Filter->value;
+            $this->_originalDictionary['DecodeParms'][0] = array();
+            if ($this->_dictionary->DecodeParms !== null ) {
+                foreach ($this->_dictionary->DecodeParms->getKeys() as $paramKey) {
+                    $this->_originalDictionary['DecodeParms'][0][$paramKey] =
+                          $this->_dictionary->DecodeParms->$paramKey->value;
+                }
+            }
+        }
+
+        if ($this->_dictionary->F !== null) {
+            $this->_originalDictionary['F'] = $this->_dictionary->F->value;
+        }
+
+        $this->_originalDictionary['FFilter']      = array();
+        $this->_originalDictionary['FDecodeParms'] = array();
+        if ($this->_dictionary->FFilter === null) {
+            // Do nothing.
+        } else if ($this->_dictionary->FFilter->getType() == Zend_Pdf_Element::TYPE_ARRAY) {
+            foreach ($this->_dictionary->FFilter->items as $id => $filter) {
+                $this->_originalDictionary['FFilter'][$id]      = $filter->value;
+                $this->_originalDictionary['FDecodeParms'][$id] = array();
+
+                if ($this->_dictionary->FDecodeParms !== null ) {
+                    if ($this->_dictionary->FDecodeParms->items[$id] !== null &&
+                        $this->_dictionary->FDecodeParms->items[$id]->value !== null) {
+                        foreach ($this->_dictionary->FDecodeParms->items[$id]->getKeys() as $paramKey) {
+                            $this->_originalDictionary['FDecodeParms'][$id][$paramKey] =
+                                  $this->_dictionary->FDecodeParms->items[$id]->items[$paramKey]->value;
+                        }
+                    }
+                }
+            }
+        } else {
+            $this->_originalDictionary['FFilter'][0]      = $this->_dictionary->FFilter->value;
+            $this->_originalDictionary['FDecodeParms'][0] = array();
+            if ($this->_dictionary->FDecodeParms !== null ) {
+                foreach ($this->_dictionary->FDecodeParms->getKeys() as $paramKey) {
+                    $this->_originalDictionary['FDecodeParms'][0][$paramKey] =
+                          $this->_dictionary->FDecodeParms->items[$paramKey]->value;
+                }
+            }
+        }
+    }
+
+    /**
+     * Decode stream
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    private function _decodeStream()
+    {
+        if ($this->_originalDictionary === null) {
+            $this->_storeOriginalDictionary();
+        }
+
+        /**
+         * All applied stream filters must be processed to decode stream.
+         * If we don't recognize any of applied filetrs an exception should be thrown here
+         */
+        if (isset($this->_originalDictionary['F'])) {
+            /** @todo Check, how external files can be processed. */
+            throw new Zend_Pdf_Exception('External filters are not supported now.');
+        }
+
+        foreach ($this->_originalDictionary['Filter'] as $id => $filterName ) {
+            $valueRef = &$this->_value->value->getRef();
+            $this->_value->value->touch();
+            switch ($filterName) {
+                case 'ASCIIHexDecode':
+                    $valueRef = Zend_Pdf_Filter_AsciiHex::decode($valueRef);
+                    break;
+
+                case 'ASCII85Decode':
+                    $valueRef = Zend_Pdf_Filter_Ascii85::decode($valueRef);
+                    break;
+
+                case 'FlateDecode':
+                    $valueRef = Zend_Pdf_Filter_Compression_Flate::decode($valueRef,
+                                                                          $this->_originalDictionary['DecodeParms'][$id]);
+                    break;
+
+                case 'LZWDecode':
+                    $valueRef = Zend_Pdf_Filter_Compression_Lzw::decode($valueRef,
+                                                                        $this->_originalDictionary['DecodeParms'][$id]);
+                    break;
+
+                default:
+                    throw new Zend_Pdf_Exception('Unknown stream filter: \'' . $filterName . '\'.');
+            }
+        }
+
+        $this->_streamDecoded = true;
+    }
+
+    /**
+     * Encode stream
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    private function _encodeStream()
+    {
+        /**
+         * All applied stream filters must be processed to encode stream.
+         * If we don't recognize any of applied filetrs an exception should be thrown here
+         */
+        if (isset($this->_originalDictionary['F'])) {
+            /** @todo Check, how external files can be processed. */
+            throw new Zend_Pdf_Exception('External filters are not supported now.');
+        }
+
+        $filters = array_reverse($this->_originalDictionary['Filter'], true);
+
+        foreach ($filters as $id => $filterName ) {
+            $valueRef = &$this->_value->value->getRef();
+            $this->_value->value->touch();
+            switch ($filterName) {
+                case 'ASCIIHexDecode':
+                    $valueRef = Zend_Pdf_Filter_AsciiHex::encode($valueRef);
+                    break;
+
+                case 'ASCII85Decode':
+                    $valueRef = Zend_Pdf_Filter_Ascii85::encode($valueRef);
+                    break;
+
+                case 'FlateDecode':
+                    $valueRef = Zend_Pdf_Filter_Compression_Flate::encode($valueRef,
+                                                                          $this->_originalDictionary['DecodeParms'][$id]);
+                    break;
+
+                case 'LZWDecode':
+                    $valueRef = Zend_Pdf_Filter_Compression_Lzw::encode($valueRef,
+                                                                        $this->_originalDictionary['DecodeParms'][$id]);
+                    break;
+
+                default:
+                    throw new Zend_Pdf_Exception('Unknown stream filter: \'' . $filterName . '\'.');
+            }
+        }
+
+        $this->_streamDecoded = false;
+    }
+
+    /**
+     * Get handler
+     *
+     * @param string $property
+     * @return mixed
+     * @throws Zend_Pdf_Exception
+     */
+    public function __get($property)
+    {
+        if ($property == 'dictionary') {
+            /**
+             * If stream is note decoded yet, then store original decoding options (do it only once).
+             */
+            if (( !$this->_streamDecoded ) && ($this->_originalDictionary === null)) {
+                $this->_storeOriginalDictionary();
+            }
+
+            return $this->_dictionary;
+        }
+
+        if ($property == 'value') {
+            if (!$this->_streamDecoded) {
+                $this->_decodeStream();
+            }
+
+            return $this->_value->value->getRef();
+        }
+
+        throw new Zend_Pdf_Exception('Unknown stream object property requested.');
+    }
+
+
+    /**
+     * Set handler
+     *
+     * @param string $property
+     * @param  mixed $value
+     */
+    public function __set($property, $value)
+    {
+        if ($property == 'value') {
+            $valueRef = &$this->_value->value->getRef();
+            $valueRef = $value;
+            $this->_value->value->touch();
+
+            $this->_streamDecoded = true;
+
+            return;
+        }
+
+        throw new Zend_Pdf_Exception('Unknown stream object property: \'' . $property . '\'.');
+    }
+
+
+    /**
+     * Treat stream data as already encoded
+     */
+    public function skipFilters()
+    {
+        $this->_streamDecoded = false;
+    }
+
+
+    /**
+     * Call handler
+     *
+     * @param string $method
+     * @param array  $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        if (!$this->_streamDecoded) {
+            $this->_decodeStream();
+        }
+
+        switch (count($args)) {
+            case 0:
+                return $this->_value->$method();
+            case 1:
+                return $this->_value->$method($args[0]);
+            default:
+                throw new Zend_Pdf_Exception('Unsupported number of arguments');
+        }
+    }
+
+    /**
+     * Dump object to a string to save within PDF file
+     *
+     * $factory parameter defines operation context.
+     *
+     * @param Zend_Pdf_ElementFactory $factory
+     * @return string
+     */
+    public function dump(Zend_Pdf_ElementFactory $factory)
+    {
+        $shift = $factory->getEnumerationShift($this->_factory);
+
+        if ($this->_streamDecoded) {
+            $this->_storeOriginalDictionary();
+            $this->_encodeStream();
+        } else if ($this->_originalDictionary != null) {
+            $startDictionary = $this->_originalDictionary;
+            $this->_storeOriginalDictionary();
+            $newDictionary = $this->_originalDictionary;
+
+            if ($startDictionary !== $newDictionary) {
+                $this->_originalDictionary = $startDictionary;
+                $this->_decodeStream();
+
+                $this->_originalDictionary = $newDictionary;
+                $this->_encodeStream();
+            }
+        }
+
+        // Update stream length
+        $this->dictionary->Length->value = $this->_value->length();
+
+        return  $this->_objNum + $shift . " " . $this->_genNum . " obj \n"
+             .  $this->dictionary->toString($factory) . "\n"
+             .  $this->_value->toString($factory) . "\n"
+             . "endobj\n";
+    }
+
+    /**
+     * Clean up resources, used by object
+     */
+    public function cleanUp()
+    {
+        $this->_dictionary = null;
+        $this->_value      = null;
+    }
+}

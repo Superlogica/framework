@@ -1,35 +1,95 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-WzkhfW3v70==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Search_Lucene_Analysis_Analyzer_Common_Text extends Zend_Search_Lucene_Analysis_Analyzer_Common
+{
+    /**
+     * Current position in a stream
+     *
+     * @var integer
+     */
+    private $_position;
+
+    /**
+     * Reset token stream
+     */
+    public function reset()
+    {
+        $this->_position = 0;
+
+        if ($this->_input === null) {
+            return;
+        }
+
+        // convert input into ascii
+        if (PHP_OS != 'AIX') {
+            $this->_input = iconv($this->_encoding, 'ASCII//TRANSLIT', $this->_input);
+        }
+        $this->_encoding = 'ASCII';
+    }
+
+    /**
+     * Tokenization stream API
+     * Get next token
+     * Returns null at the end of stream
+     *
+     * @return Zend_Search_Lucene_Analysis_Token|null
+     */
+    public function nextToken()
+    {
+        if ($this->_input === null) {
+            return null;
+        }
+
+
+        do {
+            if (! preg_match('/[a-zA-Z]+/', $this->_input, $match, PREG_OFFSET_CAPTURE, $this->_position)) {
+                // It covers both cases a) there are no matches (preg_match(...) === 0)
+                // b) error occured (preg_match(...) === FALSE)
+                return null;
+            }
+
+            $str = $match[0][0];
+            $pos = $match[0][1];
+            $endpos = $pos + strlen($str);
+
+            $this->_position = $endpos;
+
+            $token = $this->normalize(new Zend_Search_Lucene_Analysis_Token($str, $pos, $endpos));
+        } while ($token === null); // try again if token is skipped
+
+        return $token;
+    }
+}
+

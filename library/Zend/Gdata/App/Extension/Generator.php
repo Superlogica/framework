@@ -1,43 +1,114 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-mu2wIRCegxNdo3a=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * Represents the atom:generator element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_App_Extension_Generator extends Zend_Gdata_App_Extension
+{
+
+    protected $_rootElement = 'generator';
+    protected $_uri = null;
+    protected $_version = null;
+
+    public function __construct($text = null, $uri = null, $version = null)
+    {
+        parent::__construct();
+        $this->_text = $text;
+        $this->_uri = $uri;
+        $this->_version = $version;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_uri !== null) {
+            $element->setAttribute('uri', $this->_uri);
+        }
+        if ($this->_version !== null) {
+            $element->setAttribute('version', $this->_version);
+        }
+        return $element;
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'uri':
+            $this->_uri = $attribute->nodeValue;
+            break;
+        case 'version':
+            $this->_version= $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * @return Zend_Gdata_App_Extension_Uri
+     */
+    public function getUri()
+    {
+        return $this->_uri;
+    }
+
+    /**
+     * @param Zend_Gdata_App_Extension_Uri $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setUri($value)
+    {
+        $this->_uri = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_App_Extension_Version
+     */
+    public function getVersion()
+    {
+        return $this->_version;
+    }
+
+    /**
+     * @param Zend_Gdata_App_Extension_Version $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setVersion($value)
+    {
+        $this->_version = $value;
+        return $this;
+    }
+
+}

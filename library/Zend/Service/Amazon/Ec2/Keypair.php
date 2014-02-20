@@ -1,53 +1,134 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-wx4R
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+
+/**
+ * An Amazon EC2 interface to create, delete and describe Ec2 KeyPairs.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Keypair extends Zend_Service_Amazon_Ec2_Abstract
+{
+    /**
+     * Creates a new 2048 bit RSA key pair and returns a unique ID that can
+     * be used to reference this key pair when launching new instances.
+     *
+     * @param string $keyName           A unique name for the key pair.
+     * @throws Zend_Service_Amazon_Ec2_Exception
+     * @return array
+     */
+    public function create($keyName)
+    {
+        $params = array();
+
+        $params['Action'] = 'CreateKeyPair';
+
+        if(!$keyName) {
+            require_once 'Zend/Service/Amazon/Ec2/Exception.php';
+            throw new Zend_Service_Amazon_Ec2_Exception('Invalid Key Name');
+        }
+
+        $params['KeyName'] = $keyName;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = array();
+        $return['keyName']          = $xpath->evaluate('string(//ec2:keyName/text())');
+        $return['keyFingerprint']   = $xpath->evaluate('string(//ec2:keyFingerprint/text())');
+        $return['keyMaterial']      = $xpath->evaluate('string(//ec2:keyMaterial/text())');
+
+        return $return;
+    }
+
+    /**
+     * Returns information about key pairs available to you. If you specify
+     * key pairs, information about those key pairs is returned. Otherwise,
+     * information for all registered key pairs is returned.
+     *
+     * @param string|rarray $keyName    Key pair IDs to describe.
+     * @return array
+     */
+    public function describe($keyName = null)
+    {
+        $params = array();
+
+        $params['Action'] = 'DescribeKeyPairs';
+        if(is_array($keyName) && !empty($keyName)) {
+            foreach($keyName as $k=>$name) {
+                $params['KeyName.' . ($k+1)] = $name;
+            }
+        } elseif($keyName) {
+            $params['KeyName.1'] = $keyName;
+        }
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $nodes  = $xpath->query('//ec2:keySet/ec2:item');
+
+        $return = array();
+        foreach ($nodes as $k => $node) {
+            $item = array();
+            $item['keyName']          = $xpath->evaluate('string(ec2:keyName/text())', $node);
+            $item['keyFingerprint']   = $xpath->evaluate('string(ec2:keyFingerprint/text())', $node);
+
+            $return[] = $item;
+            unset($item);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Deletes a key pair
+     *
+     * @param string $keyName           Name of the key pair to delete.
+     * @throws Zend_Service_Amazon_Ec2_Exception
+     * @return boolean                  Return true or false from the deletion.
+     */
+    public function delete($keyName)
+    {
+        $params = array();
+
+        $params['Action'] = 'DeleteKeyPair';
+
+        if(!$keyName) {
+            require_once 'Zend/Service/Amazon/Ec2/Exception.php';
+            throw new Zend_Service_Amazon_Ec2_Exception('Invalid Key Name');
+        }
+
+        $params['KeyName'] = $keyName;
+
+        $response = $this->sendRequest($params);
+
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($success === "true");
+    }
+}

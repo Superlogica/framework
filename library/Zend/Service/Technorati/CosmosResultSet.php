@@ -1,52 +1,176 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CosmosResultSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/** 
+ * @see Zend_Service_Technorati_ResultSet 
+ */
+require_once 'Zend/Service/Technorati/ResultSet.php';
+
+
+/**
+ * Represents a Technorati Cosmos query result set.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_CosmosResultSet extends Zend_Service_Technorati_ResultSet
+{
+    /**
+     * Technorati weblog url, if queried URL is a valid weblog.
+     *
+     * @var     Zend_Uri_Http
+     * @access  protected
+     */
+    protected $_url;
+
+    /**
+     * Technorati weblog, if queried URL is a valid weblog.
+     *
+     * @var     Zend_Service_Technorati_Weblog
+     * @access  protected
+     */
+    protected $_weblog;
+
+    /**
+     * Number of unique blogs linking this blog
+     *
+     * @var     integer
+     * @access  protected
+     */
+    protected $_inboundBlogs;
+
+    /**
+     * Number of incoming links to this blog
+     *
+     * @var     integer
+     * @access  protected
+     */
+    protected $_inboundLinks;
+
+    /**
+     * Parses the search response and retrieve the results for iteration.
+     *
+     * @param   DomDocument $dom    the ReST fragment for this object
+     * @param   array $options      query options as associative array
+     */
+    public function __construct(DomDocument $dom, $options = array())
+    {
+        parent::__construct($dom, $options);
+
+        $result = $this->_xpath->query('/tapi/document/result/inboundlinks/text()');
+        if ($result->length == 1) $this->_inboundLinks = (int) $result->item(0)->data;
+
+        $result = $this->_xpath->query('/tapi/document/result/inboundblogs/text()');
+        if ($result->length == 1) $this->_inboundBlogs = (int) $result->item(0)->data;
+
+        $result = $this->_xpath->query('/tapi/document/result/weblog');
+        if ($result->length == 1) {
+            /**
+             * @see Zend_Service_Technorati_Weblog
+             */
+            require_once 'Zend/Service/Technorati/Weblog.php';
+            $this->_weblog = new Zend_Service_Technorati_Weblog($result->item(0));
+        }
+
+        $result = $this->_xpath->query('/tapi/document/result/url/text()');
+        if ($result->length == 1) {
+            try {
+                // fetched URL often doens't include schema 
+                // and this issue causes the following line to fail
+                $this->_url = Zend_Service_Technorati_Utils::normalizeUriHttp($result->item(0)->data);
+            } catch(Zend_Service_Technorati_Exception $e) {
+                if ($this->getWeblog() instanceof Zend_Service_Technorati_Weblog) {
+                    $this->_url = $this->getWeblog()->getUrl();
+                }
+            }
+        }
+
+        $this->_totalResultsReturned  = (int) $this->_xpath->evaluate("count(/tapi/document/item)");
+
+        // total number of results depends on query type
+        // for now check only getInboundLinks() and getInboundBlogs() value
+        if ((int) $this->getInboundLinks() > 0) {
+            $this->_totalResultsAvailable = $this->getInboundLinks();
+        } elseif ((int) $this->getInboundBlogs() > 0) {
+            $this->_totalResultsAvailable = $this->getInboundBlogs();
+        } else {
+            $this->_totalResultsAvailable = 0;
+        }
+    }
+
+
+    /**
+     * Returns the weblog URL.
+     * 
+     * @return  Zend_Uri_Http
+     */
+    public function getUrl() {
+        return $this->_url;
+    }
+
+    /**
+     * Returns the weblog.
+     * 
+     * @return  Zend_Service_Technorati_Weblog
+     */
+    public function getWeblog() {
+        return $this->_weblog;
+    }
+
+    /**
+     * Returns number of unique blogs linking this blog.
+     * 
+     * @return  integer the number of inbound blogs
+     */
+    public function getInboundBlogs() 
+    {
+        return $this->_inboundBlogs;
+    }
+
+    /**
+     * Returns number of incoming links to this blog.
+     * 
+     * @return  integer the number of inbound links
+     */
+    public function getInboundLinks() 
+    {
+        return $this->_inboundLinks;
+    }
+
+    /**
+     * Implements Zend_Service_Technorati_ResultSet::current().
+     *
+     * @return Zend_Service_Technorati_CosmosResult current result
+     */
+    public function current()
+    {
+        /**
+         * @see Zend_Service_Technorati_CosmosResult
+         */
+        require_once 'Zend/Service/Technorati/CosmosResult.php';
+        return new Zend_Service_Technorati_CosmosResult($this->_results->item($this->_currentIndex));
+    }
+}

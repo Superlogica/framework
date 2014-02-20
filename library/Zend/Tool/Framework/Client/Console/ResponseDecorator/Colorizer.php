@@ -1,30 +1,67 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-lUk31wJwSfpv
+<?php
+
+class Zend_Tool_Framework_Client_Console_ResponseDecorator_Colorizer 
+    implements Zend_Tool_Framework_Client_Response_ContentDecorator_Interface 
+{
+    
+    protected $_colorOptions = array(
+        // blacks
+        'black'     => '30m',
+        'hiBlack'   => '1;30m',
+        'bgBlack'   => '40m',
+        // reds
+        'red'       => '31m',
+        'hiRed'     => '1:31m',
+        'bgRed'     => '41m',
+        // greens
+        'green'     => '32m',
+        'hiGreen'   => '1;32m',
+        'bgGreen'   => '42m',
+        // yellows
+        'yellow'    => '33m',
+        'hiYellow'  => '1;33m',
+        'bgYellow'  => '43m',
+        // blues
+        'blue'      => '34m',
+        'hiBlue'    => '1;34m',
+        'bgBlue'    => '44m',
+        // magentas
+        'magenta'   => '35m',
+        'hiMagenta' => '1;35m',
+        'bgMagenta' => '45m',
+        // cyans
+        'cyan'      => '36m',
+        'hiCyan'    => '1;36m',
+        'bgCyan'    => '46m',
+        // whites
+        'white'     => '37m',
+        'hiWhite'   => '1;37m',
+        'bgWhite'   => '47m'
+        );
+    
+    public function getName()
+    {
+        return 'color';
+    }
+    
+    public function decorate($content, $color)
+    {
+        if (is_string($color)) {
+            $color = array($color);
+        }
+        
+        $newContent = '';
+        
+        foreach ($color as $c) {
+            if (array_key_exists($c, $this->_colorOptions)) {
+                $newContent .= "\033[" . $this->_colorOptions[$c];
+            }
+        }
+        
+        $newContent .= $content . "\033[m";
+        
+        return $newContent;
+    }
+    
+    
+}

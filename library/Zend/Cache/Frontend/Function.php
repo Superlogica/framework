@@ -1,53 +1,130 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Core
+ */
+require_once 'Zend/Cache/Core.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Frontend_Function extends Zend_Cache_Core
+{
+    /**
+     * This frontend specific options
+     *
+     * ====> (boolean) cache_by_default :
+     * - if true, function calls will be cached by default
+     *
+     * ====> (array) cached_functions :
+     * - an array of function names which will be cached (even if cache_by_default = false)
+     *
+     * ====> (array) non_cached_functions :
+     * - an array of function names which won't be cached (even if cache_by_default = true)
+     *
+     * @var array options
+     */
+    protected $_specificOptions = array(
+        'cache_by_default' => true,
+        'cached_functions' => array(),
+        'non_cached_functions' => array()
+    );
+
+    /**
+     * Constructor
+     *
+     * @param  array $options Associative array of options
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        while (list($name, $value) = each($options)) {
+            $this->setOption($name, $value);
+        }
+        $this->setOption('automatic_serialization', true);
+    }
+
+    /**
+     * Main method : call the specified function or get the result from cache
+     *
+     * @param  string $name             Function name
+     * @param  array  $parameters       Function parameters
+     * @param  array  $tags             Cache tags
+     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @param  int   $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends             
+     * @return mixed Result
+     */
+    public function call($name, $parameters = array(), $tags = array(), $specificLifetime = false, $priority = 8)
+    {
+        $cacheBool1 = $this->_specificOptions['cache_by_default'];
+        $cacheBool2 = in_array($name, $this->_specificOptions['cached_functions']);
+        $cacheBool3 = in_array($name, $this->_specificOptions['non_cached_functions']);
+        $cache = (($cacheBool1 || $cacheBool2) && (!$cacheBool3));
+        if (!$cache) {
+            // We do not have not cache
+            return call_user_func_array($name, $parameters);
+        }
+        $id = $this->_makeId($name, $parameters);
+        if ($this->test($id)) {
+            // A cache is available
+            $result = $this->load($id);
+            $output = $result[0];
+            $return = $result[1];
+        } else {
+            // A cache is not available
+            ob_start();
+            ob_implicit_flush(false);
+            $return = call_user_func_array($name, $parameters);
+            $output = ob_get_contents();
+            ob_end_clean();
+            $data = array($output, $return);
+            $this->save($data, $id, $tags, $specificLifetime, $priority);
+        }
+        echo $output;
+        return $return;
+    }
+
+    /**
+     * Make a cache id from the function name and parameters
+     *
+     * @param  string $name       Function name
+     * @param  array  $parameters Function parameters
+     * @throws Zend_Cache_Exception
+     * @return string Cache id
+     */
+    private function _makeId($name, $parameters)
+    {
+        if (!is_string($name)) {
+            Zend_Cache::throwException('Incorrect function name');
+        }
+        if (!is_array($parameters)) {
+            Zend_Cache::throwException('parameters argument must be an array');
+        }
+        return md5($name . serialize($parameters));
+    }
+
+}

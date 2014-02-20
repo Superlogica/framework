@@ -1,40 +1,99 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Locale */
+require_once 'Zend/Locale.php';
+
+/** Zend_Translate_Adapter */
+require_once 'Zend/Translate/Adapter.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Translate_Adapter_Csv extends Zend_Translate_Adapter
+{
+    private $_data    = array();
+
+    /**
+     * Generates the adapter
+     *
+     * @param  string              $data     Translation data
+     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
+     *                                       see Zend_Locale for more information
+     * @param  array               $options  Options for this adapter
+     */
+    public function __construct($data, $locale = null, array $options = array())
+    {
+        $this->_options['delimiter'] = ";";
+        $this->_options['length']    = 0;
+        $this->_options['enclosure'] = '"';
+        parent::__construct($data, $locale, $options);
+    }
+
+    /**
+     * Load translation data
+     *
+     * @param  string|array  $filename  Filename and full path to the translation source
+     * @param  string        $locale    Locale/Language to add data for, identical with locale identifier,
+     *                                  see Zend_Locale for more information
+     * @param  array         $option    OPTIONAL Options to use
+     * @return array
+     */
+    protected function _loadTranslationData($filename, $locale, array $options = array())
+    {
+        $this->_data = array();
+        $options     = $options + $this->_options;
+        $this->_file = @fopen($filename, 'rb');
+        if (!$this->_file) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception('Error opening translation file \'' . $filename . '\'.');
+        }
+
+        while(($data = fgetcsv($this->_file, $options['length'], $options['delimiter'], $options['enclosure'])) !== false) {
+            if (substr($data[0], 0, 1) === '#') {
+                continue;
+            }
+
+            if (isset($data[1]) !== true) {
+                continue;
+            }
+
+            $this->_data[$locale][$data[0]] = $data[1];
+        }
+
+        return $this->_data;
+    }
+
+    /**
+     * returns the adapters name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "Csv";
+    }
+}

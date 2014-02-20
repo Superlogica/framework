@@ -1,49 +1,164 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-orIoAKGpn7n2pP0NGLmNYInMlmE4mgA9dcU7
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Plugin
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Wildfire_Plugin_FirePhp */
+require_once 'Zend/Wildfire/Plugin/FirePhp.php';
+
+/** Zend_Wildfire_Plugin_FirePhp_Message */
+require_once 'Zend/Wildfire/Plugin/FirePhp/Message.php';
+
+/**
+ * A message envelope that can be updated for the duration of the requet before
+ * it gets flushed at the end of the request.
+ * 
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Plugin
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Wildfire_Plugin_FirePhp_TableMessage extends Zend_Wildfire_Plugin_FirePhp_Message
+{
+    /**
+     * The header of the table containing all columns
+     * @var array
+     */
+    protected $_header = null;
+    
+    /**
+     * The rows of the table
+     * $var array
+     */ 
+    protected $_rows = array();
+    
+    /**
+     * Constructor
+     * 
+     * @param string $label The label of the table
+     */
+    function __construct($label)
+    {
+        parent::__construct(Zend_Wildfire_Plugin_FirePhp::TABLE, null);
+        $this->setLabel($label);
+    }
+    
+    /**
+     * Set the table header
+     * 
+     * @param array $header The header columns
+     * @return void
+     */
+    public function setHeader($header)
+    {
+        $this->_header = $header;
+    }
+    
+    /**
+     * Append a row to the end of the table.
+     * 
+     * @param array $row An array of column values representing a row.
+     * @return void
+     */
+    public function addRow($row)
+    {
+        $this->_rows[] = $row;
+    }
+    
+    /**
+     * Get the actual message to be sent in its final format.
+     * 
+     * @return mixed Returns the message to be sent.
+     */
+    public function getMessage()
+    {
+        $table = $this->_rows;
+        if($this->_header) {
+            array_unshift($table,$this->_header);
+        }
+        return $table;
+    }
+
+    /**
+     * Returns the row at the given index
+     *
+     * @param integer $index The index of the row
+     * @return array Returns the row
+     * @throws Zend_Wildfire_Exception
+     */
+    public function getRowAt($index)
+    {
+        $count = $this->getRowCount();
+        
+        if($index < 0 || $index > $count-1) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('Row index('.$index.') out of bounds('.$count.')!');
+        }
+      
+        return $this->_rows[$index];
+    }
+
+    /**
+     * Sets the row on the given index to a new row
+     *
+     * @param integer $index The index of the row
+     * @param array $row The new data for the row
+     * @throws Zend_Wildfire_Exception
+     */
+    public function setRowAt($index, $row)
+    {
+        $count = $this->getRowCount();
+        
+        if($index < 0 || $index > $count-1) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('Row index('.$index.') out of bounds('.$count.')!');
+        }
+      
+        $this->_rows[$index] = $row;
+    }
+
+    /**
+     * Returns the number of rows
+     *
+     * @return integer
+     */
+    public function getRowCount()
+    {
+        return count($this->_rows);
+    }
+
+    /**
+     * Returns the last row of the table
+     *
+     * @return array Returns the last row
+     * @throws Zend_Wildfire_Exception
+     */
+    public function getLastRow()
+    {
+        $count = $this->getRowCount();
+        
+        if($count==0) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('Cannot get last row as no rows exist!');
+        }
+
+        return $this->_rows[$count-1];
+    }
+}

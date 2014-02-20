@@ -1,46 +1,132 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-urZioMAZcv2csr8AiFpn3QreHn0/
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Array.php 13708 2009-01-20 12:21:41Z dasprid $
+ */
+
+/**
+ * @see Zend_Config_Writer
+ */
+require_once 'Zend/Config/Writer.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Config_Writer_Array extends Zend_Config_Writer
+{
+    /**
+     * Filename to write to
+     *
+     * @var string
+     */
+    protected $_filename = null;
+    
+    /**
+     * Wether to exclusively lock the file or not
+     *
+     * @var boolean
+     */
+    protected $_exclusiveLock = false;
+    
+    /**
+     * Set the target filename
+     *
+     * @param  string $filename
+     * @return Zend_Config_Writer_Array
+     */
+    public function setFilename($filename)
+    {
+        $this->_filename = $filename;
+        
+        return $this;
+    }
+    
+    /**
+     * Set wether to exclusively lock the file or not
+     *
+     * @param  boolean     $exclusiveLock
+     * @return Zend_Config_Writer_Array
+     */
+    public function setExclusiveLock($exclusiveLock)
+    {
+        $this->_exclusiveLock = $exclusiveLock;
+        
+        return $this;
+    }
+    
+    /**
+     * Defined by Zend_Config_Writer
+     *
+     * @param  string      $filename
+     * @param  Zend_Config $config
+     * @param  boolean     $exclusiveLock
+     * @throws Zend_Config_Exception When filename was not set
+     * @throws Zend_Config_Exception When filename is not writable
+     * @return void
+     */
+    public function write($filename = null, Zend_Config $config = null, $exclusiveLock = null)
+    {
+        if ($filename !== null) {
+            $this->setFilename($filename);
+        }
+        
+        if ($config !== null) {
+            $this->setConfig($config);
+        }
+        
+        if ($exclusiveLock !== null) {
+            $this->setExclusiveLock($exclusiveLock);
+        }
+        
+        if ($this->_filename === null) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('No filename was set');
+        }
+        
+        if ($this->_config === null) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('No config was set');
+        }
+        
+        $data        = $this->_config->toArray();
+        $sectionName = $this->_config->getSectionName();
+        
+        if (is_string($sectionName)) {
+            $data = array($sectionName => $data);
+        }
+        
+        $arrayString = "<?php\n"
+                     . "return " . var_export($data, true) . ";\n";
+       
+        $flags = 0;
+        
+        if ($this->_exclusiveLock) {
+            $flags |= LOCK_EX;
+        }
+                     
+        $result = @file_put_contents($this->_filename, $arrayString, $flags);
+        
+        if ($result === false) {
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('Could not write to file "' . $this->_filename . '"');
+        }
+    }
+}

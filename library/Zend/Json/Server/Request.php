@@ -1,72 +1,288 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-5wxb2IUZ
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Json_Server_Request
+{
+    /**
+     * Request ID
+     * @var mixed
+     */
+    protected $_id;
+
+    /**
+     * Flag
+     * @var bool
+     */
+    protected $_isMethodError = false;
+
+    /**
+     * Requested method
+     * @var string
+     */
+    protected $_method;
+
+    /**
+     * Regex for method
+     * @var string
+     */
+    protected $_methodRegex = '/^[a-z][a-z0-9_.]*$/i';
+
+    /**
+     * Request parameters 
+     * @var array
+     */
+    protected $_params = array();
+
+    /**
+     * JSON-RPC version of request
+     * @var string
+     */
+    protected $_version = '1.0';
+
+    /**
+     * Set request state
+     * 
+     * @param  array $options 
+     * @return Zend_Json_Server_Request
+     */
+    public function setOptions(array $options)
+    {
+        $methods = get_class_methods($this);
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            } elseif ($key == 'jsonrpc') {
+                $this->setVersion($value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Add a parameter to the request
+     * 
+     * @param  mixed $value 
+     * @param  string $key 
+     * @return Zend_Json_Server_Request
+     */
+    public function addParam($value, $key = null)
+    {
+        if ((null === $key) || !is_string($key)) {
+            $index = count($this->_params);
+            $this->_params[$index] = $value;
+        } else {
+            $this->_params[$key] = $value;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add many params
+     * 
+     * @param  array $params 
+     * @return Zend_Json_Server_Request
+     */
+    public function addParams(array $params)
+    {
+        foreach ($params as $key => $value) {
+            $this->addParam($value, $key);
+        }
+        return $this;
+    }
+
+    /**
+     * Overwrite params
+     * 
+     * @param  array $params 
+     * @return Zend_Json_Server_Request
+     */
+    public function setParams(array $params)
+    {
+        $this->_params = array();
+        return $this->addParams($params);
+    }
+
+    /**
+     * Retrieve param by index or key
+     * 
+     * @param  int|string $index 
+     * @return mixed|null Null when not found
+     */
+    public function getParam($index)
+    {
+        if (array_key_exists($index, $this->_params)) {
+            return $this->_params[$index];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve parameters 
+     * 
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->_params;
+    }
+
+    /**
+     * Set request method
+     * 
+     * @param  string $name 
+     * @return Zend_Json_Server_Request
+     */
+    public function setMethod($name)
+    {
+        if (!preg_match($this->_methodRegex, $name)) {
+            $this->_isMethodError = true;
+        } else {
+            $this->_method = $name;
+        }
+        return $this;
+    }
+
+    /**
+     * Get request method name
+     * 
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->_method;
+    }
+
+    /**
+     * Was a bad method provided? 
+     * 
+     * @return bool
+     */
+    public function isMethodError()
+    {
+        return $this->_isMethodError;
+    }
+
+    /**
+     * Set request identifier
+     * 
+     * @param  mixed $name 
+     * @return Zend_Json_Server_Request
+     */
+    public function setId($name)
+    {
+        $this->_id = (string) $name;
+        return $this;
+    }
+
+    /**
+     * Retrieve request identifier
+     * 
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /**
+     * Set JSON-RPC version
+     * 
+     * @param  string $version 
+     * @return Zend_Json_Server_Request
+     */
+    public function setVersion($version)
+    {
+        if ('2.0' == $version) {
+            $this->_version = '2.0';
+        } else {
+            $this->_version = '1.0';
+        }
+        return $this;
+    }
+
+    /**
+     * Retrieve JSON-RPC version
+     * 
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->_version;
+    }
+
+    /**
+     * Set request state based on JSON
+     * 
+     * @param  string $json 
+     * @return void
+     */
+    public function loadJson($json)
+    {
+        require_once 'Zend/Json.php';
+        $options = Zend_Json::decode($json);
+        $this->setOptions($options);
+    }
+
+    /**
+     * Cast request to JSON
+     * 
+     * @return string
+     */
+    public function toJson()
+    {
+        $jsonArray = array(
+            'method' => $this->getMethod()
+        );
+        if (null !== ($id = $this->getId())) {
+            $jsonArray['id'] = $id;
+        }
+        $params = $this->getParams();
+        if (!empty($params)) {
+            $jsonArray['params'] = $params;
+        }
+        if ('2.0' == $this->getVersion()) {
+            $jsonArray['jsonrpc'] = '2.0';
+        }
+
+        require_once 'Zend/Json.php';
+        return Zend_Json::encode($jsonArray);
+    }
+
+    /**
+     * Cast request to string (JSON)
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+}

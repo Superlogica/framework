@@ -1,50 +1,148 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Provider_Abstract
+ */
+require_once 'Zend/Tool/Project/Provider/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Provider_Project extends Zend_Tool_Project_Provider_Abstract
+{
+
+    /**
+     * create()
+     *
+     * @param string $path
+     */
+    public function create($path)
+    {
+        if ($path == null) {
+            $path = getcwd();
+        } else {
+            $path = trim($path);
+            if (!file_exists($path)) {
+                $created = mkdir($path);
+                if (!$created) {
+                    require_once 'Zend/Tool/Framework/Client/Exception.php';
+                    throw new Zend_Tool_Framework_Client_Exception('Could not create requested project directory \'' . $path . '\'');
+                }
+            }
+            $path = str_replace('\\', '/', realpath($path));
+        }
+
+        $profile = $this->_loadProfile(self::NO_PROFILE_RETURN_FALSE, $path);
+
+        if ($profile !== false) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('A project already exists here');
+        }
+
+        $newProfile = new Zend_Tool_Project_Profile(array(
+            'projectDirectory' => $path,
+            'profileData' => $this->_getDefaultProfile()
+            ));
+
+        $newProfile->loadFromData();
+        
+        $this->_registry->getResponse()->appendContent('Creating project at ' . $path);
+
+        foreach ($newProfile->getIterator() as $resource) {
+            $resource->create();
+        }
+    }
+
+    protected function _getDefaultProfile()
+    {
+        $data = <<<EOS
+<?xml version="1.0" encoding="UTF-8"?>
+    <projectProfile type="default">
+        <projectDirectory>
+            <projectProfileFile />
+            <applicationDirectory>
+                <apisDirectory enabled="false" />
+                <configsDirectory>
+                    <applicationConfigFile type="ini" />
+                </configsDirectory>
+                <controllersDirectory>
+                    <controllerFile controllerName="index">
+                        <actionMethod actionName="index" />
+                    </controllerFile>
+                    <controllerFile controllerName="error" />
+                </controllersDirectory>
+                <layoutsDirectory enabled="false" />
+                <modelsDirectory />
+                <modulesDirectory enabled="false" />
+                <viewsDirectory>
+                    <viewScriptsDirectory>
+                        <viewControllerScriptsDirectory forControllerName="index">
+                            <viewScriptFile forActionName="index" />
+                        </viewControllerScriptsDirectory>
+                        <viewControllerScriptsDirectory forControllerName="error">
+                            <viewScriptFile forActionName="error" />
+                        </viewControllerScriptsDirectory>
+                    </viewScriptsDirectory>
+                    <viewHelpersDirectory />
+                    <viewFiltersDirectory enabled="false" />
+                </viewsDirectory>
+                <bootstrapFile />
+            </applicationDirectory>
+            <dataDirectory enabled="false">
+                <cacheDirectory enabled="false" />
+                <searchIndexesDirectory enabled="false" />
+                <localesDirectory enabled="false" />
+                <logsDirectory enabled="false" />
+                <sessionsDirectory enabled="false" />
+                <uploadsDirectory enabled="false" />
+            </dataDirectory>
+            <libraryDirectory>
+                <zfStandardLibraryDirectory enabled="false" />
+            </libraryDirectory>
+            <publicDirectory>
+                <publicStylesheetsDirectory enabled="false" />
+                <publicScriptsDirectory enabled="false" />
+                <publicImagesDirectory enabled="false" />
+                <publicIndexFile />
+                <htaccessFile />
+            </publicDirectory>
+            <projectProvidersDirectory enabled="false" />
+            <temporaryDirectory enabled="false" />
+            <testsDirectory>
+                <testPHPUnitConfigFile />
+                <testApplicationDirectory>
+                    <testApplicationBootstrapFile />
+                </testApplicationDirectory>
+                <testLibraryDirectory>
+                    <testLibraryBootstrapFile />
+                </testLibraryDirectory>
+            </testsDirectory>
+        </projectDirectory>
+    </projectProfile>
+EOS;
+        return $data;
+    }
+}

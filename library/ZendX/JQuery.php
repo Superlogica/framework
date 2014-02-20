@@ -1,40 +1,157 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-bZUyWj6U2pVrZZLGls15QYOzsmpog/slxoO=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: JQuery.php 21867 2010-04-16 07:45:34Z beberlei $
+ */
+
+/**
+ * @see Zend_Json
+ */
+require_once "Zend/Json.php";
+
+/**
+ * jQuery Global Class holding constants and static convienience methods.
+ *
+ * @todo       Offer convenience methods to add a tab or accordion container/pane combination.
+ * @package    ZendX_JQuery
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class ZendX_JQuery
+{
+    /**
+     * Current default supported jQuery library version with ZendX_JQuery
+     * 
+     * @const string
+     */
+    const DEFAULT_JQUERY_VERSION = "1.3.2";
+
+    /**
+     * Currently supported jQuery UI library version with ZendX_JQuery
+     *
+     * @const string
+     */
+    const DEFAULT_UI_VERSION = "1.7.1";
+
+    /**
+     * @see http://code.google.com/apis/ajaxlibs/documentation/index.html#jquery
+     * @const string Base path to CDN
+     */
+    const CDN_BASE_GOOGLE = 'http://ajax.googleapis.com/ajax/libs/';
+
+    /**
+     * @see http://code.google.com/apis/ajaxlibs/documentation/index.html#jquery
+     * @const string Base path to CDN
+     */
+    const CDN_BASE_GOOGLE_SSL = 'https://ajax.googleapis.com/ajax/libs/';
+
+    /**
+     * @const string
+     */
+    const CDN_SUBFOLDER_JQUERY = 'jquery/';
+
+    /**
+     * @const string
+     */
+    const CDN_SUBFOLDER_JQUERYUI = 'jqueryui/';
+
+    /**
+     * Always uses compressed version, because this is assumed to be the use case
+     * in production enviroment. An uncompressed version has to included manually.
+     *
+     * @see http://code.google.com/apis/ajaxlibs/documentation/index.html#jquery
+     * @const string File path after base and version
+     */
+    const CDN_JQUERY_PATH_GOOGLE = '/jquery.min.js';
+
+    /**
+     * Which parts of the the jQuery library should be rendered on echo'ing
+     * the jQuery library to the View. The constants act as bit-mask. This
+     * way the jQuery autogenerated code can be refactored based on personal needs.
+     *
+     * @see ZendX_JQuery_Helper_JQuery::setRenderMode
+     * @const Integer
+     */
+    const RENDER_LIBRARY         = 1;
+    const RENDER_SOURCES         = 2;
+    const RENDER_STYLESHEETS     = 4;
+    const RENDER_JAVASCRIPT      = 8;
+    const RENDER_JQUERY_ON_LOAD  = 16;
+    const RENDER_ALL             = 255;
+
+    /**
+     * jQuery-enable a view instance
+     *
+     * @param  Zend_View_Interface $view
+     * @return void
+     */
+    public static function enableView(Zend_View_Interface $view)
+    {
+        if (false === $view->getPluginLoader('helper')->getPaths('ZendX_JQuery_View_Helper')) {
+            $view->addHelperPath('ZendX/JQuery/View/Helper', 'ZendX_JQuery_View_Helper');
+        }
+    }
+
+    /**
+     * jQuery-enable a form instance
+     *
+     * @param  Zend_Form $form
+     * @return void
+     */
+    public static function enableForm(Zend_Form $form)
+    {
+        $form->addPrefixPath('ZendX_JQuery_Form_Decorator', 'ZendX/JQuery/Form/Decorator', 'decorator')
+             ->addPrefixPath('ZendX_JQuery_Form_Element', 'ZendX/JQuery/Form/Element', 'element')
+             ->addElementPrefixPath('ZendX_JQuery_Form_Decorator', 'ZendX/JQuery/Form/Decorator', 'decorator')
+             ->addDisplayGroupPrefixPath('ZendX_JQuery_Form_Decorator', 'ZendX/JQuery/Form/Decorator');
+
+        foreach ($form->getSubForms() as $subForm) {
+            self::enableForm($subForm);
+        }
+
+        if (null !== ($view = $form->getView())) {
+            self::enableView($view);
+        }
+    }
+
+    /**
+     * Encode Json that may include javascript expressions.
+     *
+     * Take care of using the Zend_Json_Encoder to alleviate problems with the json_encode
+     * magic key mechanism as of now.
+     *
+     * @see Zend_Json::encode
+     * @param  mixed $value
+     * @return mixed
+     */
+    public static function encodeJson($value)
+    {
+        if (is_array($value) && count($value) == 0) {
+            return '{}';
+        }
+
+        if(!class_exists('Zend_Json')) {
+            /**
+             * @see Zend_Json
+             */
+            require_once "Zend/Json.php";
+        }
+        return Zend_Json::encode($value, false, array('enableJsonExprFinder' => true));
+    }
+}

@@ -1,71 +1,287 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_App_util
+ */
+require_once('Zend/Gdata/App/Util.php');
+
+/**
+ * Zend_Gdata_Query
+ */
+require_once('Zend/Gdata/Query.php');
+
+/**
+ * Assists in constructing queries for Google Spreadsheets documents
+ *
+ * @link http://code.google.com/apis/gdata/spreadsheets/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage   Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Spreadsheets_DocumentQuery extends Zend_Gdata_Query
+{
+
+    const SPREADSHEETS_FEED_URI = 'http://spreadsheets.google.com/feeds';
+
+    protected $_defaultFeedUri = self::SPREADSHEETS_FEED_URI;
+    protected $_documentType;
+    protected $_visibility = 'private';
+    protected $_projection = 'full';
+    protected $_spreadsheetKey = null;
+    protected $_worksheetId = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Spreadsheets_DocumentQuery object.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Sets the spreadsheet key for this query.
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setSpreadsheetKey($value)
+    {
+        $this->_spreadsheetKey = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the spreadsheet key for this query.
+     * @return string spreadsheet key
+     */
+    public function getSpreadsheetKey()
+    {
+        return $this->_spreadsheetKey;
+    }
+
+    /**
+     * Sets the worksheet id for this query.
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_CellQuery Provides a fluent interface
+     */
+    public function setWorksheetId($value)
+    {
+        $this->_worksheetId = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the worksheet id for this query.
+     * @return string worksheet id
+     */
+    public function getWorksheetId()
+    {
+        return $this->_worksheetId;
+    }
+
+    /**
+     * Sets the document type for this query.
+     * @param string $value spreadsheets or worksheets
+     * @return Zend_Gdata_Spreadsheets_DocumentQuery Provides a fluent interface
+     */
+    public function setDocumentType($value)
+    {
+        $this->_documentType = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the document type for this query.
+     * @return string document type
+     */
+    public function getDocumentType()
+    {
+        return $this->_documentType;
+    }
+
+    /**
+     * Sets the projection for this query.
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_DocumentQuery Provides a fluent interface
+     */
+    public function setProjection($value)
+    {
+        $this->_projection = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the visibility for this query.
+     * @return Zend_Gdata_Spreadsheets_DocumentQuery Provides a fluent interface
+     */
+    public function setVisibility($value)
+    {
+        $this->_visibility = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the projection for this query.
+     * @return string projection
+     */
+    public function getProjection()
+    {
+        return $this->_projection;
+    }
+
+    /**
+     * Gets the visibility for this query.
+     * @return string visibility
+     */
+    public function getVisibility()
+    {
+        return $this->_visibility;
+    }
+
+    /**
+     * Sets the title attribute for this query.
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_DocumentQuery Provides a fluent interface
+     */
+    public function setTitle($value)
+    {
+        if ($value != null) {
+            $this->_params['title'] = $value;
+        } else {
+            unset($this->_params['title']);
+        }
+        return $this;
+    }
+
+    /**
+     * Sets the title-exact attribute for this query.
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_DocumentQuery Provides a fluent interface
+     */
+    public function setTitleExact($value)
+    {
+        if ($value != null) {
+            $this->_params['title-exact'] = $value;
+        } else {
+            unset($this->_params['title-exact']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the title attribute for this query.
+     * @return string title
+     */
+    public function getTitle()
+    {
+        if (array_key_exists('title', $this->_params)) {
+            return $this->_params['title'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets the title-exact attribute for this query.
+     * @return string title-exact
+     */
+    public function getTitleExact()
+    {
+        if (array_key_exists('title-exact', $this->_params)) {
+            return $this->_params['title-exact'];
+        } else {
+            return null;
+        }
+    }
+
+    private function appendVisibilityProjection()
+    {
+        $uri = '';
+
+        if ($this->_visibility != null) {
+            $uri .= '/'.$this->_visibility;
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php'; 
+            throw new Zend_Gdata_App_Exception('A visibility must be provided for document queries.');
+        }
+
+        if ($this->_projection != null) {
+            $uri .= '/'.$this->_projection;
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php'; 
+            throw new Zend_Gdata_App_Exception('A projection must be provided for document queries.');
+        }
+
+        return $uri;
+    }
+
+
+    /**
+     * Gets the full query URL for this query.
+     * @return string url
+     */
+    public function getQueryUrl()
+    {
+        $uri = $this->_defaultFeedUri;
+
+        if ($this->_documentType != null) {
+            $uri .= '/'.$this->_documentType;
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php'; 
+            throw new Zend_Gdata_App_Exception('A document type must be provided for document queries.');
+        }
+
+        if ($this->_documentType == 'spreadsheets') {
+            $uri .= $this->appendVisibilityProjection();
+            if ($this->_spreadsheetKey != null) {
+                $uri .= '/'.$this->_spreadsheetKey;
+            }
+        } else if ($this->_documentType == 'worksheets') {
+            if ($this->_spreadsheetKey != null) {
+                $uri .= '/'.$this->_spreadsheetKey;
+            } else {
+                require_once 'Zend/Gdata/App/Exception.php'; 
+                throw new Zend_Gdata_App_Exception('A spreadsheet key must be provided for worksheet document queries.');
+            }
+            $uri .= $this->appendVisibilityProjection();
+            if ($this->_worksheetId != null) {
+                $uri .= '/'.$this->_worksheetId;
+            }
+        }
+
+        $uri .= $this->getQueryString();
+        return $uri;
+    }
+
+    /**
+     * Gets the attribute query string for this query.
+     * @return string query string
+     */
+    public function getQueryString()
+    {
+        return parent::getQueryString();
+    }
+
+}

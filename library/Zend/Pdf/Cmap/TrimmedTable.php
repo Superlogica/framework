@@ -1,76 +1,224 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Cmap */
+require_once 'Zend/Pdf/Cmap.php';
+
+
+/**
+ * Implements the "trimmed table mapping" character map (type 6).
+ *
+ * This table type is preferred over the {@link Zend_Pdf_Cmap_SegmentToDelta}
+ * table when the Unicode characters covered by the font fall into a single
+ * contiguous range.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Cmap_TrimmedTable extends Zend_Pdf_Cmap
+{
+  /**** Instance Variables ****/
+
+
+    /**
+     * The starting character code covered by this table.
+     * @var integer
+     */
+    protected $_startCode = 0;
+
+    /**
+     * The ending character code covered by this table.
+     * @var integer
+     */
+    protected $_endCode = 0;
+
+    /**
+     * Glyph index array. Stores the actual glyph numbers.
+     * @var array
+     */
+    protected $_glyphIndexArray = array();
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Concrete Class Implementation */
+
+    /**
+     * Returns an array of glyph numbers corresponding to the Unicode characters.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumberForCharacter()}.
+     *
+     * @param array $characterCodes Array of Unicode character codes (code points).
+     * @return array Array of glyph numbers.
+     */
+    public function glyphNumbersForCharacters($characterCodes)
+    {
+        $glyphNumbers = array();
+        foreach ($characterCodes as $key => $characterCode) {
+
+            if (($characterCode < $this->_startCode) || ($characterCode > $this->_endCode)) {
+                $glyphNumbers[$key] = Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH;
+                continue;
+            }
+
+            $glyphIndex = $characterCode - $this->_startCode;
+            $glyphNumbers[$key] = $this->_glyphIndexArray[$glyphIndex];
+
+        }
+        return $glyphNumbers;
+    }
+
+    /**
+     * Returns the glyph number corresponding to the Unicode character.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
+     * operations.
+     *
+     * @param integer $characterCode Unicode character code (code point).
+     * @return integer Glyph number.
+     */
+    public function glyphNumberForCharacter($characterCode)
+    {
+        if (($characterCode < $this->_startCode) || ($characterCode > $this->_endCode)) {
+            return Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH;
+        }
+        $glyphIndex = $characterCode - $this->_startCode;
+        return $this->_glyphIndexArray[$glyphIndex];
+    }
+
+    /**
+     * Returns an array containing the Unicode characters that have entries in
+     * this character map.
+     *
+     * @return array Unicode character codes.
+     */
+    public function getCoveredCharacters()
+    {
+        $characterCodes = array();
+        for ($code = $this->_startCode; $code <= $this->_endCode; $code++) {
+            $characterCodes[] = $code;
+        }
+        return $characterCodes;
+    }
+
+
+    /**
+     * Returns an array containing the glyphs numbers that have entries in this character map.
+     * Keys are Unicode character codes (integers)
+     * 
+     * This functionality is partially covered by glyphNumbersForCharacters(getCoveredCharacters())
+     * call, but this method do it in more effective way (prepare complete list instead of searching 
+     * glyph for each character code).
+     *
+     * @internal
+     * @return array Array representing <Unicode character code> => <glyph number> pairs.
+     */
+    public function getCoveredCharactersGlyphs()
+    {
+        $glyphNumbers = array();
+        for ($code = $this->_startCode; $code <= $this->_endCode; $code++) {
+            $glyphNumbers[$code] = $this->_glyphIndexArray[$code - $this->_startCode];
+        }
+
+        return $glyphNumbers;
+    }
+
+
+  /* Object Lifecycle */
+
+    /**
+     * Object constructor
+     *
+     * Parses the raw binary table data. Throws an exception if the table is
+     * malformed.
+     *
+     * @param string $cmapData Raw binary cmap table data.
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($cmapData)
+    {
+        /* Sanity check: The table should be at least 9 bytes in size.
+         */
+        $actualLength = strlen($cmapData);
+        if ($actualLength < 9) {
+            throw new Zend_Pdf_Exception('Insufficient table data',
+                                         Zend_Pdf_Exception::CMAP_TABLE_DATA_TOO_SMALL);
+        }
+
+        /* Sanity check: Make sure this is right data for this table type.
+         */
+        $type = $this->_extractUInt2($cmapData, 0);
+        if ($type != Zend_Pdf_Cmap::TYPE_TRIMMED_TABLE) {
+            throw new Zend_Pdf_Exception('Wrong cmap table type',
+                                         Zend_Pdf_Exception::CMAP_WRONG_TABLE_TYPE);
+        }
+
+        $length = $this->_extractUInt2($cmapData, 2);
+        if ($length != $actualLength) {
+            throw new Zend_Pdf_Exception("Table length ($length) does not match actual length ($actualLength)",
+                                         Zend_Pdf_Exception::CMAP_WRONG_TABLE_LENGTH);
+        }
+
+        /* Mapping tables should be language-independent. The font may not work
+         * as expected if they are not. Unfortunately, many font files in the
+         * wild incorrectly record a language ID in this field, so we can't
+         * call this a failure.
+         */
+        $language = $this->_extractUInt2($cmapData, 4);
+        if ($language != 0) {
+            // Record a warning here somehow?
+        }
+
+        $this->_startCode = $this->_extractUInt2($cmapData, 6);
+
+        $entryCount = $this->_extractUInt2($cmapData, 8);
+        $expectedCount = ($length - 10) >> 1;
+        if ($entryCount != $expectedCount) {
+            throw new Zend_Pdf_Exception("Entry count is wrong; expected: $expectedCount; actual: $entryCount",
+                                         Zend_Pdf_Exception::CMAP_WRONG_ENTRY_COUNT);
+        }
+
+        $this->_endCode = $this->_startCode + $entryCount - 1;
+
+        $offset = 10;
+        for ($i = 0; $i < $entryCount; $i++, $offset += 2) {
+            $this->_glyphIndexArray[] = $this->_extractUInt2($cmapData, $offset);
+        }
+
+        /* Sanity check: After reading all of the data, we should be at the end
+         * of the table.
+         */
+        if ($offset != $length) {
+            throw new Zend_Pdf_Exception("Ending offset ($offset) does not match length ($length)",
+                                         Zend_Pdf_Exception::CMAP_FINAL_OFFSET_NOT_LENGTH);
+        }
+    }
+
+}

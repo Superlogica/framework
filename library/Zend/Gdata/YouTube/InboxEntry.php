@@ -1,80 +1,280 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Media_Entry
+ */
+require_once 'Zend/Gdata/Media/Entry.php';
+
+/**
+ * @see Zend_Gdata_Extension_Rating
+ */
+require_once 'Zend/Gdata/Extension/Rating.php';
+
+/**
+ * @see Zend_Gdata_Extension_Comments
+ */
+require_once 'Zend/Gdata/Extension/Comments.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Statistics
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Statistics.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Description
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Description.php';
+
+
+/**
+ * Represents the YouTube message flavor of an Atom entry
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_InboxEntry extends Zend_Gdata_Media_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_YouTube_InboxEntry';
+
+    /**
+     * The gd:comments element of this entry.
+     *
+     * @var Zend_Gdata_Extension_Comments
+     */
+    protected $_comments = null;
+
+    /**
+     * The gd:rating element of this entry.
+     *
+     * @var Zend_Gdata_Extension_Rating
+     */
+    protected $_rating = null;
+
+    /**
+     * The yt:statistics element of this entry.
+     *
+     * @var Zend_Gdata_YouTube_Extension_Statistics
+     */
+    protected $_statistics = null;
+
+    /**
+     * The yt:description element of this entry.
+     *
+     * @var Zend_Gdata_YouTube_Extension_Description
+     */
+    protected $_description = null;
+
+    /**
+     * Creates a subscription entry, representing an individual subscription
+     * in a list of subscriptions, usually associated with an individual user.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_description != null) {
+            $element->appendChild(
+                $this->_description->getDOM($element->ownerDocument));
+        }
+        if ($this->_rating != null) {
+            $element->appendChild(
+                $this->_rating->getDOM($element->ownerDocument));
+        }
+        if ($this->_statistics != null) {
+            $element->appendChild(
+                $this->_statistics->getDOM($element->ownerDocument));
+        }
+        if ($this->_comments != null) {
+            $element->appendChild(
+                $this->_comments->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gd') . ':' . 'comments':
+                $comments = new Zend_Gdata_Extension_Comments();
+                $comments->transferFromDOM($child);
+                $this->_comments = $comments;
+                break;
+            case $this->lookupNamespace('gd') . ':' . 'rating':
+                $rating = new Zend_Gdata_Extension_Rating();
+                $rating->transferFromDOM($child);
+                $this->_rating = $rating;
+                break;
+            case $this->lookupNamespace('yt') . ':' . 'description':
+                $description = new Zend_Gdata_YouTube_Extension_Description();
+                $description->transferFromDOM($child);
+                $this->_description = $description;
+                break;
+            case $this->lookupNamespace('yt') . ':' . 'statistics':
+                $statistics = new Zend_Gdata_YouTube_Extension_Statistics();
+                $statistics->transferFromDOM($child);
+                $this->_statistics = $statistics;
+                break;
+            default:
+                parent::takeChildFromDOM($child);
+                break;
+        }
+    }
+
+    /**
+     * Get the yt:description
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_Extension_Description|null
+     */
+    public function getDescription()
+    {
+        if ($this->getMajorProtocolVersion() == 2) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The getDescription ' .
+                ' method is only supported in version 1 of the YouTube ' .
+                'API.');
+        } else {
+            return $this->_description;
+        }
+    }
+
+    /**
+     * Sets the yt:description element for a new inbox entry.
+     *
+     * @param Zend_Gdata_YouTube_Extension_Description $description The
+     *        description.
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_InboxEntry Provides a fluent interface
+     */
+    public function setDescription($description = null)
+    {
+        if ($this->getMajorProtocolVersion() == 2) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The setDescription ' .
+                ' method is only supported in version 1 of the YouTube ' .
+                'API.');
+        } else {
+            $this->_description = $description;
+            return $this;
+        }
+    }
+
+    /**
+     * Get the gd:rating element for the inbox entry
+     *
+     * @return Zend_Gdata_Extension_Rating|null
+     */
+    public function getRating()
+    {
+        return $this->_rating;
+    }
+
+    /**
+     * Sets the gd:rating element for the inbox entry
+     *
+     * @param Zend_Gdata_Extension_Rating $rating The rating for the video in
+     *        the message
+     * @return Zend_Gdata_YouTube_InboxEntry Provides a fluent interface
+     */
+    public function setRating($rating = null)
+    {
+        $this->_rating = $rating;
+        return $this;
+    }
+
+    /**
+     * Get the gd:comments element of the inbox entry.
+     *
+     * @return Zend_Gdata_Extension_Comments|null
+     */
+    public function getComments()
+    {
+        return $this->_comments;
+    }
+
+    /**
+     * Sets the gd:comments element for the inbox entry
+     *
+     * @param Zend_Gdata_Extension_Comments $comments The comments feed link
+     * @return Zend_Gdata_YouTube_InboxEntry Provides a fluent interface
+     */
+    public function setComments($comments = null)
+    {
+        $this->_comments = $comments;
+        return $this;
+    }
+
+    /**
+     * Get the yt:statistics element for the inbox entry
+     *
+     * @return Zend_Gdata_YouTube_Extension_Statistics|null
+     */
+    public function getStatistics()
+    {
+        return $this->_statistics;
+    }
+
+    /**
+     * Sets the yt:statistics element for the inbox entry
+     *
+     * @param Zend_Gdata_YouTube_Extension_Statistics $statistics The
+     *        statistics element for the video in the message
+     * @return Zend_Gdata_YouTube_InboxEntry Provides a fluent interface
+     */
+    public function setStatistics($statistics = null)
+    {
+        $this->_statistics = $statistics;
+        return $this;
+    }
+
+
+}

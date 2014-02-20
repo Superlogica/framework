@@ -1,35 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV58jmoq/ssCzWcyPUR6qA+vBZt0jzWvTllEGZmj32Eia2mT6F+j7dbyIsBsTtxeVI3ETGkDQZ
-8olVtWL8KMNBTIyZACWlGQAz0QjAUOyqtTcrwvsuiCEIFgLlLIRmbyUr9vR0RAqr8R4ZfeELwqik
-6Emr+RF+Cx9/BykXj3TkGU7qRh78QnMq+V0iVDEiWGM1ulu6NqfLa+P+lw5t5VkXR0MiuHwgcQU3
-4yPq4hran1PPgbNZvv0IAa34IvD9dCrJBKTtvIykX49ercdTBthowdFtUy2+rTQPqIR/9RrJ4ac9
-RcV9/L1V0chC4eSjOCCSYO2fbZycngQozrMNPPM1ILfRACCW1NT+mlBVINNWESFm/qcdlX633Mn8
-al2YIIm/9Att/6X2qfXlzFeeGbf9n2wc283W3hmdH9bHGSRS3/qC7NTQN5uzOV3sjmvH210LElKR
-bbs0M8NFvA2fZrymhfYGIs1xO81ux7eMbqc8xlTxy4+x1upPlXTRTCaXDL7Fvf7fQZUfM+Do1Le5
-SKLmiDcVs6HCuS/boJTvTDC9YlbL0ipplCif+Zw6Iogw15qZY4t5v08l0DEBPmczHuHbulrZl3g8
-Tixjyn3GwlBB/y5YNkUMix7MYK1H9l+uKp0I2D9MU7PBxOWUYUSryAazoC/bO+9lUuWGXJQiO1dv
-n7UlKuiYq0ReOMvBGJLaTZfrZQCevLN00Bo42wKp/RLSbOiEzSZ2V/HQGfXUi3VzW+TbdRygDzcD
-/f0x3gJIrRVL7a+OIMZkjU1czPvSTiRX1JxBfV9jdAnaMprh6XTAeUy6WKf5iLOvKw3OLSwoR6WH
-1aD/yXDm8lDMFW7/tIVcgFVasFFtESxzCjj0sRIfQV2EMzKqngVRRbXKO+Tg4HHHFtcI16k9ioL+
-JqaCKG5gMJDqHHGB7Cmc31b8XPewsvtE//q4Xk3n8y76RoEdgH+6P+ImFyVtUMKqV6Tq/ucjEQcD
-MN4bY+HJtfH6woD6KSTYjOEWKzCnDQ+wXhR49Zq4iL6EXaPODiy0NNo8Yk2MBIT+uJOMf7TNWYBS
-haOvYyGOsgu/LdgJZRxXSY+3l+rV8FjvRc0kbhXYwFoKgWUfbqst81zKB5Y5UKOPA/kzqBAeBPzF
-dmUO4I8bPtG+wkI+XKwy02eQ4EO47b+jphgcn0RfFWM1VGkPYpwQ164bGu6JpwiM5cb/WaO8m6vf
-Z/e4QAYhYeBlJAcSwl+abjhwgdfTnad9XuK9RpZcXoQysSqCyaHY0gE0qQ+XyyRJwrHFt/PMbpSr
-2fyMvIJsaiHPcSKWC9uZqR2ow/rni7sI/aesUWfR14w7TUIMkbuV5NpXcd/E8LTTvW7F1AczStUF
-v8527ed1sLIxWDRk86AMNV4AkfmH6PD5cZc2ds7tX/H4KETj2Ln+EP5HwA7y2ygu1xabEzcyYoOb
-7C9bhsZHHcKv5XA0RbmB95x7xH4SWQgGDI9oFzXUNXuBQAjdCByaAPjYL0vYkTRQhMWsnIZ11UwT
-uWjihmrnAdXnA+v6FoMfLpH2mpBhVqHIsCe+WHUxeRJN2Z9fCAU1vI3Jf2Ke/UH13XhNZugu9drV
-QLEC4GhvH57DLhibxa+tkULcv0hrlhXAkt6P1SglJd5OwQunJQ8EXxEUwh39+l3Rvr6VYi+y3VYP
-6vNPQIoZ/c3qiW2KlN3r60XtxsuiREslfv9tDdakk0VAw+KZEhI8z4Y51wbdAdrGzze8PhBRkWcz
-cAt00zb/oekp724fz5+vgeMiwiKUarXpXSPN4lQ1CVnjcd8a3Vdj60VouAWLJVkdgUmZqfZwrNSs
-0ZrgczPs0Ie1b0GTEhWsW8koh1kwPtsk+8aO3avbza/CVzGTdA8JJCS0hKH8r8nOzxV9l3bZMZaA
-RmiMTVAAMr9L21bUhQacGnYof1RWXNTap/nXeTnV4p+EMSKmfaJzhWuiiQHPuD35aXwNxv03/9Mc
-XMJjtXtdkES49Wmr1hN8bIv7/us+2WOUxt9cwDvvd8uVuMZjqSMf4fkhUzhvx9pmGs7VTXz9avc6
-hy2i/EOV0zqQoTipZiDV9bf4Nqa/lTG9JtNu2yXjO9OlYYzqbzOYGQIK32JXL/V6g34KWCK9STb9
-ZgWcOmfS9tA85tvHG0djG/+8GXIPEp+8aEeospFlBTZfVfYe2yG2Da8FTeeVT3HeBb+VD0Mr6dID
-3yJeLp/2luS84MYimbmz/vb7PsBBAbdxySXtp0C/ACHSrPlgkvAKCEAkWzOrPRvrP5QjjU7tSpc8
-z4aKOd7YQrTaRhVu4EVkWGliUYWCHRhs+jNQ80pg+Cn7twjI2Snh6lYB7CKSfT9qu19jQZhL6cSE
-gjY4VHmCGOA5jQpzIMEzaOeof+y5ZNW=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Element.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Element_Interface
+ */
+require_once 'Zend/InfoCard/Xml/Element/Interface.php';
+
+/**
+ * An abstract class representing a an XML data block
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_InfoCard_Xml_Element
+    extends SimpleXMLElement
+    implements Zend_InfoCard_Xml_Element_Interface
+{
+    /**
+     * Convert the object to a string by displaying its XML content
+     *
+     * @return string an XML representation of the object
+     */
+    public function __toString()
+    {
+        return $this->asXML();
+    }
+
+    /**
+     * Converts an XML Element object into a DOM object
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @param Zend_InfoCard_Xml_Element $e The object to convert
+     * @return DOMElement A DOMElement representation of the same object
+     */
+    static public function convertToDOM(Zend_InfoCard_Xml_Element $e)
+    {
+        $dom = dom_import_simplexml($e);
+
+        if(!($dom instanceof DOMElement)) {
+            // Zend_InfoCard_Xml_Element exntes SimpleXMLElement, so this should *never* fail
+            // @codeCoverageIgnoreStart
+            require_once 'Zend/InfoCard/Xml/Exception.php';
+            throw new Zend_InfoCard_Xml_Exception("Failed to convert between SimpleXML and DOM");
+            // @codeCoverageIgnoreEnd
+        }
+
+        return $dom;
+    }
+
+    /**
+     * Converts a DOMElement object into the specific class
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @param DOMElement $e The DOMElement object to convert
+     * @param string $classname The name of the class to convert it to (must inhert from Zend_InfoCard_Xml_Element)
+     * @return Zend_InfoCard_Xml_Element a Xml Element object from the DOM element
+     */
+    static public function convertToObject(DOMElement $e, $classname)
+    {
+        if (!class_exists($classname)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($classname);
+        }
+
+        $reflection = new ReflectionClass($classname);
+
+        if(!$reflection->isSubclassOf('Zend_InfoCard_Xml_Element')) {
+            require_once 'Zend/InfoCard/Xml/Exception.php';
+            throw new Zend_InfoCard_Xml_Exception("DOM element must be converted to an instance of Zend_InfoCard_Xml_Element");
+        }
+
+        $sxe = simplexml_import_dom($e, $classname);
+
+        if(!($sxe instanceof Zend_InfoCard_Xml_Element)) {
+            // Since we just checked to see if this was a subclass of Zend_infoCard_Xml_Element this shoudl never fail
+            // @codeCoverageIgnoreStart
+            require_once 'Zend/InfoCard/Xml/Exception.php';
+            throw new Zend_InfoCard_Xml_Exception("Failed to convert between DOM and SimpleXML");
+            // @codeCoverageIgnoreEnd
+        }
+
+        return $sxe;
+    }
+}

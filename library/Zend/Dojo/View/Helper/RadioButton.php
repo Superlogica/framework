@@ -1,40 +1,89 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: RadioButton.php 10091 2008-07-15 03:46:37Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Dojo RadioButton dijit
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_RadioButton extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Dijit being used
+     * @var string
+     */
+    protected $_dijit  = 'dijit.form.RadioButton';
+
+    /**
+     * Dojo module to use
+     * @var string
+     */
+    protected $_module = 'dijit.form.CheckBox';
+
+    /**
+     * dijit.form.RadioButton
+     * 
+     * @param  string $id 
+     * @param  string $value 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @param  array $options Array of radio options
+     * @param  string $listsep String with which to separate options
+     * @return string
+     */
+    public function radioButton(
+        $id, 
+        $value = null, 
+        array $params = array(), 
+        array $attribs = array(), 
+        array $options = null, 
+        $listsep = "<br />\n"
+    ) {
+        $attribs['name'] = $id;
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id'] = $id;
+        }
+        $attribs = $this->_prepareDijit($attribs, $params, 'element');
+
+        if (is_array($options) && $this->_useProgrammatic() && !$this->_useProgrammaticNoScript()) {
+            $baseId = $id;
+            if (array_key_exists('id', $attribs)) {
+                $baseId = $attribs['id'];
+            }
+            require_once 'Zend/Filter/Alnum.php';
+            $filter = new Zend_Filter_Alnum();
+            foreach (array_keys($options) as $key) {
+                $optId = $baseId . '-' . $filter->filter($key);
+                $this->_createDijit($this->_dijit, $optId, array());
+            }
+        }
+
+        return $this->view->formRadio($id, $value, $attribs, $options, $listsep);
+    }
+}

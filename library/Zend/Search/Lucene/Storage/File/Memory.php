@@ -1,162 +1,553 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-fC6NFnV0gxP4yyNjhDkYhnA20G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Storage_File */
+require_once 'Zend/Search/Lucene/Storage/File.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Storage_File_Memory extends Zend_Search_Lucene_Storage_File
+{
+    /**
+     * FileData
+     *
+     * @var string
+     */
+    private $_data;
+
+    /**
+     * File Position
+     *
+     * @var integer
+     */
+    private $_position = 0;
+
+
+    /**
+     * Object constractor
+     *
+     * @param string $data
+     */
+    public function __construct($data)
+    {
+        $this->_data = $data;
+    }
+
+    /**
+     * Reads $length number of bytes at the current position in the
+     * file and advances the file pointer.
+     *
+     * @param integer $length
+     * @return string
+     */
+    protected function _fread($length = 1)
+    {
+        $returnValue = substr($this->_data, $this->_position, $length);
+        $this->_position += $length;
+        return $returnValue;
+    }
+
+
+    /**
+     * Sets the file position indicator and advances the file pointer.
+     * The new position, measured in bytes from the beginning of the file,
+     * is obtained by adding offset to the position specified by whence,
+     * whose values are defined as follows:
+     * SEEK_SET - Set position equal to offset bytes.
+     * SEEK_CUR - Set position to current location plus offset.
+     * SEEK_END - Set position to end-of-file plus offset. (To move to
+     * a position before the end-of-file, you need to pass a negative value
+     * in offset.)
+     * Upon success, returns 0; otherwise, returns -1
+     *
+     * @param integer $offset
+     * @param integer $whence
+     * @return integer
+     */
+    public function seek($offset, $whence=SEEK_SET)
+    {
+        switch ($whence) {
+            case SEEK_SET:
+                $this->_position = $offset;
+                break;
+
+            case SEEK_CUR:
+                $this->_position += $offset;
+                break;
+
+            case SEEK_END:
+                $this->_position = strlen($this->_data);
+                $this->_position += $offset;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Get file position.
+     *
+     * @return integer
+     */
+    public function tell()
+    {
+        return $this->_position;
+    }
+
+    /**
+     * Flush output.
+     *
+     * Returns true on success or false on failure.
+     *
+     * @return boolean
+     */
+    public function flush()
+    {
+        // Do nothing
+
+        return true;
+    }
+
+    /**
+     * Writes $length number of bytes (all, if $length===null) to the end
+     * of the file.
+     *
+     * @param string $data
+     * @param integer $length
+     */
+    protected function _fwrite($data, $length=null)
+    {
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        if ($length !== null) {
+            $this->_data .= substr($data, 0, $length);
+        } else {
+            $this->_data .= $data;
+        }
+
+        $this->_position = strlen($this->_data);
+    }
+
+    /**
+     * Lock file
+     *
+     * Lock type may be a LOCK_SH (shared lock) or a LOCK_EX (exclusive lock)
+     *
+     * @param integer $lockType
+     * @return boolean
+     */
+    public function lock($lockType, $nonBlockinLock = false)
+    {
+        // Memory files can't be shared
+        // do nothing
+
+        return true;
+    }
+
+    /**
+     * Unlock file
+     */
+    public function unlock()
+    {
+        // Memory files can't be shared
+        // do nothing
+    }
+
+    /**
+     * Reads a byte from the current position in the file
+     * and advances the file pointer.
+     *
+     * @return integer
+     */
+    public function readByte()
+    {
+        return ord($this->_data[$this->_position++]);
+    }
+
+    /**
+     * Writes a byte to the end of the file.
+     *
+     * @param integer $byte
+     */
+    public function writeByte($byte)
+    {
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        $this->_data .= chr($byte);
+        $this->_position = strlen($this->_data);
+
+        return 1;
+    }
+
+    /**
+     * Read num bytes from the current position in the file
+     * and advances the file pointer.
+     *
+     * @param integer $num
+     * @return string
+     */
+    public function readBytes($num)
+    {
+        $returnValue = substr($this->_data, $this->_position, $num);
+        $this->_position += $num;
+
+        return $returnValue;
+    }
+
+    /**
+     * Writes num bytes of data (all, if $num===null) to the end
+     * of the string.
+     *
+     * @param string $data
+     * @param integer $num
+     */
+    public function writeBytes($data, $num=null)
+    {
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        if ($num !== null) {
+            $this->_data .= substr($data, 0, $num);
+        } else {
+            $this->_data .= $data;
+        }
+
+        $this->_position = strlen($this->_data);
+    }
+
+
+    /**
+     * Reads an integer from the current position in the file
+     * and advances the file pointer.
+     *
+     * @return integer
+     */
+    public function readInt()
+    {
+        $str = substr($this->_data, $this->_position, 4);
+        $this->_position += 4;
+
+        return  ord($str[0]) << 24 |
+                ord($str[1]) << 16 |
+                ord($str[2]) << 8  |
+                ord($str[3]);
+    }
+
+
+    /**
+     * Writes an integer to the end of file.
+     *
+     * @param integer $value
+     */
+    public function writeInt($value)
+    {
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        settype($value, 'integer');
+        $this->_data .= chr($value>>24 & 0xFF) .
+                        chr($value>>16 & 0xFF) .
+                        chr($value>>8  & 0xFF) .
+                        chr($value     & 0xFF);
+
+        $this->_position = strlen($this->_data);
+    }
+
+
+    /**
+     * Returns a long integer from the current position in the file
+     * and advances the file pointer.
+     *
+     * @return integer
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function readLong()
+    {
+        $str = substr($this->_data, $this->_position, 8);
+        $this->_position += 8;
+
+        /**
+         * Check, that we work in 64-bit mode.
+         * fseek() uses long for offset. Thus, largest index segment file size in 32bit mode is 2Gb
+         */
+        if (PHP_INT_SIZE > 4) {
+            return  ord($str[0]) << 56  |
+                    ord($str[1]) << 48  |
+                    ord($str[2]) << 40  |
+                    ord($str[3]) << 32  |
+                    ord($str[4]) << 24  |
+                    ord($str[5]) << 16  |
+                    ord($str[6]) << 8   |
+                    ord($str[7]);
+        } else {
+            if ((ord($str[0])          != 0) ||
+                (ord($str[1])          != 0) ||
+                (ord($str[2])          != 0) ||
+                (ord($str[3])          != 0) ||
+                ((ord($str[0]) & 0x80) != 0)) {
+                    require_once 'Zend/Search/Lucene/Exception.php';
+                    throw new Zend_Search_Lucene_Exception('Largest supported segment size (for 32-bit mode) is 2Gb');
+            }
+
+            return  ord($str[4]) << 24  |
+                    ord($str[5]) << 16  |
+                    ord($str[6]) << 8   |
+                    ord($str[7]);
+        }
+    }
+
+    /**
+     * Writes long integer to the end of file
+     *
+     * @param integer $value
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function writeLong($value)
+    {
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        /**
+         * Check, that we work in 64-bit mode.
+         * fseek() and ftell() use long for offset. Thus, largest index segment file size in 32bit mode is 2Gb
+         */
+        if (PHP_INT_SIZE > 4) {
+            settype($value, 'integer');
+            $this->_data .= chr($value>>56 & 0xFF) .
+                            chr($value>>48 & 0xFF) .
+                            chr($value>>40 & 0xFF) .
+                            chr($value>>32 & 0xFF) .
+                            chr($value>>24 & 0xFF) .
+                            chr($value>>16 & 0xFF) .
+                            chr($value>>8  & 0xFF) .
+                            chr($value     & 0xFF);
+        } else {
+            if ($value > 0x7FFFFFFF) {
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Largest supported segment size (for 32-bit mode) is 2Gb');
+            }
+
+            $this->_data .= chr(0) . chr(0) . chr(0) . chr(0) .
+                            chr($value>>24 & 0xFF) .
+                            chr($value>>16 & 0xFF) .
+                            chr($value>>8  & 0xFF) .
+                            chr($value     & 0xFF);
+        }
+
+        $this->_position = strlen($this->_data);
+    }
+
+
+
+    /**
+     * Returns a variable-length integer from the current
+     * position in the file and advances the file pointer.
+     *
+     * @return integer
+     */
+    public function readVInt()
+    {
+        $nextByte = ord($this->_data[$this->_position++]);
+        $val = $nextByte & 0x7F;
+
+        for ($shift=7; ($nextByte & 0x80) != 0; $shift += 7) {
+            $nextByte = ord($this->_data[$this->_position++]);
+            $val |= ($nextByte & 0x7F) << $shift;
+        }
+        return $val;
+    }
+
+    /**
+     * Writes a variable-length integer to the end of file.
+     *
+     * @param integer $value
+     */
+    public function writeVInt($value)
+    {
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        settype($value, 'integer');
+        while ($value > 0x7F) {
+            $this->_data .= chr( ($value & 0x7F)|0x80 );
+            $value >>= 7;
+        }
+        $this->_data .= chr($value);
+
+        $this->_position = strlen($this->_data);
+    }
+
+
+    /**
+     * Reads a string from the current position in the file
+     * and advances the file pointer.
+     *
+     * @return string
+     */
+    public function readString()
+    {
+        $strlen = $this->readVInt();
+        if ($strlen == 0) {
+            return '';
+        } else {
+            /**
+             * This implementation supports only Basic Multilingual Plane
+             * (BMP) characters (from 0x0000 to 0xFFFF) and doesn't support
+             * "supplementary characters" (characters whose code points are
+             * greater than 0xFFFF)
+             * Java 2 represents these characters as a pair of char (16-bit)
+             * values, the first from the high-surrogates range (0xD800-0xDBFF),
+             * the second from the low-surrogates range (0xDC00-0xDFFF). Then
+             * they are encoded as usual UTF-8 characters in six bytes.
+             * Standard UTF-8 representation uses four bytes for supplementary
+             * characters.
+             */
+
+            $str_val = substr($this->_data, $this->_position, $strlen);
+            $this->_position += $strlen;
+
+            for ($count = 0; $count < $strlen; $count++ ) {
+                if (( ord($str_val[$count]) & 0xC0 ) == 0xC0) {
+                    $addBytes = 1;
+                    if (ord($str_val[$count]) & 0x20 ) {
+                        $addBytes++;
+
+                        // Never used. Java2 doesn't encode strings in four bytes
+                        if (ord($str_val[$count]) & 0x10 ) {
+                            $addBytes++;
+                        }
+                    }
+                    $str_val .= substr($this->_data, $this->_position, $addBytes);
+                    $this->_position += $addBytes;
+                    $strlen          += $addBytes;
+
+                    // Check for null character. Java2 encodes null character
+                    // in two bytes.
+                    if (ord($str_val[$count])   == 0xC0 &&
+                        ord($str_val[$count+1]) == 0x80   ) {
+                        $str_val[$count] = 0;
+                        $str_val = substr($str_val,0,$count+1)
+                                 . substr($str_val,$count+2);
+                    }
+                    $count += $addBytes;
+                }
+            }
+
+            return $str_val;
+        }
+    }
+
+    /**
+     * Writes a string to the end of file.
+     *
+     * @param string $str
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function writeString($str)
+    {
+        /**
+         * This implementation supports only Basic Multilingual Plane
+         * (BMP) characters (from 0x0000 to 0xFFFF) and doesn't support
+         * "supplementary characters" (characters whose code points are
+         * greater than 0xFFFF)
+         * Java 2 represents these characters as a pair of char (16-bit)
+         * values, the first from the high-surrogates range (0xD800-0xDBFF),
+         * the second from the low-surrogates range (0xDC00-0xDFFF). Then
+         * they are encoded as usual UTF-8 characters in six bytes.
+         * Standard UTF-8 representation uses four bytes for supplementary
+         * characters.
+         */
+
+        // We do not need to check if file position points to the end of "file".
+        // Only append operation is supported now
+
+        // convert input to a string before iterating string characters
+        settype($str, 'string');
+
+        $chars = $strlen = strlen($str);
+        $containNullChars = false;
+
+        for ($count = 0; $count < $strlen; $count++ ) {
+            /**
+             * String is already in Java 2 representation.
+             * We should only calculate actual string length and replace
+             * \x00 by \xC0\x80
+             */
+            if ((ord($str[$count]) & 0xC0) == 0xC0) {
+                $addBytes = 1;
+                if (ord($str[$count]) & 0x20 ) {
+                    $addBytes++;
+
+                    // Never used. Java2 doesn't encode strings in four bytes
+                    // and we dont't support non-BMP characters
+                    if (ord($str[$count]) & 0x10 ) {
+                        $addBytes++;
+                    }
+                }
+                $chars -= $addBytes;
+
+                if (ord($str[$count]) == 0 ) {
+                    $containNullChars = true;
+                }
+                $count += $addBytes;
+            }
+        }
+
+        if ($chars < 0) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Invalid UTF-8 string');
+        }
+
+        $this->writeVInt($chars);
+        if ($containNullChars) {
+            $this->_data .= str_replace($str, "\x00", "\xC0\x80");
+
+        } else {
+            $this->_data .= $str;
+        }
+
+        $this->_position = strlen($this->_data);
+    }
+
+
+    /**
+     * Reads binary data from the current position in the file
+     * and advances the file pointer.
+     *
+     * @return string
+     */
+    public function readBinary()
+    {
+        $length = $this->readVInt();
+        $returnValue = substr($this->_data, $this->_position, $length);
+        $this->_position += $length;
+        return $returnValue;
+    }
+}
+

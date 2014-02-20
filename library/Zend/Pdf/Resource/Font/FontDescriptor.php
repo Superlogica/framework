@@ -1,79 +1,199 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-GwglBExrvm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Font */
+require_once 'Zend/Pdf/Font.php';
+
+/** Zend_Pdf_Resource_Font */
+require_once 'Zend/Pdf/Resource/Font.php';
+
+/** Zend_Pdf_FileParser_Font_OpenType */
+require_once 'Zend/Pdf/FileParser/Font/OpenType.php';
+
+
+/**
+ * FontDescriptor implementation
+ *
+ * A font descriptor specifies metrics and other attributes of a simple font or a 
+ * CIDFont as a whole, as distinct from the metrics of individual glyphs. These font
+ * metrics provide information that enables a viewer application to synthesize a
+ * substitute font or select a similar font when the font program is unavailable. The
+ * font descriptor may also be used to embed the font program in the PDF file.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Resource_Font_FontDescriptor
+{
+    /**
+     * Object constructor
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct()
+    {
+        throw new Zend_Pdf_Exception('Zend_Pdf_Resource_Font_FontDescriptor is not intended to be instantiated');
+    } 
+    
+    /**
+     * Object constructor
+     * 
+     * The $embeddingOptions parameter allows you to set certain flags related
+     * to font embedding. You may combine options by OR-ing them together. See
+     * the EMBED_ constants defined in {@link Zend_Pdf_Font} for the list of
+     * available options and their descriptions.
+     *
+     * Note that it is not requried that fonts be embedded within the PDF file
+     * to use them. If the recipient of the PDF has the font installed on their
+     * computer, they will see the correct fonts in the document. If they don't,
+     * the PDF viewer will substitute or synthesize a replacement.
+     * 
+     * 
+     * @param Zend_Pdf_Resource_Font $font Font
+     * @param Zend_Pdf_FileParser_Font_OpenType $fontParser Font parser object containing parsed TrueType file.
+     * @param integer $embeddingOptions Options for font embedding.
+     * @return Zend_Pdf_Element_Dictionary
+     * @throws Zend_Pdf_Exception
+     */
+    static public function factory(Zend_Pdf_Resource_Font $font, Zend_Pdf_FileParser_Font_OpenType $fontParser, $embeddingOptions)
+    {
+        /* The font descriptor object contains the rest of the font metrics and
+         * the information about the embedded font program (if applicible).
+         */
+        $fontDescriptor = new Zend_Pdf_Element_Dictionary();
+
+        $fontDescriptor->Type     = new Zend_Pdf_Element_Name('FontDescriptor');
+        $fontDescriptor->FontName = new Zend_Pdf_Element_Name($font->getResource()->BaseFont->value);
+
+        /* The font flags value is a bitfield that describes the stylistic
+         * attributes of the font. We will set as many of the bits as can be
+         * determined from the font parser.
+         */
+        $flags = 0;
+        if ($fontParser->isMonospaced) {    // bit 1: FixedPitch
+            $flags |= 1 << 0;
+        }
+        if ($fontParser->isSerifFont) {    // bit 2: Serif
+            $flags |= 1 << 1;
+        }
+        if (! $fontParser->isAdobeLatinSubset) {    // bit 3: Symbolic
+            $flags |= 1 << 2;
+        }
+        if ($fontParser->isScriptFont) {    // bit 4: Script
+            $flags |= 1 << 3;
+        }
+        if ($fontParser->isAdobeLatinSubset) {    // bit 6: Nonsymbolic
+            $flags |= 1 << 5;
+        }
+        if ($fontParser->isItalic) {    // bit 7: Italic
+            $flags |= 1 << 6;
+        }
+        // bits 17-19: AllCap, SmallCap, ForceBold; not available
+        $fontDescriptor->Flags = new Zend_Pdf_Element_Numeric($flags);
+
+        $fontBBox = array(new Zend_Pdf_Element_Numeric($font->toEmSpace($fontParser->xMin)),
+                          new Zend_Pdf_Element_Numeric($font->toEmSpace($fontParser->yMin)),
+                          new Zend_Pdf_Element_Numeric($font->toEmSpace($fontParser->xMax)),
+                          new Zend_Pdf_Element_Numeric($font->toEmSpace($fontParser->yMax)));
+        $fontDescriptor->FontBBox     = new Zend_Pdf_Element_Array($fontBBox);
+
+        $fontDescriptor->ItalicAngle  = new Zend_Pdf_Element_Numeric($fontParser->italicAngle);
+
+        $fontDescriptor->Ascent       = new Zend_Pdf_Element_Numeric($font->toEmSpace($fontParser->ascent));
+        $fontDescriptor->Descent      = new Zend_Pdf_Element_Numeric($font->toEmSpace($fontParser->descent));
+
+        $fontDescriptor->CapHeight    = new Zend_Pdf_Element_Numeric($fontParser->capitalHeight);
+        /**
+         * The vertical stem width is not yet extracted from the OpenType font
+         * file. For now, record zero which is interpreted as 'unknown'.
+         * @todo Calculate value for StemV.
+         */
+        $fontDescriptor->StemV        = new Zend_Pdf_Element_Numeric(0);
+        
+        $fontDescriptor->MissingWidth = new Zend_Pdf_Element_Numeric($fontParser->glyphWidths[0]);
+
+        /* Set up font embedding. This is where the actual font program itself
+         * is embedded within the PDF document.
+         *
+         * Note that it is not requried that fonts be embedded within the PDF
+         * document to use them. If the recipient of the PDF has the font
+         * installed on their computer, they will see the correct fonts in the
+         * document. If they don't, the PDF viewer will substitute or synthesize
+         * a replacement.
+         *
+         * There are several guidelines for font embedding:
+         *
+         * First, the developer might specifically request not to embed the font.
+         */
+        if (!($embeddingOptions & Zend_Pdf_Font::EMBED_DONT_EMBED)) {
+
+            /* Second, the font author may have set copyright bits that prohibit
+             * the font program from being embedded. Yes this is controversial,
+             * but it's the rules:
+             *   http://partners.adobe.com/public/developer/en/acrobat/sdk/FontPolicies.pdf
+             *
+             * To keep the developer in the loop, and to prevent surprising bug
+             * reports of "your PDF doesn't have the right fonts," throw an
+             * exception if the font cannot be embedded.
+             */
+            if (! $fontParser->isEmbeddable) {
+                /* This exception may be suppressed if the developer decides that
+                 * it's not a big deal that the font program can't be embedded.
+                 */
+                if (!($embeddingOptions & Zend_Pdf_Font::EMBED_SUPPRESS_EMBED_EXCEPTION)) {
+                    $message = 'This font cannot be embedded in the PDF document. If you would like to use '
+                             . 'it anyway, you must pass Zend_Pdf_Font::EMBED_SUPPRESS_EMBED_EXCEPTION '
+                             . 'in the $options parameter of the font constructor.';
+                    throw new Zend_Pdf_Exception($message, Zend_Pdf_Exception::FONT_CANT_BE_EMBEDDED);
+                }
+
+            } else {
+                /* Otherwise, the default behavior is to embed all custom fonts.
+                 */
+                /* This section will change soon to a stream object data
+                 * provider model so that we don't have to keep a copy of the
+                 * entire font in memory.
+                 *
+                 * We also cannot build font subsetting until the data provider
+                 * model is in place.
+                 */
+                $fontFile = $fontParser->getDataSource()->readAllBytes();
+                $fontFileObject = $font->getFactory()->newStreamObject($fontFile);
+                $fontFileObject->dictionary->Length1 = new Zend_Pdf_Element_Numeric(strlen($fontFile));
+                if (!($embeddingOptions & Zend_Pdf_Font::EMBED_DONT_COMPRESS)) {
+                    /* Compress the font file using Flate. This generally cuts file
+                     * sizes by about half!
+                     */
+                    $fontFileObject->dictionary->Filter = new Zend_Pdf_Element_Name('FlateDecode');
+                }
+                if ($fontParser instanceof Zend_Pdf_FileParser_Font_OpenType_Type1 /* not implemented now */) {
+                    $fontDescriptor->FontFile  = $fontFileObject;
+                } else if ($fontParser instanceof Zend_Pdf_FileParser_Font_OpenType_TrueType) {
+                    $fontDescriptor->FontFile2 = $fontFileObject;
+                } else {
+                    $fontDescriptor->FontFile3 = $fontFileObject;
+                }
+            }
+        }
+
+        return $fontDescriptor;
+    }
+}

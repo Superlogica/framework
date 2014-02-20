@@ -1,359 +1,1248 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 15664 2009-05-21 12:59:47Z yoshida@zend.co.jp $
+ */
+
+
+/**
+ * @see Zend_Db
+ */
+require_once 'Zend/Db.php';
+
+/**
+ * @see Zend_Db_Select
+ */
+require_once 'Zend/Db/Select.php';
+
+/**
+ * Class for connecting to SQL databases and performing common operations.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Db_Adapter_Abstract
+{
+
+    /**
+     * User-provided configuration
+     *
+     * @var array
+     */
+    protected $_config = array();
+
+    /**
+     * Fetch mode
+     *
+     * @var integer
+     */
+    protected $_fetchMode = Zend_Db::FETCH_ASSOC;
+
+    /**
+     * Query profiler object, of type Zend_Db_Profiler
+     * or a subclass of that.
+     *
+     * @var Zend_Db_Profiler
+     */
+    protected $_profiler;
+
+    /**
+     * Default class name for a DB statement.
+     *
+     * @var string
+     */
+    protected $_defaultStmtClass = 'Zend_Db_Statement';
+
+    /**
+     * Default class name for the profiler object.
+     *
+     * @var string
+     */
+    protected $_defaultProfilerClass = 'Zend_Db_Profiler';
+
+    /**
+     * Database connection
+     *
+     * @var object|resource|null
+     */
+    protected $_connection = null;
+
+    /**
+     * Specifies the case of column names retrieved in queries
+     * Options
+     * Zend_Db::CASE_NATURAL (default)
+     * Zend_Db::CASE_LOWER
+     * Zend_Db::CASE_UPPER
+     *
+     * @var integer
+     */
+    protected $_caseFolding = Zend_Db::CASE_NATURAL;
+
+    /**
+     * Specifies whether the adapter automatically quotes identifiers.
+     * If true, most SQL generated by Zend_Db classes applies
+     * identifier quoting automatically.
+     * If false, developer must quote identifiers themselves
+     * by calling quoteIdentifier().
+     *
+     * @var bool
+     */
+    protected $_autoQuoteIdentifiers = true;
+
+    /**
+     * Keys are UPPERCASE SQL datatypes or the constants
+     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
+     *
+     * Values are:
+     * 0 = 32-bit integer
+     * 1 = 64-bit integer
+     * 2 = float or decimal
+     *
+     * @var array Associative array of datatypes to values 0, 1, or 2.
+     */
+    protected $_numericDataTypes = array(
+        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
+        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
+        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE
+    );
+
+    /** Weither or not that object can get serialized
+     *
+     * @var bool
+     */
+    protected $_allowSerialization = true;
+
+    /**
+     * Weither or not the database should be reconnected
+     * to that adapter when waking up
+     *
+     * @var bool
+     */
+    protected $_autoReconnectOnUnserialize = false;
+
+    /**
+     * Constructor.
+     *
+     * $config is an array of key/value pairs or an instance of Zend_Config
+     * containing configuration options.  These options are common to most adapters:
+     *
+     * dbname         => (string) The name of the database to user
+     * username       => (string) Connect to the database as this username.
+     * password       => (string) Password associated with the username.
+     * host           => (string) What host to connect to, defaults to localhost
+     *
+     * Some options are used on a case-by-case basis by adapters:
+     *
+     * port           => (string) The port of the database
+     * persistent     => (boolean) Whether to use a persistent connection or not, defaults to false
+     * protocol       => (string) The network protocol, defaults to TCPIP
+     * caseFolding    => (int) style of case-alteration used for identifiers
+     *
+     * @param  array|Zend_Config $config An array or instance of Zend_Config having configuration data
+     * @throws Zend_Db_Adapter_Exception
+     */
+    public function __construct($config)
+    {
+        /*
+         * Verify that adapter parameters are in an array.
+         */
+        if (!is_array($config)) {
+            /*
+             * Convert Zend_Config argument to a plain array.
+             */
+            if ($config instanceof Zend_Config) {
+                $config = $config->toArray();
+            } else {
+                /**
+                 * @see Zend_Db_Exception
+                 */
+                require_once 'Zend/Db/Exception.php';
+                throw new Zend_Db_Exception('Adapter parameters must be in an array or a Zend_Config object');
+            }
+        }
+
+        $this->_checkRequiredOptions($config);
+
+        $options = array(
+            Zend_Db::CASE_FOLDING           => $this->_caseFolding,
+            Zend_Db::AUTO_QUOTE_IDENTIFIERS => $this->_autoQuoteIdentifiers
+        );
+        $driverOptions = array();
+
+        /*
+         * normalize the config and merge it with the defaults
+         */
+        if (array_key_exists('options', $config)) {
+            // can't use array_merge() because keys might be integers
+            foreach ((array) $config['options'] as $key => $value) {
+                $options[$key] = $value;
+            }
+        }
+        if (array_key_exists('driver_options', $config)) {
+            if (!empty($config['driver_options'])) {
+                // can't use array_merge() because keys might be integers
+                foreach ((array) $config['driver_options'] as $key => $value) {
+                    $driverOptions[$key] = $value;
+                }
+            }
+        }
+
+        if (!isset($config['charset'])) {
+            $config['charset'] = null;
+        }
+
+        $this->_config = array_merge($this->_config, $config);
+        $this->_config['options'] = $options;
+        $this->_config['driver_options'] = $driverOptions;
+
+
+        // obtain the case setting, if there is one
+        if (array_key_exists(Zend_Db::CASE_FOLDING, $options)) {
+            $case = (int) $options[Zend_Db::CASE_FOLDING];
+            switch ($case) {
+                case Zend_Db::CASE_LOWER:
+                case Zend_Db::CASE_UPPER:
+                case Zend_Db::CASE_NATURAL:
+                    $this->_caseFolding = $case;
+                    break;
+                default:
+                    /** @see Zend_Db_Adapter_Exception */
+                    require_once 'Zend/Db/Adapter/Exception.php';
+                    throw new Zend_Db_Adapter_Exception('Case must be one of the following constants: '
+                        . 'Zend_Db::CASE_NATURAL, Zend_Db::CASE_LOWER, Zend_Db::CASE_UPPER');
+            }
+        }
+
+        // obtain quoting property if there is one
+        if (array_key_exists(Zend_Db::AUTO_QUOTE_IDENTIFIERS, $options)) {
+            $this->_autoQuoteIdentifiers = (bool) $options[Zend_Db::AUTO_QUOTE_IDENTIFIERS];
+        }
+
+        // obtain allow serialization property if there is one
+        if (array_key_exists(Zend_Db::ALLOW_SERIALIZATION, $options)) {
+            $this->_allowSerialization = (bool) $options[Zend_Db::ALLOW_SERIALIZATION];
+        }
+
+        // obtain auto reconnect on unserialize property if there is one
+        if (array_key_exists(Zend_Db::AUTO_RECONNECT_ON_UNSERIALIZE, $options)) {
+            $this->_autoReconnectOnUnserialize = (bool) $options[Zend_Db::AUTO_RECONNECT_ON_UNSERIALIZE];
+        }
+
+        // create a profiler object
+        $profiler = false;
+        if (array_key_exists(Zend_Db::PROFILER, $this->_config)) {
+            $profiler = $this->_config[Zend_Db::PROFILER];
+            unset($this->_config[Zend_Db::PROFILER]);
+        }
+        $this->setProfiler($profiler);
+    }
+
+    /**
+     * Check for config options that are mandatory.
+     * Throw exceptions if any are missing.
+     *
+     * @param array $config
+     * @throws Zend_Db_Adapter_Exception
+     */
+    protected function _checkRequiredOptions(array $config)
+    {
+        // we need at least a dbname
+        if (! array_key_exists('dbname', $config)) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("Configuration array must have a key for 'dbname' that names the database instance");
+        }
+
+        if (! array_key_exists('password', $config)) {
+            /**
+             * @see Zend_Db_Adapter_Exception
+             */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("Configuration array must have a key for 'password' for login credentials");
+        }
+
+        if (! array_key_exists('username', $config)) {
+            /**
+             * @see Zend_Db_Adapter_Exception
+             */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("Configuration array must have a key for 'username' for login credentials");
+        }
+    }
+
+    /**
+     * Returns the underlying database connection object or resource.
+     * If not presently connected, this initiates the connection.
+     *
+     * @return object|resource|null
+     */
+    public function getConnection()
+    {
+        $this->_connect();
+        return $this->_connection;
+    }
+
+    /**
+     * Returns the configuration variables in this adapter.
+     *
+     * @return array
+     */
+    public function getConfig()
+    {
+        return $this->_config;
+    }
+
+    /**
+     * Set the adapter's profiler object.
+     *
+     * The argument may be a boolean, an associative array, an instance of
+     * Zend_Db_Profiler, or an instance of Zend_Config.
+     *
+     * A boolean argument sets the profiler to enabled if true, or disabled if
+     * false.  The profiler class is the adapter's default profiler class,
+     * Zend_Db_Profiler.
+     *
+     * An instance of Zend_Db_Profiler sets the adapter's instance to that
+     * object.  The profiler is enabled and disabled separately.
+     *
+     * An associative array argument may contain any of the keys 'enabled',
+     * 'class', and 'instance'. The 'enabled' and 'instance' keys correspond to the
+     * boolean and object types documented above. The 'class' key is used to name a
+     * class to use for a custom profiler. The class must be Zend_Db_Profiler or a
+     * subclass. The class is instantiated with no constructor arguments. The 'class'
+     * option is ignored when the 'instance' option is supplied.
+     *
+     * An object of type Zend_Config may contain the properties 'enabled', 'class', and
+     * 'instance', just as if an associative array had been passed instead.
+     *
+     * @param  Zend_Db_Profiler|Zend_Config|array|boolean $profiler
+     * @return Zend_Db_Adapter_Abstract Provides a fluent interface
+     * @throws Zend_Db_Profiler_Exception if the object instance or class specified
+     *         is not Zend_Db_Profiler or an extension of that class.
+     */
+    public function setProfiler($profiler)
+    {
+        $enabled          = null;
+        $profilerClass    = $this->_defaultProfilerClass;
+        $profilerInstance = null;
+
+        if ($profilerIsObject = is_object($profiler)) {
+            if ($profiler instanceof Zend_Db_Profiler) {
+                $profilerInstance = $profiler;
+            } else if ($profiler instanceof Zend_Config) {
+                $profiler = $profiler->toArray();
+            } else {
+                /**
+                 * @see Zend_Db_Profiler_Exception
+                 */
+                require_once 'Zend/Db/Profiler/Exception.php';
+                throw new Zend_Db_Profiler_Exception('Profiler argument must be an instance of either Zend_Db_Profiler'
+                    . ' or Zend_Config when provided as an object');
+            }
+        }
+
+        if (is_array($profiler)) {
+            if (isset($profiler['enabled'])) {
+                $enabled = (bool) $profiler['enabled'];
+            }
+            if (isset($profiler['class'])) {
+                $profilerClass = $profiler['class'];
+            }
+            if (isset($profiler['instance'])) {
+                $profilerInstance = $profiler['instance'];
+            }
+        } else if (!$profilerIsObject) {
+            $enabled = (bool) $profiler;
+        }
+
+        if ($profilerInstance === null) {
+            if (!class_exists($profilerClass)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($profilerClass);
+            }
+            $profilerInstance = new $profilerClass();
+        }
+
+        if (!$profilerInstance instanceof Zend_Db_Profiler) {
+            /** @see Zend_Db_Profiler_Exception */
+            require_once 'Zend/Db/Profiler/Exception.php';
+            throw new Zend_Db_Profiler_Exception('Class ' . get_class($profilerInstance) . ' does not extend '
+                . 'Zend_Db_Profiler');
+        }
+
+        if (null !== $enabled) {
+            $profilerInstance->setEnabled($enabled);
+        }
+
+        $this->_profiler = $profilerInstance;
+
+        return $this;
+    }
+
+
+    /**
+     * Returns the profiler for this adapter.
+     *
+     * @return Zend_Db_Profiler
+     */
+    public function getProfiler()
+    {
+        return $this->_profiler;
+    }
+
+    /**
+     * Get the default statement class.
+     *
+     * @return string
+     */
+    public function getStatementClass()
+    {
+        return $this->_defaultStmtClass;
+    }
+
+    /**
+     * Set the default statement class.
+     *
+     * @return Zend_Db_Adapter_Abstract Fluent interface
+     */
+    public function setStatementClass($class)
+    {
+        $this->_defaultStmtClass = $class;
+        return $this;
+    }
+
+    /**
+     * Prepares and executes an SQL statement with bound data.
+     *
+     * @param  mixed  $sql  The SQL statement with placeholders.
+     *                      May be a string or Zend_Db_Select.
+     * @param  mixed  $bind An array of data to bind to the placeholders.
+     * @return Zend_Db_Statement_Interface
+     */
+    public function query($sql, $bind = array())
+    {
+        // connect to the database if needed
+        $this->_connect();
+
+        // is the $sql a Zend_Db_Select object?
+        if ($sql instanceof Zend_Db_Select) {
+            if (empty($bind)) {
+                $bind = $sql->getBind();
+            }
+
+            $sql = $sql->assemble();
+        }
+
+        // make sure $bind to an array;
+        // don't use (array) typecasting because
+        // because $bind may be a Zend_Db_Expr object
+        if (!is_array($bind)) {
+            $bind = array($bind);
+        }
+
+        // prepare and execute the statement with profiling
+        $stmt = $this->prepare($sql);
+        $stmt->execute($bind);
+
+        // return the results embedded in the prepared statement object
+        $stmt->setFetchMode($this->_fetchMode);
+        return $stmt;
+    }
+
+    /**
+     * Leave autocommit mode and begin a transaction.
+     *
+     * @return bool True
+     */
+    public function beginTransaction()
+    {
+        $this->_connect();
+        $q = $this->_profiler->queryStart('begin', Zend_Db_Profiler::TRANSACTION);
+        $this->_beginTransaction();
+        $this->_profiler->queryEnd($q);
+        return true;
+    }
+
+    /**
+     * Commit a transaction and return to autocommit mode.
+     *
+     * @return bool True
+     */
+    public function commit()
+    {
+        $this->_connect();
+        $q = $this->_profiler->queryStart('commit', Zend_Db_Profiler::TRANSACTION);
+        $this->_commit();
+        $this->_profiler->queryEnd($q);
+        return true;
+    }
+
+    /**
+     * Roll back a transaction and return to autocommit mode.
+     *
+     * @return bool True
+     */
+    public function rollBack()
+    {
+        $this->_connect();
+        $q = $this->_profiler->queryStart('rollback', Zend_Db_Profiler::TRANSACTION);
+        $this->_rollBack();
+        $this->_profiler->queryEnd($q);
+        return true;
+    }
+
+    /**
+     * Inserts a table row with specified data.
+     *
+     * @param mixed $table The table to insert data into.
+     * @param array $bind Column-value pairs.
+     * @return int The number of affected rows.
+     */
+    public function insert($table, array $bind)
+    {
+        // extract and quote col names from the array keys
+        $cols = array();
+        $vals = array();
+        foreach ($bind as $col => $val) {
+            $cols[] = $this->quoteIdentifier($col, true);
+            if ($val instanceof Zend_Db_Expr) {
+                $vals[] = $val->__toString();
+                unset($bind[$col]);
+            } else {
+                $vals[] = '?';
+            }
+        }
+
+        // build the statement
+        $sql = "INSERT INTO "
+             . $this->quoteIdentifier($table, true)
+             . ' (' . implode(', ', $cols) . ') '
+             . 'VALUES (' . implode(', ', $vals) . ')';
+
+        // execute the statement and return the number of affected rows
+        $stmt = $this->query($sql, array_values($bind));
+        $result = $stmt->rowCount();
+        return $result;
+    }
+
+    /**
+     * Updates table rows with specified data based on a WHERE clause.
+     *
+     * @param  mixed        $table The table to update.
+     * @param  array        $bind  Column-value pairs.
+     * @param  mixed        $where UPDATE WHERE clause(s).
+     * @return int          The number of affected rows.
+     */
+    public function update($table, array $bind, $where = '')
+    {
+        /**
+         * Build "col = ?" pairs for the statement,
+         * except for Zend_Db_Expr which is treated literally.
+         */
+        $set = array();
+        $i = 0;
+        foreach ($bind as $col => $val) {
+            if ($val instanceof Zend_Db_Expr) {
+                $val = $val->__toString();
+                unset($bind[$col]);
+            } else {
+                if ($this->supportsParameters('positional')) {
+                    $val = '?';
+                } else {
+                    if ($this->supportsParameters('named')) {
+                        unset($bind[$col]);
+                        $bind[':'.$col.$i] = $val;
+                        $val = ':'.$col.$i;
+                        $i++;
+                    } else {
+                        /** @see Zend_Db_Adapter_Exception */
+                        require_once 'Zend/Db/Adapter/Exception.php';
+                        throw new Zend_Db_Adapter_Exception(get_class($this) ." doesn't support positional or named binding");
+                    }
+                }
+            }
+            $set[] = $this->quoteIdentifier($col, true) . ' = ' . $val;
+        }
+
+        $where = $this->_whereExpr($where);
+
+        /**
+         * Build the UPDATE statement
+         */
+        $sql = "UPDATE "
+             . $this->quoteIdentifier($table, true)
+             . ' SET ' . implode(', ', $set)
+             . (($where) ? " WHERE $where" : '');
+
+        /**
+         * Execute the statement and return the number of affected rows
+         */
+        if ($this->supportsParameters('positional')) {
+            $stmt = $this->query($sql, array_values($bind));
+        } else {
+            $stmt = $this->query($sql, $bind);
+        }
+        $result = $stmt->rowCount();
+        return $result;
+    }
+
+    /**
+     * Deletes table rows based on a WHERE clause.
+     *
+     * @param  mixed        $table The table to update.
+     * @param  mixed        $where DELETE WHERE clause(s).
+     * @return int          The number of affected rows.
+     */
+    public function delete($table, $where = '')
+    {
+        $where = $this->_whereExpr($where);
+
+        /**
+         * Build the DELETE statement
+         */
+        $sql = "DELETE FROM "
+             . $this->quoteIdentifier($table, true)
+             . (($where) ? " WHERE $where" : '');
+
+        /**
+         * Execute the statement and return the number of affected rows
+         */
+        $stmt = $this->query($sql);
+        $result = $stmt->rowCount();
+        return $result;
+    }
+
+    /**
+     * Convert an array, string, or Zend_Db_Expr object
+     * into a string to put in a WHERE clause.
+     *
+     * @param mixed $where
+     * @return string
+     */
+    protected function _whereExpr($where)
+    {
+        if (empty($where)) {
+            return $where;
+        }
+        if (!is_array($where)) {
+            $where = array($where);
+        }
+        foreach ($where as $cond => &$term) {
+            // is $cond an int? (i.e. Not a condition)
+            if (is_int($cond)) {
+                // $term is the full condition
+                if ($term instanceof Zend_Db_Expr) {
+                    $term = $term->__toString();
+                }
+            } else {
+                // $cond is the condition with placeholder,
+                // and $term is quoted into the condition
+                $term = $this->quoteInto($cond, $term);
+            }
+            $term = '(' . $term . ')';
+        }
+
+        $where = implode(' AND ', $where);
+        return $where;
+    }
+
+    /**
+     * Creates and returns a new Zend_Db_Select object for this adapter.
+     *
+     * @return Zend_Db_Select
+     */
+    public function select()
+    {
+        return new Zend_Db_Select($this);
+    }
+
+    /**
+     * Get the fetch mode.
+     *
+     * @return int
+     */
+    public function getFetchMode()
+    {
+        return $this->_fetchMode;
+    }
+
+    /**
+     * Fetches all SQL result rows as a sequential array.
+     * Uses the current fetchMode for the adapter.
+     *
+     * @param string|Zend_Db_Select $sql  An SQL SELECT statement.
+     * @param mixed                 $bind Data to bind into SELECT placeholders.
+     * @param mixed                 $fetchMode Override current fetch mode.
+     * @return array
+     */
+    public function fetchAll($sql, $bind = array(), $fetchMode = null)
+    {
+        if ($fetchMode === null) {
+            $fetchMode = $this->_fetchMode;
+        }
+        $stmt = $this->query($sql, $bind);
+        $result = $stmt->fetchAll($fetchMode);
+        return $result;
+    }
+
+    /**
+     * Fetches the first row of the SQL result.
+     * Uses the current fetchMode for the adapter.
+     *
+     * @param string|Zend_Db_Select $sql An SQL SELECT statement.
+     * @param mixed $bind Data to bind into SELECT placeholders.
+     * @param mixed                 $fetchMode Override current fetch mode.
+     * @return array
+     */
+    public function fetchRow($sql, $bind = array(), $fetchMode = null)
+    {
+        if ($fetchMode === null) {
+            $fetchMode = $this->_fetchMode;
+        }
+        $stmt = $this->query($sql, $bind);
+        $result = $stmt->fetch($fetchMode);
+        return $result;
+    }
+
+    /**
+     * Fetches all SQL result rows as an associative array.
+     *
+     * The first column is the key, the entire row array is the
+     * value.  You should construct the query to be sure that
+     * the first column contains unique values, or else
+     * rows with duplicate values in the first column will
+     * overwrite previous data.
+     *
+     * @param string|Zend_Db_Select $sql An SQL SELECT statement.
+     * @param mixed $bind Data to bind into SELECT placeholders.
+     * @return string
+     */
+    public function fetchAssoc($sql, $bind = array())
+    {
+        $stmt = $this->query($sql, $bind);
+        $data = array();
+        while ($row = $stmt->fetch(Zend_Db::FETCH_ASSOC)) {
+            $tmp = array_values(array_slice($row, 0, 1));
+            $data[$tmp[0]] = $row;
+        }
+        return $data;
+    }
+
+    /**
+     * Fetches the first column of all SQL result rows as an array.
+     *
+     * The first column in each row is used as the array key.
+     *
+     * @param string|Zend_Db_Select $sql An SQL SELECT statement.
+     * @param mixed $bind Data to bind into SELECT placeholders.
+     * @return array
+     */
+    public function fetchCol($sql, $bind = array())
+    {
+        $stmt = $this->query($sql, $bind);
+        $result = $stmt->fetchAll(Zend_Db::FETCH_COLUMN, 0);
+        return $result;
+    }
+
+    /**
+     * Fetches all SQL result rows as an array of key-value pairs.
+     *
+     * The first column is the key, the second column is the
+     * value.
+     *
+     * @param string|Zend_Db_Select $sql An SQL SELECT statement.
+     * @param mixed $bind Data to bind into SELECT placeholders.
+     * @return string
+     */
+    public function fetchPairs($sql, $bind = array())
+    {
+        $stmt = $this->query($sql, $bind);
+        $data = array();
+        while ($row = $stmt->fetch(Zend_Db::FETCH_NUM)) {
+            $data[$row[0]] = $row[1];
+        }
+        return $data;
+    }
+
+    /**
+     * Fetches the first column of the first row of the SQL result.
+     *
+     * @param string|Zend_Db_Select $sql An SQL SELECT statement.
+     * @param mixed $bind Data to bind into SELECT placeholders.
+     * @return string
+     */
+    public function fetchOne($sql, $bind = array())
+    {
+        $stmt = $this->query($sql, $bind);
+        $result = $stmt->fetchColumn(0);
+        return $result;
+    }
+
+    /**
+     * Quote a raw string.
+     *
+     * @param string $value     Raw string
+     * @return string           Quoted string
+     */
+    protected function _quote($value)
+    {
+        if (is_int($value)) {
+            return $value;
+        } elseif (is_float($value)) {
+            return sprintf('%F', $value);
+        }
+        return "'" . addcslashes($value, "\000\n\r\\'\"\032") . "'";
+    }
+
+    /**
+     * Safely quotes a value for an SQL statement.
+     *
+     * If an array is passed as the value, the array values are quoted
+     * and then returned as a comma-separated string.
+     *
+     * @param mixed $value The value to quote.
+     * @param mixed $type  OPTIONAL the SQL datatype name, or constant, or null.
+     * @return mixed An SQL-safe quoted value (or string of separated values).
+     */
+    public function quote($value, $type = null)
+    {
+        $this->_connect();
+
+        if ($value instanceof Zend_Db_Select) {
+            return '(' . $value->assemble() . ')';
+        }
+
+        if ($value instanceof Zend_Db_Expr) {
+            return $value->__toString();
+        }
+
+        if (is_array($value)) {
+            foreach ($value as &$val) {
+                $val = $this->quote($val, $type);
+            }
+            return implode(', ', $value);
+        }
+
+        if ($type !== null && array_key_exists($type = strtoupper($type), $this->_numericDataTypes)) {
+            $quotedValue = '0';
+            switch ($this->_numericDataTypes[$type]) {
+                case Zend_Db::INT_TYPE: // 32-bit integer
+                    $quotedValue = (string) intval($value);
+                    break;
+                case Zend_Db::BIGINT_TYPE: // 64-bit integer
+                    // ANSI SQL-style hex literals (e.g. x'[\dA-F]+')
+                    // are not supported here, because these are string
+                    // literals, not numeric literals.
+                    if (preg_match('/^(
+                          [+-]?                  # optional sign
+                          (?:
+                            0[Xx][\da-fA-F]+     # ODBC-style hexadecimal
+                            |\d+                 # decimal or octal, or MySQL ZEROFILL decimal
+                            (?:[eE][+-]?\d+)?    # optional exponent on decimals or octals
+                          )
+                        )/x',
+                        (string) $value, $matches)) {
+                        $quotedValue = $matches[1];
+                    }
+                    break;
+                case Zend_Db::FLOAT_TYPE: // float or decimal
+                    $quotedValue = sprintf('%F', $value);
+            }
+            return $quotedValue;
+        }
+
+        return $this->_quote($value);
+    }
+
+    /**
+     * Quotes a value and places into a piece of text at a placeholder.
+     *
+     * The placeholder is a question-mark; all placeholders will be replaced
+     * with the quoted value.   For example:
+     *
+     * <code>
+     * $text = "WHERE date < ?";
+     * $date = "2005-01-02";
+     * $safe = $sql->quoteInto($text, $date);
+     * // $safe = "WHERE date < '2005-01-02'"
+     * </code>
+     *
+     * @param string  $text  The text with a placeholder.
+     * @param mixed   $value The value to quote.
+     * @param string  $type  OPTIONAL SQL datatype
+     * @param integer $count OPTIONAL count of placeholders to replace
+     * @return string An SQL-safe quoted value placed into the original text.
+     */
+    public function quoteInto($text, $value, $type = null, $count = null)
+    {
+        if ($count === null) {
+            return str_replace('?', $this->quote($value, $type), $text);
+        } else {
+            while ($count > 0) {
+                if (strpos($text, '?') != false) {
+                    $text = substr_replace($text, $this->quote($value, $type), strpos($text, '?'), 1);
+                }
+                --$count;
+            }
+            return $text;
+        }
+    }
+
+    /**
+     * Quotes an identifier.
+     *
+     * Accepts a string representing a qualified indentifier. For Example:
+     * <code>
+     * $adapter->quoteIdentifier('myschema.mytable')
+     * </code>
+     * Returns: "myschema"."mytable"
+     *
+     * Or, an array of one or more identifiers that may form a qualified identifier:
+     * <code>
+     * $adapter->quoteIdentifier(array('myschema','my.table'))
+     * </code>
+     * Returns: "myschema"."my.table"
+     *
+     * The actual quote character surrounding the identifiers may vary depending on
+     * the adapter.
+     *
+     * @param string|array|Zend_Db_Expr $ident The identifier.
+     * @param boolean $auto If true, heed the AUTO_QUOTE_IDENTIFIERS config option.
+     * @return string The quoted identifier.
+     */
+    public function quoteIdentifier($ident, $auto=false)
+    {
+        return $this->_quoteIdentifierAs($ident, null, $auto);
+    }
+
+    /**
+     * Quote a column identifier and alias.
+     *
+     * @param string|array|Zend_Db_Expr $ident The identifier or expression.
+     * @param string $alias An alias for the column.
+     * @param boolean $auto If true, heed the AUTO_QUOTE_IDENTIFIERS config option.
+     * @return string The quoted identifier and alias.
+     */
+    public function quoteColumnAs($ident, $alias, $auto=false)
+    {
+        return $this->_quoteIdentifierAs($ident, $alias, $auto);
+    }
+
+    /**
+     * Quote a table identifier and alias.
+     *
+     * @param string|array|Zend_Db_Expr $ident The identifier or expression.
+     * @param string $alias An alias for the table.
+     * @param boolean $auto If true, heed the AUTO_QUOTE_IDENTIFIERS config option.
+     * @return string The quoted identifier and alias.
+     */
+    public function quoteTableAs($ident, $alias = null, $auto = false)
+    {
+        return $this->_quoteIdentifierAs($ident, $alias, $auto);
+    }
+
+    /**
+     * Quote an identifier and an optional alias.
+     *
+     * @param string|array|Zend_Db_Expr $ident The identifier or expression.
+     * @param string $alias An optional alias.
+     * @param boolean $auto If true, heed the AUTO_QUOTE_IDENTIFIERS config option.
+     * @param string $as The string to add between the identifier/expression and the alias.
+     * @return string The quoted identifier and alias.
+     */
+    protected function _quoteIdentifierAs($ident, $alias = null, $auto = false, $as = ' AS ')
+    {
+        if ($ident instanceof Zend_Db_Expr) {
+            $quoted = $ident->__toString();
+        } elseif ($ident instanceof Zend_Db_Select) {
+            $quoted = '(' . $ident->assemble() . ')';
+        } else {
+            if (is_string($ident)) {
+                $ident = explode('.', $ident);
+            }
+            if (is_array($ident)) {
+                $segments = array();
+                foreach ($ident as $segment) {
+                    if ($segment instanceof Zend_Db_Expr) {
+                        $segments[] = $segment->__toString();
+                    } else {
+                        $segments[] = $this->_quoteIdentifier($segment, $auto);
+                    }
+                }
+                if ($alias !== null && end($ident) == $alias) {
+                    $alias = null;
+                }
+                $quoted = implode('.', $segments);
+            } else {
+                $quoted = $this->_quoteIdentifier($ident, $auto);
+            }
+        }
+        if ($alias !== null) {
+            $quoted .= $as . $this->_quoteIdentifier($alias, $auto);
+        }
+        return $quoted;
+    }
+
+    /**
+     * Quote an identifier.
+     *
+     * @param  string $value The identifier or expression.
+     * @param boolean $auto If true, heed the AUTO_QUOTE_IDENTIFIERS config option.
+     * @return string        The quoted identifier and alias.
+     */
+    protected function _quoteIdentifier($value, $auto=false)
+    {
+        if ($auto === false || $this->_autoQuoteIdentifiers === true) {
+            $q = $this->getQuoteIdentifierSymbol();
+            return ($q . str_replace("$q", "$q$q", $value) . $q);
+        }
+        return $value;
+    }
+
+    /**
+     * Returns the symbol the adapter uses for delimited identifiers.
+     *
+     * @return string
+     */
+    public function getQuoteIdentifierSymbol()
+    {
+        return '"';
+    }
+
+    /**
+     * Return the most recent value from the specified sequence in the database.
+     * This is supported only on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2).  Other RDBMS brands return null.
+     *
+     * @param string $sequenceName
+     * @return string
+     */
+    public function lastSequenceId($sequenceName)
+    {
+        return null;
+    }
+
+    /**
+     * Generate a new value from the specified sequence in the database, and return it.
+     * This is supported only on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2).  Other RDBMS brands return null.
+     *
+     * @param string $sequenceName
+     * @return string
+     */
+    public function nextSequenceId($sequenceName)
+    {
+        return null;
+    }
+
+    /**
+     * Helper method to change the case of the strings used
+     * when returning result sets in FETCH_ASSOC and FETCH_BOTH
+     * modes.
+     *
+     * This is not intended to be used by application code,
+     * but the method must be public so the Statement class
+     * can invoke it.
+     *
+     * @param string $key
+     * @returns string
+     */
+    public function foldCase($key)
+    {
+        switch ($this->_caseFolding) {
+            case Zend_Db::CASE_LOWER:
+                $value = strtolower((string) $key);
+                break;
+            case Zend_Db::CASE_UPPER:
+                $value = strtoupper((string) $key);
+                break;
+            case Zend_Db::CASE_NATURAL:
+            default:
+                $value = (string) $key;
+        }
+        return $value;
+    }
+
+    /**
+     * called when object is getting serialized
+     * This disconnects the DB object that cant be serialized
+     *
+     * @throws Zend_Db_Adapter_Exception
+     * @return array
+     */
+    public function __sleep()
+    {
+        if ($this->_allowSerialization == false) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception(get_class($this) ." is not allowed to be serialized");
+        }
+        $this->_connection = false;
+        return array_keys(array_diff_key(get_object_vars($this), array('_connection'=>false)));
+    }
+
+    /**
+     * called when object is getting unserialized
+     *
+     * @return void
+     */
+    public function __wakeup()
+    {
+        if ($this->_autoReconnectOnUnserialize == true) {
+            $this->getConnection();
+        }
+    }
+
+    /**
+     * Abstract Methods
+     */
+
+    /**
+     * Returns a list of the tables in the database.
+     *
+     * @return array
+     */
+    abstract public function listTables();
+
+    /**
+     * Returns the column descriptions for a table.
+     *
+     * The return value is an associative array keyed by the column name,
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME => string; name of database or schema
+     * TABLE_NAME  => string;
+     * COLUMN_NAME => string; column name
+     * COLUMN_POSITION => number; ordinal position of column in table
+     * DATA_TYPE   => string; SQL datatype name of column
+     * DEFAULT     => string; default expression of column, null if none
+     * NULLABLE    => boolean; true if column can have nulls
+     * LENGTH      => number; length of CHAR/VARCHAR
+     * SCALE       => number; scale of NUMERIC/DECIMAL
+     * PRECISION   => number; precision of NUMERIC/DECIMAL
+     * UNSIGNED    => boolean; unsigned property of an integer type
+     * PRIMARY     => boolean; true if column is part of the primary key
+     * PRIMARY_POSITION => integer; position of column in primary key
+     *
+     * @param string $tableName
+     * @param string $schemaName OPTIONAL
+     * @return array
+     */
+    abstract public function describeTable($tableName, $schemaName = null);
+
+    /**
+     * Creates a connection to the database.
+     *
+     * @return void
+     */
+    abstract protected function _connect();
+
+    /**
+     * Test if a connection is active
+     *
+     * @return boolean
+     */
+    abstract public function isConnected();
+
+    /**
+     * Force the connection to close.
+     *
+     * @return void
+     */
+    abstract public function closeConnection();
+
+    /**
+     * Prepare a statement and return a PDOStatement-like object.
+     *
+     * @param string|Zend_Db_Select $sql SQL query
+     * @return Zend_Db_Statement|PDOStatement
+     */
+    abstract public function prepare($sql);
+
+    /**
+     * Gets the last ID generated automatically by an IDENTITY/AUTOINCREMENT column.
+     *
+     * As a convention, on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2), this method forms the name of a sequence
+     * from the arguments and returns the last id generated by that sequence.
+     * On RDBMS brands that support IDENTITY/AUTOINCREMENT columns, this method
+     * returns the last value generated for such a column, and the table name
+     * argument is disregarded.
+     *
+     * @param string $tableName   OPTIONAL Name of table.
+     * @param string $primaryKey  OPTIONAL Name of primary key column.
+     * @return string
+     */
+    abstract public function lastInsertId($tableName = null, $primaryKey = null);
+
+    /**
+     * Begin a transaction.
+     */
+    abstract protected function _beginTransaction();
+
+    /**
+     * Commit a transaction.
+     */
+    abstract protected function _commit();
+
+    /**
+     * Roll-back a transaction.
+     */
+    abstract protected function _rollBack();
+
+    /**
+     * Set the fetch mode.
+     *
+     * @param integer $mode
+     * @return void
+     * @throws Zend_Db_Adapter_Exception
+     */
+    abstract public function setFetchMode($mode);
+
+    /**
+     * Adds an adapter-specific LIMIT clause to the SELECT statement.
+     *
+     * @param mixed $sql
+     * @param integer $count
+     * @param integer $offset
+     * @return string
+     */
+    abstract public function limit($sql, $count, $offset = 0);
+
+    /**
+     * Check if the adapter supports real SQL parameters.
+     *
+     * @param string $type 'positional' or 'named'
+     * @return bool
+     */
+    abstract public function supportsParameters($type);
+
+    /**
+     * Retrieve server version in PHP style
+     *
+     * @return string
+     */
+    abstract public function getServerVersion();
+}

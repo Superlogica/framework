@@ -1,46 +1,115 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Loader_Abstract
+ */
+require_once 'Zend/Tool/Framework/Loader/Abstract.php';
+
+/**
+ * @see Zend_Tool_Framework_Loader_IncludePathLoader_RecursiveFilterIterator
+ */
+require_once 'Zend/Tool/Framework/Loader/IncludePathLoader/RecursiveFilterIterator.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Loader_IncludePathLoader extends Zend_Tool_Framework_Loader_Abstract 
+{
+    
+    /**
+     * _getFiles()
+     *
+     * @return array Array of files to load
+     */
+    protected function _getFiles()
+    {
+        $paths = explode(PATH_SEPARATOR, get_include_path());
+
+        // used for checking similarly named files
+        $relativeItems   = array();
+        $files           = array();
+        $isZendTraversed = false;
+                
+        foreach ($paths as $path) {
+
+            // default patterns to use
+            $filterDenyDirectoryPattern = '.*(/|\\\\).svn';
+            $filterAcceptFilePattern    = '.*(?:Manifest|Provider)\.php$';
+            
+            if (!file_exists($path) || $path[0] == '.') {
+                continue;
+            }
+            
+            $realIncludePath = realpath($path);
+            
+            // ensure that we only traverse a single version of Zend Framework on all include paths
+            if (file_exists($realIncludePath . '/Zend/Tool/Framework/Loader/IncludePathLoader.php')) {
+                if ($isZendTraversed === false) {
+                    $isZendTraversed = true;
+                } else {
+                    // use the deny directory pattern that includes the path to 'Zend', it will not be accepted
+                    $filterDenyDirectoryPattern = '.*((/|\\\\).svn|' . preg_quote($realIncludePath . DIRECTORY_SEPARATOR) . 'Zend)';
+                }
+            }
+            
+            // create recursive directory iterator
+            $rdi = new RecursiveDirectoryIterator($path);
+            
+            // pass in the RecursiveDirectoryIterator & the patterns
+            $filter = new Zend_Tool_Framework_Loader_IncludePathLoader_RecursiveFilterIterator(
+                $rdi,
+                $filterDenyDirectoryPattern,
+                $filterAcceptFilePattern
+                );
+
+            // build the rii with the filter
+            $iterator = new RecursiveIteratorIterator($filter);
+            
+            // iterate over the accepted items
+            foreach ($iterator as $item) {
+                
+                // ensure that the same named file from separate include_paths is not loaded
+                $relativeItem = preg_replace('#^' . preg_quote($realIncludePath . DIRECTORY_SEPARATOR, '#') . '#', '', $item->getRealPath());
+                
+                // no links allowed here for now
+                if ($item->isLink()) {
+                    continue;
+                }
+                
+                // no items that are relavitely the same are allowed
+                if (in_array($relativeItem, $relativeItems)) {
+                    continue;
+                }
+
+                $relativeItems[] = $relativeItem;
+                $files[] = $item->getRealPath();
+            }
+        }
+
+        return $files;
+    }
+    
+}

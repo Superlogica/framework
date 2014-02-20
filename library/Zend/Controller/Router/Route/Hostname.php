@@ -1,141 +1,341 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Route.php 9581 2008-06-01 14:08:03Z martel $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Router_Route_Abstract */
+require_once 'Zend/Controller/Router/Route/Abstract.php';
+
+/**
+ * Hostname Route
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @see        http://manuals.rubyonrails.com/read/chapter/65
+ */
+class Zend_Controller_Router_Route_Hostname extends Zend_Controller_Router_Route_Abstract
+{
+
+    protected $_hostVariable   = ':';
+    protected $_regexDelimiter = '#';
+    protected $_defaultRegex   = null;
+
+    /**
+     * Holds names of all route's pattern variable names. Array index holds a position in host.
+     * @var array
+     */
+    protected $_variables = array();
+
+    /**
+     * Holds Route patterns for all host parts. In case of a variable it stores it's regex
+     * requirement or null. In case of a static part, it holds only it's direct value.
+     * @var array
+     */
+    protected $_parts = array();
+
+    /**
+     * Holds user submitted default values for route's variables. Name and value pairs.
+     * @var array
+     */
+    protected $_defaults = array();
+
+    /**
+     * Holds user submitted regular expression patterns for route's variables' values.
+     * Name and value pairs.
+     * @var array
+     */
+    protected $_requirements = array();
+
+    /**
+     * Default scheme
+     * @var string
+     */
+    protected $_scheme = null;
+
+    /**
+     * Associative array filled on match() that holds matched path values
+     * for given variable names.
+     * @var array
+     */
+    protected $_values = array();
+
+    /**
+     * Current request object
+     *
+     * @var Zend_Controller_Request_Abstract
+     */
+    protected $_request;
+
+    /**
+     * Helper var that holds a count of route pattern's static parts
+     * for validation
+     * @var int
+     */
+    private $_staticCount = 0;
+
+    /**
+     * Set the request object
+     *
+     * @param  Zend_Controller_Request_Abstract|null $request
+     * @return void
+     */
+    public function setRequest(Zend_Controller_Request_Abstract $request = null)
+    {
+        $this->_request = $request;
+    }
+
+    /**
+     * Get the request object
+     *
+     * @return Zend_Controller_Request_Abstract $request
+     */
+    public function getRequest()
+    {
+        if ($this->_request === null) {
+            require_once 'Zend/Controller/Front.php';
+            $this->_request = Zend_Controller_Front::getInstance()->getRequest();
+        }
+
+        return $this->_request;
+    }
+
+    /**
+     * Instantiates route based on passed Zend_Config structure
+     *
+     * @param Zend_Config $config Configuration object
+     */
+    public static function getInstance(Zend_Config $config)
+    {
+        $reqs   = ($config->reqs instanceof Zend_Config) ? $config->reqs->toArray() : array();
+        $defs   = ($config->defaults instanceof Zend_Config) ? $config->defaults->toArray() : array();
+        $scheme = (isset($config->scheme)) ? $config->scheme : null;
+        return new self($config->route, $defs, $reqs, $scheme);
+    }
+
+    /**
+     * Prepares the route for mapping by splitting (exploding) it
+     * to a corresponding atomic parts. These parts are assigned
+     * a position which is later used for matching and preparing values.
+     *
+     * @param string $route Map used to match with later submitted hostname
+     * @param array  $defaults Defaults for map variables with keys as variable names
+     * @param array  $reqs Regular expression requirements for variables (keys as variable names)
+     * @param string $scheme
+     */
+    public function __construct($route, $defaults = array(), $reqs = array(), $scheme = null)
+    {
+        $route               = trim($route, '.');
+        $this->_defaults     = (array) $defaults;
+        $this->_requirements = (array) $reqs;
+        $this->_scheme       = $scheme;
+
+        if ($route != '') {
+            foreach (explode('.', $route) as $pos => $part) {
+                if (substr($part, 0, 1) == $this->_hostVariable) {
+                    $name = substr($part, 1);
+                    $this->_parts[$pos] = (isset($reqs[$name]) ? $reqs[$name] : $this->_defaultRegex);
+                    $this->_variables[$pos] = $name;
+                } else {
+                    $this->_parts[$pos] = $part;
+                    $this->_staticCount++;
+                }
+            }
+        }
+    }
+
+    /**
+     * Matches a user submitted path with parts defined by a map. Assigns and
+     * returns an array of variables on a successful match.
+     *
+     * @param Zend_Controller_Request_Http $request Request to get the host from
+     * @return array|false An array of assigned values or a false on a mismatch
+     */
+    public function match($request)
+    {
+        // Check the scheme if required
+        if ($this->_scheme !== null) {
+            $scheme = $request->getScheme();
+
+            if ($scheme !== $this->_scheme) {
+                return false;
+            }
+        }
+
+        // Get the host and remove unnecessary port information
+        $host = $request->getHttpHost();
+        if (preg_match('#:\d+$#', $host, $result) === 1) {
+            $host = substr($host, 0, -strlen($result[0]));
+        }
+
+        $hostStaticCount = 0;
+        $values = array();
+
+        $host = trim($host, '.');
+
+        if ($host != '') {
+            $host = explode('.', $host);
+
+            foreach ($host as $pos => $hostPart) {
+                // Host is longer than a route, it's not a match
+                if (!array_key_exists($pos, $this->_parts)) {
+                    return false;
+                }
+
+                $name = isset($this->_variables[$pos]) ? $this->_variables[$pos] : null;
+                $hostPart = urldecode($hostPart);
+
+                // If it's a static part, match directly
+                if ($name === null && $this->_parts[$pos] != $hostPart) {
+                    return false;
+                }
+
+                // If it's a variable with requirement, match a regex. If not - everything matches
+                if ($this->_parts[$pos] !== null && !preg_match($this->_regexDelimiter . '^' . $this->_parts[$pos] . '$' . $this->_regexDelimiter . 'iu', $hostPart)) {
+                    return false;
+                }
+
+                // If it's a variable store it's value for later
+                if ($name !== null) {
+                    $values[$name] = $hostPart;
+                } else {
+                    $hostStaticCount++;
+                }
+            }
+        }
+
+        // Check if all static mappings have been matched
+        if ($this->_staticCount != $hostStaticCount) {
+            return false;
+        }
+
+        $return = $values + $this->_defaults;
+
+        // Check if all map variables have been initialized
+        foreach ($this->_variables as $var) {
+            if (!array_key_exists($var, $return)) {
+                return false;
+            }
+        }
+
+        $this->_values = $values;
+
+        return $return;
+
+    }
+
+    /**
+     * Assembles user submitted parameters forming a hostname defined by this route
+     *
+     * @param  array $data An array of variable and value pairs used as parameters
+     * @param  boolean $reset Whether or not to set route defaults with those provided in $data
+     * @return string Route path with user submitted parameters
+     */
+    public function assemble($data = array(), $reset = false, $encode = false, $partial = false)
+    {
+        $host = array();
+        $flag = false;
+
+        foreach ($this->_parts as $key => $part) {
+            $name = isset($this->_variables[$key]) ? $this->_variables[$key] : null;
+
+            $useDefault = false;
+            if (isset($name) && array_key_exists($name, $data) && $data[$name] === null) {
+                $useDefault = true;
+            }
+
+            if (isset($name)) {
+                if (isset($data[$name]) && !$useDefault) {
+                    $host[$key] = $data[$name];
+                    unset($data[$name]);
+                } elseif (!$reset && !$useDefault && isset($this->_values[$name])) {
+                    $host[$key] = $this->_values[$name];
+                } elseif (isset($this->_defaults[$name])) {
+                    $host[$key] = $this->_defaults[$name];
+                } else {
+                    require_once 'Zend/Controller/Router/Exception.php';
+                    throw new Zend_Controller_Router_Exception($name . ' is not specified');
+                }
+            } else {
+                $host[$key] = $part;
+            }
+        }
+
+        $return = '';
+
+        foreach (array_reverse($host, true) as $key => $value) {
+            if ($flag || !isset($this->_variables[$key]) || $value !== $this->getDefault($this->_variables[$key]) || $partial) {
+                if ($encode) $value = urlencode($value);
+                $return = '.' . $value . $return;
+                $flag = true;
+            }
+        }
+
+        $url = trim($return, '.');
+
+        if ($this->_scheme !== null) {
+            $scheme = $this->_scheme;
+        } else {
+            $request = $this->getRequest();
+            if ($request instanceof Zend_Controller_Request_Http) {
+                $scheme = $request->getScheme();
+            } else {
+                $scheme = 'http';
+            }
+        }
+
+        $hostname = implode('.', $host);
+        $url      = $scheme . '://' . $url;
+
+        return $url;
+    }
+
+    /**
+     * Return a single parameter of route's defaults
+     *
+     * @param string $name Array key of the parameter
+     * @return string Previously set default
+     */
+    public function getDefault($name) {
+        if (isset($this->_defaults[$name])) {
+            return $this->_defaults[$name];
+        }
+        return null;
+    }
+
+    /**
+     * Return an array of defaults
+     *
+     * @return array Route defaults
+     */
+    public function getDefaults() {
+        return $this->_defaults;
+    }
+
+    /**
+     * Get all variables which are used by the route
+     *
+     * @return array
+     */
+    public function getVariables()
+    {
+        return $this->_variables;
+    }
+}

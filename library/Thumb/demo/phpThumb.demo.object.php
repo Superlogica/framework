@@ -1,50 +1,86 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+///                                                         //
+// phpThumb.demo.object.php                                 //
+// James Heinrich <info@silisoftware.com>                   //
+//                                                          //
+// Example of how to use phpthumb.class.php as an object    //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+// Note: phpThumb.php is where the caching code is located, if
+//   you instantiate your own phpThumb() object that code is
+//   bypassed and it's up to you to handle the reading and
+//   writing of cached files, if appropriate.
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
+
+require_once('../phpthumb.class.php');
+
+// create phpThumb object
+$phpThumb = new phpThumb();
+
+// create 3 sizes of thumbnail
+$thumbnail_widths = array(160, 320, 640);
+$capture_raw_data = false; // set to true to insert to database rather than render to screen or file (see below)
+foreach ($thumbnail_widths as $thumbnail_width) {
+	// this is very important when using a single object to process multiple images
+	$phpThumb->resetObject();
+
+	// set data source -- do this first, any settings must be made AFTER this call
+	$phpThumb->setSourceFilename('images/loco.jpg');  // for static demo only
+	//$phpThumb->setSourceFilename($_FILES['userfile']['tmp_name']);
+	// or $phpThumb->setSourceData($binary_image_data);
+	// or $phpThumb->setSourceImageResource($gd_image_resource);
+
+	// PLEASE NOTE:
+	// You must set any relevant config settings here. The phpThumb
+	// object mode does NOT pull any settings from phpThumb.config.php
+	//$phpThumb->setParameter('config_document_root', '/home/groups/p/ph/phpthumb/htdocs/');
+	//$phpThumb->setParameter('config_cache_directory', '/tmp/persistent/phpthumb/cache/');
+
+	// set parameters (see "URL Parameters" in phpthumb.readme.txt)
+	$phpThumb->setParameter('w', $thumbnail_width);
+	//$phpThumb->setParameter('h', 100);
+	//$phpThumb->setParameter('fltr', 'gam|1.2');
+	//$phpThumb->setParameter('fltr', 'wmi|../watermark.jpg|C|75|20|20');
+
+	// set options (see phpThumb.config.php)
+	// here you must preface each option with "config_"
+	$phpThumb->setParameter('config_output_format', 'jpeg');
+	$phpThumb->setParameter('config_imagemagick_path', '/usr/local/bin/convert');
+	//$phpThumb->setParameter('config_allow_src_above_docroot', true); // needed if you're working outside DOCUMENT_ROOT, in a temp dir for example
+
+	// generate & output thumbnail
+	$output_filename = './thumbnails/'.basename($_FILES['userfile']['name']).'_'.$thumbnail_width.'.'.$phpThumb->config_output_format;
+	if ($phpThumb->GenerateThumbnail()) { // this line is VERY important, do not remove it!
+		$output_size_x = ImageSX($phpThumb->gdimg_output);
+		$output_size_y = ImageSY($phpThumb->gdimg_output);
+		if ($output_filename || $capture_raw_data) {
+			if ($capture_raw_data && $phpThumb->RenderOutput()) {
+				// RenderOutput renders the thumbnail data to $phpThumb->outputImageData, not to a file or the browser
+				mysql_query("INSERT INTO `table` (`thumbnail`) VALUES ('".mysql_escape_string($phpThumb->outputImageData)."') WHERE (`id` = '".$id."')");
+			} elseif ($phpThumb->RenderToFile($output_filename)) {
+				// do something on success
+				echo 'Successfully rendered:<br><img src="'.$output_filename.'">';
+			} else {
+				// do something with debug/error messages
+				echo 'Failed (size='.$thumbnail_width.'):<pre>'.implode("\n\n", $phpThumb->debugmessages).'</pre>';
+			}
+			$phpThumb->purgeTempFiles();
+		} else {
+			$phpThumb->OutputThumbnail();
+		}
+	} else {
+		// do something with debug/error messages
+		echo 'Failed (size='.$thumbnail_width.').<br>';
+		echo '<div style="background-color:#FFEEDD; font-weight: bold; padding: 10px;">'.$phpThumb->fatalerror.'</div>';
+		echo '<form><textarea rows="10" cols="60" wrap="off">'.htmlentities(implode("\n* ", $phpThumb->debugmessages)).'</textarea></form><hr>';
+	}
+
+}
+
 ?>
-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
-g79g

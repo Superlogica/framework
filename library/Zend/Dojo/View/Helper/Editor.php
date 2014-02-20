@@ -1,51 +1,132 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-n+niPj1oSwylgiw4+/Cz4RFmo5Q7
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/** Zend_Dojo_View_Helper_Textarea */
+require_once 'Zend/Dojo/View/Helper/Textarea.php';
+
+/** Zend_Json */
+require_once 'Zend/Json.php';
+
+/**
+ * Dojo Editor dijit
+ * 
+ * @uses       Zend_Dojo_View_Helper_Textarea
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Dojo_View_Helper_Editor extends Zend_Dojo_View_Helper_Textarea
+{
+    /**
+     * @param string Dijit type
+     */
+    protected $_dijit = 'dijit.Editor';
+
+    /**
+     * @var string Dijit module to load
+     */
+    protected $_module = 'dijit.Editor';
+
+    /**
+     * JSON-encoded parameters
+     * @var array
+     */
+    protected $_jsonParams = array('captureEvents', 'events', 'plugins');
+
+    /**
+     * dijit.Editor
+     * 
+     * @param  string $id 
+     * @param  string $value 
+     * @param  array $params 
+     * @param  array $attribs 
+     * @return string
+     */
+    public function editor($id, $value = null, $params = array(), $attribs = array())
+    {
+        $hiddenName = $id;
+        if (array_key_exists('id', $attribs)) {
+            $hiddenId = $attribs['id'];
+        } else {
+            $hiddenId = $hiddenName;
+        }
+        $hiddenId = $this->_normalizeId($hiddenId);
+
+        $textareaName = $this->_normalizeEditorName($hiddenName);
+        $textareaId   = $hiddenId . '-Editor';
+
+        $hiddenAttribs = array(
+            'id'    => $hiddenId,
+            'name'  => $hiddenName,
+            'value' => $value,
+            'type'  => 'hidden',
+        );
+        $attribs['id'] = $textareaId;
+
+        $this->_createGetParentFormFunction();
+        $this->_createEditorOnSubmit($hiddenId, $textareaId);
+
+        $html = '<input' . $this->_htmlAttribs($hiddenAttribs) . $this->getClosingBracket()
+              . $this->textarea($textareaName, $value, $params, $attribs);
+
+        return $html;
+    }
+
+    /**
+     * Normalize editor element name
+     * 
+     * @param  string $name 
+     * @return string
+     */
+    protected function _normalizeEditorName($name)
+    {
+        if ('[]' == substr($name, -2)) {
+            $name = substr($name, 0, strlen($name) - 2);
+            $name .= '[Editor][]';
+        } else {
+            $name .= '[Editor]';
+        }
+        return $name;
+    }
+
+    /**
+     * Create onSubmit binding for element
+     * 
+     * @param  string $hiddenId 
+     * @param  string $editorId 
+     * @return void
+     */
+    protected function _createEditorOnSubmit($hiddenId, $editorId)
+    {
+        $this->dojo->onLoadCaptureStart();
+        echo <<<EOJ
+function() {
+    var form = zend.findParentForm(dojo.byId('$hiddenId'));
+    dojo.connect(form, 'onsubmit', function () {
+        dojo.byId('$hiddenId').value = dijit.byId('$editorId').getValue(false);
+    });
+}
+EOJ;
+        $this->dojo->onLoadCaptureEnd();
+    }
+}

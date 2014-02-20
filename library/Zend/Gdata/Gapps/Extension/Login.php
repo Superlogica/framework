@@ -1,121 +1,484 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9N00Q2cUIWs1tih489kYp83CjG==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Gapps
+ */
+require_once 'Zend/Gdata/Gapps.php';
+
+/**
+ * Represents the apps:login element used by the Apps data API. This
+ * class is used to describe properties of a user, and is usually contained
+ * within instances of Zene_Gdata_Gapps_UserEntry or any other class
+ * which is linked to a particular username.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'apps';
+    protected $_rootElement = 'login';
+
+    /**
+     * The username for this user. This is used as the user's email address
+     * and when logging in to Google Apps-hosted services.
+     *
+     * @var string
+     */
+    protected $_username = null;
+
+    /**
+     * The password for the user. May be in cleartext or as an SHA-1
+     * digest, depending on the value of _hashFunctionName.
+     *
+     * @var string
+     */
+    protected $_password = null;
+
+    /**
+     * Specifies whether the password stored in _password is in cleartext
+     * or is an SHA-1 digest of a password. If the password is cleartext,
+     * then this should be null. If the password is an SHA-1 digest, then
+     * this should be set to 'SHA-1'.
+     *
+     * At the time of writing, no other hash functions are supported
+     *
+     * @var string
+     */
+    protected $_hashFunctionName = null;
+
+    /**
+     * True if the user has administrative rights for this domain, false
+     * otherwise.
+     *
+     * @var boolean
+     */
+    protected $_admin = null;
+
+    /**
+     * True if the user has agreed to the terms of service for Google Apps,
+     * false otherwise.
+     *
+     * @var boolean.
+     */
+    protected $_agreedToTerms = null;
+
+    /**
+     * True if this user has been suspended, false otherwise.
+     *
+     * @var boolean
+     */
+    protected $_suspended = null;
+
+    /**
+     * True if the user will be required to change their password at
+     * their next login, false otherwise.
+     *
+     * @var boolean
+     */
+    protected $_changePasswordAtNextLogin = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Gapps_Extension_Login object.
+     *
+     * @param string $username (optional) The username to be used for this
+     *          login.
+     * @param string $password (optional) The password to be used for this
+     *          login.
+     * @param string $hashFunctionName (optional) The name of the hash
+     *          function used to protect the password, or null if no
+     *          has function has been applied. As of this writing,
+     *          the only valid values are 'SHA-1' or null.
+     * @param boolean $admin (optional) Whether the user is an administrator
+     *          or not.
+     * @param boolean $suspended (optional) Whether this login is suspended or not.
+     * @param boolean $changePasswordAtNextLogin (optional) Whether
+     *          the user is required to change their password at their
+     *          next login.
+     * @param boolean $agreedToTerms (optional) Whether the user has
+     *          agreed to the terms of service.
+     */
+    public function __construct($username = null, $password = null,
+        $hashFunctionName = null, $admin = null, $suspended = null,
+        $changePasswordAtNextLogin = null, $agreedToTerms = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
+        parent::__construct();
+        $this->_username = $username;
+        $this->_password = $password;
+        $this->_hashFunctionName = $hashFunctionName;
+        $this->_admin = $admin;
+        $this->_agreedToTerms = $agreedToTerms;
+        $this->_suspended = $suspended;
+        $this->_changePasswordAtNextLogin = $changePasswordAtNextLogin;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_username !== null) {
+            $element->setAttribute('userName', $this->_username);
+        }
+        if ($this->_password !== null) {
+            $element->setAttribute('password', $this->_password);
+        }
+        if ($this->_hashFunctionName !== null) {
+            $element->setAttribute('hashFunctionName', $this->_hashFunctionName);
+        }
+        if ($this->_admin !== null) {
+            $element->setAttribute('admin', ($this->_admin ? "true" : "false"));
+        }
+        if ($this->_agreedToTerms !== null) {
+            $element->setAttribute('agreedToTerms', ($this->_agreedToTerms ? "true" : "false"));
+        }
+        if ($this->_suspended !== null) {
+            $element->setAttribute('suspended', ($this->_suspended ? "true" : "false"));
+        }
+        if ($this->_changePasswordAtNextLogin !== null) {
+            $element->setAttribute('changePasswordAtNextLogin', ($this->_changePasswordAtNextLogin ? "true" : "false"));
+        }
+
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'userName':
+            $this->_username = $attribute->nodeValue;
+            break;
+        case 'password':
+            $this->_password = $attribute->nodeValue;
+            break;
+        case 'hashFunctionName':
+            $this->_hashFunctionName = $attribute->nodeValue;
+            break;
+        case 'admin':
+            if ($attribute->nodeValue == "true") {
+                $this->_admin = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_admin = false;
+            }
+            else {
+                require_once('Zend/Gdata/App/InvalidArgumentException.php');
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for apps:login#admin.");
+            }
+            break;
+        case 'agreedToTerms':
+            if ($attribute->nodeValue == "true") {
+                $this->_agreedToTerms = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_agreedToTerms = false;
+            }
+            else {
+                require_once('Zend/Gdata/App/InvalidArgumentException.php');
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for apps:login#agreedToTerms.");
+            }
+            break;
+        case 'suspended':
+            if ($attribute->nodeValue == "true") {
+                $this->_suspended = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_suspended = false;
+            }
+            else {
+                require_once('Zend/Gdata/App/InvalidArgumentException.php');
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for apps:login#suspended.");
+            }
+            break;
+        case 'changePasswordAtNextLogin':
+            if ($attribute->nodeValue == "true") {
+                $this->_changePasswordAtNextLogin = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_changePasswordAtNextLogin = false;
+            }
+            else {
+                require_once('Zend/Gdata/App/InvalidArgumentException.php');
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for apps:login#changePasswordAtNextLogin.");
+            }
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's username attribute.
+     *
+     * @see setUsername
+     * @return string The attribute being modified.
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Set the value for this element's username attribute. This string
+     * is used to uniquely identify the user in this domian and is used
+     * to form this user's email address.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     */
+    public function setUsername($value)
+    {
+        $this->_username = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's password attribute.
+     *
+     * @see setPassword
+     * @return string The requested attribute.
+     */
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+
+    /**
+     * Set the value for this element's password attribute. As of this
+     * writing, this can be either be provided as plaintext or hashed using
+     * the SHA-1 algorithm for protection. If using a hash function,
+     * this must be indicated by calling setHashFunctionName().
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     */
+    public function setPassword($value)
+    {
+        $this->_password = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's hashFunctionName attribute.
+     *
+     * @see setHashFunctionName
+     * @return string The requested attribute.
+     */
+    public function getHashFunctionName()
+    {
+        return $this->_hashFunctionName;
+    }
+
+    /**
+     * Set the value for this element's hashFunctionName attribute. This
+     * indicates whether the password supplied with setPassword() is in
+     * plaintext or has had a hash function applied to it. If null,
+     * plaintext is assumed. As of this writing, the only valid hash
+     * function is 'SHA-1'.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     */
+    public function setHashFunctionName($value)
+    {
+        $this->_hashFunctionName = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's admin attribute.
+     *
+     * @see setAdmin
+     * @return boolean The requested attribute.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function getAdmin()
+    {
+        if (!(is_bool($this->_admin))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for admin.');
+        }
+        return $this->_admin;
+    }
+
+    /**
+     * Set the value for this element's admin attribute. This indicates
+     * whether this user is an administrator for this domain.
+     *
+     * @param boolean $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function setAdmin($value)
+    {
+        if (!(is_bool($value))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for $value.');
+        }
+        $this->_admin = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's agreedToTerms attribute.
+     *
+     * @see setAgreedToTerms
+     * @return boolean The requested attribute.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function getAgreedToTerms()
+    {
+        if (!(is_bool($this->_agreedToTerms))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for agreedToTerms.');
+        }
+        return $this->_agreedToTerms;
+    }
+
+    /**
+     * Set the value for this element's agreedToTerms attribute. This
+     * indicates whether this user has agreed to the terms of service.
+     *
+     * @param boolean $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function setAgreedToTerms($value)
+    {
+        if (!(is_bool($value))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for $value.');
+        }
+        $this->_agreedToTerms = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's suspended attribute.
+     *
+     * @see setSuspended
+     * @return boolean The requested attribute.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function getSuspended()
+    {
+        if (!(is_bool($this->_suspended))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for suspended.');
+        }
+        return $this->_suspended;
+    }
+
+    /**
+     * Set the value for this element's suspended attribute. If true, the
+     * user will not be able to login to this domain until unsuspended.
+     *
+     * @param boolean $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function setSuspended($value)
+    {
+        if (!(is_bool($value))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for $value.');
+        }
+        $this->_suspended = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's changePasswordAtNextLogin attribute.
+     *
+     * @see setChangePasswordAtNextLogin
+     * @return boolean The requested attribute.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function getChangePasswordAtNextLogin()
+    {
+        if (!(is_bool($this->_changePasswordAtNextLogin))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for changePasswordAtNextLogin.');
+        }
+        return $this->_changePasswordAtNextLogin;
+    }
+
+    /**
+     * Set the value for this element's changePasswordAtNextLogin attribute.
+     * If true, the user will be forced to set a new password the next
+     * time they login.
+     *
+     * @param boolean $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function setChangePasswordAtNextLogin($value)
+    {
+        if (!(is_bool($value))) {
+            require_once('Zend/Gdata/App/InvalidArgumentException.php');
+            throw new Zend_Gdata_App_InvalidArgumentException('Expected boolean for $value.');
+        }
+        $this->_changePasswordAtNextLogin = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     */
+    public function __toString()
+    {
+        return "Username: " . $this->getUsername() .
+            "\nPassword: " . (($this->getPassword() === null) ? "NOT SET" : "SET") .
+            "\nPassword Hash Function: " . $this->getHashFunctionName() .
+            "\nAdministrator: " . ($this->getAdmin() ? "Yes" : "No") .
+            "\nAgreed To Terms: " . ($this->getAgreedToTerms() ? "Yes" : "No") .
+            "\nSuspended: " . ($this->getSuspended() ? "Yes" : "No");
+    }
+}

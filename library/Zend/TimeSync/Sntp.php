@@ -1,35 +1,119 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_TimeSync
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Sntp.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Zend_TimeSync_Protocol
+ */
+require_once 'Zend/TimeSync/Protocol.php';
+
+/**
+ * SNTP Protocol handling class
+ *
+ * @category  Zend
+ * @package   Zend_TimeSync
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_TimeSync_Sntp extends Zend_TimeSync_Protocol
+{
+    /**
+     * Port number for this timeserver
+     *
+     * @var integer
+     */
+    protected $_port = 37;
+
+    /**
+     * Socket delay
+     *
+     * @var integer
+     */
+    private $_delay;
+
+    /**
+     * Class constructor, sets the timeserver and port number
+     *
+     * @param string  $timeserver Timeserver to connect to
+     * @param integer $port       Port of the timeserver when it differs from the default port
+     */
+    public function __construct($timeserver, $port)
+    {
+        $this->_timeserver = 'udp://' . $timeserver;
+        if ($port !== null) {
+            $this->_port = $port;
+        }
+    }
+
+    /**
+     * Prepares the data that will be send to the timeserver
+     *
+     * @return array
+     */
+    protected function _prepare()
+    {
+        return "\n";
+    }
+
+    /**
+     * Reads the data returned from the timeserver
+     *
+     * @return string
+     */
+    protected function _read()
+    {
+        $result       = fread($this->_socket, 49);
+        $this->_delay = (($this->_delay - time()) / 2);
+
+        return $result;
+    }
+
+    /**
+     * Writes data to to the timeserver
+     *
+     * @param  string $data Data to write to the timeserver
+     * @return void
+     */
+    protected function _write($data)
+    {
+        $this->_connect();
+        $this->_delay = time();
+        fputs($this->_socket, $data);
+    }
+
+    /**
+     * Extracts the data returned from the timeserver
+     *
+     * @param  string $result Data to extract
+     * @return integer
+     */
+    protected function _extract($result)
+    {
+        $dec   = hexdec('7fffffff');
+        $time  = abs(($dec - hexdec(bin2hex($result))) - $dec);
+        $time -= 2208988800;
+        // Socket delay
+        $time -= $this->_delay;
+
+        $this->_info['offset'] = $this->_delay;
+
+        return $time;
+    }
+}

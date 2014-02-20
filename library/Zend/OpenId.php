@@ -1,337 +1,753 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: OpenId.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * @see Zend_Controller_Response_Abstract
+ */
+require_once "Zend/Controller/Response/Abstract.php";
+
+/**
+ * Static class that contains common utility functions for
+ * {@link Zend_OpenId_Consumer} and {@link Zend_OpenId_Provider}.
+ *
+ * This class implements common utility functions that are used by both
+ * Consumer and Provider. They include functions for Diffie-Hellman keys
+ * generation and exchange, URL normalization, HTTP redirection and some others.
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_OpenId
+{
+    /**
+     * Default Diffie-Hellman key generator (1024 bit)
+     */
+    const DH_P   = 'dcf93a0b883972ec0e19989ac5a2ce310e1d37717e8d9571bb7623731866e61ef75a2e27898b057f9891c2e27a639c3f29b60814581cd3b2ca3986d2683705577d45c2e7e52dc81c7a171876e5cea74b1448bfdfaf18828efd2519f14e45e3826634af1949e5b535cc829a483b8a76223e5d490a257f05bdff16f2fb22c583ab';
+
+    /**
+     * Default Diffie-Hellman prime number (should be 2 or 5)
+     */
+    const DH_G   = '02';
+
+    /**
+     * OpenID 2.0 namespace. All OpenID 2.0 messages MUST contain variable
+     * openid.ns with its value.
+     */
+    const NS_2_0 = 'http://specs.openid.net/auth/2.0';
+
+    /**
+     * Allows enable/disable stoping execution of PHP script after redirect()
+     */
+    static public $exitOnRedirect = true;
+
+    /**
+     * Alternative request URL that can be used to override the default
+     * selfUrl() response
+     */
+    static public $selfUrl = null;
+
+    /**
+     * Sets alternative request URL that can be used to override the default
+     * selfUrl() response
+     *
+     * @param string $selfUrl the URL to be set
+     * @return string the old value of overriding URL
+     */
+    static public function setSelfUrl($selfUrl = null)
+    {
+        $ret = self::$selfUrl;
+        self::$selfUrl = $selfUrl;
+        return $ret;
+    }
+
+    /**
+     * Returns a full URL that was requested on current HTTP request.
+     *
+     * @return string
+     */
+    static public function selfUrl()
+    {
+        if (self::$selfUrl !== null) {
+            return self::$selfUrl;
+        } if (isset($_SERVER['SCRIPT_URI'])) {
+            return $_SERVER['SCRIPT_URI'];
+        }
+        $url = '';
+        $port = '';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            if (($pos = strpos($_SERVER['HTTP_HOST'], ':')) === false) {
+                if (isset($_SERVER['SERVER_PORT'])) {
+                    $port = ':' . $_SERVER['SERVER_PORT'];
+                }
+                $url = $_SERVER['HTTP_HOST'];
+            } else {
+                $url = substr($_SERVER['HTTP_HOST'], 0, $pos);
+                $port = substr($_SERVER['HTTP_HOST'], $pos);
+            }
+        } else if (isset($_SERVER['SERVER_NAME'])) {
+            $url = $_SERVER['SERVER_NAME'];
+            if (isset($_SERVER['SERVER_PORT'])) {
+                $port = ':' . $_SERVER['SERVER_PORT'];
+            }
+        }
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+            $url = 'https://' . $url;
+            if ($port == ':443') {
+                $port = '';
+            }
+        } else {
+            $url = 'http://' . $url;
+            if ($port == ':80') {
+                $port = '';
+            }
+        }
+
+        $url .= $port;
+        if (isset($_SERVER['HTTP_X_REWRITE_URL'])) {
+            $url .= $_SERVER['HTTP_X_REWRITE_URL'];
+        } elseif (isset($_SERVER['REQUEST_URI'])) {
+            $query = strpos($_SERVER['REQUEST_URI'], '?');
+            if ($query === false) {
+                $url .= $_SERVER['REQUEST_URI'];
+            } else {
+                $url .= substr($_SERVER['REQUEST_URI'], 0, $query);
+            }
+        } else if (isset($_SERVER['SCRIPT_URL'])) {
+            $url .= $_SERVER['SCRIPT_URL'];
+        } else if (isset($_SERVER['REDIRECT_URL'])) {
+            $url .= $_SERVER['REDIRECT_URL'];
+        } else if (isset($_SERVER['PHP_SELF'])) {
+            $url .= $_SERVER['PHP_SELF'];
+        } else if (isset($_SERVER['SCRIPT_NAME'])) {
+            $url .= $_SERVER['SCRIPT_NAME'];
+            if (isset($_SERVER['PATH_INFO'])) {
+                $url .= $_SERVER['PATH_INFO'];
+            }
+        }
+        return $url;
+    }
+
+    /**
+     * Returns an absolute URL for the given one
+     *
+     * @param string $url absilute or relative URL
+     * @return string
+     */
+    static public function absoluteUrl($url)
+    {
+        if (empty($url)) {
+            return Zend_OpenId::selfUrl();
+        } else if (!preg_match('|^([^:]+)://|', $url)) {
+            if (preg_match('|^([^:]+)://([^:@]*(?:[:][^@]*)?@)?([^/:@?#]*)(?:[:]([^/?#]*))?(/[^?]*)?((?:[?](?:[^#]*))?(?:#.*)?)$|', Zend_OpenId::selfUrl(), $reg)) {
+                $scheme = $reg[1];
+                $auth = $reg[2];
+                $host = $reg[3];
+                $port = $reg[4];
+                $path = $reg[5];
+                $query = $reg[6];
+                if ($url[0] == '/') {
+                    return $scheme
+                        . '://'
+                        . $auth
+                        . $host
+                        . (empty($port) ? '' : (':' . $port))
+                        . $url;
+                } else {
+                    $dir = dirname($path);
+                    return $scheme
+                        . '://'
+                        . $auth
+                        . $host
+                        . (empty($port) ? '' : (':' . $port))
+                        . (strlen($dir) > 1 ? $dir : '')
+                        . '/'
+                        . $url;
+                }
+            }
+        }
+        return $url;
+    }
+
+    /**
+     * Converts variable/value pairs into URL encoded query string
+     *
+     * @param array $params variable/value pairs
+     * @return string URL encoded query string
+     */
+    static public function paramsToQuery($params)
+    {
+        foreach($params as $key => $value) {
+            if (isset($query)) {
+                $query .= '&' . $key . '=' . urlencode($value);
+            } else {
+                $query = $key . '=' . urlencode($value);
+            }
+        }
+        return isset($query) ? $query : '';
+    }
+
+    /**
+     * Normalizes URL according to RFC 3986 to use it in comparison operations.
+     * The function gets URL argument by reference and modifies it.
+     * It returns true on success and false of failure.
+     *
+     * @param string &$id url to be normalized
+     * @return bool
+     */
+    static public function normalizeUrl(&$id)
+    {
+        // RFC 3986, 6.2.2.  Syntax-Based Normalization
+
+        // RFC 3986, 6.2.2.2 Percent-Encoding Normalization
+        $i = 0;
+        $n = strlen($id);
+        $res = '';
+        while ($i < $n) {
+            if ($id[$i] == '%') {
+                if ($i + 2 >= $n) {
+                    return false;
+                }
+                ++$i;
+                if ($id[$i] >= '0' && $id[$i] <= '9') {
+                    $c = ord($id[$i]) - ord('0');
+                } else if ($id[$i] >= 'A' && $id[$i] <= 'F') {
+                    $c = ord($id[$i]) - ord('A') + 10;
+                } else if ($id[$i] >= 'a' && $id[$i] <= 'f') {
+                    $c = ord($id[$i]) - ord('a') + 10;
+                } else {
+                    return false;
+                }
+                ++$i;
+                if ($id[$i] >= '0' && $id[$i] <= '9') {
+                    $c = ($c << 4) | (ord($id[$i]) - ord('0'));
+                } else if ($id[$i] >= 'A' && $id[$i] <= 'F') {
+                    $c = ($c << 4) | (ord($id[$i]) - ord('A') + 10);
+                } else if ($id[$i] >= 'a' && $id[$i] <= 'f') {
+                    $c = ($c << 4) | (ord($id[$i]) - ord('a') + 10);
+                } else {
+                    return false;
+                }
+                ++$i;
+                $ch = chr($c);
+                if (($ch >= 'A' && $ch <= 'Z') ||
+                    ($ch >= 'a' && $ch <= 'z') ||
+                    $ch == '-' ||
+                    $ch == '.' ||
+                    $ch == '_' ||
+                    $ch == '~') {
+                    $res .= $ch;
+                } else {
+                    $res .= '%';
+                    if (($c >> 4) < 10) {
+                        $res .= chr(($c >> 4) + ord('0'));
+                    } else {
+                        $res .= chr(($c >> 4) - 10 + ord('A'));
+                    }
+                    $c = $c & 0xf;
+                    if ($c < 10) {
+                        $res .= chr($c + ord('0'));
+                    } else {
+                        $res .= chr($c - 10 + ord('A'));
+                    }
+                }
+            } else {
+                $res .= $id[$i++];
+            }
+        }
+
+        if (!preg_match('|^([^:]+)://([^:@]*(?:[:][^@]*)?@)?([^/:@?#]*)(?:[:]([^/?#]*))?(/[^?#]*)?((?:[?](?:[^#]*))?)((?:#.*)?)$|', $res, $reg)) {
+            return false;
+        }
+        $scheme = $reg[1];
+        $auth = $reg[2];
+        $host = $reg[3];
+        $port = $reg[4];
+        $path = $reg[5];
+        $query = $reg[6];
+        $fragment = $reg[7]; /* strip it */
+
+        if (empty($scheme) || empty($host)) {
+            return false;
+        }
+
+        // RFC 3986, 6.2.2.1.  Case Normalization
+        $scheme = strtolower($scheme);
+        $host = strtolower($host);
+
+        // RFC 3986, 6.2.2.3.  Path Segment Normalization
+        if (!empty($path)) {
+            $i = 0;
+            $n = strlen($path);
+            $res = "";
+            while ($i < $n) {
+                if ($path[$i] == '/') {
+                    ++$i;
+                    while ($i < $n && $path[$i] == '/') {
+                        ++$i;
+                    }
+                    if ($i < $n && $path[$i] == '.') {
+                        ++$i;
+                        if ($i < $n && $path[$i] == '.') {
+                            ++$i;
+                            if ($i == $n || $path[$i] == '/') {
+                                if (($pos = strrpos($res, '/')) !== false) {
+                                    $res = substr($res, 0, $pos);
+                                }
+                            } else {
+                                    $res .= '/..';
+                            }
+                        } else if ($i != $n && $path[$i] != '/') {
+                            $res .= '/.';
+                        }
+                    } else {
+                        $res .= '/';
+                    }
+                } else {
+                    $res .= $path[$i++];
+                }
+            }
+            $path = $res;
+        }
+
+        // RFC 3986,6.2.3.  Scheme-Based Normalization
+        if ($scheme == 'http') {
+            if ($port == 80) {
+                $port = '';
+            }
+        } else if ($scheme == 'https') {
+            if ($port == 443) {
+                $port = '';
+            }
+        }
+        if (empty($path)) {
+            $path = '/';
+        }
+
+        $id = $scheme
+            . '://'
+            . $auth
+            . $host
+            . (empty($port) ? '' : (':' . $port))
+            . $path
+            . $query;
+        return true;
+    }
+
+    /**
+     * Normalizes OpenID identifier that can be URL or XRI name.
+     * Returns true on success and false of failure.
+     *
+     * Normalization is performed according to the following rules:
+     * 1. If the user's input starts with one of the "xri://", "xri://$ip*",
+     *    or "xri://$dns*" prefixes, they MUST be stripped off, so that XRIs
+     *    are used in the canonical form, and URI-authority XRIs are further
+     *    considered URL identifiers.
+     * 2. If the first character of the resulting string is an XRI Global
+     *    Context Symbol ("=", "@", "+", "$", "!"), then the input SHOULD be
+     *    treated as an XRI.
+     * 3. Otherwise, the input SHOULD be treated as an http URL; if it does
+     *    not include a "http" or "https" scheme, the Identifier MUST be
+     *    prefixed with the string "http://".
+     * 4. URL identifiers MUST then be further normalized by both following
+     *    redirects when retrieving their content and finally applying the
+     *    rules in Section 6 of [RFC3986] to the final destination URL.
+     * @param string &$id identifier to be normalized
+     * @return bool
+     */
+    static public function normalize(&$id)
+    {
+        $id = trim($id);
+        if (strlen($id) === 0) {
+            return true;
+        }
+
+        // 7.2.1
+        if (strpos($id, 'xri://$ip*') === 0) {
+            $id = substr($id, strlen('xri://$ip*'));
+        } else if (strpos($id, 'xri://$dns*') === 0) {
+            $id = substr($id, strlen('xri://$dns*'));
+        } else if (strpos($id, 'xri://') === 0) {
+            $id = substr($id, strlen('xri://'));
+        }
+
+        // 7.2.2
+        if ($id[0] == '=' ||
+            $id[0] == '@' ||
+            $id[0] == '+' ||
+            $id[0] == '$' ||
+            $id[0] == '!') {
+            return true;
+        }
+
+        // 7.2.3
+        if (strpos($id, "://") === false) {
+            $id = 'http://' . $id;
+        }
+
+        // 7.2.4
+        return self::normalizeURL($id);
+    }
+
+    /**
+     * Performs a HTTP redirection to specified URL with additional data.
+     * It may generate redirected request using GET or POST HTTP method.
+     * The function never returns.
+     *
+     * @param string $url URL to redirect to
+     * @param array $params additional variable/value pairs to send
+     * @param Zend_Controller_Response_Abstract $response
+     * @param string $method redirection method ('GET' or 'POST')
+     */
+    static public function redirect($url, $params = null,
+        Zend_Controller_Response_Abstract $response = null, $method = 'GET')
+    {
+        $url = Zend_OpenId::absoluteUrl($url);
+        $body = "";
+        if (null === $response) {
+            require_once "Zend/Controller/Response/Http.php";
+            $response = new Zend_Controller_Response_Http();
+        }
+
+        if ($method == 'POST') {
+            $body = "<html><body onLoad=\"document.forms[0].submit();\">\n";
+            $body .= "<form method=\"POST\" action=\"$url\">\n";
+            if (is_array($params) && count($params) > 0) {
+                foreach($params as $key => $value) {
+                    $body .= '<input type="hidden" name="' . $key . '" value="' . $value . "\">\n";
+                }
+            }
+            $body .= "<input type=\"submit\" value=\"Continue OpenID transaction\">\n";
+            $body .= "</form></body></html>\n";
+        } else if (is_array($params) && count($params) > 0) {
+            if (strpos($url, '?') === false) {
+                $url .= '?' . self::paramsToQuery($params);
+            } else {
+                $url .= '&' . self::paramsToQuery($params);
+            }
+        }
+        if (!empty($body)) {
+            $response->setBody($body);
+        } else if (!$response->canSendHeaders()) {
+            $response->setBody("<script language=\"JavaScript\"" .
+                 " type=\"text/javascript\">window.location='$url';" .
+                 "</script>");
+        } else {
+            $response->setRedirect($url);
+        }
+        $response->sendResponse();
+        if (self::$exitOnRedirect) {
+            exit();
+        }
+    }
+
+    /**
+     * Produces string of random byte of given length.
+     *
+     * @param integer $len length of requested string
+     * @return string RAW random binary string
+     */
+    static public function randomBytes($len)
+    {
+        $key = '';
+        for($i=0; $i < $len; $i++) {
+            $key .= chr(mt_rand(0, 255));
+        }
+        return $key;
+    }
+
+    /**
+     * Generates a hash value (message digest) according to given algorithm.
+     * It returns RAW binary string.
+     *
+     * This is a wrapper function that uses one of available internal function
+     * dependent on given PHP configuration. It may use various functions from
+     *  ext/openssl, ext/hash, ext/mhash or ext/standard.
+     *
+     * @param string $func digest algorithm
+     * @param string $data data to sign
+     * @return string RAW digital signature
+     * @throws Zend_OpenId_Exception
+     */
+    static public function digest($func, $data)
+    {
+        if (function_exists('openssl_digest')) {
+            return openssl_digest($data, $func, true);
+        } else if (function_exists('hash')) {
+            return hash($func, $data, true);
+        } else if ($func === 'sha1') {
+            return sha1($data, true);
+        } else if ($func === 'sha256') {
+            if (function_exists('mhash')) {
+                return mhash(MHASH_SHA256 , $data);
+            }
+        }
+        require_once "Zend/OpenId/Exception.php";
+        throw new Zend_OpenId_Exception(
+            'Unsupported digest algorithm "' . $func . '".',
+            Zend_OpenId_Exception::UNSUPPORTED_DIGEST);
+    }
+
+    /**
+     * Generates a keyed hash value using the HMAC method. It uses ext/hash
+     * if available or user-level PHP implementation, that is not significantly
+     * slower.
+     *
+     * @param string $macFunc name of selected hashing algorithm (sha1, sha256)
+     * @param string $data data to sign
+     * @param string $secret shared secret key used for generating the HMAC
+     *  variant of the message digest
+     * @return string RAW HMAC value
+     */
+    static public function hashHmac($macFunc, $data, $secret)
+    {
+//        require_once "Zend/Crypt/Hmac.php";
+//        return Zend_Crypt_Hmac::compute($secret, $macFunc, $data, Zend_Crypt_Hmac::BINARY);
+        if (function_exists('hash_hmac')) {
+            return hash_hmac($macFunc, $data, $secret, 1);
+        } else {
+            if (Zend_OpenId::strlen($secret) > 64) {
+                $secret = self::digest($macFunc, $secret);
+            }
+            $secret = str_pad($secret, 64, chr(0x00));
+            $ipad = str_repeat(chr(0x36), 64);
+            $opad = str_repeat(chr(0x5c), 64);
+            $hash1 = self::digest($macFunc, ($secret ^ $ipad) . $data);
+            return self::digest($macFunc, ($secret ^ $opad) . $hash1);
+        }
+    }
+
+    /**
+     * Converts binary representation into ext/gmp or ext/bcmath big integer
+     * representation.
+     *
+     * @param string $bin binary representation of big number
+     * @return mixed
+     * @throws Zend_OpenId_Exception
+     */
+    static protected function binToBigNum($bin)
+    {
+        if (extension_loaded('gmp')) {
+            return gmp_init(bin2hex($bin), 16);
+        } else if (extension_loaded('bcmath')) {
+            $bn = 0;
+            $len = Zend_OpenId::strlen($bin);
+            for ($i = 0; $i < $len; $i++) {
+                $bn = bcmul($bn, 256);
+                $bn = bcadd($bn, ord($bin[$i]));
+            }
+            return $bn;
+        }
+        require_once "Zend/OpenId/Exception.php";
+        throw new Zend_OpenId_Exception(
+            'The system doesn\'t have proper big integer extension',
+            Zend_OpenId_Exception::UNSUPPORTED_LONG_MATH);
+    }
+
+    /**
+     * Converts internal ext/gmp or ext/bcmath big integer representation into
+     * binary string.
+     *
+     * @param mixed $bn big number
+     * @return string
+     * @throws Zend_OpenId_Exception
+     */
+    static protected function bigNumToBin($bn)
+    {
+        if (extension_loaded('gmp')) {
+            $s = gmp_strval($bn, 16);
+            if (strlen($s) % 2 != 0) {
+                $s = '0' . $s;
+            } else if ($s[0] > '7') {
+                $s = '00' . $s;
+            }
+            return pack("H*", $s);
+        } else if (extension_loaded('bcmath')) {
+            $cmp = bccomp($bn, 0);
+            if ($cmp == 0) {
+                return (chr(0));
+            } else if ($cmp < 0) {
+                require_once "Zend/OpenId/Exception.php";
+                throw new Zend_OpenId_Exception(
+                    'Big integer arithmetic error',
+                    Zend_OpenId_Exception::ERROR_LONG_MATH);
+            }
+            $bin = "";
+            while (bccomp($bn, 0) > 0) {
+                $bin = chr(bcmod($bn, 256)) . $bin;
+                $bn = bcdiv($bn, 256);
+            }
+            if (ord($bin[0]) > 127) {
+                $bin = chr(0) . $bin;
+            }
+            return $bin;
+        }
+        require_once "Zend/OpenId/Exception.php";
+        throw new Zend_OpenId_Exception(
+            'The system doesn\'t have proper big integer extension',
+            Zend_OpenId_Exception::UNSUPPORTED_LONG_MATH);
+    }
+
+    /**
+     * Performs the first step of a Diffie-Hellman key exchange by generating
+     * private and public DH values based on given prime number $p and
+     * generator $g. Both sides of key exchange MUST have the same prime number
+     * and generator. In this case they will able to create a random shared
+     * secret that is never send from one to the other.
+     *
+     * @param string $p prime number in binary representation
+     * @param string $g generator in binary representation
+     * @param string $priv_key private key in binary representation
+     * @return mixed
+     */
+    static public function createDhKey($p, $g, $priv_key = null)
+    {
+        if (function_exists('openssl_dh_compute_key')) {
+            $dh_details = array(
+                    'p' => $p,
+                    'g' => $g
+                );
+            if ($priv_key !== null) {
+                $dh_details['priv_key'] = $priv_key;
+            }
+            return openssl_pkey_new(array('dh'=>$dh_details));
+        } else {
+            $bn_p        = self::binToBigNum($p);
+            $bn_g        = self::binToBigNum($g);
+            if ($priv_key === null) {
+                $priv_key    = self::randomBytes(Zend_OpenId::strlen($p));
+            }
+            $bn_priv_key = self::binToBigNum($priv_key);
+            if (extension_loaded('gmp')) {
+                $bn_pub_key  = gmp_powm($bn_g, $bn_priv_key, $bn_p);
+            } else if (extension_loaded('bcmath')) {
+                $bn_pub_key  = bcpowmod($bn_g, $bn_priv_key, $bn_p);
+            }
+            $pub_key     = self::bigNumToBin($bn_pub_key);
+
+            return array(
+                'p'        => $bn_p,
+                'g'        => $bn_g,
+                'priv_key' => $bn_priv_key,
+                'pub_key'  => $bn_pub_key,
+                'details'  => array(
+                    'p'        => $p,
+                    'g'        => $g,
+                    'priv_key' => $priv_key,
+                    'pub_key'  => $pub_key));
+        }
+    }
+
+    /**
+     * Returns an associative array with Diffie-Hellman key components in
+     * binary representation. The array includes original prime number 'p' and
+     * generator 'g', random private key 'priv_key' and corresponding public
+     * key 'pub_key'.
+     *
+     * @param mixed $dh Diffie-Hellman key
+     * @return array
+     */
+    static public function getDhKeyDetails($dh)
+    {
+        if (function_exists('openssl_dh_compute_key')) {
+            $details = openssl_pkey_get_details($dh);
+            if (isset($details['dh'])) {
+                return $details['dh'];
+            }
+        } else {
+            return $dh['details'];
+        }
+    }
+
+    /**
+     * Computes the shared secret from the private DH value $dh and the other
+     * party's public value in $pub_key
+     *
+     * @param string $pub_key other party's public value
+     * @param mixed $dh Diffie-Hellman key
+     * @return string
+     * @throws Zend_OpenId_Exception
+     */
+    static public function computeDhSecret($pub_key, $dh)
+    {
+        if (function_exists('openssl_dh_compute_key')) {
+            $ret = openssl_dh_compute_key($pub_key, $dh);
+            if (ord($ret[0]) > 127) {
+                $ret = chr(0) . $ret;
+            }
+            return $ret;
+        } else if (extension_loaded('gmp')) {
+            $bn_pub_key = self::binToBigNum($pub_key);
+            $bn_secret  = gmp_powm($bn_pub_key, $dh['priv_key'], $dh['p']);
+            return self::bigNumToBin($bn_secret);
+        } else if (extension_loaded('bcmath')) {
+            $bn_pub_key = self::binToBigNum($pub_key);
+            $bn_secret  = bcpowmod($bn_pub_key, $dh['priv_key'], $dh['p']);
+            return self::bigNumToBin($bn_secret);
+        }
+        require_once "Zend/OpenId/Exception.php";
+        throw new Zend_OpenId_Exception(
+            'The system doesn\'t have proper big integer extension',
+            Zend_OpenId_Exception::UNSUPPORTED_LONG_MATH);
+    }
+
+    /**
+     * Takes an arbitrary precision integer and returns its shortest big-endian
+     * two's complement representation.
+     *
+     * Arbitrary precision integers MUST be encoded as big-endian signed two's
+     * complement binary strings. Henceforth, "btwoc" is a function that takes
+     * an arbitrary precision integer and returns its shortest big-endian two's
+     * complement representation. All integers that are used with
+     * Diffie-Hellman Key Exchange are positive. This means that the left-most
+     * bit of the two's complement representation MUST be zero. If it is not,
+     * implementations MUST add a zero byte at the front of the string.
+     *
+     * @param string $str binary representation of arbitrary precision integer
+     * @return string big-endian signed representation
+     */
+    static public function btwoc($str)
+    {
+        if (ord($str[0]) > 127) {
+            return chr(0) . $str;
+        }
+        return $str;
+    }
+
+    /**
+     * Returns lenght of binary string in bytes
+     *
+     * @param string $str
+     * @return int the string lenght
+     */
+    static public function strlen($str)
+    {
+        if (extension_loaded('mbstring') &&
+            (((int)ini_get('mbstring.func_overload')) & 2)) {
+            return mb_strlen($str, 'latin1');
+        } else {
+            return strlen($str);
+        }
+    }
+
+}

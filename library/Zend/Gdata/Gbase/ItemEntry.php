@@ -1,56 +1,160 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Gbase_Entry
+ */
+require_once 'Zend/Gdata/Gbase/Entry.php';
+
+/**
+ * Concrete class for working with Item entries.
+ *
+ * @link http://code.google.com/apis/base/
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gbase_ItemEntry extends Zend_Gdata_Gbase_Entry
+{
+    /**
+     * The classname for individual item entry elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_Gbase_ItemEntry';
+
+    /**
+     * Set the value of the itme_type
+     *
+     * @param Zend_Gdata_Gbase_Extension_ItemType $value The desired value for the item_type 
+     * @return Zend_Gdata_Gbase_ItemEntry Provides a fluent interface
+     */
+    public function setItemType($value)
+    {
+        $this->addGbaseAttribute('item_type', $value, 'text');
+        return $this;
+    }
+
+    /**
+     * Adds a custom attribute to the entry in the following format:
+     * &lt;g:[$name] type='[$type]'&gt;[$value]&lt;/g:[$name]&gt;      
+     *
+     * @param string $name The name of the attribute
+     * @param string $value The text value of the attribute
+     * @param string $type (optional) The type of the attribute.
+     *          e.g.: 'text', 'number', 'floatUnit'
+     * @return Zend_Gdata_Gbase_ItemEntry Provides a fluent interface
+     */
+    public function addGbaseAttribute($name, $text, $type = null) {
+        $newBaseAttribute =  new Zend_Gdata_Gbase_Extension_BaseAttribute($name, $text, $type);
+        $this->_baseAttributes[] = $newBaseAttribute;
+        return $this;
+    }
+
+    /**
+     * Removes a Base attribute from the current list of Base attributes
+     * 
+     * @param Zend_Gdata_Gbase_Extension_BaseAttribute $baseAttribute The attribute to be removed
+     * @return Zend_Gdata_Gbase_ItemEntry Provides a fluent interface
+     */
+    public function removeGbaseAttribute($baseAttribute) {
+        $baseAttributes = $this->_baseAttributes;
+        for ($i = 0; $i < count($this->_baseAttributes); $i++) {
+            if ($this->_baseAttributes[$i] == $baseAttribute) {
+                array_splice($baseAttributes, $i, 1);
+                break;
+            }
+        }
+        $this->_baseAttributes = $baseAttributes;
+        return $this;
+    }
+
+    /**
+     * Uploads changes in this entry to the server using Zend_Gdata_App
+     *
+     * @param boolean $dryRun Whether the transaction is dry run or not.
+     * @param string|null $uri The URI to send requests to, or null if $data
+     *        contains the URI.
+     * @param string|null $className The name of the class that should we
+     *        deserializing the server response. If null, then
+     *        'Zend_Gdata_App_Entry' will be used.
+     * @param array $extraHeaders Extra headers to add to the request, as an
+     *        array of string-based key/value pairs.
+     * @return Zend_Gdata_App_Entry The updated entry
+     * @throws Zend_Gdata_App_Exception
+     */
+    public function save($dryRun = false,
+                         $uri = null,
+                         $className = null,
+                         $extraHeaders = array())
+    {
+        if ($dryRun == true) {
+            $editLink = $this->getEditLink();
+            if ($uri == null && $editLink !== null) {
+                $uri = $editLink->getHref() . '?dry-run=true';
+            }
+            if ($uri === null) {
+                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+                throw new Zend_Gdata_App_InvalidArgumentException('You must specify an URI which needs deleted.');
+            }
+            $service = new Zend_Gdata_App($this->getHttpClient());
+            return $service->updateEntry($this,
+                                         $uri,
+                                         $className,
+                                         $extraHeaders);
+        } else {
+            parent::save($uri, $className, $extraHeaders);
+        }
+    }
+
+    /**
+     * Deletes this entry to the server using the referenced
+     * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
+     * entry's link collection.
+     *
+     * @param boolean $dyrRun Whether the transaction is dry run or not
+     * @return void
+     * @throws Zend_Gdata_App_Exception
+     */
+    public function delete($dryRun = false)
+    {
+        $uri = null;
+
+        if ($dryRun == true) {
+            $editLink = $this->getEditLink();
+            if ($editLink !== null) {
+                $uri = $editLink->getHref() . '?dry-run=true';
+            }
+            if ($uri === null) {
+                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+                throw new Zend_Gdata_App_InvalidArgumentException('You must specify an URI which needs deleted.');
+            }
+            parent::delete($uri);
+        } else {
+            parent::delete();
+        }
+    }
+
+}

@@ -1,34 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Debug
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Concrete class for generating debug dumps related to the output source.
+ *
+ * @category   Zend
+ * @package    Zend_Debug
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Debug
+{
+
+    /**
+     * @var string
+     */
+    protected static $_sapi = null;
+
+    /**
+     * Get the current value of the debug output environment.
+     * This defaults to the value of PHP_SAPI.
+     *
+     * @return string;
+     */
+    public static function getSapi()
+    {
+        if (self::$_sapi === null) {
+            self::$_sapi = PHP_SAPI;
+        }
+        return self::$_sapi;
+    }
+
+    /**
+     * Set the debug ouput environment.
+     * Setting a value of null causes Zend_Debug to use PHP_SAPI.
+     *
+     * @param string $sapi
+     * @return void;
+     */
+    public static function setSapi($sapi)
+    {
+        self::$_sapi = $sapi;
+    }
+
+    /**
+     * Debug helper function.  This is a wrapper for var_dump() that adds
+     * the <pre /> tags, cleans up newlines and indents, and runs
+     * htmlentities() before output.
+     *
+     * @param  mixed  $var   The variable to dump.
+     * @param  string $label OPTIONAL Label to prepend to output.
+     * @param  bool   $echo  OPTIONAL Echo output if true.
+     * @return string
+     */
+    public static function dump($var, $label=null, $echo=true)
+    {
+        // format the label
+        $label = ($label===null) ? '' : rtrim($label) . ' ';
+
+        // var_dump the variable into a buffer and keep the output
+        ob_start();
+        var_dump($var);
+        $output = ob_get_clean();
+
+        // neaten the newlines and indents
+        $output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+        if (self::getSapi() == 'cli') {
+            $output = PHP_EOL . $label
+                    . PHP_EOL . $output
+                    . PHP_EOL;
+        } else {
+            if(!extension_loaded('xdebug')) {
+                $output = htmlspecialchars($output, ENT_QUOTES);
+            }
+
+            $output = '<pre>'
+                    . $label
+                    . $output
+                    . '</pre>';
+        }
+
+        if ($echo) {
+            echo($output);
+        }
+        return $output;
+    }
+
+}

@@ -1,99 +1,417 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_App_Util
+ */
+require_once 'Zend/Gdata/App/Util.php';
+
+/**
+ * Provides a mechanism to build a query URL for Gdata services.
+ * Queries are not defined for APP, but are provided by Gdata services
+ * as an extension.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Query
+{
+
+    /**
+     * Query parameters.
+     *
+     * @var array
+     */
+    protected $_params = array();
+
+    /**
+     * Default URL
+     *
+     * @var string
+     */
+    protected $_defaultFeedUri = null;
+
+    /**
+     * Base URL
+     * TODO: Add setters and getters
+     *
+     * @var string
+     */
+    protected $_url = null;
+
+    /**
+     * Category for the query
+     *
+     * @var string
+     */
+    protected $_category = null;
+
+    /**
+     * Create Gdata_Query object
+     */
+    public function __construct($url = null)
+    {
+        $this->_url = $url;
+    }
+
+    /**
+     * @return string querystring
+     */
+    public function getQueryString()
+    {
+        $queryArray = array();
+        foreach ($this->_params as $name => $value) {
+            if (substr($name, 0, 1) == '_') {
+                continue;
+            }
+            $queryArray[] = urlencode($name) . '=' . urlencode($value);
+        }
+        if (count($queryArray) > 0) {
+            return '?' . implode('&', $queryArray);
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     *
+     */
+    public function resetParameters()
+    {
+        $this->_params = array();
+    }
+
+    /**
+     * @return string url
+     */
+    public function getQueryUrl()
+    {
+        if ($this->_url == null) {
+            $url = $this->_defaultFeedUri;
+        } else {
+            $url = $this->_url;
+        }
+        if ($this->getCategory() !== null) {
+            $url .= '/-/' . $this->getCategory();
+        }
+        $url .= $this->getQueryString();
+        return $url;
+    }
+
+    /**
+     * @param string $name
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setParam($name, $value)
+    {
+        $this->_params[$name] = $value;
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function getParam($name)
+    {
+        return $this->_params[$name];
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setAlt($value)
+    {
+        if ($value != null) {
+            $this->_params['alt'] = $value;
+        } else {
+            unset($this->_params['alt']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param int $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setMaxResults($value)
+    {
+        if ($value != null) {
+            $this->_params['max-results'] = $value;
+        } else {
+            unset($this->_params['max-results']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setQuery($value)
+    {
+        if ($value != null) {
+            $this->_params['q'] = $value;
+        } else {
+            unset($this->_params['q']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param int $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setStartIndex($value)
+    {
+        if ($value != null) {
+            $this->_params['start-index'] = $value;
+        } else {
+            unset($this->_params['start-index']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setUpdatedMax($value)
+    {
+        if ($value != null) {
+            $this->_params['updated-max'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['updated-max']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setUpdatedMin($value)
+    {
+        if ($value != null) {
+            $this->_params['updated-min'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['updated-min']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setPublishedMax($value)
+    {
+        if ($value !== null) {
+            $this->_params['published-max'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['published-max']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setPublishedMin($value)
+    {
+        if ($value != null) {
+            $this->_params['published-min'] = Zend_Gdata_App_Util::formatTimestamp($value);
+        } else {
+            unset($this->_params['published-min']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setAuthor($value)
+    {
+        if ($value != null) {
+            $this->_params['author'] = $value;
+        } else {
+            unset($this->_params['author']);
+        }
+        return $this;
+    }
+
+    /**
+     * @return string rss or atom
+     */
+    public function getAlt()
+    {
+        if (array_key_exists('alt', $this->_params)) {
+            return $this->_params['alt'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return int maxResults
+     */
+    public function getMaxResults()
+    {
+        if (array_key_exists('max-results', $this->_params)) {
+            return intval($this->_params['max-results']);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string query
+     */
+    public function getQuery()
+    {
+        if (array_key_exists('q', $this->_params)) {
+            return $this->_params['q'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return int startIndex
+     */
+    public function getStartIndex()
+    {
+        if (array_key_exists('start-index', $this->_params)) {
+            return intval($this->_params['start-index']);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string updatedMax
+     */
+    public function getUpdatedMax()
+    {
+        if (array_key_exists('updated-max', $this->_params)) {
+            return $this->_params['updated-max'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string updatedMin
+     */
+    public function getUpdatedMin()
+    {
+        if (array_key_exists('updated-min', $this->_params)) {
+            return $this->_params['updated-min'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string publishedMax
+     */
+    public function getPublishedMax()
+    {
+        if (array_key_exists('published-max', $this->_params)) {
+            return $this->_params['published-max'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string publishedMin
+     */
+    public function getPublishedMin()
+    {
+        if (array_key_exists('published-min', $this->_params)) {
+            return $this->_params['published-min'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return string author
+     */
+    public function getAuthor()
+    {
+        if (array_key_exists('author', $this->_params)) {
+            return $this->_params['author'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Query Provides a fluent interface
+     */
+    public function setCategory($value)
+    {
+        $this->_category = $value;
+        return $this;
+    }
+
+    /*
+     * @return string id
+     */
+    public function getCategory()
+    {
+        return $this->_category;
+    }
+
+
+    public function __get($name)
+    {
+        $method = 'get'.ucfirst($name);
+        if (method_exists($this, $method)) {
+            return call_user_func(array(&$this, $method));
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php';
+            throw new Zend_Gdata_App_Exception('Property ' . $name . '  does not exist');
+        }
+    }
+
+    public function __set($name, $val)
+    {
+        $method = 'set'.ucfirst($name);
+        if (method_exists($this, $method)) {
+            return call_user_func(array(&$this, $method), $val);
+        } else {
+            require_once 'Zend/Gdata/App/Exception.php';
+            throw new Zend_Gdata_App_Exception('Property ' . $name . '  does not exist');
+        }
+    }
+
+}

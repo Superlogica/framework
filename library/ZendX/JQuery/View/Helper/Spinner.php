@@ -1,31 +1,73 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: Spinner.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "ZendX/JQuery/View/Helper/UiWidget.php";
+
+/**
+ * jQuery Spinner View Helper
+ *
+ * @uses 	   Zend_Json
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_Spinner extends ZendX_JQuery_View_Helper_UiWidget
+{
+    /**
+     * Create FormText field for numeric values that can be spinned through its values.
+     *
+     * @link   http://docs.jquery.com/UI/Spinner
+     * @param  string $id
+     * @param  string $value
+     * @param  array  $params
+     * @param  array  $attribs
+     * @return string
+     */
+	public function spinner($id, $value="", array $params=array(), array $attribs=array())
+	{
+	    $attribs = $this->_prepareAttributes($id, $value, $attribs);
+
+	    if(!isset($params['start']) && is_numeric($value)) {
+	        $params['start'] = $value;
+	    }
+
+	    if(count($params)) {
+	        $params = ZendX_JQuery::encodeJson($params);
+	    } else {
+	        $params = '{}';
+	    }
+
+        $js = sprintf('%s("#%s").spinner(%s);',
+            ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
+            $attribs['id'],
+            $params
+        );
+
+        $this->jquery->addOnLoad($js);
+
+	    return $this->view->formText($id, $value, $attribs);
+	}
+}

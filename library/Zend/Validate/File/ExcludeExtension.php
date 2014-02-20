@@ -1,37 +1,94 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/File/Extension.php';
+
+/**
+ * Validator for the excluding file extensions
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_ExcludeExtension extends Zend_Validate_File_Extension
+{
+    /**
+     * @const string Error constants
+     */
+    const FALSE_EXTENSION = 'fileExcludeExtensionFalse';
+    const NOT_FOUND       = 'fileExcludeExtensionNotFound';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::FALSE_EXTENSION => "The file '%value%' has a false extension",
+        self::NOT_FOUND       => "The file '%value%' was not found"
+    );
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the fileextension of $value is not included in the
+     * set extension list
+     *
+     * @param  string  $value Real file to check for extension
+     * @param  array   $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_FOUND);
+        }
+
+        if ($file !== null) {
+            $info['extension'] = substr($file['name'], strrpos($file['name'], '.') + 1);
+        } else {
+            $info = pathinfo($value);
+        }
+
+        $extensions = $this->getExtension();
+
+        if ($this->_case and (!in_array($info['extension'], $extensions))) {
+            return true;
+        } else if (!$this->_case) {
+            $found = false;
+            foreach ($extensions as $extension) {
+                if (strtolower($extension) == strtolower($info['extension'])) {
+                    $found = true;
+                }
+            }
+
+            if (!$found) {
+                return true;
+            }
+        }
+
+        return $this->_throw($file, self::FALSE_EXTENSION);
+    }
+}

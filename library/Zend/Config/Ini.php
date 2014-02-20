@@ -1,108 +1,293 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-HuX+HnA91+v5HN2tJH3yCG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Ini.php 14667 2009-04-05 09:18:21Z rob $
+ */
+
+
+/**
+ * @see Zend_Config
+ */
+require_once 'Zend/Config.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Config
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Config_Ini extends Zend_Config
+{
+    /**
+     * String that separates nesting levels of configuration data identifiers
+     *
+     * @var string
+     */
+    protected $_nestSeparator = '.';
+
+    /**
+     * String that separates the parent section name
+     *
+     * @var string
+     */
+    protected $_sectionSeparator = ':';
+
+    /**
+     * Wether to skip extends or not
+     *
+     * @var boolean
+     */
+    protected $_skipExtends = false;
+    
+    /**
+     * Loads the section $section from the config file $filename for
+     * access facilitated by nested object properties.
+     *
+     * If the section name contains a ":" then the section name to the right
+     * is loaded and included into the properties. Note that the keys in
+     * this $section will override any keys of the same
+     * name in the sections that have been included via ":".
+     *
+     * If the $section is null, then all sections in the ini file are loaded.
+     *
+     * If any key includes a ".", then this will act as a separator to
+     * create a sub-property.
+     *
+     * example ini file:
+     *      [all]
+     *      db.connection = database
+     *      hostname = live
+     *
+     *      [staging : all]
+     *      hostname = staging
+     *
+     * after calling $data = new Zend_Config_Ini($file, 'staging'); then
+     *      $data->hostname === "staging"
+     *      $data->db->connection === "database"
+     *
+     * The $options parameter may be provided as either a boolean or an array.
+     * If provided as a boolean, this sets the $allowModifications option of
+     * Zend_Config. If provided as an array, there are two configuration
+     * directives that may be set. For example:
+     *
+     * $options = array(
+     *     'allowModifications' => false,
+     *     'nestSeparator'      => '->'
+     *      );
+     *
+     * @param  string        $filename
+     * @param  string|null   $section
+     * @param  boolean|array $options
+     * @throws Zend_Config_Exception
+     * @return void
+     */
+    public function __construct($filename, $section = null, $options = false)
+    {
+        if (empty($filename)) {
+            /**
+             * @see Zend_Config_Exception
+             */
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception('Filename is not set');
+        }
+
+        $allowModifications = false;
+        if (is_bool($options)) {
+            $allowModifications = $options;
+        } elseif (is_array($options)) {
+            if (isset($options['allowModifications'])) {
+                $allowModifications = (bool) $options['allowModifications'];
+            }
+            if (isset($options['nestSeparator'])) {
+                $this->_nestSeparator = (string) $options['nestSeparator'];
+            }
+            if (isset($options['skipExtends'])) {
+                $this->_skipExtends = (bool) $options['skipExtends'];
+            }
+        }
+
+        $iniArray = $this->_loadIniFile($filename);
+
+        if (null === $section) {
+            // Load entire file
+            $dataArray = array();
+            foreach ($iniArray as $sectionName => $sectionData) {
+                if(!is_array($sectionData)) {
+                    $dataArray = array_merge_recursive($dataArray, $this->_processKey(array(), $sectionName, $sectionData));
+                } else {
+                    $dataArray[$sectionName] = $this->_processSection($iniArray, $sectionName);
+                }
+            }
+            parent::__construct($dataArray, $allowModifications);
+        } else {
+            // Load one or more sections
+            if (!is_array($section)) {
+                $section = array($section);
+            }
+            $dataArray = array();
+            foreach ($section as $sectionName) {
+                if (!isset($iniArray[$sectionName])) {
+                    /**
+                     * @see Zend_Config_Exception
+                     */
+                    require_once 'Zend/Config/Exception.php';
+                    throw new Zend_Config_Exception("Section '$sectionName' cannot be found in $filename");
+                }
+                $dataArray = array_merge($this->_processSection($iniArray, $sectionName), $dataArray);
+
+            }
+            parent::__construct($dataArray, $allowModifications);
+        } 
+
+        $this->_loadedSection = $section;
+    }
+
+    /**
+     * Load the ini file and preprocess the section separator (':' in the
+     * section name (that is used for section extension) so that the resultant
+     * array has the correct section names and the extension information is
+     * stored in a sub-key called ';extends'. We use ';extends' as this can
+     * never be a valid key name in an INI file that has been loaded using
+     * parse_ini_file().
+     *
+     * @param string $filename
+     * @throws Zend_Config_Exception
+     * @return array
+     */
+    protected function _loadIniFile($filename)
+    {
+        set_error_handler(array($this, '_loadFileErrorHandler'));
+        $loaded = parse_ini_file($filename, true); // Warnings and errors are suppressed
+        restore_error_handler();
+        // Check if there was a error while loading file
+        if ($this->_loadFileErrorStr !== null) {
+            /**
+             * @see Zend_Config_Exception
+             */
+            require_once 'Zend/Config/Exception.php';
+            throw new Zend_Config_Exception($this->_loadFileErrorStr);
+        }
+
+        $iniArray = array();
+        foreach ($loaded as $key => $data)
+        {
+            $pieces = explode($this->_sectionSeparator, $key);
+            $thisSection = trim($pieces[0]);
+            switch (count($pieces)) {
+                case 1:
+                    $iniArray[$thisSection] = $data;
+                    break;
+
+                case 2:
+                    $extendedSection = trim($pieces[1]);
+                    $iniArray[$thisSection] = array_merge(array(';extends'=>$extendedSection), $data);
+                    break;
+
+                default:
+                    /**
+                     * @see Zend_Config_Exception
+                     */
+                    require_once 'Zend/Config/Exception.php';
+                    throw new Zend_Config_Exception("Section '$thisSection' may not extend multiple sections in $filename");
+            }
+        }
+
+        return $iniArray;
+    }
+    
+    /**
+     * Process each element in the section and handle the ";extends" inheritance
+     * key. Passes control to _processKey() to handle the nest separator
+     * sub-property syntax that may be used within the key name.
+     *
+     * @param  array  $iniArray
+     * @param  string $section
+     * @param  array  $config
+     * @throws Zend_Config_Exception
+     * @return array
+     */
+    protected function _processSection($iniArray, $section, $config = array())
+    {
+        $thisSection = $iniArray[$section];
+
+        foreach ($thisSection as $key => $value) {
+            if (strtolower($key) == ';extends') {
+                if (isset($iniArray[$value])) {
+                    $this->_assertValidExtend($section, $value);
+                    
+                    if (!$this->_skipExtends) {
+                        $config = $this->_processSection($iniArray, $value, $config);
+                    }
+                } else {
+                    /**
+                     * @see Zend_Config_Exception
+                     */
+                    require_once 'Zend/Config/Exception.php';
+                    throw new Zend_Config_Exception("Parent section '$section' cannot be found");
+                }
+            } else {
+                $config = $this->_processKey($config, $key, $value);
+            }
+        }
+        return $config;
+    }
+
+    /**
+     * Assign the key's value to the property list. Handles the
+     * nest separator for sub-properties.
+     *
+     * @param  array  $config
+     * @param  string $key
+     * @param  string $value
+     * @throws Zend_Config_Exception
+     * @return array
+     */
+    protected function _processKey($config, $key, $value)
+    {
+        if (strpos($key, $this->_nestSeparator) !== false) {
+            $pieces = explode($this->_nestSeparator, $key, 2);
+            if (strlen($pieces[0]) && strlen($pieces[1])) {
+                if (!isset($config[$pieces[0]])) {
+                    if ($pieces[0] === '0' && !empty($config)) {
+                        // convert the current values in $config into an array
+                        $config = array($pieces[0] => $config);
+                    } else {
+                        $config[$pieces[0]] = array();
+                    }
+                } elseif (!is_array($config[$pieces[0]])) {
+                    /**
+                     * @see Zend_Config_Exception
+                     */
+                    require_once 'Zend/Config/Exception.php';
+                    throw new Zend_Config_Exception("Cannot create sub-key for '{$pieces[0]}' as key already exists");
+                }
+                $config[$pieces[0]] = $this->_processKey($config[$pieces[0]], $pieces[1], $value);
+            } else {
+                /**
+                 * @see Zend_Config_Exception
+                 */
+                require_once 'Zend/Config/Exception.php';
+                throw new Zend_Config_Exception("Invalid key '$key'");
+            }
+        } else {
+            $config[$key] = $value;
+        }
+        return $config;
+    }
+}

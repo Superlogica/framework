@@ -1,31 +1,90 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV57RNFGAZFOOrhc6e8L8XeMTYXFMy1N/6hCeUWu9jOGKgdvLDr6JTVIfvtky6HydOZvvPVtPa
-fl5TXurjLk4r16ggUF28jrK+IJHQ/wFCDFlZB+at520P9thAdyp+0hcSxViezyFOVq5xyAB+twKv
-cLcog42B2BKUXlbw5a2s+KxURGjuLOTzys/srm8DgsY1kl5uddzM4EKwhy/mF/oqvQXEGqFpL36Z
-JBtvsWDQ7upyHji/pizfciHBaqcSpLCjHtVbBow4GcY4PhjnTMUCambZRVRLXbNI0cXhbteUZi7g
-TLZ8rpqNuAnZJCg2YaMa/GV5NaiGxtAEflU64pTSE54txBMzsEvg/GuFPi0pHPgeLt6PcA8U4N/5
-S7SUR+mfbEZ4t/0C9rnS/6miarpbia4oV9I48uahQaQxYHJR3pTeJeBVL8WV0R6Nb/USfzjyhnbD
-Td6zCu4gfCy7Cf8aDOHgStR83n8fataVOMyA/AsJqk5ZEAg49YH+KAsZOVpGxWgjTMLvIgPVNv1z
-k/EXKC/Kw3fJMJjQRJfMxHYjX2Pye96MwTlKxu6LL5ISElUPMvkzV4v7nVUeUmSi7RjQYVvIb8mI
-Wz0W88TEcWkEb2Wr3PFLcDGhGfTu5lazzyXfY6tCJPzYiLO4Zf/8ijK2tOFdE3Gb4sKt6GbcVf4b
-ZVhB9aKNn12qXBMr9V2WBWITnfIh+IRHQ4ezpD0fwpv6WJ6GXLnHer38XJddCB3bjnLEwsqomp0x
-ECe4tPxh00dyrg6IB9LplxUqB7sO3g0PUykw0KxOq+kJ+9BIm2FiXaD0xq1hzYjdIUA9MXPstwrl
-12fn2BJ+uHkUlBQBOo0P3VV+g+Wi7jCCkhOpXh1XwioSThD3kvoziNe8OeYfAy3cVI5JKv4Qfe71
-74TsBqkwh/sxXeVRNN/pyFY0u9Op7+chy6WplYaIiAxHwD0aW+6ge0vzm82cCP29NEtWNJK6BeaA
-7dx/8r7RoIPbZrDjtZNdUDHDOgma/U2+rx+qav3JI6BduQyX5SyvEN1rCL+OYkiXFkdHOgczLeJZ
-K7ipjR7Z3ueW0dwF6tCkXraCq3d70nthAsnwvKwXGHrV01biLKI0rJUOhAmaDNAK4NHGRFcW/AC5
-IbB/A2oIPCgKrFsZ77zhyemtalEcriaSLv2USfF9+TW64jUt2RbfS9pI+cRIB0ge8lCzieO6XyVp
-rPHWHklgcpE6xg7Gk53GMXjiYy7o4EGdjyllFRwyc2x5UKZkhksLE2u4QpzE0h5t7HJYURQvgQMh
-RePlE6fCVfPtEK/aNKTuKm774lqJ/D9ZhdOBqKbaSQwzbF8CK7UKkPIAMGuJ2YyL6w3bxyj6bJWX
-3+1krEFcbBmH87YlfEX8ThTSMZgsOvp9bCZEgf1JklOw7pOCaXxU63eofq5/iexfs1cJjxeessss
-gJZBMY31eEzwVnpZhTXZk3luuhEZgDiqlZZ/TrE6ChcD1kcUSTeCPKL4zsCnMPrHSuFvxA2DAYAc
-GLK+bts1TqebSHp5pAmv1URkMXRNTxgDlGjQf7kmoD5grJEH+qKwn5N0bFtK+6Ecbfx+2urD0AVg
-9sH4drxMibJ+jM1pihxdOvwE3jTwaZw0vOrfCYUe8T6n2zR6li7E/uNtInMJ+KuYUFXLj6mJ1vQQ
-NU1dU9CtUeLW/qAH00kJXtXyI2ef7BUpdhIJWTpaIm4wWQaBDuO5Zx3Cvpz6DcQKLiNPqOqKT7xk
-CF54jWZgcW6J4yA8ItEzm2CpwiRB1ObYkmAHhPr1Xv7WFhdP12kUrVwuLD3qoH3G1axNt7I2bL5e
-ebRaLbJywz88N8aqS5nGD4DhjurBoH7YD4e5GZ3xawBM6EI8CV9suDt5kW6fsD/WPJZPI3LgOvGW
-5zRb2eohp1ywaQYC9SjtgKs8LX1x3su0zrEkAl4lRHL+29DlD8isvaCXTXUoE4FM8t5L9+6euxvX
-i1KXfvwOUqO5Jn3uMAffBkzyY49uMioOFbkACH7xNbY+wLHMU1eoDcddN1LfNfUTfoH5uEz1EAnD
-6tCRzlYq0c0LhXv1vac5rezKjkD2ibCdyG8AIUtbcowQcLmA6OtFOcALtzgb+A2sfvQF
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: KeyInfo.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Element
+ */
+require_once 'Zend/InfoCard/Xml/Element.php';
+
+/**
+ * Factory class to return a XML KeyInfo block based on input XML
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Xml_KeyInfo
+{
+    /**
+     * Constructor (disabled)
+     *
+     * @return void
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Returns an instance of KeyInfo object based on the input KeyInfo XML block
+     *
+     * @param string $xmlData The KeyInfo XML Block
+     * @return Zend_InfoCard_Xml_KeyInfo_Abstract
+     * @throws Zend_InfoCard_Xml_Exception
+     */
+    static public function getInstance($xmlData)
+    {
+
+        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
+            $strXmlData = $xmlData->asXML();
+        } else if (is_string($xmlData)) {
+            $strXmlData = $xmlData;
+        } else {
+            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
+        }
+
+        $sxe = simplexml_load_string($strXmlData);
+
+        $namespaces = $sxe->getDocNameSpaces();
+
+        if(!empty($namespaces)) {
+            foreach($sxe->getDocNameSpaces() as $namespace) {
+                switch($namespace) {
+                    case 'http://www.w3.org/2000/09/xmldsig#':
+                        include_once 'Zend/InfoCard/Xml/KeyInfo/XmlDSig.php';
+                        return simplexml_load_string($strXmlData, 'Zend_InfoCard_Xml_KeyInfo_XmlDSig');
+                    default:
+
+                        throw new Zend_InfoCard_Xml_Exception("Unknown KeyInfo Namespace provided");
+                    // We are ignoring these lines, as XDebug reports each as a "non executed" line
+                    // which breaks my coverage %
+                    // @codeCoverageIgnoreStart
+                }
+            }
+        }
+        // @codeCoverageIgnoreEnd
+
+        include_once 'Zend/InfoCard/Xml/KeyInfo/Default.php';
+        return simplexml_load_string($strXmlData, 'Zend_InfoCard_Xml_KeyInfo_Default');
+    }
+}

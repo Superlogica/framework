@@ -1,137 +1,464 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-aALt1G/tbt5shZemfWu=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Loader
+ * @subpackage Autoloader
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Autoloader.php 15508 2009-05-11 03:29:01Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Loader */
+require_once 'Zend/Loader.php';
+
+/**
+ * Autoloader stack and namespace autoloader
+ * 
+ * @uses       Zend_Loader_Autoloader
+ * @package    Zend_Loader
+ * @subpackage Autoloader
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ */
+class Zend_Loader_Autoloader
+{
+    /**
+     * @var Zend_Loader_Autoloader Singleton instance
+     */
+    protected static $_instance;
+
+    /**
+     * @var array Concrete autoloader callback implementations
+     */
+    protected $_autoloaders = array();
+
+    /**
+     * @var array Default autoloader callback
+     */
+    protected $_defaultAutoloader = array('Zend_Loader', 'loadClass');
+
+    /**
+     * @var bool Whether or not to act as a fallback autoloader
+     */
+    protected $_fallbackAutoloader = false;
+
+    /**
+     * @var array Callback for internal autoloader implementation
+     */
+    protected $_internalAutoloader;
+
+    /**
+     * @var array Supported namespaces 'Zend' and 'ZendX' by default.
+     */
+    protected $_namespaces = array(
+        'Zend_'  => true,
+        'ZendX_' => true,
+    );
+
+    /**
+     * @var array Namespace-specific autoloaders
+     */
+    protected $_namespaceAutoloaders = array();
+
+    /**
+     * @var bool Whether or not to suppress file not found warnings
+     */
+    protected $_suppressNotFoundWarnings = false;
+
+    /**
+     * Retrieve singleton instance
+     * 
+     * @return Zend_Loader_Autoloader
+     */
+    public static function getInstance()
+    {
+        if (null === self::$_instance) {
+            self::$_instance = new self();
+        }
+        return self::$_instance;
+    }
+
+    /**
+     * Reset the singleton instance
+     * 
+     * @return void
+     */
+    public static function resetInstance()
+    {
+        self::$_instance = null;
+    }
+
+    /**
+     * Autoload a class
+     * 
+     * @param  string $class 
+     * @return bool
+     */
+    public static function autoload($class)
+    {
+        $self = self::getInstance();
+
+        foreach ($self->getClassAutoloaders($class) as $autoloader) {
+            if ($autoloader instanceof Zend_Loader_Autoloader_Interface) {
+                if ($autoloader->autoload($class)) {
+                    return true;
+                }
+            } elseif (is_string($autoloader)) {
+                if ($autoloader($class)) {
+                    return true;
+                }
+            } elseif (is_array($autoloader)) {
+                $object = array_shift($autoloader);
+                $method = array_shift($autoloader);
+                if (call_user_func(array($object, $method), $class)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Set the default autoloader implementation
+     * 
+     * @param  string|array $callback PHP callback
+     * @return void
+     */
+    public function setDefaultAutoloader($callback)
+    {
+        if (!is_callable($callback)) {
+            throw new Zend_Loader_Exception('Invalid callback specified for default autoloader');
+        }
+
+        $this->_defaultAutoloader = $callback;
+        return $this;
+    }
+
+    /**
+     * Retrieve the default autoloader callback
+     * 
+     * @return string|array PHP Callback
+     */
+    public function getDefaultAutoloader()
+    {
+        return $this->_defaultAutoloader;
+    }
+
+    /**
+     * Set several autoloader callbacks at once
+     * 
+     * @param  array $autoloaders Array of PHP callbacks (or Zend_Loader_Autoloader_Interface implementations) to act as autoloaders
+     * @return Zend_Loader_Autoloader
+     */
+    public function setAutoloaders(array $autoloaders)
+    {
+        $this->_autoloaders = $autoloaders;
+        return $this;
+    }
+
+    /**
+     * Get attached autoloader implementations
+     * 
+     * @return array
+     */
+    public function getAutoloaders()
+    {
+        return $this->_autoloaders;
+    }
+
+    /**
+     * Return all autoloaders for a given namespace
+     * 
+     * @param  string $namespace
+     * @return array
+     */
+    public function getNamespaceAutoloaders($namespace)
+    {
+        $namespace = (string) $namespace;
+        if (!array_key_exists($namespace, $this->_namespaceAutoloaders)) {
+            return array();
+        }
+        return $this->_namespaceAutoloaders[$namespace];
+    }
+
+    /**
+     * Register a namespace to autoload
+     * 
+     * @param  string $namespace 
+     * @return Zend_Loader_Autoloader
+     */
+    public function registerNamespace($namespace)
+    {
+        if (is_string($namespace)) {
+            $namespace = (array) $namespace;
+        } elseif (!is_array($namespace)) {
+            throw new Zend_Loader_Exception('Invalid namespace provided');
+        }
+
+        foreach ($namespace as $ns) {
+            if (!isset($this->_namespaces[$ns])) {
+                $this->_namespaces[$ns] = true;
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Unload a registered autoload namespace
+     * 
+     * @param  string $namespace 
+     * @return Zend_Loader_Autoloader
+     */
+    public function unregisterNamespace($namespace)
+    {
+        if (is_string($namespace)) {
+            $namespace = (array) $namespace;
+        } elseif (!is_array($namespace)) {
+            throw new Zend_Loader_Exception('Invalid namespace provided');
+        }
+
+        foreach ($namespace as $ns) {
+            if (isset($this->_namespaces[$ns])) {
+                unset($this->_namespaces[$ns]);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Get a list of registered autoload namespaces
+     * 
+     * @return array
+     */
+    public function getRegisteredNamespaces()
+    {
+        return array_keys($this->_namespaces);
+    }
+
+    /**
+     * Get or set the value of the "suppress not found warnings" flag
+     * 
+     * @param  null|bool $flag 
+     * @return bool|Zend_Loader_Autoloader Returns boolean if no argument is passed, object instance otherwise
+     */
+    public function suppressNotFoundWarnings($flag = null)
+    {
+        if (null === $flag) {
+            return $this->_suppressNotFoundWarnings;
+        }
+        $this->_suppressNotFoundWarnings = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Indicate whether or not this autoloader should be a fallback autoloader
+     * 
+     * @param  bool $flag 
+     * @return Zend_Loader_Autoloader
+     */
+    public function setFallbackAutoloader($flag)
+    {
+        $this->_fallbackAutoloader = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Is this instance acting as a fallback autoloader?
+     * 
+     * @return bool
+     */
+    public function isFallbackAutoloader()
+    {
+        return $this->_fallbackAutoloader;
+    }
+
+    /**
+     * Get autoloaders to use when matching class
+     *
+     * Determines if the class matches a registered namespace, and, if so, 
+     * returns only the autoloaders for that namespace. Otherwise, it returns 
+     * all non-namespaced autoloaders.
+     *
+     * @param  string $class 
+     * @return array Array of autoloaders to use
+     */
+    public function getClassAutoloaders($class)
+    {
+        $namespace   = false;
+        $autoloaders = array();
+
+        // Add concrete namespaced autoloaders
+        foreach (array_keys($this->_namespaceAutoloaders) as $ns) {
+            if ('' == $ns) {
+                continue;
+            }
+            if (0 === strpos($class, $ns)) {
+                $namespace   = $ns;
+                $autoloaders = $autoloaders + $this->getNamespaceAutoloaders($ns);
+                break;
+            }
+        }
+
+        // Add internal namespaced autoloader
+        foreach ($this->getRegisteredNamespaces() as $ns) {
+            if (0 === strpos($class, $ns)) {
+                $namespace     = $ns;
+                $autoloaders[] = $this->_internalAutoloader;
+                break;
+            }
+        }
+
+        // Add non-namespaced autoloaders
+        $autoloaders = $autoloaders + $this->getNamespaceAutoloaders('');
+
+        // Add fallback autoloader
+        if (!$namespace && $this->isFallbackAutoloader()) {
+            $autoloaders[] = $this->_internalAutoloader;
+        }
+
+        return $autoloaders;
+    }
+
+    /**
+     * Add an autoloader to the beginning of the stack
+     * 
+     * @param  object|array|string $callback PHP callback or Zend_Loader_Autoloader_Interface implementation
+     * @param  string|array $namespace Specific namespace(s) under which to register callback
+     * @return Zend_Loader_Autoloader
+     */
+    public function unshiftAutoloader($callback, $namespace = '')
+    {
+        $autoloaders = $this->getAutoloaders();
+        array_unshift($autoloaders, $callback);
+        $this->setAutoloaders($autoloaders);
+
+        $namespace = (array) $namespace;
+        foreach ($namespace as $ns) {
+            $autoloaders = $this->getNamespaceAutoloaders($ns);
+            array_unshift($autoloaders, $callback);
+            $this->_setNamespaceAutoloaders($autoloaders, $ns);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Append an autoloader to the autoloader stack
+     * 
+     * @param  object|array|string $callback PHP callback or Zend_Loader_Autoloader_Interface implementation
+     * @param  string|array $namespace Specific namespace(s) under which to register callback
+     * @return Zend_Loader_Autoloader
+     */
+    public function pushAutoloader($callback, $namespace = '')
+    {
+        $autoloaders = $this->getAutoloaders();
+        array_push($autoloaders, $callback);
+        $this->setAutoloaders($autoloaders);
+
+        $namespace = (array) $namespace;
+        foreach ($namespace as $ns) {
+            $autoloaders = $this->getNamespaceAutoloaders($ns);
+            array_push($autoloaders, $callback);
+            $this->_setNamespaceAutoloaders($autoloaders, $ns);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Remove an autoloader from the autoloader stack
+     * 
+     * @param  object|array|string $callback PHP callback or Zend_Loader_Autoloader_Interface implementation
+     * @param  null|string|array $namespace Specific namespace(s) from which to remove autoloader
+     * @return Zend_Loader_Autoloader
+     */
+    public function removeAutoloader($callback, $namespace = null)
+    {
+        if (null === $namespace) {
+            $autoloaders = $this->getAutoloaders();
+            if (false !== ($index = array_search($callback, $autoloaders, true))) {
+                unset($autoloaders[$index]);
+                $this->setAutoloaders($autoloaders);
+            }
+
+            foreach ($this->_namespaceAutoloaders as $ns => $autoloaders) {
+                if (false !== ($index = array_search($callback, $autoloaders, true))) {
+                    unset($autoloaders[$index]);
+                    $this->_setNamespaceAutoloaders($autoloaders, $ns);
+                }
+            }
+        } else {
+            $namespace = (array) $namespace;
+            foreach ($namespace as $ns) {
+                $autoloaders = $this->getNamespaceAutoloaders($ns);
+                if (false !== ($index = array_search($callback, $autoloaders, true))) {
+                    unset($autoloaders[$index]);
+                    $this->_setNamespaceAutoloaders($autoloaders, $ns);
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Constructor
+     *
+     * Registers instance with spl_autoload stack
+     * 
+     * @return void
+     */
+    protected function __construct()
+    {
+        spl_autoload_register(array(__CLASS__, 'autoload'));
+        $this->_internalAutoloader = array($this, '_autoload');
+    }
+
+    /**
+     * Internal autoloader implementation
+     * 
+     * @param  string $class 
+     * @return bool
+     */
+    protected function _autoload($class)
+    {
+        $callback = $this->getDefaultAutoloader();
+        try {
+            if ($this->suppressNotFoundWarnings()) {
+                @call_user_func($callback, $class);
+            } else {
+                call_user_func($callback, $class);
+            }
+            return $class;
+        } catch (Zend_Exception $e) {
+            return false;
+        }
+    }
+
+    /**
+     * Set autoloaders for a specific namespace
+     * 
+     * @param  array $autoloaders 
+     * @param  string $namespace 
+     * @return Zend_Loader_Autoloader
+     */
+    protected function _setNamespaceAutoloaders(array $autoloaders, $namespace = '')
+    {
+        $namespace = (string) $namespace;
+        $this->_namespaceAutoloaders[$namespace] = $autoloaders;
+        return $this;
+    }
+}

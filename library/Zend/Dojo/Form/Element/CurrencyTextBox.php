@@ -1,35 +1,120 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-XSKAPr88p7jJEp7C40eTMXaVKhKrk0aNgPCHVlW=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_NumberTextBox */
+require_once 'Zend/Dojo/Form/Element/NumberTextBox.php';
+
+/**
+ * CurrencyTextBox dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_NumberTextBox
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CurrencyTextBox.php 10079 2008-07-14 10:56:37Z matthew $
+ */
+class Zend_Dojo_Form_Element_CurrencyTextBox extends Zend_Dojo_Form_Element_NumberTextBox
+{
+    /**
+     * Use CurrencyTextBox dijit view helper
+     * @var string
+     */
+    public $helper = 'CurrencyTextBox';
+
+    /**
+     * Set currency
+     *
+     * @param  string $currency
+     * @return Zend_Dojo_Form_Element_CurrencyTextBox
+     */
+    public function setCurrency($currency)
+    {
+        $this->setDijitParam('currency', (string) $currency);
+        return $this;
+    }
+
+    /**
+     * Retrieve currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->getDijitParam('currency');
+    }
+
+    /**
+     * Set currency symbol
+     *
+     * Casts to string, uppercases, and trims to three characters.
+     *
+     * @param  string $symbol
+     * @return Zend_Dojo_Form_Element_CurrencyTextBox
+     */
+    public function setSymbol($symbol)
+    {
+        $symbol = strtoupper((string) $symbol);
+        $length = strlen($symbol);
+        if (3 > $length) {
+            require_once 'Zend/Form/Element/Exception.php';
+            throw new Zend_Form_Element_Exception('Invalid symbol provided; please provide ISO 4217 alphabetic currency code');
+        }
+        if (3 < $length) {
+            $symbol = substr($symbol, 0, 3);
+        }
+
+        $this->setConstraint('symbol', $symbol);
+        return $this;
+    }
+
+    /**
+     * Retrieve symbol
+     *
+     * @return string|null
+     */
+    public function getSymbol()
+    {
+        return $this->getConstraint('symbol');
+    }
+
+    /**
+     * Set whether currency is fractional
+     *
+     * @param  bool $flag
+     * @return Zend_Dojo_Form_Element_CurrencyTextBox
+     */
+    public function setFractional($flag)
+    {
+        $this->setConstraint('fractional', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Get whether or not to present fractional values
+     * 
+     * @return bool
+     */
+    public function getFractional()
+    {
+        return ('true' == $this->getConstraint('fractional'));
+    }
+}

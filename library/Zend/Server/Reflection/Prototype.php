@@ -1,29 +1,103 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5FYAcDcDKc4UN3yD+i65J6KYlfeFwnGi5RQiYyfEmM9W+tYhmIi3WqAabw+edgiF+foB3hFB
-POnkKLxOOjrRy+t6h+0cr8QQNJDZcALxVU3tFKXFLQR/ZzgGcGc2HNkRaaYJig4alnKiP22a5o9F
-m2YqMUHi8nzsS8K+eP5lP9lo2Ovs1417DhTmvAzxwFAAqHxkw4cDkygWb2zgLkIumiNgz+ShuhUU
-QwVtbSpEAEBZ/3PE/fJNn4kJIPpDKor7T+KlBeH2Q2Pef95kc4DFMdmQDTL6HG8RfaAfRVo7STup
-VP3FdejJuJ/G/7guv3994X/8aipYM1wPbpMh3hEOXWBwbjMLbId4+L/7RiWa6mt4rK2E0WGSpDiv
-VZ5zK5u168I3UygdJIP/oMygQO5dGq/wEJ7KUqOxYvIHsWR8w3XNXnowaqsReLRYPv3v2Q/TY4Ng
-DYo+DsjeSnSbjl/BVCQGhmKe1VSBi8uxR8YrqeuqPw+SM0H9iOVM2sxn7zsRnWKE7Jx0RsS0hufV
-Dc9TlNc52YD9FsOmrBi92HCtiHGunHw+p5cbkGDKfeAWtBA5/9y9XnIyPXDgYjhnaxjvKXJbqis8
-Y8C2iHm9Ow7QX5SjOYJngwc1SrIWGrXFHZJ/P8mpof3CSLelr9M/NGsvP4YlKbnHLWhlGuiwShnq
-P9AS1fBeIamR0e8IQfBjhwa5r0zE6qtSA4GzT+tSfYhOI5/vfPP1IRXUfgjWQX7j4h6S1Qcnz0GE
-qqaJCQGYlB/6OoLrqzpMMn5ilr+Df+ukjmaW2hy1tBkqrms84RUrnPswcDsZC3C8GPrTgeUMp58r
-7GcGKrQ0DZFk1XMHvwPQx2+F+5bzMmvM0SXgg8mhUxKFA7D0Mv4Vs1fUMuflqH26NfMe5CHBiMYX
-Rk7oDb8Bb7uW6OEe5a7f6fVqOwL04OmdDQGuaew3IUmFmfnjZoGZmU9Q7Az/fdBDK3hWg0462V/c
-JMkzZ4nIQ7GmIgoBly+Us6lIaAb5kCmNsTz02Z/J/aTWiI5DQr40C5r7diIkiEXMUSJ2Bb9MO+PB
-feb5uA3wgkkvjj0QV3PL46RcRYirrrDsglrzm6ydC09O2I4WzF3pNqLRJa3gBZG/4xWRDKWwmL0K
-Z/ES8fqlmhIvwde2cI81DRpSdSWqZQb//YciMTBZhOM1YY5g52H2Rp3Fm2ov+QytL2IGBK9As2GE
-Ki8CC5rVk3QaiKVRgsRd027K/Q2DLEQiz+o12+YYKp80r3sBZIcH04JV8apLDEDd6KbD7l/IWsOd
-fn4KyxWJYcqY57zU/AJJs4Sn6zpHXxDAci8/OsKOlMpS8A9RTN/UHTKw5KP+8HdUTtxrYnSodltK
-Z8ELyVj6SRQlQrM4bphG8cA31WHhwPb1ZGeTH1Hk/ADvFTzlXhKHNGXr/LXkEMATsgne2d/zoMrS
-rW/jRBu9pIhS2ec7bvyt59kMBVA8/c/QHeHDThUrgMrhWU3Z4oPfTE/qm0niJiPlMgMwlTxHTZ4I
-cPvTMXilIOTRlCy7/EkLJBKmjaQ5dTLcjrxato7J22gXsq8sKwm/WGreBgWWT8NOQo+fb94YPvZj
-abJ5jTxqtj6ZHYW+KGEm5xxH+cchoL0ziBKfXUS5iFDcguCCG3yuCkQynf+nA/ErO2OmOB1iLacB
-UWOjdGdpbtIw0XCrIA0eWifCfNBP7nfaoXJdIzj53ePgBxwmL/4UVItGl4vG0fOsXYn7Yxz5qm6G
-uV88jpkCBK6arKJm8rwQXfTLVgan4jZvIeRVRuWaVXszHD/OqyPoOKIWlNVveBK5FtOt2NkW1fKZ
-xAQRcayvBqXPGhz4U/cLyn+bDAjCFo8pgSWWAK4qjW5gDLrAfQfp0fSn2Uot3ph0vIyQa2siZGWK
-iBzJAcwR86SRMHlnRUGaimGCfMMmQq7g70==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Server_Reflection_ReturnValue
+ */
+require_once 'Zend/Server/Reflection/ReturnValue.php';
+
+/**
+ * Zend_Server_Reflection_Parameter
+ */
+require_once 'Zend/Server/Reflection/Parameter.php';
+
+/**
+ * Method/Function prototypes
+ *
+ * Contains accessors for the return value and all method arguments.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Reflection
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version $Id: Prototype.php 13217 2008-12-14 11:09:37Z thomas $
+ */
+class Zend_Server_Reflection_Prototype
+{
+    /**
+     * Constructor
+     *
+     * @param Zend_Server_Reflection_ReturnValue $return
+     * @param array $params
+     * @return void
+     */
+    public function __construct(Zend_Server_Reflection_ReturnValue $return, $params = null)
+    {
+        $this->_return = $return;
+
+        if (!is_array($params) && (null !== $params)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid parameters');
+        }
+
+        if (is_array($params)) {
+            foreach ($params as $param) {
+                if (!$param instanceof Zend_Server_Reflection_Parameter) {
+                    require_once 'Zend/Server/Reflection/Exception.php';
+                    throw new Zend_Server_Reflection_Exception('One or more params are invalid');
+                }
+            }
+        }
+
+        $this->_params = $params;
+    }
+
+    /**
+     * Retrieve return type
+     *
+     * @return string
+     */
+    public function getReturnType()
+    {
+        return $this->_return->getType();
+    }
+
+    /**
+     * Retrieve the return value object
+     *
+     * @access public
+     * @return Zend_Server_Reflection_ReturnValue
+     */
+    public function getReturnValue()
+    {
+        return $this->_return;
+    }
+
+    /**
+     * Retrieve method parameters
+     *
+     * @return array Array of {@link Zend_Server_Reflection_Parameter}s
+     */
+    public function getParameters()
+    {
+        return $this->_params;
+    }
+}

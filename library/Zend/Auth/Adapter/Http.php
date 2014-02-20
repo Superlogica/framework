@@ -1,273 +1,847 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Fc/TrlkDaoTurpYU7kNeTJcRvaEMC5hPCe1ryPpmm57tfVEe6DLgp8ds9XQ0NVraUvo6tYI
-/aeJzJVqxi5JG6AIg1sB0DoNM4UDfXUZzQjL/hu76+cBCFl0CGvEA5nakGnw3gJ+kYvXt9y06zk6
-3oMEybPgslAUNcfSKYAFmCbz0c3jMZ/2PYPxHesQocgxwges0ZU+p1D1WUSeK2woJpi2qqfaxBAO
-KyuKZia4hsPvuP70xzePtcZ4IvD9dCrJBKTtvIykX49eocEDHipXvKDSUYmlxOvGg7QdnAgMh5pj
-H30qwyS7BPnENpXFNTIphgwKN/FlfexaoZLyQzofvmOCKZ+wUAhx4Xr+nyz87lyP/giDuqr1YWfR
-Sj+EP/qmj/GA3aSK+Qxj6bwksMi2URsezTNNLyEr9gdgvc80jStQPurqKqxbmAMlU0+ewsdxY3jP
-/Mk312QqbQBIYo24dEhQdoV9jzSLRNv1+Agcj/5m1csFZPX0EYE0sDt1H0VUhukMc01Ncw63A4Ja
-HVgF4F/5gTXeG/20hq50Ak36GQQoBlwHKqvf6CCdsPFSlkjKARWB/LjVIx4XDDOhfvWNUaZqm4NX
-7hnilI/nnNazkk427Xvrt9c46YsCgsfTV/+J1Z0ZtoCmEJZAoij4prrT8Rv133QMw+/nV9mjzp++
-ZjKGbgTejROq7ExYm7LtJfSziHbFru4wGTTWbGFISnXftU53lQrLYJ22nCgbRdVDEs0DOZi0z43Z
-/sSfBuS0nzZQT0mK06u7fQqihl/e0l9qecZpvUEdYb56e0X5WIqU4kUKviV9BUT2SJGgwlcMMm9V
-E/Fk0Vy+a8J65f2DZGaIIXeuCHC/MsdJ56Hw2P/cNeFBScHttynegDjJs9uHTJQtq7PSsOrb3XgU
-9CeV4wt0z8dIsA7FgN3UFerGEV0xevp+bpEoiMj0iMrbt0Hal8Ape2KFJOF42u7ZqY3fK/OL/wA1
-4WzspSTjY8BoPD0+dGHxd7tazTTHfrrabE68LABYJCiiq3O432ghi3YEBWJqUQzwiuiHTYSPAhez
-+DZqX17hTs+FhVKB1Ne1C2b9nYhYa+gXt6IKSsGwCaP+B0xCJmJgmHc6BZBvZwCnMXYHNAm2BcTl
-wj+AJEeTZps5A8+3+KquAq73wrA6fgrhA2wkYpvoi2z53Rh8s9XKm21SlsOmSoV0PmgXXFdIQZdD
-7H4psDVjn3KR6+/XidfAhy7KqQG0XEMbHxC2e1nLWVwS/H7pkvF1lwOzaDc/nFXkgHXJZUYY+DUy
-2a3aBmGMwf095MzQEWw8egYsB759cq1d7tvwJMwQCfyoPYWN/RLfn0Uo2e44967RpwadtjVxcIFe
-5dqdQwfe8gXkk3zxLTneba5EWPjIXsB2Gxrrazm0WuCRS3AXvDDuDkT2jB6nanGjcn7sTptSfvTP
-IxwwjiMDiOAte44JzqQfBnXFrTLPcnAfIQD2uveFCOgxfSYUY5PV2kNq39/b8aJa4KWpJgBdj2cf
-QrToCLz7t+ntlaJkfYFu58KzG2IY7WZBS66065gL6f1DdxXGfq0JceFG/Lt+Rf+JiLSHLUZIN9IB
-wh64lsgTbcsQXb4vvC2rYQxcx6+M1m4a8KvAnmwOyJq+Qqqir4PmqAcAiRytbhNBXv6+OQUazYBn
-rkVdL35Vvdz01gJ+rYuMP/GttGf0tz59LaUP04/dTHMoqPRCwjgvBD1ppzmluQo4zpFDc1BPb9Tz
-pQW4vxVzVBa2UquHqbXE3gYQAIocYrZovjufQG5lS1VSp04+JdV2TkycpQNe9M/xuQTqRdWJhiQ1
-AtUjfwOruxqr2l54UOovRNC9bHUcCzBhz6ai3HvsxOdo2jXRE5x5sefK4nWkPhfREucClAbjresz
-JZrZU+sJIfiDS/Gg3Ow32FJk9gStHV/ixGv4tGApN2JJ//lkyw9j1sMWTb/xIy8TLeZDXQX4pI59
-+vAS385oJbHhSCKLm6uciAq6/Uvyoo/bJ6E5FpBcifk+3ezg/oKmrjnW2C476By16u7engh2JvIZ
-av+a6/mODJXGKPd/UA7YQFHVLvm2GMDAbZZYbcstGZ+bbp+NpCR7KvwVdMKJg0ATigPsno81CRyz
-kMVYmA/p7pdb8obWqojcwSMjYLw6lLcBKcRoCeWw6rsRIlZgFtDgTje/o0D4GjPwi6ipcuyKXipI
-FNhvINDG6r/0YTtQx6GgQO9yAwdfkgePmqI3WQrTKyiv72AdfGA3Sj7idnTGzg6/P7y7v+aWowOz
-X109IsvRiKIy7fGgYFofq9iYnGDkdqhCLwcmsuPMubxzDZ/StNaV7kePvW6WyqanUtTqj6znVYrH
-tnEHjszGNK1W0xUZuRZWMpVGNkEGHyFuSC2k2IL7ykLA1Pzf0M/O64TATXtQyMGroQ3cEThgd7VN
-ysm6f4ylmezkymN6bgTudUXZMc2ig4ypwm316dEzJWeT/11yhGfqzaR7svpxYCX6W783dXGvZV9K
-VBwhZnJ57yAoVuKgJ+Y6jgV8Y1dsvb0zmbs47tQPYVp8/7PNgH3D0H6A0t8sFviQ7qPl+OKW+hVg
-rl65b2H/NdfZuttzPzuDWhu0Jawh+ZQbZD1r1XT1WTMJ91YZA4SUiFYntqN4seo8R0faqifO5e4u
-aq4T9AHFDYSOXDRHV25hgXZTYgXovEo3OrbcwPXG+oRtSVYqdGUe11AU4fw5eu9EyqADVqGhWqrl
-m8g4nGqAxxf98ol/jLsB6Or5NQE4eackcUfudMtfcCLHjkYlpIFM8CJxrdoPgd++pxL2E9Xh4vd8
-90+xCJT8TmrYafzJC3uAEWvZBw6ehHS3lg4FAzqQxm7HIMMs9rTGR0hgXqH633ZHCrroLZcTg0T1
-aUN2uJ6/ft0SoNlRkeahaoSDOK5ay0Oi3iq8qgZJqVqoAVPI4jt2qnA9MFrGiRzv8c+BuamjC+PT
-zpFeEtMY8cDun7nKdIyAFPLpA6Yt429E6WeqUDtfmX/2eY/B4PldbzdZxd4+YE7F2DVDQsU0gd4e
-PtuAJESByr/Ih0pBPWWvfXxrDQ5q/nnPIocJjo5ILeTYzJ94ylevc98MKmBrv25LIKOp6+Sc7I3Q
-RyTJ3f1kuT3w89wkYuRhP3zK2dWXmM12Xmp31Ke+Fxn6zj7DDfBSEQBQdWPqvIsGwvuD5Oc21kQ6
-Dvb5HPKFi4h8lhrH82C5Maefiu/t5HsQwJMDXLBB4wJS7v3334bE5eAYuBUzZQSqV6LjnFJ9i3uw
-PrmnSaAfyCwCaeKm3FxpjJ1lcJqJaoypvAc3VEtosfhTzd0UdPrASpMuFe+WaYklU1jKnAyiGRTq
-k2Ey9CVWo6PAwiTKSGlMwzYeddPBCc9/kJv9j/0Ohsv0DL6qKyPuMm6Nkc30W3EYI38w1EGMoPzA
-0Gx6OoWorAES0AwUnA85NyeHCIZ8VH+Z87ZG+0THiyMyCcVE4jJ8geSBuK0Ln8J9OhMWhPBl3iHG
-mIbm0BMHBAH1czN+4KxzZvkPN8pmGXSwOIIcddSUTRZsJb1m8sv+kH/uEL9bXFk4ZDNxmyCxURN/
-d3s+MjFImw0sgfZC+uqzhHzo4nndAvxkZGA4CasRGjncjOGqBWDW381ZcB6IMrN5wDeUnQu3CTeJ
-I+rnMF7Ko5D8gKcXhQemPCNhwAOWBaQUreSH8Px2cEelO1iHE37DI+IdktH2j8pfzp99imWxeGcm
-Ha/vBXjfp8AL2G7nXRKGi7/LTJehT+MbKl/FfpHveaz/V9WC5BjPWIJ7oYYt/QEDJTXhJ5NnsmzD
-76juVW+zyDlw48S630GYxg/QGnTmjKQaPJN1VOyEkKbfg1wIxvEB6U39AxVzGAmAYVbMINZHP4tf
-qil7MSynJlVWoga4UQMHGHSivA5pbZOlItriu+M2wqEhk3zvzAIO43w1RAkyulAZa1xMScqwhNcY
-un5eMum/grYAbKUQ5fXmq0db9j6RnGkQL5vKtvPHtQYLB2dsmpJAwWNSK3RSzz4S6qUjLQKgH0i0
-372wdW5r3Wx8L3VkErHDIRfRPizEomWN9ObUnSCdpCxPMRI+RwfYokn1UiWSgiHyI1rd169AXuHN
-6zAz6YBjJ2kPUD6dBkIyiYMWhRO2lIStYNSNO6jbRNr6v7Ji2NGIFxz2ijg+oYLn3AkPwPR/nMa5
-WgiJ2v0PxZg/qQFjl5FSdssbSkT1nOsm6OyMGkPRgVcMYSCVe1SjRHd7LEQCtIeBnF9Ny0bGAf2h
-gPgEeOxi3ar0tp1WmIZLCECjHufOUtU7xgHDH8dN1aRIe/pui+ZqMVrDvQJp/qad4vWX8d+h9hR6
-PR9EYXgPv1xVU0dmVHzMQDEtTPB8vKB68Hmx/kqzVKnts4VZT+ARRUrl1UASaAADGGsGbxVGp5YF
-QSLbphQlOPEp804N+zUsjczPtPO4hSlM+9ngiHBUQ+lOvyPPaPeYulZkYWZLd32Syj0ETFSKh0Wc
-0S50HHcN5dcERFGnUotOw7kT9WRMyXbTQNyPaCQ3HNfVGLpaJcRGO6DhZR23t++2yGsFojHARw4w
-OP69N62c28dvExzYSuGHZErtaqFri66w8IEyFTOiwTnYhyfpZqomrw9iYq9RGzxct/Go4XPU+oeo
-kQzae7IhbjoEOi0Fyks2LyC1cmTLTbBMxV2VZ8y/HdzzfMnV3wiYanK6W6t3g76ITFMlfikkrlU3
-ObHafo8K3YUBhT7h4nJkNxouquLNSA2/aaue8DDZEzMjpTbURgW/I6ZI9n0UGM9OCr5x/W/bQyds
-omwOQVyNXI+3WaJi2y0nlR+FkaX6uXrSKQeB/bSDT28tUXIfiEljZHM7igfjSyqGAaNPt5sQEnex
-kSiDZE1T7vF1M1kQl0O5vSWopEtxflK1rocoEwJP/oSJu/7mTJFGLIE9t8zOCKyUtGQmDgTTD8p2
-ZwxTVwtOz8TwfMPYUJr8qHctbcU3D4xznufnLGXpaD8QEfiv54hbBAyrcrXKdA+YBYiiZKgh8xDr
-hB1/oBmM0EVNickf28SWVXU40XYJdVpepE+XeyDLdR11W46q7e7a6PL0wg/CY/zA7IH3bFQFHVE7
-Pc6y3uvrldYSryBXnDbbOKJc3ZBBZMl9Wik76yBLAEu8Jzs1+4pQAFcZTOckgqvRdZ7lqXoj13hp
-mfv+MwVm+scIIDyQe8yk7AyWZxgOiW8E4MPOVCgp+mEtO3RvTNzJvgxNSd9CnDa6BM8Gag2QiB+8
-Nf5UPgu7ZtopoDqbEfECk3/PUvBlUSNTZhCY8p4Vy5y6eIvBvnpidvFFnssrS1SLfuhedu2kVc4a
-vyYuar1jbVa2qB9iVaJsfhQEm2gsp/gR1BRLRhSWnFHZRPi0fb8cXqDx0HT2dGaANLkbyPuWxOY8
-/mIFpWPZv6aw2n9wA/geiySCCoM7YYtkRYGQoObZdQf6RREjImCL1WiSgwUGYfTWQ84bQ9g4AIbk
-HBUiZ6UcGov1/vx0x37HoC+PSZyRzNA28nV8+Z9geEsat+hnlXJQcAVvjjpKPBekV4V8BpIIO7hR
-trdeYK2yrxmFaPa1TmeCyvoKLK983DrFf/1Ty331GXlD2ops1/XSSixG3lJGtToanLW40Ig2qfkN
-LSemrRywvWCvatbFCkuayVikyLZ95dw3GKgV6fRVeiegkIw+WmU3brs+DUOo7CrLk59CEzpXBmcP
-jNRDgnAZY+9HcDga9jrBQvH/2o01OsWxQexr746OJc/sSZgktG5gHXqMfv0xk4Esaaj42rR3Q0w+
-wQtauPszWYrPUbcM9u5GL4O/1bnf+6w9r4ddpUT8vbngR1lV1trxbMniYo1Pq8wb5yJ5b1qkGip7
-AX1v8d+0lTWprJ0dhkg8QIUizvqt1XG4HRAiw4ltz73TxEOEVszXvMFxdb7YIIZxnhKcQ8h1gWIV
-dXkKVRWOa46CEEXtSbMM/s6WW5rnU7wKLeSnMz+ffTRABnSrn1iGgYDjfNI0sOoUdGKsWohSONsF
-dNMzLeOd14+T8j0DKGNDvoZiU4s1CCxh/tHwZaJBcgkwytx0uDCdvs04ji+IevVyDOVNerizBS0n
-jBkMLyL9kkYUVFF4WEQFVeuhzk7BvLee+CmrLWsHEteMDuMJrTYExZU5vR6y9kY9++Cl/Dn73uZr
-d/D9Yc3+m3atR+ezP4lE4m6yR25IXgiPHb2jgqBef3wjAl6xkzmiTmrIrCDvWyJCZP/DxDwXG4Wh
-Ts6fhA3Qwss24DJ19EVAa0e9KE88Ymo/RP+urfLQQBM452mwwqnynxIOW9ZH9wN8Mt84VNcpgyfg
-glrN+K8n39e7dA8CrTuXaD41XrloS0oxPri62NDewBYKDsZXKup2PLYLWuTv/cRDGq6/Xq5sme2k
-neP5tO+6VWtR+I4gjmqc/RFk+hHzUFqmkt5AyR45rKwFgBevAfQp5pJG388hmrFVQT7CUqSZIMyY
-GIlwbDYPeE59XOL7vGjzXGz07oCRam/2t5rLxW9J4MfCh/hiO3vP9waVXxUb0/trI/zH/ofAtduM
-KM/Lkap+5bsiTYfTp4gzPSpMSSnmQhI2VyQexoN4OS79dGstw7G1Fu0hcXYbKq+33Q0VjedpHfzQ
-NPRJGtKhIs4brEifJ7VLYPvUzQXp/vtCVAKI4jmGb8gtUTAwCiaLbcg5domtafflsKDQqDyKLg6B
-agkSuc4FiXrVTF6T6CI601jsPBZv03VY8mEsji91bkviokGkVImkNxb2ak9Kgu6SkTmJEcaFCuDh
-LBrWWGfrxW/T9TgRWWS8bCYh9oeCQxzh4ku5iHsF2/C0HMv5TaDGdolPQsebpr7fl9DO9DLbLLEN
-CuMEMbjUJX8aWxBB4/uU4skXInwFGZixTnrZLGl/Lr5Jm1JBLMpyJEXO0tqC7PvkyGhXhN0cNBJA
-PAr2TWmS05nppOLUY8325DjAd5CGKSZtLC0J0S2JkOkvIoMwBsYYQhS0tblJxvqqhZkMQbIVhnig
-uTnqdqIdQffi7hEaUsOxYwy4cs01RmUjR9c98aHq2dZkY8UlMtWFvQMjIFwbP3tKAinbHdI2p9/v
-SmqI6ueQWbl3mOzrJCzvTRX6u2NW14RUIjKr7MSzlHD8Wkxg/2fZrp2XWsX8qyqhxKyiOaoZc4Gz
-GmlecO6HsPvAiI7Ngvb97zjgjI2MyFPczziLBULapQHdcbkTfB06a4MIhPo1cG8HmHKJhj0PyqgI
-m/5s7oCRtY7MMq2E4OFDKEvAzRq32947I9uztEP3EB0ZnsAvWSDujPz+LW7kbkj/sHLZ0B7/o13k
-wBSQ2IrBScZ9lCHChaBm+zh6Cybg6P5i0cHIcymWWF/I/oJMkgKCnF1G5WsJFGS8Mu3LK2VeHNLw
-GiQNYseazAxuq4Yegu3Fu2ZBPSJ5JTT6uYIinWUpSvQD/fXy7ntTwk62u7kyam27Vyf9MJjTkwuA
-V1DadL8bRb6jrl2TaO1xC7fiZoTrl7SRCqsEcLNZpoAmOPS8/5mY8QxFmXKRiRGC6kTRVaVi+mMl
-nEeensWsdzkZQd61abwK5yOZgxpmI5RsG06OCmQFuNEGcW/3GB0H/rmSM4nLqQK9fT+ZUdKvLDty
-qb/qbqIdXGP5XmdnzWHr1l+TYvZYgDBqL65xMylofgwzngH3LBCUA+/KG6NN4oPi9CpFsyjkUq3I
-c199AuN4QoC73hvuOYaISda8CDz5qBzZLbkt2+1tOVr5STRr8fELwjHX+YieqoDQT6Ai9Ha4VtZe
-rCvWZYTX0b40SnX/5YGRcscSP6iVffafCiBLtPvg105SyXHUs6SRGag/YBkfyVXhC+pyuEi2s871
-mHIRM2LVc8kC9mpgNmAmxMC1Xf8rj4MtRSq7/mQe7pf0leYkm8PS70FjIGDgZgqGe6B+1mWkhTuO
-C3Z4fYoTqrwpMX+E1ClrVXf3Zr/9TWWKC/B4eiFEkUAJCyiuNgHikknuMvBGGx4t8iI6s/OoWY3O
-3kZ5fPA/3wF2z1tUct1wHoqQbWx4Y1Pb0U5J1LdbtKzx6pD+b4HX0nBK8KmCNaM/GycB76LAuIfn
-a/Um9Rir3YT5u8EGIw/XC1w+wGYfYWYNurNl8XQOq7RXobwnMrhG6P/YOIu1VwVSy/NZL8a13yrq
-Q7EUBvMNNMH6TcoHuifd8j+TK/VoaqOANyCQh0KtHAPqWPuxGOGVGY5hVEFv/ThQpe+ehElIC0tT
-zB6ZxIGlBe173wpKASIrqwLMs/BjWmY+UllFi+85uQzL0sDRpHM5gjzGauGIC/zmAw4siHzRLGxZ
-LHt2wQHZVvcIieFgrtcOkaadkeOqiRYy/Fj2MSMBbCJDJdSkhJ3mRTebDoKH/yeFfNKTZplirEks
-MI6B3H9E9sDiUFPlpFL3NVtSRC5tKzl6HCMEtwjDbDX9udxu8LwJQ/qhhafkkQVlBnnR4C6Aa/7z
-s6lIdgnrIwhX/5CclkI0bnJnyQvjM/qze4KuCnuIR3SM48ZQHa6TycO+ABlrdRLUqdnxpHxkV93P
-UbGiHAv+cagRDHoOOxSH2+i4e2YTi7ATjTWecKepFkEKwsRDiMwKKeFzMEyx5IGHejRuaCrhnfT4
-nHf9hxIxlhcqTLdjMd/zzbDPN2YlJZMqsupHZ9qKw4UycisV9YI5vOn68fzKZCBEOMfTWmyv90M7
-WFKtDBbAS41tQLNbbXgoUYYBrvfKJgzEzhtTe/OV5BxDTkGK3musvE+q9jMJJAjUUFgMhzDCcH1q
-8vL4e+wdNhboxdgp2uHXDvEBbE9HMAucasXGWHvE9Ak/JMcmbDe3VcTytrVkRy+OnRtCisVJbmAc
-N6W3HJRCbn8dI3hpLSe4z+3uflgiGukmx0f4NXr5z4C/jNbsIKIc9zBTFsjuWygXBYce9esjhec0
-0QG/fAhlDsJFok4jx9Agu1N7oqLpkUsaMUpH3OZZPHcRHumPgdDitNInmBitPG5biKn0bmV/uZ2p
-d/pjSHdgKEI8yuMvoDPJd/2Qx+Mp5iUNv0Ym2qATvMMUy8uDMkAGPqdlUps9gW4wStQVB+cLuwdR
-ZsriZJsaIczeGzu/apJZblpJjblCqxdpvwXJT+fruBYN/aScqIYtvpBPgHE2n0mTLORjKKJC41IV
-c6l4vycS2xQJCuWD+iQRdrznoXicDXR7oD/NlpfSVkrGddZI/TfR+8xo3SVRZiE2/70JW3KYKt4o
-HbLguzJaBu9pA1vPRZ9cmKUi+W2dDXdBzRVTRS1hL3F5J1QNGag1gQ3RIescnCpC0ciSB6fX3vlg
-GJUtHXdxXw9JAmkzI1yzmUTSzsE3AF8sAF/iK2DSY4CzoiVIRXNQLuHaPE2Yv9dQRzHqibEyTFkL
-IaBx37Y/qLJdI4Ik2+sMUhsKquiQwwEk0hGDAk9nYLI6CWevqz94JnHgVuWejo92Al1jmz3P0n5x
-O5ILPHEqtrY6B4Ov412O++1S3hZTLpzdVFGFnj4Fx88lOWBDNYSx3OZhBQ6tbkLZzGuAuwpAO3rG
-hW76XNzTfHQ5vyzShEpB+A/hV3XqRkbtupuMr8fT2ebyPj86PU2v5qpBj0644OpgYmretW8R2Zqj
-xnfIm4GUuUcU5L2FVU1Ts6LTekxdb85uFIqTsXoNo1F4OlfPHFiWGX6e8KFHsyExtKZ53NCZTuXW
-2A2Crtq/INHIuLLjMXlM5Y5+0zdxAwL850HN7KKSdkbO4qhFpw1dGZOecGszD0G7e/hYwRyEaANv
-TgZuVdrVx9tmnImHw+GkovQqG8dDx/s0h7Vg60rxGAaqDj8ofcY488/tjy6hp7Hq0E6Xj5ziRP3F
-Hu40W/PAXmOzeAosFOddklydKeN9IBEbp9NscQRkrbsOmOAiEIdxyTat/5Yryn+QY16C3lMN6bUV
-Co1Ri6LpTVixTKEd26nnCPgv7nrl0UpsRETjQO8C/LaZ0yUuU8qVc6Iw070MyRAOd8Q/tKz5d79U
-NM3kmyo8dMgwOQwlcTeRiwVgna5+8oMIDUfjuHR/skL8OE/h1aZDic7uOLs9hdrzzfAqz2zJTSpJ
-sgo+BzZhPyTGbApjdUBkzVVYbueTvJUk7EJxzQAhWaTamPV6z9dNTUYiq3P9R8X60ROPE3CzBYc1
-tVlsrPPZxeny26XhNsOY2uxmyhZecQS49RFBWk3gLa9dSSrSipILCIi/biFyQIPCxPZr4M0UBrtY
-qC8ow24VyNEcjcgM5mq+7c8BU2/FwaxgGKJkpdeL95Xr+sk2Mv33srcG6pTvjYQUjXt4qv7PDkkp
-b8HjaJkmgdawOx1ZATKGU5l/3sMfLPkVx90Ke2YceFiox9Bl7wCfHoQbTQMeFeTV/EvJrNEKxNbo
-SXhHZj6JELhCzbQzGCJoUT06SVCsTV0OsqW/0P9oEkJ4S2EjsKXDLQcSxcTuJDEPo8g/WXb8us72
-jrN4GSz18VX2ljEw1FPj9hdwLW0wXZIh009MMjDz69SHhnnW70/IvEvvaEpxV9juuUDq/UOzGf/m
-vLEkXyq+hQfmGZihzYoPYuQlLXvSLex4POihoUn29HAtEMq0xSWaJSZUHj8qZNvx8BQzA040M5as
-tBZoI22msjO+asNWcXXNWB+q8lxAUCIWZrqGczYhSYkacrk8y8kGl3Bo5idx1BShbnIq1Ink7xPR
-Z5GVXIAXpvl6Cwo6HyOigm8aA7i2AuODBqpAvloVjrPq704S3vi7ngaKZECLKHWfW/fO0XWLUzvJ
-gV7D48kKjphYMHUubOzcupS8LSuzEoRQhmRv6F69xgBauCt0CDQORyJpvj2/DS+NzXIYf4YhOzxo
-yV72UR+tWGnxruXToKfyhmJVqZzRvF5kDdkuaPf0CaLhoX2o5tJmgR2VIVABgRLHHIwsUmDU78an
-pFv03VdJSNwZWbge7fAilvWXf9JDxfjwu2NAa7iiKu/E3pQ+TYSKM+5aiviqsgtAMUOAqMbpUPDG
-UG1kOV3EFv3GTD6hgRCjSvz5iPzjjvuZMe6Tz3GQRnGQq5xLNAKE3y6myvU3NPNucTe+2LQiAp3Y
-QnFydkIQJQuWll2GKCzCBmWQnoGhOCcy/RbK9RHb576o78HrVjnTyT6ee0EBU+pJzt7QWKdJKhLb
-cO+eW1v8NKCKflJ4KA/+sG0jqZ8wuoRKHNt6r0o/l7eIP8SSd/klq0x4Gp1dl0UgVobBPsiczWFZ
-35aKs5dOO+9Tzr0TBYZ+LZqBCCWULtrW4d1goBaSI9bPgpSwxMgpFkhM1SkxgD1WDdVUuGMZyP9o
-S1kRPT4zVklTxU9w52vgjmw4OV2CsoPX7bZNkfSKKygd4WB3fExni9g4tntzDhOmp/+G2tmlfyJG
-xh6Z0oP5tL4g0AmbCP0MuBpIL3xfkVH+It2sa85qCg0O1U9PfFmeRgEN+Uvx86AvQ/oups0ThXLi
-zDfQis91GTN/MyRoTCGYFcVzacd1cr0EFagiUldfDpra4dzEEQk98HBWNDlucbrlJ3rNfxGGE2Fs
-qsBPFmrTy9+95BdcO2rUJg2BDaHiEddEMQJATopDZaOlZlfp1AWPzBVqoJWxU5MUkRJe4VWr8rSj
-1BTcSdqYOFN0SR/dd8JyS0i+PMxFeJfPz4LeMQa7Y52GOknNGtUdP+lBBwOuUV+y8x1L+F4OfwVE
-gZtnbjAEpm+q7EpdSE/isGI2gHMD/qkxn7bq+SNk6U8X2Cs6vf7qr6WUapVY/1Nhhk2YTDLN3JfY
-cI60PN2FqauG5S/KJKNM7IwWiaqgKsTZJIF/jnewMZLHNZ14SBK0OSPxxM7yk1PvN3BG2gnG4oIb
-ykiOYaISK2GTFSglEF+viWji42NSi9FSeLvm0REXD0JWcs1IuSvS1y00Qk833uoqXwAySIH+yy9L
-rY2f4Vzkgb7HSlftNrIXCqNN+6sFaAXNPmzFQryrOD94Gn+uc0niOM0fP9AgtztuxRZjDjO6eZax
-BYOqaLVKyeYT63gVXjFdJsA0H23dlFXURe2I7E+DcxjK3KsAuhO3y6j5eubiG1Ag9J+j+H9pN51l
-/2go9DH4+5zThcJUwIVgtRDzifZ+OW7w2nWmYf1KHsS3s0dAGzeAYhzXn8KIclpzHRJL+Fs0Faeb
-YXa8mpvZRq6O1QV+QcCsTCiQCvVV6WZuJ20LK50xg1WWiJS5A8uxZgM9EQzzdbBQrqVYebStlozP
-vTxbGCW5G5OwQD5Z0u0M/vvvKx8QnLk5e6zWr3lfD5UNzAlMVqBlYJdOMkxfp0uIa+KNyVjZXAJH
-9PajJMdvrFwY5obQz8BjZkIpaL7E2B1+EPOM2kMTr/bX6tclYZZFPzKro18klJ3Ejs9qv1GZzQfR
-TKiOaArKNs1eeu+7zo36QBJY35zFIyQMJSEbjz9Gy1VL6E1iBMJmGN4j4RTjUK7dABvzzuvwBp+h
-CyhYXUuP6fQxwPuX5YcuvZ7QeO52cihtuagJaveU0RC7/o1fVGZLdcDmOpgPH0UWXw5ETqfAPqgh
-lFVKz/gcAdvdE03fb5sMD9sAP+MLp5vi2RjQpOlSL4v6h3OGXNUwob4E6guS6dJT6jXF+8IDEHkI
-dWHEvD+nFZQj6/CTjXIQlDKotTbif8ek1QpjkO2tfA+9PkH1mRmKKJ2aCK20NPTctNBOjXmb/HSS
-0qE3jBo13FQMOCwgDpyBwL3/K6VDkzbc24Se0Q/F+cde/8h3h+Oj+ktiPdkBaXi0OfpJhxF8ODHl
-53vEZtU2xqfc3Hi+Q9AQKemd+WdnwTNv4X3dS4ILnf/1Lnpv8r75dfQ13EvsMij5riNCowKwpwaz
-2o6aE2u4c34ukexvLt5peK0uAimM81ymR2M22/c3euCPIWUog7DEseUUPWein/6iRU2nKGns3kVM
-FcHCy6mUpuPXJYVipQGkJxE6WYw8IdVqeUNro8pDu7eO6MMum5URxsPSD1TNTAg9VsQic2bkD88b
-ZYPBrqSKNojCAfSRjPTnCeXSPXCktdeUV82K9nzupLItuYnGOGuZXHcOCIWNLzq+dogAmScpR5A+
-NZG7HA6OMPVhCIR21L4gl8czG5V+UNgomgxtilylnEtSsITSOntnAK/Y9iI7KGTdysFHrqSkGsOm
-qdGnrxICZnBCDKFC8/JDUAW1mHoGg9A4TPcqc1jSRCr0XG7L0ssgIQjeEr/XEmdEKgciha2xNcTP
-yupzxE8JIYA5qQL9CZszh8YttVBWy3DaP5shSqtskQPMH54VXcptVe11CgbRM/67xm2I22eglEdh
-6375zKjswwxOdhPCkriwu61gmSIFU6anbRVf55RJgbn3XjzZ/eWrBa/xrhm1KGRG7KLDSgT1gp/R
-LLjAv5B241XMGFy+dhEIamnqWVBHXAjJVs8I4zGslzxyJ8w1qQocp1E9nnLJ5nQE9LSvLe25yxvo
-z1iQ+UsjDo973851XvogHjCF1QbHJUM3pBRmT0elxhlriwIalcPpBG03JOWbkxmnMwz4EVb4RRs0
-gl/VKiD4rySkan63t5z0EZVLf3wVnNFHxTbOgudt4jHMSvg03CMoklNDulEK9tIoCD3oaKJYzpDk
-FSIcDlGO2X8sB26a/Ea+CJE0+XITojLQbm4Tha5jC3gDt3/JnXoTrRXW4M8l3wlrDrPbWoAOeKsq
-lg6BXFEbrm5DNYJR2V5KJSK6tXg87++35fgkIar5QqfLGFx4sRF/m45xZ8o51xW5Bi8vLhX0KpNQ
-vhpQDDIfGeyVXGVLA89GIQkR9+I1a1crl70Npuaapk98lWwT0cPG6vsKfTn9RJSNPS8GNkORXxsg
-EvhyDZGSMvGdBIRGT0ZI4eegfZYOV3Rm0XEK5KRsIQfRslSYd1KIeqd8IIpzIq+lrah/g/b80YBe
-WQ1sjmyqDsDl8wGbgiFbYXP9AhAsNFLXp8gC9W4bxq7HNDhEfib78sWcUKAn8thVgj4o74PD07G/
-OPnOFqTR7QDyoSZUmr27yfZsHJyjtSSd5nRWvZkGC010xINHAYEu8zoHZJGryYixbHwPbIcs0NCP
-Yv06DIURvqZanBf1i7/Xvq4i8A5hi1wS7w9j8VaeVt4XoYyVPuSBuWUPUPpgLS+Q6lJ7b+QWqZWO
-H8keGToCVOGppI6i5GEsv+6pq19cWK/H9dzT4xDox77NvAG+tZfyGUcCxAzYjgDgpadVt8c7Nq5r
-evPWUA7EvO/2UjGBVOcRBabvYUbIJO/CDTnMtDbZOjdlc1G7yF3WZC8u0K72KXLpbpRs8AaEC881
-TXD2OZKmY1ZfK4kc/fR4Zyfl6SDHNhNZGOzMYzlO+vy6MYd2ikDmyzwxaRUQyBV5fsf6cN29Epj0
-J2WbaW3001E/f4M1wHTU32Tx/6Zj76GIA12JJDG7TsUg5HdIA06AVjBsGHLR9hDRjAkEjuqBMM+w
-dWCBhAqOpGvNwVUJL03YojcrS2ApulHlJGXcaK88MSdN7ym7KTHabLKPR5/35Du2q0PJ7eYRvEAx
-L72o1TogQtPzTXPBTQNmpq7g/tr9I+dO5NO3dCs2BcT5j0xt96G6/rlnElqNQA5NkF2yxpyKh28C
-w8Pk5ACXOokSvcgplPrEe8+e9dkJqKwjwTjXFlUYf5oR2+un/LnyguGmBSl5qIYMUeHG1PxozQSX
-+oNfFjyRVaidRPf/96Yk2LZBnT8abJNAlUOmmPam8EQ38Cy6O/jQZGhOju+HKOqxJ9EhrnYnbCpz
-uK09r9Ci0QKsLNQWbB2n8R6LHF52wzzzNrGOpmGqkV0m4HVXhzem+FBuwGK5ZWMh7WYTuvX1mPgK
-D5nI6+pBX5MlAws35KvSRD+9MDwILJ0FXt9qt+YINFFFgltlSrVn58AWoN99/+oXrz7kLrWA8Ccz
-tc4wl6HqBLwxR8gxDH0YBDmWMPkr/R9m4pdGJHbM4eybSVO2oRrHIymmsXyBgA1i5Ft5WfZTyGlm
-nHlwGM3ZJbl0PqDqDVD5eOk2RcWi4GvWPqVEDLdjMV1ZHILA4nTI4qt/ptWzv6BB+0U5FNOz202m
-fZQPAsyWj5W9dJUQO50kn8brz0xvAMoonLFxI46gOaQcuksBfEUFh1G3XxKBb9buWrZ8UvP7Icf8
-hfM4bt1O0CtMCCxcdYY1csGXD2HEku7Hh676lr0MZH09FnvaQBpLT7R1fSqz4yZpIenMgK9WE700
-8QLVLbvShm95R5fWuvZTs8QrMYUwlPY7e9BukIOAeABhR+aBbsHVdGR1j08pUM1FeuBhAIWtUDZw
-Cf+J1IQZxH+rPV+jxKUlHIb6Etur1H/Y0DRcxZ6IZxptkTFITmVkHns2zLPnhSSRwCK++Na3Blch
-6bzRcuySrdnqzb3KqG926tuEzYnYfrjJDvWte74prkmSzhBQ3DZxI1wUs7G00yPFpKuaKbyfsard
-oW6Q7biMoPOY2Etwb74BNabQ2INsryQ8waj0dgu2GCHIhCxItSliG696FLoOFakp5StVEt4E1unJ
-M6ufANBh5UNMpA8XR6d7XMwmzNRHm1LEO8jKuwoY+YDKHdI8IW256/f4h1XbxdCccuQqIUdcgnbs
-COJjj0phzGyqYbM+ro9pahD4DjqGEXcZWqr3bWFvB4P24YcUaAiu1S8TtKxhc2av+Szzwr6UWGIj
-q0kbNQjZkHoyIuxco1e/xuPCOrkbPQcfOWMioRgmKqDdVwuEu1Aq4VjFCeV7jdMSqpG919oZyHh1
-anme7/usUiXSe28N595xJbALk0WWWsh5qClZyUgta9Hkv7UX2zDF1w79x0P5mCM95MpTZT4/BrKI
-S41MwzzXDgYDTUoqygWTh5dv8Rfi4TTqe0A0/gFUBVF/VsMUgbe6MYxXMSs5W+oWia7E9mh9WVuX
-LLZcoV5KhmOEShLRytggm7ushCqokO1SynWpaajozMzd4RHCWKqYr0ETVUO85mu8GquwmbPQzH31
-nox83ykoDbH+40onKWl/L2SnRvf3lDRnqhqa0Xaw5LgVAkps7ImAa8JHqk2fm98ZLjn1xEb6ao0A
-eH2sG9cpUptzOocxSDiztiVdlfOapXC/RDUYNH4ZuBv+bdxwvonXQRYM/72SbdQvR5j57MzfScOs
-FiPg3IL+nDoyRFDsWfKuI/vtedBCqw79lG0hMxfUKiot4fOmH/WvVcnUtGCllRVO5ia0KLwlEdtj
-nzYz6pYCd7DAEif4LxOeZ8jK2yXC2/UewGsGapPXJJ0E2gbe+dHCzPmzPeimQZx59BBQ0CUjoPf6
-VNkh7JCGf/F1WKEFZJaV1+EVCTItgnkkTyYl1XZHsJ8Y42xJgZBIiZ0q1Hs50umjBAOYlmOecQR+
-2VwjT1bn4dUEn3FER1UbJuNlUoMq5+wrSjfhsJiRBb6ySdcCc964M+j2EvGdrwMNPbUHyNYPYtof
-cnehkzQ5/TNsROueABoZbv7wnxBDwA4xRt0HmKb0HBwQTpiPAjPYupg6956Jsw5RUxMeExTtRG3d
-tB+nC86bTfWqPUVLAs3+GoXY8iy9/BkRzkoPygettWoS+fHdowkGjjJyBw1vt17YBPqfQ8WTlLWx
-JnRP2lgc0QaSIOP3LVTTJikDMoe3TELYbSTrfD1MLskFkUW8lCNmvpY5ndQa68S2f2MiEsda21R9
-tGwKtS+JDx4WmTiATet+DHTnZPqQ//wDlRmEL8Q2lHqpTyfQsrHqGPaL6Vlxotr9CGzyeiF3zM5W
-pK4NoaCPeeCcxUu2nEe+QOd/VRdNHEisSIFzCBbzsYOb3awb4EScjgdebZP+ZRTtbgAoSEgRqemR
-L0tm5vxWqAg7X3q8VKdWm0GJWkP/sG/6YKjIJ8zIDv39XtT5YunvmwVbU/soPKO2kalaUvB/rSAg
-XKzwBn1qO/RAkhd7eawfb3CxzxlRPmSDC9yVysNywGZa/QqgHwGtJTOGnbDGfg+eGLo0pFiDCMo9
-sDCapj87chKXv6b6bBCpSdNey6AiFXXMX1T9IjgvvgF9FTzCL5U8+KS8K9kdflQC33Hf2YG7GqIL
-iljkcSFMAy8EurxO5NXCfSOGEobbfZCtyQNhv+VyW4fMsmz4AoglJAG+3/UYaw0Jj0pwKs5A7bpP
-1cmR+K/RV9RESUUiKXveEq+PJFdQtC1Ro9SCMRlwrTor4PDl79vGxYajb40/bS1yhICMkGRjZejS
-5zcROaAtXEsivoSaoeaeXhX3wVraaXPUVxf3n8GjiBhVvf/9BxStfQzSgBEncNpsFzoSL3KE+PvV
-TsYjCoGcmh1xFUZJ0GTsVYxlsCdH9hYTA0rGqT3J/bipgjhQUzdcLm/NZrz1RXa/HWqPijowmMKt
-bkvs5BeNgfXomsgZM8PrKt9MRPShptw3RQV3sjz9vFvC9Q6iBFJ1kQvvTdcn00lbRO05Pd1NM5Q7
-ZjAjdePkOHiGjWF45vRNRRI3mEZyC5x9lEeKTs/gQkQhrVxhn2++tficonWm5Cw9RG0LlNPtN40N
-sWgRZI2/CaVPqrY8N2V48QloxsZu5BTTQo+g6fhQ4gD4OXixm25AAI1V41ASdqHWyIBHGu9O4KbX
-GuQZ9OWQqFUZcbADS/+7sSnrN3JGz8twD5SevxP0591pg8vLIibsI6jGU2A7Hnuspktr3Pcxf6Xk
-bvc7Jm7vYa78cLeGu1UBaup9uivko1QUD4t9RfPjnr+YofwuV23x0X9Oi2sunDZoX0xiSRYoOwKB
-2e6pkvziHyZFOVsB1ZXkD9GXiQ2PZU2TH5StOjShv+A20cr4kklEamri1CwMuSCtyMecsp6ZXhZa
-FyzPJmCvAlVvxnbw17Lr4esUwCN9UmdEqjVI48gMYgfhz0jRxG1TKSqh1DZw17bSj5yvIbFx9tb1
-9IfnXdbRk+SJ6J+O738eYSXZGD9/RGmWMLxozu181tltraHbDjExCwjzlt5Gi7QNNfA9Q0hVwD9x
-H5p5Ha75kpU/8CEl9awIA1+5IHYEiST28A8nnHCwx8O9Gp4rgDE6jyJV8tXhC/jpvrT0YFxbiWJZ
-oWk+vnt0MaWcAa1nJOcWa4NgPKmiskM1Djl9MgQF04xtX03CuKmDBCnMGWsal6PoYLab5OojPV7N
-yYYUNWcakRH2Il8OKW0A1np8utiqLsoq+JPQs1rEE+x+R8440mJnRqH9KaxRdOArPNCMnKFO1T92
-M057xnzdPyTDG8Jp0pcZm4yIFP7P7oD5V7QrxBO1u209Airoax2wVcv6AnhPusLPEkHkLqoWgLlj
-XE+nDNeMZVBy4QHGlITgZ6c2MaPBYnSe86BFdGJgBYDGfA4fS+I/LGCvlBo+p1wGPW8EUJ0Sp654
-agwhX+6SjIhzV41tiyy4fBHvxsXUtP252eggL4GCaiVgvryASJc64m1BPNRpN+33lSZbe27lhxwV
-NIZg4NMOElE2iw4uFl+Id1llxwtD1s5jBMGJj3SMKZcsEVhnPhiWLVu+MnMIXfs730N53i4/An8c
-sRuMlrbnnP0uWn6kI3YiKAshdIA8xFfkaRN0VQFENoR5Vyc8nrZgBuZ7dwdzKCQCntdn3hqnjeWL
-swUTAZA7fBdVBsLfE3zh/XjPgHfb+2rlrtjs6j2TzrbSyLbbJeWIkXQTF/BI38IpBzkmqS+KArYp
-KK+loQG1Uq5gW5tYWmSVmc54fRTU0ud8jiEBa0YuMPDbOEhr8gAJv7IXgLW8S3ggPBXU0gcVmPYZ
-gw95s+35R9q7zRLZhtBvq3+jT+UaQzYRInUQQ8XQQs908didraXJCP4//+4MMhE7ksahZASRBSYB
-qz834AZ5cBjc6DFc8IdaCgXuYyqgeAapvmb/hAkSpMZbXvyI7imAl6bmMeQBrabtDGeCfBrZQzwG
-7ce+5nqp2pIo3XXppn5wJPyRVLc0Vd6wlPKDyvY+QKzGrOYlXQT0V7tXZwg3R32729VCe60LSRCB
-WSaN9o8wrdbMMf/ewoigQSg1OoRa/1GL3fOQ7taJZLYYXhVhacSAOPctVzF308rDGBc+hOJasxwy
-sJwsoC0ZU9MtCu25cIWaaO3hPKWkkIM8LEnEQWmA+Q4HHIUNhsMqTp2OwZ7aWQpnprm8SJRkzY6g
-Qn1SriaN7HffLnKkGJzwi4LcEK/ofOIBFitreyEdnWrHcH1ac3urXvbZtiKfbwqjsCEBYDHdUwDl
-jyxs8fUp+bzJLluqbGzS0/x0aCdLURPf+g7sjx7Pjj0ovlwBfHs3PuisPvr9IPbN6R8QKh6/P0Ks
-k3AXZnw901//6213otHEhk1CWko558YVhLPLUXOMAw3F3EF+6/crIduf5r/uExK9Oc+mVeLKmv0H
-5j1V8RSh4pY1Qg6b/LDx3Gz/qJjeUQth0jrGEvd9rV4fghWwRFK2jWgd44QqZcAo3HVmZJKmEPOL
-Iox4+wTFR39fBxatlvI0iVJ7pMwM5Pp98yTxHhO+fGBHjIv54v87kV/otxzhaxLDA/yivqZddG3L
-R8gzlhQojTDIP4xec51Qc133xhViMuh5G+GTrj/bUB5tLz0iUGCA4ieklUSAsG8RxZYAUY/9FrIR
-vRM9OuXNzJhuHRab6zWb58++8WUGmaKHW0j18OKKbNvZqWVuRnTt5I+0wn9WJxFK8SItyE7EZ9a5
-btr5c1zDGefgGCYUD42G3KabL9dvKO9HYdmuj35RGx0zdaEu4VuQXbWY3f/bxEP1qaitQ/3gq6BD
-dznjt0HSivvjlOpMTft93CIdy4KKobzTZBVZtqxd1lRKz4IysLnowuoXYMjixirNVdw2pjs7A7U6
-9D/9cN0Rc3eOPtjH8pjjRNXQBvOD//G7tDFfiu0r8Uh5vuyKmeEZdDJy0xPDSjpO0yb8EcL6mMLj
-ksLT1Cu3yl+y6lxPano0Odwo9n2pCHQsKuIq3BzO82fTDENW5K6H3vCrIJ70wnAvqVXXAOgPo4KJ
-8Oi4alR7zyjzIYBlfy2vNQ3H5W2SHm0Zwae5gG/gcpqjC/kIaLtunm2T3D97GxlPUUfK1USixvSO
-IXJvHa1dlMmdWzuQOLl+MbdJQUXSUb09ZGi/r6eDDyxwhUndg0JWAtHHnmF/u69UxWlK+JOVaSrc
-CbxusitqUcZm47DhiQKgPB6Ieyfp6SwdYfaEn2oIdU3YNwNik27Kx+VKHTs4fI4nndmoScYxUEvY
-v1cfvDTeDTTX2gMdbw7igahYhlIOT2baj7Qh8R9QGR2Cw1SGZIZdemLbigESa1VCYy4DiV8ktT3p
-RfJCb338+qKmdUVmi1ePHXMc+Yy/FJTGrQBbAkgocPb1RXPm9FhgDmqAi/oXuISCHfqbX9819IwA
-xsYKmbdfQD7CXvkz7xXsDAqvl7VNY/bRU27lTJu2HPvw+mwLgqu1qWRLOTVY4FyxaKIUZEgoIN8I
-CC6p+slud2ufvOKAZKaubdZYqqmZFpXstLSv9pu3yaEGR2NW6p7ii431YIqNJI2raLMRhD1LxhpG
-iNK4nlCoYMXTMqF9Tc0hJmtxaoIz48/R2ockTPKuCGwVMIIT3sPry2KaFYPCrnwASieiSWu5Rak9
-t1YCK/P5SC6ozw44JjKT
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Http.php 12503 2008-11-10 16:28:40Z matthew $
+ */
+
+
+/**
+ * @see Zend_Auth_Adapter_Interface
+ */
+require_once 'Zend/Auth/Adapter/Interface.php';
+
+
+/**
+ * HTTP Authentication Adapter
+ *
+ * Implements a pretty good chunk of RFC 2617.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @todo       Support auth-int
+ * @todo       Track nonces, nonce-count, opaque for replay protection and stale support
+ * @todo       Support Authentication-Info header
+ */
+class Zend_Auth_Adapter_Http implements Zend_Auth_Adapter_Interface
+{
+    /**
+     * Reference to the HTTP Request object
+     *
+     * @var Zend_Controller_Request_Http
+     */
+    protected $_request;
+
+    /**
+     * Reference to the HTTP Response object
+     *
+     * @var Zend_Controller_Response_Http
+     */
+    protected $_response;
+
+    /**
+     * Object that looks up user credentials for the Basic scheme
+     *
+     * @var Zend_Auth_Adapter_Http_Resolver_Interface
+     */
+    protected $_basicResolver;
+
+    /**
+     * Object that looks up user credentials for the Digest scheme
+     *
+     * @var Zend_Auth_Adapter_Http_Resolver_Interface
+     */
+    protected $_digestResolver;
+
+    /**
+     * List of authentication schemes supported by this class
+     *
+     * @var array
+     */
+    protected $_supportedSchemes = array('basic', 'digest');
+
+    /**
+     * List of schemes this class will accept from the client
+     *
+     * @var array
+     */
+    protected $_acceptSchemes;
+
+    /**
+     * Space-delimited list of protected domains for Digest Auth
+     *
+     * @var string
+     */
+    protected $_domains;
+
+    /**
+     * The protection realm to use
+     *
+     * @var string
+     */
+    protected $_realm;
+
+    /**
+     * Nonce timeout period
+     *
+     * @var integer
+     */
+    protected $_nonceTimeout;
+
+    /**
+     * Whether to send the opaque value in the header. True by default
+     *
+     * @var boolean
+     */
+    protected $_useOpaque;
+
+    /**
+     * List of the supported digest algorithms. I want to support both MD5 and
+     * MD5-sess, but MD5-sess won't make it into the first version.
+     *
+     * @var array
+     */
+    protected $_supportedAlgos = array('MD5');
+
+    /**
+     * The actual algorithm to use. Defaults to MD5
+     *
+     * @var string
+     */
+    protected $_algo;
+
+    /**
+     * List of supported qop options. My intetion is to support both 'auth' and
+     * 'auth-int', but 'auth-int' won't make it into the first version.
+     *
+     * @var array
+     */
+    protected $_supportedQops = array('auth');
+
+    /**
+     * Whether or not to do Proxy Authentication instead of origin server
+     * authentication (send 407's instead of 401's). Off by default.
+     *
+     * @var boolean
+     */
+    protected $_imaProxy;
+
+    /**
+     * Flag indicating the client is IE and didn't bother to return the opaque string
+     *
+     * @var boolean
+     */
+    protected $_ieNoOpaque;
+
+    /**
+     * Constructor
+     *
+     * @param  array $config Configuration settings:
+     *    'accept_schemes' => 'basic'|'digest'|'basic digest'
+     *    'realm' => <string>
+     *    'digest_domains' => <string> Space-delimited list of URIs
+     *    'nonce_timeout' => <int>
+     *    'use_opaque' => <bool> Whether to send the opaque value in the header
+     *    'alogrithm' => <string> See $_supportedAlgos. Default: MD5
+     *    'proxy_auth' => <bool> Whether to do authentication as a Proxy
+     * @throws Zend_Auth_Adapter_Exception
+     * @return void
+     */
+    public function __construct(array $config)
+    {
+        if (!extension_loaded('hash')) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception(__CLASS__  . ' requires the \'hash\' extension');
+        }
+
+        $this->_request  = null;
+        $this->_response = null;
+        $this->_ieNoOpaque = false;
+
+
+        if (empty($config['accept_schemes'])) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('Config key \'accept_schemes\' is required');
+        }
+
+        $schemes = explode(' ', $config['accept_schemes']);
+        $this->_acceptSchemes = array_intersect($schemes, $this->_supportedSchemes);
+        if (empty($this->_acceptSchemes)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('No supported schemes given in \'accept_schemes\'. Valid values: '
+                                                . implode(', ', $this->_supportedSchemes));
+        }
+
+        // Double-quotes are used to delimit the realm string in the HTTP header,
+        // and colons are field delimiters in the password file.
+        if (empty($config['realm']) ||
+            !ctype_print($config['realm']) ||
+            strpos($config['realm'], ':') !== false ||
+            strpos($config['realm'], '"') !== false) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('Config key \'realm\' is required, and must contain only printable '
+                                                . 'characters, excluding quotation marks and colons');
+        } else {
+            $this->_realm = $config['realm'];
+        }
+
+        if (in_array('digest', $this->_acceptSchemes)) {
+            if (empty($config['digest_domains']) ||
+                !ctype_print($config['digest_domains']) ||
+                strpos($config['digest_domains'], '"') !== false) {
+                /**
+                 * @see Zend_Auth_Adapter_Exception
+                 */
+                require_once 'Zend/Auth/Adapter/Exception.php';
+                throw new Zend_Auth_Adapter_Exception('Config key \'digest_domains\' is required, and must contain '
+                                                    . 'only printable characters, excluding quotation marks');
+            } else {
+                $this->_domains = $config['digest_domains'];
+            }
+
+            if (empty($config['nonce_timeout']) ||
+                !is_numeric($config['nonce_timeout'])) {
+                /**
+                 * @see Zend_Auth_Adapter_Exception
+                 */
+                require_once 'Zend/Auth/Adapter/Exception.php';
+                throw new Zend_Auth_Adapter_Exception('Config key \'nonce_timeout\' is required, and must be an '
+                                                    . 'integer');
+            } else {
+                $this->_nonceTimeout = (int) $config['nonce_timeout'];
+            }
+
+            // We use the opaque value unless explicitly told not to
+            if (isset($config['use_opaque']) && false == (bool) $config['use_opaque']) {
+                $this->_useOpaque = false;
+            } else {
+                $this->_useOpaque = true;
+            }
+
+            if (isset($config['algorithm']) && in_array($config['algorithm'], $this->_supportedAlgos)) {
+                $this->_algo = $config['algorithm'];
+            } else {
+                $this->_algo = 'MD5';
+            }
+        }
+
+        // Don't be a proxy unless explicitly told to do so
+        if (isset($config['proxy_auth']) && true == (bool) $config['proxy_auth']) {
+            $this->_imaProxy = true;  // I'm a Proxy
+        } else {
+            $this->_imaProxy = false;
+        }
+    }
+
+    /**
+     * Setter for the _basicResolver property
+     *
+     * @param  Zend_Auth_Adapter_Http_Resolver_Interface $resolver
+     * @return Zend_Auth_Adapter_Http Provides a fluent interface
+     */
+    public function setBasicResolver(Zend_Auth_Adapter_Http_Resolver_Interface $resolver)
+    {
+        $this->_basicResolver = $resolver;
+
+        return $this;
+    }
+
+    /**
+     * Getter for the _basicResolver property
+     *
+     * @return Zend_Auth_Adapter_Http_Resolver_Interface
+     */
+    public function getBasicResolver()
+    {
+        return $this->_basicResolver;
+    }
+
+    /**
+     * Setter for the _digestResolver property
+     *
+     * @param  Zend_Auth_Adapter_Http_Resolver_Interface $resolver
+     * @return Zend_Auth_Adapter_Http Provides a fluent interface
+     */
+    public function setDigestResolver(Zend_Auth_Adapter_Http_Resolver_Interface $resolver)
+    {
+        $this->_digestResolver = $resolver;
+
+        return $this;
+    }
+
+    /**
+     * Getter for the _digestResolver property
+     *
+     * @return Zend_Auth_Adapter_Http_Resolver_Interface
+     */
+    public function getDigestResolver()
+    {
+        return $this->_digestResolver;
+    }
+
+    /**
+     * Setter for the Request object
+     *
+     * @param  Zend_Controller_Request_Http $request
+     * @return Zend_Auth_Adapter_Http Provides a fluent interface
+     */
+    public function setRequest(Zend_Controller_Request_Http $request)
+    {
+        $this->_request = $request;
+
+        return $this;
+    }
+
+    /**
+     * Getter for the Request object
+     *
+     * @return Zend_Controller_Request_Http
+     */
+    public function getRequest()
+    {
+        return $this->_request;
+    }
+
+    /**
+     * Setter for the Response object
+     *
+     * @param  Zend_Controller_Response_Http $response
+     * @return Zend_Auth_Adapter_Http Provides a fluent interface
+     */
+    public function setResponse(Zend_Controller_Response_Http $response)
+    {
+        $this->_response = $response;
+
+        return $this;
+    }
+
+    /**
+     * Getter for the Response object
+     *
+     * @return Zend_Controller_Response_Http
+     */
+    public function getResponse()
+    {
+        return $this->_response;
+    }
+
+    /**
+     * Authenticate
+     *
+     * @throws Zend_Auth_Adapter_Exception
+     * @return Zend_Auth_Result
+     */
+    public function authenticate()
+    {
+        if (empty($this->_request) ||
+            empty($this->_response)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('Request and Response objects must be set before calling '
+                                                . 'authenticate()');
+        }
+
+        if ($this->_imaProxy) {
+            $getHeader = 'Proxy-Authorization';
+        } else {
+            $getHeader = 'Authorization';
+        }
+
+        $authHeader = $this->_request->getHeader($getHeader);
+        if (!$authHeader) {
+            return $this->_challengeClient();
+        }
+
+        list($clientScheme) = explode(' ', $authHeader);
+        $clientScheme = strtolower($clientScheme);
+
+        // The server can issue multiple challenges, but the client should
+        // answer with only the selected auth scheme.
+        if (!in_array($clientScheme, $this->_supportedSchemes)) {
+            $this->_response->setHttpResponseCode(400);
+            return new Zend_Auth_Result(
+                Zend_Auth_Result::FAILURE_UNCATEGORIZED,
+                array(),
+                array('Client requested an incorrect or unsupported authentication scheme')
+            );
+        }
+
+        // client sent a scheme that is not the one required
+        if (!in_array($clientScheme, $this->_acceptSchemes)) {
+            // challenge again the client
+            return $this->_challengeClient();
+        }
+        
+        switch ($clientScheme) {
+            case 'basic':
+                $result = $this->_basicAuth($authHeader);
+                break;
+            case 'digest':
+                $result = $this->_digestAuth($authHeader);
+            break;
+            default:
+                /**
+                 * @see Zend_Auth_Adapter_Exception
+                 */
+                require_once 'Zend/Auth/Adapter/Exception.php';
+                throw new Zend_Auth_Adapter_Exception('Unsupported authentication scheme');
+        }
+
+        return $result;
+    }
+
+    /**
+     * Challenge Client
+     *
+     * Sets a 401 or 407 Unauthorized response code, and creates the
+     * appropriate Authenticate header(s) to prompt for credentials.
+     *
+     * @return Zend_Auth_Result Always returns a non-identity Auth result
+     */
+    protected function _challengeClient()
+    {
+        if ($this->_imaProxy) {
+            $statusCode = 407;
+            $headerName = 'Proxy-Authenticate';
+        } else {
+            $statusCode = 401;
+            $headerName = 'WWW-Authenticate';
+        }
+
+        $this->_response->setHttpResponseCode($statusCode);
+
+        // Send a challenge in each acceptable authentication scheme
+        if (in_array('basic', $this->_acceptSchemes)) {
+            $this->_response->setHeader($headerName, $this->_basicHeader());
+        }
+        if (in_array('digest', $this->_acceptSchemes)) {
+            $this->_response->setHeader($headerName, $this->_digestHeader());
+        }
+        return new Zend_Auth_Result(
+            Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID,
+            array(),
+            array('Invalid or absent credentials; challenging client')
+        );
+    }
+
+    /**
+     * Basic Header
+     *
+     * Generates a Proxy- or WWW-Authenticate header value in the Basic
+     * authentication scheme.
+     *
+     * @return string Authenticate header value
+     */
+    protected function _basicHeader()
+    {
+        return 'Basic realm="' . $this->_realm . '"';
+    }
+
+    /**
+     * Digest Header
+     *
+     * Generates a Proxy- or WWW-Authenticate header value in the Digest
+     * authentication scheme.
+     *
+     * @return string Authenticate header value
+     */
+    protected function _digestHeader()
+    {
+        $wwwauth = 'Digest realm="' . $this->_realm . '", '
+                 . 'domain="' . $this->_domains . '", '
+                 . 'nonce="' . $this->_calcNonce() . '", '
+                 . ($this->_useOpaque ? 'opaque="' . $this->_calcOpaque() . '", ' : '')
+                 . 'algorithm="' . $this->_algo . '", '
+                 . 'qop="' . implode(',', $this->_supportedQops) . '"';
+
+        return $wwwauth;
+    }
+
+    /**
+     * Basic Authentication
+     *
+     * @param  string $header Client's Authorization header
+     * @throws Zend_Auth_Adapter_Exception
+     * @return Zend_Auth_Result
+     */
+    protected function _basicAuth($header)
+    {
+        if (empty($header)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('The value of the client Authorization header is required');
+        }
+        if (empty($this->_basicResolver)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('A basicResolver object must be set before doing Basic '
+                                                . 'authentication');
+        }
+
+        // Decode the Authorization header
+        $auth = substr($header, strlen('Basic '));
+        $auth = base64_decode($auth);
+        if (!$auth) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('Unable to base64_decode Authorization header value');
+        }
+
+        // See ZF-1253. Validate the credentials the same way the digest
+        // implementation does. If invalid credentials are detected,
+        // re-challenge the client.
+        if (!ctype_print($auth)) {
+            return $this->_challengeClient();
+        }
+        // Fix for ZF-1515: Now re-challenges on empty username or password
+        $creds = array_filter(explode(':', $auth));
+        if (count($creds) != 2) {
+            return $this->_challengeClient();
+        }
+
+        $password = $this->_basicResolver->resolve($creds[0], $this->_realm);
+        if ($password && $password == $creds[1]) {
+            $identity = array('username'=>$creds[0], 'realm'=>$this->_realm);
+            return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $identity);
+        } else {
+            return $this->_challengeClient();
+        }
+    }
+
+    /**
+     * Digest Authentication
+     *
+     * @param  string $header Client's Authorization header
+     * @throws Zend_Auth_Adapter_Exception
+     * @return Zend_Auth_Result Valid auth result only on successful auth
+     */
+    protected function _digestAuth($header)
+    {
+        if (empty($header)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('The value of the client Authorization header is required');
+        }
+        if (empty($this->_digestResolver)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('A digestResolver object must be set before doing Digest authentication');
+        }
+
+        $data = $this->_parseDigestAuth($header);
+        if ($data === false) {
+            $this->_response->setHttpResponseCode(400);
+            return new Zend_Auth_Result(
+                Zend_Auth_Result::FAILURE_UNCATEGORIZED,
+                array(),
+                array('Invalid Authorization header format')
+            );
+        }
+
+        // See ZF-1052. This code was a bit too unforgiving of invalid
+        // usernames. Now, if the username is bad, we re-challenge the client.
+        if ('::invalid::' == $data['username']) {
+            return $this->_challengeClient();
+        }
+
+        // Verify that the client sent back the same nonce
+        if ($this->_calcNonce() != $data['nonce']) {
+            return $this->_challengeClient();
+        }
+        // The opaque value is also required to match, but of course IE doesn't
+        // play ball.
+        if (!$this->_ieNoOpaque && $this->_calcOpaque() != $data['opaque']) {
+            return $this->_challengeClient();
+        }
+
+        // Look up the user's password hash. If not found, deny access.
+        // This makes no assumptions about how the password hash was
+        // constructed beyond that it must have been built in such a way as
+        // to be recreatable with the current settings of this object.
+        $ha1 = $this->_digestResolver->resolve($data['username'], $data['realm']);
+        if ($ha1 === false) {
+            return $this->_challengeClient();
+        }
+
+        // If MD5-sess is used, a1 value is made of the user's password
+        // hash with the server and client nonce appended, separated by
+        // colons.
+        if ($this->_algo == 'MD5-sess') {
+            $ha1 = hash('md5', $ha1 . ':' . $data['nonce'] . ':' . $data['cnonce']);
+        }
+
+        // Calculate h(a2). The value of this hash depends on the qop
+        // option selected by the client and the supported hash functions
+        switch ($data['qop']) {
+            case 'auth':
+                $a2 = $this->_request->getMethod() . ':' . $data['uri'];
+                break;
+            case 'auth-int':
+                // Should be REQUEST_METHOD . ':' . uri . ':' . hash(entity-body),
+                // but this isn't supported yet, so fall through to default case
+            default:
+                /**
+                 * @see Zend_Auth_Adapter_Exception
+                 */
+                require_once 'Zend/Auth/Adapter/Exception.php';
+                throw new Zend_Auth_Adapter_Exception('Client requested an unsupported qop option');
+        }
+        // Using hash() should make parameterizing the hash algorithm
+        // easier
+        $ha2 = hash('md5', $a2);
+
+
+        // Calculate the server's version of the request-digest. This must
+        // match $data['response']. See RFC 2617, section 3.2.2.1
+        $message = $data['nonce'] . ':' . $data['nc'] . ':' . $data['cnonce'] . ':' . $data['qop'] . ':' . $ha2;
+        $digest  = hash('md5', $ha1 . ':' . $message);
+
+        // If our digest matches the client's let them in, otherwise return
+        // a 401 code and exit to prevent access to the protected resource.
+        if ($digest == $data['response']) {
+            $identity = array('username'=>$data['username'], 'realm'=>$data['realm']);
+            return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $identity);
+        } else {
+            return $this->_challengeClient();
+        }
+    }
+
+    /**
+     * Calculate Nonce
+     *
+     * @return string The nonce value
+     */
+    protected function _calcNonce()
+    {
+        // Once subtle consequence of this timeout calculation is that it
+        // actually divides all of time into _nonceTimeout-sized sections, such
+        // that the value of timeout is the point in time of the next
+        // approaching "boundary" of a section. This allows the server to
+        // consistently generate the same timeout (and hence the same nonce
+        // value) across requests, but only as long as one of those
+        // "boundaries" is not crossed between requests. If that happens, the
+        // nonce will change on its own, and effectively log the user out. This
+        // would be surprising if the user just logged in.
+        $timeout = ceil(time() / $this->_nonceTimeout) * $this->_nonceTimeout;
+
+        $nonce = hash('md5', $timeout . ':' . $this->_request->getServer('HTTP_USER_AGENT') . ':' . __CLASS__);
+        return $nonce;
+    }
+
+    /**
+     * Calculate Opaque
+     *
+     * The opaque string can be anything; the client must return it exactly as
+     * it was sent. It may be useful to store data in this string in some
+     * applications. Ideally, a new value for this would be generated each time
+     * a WWW-Authenticate header is sent (in order to reduce predictability),
+     * but we would have to be able to create the same exact value across at
+     * least two separate requests from the same client.
+     *
+     * @return string The opaque value
+     */
+    protected function _calcOpaque()
+    {
+        return hash('md5', 'Opaque Data:' . __CLASS__);
+    }
+
+    /**
+     * Parse Digest Authorization header
+     *
+     * @param  string $header Client's Authorization: HTTP header
+     * @return array|false Data elements from header, or false if any part of
+     *         the header is invalid
+     */
+    protected function _parseDigestAuth($header)
+    {
+        $temp = null;
+        $data = array();
+
+        // See ZF-1052. Detect invalid usernames instead of just returning a
+        // 400 code.
+        $ret = preg_match('/username="([^"]+)"/', $header, $temp);
+        if (!$ret || empty($temp[1])
+                  || !ctype_print($temp[1])
+                  || strpos($temp[1], ':') !== false) {
+            $data['username'] = '::invalid::';
+        } else {
+            $data['username'] = $temp[1];
+        }
+        $temp = null;
+
+        $ret = preg_match('/realm="([^"]+)"/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        if (!ctype_print($temp[1]) || strpos($temp[1], ':') !== false) {
+            return false;
+        } else {
+            $data['realm'] = $temp[1];
+        }
+        $temp = null;
+
+        $ret = preg_match('/nonce="([^"]+)"/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        if (!ctype_xdigit($temp[1])) {
+            return false;
+        } else {
+            $data['nonce'] = $temp[1];
+        }
+        $temp = null;
+
+        $ret = preg_match('/uri="([^"]+)"/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        // Section 3.2.2.5 in RFC 2617 says the authenticating server must
+        // verify that the URI field in the Authorization header is for the
+        // same resource requested in the Request Line.
+        $rUri = @parse_url($this->_request->getRequestUri());
+        $cUri = @parse_url($temp[1]);
+        if (false === $rUri || false === $cUri) {
+            return false;
+        } else {
+            // Make sure the path portion of both URIs is the same
+            if ($rUri['path'] != $cUri['path']) {
+                return false;
+            }
+            // Section 3.2.2.5 seems to suggest that the value of the URI
+            // Authorization field should be made into an absolute URI if the
+            // Request URI is absolute, but it's vague, and that's a bunch of
+            // code I don't want to write right now.
+            $data['uri'] = $temp[1];
+        }
+        $temp = null;
+
+        $ret = preg_match('/response="([^"]+)"/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        if (32 != strlen($temp[1]) || !ctype_xdigit($temp[1])) {
+            return false;
+        } else {
+            $data['response'] = $temp[1];
+        }
+        $temp = null;
+
+        // The spec says this should default to MD5 if omitted. OK, so how does
+        // that square with the algo we send out in the WWW-Authenticate header,
+        // if it can easily be overridden by the client?
+        $ret = preg_match('/algorithm="?(' . $this->_algo . ')"?/', $header, $temp);
+        if ($ret && !empty($temp[1])
+                 && in_array($temp[1], $this->_supportedAlgos)) {
+            $data['algorithm'] = $temp[1];
+        } else {
+            $data['algorithm'] = 'MD5';  // = $this->_algo; ?
+        }
+        $temp = null;
+
+        // Not optional in this implementation
+        $ret = preg_match('/cnonce="([^"]+)"/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        if (!ctype_print($temp[1])) {
+            return false;
+        } else {
+            $data['cnonce'] = $temp[1];
+        }
+        $temp = null;
+
+        // If the server sent an opaque value, the client must send it back
+        if ($this->_useOpaque) {
+            $ret = preg_match('/opaque="([^"]+)"/', $header, $temp);
+            if (!$ret || empty($temp[1])) {
+
+                // Big surprise: IE isn't RFC 2617-compliant.
+                if (false !== strpos($this->_request->getHeader('User-Agent'), 'MSIE')) {
+                    $temp[1] = '';
+                    $this->_ieNoOpaque = true;
+                } else {
+                    return false;
+                }
+            }
+            // This implementation only sends MD5 hex strings in the opaque value
+            if (!$this->_ieNoOpaque &&
+                (32 != strlen($temp[1]) || !ctype_xdigit($temp[1]))) {
+                return false;
+            } else {
+                $data['opaque'] = $temp[1];
+            }
+            $temp = null;
+        }
+
+        // Not optional in this implementation, but must be one of the supported
+        // qop types
+        $ret = preg_match('/qop="?(' . implode('|', $this->_supportedQops) . ')"?/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        if (!in_array($temp[1], $this->_supportedQops)) {
+            return false;
+        } else {
+            $data['qop'] = $temp[1];
+        }
+        $temp = null;
+
+        // Not optional in this implementation. The spec says this value
+        // shouldn't be a quoted string, but apparently some implementations
+        // quote it anyway. See ZF-1544.
+        $ret = preg_match('/nc="?([0-9A-Fa-f]{8})"?/', $header, $temp);
+        if (!$ret || empty($temp[1])) {
+            return false;
+        }
+        if (8 != strlen($temp[1]) || !ctype_xdigit($temp[1])) {
+            return false;
+        } else {
+            $data['nc'] = $temp[1];
+        }
+        $temp = null;
+
+        return $data;
+    }
+}

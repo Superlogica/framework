@@ -1,45 +1,137 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-EuEJXIS3SRy8Bwg/
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Weight */
+require_once 'Zend/Search/Lucene/Search/Weight.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Weight_MultiTerm extends Zend_Search_Lucene_Search_Weight
+{
+    /**
+     * IndexReader.
+     *
+     * @var Zend_Search_Lucene_Interface
+     */
+    private $_reader;
+
+    /**
+     * The query that this concerns.
+     *
+     * @var Zend_Search_Lucene_Search_Query
+     */
+    private $_query;
+
+    /**
+     * Query terms weights
+     * Array of Zend_Search_Lucene_Search_Weight_Term
+     *
+     * @var array
+     */
+    private $_weights;
+
+
+    /**
+     * Zend_Search_Lucene_Search_Weight_MultiTerm constructor
+     * query - the query that this concerns.
+     * reader - index reader
+     *
+     * @param Zend_Search_Lucene_Search_Query $query
+     * @param Zend_Search_Lucene_Interface    $reader
+     */
+    public function __construct(Zend_Search_Lucene_Search_Query $query,
+                                Zend_Search_Lucene_Interface    $reader)
+    {
+        $this->_query   = $query;
+        $this->_reader  = $reader;
+        $this->_weights = array();
+
+        $signs = $query->getSigns();
+
+        foreach ($query->getTerms() as $id => $term) {
+            if ($signs === null || $signs[$id] === null || $signs[$id]) {
+                $this->_weights[$id] = new Zend_Search_Lucene_Search_Weight_Term($term, $query, $reader);
+                $query->setWeight($id, $this->_weights[$id]);
+            }
+        }
+    }
+
+
+    /**
+     * The weight for this query
+     * Standard Weight::$_value is not used for boolean queries
+     *
+     * @return float
+     */
+    public function getValue()
+    {
+        return $this->_query->getBoost();
+    }
+
+
+    /**
+     * The sum of squared weights of contained query clauses.
+     *
+     * @return float
+     */
+    public function sumOfSquaredWeights()
+    {
+        $sum = 0;
+        foreach ($this->_weights as $weight) {
+            // sum sub weights
+            $sum += $weight->sumOfSquaredWeights();
+        }
+
+        // boost each sub-weight
+        $sum *= $this->_query->getBoost() * $this->_query->getBoost();
+
+        // check for empty query (like '-something -another')
+        if ($sum == 0) {
+            $sum = 1.0;
+        }
+        return $sum;
+    }
+
+
+    /**
+     * Assigns the query normalization factor to this.
+     *
+     * @param float $queryNorm
+     */
+    public function normalize($queryNorm)
+    {
+        // incorporate boost
+        $queryNorm *= $this->_query->getBoost();
+
+        foreach ($this->_weights as $weight) {
+            $weight->normalize($queryNorm);
+        }
+    }
+}
+
+

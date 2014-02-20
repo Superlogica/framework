@@ -1,17 +1,63 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Dl1jVhz5mxzx7iWsQOU9C6720aZRml7RRcibp5JlIWE5PJe7+JH4/HU6Lia/19dDvrhBUSW
-7vihNlHN3LSU738nIGyBVwFjsSArJPwWkuJO7Q+T3I7EOblJII4sotv523kfjS5ZiDU32a0EI9Qy
-DJCrtCqNn0Itk1qtygcm5UNHr5JA3p8PdGx+k8UDOOcBjDHzMCoopGkODFS9vK1FaXIlIntyXDvn
-4OeE9aetD6xh9dy8XUurn4kJIPpDKor7T+KlBeH2Q6XQTMZAEkL2L8ecnDNcpii8TunLKHcQVkH7
-5wiPVX7sjMO6+1/uWSOK+2y4C7EQUD/D5xAlrPyamswJJ/rUCHq/8Fc8ESfqp7LN9BcWZsFD3Jz0
-+cN8+FBQV+14OaFxBL8N5htEM6qXaQyDIrbJwlPC4nrVIa8Jo/Hj7Tb8G53tfnwszjKQcluGYCuC
-X/PDe7vW1SxHu/ZzLk23DEGzKUlH9ZyYUutuBhkQpGXd2cTa/A2eXcpJd4Gz9hPUBPVClwQfHfLx
-zO9fhKZ+APuflkBWppJbpfNLbKDhMw+PInuhHWUNqLas1g1X91MP+h2IaUkJSnuW2cn0b5Tns1Q5
-we1J4aAoHTrl+Z1cPnAEU9YlH1zcfGC7HDSo12UCROFaH/Vj6/b8O4jr5AC1KhZveFfhygaQYotv
-+5r6nLmouoctV7bjccLNBSJsyF+Y9p8Os6nbfyS36/2gvGxNcJlNnQ0s2WFymUdVw+DvflXR1isv
-esleJRiH8ZCRdak3eIsIbN5cx20JfBwthALnTjfPl/NuDkHMHQ6htBwdWcr8v1JEG0i76Dg4a6DY
-mKORjlkMr8qi48U0kXz3Qb/vnCYYBTyKtFWReRrp5ICc2uUTr7sCRju6eiU0E4qtEpMXIJDehHr+
-uGfFh6zsEeZ9nqpiJIxmWNM3+Tt+8YrKma6pCwldhAfz90+GbuS5SaUDMTOX6Qmb8/XHrccNXeK2
-BkXEpj638cqNJ0lwf/te+FY2ASQJK1pESFHauq6B6EXaanhD+d9GTjnyN0W9n5MXmHf61m==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Interface.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+/**
+ * The interface required by all Zend_InfoCard Adapter classes to implement. It represents
+ * a series of callback methods used by the component during processing of an information card
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_InfoCard_Adapter_Interface
+{
+    /**
+     * Store the assertion's claims in persistent storage
+     *
+     * @param string $assertionURI The assertion type URI
+     * @param string $assertionID The specific assertion ID
+     * @param array $conditions An array of claims to store associated with the assertion
+     * @return bool True on success, false on failure
+     */
+    public function storeAssertion($assertionURI, $assertionID, $conditions);
+
+    /**
+     * Retrieve the claims of a given assertion from persistent storage
+     *
+     * @param string $assertionURI The assertion type URI
+     * @param string $assertionID The assertion ID to retrieve
+     * @return mixed False if the assertion ID was not found for that URI, or an array of
+     *               conditions associated with that assertion if found in the same format
+     *                  provided
+     */
+    public function retrieveAssertion($assertionURI, $assertionID);
+
+    /**
+     * Remove the claims of a given assertion from persistent storage
+     *
+     * @param string $asserionURI The assertion type URI
+     * @param string $assertionID The assertion ID to remove
+     * @return bool True on success, false on failure
+     */
+    public function removeAssertion($asserionURI, $assertionID);
+}

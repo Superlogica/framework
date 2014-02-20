@@ -1,29 +1,79 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV57I7dsiqR6HCrJ8AI6IWJYm9eRzIdvZxUO6iFPgcJqYT3g1e1/Xb7gkQnChInC0vYk0qDgCH
-p/TAeAc0mJZwldkgcOx9ybMPDCong7L6QBpdj8v/JnGzDxY+8gALfmkMEXC9rCdzJDjfpl38UUxJ
-hufBlH5VS+E7NgopfDHPsdRZpL0Rrsbm8I8efzFuVR4+RebPZqJgSOTto2aIXFGuMOfnCawJdd7o
-XsMwQXIvWWlaSZUtWfLxn4kJIPpDKor7T+KlBeH2QEbatMwIHLUb1r6+hDLEKGGd0ywfauTe8/i8
-nWyK3Nliur3L1YO19K09pwg8vb6HR/LA2pt1v3Vpkmz/6DpIVaYwkC0TQImvrHRELGO24XDTKoZ8
-lZKJTXME1nl3Un+slDTi6kxnJioVIz7Z1/a3KY6DyShF83lERJrcoosvYUpf/BwDrVeoYZhAVgll
-THTUOakuZnxc7OJ2OatiNP/3VmrmBb8LL2Ix9s13Qsy90V/E0p7X9wSt025xqRMov0UT6R8Pqtam
-MKKtH10Y3kGSGQ5gRYp8fZRXp/VIQ8YqP44mhwUDV4kKXWL2f1AOl26wMi0WtXC4hzKS1SsmDfyI
-TPjY2sn/Ihi472RUuwfGyr0bi2UI9XB/MjbbjhEpOr1O7chcx2mN4k9OuheC/z8QKWY7dxG42wkY
-wxd3Wm5DT4x2TvI9icWdhBDBgq+mkqq0YBMAExav5vsHbNh5idCBzmQE1Be3wlTbQW1z2rtGC2Jr
-cPDT/+z6CF6f5gDC53JPyjAqWHA/eHyijnO65NbGUIfH+YqvOimRwMNqfd17EWP3uBbGTMyiEDSg
-MXuPizpCKdE0G9ahNNE7O8y63oFErgl/+lPPxlTKuy+pc6I7AHFkL4B7CuP+V///pbAnC63BMDDF
-yoQiwQfBq08d+BzCy9tnz0/SGj2YGlUe6nrhIJSlviFREWNs+vD3sdTIFQG3oX6oLjuSIxeCQp93
-0YTR4t44DS2CHpRKo3O04FvXI5TmPsUCQ5HKiIXQst19mm7i36TOjG7SjEpwLjjTKsiJlPC9a0Hp
-XXu1o1vS9uNvVrP5j0RXdxQFHwM1pF6Zt68ddX2Ir1CiRPPtJVEMHp0XGkoLa6z7GLrf0clFkOhc
-HNKqsiDaoVhEHftF1R9GYta/VgeI5Lbze+QZ+TG1brStQ1/4hlEU/eivuP3wDPlBsoI5UOyMaPKr
-CltDfqdrl4FcIfABR4D48RmfgKI/bvndzmUfqYED5juphceBEo3jzAp3sjcqax4/eXmGQEarMMhq
-C5JtD6G6dMHa0O4B7D5xiZGjZPWWSEKlT5W8/nrv8KSE1kCNhM1skG6+W1i6S6RqeXJ8G559AtaD
-GqwqsDkqmHKUROwLG8sO2ZtyAzpVFmo4jURKCpREEOFCW/0g4dhqKHBSLaegcbJTcvALRNjmTs0B
-92HuYPPsZWVwY0/Pxcfsur5aIxz3l8IPgEPjbQs4k1Uiu4HOYctwE1lYBNsidDD/sOKifbNk/v61
-udLEJP3bDf9KtF49hKhu7eWVx8FQoqCH9Ht9Kjv7AQVTsHaY8jwvl/kYXAJlHXDX0U2ICtsqbfeU
-20+Hwrgm0snfOOKqL7Bl8KuIEGUrbFwFyWaF5tmAhytXiUPXC1ZDPi7+YYLMeiunbOxQ+nqWGYTd
-3kDEthE38lSSDyCp9RdhC7zpnG4d6bYBVRWfCNarnm0s0X5Z99Rxh7VrB+fVRApOtVDjcZyvQZl0
-dI6M69Luvc/M5Q1KGE5tI5djqW16jr0MzQwAStDPjwZXDZsl81rqdm1uiTSKAeVXIq6gGqk6zM3L
-UNG3WtX/tpYgUzwhh9fVW8OmXeEPWnO37JdrZQbQ2qG5aIybIvEfw///5ZMHjcECuNvBLc572Ok/
-qOki31I5G8pm3gzbtPzYPP69OuQAIQJooh0nI55g
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: SearchResultSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/** 
+ * @see Zend_Service_Technorati_ResultSet 
+ */
+require_once 'Zend/Service/Technorati/ResultSet.php';
+
+
+/**
+ * Represents a Technorati Search query result set.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_SearchResultSet extends Zend_Service_Technorati_ResultSet
+{
+    /**
+     * Number of query results.
+     *
+     * @var     int
+     * @access  protected
+     */
+    protected $_queryCount;
+
+    /**
+     * Parses the search response and retrieve the results for iteration.
+     *
+     * @param   DomDocument $dom    the ReST fragment for this object
+     * @param   array $options      query options as associative array
+     */
+    public function __construct(DomDocument $dom, $options = array())
+    {
+        parent::__construct($dom, $options);
+
+        $result = $this->_xpath->query('/tapi/document/result/querycount/text()');
+        if ($result->length == 1) $this->_queryCount = (int) $result->item(0)->data;
+        
+        $this->_totalResultsReturned  = (int) $this->_xpath->evaluate("count(/tapi/document/item)");
+        $this->_totalResultsAvailable = (int) $this->_queryCount;
+    }
+
+    /**
+     * Implements Zend_Service_Technorati_ResultSet::current().
+     *
+     * @return Zend_Service_Technorati_SearchResult current result
+     */
+    public function current()
+    {
+        /**
+         * @see Zend_Service_Technorati_SearchResult
+         */
+        require_once 'Zend/Service/Technorati/SearchResult.php';
+        return new Zend_Service_Technorati_SearchResult($this->_results->item($this->_currentIndex));
+    }
+}

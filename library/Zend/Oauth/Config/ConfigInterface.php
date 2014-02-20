@@ -1,33 +1,75 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-s4Bb5EGzgpYaUDKe0G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ConfigInterface.php 20217 2010-01-12 16:01:57Z matthew $
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Oauth_Config_ConfigInterface
+{
+    public function setOptions(array $options);
+
+    public function setConsumerKey($key);
+
+    public function getConsumerKey();
+
+    public function setConsumerSecret($secret);
+
+    public function getConsumerSecret();
+
+    public function setSignatureMethod($method);
+
+    public function getSignatureMethod();
+
+    public function setRequestScheme($scheme);
+
+    public function getRequestScheme();
+
+    public function setVersion($version);
+
+    public function getVersion();
+
+    public function setCallbackUrl($url);
+
+    public function getCallbackUrl();
+
+    public function setRequestTokenUrl($url);
+
+    public function getRequestTokenUrl();
+
+    public function setRequestMethod($method);
+
+    public function getRequestMethod();
+
+    public function setAccessTokenUrl($url);
+
+    public function getAccessTokenUrl();
+
+    public function setUserAuthorizationUrl($url);
+
+    public function getUserAuthorizationUrl();
+
+    public function setToken(Zend_Oauth_Token $token);
+
+    public function getToken();
+}

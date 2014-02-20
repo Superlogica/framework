@@ -1,30 +1,132 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @subpackage Zend_OpenId_Consumer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Storage.php 9239 2008-04-18 12:09:31Z dmitry $
+ */
+
+/**
+ * Abstract class to implement external storage for OpenID consumer
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @subpackage Zend_OpenId_Consumer
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_OpenId_Consumer_Storage
+{
+
+    /**
+     * Stores information about association identified by $url/$handle
+     *
+     * @param string $url OpenID server URL
+     * @param string $handle assiciation handle
+     * @param string $macFunc HMAC function (sha1 or sha256)
+     * @param string $secret shared secret
+     * @param long $expires expiration UNIX time
+     * @return void
+     */
+    abstract public function addAssociation($url, $handle, $macFunc, $secret, $expires);
+
+    /**
+     * Gets information about association identified by $url
+     * Returns true if given association found and not expired and false
+     * otherwise
+     *
+     * @param string $url OpenID server URL
+     * @param string &$handle assiciation handle
+     * @param string &$macFunc HMAC function (sha1 or sha256)
+     * @param string &$secret shared secret
+     * @param long &$expires expiration UNIX time
+     * @return bool
+     */
+    abstract public function getAssociation($url, &$handle, &$macFunc, &$secret, &$expires);
+
+    /**
+     * Gets information about association identified by $handle
+     * Returns true if given association found and not expired and false
+     * othverwise
+     *
+     * @param string $handle assiciation handle
+     * @param string &$url OpenID server URL
+     * @param string &$macFunc HMAC function (sha1 or sha256)
+     * @param string &$secret shared secret
+     * @param long &$expires expiration UNIX time
+     * @return bool
+     */
+    abstract public function getAssociationByHandle($handle, &$url, &$macFunc, &$secret, &$expires);
+
+    /**
+     * Deletes association identified by $url
+     *
+     * @param string $url OpenID server URL
+     * @return void
+     */
+    abstract public function delAssociation($url);
+
+    /**
+     * Stores information discovered from identity $id
+     *
+     * @param string $id identity
+     * @param string $realId discovered real identity URL
+     * @param string $server discovered OpenID server URL
+     * @param float $version discovered OpenID protocol version
+     * @param long $expires expiration UNIX time
+     * @return void
+     */
+    abstract public function addDiscoveryInfo($id, $realId, $server, $version, $expires);
+
+    /**
+     * Gets information discovered from identity $id
+     * Returns true if such information exists and false otherwise
+     *
+     * @param string $id identity
+     * @param string &$realId discovered real identity URL
+     * @param string &$server discovered OpenID server URL
+     * @param float &$version discovered OpenID protocol version
+     * @param long &$expires expiration UNIX time
+     * @return bool
+     */
+    abstract public function getDiscoveryInfo($id, &$realId, &$server, &$version, &$expires);
+
+    /**
+     * Removes cached information discovered from identity $id
+     *
+     * @param string $id identity
+     * @return bool
+     */
+    abstract public function delDiscoveryInfo($id);
+
+    /**
+     * The function checks the uniqueness of openid.response_nonce
+     *
+     * @param string $provider openid.openid_op_endpoint field from authentication response
+     * @param string $nonce openid.response_nonce field from authentication response
+     * @return bool
+     */
+    abstract public function isUniqueNonce($provider, $nonce);
+
+    /**
+     * Removes data from the uniqueness database that is older then given date
+     *
+     * @param string $date Date of expired data
+     */
+    abstract public function purgeNonces($date=null);
+}

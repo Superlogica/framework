@@ -1,31 +1,117 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-tAowxzJk2dSGHgXJNH8APhe+fbBf
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Identical.php 8118 2008-02-18 16:10:32Z matthew $
+ */
+
+/** Zend_Validate_Abstract */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Identical extends Zend_Validate_Abstract
+{
+    /**#@+
+     * Error codes
+     * @const string
+     */
+    const NOT_SAME      = 'notSame';
+    const MISSING_TOKEN = 'missingToken';
+    /**#@-*/
+
+    /**
+     * Error messages
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::NOT_SAME      => 'Tokens do not match',
+        self::MISSING_TOKEN => 'No token was provided to match against',
+    );
+
+    /**
+     * Original token against which to validate
+     * @var string
+     */
+    protected $_token;
+
+    /**
+     * Sets validator options
+     *
+     * @param  string $token
+     * @return void
+     */
+    public function __construct($token = null)
+    {
+        if (null !== $token) {
+            $this->setToken($token);
+        }
+    }
+
+    /**
+     * Set token against which to compare
+     * 
+     * @param  string $token 
+     * @return Zend_Validate_Identical
+     */
+    public function setToken($token)
+    {
+        $this->_token = (string) $token;
+        return $this;
+    }
+
+    /**
+     * Retrieve token
+     * 
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->_token;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if a token has been set and the provided value 
+     * matches that token.
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $this->_setValue($value);
+        $token = $this->getToken();
+
+        if (empty($token)) {
+            $this->_error(self::MISSING_TOKEN);
+            return false;
+        }
+
+        if ($value !== $token)  {
+            $this->_error(self::NOT_SAME);
+            return false;
+        }
+
+        return true;
+    }
+}

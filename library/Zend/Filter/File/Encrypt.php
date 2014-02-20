@@ -1,38 +1,106 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-ObWauqTeXbctLL/44iLDfHffZUa=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Filter_Encrypt
+ */
+require_once 'Zend/Filter/Encrypt.php';
+
+/**
+ * Encrypts a given file and stores the encrypted file content
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_File_Encrypt extends Zend_Filter_Encrypt
+{
+    /**
+     * New filename to set
+     *
+     * @var string
+     */
+    protected $_filename;
+
+    /**
+     * Returns the new filename where the content will be stored
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->_filename;
+    }
+
+    /**
+     * Sets the new filename where the content will be stored
+     *
+     * @param  string $filename (Optional) New filename to set
+     * @return Zend_Filter_File_Encryt
+     */
+    public function setFilename($filename = null)
+    {
+        $this->_filename = $filename;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Encrypts the file $value with the defined settings
+     *
+     * @param  string $value Full path of file to change
+     * @return string The filename which has been set, or false when there were errors
+     */
+    public function filter($value)
+    {
+        if (!file_exists($value)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("File '$value' not found");
+        }
+
+        if (!isset($this->_filename)) {
+            $this->_filename = $value;
+        }
+
+        if (file_exists($this->_filename) and !is_writable($this->_filename)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("File '{$this->_filename}' is not writable");
+        }
+
+        $content = file_get_contents($value);
+        if (!$content) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("Problem while reading file '$value'");
+        }
+
+        $encrypted = parent::filter($content);
+        $result    = file_put_contents($this->_filename, $encrypted);
+
+        if (!$result) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("Problem while writing file '{$this->_filename}'");
+        }
+
+        return $this->_filename;
+    }
+}

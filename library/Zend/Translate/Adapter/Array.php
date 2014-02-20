@@ -1,34 +1,94 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-2tSKi1pBesO=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Locale */
+require_once 'Zend/Locale.php';
+
+/** Zend_Translate_Adapter */
+require_once 'Zend/Translate/Adapter.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Translate_Adapter_Array extends Zend_Translate_Adapter
+{
+    private $_data = array();
+
+    /**
+     * Generates the adapter
+     *
+     * @param  array               $data     Translation data
+     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
+     *                                       see Zend_Locale for more information
+     * @param  array               $options  OPTIONAL Options to set
+     */
+    public function __construct($data, $locale = null, array $options = array())
+    {
+        parent::__construct($data, $locale, $options);
+    }
+
+    /**
+     * Load translation data
+     *
+     * @param  string|array  $data
+     * @param  string        $locale  Locale/Language to add data for, identical with locale identifier,
+     *                                see Zend_Locale for more information
+     * @param  array         $options OPTIONAL Options to use
+     * @return array
+     */
+    protected function _loadTranslationData($data, $locale, array $options = array())
+    {
+        $this->_data = array();
+        if (!is_array($data)) {
+            if (file_exists($data)) {
+                ob_start();
+                $data = include($data);
+                ob_end_clean();
+            }
+        }
+        if (!is_array($data)) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception("Error including array or file '".$data."'");
+        }
+
+        if (!isset($this->_data[$locale])) {
+            $this->_data[$locale] = array();
+        }
+
+        $this->_data[$locale] = $data + $this->_data[$locale];
+        return $this->_data;
+    }
+
+    /**
+     * returns the adapters name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "Array";
+    }
+}

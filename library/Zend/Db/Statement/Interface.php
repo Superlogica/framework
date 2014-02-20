@@ -1,39 +1,202 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-atn2c1NdS0VYCDMZfVI2dwr/VILF
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Emulates a PDOStatement for native database adapters.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Db_Statement_Interface
+{
+
+    /**
+     * Bind a column of the statement result set to a PHP variable.
+     *
+     * @param string $column Name the column in the result set, either by
+     *                       position or by name.
+     * @param mixed  $param  Reference to the PHP variable containing the value.
+     * @param mixed  $type   OPTIONAL
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function bindColumn($column, &$param, $type = null);
+
+    /**
+     * Binds a parameter to the specified variable name.
+     *
+     * @param mixed $parameter Name the parameter, either integer or string.
+     * @param mixed $variable  Reference to PHP variable containing the value.
+     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
+     * @param mixed $length    OPTIONAL Length of SQL parameter.
+     * @param mixed $options   OPTIONAL Other options.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function bindParam($parameter, &$variable, $type = null, $length = null, $options = null);
+
+    /**
+     * Binds a value to a parameter.
+     *
+     * @param mixed $parameter Name the parameter, either integer or string.
+     * @param mixed $value     Scalar value to bind to the parameter.
+     * @param mixed $type      OPTIONAL Datatype of the parameter.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function bindValue($parameter, $value, $type = null);
+
+    /**
+     * Closes the cursor, allowing the statement to be executed again.
+     *
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function closeCursor();
+
+    /**
+     * Returns the number of columns in the result set.
+     * Returns null if the statement has no result set metadata.
+     *
+     * @return int The number of columns.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function columnCount();
+
+    /**
+     * Retrieves the error code, if any, associated with the last operation on
+     * the statement handle.
+     *
+     * @return string error code.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function errorCode();
+
+    /**
+     * Retrieves an array of error information, if any, associated with the
+     * last operation on the statement handle.
+     *
+     * @return array
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function errorInfo();
+
+    /**
+     * Executes a prepared statement.
+     *
+     * @param array $params OPTIONAL Values to bind to parameter placeholders.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function execute(array $params = array());
+
+    /**
+     * Fetches a row from the result set.
+     *
+     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
+     * @param int $cursor OPTIONAL Absolute, relative, or other.
+     * @param int $offset OPTIONAL Number for absolute or relative cursors.
+     * @return mixed Array, object, or scalar depending on fetch mode.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetch($style = null, $cursor = null, $offset = null);
+
+    /**
+     * Returns an array containing all of the result set rows.
+     *
+     * @param int $style OPTIONAL Fetch mode.
+     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
+     * @return array Collection of rows, each in a format by the fetch mode.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetchAll($style = null, $col = null);
+
+    /**
+     * Returns a single column from the next row of a result set.
+     *
+     * @param int $col OPTIONAL Position of the column to fetch.
+     * @return string
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetchColumn($col = 0);
+
+    /**
+     * Fetches the next row and returns it as an object.
+     *
+     * @param string $class  OPTIONAL Name of the class to create.
+     * @param array  $config OPTIONAL Constructor arguments for the class.
+     * @return mixed One object instance of the specified class.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetchObject($class = 'stdClass', array $config = array());
+
+    /**
+     * Retrieve a statement attribute.
+     *
+     * @param string $key Attribute name.
+     * @return mixed      Attribute value.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function getAttribute($key);
+
+    /**
+     * Retrieves the next rowset (result set) for a SQL statement that has
+     * multiple result sets.  An example is a stored procedure that returns
+     * the results of multiple queries.
+     *
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function nextRowset();
+
+    /**
+     * Returns the number of rows affected by the execution of the
+     * last INSERT, DELETE, or UPDATE statement executed by this
+     * statement object.
+     *
+     * @return int     The number of rows affected.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function rowCount();
+
+    /**
+     * Set a statement attribute.
+     *
+     * @param string $key Attribute name.
+     * @param mixed  $val Attribute value.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function setAttribute($key, $val);
+
+    /**
+     * Set the default fetch mode for this statement.
+     *
+     * @param int   $mode The fetch mode.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function setFetchMode($mode);
+
+}

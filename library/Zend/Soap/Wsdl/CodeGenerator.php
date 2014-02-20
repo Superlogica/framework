@@ -1,59 +1,127 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CodeGenerator.php 11560 2008-10-01 10:09:10Z yoshida@zend.co.jp $
+ */
+
+require_once 'Zend/Soap/Wsdl/Parser.php';
+
+/**
+ * Zend_Soap_Wsdl_CodeGenerator
+ * 
+ * @category   Zend
+ * @package    Zend_Soap
+ */
+class Zend_Soap_Wsdl_CodeGenerator {
+   
+    /**
+     * @var string WSDL Filename/URI
+     */
+    private static $filename = null;
+    
+    /**
+     * @var string PHP Code for output
+     */
+    private static $php_code;
+    
+    /**
+     * @var object Zend_Soap_Wsdl_Parser Result
+     */
+    private static $wsdl;
+
+    /**
+     * Constructor
+     *
+     * @param string $wsdl Filename, URI or XML for the WSDL
+     * @param string $output Output file name, default: null
+     */
+    public static function parse($wsdl, $output = null)
+    {
+        self::$wsdl = Zend_Soap_Wsdl_Parser::parse($wsdl);
+        
+        self::$php_code = self::generatePhp();
+        
+        if (!is_null($output) && is_writable($output)) {
+            file_put_contents($output);
+        }
+        
+        return self::$php_code;
+        
+    }
+    
+    /**
+     * Generate the output PHP
+     *
+     * @return string
+     */
+    private function generatePhp()
+    {
+        $php_code = '<?php' . "\n";
+        if (isset(self::$wsdl->documentation)) {
+            $docs = self::$wsdl->documentation;
+            $docs = explode("\n", $docs);
+            $php_code .= "/**\n";
+            foreach ($docs as $line) {
+                $php_code .= ' * ' .trim($line). PHP_EOL;
+            }
+            $php_code .= " */\n\n";
+        }
+        if (!isset(self::$wsdl->name)) {
+            $classname = 'SoapService';
+        } else {
+            $classname = self::$wsdl->name;
+        }                
+            
+        $php_code .= "class {$classname} {\n";
+        
+        foreach (self::$wsdl->operations as $name => $io) {
+            if (isset($io['documentation'])) {
+                $php_code .= "\n\t/**\n";
+                $docs = $io['documentation'];
+                $docs = explode("\n", $docs);
+                foreach ($docs as $line) {
+                    $php_code .= "\t * " .trim($line). PHP_EOL;
+                }
+                $php_code .= "\t */\n";
+            }
+            $php_code .= "\n\tpublic function {$name} (";
+            if (isset($io['input'])) {
+                $arg_names = array();
+                foreach ($io['input'] as $arg) {
+                    $arg_names[] = $arg['name'];
+                }
+                $php_code .= '$' .implode(', $', $arg_names);
+            }
+            $php_code .= ')';
+            $php_code .= "\n\t{";
+            $php_code .= "\n\t\t\n";
+            if (isset($io['output'])) {
+                $php_code .= "\t\treturn \${$io['output']['name']};\n";
+            }
+            $php_code .= "\t}\n";
+        }
+        
+        $php_code .= "\n}";
+        
+        $php_code .= PHP_EOL. "\$server = new SoapServer;" .PHP_EOL;
+        $php_code .= "\$server->setClass($classname);";
+        $php_code .= "\n?>";
+        return $php_code;
+    }
+}
+

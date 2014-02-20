@@ -1,53 +1,118 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5787RArjwLI3VBNvZWVDTwMnbmDTNnvo9gciI/T+uBQlzKjBx0cDpKxOLUaZw0iZS/cTskfp
-MhhxPhNCdQaOyOrEdAnR2Pxw2Kr+RjxwlDoJ+jdRwxDqDeY7Vp8xcO2syv4WjxELKBgr3VHMWiX3
-SQYL0tQcq0+VuAj9U1xZzzLescfPhTCU33sprW8JKGLlV9mVHBqgeRMVtfENLcm88S1HRrS8WRkX
-fdzA0+LZOQVJvakGPB44n4kJIPpDKor7T+KlBeH2Q1zc4Jw1MO4PS05WDDL+SVvSPKUcgs4Yh3CU
-4qc2zu0jJBV6IP/8D92b1CtWk2AbjjuRADrY7S5z1nDDqjzMzwvj/IJEla3uHUo2fQ/icZg893r2
-T0pUepsUScHQC+XNkuGCrUvueDFbjP5QD6Qlbe3ynE2/UBX6d0nLcSPhHG/CJNDPVSvsxDqheKil
-mUHtF+rrbnc4GQR8X47JZ37pNfqbzm5shS8g0S8/R6p3EPsrDLXubiJPvQ8j16ea4wQLa8EuMbMw
-6yC1hMOly0C2xT5ck7QisR5ohCb+g6zIiZ7mHAVjW/B10xaCp7OqnuOP9CkARklFADpl7hiOj/ny
-rwvkWl64D+7IApteox45hG7vwqZal28OOnCxWy7z4/Ps0G6blJc1NzmtN9yDOYO6WgeZ9A9mVdhM
-suE1t1KXeMkuhiDRfJlw4xPIYodLdcj2VdZdqdHxfuFUIX42BBk9+T5PH4o0ueXGGRZo58hl2Azi
-vhbVOcCzTN+FhPpdNVDTKIs1Nnqht1QCoihxgonwRvStAwtQu7UG/0iI1nNqpA4K3TlStJcmnPkR
-wMQrzlLNuT6yaMSlJ2FTdP1tovoCorK3XB9lvtVs4gPwtlH8gCIEtrnRm0rjmagAqx0OHBP/kdlv
-TPKDH1O7t9rP9muFQw9FxncYPc28W/MCj69NWjPFO2449LKdgVEEBGifd5C37TOB7o2u5SYFoLkH
-nSmS73riY1HBIarRrtJ3GNja+rJeos8nEM2JG3Q17HuOHHRFtcNpHD191O/6BgaVRVrO5dWhBgQq
-AuldQsOGannxdAv87/+PGA6wiRuUA7JTqSnotqvu50nnks2ivlb/kh9IMTY8NWYXulxOeMWHsDyW
-XuxQLZ2tnInDDKCFxWlzAO4vfFA99iFB07NB52wpEemmOa71S13JVgkwfw90kkGPvr3juqyOO7vM
-AR6ds7sUTSGDx7l2zryXSb3eUvkn1GOVgvfveim2k78JHbZPn8TljDanP8H1I+3H8KWIvF7ZFkLD
-g57yHi9NyZ+CwhQhgZYP4IZa/g2gNLHFL/oHNIf/zrlPx6DVbzLr/yELEziJ6FQvj/GrZIki+t8u
-tSGf1qaqVi9f6PLlJKdVeX0inC357i3He+j4esYXDy1HO9DD8t4g/cVW1JVRhHFifjR62ENxLpUP
-SA6j7rRkjaVpQvGPOSS2Sw4azAhRB7LlvFHm8AgPSngusA/Kqok6Of7ospE435nEoao4mENXveSJ
-CtRgpLSeTS9f7Dsj5LT6Zk9k4SAmcpRbri4gBIXIrutisR2st/UJyuvflJxE/9AOPB09CplDsUNC
-J3JOb7xjv+zGuy1wAUal8qWbuxL4rXhRXZY4RWm+32ZEvAwEXV45JdSMCBqj4bQOq0KqQKVGsLbJ
-2LSgDNa0pl2eosYbVuNQ+lTFYGwlolFot44pJy3+kxE00IT9+9THM9ppR71oZ28vc5Fzinv2PWJ4
-5wqbmawkmEMjvMols4sAZWucFOqZwj8S9DeFBY67zy19TrfjseICB0pyR2mGNzvppq+N09o0LugZ
-0nm0EkVFCYrZwnNBA3Sfds/WG1n46dE1PbXUJVC+59kTPwyC4hHShVQIkc03Sm22mnRoW/4m/bY7
-95CcrvBzY3LgMJ7QmviQcIEynBrEuY3XLYq25O21NZrzcAZayyO+TYQilQuiCVYWe0nUAHB+cF4C
-0slGXTwNVcSNqSuLHG4nWwgHqjuP5WkUe/jnScwTQGwlvB2+RznCY3u0CqOpY81+bRbQqI0RfqEK
-1uSkGkS+z+BVuU3zdaaiFtLWlKCaTGRtTakbffjwfbUlPbkxYEzShHJpXvXFiFwvdITWAdiRZufa
-arKA8lTf6sbmtn+Y2DwqfBeDJdAJ/ZzLRZZDIR7CTqxICCqPCqgAYpELZh1MPHQM1KQ/L9n6RpB0
-8HwNdml1H8fEYq6svmP783Ftqa5ABhZo6q3ReyNdJVGHjD3Y5jJ/Y1k0ozW81NTPAtRsOANQOizJ
-EhsfDC9PVPIi6E7pEElgSZDxuV5t7ZuoCWBYiY38d+gAH2tXdZTsob6uEp4YMT5MeU3R72FxGHSz
-cFJkbE7Wwox5aBmNyGWg9nCwjVyqH5EODxj11qtK66OLwFiTDD9EkHMv+g7OoMx/6XilpTVA0VtV
-4guXbGhhi/C16AImNGNxCsyV4GdbSgoZjZExe6+rjmbXb0qlEdoU9Y4pWQWZrn9T9e62K5ldex/R
-Xke2SPkY8zAr4CYJjWJB4VGtgjRhdtQxNMe4Pe9Pgw7bYuKL4YQFq4rngxiXYMKONe1NKXwbw2uT
-IExGWopbkeNvR8qAWzsZKHn0MvCWee7jjMlAKp1EuS4tDB6gDYMQdZ1I6c/Zol/kLRBFaUSU8/iA
-BC1DBVckskxyPHUywdYOAUAx3O+HkbP/A+MpU4XDVbXamoC5/mv2JA6DyXuDrLnTgEb2cTCd/kIM
-b2zaPhshLGj60d8ixrmCfc6szB8p7fKAuuhWTDxlyY0omAfdRQ82NC1q6R7F/a7qi+YG0pZwg/+m
-pbuR0LG3L5rDxhcoGFESGxGMTvTRnSZp+QMAWqNLwVmHV82MHd+iMjkEZHCLruy7P6wXFLTrGjvd
-Bx+Wz/xW/7k4Xxvqc+w4/jcaoRoDVf0ep7wlVyZq1rzxqZlUNUiRTH5wm+e6aJ/pirgLk1gE6D1a
-l+fQOrWPtYzLfeOWyVrXqs6OdE+rgwbYmCMa3+8NzwRuWGX8AE8cW0zQTrvQB8JsRojH5qszyvTf
-Tds5YX5XAvXrFX0RIZErAle76yUx7bWgIwbm878MY4zoLsBSClyYf7xE1jqEo8qYyIKt3zrJK5cb
-5YG5BeglEl16uWcodS4eRQM+U7U5SFzAqqcPVOw3efeld6zKPpaCEdu5VS08Sg/TtRlpCcLHiNJ0
-0wAP2xyQC7G6sGpMZhz44/si31+U5FH7glrux462+8ddpsO/6ErBFS+vmdQPllXZG9ycLgYLzJCj
-j3thOHECK50Ns/h53BxMleDwTlluwt4kck1TXz7J3BzZv1Sz46kjhWjQmveMqJJ/aFM8Lr0ZeeMZ
-wx3yLFmNO3jbAvSRH12t1ESZMidqdeA+1jSBZk8+ywQRi+cLyY96xxfa7hWwZYtO/K0KULgX0Myb
-fKR4/S6NY9rVIeXfIh8o3wV2sqdqRzcc8NPk1r5ujabUllcPqFVCBXxcYBYdCo2N5VZDXjogJlKD
-ScxW8mAgn1AmvxkeeHy59BlOrzLyRNe/Z0endym6djSTwrKfLv/uxVBvqCu0ItaD8YA5MSafX2/P
-zcLa8xs5VQ8oYaztw3ZL5iKCLtd4oYfiQhBUxAyvdiyPUVAC0y229VJV43yRf7w6inTIewam1m/5
-Y1E/sMWOgD6bx2WDUBiTJsD4yykoLQewopi+mRx/IhY7xTrJ+COdge189c96NqGNAMzCr+JITEXV
-rDp1+aQeiecIXc7S9dvuUF55e5OGe+S=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: OfferSet.php 12662 2008-11-15 15:29:58Z beberlei $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_OfferSet
+{
+    /**
+     * @var string
+     */
+    public $LowestNewPrice;
+
+    /**
+     * @var string
+     */
+    public $LowestNewPriceCurrency;
+
+    /**
+     * @var string
+     */
+    public $LowestUsedPrice;
+
+    /**
+     * @var string
+     */
+    public $LowestUsedPriceCurrency;
+
+    /**
+     * @var int
+     */
+    public $TotalNew;
+
+    /**
+     * @var int
+     */
+    public $TotalUsed;
+
+    /**
+     * @var int
+     */
+    public $TotalCollectible;
+
+    /**
+     * @var int
+     */
+    public $TotalRefurbished;
+
+    /**
+     * @var Zend_Service_Amazon_Offer[]
+     */
+    public $Offers;
+
+    /**
+     * Parse the given Offer Set Element
+     *
+     * @param  DOMElement $dom
+     * @return void
+     */
+    public function __construct(DOMElement $dom)
+    {
+        $xpath = new DOMXPath($dom->ownerDocument);
+        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
+
+        $offer = $xpath->query('./az:OfferSummary', $dom);
+        if ($offer->length == 1) {
+            $lowestNewPrice = $xpath->query('./az:OfferSummary/az:LowestNewPrice', $dom);
+            if ($lowestNewPrice->length == 1) {
+                $this->LowestNewPrice = (int) $xpath->query('./az:OfferSummary/az:LowestNewPrice/az:Amount/text()', $dom)->item(0)->data;
+                $this->LowestNewPriceCurrency = (string) $xpath->query('./az:OfferSummary/az:LowestNewPrice/az:CurrencyCode/text()', $dom)->item(0)->data;
+            }
+            $lowestUsedPrice = $xpath->query('./az:OfferSummary/az:LowestUsedPrice', $dom);
+            if ($lowestUsedPrice->length == 1) {
+                $this->LowestUsedPrice = (int) $xpath->query('./az:OfferSummary/az:LowestUsedPrice/az:Amount/text()', $dom)->item(0)->data;
+                $this->LowestUsedPriceCurrency = (string) $xpath->query('./az:OfferSummary/az:LowestUsedPrice/az:CurrencyCode/text()', $dom)->item(0)->data;
+            }
+            $this->TotalNew = (int) $xpath->query('./az:OfferSummary/az:TotalNew/text()', $dom)->item(0)->data;
+            $this->TotalUsed = (int) $xpath->query('./az:OfferSummary/az:TotalUsed/text()', $dom)->item(0)->data;
+            $this->TotalCollectible = (int) $xpath->query('./az:OfferSummary/az:TotalCollectible/text()', $dom)->item(0)->data;
+            $this->TotalRefurbished = (int) $xpath->query('./az:OfferSummary/az:TotalRefurbished/text()', $dom)->item(0)->data;
+        }
+        $offers = $xpath->query('./az:Offers/az:Offer', $dom);
+        if ($offers->length >= 1) {
+            /**
+             * @see Zend_Service_Amazon_Offer
+             */
+            require_once 'Zend/Service/Amazon/Offer.php';
+            foreach ($offers as $offer) {
+                $this->Offers[] = new Zend_Service_Amazon_Offer($offer);
+            }
+        }
+    }
+}

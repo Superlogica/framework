@@ -1,78 +1,520 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource */
+require_once 'Zend/Pdf/Resource.php';
+
+/**
+ * Abstract class which manages PDF fonts.
+ *
+ * Defines the public interface and creates shared storage for concrete
+ * subclasses which are responsible for generating the font's information
+ * dictionaries, mapping characters to glyphs, and providing both overall font
+ * and glyph-specific metric data.
+ *
+ * Font objects should be normally be obtained from the factory methods
+ * {@link Zend_Pdf_Font::fontWithName} and {@link Zend_Pdf_Font::fontWithPath}.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Resource_Font extends Zend_Pdf_Resource
+{
+  /**** Instance Variables ****/
+
+
+    /**
+     * The type of font. Use TYPE_ constants defined in {@link Zend_Pdf_Font}.
+     * @var integer
+     */
+    protected $_fontType = Zend_Pdf_Font::TYPE_UNKNOWN;
+
+    /**
+     * Array containing descriptive names for the font. See {@link fontName()}.
+     * @var array
+     */
+    protected $_fontNames = array();
+
+    /**
+     * Flag indicating whether or not this font is bold.
+     * @var boolean
+     */
+    protected $_isBold = false;
+
+    /**
+     * Flag indicating whether or not this font is italic.
+     * @var boolean
+     */
+    protected $_isItalic = false;
+
+    /**
+     * Flag indicating whether or not this font is monospaced.
+     * @var boolean
+     */
+    protected $_isMonospace = false;
+
+    /**
+     * The position below the text baseline of the underline (in glyph units).
+     * @var integer
+     */
+    protected $_underlinePosition = 0;
+
+    /**
+     * The thickness of the underline (in glyph units).
+     * @var integer
+     */
+    protected $_underlineThickness = 0;
+
+    /**
+     * The position above the text baseline of the strikethrough (in glyph units).
+     * @var integer
+     */
+    protected $_strikePosition = 0;
+
+    /**
+     * The thickness of the strikethrough (in glyph units).
+     * @var integer
+     */
+    protected $_strikeThickness = 0;
+
+    /**
+     * Number of glyph units per em. See {@link getUnitsPerEm()}.
+     * @var integer
+     */
+    protected $_unitsPerEm = 0;
+
+    /**
+     * Typographical ascent. See {@link getAscent()}.
+     * @var integer
+     */
+    protected $_ascent = 0;
+
+    /**
+     * Typographical descent. See {@link getDescent()}.
+     * @var integer
+     */
+    protected $_descent = 0;
+
+    /**
+     * Typographical line gap. See {@link getLineGap()}.
+     * @var integer
+     */
+    protected $_lineGap = 0;
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Object Lifecycle */
+
+    /**
+     * Object constructor.
+     *
+     */
+    public function __construct()
+    {
+        parent::__construct(new Zend_Pdf_Element_Dictionary());
+        $this->_resource->Type = new Zend_Pdf_Element_Name('Font');
+    }
+
+
+  /* Object Magic Methods */
+
+    /**
+     * Returns the full name of the font in the encoding method of the current
+     * locale. Transliterates any characters that cannot be naturally
+     * represented in that character set.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getFontName(Zend_Pdf_Font::NAME_FULL, '', '//TRANSLIT');
+    }
+
+
+  /* Accessors */
+
+    /**
+     * Returns the type of font.
+     *
+     * @return integer One of the TYPE_ constants defined in
+     *   {@link Zend_Pdf_Font}.
+     */
+    public function getFontType()
+    {
+        return $this->_fontType;
+    }
+
+    /**
+     * Returns the specified descriptive name for the font.
+     *
+     * The font name type is usually one of the following:
+     * <ul>
+     *  <li>{@link Zend_Pdf_Font::NAME_FULL}
+     *  <li>{@link Zend_Pdf_Font::NAME_FAMILY}
+     *  <li>{@link Zend_Pdf_Font::NAME_PREFERRED_FAMILY}
+     *  <li>{@link Zend_Pdf_Font::NAME_STYLE}
+     *  <li>{@link Zend_Pdf_Font::NAME_PREFERRED_STYLE}
+     *  <li>{@link Zend_Pdf_Font::NAME_DESCRIPTION}
+     *  <li>{@link Zend_Pdf_Font::NAME_SAMPLE_TEXT}
+     *  <li>{@link Zend_Pdf_Font::NAME_ID}
+     *  <li>{@link Zend_Pdf_Font::NAME_VERSION}
+     *  <li>{@link Zend_Pdf_Font::NAME_POSTSCRIPT}
+     *  <li>{@link Zend_Pdf_Font::NAME_CID_NAME}
+     *  <li>{@link Zend_Pdf_Font::NAME_DESIGNER}
+     *  <li>{@link Zend_Pdf_Font::NAME_DESIGNER_URL}
+     *  <li>{@link Zend_Pdf_Font::NAME_MANUFACTURER}
+     *  <li>{@link Zend_Pdf_Font::NAME_VENDOR_URL}
+     *  <li>{@link Zend_Pdf_Font::NAME_COPYRIGHT}
+     *  <li>{@link Zend_Pdf_Font::NAME_TRADEMARK}
+     *  <li>{@link Zend_Pdf_Font::NAME_LICENSE}
+     *  <li>{@link Zend_Pdf_Font::NAME_LICENSE_URL}
+     * </ul>
+     *
+     * Note that not all names are available for all fonts. In addition, some
+     * fonts may contain additional names, whose indicies are in the range
+     * 256 to 32767 inclusive, which are used for certain font layout features.
+     *
+     * If the preferred language translation is not available, uses the first
+     * available translation for the name, which is usually English.
+     *
+     * If the requested name does not exist, returns null.
+     *
+     * All names are stored internally as Unicode strings, using UTF-16BE
+     * encoding. You may optionally supply a different resulting character set.
+     *
+     * @param integer $nameType Type of name requested.
+     * @param mixed $language Preferred language (string) or array of languages
+     *   in preferred order. Use the ISO 639 standard 2-letter language codes.
+     * @param string $characterSet (optional) Desired resulting character set.
+     *   You may use any character set supported by {@link iconv()};
+     * @return string
+     */
+    public function getFontName($nameType, $language, $characterSet = null)
+    {
+        if (! isset($this->_fontNames[$nameType])) {
+            return null;
+        }
+        $name = null;
+        if (is_array($language)) {
+            foreach ($language as $code) {
+                if (isset($this->_fontNames[$nameType][$code])) {
+                    $name = $this->_fontNames[$nameType][$code];
+                    break;
+                }
+            }
+        } else {
+            if (isset($this->_fontNames[$nameType][$language])) {
+                $name = $this->_fontNames[$nameType][$language];
+            }
+        }
+        /* If the preferred language could not be found, use whatever is first.
+         */
+        if ($name === null) {
+            $names = $this->_fontNames[$nameType];
+            $name  = reset($names);
+        }
+        /* Convert the character set if requested.
+         */
+        if (($characterSet !== null) && ($characterSet != 'UTF-16BE') && PHP_OS != 'AIX') { // AIX knows not this charset
+            $name = iconv('UTF-16BE', $characterSet, $name);
+        }
+        return $name;
+    }
+
+    /**
+     * Returns whole set of font names.
+     *
+     * @return array
+     */
+    public function getFontNames()
+    {
+        return $this->_fontNames;
+    }
+
+    /**
+     * Returns true if font is bold.
+     *
+     * @return boolean
+     */
+    public function isBold()
+    {
+        return $this->_isBold;
+    }
+
+    /**
+     * Returns true if font is italic.
+     *
+     * @return boolean
+     */
+    public function isItalic()
+    {
+        return $this->_isItalic;
+    }
+
+    /**
+     * Returns true if font is monospace.
+     *
+     * @return boolean
+     */
+    public function isMonospace()
+    {
+        return $this->_isMonospace;
+    }
+
+    /**
+     * Returns the suggested position below the text baseline of the underline
+     * in glyph units.
+     *
+     * This value is usually negative.
+     *
+     * @return integer
+     */
+    public function getUnderlinePosition()
+    {
+        return $this->_underlinePosition;
+    }
+
+    /**
+     * Returns the suggested line thickness of the underline in glyph units.
+     *
+     * @return integer
+     */
+    public function getUnderlineThickness()
+    {
+        return $this->_underlineThickness;
+    }
+
+    /**
+     * Returns the suggested position above the text baseline of the
+     * strikethrough in glyph units.
+     *
+     * @return integer
+     */
+    public function getStrikePosition()
+    {
+        return $this->_strikePosition;
+    }
+
+    /**
+     * Returns the suggested line thickness of the strikethrough in glyph units.
+     *
+     * @return integer
+     */
+    public function getStrikeThickness()
+    {
+        return $this->_strikeThickness;
+    }
+
+    /**
+     * Returns the number of glyph units per em.
+     *
+     * Used to convert glyph space to user space. Frequently used in conjunction
+     * with {@link widthsForGlyphs()} to calculate the with of a run of text.
+     *
+     * @return integer
+     */
+    public function getUnitsPerEm()
+    {
+        return $this->_unitsPerEm;
+    }
+
+    /**
+     * Returns the typographic ascent in font glyph units.
+     *
+     * The typographic ascent is the distance from the font's baseline to the
+     * top of the text frame. It is frequently used to locate the initial
+     * baseline for a paragraph of text inside a given rectangle.
+     *
+     * @return integer
+     */
+    public function getAscent()
+    {
+        return $this->_ascent;
+    }
+
+    /**
+     * Returns the typographic descent in font glyph units.
+     *
+     * The typographic descent is the distance below the font's baseline to the
+     * bottom of the text frame. It is always negative.
+     *
+     * @return integer
+     */
+    public function getDescent()
+    {
+        return $this->_descent;
+    }
+
+    /**
+     * Returns the typographic line gap in font glyph units.
+     *
+     * The typographic line gap is the distance between the bottom of the text
+     * frame of one line to the top of the text frame of the next. It is
+     * typically combined with the typographical ascent and descent to determine
+     * the font's total line height (or leading).
+     *
+     * @return integer
+     */
+    public function getLineGap()
+    {
+        return $this->_lineGap;
+    }
+
+    /**
+     * Returns the suggested line height (or leading) in font glyph units.
+     *
+     * This value is determined by adding together the values of the typographic
+     * ascent, descent, and line gap. This value yields the suggested line
+     * spacing as determined by the font developer.
+     *
+     * It should be noted that this is only a guideline; layout engines will
+     * frequently modify this value to achieve special effects such as double-
+     * spacing.
+     *
+     * @return integer
+     */
+    public function getLineHeight()
+    {
+        return $this->_ascent - $this->_descent + $this->_lineGap;
+    }
+
+
+  /* Information and Conversion Methods */
+
+    /**
+     * Returns an array of glyph numbers corresponding to the Unicode characters.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumberForCharacter()}.
+     *
+     * @param array $characterCodes Array of Unicode character codes (code points).
+     * @return array Array of glyph numbers.
+     */
+    abstract public function glyphNumbersForCharacters($characterCodes);
+
+    /**
+     * Returns the glyph number corresponding to the Unicode character.
+     *
+     * If a particular character doesn't exist in this font, the special 'missing
+     * character glyph' will be substituted.
+     *
+     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
+     * operations.
+     *
+     * @param integer $characterCode Unicode character code (code point).
+     * @return integer Glyph number.
+     */
+    abstract public function glyphNumberForCharacter($characterCode);
+
+    /**
+     * Returns a number between 0 and 1 inclusive that indicates the percentage
+     * of characters in the string which are covered by glyphs in this font.
+     *
+     * Since no one font will contain glyphs for the entire Unicode character
+     * range, this method can be used to help locate a suitable font when the
+     * actual contents of the string are not known.
+     *
+     * Note that some fonts lie about the characters they support. Additionally,
+     * fonts don't usually contain glyphs for control characters such as tabs
+     * and line breaks, so it is rare that you will get back a full 1.0 score.
+     * The resulting value should be considered informational only.
+     *
+     * @param string $string
+     * @param string $charEncoding (optional) Character encoding of source text.
+     *   If omitted, uses 'current locale'.
+     * @return float
+     */
+    abstract public function getCoveredPercentage($string, $charEncoding = '');
+
+    /**
+     * Returns the widths of the glyphs.
+     *
+     * The widths are expressed in the font's glyph space. You are responsible
+     * for converting to user space as necessary. See {@link unitsPerEm()}.
+     *
+     * See also {@link widthForGlyph()}.
+     *
+     * @param array $glyphNumbers Array of glyph numbers.
+     * @return array Array of glyph widths (integers).
+     * @throws Zend_Pdf_Exception
+     */
+    abstract public function widthsForGlyphs($glyphNumbers);
+
+    /**
+     * Returns the width of the glyph.
+     *
+     * Like {@link widthsForGlyphs()} but used for one glyph at a time.
+     *
+     * @param integer $glyphNumber
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    abstract public function widthForGlyph($glyphNumber);
+
+    /**
+     * Convert string to the font encoding.
+     *
+     * The method is used to prepare string for text drawing operators
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of source text.
+     * @return string
+     */
+    abstract public function encodeString($string, $charEncoding);
+
+    /**
+     * Convert string from the font encoding.
+     *
+     * The method is used to convert strings retrieved from existing content streams
+     *
+     * @param string $string
+     * @param string $charEncoding Character encoding of resulting text.
+     * @return string
+     */
+    abstract public function decodeString($string, $charEncoding);
+
+
+
+  /**** Internal Methods ****/
+
+
+    /**
+     * If the font's glyph space is not 1000 units per em, converts the value.
+     *
+     * @internal
+     * @param integer $value
+     * @return integer
+     */
+    public function toEmSpace($value)
+    {
+        if ($this->_unitsPerEm == 1000) {
+            return $value;
+        }
+        return ceil(($value / $this->_unitsPerEm) * 1000);    // always round up
+    }
+}
+

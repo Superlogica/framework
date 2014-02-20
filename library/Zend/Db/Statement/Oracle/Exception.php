@@ -1,29 +1,58 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Db_Statement_Exception
+ */
+require_once 'Zend/Db/Statement/Exception.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Db_Statement_Oracle_Exception extends Zend_Db_Statement_Exception
+{
+   protected $message = 'Unknown exception';
+   protected $code = 0;
+
+   function __construct($error = null, $code = 0)
+   {
+       if (is_array($error)) {
+            if (!isset($error['offset'])) {
+                $this->message = $error['code']." ".$error['message'];
+            } else {
+                $this->message = $error['code']." ".$error['message']." ";
+                $this->message .= substr($error['sqltext'], 0, $error['offset']);
+                $this->message .= "*";
+                $this->message .= substr($error['sqltext'], $error['offset']);
+            }
+            $this->code = $error['code'];
+       }
+       if (!$this->code && $code) {
+           $this->code = $code;
+       }
+   }
+}
+

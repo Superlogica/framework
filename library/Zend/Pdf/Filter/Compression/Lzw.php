@@ -1,31 +1,91 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-scSXUcHt3rkZJCYW85pqj/yqDeJ05zYzLgAt9G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Filter_Compression */
+require_once 'Zend/Pdf/Filter/Compression.php';
+
+
+/**
+ * LZW stream filter
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Filter_Compression_Lzw extends Zend_Pdf_Filter_Compression
+{
+    /**
+     * Get EarlyChange decode param value
+     *
+     * @param array $params
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    private static function _getEarlyChangeValue($params)
+    {
+        if (isset($params['EarlyChange'])) {
+            $earlyChange = $params['EarlyChange'];
+
+            if ($earlyChange != 0  &&  $earlyChange != 1) {
+                throw new Zend_Pdf_Exception('Invalid value of \'EarlyChange\' decode param - ' . $earlyChange . '.' );
+            }
+            return $earlyChange;
+        } else {
+            return 1;
+        }
+    }
+
+
+    /**
+     * Encode data
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public static function encode($data, $params = null)
+    {
+        if ($params != null) {
+            $data = self::_applyEncodeParams($data, $params);
+        }
+
+        throw new Zend_Pdf_Exception('Not implemented yet');
+    }
+
+    /**
+     * Decode data
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public static function decode($data, $params = null)
+    {
+        throw new Zend_Pdf_Exception('Not implemented yet');
+
+        if ($params !== null) {
+            return self::_applyDecodeParams($data, $params);
+        } else {
+            return $data;
+        }
+    }
+}

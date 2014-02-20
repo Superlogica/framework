@@ -1,35 +1,181 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * An AMF Message contains information about the actual individual
+ * transaction that is to be performed. It specifies the remote
+ * operation that is to be performed; a local (client) operation
+ * to be invoked upon success; and, the data to be used in the
+ * operation.
+ * <p/>
+ * This Message structure defines how a local client would
+ * invoke a method/operation on a remote server. Additionally,
+ * the response from the Server is structured identically.
+ *
+ * @package    Zend_Amf
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Value_MessageBody
+{
+    /**
+     * A string describing which operation, function, or method
+     * is to be remotley invoked.
+     * @var string
+     */
+    protected $_targetUri = "";
+
+    /**
+     * Universal Resource Identifier that uniquely targets the originator's
+     * Object that should receive the server's response. The server will
+     * use this path specification to target the "OnResult()" or "onStatus()"
+     * handlers within the client. For Flash, it specifies an ActionScript
+     * Object path only. The NetResponse object pointed to by the Response Uri
+     * contains the connection state information. Passing/specifying this
+     * provides a convenient mechanism for the client/server to share access
+     * to an object that is managing the state of the shared connection.
+     * 
+     * Since the server will use this field in the event of an error,
+     * this field is required even if a successful server request would
+     * not be expected to return a value to the client.
+     *
+     * @var string
+     */
+    protected $_responseUri = "";
+
+    /**
+     * Contains the actual data associated with the operation. It contains
+     * the client's parameter data that is passed to the server's operation/method.
+     * When serializing a root level data type or a parameter list array, no
+     * name field is included. That is, the data is anonomously represented
+     * as "Type Marker"/"Value" pairs. When serializing member data, the data is
+     * represented as a series of "Name"/"Type"/"Value" combinations.
+     *
+     * For server generated responses, it may contain any ActionScript
+     * data/objects that the server was expected to provide.
+     *
+     * @var string
+     */
+    protected $_data;
+
+    /**
+     * Constructor
+     * 
+     * @param  string $targetUri 
+     * @param  string $responseUri 
+     * @param  string $data 
+     * @return void
+     */
+    public function __construct($targetUri, $responseUri, $data)
+    {
+        $this->setTargetUri($targetUri);
+        $this->setResponseUri($responseUri);
+        $this->setData($data);
+    }
+
+    /**
+     * Retrieve target Uri
+     * 
+     * @return string
+     */
+    public function getTargetUri()
+    {
+        return $this->_targetUri;
+    }
+
+    /**
+     * Set target Uri
+     * 
+     * @param  string $targetUri 
+     * @return Zend_Amf_Value_MessageBody
+     */
+    public function setTargetUri($targetUri)
+    {
+        if (null === $targetUri) {
+            $targetUri = '';
+        }
+        $this->_targetUri = (string) $targetUri;
+        return $this;
+    }
+
+    /**
+     * Get target Uri
+     * 
+     * @return string
+     */
+    public function getResponseUri()
+    {
+        return $this->_responseUri;
+    }
+
+    /**
+     * Set response Uri
+     * 
+     * @param  string $responseUri 
+     * @return Zend_Amf_Value_MessageBody
+     */
+    public function setResponseUri($responseUri)
+    {
+        if (null === $responseUri) {
+            $responseUri = '';
+        }
+        $this->_responseUri = $responseUri;
+        return $this;
+    }
+
+    /**
+     * Retrieve response data
+     * 
+     * @return string
+     */
+    public function getData()
+    {
+        return $this->_data;
+    }
+
+    /**
+     * Set response data
+     * 
+     * @param  mixed $data 
+     * @return Zend_Amf_Value_MessageBody
+     */
+    public function setData($data)
+    {
+        $this->_data = $data;
+        return $this;
+    }
+
+    /**
+     * Set reply method
+     * 
+     * @param  string $methodName 
+     * @return Zend_Amf_Value_MessageBody
+     */
+    public function setReplyMethod($methodName)
+    {
+        if (!preg_match('#^[/?]#', $methodName)) {
+            $this->_targetUri = rtrim($this->_targetUri, '/') . '/';
+        }
+        $this->_targetUri = $this->_targetUri . $methodName;
+        return $this;
+    }
+}

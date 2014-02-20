@@ -1,111 +1,398 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 14317 2009-03-13 20:39:31Z thomas $
+ */
+
+/**
+ * @see Zend_Validate_Interface
+ */
+require_once 'Zend/Validate/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Validate_Abstract implements Zend_Validate_Interface
+{
+    /**
+     * The value to be validated
+     *
+     * @var mixed
+     */
+    protected $_value;
+
+    /**
+     * Additional variables available for validation failure messages
+     *
+     * @var array
+     */
+    protected $_messageVariables = array();
+
+    /**
+     * Validation failure message template definitions
+     *
+     * @var array
+     */
+    protected $_messageTemplates = array();
+
+    /**
+     * Array of validation failure messages
+     *
+     * @var array
+     */
+    protected $_messages = array();
+
+    /**
+     * Flag indidcating whether or not value should be obfuscated in error
+     * messages
+     * @var bool
+     */
+    protected $_obscureValue = false;
+
+    /**
+     * Array of validation failure message codes
+     *
+     * @var array
+     * @deprecated Since 1.5.0
+     */
+    protected $_errors = array();
+
+    /**
+     * Translation object
+     * @var Zend_Translate
+     */
+    protected $_translator;
+
+    /**
+     * Default translation object for all validate objects
+     * @var Zend_Translate
+     */
+    protected static $_defaultTranslator;
+
+    /**
+     * Is translation disabled?
+     * @var Boolean
+     */
+    protected $_translatorDisabled = false;
+
+    /**
+     * Returns array of validation failure messages
+     *
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->_messages;
+    }
+
+    /**
+     * Returns an array of the names of variables that are used in constructing validation failure messages
+     *
+     * @return array
+     */
+    public function getMessageVariables()
+    {
+        return array_keys($this->_messageVariables);
+    }
+
+    /**
+     * Returns the message templates from the validator
+     *
+     * @return array
+     */
+    public function getMessageTemplates()
+    {
+        return $this->_messageTemplates;
+    }
+
+    /**
+     * Sets the validation failure message template for a particular key
+     *
+     * @param  string $messageString
+     * @param  string $messageKey     OPTIONAL
+     * @return Zend_Validate_Abstract Provides a fluent interface
+     * @throws Zend_Validate_Exception
+     */
+    public function setMessage($messageString, $messageKey = null)
+    {
+        if ($messageKey === null) {
+            $keys = array_keys($this->_messageTemplates);
+            $messageKey = current($keys);
+        }
+        if (!isset($this->_messageTemplates[$messageKey])) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("No message template exists for key '$messageKey'");
+        }
+        $this->_messageTemplates[$messageKey] = $messageString;
+        return $this;
+    }
+
+    /**
+     * Sets validation failure message templates given as an array, where the array keys are the message keys,
+     * and the array values are the message template strings.
+     *
+     * @param  array $messages
+     * @return Zend_Validate_Abstract
+     */
+    public function setMessages(array $messages)
+    {
+        foreach ($messages as $key => $message) {
+            $this->setMessage($message, $key);
+        }
+        return $this;
+    }
+
+    /**
+     * Magic function returns the value of the requested property, if and only if it is the value or a
+     * message variable.
+     *
+     * @param  string $property
+     * @return mixed
+     * @throws Zend_Validate_Exception
+     */
+    public function __get($property)
+    {
+        if ($property == 'value') {
+            return $this->_value;
+        }
+        if (array_key_exists($property, $this->_messageVariables)) {
+            return $this->{$this->_messageVariables[$property]};
+        }
+        /**
+         * @see Zend_Validate_Exception
+         */
+        require_once 'Zend/Validate/Exception.php';
+        throw new Zend_Validate_Exception("No property exists by the name '$property'");
+    }
+
+    /**
+     * Constructs and returns a validation failure message with the given message key and value.
+     *
+     * Returns null if and only if $messageKey does not correspond to an existing template.
+     *
+     * If a translator is available and a translation exists for $messageKey,
+     * the translation will be used.
+     *
+     * @param  string $messageKey
+     * @param  string $value
+     * @return string
+     */
+    protected function _createMessage($messageKey, $value)
+    {
+        if (!isset($this->_messageTemplates[$messageKey])) {
+            return null;
+        }
+
+        $message = $this->_messageTemplates[$messageKey];
+
+        if (null !== ($translator = $this->getTranslator())) {
+            if ($translator->isTranslated($message)) {
+                $message = $translator->translate($message);
+            } elseif ($translator->isTranslated($messageKey)) {
+                $message = $translator->translate($messageKey);
+            }
+        }
+
+        if (is_object($value)) {
+            if (!in_array('__toString', get_class_methods($value))) {
+                $value = get_class($value) . ' object';
+            } else {
+                $value = $value->__toString();
+            }
+        } else {
+            $value = (string)$value;
+        }
+
+        if ($this->getObscureValue()) {
+            $value = str_repeat('*', strlen($value));
+        }
+
+        $message = str_replace('%value%', (string) $value, $message);
+        foreach ($this->_messageVariables as $ident => $property) {
+            $message = str_replace("%$ident%", (string) $this->$property, $message);
+        }
+        return $message;
+    }
+
+    /**
+     * @param  string $messageKey OPTIONAL
+     * @param  string $value      OPTIONAL
+     * @return void
+     */
+    protected function _error($messageKey = null, $value = null)
+    {
+        if ($messageKey === null) {
+            $keys = array_keys($this->_messageTemplates);
+            $messageKey = current($keys);
+        }
+        if ($value === null) {
+            $value = $this->_value;
+        }
+        $this->_errors[]              = $messageKey;
+        $this->_messages[$messageKey] = $this->_createMessage($messageKey, $value);
+    }
+
+    /**
+     * Sets the value to be validated and clears the messages and errors arrays
+     *
+     * @param  mixed $value
+     * @return void
+     */
+    protected function _setValue($value)
+    {
+        $this->_value    = $value;
+        $this->_messages = array();
+        $this->_errors   = array();
+    }
+
+    /**
+     * Returns array of validation failure message codes
+     *
+     * @return array
+     * @deprecated Since 1.5.0
+     */
+    public function getErrors()
+    {
+        return $this->_errors;
+    }
+
+    /**
+     * Set flag indicating whether or not value should be obfuscated in messages
+     *
+     * @param  bool $flag
+     * @return Zend_Validate_Abstract
+     */
+    public function setObscureValue($flag)
+    {
+        $this->_obscureValue = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Retrieve flag indicating whether or not value should be obfuscated in
+     * messages
+     *
+     * @return bool
+     */
+    public function getObscureValue()
+    {
+        return $this->_obscureValue;
+    }
+
+    /**
+     * Set translation object
+     *
+     * @param  Zend_Translate|Zend_Translate_Adapter|null $translator
+     * @return Zend_Validate_Abstract
+     */
+    public function setTranslator($translator = null)
+    {
+        if ((null === $translator) || ($translator instanceof Zend_Translate_Adapter)) {
+            $this->_translator = $translator;
+        } elseif ($translator instanceof Zend_Translate) {
+            $this->_translator = $translator->getAdapter();
+        } else {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception('Invalid translator specified');
+        }
+        return $this;
+    }
+
+    /**
+     * Return translation object
+     *
+     * @return Zend_Translate_Adapter|null
+     */
+    public function getTranslator()
+    {
+        if ($this->translatorIsDisabled()) {
+            return null;
+        }
+
+        if (null === $this->_translator) {
+            return self::getDefaultTranslator();
+        }
+
+        return $this->_translator;
+    }
+
+    /**
+     * Set default translation object for all validate objects
+     *
+     * @param  Zend_Translate|Zend_Translate_Adapter|null $translator
+     * @return void
+     */
+    public static function setDefaultTranslator($translator = null)
+    {
+        if ((null === $translator) || ($translator instanceof Zend_Translate_Adapter)) {
+            self::$_defaultTranslator = $translator;
+        } elseif ($translator instanceof Zend_Translate) {
+            self::$_defaultTranslator = $translator->getAdapter();
+        } else {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception('Invalid translator specified');
+        }
+    }
+
+    /**
+     * Get default translation object for all validate objects
+     *
+     * @return Zend_Translate_Adapter|null
+     */
+    public static function getDefaultTranslator()
+    {
+        if (null === self::$_defaultTranslator) {
+            require_once 'Zend/Registry.php';
+            if (Zend_Registry::isRegistered('Zend_Translate')) {
+                $translator = Zend_Registry::get('Zend_Translate');
+                if ($translator instanceof Zend_Translate_Adapter) {
+                    return $translator;
+                } elseif ($translator instanceof Zend_Translate) {
+                    return $translator->getAdapter();
+                }
+            }
+        }
+
+        return self::$_defaultTranslator;
+    }
+
+    /**
+     * Indicate whether or not translation should be disabled
+     *
+     * @param  bool $flag
+     * @return Zend_Validate_Abstract
+     */
+    public function setDisableTranslator($flag)
+    {
+        $this->_translatorDisabled = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Is translation disabled?
+     *
+     * @return bool
+     */
+    public function translatorIsDisabled()
+    {
+        return $this->_translatorDisabled;
+    }
+}

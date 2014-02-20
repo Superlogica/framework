@@ -1,96 +1,285 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-/4mb4a1DunXd/7IGXQx302sdnGN/g/kbJUe=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Mime
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Zend_Mime
+ */
+require_once 'Zend/Mime.php';
+
+/**
+ * Zend_Mime_Part
+ */
+require_once 'Zend/Mime/Part.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mime
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mime_Message
+{
+
+    protected $_parts = array();
+    protected $_mime = null;
+
+    /**
+     * Returns the list of all Zend_Mime_Parts in the message
+     *
+     * @return array of Zend_Mime_Part
+     */
+    public function getParts()
+    {
+        return $this->_parts;
+    }
+
+    /**
+     * Sets the given array of Zend_Mime_Parts as the array for the message
+     *
+     * @param array $parts
+     */
+    public function setParts($parts)
+    {
+        $this->_parts = $parts;
+    }
+
+    /**
+     * Append a new Zend_Mime_Part to the current message
+     *
+     * @param Zend_Mime_Part $part
+     */
+    public function addPart(Zend_Mime_Part $part)
+    {
+        /**
+         * @todo check for duplicate object handle
+         */
+        $this->_parts[] = $part;
+    }
+
+    /**
+     * Check if message needs to be sent as multipart
+     * MIME message or if it has only one part.
+     *
+     * @return boolean
+     */
+    public function isMultiPart()
+    {
+        return (count($this->_parts) > 1);
+    }
+
+    /**
+     * Set Zend_Mime object for the message
+     *
+     * This can be used to set the boundary specifically or to use a subclass of
+     * Zend_Mime for generating the boundary.
+     *
+     * @param Zend_Mime $mime
+     */
+    public function setMime(Zend_Mime $mime)
+    {
+        $this->_mime = $mime;
+    }
+
+    /**
+     * Returns the Zend_Mime object in use by the message
+     *
+     * If the object was not present, it is created and returned. Can be used to
+     * determine the boundary used in this message.
+     *
+     * @return Zend_Mime
+     */
+    public function getMime()
+    {
+        if ($this->_mime === null) {
+            $this->_mime = new Zend_Mime();
+        }
+
+        return $this->_mime;
+    }
+
+    /**
+     * Generate MIME-compliant message from the current configuration
+     *
+     * This can be a multipart message if more than one MIME part was added. If
+     * only one part is present, the content of this part is returned. If no
+     * part had been added, an empty string is returned.
+     *
+     * Parts are seperated by the mime boundary as defined in Zend_Mime. If
+     * {@link setMime()} has been called before this method, the Zend_Mime
+     * object set by this call will be used. Otherwise, a new Zend_Mime object
+     * is generated and used.
+     *
+     * @param string $EOL EOL string; defaults to {@link Zend_Mime::LINEEND}
+     * @return string
+     */
+    public function generateMessage($EOL = Zend_Mime::LINEEND)
+    {
+        if (! $this->isMultiPart()) {
+            $body = array_shift($this->_parts);
+            $body = $body->getContent($EOL);
+        } else {
+            $mime = $this->getMime();
+
+            $boundaryLine = $mime->boundaryLine($EOL);
+            $body = 'This is a message in Mime Format.  If you see this, '
+                  . "your mail reader does not support this format." . $EOL;
+
+            foreach (array_keys($this->_parts) as $p) {
+                $body .= $boundaryLine
+                       . $this->getPartHeaders($p, $EOL)
+                       . $EOL
+                       . $this->getPartContent($p, $EOL);
+            }
+
+            $body .= $mime->mimeEnd($EOL);
+        }
+
+        return trim($body);
+    }
+
+    /**
+     * Get the headers of a given part as an array
+     *
+     * @param int $partnum
+     * @return array
+     */
+    public function getPartHeadersArray($partnum)
+    {
+        return $this->_parts[$partnum]->getHeadersArray();
+    }
+
+    /**
+     * Get the headers of a given part as a string
+     *
+     * @param int $partnum
+     * @return string
+     */
+    public function getPartHeaders($partnum, $EOL = Zend_Mime::LINEEND)
+    {
+        return $this->_parts[$partnum]->getHeaders($EOL);
+    }
+
+    /**
+     * Get the (encoded) content of a given part as a string
+     *
+     * @param int $partnum
+     * @return string
+     */
+    public function getPartContent($partnum, $EOL = Zend_Mime::LINEEND)
+    {
+        return $this->_parts[$partnum]->getContent($EOL);
+    }
+
+    /**
+     * Explode MIME multipart string into seperate parts
+     *
+     * Parts consist of the header and the body of each MIME part.
+     *
+     * @param string $body
+     * @param string $boundary
+     * @return array
+     */
+    protected static function _disassembleMime($body, $boundary)
+    {
+        $start = 0;
+        $res = array();
+        // find every mime part limiter and cut out the
+        // string before it.
+        // the part before the first boundary string is discarded:
+        $p = strpos($body, '--'.$boundary."\n", $start);
+        if ($p === false) {
+            // no parts found!
+            return array();
+        }
+
+        // position after first boundary line
+        $start = $p + 3 + strlen($boundary);
+
+        while (($p = strpos($body, '--' . $boundary . "\n", $start)) !== false) {
+            $res[] = substr($body, $start, $p-$start);
+            $start = $p + 3 + strlen($boundary);
+        }
+
+        // no more parts, find end boundary
+        $p = strpos($body, '--' . $boundary . '--', $start);
+        if ($p===false) {
+            throw new Zend_Exception('Not a valid Mime Message: End Missing');
+        }
+
+        // the remaining part also needs to be parsed:
+        $res[] = substr($body, $start, $p-$start);
+        return $res;
+    }
+
+    /**
+     * Decodes a MIME encoded string and returns a Zend_Mime_Message object with
+     * all the MIME parts set according to the given string
+     *
+     * @param string $message
+     * @param string $boundary
+     * @param string $EOL EOL string; defaults to {@link Zend_Mime::LINEEND}
+     * @return Zend_Mime_Message
+     */
+    public static function createFromMessage($message, $boundary, $EOL = Zend_Mime::LINEEND)
+    {
+        require_once 'Zend/Mime/Decode.php';
+        $parts = Zend_Mime_Decode::splitMessageStruct($message, $boundary, $EOL);
+
+        $res = new self();
+        foreach ($parts as $part) {
+            // now we build a new MimePart for the current Message Part:
+            $newPart = new Zend_Mime_Part($part['body']);
+            foreach ($part['header'] as $key => $value) {
+                /**
+                 * @todo check for characterset and filename
+                 */
+                switch(strtolower($key)) {
+                    case 'content-type':
+                        $newPart->type = $value;
+                        break;
+                    case 'content-transfer-encoding':
+                        $newPart->encoding = $value;
+                        break;
+                    case 'content-id':
+                        $newPart->id = trim($value,'<>');
+                        break;
+                    case 'content-disposition':
+                        $newPart->disposition = $value;
+                        break;
+                    case 'content-description':
+                        $newPart->description = $value;
+                        break;
+                    case 'content-location':
+                        $newPart->location = $value;
+                        break;
+                    case 'content-language':
+                        $newPart->language = $value;
+                        break;
+                    default:
+                        throw new Zend_Exception('Unknown header ignored for MimePart:' . $key);
+                }
+            }
+            $res->addPart($newPart);
+        }
+        return $res;
+    }
+}

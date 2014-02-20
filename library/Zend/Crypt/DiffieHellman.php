@@ -1,113 +1,380 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage DiffieHellman
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * PHP implementation of the Diffie-Hellman public key encryption algorithm.
+ * Allows two unassociated parties to establish a joint shared secret key
+ * to be used in encrypting subsequent communications.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Crypt_DiffieHellman
+{
+
+    /**
+     * Static flag to select whether to use PHP5.3's openssl extension
+     * if available.
+     *
+     * @var boolean
+     */
+    public static $useOpenssl = true;
+
+    /**
+     * Default large prime number; required by the algorithm.
+     *
+     * @var string
+     */
+    private $_prime = null;
+
+    /**
+     * The default generator number. This number must be greater than 0 but
+     * less than the prime number set.
+     *
+     * @var string
+     */
+    private $_generator = null;
+
+    /**
+     * A private number set by the local user. It's optional and will
+     * be generated if not set.
+     *
+     * @var string
+     */
+    private $_privateKey = null;
+
+    /**
+     * BigInteger support object courtesy of Zend_Crypt_Math
+     *
+     * @var Zend_Crypt_Math_BigInteger
+     */
+    private $_math = null;
+
+    /**
+     * The public key generated by this instance after calling generateKeys().
+     *
+     * @var string
+     */
+    private $_publicKey = null;
+
+    /**
+     * The shared secret key resulting from a completed Diffie Hellman
+     * exchange
+     *
+     * @var string
+     */
+    private $_secretKey = null;
+
+    /**
+     * Constants
+     */
+    const BINARY = 'binary';
+    const NUMBER = 'number';
+    const BTWOC  = 'btwoc';
+
+    /**
+     * Constructor; if set construct the object using the parameter array to
+     * set values for Prime, Generator and Private.
+     * If a Private Key is not set, one will be generated at random.
+     *
+     * @param string $prime
+     * @param string $generator
+     * @param string $privateKey
+     * @param string $privateKeyType
+     * @return void
+     */
+    public function __construct($prime, $generator, $privateKey = null, $privateKeyType = self::NUMBER)
+    {
+        $this->setPrime($prime);
+        $this->setGenerator($generator);
+        if (!is_null($privateKey)) {
+            $this->setPrivateKey($privateKey, $privateKeyType);
+        }
+        $this->setBigIntegerMath();
+    }
+
+    /**
+     * Generate own public key. If a private number has not already been
+     * set, one will be generated at this stage.
+     *
+     * @return Zend_Crypt_DiffieHellman
+     */
+    public function generateKeys()
+    {
+        if (function_exists('openssl_dh_compute_key') && self::$useOpenssl !== false) {
+            $details = array();
+            $details['p'] = $this->getPrime();
+            $details['g'] = $this->getGenerator();
+            if ($this->hasPrivateKey()) {
+                $details['priv_key'] = $this->getPrivateKey();
+            }
+            $opensslKeyResource = openssl_pkey_new( array('dh' => $details) );
+            $data = openssl_pkey_get_details($opensslKeyResource);
+            $this->setPrivateKey($data['dh']['priv_key'], self::BINARY);
+            $this->setPublicKey($data['dh']['pub_key'], self::BINARY);
+        } else {
+            // Private key is lazy generated in the absence of PHP 5.3's ext/openssl
+            $publicKey = $this->_math->powmod($this->getGenerator(), $this->getPrivateKey(), $this->getPrime());
+            $this->setPublicKey($publicKey);
+        }
+        return $this;
+    }
+
+    /**
+     * Setter for the value of the public number
+     *
+     * @param string $number
+     * @param string $type
+     * @return Zend_Crypt_DiffieHellman
+     */
+    public function setPublicKey($number, $type = self::NUMBER)
+    {
+        if ($type == self::BINARY) {
+            $number = $this->_math->fromBinary($number);
+        }
+        if (!preg_match("/^\d+$/", $number)) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('invalid parameter; not a positive natural number');
+        }
+        $this->_publicKey = (string) $number;
+        return $this;
+    }
+
+    /**
+     * Returns own public key for communication to the second party to this
+     * transaction.
+     *
+     * @param string $type
+     * @return string
+     */
+    public function getPublicKey($type = self::NUMBER)
+    {
+        if (is_null($this->_publicKey)) {
+            require_once 'Zend/Crypt/DiffieHellman/Exception.php';
+            throw new Zend_Crypt_DiffieHellman_Exception('A public key has not yet been generated using a prior call to generateKeys()');
+        }
+        if ($type == self::BINARY) {
+            return $this->_math->toBinary($this->_publicKey);
+        } elseif ($type == self::BTWOC) {
+            return $this->_math->btwoc($this->_math->toBinary($this->_publicKey));
+        }
+        return $this->_publicKey;
+    }
+
+    /**
+     * Compute the shared secret key based on the public key received from the
+     * the second party to this transaction. This should agree to the secret
+     * key the second party computes on our own public key.
+     * Once in agreement, the key is known to only to both parties.
+     * By default, the function expects the public key to be in binary form
+     * which is the typical format when being transmitted.
+     *
+     * If you need the binary form of the shared secret key, call
+     * getSharedSecretKey() with the optional parameter for Binary output.
+     *
+     * @param string $publicKey
+     * @param string $type
+     * @return mixed
+     */
+    public function computeSecretKey($publicKey, $type = self::NUMBER, $output = self::NUMBER)
+    {
+        if ($type == self::BINARY) {
+            $publicKey = $this->_math->fromBinary($publicKey);
+        }
+        if (!preg_match("/^\d+$/", $publicKey)) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('invalid parameter; not a positive natural number');
+        }
+        if (function_exists('openssl_dh_compute_key') && self::$useOpenssl !== false) {
+            $this->_secretKey = openssl_dh_compute_key($publicKey, $this->getPublicKey());
+        } else {
+            $this->_secretKey = $this->_math->powmod($publicKey, $this->getPrivateKey(), $this->getPrime());
+        }
+        return $this->getSharedSecretKey($output);
+    }
+
+    /**
+     * Return the computed shared secret key from the DiffieHellman transaction
+     *
+     * @param string $type
+     * @return string
+     */
+    public function getSharedSecretKey($type = self::NUMBER)
+    {
+        if (!isset($this->_secretKey)) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('A secret key has not yet been computed; call computeSecretKey()');
+        }
+        if ($type == self::BINARY) {
+            return $this->_math->toBinary($this->_secretKey);
+        } elseif ($type == self::BTWOC) {
+            return $this->_math->btwoc($this->_math->toBinary($this->_secretKey));
+        }
+        return $this->_secretKey;
+    }
+
+    /**
+     * Setter for the value of the prime number
+     *
+     * @param string $number
+     * @return Zend_Crypt_DiffieHellman
+     */
+    public function setPrime($number)
+    {
+        if (!preg_match("/^\d+$/", $number) || $number < 11) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('invalid parameter; not a positive natural number or too small: should be a large natural number prime');
+        }
+        $this->_prime = (string) $number;
+        return $this;
+    }
+
+    /**
+     * Getter for the value of the prime number
+     *
+     * @return string
+     */
+    public function getPrime()
+    {
+        if (!isset($this->_prime)) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('No prime number has been set');
+        }
+        return $this->_prime;
+    }
+
+
+    /**
+     * Setter for the value of the generator number
+     *
+     * @param string $number
+     * @return Zend_Crypt_DiffieHellman
+     */
+    public function setGenerator($number)
+    {
+        if (!preg_match("/^\d+$/", $number) || $number < 2) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('invalid parameter; not a positive natural number greater than 1');
+        }
+        $this->_generator = (string) $number;
+        return $this;
+    }
+
+    /**
+     * Getter for the value of the generator number
+     *
+     * @return string
+     */
+    public function getGenerator()
+    {
+        if (!isset($this->_generator)) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('No generator number has been set');
+        }
+        return $this->_generator;
+    }
+
+    /**
+     * Setter for the value of the private number
+     *
+     * @param string $number
+     * @param string $type
+     * @return Zend_Crypt_DiffieHellman
+     */
+    public function setPrivateKey($number, $type = self::NUMBER)
+    {
+        if ($type == self::BINARY) {
+            $number = $this->_math->fromBinary($number);
+        }
+        if (!preg_match("/^\d+$/", $number)) {
+            require_once('Zend/Crypt/DiffieHellman/Exception.php');
+            throw new Zend_Crypt_DiffieHellman_Exception('invalid parameter; not a positive natural number');
+        }
+        $this->_privateKey = (string) $number;
+        return $this;
+    }
+
+    /**
+     * Getter for the value of the private number
+     *
+     * @param string $type
+     * @return string
+     */
+    public function getPrivateKey($type = self::NUMBER)
+    {
+        if (!$this->hasPrivateKey()) {
+            $this->setPrivateKey($this->_generatePrivateKey());
+        }
+        if ($type == self::BINARY) {
+            return $this->_math->toBinary($this->_privateKey);
+        } elseif ($type == self::BTWOC) {
+            return $this->_math->btwoc($this->_math->toBinary($this->_privateKey));
+        }
+        return $this->_privateKey;
+    }
+
+    /**
+     * Check whether a private key currently exists.
+     *
+     * @return boolean
+     */
+    public function hasPrivateKey()
+    {
+        return isset($this->_privateKey);
+    }
+
+    /**
+     * Setter to pass an extension parameter which is used to create
+     * a specific BigInteger instance for a specific extension type.
+     * Allows manual setting of the class in case of an extension
+     * problem or bug.
+     *
+     * @param string $extension
+     * @return void
+     */
+    public function setBigIntegerMath($extension = null)
+    {
+        /**
+         * @see Zend_Crypt_Math
+         */
+        require_once 'Zend/Crypt/Math.php';
+        $this->_math = new Zend_Crypt_Math($extension);
+    }
+
+    /**
+     * In the event a private number/key has not been set by the user,
+     * or generated by ext/openssl, a best attempt will be made to
+     * generate a random key. Having a random number generator installed
+     * on linux/bsd is highly recommended! The alternative is not recommended
+     * for production unless without any other option.
+     *
+     * @return string
+     */
+    protected function _generatePrivateKey()
+    {
+        $rand = $this->_math->rand($this->getGenerator(), $this->getPrime());
+        return $rand;
+    }
+
+}

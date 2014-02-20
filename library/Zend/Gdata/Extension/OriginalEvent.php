@@ -1,58 +1,141 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Feed
+ */
+require_once 'Zend/Gdata/Feed.php';
+
+/**
+ * @see Zend_Gdata_When
+ */
+require_once 'Zend/Gdata/Extension/When.php';
+
+/**
+ * Represents the gd:originalEvent element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_OriginalEvent extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'originalEvent';
+    protected $_id = null;
+    protected $_href = null;
+    protected $_when = null;
+
+    public function __construct($id = null, $href = null, $when = null)
+    {
+        parent::__construct();
+        $this->_id = $id;
+        $this->_href = $href;
+        $this->_when = $when;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_id !== null) {
+            $element->setAttribute('id', $this->_id);
+        }
+        if ($this->_href !== null) {
+            $element->setAttribute('href', $this->_href);
+        }
+        if ($this->_when !== null) {
+            $element->appendChild($this->_when->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'id':
+            $this->_id = $attribute->nodeValue;
+            break;
+        case 'href':
+            $this->_href = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gd') . ':' . 'when';
+                $when = new Zend_Gdata_Extension_When();
+                $when->transferFromDOM($child);
+                $this->_when = $when;
+                break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    public function setId($value)
+    {
+        $this->_id = $value;
+        return $this;
+    }
+
+    public function getHref()
+    {
+        return $this->_href;
+    }
+
+    public function setHref($value)
+    {
+        $this->_href = $value;
+        return $this;
+    }
+
+    public function getWhen()
+    {
+        return $this->_when;
+    }
+
+    public function setWhen($value)
+    {
+        $this->_when = $value;
+        return $this;
+    }
+
+
+}

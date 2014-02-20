@@ -1,29 +1,148 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV53WbxmF10jGqY91w83Bcs3FYSSfzRCYYCvYinmph9Ylv3D6dtdz3K2JxYTcDCcX7b7q6pAv1
-86DjdKG+aUnbHdMWkSuOq4rtwixuBUiIjfWjAfpFrIzVW8Sj5I0qBuAgT3JiN1OJxZ/6QFtcRKBG
-ztd7FhwJauDuzkR/AL1cbOExdzPOq2M/ro4tOUvFjCowf/r4RZJVX+wmB/D+EJuU+LntKDYxXLtx
-Tq5JK+2EzwgpvA4vmUlGn4kJIPpDKor7T+KlBeH2QD9cuVetnUpELn2E1ktEQQXxX6xQgwzfeWPN
-mr2VFjHRJVz2YVE/5+nGaWVsljTQv1nxm0uXM2ZNFGhoUBQCGk/H3YPV+yYaFTFmw16J+JS901nA
-jI2pp5EbZmp9RGdndBg3GX6CGgfjexNgbHpikoj4ylw7D56I7VVDEFlEyi8lXCqipKGomc6s/e2p
-xhsQ759cO6I9zvkO5tfNEdqj+KZCfNbZ8IdkMH3FHboMEAjr737pGJK12VbdG4vCCXl7EAyceIvY
-9pZ25oDlcsvv7SGC7Po4ydupGqjLrr+GOE56dlG6lE67gpU6kDKQJroRySztz0va0p0w53QuXD77
-cC+xH79MR67VrGdYa6M/dboe5BCdlo3/PtKnm5hHb94pV1rxFZJUdBmDPX+EVFRgb9A7aTH+NYkM
-XE6rmnQnklu67vIzXykfTZOgq+8uj2ml5sY5AumHqhlxeWzC4I81zWcD2W4Ik2SuVHUA4Cvng1xM
-/BwAkEccrb8jBvoEWU0D1+rI2iZa1lMakPcGG8g0VCJ2b0w1jWCFeHhHwvySGIXUhfSEv1A/SM6e
-qKGYLFkpbgzn53BB0dPKeCYHV3kimrJ3q8S3ycUs3tLL7kbqGwuLmkrNnTJuy+dMG2nSLvMd9EYo
-0c0toSCzWsVk2kYaFfDe1eOVH3ZrjeJJeQMTLlwe/imhm85jzfZhKaeESuPIJSDr6pUnKhvVxCGQ
-7/Tdwj6lclOX9uhAguFSLpy0a5lao0kFD6BxpzrQsAr1dKTy/EBEeSQ/aFppyyDuFVb5MY2udlEd
-C6s4vR+r6cZdaTvAdbJbhyotYtmfzrqcatVQfvf3PNq3Soxwh+1nGLtBjz/ZmWzhT/JeLmclUHmr
-8+vqKp1/cvq3rQExUUgKzIiRIv36oINvP3tyRtgeuesfyf8B2lTNytO+D2XIyjvQKfjCniBRMeZ6
-tb3I5CrcFoKUK1yv8NbZai0ZG0jZ1uy3diK49ZdGx9f4hu0vjn5y4KaC+6It07V0eGjhujvhNMkH
-eER3YUCKJ9FzRsUmsUKBT4tzM5Nv7zcZ2rT+/pUOJGu4OHLoMRyLexSzXEqTZy2OY+fSuUJP9pJ3
-I+zDh24ZQw1QAbnGB9e6q9jdZ8HNwk94ArOeg3YTIy6Qy491qudBxYF7NLsunKi5MpCCH34OAxQo
-0B33n9L6ccIzE3VWehAgeJVnWS+Zn1MW7kyi4cl5I8AX0GFOm6/mAZe78yUQaHvECxHEjtpojbH+
-SmAg2z/ZvYa3Gfw9ELGC8epwpFp7Gw9G/4ToXbnzEltjyauk52B8W7P0nYGGJvukbeX15X9HtMQ7
-BGcNKcxTC5/EhAcdWei6uwZVnLNl3eWSyCWHEZSGc48isSBccpqf7uk47iqz76S8EctdKtc0sHHO
-ZO575+wiVNNkcCRKIIe2wi/BPRh5bt0LptQDgLrpjTXekknJfqMiJrtVMdHq12MtR8OF3res7DIj
-mh60iWYgv44XnphOrFG4yIymWM9gVqXrDgOA4LzwO9JrLLTv7AoqpDckU3qPtHofbAHsCykjv+YS
-7oV2jktP6pub0xBrJmFxpm2cwN8VoBI2kcDavd75cqciRVRfxYIKfYthDY4TaY++GvH+ZaRAU8yk
-Tzxyp0w32ZYtULaxe0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Result.php 8862 2008-03-16 15:36:00Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Auth
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Auth_Result
+{
+    /**
+     * General Failure
+     */
+    const FAILURE                        =  0;
+
+    /**
+     * Failure due to identity not being found.
+     */
+    const FAILURE_IDENTITY_NOT_FOUND     = -1;
+
+    /**
+     * Failure due to identity being ambiguous.
+     */
+    const FAILURE_IDENTITY_AMBIGUOUS     = -2;
+
+    /**
+     * Failure due to invalid credential being supplied.
+     */
+    const FAILURE_CREDENTIAL_INVALID     = -3;
+
+    /**
+     * Failure due to uncategorized reasons.
+     */
+    const FAILURE_UNCATEGORIZED          = -4;
+
+    /**
+     * Authentication success.
+     */
+    const SUCCESS                        =  1;
+
+    /**
+     * Authentication result code
+     *
+     * @var int
+     */
+    protected $_code;
+
+    /**
+     * The identity used in the authentication attempt
+     *
+     * @var mixed
+     */
+    protected $_identity;
+
+    /**
+     * An array of string reasons why the authentication attempt was unsuccessful
+     *
+     * If authentication was successful, this should be an empty array.
+     *
+     * @var array
+     */
+    protected $_messages;
+
+    /**
+     * Sets the result code, identity, and failure messages
+     *
+     * @param  int     $code
+     * @param  mixed   $identity
+     * @param  array   $messages
+     * @return void
+     */
+    public function __construct($code, $identity, array $messages = array())
+    {
+        $code = (int) $code;
+
+        if ($code < self::FAILURE_UNCATEGORIZED) {
+            $code = self::FAILURE;
+        } elseif ($code > self::SUCCESS ) {
+            $code = 1;
+        }
+
+        $this->_code     = $code;
+        $this->_identity = $identity;
+        $this->_messages = $messages;
+    }
+
+    /**
+     * Returns whether the result represents a successful authentication attempt
+     *
+     * @return boolean
+     */
+    public function isValid()
+    {
+        return ($this->_code > 0) ? true : false;
+    }
+
+    /**
+     * getCode() - Get the result code for this authentication attempt
+     *
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->_code;
+    }
+
+    /**
+     * Returns the identity used in the authentication attempt
+     *
+     * @return mixed
+     */
+    public function getIdentity()
+    {
+        return $this->_identity;
+    }
+
+    /**
+     * Returns an array of string reasons why the authentication attempt was unsuccessful
+     *
+     * If authentication was successful, this method returns an empty array.
+     *
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->_messages;
+    }
+}

@@ -1,59 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+//                                                          //
+// phpThumb.demo.showpic.php                                //
+// James Heinrich <info@silisoftware.com>                   //
+// 23 Feb 2004                                              //
+//                                                          //
+// This code is useful for popup pictures (e.g. thumbnails  //
+// you want to show larger, such as a larger version of a   //
+// product photo for example) but you don't know the image  //
+// dimensions before popping up. This script displays the   //
+// image with no window border, and resizes the window to   //
+// the size it needs to be (usually better to spawn it      //
+// large (600x400 for example) and let it auto-resize it    //
+// smaller), and if the image is larger than 90% of the     //
+// current screen area the window respawns itself with      //
+// scrollbars.                                              //
+//                                                          //
+// Usage:                                                   //
+// window.open('showpic.php?src=big.jpg&title=Big+picture', //
+//   'popupwindowname',                                     //
+//   'width=600,height=400,menubar=no,toolbar=no')          //
+//                                                          //
+// See demo linked from http://phpthumb.sourceforge.net    ///
+//////////////////////////////////////////////////////////////
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
+
+$phpThumbLocation = '../phpThumb.php?';
+
+echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">';
+echo '<html><head>';
+if (isset($_GET['title'])) {
+	echo '<title>'.htmlentities($_GET['title']).'</title>';
+	unset($_GET['title']);
+} else {
+	echo '<title>'.htmlentities('phpThumb :: popup window resizing demo').'</title>';
+}
 ?>
-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
-9n3FEnYrzf0BSzY6Y+k4jgoi8mK=
+
+	<script type="text/javascript">
+	<!--
+	// http://www.xs4all.nl/~ppk/js/winprop.html
+	function CrossBrowserResizeInnerWindowTo(newWidth, newHeight) {
+		if (self.innerWidth) {
+			frameWidth  = self.innerWidth;
+			frameHeight = self.innerHeight;
+		} else if (document.documentElement && document.documentElement.clientWidth) {
+			frameWidth  = document.documentElement.clientWidth;
+			frameHeight = document.documentElement.clientHeight;
+		} else if (document.body) {
+			frameWidth  = document.body.clientWidth;
+			frameHeight = document.body.clientHeight;
+		} else {
+			return false;
+		}
+		if (document.layers) {
+			newWidth  -= (parent.outerWidth - parent.innerWidth);
+			newHeight -= (parent.outerHeight - parent.innerHeight);
+		}
+
+		// original code:
+		//parent.window.resizeTo(newWidth, newHeight);
+		// fixed code: James Heinrich, 20 Feb 2004
+		parent.window.resizeBy(newWidth - frameWidth, newHeight - frameHeight);
+
+		return true;
+	}
+	// -->
+	</script>
+
+	<script type="text/javascript" src="javascript_api.js"></script>
+
+<?php
+	function SafeStripSlashes($string) {
+		return (get_magic_quotes_gpc() ? stripslashes($string) : $string);
+	}
+
+	$additionalparameters = array();
+	foreach ($_GET as $key => $value) {
+		if (is_array($value)) {
+			foreach ($value as $key2 => $value2) {
+				$additionalparameters[] = $key.'[]='.SafeStripSlashes($value2);
+			}
+		} else {
+			$additionalparameters[] = $key.'='.SafeStripSlashes($value);
+		}
+	}
+	$imagesrc = $phpThumbLocation.implode('&', $additionalparameters);
+
+	echo '<script type="text/javascript">';
+	echo 'var ns4;';
+	echo 'var op5;';
+	echo 'function setBrowserWindowSizeToImage() {';
+	echo 	'if (!document.getElementById("imageimg")) { return false; }';
+	echo	'sniffBrowsers();';
+	echo 	'var imageW = getImageWidth("imageimg");';
+	echo 	'var imageH = getImageHeight("imageimg");';
+			// check for maximum dimensions to allow no-scrollbar window
+	echo 	'if (((screen.width * 1.1) > imageW) || ((screen.height * 1.1) > imageH)) {'."\n";
+				// screen is large enough to fit whole picture on screen with 10% margin
+	echo 		'CrossBrowserResizeInnerWindowTo(imageW, imageH);'."\n";
+	echo 	'} else {'."\n";
+				// image is too large for screen: add scrollbars by putting the image inside an IFRAME
+	echo 		'document.getElementById("showpicspan").innerHTML = "<iframe width=\"100%\" height=\"100%\" marginheight=\"0\" marginwidth=\"0\" frameborder=\"0\" scrolling=\"on\" src=\"'.$imagesrc.'\">Your browser does not support the IFRAME tag. Please use one that does (IE, Firefox, etc).<br><img src=\"'.$imagesrc.'\"><\/iframe>";';
+	echo 	'}'."\n";
+	echo '}';
+	echo '</script>';
+?>
+
+</head>
+
+<body style="margin: 0px;" onLoad="setBrowserWindowSizeToImage();"><div id="showpicspan"><?php
+
+if (!empty($_GET['src'])) {
+
+	echo '<script type="text/javascript">';
+	echo 'document.writeln(\'<img src="'.$imagesrc.'" border="0" id="imageimg" hspace="0" hspace="0" style="padding: 0px; margin: 0px;">\');';
+	echo '</script>';
+
+} else {
+
+	echo '<pre>';
+	echo 'Usage:<br><br><b>'.$_SERVER['PHP_SELF'].'?src=<i>filename</i>&title=<i>Picture+Title</i></b>';
+	echo '</pre>';
+
+}
+
+?></div></body>
+</html>

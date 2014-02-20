@@ -1,45 +1,135 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-8pSa4W==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Action_Repository 
+    implements Zend_Tool_Framework_Registry_EnabledInterface, IteratorAggregate, Countable
+{
+    
+    /**
+     * @var Zend_Tool_Framework_Registry_Interface
+     */
+    protected $_registry = null;
+    
+    /**
+     * @var array
+     */
+    protected $_actions = array();
+    
+    /**
+     * setRegistry()
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+    }
+    
+    /**
+     * addAction()
+     *
+     * @param Zend_Tool_Framework_Action_Interface $action
+     * @return Zend_Tool_Framework_Action_Repository
+     */
+    public function addAction(Zend_Tool_Framework_Action_Interface $action, $overrideExistingAction = false)
+    {
+        $actionName = $action->getName();
+
+        if ($actionName == '' || $actionName == 'Base') {
+            require_once 'Zend/Tool/Framework/Action/Exception.php';
+            throw new Zend_Tool_Framework_Action_Exception('An action name for the provided action could not be determined.');
+        }
+        
+        if (!$overrideExistingAction && array_key_exists(strtolower($actionName), $this->_actions)) {
+            require_once 'Zend/Tool/Framework/Action/Exception.php';
+            throw new Zend_Tool_Framework_Action_Exception('An action by the name ' . $actionName 
+                . ' is already registered and $overrideExistingAction is set to false.');
+        }
+
+        $this->_actions[strtolower($actionName)] = $action;
+        return $this;
+    }
+
+    /**
+     * process() - this is called when the client is done constructing (after init())
+     *
+     * @return unknown
+     */
+    public function process()
+    {
+        return null;
+    }
+    
+    /**
+     * getActions() - get all actions in the repository
+     *
+     * @return array
+     */
+    public function getActions()
+    {
+        return $this->_actions;
+    }
+
+    /**
+     * getAction() - get an action by a specific name
+     *
+     * @param string $actionName
+     * @return Zend_Tool_Framework_Action_Interface
+     */
+    public function getAction($actionName)
+    {
+        if (!array_key_exists(strtolower($actionName), $this->_actions)) {
+            return null;
+        }
+
+        return $this->_actions[strtolower($actionName)];
+    }
+    
+    /**
+     * count() required by the Countable interface
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_actions);
+    }
+    
+    /**
+     * getIterator() - get all actions, this supports the IteratorAggregate interface
+     *
+     * @return array
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->_actions);
+    }
+
+}

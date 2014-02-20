@@ -1,30 +1,74 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: DialogContainer.php 20744 2010-01-29 09:55:19Z beberlei $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "ZendX/JQuery/View/Helper/UiWidget.php";
+
+/**
+ * jQuery Dialog View Helper
+ *
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_DialogContainer extends ZendX_JQuery_View_Helper_UiWidget
+{
+    /**
+     * Create a jQuery UI Dialog filled with the given content
+     *
+     * @link   http://docs.jquery.com/UI/Dialog
+     * @param  string $id
+     * @param  string $content
+     * @param  array $params
+     * @param  array $attribs
+     * @return string
+     */
+    public function dialogContainer($id, $content, $params=array(), $attribs=array())
+    {
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id'] = $id;
+        }
+
+        if(count($params) > 0) {
+            $params = ZendX_JQuery::encodeJson($params);
+        } else {
+            $params = "{}";
+        }
+
+        $js = sprintf('%s("#%s").dialog(%s);',
+                ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
+                $attribs['id'],
+                $params
+        );
+        $this->jquery->addOnLoad($js);
+
+        $html = '<div'
+                . $this->_htmlAttribs($attribs)
+                . '>'
+                . $content
+                . '</div>';
+        return $html;
+    }
+}

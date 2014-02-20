@@ -1,222 +1,780 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Twitter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+
+/**
+ * @see Zend_Rest_Client
+ */
+require_once 'Zend/Rest/Client.php';
+
+/**
+ * @see Zend_Rest_Client_Result
+ */
+require_once 'Zend/Rest/Client/Result.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Twitter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Twitter extends Zend_Rest_Client
+{
+    /**
+     * Whether or not authorization has been initialized for the current user.
+     * @var bool
+     */
+    protected $_authInitialized = false;
+
+    /**
+     * @var Zend_Http_CookieJar
+     */
+    protected $_cookieJar;
+
+    /**
+     * Date format for 'since' strings
+     * @var string
+     */
+    protected $_dateFormat = 'D, d M Y H:i:s T';
+
+    /**
+     * Username
+     * @var string
+     */
+    protected $_username;
+
+    /**
+     * Password
+     * @var string
+     */
+    protected $_password;
+
+    /**
+     * Current method type (for method proxying)
+     * @var string
+     */
+    protected $_methodType;
+
+    /**
+     * Types of API methods
+     * @var array
+     */
+    protected $_methodTypes = array(
+        'status',
+        'user',
+        'directMessage',
+        'friendship',
+        'account',
+        'favorite'
+    );
+
+    /**
+     * Constructor
+     *
+     * @param  string $username
+     * @param  string $password
+     * @return void
+     */
+    public function __construct($username, $password)
+    {
+        $this->setUsername($username);
+        $this->setPassword($password);
+        $this->setUri('http://twitter.com');
+
+        $client = self::getHttpClient();
+        $client->setHeaders('Accept-Charset', 'ISO-8859-1,utf-8');
+    }
+
+    /**
+     * Retrieve username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Set username
+     *
+     * @param  string $value
+     * @return Zend_Service_Twitter
+     */
+    public function setUsername($value)
+    {
+        $this->_username = $value;
+        $this->_authInitialized = false;
+        return $this;
+    }
+
+    /**
+     * Retrieve password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+
+    /**
+     * Set password
+     *
+     * @param  string $value
+     * @return Zend_Service_Twitter
+     */
+    public function setPassword($value)
+    {
+        $this->_password = $value;
+        $this->_authInitialized = false;
+        return $this;
+    }
+
+    /**
+     * Proxy service methods
+     *
+     * @param  string $type
+     * @return Zend_Service_Twitter
+     * @throws Zend_Service_Twitter_Exception if method is not in method types list
+     */
+    public function __get($type)
+    {
+        if (!in_array($type, $this->_methodTypes)) {
+            include_once 'Zend/Service/Twitter/Exception.php';
+            throw new Zend_Service_Twitter_Exception('Invalid method type "' . $type . '"');
+        }
+
+        $this->_methodType = $type;
+        return $this;
+    }
+
+    /**
+     * Method overloading
+     *
+     * @param  string $method
+     * @param  array $params
+     * @return mixed
+     * @throws Zend_Service_Twitter_Exception if unable to find method
+     */
+    public function __call($method, $params)
+    {
+        if (empty($this->_methodType)) {
+            include_once 'Zend/Service/Twitter/Exception.php';
+            throw new Zend_Service_Twitter_Exception('Invalid method "' . $method . '"');
+        }
+
+        $test = $this->_methodType . ucfirst($method);
+        if (!method_exists($this, $test)) {
+            include_once 'Zend/Service/Twitter/Exception.php';
+            throw new Zend_Service_Twitter_Exception('Invalid method "' . $test . '"');
+        }
+
+        return call_user_func_array(array($this, $test), $params);
+    }
+
+    /**
+     * Initialize HTTP authentication
+     *
+     * @return void
+     */
+    protected function _init()
+    {
+        $client = self::getHttpClient();
+
+        $client->resetParameters();
+
+        if (null == $this->_cookieJar) {
+            $client->setCookieJar();
+            $this->_cookieJar = $client->getCookieJar();
+        } else {
+            $client->setCookieJar($this->_cookieJar);
+        }
+
+        if (!$this->_authInitialized) {
+            $client->setAuth($this->getUsername(), $this->getPassword());
+            $this->_authInitialized = true;
+        }
+    }
+
+    /**
+     * Set date header
+     *
+     * @param  int|string $value
+     * @return void
+     */
+    protected function _setDate($value)
+    {
+        if (is_int($value)) {
+            $date = date($this->_dateFormat, $value);
+        } else {
+            $date = date($this->_dateFormat, strtotime($value));
+        }
+        self::getHttpClient()->setHeaders('If-Modified-Since', $date);
+    }
+
+    /**
+     * Public Timeline status
+     *
+     * @return Zend_Rest_Client_Result
+     */
+    public function statusPublicTimeline()
+    {
+        $this->_init();
+        $path = '/statuses/public_timeline.xml';
+        $response = $this->restGet($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Friend Timeline Status
+     *
+     * $params may include one or more of the following keys
+     * - id: ID of a friend whose timeline you wish to receive
+     * - count: how many statuses to return
+     * - since: return results only after the date specified
+     * - since_id: return results only after the specific tweet
+     * - page: return page X of results
+     *
+     * @param  array $params
+     * @return void
+     */
+    public function statusFriendsTimeline(array $params = array())
+    {
+        $this->_init();
+        $path = '/statuses/friends_timeline';
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'count':
+                    $count = (int) $value;
+                    if (0 >= $count) {
+                        $count = 1;
+                    } elseif (200 < $count) {
+                        $count = 200;
+                    }
+                    $_params['count'] = (int) $count;
+                    break;
+                case 'since_id':
+                    $_params['since_id'] = (int) $value;
+                    break;
+                case 'since':
+                    $this->_setDate($value);
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $path    .= '.xml';
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * User Timeline status
+     *
+     * $params may include one or more of the following keys
+     * - id: ID of a friend whose timeline you wish to receive
+     * - since: return results only after the date specified
+     * - page: return page X of results
+     * - count: how many statuses to return
+     *
+     * @return Zend_Rest_Client_Result
+     */
+    public function statusUserTimeline(array $params = array())
+    {
+        $this->_init();
+        $path = '/statuses/user_timeline';
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'id':
+                    $path .= '/' . $value;
+                    break;
+                case 'since':
+                    $this->_setDate($value);
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                case 'count':
+                    $count = (int) $value;
+                    if (0 >= $count) {
+                        $count = 1;
+                    } elseif (200 < $count) {
+                        $count = 200;
+                    }
+                    $_params['count'] = $count;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $path    .= '.xml';
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Show a single status
+     *
+     * @param  int $id Id of status to show
+     * @return Zend_Rest_Client_Result
+     */
+    public function statusShow($id)
+    {
+        $this->_init();
+        $path = '/statuses/show/' . $id . '.xml';
+        $response = $this->restGet($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Update user's current status
+     *
+     * @param  string $status
+     * @param  int $in_reply_to_status_id
+     * @return Zend_Rest_Client_Result
+     * @throws Zend_Service_Twitter_Exception if message is too short or too long
+     */
+    public function statusUpdate($status, $in_reply_to_status_id = null)
+    {
+        $this->_init();
+        $path = '/statuses/update.xml';
+        $len  = iconv_strlen($status, 'UTF-8');
+        if ($len > 140) {
+            include_once 'Zend/Service/Twitter/Exception.php';
+            throw new Zend_Service_Twitter_Exception('Status must be no more than 140 characters in length');
+        } elseif (0 == $len) {
+            include_once 'Zend/Service/Twitter/Exception.php';
+            throw new Zend_Service_Twitter_Exception('Status must contain at least one character');
+        }
+
+        $data = array(
+            'status' => $status
+        );
+
+        if(is_numeric($in_reply_to_status_id) && !empty($in_reply_to_status_id)) {
+            $data['in_reply_to_status_id'] = $in_reply_to_status_id;
+        }
+
+        //$this->status = $status;
+        $response = $this->restPost($path, $data);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Get status replies
+     *
+     * $params may include one or more of the following keys
+     * - since: return results only after the date specified
+     * - since_id: return results only after the specified tweet id
+     * - page: return page X of results
+     *
+     * @return Zend_Rest_Client_Result
+     */
+    public function statusReplies(array $params = array())
+    {
+        $this->_init();
+        $path = '/statuses/replies.xml';
+
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'since':
+                    $this->_setDate($value);
+                    break;
+                case 'since_id':
+                    $_params['since_id'] = (int) $value;
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Destroy a status message
+     *
+     * @param  int $id ID of status to destroy
+     * @return Zend_Rest_Client_Result
+     */
+    public function statusDestroy($id)
+    {
+        $this->_init();
+        $path = '/statuses/destroy/' . (int) $id . '.xml';
+
+        $response = $this->restPost($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * User friends
+     *
+     * @param  int|string $id Id or username of user for whom to fetch friends
+     * @return Zend_Rest_Client_Result
+     */
+    public function userFriends(array $params = array())
+    {
+        $this->_init();
+        $path = '/statuses/friends';
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'id':
+                    $path .= '/' . $value;
+                    break;
+                case 'since':
+                    $this->_setDate($value);
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $path    .= '.xml';
+
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * User Followers
+     *
+     * @param  bool $lite If true, prevents inline inclusion of current status for followers; defaults to false
+     * @return Zend_Rest_Client_Result
+     */
+    public function userFollowers($lite = false)
+    {
+        $this->_init();
+        $path = '/statuses/followers.xml';
+        if ($lite) {
+            $this->lite = 'true';
+        }
+
+        $response = $this->restGet($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Get featured users
+     *
+     * @return Zend_Rest_Client_Result
+     */
+    public function userFeatured()
+    {
+        $this->_init();
+        $path = '/statuses/featured.xml';
+
+        $response = $this->restGet($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Show extended information on a user
+     *
+     * @param  int|string $id User ID or name
+     * @return Zend_Rest_Client_Result
+     */
+    public function userShow($id)
+    {
+        $this->_init();
+        $path = '/users/show/' . $id . '.xml';
+
+        $response = $this->restGet($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Retrieve direct messages for the current user
+     *
+     * $params may include one or more of the following keys
+     * - since: return results only after the date specified
+     * - since_id: return statuses only greater than the one specified
+     * - page: return page X of results
+     *
+     * @param  array $params
+     * @return Zend_Rest_Client_Result
+     */
+    public function directMessageMessages(array $params = array())
+    {
+        $this->_init();
+        $path = '/direct_messages.xml';
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'since':
+                    $this->_setDate($value);
+                    break;
+                case 'since_id':
+                    $_params['since_id'] = (int) $value;
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Retrieve list of direct messages sent by current user
+     *
+     * $params may include one or more of the following keys
+     * - since: return results only after the date specified
+     * - since_id: return statuses only greater than the one specified
+     * - page: return page X of results
+     *
+     * @param  array $params
+     * @return Zend_Rest_Client_Result
+     */
+    public function directMessageSent(array $params = array())
+    {
+        $this->_init();
+        $path = '/direct_messages/sent.xml';
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'since':
+                    $this->_setDate($value);
+                    break;
+                case 'since_id':
+                    $_params['since_id'] = (int) $value;
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Send a direct message to a user
+     *
+     * @param  int|string $user User to whom to send message
+     * @param  string $text Message to send to user
+     * @return Zend_Rest_Client_Result
+     * @throws Zend_Service_Twitter_Exception if message is too short or too long
+     */
+    public function directMessageNew($user, $text)
+    {
+        $this->_init();
+        $path = '/direct_messages/new.xml';
+
+        $len = iconv_strlen($text, 'UTF-8');
+        if (0 == $len) {
+            throw new Zend_Service_Twitter_Exception('Direct message must contain at least one character');
+        } elseif (140 < $len) {
+            throw new Zend_Service_Twitter_Exception('Direct message must contain no more than 140 characters');
+        }
+
+        $data = array(
+            'user'	=> $user,
+            'text'	=> $text,
+        );
+
+        $response = $this->restPost($path, $data);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Destroy a direct message
+     *
+     * @param  int $id ID of message to destroy
+     * @return Zend_Rest_Client_Result
+     */
+    public function directMessageDestroy($id)
+    {
+        $this->_init();
+        $path = '/direct_messages/destroy/' . $id . '.xml';
+
+        $response = $this->restPost($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Create friendship
+     *
+     * @param  int|string $id User ID or name of new friend
+     * @return Zend_Rest_Client_Result
+     */
+    public function friendshipCreate($id)
+    {
+        $this->_init();
+        $path = '/friendships/create/' . $id . '.xml';
+
+        $response = $this->restPost($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Destroy friendship
+     *
+     * @param  int|string $id User ID or name of friend to remove
+     * @return Zend_Rest_Client_Result
+     */
+    public function friendshipDestroy($id)
+    {
+        $this->_init();
+        $path = '/friendships/destroy/' . $id . '.xml';
+
+        $response = $this->restPost($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Friendship exists
+     *
+     * @param int|string $id User ID or name of friend to see if they are your friend
+     * @return Zend_Rest_Client_result
+     */
+    public function friendshipExists($id)
+    {
+        $this->_init();
+        $path = '/friendships/exists.xml';
+
+        $data = array(
+            'user_a' => $this->getUsername(),
+            'user_b' => $id
+        );
+
+        $response = $this->restGet($path, $data);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Verify Account Credentials
+     *
+     * @return Zend_Rest_Client_Result
+     */
+    public function accountVerifyCredentials()
+    {
+        $this->_init();
+        $response = $this->restGet('/account/verify_credentials.xml');
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * End current session
+     *
+     * @return true
+     */
+    public function accountEndSession()
+    {
+        $this->_init();
+        $this->restGet('/account/end_session');
+        return true;
+    }
+
+    /**
+     * Returns the number of api requests you have left per hour.
+     *
+     * @return Zend_Rest_Client_Result
+     */
+    public function accountRateLimitStatus()
+    {
+        $this->_init();
+        $response = $this->restGet('/account/rate_limit_status.xml');
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Fetch favorites
+     *
+     * $params may contain one or more of the following:
+     * - 'id': Id of a user for whom to fetch favorites
+     * - 'page': Retrieve a different page of resuls
+     *
+     * @param  array $params
+     * @return Zend_Rest_Client_Result
+     */
+    public function favoriteFavorites(array $params = array())
+    {
+        $this->_init();
+        $path = '/favorites';
+        $_params = array();
+        foreach ($params as $key => $value) {
+            switch (strtolower($key)) {
+                case 'id':
+                    $path .= '/' . $value;
+                    break;
+                case 'page':
+                    $_params['page'] = (int) $value;
+                    break;
+                default:
+                    break;
+            }
+        }
+        $path .= '.xml';
+        $response = $this->restGet($path, $_params);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Mark a status as a favorite
+     *
+     * @param  int $id Status ID you want to mark as a favorite
+     * @return Zend_Rest_Client_Result
+     */
+    public function favoriteCreate($id)
+    {
+        $this->_init();
+        $path = '/favorites/create/' . (int) $id . '.xml';
+
+        $response = $this->restPost($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+
+    /**
+     * Remove a favorite
+     *
+     * @param  int $id Status ID you want to de-list as a favorite
+     * @return Zend_Rest_Client_Result
+     */
+    public function favoriteDestroy($id)
+    {
+        $this->_init();
+        $path = '/favorites/destroy/' . (int) $id . '.xml';
+
+        $response = $this->restPost($path);
+        return new Zend_Rest_Client_Result($response->getBody());
+    }
+}

@@ -1,105 +1,315 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-r9qqSkrOy2D0BLVoaM6zuS2TXm==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: StripTags.php 14560 2009-03-31 14:41:22Z thomas $
+ */
+
+
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_StripTags implements Zend_Filter_Interface
+{
+    /**
+     * Unique ID prefix used for allowing comments
+     */
+    const UNIQUE_ID_PREFIX = '__Zend_Filter_StripTags__';
+
+    /**
+     * Whether comments are allowed
+     *
+     * If false (the default), then comments are removed from the input string.
+     *
+     * @var boolean
+     * @depreciated
+     */
+    public $commentsAllowed;
+
+    /**
+     * Array of allowed tags and allowed attributes for each allowed tag
+     *
+     * Tags are stored in the array keys, and the array values are themselves
+     * arrays of the attributes allowed for the corresponding tag.
+     *
+     * @var array
+     */
+    protected $_tagsAllowed = array();
+
+    /**
+     * Array of allowed attributes for all allowed tags
+     *
+     * Attributes stored here are allowed for all of the allowed tags.
+     *
+     * @var array
+     */
+    protected $_attributesAllowed = array();
+
+    /**
+     * Sets the filter options
+     *
+     * @param  array|string $tagsAllowed
+     * @param  array|string $attributesAllowed
+     * @param  boolean      $allowComments
+     * @return void
+     */
+    public function __construct($tagsAllowed = null, $attributesAllowed = null, $commentsAllowed = false)
+    {
+        $this->setTagsAllowed($tagsAllowed);
+        $this->setAttributesAllowed($attributesAllowed);
+        $this->setCommentsAllowed($commentsAllowed);
+    }
+
+    /**
+     * Returns the commentsAllowed option
+     */
+    public function getCommentsAllowed()
+    {
+        return $this->commentsAllowed;
+    }
+
+    /**
+     * Sets the commentsAllowed option
+     *
+     * @param boolean $commentsAllowed
+     * @return Zend_Filter_StripTags Provides a fluent interface
+     */
+    public function setCommentsAllowed($commentsAllowed)
+    {
+       $this->commentsAllowed = (boolean) $commentsAllowed;
+       return $this;
+    }
+
+    /**
+     * Returns the tagsAllowed option
+     *
+     * @return array
+     */
+    public function getTagsAllowed()
+    {
+        return $this->_tagsAllowed;
+    }
+
+    /**
+     * Sets the tagsAllowed option
+     *
+     * @param  array|string $tagsAllowed
+     * @return Zend_Filter_StripTags Provides a fluent interface
+     */
+    public function setTagsAllowed($tagsAllowed)
+    {
+        if (!is_array($tagsAllowed)) {
+            $tagsAllowed = array($tagsAllowed);
+        }
+
+        foreach ($tagsAllowed as $index => $element) {
+            // If the tag was provided without attributes
+            if (is_int($index) && is_string($element)) {
+                // Canonicalize the tag name
+                $tagName = strtolower($element);
+                // Store the tag as allowed with no attributes
+                $this->_tagsAllowed[$tagName] = array();
+            }
+            // Otherwise, if a tag was provided with attributes
+            else if (is_string($index) && (is_array($element) || is_string($element))) {
+                // Canonicalize the tag name
+                $tagName = strtolower($index);
+                // Canonicalize the attributes
+                if (is_string($element)) {
+                    $element = array($element);
+                }
+                // Store the tag as allowed with the provided attributes
+                $this->_tagsAllowed[$tagName] = array();
+                foreach ($element as $attribute) {
+                    if (is_string($attribute)) {
+                        // Canonicalize the attribute name
+                        $attributeName = strtolower($attribute);
+                        $this->_tagsAllowed[$tagName][$attributeName] = null;
+                    }
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the attributesAllowed option
+     *
+     * @return array
+     */
+    public function getAttributesAllowed()
+    {
+        return $this->_attributesAllowed;
+    }
+
+    /**
+     * Sets the attributesAllowed option
+     *
+     * @param  array|string $attributesAllowed
+     * @return Zend_Filter_StripTags Provides a fluent interface
+     */
+    public function setAttributesAllowed($attributesAllowed)
+    {
+        if (!is_array($attributesAllowed)) {
+            $attributesAllowed = array($attributesAllowed);
+        }
+
+        // Store each attribute as allowed
+        foreach ($attributesAllowed as $attribute) {
+            if (is_string($attribute)) {
+                // Canonicalize the attribute name
+                $attributeName = strtolower($attribute);
+                $this->_attributesAllowed[$attributeName] = null;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * @todo improve docblock descriptions
+     *
+     * @param  string $value
+     * @return string
+     */
+    public function filter($value)
+    {
+        $valueCopy = (string) $value;
+
+        // If comments are allowed, then replace them with unique identifiers
+        if ($this->getCommentsAllowed()) {
+            preg_match_all('/<\!--.*?--\s*>/s' , (string) $valueCopy, $matches);
+            $comments = array_unique($matches[0]);
+            foreach ($comments as $k => $v) {
+                $valueCopy = str_replace($v, self::UNIQUE_ID_PREFIX . $k, $valueCopy);
+            }
+        }
+
+        // Initialize accumulator for filtered data
+        $dataFiltered = '';
+        // Parse the input data iteratively as regular pre-tag text followed by a
+        // tag; either may be empty strings
+        preg_match_all('/([^<]*)(<?[^>]*>?)/', (string) $valueCopy, $matches);
+        // Iterate over each set of matches
+        foreach ($matches[1] as $index => $preTag) {
+            // If the pre-tag text is non-empty, strip any ">" characters from it
+            if (strlen($preTag)) {
+                $preTag = str_replace('>', '', $preTag);
+            }
+            // If a tag exists in this match, then filter the tag
+            $tag = $matches[2][$index];
+            if (strlen($tag)) {
+                $tagFiltered = $this->_filterTag($tag);
+            } else {
+                $tagFiltered = '';
+            }
+            // Add the filtered pre-tag text and filtered tag to the data buffer
+            $dataFiltered .= $preTag . $tagFiltered;
+        }
+
+        // If comments are allowed, then replace the unique identifiers with the corresponding comments
+        if ($this->getCommentsAllowed()) {
+            foreach ($comments as $k => $v) {
+                $dataFiltered = str_replace(self::UNIQUE_ID_PREFIX . $k, $v, $dataFiltered);
+            }
+        }
+
+        // Return the filtered data
+        return $dataFiltered;
+    }
+
+    /**
+     * Filters a single tag against the current option settings
+     *
+     * @param  string $tag
+     * @return string
+     */
+    protected function _filterTag($tag)
+    {
+        // Parse the tag into:
+        // 1. a starting delimiter (mandatory)
+        // 2. a tag name (if available)
+        // 3. a string of attributes (if available)
+        // 4. an ending delimiter (if available)
+        $isMatch = preg_match('~(</?)(\w*)((/(?!>)|[^/>])*)(/?>)~', $tag, $matches);
+
+        // If the tag does not match, then strip the tag entirely
+        if (!$isMatch) {
+            return '';
+        }
+
+        // Save the matches to more meaningfully named variables
+        $tagStart      = $matches[1];
+        $tagName       = strtolower($matches[2]);
+        $tagAttributes = $matches[3];
+        $tagEnd        = $matches[5];
+
+        // If the tag is not an allowed tag, then remove the tag entirely
+        if (!isset($this->_tagsAllowed[$tagName])) {
+            return '';
+        }
+
+        // Trim the attribute string of whitespace at the ends
+        $tagAttributes = trim($tagAttributes);
+
+        // If there are non-whitespace characters in the attribute string
+        if (strlen($tagAttributes)) {
+            // Parse iteratively for well-formed attributes
+            preg_match_all('/(\w+)\s*=\s*(?:(")(.*?)"|(\')(.*?)\')/s', $tagAttributes, $matches);
+
+            // Initialize valid attribute accumulator
+            $tagAttributes = '';
+
+            // Iterate over each matched attribute
+            foreach ($matches[1] as $index => $attributeName) {
+                $attributeName      = strtolower($attributeName);
+                $attributeDelimiter = $matches[2][$index];
+                $attributeValue     = $matches[3][$index];
+
+                // If the attribute is not allowed, then remove it entirely
+                if (!array_key_exists($attributeName, $this->_tagsAllowed[$tagName])
+                    && !array_key_exists($attributeName, $this->_attributesAllowed)) {
+                    continue;
+                }
+                // Add the attribute to the accumulator
+                $tagAttributes .= " $attributeName=" . $attributeDelimiter
+                                . $attributeValue . $attributeDelimiter;
+            }
+        }
+
+        // Reconstruct tags ending with "/>" as backwards-compatible XHTML tag
+        if (strpos($tagEnd, '/') !== false) {
+            $tagEnd = " $tagEnd";
+        }
+
+        // Return the filtered tag
+        return $tagStart . $tagName . $tagAttributes . $tagEnd;
+    }
+}

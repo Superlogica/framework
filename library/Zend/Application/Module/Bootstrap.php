@@ -1,48 +1,143 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-rK6zu7UOz0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Module
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Bootstrap.php 15553 2009-05-12 13:52:41Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Application_Bootstrap_Bootstrap
+ */
+require_once 'Zend/Application/Bootstrap/Bootstrap.php';
+
+/**
+ * Base bootstrap class for modules
+ * 
+ * @uses       Zend_Loader_Autoloader_Resource
+ * @uses       Zend_Application_Bootstrap_Bootstrap
+ * @package    Zend_Application
+ * @subpackage Module
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Application_Module_Bootstrap 
+    extends Zend_Application_Bootstrap_Bootstrap
+{
+    /**
+     * @var Zend_Loader_Autoloader_Resource
+     */
+    protected $_resourceLoader;
+
+    /**
+     * Constructor
+     * 
+     * @param  Zend_Application|Zend_Application_Bootstrap_Bootstrapper $application 
+     * @return void
+     */
+    public function __construct($application)
+    {
+        $this->setApplication($application);
+
+        // Use same plugin loader as parent bootstrap
+        if ($application instanceof Zend_Application_Bootstrap_ResourceBootstrapper) {
+            $this->setPluginLoader($application->getPluginLoader());
+        }
+
+        $key = strtolower($this->getModuleName());
+        if ($application->hasOption($key)) {
+            // Don't run via setOptions() to prevent duplicate initialization
+            $this->setOptions($application->getOption($key));
+        }
+
+        if ($application->hasOption('resourceloader')) {
+            $this->setOptions(array(
+                'resourceloader' => $application->getOption('resourceloader')
+            ));
+        }
+        $this->initResourceLoader();
+
+        // ZF-6545: ensure front controller resource is loaded
+        if (!$this->hasPluginResource('FrontController')) {
+            $this->registerPluginResource('FrontController');
+        }
+
+        // ZF-6545: prevent recursive registration of modules
+        if ($this->hasPluginResource('Modules')) {
+            $this->unregisterPluginResource('Modules');
+        }
+    }
+
+    /**
+     * Set module resource loader
+     * 
+     * @param  Zend_Loader_Autoloader_Resource $loader 
+     * @return Zend_Application_Module_Bootstrap
+     */
+    public function setResourceLoader(Zend_Loader_Autoloader_Resource $loader)
+    {
+        $this->_resourceLoader = $loader;
+        return $this;
+    }
+
+    /**
+     * Retrieve module resource loader
+     * 
+     * @return Zend_Loader_Autoloader_Resource
+     */
+    public function getResourceLoader()
+    {
+        if (null === $this->_resourceLoader) {
+            $r    = new ReflectionClass($this);
+            $path = $r->getFileName();
+            $this->setResourceLoader(new Zend_Application_Module_Autoloader(array(
+                'namespace' => $this->getModuleName(),
+                'basePath'  => dirname($path),
+            )));
+        }
+        return $this->_resourceLoader;
+    }
+
+    /**
+     * Ensure resource loader is loaded
+     * 
+     * @return void
+     */
+    public function initResourceLoader()
+    {
+        $this->getResourceLoader();
+    }
+
+    /**
+     * Retrieve module name
+     * 
+     * @return string
+     */
+    public function getModuleName()
+    {
+        if (empty($this->_moduleName)) {
+            $class = get_class($this);
+            if (preg_match('/^([a-z][a-z0-9]*)_/i', $class, $matches)) {
+                $prefix = $matches[1];
+            } else {
+                $prefix = $class;
+            }
+            $this->_moduleName = $prefix;
+        }
+        return $this->_moduleName;
+    }
+}

@@ -1,69 +1,295 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Memory_Container */
+require_once 'Zend/Memory/Container.php';
+
+/** Zend_Memory_Value */
+require_once 'Zend/Memory/Value.php';
+
+/**
+ * Memory value container
+ *
+ * Movable (may be swapped with specified backend and unloaded).
+ *
+ * @category   Zend
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Memory_Container_Movable extends Zend_Memory_Container {
+    /**
+     * Internal object Id
+     *
+     * @var integer
+     */
+    protected $_id;
+
+    /**
+     * Memory manager reference
+     *
+     * @var Zend_Memory_Manager
+     */
+    private $_memManager;
+
+    /**
+     * Value object
+     *
+     * @var Zend_Memory_Value
+     */
+    private $_value;
+
+    /** Value states */
+    const LOADED   = 1;
+    const SWAPPED  = 2;
+    const LOCKED   = 4;
+
+    /**
+     * Value state (LOADED/SWAPPED/LOCKED)
+     *
+     * @var integer
+     */
+    private $_state;
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Memory_Manager $memoryManager
+     * @param integer $id
+     * @param string $value
+     */
+    public function __construct(Zend_Memory_Manager $memoryManager, $id, $value)
+    {
+        $this->_memManager = $memoryManager;
+        $this->_id    = $id;
+        $this->_state = self::LOADED;
+        $this->_value = new Zend_Memory_Value($value, $this);
+    }
+
+    /**
+     * Lock object in memory.
+     */
+    public function lock()
+    {
+        if ( !($this->_state & self::LOADED) ) {
+            $this->_memManager->load($this, $this->_id);
+            $this->_state |= self::LOADED;
+        }
+
+        $this->_state |= self::LOCKED;
+
+        /**
+         * @todo
+         * It's possible to set "value" container attribute to avoid modification tracing, while it's locked
+         * Check, if it's  more effective
+         */
+    }
+
+    /**
+     * Unlock object
+     */
+    public function unlock()
+    {
+        // Clear LOCKED state bit
+        $this->_state &= ~self::LOCKED;
+    }
+
+    /**
+     * Return true if object is locked
+     *
+     * @return boolean
+     */
+    public function isLocked()
+    {
+        return $this->_state & self::LOCKED;
+    }
+
+    /**
+     * Get handler
+     *
+     * Loads object if necessary and moves it to the top of loaded objects list.
+     * Swaps objects from the bottom of loaded objects list, if necessary.
+     *
+     * @param string $property
+     * @return string
+     * @throws Zend_Memory_Exception
+     */
+    public function __get($property)
+    {
+        if ($property != 'value') {
+            require_once 'Zend/Memory/Exception.php';
+            throw new Zend_Memory_Exception('Unknown property: Zend_Memory_container::$' . $property);
+        }
+
+        if ( !($this->_state & self::LOADED) ) {
+            $this->_memManager->load($this, $this->_id);
+            $this->_state |= self::LOADED;
+        }
+
+        return $this->_value;
+    }
+
+    /**
+     * Set handler
+     *
+     * @param string $property
+     * @param  string $value
+     * @throws Zend_Exception
+     */
+    public function __set($property, $value)
+    {
+        if ($property != 'value') {
+            require_once 'Zend/Memory/Exception.php';
+            throw new Zend_Memory_Exception('Unknown property: Zend_Memory_container::$' . $property);
+        }
+
+        $this->_state = self::LOADED;
+        $this->_value = new Zend_Memory_Value($value, $this);
+
+        $this->_memManager->processUpdate($this, $this->_id);
+    }
+
+
+    /**
+     * Get string value reference
+     *
+     * _Must_ be used for value access before PHP v 5.2
+     * or _may_ be used for performance considerations
+     *
+     * @return &string
+     */
+    public function &getRef()
+    {
+        if ( !($this->_state & self::LOADED) ) {
+            $this->_memManager->load($this, $this->_id);
+            $this->_state |= self::LOADED;
+        }
+
+        return $this->_value->getRef();
+    }
+
+    /**
+     * Signal, that value is updated by external code.
+     *
+     * Should be used together with getRef()
+     */
+    public function touch()
+    {
+        $this->_memManager->processUpdate($this, $this->_id);
+    }
+
+    /**
+     * Process container value update.
+     * Must be called only by value object
+     *
+     * @internal
+     */
+    public function processUpdate()
+    {
+        // Clear SWAPPED state bit
+        $this->_state &= ~self::SWAPPED;
+
+        $this->_memManager->processUpdate($this, $this->_id);
+    }
+
+    /**
+     * Start modifications trace
+     *
+     * @internal
+     */
+    public function startTrace()
+    {
+        if ( !($this->_state & self::LOADED) ) {
+            $this->_memManager->load($this, $this->_id);
+            $this->_state |= self::LOADED;
+        }
+
+        $this->_value->startTrace();
+    }
+
+    /**
+     * Set value (used by memory manager when value is loaded)
+     *
+     * @internal
+     */
+    public function setValue($value)
+    {
+        $this->_value = new Zend_Memory_Value($value, $this);
+    }
+
+    /**
+     * Clear value (used by memory manager when value is swapped)
+     *
+     * @internal
+     */
+    public function unloadValue()
+    {
+        // Clear LOADED state bit
+        $this->_state &= ~self::LOADED;
+
+        $this->_value = null;
+    }
+
+    /**
+     * Mark, that object is swapped
+     *
+     * @internal
+     */
+    public function markAsSwapped()
+    {
+        // Clear LOADED state bit
+        $this->_state |= self::LOADED;
+    }
+
+    /**
+     * Check if object is marked as swapped
+     *
+     * @internal
+     * @return boolean
+     */
+    public function isSwapped()
+    {
+        return $this->_state & self::SWAPPED;
+    }
+
+    /**
+     * Get object id
+     *
+     * @internal
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+    /**
+     * Destroy memory container and remove it from memory manager list
+     *
+     * @internal
+     */
+    public function destroy()
+    {
+        /**
+         * We don't clean up swap because of performance considerations
+         * Cleaning is performed by Memory Manager destructor
+         */
+
+        $this->_memManager->unlink($this, $this->_id);
+    }
+}

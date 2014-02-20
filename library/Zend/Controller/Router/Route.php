@@ -1,222 +1,556 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-CD8CADc5IeLpmP88xUZ6hVsRb1K=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Route.php 15464 2009-05-09 16:34:07Z dasprid $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Router_Route_Abstract */
+require_once 'Zend/Controller/Router/Route/Abstract.php';
+
+/**
+ * Route
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @see        http://manuals.rubyonrails.com/read/chapter/65
+ */
+class Zend_Controller_Router_Route extends Zend_Controller_Router_Route_Abstract
+{
+    /**
+     * Default translator
+     *
+     * @var Zend_Translate
+     */
+    protected static $_defaultTranslator;
+
+    /**
+     * Translator
+     *
+     * @var Zend_Translate
+     */
+    protected $_translator;
+    
+    /**
+     * Default locale
+     *
+     * @var mixed
+     */
+    protected static $_defaultLocale;
+    
+    /**
+     * Locale
+     * 
+     * @var mixed
+     */
+    protected $_locale;
+    
+    /**
+     * Wether this is a translated route or not
+     *
+     * @var boolean
+     */
+    protected $_isTranslated = false;
+    
+    /**
+     * Translatable variables
+     *
+     * @var array
+     */
+    protected $_translatable = array();
+
+    protected $_urlVariable = ':';
+    protected $_urlDelimiter = '/';
+    protected $_regexDelimiter = '#';
+    protected $_defaultRegex = null;
+
+    /**
+     * Holds names of all route's pattern variable names. Array index holds a position in URL.
+     * @var array
+     */
+    protected $_variables = array();
+
+    /**
+     * Holds Route patterns for all URL parts. In case of a variable it stores it's regex
+     * requirement or null. In case of a static part, it holds only it's direct value.
+     * In case of a wildcard, it stores an asterisk (*)
+     * @var array
+     */
+    protected $_parts = array();
+
+    /**
+     * Holds user submitted default values for route's variables. Name and value pairs.
+     * @var array
+     */
+    protected $_defaults = array();
+
+    /**
+     * Holds user submitted regular expression patterns for route's variables' values.
+     * Name and value pairs.
+     * @var array
+     */
+    protected $_requirements = array();
+
+    /**
+     * Associative array filled on match() that holds matched path values
+     * for given variable names.
+     * @var array
+     */
+    protected $_values = array();
+
+    /**
+     * Associative array filled on match() that holds wildcard variable
+     * names and values.
+     * @var array
+     */
+    protected $_wildcardData = array();
+
+    /**
+     * Helper var that holds a count of route pattern's static parts
+     * for validation
+     * @var int
+     */
+    protected $_staticCount = 0;
+
+    public function getVersion() {
+        return 1;
+    }
+    
+    /**
+     * Instantiates route based on passed Zend_Config structure
+     *
+     * @param Zend_Config $config Configuration object
+     */
+    public static function getInstance(Zend_Config $config)
+    {
+        $reqs = ($config->reqs instanceof Zend_Config) ? $config->reqs->toArray() : array();
+        $defs = ($config->defaults instanceof Zend_Config) ? $config->defaults->toArray() : array();
+        return new self($config->route, $defs, $reqs);
+    }
+
+    /**
+     * Prepares the route for mapping by splitting (exploding) it
+     * to a corresponding atomic parts. These parts are assigned
+     * a position which is later used for matching and preparing values.
+     *
+     * @param string $route Map used to match with later submitted URL path
+     * @param array $defaults Defaults for map variables with keys as variable names
+     * @param array $reqs Regular expression requirements for variables (keys as variable names)
+     * @param array          $reqs       Regular expression requirements for variables (keys as variable names)
+     * @param Zend_Translate $translator Translator to use for this instance
+     */
+    public function __construct($route, $defaults = array(), $reqs = array(), Zend_Translate $translator = null, $locale = null)
+    {
+        $route               = trim($route, $this->_urlDelimiter);
+        $this->_defaults     = (array) $defaults;
+        $this->_requirements = (array) $reqs;
+        $this->_translator   = $translator;
+        $this->_locale       = $locale;
+
+        if ($route !== '') {
+            foreach (explode($this->_urlDelimiter, $route) as $pos => $part) {
+                if (substr($part, 0, 1) == $this->_urlVariable && substr($part, 1, 1) != $this->_urlVariable) {
+                    $name = substr($part, 1);
+
+                    if (substr($name, 0, 1) === '@' && substr($name, 1, 1) !== '@') {
+                        $name                  = substr($name, 1);
+                        $this->_translatable[] = $name;
+                        $this->_isTranslated   = true;
+                    }
+                    
+                    $this->_parts[$pos]     = (isset($reqs[$name]) ? $reqs[$name] : $this->_defaultRegex);
+                    $this->_variables[$pos] = $name;
+                } else {
+                    if (substr($part, 0, 1) == $this->_urlVariable) {
+                        $part = substr($part, 1);
+                    }
+                    
+                    if (substr($part, 0, 1) === '@' && substr($part, 1, 1) !== '@') {
+                        $this->_isTranslated = true;
+                    }
+                    
+                    $this->_parts[$pos] = $part;
+                    
+                    if ($part !== '*') {
+                        $this->_staticCount++;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Matches a user submitted path with parts defined by a map. Assigns and
+     * returns an array of variables on a successful match.
+     *
+     * @param string $path Path used to match against this routing map
+     * @return array|false An array of assigned values or a false on a mismatch
+     */
+    public function match($path, $partial = false)
+    {
+        if ($this->_isTranslated) {
+            $translateMessages = $this->getTranslator()->getMessages();
+        }
+        
+        $pathStaticCount = 0;
+        $values          = array();
+        $matchedPath     = '';
+        
+        if (!$partial) {
+            $path = trim($path, $this->_urlDelimiter);
+        }
+        
+        if ($path !== '') {
+            $path = explode($this->_urlDelimiter, $path);
+
+            foreach ($path as $pos => $pathPart) {
+                // Path is longer than a route, it's not a match
+                if (!array_key_exists($pos, $this->_parts)) {
+                    if ($partial) {
+                        break;
+                    } else {
+                        return false;
+                    }
+                }
+                
+                $matchedPath .= $pathPart . $this->_urlDelimiter;
+                
+                // If it's a wildcard, get the rest of URL as wildcard data and stop matching
+                if ($this->_parts[$pos] == '*') {
+                    $count = count($path);
+                    for($i = $pos; $i < $count; $i+=2) {
+                        $var = urldecode($path[$i]);
+                        if (!isset($this->_wildcardData[$var]) && !isset($this->_defaults[$var]) && !isset($values[$var])) {
+                            $this->_wildcardData[$var] = (isset($path[$i+1])) ? urldecode($path[$i+1]) : null;
+                        }
+                    }
+                    break;
+                }
+
+                $name     = isset($this->_variables[$pos]) ? $this->_variables[$pos] : null;
+                $pathPart = urldecode($pathPart);
+
+                // Translate value if required
+                $part = $this->_parts[$pos];
+                if ($this->_isTranslated && (substr($part, 0, 1) === '@' && substr($part, 1, 1) !== '@' && $name === null) || $name !== null && in_array($name, $this->_translatable)) {
+                    if (substr($part, 0, 1) === '@') {
+                        $part = substr($part, 1);
+                    }
+                    
+                    if (($originalPathPart = array_search($pathPart, $translateMessages)) !== false) {
+                        $pathPart = $originalPathPart;
+                    }
+                }
+                
+                if (substr($part, 0, 2) === '@@') {
+                    $part = substr($part, 1);
+                }
+
+                // If it's a static part, match directly
+                if ($name === null && $part != $pathPart) {
+                    return false;
+                }
+
+                // If it's a variable with requirement, match a regex. If not - everything matches
+                if ($part !== null && !preg_match($this->_regexDelimiter . '^' . $part . '$' . $this->_regexDelimiter . 'iu', $pathPart)) {
+                    return false;
+                }
+
+                // If it's a variable store it's value for later
+                if ($name !== null) {
+                    $values[$name] = $pathPart;
+                } else {
+                    $pathStaticCount++;
+                }  
+            }
+        }
+
+        // Check if all static mappings have been matched
+        if ($this->_staticCount != $pathStaticCount) {
+            return false;
+        }
+
+        $return = $values + $this->_wildcardData + $this->_defaults;
+
+        // Check if all map variables have been initialized
+        foreach ($this->_variables as $var) {
+            if (!array_key_exists($var, $return)) {
+                return false;
+            }
+        }
+        
+        $this->setMatchedPath(rtrim($matchedPath, $this->_urlDelimiter));
+
+        $this->_values = $values;
+        
+        return $return;
+
+    }
+
+    /**
+     * Assembles user submitted parameters forming a URL path defined by this route
+     *
+     * @param  array $data An array of variable and value pairs used as parameters
+     * @param  boolean $reset Whether or not to set route defaults with those provided in $data
+     * @return string Route path with user submitted parameters
+     */
+    public function assemble($data = array(), $reset = false, $encode = false, $partial = false)
+    {
+        if ($this->_isTranslated) {
+            $translator = $this->getTranslator();
+            
+            if (isset($data['@locale'])) {
+                $locale = $data['@locale'];
+                unset($data['@locale']);
+            } else {
+                $locale = $this->getLocale();
+            }
+        }
+        
+        $url  = array();
+        $flag = false;
+
+        foreach ($this->_parts as $key => $part) {
+            $name = isset($this->_variables[$key]) ? $this->_variables[$key] : null;
+
+            $useDefault = false;
+            if (isset($name) && array_key_exists($name, $data) && $data[$name] === null) {
+                $useDefault = true;
+            }
+
+            if (isset($name)) {
+                if (isset($data[$name]) && !$useDefault) {
+                    $value = $data[$name];
+                    unset($data[$name]);
+                } elseif (!$reset && !$useDefault && isset($this->_values[$name])) {
+                    $value = $this->_values[$name];
+                } elseif (!$reset && !$useDefault && isset($this->_wildcardData[$name])) {
+                    $value = $this->_wildcardData[$name];
+                } elseif (isset($this->_defaults[$name])) {
+                    $value = $this->_defaults[$name];
+                } else {
+                    require_once 'Zend/Controller/Router/Exception.php';
+                    throw new Zend_Controller_Router_Exception($name . ' is not specified');
+                }
+                
+                if ($this->_isTranslated && in_array($name, $this->_translatable)) {
+                    $url[$key] = $translator->translate($value, $locale);
+                } else {
+                    $url[$key] = $value;
+                } 
+            } elseif ($part != '*') {
+                if ($this->_isTranslated && substr($part, 0, 1) === '@') {
+                    if (substr($part, 1, 1) !== '@') {
+                        $url[$key] = $translator->translate(substr($part, 1), $locale);
+                    } else {
+                        $url[$key] = substr($part, 1);
+                    }
+                } else {
+                    if (substr($part, 0, 2) === '@@') {
+                        $part = substr($part, 1);
+                    }
+                    
+                    $url[$key] = $part;
+                }
+            } else {
+                if (!$reset) $data += $this->_wildcardData;
+                foreach ($data as $var => $value) {
+                    if ($value !== null) {
+                        $url[$key++] = $var;
+                        $url[$key++] = $value;
+                        $flag = true;
+                    }
+                }
+            }
+        }
+
+        $return = '';
+
+        foreach (array_reverse($url, true) as $key => $value) {
+            $defaultValue = null;
+            
+            if (isset($this->_variables[$key])) {
+                $defaultValue = $this->getDefault($this->_variables[$key]);
+               
+                if ($this->_isTranslated && $defaultValue !== null && isset($this->_translatable[$this->_variables[$key]])) {
+                    $defaultValue = $translator->translate($defaultValue, $locale);
+                }
+            }
+                
+            if ($flag || $value !== $defaultValue || $partial) {
+                if ($encode) $value = urlencode($value);
+                $return = $this->_urlDelimiter . $value . $return;
+                $flag = true;
+            }
+        }
+
+        return trim($return, $this->_urlDelimiter);
+
+    }
+
+    /**
+     * Return a single parameter of route's defaults
+     *
+     * @param string $name Array key of the parameter
+     * @return string Previously set default
+     */
+    public function getDefault($name) {
+        if (isset($this->_defaults[$name])) {
+            return $this->_defaults[$name];
+        }
+        return null;
+    }
+
+    /**
+     * Return an array of defaults
+     *
+     * @return array Route defaults
+     */
+    public function getDefaults() {
+        return $this->_defaults;
+    }
+    
+    /**
+     * Get all variables which are used by the route
+     *
+     * @return array
+     */
+    public function getVariables()
+    {
+        return $this->_variables;
+    }
+
+    /**
+     * Set a default translator
+     * 
+     * @param  Zend_Translate $translator
+     * @return void
+     */
+    public static function setDefaultTranslator(Zend_Translate $translator = null)
+    {
+        self::$_defaultTranslator = $translator;
+    }
+    
+    /**
+     * Get the default translator
+     *
+     * @return Zend_Translate
+     */
+    public static function getDefaultTranslator()
+    {
+        return self::$_defaultTranslator;
+    }
+    
+    /**
+     * Set a translator
+     * 
+     * @param  Zend_Translate $translator
+     * @return void
+     */
+    public function setTranslator(Zend_Translate $translator)
+    {
+        $this->_translator = $translator;
+    }
+    
+    /**
+     * Get the translator
+     * 
+     * @throws Zend_Controller_Router_Exception When no translator can be found
+     * @return Zend_Translate
+     */
+    public function getTranslator()
+    {
+        if ($this->_translator !== null) {
+            return $this->_translator;
+        } else if (($translator = self::getDefaultTranslator()) !== null) {
+            return $translator;
+        } else {
+            try {
+                $translator = Zend_Registry::get('Zend_Translate');
+            } catch (Zend_Exception $e) {
+                $translator = null;
+            }
+            
+            if ($translator instanceof Zend_Translate) { 
+                return $translator;
+            }
+        }
+        
+        require_once 'Zend/Controller/Router/Exception.php';
+        throw new Zend_Controller_Router_Exception('Could not find a translator');
+    }
+    
+    /**
+     * Set a default locale
+     * 
+     * @param  mixed $locale
+     * @return void
+     */
+    public static function setDefaultLocale($locale = null)
+    {
+        self::$_defaultLocale = $locale;
+    }
+    
+    /**
+     * Get the default locale
+     *
+     * @return mixed
+     */
+    public static function getDefaultLocale()
+    {
+        return self::$_defaultLocale;
+    }
+    
+    /**
+     * Set a locale
+     * 
+     * @param  mixed $locale
+     * @return void
+     */
+    public function setLocale($locale)
+    {
+        $this->_locale = $locale;
+    }
+    
+    /**
+     * Get the locale
+     * 
+     * @return mixed
+     */
+    public function getLocale()
+    {
+        if ($this->_locale !== null) {
+            return $this->_locale;
+        } else if (($locale = self::getDefaultLocale()) !== null) {
+            return $locale;
+        } else {
+            try {
+                $locale = Zend_Registry::get('Zend_Locale');
+            } catch (Zend_Exception $e) {
+                $locale = null;
+            }
+            
+            if ($locale !== null) { 
+                return $locale;
+            }
+        }
+        
+        return null;
+    }
+}

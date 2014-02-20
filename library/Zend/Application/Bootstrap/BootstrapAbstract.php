@@ -1,250 +1,738 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Bootstrap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: BootstrapAbstract.php 15556 2009-05-12 14:45:23Z matthew $
+ */
+
+/**
+ * Abstract base class for bootstrap classes
+ *
+ * @uses       Zend_Application_Bootstrap_Bootstrapper
+ * @uses       Zend_Application_Bootstrap_ResourceBootstrapper
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Bootstrap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Application_Bootstrap_BootstrapAbstract
+    implements Zend_Application_Bootstrap_Bootstrapper, 
+               Zend_Application_Bootstrap_ResourceBootstrapper
+{
+    /**
+     * @var Zend_Application|Zend_Application_Bootstrap_Bootstrapper
+     */
+    protected $_application;
+
+    /**
+     * @var array Internal resource methods (resource/method pairs)
+     */
+    protected $_classResources;
+
+    /**
+     * @var object Resource container
+     */
+    protected $_container;
+
+    /**
+     * @var string
+     */
+    protected $_environment;
+
+    /**
+     * @var array 
+     */
+    protected $_options = array();
+
+    /**
+     * @var Zend_Loader_PluginLoader_Interface
+     */
+    protected $_pluginLoader;
+
+    /**
+     * @var array Class-based resource plugins
+     */
+    protected $_pluginResources = array();
+
+    /**
+     * @var array Initializers that have been run
+     */
+    protected $_run = array();
+
+    /**
+     * @var array Initializers that have been started but not yet completed (circular dependency detection)
+     */
+    protected $_started = array();
+
+    /**
+     * Constructor
+     *
+     * Sets application object, initializes options, and prepares list of 
+     * initializer methods.
+     * 
+     * @param  Zend_Application|Zend_Application_Bootstrap_Bootstrapper $application
+     * @return void
+     * @throws Zend_Application_Bootstrap_Exception When invalid applicaiton is provided 
+     */
+    public function __construct($application)
+    {
+        $this->setApplication($application);
+        $options = $application->getOptions();
+        $this->setOptions($options);
+    }
+
+    /**
+     * Set class state
+     * 
+     * @param  array $options 
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     */
+    public function setOptions(array $options)
+    {
+        $options = array_change_key_case($options, CASE_LOWER);
+        $methods = get_class_methods($this);
+        foreach ($methods as $key => $method) {
+            $methods[$key] = strtolower($method);
+        }
+
+        if (array_key_exists('pluginpaths', $options)) {
+            $pluginLoader = $this->getPluginLoader();
+            
+            foreach ($options['pluginpaths'] as $prefix => $path) {
+                $pluginLoader->addPrefixPath($prefix, $path);
+            }
+            
+            unset($options['pluginpaths']);
+        }
+
+        foreach ($options as $key => $value) {
+            $method = 'set' . strtolower($key);
+
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            } elseif ('resources' == $key) {
+                foreach ($value as $resource => $resourceOptions) {
+                    $this->registerPluginResource($resource, $resourceOptions);
+                }
+            }
+        }
+        $this->_options = $this->mergeOptions($this->_options, $options);
+        return $this;
+    }
+
+    /**
+     * Get current options from bootstrap
+     * 
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Is an option present?
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function hasOption($key)
+    {
+        return array_key_exists($key, $this->_options);
+    }
+
+    /**
+     * Retrieve a single option
+     * 
+     * @param  string $key 
+     * @return mixed
+     */
+    public function getOption($key)
+    {
+        if ($this->hasOption($key)) {
+            return $this->_options[$key];
+        }
+        return null;
+    }
+
+    /**
+     * Merge options recursively
+     * 
+     * @param  array $array1 
+     * @param  mixed $array2 
+     * @return array
+     */
+    public function mergeOptions(array $array1, $array2 = null)
+    {
+        if (is_array($array2)) {
+            foreach ($array2 as $key => $val) {
+                if (is_array($array2[$key])) {
+                    $array1[$key] = (array_key_exists($key, $array1) && is_array($array1[$key]))
+                                  ? $this->mergeOptions($array1[$key], $array2[$key]) 
+                                  : $array2[$key];
+                } else {
+                    $array1[$key] = $val;
+                }
+            }
+        }
+        return $array1;
+    }
+
+    /**
+     * Get class resources (as resource/method pairs)
+     * 
+     * Uses get_class_methods() by default, reflection on prior to 5.2.6,
+     * as a bug prevents the usage of get_class_methods() there. 
+     * 
+     * @return array
+     */
+    public function getClassResources()
+    {
+        if (null === $this->_classResources) {
+            if (version_compare(PHP_VERSION, '5.2.6') === -1) {
+                $class        = new ReflectionObject($this);
+                $classMethods = $class->getMethods();
+                $methodNames  = array();
+                
+                foreach ($classMethods as $method) {
+                    $methodNames[] = $method->getName();
+                }
+            } else {
+                $methodNames = get_class_methods($this);
+            }
+            
+            $this->_classResources = array();
+            foreach ($methodNames as $method) {
+                if (5 < strlen($method) && '_init' === substr($method, 0, 5)) {
+                    $this->_classResources[strtolower(substr($method, 5))] = $method;
+                }
+            }
+        }
+        
+        return $this->_classResources;
+    }
+
+    /**
+     * Get class resource names
+     * 
+     * @return array
+     */
+    public function getClassResourceNames()
+    {
+        $resources = $this->getClassResources();
+        return array_keys($resources);
+    }
+
+    /**
+     * Register a new resource plugin
+     * 
+     * @param  string|Zend_Application_Resource_Resource $resource
+     * @param  mixed  $options
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     * @throws Zend_Application_Bootstrap_Exception When invalid resource is provided
+     */
+    public function registerPluginResource($resource, $options = null)
+    {
+        /*
+        if (is_string($resource) && class_exists($resource)) {
+            $options = (array) $options;
+            $options['bootstrap'] = $this;
+            $resource = new $resource($options);
+        }
+         */
+        if ($resource instanceof Zend_Application_Resource_Resource) {
+            $resource->setBootstrap($this);
+            $pluginName = $this->_resolvePluginResourceName($resource);
+            $this->_pluginResources[$pluginName] = $resource;
+            return $this;
+        }
+
+        if (!is_string($resource)) {
+            throw new Zend_Application_Bootstrap_Exception('Invalid resource provided to ' . __METHOD__);
+        }
+
+        // $resource = strtolower($resource);
+        $this->_pluginResources[$resource] = $options;
+        return $this;
+    }
+
+    /**
+     * Unregister a resource from the bootstrap
+     * 
+     * @param  string|Zend_Application_Resource_Resource $resource 
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     * @throws Zend_Application_Bootstrap_Exception When unknown resource type is provided
+     */
+    public function unregisterPluginResource($resource)
+    {
+        if ($resource instanceof Zend_Application_Resource_Resource) {
+            if ($index = array_search($resource, $this->_pluginResources, true)) {
+                unset($this->_pluginResources[$index]);
+            }
+            return $this;
+        }
+
+        if (!is_string($resource)) {
+            throw new Zend_Application_Bootstrap_Exception('Unknown resource type provided to ' . __METHOD__);
+        }
+
+        $resource = strtolower($resource);
+        if (array_key_exists($resource, $this->_pluginResources)) {
+            unset($this->_pluginResources[$resource]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Is the requested plugin resource registered? 
+     * 
+     * @param  string $resource 
+     * @return bool
+     */
+    public function hasPluginResource($resource)
+    {
+        return (null !== $this->getPluginResource($resource));
+    }
+    
+    /**
+     * Get a registered plugin resource
+     *
+     * @param  string $resourceName
+     * @return Zend_Application_Resource_Resource
+     */
+    public function getPluginResource($resource)
+    {
+        if (array_key_exists(strtolower($resource), $this->_pluginResources)) {
+            $resource = strtolower($resource);
+            if (!$this->_pluginResources[$resource] instanceof Zend_Application_Resource_Resource) {
+                $resourceName = $this->_loadPluginResource($resource, $this->_pluginResources[$resource]);
+                if (!$resourceName) {
+                    throw new Zend_Application_Bootstrap_Exception(sprintf('Unable to resolve plugin "%s"; no corresponding plugin with that name', $resource));
+                }
+                $resource = $resourceName;
+            }
+            return $this->_pluginResources[$resource];
+        }
+
+        foreach ($this->_pluginResources as $plugin => $spec) {
+            if ($spec instanceof Zend_Application_Resource_Resource) {
+                $pluginName = $this->_resolvePluginResourceName($spec);
+                if (0 === strcasecmp($resource, $pluginName)) {
+                    unset($this->_pluginResources[$plugin]);
+                    $this->_pluginResources[$pluginName] = $spec;
+                    return $spec;
+                }
+                continue;
+            }
+
+
+            if (false !== $pluginName = $this->_loadPluginResource($plugin, $spec)) {
+                if (0 === strcasecmp($resource, $pluginName)) {
+                    return $this->_pluginResources[$pluginName];
+                }
+            }
+
+            if (class_exists($plugin)) {
+                $spec = (array) $spec;
+                $spec['bootstrap'] = $this;
+                $instance = new $plugin($spec);
+                $pluginName = $this->_resolvePluginResourceName($instance);
+                unset($this->_pluginResources[$plugin]);
+                $this->_pluginResources[$pluginName] = $instance;
+
+                if (0 === strcasecmp($resource, $pluginName)) {
+                    return $instance;
+                }
+            }
+        }
+
+        return null;            
+    }
+
+    /**
+     * Retrieve all plugin resources
+     * 
+     * @return array
+     */
+    public function getPluginResources()
+    {
+        foreach (array_keys($this->_pluginResources) as $resource) {
+            $this->getPluginResource($resource);
+        }
+        return $this->_pluginResources;
+    }
+
+    /**
+     * Retrieve plugin resource names
+     * 
+     * @return array
+     */
+    public function getPluginResourceNames()
+    {
+        $this->getPluginResources();
+        return array_keys($this->_pluginResources);
+    }
+
+    /**
+     * Set plugin loader for loading resources
+     * 
+     * @param  Zend_Loader_PluginLoader_Interface $loader 
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     */
+    public function setPluginLoader(Zend_Loader_PluginLoader_Interface $loader)
+    {
+        $this->_pluginLoader = $loader;
+        return $this;
+    }
+    
+    /**
+     * Get the plugin loader for resources
+     *
+     * @return Zend_Loader_PluginLoader_Interface
+     */
+    public function getPluginLoader()
+    {
+        if ($this->_pluginLoader === null) {
+            $options = array(
+                'Zend_Application_Resource' => 'Zend/Application/Resource'
+            );
+
+            $this->_pluginLoader = new Zend_Loader_PluginLoader($options);
+        }
+
+        return $this->_pluginLoader;
+    }
+
+    /**
+     * Set application/parent bootstrap
+     * 
+     * @param  Zend_Application|Zend_Application_Bootstrap_Bootstrapper $application 
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     */
+    public function setApplication($application)
+    {
+        if (($application instanceof Zend_Application) 
+            || ($application instanceof Zend_Application_Bootstrap_Bootstrapper)
+        ) {
+            $this->_application = $application;
+        } else {
+            throw new Zend_Application_Bootstrap_Exception('Invalid application provided to bootstrap constructor (received "' . get_class($application) . '" instance)');
+        }
+        return $this;
+    }
+    
+    /**
+     * Retrieve parent application instance
+     * 
+     * @return Zend_Application|Zend_Application_Bootstrap_Bootstrapper
+     */
+    public function getApplication()
+    {
+        return $this->_application;
+    }
+
+    /**
+     * Retrieve application environment
+     * 
+     * @return string
+     */
+    public function getEnvironment()
+    {
+        if (null === $this->_environment) {
+            $this->_environment = $this->getApplication()->getEnvironment();
+        }
+        return $this->_environment;
+    }
+
+    /**
+     * Set resource container
+     *
+     * By default, if a resource callback has a non-null return value, this 
+     * value will be stored in a container using the resource name as the 
+     * key.
+     *
+     * Containers must be objects, and must allow setting public properties.
+     * 
+     * @param  object $container 
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     */
+    public function setContainer($container)
+    {
+        if (!is_object($container)) {
+            throw new Zend_Application_Bootstrap_Exception('Resource containers must be objects');
+        }
+        $this->_container = $container;
+        return $this;
+    }
+
+    /**
+     * Retrieve resource container
+     * 
+     * @return object
+     */
+    public function getContainer()
+    {
+        if (null === $this->_container) {
+            $this->setContainer(new Zend_Registry());
+        }
+        return $this->_container;
+    }
+
+    /**
+     * Determine if a resource has been stored in the container
+     *
+     * During bootstrap resource initialization, you may return a value. If 
+     * you do, it will be stored in the {@link setContainer() container}.
+     * You can use this method to determine if a value was stored.
+     * 
+     * @param  string $name 
+     * @return bool
+     */
+    public function hasResource($name)
+    {
+        $resource  = strtolower($name);
+        $container = $this->getContainer();
+        return isset($container->{$resource});
+    }
+
+    /**
+     * Retrieve a resource from the container
+     *
+     * During bootstrap resource initialization, you may return a value. If 
+     * you do, it will be stored in the {@link setContainer() container}.
+     * You can use this method to retrieve that value.
+     *
+     * If no value was returned, this will return a null value.
+     * 
+     * @param  string $name 
+     * @return null|mixed
+     */
+    public function getResource($name)
+    {
+        $resource  = strtolower($name);
+        $container = $this->getContainer();
+        if ($this->hasResource($resource)) {
+            return $container->{$resource};
+        }
+        return null;
+    }
+
+    /**
+     * Bootstrap individual, all, or multiple resources
+     *
+     * Marked as final to prevent issues when subclassing and naming the
+     * child class 'Bootstrap' (in which case, overriding this method
+     * would result in it being treated as a constructor).
+     *
+     * If you need to override this functionality, override the 
+     * {@link _bootstrap()} method.
+     * 
+     * @param  null|string|array $resource
+     * @return Zend_Application_Bootstrap_BootstrapAbstract
+     * @throws Zend_Application_Bootstrap_Exception When invalid argument was passed 
+     */
+    final public function bootstrap($resource = null)
+    {
+        $this->_bootstrap($resource);
+        return $this;
+    }
+
+    /**
+     * Overloading: intercept calls to bootstrap<resourcename>() methods
+     * 
+     * @param  string $method 
+     * @param  array  $args
+     * @return void
+     * @throws Zend_Application_Bootstrap_Exception On invalid method name 
+     */
+    public function __call($method, $args)
+    {
+        if (9 < strlen($method) && 'bootstrap' === substr($method, 0, 9)) {
+            $resource = substr($method, 9);
+            return $this->bootstrap($resource);
+        }
+
+        throw new Zend_Application_Bootstrap_Exception('Invalid method "' . $method . '"');
+    }
+
+    /**
+     * Bootstrap implementation
+     *
+     * This method may be overridden to provide custom bootstrapping logic. 
+     * It is the sole method called by {@link bootstrap()}.
+     * 
+     * @param  null|string|array $resource 
+     * @return void
+     * @throws Zend_Application_Bootstrap_Exception When invalid argument was passed 
+     */
+    protected function _bootstrap($resource = null)
+    {
+        if (null === $resource) {
+            foreach ($this->getClassResourceNames() as $resource) {
+                $this->_executeResource($resource);
+            }
+            
+            foreach ($this->getPluginResourceNames() as $resource) {
+                $this->_executeResource($resource);
+            }
+        } elseif (is_string($resource)) {
+            $this->_executeResource($resource);
+        } elseif (is_array($resource)) {
+            foreach ($resource as $r) {
+                $this->_executeResource($r);
+            }
+        } else {
+            throw new Zend_Application_Bootstrap_Exception('Invalid argument passed to ' . __METHOD__);
+        }
+    }
+
+    /**
+     * Execute a resource
+     *
+     * Checks to see if the resource has already been run. If not, it searches 
+     * first to see if a local method matches the resource, and executes that. 
+     * If not, it checks to see if a plugin resource matches, and executes that 
+     * if found.
+     *
+     * Finally, if not found, it throws an exception.
+     *
+     * @param  string $resource 
+     * @return void
+     * @throws Zend_Application_Bootstrap_Exception When resource not found
+     */
+    protected function _executeResource($resource)
+    {
+        $resource = strtolower($resource);
+
+        if (in_array($resource, $this->_run)) {
+            return;
+        }
+
+        if (isset($this->_started[$resource]) && $this->_started[$resource]) {
+            throw new Zend_Application_Bootstrap_Exception('Circular resource dependency detected');
+        }
+
+        $classResources = $this->getClassResources();
+        if (array_key_exists($resource, $classResources)) {
+            $this->_started[$resource] = true;
+            $method = $classResources[$resource];
+            $return = $this->$method();
+            unset($this->_started[$resource]);
+            $this->_markRun($resource);
+
+            if (null !== $return) {
+                $this->getContainer()->{$resource} = $return;
+            }
+
+            return;
+        }
+
+        if ($this->hasPluginResource($resource)) {
+            $this->_started[$resource] = true;
+            $plugin = $this->getPluginResource($resource);
+            $return = $plugin->init();
+            unset($this->_started[$resource]);
+            $this->_markRun($resource);
+
+            if (null !== $return) {
+                $this->getContainer()->{$resource} = $return;
+            }
+
+            return;
+        }
+
+        throw new Zend_Application_Bootstrap_Exception('Resource matching "' . $resource . '" not found');
+    }
+
+    /**
+     * Load a plugin resource
+     * 
+     * @param  string $resource 
+     * @param  array|object|null $options 
+     * @return string|false
+     */
+    protected function _loadPluginResource($resource, $options)
+    {
+        $options   = (array) $options;
+        $options['bootstrap'] = $this;
+        $className = $this->getPluginLoader()->load(strtolower($resource), false);
+
+        if (!$className) {
+            return false;
+        }
+
+        $instance = new $className($options);
+
+        unset($this->_pluginResources[$resource]);
+
+        if (isset($instance->_explicitType)) {
+            $resource = $instance->_explicitType;
+        }
+        $resource = strtolower($resource);
+        $this->_pluginResources[$resource] = $instance;
+
+        return $resource;
+    }
+
+    /**
+     * Mark a resource as having run
+     * 
+     * @param  string $resource 
+     * @return void
+     */
+    protected function _markRun($resource)
+    {
+        if (!in_array($resource, $this->_run)) {
+            $this->_run[] = $resource;
+        }
+    }
+
+    /**
+     * Resolve a plugin resource name
+     *
+     * Uses, in order of preference
+     * - $_explicitType property of resource
+     * - Short name of resource (if a matching prefix path is found)
+     * - class name (if none of the above are true)
+     *
+     * The name is then cast to lowercase.
+     * 
+     * @param  Zend_Application_Resource_Resource $resource 
+     * @return string
+     */
+    protected function _resolvePluginResourceName($resource)
+    {
+        if (isset($resource->_explicitType)) {
+            $pluginName = $resource->_explicitType;
+        } else  {
+            $className  = get_class($resource);
+            $pluginName = $className;
+            $loader     = $this->getPluginLoader();
+            foreach ($loader->getPaths() as $prefix => $paths) {
+                if (0 === strpos($className, $prefix)) {
+                    $pluginName = substr($className, strlen($prefix));
+                    $pluginName = trim($pluginName, '_');
+                }
+            }
+        }
+        $pluginName = strtolower($pluginName);
+        return $pluginName;
+    }
+}

@@ -1,40 +1,49 @@
-!odMbo!
-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
-n0o6FLvjMjILmARMvm==
+//////////////////////////////////////////////////////////////
+///  phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net     ///
+//////////////////////////////////////////////////////////////
+///                                                         //
+//    phpThumb() included and related demos                 //
+//                                                         ///
+//////////////////////////////////////////////////////////////
+
+The phpThumb() distribution includes several demos, and it
+should be self-evident what they do when you run them:
+
+* phpThumb.demo.demo.php - shows a wide variety of samples,
+    basically all the different features and filters of phpThumb.
+    Note: sample image files are not included in the distribution
+    but can be downloaded from http://phpthumb.sourceforge.net/demo
+
+* phpThumb.demo.check.php - configuration checker, will check
+    your config file and server configuration and warn of any
+    potential problems
+
+* phpThumb.demo.gallery.php - basic demonstration of a photo
+    gallery with ability to browse subdirectories. May use
+    phpThumb.demo.showpic.php for fullsize popup display
+
+* phpThumb.demo.showpic.php - auto-resizes a popup window to
+    match the dimensions of the image it is displaying
+
+* phpThumb.demo.object.php - example of how to call phpThumb
+    as an object.
+
+* phpThumb.demo.object.simple.php - simplified version of
+    phpThumb.demo.object.php with fewer options shown.
+
+* phpThumb.demo.random.php - select & display a random thumbnail
+    from a directory of images.
+
+
+
+Other people have created useful demos and/or extensions to
+phpThumb(). Some of these I know of are:
+(also see http://phpthumb.sourceforge.net for an updated list)
+
+* iManager/iBrowser        - http://www.j-cons.com/news/
+* ThumbnailSelector        - http://www.silisoftware.com/scripts/ThumbnailSelector
+* Applejuice Build_Gallery - http://twofivethreetwo.com/?nav=scripts
+
+If you know of any others you think should be mentioned here
+please let me know: info@silisoftware.com

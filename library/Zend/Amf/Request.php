@@ -1,75 +1,249 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Amf_Parse_InputStream */
+require_once 'Zend/Amf/Parse/InputStream.php';
+
+/** Zend_Amf_Parse_Amf0_Deserializer */
+require_once 'Zend/Amf/Parse/Amf0/Deserializer.php';
+
+/** Zend_Amf_Constants */
+require_once 'Zend/Amf/Constants.php';
+
+/** Zend_Amf_Value_MessageHeader */
+require_once 'Zend/Amf/Value/MessageHeader.php';
+
+/** Zend_Amf_Value_MessageBody */
+require_once 'Zend/Amf/Value/MessageBody.php';
+
+/**
+ * Handle the incoming AMF request by deserializing the data to php object
+ * types and storing the data for Zend_Amf_Server to handle for processing.
+ *
+ * @todo       Currently not checking if the object needs to be Type Mapped to a server object.
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Request
+{
+    /**
+     * @var int AMF client type (AMF0, AMF3)
+     */
+    protected $_clientType = 0; // default AMF0
+
+    /**
+     * @var array Message bodies
+     */
+    protected $_bodies = array();
+
+    /**
+     * @var array Message headers
+     */
+    protected $_headers = array();
+
+    /**
+     * @var int Message encoding to use for objects in response
+     */
+    protected $_objectEncoding = 0;
+
+    /**
+     * @var Zend_Amf_Parse_InputStream
+     */
+    protected $_inputStream;
+
+    /**
+     * @var Zend_Amf_Parse_AMF0_Deserializer
+     */
+    protected $_deserializer;
+
+    /**
+     * Time of the request
+     * @var  mixed
+     */
+    protected $_time;
+
+    /**
+     * Prepare the AMF InputStream for parsing.
+     *
+     * @param  string $request
+     * @return Zend_Amf_Request
+     */
+    public function initialize($request)
+    {
+        $this->_inputStream  = new Zend_Amf_Parse_InputStream($request);
+        $this->_deserializer = new Zend_Amf_Parse_Amf0_Deserializer($this->_inputStream);
+        $this->readMessage($this->_inputStream);
+        return $this;
+    }
+
+    /**
+     * Takes the raw AMF input stream and converts it into valid PHP objects
+     *
+     * @param  Zend_Amf_Parse_InputStream
+     * @return Zend_Amf_Request
+     */
+    public function readMessage(Zend_Amf_Parse_InputStream $stream)
+    {
+        $clientVersion = $stream->readUnsignedShort();
+        if (($clientVersion != Zend_Amf_Constants::AMF0_OBJECT_ENCODING)
+            && ($clientVersion != Zend_Amf_Constants::AMF3_OBJECT_ENCODING)
+        ) {
+            require_once 'Zend/Amf/Exception.php';
+            throw new Zend_Amf_Exception('Unknown Player Version ' . $clientVersion);
+        }
+
+        $this->_bodies  = array();
+        $this->_headers = array();
+        $headerCount    = $stream->readInt();
+
+        // Iterate through the AMF envelope header
+        while ($headerCount--) {
+            $this->_headers[] = $this->readHeader();
+        }
+
+        // Iterate through the AMF envelope body
+        $bodyCount = $stream->readInt();
+        while ($bodyCount--) {
+            $this->_bodies[] = $this->readBody();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Deserialize a message header from the input stream.
+     *
+     * A message header is structured as:
+     * - NAME String
+     * - MUST UNDERSTAND Boolean
+     * - LENGTH Int
+     * - DATA Object
+     *
+     * @return Zend_Amf_Value_MessageHeader
+     */
+    public function readHeader()
+    {
+        $name     = $this->_inputStream->readUTF();
+        $mustRead = (bool)$this->_inputStream->readByte();
+        $length   = $this->_inputStream->readLong();
+
+        try {
+            $data = $this->_deserializer->readTypeMarker();
+        } catch (Exception $e) {
+            require_once 'Zend/Amf/Exception.php';
+            throw new Zend_Amf_Exception('Unable to parse ' . $name . ' header data: ' . $e->getMessage() . ' '. $e->getLine());
+        }
+
+        $header = new Zend_Amf_Value_MessageHeader($name, $mustRead, $data, $length);
+        return $header;
+    }
+
+    /**
+     * Deserialize a message body from the input stream
+     *
+     * @return Zend_Amf_Value_MessageBody
+     */
+    public function readBody()
+    {
+        $targetURI   = $this->_inputStream->readUTF();
+        $responseURI = $this->_inputStream->readUTF();
+        $length      = $this->_inputStream->readLong();
+
+        try {
+            $data = $this->_deserializer->readTypeMarker();
+        } catch (Exception $e) {
+            require_once 'Zend/Amf/Exception.php';
+            throw new Zend_Amf_Exception('Unable to parse ' . $targetURI . ' body data ' . $e->getMessage());
+        }
+
+        // Check for AMF3 objectEncoding
+        if ($this->_deserializer->getObjectEncoding() == Zend_Amf_Constants::AMF3_OBJECT_ENCODING) {
+            /*
+             * When and AMF3 message is sent to the server it is nested inside
+             * an AMF0 array called Content. The following code gets the object
+             * out of the content array and sets it as the message data.
+             */
+            if(is_array($data) && $data[0] instanceof Zend_Amf_Value_Messaging_AbstractMessage){
+                $data = $data[0];
+            }
+
+            // set the encoding so we return our message in AMF3
+            $this->_objectEncoding = Zend_Amf_Constants::AMF3_OBJECT_ENCODING;
+        }
+
+        $body = new Zend_Amf_Value_MessageBody($targetURI, $responseURI, $data);
+        return $body;
+    }
+
+    /**
+     * Return an array of the body objects that were found in the amf request.
+     *
+     * @return array {target, response, length, content}
+     */
+    public function getAmfBodies()
+    {
+        return $this->_bodies;
+    }
+
+    /**
+     * Accessor to private array of message bodies.
+     *
+     * @param  Zend_Amf_Value_MessageBody $message
+     * @return Zend_Amf_Request
+     */
+    public function addAmfBody(Zend_Amf_Value_MessageBody $message)
+    {
+        $this->_bodies[] = $message;
+        return $this;
+    }
+
+    /**
+     * Return an array of headers that were found in the amf request.
+     *
+     * @return array {operation, mustUnderstand, length, param}
+     */
+    public function getAmfHeaders()
+    {
+        return $this->_headers;
+    }
+
+    /**
+     * Return the either 0 or 3 for respect AMF version
+     *
+     * @return int
+     */
+    public function getObjectEncoding()
+    {
+        return $this->_objectEncoding;
+    }
+
+    /**
+     * Set the object response encoding
+     *
+     * @param  mixed $int
+     * @return Zend_Amf_Request
+     */
+    public function setObjectEncoding($int)
+    {
+        $this->_objectEncoding = $int;
+        return $this;
+    }
+}

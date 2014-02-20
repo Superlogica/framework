@@ -1,35 +1,119 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-gW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Index_Term */
+require_once 'Zend/Search/Lucene/Index/Term.php';
+
+/** Zend_Search_Lucene_Search_QueryEntry */
+require_once 'Zend/Search/Lucene/Search/QueryEntry.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_QueryEntry_Phrase extends Zend_Search_Lucene_Search_QueryEntry
+{
+    /**
+     * Phrase value
+     *
+     * @var string
+     */
+    private $_phrase;
+
+    /**
+     * Field
+     *
+     * @var string|null
+     */
+    private $_field;
+
+
+    /**
+     * Proximity phrase query
+     *
+     * @var boolean
+     */
+    private $_proximityQuery = false;
+
+    /**
+     * Words distance, used for proximiti queries
+     *
+     * @var integer
+     */
+    private $_wordsDistance = 0;
+
+
+    /**
+     * Object constractor
+     *
+     * @param string $phrase
+     * @param string $field
+     */
+    public function __construct($phrase, $field)
+    {
+        $this->_phrase = $phrase;
+        $this->_field  = $field;
+    }
+
+    /**
+     * Process modifier ('~')
+     *
+     * @param mixed $parameter
+     */
+    public function processFuzzyProximityModifier($parameter = null)
+    {
+        $this->_proximityQuery = true;
+
+        if ($parameter !== null) {
+            $this->_wordsDistance = $parameter;
+        }
+    }
+
+    /**
+     * Transform entry to a subquery
+     *
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Search_Query
+     * @throws Zend_Search_Lucene_Search_QueryParserException
+     */
+    public function getQuery($encoding)
+    {
+    	$query = new Zend_Search_Lucene_Search_Query_Preprocessing_Phrase($this->_phrase,
+    	                                                                  $encoding,
+    	                                                                  ($this->_field !== null)?
+    	                                                                      iconv($encoding, 'UTF-8', $this->_field) :
+    	                                                                      null);
+
+        if ($this->_proximityQuery) {
+            $query->setSlop($this->_wordsDistance);
+        }
+
+        $query->setBoost($this->_boost);
+
+        return $query;
+    }
+}

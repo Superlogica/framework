@@ -1,57 +1,437 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage SlideShare
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: SlideShow.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+
+/**
+ * The Zend_Service_SlideShare_SlideShow class represents a slide show on the
+ * slideshare.net servers.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage SlideShare
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_SlideShare_SlideShow
+{
+
+    /**
+     * Status constant mapping for web service
+     *
+     */
+    const STATUS_QUEUED = 0;
+    const STATUS_PROCESSING = 1;
+    const STATUS_READY = 2;
+    const STATUS_FAILED = 3;
+
+    /**
+     * The HTML code to embed the slide show in a web page
+     *
+     * @var string the HTML to embed the slide show
+     */
+    protected $_embedCode;
+
+    /**
+     * The URI for the thumbnail representation of the slide show
+     *
+     * @var string The URI of a thumbnail image
+     */
+    protected $_thumbnailUrl;
+
+    /**
+     * The title of the slide show
+     *
+     * @var string The slide show title
+     */
+    protected $_title;
+
+    /**
+     * The Description of the slide show
+     *
+     * @var string The slide show description
+     */
+    protected $_description;
+
+    /**
+     * The status of the silde show on the server
+     *
+     * @var int The Slide show status code
+     */
+    protected $_status;
+
+    /**
+     * The Description of the slide show status code
+     *
+     * @var string The status description
+     */
+    protected $_statusDescription;
+
+    /**
+     * The Permanent link for the slide show
+     *
+     * @var string the Permalink for the slide show
+     */
+    protected $_permalink;
+
+    /**
+     * The number of views this slide show has received
+     *
+     * @var int the number of views
+     */
+    protected $_numViews;
+
+    /**
+     * The ID of the slide show on the server
+     *
+     * @var int the Slide show ID number on the server
+     */
+    protected $_slideShowId;
+
+    /**
+     * A slide show filename on the local filesystem (when uploading)
+     *
+     * @var string the local filesystem path & file of the slide show to upload
+     */
+    protected $_slideShowFilename;
+
+    /**
+     * An array of tags associated with the slide show
+     *
+     * @var array An array of tags associated with the slide show
+     */
+    protected $_tags = array();
+
+    /**
+     * The location of the slide show
+     *
+     * @var string the Location
+     */
+    protected $_location;
+
+    /**
+     * The transcript associated with the slide show
+     *
+     * @var string the Transscript
+     */
+    protected $_transcript;
+
+
+    /**
+     * Retrieves the location of the slide show
+     *
+     * @return string the Location
+     */
+    public function getLocation()
+    {
+        return $this->_location;
+    }
+
+    /**
+     * Sets the location of the slide show
+     *
+     * @param string $loc The location to use
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setLocation($loc)
+    {
+        $this->_location = (string)$loc;
+        return $this;
+    }
+
+    /**
+     * Gets the transcript for this slide show
+     *
+     * @return string the Transcript
+     */
+    public function getTranscript()
+    {
+        return $this->_transcript;
+    }
+
+    /**
+     * Sets the transcript for this slide show
+     *
+     * @param string $t The transcript
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setTranscript($t)
+    {
+        $this->_transcript = (string)$t;
+        return $this;
+    }
+
+    /**
+     * Adds a tag to the slide show
+     *
+     * @param string $tag The tag to add
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function addTag($tag)
+    {
+        $this->_tags[] = (string)$tag;
+        return $this;
+    }
+
+    /**
+     * Sets the tags for the slide show
+     *
+     * @param array $tags An array of tags to set
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setTags(Array $tags)
+    {
+        $this->_tags = $tags;
+        return $this;
+    }
+
+    /**
+     * Gets all of the tags associated with the slide show
+     *
+     * @return array An array of tags for the slide show
+     */
+    public function getTags()
+    {
+        return $this->_tags;
+    }
+
+    /**
+     * Sets the filename on the local filesystem of the slide show
+     * (for uploading a new slide show)
+     *
+     * @param string $file The full path & filename to the slide show
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setFilename($file)
+    {
+        $this->_slideShowFilename = (string)$file;
+        return $this;
+    }
+
+    /**
+     * Retrieves the filename on the local filesystem of the slide show
+     * which will be uploaded
+     *
+     * @return string The full path & filename to the slide show
+     */
+    public function getFilename()
+    {
+        return $this->_slideShowFilename;
+    }
+
+    /**
+     * Sets the ID for the slide show
+     *
+     * @param int $id The slide show ID
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setId($id)
+    {
+        $this->_slideShowId = (string)$id;
+        return $this;
+    }
+
+    /**
+     * Gets the ID for the slide show
+     *
+     * @return int The slide show ID
+     */
+    public function getId()
+    {
+        return $this->_slideShowId;
+    }
+
+    /**
+     * Sets the HTML embed code for the slide show
+     *
+     * @param string $code The HTML embed code
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setEmbedCode($code)
+    {
+        $this->_embedCode = (string)$code;
+        return $this;
+    }
+
+    /**
+     * Retrieves the HTML embed code for the slide show
+     *
+     * @return string the HTML embed code
+     */
+    public function getEmbedCode()
+    {
+        return $this->_embedCode;
+    }
+
+    /**
+     * Sets the Thumbnail URI for the slide show
+     *
+     * @param string $url The URI for the thumbnail image
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setThumbnailUrl($url)
+    {
+        $this->_thumbnailUrl = (string) $url;
+        return $this;
+    }
+
+    /**
+     * Retrieves the Thumbnail URi for the slide show
+     *
+     * @return string The URI for the thumbnail image
+     */
+    public function getThumbnailUrl()
+    {
+        return $this->_thumbnailUrl;
+    }
+
+    /**
+     * Sets the title for the Slide show
+     *
+     * @param string $title The slide show title
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setTitle($title)
+    {
+        $this->_title = (string)$title;
+        return $this;
+    }
+
+    /**
+     * Retrieves the Slide show title
+     *
+     * @return string the Slide show title
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * Sets the description for the Slide show
+     *
+     * @param strign $desc The description of the slide show
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setDescription($desc)
+    {
+        $this->_description = (string)$desc;
+        return $this;
+    }
+
+    /**
+     * Gets the description of the slide show
+     *
+     * @return string The slide show description
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * Sets the numeric status of the slide show on the server
+     *
+     * @param int $status The numeric status on the server
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setStatus($status)
+    {
+        $this->_status = (int)$status;
+        return $this;
+    }
+
+    /**
+     * Gets the numeric status of the slide show on the server
+     *
+     * @return int A Zend_Service_SlideShare_SlideShow Status constant
+     */
+    public function getStatus()
+    {
+        return $this->_status;
+    }
+
+    /**
+     * Sets the textual description of the status of the slide show on the server
+     *
+     * @param string $desc The textual description of the status of the slide show
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setStatusDescription($desc)
+    {
+        $this->_statusDescription = (string)$desc;
+        return $this;
+    }
+
+    /**
+     * Gets the textual description of the status of the slide show on the server
+     *
+     * @return string the textual description of the service
+     */
+    public function getStatusDescription()
+    {
+        return $this->_statusDescription;
+    }
+
+    /**
+     * Sets the permanent link of the slide show
+     *
+     * @param string $url The permanent URL for the slide show
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setPermaLink($url)
+    {
+        $this->_permalink = (string)$url;
+        return $this;
+    }
+
+    /**
+     * Gets the permanent link of the slide show
+     *
+     * @return string the permanent URL for the slide show
+     */
+    public function getPermaLink()
+    {
+        return $this->_permalink;
+    }
+
+    /**
+     * Sets the number of views the slide show has received
+     *
+     * @param int $views The number of views
+     * @return Zend_Service_SlideShare_SlideShow
+     */
+    public function setNumViews($views)
+    {
+        $this->_numViews = (int)$views;
+        return $this;
+    }
+
+    /**
+     * Gets the number of views the slide show has received
+     *
+     * @return int The number of views
+     */
+    public function getNumViews()
+    {
+        return $this->_numViews;
+    }
+}

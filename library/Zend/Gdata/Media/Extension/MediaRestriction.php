@@ -1,45 +1,148 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * Represents the media:restriction element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Media_Extension_MediaRestriction extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'restriction';
+    protected $_rootNamespace = 'media';
+
+    /**
+     * @var string
+     */
+    protected $_relationship = null;
+
+    /**
+     * @var string
+     */
+    protected $_type = null;
+
+    /**
+     * Constructs a new MediaRestriction element
+     *
+     * @param string $text
+     * @param string $relationship
+     * @param string $type
+     */
+    public function __construct($text = null, $relationship = null,  $type = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
+        parent::__construct();
+        $this->_text = $text;
+        $this->_relationship = $relationship;
+        $this->_type = $type;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_relationship !== null) {
+            $element->setAttribute('relationship', $this->_relationship);
+        }
+        if ($this->_type !== null) {
+            $element->setAttribute('type', $this->_type);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'relationship':
+            $this->_relationship = $attribute->nodeValue;
+            break;
+        case 'type':
+            $this->_type = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getRelationship()
+    {
+        return $this->_relationship;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaRestriction Provides a fluent interface
+     */
+    public function setRelationship($value)
+    {
+        $this->_relationship = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaRestriction Provides a fluent interface
+     */
+    public function setType($value)
+    {
+        $this->_type = $value;
+        return $this;
+    }
+
+}

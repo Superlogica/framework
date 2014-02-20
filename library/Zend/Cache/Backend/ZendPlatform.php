@@ -1,130 +1,316 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Cache_Backend_Interface
+ */
+require_once 'Zend/Cache/Backend.php';
+
+/**
+ * @see Zend_Cache_Backend_Interface
+ */
+require_once 'Zend/Cache/Backend/Interface.php';
+
+
+/**
+ * Impementation of Zend Cache Backend using the Zend Platform (Output Content Caching)
+ *
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend_ZendPlatform extends Zend_Cache_Backend implements Zend_Cache_Backend_Interface
+{
+    /**
+     * internal ZP prefix
+     */
+    const TAGS_PREFIX = "internal_ZPtag:";
+
+    /**
+     * Constructor
+     * Validate that the Zend Platform is loaded and licensed
+     *
+     * @param  array $options Associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        if (!function_exists('accelerator_license_info')) {
+            Zend_Cache::throwException('The Zend Platform extension must be loaded for using this backend !');
+        }
+        if (!function_exists('accelerator_get_configuration')) {
+            $licenseInfo = accelerator_license_info();
+            Zend_Cache::throwException('The Zend Platform extension is not loaded correctly: '.$licenseInfo['failure_reason']);
+        }
+        $accConf = accelerator_get_configuration();
+        if (@!$accConf['output_cache_licensed']) {
+            Zend_Cache::throwException('The Zend Platform extension does not have the proper license to use content caching features');
+        }
+        if (@!$accConf['output_cache_enabled']) {
+            Zend_Cache::throwException('The Zend Platform content caching feature must be enabled for using this backend, set the \'zend_accelerator.output_cache_enabled\' directive to On !');
+        }
+        if (!is_writable($accConf['output_cache_dir'])) {
+            Zend_Cache::throwException('The cache copies directory \''. ini_get('zend_accelerator.output_cache_dir') .'\' must be writable !');
+        }
+        parent:: __construct($options);
+    }
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * @param  string  $id                     Cache id
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @return string Cached data (or false)
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        // doNotTestCacheValidity implemented by giving zero lifetime to the cache
+        if ($doNotTestCacheValidity) {
+            $lifetime = 0;
+        } else {
+            $lifetime = $this->_directives['lifetime'];
+        }
+        $res = output_cache_get($id, $lifetime);
+        if($res) {
+            return $res[0];
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * @param  string $id Cache id
+     * @return mixed|false false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    public function test($id)
+    {
+        $result = output_cache_get($id, $this->_directives['lifetime']);
+        if ($result) {
+            return $result[1];
+        }
+        return false;
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * Note : $data is always "string" (serialization is done by the
+     * core not by the backend)
+     *
+     * @param  string $data             Data to cache
+     * @param  string $id               Cache id
+     * @param  array  $tags             Array of strings, the cache record will be tagged by each string entry
+     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @return boolean true if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false)
+    {
+        if (!($specificLifetime === false)) {
+            $this->_log("Zend_Cache_Backend_ZendPlatform::save() : non false specifc lifetime is unsuported for this backend");
+        }
+
+        $lifetime = $this->_directives['lifetime'];
+        $result1  = output_cache_put($id, array($data, time()));
+        $result2  = (count($tags) == 0);
+
+        foreach ($tags as $tag) {
+            $tagid = self::TAGS_PREFIX.$tag;
+            $old_tags = output_cache_get($tagid, $lifetime);
+            if ($old_tags === false) {
+                $old_tags = array();
+            }
+            $old_tags[$id] = $id;
+            output_cache_remove_key($tagid);
+            $result2 = output_cache_put($tagid, $old_tags);
+        }
+
+        return $result1 && $result2;
+    }
+
+
+    /**
+     * Remove a cache record
+     *
+     * @param  string $id Cache id
+     * @return boolean True if no problem
+     */
+    public function remove($id)
+    {
+        return output_cache_remove_key($id);
+    }
+
+
+    /**
+     * Clean some cache records
+     *
+     * Available modes are :
+     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
+     *                                               This mode is not supported in this backend
+     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
+     *                                               ($tags can be an array of strings or a single string)
+     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => unsupported
+     * Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG => remove cache entries matching any given tags
+     *                                               ($tags can be an array of strings or a single string)
+     *
+     * @param  string $mode Clean mode
+     * @param  array  $tags Array of tags
+     * @throws Zend_Cache_Exception
+     * @return boolean True if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        switch ($mode) {
+            case Zend_Cache::CLEANING_MODE_ALL:
+            case Zend_Cache::CLEANING_MODE_OLD:
+                $cache_dir = ini_get('zend_accelerator.output_cache_dir');
+                if (!$cache_dir) {
+                    return false;
+                }
+                $cache_dir .= '/.php_cache_api/';
+                return $this->_clean($cache_dir, $mode);
+                break;
+            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
+                $idlist = null;
+                foreach ($tags as $tag) {
+                    $next_idlist = output_cache_get(self::TAGS_PREFIX.$tag, $this->_directives['lifetime']);
+                    if ($idlist) {
+                        $idlist = array_intersect_assoc($idlist, $next_idlist);
+                    } else {
+                        $idlist = $next_idlist;
+                    }
+                    if (count($idlist) == 0) {
+                        // if ID list is already empty - we may skip checking other IDs
+                        $idlist = null;
+                        break;
+                    }
+                }
+                if ($idlist) {
+                    foreach ($idlist as $id) {
+                        output_cache_remove_key($id);
+                    }
+                }
+                return true;
+                break;
+            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
+                $this->_log("Zend_Cache_Backend_ZendPlatform::clean() : CLEANING_MODE_NOT_MATCHING_TAG is not supported by the Zend Platform backend");
+                return false;
+                break;
+            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
+                $idlist = null;
+                foreach ($tags as $tag) {
+                    $next_idlist = output_cache_get(self::TAGS_PREFIX.$tag, $this->_directives['lifetime']);
+                    if ($idlist) {
+                        $idlist = array_merge_recursive($idlist, $next_idlist);
+                    } else {
+                        $idlist = $next_idlist;
+                    }
+                    if (count($idlist) == 0) {
+                        // if ID list is already empty - we may skip checking other IDs
+                        $idlist = null;
+                        break;
+                    }
+                }
+                if ($idlist) {
+                    foreach ($idlist as $id) {
+                        output_cache_remove_key($id);
+                    }
+                }
+                return true;
+                break;
+            default:
+                Zend_Cache::throwException('Invalid mode for clean() method');
+                break;
+        }
+    }
+
+    /**
+     * Clean a directory and recursivly go over it's subdirectories
+     *
+     * Remove all the cached files that need to be cleaned (according to mode and files mtime)
+     *
+     * @param  string $dir  Path of directory ot clean
+     * @param  string $mode The same parameter as in Zend_Cache_Backend_ZendPlatform::clean()
+     * @return boolean True if ok
+     */
+    private function _clean($dir, $mode)
+    {
+        $d = @dir($dir);
+        if (!$d) {
+            return false;
+        }
+        $result = true;
+        while (false !== ($file = $d->read())) {
+            if ($file == '.' || $file == '..') {
+                continue;
+            }
+            $file = $d->path . $file;
+            if (is_dir($file)) {
+                $result = ($this->_clean($file .'/', $mode)) && ($result);
+            } else {
+                if ($mode == Zend_Cache::CLEANING_MODE_ALL) {
+                    $result = ($this->_remove($file)) && ($result);
+                } else if ($mode == Zend_Cache::CLEANING_MODE_OLD) {
+                    // Files older than lifetime get deleted from cache
+                    if ($this->_directives['lifetime'] !== null) {
+                        if ((time() - @filemtime($file)) > $this->_directives['lifetime']) {
+                            $result = ($this->_remove($file)) && ($result);
+                        }
+                    }
+                }
+            }
+        }
+        $d->close();
+        return $result;
+    }
+
+    /**
+     * Remove a file
+     *
+     * If we can't remove the file (because of locks or any problem), we will touch
+     * the file to invalidate it
+     *
+     * @param  string $file Complete file path
+     * @return boolean True if ok
+     */
+    private function _remove($file)
+    {
+        if (!@unlink($file)) {
+            # If we can't remove the file (because of locks or any problem), we will touch
+            # the file to invalidate it
+            $this->_log("Zend_Cache_Backend_ZendPlatform::_remove() : we can't remove $file => we are going to try to invalidate it");
+            if ($this->_directives['lifetime'] === null) {
+                return false;
+            }
+            if (!file_exists($file)) {
+                return false;
+            }
+            return @touch($file, time() - 2*abs($this->_directives['lifetime']));
+        }
+        return true;
+    }
+
+}

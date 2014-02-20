@@ -1,53 +1,141 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-BILGexb11gJJg/Wucg7nleJxAFm=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: HtmlElement.php 12477 2008-11-09 01:55:35Z yoshida@zend.co.jp $
+ */
+
+/**
+ * @see Zend_View_Helper_Abstract
+ */
+require_once 'Zend/View/Helper/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_View_Helper_HtmlElement extends Zend_View_Helper_Abstract
+{
+    /**
+     * EOL character
+     */
+    const EOL = "\n";
+
+    /**
+     * The tag closing bracket
+     *
+     * @var string
+     */
+    protected $_closingBracket = null;
+
+    /**
+     * Get the tag closing bracket
+     *
+     * @return string
+     */
+    public function getClosingBracket()
+    {
+        if (!$this->_closingBracket) {
+            if ($this->_isXhtml()) {
+                $this->_closingBracket = ' />';
+            } else {
+                $this->_closingBracket = '>';
+            }
+        }
+
+        return $this->_closingBracket;
+    }
+
+    /**
+     * Is doctype XHTML?
+     *
+     * @return boolean
+     */
+    protected function _isXhtml()
+    {
+        $doctype = $this->view->doctype();
+        return $doctype->isXhtml();
+    }
+
+    /**
+     * Converts an associative array to a string of tag attributes.
+     *
+     * @access public
+     *
+     * @param array $attribs From this array, each key-value pair is
+     * converted to an attribute name and value.
+     *
+     * @return string The XHTML for the attributes.
+     */
+    protected function _htmlAttribs($attribs)
+    {
+        $xhtml = '';
+        foreach ((array) $attribs as $key => $val) {
+            $key = $this->view->escape($key);
+
+            if (('on' == substr($key, 0, 2)) || ('constraints' == $key)) {
+                // Don't escape event attributes; _do_ substitute double quotes with singles
+                if (!is_scalar($val)) {
+                    // non-scalar data should be cast to JSON first
+                    require_once 'Zend/Json.php';
+                    $val = Zend_Json::encode($val);
+                }
+                $val = preg_replace('/"([^"]*)":/', '$1:', $val);
+            } else {
+                if (is_array($val)) {
+                    $val = implode(' ', $val);
+                }
+                $val = $this->view->escape($val);
+            }
+
+            if ('id' == $key) {
+                $val = $this->_normalizeId($val);
+            }
+
+            if (strpos($val, '"') !== false) {
+                $xhtml .= " $key='$val'";
+            } else {
+                $xhtml .= " $key=\"$val\"";
+            }
+            
+        }
+        return $xhtml;
+    }
+
+    /**
+     * Normalize an ID
+     * 
+     * @param  string $value 
+     * @return string
+     */
+    protected function _normalizeId($value)
+    {
+        if (strstr($value, '[')) {
+            if ('[]' == substr($value, -2)) {
+                $value = substr($value, 0, strlen($value) - 2);
+            }
+            $value = trim($value, ']');
+            $value = str_replace('][', '-', $value);
+            $value = str_replace('[', '-', $value);
+        }
+        return $value;
+    }
+}

@@ -1,112 +1,380 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-HfsDLbbr5L1XMrDygOqECOWP3rFsSAAcLvU2x0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Controller_Action_HelperBroker_PriorityStack
+ */
+require_once 'Zend/Controller/Action/HelperBroker/PriorityStack.php';
+
+/**
+ * @see Zend_Loader
+ */
+require_once 'Zend/Loader.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Action_HelperBroker
+{
+    /**
+     * $_actionController - ActionController reference
+     *
+     * @var Zend_Controller_Action
+     */
+    protected $_actionController;
+
+    /**
+     * @var Zend_Loader_PluginLoader_Interface
+     */
+    protected static $_pluginLoader;
+
+    /**
+     * $_helpers - Helper array
+     *
+     * @var Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    protected static $_stack = null;
+
+    /**
+     * Set PluginLoader for use with broker
+     * 
+     * @param  Zend_Loader_PluginLoader_Interface $loader 
+     * @return void
+     */
+    public static function setPluginLoader($loader)
+    {
+        if ((null !== $loader) && (!$loader instanceof Zend_Loader_PluginLoader_Interface)) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('Invalid plugin loader provided to HelperBroker');
+        }
+        self::$_pluginLoader = $loader;
+    }
+
+    /**
+     * Retrieve PluginLoader
+     * 
+     * @return Zend_Loader_PluginLoader
+     */
+    public static function getPluginLoader()
+    {
+        if (null === self::$_pluginLoader) {
+            require_once 'Zend/Loader/PluginLoader.php';
+            self::$_pluginLoader = new Zend_Loader_PluginLoader(array(
+                'Zend_Controller_Action_Helper' => 'Zend/Controller/Action/Helper/',
+            ));
+        }
+        return self::$_pluginLoader;
+    }
+
+    /**
+     * addPrefix() - Add repository of helpers by prefix
+     *
+     * @param string $prefix
+     */
+    static public function addPrefix($prefix)
+    {
+        $prefix = rtrim($prefix, '_');
+        $path   = str_replace('_', DIRECTORY_SEPARATOR, $prefix);
+        self::getPluginLoader()->addPrefixPath($prefix, $path);
+    }
+
+    /**
+     * addPath() - Add path to repositories where Action_Helpers could be found.
+     *
+     * @param string $path
+     * @param string $prefix Optional; defaults to 'Zend_Controller_Action_Helper'
+     * @return void
+     */
+    static public function addPath($path, $prefix = 'Zend_Controller_Action_Helper')
+    {
+        self::getPluginLoader()->addPrefixPath($prefix, $path);
+    }
+
+    /**
+     * addHelper() - Add helper objects
+     *
+     * @param Zend_Controller_Action_Helper_Abstract $helper
+     * @return void
+     */
+    static public function addHelper(Zend_Controller_Action_Helper_Abstract $helper)
+    {
+        self::getStack()->push($helper);
+        return;
+    }
+
+    /**
+     * resetHelpers()
+     *
+     * @return void
+     */
+    static public function resetHelpers()
+    {
+        self::$_stack = null;
+        return;
+    }
+
+    /**
+     * Retrieve or initialize a helper statically
+     *
+     * Retrieves a helper object statically, loading on-demand if the helper
+     * does not already exist in the stack. Always returns a helper, unless
+     * the helper class cannot be found.
+     *
+     * @param  string $name
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public static function getStaticHelper($name)
+    {
+        $name  = self::_normalizeHelperName($name);
+        $stack = self::getStack();
+        
+        if (!isset($stack->{$name})) {
+            self::_loadHelper($name);
+        }
+
+        return $stack->{$name};
+    }
+
+    /**
+     * getExistingHelper() - get helper by name
+     *
+     * Static method to retrieve helper object. Only retrieves helpers already
+     * initialized with the broker (either via addHelper() or on-demand loading
+     * via getHelper()).
+     *
+     * Throws an exception if the referenced helper does not exist in the
+     * stack; use {@link hasHelper()} to check if the helper is registered
+     * prior to retrieving it.
+     *
+     * @param  string $name
+     * @return Zend_Controller_Action_Helper_Abstract
+     * @throws Zend_Controller_Action_Exception
+     */
+    public static function getExistingHelper($name)
+    {
+        $name  = self::_normalizeHelperName($name);
+        $stack = self::getStack();
+        
+        if (!isset($stack->{$name})) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('Action helper "' . $name . '" has not been registered with the helper broker');
+        }
+
+        return $stack->{$name};
+    }
+
+    /**
+     * Return all registered helpers as helper => object pairs
+     *
+     * @return array
+     */
+    public static function getExistingHelpers()
+    {
+        return self::getStack()->getHelpersByName();
+    }
+
+    /**
+     * Is a particular helper loaded in the broker?
+     *
+     * @param  string $name
+     * @return boolean
+     */
+    public static function hasHelper($name)
+    {
+        $name = self::_normalizeHelperName($name);
+        return isset(self::getStack()->{$name});
+    }
+
+    /**
+     * Remove a particular helper from the broker
+     *
+     * @param  string $name
+     * @return boolean
+     */
+    public static function removeHelper($name)
+    {
+        $name = self::_normalizeHelperName($name);
+        $stack = self::getStack();
+        if (isset($stack->{$name})) {
+            unset($stack->{$name});
+        }
+
+        return false;
+    }
+
+    /**
+     * Lazy load the priority stack and return it
+     *
+     * @return Zend_Controller_Action_HelperBroker_PriorityStack
+     */
+    public static function getStack()
+    {
+        if (self::$_stack == null) {
+            self::$_stack = new Zend_Controller_Action_HelperBroker_PriorityStack();
+        }
+        
+        return self::$_stack;
+    }
+    
+    /**
+     * Constructor
+     *
+     * @param Zend_Controller_Action $actionController
+     * @return void
+     */
+    public function __construct(Zend_Controller_Action $actionController)
+    {
+        $this->_actionController = $actionController;
+        foreach (self::getStack() as $helper) {
+            $helper->setActionController($actionController);
+            $helper->init();
+        }
+    }
+
+    /**
+     * notifyPreDispatch() - called by action controller dispatch method
+     *
+     * @return void
+     */
+    public function notifyPreDispatch()
+    {
+        foreach (self::getStack() as $helper) {
+            $helper->preDispatch();
+        }
+    }
+
+    /**
+     * notifyPostDispatch() - called by action controller dispatch method
+     *
+     * @return void
+     */
+    public function notifyPostDispatch()
+    {
+        foreach (self::getStack() as $helper) {
+            $helper->postDispatch();
+        }
+    }
+
+    /**
+     * getHelper() - get helper by name
+     *
+     * @param  string $name
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function getHelper($name)
+    {
+        $name  = self::_normalizeHelperName($name);
+        $stack = self::getStack();
+
+        if (!isset($stack->{$name})) {
+            self::_loadHelper($name);
+        }
+
+        $helper = $stack->{$name};
+
+        $initialize = false;
+        if (null === ($actionController = $helper->getActionController())) {
+            $initialize = true;
+        } elseif ($actionController !== $this->_actionController) {
+            $initialize = true;
+        }
+
+        if ($initialize) {
+            $helper->setActionController($this->_actionController)
+                   ->init();
+        }
+
+        return $helper;
+    }
+
+    /**
+     * Method overloading
+     *
+     * @param  string $method
+     * @param  array $args
+     * @return mixed
+     * @throws Zend_Controller_Action_Exception if helper does not have a direct() method
+     */
+    public function __call($method, $args)
+    {
+        $helper = $this->getHelper($method);
+        if (!method_exists($helper, 'direct')) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('Helper "' . $method . '" does not support overloading via direct()');
+        }
+        return call_user_func_array(array($helper, 'direct'), $args);
+    }
+
+    /**
+     * Retrieve helper by name as object property
+     *
+     * @param  string $name
+     * @return Zend_Controller_Action_Helper_Abstract
+     */
+    public function __get($name)
+    {
+        return $this->getHelper($name);
+    }
+
+    /**
+     * Normalize helper name for lookups
+     *
+     * @param  string $name
+     * @return string
+     */
+    protected static function _normalizeHelperName($name)
+    {
+        if (strpos($name, '_') !== false) {
+            $name = str_replace(' ', '', ucwords(str_replace('_', ' ', $name)));
+        }
+
+        return ucfirst($name);
+    }
+
+    /**
+     * Load a helper
+     *
+     * @param  string $name
+     * @return void
+     */
+    protected static function _loadHelper($name)
+    {
+        try {
+            $class = self::getPluginLoader()->load($name);
+        } catch (Zend_Loader_PluginLoader_Exception $e) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('Action Helper by name ' . $name . ' not found');
+        }
+
+        $helper = new $class();
+
+        if (!$helper instanceof Zend_Controller_Action_Helper_Abstract) {
+            require_once 'Zend/Controller/Action/Exception.php';
+            throw new Zend_Controller_Action_Exception('Helper name ' . $name . ' -> class ' . $class . ' is not of type Zend_Controller_Action_Helper_Abstract');
+        }
+
+        self::getStack()->push($helper);
+    }
+}

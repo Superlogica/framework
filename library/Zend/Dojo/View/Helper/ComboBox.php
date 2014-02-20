@@ -1,68 +1,149 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-YaPtG+m5p3bsatMZdzUfr8YWEUQWnQ2sXRX0AG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ComboBox.php 14299 2009-03-13 15:21:42Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Dojo ComboBox dijit
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_ComboBox extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Dijit being used
+     * @var string
+     */
+    protected $_dijit  = 'dijit.form.ComboBox';
+
+    /**
+     * HTML element type
+     * @var string
+     */
+    protected $_elementType = 'text';
+
+    /**
+     * Dojo module to use
+     * @var string
+     */
+    protected $_module = 'dijit.form.ComboBox';
+
+    /**
+     * dijit.form.ComboBox
+     * 
+     * @param  int $id 
+     * @param  mixed $value 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @param  array|null $options Select options
+     * @return string
+     */
+    public function comboBox($id, $value = null, array $params = array(), array $attribs = array(), array $options = null)
+    {
+        $html = '';
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id'] = $id;
+        }
+        if (array_key_exists('store', $params) && is_array($params['store'])) {
+            // using dojo.data datastore
+            if (false !== ($store = $this->_renderStore($params['store']))) {
+                $params['store'] = $params['store']['store'];
+                if (is_string($store)) {
+                    $html .= $store;
+                }
+                $html .= $this->_createFormElement($id, $value, $params, $attribs);
+                return $html;
+            }
+            unset($params['store']);
+        } elseif (array_key_exists('store', $params)) {
+            if (array_key_exists('storeType', $params)) {
+                $storeParams = array(
+                    'store' => $params['store'],
+                    'type'  => $params['storeType'],
+                );
+                unset($params['storeType']);
+                if (array_key_exists('storeParams', $params)) {
+                    $storeParams['params'] = $params['storeParams'];
+                    unset($params['storeParams']);
+                }
+                if (false !== ($store = $this->_renderStore($storeParams))) {
+                    if (is_string($store)) {
+                        $html .= $store;
+                    }
+                }
+            }
+            $html .= $this->_createFormElement($id, $value, $params, $attribs);
+            return $html;
+        }
+
+        // do as normal select
+        $attribs = $this->_prepareDijit($attribs, $params, 'element');
+        return $this->view->formSelect($id, $value, $attribs, $options);
+    }
+
+    /**
+     * Render data store element
+     *
+     * Renders to dojo view helper
+     * 
+     * @param  array $params 
+     * @return string|false
+     */
+    protected function _renderStore(array $params)
+    {
+        if (!array_key_exists('store', $params) || !array_key_exists('type', $params)) {
+            return false;
+        }
+
+        $this->dojo->requireModule($params['type']);
+
+        $extraParams = array();
+        $storeParams = array(
+            'dojoType' => $params['type'],
+            'jsId'     => $params['store'],
+        );
+
+        if (array_key_exists('params', $params)) {
+            $storeParams = array_merge($storeParams, $params['params']);
+            $extraParams = $params['params'];
+        }
+
+        if ($this->_useProgrammatic()) {
+            if (!$this->_useProgrammaticNoScript()) {
+                require_once 'Zend/Json.php';
+                $js = 'var ' . $storeParams['jsId'] . ' = '
+                    . 'new ' . $storeParams['dojoType'] . '('
+                    .     Zend_Json::encode($extraParams)
+                    . ");\n";
+                $this->dojo->addJavascript($js);
+            }
+            return true;
+        }
+
+        return '<div' . $this->_htmlAttribs($storeParams) . '></div>';
+    }
+}

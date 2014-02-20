@@ -1,82 +1,323 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_View_Helper_Navigation_HelperAbstract
+ */
+require_once 'Zend/View/Helper/Navigation/HelperAbstract.php';
+
+/**
+ * Helper for printing breadcrumbs
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_Navigation_Breadcrumbs
+    extends Zend_View_Helper_Navigation_HelperAbstract
+{
+    /**
+     * Breadcrumbs separator string
+     *
+     * @var string
+     */
+    protected $_separator = ' &gt; ';
+
+    /**
+     * The minimum depth a page must have to be included when rendering
+     *
+     * @var int
+     */
+    protected $_minDepth = 1;
+
+    /**
+     * Whether last page in breadcrumb should be hyperlinked
+     *
+     * @var bool
+     */
+    protected $_linkLast = false;
+
+    /**
+     * Partial view script to use for rendering menu
+     *
+     * @var string|array
+     */
+    protected $_partial;
+
+    /**
+     * View helper entry point:
+     * Retrieves helper and optionally sets container to operate on
+     *
+     * @param  Zend_Navigation_Container $container     [optional] container to
+     *                                                  operate on
+     * @return Zend_View_Helper_Navigation_Breadcrumbs  fluent interface,
+     *                                                  returns self
+     */
+    public function breadcrumbs(Zend_Navigation_Container $container = null)
+    {
+        if (null !== $container) {
+            $this->setContainer($container);
+        }
+
+        return $this;
+    }
+
+    // Accessors:
+
+    /**
+     * Sets breadcrumb separator
+     *
+     * @param  string $separator                        separator string
+     * @return Zend_View_Helper_Navigation_Breadcrumbs  fluent interface,
+     *                                                  returns self
+     */
+    public function setSeparator($separator)
+    {
+        if (is_string($separator)) {
+            $this->_separator = $separator;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns breadcrumb separator
+     *
+     * @return string  breadcrumb separator
+     */
+    public function getSeparator()
+    {
+        return $this->_separator;
+    }
+
+    /**
+     * Sets whether last page in breadcrumbs should be hyperlinked
+     *
+     * @param  bool $linkLast                           whether last page should
+     *                                                  be hyperlinked
+     * @return Zend_View_Helper_Navigation_Breadcrumbs  fluent interface,
+     *                                                  returns self
+     */
+    public function setLinkLast($linkLast)
+    {
+        $this->_linkLast = (bool) $linkLast;
+        return $this;
+    }
+
+    /**
+     * Returns whether last page in breadcrumbs should be hyperlinked
+     *
+     * @return bool  whether last page in breadcrumbs should be hyperlinked
+     */
+    public function getLinkLast()
+    {
+        return $this->_linkLast;
+    }
+
+    /**
+     * Sets which partial view script to use for rendering menu
+     *
+     * @param  string|array $partial                    partial view script or
+     *                                                  null. If an array is
+     *                                                  given, it is expected to
+     *                                                  contain two values;
+     *                                                  the partial view script
+     *                                                  to use, and the module
+     *                                                  where the script can be
+     *                                                  found.
+     * @return Zend_View_Helper_Navigation_Breadcrumbs  fluent interface,
+     *                                                  returns self
+     */
+    public function setPartial($partial)
+    {
+        if (null === $partial || is_string($partial) || is_array($partial)) {
+            $this->_partial = $partial;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns partial view script to use for rendering menu
+     *
+     * @return string|array|null
+     */
+    public function getPartial()
+    {
+        return $this->_partial;
+    }
+
+    // Render methods:
+
+    /**
+     * Renders breadcrumbs by chaining 'a' elements with the separator
+     * registered in the helper
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               render. Default is to
+     *                                               render the container
+     *                                               registered in the helper.
+     * @return string                                helper output
+     */
+    public function renderStraight(Zend_Navigation_Container $container = null)
+    {
+        if (null === $container) {
+            $container = $this->getContainer();
+        }
+
+        // find deepest active
+        if (!$active = $this->findActive($container)) {
+            return '';
+        }
+
+        $active = $active['page'];
+
+        // put the deepest active page last in breadcrumbs
+        if ($this->getLinkLast()) {
+            $html = $this->htmlify($active);
+        } else {
+            $html = $active->getLabel();
+            if ($this->getUseTranslator() && $t = $this->getTranslator()) {
+                $html = $t->translate($html);
+            }
+        }
+
+        // walk back to root
+        while ($parent = $active->getParent()) {
+            if ($parent instanceof Zend_Navigation_Page) {
+                // prepend crumb to html
+                $html = $this->htmlify($parent)
+                      . $this->getSeparator()
+                      . $html;
+            }
+
+            if ($parent === $container) {
+                // at the root of the given container
+                break;
+            }
+
+            $active = $parent;
+        }
+
+        return strlen($html) ? $this->getIndent() . $html : '';
+    }
+
+    /**
+     * Renders the given $container by invoking the partial view helper
+     *
+     * The container will simply be passed on as a model to the view script,
+     * so in the script it will be available in <code>$this->container</code>.
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               pass to view script.
+     *                                               Default is to use the
+     *                                               container registered in the
+     *                                               helper.
+     * @param  string|array             $partial     [optional] partial view
+     *                                               script to use. Default is
+     *                                               to use the partial
+     *                                               registered in the helper.
+     *                                               If an array is given, it is
+     *                                               expected to contain two
+     *                                               values; the partial view
+     *                                               script to use, and the
+     *                                               module where the script can
+     *                                               be found.
+     * @return string                                helper output
+     */
+    public function renderPartial(Zend_Navigation_Container $container = null,
+                                  $partial = null)
+    {
+        if (null === $container) {
+            $container = $this->getContainer();
+        }
+
+        if (null === $partial) {
+            $partial = $this->getPartial();
+        }
+
+        if (empty($partial)) {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception(
+                    'Unable to render menu: No partial view script provided');
+        }
+
+        // put breadcrumb pages in model
+        $model = array('pages' => array());
+        if ($active = $this->findActive($container)) {
+            $active = $active['page'];
+            $model['pages'][] = $active;
+            while ($parent = $active->getParent()) {
+                if ($parent instanceof Zend_Navigation_Page) {
+                    $model['pages'][] = $parent;
+                } else {
+                    break;
+                }
+
+                if ($parent === $container) {
+                    // break if at the root of the given container
+                    break;
+                }
+
+                $active = $parent;
+            }
+            $model['pages'] = array_reverse($model['pages']);
+        }
+
+        if (is_array($partial)) {
+            if (count($partial) != 2) {
+                require_once 'Zend/View/Exception.php';
+                throw new Zend_View_Exception(
+                        'Unable to render menu: A view partial supplied as ' .
+                        'an array must contain two values: partial view ' .
+                        'script and module where script can be found');
+            }
+
+            return $this->view->partial($partial[0], $partial[1], $model);
+        }
+
+        return $this->view->partial($partial, null, $model);
+    }
+
+    // Zend_View_Helper_Navigation_Helper:
+
+    /**
+     * Renders helper
+     *
+     * Implements {@link Zend_View_Helper_Navigation_Helper::render()}.
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               render. Default is to
+     *                                               render the container
+     *                                               registered in the helper.
+     * @return string                                helper output
+     */
+    public function render(Zend_Navigation_Container $container = null)
+    {
+        if ($partial = $this->getPartial()) {
+            return $this->renderPartial($container, $partial);
+        } else {
+            return $this->renderStraight($container);
+        }
+    }
+}

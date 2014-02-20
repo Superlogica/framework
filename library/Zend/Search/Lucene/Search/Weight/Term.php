@@ -1,31 +1,124 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-nZT34DrvXdT4gjbFWAsWgUrP
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Weight */
+require_once 'Zend/Search/Lucene/Search/Weight.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Weight_Term extends Zend_Search_Lucene_Search_Weight
+{
+    /**
+     * IndexReader.
+     *
+     * @var Zend_Search_Lucene_Interface
+     */
+    private $_reader;
+
+    /**
+     * Term
+     *
+     * @var Zend_Search_Lucene_Index_Term
+     */
+    private $_term;
+
+    /**
+     * The query that this concerns.
+     *
+     * @var Zend_Search_Lucene_Search_Query
+     */
+    private $_query;
+
+    /**
+     * Score factor
+     *
+     * @var float
+     */
+    private $_idf;
+
+    /**
+     * Query weight
+     *
+     * @var float
+     */
+    private $_queryWeight;
+
+
+    /**
+     * Zend_Search_Lucene_Search_Weight_Term constructor
+     * reader - index reader
+     *
+     * @param Zend_Search_Lucene_Index_Term   $term
+     * @param Zend_Search_Lucene_Search_Query $query
+     * @param Zend_Search_Lucene_Interface    $reader
+     */
+    public function __construct(Zend_Search_Lucene_Index_Term   $term,
+                                Zend_Search_Lucene_Search_Query $query,
+                                Zend_Search_Lucene_Interface    $reader)
+    {
+        $this->_term   = $term;
+        $this->_query  = $query;
+        $this->_reader = $reader;
+    }
+
+
+    /**
+     * The sum of squared weights of contained query clauses.
+     *
+     * @return float
+     */
+    public function sumOfSquaredWeights()
+    {
+        // compute idf
+        $this->_idf = $this->_reader->getSimilarity()->idf($this->_term, $this->_reader);
+
+        // compute query weight
+        $this->_queryWeight = $this->_idf * $this->_query->getBoost();
+
+        // square it
+        return $this->_queryWeight * $this->_queryWeight;
+    }
+
+
+    /**
+     * Assigns the query normalization factor to this.
+     *
+     * @param float $queryNorm
+     */
+    public function normalize($queryNorm)
+    {
+        $this->_queryNorm = $queryNorm;
+
+        // normalize query weight
+        $this->_queryWeight *= $queryNorm;
+
+        // idf for documents
+        $this->_value = $this->_queryWeight * $this->_idf;
+    }
+}
+

@@ -1,43 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * Represents the gCal:hidden element used by the Calendar data API
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Calendar_Extension_Hidden extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'gCal';
+    protected $_rootElement = 'hidden';
+    protected $_value = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Calendar_Extension_Hidden object.
+     * @param bool $value (optional) The value of the element.
+     */
+    public function __construct($value = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
+        parent::__construct();
+        $this->_value = $value;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_value !== null) {
+            $element->setAttribute('value', ($this->_value ? "true" : "false"));
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'value':
+            if ($attribute->nodeValue == "true") {
+                $this->_value = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_value = false;
+            }
+            else {
+                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+            }
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's value attribute.
+     *
+     * @return string The requested attribute.
+     */
+    public function getValue()
+    {
+        return $this->_value;
+    }
+
+    /**
+     * Set the value for this element's value attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Calendar_Extension_Hidden The element being modified.
+     */
+    public function setValue($value)
+    {
+        $this->_value = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     */
+    public function __toString()
+    {
+        return $this->_value;
+    }
+
+}
+

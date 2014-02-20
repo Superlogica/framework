@@ -1,39 +1,112 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Ean13.php 11791 2008-10-09 18:19:13Z andries $
+ */
+
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Barcode_Ean13 extends Zend_Validate_Abstract
+{
+    /**
+     * Validation failure message key for when the value is
+     * an invalid barcode
+     */
+    const INVALID = 'invalid';
+
+    /**
+     * Validation failure message key for when the value is
+     * not 13 characters long
+     */
+    const INVALID_LENGTH = 'invalidLength';
+
+    /**
+     * Validation failure message key for when the value
+     * does not only contain numeric characters
+     */
+    const NOT_NUMERIC = 'ean13NotNumeric';
+
+    /**
+     * Validation failure message template definitions
+     *
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::INVALID        => "'%value%' is an invalid EAN-13 barcode",
+        self::INVALID_LENGTH => "'%value%' should be 13 characters",
+        self::NOT_NUMERIC    => "'%value%' should contain only numeric characters",
+    );
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value contains a valid barcode
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        if (false === ctype_digit($value)) {
+            $this->_error(self::NOT_NUMERIC);
+            return false;
+        }
+
+        $valueString = (string) $value;
+        $this->_setValue($valueString);
+
+        if (strlen($valueString) !== 13) {
+            $this->_error(self::INVALID_LENGTH);
+            return false;
+        }
+
+        $barcode = strrev(substr($valueString, 0, -1));
+        $oddSum  = 0;
+        $evenSum = 0;
+
+        for ($i = 0; $i < 12; $i++) {
+            if ($i % 2 === 0) {
+                $oddSum += $barcode[$i] * 3;
+            } elseif ($i % 2 === 1) {
+                $evenSum += $barcode[$i];
+            }
+        }
+
+        $calculation = ($oddSum + $evenSum) % 10;
+        $checksum    = ($calculation === 0) ? 0 : 10 - $calculation;
+
+        if ($valueString[12] != $checksum) {
+            $this->_error(self::INVALID);
+            return false;
+        }
+
+        return true;
+    }
+}

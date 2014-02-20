@@ -1,39 +1,99 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Tool_Project_Provider_Abstract */
+require_once 'Zend/Tool/Project/Provider/Abstract.php';
+
+/** Zend_Tool_Project_Provider_Exception */
+require_once 'Zend/Tool/Project/Provider/Exception.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Provider_ProjectProvider extends Zend_Tool_Project_Provider_Abstract
+{
+    
+    /**
+     * createResource()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @param string $projectProviderName
+     * @param string $actionNames
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public static function createResource(Zend_Tool_Project_Profile $profile, $projectProviderName, $actionNames = null)
+    {
+        
+        if (!is_string($projectProviderName)) {
+            /**
+             * @see Zend_Tool_Project_Provider_Exception
+             */
+            require_once 'Zend/Tool/Project/Provider/Exception.php';
+            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_Controller::createResource() expects \"projectProviderName\" is the name of a project provider resource to create.');
+        }
+
+        $profileSearchParams = array();
+        $profileSearchParams[] = 'projectProvidersDirectory';
+
+        $projectProvider = $profile->createResourceAt($profileSearchParams, 'projectProviderFile', array('projectProviderName' => $projectProviderName, 'actionNames' => $actionNames));
+
+        return $projectProvider;
+    }
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ProjectProvider';
+    }
+    
+    /**
+     * Create stub for Zend_Tool Project Provider
+     *
+     * @var string       $name            class name for new Zend_Tool Project Provider
+     * @var array|string $actions         list of provider methods
+     * @throws Zend_Tool_Project_Provider_Exception
+     */
+    public function create($name, $actions = null)
+    {
+        $profile = $this->_loadProfileRequired();
+        
+        $projectProvider = self::createResource($profile, $name, $actions);
+
+        if ($this->_registry->getRequest()->isPretend()) {
+            $this->_registry->getResponse()->appendContent('Would create a project provider named ' . $name 
+                . ' in location ' . $projectProvider->getPath()
+                );
+        } else {
+            $this->_registry->getResponse()->appendContent('Creating a project provider named ' . $name 
+                . ' in location ' . $projectProvider->getPath()
+                );
+            $projectProvider->create();
+            $this->_storeProfile();
+        }
+        
+    }
+}

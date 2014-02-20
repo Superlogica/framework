@@ -1,49 +1,245 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV57MM9t6DUfn6N2UoKZbKKHhfRjVcIlYykPYio8N8U1/TKrdxwQR5sypWT2B31O0Rh/2sOw3h
-trP0YcprsN4nZHsJytpRANDHNWkOUDwspwRfIAeOaHdXU2uTJKAnUuy8B02Vr2r1H+anGirlGSrr
-9oaP7kDQ+v5vCNlXduh2je3+QUmiQbL7t8USjmvzG89iqJlOSgoIfLU4irDS8h1iOrVgjo+FzRtf
-s+HWBQ7oWkd59CwdoW7dn4kJIPpDKor7T+KlBeH2Q7HcEVmHk1ChmQE1zDNUTIng/mFVVHfdt8/6
-Kb+g+VNH0xHrcmR0bmombDIhYAW7HE1UU6TAW+LutQ2V0T8tFpakLsInDQ/Lx6k4vSBF1Kmf6eEi
-WkGrPUV1kNixmdgfjoFEuf53WA95ZyBK/czI0X2FgDBqS0Dfoub2TciHItmVXm/1B48V9lxN3hIQ
-99nv/wIO6hemMy0W9N1C03zUJ9XG2YqXRZ7eb5ihD9HsFIUbmx7oecyt9XpIWlM4p9pJJe7+oqLg
-RMB0XqfOv5kHFOpchBubTk6hKfAMqsBJlh+Uvxp8/ZibpKktBisbCjcHs8reySaTJi4DfhrVr2d+
-O+k7aft98V6tgViFdzpOqKkErqcQayiFub8q94GnELHJxTx/TuzeZA02knzqqms2NAFrkeIlcaOn
-E50o4EctUplQ0rlR3F1l96jFE60RK86x4zIpDJg/K+fFNosQjjRj0pu4DcEU6is7T/tJpkzGbAvV
-lMPQHd8JiUQSfdRg8dPe7b7xqitLC0iWYIfFWLiKjeuXOZPmrCvY2dOPrIvJQ6tE2xrZAgjp/Uyx
-VjnzaOcY5b0E95NBLBCOEFDJgPS6QUDfivgSLn4s2SwEciXXkqJvJ3y1/98dGAvOPI+yOTsNR9Ny
-4ZPuuroWDLZRK1nBlCKCCYPMxhNgo6NFfgTL/CaJr9PqKXF0PHH4Epb6dDvpdXIiVLJv10m+GdSd
-Hq4YOiVHuD7RXnV08YT0p0ZME33ri4+biQZMp14U+reL/HLrf0/AfapHK9vgoCXIIKeNs3gNWZhZ
-jChLMDTs2661Gry0zXt656MRlCLGOx06UHIVKF5Vx6qtige5Y51QphhC6AAMfYZwV1w4TENU0rnw
-Tzu0ke95AeTKdDgVERFsRljeopC2tixSk8EJ/OJCak0kMnkS1yiO8FS4roCpmIghmowZZ27Ug+/I
-DEbgQaJjd8vcJrFBIwK9JnmF+w1olfwk4ExiOWGfvUBZdl2hWPYl3GMrLD7L0Bs9+wT+yRzii39x
-1/61pPW+LIPfZnItq+HASUHBeAh7urXfI44ZQDiHLOL8LNT2BNfw2+ksVYvcjxlDyk+xdMtTtNzM
-sL/82QU795W3FIFBvwLm4EgcwtDG34Ls30WoJtAzG1mvcthDjhHyqlEzczBXvB9Kr0NL1QoAuqRQ
-0DMHo66fxNXAqSpJMqUQ/6bFiZBI1frTPq2DpKi0YO9f2co8nSpO6MhAXYUH29s7Dt4Xs2plHrap
-MRDetotK9ICHD4RXiZV1+YjPZkzXBHOLkip/dPQtuDW/UfpQLBGvtMKJfoz01J+bIhLb5NGdBB/H
-WPcTzgsgZ3AvYl2zSfYOBZjkWBqTpyb0AzS+d0fQj7vrpAOvyJkWu80DeRKAPU7+ORNXiaCULnXm
-MiJCEMqSYlPwwO1J0Qq6+8L4RIo3IHAWuZGihvubgd+s4esY341VySUgGNsZpwlLOSU+XrFy7eTI
-QEJfdp9w6a76+Gj/jpJ7+I7KtMcep71A27v9zBs57M8zCMjFFzOfTeXFvocTZE1YGkMAIX7z8OUL
-JfHR4sDQGD2Ye7m+sNnIOXdBDWyrXl85eU01prS/GnaHcYZCOwyQo6n/xa//+cIq+WNj7BA2Eeme
-9eBq6Lvqt094+z3/YmDI3wpv1s/Gxscnoar4v72K08SQGydvvU4CoKhiu/urwydfBHP4dsCri2w1
-LTvzV/PYmOLMYIOSNioDL7YVEye2TlZq0BxNzGbDDu+LM0ZjdcsYmO1bQxdLlsAzpMzJcTo0BCBP
-vvU4Mu6AYIQTGJcWpm0NMg+PVPclU4JZkvjcyL+eU8rJ9ysC2q6NfrH0BzAzS8fL+p+5MQR6THvZ
-ZB0zp/xDI0bzD3c9o2E5cBHhcz9XShXGqeebA61PHdXKStT/t0c8dXGapFJz8p8ov6wMCRVz0CtA
-QZCq87gwQBJ5+24xXlTiohqgx2HGcUn9xwfGGAuHaIVhnSiCOXAfERFeGDzYQdgyIg6GLMMcsRXO
-C8kOKqN6wrv+De5xWKR1QZqVCGMZ4F5LvVnrjbrSwwnGTCIw746iE/bjj1frvt0UFhqOhoRd1YqW
-CTs3De6DVN6j3m2Lvwc8xVG4wdZFz8YI/uglRgfg3Ylxg9rfPyhM7yT68DmrvnKc7vdwj/pdlR7w
-uvk2uzT5nMgtt8AJsuTl2zsUHHYGoew89JFni5kMCWQ8gC2UIYgM/Hte8bmus7AgAAWlFN1cx+ZV
-0EWqAGeu1EywuhZlci2Y8F1fsoBNWMEySvBMmh1fesBMCMg5ji5IaO1RYhprKE/5pPFjvkncnTv3
-WsqmT0XA+6RMoWLuXKdYrv0BTCCtE04qjpR6kMba80SKC7sPNE+Qvdb3aYAGlaRxPLNs95gc4XC8
-TH8XceAQ8G31jT9QzfO9jMsKCSvxPqMkcOJ8HnGw4TYMxKasfEu6UpZX1+5b3euWNLUxX0/DFgmL
-VcokXuhy7akVxwrcpRzgQ472Genp822oSXr+yfhqGSvzdCTBl5EzOk7EJxVm9RYXwkWBwvcT5bKP
-+9iUANPYM5t7n2IuFH6LcMw11Wxob3Jh9tYpRgJ/V9+7Sc4lJrTcynBZ/F4sk/rlIHlLKaNjou0U
-ceFN7IhIf+SY0b7fqwxnOrjY+sBWs5NGkCNhAuKRbTPcH3P1JQfj33ZKMOAwLctbgAl3H/36WoDu
-X17krtLYrFDQR9Um0aDkzQyVn5ic5X3PtSoYnL4chwk2ppNCnJj+brxm4ew1ydZ+nNnlqfX8BXuX
-tud9WaSscukvpwTJepCkL/TRPMr3jRaIQlzFigZIGVrUV2xkA043LVIkPvFJX7icNJt1HWDha9Lw
-4OtNo5nR2LbOR4WAdi50m8xFTva5FQE/733XZUKeyYcdTqDtvY6j1LnJtYU2CKFopeP/lJ4K+FPs
-kAtIW7CIR5NPNA2h93+Lbea/n1FMiWGCORBDCaANVcTRVX/VN4ki3/0iDPlGxceY8upsTq3kaTu4
-OrPlWI2qBpb97VuVJwTBAAcpCrE9UpVoJF30/rFqoL4boXj40LKD/KtmG2YsPOlTvJDG/I08B6KE
-yH3edslAKyBM5xISDISGI8Lkodd8xVbZdSDmgx3NUIj8SWlxBR7sPYDGuyVFmujNCJ3rdaWS7+Af
-olRtuKcAAI7BvrN5eH/QVW4O3bR2WCTCyCh47rA+vQIMxm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Plugin
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * A message envelope that can be passed to Zend_Wildfire_Plugin_FirePhp to be
+ * logged to Firebug instead of a variable.
+ * 
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Plugin
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Wildfire_Plugin_FirePhp_Message
+{
+    /**
+     * The style of the message
+     * @var string
+     */
+    protected $_style = null;
+    
+    /**
+     * The label of the message
+     * @var string
+     */
+    protected $_label = null;
+    
+    /**
+     * The message value
+     * @var mixed
+     */
+    protected $_message = null;
+    
+    /**
+     * Flag indicating if message buffering is enabled
+     * @var boolean
+     */
+    protected $_buffered = false;
+
+    /**
+     * Flag indicating if message should be destroyed and not delivered
+     * @var boolean
+     */
+    protected $_destroy = false;
+    
+    /**
+     * Random unique ID used to identify message in comparison operations
+     * @var string
+     */
+    protected $_ruid = false;
+
+    /**
+     * Options for the object
+     * @var array
+     */
+    protected $_options = array(
+        'traceOffset' => null, /* The offset in the trace which identifies the source of the message */
+        'includeLineNumbers' => null /* Whether to include line and file info for this message */
+    );
+
+    /**
+     * Creates a new message with the given style and message
+     * 
+     * @param string $style Style of the message.
+     * @param mixed $message The message
+     * @return void
+     */
+    function __construct($style, $message)
+    {
+        $this->_style = $style;
+        $this->_message = $message;
+        $this->_ruid = md5(microtime().mt_rand());
+    }
+    
+    /**
+     * Set the label of the message
+     * 
+     * @param string $label The label to be set
+     * @return void
+     */
+    public function setLabel($label)
+    {
+        $this->_label = $label;
+    }
+    
+    /**
+     * Get the label of the message
+     * 
+     * @return string The label of the message
+     */
+    public function getLabel()
+    {
+        return $this->_label;
+    }
+    
+    /**
+     * Enable or disable message buffering
+     * 
+     * If a message is buffered it can be updated for the duration of the
+     * request and is only flushed at the end of the request.
+     * 
+     * @param boolean $buffered TRUE to enable buffering FALSE otherwise
+     * @return boolean Returns previous buffering value
+     */
+    public function setBuffered($buffered)
+    {
+        $previous = $this->_buffered;
+        $this->_buffered = $buffered;
+        return $previous;
+    }
+
+    /**
+     * Determine if buffering is enabled or disabled
+     * 
+     * @return boolean Returns TRUE if buffering is enabled, FALSE otherwise. 
+     */
+    public function getBuffered()
+    {
+        return $this->_buffered;
+    }
+    
+    /**
+     * Destroy the message to prevent delivery
+     * 
+     * @param boolean $destroy TRUE to destroy FALSE otherwise
+     * @return boolean Returns previous destroy value
+     */
+    public function setDestroy($destroy)
+    {
+        $previous = $this->_destroy;
+        $this->_destroy = $destroy;
+        return $previous;
+    }
+    
+    /**
+     * Determine if message should be destroyed
+     * 
+     * @return boolean Returns TRUE if message should be destroyed, FALSE otherwise. 
+     */
+    public function getDestroy()
+    {
+        return $this->_destroy;
+    }
+
+    /**
+     * Set the style of the message
+     * 
+     * @return void
+     */
+    public function setStyle($style)
+    {
+        $this->_style = $style;
+    }
+
+    /**
+     * Get the style of the message
+     * 
+     * @return string The style of the message
+     */
+    public function getStyle()
+    {
+        return $this->_style;
+    }
+
+    /**
+     * Set the actual message to be sent in its final format.
+     * 
+     * @return void
+     */
+    public function setMessage($message)
+    {
+        $this->_message = $message;
+    }
+
+    /**
+     * Get the actual message to be sent in its final format.
+     * 
+     * @return mixed Returns the message to be sent.
+     */
+    public function getMessage()
+    {
+        return $this->_message;
+    }
+    
+    /**
+     * Set a single option
+     * 
+     * @param  string $key The name of the option
+     * @param  mixed $value The value of the option
+     * @return mixed The previous value of the option
+     */
+    public function setOption($key, $value)
+    {
+      if(!array_key_exists($key,$this->_options)) {
+        throw new Zend_Wildfire_Exception('Option with name "'.$key.'" does not exist!');
+      }
+      $previous = $this->_options[$key];
+      $this->_options[$key] = $value;
+      return $previous;
+    }
+
+    /**
+     * Retrieve a single option
+     * 
+     * @param  string $key The name of the option
+     * @return mixed The value of the option
+     */
+    public function getOption($key)
+    {
+      if(!array_key_exists($key,$this->_options)) {
+        throw new Zend_Wildfire_Exception('Option with name "'.$key.'" does not exist!');
+      }
+      return $this->_options[$key];
+    }
+
+    /**
+     * Retrieve all options
+     * 
+     * @return array All options
+     */
+    public function getOptions()
+    {
+      return $this->_options;
+    }    
+}
+

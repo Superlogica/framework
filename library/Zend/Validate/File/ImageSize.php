@@ -1,109 +1,370 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * Validator for the image size of a image file
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_ImageSize extends Zend_Validate_Abstract
+{
+    /**
+     * @const string Error constants
+     */
+    const WIDTH_TOO_BIG    = 'fileImageSizeWidthTooBig';
+    const WIDTH_TOO_SMALL  = 'fileImageSizeWidthTooSmall';
+    const HEIGHT_TOO_BIG   = 'fileImageSizeHeightTooBig';
+    const HEIGHT_TOO_SMALL = 'fileImageSizeHeightTooSmall';
+    const NOT_DETECTED     = 'fileImageSizeNotDetected';
+    const NOT_READABLE     = 'fileImageSizeNotReadable';
+
+    /**
+     * @var array Error message template
+     */
+    protected $_messageTemplates = array(
+        self::WIDTH_TOO_BIG    => "Maximum allowed width for image '%value%' should be '%maxwidth%' but '%width%' detected",
+        self::WIDTH_TOO_SMALL  => "Minimum expected width for image '%value%' should be '%minwidth%' but '%width%' detected",
+        self::HEIGHT_TOO_BIG   => "Maximum allowed height for image '%value%' should be '%maxheight%' but '%height%' detected",
+        self::HEIGHT_TOO_SMALL => "Minimum expected height for image '%value%' should be '%minheight%' but '%height%' detected",
+        self::NOT_DETECTED     => "The size of image '%value%' could not be detected",
+        self::NOT_READABLE     => "The image '%value%' can not be read"
+    );
+
+    /**
+     * @var array Error message template variables
+     */
+    protected $_messageVariables = array(
+        'minwidth'  => '_minwidth',
+        'maxwidth'  => '_maxwidth',
+        'minheight' => '_minheight',
+        'maxheight' => '_maxheight',
+        'width'     => '_width',
+        'height'    => '_height'
+    );
+
+    /**
+     * Minimum image width
+     *
+     * @var integer
+     */
+    protected $_minwidth;
+
+    /**
+     * Maximum image width
+     *
+     * @var integer
+     */
+    protected $_maxwidth;
+
+    /**
+     * Minimum image height
+     *
+     * @var integer
+     */
+    protected $_minheight;
+
+    /**
+     * Maximum image height
+     *
+     * @var integer
+     */
+    protected $_maxheight;
+
+    /**
+     * Detected width
+     *
+     * @var integer
+     */
+    protected $_width;
+
+    /**
+     * Detected height
+     *
+     * @var integer
+     */
+    protected $_height;
+
+    /**
+     * Sets validator options
+     *
+     * Accepts the following option keys:
+     * - minheight
+     * - minwidth
+     * - maxheight
+     * - maxwidth
+     *
+     * @param  Zend_Config|array $options
+     * @return void
+     */
+    public function __construct($options)
+    {
+        $minwidth  = 0;
+        $minheight = 0;
+        $maxwidth  = null;
+        $maxheight = null;
+
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (1 < func_num_args()) {
+            trigger_error('Multiple constructor options are deprecated in favor of a single options array', E_USER_NOTICE);
+            if (!is_array($options)) {
+                $options = array('minwidth' => $options);
+            }
+            $argv = func_get_args();
+            array_shift($argv);
+            $options['minheight'] = array_shift($argv);
+            if (!empty($argv)) {
+                $options['maxwidth'] = array_shift($argv);
+                if (!empty($argv)) {
+                    $options['maxheight'] = array_shift($argv);
+                }
+            }
+        } else if (!is_array($options)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        }
+
+        if (isset($options['minheight']) || isset($options['minwidth'])) {
+            $this->setImageMin($options);
+        }
+
+        if (isset($options['maxheight']) || isset($options['maxwidth'])) {
+            $this->setImageMax($options);
+        }
+    }
+
+    /**
+     * Returns the set minimum image sizes
+     *
+     * @return array
+     */
+    public function getImageMin()
+    {
+        return array('minwidth' => $this->_minwidth, 'minheight' => $this->_minheight);
+    }
+
+    /**
+     * Returns the set maximum image sizes
+     *
+     * @return array
+     */
+    public function getImageMax()
+    {
+        return array('maxwidth' => $this->_maxwidth, 'maxheight' => $this->_maxheight);
+    }
+
+    /**
+     * Returns the set image width sizes
+     *
+     * @return array
+     */
+    public function getImageWidth()
+    {
+        return array('minwidth' => $this->_minwidth, 'maxwidth' => $this->_maxwidth);
+    }
+
+    /**
+     * Returns the set image height sizes
+     *
+     * @return array
+     */
+    public function getImageHeight()
+    {
+        return array('minheight' => $this->_minheight, 'maxheight' => $this->_maxheight);
+    }
+
+    /**
+     * Sets the minimum image size
+     *
+     * @param  array $options               The minimum image dimensions
+     * @throws Zend_Validate_Exception      When minwidth is greater than maxwidth
+     * @throws Zend_Validate_Exception      When minheight is greater than maxheight
+     * @return Zend_Validate_File_ImageSize Provides a fluent interface
+     */
+    public function setImageMin($options)
+    {
+        if (isset($options['minwidth'])) {
+            if (($this->_maxwidth !== null) and ($options['minwidth'] > $this->_maxwidth)) {
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception("The minimum image width must be less than or equal to the "
+                    . " maximum image width, but {$options['minwidth']} > {$this->_maxwidth}");
+            }
+        }
+
+        if (isset($options['maxheight'])) {
+            if (($this->_maxheight !== null) and ($options['minheight'] > $this->_maxheight)) {
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception("The minimum image height must be less than or equal to the "
+                    . " maximum image height, but {$options['minheight']} > {$this->_maxheight}");
+            }
+        }
+
+        if (isset($options['minwidth'])) {
+            $this->_minwidth  = (int) $options['minwidth'];
+        }
+
+        if (isset($options['minheight'])) {
+            $this->_minheight = (int) $options['minheight'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets the maximum image size
+     *
+     * @param  array $options          The maximum image dimensions
+     * @throws Zend_Validate_Exception When maxwidth is smaller than minwidth
+     * @throws Zend_Validate_Exception When maxheight is smaller than minheight
+     * @return Zend_Validate_StringLength Provides a fluent interface
+     */
+    public function setImageMax($options)
+    {
+        if (isset($options['maxwidth'])) {
+            if (($this->_minwidth !== null) and ($options['maxwidth'] < $this->_minwidth)) {
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception("The maximum image width must be greater than or equal to the "
+                    . "minimum image width, but {$options['maxwidth']} < {$this->_minwidth}");
+            }
+        }
+
+        if (isset($options['maxheight'])) {
+            if (($this->_minheight !== null) and ($options['maxheight'] < $this->_minheight)) {
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception("The maximum image height must be greater than or equal to the "
+                    . "minimum image height, but {$options['maxheight']} < {$this->_minwidth}");
+            }
+        }
+
+        if (isset($options['maxwidth'])) {
+            $this->_maxwidth  = (int) $options['maxwidth'];
+        }
+
+        if (isset($options['maxheight'])) {
+            $this->_maxheight = (int) $options['maxheight'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets the mimimum and maximum image width
+     *
+     * @param  array $options               The image width dimensions
+     * @return Zend_Validate_File_ImageSize Provides a fluent interface
+     */
+    public function setImageWidth($options)
+    {
+        $this->setImageMin($options);
+        $this->setImageMax($options);
+
+        return $this;
+    }
+
+    /**
+     * Sets the mimimum and maximum image height
+     *
+     * @param  array $options               The image height dimensions
+     * @return Zend_Validate_File_ImageSize Provides a fluent interface
+     */
+    public function setImageHeight($options)
+    {
+        $this->setImageMin($options);
+        $this->setImageMax($options);
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the imagesize of $value is at least min and
+     * not bigger than max
+     *
+     * @param  string $value Real file to check for image size
+     * @param  array  $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_READABLE);
+        }
+
+        $size = @getimagesize($value);
+        $this->_setValue($file);
+
+        if (empty($size) or ($size[0] === 0) or ($size[1] === 0)) {
+            return $this->_throw($file, self::NOT_DETECTED);
+        }
+
+        $this->_width  = $size[0];
+        $this->_height = $size[1];
+        if ($this->_width < $this->_minwidth) {
+            $this->_throw($file, self::WIDTH_TOO_SMALL);
+        }
+
+        if (($this->_maxwidth !== null) and ($this->_maxwidth < $this->_width)) {
+            $this->_throw($file, self::WIDTH_TOO_BIG);
+        }
+
+        if ($this->_height < $this->_minheight) {
+            $this->_throw($file, self::HEIGHT_TOO_SMALL);
+        }
+
+        if (($this->_maxheight !== null) and ($this->_maxheight < $this->_height)) {
+            $this->_throw($file, self::HEIGHT_TOO_BIG);
+        }
+
+        if (count($this->_messages) > 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Throws an error of the given type
+     *
+     * @param  string $file
+     * @param  string $errorType
+     * @return false
+     */
+    protected function _throw($file, $errorType)
+    {
+        if ($file !== null) {
+            $this->_value = $file['name'];
+        }
+
+        $this->_error($errorType);
+        return false;
+    }
+}

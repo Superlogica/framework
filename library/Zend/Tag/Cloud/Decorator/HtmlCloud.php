@@ -1,38 +1,127 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-p0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tag
+ * @subpackage Cloud
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: HtmlCloud.php 15122 2009-04-23 22:05:33Z dasprid $
+ */
+
+/**
+ * @see Zend_Tag_Cloud_Decorator_Cloud
+ */
+require_once 'Zend/Tag/Cloud/Decorator/Cloud.php';
+
+/**
+ * Simple HTML decorator for clouds
+ *
+ * @category  Zend
+ * @package   Zend_Tag
+ * @uses      Zend_Tag_Cloud_Decorator_Cloud
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tag_Cloud_Decorator_HtmlCloud extends Zend_Tag_Cloud_Decorator_Cloud
+{
+    /**
+     * List of HTML tags
+     *
+     * @var array
+     */
+    protected $_htmlTags = array(
+        'ul' => array('class' => 'Zend_Tag_Cloud')
+    );
+    
+    /**
+     * Separator for the single tags
+     *
+     * @var string
+     */
+    protected $_separator = '';
+    
+    /**
+     * Set the HTML tags surrounding all tags
+     *
+     * @param  array $htmlTags
+     * @return Zend_Tag_Cloud_Decorator_HtmlCloud
+     */
+    public function setHtmlTags(array $htmlTags)
+    {
+        $this->_htmlTags = $htmlTags;
+        return $this;   
+    }
+
+    /**
+     * Retrieve HTML tag map
+     * 
+     * @return array
+     */
+    public function getHtmlTags()
+    {
+        return $this->_htmlTags;
+    }
+    
+    /**
+     * Set the separator between the single tags
+     *
+     * @param  string
+     * @return Zend_Tag_Cloud_Decorator_HtmlCloud
+     */
+    public function setSeparator($separator)
+    {
+        $this->_separator = $separator;
+        return $this;
+    }
+
+    /**
+     * Get tag separator
+     * 
+     * @return string
+     */
+    public function getSeparator()
+    {
+        return $this->_separator;
+    }
+    
+    /**
+     * Defined by Zend_Tag_Cloud_Decorator_Cloud
+     *
+     * @param  array $tags
+     * @return string
+     */
+    public function render(array $tags)
+    {
+        $cloudHtml = implode($this->getSeparator(), $tags);
+        
+        foreach ($this->getHtmlTags() as $key => $data) {
+            if (is_array($data)) {
+                $htmlTag    = $key;
+                $attributes = '';
+                
+                foreach ($data as $param => $value) {
+                    $attributes .= ' ' . $param . '="' . htmlspecialchars($value) . '"';
+                }
+            } else {
+                $htmlTag    = $data;
+                $attributes = '';
+            }
+            
+            $cloudHtml = sprintf('<%1$s%3$s>%2$s</%1$s>', $htmlTag, $cloudHtml, $attributes);
+        }
+        
+        return $cloudHtml;
+    }
+}

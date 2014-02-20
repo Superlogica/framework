@@ -1,35 +1,157 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Controller_Action
+ */
+require_once 'Zend/Controller/Action.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Controller_Action_Helper_Abstract
+{
+    /**
+     * $_actionController
+     *
+     * @var Zend_Controller_Action $_actionController
+     */
+    protected $_actionController = null;
+
+    /**
+     * @var mixed $_frontController
+     */
+    protected $_frontController = null;
+
+    /**
+     * setActionController()
+     *
+     * @param  Zend_Controller_Action $actionController
+     * @return Zend_Controller_ActionHelper_Abstract Provides a fluent interface
+     */
+    public function setActionController(Zend_Controller_Action $actionController = null)
+    {
+        $this->_actionController = $actionController;
+        return $this;
+    }
+
+    /**
+     * Retrieve current action controller
+     *
+     * @return Zend_Controller_Action
+     */
+    public function getActionController()
+    {
+        return $this->_actionController;
+    }
+
+    /**
+     * Retrieve front controller instance
+     *
+     * @return Zend_Controller_Front
+     */
+    public function getFrontController()
+    {
+        if (null === $this->_frontController) {
+            $this->_frontController = Zend_Controller_Front::getInstance();
+        }
+
+        return $this->_frontController;
+    }
+
+    /**
+     * Hook into action controller initialization
+     *
+     * @return void
+     */
+    public function init()
+    {
+    }
+
+    /**
+     * Hook into action controller preDispatch() workflow
+     *
+     * @return void
+     */
+    public function preDispatch()
+    {
+    }
+
+    /**
+     * Hook into action controller postDispatch() workflow
+     *
+     * @return void
+     */
+    public function postDispatch()
+    {
+    }
+
+    /**
+     * getRequest() -
+     *
+     * @return Zend_Controller_Request_Abstract $request
+     */
+    public function getRequest()
+    {
+        $controller = $this->getActionController();
+        if (null === $controller) {
+            $controller = $this->getFrontController();
+        }
+
+        return $controller->getRequest();
+    }
+
+    /**
+     * getResponse() -
+     *
+     * @return Zend_Controller_Response_Abstract $response
+     */
+    public function getResponse()
+    {
+        $controller = $this->getActionController();
+        if (null === $controller) {
+            $controller = $this->getFrontController();
+        }
+
+        return $controller->getResponse();
+    }
+
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        $full_class_name = get_class($this);
+
+        if (strpos($full_class_name, '_') !== false) {
+            $helper_name = strrchr($full_class_name, '_');
+            return ltrim($helper_name, '_');
+        } else {
+            return $full_class_name;
+        }
+    }
+}

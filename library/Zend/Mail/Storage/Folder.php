@@ -1,52 +1,236 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-iXWV8Q2PzLEneBxJBQy=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Folder.php 9099 2008-03-30 19:35:47Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Storage_Folder implements RecursiveIterator
+{
+    /**
+     * subfolders of folder array(localName => Zend_Mail_Storage_Folder folder)
+     * @var array
+     */
+    protected $_folders;
+
+    /**
+     * local name (name of folder in parent folder)
+     * @var string
+     */
+    protected $_localName;
+
+    /**
+     * global name (absolute name of folder)
+     * @var string
+     */
+    protected $_globalName;
+
+    /**
+     * folder is selectable if folder is able to hold messages, else it's just a parent folder
+     * @var bool
+     */
+    protected $_selectable = true;
+
+    /**
+     * create a new mail folder instance
+     *
+     * @param string $localName  name of folder in current subdirectory
+     * @param string $globalName absolute name of folder
+     * @param bool   $selectable if true folder holds messages, if false it's just a parent for subfolders
+     * @param array  $folders    init with given instances of Zend_Mail_Storage_Folder as subfolders
+     */
+    public function __construct($localName, $globalName = '', $selectable = true, array $folders = array())
+    {
+        $this->_localName  = $localName;
+        $this->_globalName = $globalName ? $globalName : $localName;
+        $this->_selectable = $selectable;
+        $this->_folders    = $folders;
+    }
+
+    /**
+     * implements RecursiveIterator::hasChildren()
+     *
+     * @return bool current element has children
+     */
+    public function hasChildren()
+    {
+        $current = $this->current();
+        return $current && $current instanceof Zend_Mail_Storage_Folder && !$current->isLeaf();
+    }
+
+    /**
+     * implements RecursiveIterator::getChildren()
+     *
+     * @return Zend_Mail_Storage_Folder same as self::current()
+     */
+    public function getChildren()
+    {
+        return $this->current();
+    }
+
+    /**
+     * implements Iterator::valid()
+     *
+     * @return bool check if there's a current element
+     */
+    public function valid()
+    {
+        return key($this->_folders) !== null;
+    }
+
+    /**
+     * implements Iterator::next()
+     *
+     * @return null
+     */
+    public function next()
+    {
+        next($this->_folders);
+    }
+
+    /**
+     * implements Iterator::key()
+     *
+     * @return string key/local name of current element
+     */
+    public function key()
+    {
+        return key($this->_folders);
+    }
+
+    /**
+     * implements Iterator::current()
+     *
+     * @return Zend_Mail_Storage_Folder current folder
+     */
+    public function current()
+    {
+        return current($this->_folders);
+    }
+
+    /**
+     * implements Iterator::rewind()
+     *
+     * @return null
+     */
+    public function rewind()
+    {
+        reset($this->_folders);
+    }
+
+    /**
+     * get subfolder named $name
+     *
+     * @param  string $name wanted subfolder
+     * @return Zend_Mail_Storage_Folder folder named $folder
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function __get($name)
+    {
+        if (!isset($this->_folders[$name])) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception("no subfolder named $name");
+        }
+
+        return $this->_folders[$name];
+    }
+
+    /**
+     * add or replace subfolder named $name
+     *
+     * @param string $name local name of subfolder
+     * @param Zend_Mail_Storage_Folder $folder instance for new subfolder
+     * @return null
+     */
+    public function __set($name, Zend_Mail_Storage_Folder $folder)
+    {
+        $this->_folders[$name] = $folder;
+    }
+
+    /**
+     * remove subfolder named $name
+     *
+     * @param string $name local name of subfolder
+     * @return null
+     */
+    public function __unset($name)
+    {
+        unset($this->_folders[$name]);
+    }
+
+    /**
+     * magic method for easy output of global name
+     *
+     * @return string global name of folder
+     */
+    public function __toString()
+    {
+        return (string)$this->getGlobalName();
+    }
+
+    /**
+     * get local name
+     *
+     * @return string local name
+     */
+    public function getLocalName()
+    {
+        return $this->_localName;
+    }
+
+    /**
+     * get global name
+     *
+     * @return string global name
+     */
+    public function getGlobalName()
+    {
+        return $this->_globalName;
+    }
+
+    /**
+     * is this folder selectable?
+     *
+     * @return bool selectable
+     */
+    public function isSelectable()
+    {
+        return $this->_selectable;
+    }
+
+    /**
+     * check if folder has no subfolder
+     *
+     * @return bool true if no subfolders
+     */
+    public function isLeaf()
+    {
+        return empty($this->_folders);
+    }
+}

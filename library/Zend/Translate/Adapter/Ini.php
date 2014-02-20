@@ -1,33 +1,87 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Locale */
+require_once 'Zend/Locale.php';
+
+/** Zend_Translate_Adapter */
+require_once 'Zend/Translate/Adapter.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Translate_Adapter_Ini extends Zend_Translate_Adapter
+{
+    private $_data = array();
+
+    /**
+     * Generates the adapter
+     *
+     * @param  array               $data     Translation data
+     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
+     *                                       see Zend_Locale for more information
+     * @param  array               $options  OPTIONAL Options to set
+     */
+    public function __construct($data, $locale = null, array $options = array())
+    {
+        parent::__construct($data, $locale, $options);
+    }
+
+    /**
+     * Load translation data
+     *
+     * @param  string|array  $data
+     * @param  string        $locale  Locale/Language to add data for, identical with locale identifier,
+     *                                see Zend_Locale for more information
+     * @param  array         $options OPTIONAL Options to use
+     * @throws Zend_Translate_Exception Ini file not found
+     * @return array
+     */
+    protected function _loadTranslationData($data, $locale, array $options = array())
+    {
+        $this->_data = array();
+        if (!file_exists($data)) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception("Ini file '".$data."' not found");
+        }
+
+        $inidata                   = parse_ini_file($data, false);
+        if (!isset($this->_data[$locale])) {
+            $this->_data[$locale] = array();
+        }
+
+        $this->_data[$locale] = array_merge($this->_data[$locale], $inidata);
+        return $this->_data;
+    }
+
+    /**
+     * returns the adapters name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "Ini";
+    }
+}

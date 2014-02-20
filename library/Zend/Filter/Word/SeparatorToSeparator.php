@@ -1,36 +1,129 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-7eGTdzSSiFWFIIC=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CamelCaseToUnderscore.php 6779 2007-11-08 15:10:41Z matthew $
+ */
+
+/**
+ * @see Zend_Filter_PregReplace
+ */
+require_once 'Zend/Filter/PregReplace.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_Word_SeparatorToSeparator extends Zend_Filter_PregReplace
+{
+
+    protected $_searchSeparator = null;
+    protected $_replacementSeparator = null;
+
+    /**
+     * Constructor
+     * 
+     * @param  string  $searchSeparator      Seperator to search for
+     * @param  string  $replacementSeperator Seperator to replace with
+     * @return void
+     */
+    public function __construct($searchSeparator = ' ', $replacementSeparator = '-')
+    {
+        $this->setSearchSeparator($searchSeparator);
+        $this->setReplacementSeparator($replacementSeparator);
+    }
+
+    /**
+     * Sets a new seperator to search for
+     * 
+     * @param  string  $separator  Seperator to search for
+     * @return $this
+     */
+    public function setSearchSeparator($separator)
+    {
+        $this->_searchSeparator = $separator;
+        return $this;
+    }
+
+    /**
+     * Returns the actual set seperator to search for
+     * 
+     * @return  string
+     */
+    public function getSearchSeparator()
+    {
+        return $this->_searchSeparator;
+    }
+
+    /**
+     * Sets a new seperator which replaces the searched one
+     * 
+     * @param  string  $separator  Seperator which replaces the searched one
+     * @return $this
+     */
+    public function setReplacementSeparator($separator)
+    {
+        $this->_replacementSeparator = $separator;
+        return $this;
+    }
+
+    /**
+     * Returns the actual set seperator which replaces the searched one
+     * 
+     * @return  string
+     */
+    public function getReplacementSeparator()
+    {
+        return $this->_replacementSeparator;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Returns the string $value, replacing the searched seperators with the defined ones
+     *
+     * @param  string $value
+     * @return string
+     */
+    public function filter($value)
+    {
+        return $this->_separatorToSeparatorFilter($value);
+    }
+
+    /**
+     * Do the real work, replaces the seperator to search for with the replacement seperator
+     *
+     * Returns the replaced string
+     *
+     * @param  string $value
+     * @return string
+     */
+    protected function _separatorToSeparatorFilter($value)
+    {
+        if ($this->_searchSeparator == null) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('You must provide a search separator for this filter to work.');
+        }
+
+        $this->setMatchPattern('#' . preg_quote($this->_searchSeparator, '#') . '#');
+        $this->setReplacement($this->_replacementSeparator);
+        return parent::filter($value);
+    }
+
+}

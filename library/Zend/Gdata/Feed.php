@@ -1,75 +1,250 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-lE0v5UyslPFumQGSh8Q2U0a=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata
+ */
+require_once 'Zend/Gdata.php';
+
+/**
+ * @see Zend_Gdata_App_Feed
+ */
+require_once 'Zend/Gdata/App/Feed.php';
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Extension_OpenSearchTotalResults
+ */
+require_once 'Zend/Gdata/Extension/OpenSearchTotalResults.php';
+
+/**
+ * @see Zend_Gdata_Extension_OpenSearchStartIndex
+ */
+require_once 'Zend/Gdata/Extension/OpenSearchStartIndex.php';
+
+/**
+ * @see Zend_Gdata_Extension_OpenSearchItemsPerPage
+ */
+require_once 'Zend/Gdata/Extension/OpenSearchItemsPerPage.php';
+
+/**
+ * The Gdata flavor of an Atom Feed
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Feed extends Zend_Gdata_App_Feed
+{
+
+    /**
+     * The classname for individual feed elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_Entry';
+
+    /**
+     * The openSearch:totalResults element
+     *
+     * @var Zend_Gdata_Extension_OpenSearchTotalResults|null
+     */
+    protected $_totalResults = null;
+
+    /**
+     * The openSearch:startIndex element
+     *
+     * @var Zend_Gdata_Extension_OpenSearchStartIndex|null
+     */
+    protected $_startIndex = null;
+
+    /**
+     * The openSearch:itemsPerPage element
+     *
+     * @var Zend_Gdata_Extension_OpenSearchItemsPerPage|null
+     */
+    protected $_itemsPerPage = null;
+
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata::$namespaces);
+        parent::__construct($element);
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_totalResults != null) {
+            $element->appendChild($this->_totalResults->getDOM($element->ownerDocument));
+        }
+        if ($this->_startIndex != null) {
+            $element->appendChild($this->_startIndex->getDOM($element->ownerDocument));
+        }
+        if ($this->_itemsPerPage != null) {
+            $element->appendChild($this->_itemsPerPage->getDOM($element->ownerDocument));
+        }
+
+        // ETags are special. We only support them in protocol >= 2.X.
+        // This will be duplicated by the HTTP ETag header.
+        if ($majorVersion >= 2) {
+            if ($this->_etag != null) {
+                $element->setAttributeNS($this->lookupNamespace('gd'),
+                                         'gd:etag',
+                                         $this->_etag);
+            }
+        }
+
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('openSearch') . ':' . 'totalResults':
+            $totalResults = new Zend_Gdata_Extension_OpenSearchTotalResults();
+            $totalResults->transferFromDOM($child);
+            $this->_totalResults = $totalResults;
+            break;
+        case $this->lookupNamespace('openSearch') . ':' . 'startIndex':
+            $startIndex = new Zend_Gdata_Extension_OpenSearchStartIndex();
+            $startIndex->transferFromDOM($child);
+            $this->_startIndex = $startIndex;
+            break;
+        case $this->lookupNamespace('openSearch') . ':' . 'itemsPerPage':
+            $itemsPerPage = new Zend_Gdata_Extension_OpenSearchItemsPerPage();
+            $itemsPerPage->transferFromDOM($child);
+            $this->_itemsPerPage = $itemsPerPage;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'etag':
+            // ETags are special, since they can be conveyed by either the
+            // HTTP ETag header or as an XML attribute.
+            $etag = $attribute->nodeValue;
+            if ($this->_etag === null) {
+                $this->_etag = $etag;
+            }
+            elseif ($this->_etag != $etag) {
+                require_once('Zend/Gdata/App/IOException.php');
+                throw new Zend_Gdata_App_IOException("ETag mismatch");
+            }
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+            break;
+        }
+    }
+
+    /**
+     *  Set the value of the totalResults property.
+     *
+     * @param Zend_Gdata_Extension_OpenSearchTotalResults|null $value The
+     *        value of the totalResults property. Use null to unset.
+     * @return Zend_Gdata_Feed Provides a fluent interface.
+     */
+    function setTotalResults($value) {
+        $this->_totalResults = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value of the totalResults property.
+     *
+     * @return Zend_Gdata_Extension_OpenSearchTotalResults|null The value of
+     *         the totalResults property, or null if unset.
+     */
+    function getTotalResults() {
+        return $this->_totalResults;
+    }
+
+    /**
+     * Set the start index property for feed paging.
+     *
+     * @param Zend_Gdata_Extension_OpenSearchStartIndex|null $value The value
+     *        for the startIndex property. Use null to unset.
+     * @return Zend_Gdata_Feed Provides a fluent interface.
+     */
+    function setStartIndex($value) {
+        $this->_startIndex = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value of the startIndex property.
+     *
+     * @return Zend_Gdata_Extension_OpenSearchStartIndex|null The value of the
+     *         startIndex property, or null if unset.
+     */
+    function getStartIndex() {
+        return $this->_startIndex;
+    }
+
+    /**
+     * Set the itemsPerPage property.
+     *
+     * @param Zend_Gdata_Extension_OpenSearchItemsPerPage|null $value The
+     *        value for the itemsPerPage property. Use nul to unset.
+     * @return Zend_Gdata_Feed Provides a fluent interface.
+     */
+    function setItemsPerPage($value) {
+        $this->_itemsPerPage = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value of the itemsPerPage property.
+     *
+     * @return Zend_Gdata_Extension_OpenSearchItemsPerPage|null The value of
+     *         the itemsPerPage property, or null if unset.
+     */
+    function getItemsPerPage() {
+        return $this->_itemsPerPage;
+    }
+
+}

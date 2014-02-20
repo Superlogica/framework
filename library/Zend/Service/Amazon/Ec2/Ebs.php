@@ -1,148 +1,340 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+
+
+/**
+ * An Amazon EC2 interface to create, describe, attach, detach and delete Elastic Block
+ * Storage Volumes and Snaphsots.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Ebs extends Zend_Service_Amazon_Ec2_Abstract
+{
+    /**
+     * Creates a new Amazon EBS volume that you can mount from any Amazon EC2 instance.
+     *
+     * You must specify an availability zone when creating a volume. The volume and
+     * any instance to which it attaches must be in the same availability zone.
+     *
+     * @param string $size                  The size of the volume, in GiB.
+     * @param string $availabilityZone      The availability zone in which to create the new volume.
+     * @return array
+     */
+    public function createNewVolume($size, $availabilityZone)
+    {
+        $params = array();
+        $params['Action'] = 'CreateVolume';
+        $params['AvailabilityZone'] = $availabilityZone;
+        $params['Size'] = $size;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = array();
+        $return['volumeId']             = $xpath->evaluate('string(//ec2:volumeId/text())');
+        $return['size']                 = $xpath->evaluate('string(//ec2:size/text())');
+        $return['status']               = $xpath->evaluate('string(//ec2:status/text())');
+        $return['createTime']           = $xpath->evaluate('string(//ec2:createTime/text())');
+        $return['availabilityZone']     = $xpath->evaluate('string(//ec2:availabilityZone/text())');
+
+        return $return;
+    }
+
+    /**
+     * Creates a new Amazon EBS volume that you can mount from any Amazon EC2 instance.
+     *
+     * You must specify an availability zone when creating a volume. The volume and
+     * any instance to which it attaches must be in the same availability zone.
+     *
+     * @param string $snapshotId            The snapshot from which to create the new volume.
+     * @param string $availabilityZone      The availability zone in which to create the new volume.
+     * @return array
+     */
+    public function createVolumeFromSnapshot($snapshotId, $availabilityZone)
+    {
+        $params = array();
+        $params['Action'] = 'CreateVolume';
+        $params['AvailabilityZone'] = $availabilityZone;
+        $params['SnapshotId'] = $snapshotId;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = array();
+        $return['volumeId']             = $xpath->evaluate('string(//ec2:volumeId/text())');
+        $return['size']                 = $xpath->evaluate('string(//ec2:size/text())');
+        $return['status']               = $xpath->evaluate('string(//ec2:status/text())');
+        $return['createTime']           = $xpath->evaluate('string(//ec2:createTime/text())');
+        $return['availabilityZone']     = $xpath->evaluate('string(//ec2:availabilityZone/text())');
+        $return['snapshotId']           = $xpath->evaluate('string(//ec2:snapshotId/text())');
+
+        return $return;
+    }
+
+    /**
+     * Lists one or more Amazon EBS volumes that you own, If you do not
+     * specify any volumes, Amazon EBS returns all volumes that you own.
+     *
+     * @param string|array $volumeId        The ID or array of ID's of the volume(s) to list
+     * @return array
+     */
+    public function describeVolume($volumeId = null)
+    {
+        $params = array();
+        $params['Action'] = 'DescribeVolumes';
+
+        if(is_array($volumeId) && !empty($volumeId)) {
+            foreach($volumeId as $k=>$name) {
+                $params['VolumeId.' . ($k+1)] = $name;
+            }
+        } elseif($volumeId) {
+            $params['VolumeId.1'] = $volumeId;
+        }
+
+        $response = $this->sendRequest($params);
+
+        $xpath  = $response->getXPath();
+        $nodes = $xpath->query('//ec2:volumeSet/ec2:item', $response->getDocument());
+
+        $return = array();
+        foreach ($nodes as $node) {
+            $item = array();
+
+            $item['volumeId']   = $xpath->evaluate('string(ec2:volumeId/text())', $node);
+            $item['size']       = $xpath->evaluate('string(ec2:size/text())', $node);
+            $item['status']     = $xpath->evaluate('string(ec2:status/text())', $node);
+            $item['createTime'] = $xpath->evaluate('string(ec2:createTime/text())', $node);
+
+            $attachmentSet = $xpath->query('ec2:attachmentSet/ec2:item', $node);
+            if($attachmentSet->length == 1) {
+                $_as = $attachmentSet->item(0);
+                $as = array();
+                $as['volumeId'] = $xpath->evaluate('string(ec2:volumeId/text())', $_as);
+                $as['instanceId'] = $xpath->evaluate('string(ec2:instanceId/text())', $_as);
+                $as['device'] = $xpath->evaluate('string(ec2:device/text())', $_as);
+                $as['status'] = $xpath->evaluate('string(ec2:status/text())', $_as);
+                $as['attachTime'] = $xpath->evaluate('string(ec2:attachTime/text())', $_as);
+                $item['attachmentSet'] = $as;
+            }
+
+            $return[] = $item;
+            unset($item, $node);
+        }
+
+        return $return;
+    }
+
+    public function describeAttachedVolumes($instanceId)
+    {
+        $volumes = $this->describeVolume();
+
+        $return = array();
+        foreach($volumes as $vol) {
+            if(isset($vol['attachmentSet']) && $vol['attachmentSet']['instanceId'] == $instanceId) {
+                $return[] = $vol;
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * Attaches an Amazon EBS volume to an instance
+     *
+     * @param string $volumeId              The ID of the Amazon EBS volume
+     * @param string $instanceId            The ID of the instance to which the volume attaches
+     * @param string $device                Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * @return array
+     */
+    public function attachVolume($volumeId, $instanceId, $device)
+    {
+        $params = array();
+        $params['Action']       = 'AttachVolume';
+        $params['VolumeId']     = $volumeId;
+        $params['InstanceId']   = $instanceId;
+        $params['Device']       = $device;
+
+        $response = $this->sendRequest($params);
+
+        $xpath = $response->getXPath();
+
+        $return = array();
+        $return['volumeId']     = $xpath->evaluate('string(//ec2:volumeId/text())');
+        $return['instanceId']   = $xpath->evaluate('string(//ec2:instanceId/text())');
+        $return['device']       = $xpath->evaluate('string(//ec2:device/text())');
+        $return['status']       = $xpath->evaluate('string(//ec2:status/text())');
+        $return['attachTime']   = $xpath->evaluate('string(//ec2:attachTime/text())');
+
+        return $return;
+    }
+
+    /**
+     * Detaches an Amazon EBS volume from an instance
+     *
+     * @param string $volumeId              The ID of the Amazon EBS volume
+     * @param string $instanceId            The ID of the instance from which the volume will detach
+     * @param string $device                The device name
+     * @param boolean $force                Forces detachment if the previous detachment attempt did not occur cleanly
+     *                                      (logging into an instance, unmounting the volume, and detaching normally).
+     *                                      This option can lead to data loss or a corrupted file system. Use this option
+     *                                      only as a last resort to detach an instance from a failed instance. The
+     *                                      instance will not have an opportunity to flush file system caches nor
+     *                                      file system meta data.
+     * @return array
+     */
+    public function detachVolume($volumeId, $instanceId = null, $device = null, $force = false)
+    {
+        $params = array();
+        $params['Action']       = 'DetachVolume';
+        $params['VolumeId']     = $volumeId;
+        $params['InstanceId']   = $instanceId;
+        $params['Device']       = $device;
+        $params['Force']        = $force;
+
+        $response = $this->sendRequest($params);
+
+        $xpath = $response->getXPath();
+
+        $return = array();
+        $return['volumeId']     = $xpath->evaluate('string(//ec2:volumeId/text())');
+        $return['instanceId']   = $xpath->evaluate('string(//ec2:instanceId/text())');
+        $return['device']       = $xpath->evaluate('string(//ec2:device/text())');
+        $return['status']       = $xpath->evaluate('string(//ec2:status/text())');
+        $return['attachTime']   = $xpath->evaluate('string(//ec2:attachTime/text())');
+
+        return $return;
+    }
+
+    /**
+     * Deletes an Amazon EBS volume
+     *
+     * @param string $volumeId              The ID of the volume to delete
+     * @return boolean
+     */
+    public function deleteVolume($volumeId)
+    {
+        $params = array();
+        $params['Action']       = 'DeleteVolume';
+        $params['volumeId']     = $volumeId;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($return === "true");
+    }
+
+    /**
+     * Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use snapshots for backups,
+     * to launch instances from identical snapshots, and to save data before shutting down an instance
+     *
+     * @param string $volumeId              The ID of the Amazon EBS volume to snapshot
+     * @return array
+     */
+    public function createSnapshot($volumeId)
+    {
+        $params = array();
+        $params['Action']       = 'CreateSnapshot';
+        $params['VolumeId']     = $volumeId;
+
+        $response = $this->sendRequest($params);
+
+        $xpath = $response->getXPath();
+
+        $return = array();
+        $return['snapshotId']   = $xpath->evaluate('string(//ec2:snapshotId/text())');
+        $return['volumeId']     = $xpath->evaluate('string(//ec2:volumeId/text())');
+        $return['status']       = $xpath->evaluate('string(//ec2:status/text())');
+        $return['startTime']    = $xpath->evaluate('string(//ec2:startTime/text())');
+        $return['progress']     = $xpath->evaluate('string(//ec2:progress/text())');
+
+        return $return;
+    }
+
+    /**
+     * Describes the status of Amazon EBS snapshots
+     *
+     * @param string|array $snapshotId      The ID or arry of ID's of the Amazon EBS snapshot
+     * @return array
+     */
+    public function describeSnapshot($snapshotId = null)
+    {
+        $params = array();
+        $params['Action'] = 'DescribeSnapshots';
+
+        if(is_array($snapshotId) && !empty($snapshotId)) {
+            foreach($snapshotId as $k=>$name) {
+                $params['SnapshotId.' . ($k+1)] = $name;
+            }
+        } elseif($snapshotId) {
+            $params['SnapshotId.1'] = $snapshotId;
+        }
+
+        $response = $this->sendRequest($params);
+
+        $xpath  = $response->getXPath();
+        $nodes = $xpath->query('//ec2:snapshotSet/ec2:item', $response->getDocument());
+
+        $return = array();
+        foreach ($nodes as $node) {
+            $item = array();
+
+            $item['snapshotId'] = $xpath->evaluate('string(ec2:snapshotId/text())', $node);
+            $item['volumeId']   = $xpath->evaluate('string(ec2:volumeId/text())', $node);
+            $item['status']     = $xpath->evaluate('string(ec2:status/text())', $node);
+            $item['startTime']  = $xpath->evaluate('string(ec2:startTime/text())', $node);
+            $item['progress']   = $xpath->evaluate('string(ec2:progress/text())', $node);
+
+            $return[] = $item;
+            unset($item, $node);
+        }
+
+        return $return;
+    }
+
+    /**
+     * Deletes a snapshot of an Amazon EBS  volume that is stored in Amazon S3
+     *
+     * @param string $snapshotId            The ID of the Amazon EBS snapshot to delete
+     * @return boolean
+     */
+    public function deleteSnapshot($snapshotId)
+    {
+        $params = array();
+        $params['Action']       = 'DeleteSnapshot';
+        $params['SnapshotId']   = $snapshotId;
+
+        $response = $this->sendRequest($params);
+
+        $xpath = $response->getXPath();
+        $return = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($return === "true");
+    }
+}

@@ -1,62 +1,262 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-e6Vk7A4=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Profile_Resource_Container
+ */
+require_once 'Zend/Tool/Project/Profile/Resource/Container.php';
+
+/**
+ * @see Zend_Tool_Project_Context_Repository
+ */
+require_once 'Zend/Tool/Project/Context/Repository.php';
+
+/**
+ * This class is an iterator that will iterate only over enabled resources
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Profile_Resource extends Zend_Tool_Project_Profile_Resource_Container
+{
+    
+    /**
+     * @var Zend_Tool_Project_Profile
+     */
+    protected $_profile = null;
+    
+    /**
+     * @var Zend_Tool_Project_Profile_Resource
+     */
+    protected $_parentResource = null;
+
+    /**#@+
+     * @var bool
+     */
+    protected $_deleted = false;
+    protected $_enabled = true;
+    /**#@-*/
+
+    /**
+     * @var Zend_Tool_Project_Context|string
+     */
+    protected $_context = null;
+
+    /**
+     * @var array
+     */
+    protected $_attributes = array();
+
+    /**
+     * @var bool
+     */
+    protected $_isContextInitialized = false;
+
+    /**
+     * __construct()
+     *
+     * @param string|Zend_Tool_Project_Context_Interface $context
+     */
+    public function __construct($context)
+    {
+        $this->setContext($context);
+    }
+
+    /**
+     * setContext()
+     *
+     * @param string|Zend_Tool_Project_Context_Interface $context
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function setContext($context)
+    {
+        $this->_context = $context;
+        return $this;
+    }
+
+    /**
+     * getContext()
+     *
+     * @return Zend_Tool_Project_Context_Interface
+     */
+    public function getContext()
+    {
+        return $this->_context;
+    }
+
+    /**
+     * getName() - Get the resource name
+     * 
+     * Name is derived from the context name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        if (is_string($this->_context)) {
+            return $this->_context;
+        } elseif ($this->_context instanceof Zend_Tool_Project_Context_Interface) {
+            return $this->_context->getName();
+        } else {
+            throw new Zend_Tool_Project_Exception('Invalid context in resource');
+        }
+    }
+
+    /**
+     * setProfile()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function setProfile(Zend_Tool_Project_Profile $profile)
+    {
+        $this->_profile = $profile;
+        return $this;
+    }
+
+    /**
+     * getProfile
+     *
+     * @return Zend_Tool_Project_Profile
+     */
+    public function getProfile()
+    {
+        return $this->_profile;
+    }
+
+    /**
+     * getPersistentAttributes()
+     *
+     * @return array
+     */
+    public function getPersistentAttributes()
+    {
+        if (method_exists($this->_context, 'getPersistentAttributes')) {
+            return $this->_context->getPersistentAttributes();
+        }
+
+        return array();
+    }
+
+    /**
+     * setEnabled()
+     *
+     * @param bool $enabled
+     * @return Zend_Tool_Project_Profile_Resource
+     */    
+    public function setEnabled($enabled = true)
+    {
+        // convert fuzzy types to bool
+        $this->_enabled = (!in_array($enabled, array('false', 'disabled', 0, -1, false), true)) ? true : false;
+        return $this;
+    }
+
+    /**
+     * isEnabled()
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->_enabled;
+    }
+
+    /**
+     * setDeleted()
+     *
+     * @param bool $deleted
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function setDeleted($deleted = true)
+    {
+        $this->_deleted = (bool) $deleted;
+        return $this;
+    }
+
+    /**
+     * isDeleted()
+     *
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function isDeleted()
+    {
+        return $this->_deleted;
+    }
+    
+    /**
+     * initializeContext()
+     *
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function initializeContext()
+    {
+        if ($this->_isContextInitialized) {
+            return;
+        }
+        if (is_string($this->_context)) {
+            $this->_context = Zend_Tool_Project_Context_Repository::getInstance()->getContext($this->_context);
+        }
+        
+        if (method_exists($this->_context, 'setResource')) {
+            $this->_context->setResource($this);
+        }
+        
+        if (method_exists($this->_context, 'init')) {
+            $this->_context->init();
+        }
+        
+        $this->_isContextInitialized = true;
+        return $this;
+    }
+
+    /**
+     * __toString()
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->_context->getName();
+    }
+
+    /**
+     * __call()
+     *
+     * @param string $method
+     * @param array $arguments
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public function __call($method, $arguments)
+    {
+        if (method_exists($this->_context, $method)) {
+            if (!$this->isEnabled()) {
+                $this->setEnabled(true);
+            }
+            return call_user_func_array(array($this->_context, $method), $arguments);
+        } else {
+            throw new Zend_Tool_Project_Profile_Exception('cannot call ' . $method);
+        }
+    }
+
+}

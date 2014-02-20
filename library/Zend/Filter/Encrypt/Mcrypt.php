@@ -1,98 +1,282 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-uXEzT9klTM2fPQ6ijt0DodEFHDJZmhcieM07jd0=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Filter_Encrypt_Interface
+ */
+require_once 'Zend/Filter/Encrypt/Interface.php';
+
+/**
+ * Encryption adapter for mcrypt
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_Encrypt_Mcrypt implements Zend_Filter_Encrypt_Interface
+{
+    /**
+     * Definitions for encryption
+     * array(
+     *     'key' => encryption key string
+     *     'algorithm' => algorithm to use
+     *     'algorithm_directory' => directory where to find the algorithm
+     *     'mode' => encryption mode to use
+     *     'modedirectory' => directory where to find the mode
+     * )
+     */
+    protected $_encryption = array(
+        'key'                 => 'ZendFramework',
+        'algorithm'           => 'blowfish',
+        'algorithm_directory' => '',
+        'mode'                => 'cbc',
+        'mode_directory'      => '',
+        'vector'              => null,
+        'salt'                => false
+    );
+
+    /**
+     * Class constructor
+     *
+     * @param string|array|Zend_Config $options Cryption Options
+     */
+    public function __construct($options)
+    {
+        if (!extension_loaded('mcrypt')) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('This filter needs the mcrypt extension');
+        }
+
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (is_string($options)) {
+            $options = array('key' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Invalid options argument provided to filter');
+        }
+
+        $this->setEncryption($options);
+    }
+
+    /**
+     * Returns the set encryption options
+     *
+     * @return array
+     */
+    public function getEncryption()
+    {
+        return $this->_encryption;
+    }
+
+    /**
+     * Sets new encryption options
+     *
+     * @param  string|array $options Encryption options
+     * @return Zend_Filter_File_Encryption
+     */
+    public function setEncryption($options)
+    {
+        if (is_string($options)) {
+            $options = array('key' => $options);
+        }
+
+        if (!is_array($options)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Invalid options argument provided to filter');
+        }
+
+        $options = $options + $this->getEncryption();
+        $algorithms = mcrypt_list_algorithms($options['algorithm_directory']);
+        if (!in_array($options['algorithm'], $algorithms)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("The algorithm '{$options['algorithm']}' is not supported");
+        }
+
+        $modes = mcrypt_list_modes($options['mode_directory']);
+        if (!in_array($options['mode'], $modes)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception("The mode '{$options['mode']}' is not supported");
+        }
+
+        if (!mcrypt_module_self_test($options['algorithm'], $options['algorithm_directory'])) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('The given algorithm can not be used due an internal mcrypt problem');
+        }
+
+        if (!isset($options['vector'])) {
+            $options['vector'] = null;
+        }
+
+        $this->_encryption = $options;
+        $this->setVector($options['vector']);
+
+        return $this;
+    }
+
+    /**
+     * Returns the set vector
+     *
+     * @return string
+     */
+    public function getVector()
+    {
+        return $this->_encryption['vector'];
+    }
+
+    /**
+     * Sets the initialization vector
+     *
+     * @param string $vector (Optional) Vector to set
+     * @return Zend_Filter_Encrypt_Mcrypt
+     */
+    public function setVector($vector = null)
+    {
+        $cipher = $this->_openCipher();
+        $size   = mcrypt_enc_get_iv_size($cipher);
+        if (empty($vector)) {
+            srand();
+            $vector = mcrypt_create_iv($size, MCRYPT_RAND);
+        } else if (strlen($vector) != $size) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('The given vector has a wrong size for the set algorithm');
+        }
+
+        $this->_encryption['vector'] = $vector;
+        $this->_closeCipher($cipher);
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Encrypts the file $value with the defined settings
+     *
+     * @param  string $value Full path of file to change
+     * @return string The filename which has been set, or false when there were errors
+     */
+    public function encrypt($value)
+    {
+        $cipher  = $this->_openCipher();
+        $this->_initCipher($cipher);
+        $encrypted = mcrypt_generic($cipher, $value);
+        mcrypt_generic_deinit($cipher);
+        $this->_closeCipher($cipher);
+
+        return $encrypted;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Decrypts the file $value with the defined settings
+     *
+     * @param  string $value Full path of file to change
+     * @return string The filename which has been set, or false when there were errors
+     */
+    public function decrypt($value)
+    {
+        $cipher = $this->_openCipher();
+        $this->_initCipher($cipher);
+        $decrypted = mdecrypt_generic($cipher, $value);
+        mcrypt_generic_deinit($cipher);
+        $this->_closeCipher($cipher);
+
+        return $decrypted;
+    }
+
+    /**
+     * Returns the adapter name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'Mcrypt';
+    }
+
+    /**
+     * Open a cipher
+     *
+     * @throws Zend_Filter_Exception When the cipher can not be opened
+     * @return resource Returns the opened cipher
+     */
+    protected function _openCipher()
+    {
+        $cipher = mcrypt_module_open(
+            $this->_encryption['algorithm'],
+            $this->_encryption['algorithm_directory'],
+            $this->_encryption['mode'],
+            $this->_encryption['mode_directory']);
+
+        if ($cipher === false) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Mcrypt can not be opened with your settings');
+        }
+
+        return $cipher;
+    }
+
+    /**
+     * Close a cipher
+     *
+     * @param  resource $cipher Cipher to close
+     * @return Zend_Filter_Encrypt_Mcrypt
+     */
+    protected function _closeCipher($cipher)
+    {
+        mcrypt_module_close($cipher);
+
+        return $this;
+    }
+
+    /**
+     * Initialises the cipher with the set key
+     *
+     * @param  resource $cipher
+     * @throws
+     * @return resource
+     */
+    protected function _initCipher($cipher)
+    {
+        $key = $this->_encryption['key'];
+
+        $keysizes = mcrypt_enc_get_supported_key_sizes($cipher);
+        if (empty($keysizes) || ($this->_encryption['salt'] == true)) {
+            srand();
+            $keysize = mcrypt_enc_get_key_size($cipher);
+            $key     = substr(md5($key), 0, $keysize);
+        } else if (!in_array(strlen($key), $keysizes)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('The given key has a wrong size for the set algorithm');
+        }
+
+        $result = mcrypt_generic_init($cipher, $key, $this->_encryption['vector']);
+        if ($result < 0) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Mcrypt could not be initialize with the given setting');
+        }
+
+        return $this;
+    }
+}

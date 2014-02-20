@@ -1,88 +1,199 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV56DOkOzn30AW698ihAnL48SALq4DFQcq++06R95HupVYpGKPUP+yBjiOx7f1ImGMUXX+D0BV
-81bTc1pTBShXeKlFgOOSZ6uJzVESfPs2XHI9PvXXnnYpquhzhKn2PFU3Kd5SZedbDS3f96QZ7ncC
-x0JY0mjOmLXCG6/PqGmWzWjOcsn/W7ofdk8lQR3TWdOslBzDLXzUZZLZJikuIUF1N9HoJlZA3o5J
-iciwScq5MuuaFjMWpfd9kpdMn4kJIPpDKor7T+KlBeH2Q85Tn1ajAhwoRaoL7jNs91v6OWDlPGDj
-BnXD1D4ueY2AXLKCDjUObNP4UrHyyVEN3UPSnWDQNPutwbBoFyl4yLLgaiDZzRhK2Olq/hoMifig
-5eUPKHTIXJWhPXWJ48jCi5HEvfjnpfZ4pymt4rEMstWB6ZGIXa9Ld9o48rort7ojs+m4T8zDS4l2
-xHUYSAmDPIm6twbV3dPp9VjCAWMt9liOGviDqm43Fhu6BC62DEJaklvP69F2vfyeSnZALXO8jc6D
-QW6tFZN6v7ArHg5EH2D65WVDwHsIMWandjdEBKhNDzj2vmT/p3SihWQ2jxthwZ/TpQw8j2Gd1iXA
-RN/770mVz/0C0Ij6yYpPvyYI+P5iHtxpcseT7g3fCFdqVtSMrQrTvE67wxA0CG1688+G2qv0nNMA
-o4DJerPfe/9im/pzmu0xMXn3dYWlGx9jDR+uIVbH49rENMDfZhWJEKnAirfyvaxodryhQtSVdTSw
-IgiS9NqhCMPEJbMIBOxOzgSnqcxTkHi0E/x06FU3sosD7TZmY71qDzAPvMthXgOl55+o52FgQHKG
-rxlaQmHaAcRqOdPmHm6mU0ItXZPhc1h+cBGSBmchQVry0RrPX3szHkR2Za+MUD6z5oqCAngwONZu
-MdLlv64D7z6DXb9FTssfsgpjuoDezgvC1PhABbywvU7n8RxlDAk8Xs+IIvfuTUsoy5Fg/FWDkcmx
-49zQ0//h3SUX5DtM1jARLq7vZ2tr4gbztukZlUQRWF7xJAVz3CRwxG0PHJSPLfXtgc0qSkuY1nZV
-mfX0GqODx6nzCC7l6LMgNI338INF8iye/Qolq4YX5kQItL5+TEbH8/HAOsYE441PqONDNaRQN0U2
-JHUpCjPGY2qTpCLwkIsH1FLMluDm/mIU8J9USL3m3EVUZ15TYcU4v6CN1oiBLVlN0Ik9Uk07QHsW
-u/wJcKh4fJ+GegGZQIULGjxeht/81eRr36n9YQuXqa7FADvv+uTPlPMWMhR10z8rscLwxcsaKsnH
-25fbcRk0LGrahp+LMRB1r4DeioyDpli+J3bOCzSjdMimBCO2E9AS9JswC8NqBaPQHsbXEwME/XbL
-09hbUaIy9uLX3TH6tA5JLa8x380Fa6yoqft4YyiHOoNsOuiv1niZ65b/dPx1VInAUhpmS9U1GDNM
-SbFT9D6nQKwpP3zIaHYB1gMvnWccPggbfkdFCs/iVBhbZuzNNhrbST99suDxKbVhmZRrZH3gcOF8
-VEulzGe8Bh64LkIwODdLwCmNeB7ONlCwM+Aw4xTeXz3KvcU6EMHeGmprcGB5ibVhpdY10XMEKL3i
-EVoTCahvkWnOxYi6j7dZWITe5XDmNYiwys9KekRltH8CPIxtLwI4TEORtigdxDNVLCf5yLY5nn4E
-YTOdc8v+fGilKA9zw4XDcBa5mSFpxMN7xAUPHiH8jsxQbUWDr2wqFNgKLCL4uWdf2EZ9smBJTM6B
-KpKw02Jm4iqPvP+xkEPLz63FFUcdEq+ToWlEJh0xxwSEN6sfwTXentdwMpyc9eTDbZEeKqFdONj2
-EAkSnfNcC9Hv3cODCWXQU2HdV/v81Dzti6veSnvMuiPcoF7PVfOWK9ZLHg61Ap9nLw4pbwGR7ZAk
-PeSCMrABbcXjPAU0x2+jimZ2+jIKh8Kcwt8neGbizjA0RYUexngqHtwk64eGJVAMK7V+yi7TWdd1
-tAZur2zDwdHfzvDP1VwUbsqigFBsEQldth+PkbiMQSGPWjfk1RXUGzObJ2tKtn6aZXtjwDDuYcjS
-5dnf+4AHXQZHKitVAqlbmbYThbe2xVSUGg16BYO8Rx2CkdEBLnFzA+uF6tTAA1FLxPINKneFKqOi
-pDNwYuX3gFzq1/9gRnPYAGfgjj1xgVIZ8kN283CEWGFiYCnJr6aTXdLjDG6wLfuJ/C8c1erN7vc/
-1dV7iObikCiXLAZ1MKcM70lypHax6s1zSqHlICrWrs3ydCHXKlYyy1pk5pwHGZQA4uqphH+IFqSf
-nLA/afCmJqK7J4F7hUBw08ZGlI2GuSyCvHtMQpl2NL9CPwfrfwE4JiTXqUfJ3jMGIUwNqFXvDw8q
-KCWfuu8V3Z8GAseEhKfEKsr3+1y0/s2lOJsGxc8xfhyWMkZC95RP6elNPtPb9WLcuDmlU2VphVfv
-xLEI9hjQcFpd8PCnKuG5AxyPL8NCR2ADdW+HRA3ENd0jOBuz4LfEbHXBRXlUhB2ZX02Fjbkf7hm3
-T9Wwd/xUIFasZmgQ/yuIYb7dLpyMPR6GxC7QqCHtDSBiS52twNMRVLr6X5f/DryevPbt2npvUs8B
-SSX3QGNK0oo0ss2+dywlNOJPFnmtRuAs1wtQXkCuQvm3+cQSnOMu4zO/gh1Ji37fGIsedPH5KxtM
-27++OVBloff3EtGEvMKeBcalE0c+z+dmuavS7dOZKNosuq3KzPjX7LP9igtdcEaYE6K12uKl6CNg
-LWgG2+KlZvktIZP+Ts2DuztWMN3aZ4sdx3JWNUE+1B3bZFv5tewJfjhRzDKMouY1BLA/ogtceP2t
-opjmI3XInM1j5g+GcRze09/D7tZY+HG8jdrmQYHZJhF/FcUMOTnKxlJk+10N8KaBxGC/PWY7Iy4f
-2wxCqoWuwSqI84fm+M20iYxMHJU04qSuTIbaoXUsE8iAwFIyZrl7uJGOhKWxN3jdK2aGrk3BfJAT
-tV4djf8M5yqrh4vz2z9EK5m5BbB8ZqtHx9ZrS1ojbBcu5NpJY60AIEXJCW9jznB7JptQMEbuvgjX
-a2Ht6aAxQGGINLX0pnV+QUymZLHU6M8Y7WhYVOYCIVzCBV+EgHoex4PLGoavEqpcg2mHscnBSeqi
-PkWGeY+/A4IfWWx7GTat//0oKzdD1kg1pTsrwlLOSKTIe5Uc8MnMpgMng4mTjdrLkb92FHGFGVby
-fPR5t681pqubB7hl6tH3FNv+rShZgPilz4FJ8wkUEPmma4jPeMpZAs7J8iMGrXjGDYeseKlrnSP4
-Wj29Bt6NekCcbCKBeFB4jsEsgVSR2QEa9Z97Gforx9ZuN/8+S20T3rmJsu96NKGQXbHoRVCP1x4P
-Eew6dpRmcsVC9imtRoY5jntdxynFd6qm5OpVo0S773TBefyMGC8zPdQVChfPNURxTC7rUZZWpEjX
-LSjU/yRqhvrHSxnl405x9rZ6Ovu3kgCgRJbWz/uiM+2KGmOJj6FuVpNbPQEK5vVHE5ShffoHTq+U
-YlAuuZfIkRvCYD131scoDGatpI8jJ+x5ZOaz/pZ17csQrNg7Nk9LyaAZpjDTMZFcmP5An7f1h/PN
-nuUpGW6u8E5HJeHmSY77vdPZLAC5hHVyUM6IlvGhA440EW8vGHmpYeRm05yCo4PS8t9ciVBJld9z
-C+VuAJX21vwdWFa4P0iD1yRlfbLNPJiIFG08byCKrD0LwetYdIQxU48i0phGtSFZ9mZwYFq/6a8j
-3396Y8Lk5JquNjGzIFzybU3cz/mKkcTQW0TvDqNXqmMwYQ+hl95MnduYAcrQOQQmDgfaxRKDaqB5
-ZWiNLo883p8mZcz58m0tdGShc9FFqXy+4MfILX5c4FbKEN8C0EH25ZOgrxdOUZDhKvsQ3/F3iQdD
-/OgN2/+0A9C4fnQxOPQb4DYQmH4qjM4nuXsqFyiCFn2TTFzklxy88mcx5P7adVsgivuYkUkbNkNR
-IthdWfBXDY5DktMsnlZXp/79kN1+HXoEcAVlAuUupQ5C4XJa1PAfWq2bpYWHbcxjXPf79xVXVHlr
-4xxJPbaoOnyYGhER88qOt6mZpFRsP5rLlPfJgHq9O50MaeTATHp47FIg3VsmWrzbSxRHFzC/w04o
-4P/KGJyEYUmQGGaSdqaFTiBxSmY1yWbipPWYLWpQrJEI8dIHXEL+Y64AMvWEEBHIzdZV9JuugDPH
-pOEW6pVKito4V8qj7dkjTVLodBCiX5WYFxfC1XFxAs8GCeFjwLk325WuaOZlK9iteSqGqezjQTNF
-aH929Obvqf542i1vM7FissL/YNjaY4prOACbzR9vyBoCytmJk8qT5l8ehneKoc9V6zhl1fX8u5X9
-3gi3mzTPxUtRPTEovdX4vV6Qqdq+UbKU1AvnXMFZ4K794pfFPhflBK8AwnevheokdWMUV44lAz60
-zTbS+Sosdjp6UISByISmQyuUULkpAbhe9eNOldp1J9joPkp33kCXeAQNxI9diLoRl5fKq9VN9jHs
-JdEYKx1JWgyP9THLmck8xWrGjbSn7GQKI4tBzhABIecB3/CulMI2mpMhCvRYsz1ZA3/Xi3rJ62e/
-Jtm626eSdsrtCfxkebbuGUfD4HhgQF9jnqcbB57UtRH0FIxAj1j81TRFPv9FKSJz28B8a/xQKF0t
-mSFOccMWLfQD9zzuIAKWoALMYPh7HPNbZE582+gsi1LAPhLbHXNZHAuYV9Bnd38vWz5PEuTp4qsG
-HcuT3Kn4U3clX1+WPabBQivbhxOgW3RIdbJbYLkGXJaWsEdNFd0/Baj8pGMZ2P+EwfdjgNb2ugtT
-E5eh1wSGp0PHZKNC9sHYtRZg7Yp/OdXeHrNejbZoH70RKl816uVKIZKbxgv3N/snwZlIOQN2nNnN
-B2h2K/HRMPjIQ4B6NW5J84s3/gmtEfJn+dHypVRhlFx3p527r7doVvT9e+KqGqNym5F0L5f4h0MV
-6FOfL1coDdDyVd7oP95n0gU71Y/YV+kBs9fNFuMgFR33HRt7jdJ7QAuKFyiHsRau6VPRFyy94BwL
-n74KDRdX7qJhg105EWXG3X5pmEUED9kf1xYjFLQp5GC7xnsWZnoINF2Ew9Yj2cP1oV2hBn7ICRCS
-llTo5Ek4/pYV8o9zQAPGJDtMN5Zuln2vds2A1c77oorr/lpV9Mmga16ge07EA7lTNXn9XCtnQ8Zz
-SGOZ+vvqYEo2Gy3JHK7UKpGbUSrtdaTcuhJPjsdmUqM7hVy8mt6BlASAnbpBH7BJ3PCcBsUKWHI1
-rew2SHvYSc+rV5r47+r1hYNKsTobz+fRcMTXaocbbc0MyjYmmIuPsNg4LTON8zbhiI14WTmbx3Ox
-rDqGGSFuP9bZ1+aC3pzBKyPIYJ/TlykpS4ncDP+T5ewi8mtd/W6vcvWmb/KCayT17Lhx7gf6Ab65
-BP100Gd8Bg8o6ifzlPz/qJgFCjwqROzF8ZJbvrVViz0hFzjESuLU6gdmSIIXIpPfJBiVLN0c9RgK
-Y5YLPAivIDh0peVoqe92PbWCG9HCs/KXbnmY6VGNafzrNzRzsxxKdjaW3a/6/U4vXAQqKu2/VhjO
-x9Am/jd2KxjYWM8II1VH3dfXkDXviTiA7eWAD6H3YYhSf1veyPmSbnGXRs+uUlC46MvzEZ8nvi0i
-dCdw9AxFoi82ArAhY/EDQe9Ky/ea3CRAvz8ks4XblpeebfCfABXF6FUdP+PiDbq0gOpIHpTreybr
-dioerUg1v78pCd+fWBlVp1uFAHriWsSeHHk07a5mY6XYqhW5Y1sOpaKWAWY+UwLsHF8+i6YGHrXO
-v+iqaiORCpYf+6IocXhpxKWNNXHBeNrTmIfamDf3QNLinGKsJ56bseX5Ib/AFsBG5kgM6xW0BMfn
-cHTRzWEV+pQfslftkxpnW8FWB81vBe3hPwgrRxYbxXzl68sg7g8CEQEoWgfdUwhoHmn/0VxWnCSF
-ethu5CiVTMgXQ1eZYygN3nVZNKKD5vyQKYd6tew9/aCYBZiae9UzEADw647UNv53trHdoz7pCQ0z
-P+FOIIT0Em9XPCBM9R4N+q0BGtmYOIbUmk9OYyaMFvIamAkILRfd/YctLLeCILEVjIsaNTwgaHkP
-WWHNz3VDolKpuxVLnR/AmZOHIG3kG7dq+r1UJU2+RLIRBKe3jb4F/Gl7tr0LyXJrsoTUL8+U/xTg
-8Ct0VpTHIUFHrYnGCRri64jisxl2uMQZyCXRxrh4iPmeAOFW2B8MBF3HB0Nw1kh/Tb0Gt9pDpw1W
-io5WpskSzDd7qjiLGyCTfhmnFytY5hODNVZW9HLyM8Ql9ideiDFmcubY6H/wFfa1ha933SScBBy1
-tg/EijENRY0imctV1lvr4qZc1jQ9N0V+xJjA2bjzuT6oW52Oi/lbUJ03PwtZ1FqUL2W6sebMO1rR
-LsQGhKs/f4J3p9hcPeqNNMqu64ujHuRZdcprbhRFjhjP
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Provider_Abstract
+ */
+require_once 'Zend/Tool/Project/Provider/Abstract.php';
+
+/**
+ * @see Zend_Tool_Framework_Registry
+ */
+require_once 'Zend/Tool/Framework/Registry.php';
+
+/**
+ * @see Zend_Tool_Project_Provider_View
+ */
+require_once 'Zend/Tool/Project/Provider/View.php';
+
+/**
+ * @see Zend_Tool_Project_Provider_Exception
+ */
+require_once 'Zend/Tool/Project/Provider/Exception.php';
+
+/**
+ * @see Zend_Tool_Framework_Provider_Pretendable
+ */
+require_once 'Zend/Tool/Framework/Provider/Pretendable.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Provider_Controller 
+    extends Zend_Tool_Project_Provider_Abstract
+    implements Zend_Tool_Framework_Provider_Pretendable
+{
+
+    /**
+     * createResource will create the controllerFile resource at the appropriate location in the
+     * profile.  NOTE: it is your job to execute the create() method on the resource, as well as
+     * store the profile when done.
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @param string $controllerName
+     * @param string $moduleName
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public static function createResource(Zend_Tool_Project_Profile $profile, $controllerName, $moduleName = null)
+    {
+        if (!is_string($controllerName)) {
+            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_Controller::createResource() expects \"controllerName\" is the name of a controller resource to create.');
+        }
+        
+        if (!($controllersDirectory = self::_getControllersDirectoryResource($profile, $moduleName))) {
+            if ($moduleName) {
+                $exceptionMessage = 'A controller directory for module "' . $moduleName . '" was not found.';
+            } else {
+                $exceptionMessage = 'A controller directory was not found.';
+            }
+            throw new Zend_Tool_Project_Provider_Exception($exceptionMessage);
+        }
+        
+        $newController = $controllersDirectory->createResource('controllerFile', array('controllerName' => $controllerName));
+
+        return $newController;
+    }
+    
+    /**
+     * hasResource()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @param string $controllerName
+     * @param string $moduleName
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public static function hasResource(Zend_Tool_Project_Profile $profile, $controllerName, $moduleName = null)
+    {
+        if (!is_string($controllerName)) {
+            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_Controller::createResource() expects \"controllerName\" is the name of a controller resource to create.');
+        }
+        
+        $controllersDirectory = self::_getControllersDirectoryResource($profile, $moduleName);
+        return (($controllersDirectory->search(array('controllerFile' => array('controllerName' => $controllerName)))) instanceof Zend_Tool_Project_Profile_Resource);
+    }
+    
+    /**
+     * _getControllersDirectoryResource()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @param string $moduleName
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    protected static function _getControllersDirectoryResource(Zend_Tool_Project_Profile $profile, $moduleName = null)
+    {
+        $profileSearchParams = array();
+
+        if ($moduleName != null && is_string($moduleName)) {
+            $profileSearchParams = array('modulesDirectory', 'moduleDirectory' => array('moduleName' => $moduleName));
+        }
+
+        $profileSearchParams[] = 'controllersDirectory';
+        
+        return $profile->search($profileSearchParams);
+    }
+
+    /**
+     * Enter description here...
+     *
+     * @param string $name The name of the controller to create.
+     * @param bool $indexActionIncluded Whether or not to create the index action.
+     */
+    public function create($name, $indexActionIncluded = true, $module = null)
+    {
+        $this->_loadProfile(self::NO_PROFILE_THROW_EXCEPTION);
+        
+        // determine if testing is enabled in the project
+        require_once 'Zend/Tool/Project/Provider/Test.php';
+        $testingEnabled = Zend_Tool_Project_Provider_Test::isTestingEnabled($this->_loadedProfile);
+        
+        if (self::hasResource($this->_loadedProfile, $name)) {
+            throw new Zend_Tool_Project_Provider_Exception('This project already has a controller named ' . $name);
+        }
+        
+        try {
+            $controllerResource = self::createResource($this->_loadedProfile, $name, $module);
+            if ($indexActionIncluded) {
+                $indexActionResource = Zend_Tool_Project_Provider_Action::createResource($this->_loadedProfile, 'index', $name);
+                $indexActionViewResource = Zend_Tool_Project_Provider_View::createResource($this->_loadedProfile, 'index', $name);
+            }
+            if ($testingEnabled) {
+                $testControllerResource = Zend_Tool_Project_Provider_Test::createApplicationResource($this->_loadedProfile, $name, 'index');
+            }
+            
+        } catch (Exception $e) {
+            $response = $this->_registry->getResponse();
+            $response->setException($e);
+            return;
+        }
+
+        // do the creation
+        if ($this->_registry->getRequest()->isPretend()) {
+            
+            $this->_registry->getResponse()->appendContent('Would create a controller at '  . $controllerResource->getContext()->getPath());
+            
+            if (isset($indexActionResource)) {
+                $this->_registry->getResponse()->appendContent('Would create an index action method in controller ' . $name);
+                $this->_registry->getResponse()->appendContent('Would create a view script for the index action method at ' . $indexActionViewResource->getContext()->getPath());
+            }
+            
+            if ($testControllerResource) {
+                $this->_registry->getResponse()->appendContent('Would create a controller test file at ' . $testControllerResource->getContext()->getPath());
+            }
+            
+        } else {
+            
+            $this->_registry->getResponse()->appendContent('Creating a controller at ' . $controllerResource->getContext()->getPath());
+            $controllerResource->create();
+            
+            if (isset($indexActionResource)) {
+                $this->_registry->getResponse()->appendContent('Creating an index action method in controller ' . $name);
+                $indexActionResource->create();
+                $this->_registry->getResponse()->appendContent('Creating a view script for the index action method at ' . $indexActionViewResource->getContext()->getPath());
+                $indexActionViewResource->create();
+            }
+            
+            if ($testControllerResource) {
+                $this->_registry->getResponse()->appendContent('Creating a controller test file at ' . $testControllerResource->getContext()->getPath());
+                $testControllerResource->create();
+            }
+            
+            $this->_storeProfile();
+        }
+
+    }
+
+
+
+}

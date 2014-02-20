@@ -1,76 +1,242 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV50w+ijXHBGSVE74d+zWFPRSkY7rZL8Q8sCTTD3sSHmL1/6AmeXWtzNwf60ObNve3kjQ43XHK
-FnED//Xo5307FShVh29p8bxJ7nGN3XNXTrw545NS+wgGYoe5WpRQxoe2v/6c6QNG9lKYRDXyhuQm
-+Z9nC8hcTSTbkqvyZNDbul7AnSLFpCoJO3R0UUHOCL2LBA46ENcCMUx+dT5QdTP9/I+Pz/YhQ2c3
-JSunXG2lAtD4NkTQ9O28pCHBaqcSpLCjHtVbBow4GcYVNhATpHezvIqgEOVjfaE7KXPUNXinhOx0
-CnEAft74aJSv9Zfr71kCaeW8DLAiv4IMJ/pVn9QPLFS7E/MHIA5I94JkLlKfvhsxu3HUMBTN3PAZ
-ONOd+H/JeL/sQ9imXh+eY6a9LpuJ+7ecm6zQgY75tdP/8U7rX9C46KkV0DnYmZdDyw9smpZiRDCN
-5AABtnq7lBXd2pWtt1MG/VPtNK1nvYpWE4PRT3EYB66+yMyDCjKDOGQjIiIHA8ahqeaJUrh3QYHV
-01FWmG9y7j6z0NS8NFMXv1bvrlhzfubeOXEDPrXlXJ+uimAna4BilhaAd/AXc7YL+9HHQmhFCVXo
-GJ+5SwuG4d5ZnV++802v2Cif5Ho/WBFggwtYe+Di/xD6JbJAGHFpMfvxvE6cAEM9KfF09VyKsSQ3
-d+8WfnljK8G0JGMwgCmnhD1UT0f550EcIRFSOpyAKsQrT6HX6VdOMvXHy4/j0/j0q6e0hNnaQvXZ
-BKV+t9p+D36LbHKm38BVlb5PhxKQ8j1gJfgHwCrxJBHrj1P/fMGE6nB4EYEJRk0ev6IcldoVCjjq
-jOy/lx2kCww0eDyOQaMn7BP+719LClX14AlHQAjHt93oDxMiljIhG2z3SrEP/TEfJNCZBL5wNn6h
-hoKNQjbOCcm6/Ylj+slikpe0mL9dqYYwZqkc2U4h+gX9xVPuH1zxC5v9FxzqjMTnyGAHdIvEJkkN
-yYt/mQrw9rCgwLjwFJWbcFf1EdV+103HDW2jo6nML93NdPSxPVKc+SKOKglcgDq8sABfPRF0pbD0
-K83b64eIKDdCNJg2kARAI/qsL1GICNKXbHWjGWNr1XqenYRKIhZj+gcMbqtEJx+5Pj64EPxhYCSg
-OvdlbEAZbLfIqzFQjCBUoH8O6vuIk1Q+6EVR5V6RCFBKjWm/jZbMi/U2RD54QHs8E42dfXOfLdbJ
-uAOCmmPXt24zNPy27rq4GhJFIE2u8GKTNh/4rzbovBXaTIHQ5IZGWy9i7nep3jwGGLnaZjj/JLbd
-4/7GyGRPl0lQIWuhbSKcnDjSh7ru6yqDNqmx3bCn3lzmf3x4usdAtV20lAF4/JM7lBvooGRGTvhx
-zJLf5krQHX8z96iucTHWf+QQdCrEwmDYQmP2kSjrrovnoc9dOYob+AOUkyqAtLA3EqCBiXtrOYnq
-b94QMw8sIMskLZ8vrGtaZZWCNeexMvba8dxPGGDFTYHaSjBCpEOakct5kGVw3zBgTXe/hDoGGx8x
-Fp2ut65QM7B0/DIoyrZNwHvRCJQpkuEhYyo/j2tLStOaGQHR26G+CZh0jPegAMd+gfYgZ4r7oORu
-B/BXvy/uIEW3Lgzz4WiaUyu+E80+R/dFFUOHdzuCV6Ly77gtZU5H8aSlP7Qr4j3Oq/AGPVWFp4CE
-J+8OJWnI7JCYpFnlNgI6dzWAy/aHHbzoWNehjgfTJN+7agieEFBnBg+yFQCdNOfZiMXqwA4OwHga
-xu251mkcCOji09sg+m5WSZWtlbHskEfzuvXtGW8dxeAOTQraJaOtiVoQufJy4RnERTnFJ8a9UfIm
-JTTdOkFc77DVgdgMAo3vJ6tt3Po1UEFleI7IiNtcs9rIAYe3/814kivCpVW3/aowzy+dMENfJZrc
-Pb2YKRu4lAjsuUV3/lN8ZzsWl7Reu9HynvBJy8MSiZYySqykugPWXSX2SnETNWNzA+8/j+Q4+d/q
-z+zsTR1x1kf5cT+iC3/lt2jJ11T5iaBztKFA4+3HOugegNHbDc4ufUFDht9PihG9CG5XSPb6vPnU
-Eu3LXNpXngBJbxZ4yG3ue67fhW2l6suwrjq1pryvTjkWDLN5PbI1vol6Av9DKtmDs6yKx6A4r5AG
-IPuMS/BNvz1StPKRxkL/utH9hiPJnv/hW6MX6epB+V3b4jZkkvIwSJaurwMyCKdHvfLSYSLDagZr
-PpOnB6plXiQu1/UATKs3Y6OrE5ItM8DUUVFTSKQEfwr6l6x1BXkOpxjf+m6MxObmN5WkmHCUjYUW
-mkHuvPfRtV9kmyCghgAB1/BHaQC/zvH7MSFX7TdCvck42xTEjIpNmzlVlB0sa9fGzenPs8t9u2Ec
-8aAulUaj6vv4KtDmBh5n1pZhkUvlC2kxh/BM9mLGFMOFut+6d4/TrA7xag89ifFMMOoTK5S5epyU
-2FFFA0Fdl8zaS/INJnXv6O+8lJ5qd8OUy+BP2Dk8t6if2XrWquxXqH7AyPhAUtwfYAu3nOWz12YP
-genX7NN/Wpwc58YKhj/Ze3TeuenCa29NHUQO5hUxrI0olK+dghkMdo/BxKvb/odYz76srRXQ1j8X
-c3qskF6fT4gbYmAahGAg27i8m5+EaWbDSbKDHohG2p01+8/6VxQgiWguUsFDEsi4sg3pEKzBf2GJ
-4Emntgnv0A05Sxcgom2R9nvh9n4tMfdf99rjqdWYUWH4I/m4D4+QkMNaFnTz/n0dtuwAXibifSnh
-mnbTWyyAt8rjcgjza/vO5VMdmoDgwfnoZNbOA+65CwPEpgvUzD9F2D9vU2R1C49K+d4v0OV5oijx
-5AakFfMJwgleNcbXjJgzaZdFE2x20JMms2J/e/YprC06Vbp3ATOnRAQX4M+EnTfsQOKlE5kvvvuB
-9olxVF7xhyyKrz32zhWPhLKkV2+MXpxT6l7+tUuDenrd7pRT0patfQjxhz6XlJwUohblti4PnNGT
-/Wz9ZGmxZrzeRMrPE1y38OcyhLK6zwoE1ShueHEEbiM4b5k7sgYy8jMZmzkJH6eiiX0wzUqulmLz
-v9Xf3mi+twWw5rUpQgqqUmAqJpgJmQDH3NWx9R+t6fjEGATIOQGVak1AF+jK7Ull3JO67s8/BFva
-R1SCZhZCX7g+JwQSO/2VSn7qHdlChXYkdph0lrTvrceEjCoJQUEEtLTaOL9pbEIyq2l+VlBq8eAe
-cCoYbZZMVaH+vc/6/HBlj7wXdxXyjYFYVx6Ha5zD4j4zI/Qu9R1wmLcJcPRMIOUKRt/jbKEd2LrP
-TeEfQdRFk73wM7FyTT0iBohzvRXDuMgZofiEWfvTIWq3l9nOvPm2pUiNVh9o1Ix2Wdwo02ll2CRt
-c7BsaAB7CtjShorI6XyqtciGO/hWfaqkyxIYE82CjzWbdhgmwTY83oAYvqxdOMurLlzmc3lXYj20
-gkCBrKKZdQHTbRZflctic4ikSbzMSUjn7ltRZ5Ms0859QHyLR+3dafRzMxNv6nbd+MfahYRYEvZC
-X+aCVvusYIyO9bA5bTvOKOIte+bFWHl1QydG8GNcpcATMc2bt6mzUGBoTGMkLhVrBDGnW6p1Xv2I
-+yBUrdxk2CcLGm4RXLPi52AswQ9o6Ejzy/91GcGKqk5JRZBze05rdx/tY/feRRQimkY/NnfLhaUG
-enW1QKxQOKVBn5cTXc9GVikUDQvIvujvlAT3RsMU7HVF+40IpMdzeJ262m9GPOCmJRCXIRCrwd3a
-+LpIgwINU8pdsa17lycxN7bATA8l//vAhbamInlxfAHhY6Xrog1t9tZu5lhOJg3bo7sbAV2uMLdD
-e/eMGOscTGKE4o/lrXCOj7lDyD+T+KeVS/IIKwZcF+bwwFcbBG2beLumx1fZGZRMrlmdBFJB9RKJ
-6Oys/ZGjZHfImRhqKxUua9wT5pRU1i53rHgxkEnpsga/7E+ZT/P7r7zDI64Xh0xXCrJOQ8RM1vg1
-0PGoMj/m55Zkx6G+hbrFCW1Y9akLvxiAO0fSp9kqvn7v4cMFUIRDuCc7uBhvLrla5InCzfuX3GOX
-pBpi9pFmmSixfeTJHZhtMTyzDTEZSUdEz/Pm+3Vt85iOGyTVT2OchnNTQyeJZiNNf1//rPkGicbY
-UT76Mgxsf3RkGFE2Z8yVvG+RN3cwrurY2s9BQOZM/VMdtxlfQD5/y+KeRWTMp3G1K/lBEjVdO/BI
-wHNhRwld+lEVTloQ+fAYI/RpanGjf3ZNZXPqtGHvyfAZa1VBdYBEiz89+/0fkPZl9VhJo3tuxC7H
-0sQcHmuDuvJt58mezZFkUjxFJx6hmicvIGA0Ih+oSwTV4rLkKpA+ujLdV9qz/7Xsh+q9emW6aTx4
-mCqB54ElmCLPDD0Wv/MGiYzq6dhJa5Uh5mqxCyyOTy5DL0GOGFyJ0JvSJcYvwAUXEQpMaetClvgL
-6jO4wZrw0BNRW808cn2ZpBFQJMxaLJVJRw8i31XLW/cWKTzW7ot+zfK3r0YVe9F15C6gjtgWbui7
-7sYoPFFLECams5WzjaShVq5DETaZbLvp12ORdh6Jo1V27A/NrH0IiBM+pZvmQFfbDQiJSQHVVB7v
-JrVQG8dDsiabQf56leChiFLxNVjUYeWoOZM5kJaQEVeFZJ+ZNvjdVnFYxk36KuXp7iC9zzxcsqsX
-UQsd/fIj1Yxh1WBUd7UjcV666L5fwBfIwIzhqLrCl9kQD4ENLPy1LonbKAzi1/jHU7VQ/eQIMJaF
-CyHXx6ty02shzD8l7gVx9ECoiicJ6r/m3U+5bDdH5FG4ItjQqwactahXw218nMVuDOA6QhTHC+va
-/yEMU8JbHtzKKSCre6E/iagsdnQPGJyeGhgKZN1+BRF8ScDPxPFyyvtsSMWs7eBrOCvOpLhL+pbl
-8rqo0TuAZuiaVm7xWSLfqPYe0mKGvMIJt8Rx8+LBcNH4EmLdpa8U58X1vYfzWmuEJLAnBxY2i8Od
-L4pMIgkTMO7dACGv83yhNIcQy7SPn2PCfEMZi0OXlg+0SooRUmrD0QWu6QOCi2PqnaNkYK8IbrWH
-jgy6Q3MAHNowpLNKpMx0ggdRpS9zCk0NRtE8DQcHnW3DfuWjhgf+hB/gZMRbQJJHuGPEqPZ1l0RL
-A03Qnya7hD9nf1f6iPsUz8YvvSLz6nWFV8FpML92pVFVov1KZRaecYSa0w/OktHP/cSO8un3abVR
-vsYvl/xTMyl3DAVTu/Fo22RgAn+trZrdy7pmJX0fo1u5Cyd04r+JaWmUlAG/IcSAaQzBL76IxCVm
-TY3y0xVQMGpmnc63CmVKShZUsVMJ9MK1Gbl/3xbB3VDgm6ZRbeQXDD3zISNfHdgamlfLWGjS5gaw
-3ZKfoPE2540KkwM/I8RaTPBhFvUyY4eVMzoDbx+S3+7gM6iuMM4XNHvSKCnV1+T1To4zhKnmw5Lh
-/I91R5Xvq4WqX7iepa9DUEc79cm4szLBDlXm7EYL5CVD4GP6AwEmFoRmgxzGhrZU7aYaeh6eJLfZ
-i3HG4WPec00d/ega3ggxFW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Cache_Core
+ */
+require_once 'Zend/Cache/Core.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Frontend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Frontend_Class extends Zend_Cache_Core
+{
+    /**
+     * Available options
+     *
+     * ====> (mixed) cached_entity :
+     * - if set to a class name, we will cache an abstract class and will use only static calls
+     * - if set to an object, we will cache this object methods
+     *
+     * ====> (boolean) cache_by_default :
+     * - if true, method calls will be cached by default
+     *
+     * ====> (array) cached_methods :
+     * - an array of method names which will be cached (even if cache_by_default = false)
+     *
+     * ====> (array) non_cached_methods :
+     * - an array of method names which won't be cached (even if cache_by_default = true)
+     *
+     * @var array available options
+     */
+    protected $_specificOptions = array(
+        'cached_entity' => null,
+        'cache_by_default' => true,
+        'cached_methods' => array(),
+        'non_cached_methods' => array()
+    );
+
+    /**
+     * Tags array
+     *
+     * @var array
+     */
+    private $_tags = array();
+
+    /**
+     * SpecificLifetime value
+     *
+     * false => no specific life time
+     *
+     * @var int
+     */
+    private $_specificLifetime = false;
+
+    /**
+     * The cached object or the name of the cached abstract class
+     *
+     * @var mixed
+     */
+    private $_cachedEntity = null;
+
+     /**
+      * The class name of the cached object or cached abstract class
+      *
+      * Used to differentiate between different classes with the same method calls.
+      *
+      * @var string
+      */
+    private $_cachedEntityLabel = '';
+
+    /**
+     * Priority (used by some particular backends)
+     *
+     * @var int
+     */
+    private $_priority = 8;
+
+    /**
+     * Constructor
+     *
+     * @param  array $options Associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        while (list($name, $value) = each($options)) {
+            $this->setOption($name, $value);
+        }
+        if ($this->_specificOptions['cached_entity'] === null) {
+            Zend_Cache::throwException('cached_entity must be set !');
+        }
+        $this->setCachedEntity($this->_specificOptions['cached_entity']);
+        $this->setOption('automatic_serialization', true);
+    }
+
+    /**
+     * Set a specific life time
+     *
+     * @param  int $specificLifetime
+     * @return void
+     */
+    public function setSpecificLifetime($specificLifetime = false)
+    {
+        $this->_specificLifetime = $specificLifetime;
+    }
+
+    /**
+     * Set the priority (used by some particular backends)
+     *
+     * @param int $priority integer between 0 (very low priority) and 10 (maximum priority)
+     */
+    public function setPriority($priority)
+    {
+        $this->_priority = $priority;
+    }
+
+    /**
+     * Public frontend to set an option
+     *
+     * Just a wrapper to get a specific behaviour for cached_entity
+     *
+     * @param  string $name  Name of the option
+     * @param  mixed  $value Value of the option
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function setOption($name, $value)
+    {
+        if ($name == 'cached_entity') {
+            $this->setCachedEntity($value);
+        } else {
+            parent::setOption($name, $value);
+        }
+    }
+
+    /**
+     * Specific method to set the cachedEntity
+     *
+     * if set to a class name, we will cache an abstract class and will use only static calls
+     * if set to an object, we will cache this object methods
+     *
+     * @param mixed $cachedEntity
+     */
+    public function setCachedEntity($cachedEntity)
+    {
+        if (!is_string($cachedEntity) && !is_object($cachedEntity)) {
+            Zend_Cache::throwException('cached_entity must be an object or a class name');
+        }
+        $this->_cachedEntity = $cachedEntity;
+        $this->_specificOptions['cached_entity'] = $cachedEntity;
+        if (is_string($this->_cachedEntity)){
+            $this->_cachedEntityLabel = $this->_cachedEntity;
+        } else {
+            $ro = new ReflectionObject($this->_cachedEntity);
+            $this->_cachedEntityLabel = $ro->getName();
+        }
+    }
+
+    /**
+     * Set the cache array
+     *
+     * @param  array $tags
+     * @return void
+     */
+    public function setTagsArray($tags = array())
+    {
+        $this->_tags = $tags;
+    }
+
+    /**
+     * Main method : call the specified method or get the result from cache
+     *
+     * @param  string $name       Method name
+     * @param  array  $parameters Method parameters
+     * @return mixed Result
+     */
+    public function __call($name, $parameters)
+    {
+        $cacheBool1 = $this->_specificOptions['cache_by_default'];
+        $cacheBool2 = in_array($name, $this->_specificOptions['cached_methods']);
+        $cacheBool3 = in_array($name, $this->_specificOptions['non_cached_methods']);
+        $cache = (($cacheBool1 || $cacheBool2) && (!$cacheBool3));
+        if (!$cache) {
+            // We do not have not cache
+            return call_user_func_array(array($this->_cachedEntity, $name), $parameters);
+        }
+        $id = $this->_makeId($name, $parameters);
+        if ($this->test($id)) {
+            // A cache is available
+            $result = $this->load($id);
+            $output = $result[0];
+            $return = $result[1];
+        } else {
+            // A cache is not available
+            ob_start();
+            ob_implicit_flush(false);
+            $return = call_user_func_array(array($this->_cachedEntity, $name), $parameters);
+            $output = ob_get_contents();
+            ob_end_clean();
+            $data = array($output, $return);
+            $this->save($data, $id, $this->_tags, $this->_specificLifetime, $this->_priority);
+        }
+        echo $output;
+        return $return;
+    }
+
+    /**
+     * Make a cache id from the method name and parameters
+     *
+     * @param  string $name       Method name
+     * @param  array  $parameters Method parameters
+     * @return string Cache id
+     */
+    private function _makeId($name, $parameters)
+    {
+        return md5($this->_cachedEntityLabel . '__' . $name . '__' . serialize($parameters));
+    }
+
+}

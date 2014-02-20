@@ -1,41 +1,114 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-eBe=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Color */
+require_once 'Zend/Pdf/Color.php';
+
+/** Zend_Pdf_Element_Numeric */
+require_once 'Zend/Pdf/Element/Numeric.php';
+
+/**
+ * CMYK color implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Color_Cmyk extends Zend_Pdf_Color
+{
+    /**
+     * Cyan level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_c;
+
+    /**
+     * Magenta level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_m;
+
+    /**
+     * Yellow level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_y;
+
+    /**
+     * Key (BlacK) level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_k;
+
+
+    /**
+     * Object constructor
+     *
+     * @param float $c
+     * @param float $m
+     * @param float $y
+     * @param float $k
+     */
+    public function __construct($c, $m, $y, $k)
+    {
+        $this->_c = new Zend_Pdf_Element_Numeric($c);
+        $this->_m = new Zend_Pdf_Element_Numeric($m);
+        $this->_y = new Zend_Pdf_Element_Numeric($y);
+        $this->_k = new Zend_Pdf_Element_Numeric($k);
+
+        if ($this->_c->value < 0) { $this->_c->value = 0; }
+        if ($this->_c->value > 1) { $this->_c->value = 1; }
+
+        if ($this->_m->value < 0) { $this->_m->value = 0; }
+        if ($this->_m->value > 1) { $this->_m->value = 1; }
+
+        if ($this->_y->value < 0) { $this->_y->value = 0; }
+        if ($this->_y->value > 1) { $this->_y->value = 1; }
+
+        if ($this->_k->value < 0) { $this->_k->value = 0; }
+        if ($this->_k->value > 1) { $this->_k->value = 1; }
+    }
+
+    /**
+     * Instructions, which can be directly inserted into content stream
+     * to switch color.
+     * Color set instructions differ for stroking and nonstroking operations.
+     *
+     * @param boolean $stroking
+     * @return string
+     */
+    public function instructions($stroking)
+    {
+        return $this->_c->toString() . ' '
+             . $this->_m->toString() . ' '
+             . $this->_y->toString() . ' '
+             . $this->_k->toString() .     ($stroking? " K\n" : " k\n");
+    }
+}
+

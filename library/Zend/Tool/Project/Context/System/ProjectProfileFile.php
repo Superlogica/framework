@@ -1,29 +1,118 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV58OJDPvJ+8tHFgQWlU+xAN5svQ5eQ5jOg9kinafF52iv0/lwaz+Rvn/mbV4fSWOkHe4jd3WW
-fIuCyrkczXYyCfXLWmahWmt7s9SgednG4BUpFOEeiLPCqWj1BNC7CCCBoooyyYFupxQjxNscGMuS
-m08oO8Uh/aMrvs6272iemaKdz/Dhr84OVvyD7u10QGsdbMIhC/QjRWUXl+Ea0aeEk3UrOHP1p+bq
-jAOD67Mlud2Hy3JY00sJn4kJIPpDKor7T+KlBeH2Q79TGF8D79PblqAtVDMsL142/wtrk3uvEpse
-xGbiIHNPuzZh2DZ7nLZU6/5+nE94l08/BYwkJ/WLgbVWOhr6uqsGR5h72JKYDvNA3urMXVT/KKMu
-gfXm4DzC2grFuLJXWxZEzL9zODxX5fU9hBxVWDu8LGxbEm5p5uTDHdv6x9r5hkniO0Ht2DgVMW2k
-ZDgR8tmh8O41Xl2lyXkaUTys58+U5vzh2WYWj8Ib6V2haX3mCXsoWRSrJ/90mncajc0prLtqcWUC
-i1/g+vNXWBXXCQ1a9OVtrzFOX1f5OL+vaUsaox+DrfSKYTE/Rb5rZtP6gfFzVazKai4lq5xp7MdW
-uYoMl8gE6VLSRgQIpnyIGvPw4cJ/IemxJ3wrN4EHNTv2cyIssT5VTy2ao5T9KWjg2AqnvzK7uEMo
-/3FOlr1uvXz+e/LSv1ZQafG2K8pLd0SJQ6s3qveH8Ftw+F2fXNMW3Yvwk6hMv1NckEK49TedC84I
-zurPOVsfjl9/tfNFdz1SmBXW0BV3SF2VJW7XvV0HmAx5ekcSh8QKhpE9FnLH9NJn/njlGRej3Y7M
-CNXfIP9hao8lyvpEbO6zbQ+RxEDvfXdjZBvBeudZ04u20OLlhCgkkFjXBXmuZn+VLFNZ2psYy1Yo
-aBBNOZySlMcG9RLv/BJyooIBhg5kJ9+fArxn45d8fsLhKDYZ7+6IOHy3IwIARtg3Sn1+GnF1jp+G
-u6yWkK48auTqayjy4W+7Ki2QqdcMgA/XjtiU21UBjfpt06sGZBINxqzlDrBB37Ty90HTfO1zRnfe
-q65jQ1LE2XlfsprWGUDDvUgJ3jlmNyiYdYmIe3LSY6jJnN09RFyhd9HwbKpsBCCLWSEVwo0KH4Wd
-kMvuR7wWtAuXQamuPs6/Jgx/bdeGc2d6Kv/lzakLW2jqRSiKsuSL6X70VY+qlTvdBz6WcgB1G2ov
-koKviTVfTiJ96KjHmGDpYhDA1wtJU2iDl00FhlKYRq3hW7+V38oAuLzSvH5nQ0DbeSQSLqW1ncL4
-q8KTb92aZTJTOAM+BbI+u+KpbFNRpD2tNF4wQGHf77nSSvomJ9i2iaxKcnNcBnGDsuijOffLMhbp
-D5g9557Yxe3HIYn1t+Jcu/wpyKMOIrk/Me9j7mXa2ZkVOoep5PQ6MAxFvCjJJhSAd5tGxV0ZukQx
-KYWesevpBQZEgyoE9DMOLGu8oaaBJBcQfe4Rf0vOKhXQ/37w8dl3wY/25HpiJNCnQxiMOwEAHjRK
-/tt3WEu0Efj6Zgnt/kf9KJAebqtsoDJnKo9iN6e4cNkK57dfzLZh75nHz518xk4wlLm3/HjG72ba
-FoXd0F3nSiqcZzfLXTu8fV7NvesQX8M1+KMlZJkKSPGLtehquuLr/kNSmPX5QMT8upauI8Z8E2YU
-Wzgk1o+RrlltRO84Dsq5HjWQDoT5fAsacMMYJ33H3WyPiSyvUYi6LwXEWjm0QaxSTxa/+9b6wuVF
-QPcaGKvX0IlEE/gkMuXtiG+m2zPS+YRNRo+GGhCo3Bdo2d7TOK70M5BGFd3T6zlqHlf27yvjgRdd
-jlInHq9AOT0EDmCwMuK1d5ZQAQikbFpffxlFWsDHTPq00z9INvnAvSY012U+sMUFbHe46gX1n9e2
-krXP0IS=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_File
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+
+/**
+ * @see Zend_Tool_Project_Context_System_Interface
+ */
+require_once 'Zend/Tool/Project/Context/System/Interface.php';
+
+/**
+ * @see Zend_Tool_Project_Context_System_NotOverwritable
+ */
+require_once 'Zend/Tool/Project/Context/System/NotOverwritable.php';
+
+/**
+ * @see Zend_Tool_Project_Profile_FileParser_Xml
+ */
+require_once 'Zend/Tool/Project/Profile/FileParser/Xml.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_System_ProjectProfileFile 
+    extends Zend_Tool_Project_Context_Filesystem_File
+    implements Zend_Tool_Project_Context_System_Interface,
+               Zend_Tool_Project_Context_System_NotOverwritable
+{
+
+    /**
+     * @var string
+     */
+    protected $_filesystemName = '.zfproject.xml';
+    
+    /**
+     * @var Zend_Tool_Project_Profile
+     */
+    protected $_profile = null;
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ProjectProfileFile';
+    }
+    
+    /**
+     * setProfile()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @return Zend_Tool_Project_Context_System_ProjectProfileFile
+     */
+    public function setProfile($profile)
+    {
+        $this->_profile = $profile;
+        return $this;
+    }
+    
+    /**
+     * save() 
+     * 
+     * Proxy to create
+     *
+     * @return Zend_Tool_Project_Context_System_ProjectProfileFile
+     */
+    public function save()
+    {
+        parent::create();
+        return $this;
+    }
+    
+    /**
+     * getContents()
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+        $parser = new Zend_Tool_Project_Profile_FileParser_Xml();
+        $profile = $this->_resource->getProfile();
+        $xml = $parser->serialize($profile);
+        return $xml;
+    }
+    
+}

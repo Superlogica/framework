@@ -1,144 +1,513 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * A streaming Media MIME class that allows for buffered read operations.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_MediaMimeStream
+{
+
+    /**
+     * The Content-Type section that precedes the XML data in the message.
+     *
+     * @var string
+     */
+    // TODO (jhartmann) Add support for charset [ZF-5768]
+    const XML_HEADER = "Content-Type: application/atom+xml\r\n\r\n";
+
+    /**
+     * A constant indicating the xml string part of the message
+     *
+     * @var integer
+     */
+    const PART_XML_STRING = 0;
+
+    /**
+     * A constant indicating the file binary part of the message
+     *
+     * @var integer
+     */
+    const PART_FILE_BINARY = 1;
+
+    /**
+     * A constant indicating the closing boundary string of the message
+     *
+     * @var integer
+     */
+    const PART_CLOSING_XML_STRING = 2;
+
+    /**
+     * The maximum buffer size that can be used.
+     *
+     * @var integer
+     */
+    const MAX_BUFFER_SIZE = 8192;
+
+    /**
+     * A valid MIME boundary including a linefeed.
+     *
+     * @var string
+     */
+    protected $_boundaryLine = null;
+
+    /**
+     * A valid MIME boundary without a linefeed for use in the header.
+     *
+     * @var string
+     */
+    protected $_boundaryString = null;
+
+    /**
+     * A valid MIME closing boundary including a linefeed.
+     *
+     * @var string
+     */
+    protected $_closingBoundaryLine = null;
+
+    /**
+     * A handle to the file that is part of the message.
+     *
+     * @var resource
+     */
+    protected $_fileHandle = null;
+
+    /**
+     * The headers that preceed the file binary including linefeeds.
+     *
+     * @var string
+     */
+    protected $_fileHeaders = null;
+
+    /**
+     * The internet media type of the enclosed file.
+     *
+     * @var string
+     */
+    protected $_fileContentType = null;
+
+    /**
+     * The file size.
+     *
+     * @var integer
+     */
+    protected $_fileSize = null;
+
+    /**
+     * The total size of the message.
+     *
+     * @var integer
+     */
+    protected $_totalSize = null;
+
+    /**
+     * The XML string that typically represents the entry to be sent.
+     *
+     * @var string
+     */
+    protected $_xmlString = null;
+
+    /**
+     * The number of bytes that have been read so far.
+     *
+     * @var integer
+     */
+    protected $_bytesRead = 0;
+
+    /**
+     * Enumeration indicating the part of the message that is currently being
+     * read. Allowed values are: 0, 1 and 2, corresponding to the constants:
+     * PART_XML_STRING, PART_FILE_BINARY, PART_CLOSING_XML_STRING
+     *
+     * @var integer
+     */
+    protected $_currentPart = 0;
+
+    /**
+     * A nested array containing the message to be sent. Each element contains
+     * an array in the format:
+     *
+     * [integer (size of message)][string (message)]
+     *
+     * Note that the part corresponding to the file only contains a size.
+     *
+     * @var array
+     */
+    protected $_parts = null;
+
+    /**
+     * A boolean to be set immediately once we have finished reading.
+     *
+     * @var boolean
+     */
+    protected $_doneReading = false;
+
+    /**
+     * Create a new MimeMediaStream object.
+     *
+     * @param string $xmlString The string corresponding to the XML section
+     *               of the message, typically an atom entry or feed.
+     * @param string $filePath The path to the file that constitutes the binary
+     *               part of the message.
+     * @param string $fileContentType The valid internet media type of the file.
+     * @throws Zend_Gdata_App_IOException If the file cannot be read or does
+     *         not exist. Also if mbstring.func_overload has been set > 1.
+     */
+    public function __construct($xmlString = null, $filePath = null,
+        $fileContentType = null)
+    {
+        $this->_xmlString = $xmlString;
+        $this->_filePath = $filePath;
+        $this->_fileContentType = $fileContentType;
+
+        if (!file_exists($filePath) || !is_readable($filePath)) {
+            require_once 'Zend/Gdata/App/IOException.php';
+            throw new Zend_Gdata_App_IOException('File to be uploaded at ' .
+                $filePath . ' does not exist or is not readable.');
+        }
+
+        $this->_fileHandle = fopen($filePath, 'rb', true);
+        $this->generateBoundaries();
+        $this->calculatePartSizes();
+    }
+
+    /**
+     * Generate the MIME message boundary strings.
+     *
+     * @return void
+     */
+    private function generateBoundaries()
+    {
+        $this->_boundaryString = '=_' . md5(microtime(1) . rand(1,20));
+        $this->_boundaryLine = "\r\n" . '--' . $this->_boundaryString . "\r\n";
+        $this->_closingBoundaryLine = "\r\n" . '--' . $this->_boundaryString .
+            '--';
+    }
+
+    /**
+     * Calculate the sizes of the MIME message sections.
+     *
+     * @return void
+     */
+    private function calculatePartSizes()
+    {
+        $this->_fileHeaders = 'Content-Type: ' . $this->_fileContentType .
+            "\r\n" . 'Content-Transfer-Encoding: binary' . "\r\n\r\n";
+        $this->_fileSize = filesize($this->_filePath);
+
+        $stringSection = $this->_boundaryLine . self::XML_HEADER .
+            $this->_xmlString . "\r\n" . $this->_boundaryLine .
+            $this->_fileHeaders;
+        $stringLen = strlen($stringSection);
+        $closingBoundaryLen = strlen($this->_closingBoundaryLine);
+
+        $this->_parts = array();
+        $this->_parts[] = array($stringLen, $stringSection);
+        $this->_parts[] = array($this->_fileSize);
+        $this->_parts[] = array($closingBoundaryLen,
+            $this->_closingBoundaryLine);
+
+        $this->_totalSize = $stringLen + $this->_fileSize + $closingBoundaryLen;
+    }
+
+    /**
+     * A wrapper around fread() that doesn't error when $length is 0.
+     *
+     * @param integer $length Number of bytes to read.
+     * @return string Results of byte operation.
+     */
+    private function smartfread($length)
+    {
+        if ($length < 1) {
+            return '';
+        } else {
+            return fread($this->_fileHandle, $length);
+        }
+    }
+
+    /**
+     * A non mbstring overloadable strlen-like function.
+     *
+     * @param string $string The string whose length we want to get.
+     * @return integer The length of the string.
+     */
+    private function strlen2($string)
+    {
+        return array_sum(char_count($string));
+    }
+
+    /**
+     * Read a specific chunk of the the MIME multipart message.
+     *
+     * This function works by examining the internal 'parts' array. It
+     * expects that array to consist of basically a string, a file handle
+     * and a closing string.
+     *
+     * An abbreviated version of what this function does is as follows:
+     *
+     * - throw exception if trying to read bigger than the allocated max buffer
+     * - If bufferSize bigger than the entire message: return it and exit.
+     *
+     * - Check how far to read by looking at how much has been read.
+     * - Figure out whether we are crossing sections in this read:
+     *   i.e. -> reading past the xml_string and into the file ?
+     *   - Determine whether we are crossing two sections in this read:
+     *     i.e. xml_string, file and half of the closing string or
+     *     possibly file, closing string and next (non-existant) section
+     *     and handle each case.
+     *   - If we are NOT crossing any sections: read either string and
+     *     increment counter, or read file (no counter needed since fread()
+     *     stores it's own counter.
+     *   - If we are crossing 1 section, figure out how much remains in that
+     *     section that we are currently reading and how far to read into
+     *     the next section. If the section just read is xml_string, then
+     *     immediately unset it from our 'parts' array. If it is the file,
+     *     then close the handle.
+     *
+     * @param integer $bufferSize The size of the chunk that is to be read,
+     *                            must be lower than MAX_BUFFER_SIZE.
+     * @throws Zend_Gdata_App_InvalidArgumentException if buffer size too big.
+     * @return string A corresponding piece of the message. This could be
+     *                binary or regular text.
+     */
+    public function read($bufferSize)
+    {
+        if ($bufferSize > self::MAX_BUFFER_SIZE) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException('Buffer size ' .
+                'is larger than the supported max of ' . self::MAX_BUFFER_SIZE);
+        }
+
+        // handle edge cases where bytesRead is negative
+        if ($this->_bytesRead < 0) {
+            $this->_bytesRead = 0;
+        }
+
+        $returnString = null;
+        // If entire message is smaller than the buffer, just return everything
+        if ($bufferSize > $this->_totalSize) {
+            $returnString = $this->_parts[self::PART_XML_STRING][1];
+            $returnString .= fread($this->_fileHandle, $bufferSize);
+            $returnString .= $this->_closingBoundaryLine;
+            $this->closeFileHandle();
+            $this->_doneReading = true;
+            return $returnString;
+        }
+
+        // increment internal counters
+        $readTo = $this->_bytesRead + $bufferSize;
+        $sizeOfCurrentPart = $this->_parts[$this->_currentPart][0];
+        $sizeOfNextPart = 0;
+
+        // if we are in a part past the current part, exit
+        if ($this->_currentPart > self::PART_CLOSING_XML_STRING) {
+            $this->_doneReading = true;
+            return;
+        }
+
+        // if bytes read is bigger than the current part and we are
+        // at the end, return
+        if (($this->_bytesRead > $sizeOfCurrentPart) &&
+            ($this->_currentPart == self::PART_CLOSING_XML_STRING)) {
+                $this->_doneReading = true;
+                return;
+        }
+
+        // check if we have a next part
+        if ($this->_currentPart != self::PART_CLOSING_XML_STRING) {
+            $nextPart = $this->_currentPart + 1;
+            $sizeOfNextPart = $this->_parts[$nextPart][0];
+        }
+
+        $readIntoNextPart = false;
+        $readFromRemainingPart = null;
+        $readFromNextPart = null;
+
+        // are we crossing into multiple sections of the message in
+        // this read?
+        if ($readTo > ($sizeOfCurrentPart + $sizeOfNextPart)) {
+            if ($this->_currentPart == self::PART_XML_STRING) {
+                // If we are in XML string and have crossed over the file
+                // return that and whatever we can from the closing boundary
+                // string.
+                $returnString = $this->_parts[self::PART_XML_STRING][1];
+                unset($this->_parts[self::PART_XML_STRING]);
+                $returnString .= fread($this->_fileHandle,
+                    self::MAX_BUFFER_SIZE);
+                $this->closeFileHandle();
+
+                $readFromClosingString = $readTo -
+                    ($sizeOfCurrentPart + $sizeOfNextPart);
+                $returnString .= substr(
+                    $this->_parts[self::PART_CLOSING_XML_STRING][1], 0,
+                    $readFromClosingString);
+                $this->_bytesRead = $readFromClosingString;
+                $this->_currentPart = self::PART_CLOSING_XML_STRING;
+                return $returnString;
+
+            } elseif ($this->_currentPart == self::PART_FILE_BINARY) {
+                // We have read past the entire message, so return it.
+                $returnString .= fread($this->_fileHandle,
+                    self::MAX_BUFFER_SIZE);
+                $returnString .= $this->_closingBoundaryLine;
+                $this->closeFileHandle();
+                $this->_doneReading = true;
+                return $returnString;
+            }
+        // are we just crossing from one section into another?
+        } elseif ($readTo >= $sizeOfCurrentPart) {
+            $readIntoNextPart = true;
+            $readFromRemainingPart = $sizeOfCurrentPart - $this->_bytesRead;
+            $readFromNextPart = $readTo - $sizeOfCurrentPart;
+        }
+
+        if (!$readIntoNextPart) {
+            // we are not crossing any section so just return something
+            // from the current part
+            switch ($this->_currentPart) {
+                case self::PART_XML_STRING:
+                    $returnString = $this->readFromStringPart(
+                        $this->_currentPart, $this->_bytesRead, $bufferSize);
+                    break;
+                case self::PART_FILE_BINARY:
+                    $returnString = fread($this->_fileHandle, $bufferSize);
+                    break;
+                case self::PART_CLOSING_XML_STRING:
+                    $returnString = $this->readFromStringPart(
+                        $this->_currentPart, $this->_bytesRead, $bufferSize);
+                    break;
+            }
+        } else {
+            // we are crossing from one section to another, so figure out
+            // where we are coming from and going to
+            switch ($this->_currentPart) {
+                case self::PART_XML_STRING:
+                    // crossing from string to file
+                    $returnString = $this->readFromStringPart(
+                        $this->_currentPart, $this->_bytesRead,
+                        $readFromRemainingPart);
+                    // free up string
+                    unset($this->_parts[self::PART_XML_STRING]);
+                    $returnString .= $this->smartfread($this->_fileHandle,
+                            $readFromNextPart);
+                    $this->_bytesRead = $readFromNextPart - 1;
+                    break;
+                case self::PART_FILE_BINARY:
+                    // skipping past file section
+                    $returnString = $this->smartfread($this->_fileHandle,
+                            $readFromRemainingPart);
+                    $this->closeFileHandle();
+                    // read closing boundary string
+                    $returnString = $this->readFromStringPart(
+                        self::PART_CLOSING_XML_STRING, 0, $readFromNextPart);
+                    // have we read past the entire closing boundary string?
+                    if ($readFromNextPart >=
+                        $this->_parts[self::PART_CLOSING_XML_STRING][0]) {
+                        $this->_doneReading = true;
+                        return $returnString;
+                    }
+
+                    // Reset counter appropriately since we are now just
+                    // counting how much of the final string is being read.
+                    $this->_bytesRead = $readFromNextPart - 1;
+                    break;
+                case self::PART_CLOSING_XML_STRING:
+                    // reading past the end of the closing boundary
+                    if ($readFromRemainingPart > 0) {
+                        $returnString = $this->readFromStringPart(
+                            $this->_currentPart, $this->_bytesRead,
+                            $readFromRemainingPart);
+                        $this->_doneReading = true;
+                    }
+                    return $returnString;
+            }
+            $this->_currentPart++;
+        }
+        $this->_bytesRead += $bufferSize;
+        return $returnString;
+    }
+
+    /**
+     * Convenience method to shorthand the reading of non-file parts of the
+     * message.
+     *
+     * @param integer $part The part from which to read (supports only 0 or 2).
+     * @param integer $start The point at which to read from.
+     * @param integer $length How many characters to read.
+     * @return string A string of characters corresponding to the requested
+     *                section.
+     */
+    private function readFromStringPart($part, $start, $length)
+    {
+        return substr($this->_parts[$part][1], $start, $length);
+    }
+
+    /**
+     * Return the total size of the mime message.
+     *
+     * @return integer Total size of the message to be sent.
+     */
+    public function getTotalSize()
+    {
+        return $this->_totalSize;
+    }
+
+    /**
+     * Check whether we have data left to read.
+     *
+     * @return boolean True if there is data remaining in the mime message,
+     *                 false, otherwise.
+     */
+    public function hasData()
+    {
+        return !($this->_doneReading);
+    }
+
+    /**
+     * Close the internal file that we are streaming to the socket.
+     *
+     * @return void
+     */
+    protected function closeFileHandle()
+    {
+        if ($this->_fileHandle !== null) {
+            fclose($this->_fileHandle);
+        }
+    }
+
+    /**
+     * Return a Content-type header that includes the current boundary string.
+     *
+     * @return string A valid HTTP Content-Type header.
+     */
+    public function getContentType()
+    {
+        return 'multipart/related; boundary="' .
+            $this->_boundaryString . '"' . "\r\n";
+    }
+
+}

@@ -1,39 +1,159 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage ReCaptcha
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Service_ReCaptcha_Response
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage ReCaptcha
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+class Zend_Service_ReCaptcha_Response
+{
+    /**
+     * Status
+     *
+     * true if the response is valid or false otherwise
+     *
+     * @var boolean
+     */
+    protected $_status = null;
+
+    /**
+     * Error code
+     *
+     * The error code if the status is false. The different error codes can be found in the
+     * recaptcha API docs.
+     *
+     * @var string
+     */
+    protected $_errorCode = null;
+
+    /**
+     * Class constructor used to construct a response
+     *
+     * @param string $status
+     * @param string $errorCode
+     * @param Zend_Http_Response $httpResponse If this is set the content will override $status and $errorCode
+     */
+    public function __construct($status = null, $errorCode = null, Zend_Http_Response $httpResponse = null)
+    {
+        if ($status !== null) {
+            $this->setStatus($status);
+        }
+
+        if ($errorCode !== null) {
+            $this->setErrorCode($errorCode);
+        }
+
+        if ($httpResponse !== null) {
+            $this->setFromHttpResponse($httpResponse);
+        }
+    }
+
+    /**
+     * Set the status
+     *
+     * @param string $status
+     * @return Zend_Service_ReCaptcha_Response
+     */
+    public function setStatus($status)
+    {
+        if ($status === 'true') {
+            $this->_status = true;
+        } else {
+            $this->_status = false;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the status
+     *
+     * @return boolean
+     */
+    public function getStatus()
+    {
+        return $this->_status;
+    }
+
+    /**
+     * Alias for getStatus()
+     *
+     * @return boolean
+     */
+    public function isValid()
+    {
+        return $this->getStatus();
+    }
+
+    /**
+     * Set the error code
+     *
+     * @param string $errorCode
+     * @return Zend_Service_ReCaptcha_Response
+     */
+    public function setErrorCode($errorCode)
+    {
+        $this->_errorCode = $errorCode;
+
+        return $this;
+    }
+
+    /**
+     * Get the error code
+     *
+     * @return string
+     */
+    public function getErrorCode()
+    {
+        return $this->_errorCode;
+    }
+
+    /**
+     * Populate this instance based on a Zend_Http_Response object
+     *
+     * @param Zend_Http_Response $response
+     * @return Zend_Service_ReCaptcha_Response
+     */
+    public function setFromHttpResponse(Zend_Http_Response $response)
+    {
+        $body = $response->getBody();
+
+        $parts = explode("\n", $body, 2);
+
+        if (count($parts) !== 2) {
+            $status = 'false';
+            $errorCode = '';
+        } else {
+            list($status, $errorCode) = $parts;
+        }
+
+        $this->setStatus($status);
+        $this->setErrorCode($errorCode);
+
+        return $this;
+    }
+}

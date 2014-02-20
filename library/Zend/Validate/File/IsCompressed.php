@@ -1,52 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-6CyfoRQilnrjjx8do9w3UJZOEhp9g53o2Va=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_File_MimeType
+ */
+require_once 'Zend/Validate/File/MimeType.php';
+
+/**
+ * Validator which checks if the file already exists in the directory
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_IsCompressed extends Zend_Validate_File_MimeType
+{
+    /**
+     * @const string Error constants
+     */
+    const FALSE_TYPE   = 'fileIsCompressedFalseType';
+    const NOT_DETECTED = 'fileIsCompressedNotDetected';
+    const NOT_READABLE = 'fileIsCompressedNotReadable';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::FALSE_TYPE   => "The file '%value%' is not compressed, '%type%' detected",
+        self::NOT_DETECTED => "The mimetype of file '%value%' has not been detected",
+        self::NOT_READABLE => "The file '%value%' can not be read"
+    );
+
+    /**
+     * Sets validator options
+     *
+     * @param  string|array $compression
+     * @return void
+     */
+    public function __construct($mimetype = array())
+    {
+        if (empty($mimetype)) {
+            $mimetype = array(
+                'application/x-tar',
+                'application/x-cpio',
+                'application/x-debian-package',
+                'application/x-archive',
+                'application/x-arc',
+                'application/x-arj',
+                'application/x-lharc',
+                'application/x-lha',
+                'application/x-rar',
+                'application/zip',
+                'application/zoo',
+                'application/x-eet',
+                'application/x-java-pack200',
+                'application/x-compress',
+                'application/x-gzip',
+                'application/x-bzip2'
+            );
+        }
+
+        $this->setMimeType($mimetype);
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the file is compression with the set compression types
+     *
+     * @param  string  $value Real file to check for compression
+     * @param  array   $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_READABLE);
+        }
+
+        if ($file !== null) {
+            if (class_exists('finfo', false) && defined('MAGIC')) {
+                $mime = new finfo(FILEINFO_MIME);
+                $this->_type = $mime->file($value);
+                unset($mime);
+            } elseif (function_exists('mime_content_type') && ini_get('mime_magic.magicfile')) {
+                $this->_type = mime_content_type($value);
+            } else {
+                $this->_type = $file['type'];
+            }
+        }
+
+        if (empty($this->_type)) {
+            return $this->_throw($file, self::NOT_DETECTED);
+        }
+
+        $compressions = $this->getMimeType(true);
+        if (in_array($this->_type, $compressions)) {
+            return true;
+        }
+
+        $types = explode('/', $this->_type);
+        $types = array_merge($types, explode('-', $this->_type));
+        foreach ($compressions as $mime) {
+            if (in_array($mime, $types)) {
+                return true;
+            }
+        }
+
+        return $this->_throw($file, self::FALSE_TYPE);
+    }
+}

@@ -1,32 +1,109 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Yahoo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: WebResult.php 13005 2008-12-03 21:15:02Z matthew $
+ */
+
+
+/**
+ * @see Zend_Service_Yahoo_Result
+ */
+require_once 'Zend/Service/Yahoo/Result.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Yahoo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Yahoo_WebResult extends Zend_Service_Yahoo_Result
+{
+    /**
+     * A summary of the result
+     *
+     * @var string
+     */
+    public $Summary;
+
+    /**
+     * The file type of the result (text, html, pdf, etc.)
+     *
+     * @var string
+     */
+    public $MimeType;
+
+    /**
+     * The modification time of the result (as a unix timestamp)
+     *
+     * @var string
+     */
+    public $ModificationDate;
+
+    /**
+     * The URL for the Yahoo cache of this page, if it exists
+     *
+     * @var string
+     */
+    public $CacheUrl;
+
+    /**
+     * The size of the cache entry
+     *
+     * @var int
+     */
+    public $CacheSize;
+
+    /**
+     * Web result namespace
+     *
+     * @var string
+     */
+    protected $_namespace = 'urn:yahoo:srch';
+
+
+    /**
+     * Initializes the web result
+     *
+     * @param  DOMElement $result
+     * @return void
+     */
+    public function __construct(DOMElement $result)
+    {
+        $this->_fields = array('Summary', 'MimeType', 'ModificationDate');
+        parent::__construct($result);
+
+        $this->_xpath = new DOMXPath($result->ownerDocument);
+        $this->_xpath->registerNamespace('yh', $this->_namespace);
+		
+        // check if the cache section exists
+        $cacheUrl = $this->_xpath->query('./yh:Cache/yh:Url/text()', $result)->item(0);
+        if ($cacheUrl instanceof DOMNode)
+        {
+        	$this->CacheUrl = $cacheUrl->data;
+        }
+        $cacheSize = $this->_xpath->query('./yh:Cache/yh:Size/text()', $result)->item(0);
+        if ($cacheSize instanceof DOMNode)
+        {
+        	$this->CacheSize = (int) $cacheSize->data;
+        }
+    }
+}

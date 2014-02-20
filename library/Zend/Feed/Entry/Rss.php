@@ -1,37 +1,122 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-unKS9wd/2ZWm4G==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Rss.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Feed_Entry_Abstract
+ */
+require_once 'Zend/Feed/Entry/Abstract.php';
+
+
+/**
+ * Concrete class for working with RSS items.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Entry_Rss extends Zend_Feed_Entry_Abstract
+{
+    /**
+     * Root XML element for RSS items.
+     *
+     * @var string
+     */
+    protected $_rootElement = 'item';
+
+    /**
+     * Overwrites parent::_get method to enable read access
+     * to content:encoded element.
+     *
+     * @param  string $var The property to access.
+     * @return mixed
+     */
+    public function __get($var)
+    {
+        switch ($var) {
+            case 'content':
+                $prefix = $this->_element->lookupPrefix('http://purl.org/rss/1.0/modules/content/');
+                return parent::__get("$prefix:encoded");
+            default:
+                return parent::__get($var);
+        }
+    }
+
+    /**
+     * Overwrites parent::_set method to enable write access
+     * to content:encoded element.
+     *
+     * @param  string $var The property to change.
+     * @param  string $val The property's new value.
+     * @return void
+     */
+    public function __set($var, $value)
+    {
+        switch ($var) {
+            case 'content':
+                parent::__set('content:encoded', $value);
+                break;
+            default:
+                parent::__set($var, $value);
+        }
+    }
+
+    /**
+     * Overwrites parent::_isset method to enable access
+     * to content:encoded element.
+     *
+     * @param  string $var
+     * @return boolean
+     */
+    public function __isset($var)
+    {
+        switch ($var) {
+            case 'content':
+                // don't use other callback to prevent invalid returned value
+                return $this->content() !== null;
+            default:
+                return parent::__isset($var);
+        }
+    }
+    
+    /**
+     * Overwrites parent::_call method to enable read access
+     * to content:encoded element.
+     * Please note that method-style write access is not currently supported
+     * by parent method, consequently this method doesn't as well.
+     *
+     * @param  string $var    The element to get the string value of.
+     * @param  mixed  $unused This parameter is not used.
+     * @return mixed The node's value, null, or an array of nodes.
+     */
+    public function __call($var, $unused)
+    {
+        switch ($var) {
+            case 'content':
+                $prefix = $this->_element->lookupPrefix('http://purl.org/rss/1.0/modules/content/');
+                return parent::__call("$prefix:encoded", $unused);
+            default:
+                return parent::__call($var, $unused);
+        }
+    }
+}

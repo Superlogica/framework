@@ -1,220 +1,570 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Zend_Search_Lucene_Search_Query
+ */
+require_once 'Zend/Search/Lucene/Search/Query.php';
+
+/**
+ * Zend_Search_Lucene_Search_Weight_Phrase
+ */
+require_once 'Zend/Search/Lucene/Search/Weight/Phrase.php';
+
+
+/**
+ * A Query that matches documents containing a particular sequence of terms.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Query_Phrase extends Zend_Search_Lucene_Search_Query
+{
+    /**
+     * Terms to find.
+     * Array of Zend_Search_Lucene_Index_Term objects.
+     *
+     * @var array
+     */
+    private $_terms;
+
+    /**
+     * Term positions (relative positions of terms within the phrase).
+     * Array of integers
+     *
+     * @var array
+     */
+    private $_offsets;
+
+    /**
+     * Sets the number of other words permitted between words in query phrase.
+     * If zero, then this is an exact phrase search.  For larger values this works
+     * like a WITHIN or NEAR operator.
+     *
+     * The slop is in fact an edit-distance, where the units correspond to
+     * moves of terms in the query phrase out of position.  For example, to switch
+     * the order of two words requires two moves (the first move places the words
+     * atop one another), so to permit re-orderings of phrases, the slop must be
+     * at least two.
+     * More exact matches are scored higher than sloppier matches, thus search
+     * results are sorted by exactness.
+     *
+     * The slop is zero by default, requiring exact matches.
+     *
+     * @var integer
+     */
+    private $_slop;
+
+    /**
+     * Result vector.
+     *
+     * @var array
+     */
+    private $_resVector = null;
+
+    /**
+     * Terms positions vectors.
+     * Array of Arrays:
+     * term1Id => (docId => array( pos1, pos2, ... ), ...)
+     * term2Id => (docId => array( pos1, pos2, ... ), ...)
+     *
+     * @var array
+     */
+    private $_termsPositions = array();
+
+    /**
+     * Class constructor.  Create a new prase query.
+     *
+     * @param string $field    Field to search.
+     * @param array  $terms    Terms to search Array of strings.
+     * @param array  $offsets  Relative term positions. Array of integers.
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function __construct($terms = null, $offsets = null, $field = null)
+    {
+        $this->_slop = 0;
+
+        if (is_array($terms)) {
+            $this->_terms = array();
+            foreach ($terms as $termId => $termText) {
+                $this->_terms[$termId] = ($field !== null)? new Zend_Search_Lucene_Index_Term($termText, $field):
+                                                            new Zend_Search_Lucene_Index_Term($termText);
+            }
+        } else if ($terms === null) {
+            $this->_terms = array();
+        } else {
+            throw new Zend_Search_Lucene_Exception('terms argument must be array of strings or null');
+        }
+
+        if (is_array($offsets)) {
+            if (count($this->_terms) != count($offsets)) {
+                throw new Zend_Search_Lucene_Exception('terms and offsets arguments must have the same size.');
+            }
+            $this->_offsets = $offsets;
+        } else if ($offsets === null) {
+            $this->_offsets = array();
+            foreach ($this->_terms as $termId => $term) {
+                $position = count($this->_offsets);
+                $this->_offsets[$termId] = $position;
+            }
+        } else {
+            throw new Zend_Search_Lucene_Exception('offsets argument must be array of strings or null');
+        }
+    }
+
+    /**
+     * Set slop
+     *
+     * @param integer $slop
+     */
+    public function setSlop($slop)
+    {
+        $this->_slop = $slop;
+    }
+
+
+    /**
+     * Get slop
+     *
+     * @return integer
+     */
+    public function getSlop()
+    {
+        return $this->_slop;
+    }
+
+
+    /**
+     * Adds a term to the end of the query phrase.
+     * The relative position of the term is specified explicitly or the one immediately
+     * after the last term added.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param integer $position
+     */
+    public function addTerm(Zend_Search_Lucene_Index_Term $term, $position = null) {
+        if ((count($this->_terms) != 0)&&(end($this->_terms)->field != $term->field)) {
+            throw new Zend_Search_Lucene_Exception('All phrase terms must be in the same field: ' .
+                                                   $term->field . ':' . $term->text);
+        }
+
+        $this->_terms[] = $term;
+        if ($position !== null) {
+            $this->_offsets[] = $position;
+        } else if (count($this->_offsets) != 0) {
+            $this->_offsets[] = end($this->_offsets) + 1;
+        } else {
+            $this->_offsets[] = 0;
+        }
+    }
+
+
+    /**
+     * Re-write query into primitive queries in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function rewrite(Zend_Search_Lucene_Interface $index)
+    {
+        if (count($this->_terms) == 0) {
+            return new Zend_Search_Lucene_Search_Query_Empty();
+        } else if ($this->_terms[0]->field !== null) {
+            return $this;
+        } else {
+            $query = new Zend_Search_Lucene_Search_Query_Boolean();
+            $query->setBoost($this->getBoost());
+
+            foreach ($index->getFieldNames(true) as $fieldName) {
+                $subquery = new Zend_Search_Lucene_Search_Query_Phrase();
+                $subquery->setSlop($this->getSlop());
+
+                foreach ($this->_terms as $termId => $term) {
+                    $qualifiedTerm = new Zend_Search_Lucene_Index_Term($term->text, $fieldName);
+
+                    $subquery->addTerm($qualifiedTerm, $this->_offsets[$termId]);
+                }
+
+                $query->addSubquery($subquery);
+            }
+
+            return $query;
+        }
+    }
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function optimize(Zend_Search_Lucene_Interface $index)
+    {
+        // Check, that index contains all phrase terms
+        foreach ($this->_terms as $term) {
+            if (!$index->hasTerm($term)) {
+                return new Zend_Search_Lucene_Search_Query_Empty();
+            }
+        }
+
+        if (count($this->_terms) == 1) {
+            // It's one term query
+            $optimizedQuery = new Zend_Search_Lucene_Search_Query_Term(reset($this->_terms));
+            $optimizedQuery->setBoost($this->getBoost());
+
+            return $optimizedQuery;
+        }
+
+        if (count($this->_terms) == 0) {
+            return new Zend_Search_Lucene_Search_Query_Empty();
+        }
+
+
+        return $this;
+    }
+
+    /**
+     * Returns query term
+     *
+     * @return array
+     */
+    public function getTerms()
+    {
+        return $this->_terms;
+    }
+
+
+    /**
+     * Set weight for specified term
+     *
+     * @param integer $num
+     * @param Zend_Search_Lucene_Search_Weight_Term $weight
+     */
+    public function setWeight($num, $weight)
+    {
+        $this->_weights[$num] = $weight;
+    }
+
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     */
+    public function createWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        $this->_weight = new Zend_Search_Lucene_Search_Weight_Phrase($this, $reader);
+        return $this->_weight;
+    }
+
+
+    /**
+     * Score calculator for exact phrase queries (terms sequence is fixed)
+     *
+     * @param integer $docId
+     * @return float
+     */
+    public function _exactPhraseFreq($docId)
+    {
+        $freq = 0;
+
+        // Term Id with lowest cardinality
+        $lowCardTermId = null;
+
+        // Calculate $lowCardTermId
+        foreach ($this->_terms as $termId => $term) {
+            if ($lowCardTermId === null ||
+                count($this->_termsPositions[$termId][$docId]) <
+                count($this->_termsPositions[$lowCardTermId][$docId]) ) {
+                    $lowCardTermId = $termId;
+                }
+        }
+
+        // Walk through positions of the term with lowest cardinality
+        foreach ($this->_termsPositions[$lowCardTermId][$docId] as $lowCardPos) {
+            // We expect phrase to be found
+            $freq++;
+
+            // Walk through other terms
+            foreach ($this->_terms as $termId => $term) {
+                if ($termId != $lowCardTermId) {
+                    $expectedPosition = $lowCardPos +
+                                            ($this->_offsets[$termId] -
+                                             $this->_offsets[$lowCardTermId]);
+
+                    if (!in_array($expectedPosition, $this->_termsPositions[$termId][$docId])) {
+                        $freq--;  // Phrase wasn't found.
+                        break;
+                    }
+                }
+            }
+        }
+
+        return $freq;
+    }
+
+    /**
+     * Score calculator for sloppy phrase queries (terms sequence is fixed)
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     */
+    public function _sloppyPhraseFreq($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        $freq = 0;
+
+        $phraseQueue = array();
+        $phraseQueue[0] = array(); // empty phrase
+        $lastTerm = null;
+
+        // Walk through the terms to create phrases.
+        foreach ($this->_terms as $termId => $term) {
+            $queueSize = count($phraseQueue);
+            $firstPass = true;
+
+            // Walk through the term positions.
+            // Each term position produces a set of phrases.
+            foreach ($this->_termsPositions[$termId][$docId] as $termPosition ) {
+                if ($firstPass) {
+                    for ($count = 0; $count < $queueSize; $count++) {
+                        $phraseQueue[$count][$termId] = $termPosition;
+                    }
+                } else {
+                    for ($count = 0; $count < $queueSize; $count++) {
+                        if ($lastTerm !== null &&
+                            abs( $termPosition - $phraseQueue[$count][$lastTerm] -
+                                 ($this->_offsets[$termId] - $this->_offsets[$lastTerm])) > $this->_slop) {
+                            continue;
+                        }
+
+                        $newPhraseId = count($phraseQueue);
+                        $phraseQueue[$newPhraseId]          = $phraseQueue[$count];
+                        $phraseQueue[$newPhraseId][$termId] = $termPosition;
+                    }
+
+                }
+
+                $firstPass = false;
+            }
+            $lastTerm = $termId;
+        }
+
+
+        foreach ($phraseQueue as $phrasePos) {
+            $minDistance = null;
+
+            for ($shift = -$this->_slop; $shift <= $this->_slop; $shift++) {
+                $distance = 0;
+                $start = reset($phrasePos) - reset($this->_offsets) + $shift;
+
+                foreach ($this->_terms as $termId => $term) {
+                    $distance += abs($phrasePos[$termId] - $this->_offsets[$termId] - $start);
+
+                    if($distance > $this->_slop) {
+                        break;
+                    }
+                }
+
+                if ($minDistance === null || $distance < $minDistance) {
+                    $minDistance = $distance;
+                }
+            }
+
+            if ($minDistance <= $this->_slop) {
+                $freq += $reader->getSimilarity()->sloppyFreq($minDistance);
+            }
+        }
+
+        return $freq;
+    }
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     */
+    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
+    {
+        $this->_resVector = null;
+
+        if (count($this->_terms) == 0) {
+            $this->_resVector = array();
+        }
+
+        $resVectors      = array();
+        $resVectorsSizes = array();
+        $resVectorsIds   = array(); // is used to prevent arrays comparison
+        foreach ($this->_terms as $termId => $term) {
+            $resVectors[]      = array_flip($reader->termDocs($term));
+            $resVectorsSizes[] = count(end($resVectors));
+            $resVectorsIds[]   = $termId;
+
+            $this->_termsPositions[$termId] = $reader->termPositions($term);
+        }
+        // sort resvectors in order of subquery cardinality increasing
+        array_multisort($resVectorsSizes, SORT_ASC, SORT_NUMERIC,
+                        $resVectorsIds,   SORT_ASC, SORT_NUMERIC,
+                        $resVectors);
+
+        foreach ($resVectors as $nextResVector) {
+            if($this->_resVector === null) {
+                $this->_resVector = $nextResVector;
+            } else {
+                //$this->_resVector = array_intersect_key($this->_resVector, $nextResVector);
+
+                /**
+                 * This code is used as workaround for array_intersect_key() slowness problem.
+                 */
+                $updatedVector = array();
+                foreach ($this->_resVector as $id => $value) {
+                    if (isset($nextResVector[$id])) {
+                        $updatedVector[$id] = $value;
+                    }
+                }
+                $this->_resVector = $updatedVector;
+            }
+
+            if (count($this->_resVector) == 0) {
+                // Empty result set, we don't need to check other terms
+                break;
+            }
+        }
+
+        // ksort($this->_resVector, SORT_NUMERIC);
+        // Docs are returned ordered. Used algorithm doesn't change elements order.
+
+        // Initialize weight if it's not done yet
+        $this->_initWeight($reader);
+    }
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     */
+    public function matchedDocs()
+    {
+        return $this->_resVector;
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     */
+    public function score($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        if (isset($this->_resVector[$docId])) {
+            if ($this->_slop == 0) {
+                $freq = $this->_exactPhraseFreq($docId);
+            } else {
+                $freq = $this->_sloppyPhraseFreq($docId, $reader);
+            }
+
+            if ($freq != 0) {
+                $tf = $reader->getSimilarity()->tf($freq);
+                $weight = $this->_weight->getValue();
+                $norm = $reader->norm($docId, reset($this->_terms)->field);
+
+                return $tf * $weight * $norm * $this->getBoost();
+            }
+
+            // Included in result, but culculated freq is zero
+            return 0;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     */
+    public function getQueryTerms()
+    {
+        return $this->_terms;
+    }
+
+    /**
+     * Query specific matches highlighting
+     *
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
+     */
+    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
+    {
+        $words = array();
+        foreach ($this->_terms as $term) {
+            $words[] = $term->text;
+        }
+
+        $highlighter->highlight($words);
+    }
+
+    /**
+     * Print a query
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        // It's used only for query visualisation, so we don't care about characters escaping
+        if (isset($this->_terms[0]) && $this->_terms[0]->field !== null) {
+            $query = $this->_terms[0]->field . ':';
+        } else {
+        	$query = '';
+        }
+
+        $query .= '"';
+
+        foreach ($this->_terms as $id => $term) {
+            if ($id != 0) {
+                $query .= ' ';
+            }
+            $query .= $term->text;
+        }
+
+        $query .= '"';
+
+        if ($this->_slop != 0) {
+            $query .= '~' . $this->_slop;
+        }
+
+        if ($this->getBoost() != 1) {
+            $query .= '^' . round($this->getBoost(), 4);
+        }
+
+        return $query;
+    }
+}
+

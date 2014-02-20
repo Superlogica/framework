@@ -1,70 +1,171 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51tv6EffQ+7DO3UDoTrkOBUkMIQO8moamvIixmRjip2avJbtBjuVNqSwXMqpBjMYxxxWqdop
-JhzEI82pJ+0YC2AmSX3dDN6ioAK5sQLvwoCq+6v3OGsBrJFwTxI6m0c//oWtEwDvKkfAuEDtmHeb
-nIkLgXQv1CAg1Wdfb2WpAc8n0MpyCW39UMgboI7ngGJm+Gf/wz3DnemUZKskTg8IkWtMO7HsZ+3K
-xOEiwIFwf1u2syTjnlD9n4kJIPpDKor7T+KlBeH2Q9nZhD35vbWkFga5cjNU/aKPLroF/2skLHJY
-6ISIwjGmt4JSYmlO1D2Dgpx4GRu/9QnuBgTveB80/Ccnz9dj0iwlYS49s2RbP6hS4rnkvNhryxsg
-7gbIkJY8j1y/wg6HSAF+t2SB3UM3xPa6DASF7kM1yYTqnekpNXFS8/8IOpYuZypd5oIsXz7Gb0dX
-psH2akhaE3QUUzFPpmbMis3Ow2vCLDo0JCfzTtZLsb4edtDsZ0nGe8Wpv5HfqD1MUUoHzOPEmtmW
-glW5q0qcVYD+cFfVi/WlwY3mRy3BX080+d/+mGNRpZMWCFWNy+4H+8yMMxH3VWAYTs7Sxdy4ZAcB
-mktlzMKx9FjLC3MyW2kuRIpQk4M+7YZ/y+1krQH220KJvAXVmifdHCsCKsoQKwLjRv19OrOcQwLW
-l7xcEjG8qEGaFRklY7yC0dbzVfcwBO3zznYENiUOhwYEYAX1Sry5JEh9Ed3TrSq/0LwyggTOwwJi
-AJ+2GVjU3Dxw2rrGvHaZoaVMx7c9PenSI4tH2Ye70oWdfZRU0PmwlUjhaOqFCEOW4nmxHrza6Nf3
-Uzk8TO+kNfImdmNID44CQuzxiOVgUe2A2fDSsDHCKemtNjtjbgSbLQZc41UW9kUiEZ5OcB5S/w53
-pQCUMsRENF0/xepmq2bYNVdFP/dE27NKN4bdTxbn3xB3FzWaycOd4hOu1mAz9tTCa8gDC5R1tm+f
-a3FnbK6XqUAk8csD831JEg13gYN9e/3uoM+fO0wZIutmrH8OKsRt2PRyzR9D55sAhPZwFncLKMGR
-RuCvUR3BSQg2HugBRQ4sh69aBClkrG+Qm92zG8D5sgyNe7K3mCvev4Lh6FUOOVUEJGV7jh6JB1IB
-JHXpyDUFft25RP03lPBG9zVIFz5fgzDX3MSd+TH7BPpwBCi377I5erwa2SpJW4tXrQsvsQAgQdh2
-j2Eq5hI2rVs3q3zfe7vVXyRiowuPWStRG9zLzFecKaCkUR7Mjfdo52or0CUF881lUYJVjbVdCmYR
-tL2w2cA8NMPBhch52NiouQ2NbI9jo6YMZnabdwrMTUcuCp5jRIEttRyaC+3yAGCHHtEehdmIMD2G
-Vp6yO/9NxQPyOa+e+73oPMgdQ60us3bzIhAdrCTXMbDU6axcRHERGX6LgvMbnK5KRfyJbEaeeaZv
-BOXysRQp1WLvDPc/1Vl9tq/Hufcm7apcMtKZt0mM1Ef/JfR8HbTF43HpzQnhNGoH+4LxvtkUDvcP
-RwD7yGgd3ok8ffbbMiJEtpcRVlWkQDS3wdmRjip/bRGWoSUh3bR5u9yA5V9LYnZVIrmFcLVWFja2
-uFoUUIV8tGjpuK+61b4nix4W8DcGFOd8ZTPsffVmbiNk+LWr6Te/W9l7ZGZ1lk57+WDDeDO3zFqd
-sVwXtl44s5RCJ2SduoQrfR0CGXw4kJZqY5xBSDdTmK4smMdF1iBpcrfrwXaIrJ1Ohbt0jBAmQrGC
-9tqI44aZVd8JalorsmYr1GtiTtDtxxwbZBhpa3qQ+xy4eLL+MBzc5B+i29hE+woJ6mJwdEbBZCXY
-1htfI8nDsxhONXTg3oLDcgr9YTg7c1zu/BtqhlC1caNZJj14vZDbJsRo+VJPLz6LL5hSPxhZnVvw
-9YFeih6+XfSCo5AsnQ2PW/1JexQq4nehPDvu8yyZzbE/WGzkstmfrMVrbhfjCk9sBD0VzNztl6Na
-1pHOzkAFSqlSiNoa+9YCrGrjdX4M+Tv4qFUYJij+uIsaSIRToWBb8FzJVnWEVdVeWX2KfXeu5aYR
-urDaEoNxUJc89STxfcUDBT6OYjp/mir7YowIZdXBTkCf+eXm5QvIuycoFbs5fe6xhqV59MAJkxjA
-NG1WlAkZSsS9hNTIXHPWlJ3vaK1LdeBGilA9GmWFvFS5c4srn7uS/e5Igx/2bx6lWPr4aP9CynQk
-CUAEpjlmvf1OWfwd31NyPePZYT1ZczJMmUDxp78Y0erb/ne9mhezetLO1SWwbUw0VFozOyvk0Rxb
-7n8g5o94Z8RVhRp4uASgt2kT5UkuVG2wTTzpOvtPKtsoRa93KYYpl1vlyk52M+BjTHs2963jesL4
-OifkklR4Qq9PNj8uqtHTUtpiV974OdkS6ng/w6tgYZ8ExfclP5tqLJNwdkM+veU/5AW7tu4xc42D
-d4plevjsshiP+rXZFUpARMzzgbbrM51FdNVf2lRx4kHKQ3a9bKwDpXMOq11Gcb38kUDzkDn6u8Iw
-aAaFnEWQMwLQWyE/U+VopkqKWYuvXaE1hWOzW4YiTuRWXZrY5A2OOnseflFNkRUQ38rb6H9efo2Y
-zdH1tFqmYQOUjKUyrh9U8xoKPxD5gyUI42ljJ30qD9o22Qgoz9V27HP5BoLy3XTCjw3iJ+EO3Zuh
-hUlpOGgpFqSkfIe97KiFYJiFLerk2CCjXa4Sbkhg6PoE2yDGIDVxlOtdnLp/+3/pJN9Dfrw//Bj9
-QZyj79nzDDtDfgzNHnfQVX+SIqat4C8XKUWM7x6sBqFUTEUAyYRzL/e7byELX3zvIGAeezNUlLjZ
-OH+FX1QFSbW8rRO1h7cx8iIGQJiMVxXV3de2YDGxoRwS7/HMhCkAaf4biwQfDFMkH1ilYcpobwc9
-c8oaFiE8plOjR5dYPFFMJJS99y/QfVv1WBjDkADIpOQt1y3JpbfR8NJVtw9fIEep1vkJbY04tzun
-BcGLFOYQ4sKXMj6wMFMypXfstaIgekJLtU7lNucKDOXrH6S0fXAYodiA/BhpklpmasV/o5wNhHu3
-1p5r5cvGL6axQ6Boqhpq8FyBeVXSTSWIrcPSC1tSZhQD+7vfZLZqJLJDPSGHThoDObzAZiwDXoJP
-wpv4jCjSPrl3u5PJYfpnmeHB01mXjpIZ2p2XmGkH8pxdCudt8xSzbDsF9DV3xN3wMOjkoNuk7w+M
-3PWj1f7q4336/yX9rjXenHLgC3Ua8d83D1sdQK6oD3hF8gPSI4XqCqr8bc9hRXCJjyng9KVCJctA
-PigBHML4hqs1wCDRp/gRRgm3HSd/d5ZjDgvOO8AJOGRKctI/cn2iXIwvKfGJpr9oOKmjA4tPNBsv
-nUGhazXX5qNgGrdRHi/1YJ4dT+bBK6P2M9M8KLe/mYjPElU8r1wSSEUbAtbEZUhfHpuubGYFSF7/
-gLmuw5H8tm5289KC845szU+Yz+CtDnSvj1xnI7OdjgcYndj1eKX/0xy9UZWX1AyB9BM1MfrPJuuB
-i2lAt9lEKJ5TSlS5FOJPCgDdQxsuV4vXH+mb9NIC5C8pFQDJCf/0UK9bDErG3cC8vWFkShPpYzfy
-JYHrthPaE2z7HUl0YRWgkOxVIGZCT90MsvLu2OdYNLmZ9BHNXz+A3hLr1bP2bPyXPnGzMAYRsn+J
-Rbfi+M5H8Bq7jY7Q7eDMkipgh5A+zClSv/ilHBcZ7IWLlN21YqXlSQ4YvW9XBcDAdHe+yXqsHcA5
-TRH0BZdatZJrf9qlTGlmynTFCuzKMuiUYZtxlLoL6/t9J9e+f07CNsZBejT80jlLAElWm0kcSLsZ
-a1upGtJdoIPuNbvp71YNM5wuA0d6KvQmNsA0OpXUyxGRNLQUCSoNrbo5juTMke8AfOJ83PVLGRR3
-iHfimVSTXjv2KzSDrGqv9UlQ5ClyoVzw0iw+S+yfm1JnkPJOyL79g/VqMEHTtkn8p5XsAxbpQSi4
-plGnOwFQWBHoixrasWY3XYO99vUI5T7ZhvtADm1mtk0zQXoAOqs4VvEPG645jbCP7o3BzjOFgxCl
-mfAKKtMssyRkTs4XMcTzdwMu0X3A+RidrC5Rbq+kM2Wk8f+L3gnQxaR/kUzcbVOtrBYTN4C329Ru
-2sew+UBHOT+NjRPCXNCT75hY1iRYASsWAG5oh+5qwT0RCgeUDj2izf7i+LQPxuON4Hgfwf/m64+U
-BmRJ71Tr9oe7cTWYQSy5kTgkdCdwaVU4542ELCqHbkfAsT6lN9qDUSttTYOoPTyknrd+YxPVVANO
-R/TPT7wm0pdYFK6oPmJxOFMD74tZu4L8YwW80ZOgvgfFnJle5WaViDeS6pAzacR53xV3wEKkFJAW
-35iE/u5UShYKXiwLawHbCPqGk5gFsd5aJlJx88A1oeTrLzqt7Tod044kFtZyPFBfQawPgwvz8+b3
-buo1bu9jX9sVsmSNjvjPI3XrYlfi8JEsXAU3Y3XYvEbxiqSbGEM/mfbqj44RbenkEBHnD1eYRy7N
-bazIxR1tVke5YY2RZIduDb+/ESpIklfVdnXbiKrESHDVYpQpufPVq2F3E+65+YEgVnJy4utHCde0
-NJeNhuE/H+8RacH8Z0QjuoDcEzybKlfMd6cuL5Akx3ZoZ18X1UrcKmJh2gedQNzUaA1Mzg0ohA4k
-a0UpeWx2//iUMr2573idxNMC/vIDltmRo1fCFZ5zY+51W8JanfZzzB1HTcGzglDk4T/s/vw0jBVj
-0ICzU8QoVLwh7N/bmgReYH+wreH9wOPKtTEvvpZ32NT/+L2hv67RW6j4OtN+9XQ3iGWJ2BnMQvEh
-5DnT8nrOiK+II0x1VmAuLEolpWvbIaJfmhpVqLGLq9P2kOkh3kYfl2s7l29IFIALyVw0bG8IqaoR
-zNsb2+QWX0R7bxIcXrNW5ixBj7DZi1OD7LV9N/vsLhi/VPbsO2Iom6AlSIc8udiPXiWNsB3CEOcs
-bZ6J0zB2CqBJyNqaETN7g127b0x74/DL5vQ9EOyWZ2eG31e34CR7mw8iVPnE2dFdeK9mIbBEpXpn
-grEIAsUwI5fsUjMueClMPBhRVL4ixMVAE1LeQxIA/CXG
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: AccordionContainer.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+/**
+ * @see ZendX_JQuery_View_Helper_UiWidget
+ */
+require_once "ZendX/JQuery/View/Helper/UiWidget.php";
+
+/**
+ * jQuery Accordion View Helper
+ *
+ * @uses 	   Zend_Json
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class ZendX_JQuery_View_Helper_AccordionContainer extends ZendX_JQuery_View_Helper_UiWidget
+{
+    /**
+     * @var array
+     */
+    protected $_panes = array();
+
+    /**
+     * @var string
+     */
+    protected $_elementHtmlTemplate = null;
+
+    /**
+     * Add Accordion Pane for the Accordion-Id
+     *
+     * @param  string $id
+     * @param  string $name
+     * @param  string $content
+     * @return ZendX_JQuery_View_Helper_AccordionContainer
+     */
+    public function addPane($id, $name, $content, array $options=array())
+    {
+        if(!isset($this->_panes[$id])) {
+            $this->_panes[$id] = array();
+        }
+        if(strlen($name) == 0 && isset($options['title'])) {
+            $name = $options['title'];
+        }
+        $this->_panes[$id][] = array('name' => $name, 'content' => $content, 'options' => $options);
+        return $this;
+    }
+
+    /**
+     * Render Accordion with the currently registered elements.
+     *
+     * If no arguments are given, the accordion object is returned so that
+     * chaining the {@link addPane()} function allows to register new elements
+     * for an accordion.
+     *
+     * @link   http://docs.jquery.com/UI/Accordion
+     * @param  string $id
+     * @param  array  $params
+     * @param  array  $attribs
+     * @return string|ZendX_JQuery_View_Helper_AccordionContainer
+     */
+    public function accordionContainer($id=null, array $params=array(), array $attribs=array())
+    {
+        if(0 === func_num_args()) {
+            return $this;
+        }
+
+        if(!isset($attribs['id'])) {
+            $attribs['id'] = $id;
+        }
+
+        $html = "";
+        if(isset($this->_panes[$id])) {
+            foreach($this->_panes[$id] AS $element) {
+                $html .= sprintf($this->getElementHtmlTemplate(), $element['name'], $element['content']).PHP_EOL;
+            }
+
+            if(count($params) > 0) {
+                $params = ZendX_JQuery::encodeJson($params);
+            } else {
+                $params = "{}";
+            }
+
+            $js = sprintf('%s("#%s").accordion(%s);',
+                ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
+                $attribs['id'],
+                $params
+            );
+            $this->jquery->addOnLoad($js);
+
+            $html = $this->getAccordionTemplate($attribs, $html);
+        }
+        return $html;
+    }
+
+    /**
+     * @param  array $attribs
+     * @param  string $html
+     * @return string
+     */
+    protected function getAccordionTemplate($attribs, $html)
+    {
+        if(version_compare($this->jquery->getUiVersion(), "1.7.0") >= 0) {
+            $html = '<div'
+                  . $this->_htmlAttribs($attribs)
+                  . '>'.PHP_EOL
+                  . $html
+                  . '</div>'.PHP_EOL;
+        } else {
+            $html = '<ul'
+                  . $this->_htmlAttribs($attribs)
+                  . '>'.PHP_EOL
+                  . $html
+                  . '</ul>'.PHP_EOL;
+        }
+        return $html;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getElementHtmlTemplate()
+    {
+        if($this->_elementHtmlTemplate == null) {
+            if(version_compare($this->jquery->getUiVersion(), "1.7.0") >= 0) {
+                $this->_elementHtmlTemplate = '<h3><a href="#">%s</a></h3><div>%s</div>';
+            } else {
+                $this->_elementHtmlTemplate = '<li class="ui-accordion-group"><a href="#" class="ui-accordion-header">%s</a><div class="ui-accordion-content">%s</div></li>';
+            }
+        }
+        return $this->_elementHtmlTemplate;
+    }
+
+    /**
+     * Set the accordion element template
+     *
+     * @param  string $htmlTemplate
+     * @return ZendX_JQuery_View_Helper_AccordionContainer
+     */
+    public function setElementHtmlTemplate($htmlTemplate)
+    {
+        if(substr_count($htmlTemplate, '%s') != 2) {
+            require_once "ZendX/JQuery/View/Exception.php";
+            throw new ZendX_JQuery_View_Exception(
+                "Accordion Container HTML Template requires two sprintf() string replace markers '%s'."
+            );
+        }
+        $this->_elementHtmlTemplate = $htmlTemplate;
+        return $this;
+    }
+}

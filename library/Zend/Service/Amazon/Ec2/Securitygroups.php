@@ -1,96 +1,288 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+
+/**
+ * An Amazon EC2 interface to create, delete, describe, grand and revoke sercurity permissions.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Securitygroups extends Zend_Service_Amazon_Ec2_Abstract
+{
+    /**
+     * Creates a new security group.
+     *
+     * Every instance is launched in a security group. If no security group is specified
+     * during launch, the instances are launched in the default security group. Instances
+     * within the same security group have unrestricted network access to each other.
+     * Instances will reject network access attempts from other instances in a different
+     * security group. As the owner of instances you can grant or revoke specific permissions
+     * using the {@link authorizeIp}, {@link authorizeGroup}, {@link revokeGroup} and
+     * {$link revokeIp} operations.
+     *
+     * @param string $name          Name of the new security group.
+     * @param string $description   Description of the new security group.
+     * @return boolean
+     */
+    public function create($name, $description)
+    {
+        $params = array();
+        $params['Action'] = 'CreateSecurityGroup';
+        $params['GroupName'] = $name;
+        $params['GroupDescription'] = $description;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($success === "true");
+    }
+
+    /**
+     * Returns information about security groups that you own.
+     *
+     * If you specify security group names, information about those security group is returned.
+     * Otherwise, information for all security group is returned. If you specify a group
+     * that does not exist, a fault is returned.
+     *
+     * @param string|array $name    List of security groups to describe
+     * @return array
+     */
+    public function describe($name = null)
+    {
+        $params = array();
+        $params['Action'] = 'DescribeSecurityGroups';
+        if(is_array($name) && !empty($name)) {
+            foreach($name as $k=>$name) {
+                $params['GroupName.' . ($k+1)] = $name;
+            }
+        } elseif($name) {
+            $params['GroupName.1'] = $name;
+        }
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+
+        $return = array();
+
+        $nodes = $xpath->query('//ec2:securityGroupInfo/ec2:item');
+
+        foreach($nodes as $node) {
+            $item = array();
+
+            $item['ownerId'] = $xpath->evaluate('string(ec2:ownerId/text())', $node);
+            $item['groupName'] = $xpath->evaluate('string(ec2:groupName/text())', $node);
+            $item['groupDescription'] = $xpath->evaluate('string(ec2:groupDescription/text())', $node);
+
+            $ip_nodes = $xpath->query('ec2:ipPermissions/ec2:item', $node);
+
+            foreach($ip_nodes as $ip_node) {
+                $sItem = array();
+
+                $sItem['ipProtocol'] = $xpath->evaluate('string(ec2:ipProtocol/text())', $ip_node);
+                $sItem['fromPort'] = $xpath->evaluate('string(ec2:fromPort/text())', $ip_node);
+                $sItem['toPort'] = $xpath->evaluate('string(ec2:toPort/text())', $ip_node);
+                $sItem['ipRanges'] = $xpath->evaluate('string(ec2:ipRanges/ec2:item/ec2:cidrIp/text())', $ip_node);
+
+                $item['ipPermissions'][] = $sItem;
+                unset($ip_node, $sItem);
+            }
+
+            $return[] = $item;
+
+            unset($item, $node);
+        }
+
+
+        return $return;
+    }
+
+    /**
+     * Deletes a security group.
+     *
+     * If you attempt to delete a security group that contains instances, a fault is returned.
+     * If you attempt to delete a security group that is referenced by another security group,
+     * a fault is returned. For example, if security group B has a rule that allows access
+     * from security group A, security group A cannot be deleted until the allow rule is removed.
+     *
+     * @param string $name          Name of the security group to delete.
+     * @return boolean
+     */
+    public function delete($name)
+    {
+        $params = array();
+        $params['Action'] = 'DeleteSecurityGroup';
+        $params['GroupName'] = $name;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($success === "true");
+    }
+
+    /**
+     * Adds permissions to a security group
+     *
+     * Permissions are specified by the IP protocol (TCP, UDP or ICMP), the source of the request
+     * (by IP range or an Amazon EC2 user-group pair), the source and destination port ranges
+     * (for TCP and UDP), and the ICMP codes and types (for ICMP). When authorizing ICMP, -1
+     * can be used as a wildcard in the type and code fields.
+     *
+     * Permission changes are propagated to instances within the security group as quickly as
+     * possible. However, depending on the number of instances, a small delay might occur.
+     *
+     *
+     * @param string $name                  Name of the group to modify.
+     * @param string $ipProtocol            IP protocol to authorize access to when operating on a CIDR IP.
+     * @param integer $fromPort             Bottom of port range to authorize access to when operating on a CIDR IP.
+     *                                      This contains the ICMP type if ICMP is being authorized.
+     * @param integer $toPort               Top of port range to authorize access to when operating on a CIDR IP.
+     *                                      This contains the ICMP code if ICMP is being authorized.
+     * @param string $cidrIp                CIDR IP range to authorize access to when operating on a CIDR IP.
+     * @return boolean
+     */
+    public function authorizeIp($name, $ipProtocol, $fromPort, $toPort, $cidrIp)
+    {
+        $params = array();
+        $params['Action'] = 'AuthorizeSecurityGroupIngress';
+        $params['GroupName'] = $name;
+        $params['IpProtocol'] = $ipProtocol;
+        $params['FromPort'] = $fromPort;
+        $params['ToPort'] = $toPort;
+        $params['CidrIp'] = $cidrIp;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($success === "true");
+
+    }
+
+    /**
+     * Adds permissions to a security group
+     *
+     * When authorizing a user/group pair permission, GroupName, SourceSecurityGroupName and
+     * SourceSecurityGroupOwnerId must be specified.
+     *
+     * Permission changes are propagated to instances within the security group as quickly as
+     * possible. However, depending on the number of instances, a small delay might occur.
+     *
+     * @param string $name                  Name of the group to modify.
+     * @param string $groupName             Name of security group to authorize access to when operating on a user/group pair.
+     * @param string $ownerId               Owner of security group to authorize access to when operating on a user/group pair.
+     * @return boolean
+     */
+    public function authorizeGroup($name, $groupName, $ownerId)
+    {
+        $params = array();
+        $params['Action'] = 'AuthorizeSecurityGroupIngress';
+        $params['GroupName'] = $name;
+        $params['SourceSecurityGroupName'] = $groupName;
+        $params['SourceSecurityGroupOwnerId'] = $ownerId;
+
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+
+        return ($success === "true");
+    }
+
+    /**
+     * Revokes permissions from a security group. The permissions used to revoke must be specified
+     * using the same values used to grant the permissions.
+     *
+     * Permissions are specified by the IP protocol (TCP, UDP or ICMP), the source of the request
+     * (by IP range or an Amazon EC2 user-group pair), the source and destination port ranges
+     * (for TCP and UDP), and the ICMP codes and types (for ICMP). When authorizing ICMP, -1
+     * can be used as a wildcard in the type and code fields.
+     *
+     * Permission changes are propagated to instances within the security group as quickly as
+     * possible. However, depending on the number of instances, a small delay might occur.
+     *
+     *
+     * @param string $name                  Name of the group to modify.
+     * @param string $ipProtocol            IP protocol to revoke access to when operating on a CIDR IP.
+     * @param integer $fromPort             Bottom of port range to revoke access to when operating on a CIDR IP.
+     *                                      This contains the ICMP type if ICMP is being revoked.
+     * @param integer $toPort               Top of port range to revoked access to when operating on a CIDR IP.
+     *                                      This contains the ICMP code if ICMP is being revoked.
+     * @param string $cidrIp                CIDR IP range to revoke access to when operating on a CIDR IP.
+     * @return boolean
+     */
+    public function revokeIp($name, $ipProtocol, $fromPort, $toPort, $cidrIp)
+    {
+        $params = array();
+        $params['Action'] = 'RevokeSecurityGroupIngress';
+        $params['GroupName'] = $name;
+        $params['IpProtocol'] = $ipProtocol;
+        $params['FromPort'] = $fromPort;
+        $params['ToPort'] = $toPort;
+        $params['CidrIp'] = $cidrIp;
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+        return ($success === "true");
+    }
+
+    /**
+     * Revokes permissions from a security group. The permissions used to revoke must be specified
+     * using the same values used to grant the permissions.
+     *
+     * Permission changes are propagated to instances within the security group as quickly as
+     * possible. However, depending on the number of instances, a small delay might occur.
+     *
+     * When revoking a user/group pair permission, GroupName, SourceSecurityGroupName and
+     * SourceSecurityGroupOwnerId must be specified.
+     *
+     * @param string $name                  Name of the group to modify.
+     * @param string $groupName             Name of security group to revoke access to when operating on a user/group pair.
+     * @param string $ownerId               Owner of security group to revoke access to when operating on a user/group pair.
+     * @return boolean
+     */
+    public function revokeGroup($name, $groupName, $ownerId)
+    {
+        $params = array();
+        $params['Action'] = 'RevokeSecurityGroupIngress';
+        $params['GroupName'] = $name;
+        $params['SourceSecurityGroupName'] = $groupName;
+        $params['SourceSecurityGroupOwnerId'] = $ownerId;
+
+
+        $response = $this->sendRequest($params);
+        $xpath = $response->getXPath();
+        $success  = $xpath->evaluate('string(//ec2:return/text())');
+
+
+        return ($success === "true");
+    }
+}

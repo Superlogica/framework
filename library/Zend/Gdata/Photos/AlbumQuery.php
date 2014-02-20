@@ -1,38 +1,148 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-O2KFr4UAXAJRM1Q8
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Photos
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Photos_UserQuery
+ */
+require_once('Zend/Gdata/Photos/UserQuery.php');
+
+/**
+ * Assists in constructing album queries for various entries.
+ * Instances of this class can be provided in many places where a URL is
+ * required.
+ *
+ * For information on submitting queries to a server, see the service
+ * class, Zend_Gdata_Photos.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Photos
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Photos_AlbumQuery extends Zend_Gdata_Photos_UserQuery
+{
+
+    /**
+     * The name of the album to query for. Mutually exclusive with AlbumId.
+     *
+     * @var string
+     */
+    protected $_albumName = null;
+
+    /**
+     * The ID of the album to query for. Mutually exclusive with AlbumName.
+     *
+     * @var string
+     */
+    protected $_albumId = null;
+
+    /**
+     * Set the album name to query for. When set, this album's photographs
+     * be returned. If not set or null, the default user's feed will be
+     * returned instead.
+     *
+     * NOTE: AlbumName and AlbumId are mutually exclusive. Setting one will
+     *       automatically set the other to null.
+     *
+     * @param string $value The name of the album to retrieve, or null to
+     *          clear.
+     * @return Zend_Gdata_Photos_AlbumQuery The query object.
+     */
+     public function setAlbumName($value)
+     {
+         $this->_albumId = null;
+         $this->_albumName = $value;
+         
+         return $this;
+     }
+
+    /**
+     * Get the album name which is to be returned.
+     *
+     * @see setAlbumName
+     * @return string The name of the album to retrieve.
+     */
+    public function getAlbumName()
+    {
+        return $this->_albumName;
+    }
+
+    /**
+     * Set the album ID to query for. When set, this album's photographs
+     * be returned. If not set or null, the default user's feed will be
+     * returned instead.
+     *
+     * NOTE: Album and AlbumId are mutually exclusive. Setting one will
+     *       automatically set the other to null.
+     *
+     * @param string $value The ID of the album to retrieve, or null to
+     *          clear.
+     * @return Zend_Gdata_Photos_AlbumQuery The query object.
+     */
+     public function setAlbumId($value)
+     {
+         $this->_albumName = null;
+         $this->_albumId = $value;
+         
+         return $this;
+     }
+
+    /**
+     * Get the album ID which is to be returned.
+     *
+     * @see setAlbum
+     * @return string The ID of the album to retrieve.
+     */
+    public function getAlbumId()
+    {
+        return $this->_albumId;
+    }
+
+    /**
+     * Returns the URL generated for this query, based on it's current
+     * parameters.
+     *
+     * @return string A URL generated based on the state of this query.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function getQueryUrl($incomingUri = '')
+    {
+        $uri = '';
+        if ($this->getAlbumName() !== null && $this->getAlbumId() === null) {
+            $uri .= '/album/' . $this->getAlbumName();
+        } elseif ($this->getAlbumName() === null && $this->getAlbumId() !== null) {
+            $uri .= '/albumid/' . $this->getAlbumId();
+        } elseif ($this->getAlbumName() !== null && $this->getAlbumId() !== null) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'AlbumName and AlbumId cannot both be non-null');
+        } else {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'AlbumName and AlbumId cannot both be null');
+        }
+        $uri .= $incomingUri;
+        return parent::getQueryUrl($uri);
+    }
+
+}

@@ -1,91 +1,346 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-WPnNUNgdhOcsl/kUOozzGWscnl+uJYi=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Http_Client
+ */
+require_once 'Zend/Http/Client.php';
+
+/**
+ * Gdata Http Client object.
+ *
+ * Class to extend the generic Zend Http Client with the ability to perform
+ * secure AuthSub requests
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_HttpClient extends Zend_Http_Client
+{
+
+    /**
+     * OpenSSL private key resource id
+     * This key is used for AuthSub authentication.  If this value is set,
+     * it is assuemd that secure AuthSub is desired.
+     *
+     * @var resource
+     */
+    private $_authSubPrivateKeyId = null;
+
+    /**
+     * Token for AuthSub authentication.
+     * If this token is set, AuthSub authentication is used.
+     *
+     * @var string
+     */
+    private $_authSubToken = null;
+
+    /**
+     * Token for ClientLogin authentication.
+     * If only this token is set, ClientLogin authentication is used.
+     *
+     * @var string
+     */
+    private $_clientLoginToken = null;
+
+    /**
+     * Token for ClientLogin authentication.
+     * If this token is set, and the AuthSub key is not set,
+     * ClientLogin authentication is used
+     *
+     * @var string
+     */
+    private $_clientLoginKey = null;
+
+    /**
+     * True if this request is being made with data supplied by
+     * a stream object instead of a raw encoded string.
+     *
+     * @var bool
+     */
+    protected $_streamingRequest = null;
+
+    /**
+     * Sets the PEM formatted private key, as read from a file.
+     *
+     * This method reads the file and then calls setAuthSubPrivateKey()
+     * with the file contents.
+     *
+     * @param string $file The location of the file containing the PEM key
+     * @param string $passphrase The optional private key passphrase
+     * @param bool $useIncludePath Whether to search the include_path
+     *                             for the file
+     * @return void
+     */
+    public function setAuthSubPrivateKeyFile($file, $passphrase = null,
+                                             $useIncludePath = false) {
+        $fp = fopen($file, "r", $useIncludePath);
+        $key = '';
+        while (!feof($fp)) {
+            $key .= fread($fp, 8192);
+        }
+        $this->setAuthSubPrivateKey($key, $passphrase);
+        fclose($fp);
+    }
+
+    /**
+     * Sets the PEM formatted private key to be used for secure AuthSub auth.
+     *
+     * In order to call this method, openssl must be enabled in your PHP
+     * installation.  Otherwise, a Zend_Gdata_App_InvalidArgumentException
+     * will be thrown.
+     *
+     * @param string $key The private key
+     * @param string $passphrase The optional private key passphrase
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     * @return Zend_Gdata_HttpClient Provides a fluent interface
+     */
+    public function setAuthSubPrivateKey($key, $passphrase = null) {
+        if ($key != null && !function_exists('openssl_pkey_get_private')) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'You cannot enable secure AuthSub if the openssl module ' .
+                    'is not enabled in your PHP installation.');
+        }
+        $this->_authSubPrivateKeyId = openssl_pkey_get_private(
+                $key, $passphrase);
+        return $this;
+    }
+
+    /**
+     * Gets the openssl private key id
+     *
+     * @return string The private key
+     */
+    public function getAuthSubPrivateKeyId() {
+        return $this->_authSubPrivateKeyId;
+    }
+
+    /**
+     * Gets the AuthSub token used for authentication
+     *
+     * @return string The token
+     */
+    public function getAuthSubToken() {
+        return $this->_authSubToken;
+    }
+
+    /**
+     * Sets the AuthSub token used for authentication
+     *
+     * @param string $token The token
+     * @return Zend_Gdata_HttpClient Provides a fluent interface
+     */
+    public function setAuthSubToken($token) {
+        $this->_authSubToken = $token;
+        return $this;
+    }
+
+    /**
+     * Gets the ClientLogin token used for authentication
+     *
+     * @return string The token
+     */
+    public function getClientLoginToken() {
+        return $this->_clientLoginToken;
+    }
+
+    /**
+     * Sets the ClientLogin token used for authentication
+     *
+     * @param string $token The token
+     * @return Zend_Gdata_HttpClient Provides a fluent interface
+     */
+    public function setClientLoginToken($token) {
+        $this->_clientLoginToken = $token;
+        return $this;
+    }
+
+    /**
+     * Filters the HTTP requests being sent to add the Authorization header.
+     *
+     * If both AuthSub and ClientLogin tokens are set,
+     * AuthSub takes precedence.  If an AuthSub key is set, then
+     * secure AuthSub authentication is used, and the request is signed.
+     * Requests must be signed only with the private key corresponding to the
+     * public key registered with Google.  If an AuthSub key is set, but
+     * openssl support is not enabled in the PHP installation, an exception is
+     * thrown.
+     *
+     * @param string $method The HTTP method
+     * @param string $url The URL
+     * @param array $headers An associate array of headers to be
+     *                       sent with the request or null
+     * @param string $body The body of the request or null
+     * @param string $contentType The MIME content type of the body or null
+     * @throws Zend_Gdata_App_Exception if there was a signing failure
+     * @return array The processed values in an associative array,
+     *               using the same names as the params
+     */
+    public function filterHttpRequest($method, $url, $headers = array(), $body = null, $contentType = null) {
+        if ($this->getAuthSubToken() != null) {
+            // AuthSub authentication
+            if ($this->getAuthSubPrivateKeyId() != null) {
+                // secure AuthSub
+                $time = time();
+                $nonce = mt_rand(0, 999999999);
+                $dataToSign = $method . ' ' . $url . ' ' . $time . ' ' . $nonce;
+
+                // compute signature
+                $pKeyId = $this->getAuthSubPrivateKeyId();
+                $signSuccess = openssl_sign($dataToSign, $signature, $pKeyId,
+                                            OPENSSL_ALGO_SHA1);
+                if (!$signSuccess) {
+                    require_once 'Zend/Gdata/App/Exception.php';
+                    throw new Zend_Gdata_App_Exception(
+                            'openssl_signing failure - returned false');
+                }
+                // encode signature
+                $encodedSignature = base64_encode($signature);
+
+                // final header
+                $headers['authorization'] = 'AuthSub token="' . $this->getAuthSubToken() . '" ' .
+                                            'data="' . $dataToSign . '" ' .
+                                            'sig="' . $encodedSignature . '" ' .
+                                            'sigalg="rsa-sha1"';
+            } else {
+                // AuthSub without secure tokens
+                $headers['authorization'] = 'AuthSub token="' . $this->getAuthSubToken() . '"';
+            }
+        } elseif ($this->getClientLoginToken() != null) {
+            $headers['authorization'] = 'GoogleLogin auth=' . $this->getClientLoginToken();
+        }
+        return array('method' => $method, 'url' => $url, 'body' => $body, 'headers' => $headers, 'contentType' => $contentType);
+    }
+
+    /**
+     * Method for filtering the HTTP response, though no filtering is
+     * currently done.
+     *
+     * @param Zend_Http_Response $response The response object to filter
+     * @return Zend_Http_Response The filterd response object
+     */
+    public function filterHttpResponse($response) {
+        return $response;
+    }
+
+    /**
+     * Return the current connection adapter
+     *
+     * @return Zend_Http_Client_Adapter_Interface|string $adapter
+     */
+    public function getAdapter()
+    {
+    	return $this->adapter;
+    }
+
+   /**
+     * Load the connection adapter
+     *
+     * @param Zend_Http_Client_Adapter_Interface $adapter
+     * @return void
+     */
+    public function setAdapter($adapter)
+    {
+        if ($adapter == null) {
+            $this->adapter = $adapter;
+        } else {
+        	  parent::setAdapter($adapter);
+        }
+    }
+
+    /**
+     * Set the streamingRequest variable which controls whether we are
+     * sending the raw (already encoded) POST data from a stream source.
+     *
+     * @param boolean $value The value to set.
+     * @return void
+     */
+    public function setStreamingRequest($value)
+    {
+        $this->_streamingRequest = $value;
+    }
+
+    /**
+     * Check whether the client is set to perform streaming requests.
+     *
+     * @return boolean True if yes, false otherwise.
+     */
+    public function getStreamingRequest()
+    {
+        if ($this->_streamingRequest()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Prepare the request body (for POST and PUT requests)
+     *
+     * @return string
+     * @throws Zend_Http_Client_Exception
+     */
+    protected function _prepareBody()
+    {
+        if($this->_streamingRequest) {
+            $this->setHeaders(self::CONTENT_LENGTH,
+                $this->raw_post_data->getTotalSize());
+            return $this->raw_post_data;
+        }
+        else {
+            return parent::_prepareBody();
+        }
+    }
+
+    /**
+     * Clear all custom parameters we set.
+     *
+     * @return Zend_Http_Client
+     */
+    public function resetParameters()
+    {
+        $this->_streamingRequest = false;
+
+        return parent::resetParameters();
+    }
+
+    /**
+     * Set the raw (already encoded) POST data from a stream source.
+     *
+     * This is used to support POSTing from open file handles without
+     * caching the entire body into memory. It is a wrapper around
+     * Zend_Http_Client::setRawData().
+     *
+     * @param string $data The request data
+     * @param string $enctype The encoding type
+     * @return Zend_Http_Client
+     */
+    public function setRawDataStream($data, $enctype = null)
+    {
+        $this->_streamingRequest = true;
+        return $this->setRawData($data, $enctype);
+    }
+
+}

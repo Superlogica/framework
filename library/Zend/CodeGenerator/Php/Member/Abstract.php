@@ -1,42 +1,184 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @subpackage PHP
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_CodeGenerator_Php_Abstract
+ */
+require_once 'Zend/CodeGenerator/Php/Abstract.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_CodeGenerator_Php_Member_Abstract extends Zend_CodeGenerator_Php_Abstract
+{
+    /**#@+
+     * @param const string
+     */
+    const VISIBILITY_PUBLIC    = 'public';
+    const VISIBILITY_PROTECTED = 'protected';
+    const VISIBILITY_PRIVATE   = 'private';
+    /**#@-*/
+    
+    /**
+     * @var bool
+     */
+    protected $_isAbstract = false;
+    
+    /**
+     * @var bool
+     */
+    protected $_isStatic   = false;
+    
+    /**
+     * @var const
+     */
+    protected $_visibility = self::VISIBILITY_PUBLIC;
+    
+    /**
+     * @var string
+     */
+    protected $_name = null;
+
+    /**
+     * setDocblock() Set the docblock
+     *
+     * @param Zend_CodeGenerator_Php_Docblock|array|string $docblock
+     * @return Zend_CodeGenerator_Php_File
+     */
+    public function setDocblock($docblock) 
+    {
+        if (is_string($docblock)) {
+            $docblock = array('shortDescription' => $docblock);
+        }
+        
+        if (is_array($docblock)) {
+            $docblock = new Zend_CodeGenerator_Php_Docblock($docblock);
+        } elseif (!$docblock instanceof Zend_CodeGenerator_Php_Docblock) {
+            require_once 'Zend/CodeGenerator/Php/Exception.php';
+            throw new Zend_CodeGenerator_Php_Exception('setDocblock() is expecting either a string, array or an instance of Zend_CodeGenerator_Php_Docblock');
+        }
+        
+        $this->_docblock = $docblock;
+        return $this;
+    }
+    
+    /**
+     * getDocblock()
+     *
+     * @return Zend_CodeGenerator_Php_Docblock
+     */
+    public function getDocblock()
+    {
+        return $this->_docblock;
+    }
+    
+    /**
+     * setAbstract()
+     *
+     * @param bool $isAbstract
+     * @return Zend_CodeGenerator_Php_Member_Abstract
+     */
+    public function setAbstract($isAbstract)
+    {
+        $this->_isAbstract = ($isAbstract) ? true : false;
+        return $this;
+    }
+    
+    /**
+     * isAbstract()
+     *
+     * @return bool
+     */
+    public function isAbstract()
+    {
+        return $this->_isAbstract;
+    }
+    
+    /**
+     * setStatic()
+     *
+     * @param bool $isStatic
+     * @return Zend_CodeGenerator_Php_Member_Abstract
+     */
+    public function setStatic($isStatic)
+    {
+        $this->_isStatic = ($isStatic) ? true : false;
+        return $this;
+    }
+    
+    /**
+     * isStatic()
+     *
+     * @return bool
+     */
+    public function isStatic()
+    {
+        return $this->_isStatic;
+    }    
+    
+    /**
+     * setVisitibility()
+     *
+     * @param const $visibility
+     * @return Zend_CodeGenerator_Php_Member_Abstract
+     */
+    public function setVisibility($visibility)
+    {
+        $this->_visibility = $visibility;
+        return $this;
+    }
+    
+    /**
+     * getVisibility()
+     *
+     * @return const
+     */
+    public function getVisibility()
+    {
+        return $this->_visibility;
+    }
+    
+    /**
+     * setName()
+     *
+     * @param string $name
+     * @return Zend_CodeGenerator_Php_Member_Abstract
+     */
+    public function setName($name)
+    {
+        $this->_name = $name;
+        return $this;
+    }
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+}

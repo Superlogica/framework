@@ -1,141 +1,381 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-+0NpZBaLtDYs
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Mssql.php 12960 2008-11-30 11:04:38Z mikaelkael $
+ */
+
+
+/**
+ * @see Zend_Db_Adapter_Pdo_Abstract
+ */
+require_once 'Zend/Db/Adapter/Pdo/Abstract.php';
+
+
+/**
+ * Class for connecting to Microsoft SQL Server databases and performing common operations.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Adapter_Pdo_Mssql extends Zend_Db_Adapter_Pdo_Abstract
+{
+    /**
+     * PDO type.
+     *
+     * @var string
+     */
+    protected $_pdoType = 'mssql';
+
+    /**
+     * Keys are UPPERCASE SQL datatypes or the constants
+     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
+     *
+     * Values are:
+     * 0 = 32-bit integer
+     * 1 = 64-bit integer
+     * 2 = float or decimal
+     *
+     * @var array Associative array of datatypes to values 0, 1, or 2.
+     */
+    protected $_numericDataTypes = array(
+        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
+        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
+        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE,
+        'INT'                => Zend_Db::INT_TYPE,
+        'SMALLINT'           => Zend_Db::INT_TYPE,
+        'TINYINT'            => Zend_Db::INT_TYPE,
+        'BIGINT'             => Zend_Db::BIGINT_TYPE,
+        'DECIMAL'            => Zend_Db::FLOAT_TYPE,
+        'FLOAT'              => Zend_Db::FLOAT_TYPE,
+        'MONEY'              => Zend_Db::FLOAT_TYPE,
+        'NUMERIC'            => Zend_Db::FLOAT_TYPE,
+        'REAL'               => Zend_Db::FLOAT_TYPE,
+        'SMALLMONEY'         => Zend_Db::FLOAT_TYPE
+    );
+
+    /**
+     * Creates a PDO DSN for the adapter from $this->_config settings.
+     *
+     * @return string
+     */
+    protected function _dsn()
+    {
+        // baseline of DSN parts
+        $dsn = $this->_config;
+
+        // don't pass the username and password in the DSN
+        unset($dsn['username']);
+        unset($dsn['password']);
+        unset($dsn['driver_options']);
+
+        if (isset($dsn['port'])) {
+            $seperator = ':';
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                $seperator = ',';
+            }
+            $dsn['host'] .= $seperator . $dsn['port'];
+            unset($dsn['port']);
+        }
+
+        // this driver supports multiple DSN prefixes
+        // @see http://www.php.net/manual/en/ref.pdo-dblib.connection.php
+        if (isset($dsn['pdoType'])) {
+            switch (strtolower($dsn['pdoType'])) {
+                case 'freetds':
+                case 'sybase':
+                    $this->_pdoType = 'sybase';
+                    break;
+                case 'mssql':
+                    $this->_pdoType = 'mssql';
+                    break;
+                case 'dblib':
+                default:
+                    $this->_pdoType = 'dblib';
+                    break;
+            }
+            unset($dsn['pdoType']);
+        }
+
+        // use all remaining parts in the DSN
+        foreach ($dsn as $key => $val) {
+            $dsn[$key] = "$key=$val";
+        }
+
+        $dsn = $this->_pdoType . ':' . implode(';', $dsn);
+        return $dsn;
+    }
+
+    /**
+     * @return void
+     */
+    protected function _connect()
+    {
+        if ($this->_connection) {
+            return;
+        }
+        parent::_connect();
+        $this->_connection->exec('SET QUOTED_IDENTIFIER ON');
+    }
+
+    /**
+     * Begin a transaction.
+     *
+     * It is necessary to override the abstract PDO transaction functions here, as
+     * the PDO driver for MSSQL does not support transactions.
+     */
+    protected function _beginTransaction()
+    {
+        $this->_connect();
+        $this->_connection->exec('BEGIN TRANSACTION');
+        return true;
+    }
+
+    /**
+     * Commit a transaction.
+     *
+     * It is necessary to override the abstract PDO transaction functions here, as
+     * the PDO driver for MSSQL does not support transactions.
+     */
+    protected function _commit()
+    {
+        $this->_connect();
+        $this->_connection->exec('COMMIT TRANSACTION');
+        return true;
+    }
+
+    /**
+     * Roll-back a transaction.
+     *
+     * It is necessary to override the abstract PDO transaction functions here, as
+     * the PDO driver for MSSQL does not support transactions.
+     */
+    protected function _rollBack() {
+        $this->_connect();
+        $this->_connection->exec('ROLLBACK TRANSACTION');
+        return true;
+    }
+
+    /**
+     * Returns a list of the tables in the database.
+     *
+     * @return array
+     */
+    public function listTables()
+    {
+        $sql = "SELECT name FROM sysobjects WHERE type = 'U' ORDER BY name";
+        return $this->fetchCol($sql);
+    }
+
+    /**
+     * Returns the column descriptions for a table.
+     *
+     * The return value is an associative array keyed by the column name,
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME      => string; name of database or schema
+     * TABLE_NAME       => string;
+     * COLUMN_NAME      => string; column name
+     * COLUMN_POSITION  => number; ordinal position of column in table
+     * DATA_TYPE        => string; SQL datatype name of column
+     * DEFAULT          => string; default expression of column, null if none
+     * NULLABLE         => boolean; true if column can have nulls
+     * LENGTH           => number; length of CHAR/VARCHAR
+     * SCALE            => number; scale of NUMERIC/DECIMAL
+     * PRECISION        => number; precision of NUMERIC/DECIMAL
+     * UNSIGNED         => boolean; unsigned property of an integer type
+     * PRIMARY          => boolean; true if column is part of the primary key
+     * PRIMARY_POSITION => integer; position of column in primary key
+     * PRIMARY_AUTO     => integer; position of auto-generated column in primary key
+     *
+     * @todo Discover column primary key position.
+     * @todo Discover integer unsigned property.
+     *
+     * @param string $tableName
+     * @param string $schemaName OPTIONAL
+     * @return array
+     */
+    public function describeTable($tableName, $schemaName = null)
+    {
+        /**
+         * Discover metadata information about this table.
+         */
+        $sql = "exec sp_columns @table_name = " . $this->quoteIdentifier($tableName, true);
+        $stmt = $this->query($sql);
+        $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
+
+        $table_name  = 2;
+        $column_name = 3;
+        $type_name   = 5;
+        $precision   = 6;
+        $length      = 7;
+        $scale       = 8;
+        $nullable    = 10;
+        $column_def  = 12;
+        $column_position = 16;
+
+        /**
+         * Discover primary key column(s) for this table.
+         */
+        $sql = "exec sp_pkeys @table_name = " . $this->quoteIdentifier($tableName, true);
+        $stmt = $this->query($sql);
+        $primaryKeysResult = $stmt->fetchAll(Zend_Db::FETCH_NUM);
+        $primaryKeyColumn = array();
+        $pkey_column_name = 3;
+        $pkey_key_seq = 4;
+        foreach ($primaryKeysResult as $pkeysRow) {
+            $primaryKeyColumn[$pkeysRow[$pkey_column_name]] = $pkeysRow[$pkey_key_seq];
+        }
+
+        $desc = array();
+        $p = 1;
+        foreach ($result as $key => $row) {
+            $identity = false;
+            $words = explode(' ', $row[$type_name], 2);
+            if (isset($words[0])) {
+                $type = $words[0];
+                if (isset($words[1])) {
+                    $identity = (bool) preg_match('/identity/', $words[1]);
+                }
+            }
+
+            $isPrimary = array_key_exists($row[$column_name], $primaryKeyColumn);
+            if ($isPrimary) {
+                $primaryPosition = $primaryKeyColumn[$row[$column_name]];
+            } else {
+                $primaryPosition = null;
+            }
+
+            $desc[$this->foldCase($row[$column_name])] = array(
+                'SCHEMA_NAME'      => null, // @todo
+                'TABLE_NAME'       => $this->foldCase($row[$table_name]),
+                'COLUMN_NAME'      => $this->foldCase($row[$column_name]),
+                'COLUMN_POSITION'  => (int) $row[$column_position],
+                'DATA_TYPE'        => $type,
+                'DEFAULT'          => $row[$column_def],
+                'NULLABLE'         => (bool) $row[$nullable],
+                'LENGTH'           => $row[$length],
+                'SCALE'            => $row[$scale],
+                'PRECISION'        => $row[$precision],
+                'UNSIGNED'         => null, // @todo
+                'PRIMARY'          => $isPrimary,
+                'PRIMARY_POSITION' => $primaryPosition,
+                'IDENTITY'         => $identity
+            );
+        }
+        return $desc;
+    }
+
+    /**
+     * Adds an adapter-specific LIMIT clause to the SELECT statement.
+     *
+     * @link http://lists.bestpractical.com/pipermail/rt-devel/2005-June/007339.html
+     *
+     * @param string $sql
+     * @param integer $count
+     * @param integer $offset OPTIONAL
+     * @throws Zend_Db_Adapter_Exception
+     * @return string
+     */
+     public function limit($sql, $count, $offset = 0)
+     {
+        $count = intval($count);
+        if ($count <= 0) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("LIMIT argument count=$count is not valid");
+        }
+
+        $offset = intval($offset);
+        if ($offset < 0) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("LIMIT argument offset=$offset is not valid");
+        }
+
+        $orderby = stristr($sql, 'ORDER BY');
+        if ($orderby !== false) {
+            $sort = (stripos($orderby, ' desc') !== false) ? 'desc' : 'asc';
+            $order = str_ireplace('ORDER BY', '', $orderby);
+            $order = trim(preg_replace('/\bASC\b|\bDESC\b/i', '', $order));
+        }
+
+        $sql = preg_replace('/^SELECT\s/i', 'SELECT TOP ' . ($count+$offset) . ' ', $sql);
+
+        $sql = 'SELECT * FROM (SELECT TOP ' . $count . ' * FROM (' . $sql . ') AS inner_tbl';
+        if ($orderby !== false) {
+            $sql .= ' ORDER BY ' . $order . ' ';
+            $sql .= (stripos($sort, 'asc') !== false) ? 'DESC' : 'ASC';
+        }
+        $sql .= ') AS outer_tbl';
+        if ($orderby !== false) {
+            $sql .= ' ORDER BY ' . $order . ' ' . $sort;
+        }
+
+        return $sql;
+    }
+
+    /**
+     * Gets the last ID generated automatically by an IDENTITY/AUTOINCREMENT column.
+     *
+     * As a convention, on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2), this method forms the name of a sequence
+     * from the arguments and returns the last id generated by that sequence.
+     * On RDBMS brands that support IDENTITY/AUTOINCREMENT columns, this method
+     * returns the last value generated for such a column, and the table name
+     * argument is disregarded.
+     *
+     * Microsoft SQL Server does not support sequences, so the arguments to
+     * this method are ignored.
+     *
+     * @param string $tableName   OPTIONAL Name of table.
+     * @param string $primaryKey  OPTIONAL Name of primary key column.
+     * @return string
+     * @throws Zend_Db_Adapter_Exception
+     */
+    public function lastInsertId($tableName = null, $primaryKey = null)
+    {
+        $sql = 'SELECT SCOPE_IDENTITY()';
+        return (int)$this->fetchOne($sql);
+    }
+
+    /**
+     * Retrieve server version in PHP style
+     * Pdo_Mssql doesn't support getAttribute(PDO::ATTR_SERVER_VERSION)
+     * @return string
+     */
+    public function getServerVersion()
+    {
+        try {
+            $stmt = $this->query("SELECT SERVERPROPERTY('productversion')");
+            $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
+            if (count($result)) {
+                return $result[0][0];
+            }
+            return null;
+        } catch (PDOException $e) {
+            return null;
+        }
+    }
+}

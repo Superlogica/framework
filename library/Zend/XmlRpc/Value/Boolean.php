@@ -1,31 +1,84 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59JNA0Ui/zUHABrYlIJlo7YUOiqOsvMaifki8MNED6lOfW4lCEhocv7WG0bcfEn6Sai36pRG
-4c1/lKyupQfOGjYCCO9JNXnDM2C56k3XDJBsNHSS1I3EerBMzh90VG04taHjQ8k7siamOpKxyzqX
-oZHLeTVhi4mIYdy5qsbJXA7XPid4x8gx3DQ4g2yVpeZgHc1oGkowLIljCHDUOeJe3rJXkLorfds3
-vb7WZVYlgnwV2k8HHQesn4kJIPpDKor7T+KlBeH2Q3jWbewJaw9fgIwtVzNkvYX1v4lQ4s4cCN33
-nZWOzQHJiS5W5spd7YaHM8WhX5bxzvNtqVHfqDdaSF30U4KlfI0svOcj6iWUZwRO3ngmxfou1lbu
-LYzxPSJQSsAlkeH1gyZCsOxSjCbfnn+qLYrchJJOORYAJJqdfoAux2pNcibaZIH9oGgloZvXEo3a
-x26bfCFuCwmIfQXQkeVewDiY0USzqzuhXgME/jQ6hW6WPBrAfyZUW7vhXOApNfvsseF8vvzTxsoc
-gnoJiq71arECSRFFL7djXUK/GE6xtGQOPRZCXei4V/XHeCo/N9U8G/xSmmuS2jjL585ZAHgwSRcn
-qKEicpGbri0pG4glXWp4psASnbxlcWYxqpNX0NFHb8PCreN2lgX5rW7Vef9+DSimD/wywnUhw2xu
-PVJOJegCzxObRkqZpwL8FUM3mYiZT+Wp8i9NHXpIYKVqe8VHod4TtS4DTgGm6XjYRbP2pzo5+G9B
-DIEGpXqFj9tr6oTNZbggeVBz95tuso3ggR1oMZ5QKDU838EoHHF0rcGAvVnGThBbdG5S8yCtOJ+v
-r4MO6JgZ38xHSlfMFTKuP34Fs/jj3urkvWqsZQ00Z9WCQ/fpqLl/COZhUqEDUd3cVid2I11/8O30
-MECJKu910TLyqt1iZZ/MclVjON4acURkzgVFfgxSTS8KEt0rZG1jmXWidIBc648GYh7Nr5y+08Do
-Q+CQWCA+65a/9fVGMd7oYHhU555NYGLCSgZoVTL4KI1CtSE0Qh11+q4D4eK4vvbG9ZfTkCDQFoGE
-ExTnYSFoE1vSxt453L4obDHkT+hslhErQfYSQ8yoixLDfWGaqlYPxHW7W23VgQNQ07QtLBT69y1M
-rGZJtVs/n2WHfZ2ukB6tEu3HUrLk6Bx1uK59J2n/4nbbvNdchUy6GULdvs6BX4DSVhNf5tGLSowf
-wlrhbNR2S/abAoMEmlOncDd0d2T/ngXp45pG0OB2iKtRYe9gBcqGrw9XlkMxlgq4cmLu9K/1Alhl
-Nlhj7Mu5MIWpQvEMQhSNLJxrtwL/pHfN/4Sd7qn/0m1egMEMuySKLZb+iHPPyPRQzWc9MRSP9Vvt
-f6s9nXxwrnCfjTqRGSkq8Q2/h7mwcthEkU3lrzmoIrSqiZ7cjrlYNEMNnxKJ7HW5bzdijxDHcwKj
-2116Wy10XPuIofQSJmYtZjHdxWgE9bxO8Ssd4LJ5084zE0kWnFXm42Bcbn4S9un8hg3X/zjNPPmu
-1HWIKCusX2ghmwt1qdkUh8U3KaHkFPHLnprZKtff4eA8OY9LUXvMTJxhWQck1zOnbwWE9WB0JnuG
-EIgaRHUVZq7ockVyNPpuxtEvn2Ejro09jHLMJP3gojROeXQz39w6GBQ2OSkRxLzWBcKftOtc5kGl
-1qWzHvARh2axKt4B03zhrC8PdkElcBSTimDcoIyZbekf/JLTIKmfNmUNseDExI47poCapHhSNQg4
-fQ3oBUUTjp5nwyLn0SoH3KG7C+RFH+/L1OHt9KSQF/YGegGNv8Pn3D7scpfC1Hmi0vYWrzQ8QKoB
-47K3GgD2iCVescJqpbW439eqhDqbpcGlkmblKTyKdb2xyu4cTnPcFsi0DON6IZM6qosM2HqOt6PU
-JDLZel5R83CVCXIuSH+d8BTSyX/js5igsP+BFJ9e2d2YgyT+JSDpix0d7eh883jWoJMUT+qBLeqP
-S0HWd/NGDs+xAc83sEuMsTJgvPyE4iTuZnKU0HmEsF19baGnXQjSGr3px3gl6A/QnGu1ZciYfgUD
-hBNC0Pbba08vZTWj9hmvSKBoSbukbjn2pWY8JZ0kJQs6bPvZ
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Boolean.php 9096 2008-03-30 19:04:05Z thomas $
+ */
+
+
+/**
+ * Zend_XmlRpc_Value_Scalar
+ */
+require_once 'Zend/XmlRpc/Value/Scalar.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Value_Boolean extends Zend_XmlRpc_Value_Scalar
+{
+
+    /**
+     * Set the value of a boolean native type
+     * We hold the boolean type as an integer (0 or 1)
+     *
+     * @param bool $value
+     */
+    public function __construct($value)
+    {
+        $this->_type = self::XMLRPC_TYPE_BOOLEAN;
+        // Make sure the value is boolean and then convert it into a integer
+        // The double convertion is because a bug in the ZendOptimizer in PHP version 5.0.4
+        $this->_value = (int)(bool)$value;
+    }
+
+    /**
+     * Return the value of this object, convert the XML-RPC native boolean value into a PHP boolean
+     *
+     * @return bool
+     */
+    public function getValue()
+    {
+        return (bool)$this->_value;
+    }
+
+    /**
+     * Return the XML-RPC serialization of the boolean value
+     *
+     * @return string
+     */
+    public function saveXML()
+    {
+        if (! $this->_as_xml) {   // The XML was not generated yet
+            $dom   = new DOMDocument('1.0', 'UTF-8');
+            $value = $dom->appendChild($dom->createElement('value'));
+            $type  = $value->appendChild($dom->createElement($this->_type));
+            $type->appendChild($dom->createTextNode($this->_value));
+
+            $this->_as_dom = $value;
+            $this->_as_xml = $this->_stripXmlDeclaration($dom);
+        }
+
+        return $this->_as_xml;
+    }
+}
+

@@ -1,112 +1,300 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5DhOeK8mSnfrsHyqOKjv+oV+WE/KiE/Shz0IsVgEttiSYRyhaAqO540kcuVsePcCDCD67WNB
-8RezmI9w1VhQcsQdtoU5bzT3yEN15I3DrwgpQckR2imWGop93A6buP3BEKyR6hjzb30CNvVxRlVT
-uFopCSjjy9SPEUDlnS9YUpHbozb/r1FyHoOf8Qe/ccgaz3LINmsJVZNilyXM2cD7UA0H+u6RAo4j
-qxpcRq9/hTGFg7ItzXbAeiHBaqcSpLCjHtVbBow4GcYwP7bPaZYYkHAUa3tL9c8JN/yN/9YZnJia
-0ELGnU2oRcFyQcoPE70AvVdFzJtP76INhUsZ2ufiaT1HKuC8SbnMQ6nXT5w/c5AKdvCCPBx7hDql
-4Q0BtAse+DovsTGUQLk2pA47yXZXMhQ4I7bThSj76Wqz4Q+O4kJHkOQhZ+4kky2ieqkrDoSj3dRM
-TImwz1En+yzenLhrmESd1MnzVTJvKELFTifGJPIE+G+pLECRz0i38ksa3Q9ARULV+WVVbjkXforw
-MUqYvCkY/61k8kc7OGljBZar3BvJvEv0GF8U+9yAHS+g58l0eRusTQUOORcJ9Lo5weRLADXf/vrC
-9E9EQxp0EMmOPrIrZ8IfqFnEL/nnf2G77fJWGjh6TX3nhVHVAnX3GE6NklXcFW7Hb9Lqf0Bzdw2V
-0n8ejTzmdSXhzuTF3DsdzuLrohawulJiQ75g4tzgARxdm13WibVJ25qfXsrkh0JvUIfLvaU81Y0Q
-R2W42VNh2CGgndHVV8klvzo97leaMb1HOmbSRWRWkIWEQxZbqi+8m6911WkMpx2wL+DX2CjEwSMx
-cmE99MW8Yk+OSFf2286jaULdMdQmoRc0W/rFWY6UOecPmcNZygekAUmKJmELiD9cJDsthCeEXcnc
-vJAKNuCUt8IldCylzGM0XMDL/5qrv5gltht8ZabyQ7Y1uXAgzPMJz90Nhp0QnFvw695IpoR/ibHg
-Mg1hi8KDs5IQRc11PBxone+RCDpwVPvBcui0nhYaCVZQmw+WZaqw1D7R0Kuo7NwrImvHw2CgJ9Gu
-5ZbQvAxhPqpegZv/hEPOwjWQh2I1LNPiYy3HVklBY6nOdU0ttw1FgNQFmsV2aggkoAJjtF5INfPg
-a9o27ApuOzWhU5XWru4HioCm2a5CBU0S3KG0tZGCE5ZW+MwFJkfe7Dt+wbWZUWPkIntUm8WXgOtk
-QXjRZiZqgujDEQSRIdaQ9GvshxALZmeXbz6VnPaw2niWts9n8vNndF+PVuOLhWiDSf3coXbo6Gns
-uic9g1RJsCDX9aOoAeOKpmgKbOw8iAL48lzhQih9UfkLlY79SO/oH6FltvWvlpcVIwbdfW3BbO2e
-F/UXm6cBO2/kQT1m/zhBRw3n+EBR2ixTzlt2/47MMXsHCYOKVxKj8JhxO4kjOeg0Xv6Kq6Teagn3
-/Lmr79F48W/qvqT2Z+7s74wHT6FmRc11hWWLhWy9RRgD8qkdl5tU1I8bnbkCBDfSu6iGRnrHVNjY
-HIWozI7rEL+rCtC1g9s0Ffn+1we9bCN12n75mQV+UBZebxa1URIqx0s1MAZ8OsN71kO1ZbTenSxk
-ECKMZI6a+E9zH3A5X9Ea16DzWHCkp8w82OMTiOu9pkvjZHAcMiGCRCdQ+YxdYoo3LI7wUdvz/mOw
-qOyc6rnSQ7gLzKEratV/v/e7Kv+Vq8+HeX3MoQTnu1UhsIrDi+8MI6I1Iu6KA+bZyIVUiYyTddyc
-FImFbS95N2LXJ8UAIzZE/OyWQX8LrAOUNP++HhMf7fO4B4TrkKlCVuOE4yrqYArNPEzdKZP4O+Vs
-UgAnURoFsF35ReUkSfSEAogEkdNIvcuXKDDowXjr396VEqgXY7Pj/twi188Xdfe9WVxztB0rAmrZ
-ptaKjguIRC3yfMgr7F597z14kl1AQ/V8XIhApqLe6u1TIbuM1E0aSJ15h7gJ6S52rbYOYH7wM52p
-z6NUYGXHUaOwNizT6erCtGC0tvfMRh3qGXWSOv5foQhJESyBzK56AKzgEDmaS16y7ARcsGel6vX9
-G5D1dDv7Oo4Yc8HHO43zRIRSRlIsT7aQ1DOYOgVO8RacIxbrK1hjv6H5ITH5CWIFLQEIvfKzVd+Y
-TEp8aZsel2qsxl2R6d0ZRcbMnQaG71t+honeTe3fKasPPAIuPOZEGC+Bm0fchQWaCgp834pj4I0h
-vIB6+GLWBSBb62AORVuHohtjFN69MmHMr90C2Tas5OvcyU7+1kj39VfCeWyUPNLmXOF6e98DOoM2
-2i1Jaw9ue6643EhNsEziS+YHCPn7fz1HvLkOYUP5QAtsEDuMWoqw6ku5Nexsvg414wuKrWJ3e41Y
-ye2gjfSVisajBVzUbb0vPKuLRnKHz1jzdU2bAXStoQW4XHXJ7jQDFU5WZW94y+jYx5+p4YKhS+Nq
-2kai4Ob9DRu79pBYfycXTOIeGPGwJr/iiTNDhiZYscDMBCIl66Ah8/8W0PlK0ti8oz84XD7/A8Qg
-z7MZd31rYo3T+ZIU6J5Lna8nTgwoOxmqqdMRDvHCEq+PwTw0znXANXKMC0pt2+kDEiau1uXgBjoG
-jZ82hJloOjsTUFNhcOAb/HWfZ8ZJbOC28UGYYOjlsAHtBlezWXwZ5eEl5M73hUYes759ZI9TcN1u
-lTu4BvDkAxdpfGTYStpFoUtAMOmA1ejh0UrDsEuQ71oLHTJATo9+b27pfDTIoNiwJRZliXxGdQ4G
-VT55QNt8qfun6zh/RzjxLyq6/CPVk9nZX5sWYEabGbYIyrjsU8p4FS4FS2RORiH1kdoekbvftFnk
-SDXohnG/P5l4cnYoiFxNKqg79FtwEtTshQo+T702ORLCx6VsWMNrUlw44nEqDMthkoOthupLYlg5
-629v8gFM14//1QDozwSsZLoUpKjgrutWlHXwW7WZQSt9vBT5vjF2iEhRo3ssFR3xz/XwGb0RCmBN
-uz7DwFQ1GhJAjzXnxAkfJ6E1XypGYOi1R/WCVFGJJ2uIe/fow/uY+2Crkirv2ZdWcUSl7DnfQtkE
-wUH6jl/KrbhS2RuYNY//5fM3C7dG4B/v22MyQmhJnyONJe3lc7dz1gpwLmUuE5WIyKB7bcp0z391
-ExxtXsGHLxUpUsIoDmyE+AS8CE2YnnPSxba7Sw4lLzqY7XOGumBIk6NaJTK7gLvNxmjhB0AwBhPd
-BhchJ4OQW084bbd/tkb6Hd+qJyx3Ln2S9WZNR2czKq2YKGueNuXgT+oQKkP7NSPLazt1vpDMRN8c
-KaEZXU3N7L8Tq6pcKSIt721xDgy+wGPWicMPxhVv+3VCISp/Q8i8TKz/MYCn22dmdLDtMwR0KODh
-rtVs6AGiTHxhf8s5dRDODMOYie2oMt8gaqZ4DeEa1QW4BxHAuS5TzsAS1VzKrQbEdvd2V0tN/0ni
-4VxJn60SwVt2O17GXjKkGatyPnNWeKgZ/+8gHcK1hQVRqd3GTX7X3aOMrBhJeTHYUweE88msg8Vm
-MYwI8wrnjob1+D/LYweoy4CM73O+n+NQ+C+YiZMxOFTaFx2vNwPSC9TGevx67bMFHLLghf5dPwqn
-l+3W4AiiPbal6slze4qpRmahUeMTVxutm0dog2VvTfvhpi0w7vdB5mkVLZ2sZAleeWGd9z0M0tBo
-1aIA0ZWjXCKFk0ORKdjZAYjW6xIp0sn85Hylj8bQcTNa+ViLX3NPqZdM1YvFtxjEpq/JFM/ngYAU
-bnqtfbxXP+5LsF00idvfATFvSN7VjBd3U88uczDV9wzO1vyLlKsFbkEcfk6vVMnSgeHSQc8KkmJA
-YQ0trLE0eQWj0EvecHmaN0agicexTt5Wq6cJJY360xIANnJLltSesyytaMMJ9ehq7jC6fu75CFAq
-OEjhrHgrsbn2rhTI4QiP0vJtGtvTH3SbNM6cxQNSMzfg3uucyS+i8xPcvDCeo1ohlYE+7c+zfi9l
-ZdYzo5q6e9yOnXBNPwx7xEaAvaOpOOQMx9SsjiLRtTxf0TaV9jeiS4+12YwLlwfADQ/4ZFsJiTuq
-oqwnEpyC/ZLbs6qpHBYUl1y0a5iFfU9ieVng5bYzyxc1cZ+QYr8wDm79Jc21up5wQf64WYAz4n0u
-fnHt8hFLMo3lBjY55x4hv5eLa/qiboaLtzPgjurhidBnh6Ulj3/sPa/PboACuGMbdAJ+yg+QuH2a
-S3Vj+IciQ40Q404A6EZehQ8bhqUH0VIh640eN6kLsmibLbo0WC1iMLikmodKtW+44+Lw6lLQHvgH
-PWOCa3KU7A6QaLO+RZIaXdzA8ZVQG1ZzBPsVBZYZrqzmJwdN3p2ruXs1l4eZS9oziRDqQiQA8tTK
-Z1pl1Yiz/V08HpMwfQaiT/KTULEJJ9Or9u787yUx2GvGBq3JWV3H0ZiA4vy619pK4uU26KIwmAv1
-ClJhvz2V129MG/tMqlT1P+zBUbN0FkSa9liBSF/Z+b7RD8cVL9jwZ9q2FXZOraPXuaVdCJ1JQ8LX
-pYFufzikz/eLGqSdGmVs7CfopEXJiMsDczGmGMw2LIibs1Uir6LXcn/wQfwABZlGxmQ7hQJ98oCJ
-XEtdXIfdEex9ZBFmGMbzZxHsq5V6SeTXINnAAOiSuiW0uFcyy7LLzUKvGZbbNZLNcENTuiBg+Pjx
-6dKiQd6+xniJgzdEXKVIUyHNsvwhks0c7Hm6WlAr3CKxU5zfeX0HUr0Ii/mH2rbSBG9EqZByEg+6
-zhhcCNHyupiA95fvhMeTBXanEONX6pNjOYjFUND/1ssIQvESSMtmOXSVrHS/kKDn4+XqxQIFkdbD
-4qXlheFYsrWEbDwCLcKaLEkboPkDR7Mfqma9dxyjE49UOI9mkT3uD3O8aiSuoJr4czRiDmX76U1Y
-b0yQ3afd9oUgI8mjPal7AP28ZI1VvRg4Ya87Rq7kFIvNgtf+u65R88dX5SJy6HiCtkXJ2C+gZkyp
-9DG/f53UWgPGGB04qLF6oLGQgLMap3/FHV/dOaX1Jd5GV2ofEC3nSW1h7cuX6FIyGD9UxfZHbAha
-233uHIPJRxTiST8qb1qBoJDmiT01WvKOEq6PuEJv1pD4xBRqvsn2jLXXphMD4E4YQSe8FsE4Nlgi
-K+jgPu4s6Z4OmDlUPf3DWHHyFUNuL0ZeUdGnymj8ISQY9Jl98ZjIcVhVqRWQuBvySuwednipi2dX
-lZa8+X4Aw6nCaqSX/59phk6McosjlVs6Rmkb462wZEir6JMUSX5c2Z22XMWglXo0Vk9fWB9AKSOD
-j4vcYoKAk0ibj9ffACsHb02jz2m5bDZgg1agI1uBQ4Q4ZtLtHI4ei6mGRGaW7S0PdaRM0A9Vpm0D
-KsXSAh1gnbZqQyGlmEDiZVrE1WTHm0ghq1ERVwDIC1DU1cvVwKxxtAifquOf9h1NbZfxl9Hn+Rnc
-I0NqzeNvGJNJcrjMDUwcOSi/cfjkmDDL23y2aSxHlnyLGLVE8Z/m/u5AXiXUYV3S1qrJPeD9+44m
-Aqzi9GEB7CK0Tl/Vz0PXjLNkRWc0iWo9KzQpflqRtZtsTadhC9Q9+5hZx4D1veOAFkSRBFTfkkbw
-qEtlJ8yEGk3OIDw8EMmNxD+c09Hh9G52UX6YXXYYB6FMVuXQIiWzzAKW98hkZ6SCnfDTJdYIyqA+
-qenVt7RVil+gtu3U6T0H+rYELWJ/xKjXYJ7uWCjevcdMjWRXV+kf94EKKIPy2NksmmkYUJiTWW9e
-lTbaL9YYzA4OndZJqmrUjh+kYObWfYWOytXoNg9xC05npWxtFxSBCqQnkDjpluw4/GuJ+wkMyhug
-tmvdjmTDBe2tHRq/6WaF0g87zTspqPpzKUTT/R2RgFU+WB3+Gvyn/rk62js7/VkxxWLSlbK7qBuh
-QPRbvpxYgCPe9Untz2eNtzsrnB2PvG5JJM5Ztv0vMHP9k78lfjHguTnxsPDPfJlKbGyYNqXsYWjA
-Sd9dlcCXIq/CEFrRohebbCxIwC10IyIe4grpn3DaTCDW77WkqRw5BU0ffLkdDv2MWA57HhGUVTkb
-zilfnS+EoNGRNcZwcfgYeHDJ5nAN3I6den5//N7q1Psy8goEO5nALuy7yr66xQtxQNzBQkKK2UBB
-lvJC77q8pOaj+mcXqwpTCQJ3CHnwzwpsIkpRixIz3ohN2EF/WncoI3Q7z99LLtmIMUSthZ/P3yOZ
-+3vDZYcfhGUhE5kZEKn3oH2wj8lerF7ynaLtE6qO9Z34H2WP4a2YZgDqcwkUvY1GxqkXCe6wMy2G
-VbYoiKTv68MDJyqcoAXaq1zdhDWeKP0ICU/NwCBNH9zjiY1KMSKXtOejnyLTD8SGZ4feK4mCcMK8
-OBk3Ny5RLPbcVPN738plKoHOasvoYW+THh6y+j4T5HZZh8rKZPvZife0IjtLEzqkr3WXWq4vnpX0
-6pDew9lV75jkwxuN3B/8Kbt85DOkVKMbYsMit6L9Lcu8/HKe0Y/xKZi9lOocCaVNXjIMv6p2h8Xu
-SgLTRI1LakUPDFyDw1U7alKgtjWrk8XrN97kOs7hDgw6ELJPhOPcTP9KEPFX2Ain9GgW3a4uVAK0
-o6LE4MCCptbxcNWLlCgk6vApu5+U/aerX40zmfnJvQcZoin//UD0Bi7ZYH67+bHcfH/yX9OfoAnz
-KVwctCPxffdtrsL2df/r7oVREdCbmKu+id88gWRVJZYHZgHStU46idvCKOEqbAsDbQnYTe3Bug/s
-x/0HDvGthmyVnvN0rM4majfuEJQPyr9hkZTZC1ScZfPP4o3LVl/yYFs1MYZyaaib7zQnc4UByIfJ
-vXwv5RXjntxL8mAoojlCDIDpqYScGMgmuW089PP3AB7b9+cEfnoQ/LRzKEH5CA/WrbbaBMdo8BdL
-x+InsHmfy8XUcvQcKntaxhTO/pIQM1I2T/2xFGT/ONdTfXe5rf68eJ45yX+t1ATF4S8bg+z2xsf4
-HlUNUN/XixJYwO0kDEq4P3vn92OZ9q9Lu47CGjTcXt+PfWRNI9F62zlcUzA4zP7CAqE3ZOuZhPsA
-2eBLXKijwej7mhlYUHvIo7VNhAu8j142KQzrQNTjldRY7Jz+kGIBzHBP4oZcdR3WBj49c/jBHpS3
-NKHK/dR5h56cRdIHJ8rENafHmMHXv+o58OHuaUkbPs+mYujYOUQX4lD+7dIGmFvwj6YaPzFoSeXZ
-K451BD2+aPZzCyb8CJIqMtHPlNmx1/p6Jx3uapHIIgMDXDgUqKpsWmUH+Gi4aX3/qecmC/5Z01QW
-f9EcfnBmoxE5bcZB5fjcaJZdm1A9kg8AHNvokZEU/7VuVn3Yo8boAcIh/CkYQazf9rrgkfrWaSp+
-Uoi3ldmwe62P45YkB4SDJavr2Dht+3GDveVJugOe+8nMX9HYIPv35nmP2AD03zOj3OCxEbVbvCPi
-gwE2LbFS6xXM3DWqv7BAtaOLRA/+RsolucWA7EVhV4m4lroLbPSYwN7l0gi9uWaC7Mi9js913HKn
-zI4kdSw3slRh8A/0K+ydMEAtS+L7hcdlVGIfSt/vL4jAI9YHpXaCiHfRDmBSIA0zuNah1ks4k4J+
-FvjWWSpm3/oOTDrwQk0U6+HaEopdalDgo0shfOjP8TTWhefQQ83Gnwg7dzXZWIn6uXgngckKgBR3
-93f6uk5fjPlf8TA1olY3eh9h0zZSyVC2XEM8/jwzhES5HY108zc75KhOX/dDZl+0Y1o/vFZxlCyr
-zd12xrQSYyOho8DZyQVvtwjMTE3hsLbfDAytgwUb3/t2fSgDtUc5O/sNu/vi2j+3501sipA6xC1n
-9eQrCs12RUnLf4MSzcDm1Wv4bLhfdEudUDboowejvlfzx3SlTsZdUxus1ghyJBWpbPHwypSD2q+j
-PbCfSX1XkDVRqMsV0pvTNMCmtHdpmW/4k1Z6aQTyYd3D+ErLjhbE4cMzxXbAAd6ZAlGJmXCG3B+A
-NJ662VT46kNl2YY6a0WzTl6/e3XDIYdIZHLZXVLRY7G8433v4DxN8/ag7eT8nxowJt3u/EWmLiQ7
-wu5oIXM3OHUA/PtBQi0ckvFAgy5oRAvPqbZVfCCmAm3QrkHlecrp3qElvb1T10rtulWmeM9xfWgr
-hKqbPRdopE4BWg1n4sbX5vnxNbORgX0xfAn5G5HgSxnyvHTtFkIHwvwxiQUoRFHHcbzFq0SW8iWA
-d20xDlzxEcqsqzm81JxSzHwYasPa7m/Wyr0I97JeX4wRkxKAp5eQRHlBJHzibnbGKY8/aZsajdM4
-6W==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Registry_EnabledInterface
+ */
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * @see Zend_Tool_Framework_Registry
+ */
+require_once 'Zend/Tool/Framework/Registry.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Tool_Framework_Client_Abstract implements Zend_Tool_Framework_Registry_EnabledInterface
+{
+
+    /**
+     * @var Zend_Tool_Framework_Registry
+     */
+    protected $_registry = null;
+    
+    /**
+     * @var callback|null
+     */
+    protected $_interactiveCallback = null;
+
+    /**
+     * @var bool
+     */
+    protected $_isInitialized = false;
+    
+    /**
+     * @var Zend_Log
+     */
+    protected $_debugLogger = null;
+    
+    /**
+     * getName() - Return the client name which can be used to 
+     * query the manifest if need be.
+     *
+     * @return string The client name
+     */
+    abstract public function getName();
+    
+    /**
+     * initialized() - This will initialize the client for use
+     *
+     */
+    public function initialize()
+    {
+        // if its already initialized, no need to initialize again
+        if ($this->_isInitialized) {
+            return;
+        }
+        
+        // this might look goofy, but this is setting up the 
+        // registry for dependency injection into the client
+        $registry = new Zend_Tool_Framework_Registry();
+        $registry->setClient($this);
+        
+        // NOTE: at this moment, $this->_registry should contain
+        // the registry object
+        
+        // run any preInit
+        $this->_preInit();
+
+        // setup the debug log
+        if (!$this->_debugLogger instanceof Zend_Log) {
+            require_once 'Zend/Log.php';
+            require_once 'Zend/Log/Writer/Null.php';
+            $this->_debugLogger = new Zend_Log(new Zend_Log_Writer_Null());
+        }
+        
+        // let the loader load, then the repositories process whats been loaded
+        $this->_registry->getLoader()->load();
+        
+        // process the action repository
+        $this->_registry->getActionRepository()->process();
+        
+        // process the provider repository
+        $this->_registry->getProviderRepository()->process();
+        
+        // process the manifest repository
+        $this->_registry->getManifestRepository()->process();
+        
+        if ($this instanceof Zend_Tool_Framework_Client_Interactive_InputInterface) {
+            require_once 'Zend/Tool/Framework/Client/Interactive/InputHandler.php';
+        }
+        
+        if ($this instanceof Zend_Tool_Framework_Client_Interactive_OutputInterface) {
+            $this->_registry->getResponse()->setContentCallback(array($this, 'handleInteractiveOutput'));
+        }
+        
+    }
+
+
+    /**
+     * This method should be implemented by the client implementation to
+     * construct and set custom inflectors, request and response objects.
+     */
+    protected function _preInit()
+    {
+    }
+
+    /**
+     * This method *must* be implemented by the client implementation to
+     * parse out and setup the request objects action, provider and parameter
+     * information.
+     */
+    abstract protected function _preDispatch();
+
+    /**
+     * This method should be implemented by the client implementation to
+     * take the output of the response object and return it (in an client
+     * specific way) back to the Tooling Client.
+     */
+    protected function _postDispatch()
+    {
+    }
+    
+    /**
+     * setRegistry() - Required by the Zend_Tool_Framework_Registry_EnabledInterface
+     * interface which ensures proper registry dependency resolution
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     * @return Zend_Tool_Framework_Client_Abstract
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+    
+    /**
+     * hasInteractiveInput() - Convienence method for determining if this
+     * client can handle interactive input, and thus be able to run the 
+     * promptInteractiveInput
+     *
+     * @return bool
+     */
+    public function hasInteractiveInput()
+    {
+        return ($this instanceof Zend_Tool_Framework_Client_Interactive_InputInterface);
+    }
+    
+    public function promptInteractiveInput($inputRequest)
+    {
+        if (!$this->hasInteractiveInput()) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('promptInteractive() cannot be called on a non-interactive client.');
+        }
+        
+        $inputHandler = new Zend_Tool_Framework_Client_Interactive_InputHandler();
+        $inputHandler->setClient($this);
+        $inputHandler->setInputRequest($inputRequest);
+        return $inputHandler->handle();
+
+    }
+    
+    /**
+     * This method should be called in order to "handle" a Tooling Client
+     * request that has come to the client that has been implemented.
+     */
+    public function dispatch()
+    {
+        $this->initialize();
+        
+        try {
+
+            $this->_preDispatch();
+
+            if ($this->_registry->getRequest()->isDispatchable()) {
+
+                if ($this->_registry->getRequest()->getActionName() == null) {
+                    require_once 'Zend/Tool/Framework/Client/Exception.php';
+                    throw new Zend_Tool_Framework_Client_Exception('Client failed to setup the action name.');
+                }
+
+                if ($this->_registry->getRequest()->getProviderName() == null) {
+                    require_once 'Zend/Tool/Framework/Client/Exception.php';
+                    throw new Zend_Tool_Framework_Client_Exception('Client failed to setup the provider name.');
+                }
+
+                $this->_handleDispatch();
+
+            }
+
+        } catch (Exception $exception) {
+            $this->_registry->getResponse()->setException($exception);
+        }
+
+        $this->_postDispatch();
+    }
+    
+    public function convertToClientNaming($string)
+    {
+        return $string;
+    }
+    
+    public function convertFromClientNaming($string)
+    {
+        return $string;
+    }
+    
+    protected function _handleDispatch()
+    {
+        // get the provider repository
+        $providerRepository = $this->_registry->getProviderRepository();
+        
+        $request = $this->_registry->getRequest();
+        
+        // get the dispatchable provider signature
+        $providerSignature = $providerRepository->getProviderSignature($request->getProviderName());
+        
+        // get the actual provider
+        $provider = $providerSignature->getProvider();
+
+        // ensure that we can pretend if this is a pretend request
+        if ($request->isPretend() && (!$provider instanceof Zend_Tool_Framework_Provider_Pretendable)) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('Dispatcher error - provider does not support pretend');  
+        }
+        
+        // get the action name
+        $actionName = $this->_registry->getRequest()->getActionName();
+
+        if (!$actionableMethod = $providerSignature->getActionableMethodByActionName($actionName)) {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('Dispatcher error - actionable method not found');         
+        }
+        
+        // get the actual method and param information
+        $methodName       = $actionableMethod['methodName'];
+        $methodParameters = $actionableMethod['parameterInfo'];
+
+        // get the provider params
+        $requestParameters = $this->_registry->getRequest()->getProviderParameters();
+        
+        // @todo This seems hackish, determine if there is a better way
+        $callParameters = array();
+        foreach ($methodParameters as $methodParameterName => $methodParameterValue) {
+            if (!array_key_exists($methodParameterName, $requestParameters) && $methodParameterValue['optional'] == false) {
+                if ($this instanceof Zend_Tool_Framework_Client_Interactive_InputInterface) {
+                    $promptSting = $this->getMissingParameterPromptString($provider, $actionableMethod['action'], $methodParameterValue['name']);
+                    $parameterPromptValue = $this->promptInteractiveInput($promptSting)->getContent();
+                    if ($parameterPromptValue == null) {
+                        require_once 'Zend/Tool/Framework/Client/Exception.php';
+                        throw new Zend_Tool_Framework_Client_Exception('Value supplied for required parameter "' . $methodParameterValue['name'] . '" is empty');
+                    }
+                    $callParameters[] = $parameterPromptValue;
+                } else {
+                    require_once 'Zend/Tool/Framework/Client/Exception.php';
+                    throw new Zend_Tool_Framework_Client_Exception('A required parameter "' . $methodParameterValue['name'] . '" was not supplied.');
+                }
+            } else {
+                $callParameters[] = (array_key_exists($methodParameterName, $requestParameters)) ? $requestParameters[$methodParameterName] : $methodParameterValue['default'];
+            }
+        }
+        
+        if (($specialtyName = $this->_registry->getRequest()->getSpecialtyName()) != '_Global') {
+            $methodName .= $specialtyName;
+        }
+        
+        if (method_exists($provider, $methodName)) {
+            call_user_func_array(array($provider, $methodName), $callParameters);
+        } elseif (method_exists($provider, $methodName . 'Action')) {
+            call_user_func_array(array($provider, $methodName . 'Action'), $callParameters);
+        } else {
+            require_once 'Zend/Tool/Framework/Client/Exception.php';
+            throw new Zend_Tool_Framework_Client_Exception('Not a supported method.');
+        }
+    }
+
+}

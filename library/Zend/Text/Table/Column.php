@@ -1,76 +1,243 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-0rXM2puEJMpecxwOiwzuiXIL9yC=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Text_Table
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Column.php 13556 2009-01-08 17:54:13Z dasprid $
+ */
+
+/**
+ * @see Zend_Text_Table
+ */
+require_once 'Zend/Text/Table.php';
+
+/**
+ * @see Zend_Text_MultiByte
+ */
+require_once 'Zend/Text/MultiByte.php';
+
+/**
+ * Column class for Zend_Text_Table_Row
+ *
+ * @category  Zend
+ * @package   Zend_Text_Table
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Text_Table_Column
+{
+    /**
+     * Aligns for columns
+     */
+    const ALIGN_LEFT   = 'left';
+    const ALIGN_CENTER = 'center';
+    const ALIGN_RIGHT  = 'right';
+
+    /**
+     * Content of the column
+     *
+     * @var string
+     */
+    protected $_content = '';
+
+    /**
+     * Align of the column
+     *
+     * @var string
+     */
+    protected $_align = self::ALIGN_LEFT;
+
+    /**
+     * Colspan of the column
+     *
+     * @var integer
+     */
+    protected $_colSpan = 1;
+
+    /**
+     * Allowed align parameters
+     *
+     * @var array
+     */
+    protected $_allowedAligns = array(self::ALIGN_LEFT, self::ALIGN_CENTER, self::ALIGN_RIGHT);
+
+    /**
+     * Create a column for a Zend_Text_Table_Row object.
+     *
+     * @param string  $content  The content of the column
+     * @param string  $align    The align of the content
+     * @param integer $colSpan  The colspan of the column
+     * @param string  $charset  The encoding of the content
+     */
+    public function __construct($content = null, $align = null, $colSpan = null, $charset = null)
+    {
+        if ($content !== null) {
+            $this->setContent($content, $charset);
+        }
+
+        if ($align !== null) {
+            $this->setAlign($align);
+        }
+
+        if ($colSpan !== null) {
+            $this->setColSpan($colSpan);
+        }
+    }
+
+    /**
+     * Set the content.
+     *
+     * If $charset is not defined, it is assumed that $content is encoded in
+     * the charset defined via Zend_Text_Table::setInputCharset() (defaults
+     * to utf-8).
+     *
+     * @param  string $content  Content of the column
+     * @param  string $charset  The charset of the content
+     * @throws Zend_Text_Table_Exception When $content is not a string
+     * @return Zend_Text_Table_Column
+     */
+    public function setContent($content, $charset = null)
+    {
+        if (is_string($content) === false) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('$content must be a string');
+        }
+
+        if ($charset === null) {
+            $inputCharset = Zend_Text_Table::getInputCharset();
+        } else {
+            $inputCharset = strtolower($charset);
+        }
+
+        $outputCharset = Zend_Text_Table::getOutputCharset();
+
+        if ($inputCharset !== $outputCharset) {
+            if (PHP_OS !== 'AIX') {
+                // AIX does not understand these character sets
+                $content = iconv($inputCharset, $outputCharset, $content);
+            }
+
+        }
+
+        $this->_content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Set the align
+     *
+     * @param  string $align Align of the column
+     * @throws Zend_Text_Table_Exception When supplied align is invalid
+     * @return Zend_Text_Table_Column
+     */
+    public function setAlign($align)
+    {
+        if (in_array($align, $this->_allowedAligns) === false) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('Invalid align supplied');
+        }
+
+        $this->_align = $align;
+
+        return $this;
+    }
+
+    /**
+     * Set the colspan
+     *
+     * @param  int $colSpan
+     * @throws Zend_Text_Table_Exception When $colSpan is smaller than 1
+     * @return Zend_Text_Table_Column
+     */
+    public function setColSpan($colSpan)
+    {
+        if (is_int($colSpan) === false or $colSpan < 1) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('$colSpan must be an integer and greater than 0');
+        }
+
+        $this->_colSpan = $colSpan;
+
+        return $this;
+    }
+
+    /**
+     * Get the colspan
+     *
+     * @return integer
+     */
+    public function getColSpan()
+    {
+        return $this->_colSpan;
+    }
+
+    /**
+     * Render the column width the given column width
+     *
+     * @param  integer $columnWidth The width of the column
+     * @param  integer $padding     The padding for the column
+     * @throws Zend_Text_Table_Exception When $columnWidth is lower than 1
+     * @throws Zend_Text_Table_Exception When padding is greater than columnWidth
+     * @return string
+     */
+    public function render($columnWidth, $padding = 0)
+    {
+        if (is_int($columnWidth) === false or $columnWidth < 1) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('$columnWidth must be an integer and greater than 0');
+        }
+
+        $columnWidth -= ($padding * 2);
+
+        if ($columnWidth < 1) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('Padding (' . $padding . ') is greater than column width');
+        }
+
+        switch ($this->_align) {
+            case self::ALIGN_LEFT:
+                $padMode = STR_PAD_RIGHT;
+                break;
+
+            case self::ALIGN_CENTER:
+                $padMode = STR_PAD_BOTH;
+                break;
+
+            case self::ALIGN_RIGHT:
+                $padMode = STR_PAD_LEFT;
+                break;
+
+            default:
+                // This can never happen, but the CS tells I have to have it ...
+                break;
+        }
+
+        $outputCharset = Zend_Text_Table::getOutputCharset();
+        $lines         = explode("\n", Zend_Text_MultiByte::wordWrap($this->_content, $columnWidth, "\n", true, $outputCharset));
+        $paddedLines   = array();
+
+        foreach ($lines AS $line) {
+            $paddedLines[] = str_repeat(' ', $padding)
+                           . Zend_Text_MultiByte::strPad($line, $columnWidth, ' ', $padMode, $outputCharset)
+                           . str_repeat(' ', $padding);
+        }
+
+        $result = implode("\n", $paddedLines);
+
+        return $result;
+    }
+}

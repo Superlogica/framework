@@ -1,64 +1,163 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_File_Size
+ */
+require_once 'Zend/Validate/File/Size.php';
+
+/**
+ * Validator for the size of all files which will be validated in sum
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_FilesSize extends Zend_Validate_File_Size
+{
+    /**
+     * @const string Error constants
+     */
+    const TOO_BIG      = 'fileFilesSizeTooBig';
+    const TOO_SMALL    = 'fileFilesSizeTooSmall';
+    const NOT_READABLE = 'fileFilesSizeNotReadable';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::TOO_BIG      => "All files in sum should have a maximum size of '%max%' but '%size%' were detected",
+        self::TOO_SMALL    => "All files in sum should have a minimum size of '%min%' but '%size%' were detected",
+        self::NOT_READABLE => "One or more files can not be read"
+    );
+
+    /**
+     * Internal file array
+     *
+     * @var array
+     */
+    protected $_files;
+
+    /**
+     * Sets validator options
+     *
+     * Min limits the used diskspace for all files, when used with max=null it is the maximum filesize
+     * It also accepts an array with the keys 'min' and 'max'
+     *
+     * @param  integer|array $min        Minimum diskspace for all files
+     * @param  integer       $max        Maximum diskspace for all files (deprecated)
+     * @param  boolean       $bytestring Use bytestring or real size ? (deprecated)
+     * @return void
+     */
+    public function __construct($options)
+    {
+        $this->_files = array();
+        $this->_setSize(0);
+
+        if (1 < func_num_args()) {
+            trigger_error('Multiple constructor options are deprecated in favor of a single options array', E_USER_NOTICE);
+            if ($options instanceof Zend_Config) {
+                $options = $options->toArray();
+            } elseif (is_scalar($options)) {
+                $options = array('min' => $options);
+            } elseif (!is_array($options)) {
+                require_once 'Zend/Validate/Exception.php';
+                throw new Zend_Validate_Exception('Invalid options to validator provided');
+            }
+
+            $argv = func_get_args();
+            array_shift($argv);
+            $options['max'] = array_shift($argv);
+            if (!empty($argv)) {
+                $options['bytestring'] = array_shift($argv);
+            }
+        }
+
+        parent::__construct($options);
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the disk usage of all files is at least min and
+     * not bigger than max (when max is not null).
+     *
+     * @param  string|array $value Real file to check for size
+     * @param  array        $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        require_once 'Zend/Loader.php';
+        if (is_string($value)) {
+            $value = array($value);
+        }
+
+        $min  = $this->getMin(true);
+        $max  = $this->getMax(true);
+        $size = $this->_getSize();
+        foreach ($value as $files) {
+            // Is file readable ?
+            if (!Zend_Loader::isReadable($files)) {
+                $this->_throw($file, self::NOT_READABLE);
+                continue;
+            }
+
+            if (!isset($this->_files[$files])) {
+                $this->_files[$files] = $files;
+            } else {
+                // file already counted... do not count twice
+                continue;
+            }
+
+            // limited to 2GB files
+            $size += @filesize($files);
+            $this->_setSize($size);
+            if (($max !== null) && ($max < $size)) {
+                if ($this->useByteString()) {
+                    $this->setMax($this->_toByteString($max));
+                    $this->_throw($file, self::TOO_BIG);
+                    $this->setMax($max);
+                } else {
+                    $this->_throw($file, self::TOO_BIG);
+                }
+            }
+        }
+
+        // Check that aggregate files are >= minimum size
+        if (($min !== null) && ($size < $min)) {
+            if ($this->useByteString()) {
+                $this->setMin($this->_toByteString($min));
+                $this->_throw($file, self::TOO_SMALL);
+                $this->setMin($min);
+            } else {
+                $this->_throw($file, self::TOO_SMALL);
+            }
+        }
+
+        if (count($this->_messages) > 0) {
+            return false;
+        }
+
+        return true;
+    }
+}

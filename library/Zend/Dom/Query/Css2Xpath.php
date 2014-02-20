@@ -1,60 +1,141 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dom
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Transform CSS selectors to XPath 
+ * 
+ * @package    Zend_Dom
+ * @subpackage Query
+ * @copyright  Copyright (C) 2007 - Present, Zend Technologies, Inc.
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ * @version    $Id: Css2Xpath.php 11013 2008-08-24 21:06:20Z thomas $
+ */
+class Zend_Dom_Query_Css2Xpath
+{
+    /**
+     * Transform CSS expression to XPath
+     * 
+     * @param  string $path 
+     * @return string
+     */
+    public static function transform($path)
+    {
+        $path = (string) $path;
+        if (strstr($path, ',')) {
+            $paths       = explode(',', $path);
+            $expressions = array();
+            foreach ($paths as $path) {
+                $xpath = self::transform(trim($path));
+                if (is_string($xpath)) {
+                    $expressions[] = $xpath;
+                } elseif (is_array($xpath)) {
+                    $expressions = array_merge($expressions, $xpath);
+                }
+            }
+            return $expressions;
+        }
+
+        $paths    = array('//');
+        $segments = preg_split('/\s+/', $path);
+        foreach ($segments as $key => $segment) {
+            $pathSegment = self::_tokenize($segment);
+            if (0 == $key) {
+                if (0 === strpos($pathSegment, '[contains(@class')) {
+                    $paths[0] .= '*' . $pathSegment;
+                } else {
+                    $paths[0] .= $pathSegment;
+                }
+                continue;
+            }
+            if (0 === strpos($pathSegment, '[contains(@class')) {
+                foreach ($paths as $key => $xpath) {
+                    $paths[$key] .= '//*' . $pathSegment;
+                    $paths[]      = $xpath . $pathSegment;
+                }
+            } else {
+                foreach ($paths as $key => $xpath) {
+                    $paths[$key] .= '//' . $pathSegment;
+                }
+            }
+        }
+
+        if (1 == count($paths)) {
+            return $paths[0];
+        }
+        return implode(' | ', $paths);
+    }
+
+    /**
+     * Tokenize CSS expressions to XPath
+     * 
+     * @param  string $expression 
+     * @return string
+     */
+    protected static function _tokenize($expression)
+    {
+        // Child selectors
+        $expression = str_replace('>', '/', $expression);
+
+        // IDs
+        $expression = preg_replace('|#([a-z][a-z0-9_-]*)|i', '[@id=\'$1\']', $expression);
+        $expression = preg_replace('|(?<![a-z0-9_-])(\[@id=)|i', '*$1', $expression);
+
+        // arbitrary attribute strict equality
+        if (preg_match('|([a-z]+)\[([a-z0-9_-]+)=[\'"]([^\'"]+)[\'"]\]|i', $expression)) {
+            $expression = preg_replace_callback(
+                '|([a-z]+)\[([a-z0-9_-]+)=[\'"]([^\'"]+)[\'"]\]|i', 
+                create_function(
+                    '$matches',
+                    'return $matches[1] . "[@" . strtolower($matches[2]) . "=\'" . $matches[3] . "\']";'
+                ),
+                $expression
+            );
+        }
+
+        // arbitrary attribute contains full word
+        if (preg_match('|([a-z]+)\[([a-z0-9_-]+)~=[\'"]([^\'"]+)[\'"]\]|i', $expression)) {
+            $expression = preg_replace_callback(
+                '|([a-z]+)\[([a-z0-9_-]+)~=[\'"]([^\'"]+)[\'"]\]|i', 
+                create_function(
+                    '$matches',
+                    'return $matches[1] . "[contains(@" . strtolower($matches[2]) . ", \' $matches[3] \')]";'
+                ),
+                $expression
+            );
+        }
+
+        // arbitrary attribute contains specified content
+        if (preg_match('|([a-z]+)\[([a-z0-9_-]+)\*=[\'"]([^\'"]+)[\'"]\]|i', $expression)) {
+            $expression = preg_replace_callback(
+                '|([a-z]+)\[([a-z0-9_-]+)\*=[\'"]([^\'"]+)[\'"]\]|i', 
+                create_function(
+                    '$matches',
+                    'return $matches[1] . "[contains(@" . strtolower($matches[2]) . ", \'" . $matches[3] . "\')]";'
+                ),
+                $expression
+            );
+        }
+
+        // Classes
+        $expression = preg_replace('|\.([a-z][a-z0-9_-]*)|i', "[contains(@class, ' \$1 ')]", $expression);
+
+        return $expression;
+    }
+}

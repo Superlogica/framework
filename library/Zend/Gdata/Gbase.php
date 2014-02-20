@@ -1,57 +1,208 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata
+ */
+require_once 'Zend/Gdata.php';
+
+/**
+ * @see Zend_Gdata_Gbase_ItemFeed
+ */
+require_once 'Zend/Gdata/Gbase/ItemFeed.php';
+
+/**
+ * @see Zend_Gdata_Gbase_ItemEntry
+ */
+require_once 'Zend/Gdata/Gbase/ItemEntry.php';
+
+/**
+ * @see Zend_Gdata_Gbase_SnippetEntry
+ */
+require_once 'Zend/Gdata/Gbase/SnippetEntry.php';
+
+/**
+ * @see Zend_Gdata_Gbase_SnippetFeed
+ */
+require_once 'Zend/Gdata/Gbase/SnippetFeed.php';
+
+/**
+ * Service class for interacting with the Google Base data API
+ *
+ * @link http://code.google.com/apis/base
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gbase
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gbase extends Zend_Gdata
+{
+
+    /**
+     * Path to the customer items feeds on the Google Base server.
+     */
+    const GBASE_ITEM_FEED_URI = 'http://www.google.com/base/feeds/items';
+
+    /**
+     * Path to the snippets feeds on the Google Base server.
+     */
+    const GBASE_SNIPPET_FEED_URI = 'http://www.google.com/base/feeds/snippets';
+
+    /**
+     * Authentication service name for Google Base
+     */
+    const AUTH_SERVICE_NAME = 'gbase';
+
+    /**
+     * The default URI for POST methods
+     *
+     * @var string
+     */
+    protected $_defaultPostUri = self::GBASE_ITEM_FEED_URI;
+
+    /**
+     * Namespaces used for Zend_Gdata_Gbase
+     *
+     * @var array
+     */
+    public static $namespaces = array(
+        array('g', 'http://base.google.com/ns/1.0', 1, 0),
+        array('batch', 'http://schemas.google.com/gdata/batch', 1, 0)
+    );
+
+    /**
+     * Create Zend_Gdata_Gbase object
+     *
+     * @param Zend_Http_Client $client (optional) The HTTP client to use when
+     *          when communicating with the Google Apps servers.
+     * @param string $applicationId The identity of the app in the form of Company-AppName-Version
+     */
+    public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
+    {
+        $this->registerPackage('Zend_Gdata_Gbase');
+        $this->registerPackage('Zend_Gdata_Gbase_Extension');
+        parent::__construct($client, $applicationId);
+        $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
+    }
+
+    /**
+     * Retreive feed object
+     *
+     * @param mixed $location The location for the feed, as a URL or Query
+     * @return Zend_Gdata_Gbase_ItemFeed
+     */
+    public function getGbaseItemFeed($location = null)
+    {
+        if ($location === null) {
+            $uri = self::GBASE_ITEM_FEED_URI;
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getFeed($uri, 'Zend_Gdata_Gbase_ItemFeed');
+    }
+
+    /**
+     * Retreive entry object
+     *
+     * @param mixed $location The location for the feed, as a URL or Query
+     * @return Zend_Gdata_Gbase_ItemEntry
+     */
+    public function getGbaseItemEntry($location = null)
+    {
+        if ($location === null) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Location must not be null');
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getEntry($uri, 'Zend_Gdata_Gbase_ItemEntry');
+    }
+
+    /**
+     * Insert an entry
+     *
+     * @param Zend_Gdata_Gbase_ItemEntry $entry The Base entry to upload
+     * @param boolean $dryRun Flag for the 'dry-run' parameter
+     * @return Zend_Gdata_Gbase_ItemFeed
+     */
+    public function insertGbaseItem($entry, $dryRun = false)
+    {
+        if ($dryRun == false) {
+            $uri = $this->_defaultPostUri;
+        } else {
+            $uri = $this->_defaultPostUri . '?dry-run=true';
+        }
+        $newitem = $this->insertEntry($entry, $uri, 'Zend_Gdata_Gbase_ItemEntry');
+        return $newitem;
+    }
+
+    /**
+     * Update an entry
+     *
+     * @param Zend_Gdata_Gbase_ItemEntry $entry The Base entry to be updated
+     * @param boolean $dryRun Flag for the 'dry-run' parameter
+     * @return Zend_Gdata_Gbase_ItemEntry
+     */
+    public function updateGbaseItem($entry, $dryRun = false)
+    {
+        $returnedEntry = $entry->save($dryRun);
+        return $returnedEntry;
+    }
+
+    /**
+     * Delete an entry
+     *
+     * @param Zend_Gdata_Gbase_ItemEntry $entry The Base entry to remove
+     * @param boolean $dryRun Flag for the 'dry-run' parameter
+     * @return Zend_Gdata_Gbase_ItemFeed
+     */
+    public function deleteGbaseItem($entry, $dryRun = false)
+    {
+        $entry->delete($dryRun);
+        return $this;
+    }
+
+    /**
+     * Retrieve feed object
+     *
+     * @param mixed $location The location for the feed, as a URL or Query
+     * @return Zend_Gdata_Gbase_SnippetFeed
+     */
+    public function getGbaseSnippetFeed($location = null)
+    {
+        if ($location === null) {
+            $uri = self::GBASE_SNIPPET_FEED_URI;
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getFeed($uri, 'Zend_Gdata_Gbase_SnippetFeed');
+    }
+}

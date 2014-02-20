@@ -1,88 +1,243 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Amazon.php 13551 2009-01-08 14:27:42Z beberlei $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon
+{
+    /**
+     * Amazon Web Services Access Key ID
+     *
+     * @var string
+     */
+    public $appId;
+
+    /**
+     * List of Amazon Web Service base URLs, indexed by country code
+     *
+     * @var array
+     */
+    protected $_baseUriList = array('US' => 'http://webservices.amazon.com',
+                                    'UK' => 'http://webservices.amazon.co.uk',
+                                    'DE' => 'http://webservices.amazon.de',
+                                    'JP' => 'http://webservices.amazon.co.jp',
+                                    'FR' => 'http://webservices.amazon.fr',
+                                    'CA' => 'http://webservices.amazon.ca');
+
+    /**
+     * Reference to REST client object
+     *
+     * @var Zend_Rest_Client
+     */
+    protected $_rest;
+
+
+    /**
+     * Constructs a new Amazon Web Services Client
+     *
+     * @param  string $appId       Developer's Amazon appid
+     * @param  string $countryCode Country code for Amazon service; may be US, UK, DE, JP, FR, CA
+     * @throws Zend_Service_Exception
+     * @return Zend_Service_Amazon
+     */
+    public function __construct($appId, $countryCode = 'US')
+    {
+        $this->appId = (string) $appId;
+        $countryCode = (string) $countryCode;
+
+        if (!isset($this->_baseUriList[$countryCode])) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception("Unknown country code: $countryCode");
+        }
+
+        /**
+         * @see Zend_Rest_Client
+         */
+        require_once 'Zend/Rest/Client.php';
+        $this->_rest = new Zend_Rest_Client($this->_baseUriList[$countryCode]);
+    }
+
+
+    /**
+     * Search for Items
+     *
+     * @param  array $options Options to use for the Search Query
+     * @throws Zend_Service_Exception
+     * @return Zend_Service_Amazon_ResultSet
+     * @see http://www.amazon.com/gp/aws/sdk/main.html/102-9041115-9057709?s=AWSEcommerceService&v=2005-10-05&p=ApiReference/ItemSearchOperation
+     */
+    public function itemSearch(array $options)
+    {
+        $defaultOptions = array('ResponseGroup' => 'Small');
+        $options = $this->_prepareOptions('ItemSearch', $options, $defaultOptions);
+        $this->_rest->getHttpClient()->resetParameters();
+        $response = $this->_rest->restGet('/onca/xml', $options);
+
+        if ($response->isError()) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+        self::_checkErrors($dom);
+
+        /**
+         * @see Zend_Service_Amazon_ResultSet
+         */
+        require_once 'Zend/Service/Amazon/ResultSet.php';
+        return new Zend_Service_Amazon_ResultSet($dom);
+    }
+
+
+    /**
+     * Look up item(s) by ASIN
+     *
+     * @param  string $asin    Amazon ASIN ID
+     * @param  array  $options Query Options
+     * @see http://www.amazon.com/gp/aws/sdk/main.html/102-9041115-9057709?s=AWSEcommerceService&v=2005-10-05&p=ApiReference/ItemLookupOperation
+     * @throws Zend_Service_Exception
+     * @return Zend_Service_Amazon_Item|Zend_Service_Amazon_ResultSet
+     */
+    public function itemLookup($asin, array $options = array())
+    {
+        $defaultOptions = array('IdType' => 'ASIN', 'ResponseGroup' => 'Small');
+        $options['ItemId'] = (string) $asin;
+        $options = $this->_prepareOptions('ItemLookup', $options, $defaultOptions);
+        $this->_rest->getHttpClient()->resetParameters();
+        $response = $this->_rest->restGet('/onca/xml', $options);
+
+        if ($response->isError()) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+        self::_checkErrors($dom);
+        $xpath = new DOMXPath($dom);
+        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
+        $items = $xpath->query('//az:Items/az:Item');
+
+        if ($items->length == 1) {
+            /**
+             * @see Zend_Service_Amazon_Item
+             */
+            require_once 'Zend/Service/Amazon/Item.php';
+            return new Zend_Service_Amazon_Item($items->item(0));
+        }
+
+        /**
+         * @see Zend_Service_Amazon_ResultSet
+         */
+        require_once 'Zend/Service/Amazon/ResultSet.php';
+        return new Zend_Service_Amazon_ResultSet($dom);
+    }
+
+
+    /**
+     * Returns a reference to the REST client
+     *
+     * @return Zend_Rest_Client
+     */
+    public function getRestClient()
+    {
+        return $this->_rest;
+    }
+
+
+    /**
+     * Prepare options for request
+     *
+     * @param  string $query          Action to perform
+     * @param  array  $options        User supplied options
+     * @param  array  $defaultOptions Default options
+     * @return array
+     */
+    protected function _prepareOptions($query, array $options, array $defaultOptions)
+    {
+        $options['SubscriptionId'] = $this->appId;
+        $options['Service']        = 'AWSECommerceService';
+        $options['Operation']      = (string) $query;
+
+        // de-canonicalize out sort key
+        if (isset($options['ResponseGroup'])) {
+            $responseGroup = split(',', $options['ResponseGroup']);
+
+            if (!in_array('Request', $responseGroup)) {
+                $responseGroup[] = 'Request';
+                $options['ResponseGroup'] = implode(',', $responseGroup);
+            }
+        }
+
+        $options = array_merge($defaultOptions, $options);
+        return $options;
+    }
+
+
+    /**
+     * Check result for errors
+     *
+     * @param  DOMDocument $dom
+     * @throws Zend_Service_Exception
+     * @return void
+     */
+    protected static function _checkErrors(DOMDocument $dom)
+    {
+        $xpath = new DOMXPath($dom);
+        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
+
+        if ($xpath->query('//az:Error')->length >= 1) {
+            $code = $xpath->query('//az:Error/az:Code/text()')->item(0)->data;
+            $message = $xpath->query('//az:Error/az:Message/text()')->item(0)->data;
+
+            switch($code) {
+                case 'AWS.ECommerceService.NoExactMatches':
+                    break;
+                default:
+                    /**
+                     * @see Zend_Service_Exception
+                     */
+                    require_once 'Zend/Service/Exception.php';
+                    throw new Zend_Service_Exception("$message ($code)");
+            }
+        }
+    }
+}

@@ -1,29 +1,72 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59rda30zp6W7BD854oBxw3lMbTqm6D8bvhUiZaisOOebGvf5gspkvVD47VaFxPm9PIFBdWfw
-u6ymkVt1cKZ9x7GZUhFMPKL2631jfsNVOCWsPQg13OqGi7AHFqX4ISuaGYj/cgGcV2+ox5+LLVL8
-/XVsy9XMPU1P1sFptT2jydo/wi2oROPg+LzV6XAZuq0WYWbV9m+xsCYYKywx1DbETlMucTwLxkZZ
-tbYrFs2/5D27Tmle7Neun4kJIPpDKor7T+KlBeH2Q1DZ9V5nFKkQg27rTzME+qOi/xXUKCVl/mQG
-jhLPTa0Da9CKz348FYwWB5PCld266cSmPCmznal8LZrYqZIsP62QkY6zzwlLud9H/nWd9EUAjwrB
-uXGTJmx9dn6BKislxB67+Tn3Tw37DWhCFqRuZFWmm6JMK4bQO2w3Fryxi2zHa/hUA/iJ5Ev5XGlx
-rG6zbetizbcmhdZVwEwWTaXDzSCqAplS3SGv95AlOCssCt9sdNrLuWvA55ytC+iJiiMAaYoj1diY
-7GGsqMXMwKiZQE4DP+dcL2xBvukOYYf1l61C1XvqZQOrJwYdjA8YcUC0mh/OwKOtoRcMWAtGf/xt
-tS1qEazo7rSg+9aGy5n013VK/bjA+JZrUZflyRkJ5C1RxHdJUc48gnmkkfgo/W7vFtMOur11XahQ
-+OicKM3AieUOVoE1AM72HXTQy4p5eVixuz7ciYkaC6LyTPpTPaURBdfOuqIr234C1h/jFfQjN65N
-YNlpP6q3q5IkH3kgbh0lLGp70e/LpJ8SniaiVIXhNoTPp5hHrGGI+1HD6jOv2onUthP9oOyufZR7
-P6XtRY0g5dM2DIMzIS9x4vev2JYGvK9JDmuhLJAxNGUdoY1wZeou0bC5c1+tiLZAHxq203tie411
-pkqvy8+KFxU9nx5dU0EDZyLVTOalFI9Pl2XoyNGRHGeQ0tCRj7EqjI3roCRZN5gZQ4bUCf2zGcja
-Kl/MMMSO/UeGIYhxnlfO+6VAFJVLpbNj7x+/DMy5P/Sf8xDuT5vdK0tm5ehuJKVyzrAwDuKL7vPx
-2ktpL2qP+UgYIZ9Sz1SOEc8Mzy1ohQ3Kb42Y69g4pyQGW7i7m6LmgrDt1W+Zt7JMenAuSIijVwCw
-WkmX0Zk0C6MvfB6WffFaIg3u2lJ/9Cmz1eQaXT5+639bZrLp9BQy5bqD3bAikIePs34rGYgHEs14
-O5CnCtFQlJWHrvS1qVsO7W1TI9Uy0aQuDrUZ8Js2ysnMaQj8P3wbOBcHXu5A8xWIr0ao/stNfGhq
-1vYjt1HgZKAu1aeOOLY5iI13XQ5SGpO4HlWH2sy56kb6VIsyNCP+IxQKPSDFYbf9ni7jw3qFTelm
-XG9BvFyAxOL+PspKhUV3++Fn0+l/aXK1fQhZ3uWPrymnP6WrikmSc8z9sNm0NJ5IfLjYP5lRMxTF
-syGx4bJruxAFFyi2/njh6Imj3CmR/NgRZNalIOACdsfX7rWrhoflusUbZkTp8iarOT4f4q81wp7c
-LRLnO0YDDX8X47buB7NwVcMn+dmx4+GsvFpwxlC/38NZjfVT8Dl9CtBsP+fHo+MlqAYcmv1I81fB
-PMvhdmp2X/oxN9Gw/HmjctRqviFRqXcc5GbnPwnY8uIuYrRIDK3YB7Xfz4BSNndYojyU/HFrnu3w
-mHbjo1Uk5O6brn6ZHdB86/5fKorUlu3JYIkKmLwXH80UHls3Lix+kuVXqg7Eeip+B5+a9nzdk0K7
-UPLEP8m3M9wV8upOTXYwBT93loQdGdEKM+mIJ03MwqarN8Bl7vCkgWKopnmDO2QCoLBuZOfuQYVp
-Z4EzqRQw4bhQ8MVMx0SlxY+hHM631gcf8kWF65K1Yxlw+CKhUBk0h9joeM3+4pMraayIlqUl+Gyg
-OP1NvfIEbveTjUf6Qm8=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Memory_Exception */
+require_once 'Zend/Memory/Manager.php';
+
+/** Zend_Memory_Value */
+require_once 'Zend/Memory/Value.php';
+
+/** Zend_Memory_Container */
+require_once 'Zend/Memory/Container.php';
+
+/** Zend_Memory_Exception */
+require_once 'Zend/Cache.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Memory
+{
+    /**
+     * Factory
+     *
+     * @param string $backend backend name
+     * @param array $backendOptions associative array of options for the corresponding backend constructor
+     * @return Zend_Memory_Manager
+     * @throws Zend_Memory_Exception
+     */
+    public static function factory($backend, $backendOptions = array())
+    {
+        if (strcasecmp($backend, 'none') == 0) {
+            return new Zend_Memory_Manager();
+        }
+
+        // because lowercase will fail
+        $backend = @ucfirst(strtolower($backend));
+
+        if (!in_array($backend, Zend_Cache::$availableBackends)) {
+            require_once 'Zend/Memory/Exception.php';
+            throw new Zend_Memory_Exception("Incorrect backend ($backend)");
+        }
+
+        $backendClass = 'Zend_Cache_Backend_' . $backend;
+
+        // For perfs reasons, we do not use the Zend_Loader::loadClass() method
+        // (security controls are explicit)
+        require_once str_replace('_', DIRECTORY_SEPARATOR, $backendClass) . '.php';
+
+        $backendObject = new $backendClass($backendOptions);
+
+        return new Zend_Memory_Manager($backendObject);
+    }
+}

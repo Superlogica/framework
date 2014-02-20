@@ -1,13 +1,47 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59Omi/pG1GZpkOactp5OC+LzrHY863JwnkbkGjp+cAo9z+MjnzHQ9ARZU1FOsHTAHQ/1mVIV
-Ku99H45aByWw5mXCl7FpdsGuQhnd+Bffi1yI/limiSf/6APQ5jUBugphgwYTZKoLjtadibR9FawT
-Kz9TEVwJ/GztYiC6NYjAKgaNOlWjfIOzoGQGFMo92gc8ueuMWilvkMJpuIzzQNZfRNyqlhOnzD5Z
-GYpdGsUbb+VWIm34EYzlOSHBaqcSpLCjHtVbBow4GcX/PQ7MrPxDEJT3bERjJk+7UXqjkwDwQ7Xm
-7EepTcIJrRytH6O5eK+1gi6KRGCAAPeaQXOjLRFwXN3ER+WhK8oBNDKvkOSO+f9hYeP2ofUwBIxc
-kbh+CUjJUOFg902u4mCPOkvcPPL+YZkMFqIdT3uSi6jDV00eo4p3e7riK/NRh0kuSBhFiO3aDOR3
-6m4GacaNxTRMgFXEEQ6UTCuisOUhTThZZxclQruXQait2dW++6aHPemEUW+v1hsnbTGiVrmO2eHP
-msO9CWW28j4AC7Y928I/jS994qONWXmncVYisYkRicz8SAgy/munf8lIa3gdM5qL8dLht9YxPhKF
-L9nFMtZxURzK8Kc5pHUrxY11Aj+iQ3zCFvD2E5ZZ/n7bJH1++gKCjjZaYacGyQ9u5V6P+JFBvGMI
-Ts0RcWPnSMIP5QL8SX5p58g/Ns3Qq2S5VflHjb2LoeK=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Interface.php 8862 2008-03-16 15:36:00Z thomas $
+ */
+
+
+/**
+ * Auth HTTP Resolver Interface
+ *
+ * Defines an interace to resolve a username/realm combination into a shared
+ * secret usable by HTTP Authentication.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Auth_Adapter_Http_Resolver_Interface
+{
+    /**
+     * Resolve username/realm to password/hash/etc.
+     *
+     * @param  string $username Username
+     * @param  string $realm    Authentication Realm
+     * @return string|false User's shared secret, if the user is found in the
+     *         realm, false otherwise.
+     */
+    public function resolve($username, $realm);
+}

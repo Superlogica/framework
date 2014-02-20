@@ -1,258 +1,1040 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-MkBneCEpE74=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Extension_FeedLink
+ */
+require_once 'Zend/Gdata/Extension/FeedLink.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Description
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Description.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_AboutMe
+ */
+require_once 'Zend/Gdata/YouTube/Extension/AboutMe.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Age
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Age.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Username
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Username.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Books
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Books.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Company
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Company.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Hobbies
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Hobbies.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Hometown
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Hometown.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Location
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Location.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Movies
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Movies.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Music
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Music.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Occupation
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Occupation.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_School
+ */
+require_once 'Zend/Gdata/YouTube/Extension/School.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Gender
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Gender.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Relationship
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Relationship.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_FirstName
+ */
+require_once 'Zend/Gdata/YouTube/Extension/FirstName.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_LastName
+ */
+require_once 'Zend/Gdata/YouTube/Extension/LastName.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_Statistics
+ */
+require_once 'Zend/Gdata/YouTube/Extension/Statistics.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaThumbnail
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaThumbnail.php';
+
+/**
+ * Represents the YouTube video playlist flavor of an Atom entry
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_UserProfileEntry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_YouTube_UserProfileEntry';
+
+    /**
+     * Nested feed links
+     *
+     * @var array
+     */
+    protected $_feedLink = array();
+
+    /**
+     * The username for this profile entry
+     *
+     * @var string
+     */
+    protected $_username = null;
+
+    /**
+     * The description of the user
+     *
+     * @var string
+     */
+    protected $_description = null;
+    
+    /**
+     * The contents of the 'About Me' field.
+     *
+     * @var string
+     */
+    protected $_aboutMe = null;
+
+    /**
+     * The age of the user
+     *
+     * @var int
+     */
+    protected $_age = null;
+
+    /**
+     * Books of interest to the user
+     *
+     * @var string
+     */
+    protected $_books = null;
+
+    /**
+     * Company
+     *
+     * @var string
+     */
+    protected $_company = null;
+
+    /**
+     * Hobbies
+     *
+     * @var string
+     */
+    protected $_hobbies = null;
+
+    /**
+     * Hometown
+     *
+     * @var string
+     */
+    protected $_hometown = null;
+
+    /**
+     * Location
+     *
+     * @var string
+     */
+    protected $_location = null;
+
+    /**
+     * Movies
+     *
+     * @var string
+     */
+    protected $_movies = null;
+
+    /**
+     * Music
+     *
+     * @var string
+     */
+    protected $_music = null;
+
+    /**
+     * Occupation
+     *
+     * @var string
+     */
+    protected $_occupation = null;
+
+    /**
+     * School
+     *
+     * @var string
+     */
+    protected $_school = null;
+
+    /**
+     * Gender
+     *
+     * @var string
+     */
+    protected $_gender = null;
+
+    /**
+     * Relationship
+     *
+     * @var string
+     */
+    protected $_relationship = null;
+
+    /**
+     * First name
+     *
+     * @var string
+     */
+    protected $_firstName = null;
+    
+    /**
+     * Last name
+     *
+     * @var string
+     */
+    protected $_lastName = null;
+    
+    /**
+     * Statistics
+     *
+     * @var Zend_Gdata_YouTube_Extension_Statistics
+     */
+    protected $_statistics = null;
+
+    /**
+     * Thumbnail
+     *
+     * @var Zend_Gdata_Media_Extension_MediaThumbnail
+     */
+    protected $_thumbnail = null;
+
+    /**
+     * Creates a User Profile entry, representing an individual user
+     * and their attributes.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_description != null) {
+            $element->appendChild($this->_description->getDOM($element->ownerDocument));
+        }
+        if ($this->_aboutMe != null) {
+            $element->appendChild($this->_aboutMe->getDOM($element->ownerDocument));
+        }
+        if ($this->_age != null) {
+            $element->appendChild($this->_age->getDOM($element->ownerDocument));
+        }
+        if ($this->_username != null) {
+            $element->appendChild($this->_username->getDOM($element->ownerDocument));
+        }
+        if ($this->_books != null) {
+            $element->appendChild($this->_books->getDOM($element->ownerDocument));
+        }
+        if ($this->_company != null) {
+            $element->appendChild($this->_company->getDOM($element->ownerDocument));
+        }
+        if ($this->_hobbies != null) {
+            $element->appendChild($this->_hobbies->getDOM($element->ownerDocument));
+        }
+        if ($this->_hometown != null) {
+            $element->appendChild($this->_hometown->getDOM($element->ownerDocument));
+        }
+        if ($this->_location != null) {
+            $element->appendChild($this->_location->getDOM($element->ownerDocument));
+        }
+        if ($this->_movies != null) {
+            $element->appendChild($this->_movies->getDOM($element->ownerDocument));
+        }
+        if ($this->_music != null) {
+            $element->appendChild($this->_music->getDOM($element->ownerDocument));
+        }
+        if ($this->_occupation != null) {
+            $element->appendChild($this->_occupation->getDOM($element->ownerDocument));
+        }
+        if ($this->_school != null) {
+            $element->appendChild($this->_school->getDOM($element->ownerDocument));
+        }
+        if ($this->_gender != null) {
+            $element->appendChild($this->_gender->getDOM($element->ownerDocument));
+        }
+        if ($this->_relationship != null) {
+            $element->appendChild($this->_relationship->getDOM($element->ownerDocument));
+        }
+        if ($this->_firstName != null) {
+            $element->appendChild($this->_firstName->getDOM($element->ownerDocument));
+        }
+        if ($this->_lastName != null) {
+            $element->appendChild($this->_lastName->getDOM($element->ownerDocument));
+        }
+        if ($this->_statistics != null) {
+            $element->appendChild($this->_statistics->getDOM($element->ownerDocument));
+        }
+        if ($this->_thumbnail != null) {
+            $element->appendChild($this->_thumbnail->getDOM($element->ownerDocument));
+        }
+        if ($this->_feedLink != null) {
+            foreach ($this->_feedLink as $feedLink) {
+                $element->appendChild($feedLink->getDOM($element->ownerDocument));
+            }
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('yt') . ':' . 'description':
+            $description = new Zend_Gdata_YouTube_Extension_Description();
+            $description->transferFromDOM($child);
+            $this->_description = $description;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'aboutMe':
+            $aboutMe = new Zend_Gdata_YouTube_Extension_AboutMe();
+            $aboutMe->transferFromDOM($child);
+            $this->_aboutMe = $aboutMe;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'age':
+            $age = new Zend_Gdata_YouTube_Extension_Age();
+            $age->transferFromDOM($child);
+            $this->_age = $age;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'username':
+            $username = new Zend_Gdata_YouTube_Extension_Username();
+            $username->transferFromDOM($child);
+            $this->_username = $username;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'books':
+            $books = new Zend_Gdata_YouTube_Extension_Books();
+            $books->transferFromDOM($child);
+            $this->_books = $books;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'company':
+            $company = new Zend_Gdata_YouTube_Extension_Company();
+            $company->transferFromDOM($child);
+            $this->_company = $company;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'hobbies':
+            $hobbies = new Zend_Gdata_YouTube_Extension_Hobbies();
+            $hobbies->transferFromDOM($child);
+            $this->_hobbies = $hobbies;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'hometown':
+            $hometown = new Zend_Gdata_YouTube_Extension_Hometown();
+            $hometown->transferFromDOM($child);
+            $this->_hometown = $hometown;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'location':
+            $location = new Zend_Gdata_YouTube_Extension_Location();
+            $location->transferFromDOM($child);
+            $this->_location = $location;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'movies':
+            $movies = new Zend_Gdata_YouTube_Extension_Movies();
+            $movies->transferFromDOM($child);
+            $this->_movies = $movies;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'music':
+            $music = new Zend_Gdata_YouTube_Extension_Music();
+            $music->transferFromDOM($child);
+            $this->_music = $music;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'occupation':
+            $occupation = new Zend_Gdata_YouTube_Extension_Occupation();
+            $occupation->transferFromDOM($child);
+            $this->_occupation = $occupation;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'school':
+            $school = new Zend_Gdata_YouTube_Extension_School();
+            $school->transferFromDOM($child);
+            $this->_school = $school;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'gender':
+            $gender = new Zend_Gdata_YouTube_Extension_Gender();
+            $gender->transferFromDOM($child);
+            $this->_gender = $gender;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'relationship':
+            $relationship = new Zend_Gdata_YouTube_Extension_Relationship();
+            $relationship->transferFromDOM($child);
+            $this->_relationship = $relationship;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'firstName':
+            $firstName = new Zend_Gdata_YouTube_Extension_FirstName();
+            $firstName->transferFromDOM($child);
+            $this->_firstName = $firstName;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'lastName':
+            $lastName = new Zend_Gdata_YouTube_Extension_LastName();
+            $lastName->transferFromDOM($child);
+            $this->_lastName = $lastName;
+            break;
+        case $this->lookupNamespace('yt') . ':' . 'statistics':
+            $statistics = new Zend_Gdata_YouTube_Extension_Statistics();
+            $statistics->transferFromDOM($child);
+            $this->_statistics = $statistics;
+            break;
+        case $this->lookupNamespace('media') . ':' . 'thumbnail':
+            $thumbnail = new Zend_Gdata_Media_Extension_MediaThumbnail();
+            $thumbnail->transferFromDOM($child);
+            $this->_thumbnail = $thumbnail;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'feedLink':
+            $feedLink = new Zend_Gdata_Extension_FeedLink();
+            $feedLink->transferFromDOM($child);
+            $this->_feedLink[] = $feedLink;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Sets the content of the 'about me' field.
+     *
+     * @param Zend_Gdata_YouTube_Extension_AboutMe $aboutMe The 'about me'
+     *        information.
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setAboutMe($aboutMe = null)
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The setAboutMe ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            $this->_aboutMe = $aboutMe;
+            return $this;
+        }
+    }
+
+    /**
+     * Returns the contents of the 'about me' field.
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_Extension_AboutMe  The 'about me' information
+     */
+    public function getAboutMe()
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The getAboutMe ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            return $this->_aboutMe;
+        }
+    }
+
+    /**
+     * Sets the content of the 'first name' field.
+     *
+     * @param Zend_Gdata_YouTube_Extension_FirstName $firstName The first name
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setFirstName($firstName = null)
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The setFirstName ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            $this->_firstName = $firstName;
+            return $this;
+        }
+    }
+
+    /**
+     * Returns the first name
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_Extension_FirstName  The first name
+     */
+    public function getFirstName()
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The getFirstName ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            return $this->_firstName;
+        }
+    }
+
+    /**
+     * Sets the content of the 'last name' field.
+     *
+     * @param Zend_Gdata_YouTube_Extension_LastName $lastName The last name
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setLastName($lastName = null)
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The setLastName ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            $this->_lastName = $lastName;
+            return $this;
+        }
+    }
+
+    /**
+     * Returns the last name
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_Extension_LastName  The last name
+     */
+    public function getLastName()
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The getLastName ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            return $this->_lastName;
+        }
+    }
+
+    /**
+     * Returns the statistics
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_YouTube_Extension_Statistics  The profile statistics
+     */
+    public function getStatistics()
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The getStatistics ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            return $this->_statistics;
+        }
+    }
+    
+    /**
+     * Returns the thumbnail
+     *
+     * @throws Zend_Gdata_App_VersionException
+     * @return Zend_Gdata_Media_Extension_MediaThumbnail The profile thumbnail
+     */
+    public function getThumbnail()
+    {
+        if (($this->getMajorProtocolVersion() == null) ||
+           ($this->getMajorProtocolVersion() == 1)) {
+            require_once 'Zend/Gdata/App/VersionException.php';
+            throw new Zend_Gdata_App_VersionException('The getThumbnail ' .
+                ' method is only supported as of version 2 of the YouTube ' .
+                'API.');
+        } else {
+            return $this->_thumbnail;
+        }
+    }
+
+    /**
+     * Sets the age
+     *
+     * @param Zend_Gdata_YouTube_Extension_Age $age The age
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setAge($age = null)
+    {
+        $this->_age = $age;
+        return $this;
+    }
+
+    /**
+     * Returns the age
+     *
+     * @return Zend_Gdata_YouTube_Extension_Age  The age
+     */
+    public function getAge()
+    {
+        return $this->_age;
+    }
+
+    /**
+     * Sets the username
+     *
+     * @param Zend_Gdata_YouTube_Extension_Username $username The username
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setUsername($username = null)
+    {
+        $this->_username = $username;
+        return $this;
+    }
+
+    /**
+     * Returns the username
+     *
+     * @return Zend_Gdata_YouTube_Extension_Username  The username
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Sets the books
+     *
+     * @param Zend_Gdata_YouTube_Extension_Books $books The books
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setBooks($books = null)
+    {
+        $this->_books = $books;
+        return $this;
+    }
+
+    /**
+     * Returns the books
+     *
+     * @return Zend_Gdata_YouTube_Extension_Books  The books
+     */
+    public function getBooks()
+    {
+        return $this->_books;
+    }
+
+    /**
+     * Sets the company
+     *
+     * @param Zend_Gdata_YouTube_Extension_Company $company The company
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setCompany($company = null)
+    {
+        $this->_company = $company;
+        return $this;
+    }
+
+    /**
+     * Returns the company
+     *
+     * @return Zend_Gdata_YouTube_Extension_Company  The company
+     */
+    public function getCompany()
+    {
+        return $this->_company;
+    }
+
+    /**
+     * Sets the hobbies
+     *
+     * @param Zend_Gdata_YouTube_Extension_Hobbies $hobbies The hobbies
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setHobbies($hobbies = null)
+    {
+        $this->_hobbies = $hobbies;
+        return $this;
+    }
+
+    /**
+     * Returns the hobbies
+     *
+     * @return Zend_Gdata_YouTube_Extension_Hobbies  The hobbies
+     */
+    public function getHobbies()
+    {
+        return $this->_hobbies;
+    }
+
+    /**
+     * Sets the hometown
+     *
+     * @param Zend_Gdata_YouTube_Extension_Hometown $hometown The hometown
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setHometown($hometown = null)
+    {
+        $this->_hometown = $hometown;
+        return $this;
+    }
+
+    /**
+     * Returns the hometown
+     *
+     * @return Zend_Gdata_YouTube_Extension_Hometown  The hometown
+     */
+    public function getHometown()
+    {
+        return $this->_hometown;
+    }
+
+    /**
+     * Sets the location
+     *
+     * @param Zend_Gdata_YouTube_Extension_Location $location The location
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setLocation($location = null)
+    {
+        $this->_location = $location;
+        return $this;
+    }
+
+    /**
+     * Returns the location
+     *
+     * @return Zend_Gdata_YouTube_Extension_Location  The location
+     */
+    public function getLocation()
+    {
+        return $this->_location;
+    }
+
+    /**
+     * Sets the movies
+     *
+     * @param Zend_Gdata_YouTube_Extension_Movies $movies The movies
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setMovies($movies = null)
+    {
+        $this->_movies = $movies;
+        return $this;
+    }
+
+    /**
+     * Returns the movies
+     *
+     * @return Zend_Gdata_YouTube_Extension_Movies  The movies
+     */
+    public function getMovies()
+    {
+        return $this->_movies;
+    }
+
+    /**
+     * Sets the music
+     *
+     * @param Zend_Gdata_YouTube_Extension_Music $music The music
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setMusic($music = null)
+    {
+        $this->_music = $music;
+        return $this;
+    }
+
+    /**
+     * Returns the music
+     *
+     * @return Zend_Gdata_YouTube_Extension_Music  The music
+     */
+    public function getMusic()
+    {
+        return $this->_music;
+    }
+
+    /**
+     * Sets the occupation
+     *
+     * @param Zend_Gdata_YouTube_Extension_Occupation $occupation The occupation
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setOccupation($occupation = null)
+    {
+        $this->_occupation = $occupation;
+        return $this;
+    }
+
+    /**
+     * Returns the occupation
+     *
+     * @return Zend_Gdata_YouTube_Extension_Occupation  The occupation
+     */
+    public function getOccupation()
+    {
+        return $this->_occupation;
+    }
+
+    /**
+     * Sets the school
+     *
+     * @param Zend_Gdata_YouTube_Extension_School $school The school
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setSchool($school = null)
+    {
+        $this->_school = $school;
+        return $this;
+    }
+
+    /**
+     * Returns the school
+     *
+     * @return Zend_Gdata_YouTube_Extension_School  The school
+     */
+    public function getSchool()
+    {
+        return $this->_school;
+    }
+
+    /**
+     * Sets the gender
+     *
+     * @param Zend_Gdata_YouTube_Extension_Gender $gender The gender
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setGender($gender = null)
+    {
+        $this->_gender = $gender;
+        return $this;
+    }
+
+    /**
+     * Returns the gender
+     *
+     * @return Zend_Gdata_YouTube_Extension_Gender  The gender
+     */
+    public function getGender()
+    {
+        return $this->_gender;
+    }
+
+    /**
+     * Sets the relationship
+     *
+     * @param Zend_Gdata_YouTube_Extension_Relationship $relationship The relationship
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setRelationship($relationship = null)
+    {
+        $this->_relationship = $relationship;
+        return $this;
+    }
+
+    /**
+     * Returns the relationship
+     *
+     * @return Zend_Gdata_YouTube_Extension_Relationship  The relationship
+     */
+    public function getRelationship()
+    {
+        return $this->_relationship;
+    }
+
+    /**
+     * Sets the array of embedded feeds related to the video
+     *
+     * @param array $feedLink The array of embedded feeds relating to the video
+     * @return Zend_Gdata_YouTube_UserProfileEntry Provides a fluent interface
+     */
+    public function setFeedLink($feedLink = null)
+    {
+        $this->_feedLink = $feedLink;
+        return $this;
+    }
+
+    /**
+     * Get the feed link property for this entry.
+     *
+     * @see setFeedLink
+     * @param string $rel (optional) The rel value of the link to be found.
+     *          If null, the array of links is returned.
+     * @return mixed If $rel is specified, a Zend_Gdata_Extension_FeedLink
+     *          object corresponding to the requested rel value is returned
+     *          if found, or null if the requested value is not found. If
+     *          $rel is null or not specified, an array of all available
+     *          feed links for this entry is returned, or null if no feed
+     *          links are set.
+     */
+    public function getFeedLink($rel = null)
+    {
+        if ($rel == null) {
+            return $this->_feedLink;
+        } else {
+            foreach ($this->_feedLink as $feedLink) {
+                if ($feedLink->rel == $rel) {
+                    return $feedLink;
+                }
+            }
+            return null;
+        }
+    }
+
+    /**
+     * Returns the URL in the gd:feedLink with the provided rel value
+     *
+     * @param string $rel The rel value to find
+     * @return mixed Either the URL as a string or null if a feedLink wasn't
+     *     found with the provided rel value
+     */
+    public function getFeedLinkHref($rel)
+    {
+        $feedLink = $this->getFeedLink($rel);
+        if ($feedLink !== null) {
+            return $feedLink->href;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Returns the URL of the playlist list feed
+     *
+     * @return string The URL of the playlist video feed
+     */
+    public function getPlaylistListFeedUrl()
+    {
+        return getFeedLinkHref(Zend_Gdata_YouTube::USER_PLAYLISTS_REL);
+    }
+
+    /**
+     * Returns the URL of the uploads feed
+     *
+     * @return string The URL of the uploads video feed
+     */
+    public function getUploadsFeedUrl()
+    {
+        return getFeedLinkHref(Zend_Gdata_YouTube::USER_UPLOADS_REL);
+    }
+
+    /**
+     * Returns the URL of the subscriptions feed
+     *
+     * @return string The URL of the subscriptions feed
+     */
+    public function getSubscriptionsFeedUrl()
+    {
+        return getFeedLinkHref(Zend_Gdata_YouTube::USER_SUBSCRIPTIONS_REL);
+    }
+
+    /**
+     * Returns the URL of the contacts feed
+     *
+     * @return string The URL of the contacts feed
+     */
+    public function getContactsFeedUrl()
+    {
+        return getFeedLinkHref(Zend_Gdata_YouTube::USER_CONTACTS_REL);
+    }
+
+    /**
+     * Returns the URL of the favorites feed
+     *
+     * @return string The URL of the favorites feed
+     */
+    public function getFavoritesFeedUrl()
+    {
+        return getFeedLinkHref(Zend_Gdata_YouTube::USER_FAVORITES_REL);
+    }
+
+}

@@ -1,32 +1,84 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-S+j2yc2KyyiMKCC0qYNI5bgFfAg5ewx+iBF/7W==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_File_Exists
+ */
+require_once 'Zend/Validate/File/Exists.php';
+
+/**
+ * Validator which checks if the destination file does not exist
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_NotExists extends Zend_Validate_File_Exists
+{
+    /**
+     * @const string Error constants
+     */
+    const DOES_EXIST = 'fileNotExistsDoesExist';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::DOES_EXIST => "The file '%value%' does exist"
+    );
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the file does not exist in the set destinations
+     *
+     * @param  string  $value Real file to check for
+     * @param  array   $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        $directories = $this->getDirectory(true);
+        if (($file !== null) and (!empty($file['destination']))) {
+            $directories[] = $file['destination'];
+        } else if (!isset($file['name'])) {
+            $file['name'] = $value;
+        }
+
+        foreach ($directories as $directory) {
+            if (empty($directory)) {
+                continue;
+            }
+
+            $check = true;
+            if (file_exists($directory . DIRECTORY_SEPARATOR . $file['name'])) {
+                return $this->_throw($file, self::DOES_EXIST);
+            }
+        }
+
+        if (!isset($check)) {
+            return $this->_throw($file, self::DOES_EXIST);
+        }
+
+        return true;
+    }
+}

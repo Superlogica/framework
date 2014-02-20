@@ -1,145 +1,420 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9Q3C
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @subpackage Parse_Amf3
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Amf_Parse_Deserializer */
+require_once 'Zend/Amf/Parse/Deserializer.php';
+
+/** Zend_Amf_Parse_TypeLoader */
+require_once 'Zend/Amf/Parse/TypeLoader.php';
+
+/**
+ * Read an AMF3 input stream and convert it into PHP data types.
+ *
+ * @todo       readObject to handle Typed Objects
+ * @todo       readXMLStrimg to be implemented.
+ * @todo       Class could be implmented as Factory Class with each data type it's own class.
+ * @package    Zend_Amf
+ * @subpackage Parse_Amf3
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Parse_Amf3_Deserializer extends Zend_Amf_Parse_Deserializer
+{
+    /**
+     * Total number of objects in the referenceObject array
+     * @var int
+     */
+    protected $_objectCount;
+
+    /**
+     * An array of reference objects per amf body
+     * @var array
+     */
+    protected $_referenceObjects = array();
+
+    /**
+     * An array of reference strings per amf body
+     * @var array
+     */
+    protected $_referenceStrings = array();
+
+    /**
+     * An array of reference class definitions per body
+     * @var array
+     */
+    protected $_referenceDefinitions = array();
+
+    /**
+     * Read AMF markers and dispatch for deserialization
+     *
+     * Checks for AMF marker types and calls the appropriate methods
+     * for deserializing those marker types. markers are the data type of
+     * the following value.
+     *
+     * @param  integer $typeMarker
+     * @return mixed Whatever the corresponding PHP data type is
+     * @throws Zend_Amf_Exception for unidentified marker type
+     */
+    public function readTypeMarker($typeMarker = null)
+    {
+        if(null === $typeMarker) {
+            $typeMarker = $this->_stream->readByte();
+        }
+
+        switch($typeMarker) {
+            case Zend_Amf_Constants::AMF3_UNDEFINED:
+                 return null;
+            case Zend_Amf_Constants::AMF3_NULL:
+                 return null;
+            case Zend_Amf_Constants::AMF3_BOOLEAN_FALSE:
+                 return false;
+            case Zend_Amf_Constants::AMF3_BOOLEAN_TRUE:
+                 return true;
+            case Zend_Amf_Constants::AMF3_INTEGER:
+                 return $this->readInteger();
+            case Zend_Amf_Constants::AMF3_NUMBER:
+                 return $this->_stream->readDouble();
+            case Zend_Amf_Constants::AMF3_STRING:
+                 return $this->readString();
+            case Zend_Amf_Constants::AMF3_DATE:
+                 return $this->readDate();
+            case Zend_Amf_Constants::AMF3_ARRAY:
+                 return $this->readArray();
+            case Zend_Amf_Constants::AMF3_OBJECT:
+                 return $this->readObject();
+            case Zend_Amf_Constants::AMF3_XML:
+            case Zend_Amf_Constants::AMF3_XMLSTRING:
+                 return $this->readXmlString();
+            case Zend_Amf_Constants::AMF3_BYTEARRAY:
+                 return $this->readString();
+            default:
+                require_once 'Zend/Amf/Exception.php';
+                throw new Zend_Amf_Exception('Unsupported type marker: ' . $typeMarker);
+        }
+    }
+
+    /**
+     * Read and deserialize an integer
+     *
+     * AMF 3 represents smaller integers with fewer bytes using the most
+     * significant bit of each byte. The worst case uses 32-bits
+     * to represent a 29-bit number, which is what we would have
+     * done with no compression.
+     * - 0x00000000 - 0x0000007F : 0xxxxxxx
+     * - 0x00000080 - 0x00003FFF : 1xxxxxxx 0xxxxxxx
+     * - 0x00004000 - 0x001FFFFF : 1xxxxxxx 1xxxxxxx 0xxxxxxx
+     * - 0x00200000 - 0x3FFFFFFF : 1xxxxxxx 1xxxxxxx 1xxxxxxx xxxxxxxx
+     * - 0x40000000 - 0xFFFFFFFF : throw range exception
+     *
+     *
+     * 0x04 -> integer type code, followed by up to 4 bytes of data.
+     *
+     * @see:   Parsing integers on OSFlash {http://osflash.org/amf3/parsing_integers>} for the AMF3 integer data format.
+     * @return int|float
+     */
+    public function readInteger()
+    {
+        $count        = 1;
+        $intReference = $this->_stream->readByte();
+        $result       = 0;
+        while ((($intReference & 0x80) != 0) && $count < 4) {
+            $result       <<= 7;
+            $result        |= ($intReference & 0x7f);
+            $intReference   = $this->_stream->readByte();
+            $count++;
+        }
+        if ($count < 4) {
+            $result <<= 7;
+            $result  |= $intReference;
+        } else {
+            // Use all 8 bits from the 4th byte
+            $result <<= 8;
+            $result  |= $intReference;
+
+            // Check if the integer should be negative
+            if (($result & 0x10000000) != 0) {
+                //and extend the sign bit
+                $result |= 0xe0000000;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * Read and deserialize a string
+     *
+     * Strings can be sent as a reference to a previously
+     * occurring String by using an index to the implicit string reference table.
+     * Strings are encoding using UTF-8 - however the header may either
+     * describe a string literal or a string reference.
+     *
+     * - string = 0x06 string-data
+     * - string-data = integer-data [ modified-utf-8 ]
+     * - modified-utf-8 = *OCTET
+     *
+     * @return String
+     */
+    public function readString()
+    {
+        $stringReference = $this->readInteger();
+
+        //Check if this is a reference string
+        if (($stringReference & 0x01) == 0) {
+            // reference string
+            $stringReference = $stringReference >> 1;
+            if ($stringReference >= count($this->_referenceStrings)) {
+                require_once 'Zend/Amf/Exception.php';
+                throw new Zend_Amf_Exception('Undefined string reference: ' . $stringReference);
+            }
+            // reference string found
+            return $this->_referenceStrings[$stringReference];
+        }
+
+        $length = $stringReference >> 1;
+        if ($length) {
+            $string = $this->_stream->readBytes($length);
+            $this->_referenceStrings[] = $string;
+        } else {
+            $string = "";
+        }
+        return $string;
+    }
+
+    /**
+     * Read and deserialize a date
+     *
+     * Data is the number of milliseconds elapsed since the epoch
+     * of midnight, 1st Jan 1970 in the UTC time zone.
+     * Local time zone information is not sent to flash.
+     *
+     * - date = 0x08 integer-data [ number-data ]
+     *
+     * @return Zend_Date
+     */
+    public function readDate()
+    {
+        $dateReference = $this->readInteger();
+        if (($dateReference & 0x01) == 0) {
+            $dateReference = $dateReference >> 1;
+            if ($dateReference>=count($this->_referenceObjects)) {
+                require_once 'Zend/Amf/Exception.php';
+                throw new Zend_Amf_Exception('Undefined date reference: ' . $dateReference);
+            }
+            return $this->_referenceObjects[$dateReference];
+        }
+
+        $timestamp = floor($this->_stream->readDouble() / 1000);
+
+        require_once 'Zend/Date.php';
+        $dateTime  = new Zend_Date((int) $timestamp);
+        $this->_referenceObjects[] = $dateTime;
+        return $dateTime;
+    }
+
+    /**
+     * Read amf array to PHP array
+     *
+     * - array = 0x09 integer-data ( [ 1OCTET *amf3-data ] | [OCTET *amf3-data 1] | [ OCTET *amf-data ] )
+     *
+     * @return array
+     */
+    public function readArray()
+    {
+        $arrayReference = $this->readInteger();
+        if (($arrayReference & 0x01)==0){
+            $arrayReference = $arrayReference >> 1;
+            if ($arrayReference>=count($this->_referenceObjects)) {
+                require_once 'Zend/Amf/Exception.php';
+                throw new Zend_Amf_Exception('Unknow array reference: ' . $arrayReference);
+            }
+            return $this->_referenceObjects[$arrayReference];
+        }
+
+        // Create a holder for the array in the reference list
+        $data = array();
+        $this->_referenceObjects[] =& $data;
+        $key = $this->readString();
+
+        // Iterating for string based keys.
+        while ($key != '') {
+            $data[$key] = $this->readTypeMarker();
+            $key = $this->readString();
+        }
+
+        $arrayReference = $arrayReference >>1;
+
+        //We have a dense array
+        for ($i=0; $i < $arrayReference; $i++) {
+            $data[] = $this->readTypeMarker();
+        }
+
+        return $data;
+    }
+
+    /**
+     * Read an object from the AMF stream and convert it into a PHP object
+     *
+     * @todo   Rather than using an array of traitsInfo create Zend_Amf_Value_TraitsInfo
+     * @return object|array
+     */
+    public function readObject()
+    {
+        $traitsInfo   = $this->readInteger();
+        $storedObject = ($traitsInfo & 0x01)==0;
+        $traitsInfo   = $traitsInfo >> 1;
+
+        // Check if the Object is in the stored Objects reference table
+        if ($storedObject) {
+            $ref = $traitsInfo;
+            if (!isset($this->_referenceObjects[$ref])) {
+                require_once 'Zend/Amf/Exception.php';
+                throw new Zend_Amf_Exception('Unknown Object reference: ' . $ref);
+            }
+            $returnObject = $this->_referenceObjects[$ref];
+        } else {
+            // Check if the Object is in the stored Definistions reference table
+            $storedClass = ($traitsInfo & 0x01) == 0;
+            $traitsInfo  = $traitsInfo >> 1;
+            if ($storedClass) {
+                $ref = $traitsInfo;
+                if (!isset($this->_referenceDefinitions[$ref])) {
+                    require_once 'Zend/Amf/Exception.php';
+                    throw new Zend_Amf_Exception('Unknows Definition reference: '. $ref);
+                }
+                // Populate the reference attributes
+                $className     = $this->_referenceDefinitions[$ref]['className'];
+                $encoding      = $this->_referenceDefinitions[$ref]['encoding'];
+                $propertyNames = $this->_referenceDefinitions[$ref]['propertyNames'];
+            } else {
+                // The class was not in the reference tables. Start reading rawdata to build traits.
+                // Create a traits table. Zend_Amf_Value_TraitsInfo would be ideal
+                $className     = $this->readString();
+                $encoding      = $traitsInfo & 0x03;
+                $propertyNames = array();
+                $traitsInfo    = $traitsInfo >> 2;
+            }
+
+            // We now have the object traits defined in variables. Time to go to work:
+            if (!$className) {
+                // No class name generic object
+                $returnObject = new stdClass();
+            } else {
+                // Defined object
+                // Typed object lookup agsinst registered classname maps
+                if ($loader = Zend_Amf_Parse_TypeLoader::loadType($className)) {
+                    $returnObject = new $loader();
+                } else {
+                    //user defined typed object
+                    require_once 'Zend/Amf/Exception.php';
+                    throw new Zend_Amf_Exception('Typed object not found: '. $className . ' ');
+                }
+            }
+
+            // Add the Object ot the reference table
+            $this->_referenceObjects[] = $returnObject;
+
+            $properties = array(); // clear value
+            // Check encoding types for additional processing.
+            switch ($encoding) {
+                case (Zend_Amf_Constants::ET_EXTERNAL):
+                    // Externalizable object such as {ArrayCollection} and {ObjectProxy}
+                    if (!$storedClass) {
+                        $this->_referenceDefinitions[] = array(
+                            'className'     => $className,
+                            'encoding'      => $encoding,
+                            'propertyNames' => $propertyNames,
+                        );
+                    }
+                    $returnObject->externalizedData = $this->readTypeMarker();
+                    break;
+                case (Zend_Amf_Constants::ET_DYNAMIC):
+                    // used for Name-value encoding
+                    if (!$storedClass) {
+                        $this->_referenceDefinitions[] = array(
+                            'className'     => $className,
+                            'encoding'      => $encoding,
+                            'propertyNames' => $propertyNames,
+                        );
+                    }
+                    // not a refrence object read name value properties from byte stream
+                    do {
+                        $property = $this->readString();
+                        if ($property != "") {
+                            $propertyNames[]       = $property;
+                            $properties[$property] = $this->readTypeMarker();
+                        }
+                    } while ($property !="");
+                    break;
+                default:
+                    // basic property list object.
+                    if (!$storedClass) {
+                        $count = $traitsInfo; // Number of properties in the list
+                        for($i=0; $i< $count; $i++) {
+                            $propertyNames[] = $this->readString();
+                        }
+                        // Add a refrence to the class.
+                        $this->_referenceDefinitions[] = array(
+                            'className'     => $className,
+                            'encoding'      => $encoding,
+                            'propertyNames' => $propertyNames,
+                        );
+                    }
+                    foreach ($propertyNames as $property) {
+                        $properties[$property] = $this->readTypeMarker();
+                    }
+                    break;
+            }
+
+            // Add properties back to the return object.
+            foreach($properties as $key=>$value) {
+                if($key) {
+                    $returnObject->$key = $value;
+                }
+            }
+			
+		  
+        }
+		
+	   if($returnObject instanceof Zend_Amf_Value_Messaging_ArrayCollection) {
+		if(isset($returnObject->externalizedData)) {
+			$returnObject = $returnObject->externalizedData;
+		} else {
+			$returnObject = get_object_vars($returnObject);
+		}
+	   }
+	   
+        return $returnObject;
+    }
+
+    /**
+     * Convert XML to SimpleXml
+     * If user wants DomDocument they can use dom_import_simplexml
+     *
+     * @return SimpleXml Object
+     */
+    public function readXmlString()
+    {
+        $xmlReference = $this->readInteger();
+        $length = $xmlReference >> 1;
+        $string = $this->_stream->readBytes($length);
+        return simplexml_load_string($string);
+    }
+}

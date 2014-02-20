@@ -1,35 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+
+/**
+ * @see Zend_Loader
+ */
+require_once 'Zend/Locale/Format.php';
+
+/**
+ * Encrypts a given string
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_NormalizedToLocalized implements Zend_Filter_Interface
+{
+    /**
+     * Set options
+     */
+    protected $_options = array(
+        'locale'      => null,
+        'date_format' => null,
+        'precision'   => null
+    );
+
+    /**
+     * Class constructor
+     *
+     * @param string|Zend_Locale $locale (Optional) Locale to set
+     */
+    public function __construct($options = null)
+    {
+        if (null !== $options) {
+            $this->setOptions($options);
+        }
+    }
+
+    /**
+     * Returns the set options
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Sets options to use
+     *
+     * @param  array $options (Optional) Options to use
+     * @return Zend_Filter_LocalizedToNormalized
+     */
+    public function setOptions(array $options = null)
+    {
+        $this->_options = $options + $this->_options;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Normalizes the given input
+     *
+     * @param  string $value Value to normalized
+     * @return string|array The normalized value
+     */
+    public function filter($value)
+    {
+        if (is_array($value)) {
+            require_once 'Zend/Date.php';
+            $date = new Zend_Date($value, $this->_options['locale']);
+            return $date->toString($this->_options['date_format']);
+        } else if ($this->_options['precision'] === 0) {
+            return Zend_Locale_Format::toInteger($value, $this->_options);
+        } else if ($this->_options['precision'] === null) {
+            return Zend_Locale_Format::toFloat($value, $this->_options);
+        }
+
+        return Zend_Locale_Format::toNumber($value, $this->_options);
+    }
+}

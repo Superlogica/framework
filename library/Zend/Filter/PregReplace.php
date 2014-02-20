@@ -1,41 +1,156 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-p5sNjORwho6z2Di=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: PregReplace.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_PregReplace implements Zend_Filter_Interface
+{
+    /**
+     * Pattern to match
+     * @var mixed
+     */
+    protected $_matchPattern = null;
+
+    /**
+     * Replacement pattern
+     * @var mixed
+     */
+    protected $_replacement = '';
+    
+    /**
+     * Is unicode enabled?
+     *
+     * @var bool
+     */
+    static protected $_unicodeSupportEnabled = null;
+
+    /**
+     * Is Unicode Support Enabled Utility function
+     *
+     * @return bool
+     */
+    static public function isUnicodeSupportEnabled()
+    {
+        if (self::$_unicodeSupportEnabled === null) {
+            self::_determineUnicodeSupport();
+        }
+        
+        return self::$_unicodeSupportEnabled;
+    }
+    
+    /**
+     * Method to cache the regex needed to determine if unicode support is available
+     *
+     * @return bool
+     */
+    static protected function _determineUnicodeSupport()
+    {
+        self::$_unicodeSupportEnabled = (@preg_match('/\pL/u', 'a')) ? true : false;
+    }
+    
+    /**
+     * Constructor
+     * 
+     * @param  string $match 
+     * @param  string $replace 
+     * @return void
+     */
+    public function __construct($matchPattern = null, $replacement = null)
+    {
+        if ($matchPattern) {
+            $this->setMatchPattern($matchPattern);
+        }
+        
+        if ($replacement) {
+            $this->setReplacement($replacement);
+        }
+    }
+    
+    /**
+     * Set the match pattern for the regex being called within filter()
+     *
+     * @param mixed $match - same as the first argument of preg_replace
+     * @return Zend_Filter_PregReplace
+     */
+    public function setMatchPattern($match)
+    {
+        $this->_matchPattern = $match;
+        return $this;
+    }
+
+    /**
+     * Get currently set match pattern
+     * 
+     * @return string
+     */
+    public function getMatchPattern()
+    {
+        return $this->_matchPattern;
+    }
+    
+    /**
+     * Set the Replacement pattern/string for the preg_replace called in filter
+     *
+     * @param mixed $replacement - same as the second argument of preg_replace
+     * @return Zend_Filter_PregReplace
+     */
+    public function setReplacement($replacement)
+    {
+        $this->_replacement = $replacement;
+        return $this;
+    }
+
+    /**
+     * Get currently set replacement value
+     * 
+     * @return string
+     */
+    public function getReplacement()
+    {
+        return $this->_replacement;
+    }
+    
+    /**
+     * Perform regexp replacement as filter
+     * 
+     * @param  string $value 
+     * @return string
+     */
+    public function filter($value)
+    {
+        if ($this->_matchPattern == null) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception(get_class($this) . ' does not have a valid MatchPattern set.');
+        }
+        
+        return preg_replace($this->_matchPattern, $this->_replacement, $value);    
+    }
+    
+}

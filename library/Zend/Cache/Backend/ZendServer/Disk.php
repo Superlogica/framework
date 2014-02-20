@@ -1,35 +1,101 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-ONoLBwoiIoGlpRuI0jTO
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** @see Zend_Cache_Backend_Interface */
+require_once 'Zend/Cache/Backend/Interface.php';
+
+/** @see Zend_Cache_Backend_ZendServer */
+require_once 'Zend/Cache/Backend/ZendServer.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend_ZendServer_Disk extends Zend_Cache_Backend_ZendServer implements Zend_Cache_Backend_Interface
+{
+    /**
+     * Constructor
+     *
+     * @param  array $options associative array of options
+     * @throws Zend_Cache_Exception
+     */
+    public function __construct(array $options = array())
+    {
+        if (!function_exists('zend_disk_cache_store')) {
+            Zend_Cache::throwException('Zend_Cache_ZendServer_Disk backend has to be used within Zend Server environment.');
+        }
+        parent::__construct($options);
+    }
+
+	/**
+     * Store data
+     *
+     * @var mixed  $data        Object to store
+     * @var string $id          Cache id
+     * @var int    $timeToLive  Time to live in seconds
+     * @return boolean true if no problem
+     */
+    protected function _store($data, $id, $timeToLive)
+    {
+    	if (zend_disk_cache_store($this->_options['namespace'] . '::' . $id,
+    	                          $data,
+    	                          $timeToLive) === false) {
+            $this->_log('Store operation failed.');
+            return false;
+    	}
+    	return true;
+    }
+
+    /**
+     * Fetch data
+     *
+     * @var mixed  $data        Object to store
+     * @var string $id          Cache id
+     * @var int    $timeToLive  Time to live in seconds
+     */
+    protected function _fetch($id)
+    {
+    	return zend_disk_cache_fetch($this->_options['namespace'] . '::' . $id);
+    }
+
+    /**
+     * Unset data
+     *
+     * @var string $id          Cache id
+     * @return boolean true if no problem
+     */
+    protected function _unset($id)
+    {
+    	return zend_disk_cache_delete($this->_options['namespace'] . '::' . $id);
+    }
+
+    /**
+     * Clear cache
+     */
+    protected function _clear()
+    {
+    	zend_disk_cache_clear($this->_options['namespace']);
+    }
+}

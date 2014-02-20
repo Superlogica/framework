@@ -1,37 +1,116 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Transform.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+/**
+ * A class to create a transform rule set based on XML URIs and then apply those rules
+ * in the correct order to a given XML input
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Xml_Security_Transform
+{
+    /**
+     * A list of transforms to apply
+     *
+     * @var array
+     */
+    protected $_transformList = array();
+
+    /**
+     * Returns the name of the transform class based on a given URI
+     *
+     * @throws Zend_InfoCard_Xml_Security_Exception
+     * @param string $uri The transform URI
+     * @return string The transform implementation class name
+     */
+    protected function _findClassbyURI($uri)
+    {
+        switch($uri) {
+            case 'http://www.w3.org/2000/09/xmldsig#enveloped-signature':
+                return 'Zend_InfoCard_Xml_Security_Transform_EnvelopedSignature';
+            case 'http://www.w3.org/2001/10/xml-exc-c14n#':
+                return 'Zend_InfoCard_Xml_Security_Transform_XmlExcC14N';
+            default:
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or Unsupported Transformation Requested");
+        }
+    }
+
+    /**
+     * Add a Transform URI to the list of transforms to perform
+     *
+     * @param string $uri The Transform URI
+     * @return Zend_InfoCard_Xml_Security_Transform
+     */
+    public function addTransform($uri)
+    {
+        $class = $this->_findClassbyURI($uri);
+
+        $this->_transformList[] = array('uri' => $uri,
+                                        'class' => $class);
+        return $this;
+    }
+
+    /**
+     * Return the list of transforms to perform
+     *
+     * @return array The list of transforms
+     */
+    public function getTransformList()
+    {
+        return $this->_transformList;
+    }
+
+    /**
+     * Apply the transforms in the transform list to the input XML document
+     *
+     * @param string $strXmlDocument The input XML
+     * @return string The XML after the transformations have been applied
+     */
+    public function applyTransforms($strXmlDocument)
+    {
+        foreach($this->_transformList as $transform) {
+            if (!class_exists($transform['class'])) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($transform['class']);
+            }
+
+            $transformer = new $transform['class'];
+
+            // We can't really test this check because it would require logic changes in the component itself
+            // @codeCoverageIgnoreStart
+            if(!($transformer instanceof Zend_InfoCard_Xml_Security_Transform_Interface)) {
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Transforms must implement the Transform Interface");
+            }
+            // @codeCoverageIgnoreEnd
+
+            $strXmlDocument = $transformer->transform($strXmlDocument);
+        }
+
+        return $strXmlDocument;
+    }
+}

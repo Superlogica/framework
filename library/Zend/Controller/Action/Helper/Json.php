@@ -1,36 +1,130 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-CIj9j8iMbA8=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Json.php 15052 2009-04-21 15:34:02Z matthew $
+ */
+
+/**
+ * @see Zend_Controller_Action_Helper_Abstract
+ */
+require_once 'Zend/Controller/Action/Helper/Abstract.php';
+
+/**
+ * Simplify AJAX context switching based on requested format
+ *
+ * @uses       Zend_Controller_Action_Helper_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Action_Helper_Json extends Zend_Controller_Action_Helper_Abstract
+{
+    /**
+     * Suppress exit when sendJson() called
+     * @var boolean
+     */
+    public $suppressExit = false;
+
+    /**
+     * Create JSON response
+     *
+     * Encodes and returns data to JSON. Content-Type header set to
+     * 'application/json', and disables layouts and viewRenderer (if being
+     * used).
+     *
+     * @param  mixed   $data
+     * @param  boolean $keepLayouts
+     * @param  boolean|array $keepLayouts
+     * NOTE:   if boolean, establish $keepLayouts to true|false
+     *         if array, admit params for Zend_Json::encode as enableJsonExprFinder=>true|false
+     *         if $keepLayouts and parmas for Zend_Json::encode are required
+     *         then, the array can contains a 'keepLayout'=>true|false
+     *         that will not be passed to Zend_Json::encode method but will be passed
+     *         to Zend_View_Helper_Json
+     * @throws Zend_Controller_Action_Helper_Json
+     * @return string
+     */
+    public function encodeJson($data, $keepLayouts = false)
+    {
+        /**
+         * @see Zend_View_Helper_Json
+         */
+        require_once 'Zend/View/Helper/Json.php';
+        $jsonHelper = new Zend_View_Helper_Json();
+        $data = $jsonHelper->json($data, $keepLayouts);
+
+        if (!$keepLayouts) {
+            /**
+             * @see Zend_Controller_Action_HelperBroker
+             */
+            require_once 'Zend/Controller/Action/HelperBroker.php';
+            Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->setNoRender(true);
+        }
+
+        return $data;
+    }
+
+    /**
+     * Encode JSON response and immediately send
+     *
+     * @param  mixed   $data
+     * @param  boolean|array $keepLayouts
+     * NOTE:   if boolean, establish $keepLayouts to true|false
+     *         if array, admit params for Zend_Json::encode as enableJsonExprFinder=>true|false
+     *         if $keepLayouts and parmas for Zend_Json::encode are required
+     *         then, the array can contains a 'keepLayout'=>true|false
+     *         that will not be passed to Zend_Json::encode method but will be passed
+     *         to Zend_View_Helper_Json
+     * @return string|void
+     */
+    public function sendJson($data, $keepLayouts = false)
+    {
+        $data = $this->encodeJson($data, $keepLayouts);
+        $response = $this->getResponse();
+        $response->setBody($data);
+
+        if (!$this->suppressExit) {
+            $response->sendResponse();
+            exit;
+        }
+
+        return $data;
+    }
+
+    /**
+     * Strategy pattern: call helper as helper broker method
+     *
+     * Allows encoding JSON. If $sendNow is true, immediately sends JSON
+     * response.
+     *
+     * @param  mixed   $data
+     * @param  boolean $sendNow
+     * @param  boolean $keepLayouts
+     * @return string|void
+     */
+    public function direct($data, $sendNow = true, $keepLayouts = false)
+    {
+        if ($sendNow) {
+            return $this->sendJson($data, $keepLayouts);
+        }
+        return $this->encodeJson($data, $keepLayouts);
+    }
+}

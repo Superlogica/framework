@@ -1,55 +1,290 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ResultSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Technorati_Result
+ */
+require_once 'Zend/Service/Technorati/Result.php';
+
+
+/**
+ * This is the most essential result set.
+ * The scope of this class is to be extended by a query-specific child result set class,
+ * and it should never be used to initialize a standalone object.
+ *
+ * Each of the specific result sets represents a collection of query-specific
+ * Zend_Service_Technorati_Result objects.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @abstract
+ */
+abstract class Zend_Service_Technorati_ResultSet implements SeekableIterator
+{
+    /**
+     * The total number of results available
+     *
+     * @var     int
+     * @access  protected
+     */
+    protected $_totalResultsAvailable;
+
+    /**
+     * The number of results in this result set
+     *
+     * @var     int
+     * @access  protected
+     */
+    protected $_totalResultsReturned;
+
+    /**
+     * The offset in the total result set of this search set
+     *
+     * @var     int
+     * @todo
+     */
+    // public $firstResultPosition;
+
+
+    /**
+     * A DomNodeList of results
+     *
+     * @var     DomNodeList
+     * @access  protected
+     */
+    protected $_results;
+
+    /**
+     * Technorati API response document
+     *
+     * @var     DomDocument
+     * @access  protected
+     */
+    protected $_dom;
+
+    /**
+     * Object for $this->_dom
+     *
+     * @var     DOMXpath
+     * @access  protected
+     */
+    protected $_xpath;
+
+    /**
+     * XML string representation for $this->_dom
+     *
+     * @var     string
+     * @access  protected
+     */
+    protected $_xml;
+
+    /**
+     * Current Item
+     *
+     * @var     int
+     * @access  protected
+     */
+    protected $_currentIndex = 0;
+
+
+    /**
+     * Parses the search response and retrieves the results for iteration.
+     *
+     * @param   DomDocument $dom    the ReST fragment for this object
+     * @param   array $options      query options as associative array
+     */
+    public function __construct(DomDocument $dom, $options = array())
+    {
+        $this->_init($dom, $options);
+
+        // Technorati loves to make developer's life really hard
+        // I must read query options in order to normalize a single way
+        // to display start and limit.
+        // The value is printed out in XML using many different tag names,
+        // too hard to get it from XML
+
+        // Additionally, the following tags should be always available
+        // according to API documentation but... this is not the truth!
+        // - querytime
+        // - limit
+        // - start (sometimes rankingstart)
+
+        // query tag is only available for some requests, the same for url.
+        // For now ignore them.
+
+        //$start = isset($options['start']) ? $options['start'] : 1;
+        //$limit = isset($options['limit']) ? $options['limit'] : 20;
+        //$this->_firstResultPosition = $start;
+    }
+
+    /**
+     * Initializes this object from a DomDocument response.
+     *
+     * Because __construct and __wakeup shares some common executions,
+     * it's useful to group them in a single initialization method.
+     * This method is called once each time a new instance is created
+     * or a serialized object is unserialized.
+     *
+     * @param   DomDocument $dom    the ReST fragment for this object
+     * @param   array $options      query options as associative array
+     *      * @return  void
+     */
+    protected function _init(DomDocument $dom, $options = array())
+    {
+        $this->_dom     = $dom;
+        $this->_xpath   = new DOMXPath($dom);
+
+        $this->_results = $this->_xpath->query("//item");
+    }
+
+    /**
+     * Number of results returned.
+     *
+     * @return  int     total number of results returned
+     */
+    public function totalResults()
+    {
+        return (int) $this->_totalResultsReturned;
+    }
+
+
+    /**
+     * Number of available results.
+     *
+     * @return  int     total number of available results
+     */
+    public function totalResultsAvailable()
+    {
+        return (int) $this->_totalResultsAvailable;
+    }
+
+    /**
+     * Implements SeekableIterator::current().
+     *
+     * @return  void
+     * @throws  Zend_Service_Exception
+     * @abstract
+     */
+    // abstract public function current();
+
+    /**
+     * Implements SeekableIterator::key().
+     *
+     * @return  int
+     */
+    public function key()
+    {
+        return $this->_currentIndex;
+    }
+
+    /**
+     * Implements SeekableIterator::next().
+     *
+     * @return  void
+     */
+    public function next()
+    {
+        $this->_currentIndex += 1;
+    }
+
+    /**
+     * Implements SeekableIterator::rewind().
+     *
+     * @return  bool
+     */
+    public function rewind()
+    {
+        $this->_currentIndex = 0;
+        return true;
+    }
+
+    /**
+     * Implement SeekableIterator::seek().
+     *
+     * @param   int $index
+     * @return  void
+     * @throws  OutOfBoundsException
+     */
+    public function seek($index)
+    {
+        $indexInt = (int) $index;
+        if ($indexInt >= 0 && $indexInt < $this->_results->length) {
+            $this->_currentIndex = $indexInt;
+        } else {
+            throw new OutOfBoundsException("Illegal index '$index'");
+        }
+    }
+
+    /**
+     * Implement SeekableIterator::valid().
+     *
+     * @return boolean
+     */
+    public function valid()
+    {
+        return null !== $this->_results && $this->_currentIndex < $this->_results->length;
+    }
+
+    /**
+     * Returns the response document as XML string.
+     *
+     * @return string   the response document converted into XML format
+     */
+    public function getXml()
+    {
+        return $this->_dom->saveXML();
+    }
+
+    /**
+     * Overwrites standard __sleep method to make this object serializable.
+     *
+     * DomDocument and DOMXpath objects cannot be serialized.
+     * This method converts them back to an XML string.
+     *
+     * @return void
+     */
+    public function __sleep() {
+        $this->_xml     = $this->getXml();
+        $vars = array_keys(get_object_vars($this));
+        return array_diff($vars, array('_dom', '_xpath'));
+    }
+
+    /**
+     * Overwrites standard __wakeup method to make this object unserializable.
+     *
+     * Restores object status before serialization.
+     * Converts XML string into a DomDocument object and creates a valid
+     * DOMXpath instance for given DocDocument.
+     *
+     * @return void
+     */
+    public function __wakeup() {
+        $dom = new DOMDocument();
+        $dom->loadXml($this->_xml);
+        $this->_init($dom);
+        $this->_xml = null; // reset XML content
+    }
+}

@@ -1,50 +1,208 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_Slider */
+require_once 'Zend/Dojo/Form/Element/Slider.php';
+
+/**
+ * HorizontalSlider dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_Slider
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: HorizontalSlider.php 10012 2008-07-09 20:47:48Z matthew $
+ */
+class Zend_Dojo_Form_Element_HorizontalSlider extends Zend_Dojo_Form_Element_Slider
+{
+    /**
+     * Use HorizontalSlider dijit view helper
+     * @var string
+     */
+    public $helper = 'HorizontalSlider';
+
+    /**
+     * Get top decoration data
+     * 
+     * @return array
+     */
+    public function getTopDecoration()
+    {
+        if ($this->hasDijitParam('topDecoration')) {
+            return $this->getDijitParam('topDecoration');
+        }
+        return array();
+    }
+
+    /**
+     * Set dijit to use with top decoration
+     * 
+     * @param mixed $dijit 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setTopDecorationDijit($dijit)
+    {
+        $decoration = $this->getTopDecoration();
+        $decoration['dijit'] = (string) $dijit;
+        $this->setDijitParam('topDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set container to use with top decoration
+     * 
+     * @param mixed $container 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setTopDecorationContainer($container)
+    {
+        $decoration = $this->getTopDecoration();
+        $decoration['container'] = (string) $container;
+        $this->setDijitParam('topDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set labels to use with top decoration
+     * 
+     * @param  array $labels 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setTopDecorationLabels(array $labels)
+    {
+        $decoration = $this->getTopDecoration();
+        $decoration['labels'] = array_values($labels);
+        $this->setDijitParam('topDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set params to use with top decoration
+     * 
+     * @param  array $params 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setTopDecorationParams(array $params)
+    {
+        $decoration = $this->getTopDecoration();
+        $decoration['params'] = $params;
+        $this->setDijitParam('topDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set attribs to use with top decoration
+     * 
+     * @param  array $attribs 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setTopDecorationAttribs(array $attribs)
+    {
+        $decoration = $this->getTopDecoration();
+        $decoration['attribs'] = $attribs;
+        $this->setDijitParam('topDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Get bottom decoration data
+     * 
+     * @return array
+     */
+    public function getBottomDecoration()
+    {
+        if ($this->hasDijitParam('bottomDecoration')) {
+            return $this->getDijitParam('bottomDecoration');
+        }
+        return array();
+    }
+
+    /**
+     * Set dijit to use with bottom decoration
+     * 
+     * @param mixed $dijit 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setBottomDecorationDijit($dijit)
+    {
+        $decoration = $this->getBottomDecoration();
+        $decoration['dijit'] = (string) $dijit;
+        $this->setDijitParam('bottomDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set container to use with bottom decoration
+     * 
+     * @param mixed $container 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setBottomDecorationContainer($container)
+    {
+        $decoration = $this->getBottomDecoration();
+        $decoration['container'] = (string) $container;
+        $this->setDijitParam('bottomDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set labels to use with bottom decoration
+     * 
+     * @param  array $labels 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setBottomDecorationLabels(array $labels)
+    {
+        $decoration = $this->getBottomDecoration();
+        $decoration['labels'] = array_values($labels);
+        $this->setDijitParam('bottomDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set params to use with bottom decoration
+     * 
+     * @param  array $params 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setBottomDecorationParams(array $params)
+    {
+        $decoration = $this->getBottomDecoration();
+        $decoration['params'] = $params;
+        $this->setDijitParam('bottomDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set attribs to use with bottom decoration
+     * 
+     * @param  array $attribs 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setBottomDecorationAttribs(array $attribs)
+    {
+        $decoration = $this->getBottomDecoration();
+        $decoration['attribs'] = $attribs;
+        $this->setDijitParam('bottomDecoration', $decoration);
+        return $this;
+    }
+}

@@ -1,56 +1,209 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Registry
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Registry.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+/**
+ * Generic storage class helps to manage global data.
+ *
+ * @category   Zend
+ * @package    Zend_Registry
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Registry extends ArrayObject
+{
+    /**
+     * Class name of the singleton registry object.
+     * @var string
+     */
+    private static $_registryClassName = 'Zend_Registry';
+
+    /**
+     * Registry object provides storage for shared objects.
+     * @var Zend_Registry
+     */
+    private static $_registry = null;
+
+    /**
+     * Retrieves the default registry instance.
+     *
+     * @return Zend_Registry
+     */
+    public static function getInstance()
+    {
+        if (self::$_registry === null) {
+            self::init();
+        }
+
+        return self::$_registry;
+    }
+
+    /**
+     * Set the default registry instance to a specified instance.
+     *
+     * @param Zend_Registry $registry An object instance of type Zend_Registry,
+     *   or a subclass.
+     * @return void
+     * @throws Zend_Exception if registry is already initialized.
+     */
+    public static function setInstance(Zend_Registry $registry)
+    {
+        if (self::$_registry !== null) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception('Registry is already initialized');
+        }
+
+        self::setClassName(get_class($registry));
+        self::$_registry = $registry;
+    }
+
+    /**
+     * Initialize the default registry instance.
+     *
+     * @return void
+     */
+    protected static function init()
+    {
+        self::setInstance(new self::$_registryClassName());
+    }
+
+    /**
+     * Set the class name to use for the default registry instance.
+     * Does not affect the currently initialized instance, it only applies
+     * for the next time you instantiate.
+     *
+     * @param string $registryClassName
+     * @return void
+     * @throws Zend_Exception if the registry is initialized or if the
+     *   class name is not valid.
+     */
+    public static function setClassName($registryClassName = 'Zend_Registry')
+    {
+        if (self::$_registry !== null) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception('Registry is already initialized');
+        }
+
+        if (!is_string($registryClassName)) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception("Argument is not a class name");
+        }
+
+        /**
+         * @see Zend_Loader
+         */
+        if (!class_exists($registryClassName)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($registryClassName);
+        }
+
+        self::$_registryClassName = $registryClassName;
+    }
+
+    /**
+     * Unset the default registry instance.
+     * Primarily used in tearDown() in unit tests.
+     * @returns void
+     */
+    public static function _unsetInstance()
+    {
+        self::$_registry = null;
+    }
+
+    /**
+     * getter method, basically same as offsetGet().
+     *
+     * This method can be called from an object of type Zend_Registry, or it
+     * can be called statically.  In the latter case, it uses the default
+     * static instance stored in the class.
+     *
+     * @param string $index - get the value associated with $index
+     * @return mixed
+     * @throws Zend_Exception if no entry is registerd for $index.
+     */
+    public static function get($index)
+    {
+        $instance = self::getInstance();
+
+        if (!$instance->offsetExists($index)) {
+            require_once 'Zend/Exception.php';
+            throw new Zend_Exception("No entry is registered for key '$index'");
+        }
+
+        return $instance->offsetGet($index);
+    }
+
+    /**
+     * setter method, basically same as offsetSet().
+     *
+     * This method can be called from an object of type Zend_Registry, or it
+     * can be called statically.  In the latter case, it uses the default
+     * static instance stored in the class.
+     *
+     * @param string $index The location in the ArrayObject in which to store
+     *   the value.
+     * @param mixed $value The object to store in the ArrayObject.
+     * @return void
+     */
+    public static function set($index, $value)
+    {
+        $instance = self::getInstance();
+        $instance->offsetSet($index, $value);
+    }
+
+    /**
+     * Returns TRUE if the $index is a named value in the registry,
+     * or FALSE if $index was not found in the registry.
+     *
+     * @param  string $index
+     * @return boolean
+     */
+    public static function isRegistered($index)
+    {
+        if (self::$_registry === null) {
+            return false;
+        }
+        return self::$_registry->offsetExists($index);
+    }
+
+    /**
+     * Constructs a parent ArrayObject with default
+     * ARRAY_AS_PROPS to allow acces as an object
+     *
+     * @param array $array data array
+     * @param integer $flags ArrayObject flags
+     */
+    public function __construct($array = array(), $flags = parent::ARRAY_AS_PROPS)
+    {
+        parent::__construct($array, $flags);
+    }
+
+    /**
+     * @param string $index
+     * @returns mixed
+     *
+     * Workaround for http://bugs.php.net/bug.php?id=40442 (ZF-960).
+     */
+    public function offsetExists($index)
+    {
+        return array_key_exists($index, $this);
+    }
+
+}

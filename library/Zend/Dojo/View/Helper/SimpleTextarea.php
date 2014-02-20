@@ -1,30 +1,78 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5C0HRblJ/bATlgJxU4XiMY1GMsVTw3vGHyygzh1uoRYmcQiKCOiJ7aNz04iaYECI7TFR3pxn
-fkO0eoF5341fwUFotgq3Xe6FJy/y9GhKFM32N418pBxWOQMLrhvwVi2jxmgDr5l9bx4Tus96Y10k
-gNfKJgZVzrgCh/lh6Z6q4dTlIEzH1eCZ8gB6ZrddcneQ/ooZr92re2e0wMnb8VSAVvPKV/dS7nlu
-hRLEFTeQ7kiaBeWQ0+Z08yHBaqcSpLCjHtVbBow4GcXPOWDSJyPtQqWQ9ptLZgM0H/yC+RiqNVXK
-3bBkNrVK0LhPbwpnmWjD0trdPRBHVEfyR00O3Gt0skD+eemTxgOEUy2oaxK24nw13UY5ej3z0ANC
-rpKewI8nLQkR4WkOIXXfTFxsG5TOQ6E5O311hOd6ncP8rMkrnKy6jcDSWi+eoWVAFe7yx01om5bP
-c7hKOHt9c5KNh7E5e6ZT6/1H7mMzMrvw2Nu21ZKnRA7ne4251zWnusyY8jXsmfVvzkc7uGkXbnIy
-Nx7lOhTTSF+N6jklA6GZam95UTrP8aRED2tZgb9J8HMo4ADHLJFW2QioQxe3qT27S3Y1yN5y8Bpf
-Lfi8LBHQLIa9lFC7atY1yKBhSlDTCagWZwxKxKbFCG0qHPvLl6uQuiehPVwIMI45vQAxBb8n42VR
-ZjMbZBVKdTeSQHKOg9SUdNDE1ZdpKH+x68vNDwJPQraxxEoTN5eoaWvbp9nw1AnqMTbY6HHY36O8
-Syo1BS4GEJvXbxUM7p2HE0OoSWbRaSlua/Q00ddzP/GwLKx/KwVDYkx1XLUc/0RR7BlODeGWKmkk
-v//seiT8vBW7vmCcmcV6mILtgBN73IhA7uaVeoeKpIFTKMKagRmA3ZefCe3reSkO29sq2ERWvsoL
-D8vz4GMKfJBW9pg5FY8Ff0Zho1l499UmKY3rKrW4uOgsyB+N6U/aR8oX3G2Q8ew27/ZSBq4Mh195
-gng5LVx39prfqMT6xDSlLl4/1WfMOUaXaGm4ciMvETlzb6jSkErb3rtugrPoZkxrmDreIuUQqRA1
-GpauehrGo6nWClt7y6kTYLg0h46ZT5HPgxnV921LogbYH/DI5RdNl3LwzcVtwKYOJxIXSmHROyMM
-R2fBk49rXA4TNkZvRm/U+Jga/GO+/vf5ItcZEH9bdhSbgnppeh5gf/xYtI4XpFdQZ8EYMMH/jqhV
-XlPjRMmIRHfDKQWmdC6K3l/EytSN/CMNKZyZmEqqj9TJD/AKdDWwuhMJ4dflvKkZHjdm/U/Tt6w3
-Lo1apyQiWUxmwucG/PZI9XWLVSQc4mnX/xzTP8SI5vsRVyDWnx+wZRF1q/uBaYZKQdv9rW0PT5uk
-B9sfpsD4QzZ402iXVoWmqbet7Jst8XIkAWQMg0MWCScYJ0yjGsb+1GfS2L7INqYwuCBjQTZyiJ9y
-l76nwwKL3vPfhzgqD+fjVMwzOHx9YjXVIW4ioovnjw1pgpid2sflWxvUcTcrZMxmoHYV0S1JzXfG
-lzOLkhF6gpfljav/4QCVShInKmJKWfvmgDQVnkgRuJctC3V8jsEmu2o+lAtdlpqgyf+l7KSYDNFI
-9RwV6paxOnSZVawRMsXv8pXzzXH1anZrhh5hzFVAN8s3ZEM0QNg1X1MDvJjyeUBA1oVr1SMPK714
-b/5eAyHSM84qKSM+E6gcyX3lehqaMovaO3lRP9HDjPE7pzITIL0QmyMB3X+/cpW6KWMsfXs4Zs7S
-qTruX86wiGET08HJ3+rwWeP+9rHCfvM4yA5zIcBcHqpacfHe1eODaOcxuGd8tZKZsP/gmgBPB3B9
-L+5fTCxx4qO5ph07UF2Fnh0bLoK33OQ9si9wHhzs10GNh3vZvaJsF+DuDzd3AnWvHafSUqnJRUgg
-c4gCqnsf0XTPyV+BdJWMkS3LsTPTVOtKBR3kUyMg1ZfVEyKx4eS3k1H6RlhbhqIext8wdl8DPF/R
-cQpPQXA/
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * dijit.form.SimpleTextarea view helper
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
+ * @version    $Id: $
+ */
+class Zend_Dojo_View_Helper_SimpleTextarea extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * @var string Dijit type
+     */
+    protected $_dijit  = 'dijit.form.SimpleTextarea';
+
+    /**
+     * @var string HTML element type
+     */
+    protected $_elementType = 'textarea';
+
+    /**
+     * @var string Dojo module
+     */
+    protected $_module = 'dijit.form.SimpleTextarea';
+
+    /**
+     * dijit.form.SimpleTextarea
+     * 
+     * @param  string $id 
+     * @param  string $value 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @return string
+     */
+    public function simpleTextarea($id, $value = null, array $params = array(), array $attribs = array())
+    {
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id']    = $id;
+        }
+        $attribs['name']  = $id;
+        $attribs['type']  = $this->_elementType;
+
+        $attribs = $this->_prepareDijit($attribs, $params, 'textarea');
+
+        $html = '<textarea' . $this->_htmlAttribs($attribs) . '>'
+              . $this->view->escape($value)
+              . "</textarea>\n";
+
+        return $html;
+    }
+}

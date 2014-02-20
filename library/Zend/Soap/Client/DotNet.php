@@ -1,31 +1,94 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-78S8eW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Soap_Client */
+require_once 'Zend/Soap/Client.php';
+
+if (extension_loaded('soap')) {
+
+/**
+ * Zend_Soap_Client_Local
+ *
+ * Class is intended to be used with .Net Web Services.
+ *
+ * Important! Class is at experimental stage now.
+ * Please leave your notes, compatiblity issues reports or
+ * suggestions in fw-webservices@lists.zend.com or fw-general@lists.com
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Client
+ */
+class Zend_Soap_Client_DotNet extends Zend_Soap_Client
+{
+    /**
+     * Constructor
+     *
+     * @param string $wsdl
+     * @param array $options
+     */
+    public function __construct($wsdl = null, $options = null)
+    {
+        // Use SOAP 1.1 as default
+        $this->setSoapVersion(SOAP_1_1);
+
+        parent::__construct($wsdl, $options);
+    }
+
+
+    /**
+     * Perform arguments pre-processing
+     *
+     * My be overridden in descendant classes
+     *
+     * @param array $arguments
+     * @throws Zend_Soap_Client_Exception
+     */
+    protected function _preProcessArguments($arguments)
+    {
+    	if (count($arguments) > 1  ||
+    	    (count($arguments) == 1  &&  !is_array(reset($arguments)))
+    	   ) {
+    		require_once 'Zend/Soap/Client/Exception.php';
+    		throw new Zend_Soap_Client_Exception('.Net webservice arguments have to be grouped into array: array(\'a\' => $a, \'b\' => $b, ...).');
+    	}
+
+        // Do nothing
+        return array($arguments);
+    }
+
+    /**
+     * Perform result pre-processing
+     *
+     * My be overridden in descendant classes
+     *
+     * @param array $arguments
+     */
+    protected function _preProcessResult($result)
+    {
+        $resultProperty = $this->getLastMethod() . 'Result';
+
+        return $result->$resultProperty;
+    }
+
+}
+
+} // end if (extension_loaded('soap')

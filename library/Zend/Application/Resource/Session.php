@@ -1,37 +1,93 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-iAlxVdSpjghU0RnBFcaI
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Session.php 14957 2009-04-17 12:20:40Z matthew $
+ */
+
+/**
+ * Resource for setting session options
+ *
+ * @uses       Zend_Application_Resource_ResourceAbstract
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Application_Resource_Session extends Zend_Application_Resource_ResourceAbstract
+{
+    /**
+     * Save handler to use
+     *
+     * @var Zend_Session_SaveHandler_Interface
+     */
+    protected $_saveHandler = null;
+
+    /**
+     * Set session save handler
+     *
+     * @param  array|string|Zend_Session_SaveHandler_Interface $saveHandler
+     * @return Zend_Application_Resource_Session
+     * @throws Zend_Application_Resource_Exception When $saveHandler is no valid save handler
+     */
+    public function setSaveHandler($saveHandler)
+    {
+        if (is_array($saveHandler)) {
+            if (!array_key_exists('class', $saveHandler)) {
+                throw new Zend_Application_Resource_Exception('Session save handler class not provided in options');
+            }
+            if (array_key_exists('options', $saveHandler)) {
+                $options = $saveHandler['options'];
+            }
+            $saveHandler = $saveHandler['class'];
+            $saveHandler = new $saveHandler($options);
+        } elseif (is_string($saveHandler)) {
+            $saveHandler = new $saveHandler();
+        }
+
+        if (!$saveHandler instanceof Zend_Session_SaveHandler_Interface) {
+            throw new Zend_Application_Resource_Exception('Invalid session save handler');
+        }
+
+        $this->_saveHandler = $saveHandler;
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Application_Resource_Resource
+     *
+     * @return void
+     */
+    public function init()
+    {
+        $options = array_change_key_case($this->getOptions(), CASE_LOWER);
+        if (isset($options['savehandler'])) {
+            unset($options['savehandler']);
+        }
+
+        if (count($options) > 0) {
+            Zend_Session::setOptions($options);
+        }
+
+        if ($this->_saveHandler !== null) {
+            Zend_Session::setSaveHandler($this->_saveHandler);
+        }
+    }
+}

@@ -1,48 +1,101 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV55iEdsjJqsDCFhyAIAnaAGB2fZbRpG8KkCuMnRMp0rGJ7fsuHf6qYoTq8/2MgR/RrO6Ley1Z
-fsc5QwrnCU74SBbZ8BSPK9e2kiMWpQ78Pcy0Ak8/EMC+w1lpvJdicSwdLbDLOG9HKzdFO3dmvJeu
-bvTuP6bEMyg5YcHG9mySZJCzfa3w1hhZNItZARHSq+w6/QtrQhxv2H9UXHFK1afqNtlMZg/Qovum
-Z8AoZ55cJDERxhB9KAGs0yHBaqcSpLCjHtVbBow4GcY2O0aeLfvGvPSEu07LThBZ9l+C1NK3XZkr
-u3hBCHVa1lKux/lXPelGl7szu3IMyAafWEPSUAxeRJUhlIS/RgbvA+O2/6xy6J9BgPGehrnxTE/P
-20iJOICrdM1RkZHELTTonQ+kJnRWWYjE4z7vHHYsam3Ow0QyitCIHA/cDFChanTtiK6Xgq+7upld
-flSJptsetgTwhS9PYneWRZ6Ct/K8xEq2JDwLx9MHLMkwwtsQeBggM1wt8KeXjCsr7tI1kjtYJBFa
-A7KJqY0B8eYCQBBBQsDS0M9CvD4jW3gaLGjzKeU1xxdXbOa5AxK+YKBDgC+0jLPI+ryrpVd/aibk
-yIRmnEH1xb2Ww1ozk1L3jfBSLonMamKknBiNJmfY/XlpywG5jyjx2UObk7TQK1P4qS8d0ulKbH5h
-wgpzpfonClDy3Rf/qW2I07NIoPQzmc0T303bFwJQrPGX3a1ecnOLRhAkAnGtM13V6S74nA0Q41g/
-PNufIDJN5rnhgvU6TAXrn83SkXpmP8KRjjrcTGq2vn81OacnatCedma7oUGsZqxeREbqzbDWdvRi
-TpkGco5SOH32a/vBFxqxlF1NkUQWaNIwVyEwZXauHsM1iYLQu0KplYdiqJckBaNY/Y6ZDgM//i2l
-X+mKasq1PeqoGYx6aeAFiTC7P0I9v/BJ0yWiq5pjkyZ63DuSIlWnDTFOAy3hJq6oYuG/qdiTqHN3
-4/zCjooEnJwN2hmlQzxFd5hG/8cYzuNGAXeopYNGrGap7gCjzMMxEkZmy+He55EERUwhMlqICOwL
-zcWmWvUVrj1UgEX5GkhFPQqS2ch5r9Bliv4WrVCUXFCQGY6ZzhLaT2cWADDnQWHErGq9jvVmRI5S
-4kvfwSG25SRArSY2Ot4rt7BgP1hzRWj2OJaz9TwD/aSBx1dX8JI/KqQT3Uo+Zu7agq2mRZ2/c3N4
-yftK9gSSnwvy4ZT4x2j1oyd38OMTIRYddoC7TroOkNZc/dO/bzb281UXrlnY/g7ptN98eG5EbJU7
-VFG4WtxOcEdIO5P5dc/RIMzwaQ84Cnvq4J/31+Pq/y2RCjsuZ3PWNeAp65+4qZ87TyjQ3Cv0pRwB
-InTDoKAwrxGR3nBKMda/FNKRoskLJWn23h49qyjThzIoiFMUXPqzt1wW65Tu1fRmb+TGE0rzfZgs
-phHGTnPAEiLUcYQWs+3xe1ll4wS+3vlKR7Q0aS6QEY0CVMbP9om1VeqxypHp8LCIhBmfPavIqEfY
-y89u3QJuzDxjhpqk06q14T7NQVN9eauF124FvFLUEFazfgMjfoOF3Funj79ZJcePTyLkcOH6DasG
-fQtzDFniwyljHPRcdxXnrfn80p8ctWbV2Q6bSfb07z/NEnJkRNmniv+lp0rCyUC55KGQSeV8yatA
-gaF/nJVeZx9NHtrH+CtkH01nCHeHFZhmume8hZCaREbq+Vh0eOAVGN+LgINDOkY1OM4PJ73sqhrP
-k5AEGWr9OChWq7kTZXwSGsuQuzphDuDgmI7KBAprS2CkWT2Kvg2Fjt5dM0+7glcRD5MvbuMbRwng
-+cN9fZrWUpjQxnLCRZ1llqAtYOSK32wLl5AMrzdXZpfKsaMD5Z84UjyX0a1qrvYpQSuWHH47fn7T
-j4yFuBxBH23ks23wbbkyWN2A9/lkY470AHOvvIyOwr9qPxEirtnL7PH3Pwmn3NEjux0WQFiG4RQx
-0wTsLlbbAxJCUWDGnxTkxqV0z6KEAGN9GoV1foIC0FzHxDtcudBpm4miMQpEm44RlDcy6NQXkySg
-ics0aPpJ7pMw4FkWXIqAgrRX9lkGeTTVZ5lBXjotIOkxzpOkq2v1NmaRrpAUMC4qxdGnfFZkcnnh
-ozPUf0XbSwTdhUy7UXPJuzwnM2Hu+H/u7SZDbMdxC0RzUnjvIz8RlCwsJD4V7CEIW7+Ch2KVqNG0
-s+qg+wE8aD7HgQdIEJQH2EDLSMGvuHCXE8hjZUFmg6OaKN28tDAQ77P2dkIDk1Nm5l71wQKTi4NV
-Ern6hHatU8SpOvLOXJllqULMkBI5Gn3OBMXnCfqIxKmW7K8DRgflkKJiFl6H5z+mXCVW+BXS6SuA
-bbTAu52YuO0wH2pMh56agYhiTF0naWMojGrMj04Hm5k0/oC8G8XxJHOSuJ0z+QaIAWglqR8PbYpo
-2vl27bNkUUxNVkWH4GDKgZ7qZ7MTj4PJvp2c+tBvCJ1KbPMHKVbcIphx2/0vHsM5W+fD9J126dpC
-pwfbEgtyO/SkFTSw3ltTQ7frXx83AaqDCBfGfp5xwuL9l/IRrLmIdm4dxS41QRV0cFfjy+pLTJ5g
-Y05bveD+pHIdlRWwgyv1ZGR8j8Vfq/W9QutcP8rRNR+rksLPPJJNNDXusXT5x1KSQ6zPXlGXkLMm
-YhrH7htzEMaCDuXbzK6f9bknhafl2CZFMjJLr5qkoRFv2XMYt99ZYegPSMtV48fAKCgXaDzp/PNo
-fnoGMozvpxAjTLXIa2j73sAtfomGJAmQhSrM/ocDJ/HPNe/MKjCwYfa+dEvso4xF/VtnRcGeKzjI
-TAwwmmb8naQNe6NEct1K49+CrI/jPXyjI8fp1GOdNo2zAmDtQ+p8P05PyKsSBKO1ICgrLu/ZAobA
-iqogrdmBSiG/3BU7mUtBu+mHA91dPk639lCTbGSU6nyY4gGT6DODBM0hFPOKzlLcIrdHx7WbyC/L
-wfx8NK2IGBvAL9ZlR/5xnuIq1M72cEwhJhelIBEEVmb+k2zHjLu4dTmPE3CdC2x5cljSB7nhzmYt
-IjMuIlbLtFZjwkspBpdlMdQimPbGpOIKEf+553tEg+h2XkDlJEDnc99whUGOEPMAzhQR8eOUQuDQ
-gAPrnV0tnnMaIYBh8iwF539RHw6PDqnt12rjsPd8i33Z4nZmx9UWjlEJbj/SDhTX0B5vBuXTY5Tt
-waiPHGF1jxlhai+3VgCf8jhXbZJge8l264mrEflsvnyh1RkoRw2KJItMrYd6Pn/Q4nFONPAL95Hk
-8yAMCHChtiPae1Dr/guchhjtPsDa4RvKJPpGH5E54M3jZdLSauLHgI2w5U3UqcHoftNNxIc69kTX
-zyEYd1h2SLQ++j3qD4mvQ4hL3CY30K3AxWYZmO58tG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource_Font_Simple */
+require_once 'Zend/Pdf/Resource/Font/Simple.php';
+
+/** Zend_Pdf_FileParser_Font_OpenType */
+require_once 'Zend/Pdf/FileParser/Font/OpenType.php';
+
+
+/**
+ * Parsed and (optionaly) embedded fonts implementation
+ *
+ * OpenType fonts can contain either TrueType or PostScript Type 1 outlines.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Resource_Font_Simple_Parsed extends Zend_Pdf_Resource_Font_Simple
+{
+    /**
+     * Object constructor
+     *
+     * @param Zend_Pdf_FileParser_Font_OpenType $fontParser Font parser object containing OpenType file.
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct(Zend_Pdf_FileParser_Font_OpenType $fontParser)
+    {
+        parent::__construct();
+        
+        
+        $fontParser->parse();
+
+        /* Object properties */
+
+        $this->_fontNames = $fontParser->names;
+
+        $this->_isBold       = $fontParser->isBold;
+        $this->_isItalic     = $fontParser->isItalic;
+        $this->_isMonospaced = $fontParser->isMonospaced;
+
+        $this->_underlinePosition  = $fontParser->underlinePosition;
+        $this->_underlineThickness = $fontParser->underlineThickness;
+        $this->_strikePosition     = $fontParser->strikePosition;
+        $this->_strikeThickness    = $fontParser->strikeThickness;
+
+        $this->_unitsPerEm = $fontParser->unitsPerEm;
+
+        $this->_ascent  = $fontParser->ascent;
+        $this->_descent = $fontParser->descent;
+        $this->_lineGap = $fontParser->lineGap;
+
+        $this->_glyphWidths       = $fontParser->glyphWidths;
+        $this->_missingGlyphWidth = $this->_glyphWidths[0];
+
+
+        $this->_cmap = $fontParser->cmap;
+
+
+        /* Resource dictionary */
+
+        $baseFont = $this->getFontName(Zend_Pdf_Font::NAME_POSTSCRIPT, 'en', 'UTF-8');
+        $this->_resource->BaseFont = new Zend_Pdf_Element_Name($baseFont);
+
+        $this->_resource->FirstChar = new Zend_Pdf_Element_Numeric(0);
+        $this->_resource->LastChar  = new Zend_Pdf_Element_Numeric(count($this->_glyphWidths) - 1);
+
+        /* Now convert the scalar glyph widths to Zend_Pdf_Element_Numeric objects.
+         */
+        $pdfWidths = array();
+        foreach ($this->_glyphWidths as $width) {
+            $pdfWidths[] = new Zend_Pdf_Element_Numeric($this->toEmSpace($width));
+        }
+        /* Create the Zend_Pdf_Element_Array object and add it to the font's
+         * object factory and resource dictionary.
+         */
+        $widthsArrayElement = new Zend_Pdf_Element_Array($pdfWidths);
+        $widthsObject = $this->_objectFactory->newObject($widthsArrayElement);
+        $this->_resource->Widths = $widthsObject;
+    }
+
+}

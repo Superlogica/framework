@@ -1,167 +1,532 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-PTc5NmS9ExYu466lcrhHelwO/kC=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Text_Table
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Table.php 12550 2008-11-11 15:26:47Z dasprid $
+ */
+
+/**
+ * Zend_Text_Table enables developers to create tables out of characters
+ *
+ * @category  Zend
+ * @package   Zend_Text_Table
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Text_Table
+{
+    /**
+     * Auto seperator settings
+     */
+    const AUTO_SEPARATE_NONE   = 0x0;
+    const AUTO_SEPARATE_HEADER = 0x1;
+    const AUTO_SEPARATE_FOOTER = 0x2;
+    const AUTO_SEPARATE_ALL    = 0x4;
+    
+    /**
+     * Decorator used for the table borders
+     *
+     * @var Zend_Text_Table_Decorator_Interface
+     */
+    protected $_decorator = null;
+
+    /**
+     * List of all column widths
+     *
+     * @var array
+     */
+    protected $_columnWidths = null;
+
+    /**
+     * Rows of the table
+     *
+     * @var array
+     */
+    protected $_rows = array();
+    
+    /**
+     * Auto separation mode
+     *
+     * @var integer
+     */
+    protected $_autoSeparate = self::AUTO_SEPARATE_ALL;
+    
+    /**
+     * Padding for columns
+     *
+     * @var integer
+     */
+    protected $_padding = 0;
+    
+    /**
+     * Default column aligns for rows created by appendRow(array $data)
+     *
+     * @var array
+     */
+    protected $_defaultColumnAligns = array();
+
+    /**
+     * Plugin loader for decorators
+     *
+     * @var string
+     */
+    protected $_pluginLoader = null;
+    
+    /**
+     * Charset which is used for input by default
+     *
+     * @var string
+     */
+    protected static $_inputCharset = 'utf-8';
+    
+    /**
+     * Charset which is used internally
+     *
+     * @var string
+     */
+    protected static $_outputCharset = 'utf-8';
+    
+    /**
+     * Option keys to skip when calling setOptions()
+     * 
+     * @var array
+     */
+    protected $_skipOptions = array(
+        'options',
+        'config',
+        'defaultColumnAlign',
+    );
+        
+    /**
+     * Create a basic table object
+     *
+     * @param  array             $columnsWidths List of all column widths
+     * @param  Zend_Config|array $options       Configuration options
+     * @throws Zend_Text_Table_Exception When no columns widths were set
+     */
+    public function __construct($options = null)
+    {       
+        // Set options
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } else if ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        }
+
+        // Check if column widths were set
+        // @todo When column widths were not set, assume auto-sizing
+        if ($this->_columnWidths === null) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('You must define the column widths');
+        }
+        
+        // If no decorator was given, use default unicode decorator
+        if ($this->_decorator === null) {
+            if (self::getOutputCharset() === 'utf-8') {
+                $this->setDecorator('unicode');
+            } else {
+                $this->setDecorator('ascii');
+            }
+        }
+    }
+    
+    /**
+     * Set options from array
+     *
+     * @param  array $options Configuration for Zend_Text_Table
+     * @return Zend_Text_Table
+     */
+    public function setOptions(array $options)
+    {
+        foreach ($options as $key => $value) {
+            if (in_array(strtolower($key), $this->_skipOptions)) {
+                continue;
+            }
+
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+        
+        return $this;
+    }
+
+    /**
+     * Set options from config object
+     *
+     * @param  Zend_Config $config Configuration for Zend_Text_Table
+     * @return Zend_Text_Table
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        return $this->setOptions($config->toArray());
+    }
+    
+    /**
+     * Set column widths
+     *
+     * @param  array $columnWidths Widths of all columns
+     * @throws Zend_Text_Table_Exception When no columns were supplied
+     * @throws Zend_Text_Table_Exception When a column has an invalid width
+     * @return Zend_Text_Table
+     */
+    public function setColumnWidths(array $columnWidths)
+    {
+        if (count($columnWidths) === 0) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('You must supply at least one column');
+        }
+        
+        foreach ($columnWidths as $columnNum => $columnWidth) {
+            if (is_int($columnWidth) === false or $columnWidth < 1) {
+                require_once 'Zend/Text/Table/Exception.php';
+                throw new Zend_Text_Table_Exception('Column ' . $columnNum . ' has an invalid'
+                                                    . ' column width');
+            }
+        }
+
+        $this->_columnWidths = $columnWidths;
+        
+        return $this;
+    }
+
+    /**
+     * Set auto separation mode
+     *
+     * @param  integer $autoSeparate Auto separation mode
+     * @return Zend_Text_Table
+     */
+    public function setAutoSeparate($autoSeparate)
+    {
+        $this->_autoSeparate = (int) $autoSeparate;
+        return $this;
+    }
+       
+    /**
+     * Set decorator
+     *
+     * @param  Zend_Text_Table_Decorator_Interface|string $decorator Decorator to use
+     * @return Zend_Text_Table
+     */
+    public function setDecorator($decorator)
+    {
+        if ($decorator instanceof Zend_Text_Table_Decorator_Interface) {
+            $this->_decorator = $decorator;
+        } else {
+            $classname        = $this->getPluginLoader()->load($decorator);
+            $this->_decorator = new $classname;
+        }
+        
+        return $this;
+    }
+    
+    /**
+     * Set the column padding
+     *
+     * @param  integer $padding The padding for the columns
+     * @return Zend_Text_Table
+     */
+    public function setPadding($padding)
+    {
+        $this->_padding = max(0, (int) $padding);
+        return $this;
+    }
+    
+    /**
+     * Get the plugin loader for decorators
+     *
+     * @return Zend_Loader_PluginLoader
+     */
+    public function getPluginLoader()
+    {
+        if ($this->_pluginLoader === null) {
+            $prefix     = 'Zend_Text_Table_Decorator_';
+            $pathPrefix = 'Zend/Text/Table/Decorator/';
+    
+            require_once 'Zend/Loader/PluginLoader.php';
+            $this->_pluginLoader = new Zend_Loader_PluginLoader(array($prefix => $pathPrefix));
+        }
+        
+        return $this->_pluginLoader;
+    }
+    
+    /**
+     * Set default column align for rows created by appendRow(array $data) 
+     *
+     * @param  integer $columnNum
+     * @param  string  $align
+     * @return Zend_Text_Table
+     */
+    public function setDefaultColumnAlign($columnNum, $align) 
+    {
+        $this->_defaultColumnAligns[$columnNum] = $align;
+        
+        return $this;
+    }
+
+    /**
+     * Set the input charset for column contents
+     *
+     * @param string $charset
+     */
+    public static function setInputCharset($charset)
+    {
+        self::$_inputCharset = strtolower($charset);
+    }
+    
+    /**
+     * Get the input charset for column contents
+     *
+     * @param string $charset
+     */
+    public static function getInputCharset()
+    {
+        return self::$_inputCharset;
+    }
+    
+    /**
+     * Set the output charset for column contents
+     *
+     * @param string $charset
+     */
+    public static function setOutputCharset($charset)
+    {
+        self::$_outputCharset = strtolower($charset);
+    }
+    
+    /**
+     * Get the output charset for column contents
+     *
+     * @param string $charset
+     */
+    public static function getOutputCharset()
+    {
+        return self::$_outputCharset;
+    }
+    
+    /**
+     * Append a row to the table
+     *
+     * @param  array|Zend_Text_Table_Row $row The row to append to the table
+     * @throws Zend_Text_Table_Exception When $row is neither an array nor Zend_Zext_Table_Row
+     * @throws Zend_Text_Table_Exception When a row contains too many columns
+     * @return Zend_Text_Table
+     */
+    public function appendRow($row)
+    {
+        if (!is_array($row) && !($row instanceof Zend_Text_Table_Row)) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('$row must be an array or instance of Zend_Text_Table_Row');
+        }
+        
+        if (is_array($row)) {
+            if (count($row) > count($this->_columnWidths)) {
+                require_once 'Zend/Text/Table/Exception.php';
+                throw new Zend_Text_Table_Exception('Row contains too many columns');
+            }
+                        
+            require_once 'Zend/Text/Table/Row.php';
+            
+            $data   = $row;
+            $row    = new Zend_Text_Table_Row();
+            $colNum = 0;
+            foreach ($data as $columnData) {
+                if (isset($this->_defaultColumnAligns[$colNum])) {
+                    $align = $this->_defaultColumnAligns[$colNum];
+                } else {
+                    $align = null;
+                }
+                
+                $row->appendColumn(new Zend_Text_Table_Column($columnData, $align));
+                $colNum++;    
+            }
+        }
+        
+        $this->_rows[] = $row;
+        
+        return $this;
+    }
+
+    /**
+     * Render the table
+     *
+     * @throws Zend_Text_Table_Exception When no rows were added to the table
+     * @return string
+     */
+    public function render()
+    {
+        // There should be at least one row
+        if (count($this->_rows) === 0) {
+            require_once 'Zend/Text/Table/Exception.php';
+            throw new Zend_Text_Table_Exception('No rows were added to the table yet');
+        }
+
+        // Initiate the result variable
+        $result = '';
+
+        // Count total columns
+        $totalNumColumns = count($this->_columnWidths);
+
+        // Now render all rows, starting from the first one
+        $numRows = count($this->_rows);
+        foreach ($this->_rows as $rowNum => $row) {
+            // Get all column widths
+            if (isset($columnWidths) === true) {
+                $lastColumnWidths = $columnWidths;
+            }
+
+            $renderedRow  = $row->render($this->_columnWidths, $this->_decorator, $this->_padding);
+            $columnWidths = $row->getColumnWidths();
+            $numColumns   = count($columnWidths);
+
+            // Check what we have to draw
+            if ($rowNum === 0) {
+                // If this is the first row, draw the table top
+                $result .= $this->_decorator->getTopLeft();
+
+                foreach ($columnWidths as $columnNum => $columnWidth) {
+                    $result .= str_repeat($this->_decorator->getHorizontal(),
+                                          $columnWidth);
+
+                    if (($columnNum + 1) === $numColumns) {
+                        $result .= $this->_decorator->getTopRight();
+                    } else {
+                        $result .= $this->_decorator->getHorizontalDown();
+                    }
+                }
+
+                $result .= "\n";
+            } else {
+                // Else check if we have to draw the row separator
+                if ($this->_autoSeparate & self::AUTO_SEPARATE_ALL) {
+                    $drawSeparator = true;
+                } else if ($rowNum === 1 && $this->_autoSeparate & self::AUTO_SEPARATE_HEADER) {
+                    $drawSeparator = true;
+                } else if ($rowNum === ($numRows - 1) && $this->_autoSeparate & self::AUTO_SEPARATE_FOOTER) {
+                    $drawSeparator = true;
+                } else {
+                    $drawSeparator = false;
+                }
+                
+                if ($drawSeparator) {             
+                    $result .= $this->_decorator->getVerticalRight();
+    
+                    $currentUpperColumn = 0;
+                    $currentLowerColumn = 0;
+                    $currentUpperWidth  = 0;
+                    $currentLowerWidth  = 0;
+    
+                    // Loop through all column widths
+                    foreach ($this->_columnWidths as $columnNum => $columnWidth) {
+                        // Add the horizontal line
+                        $result .= str_repeat($this->_decorator->getHorizontal(),
+                                              $columnWidth);
+    
+                        // If this is the last line, break out
+                        if (($columnNum + 1) === $totalNumColumns) {
+                            break;
+                        }
+    
+                        // Else check, which connector style has to be used
+                        $connector          = 0x0;
+                        $currentUpperWidth += $columnWidth;
+                        $currentLowerWidth += $columnWidth;
+    
+                        if ($lastColumnWidths[$currentUpperColumn] === $currentUpperWidth) {
+                            $connector          |= 0x1;
+                            $currentUpperColumn += 1;
+                            $currentUpperWidth   = 0;
+                        } else {
+                            $currentUpperWidth += 1;
+                        }
+    
+                        if ($columnWidths[$currentLowerColumn] === $currentLowerWidth) {
+                            $connector          |= 0x2;
+                            $currentLowerColumn += 1;
+                            $currentLowerWidth   = 0;
+                        } else {
+                            $currentLowerWidth += 1;
+                        }
+    
+                        switch ($connector) {
+                            case 0x0:
+                                $result .= $this->_decorator->getHorizontal();
+                                break;
+    
+                            case 0x1:
+                                $result .= $this->_decorator->getHorizontalUp();
+                                break;
+    
+                            case 0x2:
+                                $result .= $this->_decorator->getHorizontalDown();
+                                break;
+    
+                            case 0x3:
+                                $result .= $this->_decorator->getCross();
+                                break;
+    
+                            default:
+                                // This can never happen, but the CS tells I have to have it ...
+                                break;
+                        }
+                    }
+    
+                    $result .= $this->_decorator->getVerticalLeft() . "\n";
+                }
+            }
+
+            // Add the rendered row to the result
+            $result .= $renderedRow;
+
+            // If this is the last row, draw the table bottom
+            if (($rowNum + 1) === $numRows) {
+                $result .= $this->_decorator->getBottomLeft();
+
+                foreach ($columnWidths as $columnNum => $columnWidth) {
+                    $result .= str_repeat($this->_decorator->getHorizontal(),
+                                          $columnWidth);
+
+                    if (($columnNum + 1) === $numColumns) {
+                        $result .= $this->_decorator->getBottomRight();
+                    } else {
+                        $result .= $this->_decorator->getHorizontalUp();
+                    }
+                }
+
+                $result .= "\n";
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Magic method which returns the rendered table
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        try {
+            return $this->render();
+        } catch (Exception $e) {
+            trigger_error($e->getMessage(), E_USER_ERROR);
+        }
+
+    }
+}

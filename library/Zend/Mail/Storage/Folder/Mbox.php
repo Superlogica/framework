@@ -1,91 +1,264 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Mbox.php 9098 2008-03-30 19:29:10Z thomas $
+ */
+
+
+/**
+ * @see Zend_Mail_Storage_Folder
+ */
+require_once 'Zend/Mail/Storage/Folder.php';
+
+/**
+ * @see Zend_Mail_Storage_Folder_Interface
+ */
+require_once 'Zend/Mail/Storage/Folder/Interface.php';
+
+/**
+ * @see Zend_Mail_Storage_Mbox
+ */
+require_once 'Zend/Mail/Storage/Mbox.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Storage_Folder_Mbox extends Zend_Mail_Storage_Mbox implements Zend_Mail_Storage_Folder_Interface
+{
+    /**
+     * Zend_Mail_Storage_Folder root folder for folder structure
+     * @var Zend_Mail_Storage_Folder
+     */
+    protected $_rootFolder;
+
+    /**
+     * rootdir of folder structure
+     * @var string
+     */
+    protected $_rootdir;
+
+    /**
+     * name of current folder
+     * @var string
+     */
+    protected $_currentFolder;
+
+    /**
+     * Create instance with parameters
+     *
+     * Disallowed parameters are:
+     *   - filename use Zend_Mail_Storage_Mbox for a single file
+     * Supported parameters are:
+     *   - dirname rootdir of mbox structure
+     *   - folder intial selected folder, default is 'INBOX'
+     *
+     * @param  $params array mail reader specific parameters
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function __construct($params)
+    {
+        if (is_array($params)) {
+            $params = (object)$params;
+        }
+
+        if (isset($params->filename)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('use Zend_Mail_Storage_Mbox for a single file');
+        }
+
+        if (!isset($params->dirname) || !is_dir($params->dirname)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('no valid dirname given in params');
+        }
+
+        $this->_rootdir = rtrim($params->dirname, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+
+        $this->_buildFolderTree($this->_rootdir);
+        $this->selectFolder(!empty($params->folder) ? $params->folder : 'INBOX');
+        $this->_has['top']      = true;
+        $this->_has['uniqueid'] = false;
+    }
+
+    /**
+     * find all subfolders and mbox files for folder structure
+     *
+     * Result is save in Zend_Mail_Storage_Folder instances with the root in $this->_rootFolder.
+     * $parentFolder and $parentGlobalName are only used internally for recursion.
+     *
+     * @param string $currentDir call with root dir, also used for recursion.
+     * @param Zend_Mail_Storage_Folder|null $parentFolder used for recursion
+     * @param string $parentGlobalName used for rescursion
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    protected function _buildFolderTree($currentDir, $parentFolder = null, $parentGlobalName = '')
+    {
+        if (!$parentFolder) {
+            $this->_rootFolder = new Zend_Mail_Storage_Folder('/', '/', false);
+            $parentFolder = $this->_rootFolder;
+        }
+
+        $dh = @opendir($currentDir);
+        if (!$dh) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception("can't read dir $currentDir");
+        }
+        while (($entry = readdir($dh)) !== false) {
+            // ignore hidden files for mbox
+            if ($entry[0] == '.') {
+                continue;
+            }
+            $absoluteEntry = $currentDir . $entry;
+            $globalName = $parentGlobalName . DIRECTORY_SEPARATOR . $entry;
+            if (is_file($absoluteEntry) && $this->_isMboxFile($absoluteEntry)) {
+                $parentFolder->$entry = new Zend_Mail_Storage_Folder($entry, $globalName);
+                continue;
+            }
+            if (!is_dir($absoluteEntry) /* || $entry == '.' || $entry == '..' */) {
+                continue;
+            }
+            $folder = new Zend_Mail_Storage_Folder($entry, $globalName, false);
+            $parentFolder->$entry = $folder;
+            $this->_buildFolderTree($absoluteEntry . DIRECTORY_SEPARATOR, $folder, $globalName);
+        }
+
+        closedir($dh);
+    }
+
+    /**
+     * get root folder or given folder
+     *
+     * @param string $rootFolder get folder structure for given folder, else root
+     * @return Zend_Mail_Storage_Folder root or wanted folder
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getFolders($rootFolder = null)
+    {
+        if (!$rootFolder) {
+            return $this->_rootFolder;
+        }
+
+        $currentFolder = $this->_rootFolder;
+        $subname = trim($rootFolder, DIRECTORY_SEPARATOR);
+        while ($currentFolder) {
+            @list($entry, $subname) = @explode(DIRECTORY_SEPARATOR, $subname, 2);
+            $currentFolder = $currentFolder->$entry;
+            if (!$subname) {
+                break;
+            }
+        }
+
+        if ($currentFolder->getGlobalName() != DIRECTORY_SEPARATOR . trim($rootFolder, DIRECTORY_SEPARATOR)) {
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception("folder $rootFolder not found");
+        }
+        return $currentFolder;
+    }
+
+    /**
+     * select given folder
+     *
+     * folder must be selectable!
+     *
+     * @param Zend_Mail_Storage_Folder|string $globalName global name of folder or instance for subfolder
+     * @return null
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function selectFolder($globalName)
+    {
+        $this->_currentFolder = (string)$globalName;
+
+        // getting folder from folder tree for validation
+        $folder = $this->getFolders($this->_currentFolder);
+
+        try {
+            $this->_openMboxFile($this->_rootdir . $folder->getGlobalName());
+        } catch(Zend_Mail_Storage_Exception $e) {
+            // check what went wrong
+            if (!$folder->isSelectable()) {
+                /**
+                 * @see Zend_Mail_Storage_Exception
+                 */
+                require_once 'Zend/Mail/Storage/Exception.php';
+                throw new Zend_Mail_Storage_Exception("{$this->_currentFolder} is not selectable");
+            }
+            // seems like file has vanished; rebuilding folder tree - but it's still an exception
+            $this->_buildFolderTree($this->_rootdir);
+            /**
+             * @see Zend_Mail_Storage_Exception
+             */
+            require_once 'Zend/Mail/Storage/Exception.php';
+            throw new Zend_Mail_Storage_Exception('seems like the mbox file has vanished, I\'ve rebuild the ' .
+                                                         'folder tree, search for an other folder and try again');
+        }
+    }
+
+    /**
+     * get Zend_Mail_Storage_Folder instance for current folder
+     *
+     * @return Zend_Mail_Storage_Folder instance of current folder
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function getCurrentFolder()
+    {
+        return $this->_currentFolder;
+    }
+
+    /**
+     * magic method for serialize()
+     *
+     * with this method you can cache the mbox class
+     *
+     * @return array name of variables
+     */
+    public function __sleep()
+    {
+        return array_merge(parent::__sleep(), array('_currentFolder', '_rootFolder', '_rootdir'));
+    }
+
+    /**
+     * magic method for unserialize()
+     *
+     * with this method you can cache the mbox class
+     *
+     * @return null
+     */
+    public function __wakeup()
+    {
+        // if cache is stall selectFolder() rebuilds the tree on error
+        parent::__wakeup();
+    }
+}

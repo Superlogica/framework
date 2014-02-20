@@ -1,48 +1,119 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_Parameter extends ReflectionParameter 
+{
+    /**
+     * @var bool
+     */
+    protected $_isFromMethod = false;
+    
+    /**
+     * Get declaring class reflection object
+     *
+     * @param  string $reflectionClass Reflection class to use
+     * @return Zend_Reflection_Class
+     */
+    public function getDeclaringClass($reflectionClass = 'Zend_Reflection_Class')
+    {
+        $phpReflection  = parent::getDeclaringClass();
+        $zendReflection = new $reflectionClass($phpReflection->getName());
+        if (!$zendReflection instanceof Zend_Reflection_Class) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
+        }
+        unset($phpReflection);
+        return $zendReflection;
+    }
+    
+    /**
+     * Get class reflection object
+     *
+     * @param  string $reflectionClass Reflection class to use
+     * @return Zend_Reflection_Class
+     */
+    public function getClass($reflectionClass = 'Zend_Reflection_Class')
+    {
+        $phpReflection  = parent::getClass();
+        $zendReflection = new $reflectionClass($phpReflection->getName());
+        if (!$zendReflection instanceof Zend_Reflection_Class) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
+        }
+        unset($phpReflection);
+        return $zendReflection;
+    }
+    
+    /**
+     * Get declaring function reflection object
+     *
+     * @param  string $reflectionClass Reflection class to use
+     * @return Zend_Reflection_Function|Zend_Reflection_Method
+     */
+    public function getDeclaringFunction($reflectionClass = null)
+    {
+        $phpReflection = parent::getDeclaringFunction();
+        if ($phpReflection instanceof ReflectionMethod) {
+            $baseClass = 'Zend_Reflection_Method';
+            if (null === $reflectionClass) {
+                $reflectionClass = $baseClass;
+            }
+            $zendReflection = new $reflectionClass($this->getDeclaringClass()->getName(), $phpReflection->getName());
+        } else {
+            $baseClass = 'Zend_Reflection_Function';
+            if (null === $reflectionClass) {
+                $reflectionClass = $baseClass;
+            }
+            $zendReflection = new $reflectionClass($phpReflection->getName());
+        }
+        if (!$zendReflection instanceof $baseClass) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend ' . $baseClass);
+        }
+        unset($phpReflection);
+        return $zendReflection;
+    }
+    
+    /**
+     * Get parameter type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        if ($docblock = $this->getDeclaringFunction()->getDocblock()) {
+            $params = $docblock->getTags('param');
+            
+            if (isset($params[$this->getPosition() - 1])) {
+                return $params[$this->getPosition() - 1]->getType();
+            }
+            
+        }
+        
+        return null;
+    }
+}

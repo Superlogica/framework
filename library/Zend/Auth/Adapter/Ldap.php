@@ -1,117 +1,345 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-9XC7n9jJXdxoKaojB1+7u0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Ldap.php 14095 2009-02-16 22:17:54Z norm2782 $
+ */
+
+/**
+ * @see Zend_Auth_Adapter_Interface
+ */
+require_once 'Zend/Auth/Adapter/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Auth_Adapter_Ldap implements Zend_Auth_Adapter_Interface
+{
+
+    /**
+     * The Zend_Ldap context.
+     *
+     * @var Zend_Ldap
+     */
+    protected $_ldap = null;
+
+    /**
+     * The array of arrays of Zend_Ldap options passed to the constructor.
+     *
+     * @var array
+     */
+    protected $_options = null;
+
+    /**
+     * The username of the account being authenticated.
+     *
+     * @var string
+     */
+    protected $_username = null;
+
+    /**
+     * The password of the account being authenticated.
+     *
+     * @var string
+     */
+    protected $_password = null;
+
+    /**
+     * Constructor
+     *
+     * @param  array  $options  An array of arrays of Zend_Ldap options
+     * @param  string $username The username of the account being authenticated
+     * @param  string $password The password of the account being authenticated
+     * @return void
+     */
+    public function __construct(array $options = array(), $username = null, $password = null)
+    {
+        $this->setOptions($options);
+        if ($username !== null) {
+            $this->setUsername($username);
+        }
+        if ($password !== null) {
+            $this->setPassword($password);
+        }
+    }
+
+    /**
+     * Returns the array of arrays of Zend_Ldap options of this adapter.
+     *
+     * @return array|null
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Sets the array of arrays of Zend_Ldap options to be used by
+     * this adapter.
+     *
+     * @param  array $options The array of arrays of Zend_Ldap options
+     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
+     */
+    public function setOptions($options)
+    {
+        $this->_options = is_array($options) ? $options : array();
+        return $this;
+    }
+
+    /**
+     * Returns the username of the account being authenticated, or
+     * NULL if none is set.
+     *
+     * @return string|null
+     */
+    public function getUsername()
+    {
+        return $this->_username;
+    }
+
+    /**
+     * Sets the username for binding
+     *
+     * @param  string $username The username for binding
+     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
+     */
+    public function setUsername($username)
+    {
+        $this->_username = (string) $username;
+        return $this;
+    }
+
+    /**
+     * Returns the password of the account being authenticated, or
+     * NULL if none is set.
+     *
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+
+    /**
+     * Sets the passwort for the account
+     *
+     * @param  string $password The password of the account being authenticated
+     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
+     */
+    public function setPassword($password)
+    {
+        $this->_password = (string) $password;
+        return $this;
+    }
+
+    /**
+     * Returns the LDAP Object
+     *
+     * @return Zend_Ldap The Zend_Ldap object used to authenticate the credentials
+     */
+    public function getLdap()
+    {
+        if ($this->_ldap === null) {
+            /**
+             * @see Zend_Ldap
+             */
+            require_once 'Zend/Ldap.php';
+            $this->_ldap = new Zend_Ldap();
+        }
+
+        return $this->_ldap;
+    }
+
+    /**
+     * Set an Ldap connection
+     *
+     * @param Zend_Ldap $ldap An existing Ldap object
+     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
+     */
+    public function setLdap(Zend_Ldap $ldap)
+    {
+        $this->_ldap = $ldap;
+
+        $this->setOptions(array($ldap->getOptions()));
+
+        return $this;
+    }
+
+    /**
+     * Returns a domain name for the current LDAP options. This is used
+     * for skipping redundant operations (e.g. authentications).
+     *
+     * @return string
+     */
+    protected function _getAuthorityName()
+    {
+        $options = $this->getLdap()->getOptions();
+        $name = $options['accountDomainName'];
+        if (!$name)
+            $name = $options['accountDomainNameShort'];
+        return $name ? $name : '';
+    }
+
+    /**
+     * Authenticate the user
+     *
+     * @throws Zend_Auth_Adapter_Exception
+     * @return Zend_Auth_Result
+     */
+    public function authenticate()
+    {
+        /**
+         * @see Zend_Ldap_Exception
+         */
+        require_once 'Zend/Ldap/Exception.php';
+
+        $messages = array();
+        $messages[0] = ''; // reserved
+        $messages[1] = ''; // reserved
+
+        $username = $this->_username;
+        $password = $this->_password;
+
+        if (!$username) {
+            $code = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
+            $messages[0] = 'A username is required';
+            return new Zend_Auth_Result($code, '', $messages);
+        }
+        if (!$password) {
+            /* A password is required because some servers will
+             * treat an empty password as an anonymous bind.
+             */
+            $code = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
+            $messages[0] = 'A password is required';
+            return new Zend_Auth_Result($code, '', $messages);
+        }
+
+        $ldap = $this->getLdap();
+
+        $code = Zend_Auth_Result::FAILURE;
+        $messages[0] = "Authority not found: $username";
+        $failedAuthorities = array();
+
+        /* Iterate through each server and try to authenticate the supplied
+         * credentials against it.
+         */
+        foreach ($this->_options as $name => $options) {
+
+            if (!is_array($options)) {
+                /**
+                 * @see Zend_Auth_Adapter_Exception
+                 */
+                require_once 'Zend/Auth/Adapter/Exception.php';
+                throw new Zend_Auth_Adapter_Exception('Adapter options array not in array');
+            }
+            $ldap->setOptions($options);
+            $dname = '';
+
+            try {
+                if ($messages[1])
+                    $messages[] = $messages[1];
+                $messages[1] = '';
+                $messages[] = $this->_optionsToString($options);
+
+                $dname = $this->_getAuthorityName();
+                if (isset($failedAuthorities[$dname])) {
+                    /* If multiple sets of server options for the same domain
+                     * are supplied, we want to skip redundant authentications
+                     * where the identity or credentials where found to be
+                     * invalid with another server for the same domain. The
+                     * $failedAuthorities array tracks this condition (and also
+                     * serves to supply the original error message).
+                     * This fixes issue ZF-4093.
+                     */
+                    $messages[1] = $failedAuthorities[$dname];
+                    $messages[] = "Skipping previously failed authority: $dname";
+                    continue;
+                }
+
+                $canonicalName = $ldap->getCanonicalAccountName($username);
+
+                $ldap->bind($canonicalName, $password);
+
+                $messages[0] = '';
+                $messages[1] = '';
+                $messages[] = "$canonicalName authentication successful";
+
+                return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $canonicalName, $messages);
+            } catch (Zend_Ldap_Exception $zle) {
+
+                /* LDAP based authentication is notoriously difficult to diagnose. Therefore
+                 * we bend over backwards to capture and record every possible bit of
+                 * information when something goes wrong.
+                 */
+
+                $err = $zle->getCode();
+
+                if ($err == Zend_Ldap_Exception::LDAP_X_DOMAIN_MISMATCH) {
+                    /* This error indicates that the domain supplied in the
+                     * username did not match the domains in the server options
+                     * and therefore we should just skip to the next set of
+                     * server options.
+                     */
+                    continue;
+                } else if ($err == Zend_Ldap_Exception::LDAP_NO_SUCH_OBJECT) {
+                    $code = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
+                    $messages[0] = "Account not found: $username";
+                    $failedAuthorities[$dname] = $zle->getMessage();
+                } else if ($err == Zend_Ldap_Exception::LDAP_INVALID_CREDENTIALS) {
+                    $code = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
+                    $messages[0] = 'Invalid credentials';
+                    $failedAuthorities[$dname] = $zle->getMessage();
+                } else {
+                    $line = $zle->getLine();
+                    $messages[] = $zle->getFile() . "($line): " . $zle->getMessage();
+                    $messages[] = str_replace($password, '*****', $zle->getTraceAsString());
+                    $messages[0] = 'An unexpected failure occurred';
+                }
+                $messages[1] = $zle->getMessage();
+            }
+        }
+
+        $msg = isset($messages[1]) ? $messages[1] : $messages[0];
+        $messages[] = "$username authentication failed: $msg";
+
+        return new Zend_Auth_Result($code, $username, $messages);
+    }
+
+    /**
+     * Converts options to string
+     *
+     * @param  array $options
+     * @return string
+     */
+    private function _optionsToString(array $options)
+    {
+        $str = '';
+        foreach ($options as $key => $val) {
+            if ($key === 'password')
+                $val = '*****';
+            if ($str)
+                $str .= ',';
+            $str .= $key . '=' . $val;
+        }
+        return $str;
+    }
+}

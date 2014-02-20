@@ -1,36 +1,83 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-AQNL
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Translate.php 14974 2009-04-18 00:02:32Z norm2782 $
+ */
+
+/**
+ * Resource for setting translation options
+ *
+ * @uses       Zend_Application_Resource_ResourceAbstract
+ * @category   Zend
+ * @package    Zend_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Application_Resource_Translate extends Zend_Application_Resource_ResourceAbstract
+{
+    const DEFAULT_REGISTRY_KEY = 'Zend_Translate';
+
+    /**
+     * @var Zend_Translate
+     */
+    protected $_translate;
+
+    /**
+     * Defined by Zend_Application_Resource_Resource
+     *
+     * @return Zend_Translate
+     */
+    public function init()
+    {
+        return $this->getTranslate();
+    }
+
+    /**
+     * Retrieve translate object
+     *
+     * @return Zend_Translate
+     */
+    public function getTranslate()
+    {
+        if (null === $this->_translate) {
+            $options = $this->getOptions();
+
+            if (!isset($options['data'])) {
+                throw new Zend_Application_Resource_Exception('No translation source data provided.');
+            }
+
+            $adapter = isset($options['adapter']) ? $options['adapter'] : Zend_Translate::AN_ARRAY;
+            $locale  = isset($options['locale'])  ? $options['locale']  : null;
+            $translateOptions = isset($options['options']) ? $options['options'] : array();
+
+            $this->_translate = new Zend_Translate(
+                $adapter, $options['data'], $locale, $translateOptions
+            );
+
+            $key = (isset($options['registry_key']) && !is_numeric($options['registry_key']))
+                 ? $options['registry_key']
+                 : self::DEFAULT_REGISTRY_KEY;
+
+            Zend_Registry::set($key, $this->_translate);
+        }
+
+        return $this->_translate;
+    }
+}

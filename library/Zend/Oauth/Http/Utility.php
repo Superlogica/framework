@@ -1,88 +1,217 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Utility.php 23484 2010-12-10 03:57:59Z mjh_ca $
+ */
+
+/** Zend_Oauth */
+require_once 'Zend/Oauth.php';
+
+/** Zend_Oauth_Http */
+require_once 'Zend/Oauth/Http.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Oauth_Http_Utility
+{
+    /**
+     * Assemble all parameters for a generic OAuth request - i.e. no special
+     * params other than the defaults expected for any OAuth query.
+     *
+     * @param  string $url
+     * @param  Zend_Oauth_Config_ConfigInterface $config
+     * @param  null|array $serviceProviderParams
+     * @return array
+     */
+    public function assembleParams(
+        $url,
+        Zend_Oauth_Config_ConfigInterface $config,
+        array $serviceProviderParams = null
+    ) {
+        $params = array(
+            'oauth_consumer_key'     => $config->getConsumerKey(),
+            'oauth_nonce'            => $this->generateNonce(),
+            'oauth_signature_method' => $config->getSignatureMethod(),
+            'oauth_timestamp'        => $this->generateTimestamp(),
+            'oauth_version'          => $config->getVersion(),
+        );
+
+        if ($config->getToken()->getToken() != null) {
+            $params['oauth_token'] = $config->getToken()->getToken();
+        }
+
+
+        if ($serviceProviderParams !== null) {
+            $params = array_merge($params, $serviceProviderParams);
+        }
+
+        $params['oauth_signature'] = $this->sign(
+            $params,
+            $config->getSignatureMethod(),
+            $config->getConsumerSecret(),
+            $config->getToken()->getTokenSecret(),
+            $config->getRequestMethod(),
+            $url
+        );
+
+        return $params;
+    }
+
+    /**
+     * Given both OAuth parameters and any custom parametere, generate an
+     * encoded query string. This method expects parameters to have been
+     * assembled and signed beforehand.
+     *
+     * @param array $params
+     * @param bool $customParamsOnly Ignores OAuth params e.g. for requests using OAuth Header
+     * @return string
+     */
+    public function toEncodedQueryString(array $params, $customParamsOnly = false)
+    {
+        if ($customParamsOnly) {
+            foreach ($params as $key=>$value) {
+                if (preg_match("/^oauth_/", $key)) {
+                    unset($params[$key]);
+                }
+            }
+        }
+        $encodedParams = array();
+        foreach ($params as $key => $value) {
+            $encodedParams[] = self::urlEncode($key)
+                             . '='
+                             . self::urlEncode($value);
+        }
+        return implode('&', $encodedParams);
+    }
+
+    /**
+     * Cast to authorization header
+     *
+     * @param  array $params
+     * @param  null|string $realm
+     * @param  bool $excludeCustomParams
+     * @return void
+     */
+    public function toAuthorizationHeader(array $params, $realm = null, $excludeCustomParams = true)
+    {
+        $headerValue = array(
+            'OAuth realm="' . $realm . '"',
+        );
+
+        foreach ($params as $key => $value) {
+            if ($excludeCustomParams) {
+                if (!preg_match("/^oauth_/", $key)) {
+                    continue;
+                }
+            }
+            $headerValue[] = self::urlEncode($key)
+                           . '="'
+                           . self::urlEncode($value) . '"';
+        }
+        return implode(",", $headerValue);
+    }
+
+    /**
+     * Sign request
+     *
+     * @param  array $params
+     * @param  string $signatureMethod
+     * @param  string $consumerSecret
+     * @param  null|string $tokenSecret
+     * @param  null|string $method
+     * @param  null|string $url
+     * @return string
+     */
+    public function sign(
+        array $params, $signatureMethod, $consumerSecret, $tokenSecret = null, $method = null, $url = null
+    ) {
+        $className = '';
+        $hashAlgo  = null;
+        $parts     = explode('-', $signatureMethod);
+        if (count($parts) > 1) {
+            $className = 'Zend_Oauth_Signature_' . ucfirst(strtolower($parts[0]));
+            $hashAlgo  = $parts[1];
+        } else {
+            $className = 'Zend_Oauth_Signature_' . ucfirst(strtolower($signatureMethod));
+        }
+
+        require_once str_replace('_', '/', $className) . '.php';
+        $signatureObject = new $className($consumerSecret, $tokenSecret, $hashAlgo);
+        return $signatureObject->sign($params, $method, $url);
+    }
+
+    /**
+     * Parse query string
+     *
+     * @param  mixed $query
+     * @return array
+     */
+    public function parseQueryString($query)
+    {
+        $params = array();
+        if (empty($query)) {
+            return array();
+        }
+
+        // Not remotely perfect but beats parse_str() which converts
+        // periods and uses urldecode, not rawurldecode.
+        $parts = explode('&', $query);
+        foreach ($parts as $pair) {
+            $kv = explode('=', $pair);
+            $params[rawurldecode($kv[0])] = rawurldecode($kv[1]);
+        }
+        return $params;
+    }
+
+    /**
+     * Generate nonce
+     *
+     * @return string
+     */
+    public function generateNonce()
+    {
+        return md5(uniqid(rand(), true));
+    }
+
+    /**
+     * Generate timestamp
+     *
+     * @return int
+     */
+    public function generateTimestamp()
+    {
+        return time();
+    }
+
+    /**
+     * urlencode a value
+     *
+     * @param  string $value
+     * @return string
+     */
+    public static function urlEncode($value)
+    {
+        $encoded = rawurlencode($value);
+        $encoded = str_replace('%7E', '~', $encoded);
+        return $encoded;
+    }
+}

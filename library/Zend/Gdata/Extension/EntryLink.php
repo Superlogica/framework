@@ -1,70 +1,166 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51gEPsTiKbn9VK3oHC9+sgJBsQUD8cgnfggiOo0pLhG8BUaQcjebi0IxOCeEjg/ecUN+AVdw
-m49QeSMGFZVKQ24I+n6hkhtan0P4Yw5hOh+FH/UL3xfWv+HtSPktbALLbIJOC8S2gq9c8zFAAk/n
-cGrAdDMa8ljN4ELC8w2eAxSW8kUT1mBmAeF8tfeYPAJx5gfkQk10kOWNjOj36/njoMx6jLEVgbyA
-FwK0ucTItkOv/XuAw3yfn4kJIPpDKor7T+KlBeH2QFPYSK69SpF1omnBMTM6iwXeuhx8/1+Bn+ti
-+CQb/089JTUTKVLu6BoA7cmzwuCLTAzLMRlvT1rK9EBn0OriphEIePR5VBH7/iyIgn8tfUxbKfKN
-N/BhoTC2lja0FY3KQbZa4ZungOUgvPshHOlkLjqrQGjmPAqt5JYDlh3HRpI+xmELuY3WhOELeazy
-y9tQTBF6vN8obtQ3veJZOwuYJ1VPFbJf7D0qrqA0HI+4TjUK9rNAJMz5v35d8BrrTyVUlrmTKhzB
-WR0+Qvjw3RcTtPnx26xz6tE3/cMrRinjeNsAX/l2TZrvgv727HRMp9oYLXXD9As8SdqSvy6usv5E
-5R59kCQ6QnY94CoMjzyUdm+HdZKiC14ZM657AqGvBOLcIw+iRbDyKo3cmhSH2H869P42N2IHm/Yn
-wkAHXWAT2KF+/KtOCKwkWeBWnzPZxC8lRm/nmIUeTKYUH5fmbVTEE0mpSweA2U90+WOgbcXZ+LQ5
-TvHjPui/5MPGlxL+bTIkJAsl2Uj7j69m7abGStZkPS+9108a/etp03GGKySOzNkzN5G5aLHiHb4R
-Dv0uVDyvyDnF8vfJDLHC5tP821WDiM0vQqUbt9LzhwKW2j35T2EKFVFy7UtT7voSl89OLH/eAU00
-ogljDRlK30EQRf0Z06AU/hmfc3NWPWsErDx/bLyR7RegQ87QJRSbIvrDiyjWAt/dJ3tE8YrELADG
-7TH23SL2sQke42DIZBZ/xzyN50yYhwMz9P8//CZDGAEb/jjQGUIBFqfP+oDVrXCnCFdJuo6QyyYQ
-3NwqY+CbzHChcBv6nSqgkp3c6KD827mn/7ty/zmbrIx5pigVHR5Vhu0tqRUmdvDxxKu4KrNFP/AS
-EIzjfksT0IUXWq5/fKcWmiFJSDWBA/DD/f9DjGR9YKaDIsUPUZxYLlZ7/2Jnzz58jPUTfcbGp4uq
-W65l5VxKsgYRkfyQg2dJaX2HK8EMa1miuPbtKe91+utl3mb64VQofO9nP86FhsuM4zgjp6eq1COc
-isfx6QPvcUMOATAfYOu5HXWFBU7FelwMwEt1BY9fqmZfSwRNVa0pTlb1/n91L+VmWSr8d/LicrxY
-SLNUUgdOF+fJYHUidXR9paouqOmWcrmphmG9CHS0e6eIav9QLUgNNcxLb5QOT5hx2a4ZajQTKntf
-1sc86hoONfm5e3LsP8o2O1RcR3kUSArIRUfeKPDBK0lZD7EWV5pXiBXRKv0Kl9qt0CwZ6sHpquws
-/m7U8bcBn5JFs4/U4fFM0TUSVzsX4nEvNaJtAifI3HeU3hBkIWLmyGfZpjB78XMXRNwBkYTZfyJw
-KXXqBHqjYcPAWw7Gn+8Hz1bqtm65aWxTp/0BPf5yZRiia7TeXMPuiCgwArG+zcTEGmYrVSqelw2g
-SehhK7C/iN2DnZax3a1bNKyHlGXKYKpUFzbFYmwX+Q9GhJYbYdViLF/EkaalIr8jvGjRuyTixjhK
-Np8fhENJUZj7evp+T3OF2RAH8z/S9Fx6LXD8qO/AT04QPgCPcUOtMWXqgACCUnY8J38CqZMvNd0i
-H5c031YPUWf5lpjGCc1PdyIOXxw7wKVat58W5EfCHHpc0prSyLmUYj/Fd22J8SJAUZtHcnUDJSVn
-YnMzqsug/1lmo2R05X50By0ZHmsd2MiKGofxLd0Qm9gHlFsoQygw3eWuHXSQVqhiW5px+9/L0Nia
-JdMEFikYCNhW544fVBvsiQWdcEiO8tFKRKif8HwxwP3k835rwL0ftyJtTxs1NV+0n7B8btemkIwi
-NGLvP56j0fcj5wtAI3DFMl5v5YY0+TBi7bQJZ2Z1vQxEmdvUWBRI7iIU1j8DpjK7fYdk3kuWWHgw
-DodDE0aH0OPN20zKjnpp4N/5Xo7EyLKMKWtedAkRtMSHu4RBU/FOlvqKInagMWGUiuGkAQUzLDWU
-5bAwmJHZKlJ80VVKU9Rd6XQisIBI8tvry26HAGCs8ftmTq6rHM/H0oEYhQvZtZ9q/i1Bt6KzO+5P
-TCSQYMHCm0w7t8ZsTrGWRE5bGdHJnGYQgRkDG/aoU/HbkVLFSbmEUanop2SSvKGuh0UYZ0DIHjGi
-EEgM5iiN5bwda0zpW7x+5q0VcJv0Wfg3Q4nS8WbzBsCP3k/bh7WfjwUFETQTRU3MxnaoWptHgMby
-IVIKq275GJuIHcSnEpYLIcWGYFbBycxLKEilRAKAQg3eMbiZt6njgCL0U/hsveckADKTG0mw/lEi
-YacGQ5+fwNEujVplg82x/GWR5kOPklg0xPEaVU6kUjQSdrKVIvr80Lg6MMCIR8dnx4I1NlEWP/3g
-N9/IHr4lbyAau8zViUcCM6lYE9xPNaiblcpKAK3NagzCEOsj67IHS2KC2+3BSItpEEeQMbBfKi9F
-3lAZZTPnrcxHH9bBp9DP2GGAhVdfRG78B3b9Jh67JnGJTOeVll6ppQS2c3qT1RIqS1Bcct4tO+c8
-9eO14WHFEqS2sDl6rthmgzEpq0vd40fxCpTfb8Vfx2DePkBzj3iozMPZ5hwjM66+rT+a0f7AByVz
-xffCTr62ZWntcw3XOoaonMBepI9xbNkr3HGvV6n6C29G+8w7UljnQ+Gv/ErpMcRq3wG3np20GwIb
-wRTbJ4Sxupy6nBwTxK6Th1DwkH9t2rwjZMY3CrxFowJgIwTy0db+5EkvMrW4uLIVLXbDb2tultHc
-gocpVSF3a/6m8fiWyWoQWiQid/n7dG1llDDlg1Mak6wTfp2KAmoiPVPZ4E8K29SzzeaM/uSwrnpb
-zTzC/UtbZyqpM5gl1596yAoD1X4vuRMYKLBrA//WYvvQqOxSY4wl6xnG0RleleIQhsw3bFyfgmsi
-XvRB4hCOzoYfdMq7bdAy0H5S5WIrsrFgrAW38OX7evdrSrm6w3Ldx9zu1jma3WZfJQW8hTJ3B33C
-f9Zp7IXUPq8f4x7IIgRR5b/hRwMqdx27vblFtpzRp0XfkUef1xbweJeW4ZCVrFQsvXjc45nFrA9P
-6vAEmel2I//9c3ISY07H/wlG91/gquz/HRrOkf+MuVRmWT4d0Elkx/zD6TNF6c7zfJu8h6K0Xo7e
-NxrKq4gmKNPmbwmcpuSMz7pHu/2UXYXNaAX/JWgA/9sMUz5/lgAycpH/dUE2Y0OpBBXowv7U/s0+
-uJHXEoyHmLvjL0G/u4g5Iu5M2IIeBFoQVDof+ZM6tgAvNZGV752hIx3YnaFzyj+RSA2njOfKZXvf
-yjQ37LPW9WiQnI0YVlPK5qedVZfNa84rw7CWZRLLY1NE1FL8yeu+PnV2iNRAg79ogew5lpGcuJS6
-4dgT/EEHaaiwSEbjPKw7taPxykQ1/gra6RnJN5ZttprshsNdTXSnP99g61E0pggiIUvYIEKIM3er
-zUKHiHef0wNBkZfg/vlqokbYvk6b2a2wE/W9C11Wdyl36NdeugRO0i04PwOQftI2ryVtn2tQGvvp
-7Hrm/i4PIUJTd9qN5FrlMBYGWr2rA3qJIu6EtwYdT47o3j+z1EVU/tR5fM1GvOs+0d4jhcOuDqc6
-iXXC0+1n2bLd1IvkpdsDCosbKhbPsdUcNU/Cf8+71oG1Q+biz9R5XrsWCXu3fSKZaBS66nrw9BD7
-xPT0G/LNBm2RXze5tVb0X3OFoygKzl+e731nsc44fnygPiZ1LbAGVMQqEHIXtJu0yUZzafbQPP5r
-nfhwW0Nk+HXz59BKcBWAh6KvllgbcGVxlBfXblpfD0YkTSkZn5alXb5BWIWLyrbivJI9hDNIEofU
-xkGk0AkWUnu6SZs7otmvZ4BnHiLhGqtu94BunhiUmUQjCS1DRlxyjTW9sslhpKM1TLWC4IGRBF35
-cIoswd+U4Fy15j2W0wTtfKfO3kbhGfni11JNP6d2ETgZSdxegqtMzjUEj/Jf2ooxyTLdNkfzVt6l
-SlGQzIwJDpNURGA8irrp4IxTKbdc7uetStVfiPvTRwD5zWh2SrOkl4JCnqZQ864Ydh3kQiaVm05o
-J/mlhz4d9TlaXPJM8rELPnRtSh8+WhUYrEdCrnAq1Igjh8TP1bpQSWnNzitdsBw2Wwvg9Z4t75rS
-NXo35Hy6euk6zWh6xtKN+9+mcSfH/Q1EsQgIO+nIs4M4Oa6744u5nDkQJngJnXTSGAgjmV5Gbl4r
-igbGA27NNyK4enQpTjinkFtAv0mR1IHF+45qM7LBo5YTw0e0ZKfn7YwzyhdqvoqFse98MNHMKrCk
-caYo9YK47V4JdWkqsUTLbbzSZxb5rq7IfZOCVpOCk8QHD4QnvZx6eXlUrETVgjwOdRwoD5lQl2WB
-WklP4UBtcnB0OMYNBT8JeYfpsHmj/dymDxUIV30ZLIIrigUDiOe8SZUkn31ds5Q/t2hcMTjx8Cdw
-x7owaaXJB80cAt5jh2CbqcquWnZkfIdyiAPhRaSsJvZ6eA38dglRBCAZ+eXwAw4/lduGXyy9n478
-hv9jJiBZIEsOrd8cmD8/7/6SSJY/aNMXgKQmaDmAn94TfCX8PVHJ22zZzIYMfp9X8x1xFRVkOrIJ
-EjmfxH95iXBJJoiGbMyP5CRNh2mxx7kVJL++7eiQ74g/rngs1WfzWfQIcSh4adtw8N71kFmLPftA
-gRCtBS79dq+JrkplNbhWvor4uDN4VyPMUhIr6WEdgRT4SjXtatPYM1hfdFx9QXfdK9oVVM+bv8Nl
-fzpSYCjLuVRxv7LSJGi7PCW6ziRCFnrSuyrsy1k09waKtHOmMvLJ2ynKCJuDBH0O09gVuhNvVGEf
-GKrdJK4SY7HgbuhUUN2ePP5dhLh9hjZCBR03hgfw9OGMl/w7g6xVR8dSyY2EbkrUeq2hFkqKx0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * Represents the gd:entryLink element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_EntryLink extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'entryLink';
+    protected $_href = null;
+    protected $_readOnly = null;
+    protected $_rel = null;
+    protected $_entry = null;
+
+    public function __construct($href = null, $rel = null,
+            $readOnly = null, $entry = null)
+    {
+        parent::__construct();
+        $this->_href = $href;
+        $this->_readOnly = $readOnly;
+        $this->_rel = $rel;
+        $this->_entry = $entry;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_href !== null) {
+            $element->setAttribute('href', $this->_href);
+        }
+        if ($this->_readOnly !== null) {
+            $element->setAttribute('readOnly', ($this->_readOnly ? "true" : "false"));
+        }
+        if ($this->_rel !== null) {
+            $element->setAttribute('rel', $this->_rel);
+        }
+        if ($this->_entry !== null) {
+            $element->appendChild($this->_entry->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('atom') . ':' . 'entry';
+                $entry = new Zend_Gdata_Entry();
+                $entry->transferFromDOM($child);
+                $this->_entry = $entry;
+                break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'href':
+            $this->_href = $attribute->nodeValue;
+            break;
+        case 'readOnly':
+            if ($attribute->nodeValue == "true") {
+                $this->_readOnly = true;
+            }
+            else if ($attribute->nodeValue == "false") {
+                $this->_readOnly = false;
+            }
+            else {
+                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+            }
+            break;
+        case 'rel':
+            $this->_rel = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getHref()
+    {
+        return $this->_href;
+    }
+
+    public function setHref($value)
+    {
+        $this->_href = $value;
+        return $this;
+    }
+
+    public function getReadOnly()
+    {
+        return $this->_readOnly;
+    }
+
+    public function setReadOnly($value)
+    {
+        $this->_readOnly = $value;
+        return $this;
+    }
+
+    public function getRel()
+    {
+        return $this->_rel;
+    }
+
+    public function setRel($value)
+    {
+        $this->_rel = $value;
+        return $this;
+    }
+
+    public function getEntry()
+    {
+        return $this->_entry;
+    }
+
+    public function setEntry($value)
+    {
+        $this->_entry = $value;
+        return $this;
+    }
+
+}

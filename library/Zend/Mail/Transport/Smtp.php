@@ -1,58 +1,239 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-3MeBCrG7UjnkvpO59x6xaMhx
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Transport
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Smtp.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+
+/**
+ * @see Zend_Mime
+ */
+require_once 'Zend/Mime.php';
+
+/**
+ * @see Zend_Mail_Protocol_Smtp
+ */
+require_once 'Zend/Mail/Protocol/Smtp.php';
+
+/**
+ * @see Zend_Mail_Transport_Abstract
+ */
+require_once 'Zend/Mail/Transport/Abstract.php';
+
+
+/**
+ * SMTP connection object
+ *
+ * Loads an instance of Zend_Mail_Protocol_Smtp and forwards smtp transactions
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Transport
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Transport_Smtp extends Zend_Mail_Transport_Abstract
+{
+    /**
+     * EOL character string used by transport
+     * @var string
+     * @access public
+     */
+    public $EOL = "\n";
+
+    /**
+     * Remote smtp hostname or i.p.
+     *
+     * @var string
+     */
+    protected $_host;
+
+
+    /**
+     * Port number
+     *
+     * @var integer|null
+     */
+    protected $_port;
+
+
+    /**
+     * Local client hostname or i.p.
+     *
+     * @var string
+     */
+    protected $_name = 'localhost';
+
+
+    /**
+     * Authentication type OPTIONAL
+     *
+     * @var string
+     */
+    protected $_auth;
+
+
+    /**
+     * Config options for authentication
+     *
+     * @var array
+     */
+    protected $_config;
+
+
+    /**
+     * Instance of Zend_Mail_Protocol_Smtp
+     *
+     * @var Zend_Mail_Protocol_Smtp
+     */
+    protected $_connection;
+
+
+    /**
+     * Constructor.
+     *
+     * @param  string $host OPTIONAL (Default: 127.0.0.1)
+     * @param  array|null $config OPTIONAL (Default: null)
+     * @return void
+     */
+    public function __construct($host = '127.0.0.1', Array $config = array())
+    {
+        if (isset($config['name'])) {
+            $this->_name = $config['name'];
+        }
+        if (isset($config['port'])) {
+            $this->_port = $config['port'];
+        }
+        if (isset($config['auth'])) {
+            $this->_auth = $config['auth'];
+        }
+
+        $this->_host = $host;
+        $this->_config = $config;
+    }
+
+
+    /**
+     * Class destructor to ensure all open connections are closed
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        if ($this->_connection instanceof Zend_Mail_Protocol_Smtp) {
+            try {
+                $this->_connection->quit();
+            } catch (Zend_Mail_Protocol_Exception $e) {
+                // ignore
+            }
+            $this->_connection->disconnect();
+        }
+    }
+
+
+    /**
+     * Sets the connection protocol instance
+     *
+     * @param Zend_Mail_Protocol_Abstract $client
+     *
+     * @return void
+     */
+    public function setConnection(Zend_Mail_Protocol_Abstract $connection)
+    {
+        $this->_connection = $connection;
+    }
+
+
+    /**
+     * Gets the connection protocol instance
+     *
+     * @return Zend_Mail_Protocol|null
+     */
+    public function getConnection()
+    {
+        return $this->_connection;
+    }
+
+    /**
+     * Send an email via the SMTP connection protocol
+     *
+     * The connection via the protocol adapter is made just-in-time to allow a
+     * developer to add a custom adapter if required before mail is sent.
+     *
+     * @return void
+     */
+    public function _sendMail()
+    {
+        // If sending multiple messages per session use existing adapter
+        if (!($this->_connection instanceof Zend_Mail_Protocol_Smtp)) {
+            // Check if authentication is required and determine required class
+            $connectionClass = 'Zend_Mail_Protocol_Smtp';
+            if ($this->_auth) {
+                $connectionClass .= '_Auth_' . ucwords($this->_auth);
+            }
+            if (!class_exists($connectionClass)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($connectionClass);
+            }
+            $this->setConnection(new $connectionClass($this->_host, $this->_port, $this->_config));
+            $this->_connection->connect();
+            $this->_connection->helo($this->_name);
+        } else {
+            // Reset connection to ensure reliable transaction
+            $this->_connection->rset();
+        }
+
+        // Set mail return path from sender email address
+        $this->_connection->mail($this->_mail->getReturnPath());
+
+        // Set recipient forward paths
+        foreach ($this->_mail->getRecipients() as $recipient) {
+            $this->_connection->rcpt($recipient);
+        }
+
+        // Issue DATA command to client
+        $this->_connection->data($this->header . Zend_Mime::LINEEND . $this->body);
+    }
+
+    /**
+     * Format and fix headers
+     *
+     * Some SMTP servers do not strip BCC headers. Most clients do it themselves as do we.
+     *
+     * @access  protected
+     * @param   array $headers
+     * @return  void
+     * @throws  Zend_Transport_Exception
+     */
+    protected function _prepareHeaders($headers)
+    {
+        if (!$this->_mail) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Transport_Exception('_prepareHeaders requires a registered Zend_Mail object');
+        }
+
+        unset($headers['Bcc']);
+
+        // Prepare headers
+        parent::_prepareHeaders($headers);
+    }
+}

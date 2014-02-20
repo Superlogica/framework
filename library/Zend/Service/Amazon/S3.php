@@ -1,270 +1,738 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-pC06/YlXYxfkybFj
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon_S3
+ * @copyright  Copyright (c) 2009, Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: S3.php 14190 2009-02-28 04:32:18Z jplock $
+ */
+
+/**
+ * @see Zend_Service_Amazon_Abstract
+ */
+require_once 'Zend/Service/Amazon/Abstract.php';
+
+/**
+ * @see Zend_Crypt_Hmac
+ */
+require_once 'Zend/Crypt/Hmac.php';
+
+/**
+ * Amazon S3 PHP connection class
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon_S3
+ * @copyright  Copyright (c) 2005-2008, Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_S3 extends Zend_Service_Amazon_Abstract
+{
+    /**
+     * Store for stream wrapper clients
+     *
+     * @var array
+     */
+    protected static $_wrapperClients = array();
+
+    const S3_ENDPOINT = 's3.amazonaws.com';
+
+    const S3_ACL_PRIVATE = 'private';
+    const S3_ACL_PUBLIC_READ = 'public-read';
+    const S3_ACL_PUBLIC_WRITE = 'public-read-write';
+    const S3_ACL_AUTH_READ = 'authenticated-read';
+
+    const S3_ACL_HEADER = 'x-amz-acl';
+    const S3_CONTENT_TYPE_HEADER = 'Content-Type';
+
+    /**
+     * Add a new bucket
+     *
+     * @param  string $bucket
+     * @return boolean
+     */
+    public function createBucket($bucket)
+    {
+        $len = strlen($bucket);
+        if ($len < 3 || $len > 255) {
+            /**
+             * @see Zend_Service_Amazon_S3_Exception
+             */
+            require_once 'Zend/Service/Amazon/S3/Exception.php';
+            throw new Zend_Service_Amazon_S3_Exception("Bucket name \"$bucket\" must be between 3 and 255 characters long");
+        }
+
+        if (preg_match('/[^a-z0-9\._-]/', $bucket)) {
+            /**
+             * @see Zend_Service_Amazon_S3_Exception
+             */
+            require_once 'Zend/Service/Amazon/S3/Exception.php';
+            throw new Zend_Service_Amazon_S3_Exception("Bucket name \"$bucket\" contains invalid characters");
+        }
+
+        if (preg_match('/(\d+).(\d+).(\d+).(\d+)/', $bucket)) {
+            /**
+             * @see Zend_Service_Amazon_S3_Exception
+             */
+            require_once 'Zend/Service/Amazon/S3/Exception.php';
+            throw new Zend_Service_Amazon_S3_Exception("Bucket name \"$bucket\" cannot be an IP address");
+        }
+
+        $response = $this->_makeRequest('PUT', $bucket);
+
+        return ($response->getStatus() == 200);
+    }
+
+    /**
+     * Checks if a given bucket name is available
+     *
+     * @param  string $bucket
+     * @return boolean
+     */
+    public function isBucketAvailable($bucket)
+    {
+        $response = $this->_makeRequest('HEAD', $bucket, array('max-keys'=>0));
+
+        return ($response->getStatus() != 404);
+    }
+
+    /**
+     * Checks if a given object exists
+     *
+     * @param  string $object
+     * @return boolean
+     */
+    public function isObjectAvailable($object)
+    {
+        $response = $this->_makeRequest('HEAD', $object);
+
+        return ($response->getStatus() == 200);
+    }
+
+    /**
+     * Remove a given bucket. All objects in the bucket must be removed prior
+     * to removing the bucket.
+     *
+     * @param  string $bucket
+     * @return boolean
+     */
+    public function removeBucket($bucket)
+    {
+        $response = $this->_makeRequest('DELETE', $bucket);
+
+        // Look for a 204 No Content response
+        return ($response->getStatus() == 204);
+    }
+
+    /**
+     * Get metadata information for a given object
+     *
+     * @param  string $object
+     * @return array|false
+     */
+    public function getInfo($object)
+    {
+        $info = array();
+
+        $object = $this->_fixupObjectName($object);
+        $response = $this->_makeRequest('HEAD', $object);
+
+        if ($response->getStatus() == 200) {
+            $info['type'] = $response->getHeader('Content-type');
+            $info['size'] = $response->getHeader('Content-length');
+            $info['mtime'] = strtotime($response->getHeader('Last-modified'));
+            $info['etag'] = $response->getHeader('ETag');
+        }
+        else {
+            return false;
+        }
+
+        return $info;
+    }
+
+    /**
+     * List the S3 buckets
+     *
+     * @return array|false
+     */
+    public function getBuckets()
+    {
+        $response = $this->_makeRequest('GET');
+
+        if ($response->getStatus() != 200) {
+            return false;
+        }
+
+        $xml = new SimpleXMLElement($response->getBody());
+
+        $buckets = array();
+        foreach ($xml->Buckets->Bucket as $bucket) {
+            $buckets[] = (string)$bucket->Name;
+        }
+
+        return $buckets;
+    }
+
+    /**
+     * Remove all objects in the bucket.
+     *
+     * @param string $bucket
+     * @return boolean
+     */
+    public function cleanBucket($bucket)
+    {
+        $objects = $this->getObjectsByBucket($bucket);
+        if (!$objects) {
+            return false;
+        }
+
+        foreach ($objects as $object) {
+            $this->removeObject("$bucket/$object");
+        }
+        return true;
+    }
+
+    /**
+     * List the objects in a bucket.
+     *
+     * Provides the list of object keys that are contained in the bucket.
+     *
+     * @param  string $bucket
+     * @return array|false
+     */
+    public function getObjectsByBucket($bucket)
+    {
+        $response = $this->_makeRequest('GET', $bucket);
+
+        if ($response->getStatus() != 200) {
+            return false;
+        }
+
+        $xml = new SimpleXMLElement($response->getBody());
+
+        $objects = array();
+        if (isset($xml->Contents)) {
+            foreach ($xml->Contents as $contents) {
+                foreach ($contents->Key as $object) {
+                    $objects[] = (string)$object;
+                }
+            }
+        }
+
+        return $objects;
+    }
+
+    protected function _fixupObjectName($object)
+    {
+        $nameparts = explode('/', $object, 2);
+
+        if (preg_match('/[^a-z0-9\._-]/', $nameparts[0])) {
+            /**
+             * @see Zend_Service_Amazon_S3_Exception
+             */
+            require_once 'Zend/Service/Amazon/S3/Exception.php';
+            throw new Zend_Service_Amazon_S3_Exception("Bucket name contains invalid characters");
+        }
+
+        if(empty($nameparts[1])) {
+            return $object;
+        }
+
+        return $nameparts[0].'/'.urlencode($nameparts[1]);
+    }
+
+    /**
+     * Get an object
+     *
+     * @param  string $object
+     * @return string|false
+     */
+    public function getObject($object)
+    {
+        $object = $this->_fixupObjectName($object);
+        $response = $this->_makeRequest('GET', $object);
+
+        if ($response->getStatus() != 200) {
+            return false;
+        }
+
+        return $response->getBody();
+    }
+
+    /**
+     * Upload an object by a PHP string
+     *
+     * @param  string $object Object name
+     * @param  string $data   Object data
+     * @param  array  $meta   Metadata
+     * @return boolean
+     */
+    public function putObject($object, $data, $meta=null)
+    {
+        $object = $this->_fixupObjectName($object);
+        $headers = (is_array($meta)) ? $meta : array();
+
+        $headers['Content-MD5'] = base64_encode(md5($data, true));
+        $headers['Expect'] = '100-continue';
+
+        if (!isset($headers[self::S3_CONTENT_TYPE_HEADER])) {
+            $headers[self::S3_CONTENT_TYPE_HEADER] = self::getMimeType($object);
+        }
+
+        $response = $this->_makeRequest('PUT', $object, null, $headers, $data);
+
+        // Check the MD5 Etag returned by S3 against and MD5 of the buffer
+        if ($response->getStatus() == 200) {
+            // It is escaped by double quotes for some reason
+            $etag = str_replace('"', '', $response->getHeader('Etag'));
+
+            if ($etag == md5($data)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Put file to S3 as object
+     *
+     * @param string $path   File name
+     * @param string $object Object name
+     * @param array  $meta   Metadata
+     * @return boolean
+     */
+    public function putFile($path, $object, $meta=null)
+    {
+        $object = $this->_fixupObjectName($object);
+        $data = @file_get_contents($path);
+        if ($data === false) {
+            /**
+             * @see Zend_Service_Amazon_S3_Exception
+             */
+            require_once 'Zend/Service/Amazon/S3/Exception.php';
+            throw new Zend_Service_Amazon_S3_Exception("Cannot read file $path");
+        }
+
+        if (!is_array($meta)) {
+            $meta = array();
+        }
+
+        if (!isset($meta[self::S3_CONTENT_TYPE_HEADER])) {
+           $meta[self::S3_CONTENT_TYPE_HEADER] = self::getMimeType($path);
+        }
+
+        return $this->putObject($object, $data, $meta);
+    }
+
+    /**
+     * Remove a given object
+     *
+     * @param  string $object
+     * @return boolean
+     */
+    public function removeObject($object)
+    {
+        $object = $this->_fixupObjectName($object);
+        $response = $this->_makeRequest('DELETE', $object);
+
+        // Look for a 204 No Content response
+        return ($response->getStatus() == 204);
+    }
+
+    /**
+     * Make a request to Amazon S3
+     *
+     * TODO: support bucket.s3.amazon.com style
+     *
+     * @param  string $method
+     * @param  string $path
+     * @param  array  $params
+     * @param  array  $headers
+     * @param  string $data
+     * @return Zend_Http_Response
+     */
+    public function _makeRequest($method, $path='', $params=null, $headers=array(), $data=null)
+    {
+        $retry_count = 0;
+
+        if (!is_array($headers)) {
+            $headers = array($headers);
+        }
+
+        $headers['Date'] = gmdate(DATE_RFC1123, time());
+
+        self::addSignature($method, $path, $headers);
+
+        $client = self::getHttpClient();
+
+        $client->resetParameters();
+        // Work around buglet in HTTP client - it doesn't clean headers
+        // Remove when ZHC is fixed
+        $client->setHeaders(array('Content-MD5' => null,
+                                  'Expect'      => null,
+                                  'Range'       => null,
+                                  'x-amz-acl'   => null));
+
+        // build the end point out
+        $parts = explode('/', $path);
+        if(count($parts) > 1) {
+            $endpoint = 'http://' . $parts[0] . '.' . self::S3_ENDPOINT;
+            array_shift($parts);
+            $client->setUri($endpoint . '/' . implode('/', $parts));
+        } else {
+            $client->setUri('http://' . self::S3_ENDPOINT.'/'.$path);
+        }
+        $client->setHeaders($headers);
+
+        if (is_array($params)) {
+            foreach ($params as $name=>$value) {
+                $client->setParameterGet($name, $value);
+            }
+         }
+
+         if (($method == 'PUT') && ($data !== null)) {
+             if (!isset($headers['Content-type'])) {
+                 $headers['Content-type'] = self::getMimeType($path);
+             }
+             $client->setRawData($data, $headers['Content-type']);
+         }
+
+         do {
+            $retry = false;
+
+            $response = $client->request($method);
+            $response_code = $response->getStatus();
+
+            // Some 5xx errors are expected, so retry automatically
+            if ($response_code >= 500 && $response_code < 600 && $retry_count <= 5) {
+                $retry = true;
+                $retry_count++;
+                sleep($retry_count / 4 * $retry_count);
+            }
+            else if ($response_code == 307) {
+                // Need to redirect, new S3 endpoint given
+                // This should never happen as Zend_Http_Client will redirect automatically
+            }
+            else if ($response_code == 100) {
+                echo 'OK to Continue';
+            }
+        } while ($retry);
+
+        return $response;
+    }
+
+    /**
+     * Add the S3 Authorization signature to the request headers
+     *
+     * @param  string $method
+     * @param  string $pathhttp://
+     * @param  array &$headers
+     * @return string
+     */
+    protected function addSignature($method, $path, &$headers)
+    {
+        if (!is_array($headers)) {
+            $headers = array($headers);
+        }
+
+        $type = $md5 = $date = '';
+
+        // Search for the Content-type, Content-MD5 and Date headers
+        foreach ($headers as $key=>$val) {
+            if (strcasecmp($key, 'content-type') == 0) {
+                $type = $val;
+            }
+            else if (strcasecmp($key, 'content-md5') == 0) {
+                $md5 = $val;
+            }
+            else if (strcasecmp($key, 'date') == 0) {
+                $date = $val;
+            }
+        }
+
+        // If we have an x-amz-date header, use that instead of the normal Date
+        if (isset($headers['x-amz-date']) && isset($date)) {
+            $date = '';
+        }
+
+        $sig_str = "$method\n$md5\n$type\n$date\n";
+        // For x-amz- headers, combine like keys, lowercase them, sort them
+        // alphabetically and remove excess spaces around values
+        $amz_headers = array();
+        foreach ($headers as $key=>$val) {
+            $key = strtolower($key);
+            if (substr($key, 0, 6) == 'x-amz-') {
+                if (is_array($val)) {
+                    $amz_headers[$key] = $val;
+                }
+                else {
+                    $amz_headers[$key][] = preg_replace('/\s+/', ' ', $val);
+                }
+            }
+        }
+        if (!empty($amz_headers)) {
+            ksort($amz_headers);
+            foreach ($amz_headers as $key=>$val) {
+                $sig_str .= $key.':'.implode(',', $val)."\n";
+            }
+        }
+
+        $sig_str .= '/'.parse_url($path, PHP_URL_PATH);
+        if (strpos($path, '?location') !== false) {
+            $sig_str .= '?location';
+        }
+        else if (strpos($path, '?acl') !== false) {
+            $sig_str .= '?acl';
+        }
+        else if (strpos($path, '?torrent') !== false) {
+            $sig_str .= '?torrent';
+        }
+
+        $signature = base64_encode(Zend_Crypt_Hmac::compute($this->_getSecretKey(), 'sha1', utf8_encode($sig_str), Zend_Crypt_Hmac::BINARY));
+        $headers['Authorization'] = 'AWS '.$this->_getAccessKey().':'.$signature;
+
+        return $sig_str;
+    }
+
+    /**
+     * Attempt to get the content-type of a file based on the extension
+     *
+     * TODO: move this to Zend_Mime
+     *
+     * @param  string $path
+     * @return string
+     */
+    public static function getMimeType($path)
+    {
+        $ext = substr(strrchr($path, '.'), 1);
+
+        if(!$ext) {
+            // shortcut
+            return 'binary/octet-stream';
+        }
+
+        switch ($ext) {
+            case 'xls':
+                $content_type = 'application/excel';
+                break;
+            case 'hqx':
+                $content_type = 'application/macbinhex40';
+                break;
+            case 'doc':
+            case 'dot':
+            case 'wrd':
+                $content_type = 'application/msword';
+                break;
+            case 'pdf':
+                $content_type = 'application/pdf';
+                break;
+            case 'pgp':
+                $content_type = 'application/pgp';
+                break;
+            case 'ps':
+            case 'eps':
+            case 'ai':
+                $content_type = 'application/postscript';
+                break;
+            case 'ppt':
+                $content_type = 'application/powerpoint';
+                break;
+            case 'rtf':
+                $content_type = 'application/rtf';
+                break;
+            case 'tgz':
+            case 'gtar':
+                $content_type = 'application/x-gtar';
+                break;
+            case 'gz':
+                $content_type = 'application/x-gzip';
+                break;
+            case 'php':
+            case 'php3':
+            case 'php4':
+                $content_type = 'application/x-httpd-php';
+                break;
+            case 'js':
+                $content_type = 'application/x-javascript';
+                break;
+            case 'ppd':
+            case 'psd':
+                $content_type = 'application/x-photoshop';
+                break;
+            case 'swf':
+            case 'swc':
+            case 'rf':
+                $content_type = 'application/x-shockwave-flash';
+                break;
+            case 'tar':
+                $content_type = 'application/x-tar';
+                break;
+            case 'zip':
+                $content_type = 'application/zip';
+                break;
+            case 'mid':
+            case 'midi':
+            case 'kar':
+                $content_type = 'audio/midi';
+                break;
+            case 'mp2':
+            case 'mp3':
+            case 'mpga':
+                $content_type = 'audio/mpeg';
+                break;
+            case 'ra':
+                $content_type = 'audio/x-realaudio';
+                break;
+            case 'wav':
+                $content_type = 'audio/wav';
+                break;
+            case 'bmp':
+                $content_type = 'image/bitmap';
+                break;
+            case 'gif':
+                $content_type = 'image/gif';
+                break;
+            case 'iff':
+                $content_type = 'image/iff';
+                break;
+            case 'jb2':
+                $content_type = 'image/jb2';
+                break;
+            case 'jpg':
+            case 'jpe':
+            case 'jpeg':
+                $content_type = 'image/jpeg';
+                break;
+            case 'jpx':
+                $content_type = 'image/jpx';
+                break;
+            case 'png':
+                $content_type = 'image/png';
+                break;
+            case 'tif':
+            case 'tiff':
+                $content_type = 'image/tiff';
+                break;
+            case 'wbmp':
+                $content_type = 'image/vnd.wap.wbmp';
+                break;
+            case 'xbm':
+                $content_type = 'image/xbm';
+                break;
+            case 'css':
+                $content_type = 'text/css';
+                break;
+            case 'txt':
+                $content_type = 'text/plain';
+                break;
+            case 'htm':
+            case 'html':
+                $content_type = 'text/html';
+                break;
+            case 'xml':
+                $content_type = 'text/xml';
+                break;
+            case 'xsl':
+                $content_type = 'text/xsl';
+                break;
+            case 'mpg':
+            case 'mpe':
+            case 'mpeg':
+                $content_type = 'video/mpeg';
+                break;
+            case 'qt':
+            case 'mov':
+                $content_type = 'video/quicktime';
+                break;
+            case 'avi':
+                $content_type = 'video/x-ms-video';
+                break;
+            case 'eml':
+                $content_type = 'message/rfc822';
+                break;
+            default:
+                $content_type = 'binary/octet-stream';
+                break;
+        }
+
+        return $content_type;
+    }
+
+    /**
+     * Register this object as stream wrapper client
+     *
+     * @param  string $name
+     * @return Zend_Service_Amazon_S3
+     */
+    public function registerAsClient($name)
+    {
+        self::$_wrapperClients[$name] = $this;
+        return $this;
+    }
+
+    /**
+     * Unregister this object as stream wrapper client
+     *
+     * @param  string $name
+     * @return Zend_Service_Amazon_S3
+     */
+    public function unregisterAsClient($name)
+    {
+        unset(self::$_wrapperClients[$name]);
+        return $this;
+    }
+
+    /**
+     * Get wrapper client for stream type
+     *
+     * @param  string $name
+     * @return Zend_Service_Amazon_S3
+     */
+    public static function getWrapperClient($name)
+    {
+        return self::$_wrapperClients[$name];
+    }
+
+    /**
+     * Register this object as stream wrapper
+     *
+     * @param  string $name
+     * @return Zend_Service_Amazon_S3
+     */
+    public function registerStreamWrapper($name='s3')
+    {
+        /**
+         * @see Zend_Service_Amazon_S3_Stream
+         */
+        require_once 'Zend/Service/Amazon/S3/Stream.php';
+
+        stream_register_wrapper($name, 'Zend_Service_Amazon_S3_Stream');
+        $this->registerAsClient($name);
+    }
+
+    /**
+     * Unregister this object as stream wrapper
+     *
+     * @param  string $name
+     * @return Zend_Service_Amazon_S3
+     */
+    public function unregisterStreamWrapper($name='s3')
+    {
+        stream_wrapper_unregister($name);
+        $this->unregisterAsClient($name);
+    }
+}

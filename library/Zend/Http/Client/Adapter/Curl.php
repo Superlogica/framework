@@ -1,150 +1,388 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-lVkq0+0=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Client_Adapter
+ * @version    $Id: Curl.php 14379 2009-03-19 14:57:23Z matthew $
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Uri_Http */
+require_once 'Zend/Uri/Http.php';
+
+/** Zend_Http_Client_Adapter_Interface */
+require_once 'Zend/Http/Client/Adapter/Interface.php';
+
+/**
+ * An adapter class for Zend_Http_Client based on the curl extension.
+ * Curl requires libcurl. See for full requirements the PHP manual: http://php.net/curl
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Client_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Http_Client_Adapter_Curl implements Zend_Http_Client_Adapter_Interface
+{
+    /**
+     * Parameters array
+     *
+     * @var array
+     */
+    protected $_config = array();
+
+    /**
+     * What host/port are we connected to?
+     *
+     * @var array
+     */
+    protected $_connected_to = array(null, null);
+
+    /**
+     * The curl session handle
+     *
+     * @var resource|null
+     */
+    protected $_curl = null;
+
+    /**
+     * List of cURL options that should never be overwritten
+     * 
+     * @var array
+     */
+    protected $_invalidOverwritableCurlOptions = array(
+        CURLOPT_HTTPGET,
+        CURLOPT_POST,
+        CURLOPT_PUT,
+        CURLOPT_CUSTOMREQUEST,
+        CURLOPT_HEADER,
+        CURLOPT_RETURNTRANSFER,
+        CURLOPT_HTTPHEADER,
+        CURLOPT_POSTFIELDS,
+        CURLOPT_INFILE,
+        CURLOPT_INFILESIZE,
+        CURLOPT_PORT,
+        CURLOPT_MAXREDIRS,
+        CURLOPT_TIMEOUT,
+        CURL_HTTP_VERSION_1_1,
+        CURL_HTTP_VERSION_1_0,
+    );
+
+    /**
+     * Response gotten from server
+     *
+     * @var string
+     */
+    protected $_response = null;
+
+    /**
+     * Adapter constructor
+     *
+     * Config is set using setConfig()
+     *
+     * @return void
+     * @throws Zend_Http_Client_Adapter_Exception
+     */
+    public function __construct()
+    {
+        if (!extension_loaded('curl')) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception('cURL extension has to be loaded to use this Zend_Http_Client adapter.');
+        }
+    }
+
+    /**
+     * Set the configuration array for the adapter
+     *
+     * @throws Zend_Http_Client_Adapter_Exception
+     * @param array $config
+     * @return Zend_Http_Client_Adapter_Curl
+     */
+    public function setConfig($config = array())
+    {
+        if (!is_array($config)) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception('Http Adapter configuration expects an array, ' . gettype($config) . ' recieved.');
+        }
+
+        foreach ($config as $k => $v) {
+            $this->_config[strtolower($k)] = $v;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Direct setter for cURL adapter related options.
+     * 
+     * @param  string|int $option
+     * @param  mixed $value
+     * @return Zend_Http_Adapter_Curl
+     */
+    public function setCurlOption($option, $value)
+    {
+        if (!isset($this->_config['curloptions'])) {
+            $this->_config['curloptions'] = array();
+        }
+        $this->_config['curloptions'][$option] = $value;
+        return $this;
+    }
+
+    /**
+     * Initialize curl
+     *
+     * @param  string  $host
+     * @param  int     $port
+     * @param  boolean $secure
+     * @return void
+     * @throws Zend_Http_Client_Adapter_Exception if unable to connect
+     */
+    public function connect($host, $port = 80, $secure = false)
+    {
+        // If we're already connected, disconnect first
+        if ($this->_curl) {
+            $this->close();
+        }
+
+        // If we are connected to a different server or port, disconnect first
+        if ($this->_curl 
+            && is_array($this->_connected_to) 
+            && ($this->_connected_to[0] != $host 
+            || $this->_connected_to[1] != $port)
+        ) {
+            $this->close();
+        }
+
+        // Do the actual connection
+        $this->_curl = curl_init();
+        if ($port != 80) {
+            curl_setopt($this->_curl, CURLOPT_PORT, intval($port));
+        }
+
+        // Set timeout
+        curl_setopt($this->_curl, CURLOPT_TIMEOUT, $this->_config['timeout']);
+
+        // Set Max redirects
+        curl_setopt($this->_curl, CURLOPT_MAXREDIRS, $this->_config['maxredirects']);
+
+        if (!$this->_curl) {
+            $this->close();
+
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception('Unable to Connect to ' .  $host . ':' . $port);
+        }
+
+        if ($secure !== false) {
+            // Behave the same like Zend_Http_Adapter_Socket on SSL options.
+            if (isset($this->_config['sslcert'])) {
+                curl_setopt($this->_curl, CURLOPT_SSLCERT, $this->_config['sslcert']);
+            }
+            if (isset($this->_config['sslpassphrase'])) {
+                curl_setopt($this->_curl, CURLOPT_SSLCERTPASSWD, $this->_config['sslpassphrase']);
+            }
+        }
+
+        // Update connected_to
+        $this->_connected_to = array($host, $port);
+    }
+
+    /**
+     * Send request to the remote server
+     *
+     * @param  string        $method
+     * @param  Zend_Uri_Http $uri
+     * @param  float         $http_ver
+     * @param  array         $headers
+     * @param  string        $body
+     * @return string        $request
+     * @throws Zend_Http_Client_Adapter_Exception If connection fails, connected to wrong host, no PUT file defined, unsupported method, or unsupported cURL option
+     */
+    public function write($method, $uri, $http_ver = '1.1', $headers = array(), $body = '')
+    {
+        // Make sure we're properly connected
+        if (!$this->_curl) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception("Trying to write but we are not connected");
+        }
+
+        if ($this->_connected_to[0] != $uri->getHost() || $this->_connected_to[1] != $uri->getPort()) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception("Trying to write but we are connected to the wrong host");
+        }
+
+        // set URL
+        curl_setopt($this->_curl, CURLOPT_URL, $uri->__toString());
+
+        // ensure correct curl call
+        $curlValue = true;
+        switch ($method) {
+            case Zend_Http_Client::GET:
+                $curlMethod = CURLOPT_HTTPGET;
+                break;
+
+            case Zend_Http_Client::POST:
+                $curlMethod = CURLOPT_POST;
+                break;
+
+            case Zend_Http_Client::PUT:
+                // There are two different types of PUT request, either a Raw Data string has been set
+                // or CURLOPT_INFILE and CURLOPT_INFILESIZE are used.
+                if (isset($this->_config['curloptions'][CURLOPT_INFILE])) {
+                    if (!isset($this->_config['curloptions'][CURLOPT_INFILESIZE])) {
+                        require_once 'Zend/Http/Client/Adapter/Exception.php';
+                        throw new Zend_Http_Client_Adapter_Exception("Cannot set a file-handle for cURL option CURLOPT_INFILE without also setting its size in CURLOPT_INFILESIZE.");
+                    }
+
+                    // Now we will probably already have Content-Length set, so that we have to delete it
+                    // from $headers at this point:
+                    foreach ($headers AS $k => $header) {
+                        if (stristr($header, "Content-Length:") !== false) {
+                            unset($headers[$k]);
+                        }
+                    }
+
+                    $curlMethod = CURLOPT_PUT;
+                } else {
+                    $curlMethod = CURLOPT_CUSTOMREQUEST;
+                    $curlValue = "PUT";
+                }
+                break;
+
+            case Zend_Http_Client::DELETE:
+                $curlMethod = CURLOPT_CUSTOMREQUEST;
+                $curlValue = "DELETE";
+                break;
+
+            case Zend_Http_Client::OPTIONS:
+                $curlMethod = CURLOPT_CUSTOMREQUEST;
+                $curlValue = "OPTIONS";
+                break;
+
+            case Zend_Http_Client::TRACE:
+                $curlMethod = CURLOPT_CUSTOMREQUEST;
+                $curlValue = "TRACE";
+                break;
+
+            default:
+                // For now, through an exception for unsupported request methods
+                require_once 'Zend/Http/Client/Adapter/Exception.php';
+                throw new Zend_Http_Client_Adapter_Exception("Method currently not supported");
+        }
+
+        // get http version to use
+        $curlHttp = ($http_ver = 1.1) ? CURL_HTTP_VERSION_1_1 : CURL_HTTP_VERSION_1_0;
+
+        // mark as HTTP request and set HTTP method
+        curl_setopt($this->_curl, $curlHttp, true);
+        curl_setopt($this->_curl, $curlMethod, $curlValue);
+
+        // ensure headers are also returned
+        curl_setopt($this->_curl, CURLOPT_HEADER, true);
+
+        // ensure actual response is returned
+        curl_setopt($this->_curl, CURLOPT_RETURNTRANSFER, true);
+
+        // set additional headers
+        $headers['Accept'] = '';
+        curl_setopt($this->_curl, CURLOPT_HTTPHEADER, $headers);
+
+        /**
+         * Make sure POSTFIELDS is set after $curlMethod is set:
+         * @link http://de2.php.net/manual/en/function.curl-setopt.php#81161
+         */
+        if ($method == Zend_Http_Client::POST) {
+            curl_setopt($this->_curl, CURLOPT_POSTFIELDS, $body);
+        } elseif ($curlMethod == CURLOPT_PUT) {
+            // this covers a PUT by file-handle:
+            // Make the setting of this options explicit (rather than setting it through the loop following a bit lower)
+            // to group common functionality together.
+            curl_setopt($this->_curl, CURLOPT_INFILE, $this->_config['curloptions'][CURLOPT_INFILE]);
+            curl_setopt($this->_curl, CURLOPT_INFILESIZE, $this->_config['curloptions'][CURLOPT_INFILESIZE]);
+            unset($this->_config['curloptions'][CURLOPT_INFILE]);
+            unset($this->_config['curloptions'][CURLOPT_INFILESIZE]);
+        } elseif ($method == Zend_Http_Client::PUT) {
+            // This is a PUT by a setRawData string, not by file-handle
+            curl_setopt($this->_curl, CURLOPT_POSTFIELDS, $body);
+        }
+
+        // set additional curl options
+        if (isset($this->_config['curloptions'])) {
+            foreach ((array)$this->_config['curloptions'] as $k => $v) {
+                if (!in_array($k, $this->_invalidOverwritableCurlOptions)) {
+                    if (curl_setopt($this->_curl, $k, $v) == false) {
+                        require_once 'Zend/Http/Client/Exception.php';
+                        throw new Zend_Http_Client_Exception(sprintf("Unknown or erroreous cURL option '%s' set", $k));
+                    }
+                }
+            }
+        }
+
+        // send the request
+        $this->_response = curl_exec($this->_curl);
+
+        $request  = curl_getinfo($this->_curl, CURLINFO_HEADER_OUT);
+        $request .= $body;
+
+        if (empty($this->_response)) {
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception("Error in cURL request: " . curl_error($this->_curl));
+        }
+
+        // cURL automatically decodes chunked-messages, this means we have to disallow the Zend_Http_Response to do it again
+        if (stripos($this->_response, "Transfer-Encoding: chunked\r\n")) {
+            $this->_response = str_ireplace("Transfer-Encoding: chunked\r\n", '', $this->_response);
+        }
+
+        // TODO: Probably the pattern for multiple handshake requests is always the same, several HTTP codes in the response. Use that information?
+        // cURL automactically handles Expect: 100-continue; and its responses. Delete the HTTP 100 CONTINUE from a response
+        // because it messes up Zend_Http_Response parsing
+        if (stripos($this->_response, "HTTP/1.1 100 Continue\r\n\r\n") !== false) {
+            $this->_response = str_ireplace("HTTP/1.1 100 Continue\r\n\r\n", '', $this->_response);
+        }
+
+        // cURL automatically handles Proxy rewrites, remove the "HTTP/1.0 200 Connection established" string:
+        if (stripos($this->_response, "HTTP/1.0 200 Connection established\r\n\r\n") !== false) {
+            $this->_response = str_ireplace("HTTP/1.0 200 Connection established\r\n\r\n", '', $this->_response);
+        }
+
+        return $request;
+    }
+
+    /**
+     * Return read response from server
+     *
+     * @return string
+     */
+    public function read()
+    {
+        return $this->_response;
+    }
+
+    /**
+     * Close the connection to the server
+     *
+     */
+    public function close()
+    {
+        if(is_resource($this->_curl)) {
+            curl_close($this->_curl);
+        }
+        $this->_curl         = null;
+        $this->_connected_to = array(null, null);
+    }
+}

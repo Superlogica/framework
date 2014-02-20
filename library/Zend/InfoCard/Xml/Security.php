@@ -1,152 +1,305 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-k4RSeTq=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Security.php 13213 2008-12-14 11:05:07Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Security_Transform
+ */
+require_once 'Zend/InfoCard/Xml/Security/Transform.php';
+
+/**
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml_Security
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Xml_Security
+{
+    /**
+     * ASN.1 type INTEGER class
+     */
+    const ASN_TYPE_INTEGER = 0x02;
+
+    /**
+     * ASN.1 type BIT STRING class
+     */
+    const ASN_TYPE_BITSTRING = 0x03;
+
+    /**
+     * ASN.1 type SEQUENCE class
+     */
+    const ASN_TYPE_SEQUENCE = 0x30;
+
+    /**
+     * The URI for Canonical Method C14N Exclusive
+     */
+    const CANONICAL_METHOD_C14N_EXC = 'http://www.w3.org/2001/10/xml-exc-c14n#';
+
+    /**
+     * The URI for Signature Method SHA1
+     */
+    const SIGNATURE_METHOD_SHA1 = 'http://www.w3.org/2000/09/xmldsig#rsa-sha1';
+
+    /**
+     * The URI for Digest Method SHA1
+     */
+    const DIGEST_METHOD_SHA1 = 'http://www.w3.org/2000/09/xmldsig#sha1';
+
+    /**
+     * The Identifier for RSA Keys
+     */
+    const RSA_KEY_IDENTIFIER = '300D06092A864886F70D0101010500';
+
+    /**
+     * Constructor  (disabled)
+     *
+     * @return void
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Validates the signature of a provided XML block
+     *
+     * @param  string $strXMLInput An XML block containing a Signature
+     * @return bool True if the signature validated, false otherwise
+     * @throws Zend_InfoCard_Xml_Security_Exception
+     */
+    static public function validateXMLSignature($strXMLInput)
+    {
+        if(!extension_loaded('openssl')) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("You must have the openssl extension installed to use this class");
+        }
+
+        $sxe = simplexml_load_string($strXMLInput);
+
+        if(!isset($sxe->Signature)) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("Could not identify XML Signature element");
+        }
+
+        if(!isset($sxe->Signature->SignedInfo)) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a SignedInfo block");
+        }
+
+        if(!isset($sxe->Signature->SignatureValue)) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a SignatureValue block");
+        }
+
+        if(!isset($sxe->Signature->KeyInfo)) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a KeyInfo block");
+        }
+
+        if(!isset($sxe->Signature->KeyInfo->KeyValue)) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a KeyValue block");
+        }
+
+        switch((string)$sxe->Signature->SignedInfo->CanonicalizationMethod['Algorithm']) {
+            case self::CANONICAL_METHOD_C14N_EXC:
+                $cMethod = (string)$sxe->Signature->SignedInfo->CanonicalizationMethod['Algorithm'];
+                break;
+            default:
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or unsupported CanonicalizationMethod Requested");
+                break;
+        }
+
+        switch((string)$sxe->Signature->SignedInfo->SignatureMethod['Algorithm']) {
+            case self::SIGNATURE_METHOD_SHA1:
+                $sMethod = (string)$sxe->Signature->SignedInfo->SignatureMethod['Algorithm'];
+                break;
+            default:
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or unsupported SignatureMethod Requested");
+                break;
+        }
+
+        switch((string)$sxe->Signature->SignedInfo->Reference->DigestMethod['Algorithm']) {
+            case self::DIGEST_METHOD_SHA1:
+                $dMethod = (string)$sxe->Signature->SignedInfo->Reference->DigestMethod['Algorithm'];
+                break;
+            default:
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or unsupported DigestMethod Requested");
+                break;
+        }
+
+        $base64DecodeSupportsStrictParam = version_compare(PHP_VERSION, '5.2.0', '>=');
+
+        if ($base64DecodeSupportsStrictParam) {
+            $dValue = base64_decode((string)$sxe->Signature->SignedInfo->Reference->DigestValue, true);
+        } else {
+            $dValue = base64_decode((string)$sxe->Signature->SignedInfo->Reference->DigestValue);
+        }
+
+        if ($base64DecodeSupportsStrictParam) {
+            $signatureValue = base64_decode((string)$sxe->Signature->SignatureValue, true);
+        } else {
+            $signatureValue = base64_decode((string)$sxe->Signature->SignatureValue);
+        }
+
+        $transformer = new Zend_InfoCard_Xml_Security_Transform();
+
+        foreach($sxe->Signature->SignedInfo->Reference->Transforms->children() as $transform) {
+            $transformer->addTransform((string)$transform['Algorithm']);
+        }
+
+        $transformed_xml = $transformer->applyTransforms($strXMLInput);
+
+        $transformed_xml_binhash = pack("H*", sha1($transformed_xml));
+
+        if($transformed_xml_binhash != $dValue) {
+            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+            throw new Zend_InfoCard_Xml_Security_Exception("Locally Transformed XML does not match XML Document. Cannot Verify Signature");
+        }
+
+        $public_key = null;
+
+        switch(true) {
+            case isset($sxe->Signature->KeyInfo->KeyValue->X509Certificate):
+
+                $certificate = (string)$sxe->Signature->KeyInfo->KeyValue->X509Certificate;
+
+
+                $pem = "-----BEGIN CERTIFICATE-----\n" .
+                       wordwrap($certificate, 64, "\n", true) .
+                       "\n-----END CERTIFICATE-----";
+
+                $public_key = openssl_pkey_get_public($pem);
+
+                if(!$public_key) {
+                    require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                    throw new Zend_InfoCard_Xml_Security_Exception("Unable to extract and prcoess X509 Certificate from KeyValue");
+                }
+
+                break;
+            case isset($sxe->Signature->KeyInfo->KeyValue->RSAKeyValue):
+
+                if(!isset($sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Modulus) ||
+                   !isset($sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Exponent)) {
+                       require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                       throw new Zend_InfoCard_Xml_Security_Exception("RSA Key Value not in Modulus/Exponent form");
+                }
+
+                $modulus = base64_decode((string)$sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Modulus);
+                $exponent = base64_decode((string)$sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Exponent);
+
+                $pem_public_key = self::_getPublicKeyFromModExp($modulus, $exponent);
+
+                $public_key = openssl_pkey_get_public ($pem_public_key);
+
+                break;
+            default:
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Unable to determine or unsupported representation of the KeyValue block");
+        }
+
+        $transformer = new Zend_InfoCard_Xml_Security_Transform();
+        $transformer->addTransform((string)$sxe->Signature->SignedInfo->CanonicalizationMethod['Algorithm']);
+
+        // The way we are doing our XML processing requires that we specifically add this
+        // (even though it's in the <Signature> parent-block).. otherwise, our canonical form
+        // fails signature verification
+        $sxe->Signature->SignedInfo->addAttribute('xmlns', 'http://www.w3.org/2000/09/xmldsig#');
+
+        $canonical_signedinfo = $transformer->applyTransforms($sxe->Signature->SignedInfo->asXML());
+
+        if(@openssl_verify($canonical_signedinfo, $signatureValue, $public_key)) {
+            return (string)$sxe->Signature->SignedInfo->Reference['URI'];
+        }
+
+        return false;
+    }
+
+    /**
+     * Transform an RSA Key in Modulus/Exponent format into a PEM encoding and
+     * return an openssl resource for it
+     *
+     * @param string $modulus The RSA Modulus in binary format
+     * @param string $exponent The RSA exponent in binary format
+     * @return string The PEM encoded version of the key
+     */
+    static protected function _getPublicKeyFromModExp($modulus, $exponent)
+    {
+        $modulusInteger  = self::_encodeValue($modulus, self::ASN_TYPE_INTEGER);
+        $exponentInteger = self::_encodeValue($exponent, self::ASN_TYPE_INTEGER);
+        $modExpSequence  = self::_encodeValue($modulusInteger . $exponentInteger, self::ASN_TYPE_SEQUENCE);
+        $modExpBitString = self::_encodeValue($modExpSequence, self::ASN_TYPE_BITSTRING);
+
+        $binRsaKeyIdentifier = pack( "H*", self::RSA_KEY_IDENTIFIER );
+
+        $publicKeySequence = self::_encodeValue($binRsaKeyIdentifier . $modExpBitString, self::ASN_TYPE_SEQUENCE);
+
+        $publicKeyInfoBase64 = base64_encode( $publicKeySequence );
+
+        $publicKeyString = "-----BEGIN PUBLIC KEY-----\n";
+        $publicKeyString .= wordwrap($publicKeyInfoBase64, 64, "\n", true);
+        $publicKeyString .= "\n-----END PUBLIC KEY-----\n";
+
+        return $publicKeyString;
+    }
+
+    /**
+     * Encode a limited set of data types into ASN.1 encoding format
+     * which is used in X.509 certificates
+     *
+     * @param string $data The data to encode
+     * @param const $type The encoding format constant
+     * @return string The encoded value
+     * @throws Zend_InfoCard_Xml_Security_Exception
+     */
+    static protected function _encodeValue($data, $type)
+    {
+        // Null pad some data when we get it (integer values > 128 and bitstrings)
+        if( (($type == self::ASN_TYPE_INTEGER) && (ord($data) > 0x7f)) ||
+            ($type == self::ASN_TYPE_BITSTRING)) {
+                $data = "\0$data";
+        }
+
+        $len = strlen($data);
+
+        // encode the value based on length of the string
+        // I'm fairly confident that this is by no means a complete implementation
+        // but it is enough for our purposes
+        switch(true) {
+            case ($len < 128):
+                return sprintf("%c%c%s", $type, $len, $data);
+            case ($len < 0x0100):
+                return sprintf("%c%c%c%s", $type, 0x81, $len, $data);
+            case ($len < 0x010000):
+                return sprintf("%c%c%c%c%s", $type, 0x82, $len / 0x0100, $len % 0x0100, $data);
+            default:
+                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+                throw new Zend_InfoCard_Xml_Security_Exception("Could not encode value");
+        }
+
+        require_once 'Zend/InfoCard/Xml/Security/Exception.php';
+        throw new Zend_InfoCard_Xml_Security_Exception("Invalid code path");
+    }
+}

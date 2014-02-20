@@ -1,50 +1,208 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_Slider */
+require_once 'Zend/Dojo/Form/Element/Slider.php';
+
+/**
+ * VerticalSlider dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_Slider
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: VerticalSlider.php 10012 2008-07-09 20:47:48Z matthew $
+ */
+class Zend_Dojo_Form_Element_VerticalSlider extends Zend_Dojo_Form_Element_Slider
+{
+    /**
+     * Use VerticalSlider dijit view helper
+     * @var string
+     */
+    public $helper = 'VerticalSlider';
+
+    /**
+     * Get left decoration data
+     * 
+     * @return array
+     */
+    public function getLeftDecoration()
+    {
+        if ($this->hasDijitParam('leftDecoration')) {
+            return $this->getDijitParam('leftDecoration');
+        }
+        return array();
+    }
+
+    /**
+     * Set dijit to use with left decoration
+     * 
+     * @param mixed $dijit 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setLeftDecorationDijit($dijit)
+    {
+        $decoration = $this->getLeftDecoration();
+        $decoration['dijit'] = (string) $dijit;
+        $this->setDijitParam('leftDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set container to use with left decoration
+     * 
+     * @param mixed $container 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setLeftDecorationContainer($container)
+    {
+        $decoration = $this->getLeftDecoration();
+        $decoration['container'] = (string) $container;
+        $this->setDijitParam('leftDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set labels to use with left decoration
+     * 
+     * @param  array $labels 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setLeftDecorationLabels(array $labels)
+    {
+        $decoration = $this->getLeftDecoration();
+        $decoration['labels'] = array_values($labels);
+        $this->setDijitParam('leftDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set params to use with left decoration
+     * 
+     * @param  array $params 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setLeftDecorationParams(array $params)
+    {
+        $decoration = $this->getLeftDecoration();
+        $decoration['params'] = $params;
+        $this->setDijitParam('leftDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set attribs to use with left decoration
+     * 
+     * @param  array $attribs 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setLeftDecorationAttribs(array $attribs)
+    {
+        $decoration = $this->getLeftDecoration();
+        $decoration['attribs'] = $attribs;
+        $this->setDijitParam('leftDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Get right decoration data
+     * 
+     * @return array
+     */
+    public function getRightDecoration()
+    {
+        if ($this->hasDijitParam('rightDecoration')) {
+            return $this->getDijitParam('rightDecoration');
+        }
+        return array();
+    }
+
+    /**
+     * Set dijit to use with right decoration
+     * 
+     * @param mixed $dijit 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setRightDecorationDijit($dijit)
+    {
+        $decoration = $this->getRightDecoration();
+        $decoration['dijit'] = (string) $dijit;
+        $this->setDijitParam('rightDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set container to use with right decoration
+     * 
+     * @param mixed $container 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setRightDecorationContainer($container)
+    {
+        $decoration = $this->getRightDecoration();
+        $decoration['container'] = (string) $container;
+        $this->setDijitParam('rightDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set labels to use with right decoration
+     * 
+     * @param  array $labels 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setRightDecorationLabels(array $labels)
+    {
+        $decoration = $this->getRightDecoration();
+        $decoration['labels'] = array_values($labels);
+        $this->setDijitParam('rightDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set params to use with right decoration
+     * 
+     * @param  array $params 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setRightDecorationParams(array $params)
+    {
+        $decoration = $this->getRightDecoration();
+        $decoration['params'] = $params;
+        $this->setDijitParam('rightDecoration', $decoration);
+        return $this;
+    }
+
+    /**
+     * Set attribs to use with right decoration
+     * 
+     * @param  array $attribs 
+     * @return Zend_Dojo_Form_Element_HorizontalSlider
+     */
+    public function setRightDecorationAttribs(array $attribs)
+    {
+        $decoration = $this->getRightDecoration();
+        $decoration['attribs'] = $attribs;
+        $this->setDijitParam('rightDecoration', $decoration);
+        return $this;
+    }
+}

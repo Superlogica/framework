@@ -1,71 +1,183 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: SignatureAbstract.php 23484 2010-12-10 03:57:59Z mjh_ca $
+ */
+
+/** Zend_Oauth_Http_Utility */
+require_once 'Zend/Oauth/Http/Utility.php';
+
+/** Zend_Uri_Http */
+require_once 'Zend/Uri/Http.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Oauth_Signature_SignatureAbstract
+{
+    /**
+     * Hash algorithm to use when generating signature
+     * @var string
+     */
+    protected $_hashAlgorithm = null;
+
+    /**
+     * Key to use when signing
+     * @var string
+     */
+    protected $_key = null;
+
+    /**
+     * Consumer secret
+     * @var string
+     */
+    protected $_consumerSecret = null;
+
+    /**
+     * Token secret
+     * @var string
+     */
+    protected $_tokenSecret = '';
+
+    /**
+     * Constructor
+     *
+     * @param  string $consumerSecret
+     * @param  null|string $tokenSecret
+     * @param  null|string $hashAlgo
+     * @return void
+     */
+    public function __construct($consumerSecret, $tokenSecret = null, $hashAlgo = null)
+    {
+        $this->_consumerSecret = $consumerSecret;
+        if (isset($tokenSecret)) {
+            $this->_tokenSecret = $tokenSecret;
+        }
+        $this->_key = $this->_assembleKey();
+        if (isset($hashAlgo)) {
+            $this->_hashAlgorithm = $hashAlgo;
+        }
+    }
+
+    /**
+     * Sign a request
+     *
+     * @param  array $params
+     * @param  null|string $method
+     * @param  null|string $url
+     * @return string
+     */
+    public abstract function sign(array $params, $method = null, $url = null);
+
+    /**
+     * Normalize the base signature URL
+     *
+     * @param  string $url
+     * @return string
+     */
+    public function normaliseBaseSignatureUrl($url)
+    {
+        $uri = Zend_Uri_Http::fromString($url);
+        if ($uri->getScheme() == 'http' && $uri->getPort() == '80') {
+            $uri->setPort('');
+        } elseif ($uri->getScheme() == 'https' && $uri->getPort() == '443') {
+            $uri->setPort('');
+        }
+        $uri->setQuery('');
+        $uri->setFragment('');
+        $uri->setHost(strtolower($uri->getHost()));
+        return $uri->getUri(true);
+    }
+
+    /**
+     * Assemble key from consumer and token secrets
+     *
+     * @return string
+     */
+    protected function _assembleKey()
+    {
+        $parts = array($this->_consumerSecret);
+        if ($this->_tokenSecret !== null) {
+            $parts[] = $this->_tokenSecret;
+        }
+        foreach ($parts as $key => $secret) {
+            $parts[$key] = Zend_Oauth_Http_Utility::urlEncode($secret);
+        }
+        return implode('&', $parts);
+    }
+
+    /**
+     * Get base signature string
+     *
+     * @param  array $params
+     * @param  null|string $method
+     * @param  null|string $url
+     * @return string
+     */
+    protected function _getBaseSignatureString(array $params, $method = null, $url = null)
+    {
+        $encodedParams = array();
+        foreach ($params as $key => $value) {
+            $encodedParams[Zend_Oauth_Http_Utility::urlEncode($key)] =
+                Zend_Oauth_Http_Utility::urlEncode($value);
+        }
+        $baseStrings = array();
+        if (isset($method)) {
+            $baseStrings[] = strtoupper($method);
+        }
+        if (isset($url)) {
+            // should normalise later
+            $baseStrings[] = Zend_Oauth_Http_Utility::urlEncode(
+                $this->normaliseBaseSignatureUrl($url)
+            );
+        }
+        if (isset($encodedParams['oauth_signature'])) {
+            unset($encodedParams['oauth_signature']);
+        }
+        $baseStrings[] = Zend_Oauth_Http_Utility::urlEncode(
+            $this->_toByteValueOrderedQueryString($encodedParams)
+        );
+        return implode('&', $baseStrings);
+    }
+
+    /**
+     * Transform an array to a byte value ordered query string
+     *
+     * @param  array $params
+     * @return string
+     */
+    protected function _toByteValueOrderedQueryString(array $params)
+    {
+        $return = array();
+        uksort($params, 'strnatcmp');
+        foreach ($params as $key => $value) {
+            if (is_array($value)) {
+                natsort($value);
+                foreach ($value as $keyduplicate) {
+                    $return[] = $key . '=' . $keyduplicate;
+                }
+            } else {
+                $return[] = $key . '=' . $value;
+            }
+        }
+        return implode('&', $return);
+    }
+}

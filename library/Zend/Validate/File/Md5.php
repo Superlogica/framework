@@ -1,53 +1,183 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-b+Dg9i9yThJqNBpCC7SuwKQZLGCdUJcXT2Pr3G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_File_Hash
+ */
+require_once 'Zend/Validate/File/Hash.php';
+
+/**
+ * Validator for the md5 hash of given files
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_Md5 extends Zend_Validate_File_Hash
+{
+    /**
+     * @const string Error constants
+     */
+    const DOES_NOT_MATCH = 'fileMd5DoesNotMatch';
+    const NOT_DETECTED   = 'fileMd5NotDetected';
+    const NOT_FOUND      = 'fileMd5NotFound';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::DOES_NOT_MATCH => "The file '%value%' does not match the given md5 hashes",
+        self::NOT_DETECTED   => "There was no md5 hash detected for the given file",
+        self::NOT_FOUND      => "The file '%value%' could not be found"
+    );
+
+    /**
+     * Hash of the file
+     *
+     * @var string
+     */
+    protected $_hash;
+
+    /**
+     * Sets validator options
+     *
+     * $hash is the hash we accept for the file $file
+     *
+     * @param  string|array $options
+     * @return void
+     */
+    public function __construct($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (is_scalar($options)) {
+            $options = array('hash1' => $options);
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
+        }
+
+        $this->setMd5($options);
+    }
+
+    /**
+     * Returns all set md5 hashes
+     *
+     * @return array
+     */
+    public function getMd5()
+    {
+        return $this->getHash();
+    }
+
+    /**
+     * Sets the md5 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @param  string       $algorithm (Deprecated) Algorithm to use, fixed to md5
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function setHash($options)
+    {
+        if (!is_array($options)) {
+            $options = (array) $options;
+        }
+
+        $options['algorithm'] = 'md5';
+        parent::setHash($options);
+        return $this;
+    }
+
+    /**
+     * Sets the md5 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function setMd5($options)
+    {
+        $this->setHash($options);
+        return $this;
+    }
+
+    /**
+     * Adds the md5 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @param  string       $algorithm (Depreciated) Algorithm to use, fixed to md5
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function addHash($options)
+    {
+        if (!is_array($options)) {
+            $options = (array) $options;
+        }
+
+        $options['algorithm'] = 'md5';
+        parent::addHash($options);
+        return $this;
+    }
+
+    /**
+     * Adds the md5 hash for one or multiple files
+     *
+     * @param  string|array $options
+     * @return Zend_Validate_File_Hash Provides a fluent interface
+     */
+    public function addMd5($options)
+    {
+        $this->addHash($options);
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the given file confirms the set hash
+     *
+     * @param  string $value Filename to check for hash
+     * @param  array  $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        // Is file readable ?
+        require_once 'Zend/Loader.php';
+        if (!Zend_Loader::isReadable($value)) {
+            return $this->_throw($file, self::NOT_FOUND);
+        }
+
+        $hashes = array_unique(array_keys($this->_hash));
+        $filehash = hash_file('md5', $value);
+        if ($filehash === false) {
+            return $this->_throw($file, self::NOT_DETECTED);
+        }
+
+        foreach($hashes as $hash) {
+            if ($filehash === $hash) {
+                return true;
+            }
+        }
+
+        return $this->_throw($file, self::DOES_NOT_MATCH);
+    }
+}

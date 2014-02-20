@@ -1,67 +1,215 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Backend_Interface
+ */
+require_once 'Zend/Cache/Backend/Interface.php';
+
+/**
+ * @see Zend_Cache_Backend
+ */
+require_once 'Zend/Cache/Backend.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend_Xcache extends Zend_Cache_Backend implements Zend_Cache_Backend_Interface
+{
+
+    /**
+     * Log message
+     */
+    const TAGS_UNSUPPORTED_BY_CLEAN_OF_XCACHE_BACKEND = 'Zend_Cache_Backend_Xcache::clean() : tags are unsupported by the Xcache backend';
+    const TAGS_UNSUPPORTED_BY_SAVE_OF_XCACHE_BACKEND =  'Zend_Cache_Backend_Xcache::save() : tags are unsupported by the Xcache backend';
+    
+    /**
+     * Available options
+     *
+     * =====> (string) user :
+     * xcache.admin.user (necessary for the clean() method)
+     *
+     * =====> (string) password :
+     * xcache.admin.pass (clear, not MD5) (necessary for the clean() method)
+     *
+     * @var array available options
+     */
+    protected $_options = array(
+        'user' => null,
+        'password' => null
+    );
+
+    /**
+     * Constructor
+     *
+     * @param  array $options associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        if (!extension_loaded('xcache')) {
+            Zend_Cache::throwException('The xcache extension must be loaded for using this backend !');
+        }
+        parent::__construct($options);
+    }
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * WARNING $doNotTestCacheValidity=true is unsupported by the Xcache backend
+     *
+     * @param  string  $id                     cache id
+     * @param  boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
+     * @return string cached datas (or false)
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        if ($doNotTestCacheValidity) {
+            $this->_log("Zend_Cache_Backend_Xcache::load() : \$doNotTestCacheValidity=true is unsupported by the Xcache backend");
+        }
+        $tmp = xcache_get($id);
+        if (is_array($tmp)) {
+            return $tmp[0];
+        }
+        return false;
+    }
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * @param  string $id cache id
+     * @return mixed false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    public function test($id)
+    {
+        if (xcache_isset($id)) {
+            $tmp = xcache_get($id);
+            if (is_array($tmp)) {
+                return $tmp[1];
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * Note : $data is always "string" (serialization is done by the
+     * core not by the backend)
+     *
+     * @param string $data datas to cache
+     * @param string $id cache id
+     * @param array $tags array of strings, the cache record will be tagged by each string entry
+     * @param int $specificLifetime if != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @return boolean true if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false)
+    {
+        $lifetime = $this->getLifetime($specificLifetime);
+        $result = xcache_set($id, array($data, time()), $lifetime);
+        if (count($tags) > 0) {
+            $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_XCACHE_BACKEND);
+        }
+        return $result;
+    }
+
+    /**
+     * Remove a cache record
+     *
+     * @param  string $id cache id
+     * @return boolean true if no problem
+     */
+    public function remove($id)
+    {
+        return xcache_unset($id);
+    }
+
+    /**
+     * Clean some cache records
+     *
+     * Available modes are :
+     * 'all' (default)  => remove all cache entries ($tags is not used)
+     * 'old'            => unsupported
+     * 'matchingTag'    => unsupported
+     * 'notMatchingTag' => unsupported
+     * 'matchingAnyTag' => unsupported
+     *
+     * @param  string $mode clean mode
+     * @param  array  $tags array of tags
+     * @throws Zend_Cache_Exception
+     * @return boolean true if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        switch ($mode) {
+            case Zend_Cache::CLEANING_MODE_ALL:
+                // Necessary because xcache_clear_cache() need basic authentification
+                $backup = array();
+                if (isset($_SERVER['PHP_AUTH_USER'])) {
+                    $backup['PHP_AUTH_USER'] = $_SERVER['PHP_AUTH_USER'];
+                }
+                if (isset($_SERVER['PHP_AUTH_PW'])) {
+                    $backup['PHP_AUTH_PW'] = $_SERVER['PHP_AUTH_PW'];
+                }
+                if ($this->_options['user']) {
+                    $_SERVER['PHP_AUTH_USER'] = $this->_options['user'];
+                }
+                if ($this->_options['password']) {
+                    $_SERVER['PHP_AUTH_PW'] = $this->_options['password'];
+                }
+                xcache_clear_cache(XC_TYPE_VAR, 0);
+                if (isset($backup['PHP_AUTH_USER'])) {
+                    $_SERVER['PHP_AUTH_USER'] = $backup['PHP_AUTH_USER'];
+                    $_SERVER['PHP_AUTH_PW'] = $backup['PHP_AUTH_PW'];
+                }
+                return true;
+                break;
+            case Zend_Cache::CLEANING_MODE_OLD:
+                $this->_log("Zend_Cache_Backend_Xcache::clean() : CLEANING_MODE_OLD is unsupported by the Xcache backend");
+                break;
+            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
+            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
+            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
+                $this->_log(self::TAGS_UNSUPPORTED_BY_CLEAN_OF_XCACHE_BACKEND);
+                break;
+            default:
+                Zend_Cache::throwException('Invalid mode for clean() method');
+                break;
+        }
+    }
+
+    /**
+     * Return true if the automatic cleaning is available for the backend
+     *
+     * @return boolean
+     */
+    public function isAutomaticCleaningAvailable()
+    {
+        return false;
+    }
+
+}

@@ -1,26 +1,136 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV53Zr7PWcNURVAq68kr6Mc7JeN6i+SXq0h9giOmsex04njq5aQKKnmNN1azh1Do74wIC8jVHz
-jgLfp4Y7OK4/veA0owvRzeq/ENVS2f1d9srnwxvR6djWG+E2tK+YBCglQwC/3bOZIdg58FbqeAFO
-u0kOS3DuiUkH/geNlVwxSSHwVc3moOytaieE0ifpuOuGsFnoNUmkKvCxqjpHe6vZtDQ5+MjmxbWQ
-O0yWhdu0s0n/e3bNXNRGn4kJIPpDKor7T+KlBeH2QEXYMJU6BYpfYOr2cTNMTDv1Xf/mlCddMipf
-djYTWUZ7VY+b7z+YQwc09XuZj/0J6YFuUQqmkUZcGA+xtKUfkYkJ0qTYNR0wDWg6zBbCSeFo5YtP
-gPuKy1kiL+FZXRE5XrGt+jfDBxzWX/grgTciAAC9dRqfPkRiJiR11gNqR7Tyajf6xKBhw1jALhOq
-ZyTw8eaSaS3YhsHIWUXQO5HKh2PI0yuFrTeuLv/irCuSPQaI5hQhedNymNbZK7zS6MmJlXC/Khce
-V5de5h1axa9i2KgxsoQ2fORPnuznTJHbwM0+VZDEwcVf7ONAwacMsP65mBCBNT9UdsjMMq7VKfhf
-0mQ3CE2nYIo3CZ0EQRAM5gmcykhJyJPXwxkGEci1hmCduh43bKOGG+VFTJAi6fD7LibuLnd3VFjE
-PVVWpkqNZ7GxMd+lmD7rWnairmQt54K0ytJdlWcKIsRyMaYBi8kvolHZgJltRWDIr70UPjngIXz9
-xOyGyUraHT9G+Pv0vXltPiIQOitVEzD5FHzNNujPTp2H+2eK4PmNRAX1gvQ41tRNDOqzs3i9Kdv/
-VoliGDJZDfAx2g3amKTOWH3dlkDWf6l2dWuqY7xj9u9LjvEkUZaxHWIrFnzlfWZbLN9FoutAkaDM
-dlRZOL502o7TjwqKjmv/wg3Zoa1GPGdzvdMDnV7SqCbTyoYSw1nWHvB/rCku4/OmOwqGABqGME1k
-hk2SUpRAAl/BEhzi6XZSmTQrYPKVFa2PNG9LwUpPzU0j0HQVhIqZGQSnVyXDYNiUlyEPLsFBjSCv
-rOi+igAmAjkse7dcxBhBfn+QI97avHHb3Z681AK8vNC34UrOIpk7Wa2TjyDNHi5eokxPc9aw8JYq
-/FmK2VxS+E5j5JuC8jn434SZWXmxN0RaLKa+a8O0nEtSISP3vcD0CqeVGYW7e30qyM2zjQfra74N
-UN852juIG7iF3rp+XXh+yT5ATxwcax6t+C/6CATLUlKmmpK0PuTUzOR/7Sa4M9g56JU7AnnGQ+V5
-VRRpCwRneZ4AZLEN34+BfF9YqgvlmAe8Pi5LBZgmf65lrETmHata1fJ5ebockOOZBOxkb+UZtd88
-D9pRLmd0Oshifo9D6jjQiwi2vySk2OH9i15byzznUQF6YAKVqdR+mdns1A8TOaxNXzcGvqPeMXDV
-bKn01DZkcvvAhk7BuvVVgmLUk7+v8LzRNP4fC1qt2Z2bi8L5w/vjb1MZHZ9yi82qE9erwfisU/WO
-J8jvhf7I1STbgsA3qjyWIDeeZjJP6NfVDpqT4n0Diegr2KwmSsJ/HCoKPWQ65prFN70gN6ARQ15Q
-pdknlUNRmARppWVMrfesYfhTk49TVnOAwI3XOL/Rg4cLY3juS5LH7gresD79HLnYPAIUNRNpu4yu
-bfYqwtswsY2ZI6EZbWa3/mPqfNCDLNq=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Interface.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+interface Zend_Mail_Part_Interface extends RecursiveIterator
+{
+    /**
+     * Check if part is a multipart message
+     *
+     * @return bool if part is multipart
+     */
+    public function isMultipart();
+
+
+    /**
+     * Body of part
+     *
+     * If part is multipart the raw content of this part with all sub parts is returned
+     *
+     * @return string body
+     * @throws Zend_Mail_Exception
+     */
+    public function getContent();
+
+    /**
+     * Return size of part
+     *
+     * @return int size
+     */
+    public function getSize();
+
+    /**
+     * Get part of multipart message
+     *
+     * @param  int $num number of part starting with 1 for first part
+     * @return Zend_Mail_Part wanted part
+     * @throws Zend_Mail_Exception
+     */
+    public function getPart($num);
+
+    /**
+     * Count parts of a multipart part
+     *
+     * @return int number of sub-parts
+     */
+    public function countParts();
+
+
+    /**
+     * Get all headers
+     *
+     * The returned headers are as saved internally. All names are lowercased. The value is a string or an array
+     * if a header with the same name occurs more than once.
+     *
+     * @return array headers as array(name => value)
+     */
+    public function getHeaders();
+
+    /**
+     * Get a header in specificed format
+     *
+     * Internally headers that occur more than once are saved as array, all other as string. If $format
+     * is set to string implode is used to concat the values (with Zend_Mime::LINEEND as delim).
+     *
+     * @param  string $name   name of header, matches case-insensitive, but camel-case is replaced with dashes
+     * @param  string $format change type of return value to 'string' or 'array'
+     * @return string|array value of header in wanted or internal format
+     * @throws Zend_Mail_Exception
+     */
+    public function getHeader($name, $format = null);
+    
+    /**
+     * Get a specific field from a header like content type or all fields as array
+     *
+     * If the header occurs more than once, only the value from the first header
+     * is returned.
+     *
+     * Throws a Zend_Mail_Exception if the requested header does not exist. If
+     * the specific header field does not exist, returns null.
+     *
+     * @param  string $name       name of header, like in getHeader()
+     * @param  string $wantedPart the wanted part, default is first, if null an array with all parts is returned
+     * @param  string $firstName  key name for the first part
+     * @return string|array wanted part or all parts as array($firstName => firstPart, partname => value)
+     * @throws Zend_Exception, Zend_Mail_Exception
+     */
+    public function getHeaderField($name, $wantedPart = 0, $firstName = 0);
+
+
+    /**
+     * Getter for mail headers - name is matched in lowercase
+     *
+     * This getter is short for Zend_Mail_Part::getHeader($name, 'string')
+     *
+     * @see Zend_Mail_Part::getHeader()
+     *
+     * @param  string $name header name
+     * @return string value of header
+     * @throws Zend_Mail_Exception
+     */
+    public function __get($name);
+
+    /**
+     * magic method to get content of part
+     *
+     * @return string content
+     */
+    public function __toString();
+}

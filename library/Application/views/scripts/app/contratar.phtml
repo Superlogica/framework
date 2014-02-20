@@ -5,12 +5,24 @@ $devInfo = $response['data'];
 
 $this->assign('titulo', 'Contratar ' . $devInfo['nome']);
 $urlDev = Application_Plugins_Api::getRemoteDevUrl();
-      
+     
 $session = Application_Helpers_Session::getInstance();
 if (!$session->redirecttoken)
     $session->redirecttoken = sha1(uniqid(rand(1,1000), true));
 //die( $session->redirecttoken );
+/**
+ * Devida a um bug no ie, que não completa o processo de contrato,
+ * então foi colocada essa trava para o Internet Explorer
+ */
+$browser = $_SERVER['HTTP_USER_AGENT'];
+if(preg_match('/MSIE/',$browser) || preg_match('/Trident\/7.0;/',$browser)){
+    echo '<div class="alerta">
+            Este navegador não é compatível. Use Chrome ou Firefox.
+          </div>';
+    
+}else{   
 ?>
+
 <div id="superlogica_planos_script"></div>
 <script type="text/javascript">
 //<![CDATA[
@@ -25,3 +37,6 @@ document.getElementById("superlogica_planos_script").appendChild(iframePlanos);
 }());
 //]]>
 </script>
+<?php
+}
+?>

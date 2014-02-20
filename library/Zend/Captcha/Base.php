@@ -1,46 +1,176 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Captcha_Adapter */
+require_once 'Zend/Captcha/Adapter.php';
+
+/** Zend_Validate_Abstract */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * Base class for Captcha adapters
+ * 
+ * Provides some utility functionality to build on
+ *
+ * @category   Zend
+ * @package    Zend_Captcha
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+abstract class Zend_Captcha_Base extends Zend_Validate_Abstract implements Zend_Captcha_Adapter 
+{
+    /**
+     * Element name
+     * 
+     * Useful to generate/check form fields
+     *
+     * @var string
+     */
+    protected $_name;
+
+    /**
+     * Captcha options 
+     * 
+     * @var array
+     */
+    protected $_options = array();
+
+    /**
+     * Options to skip when processing options
+     * @var array
+     */
+    protected $_skipOptions = array(
+        'options',
+        'config',
+    );
+    
+    /**
+     * Get name
+     * 
+     * @return string
+     */
+    public function getName() 
+    {
+        return $this->_name;
+    }
+    
+    /**
+     * Set name 
+     * 
+     * @param string $name
+     */
+    public function setName($name) 
+    {
+        $this->_name = $name;
+        return $this;
+    }
+
+    /**
+     * Constructor
+     *
+     * @param  array|Zend_Config $options 
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        // Set options
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } else if ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        } 
+    } 
+    
+    /**
+     * Set single option for the object
+     *
+     * @param string $key
+     * @param string $value
+     * @return Zend_Form_Element
+     */
+    public function setOption($key, $value)
+    {
+        if (in_array(strtolower($key), $this->_skipOptions)) {
+            return $this;
+        }
+
+        $method = 'set' . ucfirst ($key);
+        if (method_exists ($this, $method)) {
+            // Setter exists; use it
+            $this->$method ($value);
+            $this->_options[$key] = $value;
+        } elseif (property_exists($this, $key)) {
+            // Assume it's metadata
+            $this->$key = $value;
+            $this->_options[$key] = $value;
+        }
+        return $this;
+    }
+    
+    /**
+     * Set object state from options array
+     * 
+     * @param  array $options 
+     * @return Zend_Form_Element
+     */
+    public function setOptions($options = null)
+    {
+        foreach ($options as $key => $value) {
+            $this->setOption($key, $value);
+        }
+        return $this;
+    }
+    
+    /**
+     * Retrieve options representing object state
+     * 
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Set object state from config object
+     * 
+     * @param  Zend_Config $config 
+     * @return Zend_Captcha_Base
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        return $this->setOptions($config->toArray());
+    }
+
+    /**
+     * Get optional decorator
+     * 
+     * By default, return null, indicating no extra decorator needed.
+     *
+     * @return null
+     */
+    public function getDecorator() 
+    {
+        return null;
+    }
+}

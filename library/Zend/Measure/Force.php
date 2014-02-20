@@ -1,28 +1,126 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV50ePWJ/FvdamWgmK7Dq99orcs29sJZ0R4g6ifjQ0txZ/rTklqHue/r0fpLvxhMuDTkLoH7Kl
-Xe8C7FoyO2QJkEq7Ry2bMygoYphL+fFxoBAXHeyd0k9EEb9vKbQqQskKmqCdFlkLzMVGNVQVpacs
-MnOI7g0OfcXvDFY9vFEz42Pm01vW+tD9OiqsUEm1i8NMvNP7m3qrKmGgzmlQxWs8yTnVA7qJO9rQ
-VmJXQ/KpUsgszqxkVxy8n4kJIPpDKor7T+KlBeH2Q0HWeqjDVp94/WDVvjN+rDzFNsoJfTqj8Bck
-KuBCqUck8wEoqNxHPMthKC5P+8Jn7Iw6bYCAtZIhtwfmApGnAST+tdijv0IzHjL7uTVP7sjGvnSC
-jyN5NnGNGmGBof9RqP6JN3TleYWQZ8Opl9hpSxHaZq8zdn3/u1OaVCOxwUTramMiD91+WfmAghso
-6fcaLZGToGGttfU9dmVCnh/hLOtzkLOj495hJOoCT8MG8yYF3uT3NOjhX7nzIACAOS8MG2jr+j7P
-ByIiM+Oo8BClL/14Z15wdtyJEV0zU+V2JRLoW2SA+Eszs6CACOzqNiTjK1yQ4VRlTRoeEegdrAcn
-jzJ6gUdy7cjgU+xXtGeihEjqWXoGMN5j5cVEvbcHKM/yD1N2mBhWL6rBeA7Vmx/XO84+0d4AERae
-aeIa9rk0Uazx3bUq5usc1kivoy1njKL7YVkMisddqC1oxbB0+UEtbifwWbWDTf7O2uZzgcGeAlua
-H21LezPRV1Xuyz9yMW7cLNAZ8P4lGv7HzsBJC137WLAoLqdWSTiveH9wBepQSZ+Btq5+3n69Yjc5
-IruGtdhrsvHHPdyS6wSu/4os8yRwkhco5QzwDVVubuhB9fr6xh9X4Ggwt8pvLk197PNkIdnwOjOP
-DPnujzzY4LPn5nDPYzONLKsnRjrdCSUemz1Oxa9T2YiknJ+RIwq1c7suVrtcbXpxtbi9xaRR0hXa
-cJVbYgjIKoFyZaY4Qu0KVsnPDzmabuzeY000oprvpBWvJPs1vulTln7bg4s7zfAQreXYdpL1ao1i
-pA9Q23sPIsFgKtZXSg6XPLHQUIxN/AwLzQH7/nsdFv6BwezVxWBNbTB9QF/8bkWzl/ptHR3y1SLW
-7mP3qEHC0N3FDGh1T2vgJFh+NG9aAPw5uapVjrkmlekN73AlFxpTPfvStLY26dNABl/uaD12yn0k
-R0O2fk9FRNVjlmB+Wfm/HXp4sV1BldMTktf6Kfbym2bb7Ph4jwPn2upUFLjLHJ/Vpx6+I9VwWPaf
-23rLbm94KKx8uVPTQLmr+4WCyDczLwmuxJxTCv9vLAF4K3qpv2njxEVvlr7yQiHIsqgzvvDJ2kDh
-PcUYoCOg0uWqiDRLcFf2sFf1QQeV+mR3iWh2vc5Wb6Z7CD/y41+2nKpCQGAGUpO6Edt15F/jmpAP
-49bHOKlFnlkmLoeGpqJFbcGeSiMkpNWhJZNjXy8qmbNpW6K2nR4SLGp3RbOdSXa56DY1AhV3R6Ag
-NHeMHvg3swvHx47ZvYBGX5HoMm8p+0I1rsnUdiXKvo/UFOz71CzHbk8sZ5cP7IB8+jLCvTZTQHeD
-PFKlY+g+pyTol6zEDuvgl9mWNHBdBTxf+vD6kLhJ1kaUp7qVZLtZRCOQo6oo1Hmzb+a4ShS8ehsm
-fd8grcaZsmgIWnbhUtVA5IPtxjA1k+G54bXuaFhGI9MqWNQ7+SCnC3YCTo1Lnpu8/r/IXfftNnuJ
-HckLBddVNT8RDdA6CVNJg2KbgeeDkLbN4Jq7UQL97Sa4U9/qvpN8MiGTC4gnVw9JwgxwMkldRw83
-GsrWRDMCocJN5KamxQIwfa9t/3LBQXUjOzZG3IPtXdn7wyILqal9HH6efbFnXm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Force.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling force conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Force
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Force extends Zend_Measure_Abstract
+{
+    const STANDARD = 'NEWTON';
+
+    const ATTONEWTON      = 'ATTONEWTON';
+    const CENTINEWTON     = 'CENTINEWTON';
+    const DECIGRAM_FORCE  = 'DECIGRAM_FORCE';
+    const DECINEWTON      = 'DECINEWTON';
+    const DEKAGRAM_FORCE  = 'DEKAGRAM_FORCE';
+    const DEKANEWTON      = 'DEKANEWTON';
+    const DYNE            = 'DYNE';
+    const EXANEWTON       = 'EXANEWTON';
+    const FEMTONEWTON     = 'FEMTONEWTON';
+    const GIGANEWTON      = 'GIGANEWTON';
+    const GRAM_FORCE      = 'GRAM_FORCE';
+    const HECTONEWTON     = 'HECTONEWTON';
+    const JOULE_PER_METER = 'JOULE_PER_METER';
+    const KILOGRAM_FORCE  = 'KILOGRAM_FORCE';
+    const KILONEWTON      = 'KILONEWTON';
+    const KILOPOND        = 'KILOPOND';
+    const KIP             = 'KIP';
+    const MEGANEWTON      = 'MEGANEWTON';
+    const MEGAPOND        = 'MEGAPOND';
+    const MICRONEWTON     = 'MICRONEWTON';
+    const MILLINEWTON     = 'MILLINEWTON';
+    const NANONEWTON      = 'NANONEWTON';
+    const NEWTON          = 'NEWTON';
+    const OUNCE_FORCE     = 'OUNCE_FORCE';
+    const PETANEWTON      = 'PETANEWTON';
+    const PICONEWTON      = 'PICONEWTON';
+    const POND            = 'POND';
+    const POUND_FORCE     = 'POUND_FORCE';
+    const POUNDAL         = 'POUNDAL';
+    const STHENE          = 'STHENE';
+    const TERANEWTON      = 'TERANEWTON';
+    const TON_FORCE_LONG  = 'TON_FORCE_LONG';
+    const TON_FORCE       = 'TON_FORCE';
+    const TON_FORCE_SHORT = 'TON_FORCE_SHORT';
+    const YOCTONEWTON     = 'YOCTONEWTON';
+    const YOTTANEWTON     = 'YOTTANEWTON';
+    const ZEPTONEWTON     = 'ZEPTONEWTON';
+    const ZETTANEWTON     = 'ZETTANEWTON';
+
+    /**
+     * Calculations for all force units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'ATTONEWTON'      => array('1.0e-18',     'aN'),
+        'CENTINEWTON'     => array('0.01',        'cN'),
+        'DECIGRAM_FORCE'  => array('0.000980665', 'dgf'),
+        'DECINEWTON'      => array('0.1',         'dN'),
+        'DEKAGRAM_FORCE'  => array('0.0980665',   'dagf'),
+        'DEKANEWTON'      => array('10',          'daN'),
+        'DYNE'            => array('0.00001',     'dyn'),
+        'EXANEWTON'       => array('1.0e+18',     'EN'),
+        'FEMTONEWTON'     => array('1.0e-15',     'fN'),
+        'GIGANEWTON'      => array('1.0e+9',      'GN'),
+        'GRAM_FORCE'      => array('0.00980665',  'gf'),
+        'HECTONEWTON'     => array('100',         'hN'),
+        'JOULE_PER_METER' => array('1',           'J/m'),
+        'KILOGRAM_FORCE'  => array('9.80665',     'kgf'),
+        'KILONEWTON'      => array('1000',        'kN'),
+        'KILOPOND'        => array('9.80665',     'kp'),
+        'KIP'             => array('4448.2216',   'kip'),
+        'MEGANEWTON'      => array('1000000',     'Mp'),
+        'MEGAPOND'        => array('9806.65',     'MN'),
+        'MICRONEWTON'     => array('0.000001',    'µN'),
+        'MILLINEWTON'     => array('0.001',       'mN'),
+        'NANONEWTON'      => array('0.000000001', 'nN'),
+        'NEWTON'          => array('1',           'N'),
+        'OUNCE_FORCE'     => array('0.27801385',  'ozf'),
+        'PETANEWTON'      => array('1.0e+15',     'PN'),
+        'PICONEWTON'      => array('1.0e-12',     'pN'),
+        'POND'            => array('0.00980665',  'pond'),
+        'POUND_FORCE'     => array('4.4482216',   'lbf'),
+        'POUNDAL'         => array('0.13825495',  'pdl'),
+        'STHENE'          => array('1000',        'sn'),
+        'TERANEWTON'      => array('1.0e+12',     'TN'),
+        'TON_FORCE_LONG'  => array('9964.016384', 'tnf'),
+        'TON_FORCE'       => array('9806.65',     'tnf'),
+        'TON_FORCE_SHORT' => array('8896.4432',   'tnf'),
+        'YOCTONEWTON'     => array('1.0e-24',     'yN'),
+        'YOTTANEWTON'     => array('1.0e+24',     'YN'),
+        'ZEPTONEWTON'     => array('1.0e-21',     'zN'),
+        'ZETTANEWTON'     => array('1.0e+21',     'ZN'),
+        'STANDARD'        => 'NEWTON'
+    );
+}

@@ -1,33 +1,111 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Books
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_Books
+ */
+require_once('Zend/Gdata/Books.php');
+
+/**
+ * Zend_Gdata_Query
+ */
+require_once('Zend/Gdata/Query.php');
+
+/**
+ * Assists in constructing queries for Books volumes
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Books
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Books_VolumeQuery extends Zend_Gdata_Query
+{
+
+    /**
+     * Create Gdata_Books_VolumeQuery object
+     *
+     * @param string|null $url If non-null, pre-initializes the instance to
+     *        use a given URL.
+     */
+    public function __construct($url = null)
+    {
+        parent::__construct($url);
+    }
+
+    /**
+     * Sets the minimum level of viewability of volumes to return in the search results
+     *
+     * @param string|null $value The minimum viewability - 'full' or 'partial'
+     * @return Zend_Gdata_Books_VolumeQuery Provides a fluent interface
+     */
+    public function setMinViewability($value = null)
+    {
+        switch ($value) {
+            case 'full_view':
+                $this->_params['min-viewability'] = 'full';
+                break;
+            case 'partial_view':
+                $this->_params['min-viewability'] = 'partial';
+                break;
+            case null:
+                unset($this->_params['min-viewability']);
+                break;
+        }
+        return $this;
+    }
+
+    /**
+     * Minimum viewability of volumes to include in search results
+     *
+     * @return string|null min-viewability
+     */
+    public function getMinViewability()
+    {
+        if (array_key_exists('min-viewability', $this->_params)) {
+            return $this->_params['min-viewability'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Returns the generated full query URL
+     *
+     * @return string The URL
+     */
+    public function getQueryUrl()
+    {
+        if (isset($this->_url)) {
+            $url = $this->_url;
+        } else {
+            $url = Zend_Gdata_Books::VOLUME_FEED_URI;
+        }
+        if ($this->getCategory() !== null) {
+            $url .= '/-/' . $this->getCategory();
+        }
+        $url = $url . $this->getQueryString();
+        return $url;
+    }
+
+}

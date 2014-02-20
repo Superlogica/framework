@@ -1,71 +1,366 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 9099 2008-03-30 19:35:47Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Mail_Storage_Abstract implements Countable, ArrayAccess, SeekableIterator
+{
+    /**
+     * class capabilities with default values
+     * @var array
+     */
+    protected $_has = array('uniqueid'  => true,
+                            'delete'    => false,
+                            'create'    => false,
+                            'top'       => false,
+                            'fetchPart' => true,
+                            'flags'     => false);
+
+    /**
+     * current iteration position
+     * @var int
+     */
+    protected $_iterationPos = 0;
+
+    /**
+     * maximum iteration position (= message count)
+     * @var null|int
+     */
+    protected $_iterationMax = null;
+
+    /**
+     * used message class, change it in an extened class to extend the returned message class
+     * @var string
+     */
+    protected $_messageClass = 'Zend_Mail_Message';
+
+    /**
+     * Getter for has-properties. The standard has properties
+     * are: hasFolder, hasUniqueid, hasDelete, hasCreate, hasTop
+     *
+     * The valid values for the has-properties are:
+     *   - true if a feature is supported
+     *   - false if a feature is not supported
+     *   - null is it's not yet known or it can't be know if a feature is supported
+     *
+     * @param  string $var  property name
+     * @return bool         supported or not
+     * @throws Zend_Mail_Storage_Exception
+     */
+    public function __get($var)
+    {
+        if (strpos($var, 'has') === 0) {
+            $var = strtolower(substr($var, 3));
+            return isset($this->_has[$var]) ? $this->_has[$var] : null;
+        }
+        
+        /**
+         * @see Zend_Mail_Storage_Exception
+         */
+        require_once 'Zend/Mail/Storage/Exception.php';
+        throw new Zend_Mail_Storage_Exception($var . ' not found');
+    }
+
+
+    /**
+     * Get a full list of features supported by the specific mail lib and the server
+     *
+     * @return array list of features as array(featurename => true|false[|null])
+     */
+    public function getCapabilities()
+    {
+        return $this->_has;
+    }
+
+
+    /**
+     * Count messages messages in current box/folder
+     *
+     * @return int number of messages
+     * @throws Zend_Mail_Storage_Exception
+     */
+    abstract public function countMessages();
+
+
+    /**
+     * Get a list of messages with number and size
+     *
+     * @param  int $id  number of message
+     * @return int|array size of given message of list with all messages as array(num => size)
+     */
+    abstract public function getSize($id = 0);
+
+
+    /**
+     * Get a message with headers and body
+     *
+     * @param  $id int number of message
+     * @return Zend_Mail_Message
+     */
+    abstract public function getMessage($id);
+
+
+    /**
+     * Get raw header of message or part
+     *
+     * @param  int               $id       number of message
+     * @param  null|array|string $part     path to part or null for messsage header
+     * @param  int               $topLines include this many lines with header (after an empty line)
+     * @return string raw header
+     */
+    abstract public function getRawHeader($id, $part = null, $topLines = 0);
+
+    /**
+     * Get raw content of message or part
+     *
+     * @param  int               $id   number of message
+     * @param  null|array|string $part path to part or null for messsage content
+     * @return string raw content
+     */
+    abstract public function getRawContent($id, $part = null);
+
+    /**
+     * Create instance with parameters
+     *
+     * @param  array $params mail reader specific parameters
+     * @throws Zend_Mail_Storage_Exception
+     */
+    abstract public function __construct($params);
+
+
+    /**
+     * Destructor calls close() and therefore closes the resource.
+     */
+    public function __destruct()
+    {
+        $this->close();
+    }
+
+
+    /**
+     * Close resource for mail lib. If you need to control, when the resource
+     * is closed. Otherwise the destructor would call this.
+     *
+     * @return null
+     */
+    abstract public function close();
+
+
+    /**
+     * Keep the resource alive.
+     *
+     * @return null
+     */
+    abstract public function noop();
+
+    /**
+     * delete a message from current box/folder
+     *
+     * @return null
+     */
+    abstract public function removeMessage($id);
+
+    /**
+     * get unique id for one or all messages
+     *
+     * if storage does not support unique ids it's the same as the message number
+     *
+     * @param int|null $id message number
+     * @return array|string message number for given message or all messages as array
+     * @throws Zend_Mail_Storage_Exception
+     */
+    abstract public function getUniqueId($id = null);
+
+    /**
+     * get a message number from a unique id
+     *
+     * I.e. if you have a webmailer that supports deleting messages you should use unique ids
+     * as parameter and use this method to translate it to message number right before calling removeMessage()
+     *
+     * @param string $id unique id
+     * @return int message number
+     * @throws Zend_Mail_Storage_Exception
+     */
+    abstract public function getNumberByUniqueId($id);
+
+    // interface implementations follows
+
+    /**
+     * Countable::count()
+     *
+     * @return   int
+     */
+     public function count()
+     {
+        return $this->countMessages();
+     }
+
+
+     /**
+      * ArrayAccess::offsetExists()
+      *
+      * @param    int     $id
+      * @return   boolean
+      */
+     public function offsetExists($id)
+     {
+        try {
+            if ($this->getMessage($id)) {
+                return true;
+            }
+        } catch(Zend_Mail_Storage_Exception $e) {}
+
+        return false;
+     }
+
+
+     /**
+      * ArrayAccess::offsetGet()
+      *
+      * @param    int $id
+      * @return   Zend_Mail_Message message object
+      */
+     public function offsetGet($id)
+     {
+        return $this->getMessage($id);
+     }
+
+
+     /**
+      * ArrayAccess::offsetSet()
+      *
+      * @param    id     $id
+      * @param    mixed  $value
+      * @throws   Zend_Mail_Storage_Exception
+      * @return   void
+      */
+     public function offsetSet($id, $value)
+     {
+        /**
+         * @see Zend_Mail_Storage_Exception
+         */
+        require_once 'Zend/Mail/Storage/Exception.php';
+        throw new Zend_Mail_Storage_Exception('cannot write mail messages via array access');
+     }
+
+
+     /**
+      * ArrayAccess::offsetUnset()
+      *
+      * @param    int   $id
+      * @return   boolean success
+      */
+     public function offsetUnset($id)
+     {
+        return $this->removeMessage($id);
+     }
+
+
+     /**
+      * Iterator::rewind()
+      *
+      * Rewind always gets the new count from the storage. Thus if you use
+      * the interfaces and your scripts take long you should use reset()
+      * from time to time.
+      *
+      * @return   void
+      */
+     public function rewind()
+     {
+        $this->_iterationMax = $this->countMessages();
+        $this->_iterationPos = 1;
+     }
+
+
+     /**
+      * Iterator::current()
+      *
+      * @return   Zend_Mail_Message current message
+      */
+     public function current()
+     {
+        return $this->getMessage($this->_iterationPos);
+     }
+
+
+     /**
+      * Iterator::key()
+      *
+      * @return   int id of current position
+      */
+     public function key()
+     {
+        return $this->_iterationPos;
+     }
+
+
+     /**
+      * Iterator::next()
+      *
+      * @return   void
+      */
+     public function next()
+     {
+        ++$this->_iterationPos;
+     }
+
+
+     /**
+      * Iterator::valid()
+      *
+      * @return   boolean
+      */
+     public function valid()
+     {
+        if ($this->_iterationMax === null) {
+          $this->_iterationMax = $this->countMessages();
+        }
+        return $this->_iterationPos && $this->_iterationPos <= $this->_iterationMax;
+     }
+
+
+     /**
+      * SeekableIterator::seek()
+      *
+      * @param  int $pos
+      * @return void
+      * @throws OutOfBoundsException
+      */
+     public function seek($pos)
+     {
+        if ($this->_iterationMax === null) {
+          $this->_iterationMax = $this->countMessages();
+        }
+
+        if ($pos > $this->_iterationMax) {
+            throw new OutOfBoundsException('this position does not exist');
+        }
+        $this->_iterationPos = $pos;
+     }
+
+}

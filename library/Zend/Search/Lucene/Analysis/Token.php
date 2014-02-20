@@ -1,25 +1,153 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV503UUdIT9rzyJ6hlLsdA9oLRazWl31jl882i+kjc+lvbQXPsH3hhI3IOQjHogI231V1S+h9U
-/J3T5E3Z7QtGbdZgbiT8D40caRzmf/n5VTJadWhRvklxlC3lxmWO7wd4HIJ+/rxMTbgsPtH0nn5g
-U77hUCdhIZM5I0wkZJslfAfa3Kmt9LP5ULc35vTC4WCIHwUrto8Um2J9PUb9a51LNg+lZjuAEBcV
-RoH534BFKrL99TkFsFtfn4kJIPpDKor7T+KlBeH2QCnWWdn0nWpg8HSS7TKEGlOxQsrsmHjIDOjo
-3iK/Md6X4v0cxVSxPdDo/Y0NonFLoWbfkCzgo93IBOq9yZEHjkluSYrHSkW/9Re2DObuS79xyfmp
-/Qfap/5V4mHK4uPNUnn1plxtzOKfU8Nv7kcQepf1ITp7wvxNAxtgi/5mcxHxDO13v7VkdoMcuqL9
-2xNOz2wwb8sk7CQEqSERoVaVOoZXuQ4TJb5HxyKXDBqRwSlThpLCqYKZcvjmNHnogSNISLmcTB/s
-XjDYYvqur6FeTjYYwgJqC9J3bGM5gBOo3HwhpO4dzyACDzCtKLqS5TIt8lWo9Nw/eSLOzfmsu2As
-BHnIENjbc3Gwo3KM8Qu6qfS37oxjGMRsDJXd79FrERy0BJfaJk/FbEt/ae8rh3ksLr5g/0UpeumQ
-JWJRrml9WTLN+0WB3kqkOB9Y2YbnEg/FNT2AG1BlJ7q5tAo+llDDE8YBhaVbRPJGNHGpZGavoBWP
-muWvJ5QEfBbIzUz+MGjBKPYg8fTNUHap3LacIHw6tmUURh9i26ndEnUoZNU6a/faJVb4tVNmgk+N
-Fk18Wk0D2PZDwzNiKq8wpZUuTzPDSBK/o2TKBtsKV7RQnIzZwo1nsEI9CqeGV02AAwkneWLbTy3d
-FIBqBVerWWNnTQZPPgQXVQlfPGGoezK+bRBJq7fnaEwUX9qMUlsCbnnX3aupqSEsgXOa1xgoo/Cu
-6F+eVfwjocr3YTqZQxT+SYn6CNHxkS1+14CrrgWHwMCv1ztkdVhO9w3fEapWLTP0VEbi72+cXmK7
-zHMXfY32OYRklugFMnr1Z6biPgeXwekYjIxQ5eaGzMRa8V7PJSXc9seTyXydtPpluYAKx0P7DbLt
-gGohg93Ub8Jn4Xx6FVBthB8a7PgfDbckOuLOEfJ1YG2sGFiJkfxOxjEj87qEqtvqYj9vk83jO4ve
-r/cffyM+WUTGs858nG6CiDiCye4w+sMS/50BgBYKTv2N9/elsGZHB/2TH2vTRkVyMQcCVQEN+8MH
-hBYiD2THhQUI14LUD6TgxRGUx6J3FK13olfiueXqrKfVx0ZURR2k+rB0vYNVsGsi4swm6QslyLaA
-3BBn9OzKsg0aZIXi7G1HYeznXJ4XbP7gpQA7E6RkwIjfKdtxx9OjOYoesCK75zJY9f4XwVc4gFfd
-1ZLHqd5lxFcHmWsPSzVgTbhqX+IBe616ijl9XbJwg2uQrpaVn9iBpHZ3doFuaUYe5QHS2fvfA97P
-N8dAUpRVVKTLfMuZ/tvS4fQx8Qe8Wm5fm0nlhMD5YqIp6lVd+EWETGvpti40lxLuEScHtr+snB9g
-Wmgp1NB7Y4kTD1Yq2DUhfB6fzZNf
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Analysis_Token
+{
+    /**
+     * The text of the term.
+     *
+     * @var string
+     */
+    private $_termText;
+
+    /**
+     * Start in source text.
+     *
+     * @var integer
+     */
+    private $_startOffset;
+
+    /**
+     * End in source text
+     *
+     * @var integer
+     */
+    private $_endOffset;
+
+    /**
+     * The position of this token relative to the previous Token.
+     *
+     * The default value is one.
+     *
+     * Some common uses for this are:
+     * Set it to zero to put multiple terms in the same position.  This is
+     * useful if, e.g., a word has multiple stems.  Searches for phrases
+     * including either stem will match.  In this case, all but the first stem's
+     * increment should be set to zero: the increment of the first instance
+     * should be one.  Repeating a token with an increment of zero can also be
+     * used to boost the scores of matches on that token.
+     *
+     * Set it to values greater than one to inhibit exact phrase matches.
+     * If, for example, one does not want phrases to match across removed stop
+     * words, then one could build a stop word filter that removes stop words and
+     * also sets the increment to the number of stop words removed before each
+     * non-stop word.  Then exact phrase queries will only match when the terms
+     * occur with no intervening stop words.
+     *
+     * @var integer
+     */
+    private $_positionIncrement;
+
+
+    /**
+     * Object constructor
+     *
+     * @param string  $text
+     * @param integer $start
+     * @param integer $end
+     * @param string  $type
+     */
+    public function __construct($text, $start, $end)
+    {
+        $this->_termText    = $text;
+        $this->_startOffset = $start;
+        $this->_endOffset   = $end;
+
+        $this->_positionIncrement = 1;
+    }
+
+
+    /**
+     * positionIncrement setter
+     *
+     * @param integer $positionIncrement
+     */
+    public function setPositionIncrement($positionIncrement)
+    {
+        $this->_positionIncrement = $positionIncrement;
+    }
+
+    /**
+     * Returns the position increment of this Token.
+     *
+     * @return integer
+     */
+    public function getPositionIncrement()
+    {
+        return $this->_positionIncrement;
+    }
+
+    /**
+     * Returns the Token's term text.
+     *
+     * @return string
+     */
+    public function getTermText()
+    {
+        return $this->_termText;
+    }
+
+    /**
+     * Returns this Token's starting offset, the position of the first character
+     * corresponding to this token in the source text.
+     *
+     * Note:
+     * The difference between getEndOffset() and getStartOffset() may not be equal
+     * to strlen(Zend_Search_Lucene_Analysis_Token::getTermText()), as the term text may have been altered
+     * by a stemmer or some other filter.
+     *
+     * @return integer
+     */
+    public function getStartOffset()
+    {
+        return $this->_startOffset;
+    }
+
+    /**
+     * Returns this Token's ending offset, one greater than the position of the
+     * last character corresponding to this token in the source text.
+     *
+     * @return integer
+     */
+    public function getEndOffset()
+    {
+        return $this->_endOffset;
+    }
+}
+

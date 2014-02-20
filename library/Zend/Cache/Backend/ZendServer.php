@@ -1,65 +1,208 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5FaHQs+yjcz1hTp+J2IB9Kq8QozKls7D+BMiujtIX1xkSNeACNtxflmSpcEZeBWVlcD4f2Mq
-MGT7/TH+K28plTvgflAj3MdPKg4URSB8aEG+ONaCGWT6TeS2GqatJ0rut5Ee8KFGq75Ed2JRagH0
-a7amhMCtf28cxmnAu1t/Sn6AdM9C6wSKh+Br2CvAgr2RHWVOuVZwfbZajbwdvWoiqlMYuqvVWYQT
-uQoAWK1xAZVxv/dLFsPvn4kJIPpDKor7T+KlBeH2Q9zY6aUDm04UixxNHUsUXcnC/zBUjiYMjcDo
-4G1+YueZJmIdz38PyUqGvpkmbKx7VGjQ+khzw/9M9yisohcnfIK2cbj0dxgF4m+FeeycPwxQZNpx
-8qTvWhHMtidce+Jzhp29J28zLxtWAUDr0nDZZ+wW4bj1+FvIfs/nxTa0KPZLhxEHmY67xtf7gGi9
-EcYYUgUP9MvzxJMGjOAotJvzBnqPOLIcI8zSySknFKgBSVkpK/tUHUFKo7J9ANEmq6s+aiZ/z+Kn
-juLOMuWYJtjOEwyKm1ako/nYdIfZFXBXs70opNbvYMgj0AG0wIu9AD5UiA5OPkfLT6gh+Ednz9ZA
-x8j2uRD0NZJXdLBTtRbr9cArGM0/GuETOhwFcYKRVb7Molj1jEVLqPxz3pL7s11KwFANkTZkQ2Hw
-m5F2iEkweAsKfFAc3JXA82iK6FaOYhBToC8oW4D8ltVlH5YBq4mSt9XD+ThrP0izLvvBaeKE39nA
-GjMaILtcp7m+Dtuccw5PoYHyOB7NSSVahuZHrOarIz4gdSobJB3HTfCn0R9Fc5lHvZYT7h1vLZD0
-EnXez6CF3cCCDOmukzUWkE+grBLi1U2EI6LWlgZRO52h5BuxCSDd1hVa/96pciwr3s0YDFf+ji/C
-zWumRm/g4cdP63UsZG5aUmVxRN1PTSb2Jl2I15C31emLSW/t/iOFXn1IwkADahKM6rhME/+a5frF
-RJ/Mw7TnHF/c2OqPwxXU55mX/A2H5kx+Jw5tnS0FNLeAAFnULlJABEd9P4qF6Tq7ZJyls0SvoFTZ
-tykvgYSJZ31l13M4vRdjCVy32gObsT1wZj7Dehe0+l2dmI72vP+DlvHU/TMvpaWM0uVV0wx+u51s
-mxlJfQ3sTYghFdNY6W5bMXRmC0P6MWlTkhGHx68QWkJay7jAEWqsf6TMLXx0l9y59db086KCsPJ3
-OUca96+6zQM2YqL6T/NsJQB5qzauDJBmPfzN7kTSu2KF1YVpcyWr9L8N/fuQMrQjWL/Dm5DNucST
-NwSWsCy+/HB6Ky5HhHE2tNtdmU2DOfi9qxI3zgWf4lSKCYrLNj3BJFT/UKfEa5bTPD1Jy1SYb2Ht
-16muxZC3So+Yso4GLylgRK4797J9GYPa7W2EZGHjcV9T3byjmJ0+OD+ckZrOllWZKttKoMjsUz0K
-I7Q+Y7TY988AUF5566sbabLQ2cAx6UNh99P6eumXeGDjPDQUTWlHZfGEVgqYW3RGD/+iXnwPhMm2
-hD6dFJcIT6HgKsVPNL3Vm/5LBTZZ2MpZidujowLlaZQEyhQu8A2PptHcvRA84kEiRSg4v7V9uH1T
-Iw3IwnoDmlY9x34h8QUB/Ya5Dkzv0DelrXcHz9C9+dRpI0fyvzfvWw7Ue8ZDZk1uQ9uQGMmec34i
-YvWCC3456jVnFzdPCfGZyCT+XOhNsn5yyxDo3Ab9bdAI60U5oV9bxNNezhUH2mrbBrjcNfaO8haz
-4x5423iGlJq9aM7aqU8jpBgPI1NP/qJcqxk+c9rqDTL1mQwmfZga6RW1LJDSU+KcON9xJqr7XHaB
-htcDCx+Tw8IhWhsyJ4YhWulMMW9WCNfGjIqJLWRKj5TPT+wDPJ5iN8k1B+/juj4Gx9Emw5rOhHn9
-mKAdL6chVbzPJgowBEQdhtwNOCBSn+zZWxTEjaj2Kk+5JjONOmFJQB9TmY4aiKEdeY6a691bMsNU
-fWfKuOICfaVn56F9yTH01kjeZc2Ev6d8DYS1WX8QgaRrUD5yuUuj0QCbX+SnJnHh+r7438Rc5wdT
-KFu9cXyZeG8+cO3EtxLC8B7QUmM1dGHL8NYL9BdIxtjMh9+BHVYrg+MNBHyTCMXfFw0Je75azMGA
-nO5QsqKWsaispy3KW/P0ZAuaPJxTjfvRS/hDf3uzmT4pM+vPOynIgmRY8J7B07qgdRDkYHn9YXM8
-BEWuiWuRe5odm/S0klUjt91+SamavY00SmyNi6EOYvft3rVWOLagyn4vm4hDT/gI87Q6OM2pQS2x
-PUnebIMIAq0Q1tRny8yBTfWT7Yr/oGVb4ylW8W6QpDXhl5vLiAJiBI5BVN77uBNWoBy7/lZZEKZL
-RdO0PzIVMMuZ/+gwGJekaYchUHivlCVbrlSjmhgFlr1gbeXi6NHIKC1YBQlSVNO5V3PNPVjR7RXA
-gJ/Z1GMVqpYXDaGoNa9TnaER+BAQqY/OhM8Up+ZllVBKK32q5QQMZggnFkPRs6h5Y/o5xmRLHcA1
-VrmqkBTh9XiN95FcposJpA4bhEvNvfbmmU/o4LLYCiYJy7CGiSzTs8mdsyIhpd1wE2tIKhMu5DO5
-iBK/y9m+opeT3wsc1B3LYWLWs0b6AtAg421K15Dnjqq3R0/KvMR+0K8zfRvWt1vtZ/vJcoIeRhJ4
-QasoCUMlViiDh1+OFMj2hcE4vGy/qvJHWmROL1YcYTg05famXrikFMLTZljYkXCOqUXTWpwUSjuB
-5okySaUsWjesCWXl68UQ8I5mQf2llHqZzD25DfjQM9/Q9baAWaRh2P7hXikmkQ15ncxittT95wws
-8hlAELeWp2BfgAcFtpANcUfrV/PUMJ0iRCTF2K5WbTzeFlDDSaD8PhIHT2jVIueUTSf3YI4uw2c1
-QiyG+3qaSHXpjPDt6SSVMo3v9vL9UasmA22dujKNp31JlrSQY7BQEXjUQ11P8I5NHevscEBV44qZ
-CnWNtmkuXBGeamqt43hTsF4JR/AOdp4mCA4O0WAbaeC695Ql9WxVz5SACzu/pxeiCsmtVlIksV7R
-gAeM+RVWSl7RTtbcLV5m3VzpPuPS53DIudJXg8SUnv7/q0CwlPaGcGEh9jew4iK3YwhjHt/yBrOM
-Yqy2KEY5u/QXSmgVNXNryybQ1uIjWD8dBUlsmQlkKpdbnDMcGqOiWc5N1CTxN5vZiLFCWRfgrBE2
-Fzidj4zlXql4s75uHRtrTpruNThpy+BCaoxaDQfyzyZjG0KgUUhISjqldSHCZ3qiDXJ2GT0V8J1o
-oV4CHWKWiPiaEa2FNvig2spKp+nCKFLCUzmPQ1ZdkVSjHIZvr7zDLchwYqCMl6WoLzRZ3Y6ApPld
-LuN8oCBnbxQSQdEg8Ic22yqjktBdNo4cDSdbxsCvXSpqeDrJB0G/F+56MhTOpmX0SUmP4ve5cDRO
-vjejJ01S5anMDj0Np1Ixilar66etxU52+wgwMNXbICMTSLiaaUXjmJBeMf210nHaNo90LEdaUkz9
-MNih0lhisqvIkf8+n1Ubr/cljPmv82VNAplHukIsixsa2CWMzBdqAtdlLbOL818iKFf0oYDoh9yH
-n+7c28VQMbeXIWkeZ2J3Q1eMdYBXyL8FYc7pnrmHiZKPpjMjPAMGHI6CAKdWTo4lvrruyW8B2vjq
-N8n73e3fzOvHjOvhB/pJH15D9+e9hgF7yvX7Mo+IUTqhPEnnTC37dd7Ar2RxrVg9wDy8Cl6deSEP
-mdNXPZYvvbRxvAV5YlEyr/weM2uFcc/EU6lObo1hDwjWh5OfZk1A7ZDZOzE+Iy/NyRsuDBJX3YFS
-yZ4fbDZH6F8u2jUbEehiLdBjLvNlLCsqkLgUBIpN7QW8wpd1TfQv19ZOGKmbJuaAHKM6oJZlHWEK
-odJW5tXEsZSqXKxK78ZjQxcP/K2m7yjXUSnjEDV6hT9eJaeBHCRkqWZQoxKNHF6zEdIyGSdD2rT/
-WPZFtDPOBweGSY696lDthzsMm59TfglwFOsVVF3Ys7i0Qk2TNgZHQ1VyeSo4RB0+oux2HnxIjvCi
-UtjaMcgdFHxwayYWcZlo+slg4cP3u12oIPGQzFJgHtvtD8S4RIqSwCYxUPVbz3im0AaKduTmsHyO
-Ml+qWhEkpYx4JyePNid+IG2q5qMlpJ3v4oaKwTDe7+EgOv3mySJdZnSBahp9wkSfG7nOs8/90T/r
-77zoKGEwFZ3P6GA1IoWjqIitw/ofn7ezTJ2w03v/oJTS9CXX0CfwZAL58RdqkSHlE3qmU2gjMzIu
-VDL4/eM3qHUwG0VV7V01efriRU0+aVZx6ID7+znomyWBLntBKEsB5HzZWjYRsWU6Am4OXfeBpowb
-mP5eXBXiGNYWJYAa0L+g96ihXHleeBhqRLancsCnQ4uRD9HXt9/d3lrecU8BP7j1gehykfcQi/lD
-4PfU7xnMTeOfYgPYTKPHbtN1TVfkxeaflbNhs/OnaLtr5AAJ/bdmqco8qIKpSHPnVW/GXzg6415w
-3NSzEcCTd28pWknzXXmaLoxvreAUUvmQEvjhV4QXA18v2O9f5MuwSP5jcuBmlbwWWxQbvBwDqz6U
-grqwuDMeBmdJW1QrJ69/91lD00lFYnxNRUELZ4Fvjye3kmMfKRYKhgs2yE6KUVEv4+sU8FHuCOrO
-bEjDdokH3pqNMxsiEXPqxYPUVwkN5SgefyPwttjMaL2vZ61q8W==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** @see Zend_Cache_Backend_Interface */
+require_once 'Zend/Cache/Backend/Interface.php';
+
+/** @see Zend_Cache_Backend */
+require_once 'Zend/Cache/Backend.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Cache_Backend_ZendServer extends Zend_Cache_Backend implements Zend_Cache_Backend_Interface
+{
+    /**
+     * Available options
+     *
+     * =====> (string) namespace :
+     * Namespace to be used for chaching operations
+     *
+     * @var array available options
+     */
+    protected $_options = array(
+        'namespace' => 'zendframework'
+    );
+
+    /**
+     * Store data
+     *
+     * @var mixed  $data        Object to store
+     * @var string $id          Cache id
+     * @var int    $timeToLive  Time to live in seconds
+     * @throws Zend_Cache_Exception
+     */
+    abstract protected function _store($data, $id, $timeToLive);
+
+    /**
+     * Fetch data
+     *
+     * @var mixed  $data        Object to store
+     * @var string $id          Cache id
+     * @var int    $timeToLive  Time to live in seconds
+     * @throws Zend_Cache_Exception
+     */
+    abstract protected function _fetch($id);
+
+    /**
+     * Unset data
+     *
+     * @var string $id          Cache id
+     */
+    abstract protected function _unset($id);
+
+    /**
+     * Clear cache
+     */
+    abstract protected function _clear();
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * @param  string  $id                     cache id
+     * @param  boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
+     * @return string cached datas (or false)
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        $tmp = $this->_fetch($id);
+        if ($tmp !== null) {
+            return $tmp;
+        }
+        return false;
+    }
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * @param  string $id cache id
+     * @return mixed false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     * @throws Zend_Cache_Exception
+     */
+    public function test($id)
+    {
+        $tmp = $this->_fetch('internal-metadatas---' . $id);
+        if ($tmp !== null) {
+        	if (!is_array($tmp) || !isset($tmp['mtime'])) {
+        		Zend_Cache::throwException('Cache metadata for \'' . $id . '\' id is corrupted' );
+        	}
+            return $tmp['mtime'];
+        }
+        return false;
+    }
+
+    /**
+     * Compute & return the expire time
+     *
+     * @return int expire time (unix timestamp)
+     */
+    private function _expireTime($lifetime)
+    {
+        if ($lifetime === null) {
+            return 9999999999;
+        }
+        return time() + $lifetime;
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * Note : $data is always "string" (serialization is done by the
+     * core not by the backend)
+     *
+     * @param string $data datas to cache
+     * @param string $id cache id
+     * @param array $tags array of strings, the cache record will be tagged by each string entry
+     * @param int $specificLifetime if != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @return boolean true if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false)
+    {
+        $lifetime = $this->getLifetime($specificLifetime);
+        $metadatas = array(
+            'mtime' => time(),
+            'expire' => $this->_expireTime($lifetime),
+        );
+
+        if (count($tags) > 0) {
+            $this->_log('Zend_Cache_Backend_ZendServer::save() : tags are unsupported by the ZendServer backends');
+        }
+
+        return  $this->_store($data, $id, $lifetime) &&
+                $this->_store($metadatas, 'internal-metadatas---' . $id, $lifetime);
+    }
+
+    /**
+     * Remove a cache record
+     *
+     * @param  string $id cache id
+     * @return boolean true if no problem
+     */
+    public function remove($id)
+    {
+    	$result1 = $this->_unset($id);
+    	$result2 = $this->_unset('internal-metadatas---' . $id);
+
+        return $result1 && $result2;
+    }
+
+    /**
+     * Clean some cache records
+     *
+     * Available modes are :
+     * 'all' (default)  => remove all cache entries ($tags is not used)
+     * 'old'            => unsupported
+     * 'matchingTag'    => unsupported
+     * 'notMatchingTag' => unsupported
+     * 'matchingAnyTag' => unsupported
+     *
+     * @param  string $mode clean mode
+     * @param  array  $tags array of tags
+     * @throws Zend_Cache_Exception
+     * @return boolean true if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        switch ($mode) {
+            case Zend_Cache::CLEANING_MODE_ALL:
+            	$this->_clear();
+                return true;
+                break;
+            case Zend_Cache::CLEANING_MODE_OLD:
+                $this->_log("Zend_Cache_Backend_ZendServer::clean() : CLEANING_MODE_OLD is unsupported by the Zend Server backends.");
+                break;
+            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
+            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
+            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
+            	$this->_clear();
+                $this->_log('Zend_Cache_Backend_ZendServer::clean() : tags are unsupported by the Zend Server backends.');
+                break;
+            default:
+                Zend_Cache::throwException('Invalid mode for clean() method');
+                break;
+        }
+    }
+}

@@ -1,40 +1,136 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-AW5QlwzwsRIBBsEKewSbM8gfLelIK0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Alpha.php 14560 2009-03-31 14:41:22Z thomas $
+ */
+
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+/**
+ * @see Zend_Locale
+ */
+require_once 'Zend/Locale.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_Alpha implements Zend_Filter_Interface
+{
+    /**
+     * Whether to allow white space characters; off by default
+     *
+     * @var boolean
+     * @depreciated
+     */
+    public $allowWhiteSpace;
+
+    /**
+     * Is PCRE is compiled with UTF-8 and Unicode support
+     *
+     * @var mixed
+     **/
+    protected static $_unicodeEnabled;
+
+    /**
+     * Locale in browser.
+     *
+     * @var Zend_Locale object
+     */
+    protected $_locale;
+
+    /**
+     * The Alphabet means english alphabet.
+     *
+     * @var boolean
+     */
+    protected static $_meansEnglishAlphabet;
+
+    /**
+     * Sets default option values for this instance
+     *
+     * @param  boolean $allowWhiteSpace
+     * @return void
+     */
+    public function __construct($allowWhiteSpace = false)
+    {
+        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
+        if (null === self::$_unicodeEnabled) {
+            self::$_unicodeEnabled = (@preg_match('/\pL/u', 'a')) ? true : false;
+        }
+
+        if (null === self::$_meansEnglishAlphabet) {
+            $this->_locale = new Zend_Locale('auto');
+            self::$_meansEnglishAlphabet = in_array($this->_locale->getLanguage(),
+                                                    array('ja', 'ko', 'zh')
+                                                    );
+        }
+
+    }
+
+    /**
+     * Returns the allowWhiteSpace option
+     *
+     * @return boolean
+     */
+    public function getAllowWhiteSpace()
+    {
+        return $this->allowWhiteSpace;
+    }
+
+    /**
+     * Sets the allowWhiteSpace option
+     *
+     * @param boolean $allowWhiteSpace
+     * @return Zend_Filter_Alpha Provides a fluent interface
+     */
+    public function setAllowWhiteSpace($allowWhiteSpace)
+    {
+        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Returns the string $value, removing all but alphabetic characters
+     *
+     * @param  string $value
+     * @return string
+     */
+    public function filter($value)
+    {
+        $whiteSpace = $this->allowWhiteSpace ? '\s' : '';
+        if (!self::$_unicodeEnabled) {
+            // POSIX named classes are not supported, use alternative a-zA-Z match
+            $pattern = '/[^a-zA-Z' . $whiteSpace . ']/';
+        } else if (self::$_meansEnglishAlphabet) {
+            //The Alphabet means english alphabet.
+            $pattern = '/[^a-zA-Z'  . $whiteSpace . ']/u';
+        } else {
+            //The Alphabet means each language's alphabet.
+            $pattern = '/[^\p{L}' . $whiteSpace . ']/u';
+        }
+
+        return preg_replace($pattern, '', (string) $value);
+    }
+}

@@ -1,53 +1,185 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-QEjfQJXM2/dIAI8Kwvcp1Fd5I0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Registry.php 15577 2009-05-14 12:43:34Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Registry */
+require_once 'Zend/Registry.php';
+
+/** Zend_View_Helper_Placeholder_Container_Abstract */
+require_once 'Zend/View/Helper/Placeholder/Container/Abstract.php';
+
+/** Zend_View_Helper_Placeholder_Container */
+require_once 'Zend/View/Helper/Placeholder/Container.php';
+
+/**
+ * Registry for placeholder containers
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */ 
+class Zend_View_Helper_Placeholder_Registry
+{
+    /**
+     * Zend_Registry key under which placeholder registry exists
+     * @const string
+     */
+    const REGISTRY_KEY = 'Zend_View_Helper_Placeholder_Registry';
+
+    /**
+     * Default container class
+     * @var string
+     */
+    protected $_containerClass = 'Zend_View_Helper_Placeholder_Container';
+
+    /**
+     * Placeholder containers
+     * @var array
+     */
+    protected $_items = array();
+
+    /**
+     * Retrieve or create registry instnace
+     * 
+     * @return void
+     */
+    public static function getRegistry()
+    {
+        if (Zend_Registry::isRegistered(self::REGISTRY_KEY)) {
+            $registry = Zend_Registry::get(self::REGISTRY_KEY);
+        } else {
+            $registry = new self();
+            Zend_Registry::set(self::REGISTRY_KEY, $registry);
+        }
+
+        return $registry;
+    }
+
+    /**
+     * createContainer 
+     * 
+     * @param  string $key 
+     * @param  array $value 
+     * @return Zend_View_Helper_Placeholder_Container_Abstract
+     */
+    public function createContainer($key, array $value = array())
+    {
+        $key = (string) $key;
+
+        $this->_items[$key] = new $this->_containerClass(array());
+        return $this->_items[$key];
+    }
+
+    /**
+     * Retrieve a placeholder container
+     * 
+     * @param  string $key 
+     * @return Zend_View_Helper_Placeholder_Container_Abstract
+     */
+    public function getContainer($key)
+    {
+        $key = (string) $key;
+        if (isset($this->_items[$key])) {
+            return $this->_items[$key];
+        }
+
+        $container = $this->createContainer($key);
+
+        return $container;
+    }
+
+    /**
+     * Does a particular container exist?
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function containerExists($key)
+    {
+        $key = (string) $key;
+        $return =  array_key_exists($key, $this->_items);
+        return $return;
+    }
+
+    /**
+     * Set the container for an item in the registry
+     * 
+     * @param  string $key 
+     * @param  Zend_View_Placeholder_Container_Abstract $container 
+     * @return Zend_View_Placeholder_Registry
+     */
+    public function setContainer($key, Zend_View_Helper_Placeholder_Container_Abstract $container)
+    {
+        $key = (string) $key;
+        $this->_items[$key] = $container;
+        return $this;
+    }
+
+    /**
+     * Delete a container
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function deleteContainer($key)
+    {
+        $key = (string) $key;
+        if (isset($this->_items[$key])) {
+            unset($this->_items[$key]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Set the container class to use
+     * 
+     * @param  string $name 
+     * @return Zend_View_Helper_Placeholder_Registry
+     */
+    public function setContainerClass($name)
+    {
+        if (!class_exists($name)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($name);
+        }
+
+        $reflection = new ReflectionClass($name);
+        if (!$reflection->isSubclassOf(new ReflectionClass('Zend_View_Helper_Placeholder_Container_Abstract'))) {
+            require_once 'Zend/View/Helper/Placeholder/Registry/Exception.php';
+            throw new Zend_View_Helper_Placeholder_Registry_Exception('Invalid Container class specified');
+        }
+
+        $this->_containerClass = $name;
+        return $this;
+    }
+
+    /**
+     * Retrieve the container class
+     * 
+     * @return string
+     */
+    public function getContainerClass()
+    {
+        return $this->_containerClass;
+    }
+}

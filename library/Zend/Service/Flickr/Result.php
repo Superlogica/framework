@@ -1,33 +1,195 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-h4BXila=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Flickr
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Result.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Flickr
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Flickr_Result
+{
+    /**
+     * The photo's Flickr ID.
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
+     * The photo owner's NSID.
+     *
+     * @var string
+     */
+    public $owner;
+
+    /**
+     * A key used in URI construction.
+     *
+     * @var string
+     */
+    public $secret;
+
+    /**
+     * The servername to use for URI construction.
+     *
+     * @var string
+     */
+    public $server;
+
+    /**
+     * The photo's title.
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
+     * Whether the photo is public.
+     *
+     * @var string
+     */
+    public $ispublic;
+
+    /**
+     * Whether the photo is visible to you because you are a friend of the owner.
+     *
+     * @var string
+     */
+    public $isfriend;
+
+    /**
+     * Whether the photo is visible to you because you are family of the owner.
+     *
+     * @var string
+     */
+    public $isfamily;
+
+    /**
+     * The license the photo is available under.
+     *
+     * @var string
+     */
+    public $license;
+
+    /**
+     * The date the photo was uploaded.
+     *
+     * @var string
+     */
+    public $dateupload;
+
+    /**
+     * The date the photo was taken.
+     *
+     * @var string
+     */
+    public $datetaken;
+
+    /**
+     * The screenname of the owner.
+     *
+     * @var string
+     */
+    public $ownername;
+
+    /**
+     * The server used in assembling icon URLs.
+     *
+     * @var string
+     */
+    public $iconserver;
+
+    /**
+     * A 75x75 pixel square thumbnail of the image.
+     *
+     * @var Zend_Service_Flickr_Image
+     */
+    public $Square;
+
+    /**
+     * A 100 pixel thumbnail of the image.
+     *
+     * @var Zend_Service_Flickr_Image
+     */
+    public $Thumbnail;
+
+    /**
+     * A 240 pixel version of the image.
+     *
+     * @var Zend_Service_Flickr_Image
+     */
+    public $Small;
+
+    /**
+     * A 500 pixel version of the image.
+     *
+     * @var Zend_Service_Flickr_Image
+     */
+    public $Medium;
+
+    /**
+     * A 640 pixel version of the image.
+     *
+     * @var Zend_Service_Flickr_Image
+     */
+    public $Large;
+
+    /**
+     * The original image.
+     *
+     * @var Zend_Service_Flickr_Image
+     */
+    public $Original;
+
+    /**
+     * Original Zend_Service_Flickr object.
+     *
+     * @var Zend_Service_Flickr
+     */
+    protected $_flickr;
+
+    /**
+     * Parse the Flickr Result
+     *
+     * @param  DOMElement          $image
+     * @param  Zend_Service_Flickr $flickr Original Zend_Service_Flickr object with which the request was made
+     * @return void
+     */
+    public function __construct(DOMElement $image, Zend_Service_Flickr $flickr)
+    {
+        $xpath = new DOMXPath($image->ownerDocument);
+
+        foreach ($xpath->query('./@*', $image) as $property) {
+            $this->{$property->name} = (string) $property->value;
+        }
+
+        $this->_flickr = $flickr;
+
+        foreach ($this->_flickr->getImageDetails($this->id) as $k => $v) {
+            $this->$k = $v;
+        }
+    }
+}

@@ -1,48 +1,132 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-YSBVf61p4By=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Amf_Auth_Abstract */
+require_once 'Zend/Amf/Auth/Abstract.php';
+
+/** Zend_Acl */
+require_once 'Zend/Acl.php';
+
+/** Zend_Auth_Result */
+require_once 'Zend/Auth/Result.php';
+
+/**
+ * This class implements authentication against XML file with roles for Flex Builder.
+ *
+ * @package    Zend_Amf
+ * @subpackage Adobe
+ * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Amf_Adobe_Auth extends Zend_Amf_Auth_Abstract
+{
+    
+    /**
+     * ACL for authorization
+     * 
+     * @var Zend_Acl
+     */
+    protected $_acl;
+    
+    /**
+     * Username/password array
+     * 
+     * @var array
+     */
+    protected $_users = array();
+    
+    /**
+     * Create auth adapter
+     * 
+     * @param string $rolefile File containing XML with users and roles
+     */
+    public function __construct($rolefile)
+    {
+        $this->_acl = new Zend_Acl();
+        $xml = simplexml_load_file($rolefile);
+/*
+Roles file format:
+ <roles>
+   <role id=”admin”>
+        <user name=”user1” password=”pwd”/>
+    </role>
+   <role id=”hr”>
+        <user name=”user2” password=”pwd2”/>
+    </role>    
+</roles>
+*/
+        foreach($xml->role as $role) {
+            $this->_acl->addRole(new Zend_Acl_Role((string)$role["id"]));
+            foreach($role->user as $user) {
+		        $this->_users[(string)$user["name"]] = array("password" => (string)$user["password"], 
+		        										"role" => (string)$role["id"]);
+	        }
+        }
+    }
+    
+    /**
+     * Get ACL with roles from XML file
+     * 
+     * @return Zend_Acl
+     */
+    public function getAcl()
+    {
+        return $this->_acl;
+    }
+    
+    /**
+     * Perform authentication
+     * 
+     * @throws Zend_Auth_Adapter_Exception
+     * @return Zend_Auth_Result
+     * @see Zend_Auth_Adapter_Interface#authenticate()
+     */
+    public function authenticate()
+    {
+        if (empty($this->_username) ||
+            empty($this->_password)) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('Username/password should be set');
+        }
+        
+        if(!isset($this->_users[$this->_username])) {
+            return new Zend_Auth_Result(Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND,
+                null,
+                array('Username not found')
+                );
+        }
+        
+        $user = $this->_users[$this->_username];
+        if($user["password"] != $this->_password) {
+            return new Zend_Auth_Result(Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID,
+                null,
+                array('Authentication failed')
+                );
+        }
+        
+        $id = new stdClass();
+        $id->role = $user["role"];
+        $id->name = $this->_username;
+        return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $id);
+    }
+}

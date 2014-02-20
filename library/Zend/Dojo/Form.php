@@ -1,34 +1,89 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Wy+4xtt4d//xpoXMEQwjYlA/oG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form */
+require_once 'Zend/Form.php';
+
+/**
+ * Dijit-enabled Form
+ * 
+ * @uses       Zend_Form
+ * @package    Zend_Dojo
+ * @subpackage Form
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Form.php 12373 2008-11-07 16:52:44Z matthew $
+ */
+class Zend_Dojo_Form extends Zend_Form
+{
+    /**
+     * Constructor
+     * 
+     * @param  array|Zend_Config|null $options 
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        $this->addPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
+             ->addPrefixPath('Zend_Dojo_Form_Element', 'Zend/Dojo/Form/Element', 'element')
+             ->addElementPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
+             ->addDisplayGroupPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator')
+             ->setDefaultDisplayGroupClass('Zend_Dojo_Form_DisplayGroup');
+        parent::__construct($options);
+    }
+
+    /**
+     * Load the default decorators
+     * 
+     * @return void
+     */
+    public function loadDefaultDecorators()
+    {
+        if ($this->loadDefaultDecoratorsIsDisabled()) {
+            return;
+        }
+
+        $decorators = $this->getDecorators();
+        if (empty($decorators)) {
+            $this->addDecorator('FormElements')
+                 ->addDecorator('HtmlTag', array('tag' => 'dl', 'class' => 'zend_form_dojo'))
+                 ->addDecorator('DijitForm');
+        }
+    }
+
+    /**
+     * Set the view object
+     *
+     * Ensures that the view object has the dojo view helper path set.
+     * 
+     * @param  Zend_View_Interface $view 
+     * @return Zend_Dojo_Form_Element_Dijit
+     */
+    public function setView(Zend_View_Interface $view = null)
+    {
+        if (null !== $view) {
+            if (false === $view->getPluginLoader('helper')->getPaths('Zend_Dojo_View_Helper')) {
+                $view->addHelperPath('Zend/Dojo/View/Helper', 'Zend_Dojo_View_Helper');
+            }
+        }
+        return parent::setView($view);
+    }
+}

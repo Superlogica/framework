@@ -1,207 +1,453 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-QJvBfRIWBxbX6iW+
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Document
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Document */
+require_once 'Zend/Search/Lucene/Document.php';
+
+
+/**
+ * HTML document.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Document
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Document_Html extends Zend_Search_Lucene_Document
+{
+    /**
+     * List of document links
+     *
+     * @var array
+     */
+    private $_links = array();
+
+    /**
+     * List of document header links
+     *
+     * @var array
+     */
+    private $_headerLinks = array();
+
+    /**
+     * Stored DOM representation
+     *
+     * @var DOMDocument
+     */
+    private $_doc;
+
+    /**
+     * Exclud nofollow links flag
+     *
+     * If true then links with rel='nofollow' attribute are not included into
+     * document links.
+     *
+     * @var boolean
+     */
+    private static $_excludeNoFollowLinks = false;
+
+    /**
+     * Object constructor
+     *
+     * @param string  $data         HTML string (may be HTML fragment, )
+     * @param boolean $isFile
+     * @param boolean $storeContent
+     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
+     */
+    private function __construct($data, $isFile, $storeContent, $defaultEncoding = '')
+    {
+        $this->_doc = new DOMDocument();
+        $this->_doc->substituteEntities = true;
+
+        if ($isFile) {
+            $htmlData = file_get_contents($data);
+        } else {
+            $htmlData = $data;
+        }
+        @$this->_doc->loadHTML($htmlData);
+
+        if ($this->_doc->encoding === null) {
+        	// Document encoding is not recognized
+
+        	/** @todo improve HTML vs HTML fragment recognition */
+        	if (preg_match('/<html>/i', $htmlData, $matches, PREG_OFFSET_CAPTURE)) {
+        		// It's an HTML document
+        		// Add additional HEAD section and recognize document
+        		$htmlTagOffset = $matches[0][1] + strlen($matches[0][1]);
+
+        		@$this->_doc->loadHTML(iconv($defaultEncoding, 'UTF-8//IGNORE', substr($htmlData, 0, $htmlTagOffset))
+                                     . '<head><META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/></head>'
+                                     . iconv($defaultEncoding, 'UTF-8//IGNORE', substr($htmlData, $htmlTagOffset)));
+
+                // Remove additional HEAD section
+                $xpath = new DOMXPath($this->_doc);
+                $head  = $xpath->query('/html/head')->item(0);
+        		$head->parentNode->removeChild($head);
+        	} else {
+        		// It's an HTML fragment
+        		@$this->_doc->loadHTML('<html><head><META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/></head><body>'
+        		                     . iconv($defaultEncoding, 'UTF-8//IGNORE', $htmlData)
+        		                     . '</body></html>');
+        	}
+
+        }
+        /** @todo Add correction of wrong HTML encoding recognition processing
+         * The case is:
+         * Content-type HTTP-EQUIV meta tag is presented, but ISO-8859-5 encoding is actually used,
+         * even $this->_doc->encoding demonstrates another recognized encoding
+         */
+
+        $xpath = new DOMXPath($this->_doc);
+
+        $docTitle = '';
+        $titleNodes = $xpath->query('/html/head/title');
+        foreach ($titleNodes as $titleNode) {
+            // title should always have only one entry, but we process all nodeset entries
+            $docTitle .= $titleNode->nodeValue . ' ';
+        }
+        $this->addField(Zend_Search_Lucene_Field::Text('title', $docTitle, 'UTF-8'));
+
+        $metaNodes = $xpath->query('/html/head/meta[@name]');
+        foreach ($metaNodes as $metaNode) {
+            $this->addField(Zend_Search_Lucene_Field::Text($metaNode->getAttribute('name'),
+                                                           $metaNode->getAttribute('content'),
+                                                           'UTF-8'));
+        }
+
+        $docBody = '';
+        $bodyNodes = $xpath->query('/html/body');
+        foreach ($bodyNodes as $bodyNode) {
+            // body should always have only one entry, but we process all nodeset entries
+            $this->_retrieveNodeText($bodyNode, $docBody);
+        }
+        if ($storeContent) {
+            $this->addField(Zend_Search_Lucene_Field::Text('body', $docBody, 'UTF-8'));
+        } else {
+            $this->addField(Zend_Search_Lucene_Field::UnStored('body', $docBody, 'UTF-8'));
+        }
+
+        $linkNodes = $this->_doc->getElementsByTagName('a');
+        foreach ($linkNodes as $linkNode) {
+            if (($href = $linkNode->getAttribute('href')) != '' &&
+                (!self::$_excludeNoFollowLinks  ||  strtolower($linkNode->getAttribute('rel')) != 'nofollow' )
+               ) {
+                $this->_links[] = $href;
+            }
+        }
+        $this->_links = array_unique($this->_links);
+
+        $linkNodes = $xpath->query('/html/head/link');
+        foreach ($linkNodes as $linkNode) {
+            if (($href = $linkNode->getAttribute('href')) != '') {
+                $this->_headerLinks[] = $href;
+            }
+        }
+        $this->_headerLinks = array_unique($this->_headerLinks);
+    }
+
+    /**
+     * Set exclude nofollow links flag
+     *
+     * @param boolean $newValue
+     */
+    public static function setExcludeNoFollowLinks($newValue)
+    {
+        self::$_excludeNoFollowLinks = $newValue;
+    }
+
+    /**
+     * Get exclude nofollow links flag
+     *
+     * @return boolean
+     */
+    public static function getExcludeNoFollowLinks()
+    {
+        return self::$_excludeNoFollowLinks;
+    }
+
+    /**
+     * Get node text
+     *
+     * We should exclude scripts, which may be not included into comment tags, CDATA sections,
+     *
+     * @param DOMNode $node
+     * @param string &$text
+     */
+    private function _retrieveNodeText(DOMNode $node, &$text)
+    {
+        if ($node->nodeType == XML_TEXT_NODE) {
+            $text .= $node->nodeValue ;
+            $text .= ' ';
+        } else if ($node->nodeType == XML_ELEMENT_NODE  &&  $node->nodeName != 'script') {
+            foreach ($node->childNodes as $childNode) {
+                $this->_retrieveNodeText($childNode, $text);
+            }
+        }
+    }
+
+    /**
+     * Get document HREF links
+     *
+     * @return array
+     */
+    public function getLinks()
+    {
+        return $this->_links;
+    }
+
+    /**
+     * Get document header links
+     *
+     * @return array
+     */
+    public function getHeaderLinks()
+    {
+        return $this->_headerLinks;
+    }
+
+    /**
+     * Load HTML document from a string
+     *
+     * @param string  $data
+     * @param boolean $storeContent
+     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
+     * @return Zend_Search_Lucene_Document_Html
+     */
+    public static function loadHTML($data, $storeContent = false, $defaultEncoding = '')
+    {
+        return new Zend_Search_Lucene_Document_Html($data, false, $storeContent, $defaultEncoding);
+    }
+
+    /**
+     * Load HTML document from a file
+     *
+     * @param string  $file
+     * @param boolean $storeContent
+     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
+     * @return Zend_Search_Lucene_Document_Html
+     */
+    public static function loadHTMLFile($file, $storeContent = false, $defaultEncoding = '')
+    {
+        return new Zend_Search_Lucene_Document_Html($file, true, $storeContent, $defaultEncoding);
+    }
+
+
+    /**
+     * Highlight text in text node
+     *
+     * @param DOMText $node
+     * @param array   $wordsToHighlight
+     * @param callback $callback   Callback method, used to transform (highlighting) text.
+     * @param array    $params     Array of additionall callback parameters (first non-optional parameter is a text to transform)
+     * @throws Zend_Search_Lucene_Exception
+     */
+    protected function _highlightTextNode(DOMText $node, $wordsToHighlight, $callback, $params)
+    {
+        $analyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
+        $analyzer->setInput($node->nodeValue, 'UTF-8');
+
+        $matchedTokens = array();
+
+        while (($token = $analyzer->nextToken()) !== null) {
+            if (isset($wordsToHighlight[$token->getTermText()])) {
+                $matchedTokens[] = $token;
+            }
+        }
+
+        if (count($matchedTokens) == 0) {
+            return;
+        }
+
+        $matchedTokens = array_reverse($matchedTokens);
+
+        foreach ($matchedTokens as $token) {
+            // Cut text after matched token
+            $node->splitText($token->getEndOffset());
+
+            // Cut matched node
+            $matchedWordNode = $node->splitText($token->getStartOffset());
+
+            // Retrieve HTML string representation for highlihted word
+            $fullCallbackparamsList = $params;
+            array_unshift($fullCallbackparamsList, $matchedWordNode->nodeValue);
+            $highlightedWordNodeSetHtml = call_user_func_array($callback, $fullCallbackparamsList);
+
+            // Transform HTML string to a DOM representation and automatically transform retrieved string
+            // into valid XHTML (It's automatically done by loadHTML() method)
+            $highlightedWordNodeSetDomDocument = new DOMDocument('1.0', 'UTF-8');
+            $success = @$highlightedWordNodeSetDomDocument->
+                                loadHTML('<html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8"/></head><body>'
+                                       . $highlightedWordNodeSetHtml
+                                       . '</body></html>');
+            if (!$success) {
+            	require_once 'Zend/Search/Lucene/Exception.php';
+            	throw new Zend_Search_Lucene_Exception("Error occured while loading highlighted text fragment: '$highlightedNodeHtml'.");
+            }
+            $highlightedWordNodeSetXpath = new DOMXPath($highlightedWordNodeSetDomDocument);
+            $highlightedWordNodeSet      = $highlightedWordNodeSetXpath->query('/html/body')->item(0)->childNodes;
+
+            for ($count = 0; $count < $highlightedWordNodeSet->length; $count++) {
+            	$nodeToImport = $highlightedWordNodeSet->item($count);
+            	$node->parentNode->insertBefore($this->_doc->importNode($nodeToImport, true /* deep copy */),
+            	                                $matchedWordNode);
+            }
+
+            $node->parentNode->removeChild($matchedWordNode);
+        }
+    }
+
+
+    /**
+     * highlight words in content of the specified node
+     *
+     * @param DOMNode $contextNode
+     * @param array $wordsToHighlight
+     * @param callback $callback   Callback method, used to transform (highlighting) text.
+     * @param array    $params     Array of additionall callback parameters (first non-optional parameter is a text to transform)
+     */
+    protected function _highlightNodeRecursive(DOMNode $contextNode, $wordsToHighlight, $callback, $params)
+    {
+        $textNodes = array();
+
+        if (!$contextNode->hasChildNodes()) {
+            return;
+        }
+
+        foreach ($contextNode->childNodes as $childNode) {
+            if ($childNode->nodeType == XML_TEXT_NODE) {
+                // process node later to leave childNodes structure untouched
+                $textNodes[] = $childNode;
+            } else {
+                // Process node if it's not a script node
+                if ($childNode->nodeName != 'script') {
+                    $this->_highlightNodeRecursive($childNode, $wordsToHighlight, $callback, $params);
+                }
+            }
+        }
+
+        foreach ($textNodes as $textNode) {
+            $this->_highlightTextNode($textNode, $wordsToHighlight, $callback, $params);
+        }
+    }
+
+    /**
+     * Standard callback method used to highlight words.
+     *
+     * @param  string  $stringToHighlight
+     * @return string
+     * @internal
+     */
+    public function applyColour($stringToHighlight, $colour)
+    {
+        return '<b style="color:black;background-color:' . $colour . '">' . $stringToHighlight . '</b>';
+    }
+
+    /**
+     * Highlight text with specified color
+     *
+     * @param string|array $words
+     * @param string $colour
+     * @return string
+     */
+    public function highlight($words, $colour = '#66ffff')
+    {
+    	return $this->highlightExtended($words, array($this, 'applyColour'), array($colour));
+    }
+
+
+
+    /**
+     * Highlight text using specified View helper or callback function.
+     *
+     * @param string|array $words  Words to highlight. Words could be organized using the array or string.
+     * @param callback $callback   Callback method, used to transform (highlighting) text.
+     * @param array    $params     Array of additionall callback parameters passed through into it
+     *                             (first non-optional parameter is an HTML fragment for highlighting)
+     * @return string
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function highlightExtended($words, $callback, $params = array())
+    {
+        if (!is_array($words)) {
+            $words = array($words);
+        }
+
+        $wordsToHighlightList = array();
+        $analyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
+        foreach ($words as $wordString) {
+            $wordsToHighlightList[] = $analyzer->tokenize($wordString);
+        }
+        $wordsToHighlight = call_user_func_array('array_merge', $wordsToHighlightList);
+
+        if (count($wordsToHighlight) == 0) {
+            return $this->_doc->saveHTML();
+        }
+
+        $wordsToHighlightFlipped = array();
+        foreach ($wordsToHighlight as $id => $token) {
+            $wordsToHighlightFlipped[$token->getTermText()] = $id;
+        }
+
+        if (!is_callable($callback)) {
+        	require_once 'Zend/Search/Lucene/Exception.php';
+        	throw new Zend_Search_Lucene_Exception('$viewHelper parameter mast be a View Helper name, View Helper object or callback.');
+        }
+
+        $xpath = new DOMXPath($this->_doc);
+
+        $matchedNodes = $xpath->query("/html/body");
+        foreach ($matchedNodes as $matchedNode) {
+            $this->_highlightNodeRecursive($matchedNode, $wordsToHighlightFlipped, $callback, $params);
+        }
+    }
+
+
+    /**
+     * Get HTML
+     *
+     * @return string
+     */
+    public function getHTML()
+    {
+        return $this->_doc->saveHTML();
+    }
+
+    /**
+     * Get HTML body
+     *
+     * @return string
+     */
+    public function getHtmlBody()
+    {
+        $xpath = new DOMXPath($this->_doc);
+        $bodyNodes = $xpath->query('/html/body')->item(0)->childNodes;
+
+        $outputFragments = array();
+        for ($count = 0; $count < $bodyNodes->length; $count++) {
+        	$outputFragments[] = $this->_doc->saveXML($bodyNodes->item($count));
+        }
+
+        return implode($outputFragments);
+    }
+}
+

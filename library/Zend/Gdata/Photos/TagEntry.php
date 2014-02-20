@@ -1,46 +1,139 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Photos
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Photos_Extension_Weight
+ */
+require_once 'Zend/Gdata/Photos/Extension/Weight.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Category
+ */
+require_once 'Zend/Gdata/App/Extension/Category.php';
+
+/**
+ * Data model class for a Tag Entry.
+ *
+ * To transfer user entries to and from the servers, including
+ * creating new entries, refer to the service class,
+ * Zend_Gdata_Photos.
+ *
+ * This class represents <atom:entry> in the Google Data protocol.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Photos
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Photos_TagEntry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_Photos_TagEntry';
+
+    protected $_gphotoWeight = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Photos::$namespaces);
+        parent::__construct($element);
+
+        $category = new Zend_Gdata_App_Extension_Category(
+            'http://schemas.google.com/photos/2007#tag',
+            'http://schemas.google.com/g/2005#kind');
+        $this->setCategory(array($category));
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_gphotoWeight !== null) {
+            $element->appendChild($this->_gphotoWeight->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gphoto') . ':' . 'weight';
+                $weight = new Zend_Gdata_Photos_Extension_Weight();
+                $weight->transferFromDOM($child);
+                $this->_gphotoWeight = $weight;
+                break;
+            default:
+                parent::takeChildFromDOM($child);
+                break;
+        }
+    }
+
+    /**
+     * Get the value for this element's gphoto:weight attribute.
+     *
+     * @see setGphotoWeight
+     * @return string The requested attribute.
+     */
+    public function getGphotoWeight()
+    {
+        return $this->_gphotoWeight;
+    }
+
+    /**
+     * Set the value for this element's gphoto:weight attribute.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Photos_Extension_Weight The element being modified.
+     */
+    public function setGphotoWeight($value)
+    {
+        $this->_gphotoWeight = $value;
+        return $this;
+    }
+}

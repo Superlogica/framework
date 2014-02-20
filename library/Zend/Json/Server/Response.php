@@ -1,46 +1,247 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-ITfeYfsgQKSo5HRNTEidK8cfwEt+612titjJUFu=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Json_Server_Response
+{
+    /**
+     * Response error
+     * @var null|Zend_Json_Server_Error
+     */
+    protected $_error;
+
+    /**
+     * Request ID
+     * @var mixed
+     */
+    protected $_id;
+
+    /**
+     * Result
+     * @var mixed
+     */
+    protected $_result;
+
+    /**
+     * Service map
+     * @var Zend_Json_Server_Smd
+     */
+    protected $_serviceMap;
+
+    /**
+     * JSON-RPC version
+     * @var string
+     */
+    protected $_version;
+
+    /**
+     * Set result
+     * 
+     * @param  mixed $value 
+     * @return Zend_Json_Server_Response
+     */
+    public function setResult($value)
+    {
+        $this->_result = $value;
+        return $this;
+    }
+
+    /**
+     * Get result
+     * 
+     * @return mixed
+     */
+    public function getResult()
+    {
+        return $this->_result;
+    }
+
+    // RPC error, if response results in fault
+    /**
+     * Set result error
+     * 
+     * @param  Zend_Json_Server_Error $error 
+     * @return Zend_Json_Server_Response
+     */
+    public function setError(Zend_Json_Server_Error $error)
+    {
+        $this->_error = $error;
+        return $this;
+    }
+
+    /**
+     * Get response error
+     * 
+     * @return null|Zend_Json_Server_Error
+     */
+    public function getError()
+    {
+        return $this->_error;
+    }
+
+    /**
+     * Is the response an error?
+     * 
+     * @return bool
+     */
+    public function isError()
+    {
+        return $this->getError() instanceof Zend_Json_Server_Error;
+    }
+
+    /**
+     * Set request ID
+     * 
+     * @param  mixed $name 
+     * @return Zend_Json_Server_Response
+     */
+    public function setId($name)
+    {
+        $this->_id = $name;
+        return $this;
+    }
+
+    /**
+     * Get request ID
+     * 
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /**
+     * Set JSON-RPC version
+     * 
+     * @param  string $version 
+     * @return Zend_Json_Server_Response
+     */
+    public function setVersion($version)
+    {
+        $version = (string) $version;
+        if ('2.0' == $version) {
+            $this->_version = '2.0';
+        } else {
+            $this->_version = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve JSON-RPC version
+     * 
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->_version;
+    }
+
+    /**
+     * Cast to JSON
+     * 
+     * @return string
+     */
+    public function toJson()
+    {
+        if ($this->isError()) {
+            $response = array(
+                'error' => $this->getError()->toArray(),
+                'id'    => $this->getId(),
+            );
+        } else {
+            $response = array(
+                'result' => $this->getResult(),
+                'id'     => $this->getId(),
+            );
+        }
+
+        if (null !== ($version = $this->getVersion())) {
+            $response['jsonrpc'] = $version;
+        }
+
+        require_once 'Zend/Json.php';
+        return Zend_Json::encode($response);
+    }
+
+    /**
+     * Retrieve args
+     *
+     * @return mixed
+     */
+    public function getArgs()
+    {
+        return $this->_args;
+    }
+
+    /**
+     * Set args
+     *
+     * @param mixed $args
+     * @return self
+     */
+    public function setArgs($args)
+    {
+        $this->_args = $args;
+        return $this;
+    }
+
+    /**
+     * Set service map object
+     *
+     * @param  Zend_Json_Server_Smd $serviceMap
+     * @return Zend_Json_Server_Response
+     */
+    public function setServiceMap($serviceMap)
+    {
+        $this->_serviceMap = $serviceMap;
+        return $this;
+    }
+
+    /**
+     * Retrieve service map
+     *
+     * @return Zend_Json_Server_Smd|null
+     */
+    public function getServiceMap()
+    {
+        return $this->_serviceMap;
+    }
+
+    /**
+     * Cast to string (JSON)
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+}
+

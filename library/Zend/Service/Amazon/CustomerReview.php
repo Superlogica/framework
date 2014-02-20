@@ -1,29 +1,86 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: CustomerReview.php 12662 2008-11-15 15:29:58Z beberlei $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_CustomerReview
+{
+    /**
+     * @var string
+     */
+    public $Rating;
+
+    /**
+     * @var string
+     */
+    public $HelpfulVotes;
+
+    /**
+     * @var string
+     */
+    public $CustomerId;
+
+    /**
+     * @var string
+     */
+    public $TotalVotes;
+
+    /**
+     * @var string
+     */
+    public $Date;
+
+    /**
+     * @var string
+     */
+    public $Summary;
+
+    /**
+     * @var string
+     */
+    public $Content;
+
+    /**
+     * Assigns values to properties relevant to CustomerReview
+     *
+     * @param  DOMElement $dom
+     * @return void
+     */
+    public function __construct(DOMElement $dom)
+    {
+        $xpath = new DOMXPath($dom->ownerDocument);
+        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
+        foreach (array('Rating', 'HelpfulVotes', 'CustomerId', 'TotalVotes', 'Date', 'Summary', 'Content') as $el) {
+            $result = $xpath->query("./az:$el/text()", $dom);
+            if ($result->length == 1) {
+                $this->$el = (string) $result->item(0)->data;
+            }
+        }
+    }
+}

@@ -1,53 +1,168 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-w1fG05kEnB+IzE4i
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata
+ */
+require_once 'Zend/Gdata.php';
+
+/**
+ * @see Zend_Gdata_Calendar_EventFeed
+ */
+require_once 'Zend/Gdata/Calendar/EventFeed.php';
+
+/**
+ * @see Zend_Gdata_Calendar_EventEntry
+ */
+require_once 'Zend/Gdata/Calendar/EventEntry.php';
+
+/**
+ * @see Zend_Gdata_Calendar_ListFeed
+ */
+require_once 'Zend/Gdata/Calendar/ListFeed.php';
+
+/**
+ * @see Zend_Gdata_Calendar_ListEntry
+ */
+require_once 'Zend/Gdata/Calendar/ListEntry.php';
+
+/**
+ * Service class for interacting with the Google Calendar data API
+ * @link http://code.google.com/apis/gdata/calendar.html
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Calendar extends Zend_Gdata
+{
+
+    const CALENDAR_FEED_URI = 'http://www.google.com/calendar/feeds';
+    const CALENDAR_EVENT_FEED_URI = 'http://www.google.com/calendar/feeds/default/private/full';
+    const AUTH_SERVICE_NAME = 'cl';
+
+    protected $_defaultPostUri = self::CALENDAR_EVENT_FEED_URI;
+
+    /**
+     * Namespaces used for Zend_Gdata_Calendar
+     *
+     * @var array
+     */
+    public static $namespaces = array(
+        array('gCal', 'http://schemas.google.com/gCal/2005', 1, 0)
+    );
+
+    /**
+     * Create Gdata_Calendar object
+     *
+     * @param Zend_Http_Client $client (optional) The HTTP client to use when
+     *          when communicating with the Google servers.
+     * @param string $applicationId The identity of the app in the form of Company-AppName-Version
+     */
+    public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
+    {
+        $this->registerPackage('Zend_Gdata_Calendar');
+        $this->registerPackage('Zend_Gdata_Calendar_Extension');
+        parent::__construct($client, $applicationId);
+        $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
+    }
+
+    /**
+     * Retreive feed object
+     *
+     * @param mixed $location The location for the feed, as a URL or Query
+     * @return Zend_Gdata_Calendar_EventFeed
+     */
+    public function getCalendarEventFeed($location = null)
+    {
+        if ($location == null) {
+            $uri = self::CALENDAR_EVENT_FEED_URI;
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getFeed($uri, 'Zend_Gdata_Calendar_EventFeed');
+    }
+
+    /**
+     * Retreive entry object
+     *
+     * @return Zend_Gdata_Calendar_EventEntry
+     */
+    public function getCalendarEventEntry($location = null)
+    {
+        if ($location == null) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Location must not be null');
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getEntry($uri, 'Zend_Gdata_Calendar_EventEntry');
+    }
+
+
+    /**
+     * Retrieve feed object
+     *
+     * @return Zend_Gdata_Calendar_ListFeed
+     */
+    public function getCalendarListFeed()
+    {
+        $uri = self::CALENDAR_FEED_URI . '/default';
+        return parent::getFeed($uri,'Zend_Gdata_Calendar_ListFeed');
+    }
+
+    /**
+     * Retreive entryobject
+     *
+     * @return Zend_Gdata_Calendar_ListEntry
+     */
+    public function getCalendarListEntry($location = null)
+    {
+        if ($location == null) {
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            throw new Zend_Gdata_App_InvalidArgumentException(
+                    'Location must not be null');
+        } else if ($location instanceof Zend_Gdata_Query) {
+            $uri = $location->getQueryUrl();
+        } else {
+            $uri = $location;
+        }
+        return parent::getEntry($uri,'Zend_Gdata_Calendar_ListEntry');
+    }
+
+    public function insertEvent($event, $uri=null)
+    {
+        if ($uri == null) {
+            $uri = $this->_defaultPostUri;
+        }
+        $newEvent = $this->insertEntry($event, $uri, 'Zend_Gdata_Calendar_EventEntry');
+        return $newEvent;
+    }
+
+}

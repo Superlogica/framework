@@ -1,47 +1,108 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5E8idOs4y6MYHPq8hZWzuUaz3HpPECrZ28wiTnM6xmDM6mEj74bX7Gfo8R97XALoc+olQa9F
-VW7c1dXuxQA+BaVuLH7ECbEUStDpclpMoRH5gdm69dIEGvrUyMGMjRMxG0MX9TjtmlOIDhnNDFhs
-aa+ikERrqAGHNLKbhW8fDaoZqYC8AoqKTpiUTexwK/kmf5E6TMzZNJZhKtggrdtPWui0hyjHVgr/
-reBVMJ+OGALRBWKUkSvjn4kJIPpDKor7T+KlBeH2Q9vSGxh0v/ptHb9d5TKk1Te9onnmGst0mt+p
-S7pjrqOzyWcHFhQGJPYSU2D2QCjI7CuXA/+cwHkVwDO6BMFoDfs/4DuqprmGQ7ny+7Qd9QH0gluS
-6iM0vBCLgEmAFemd7zdKzF5HxzSHXUfnWxEUYShXDIBuAvA8ehZyY9bMcpSAWF29fY7u7QwhG8nB
-rwbhBXFi8zVVsFOXbq0OIQMHYeCIDirYuJWiRz8LZKzMhbhkXCJ/gZMzfl8m+Morsnc35SK75n18
-Ea3YMoka+JyvifwybkeRRSvnktS/oQOUYRXDCrQG5ltdEiKxUv+zDznBdWlYrHp2UfRm0foGxZ2h
-Z4VDnrdbwGTkhZl+e0Rkktx4sPg7Bb9wK7V4D78VREuWpeRFmCgbPtaYFsFbAgQAkiGl9BIIm464
-XkrJI49dsCowlXb2MDEwWTASEb5sx6s/O8o2yJF7IWvXmvf2eSkg67dGUEUbE4hZZTDYE+v40fOp
-P6HzE3ikjFa61/NV+NJKXrHAMTFc/S2EoTn+sslL6mcIXJs46VK4u/Jv9Myw0EtBVkMeEaORgqiu
-YnFF6UYVovuXdLkimnqmlcFIY3ta9mW0c9QIuX1kgs0uJGABfeY7FPKcxicr75a6Mu6u2fOfZf4E
-u6RCsJrtW+OjR4OJIhuoBiQzN7o4MIy+s3V1yESzoKdHW6TGybHfIh+CrPm6Wvdkun6TK7aJ5Vzs
-riHaJOlI+PfyGF6QqcIUgQ37Y9ohfCZ8UYKuuLt5CXnzjuAeMLeh8PqUo/gdPdJBgwcZr56qQdCR
-ktZ8PHJmuOMTi5ZMS7WsoD/c2HZgHwCfsNyRsoRD8hhW9CTfAlIbKKyXOtTtw+3iy1DfjazfaVRm
-1DXCVvy7pZWdEXqcJEr+BauL412jVsYRGwSaAvM21t/WSyIDPIifdy00D7c/u1VaB7lKqbplpZSq
-z/pDO5JIl64G+2uTCjSraeHQPP/oaTG8Id2K2mcQ4OnVkjfkGxCBpzrXtL63LBSxCf/OqZv3LkfP
-qCrG4/lYJXdIK7DxMfKDtqm8hbWt2J2/n3yvb4u2W1/7RBjo1NOa1SnNTVT1/KmUa5I/T6S7FefT
-3ZspZCGl3QkzQ3lqUa1NgfJS2hd582Ok266WaQjphBI2YAHlDwhe9DIv8ba49fXCpu03tbLlf3kl
-moZHifUJDkQ/+lRBe5/3UkUsi9kqvHBDu/KPWgZdxx3YvLAOn/d5GiGbot7cDvvk5uzCZnDRTLsA
-T/05q6UPc7rgN4zeVpLNYtEYkWlJE3PurJFLFqhXiVSGMAcn6uYNzpJqZWvEJF56AyZqCGRv9/iL
-Vz9eX6Y/gTH5U9/Fo9l9S2ldxCtigkh34+xMxA9D0Q56o1KsSTsfaS68d1DM0K069pJEuPtL6Hk4
-e3l/GKvlkUGU9svHUtiiNr1YZh9WIOG4wZA8CLqlq0YW5+G3eySu8xzPFr+fKa87hmREJl1Efw7d
-dI+ckTyYFx/g2+IxdQ7VdJcSNEQkHvZhIi3+zbA+QOh5NNfQka4nMqKb9Kc1/p4znwz7rKw8ntGo
-n9E/sRfamqFCKGuEIkbPlxfHUpMI6ziuGJ0d+VMSQNDtkdv8/rg1lhVoqQ9oCvlecJbLy8BFe4+I
-gjf6/5QdRLWCZyAgWMmTc2fmN5v9b7qXR7H19xWbByYeUEPVKH5yAknnnG9p+/0UHOo45aYSzwSt
-q0X5IpbhB45hcPoxQSOcY6VnsH6xiqhp5wCZTmdtR2zxhzkzusdaeXj+X7I6MyWrkjUe3SKzmc4X
-1RKQM7eRMJwj0epx2DRRz4TdZqn3B8oK6pPfCEDNje8L4HZPW3kiQGEQCOI/P4TyNe2TJaqjD4T5
-kAPUm43L6AE+OO9AbFh7W8jRlxaoP2sRp4gOF/a6aGqP0Er4AYjccyn3AO78Af16q8Pnk3UysWNM
-xs2Ke9BR2V3sUZf4pK3DWdJDSvXbW7npwQxrNZLQbqwKpNXY6w31uLuepHBBonntgpFkH8DGg+yu
-4yhKsQreAW5Az9xry8+tpVlOU727Eu/NP+Da8oiV03LtGYVE/j87EI4t/aEe2ND0cDnIlztCDOMj
-Dkxkts0GuMnU7vuzku3J7MPYixh8xhD45dpxxjdzMWS4KAKbCxLR4oEUEr7CCSUE2g1XePggWck7
-G2kHtdQ82NJrbd9u2OEt7oPCTf562uXEYg0QdAxkHDLMCv4qdNjcQlt+AOMYV2k/tI+pI4JZQPN6
-bfgxPtjEWHrmlx1zH+kBFKnXDwCOvPDDImJt3qQemyXIlrlCUVD5Qbo4EE1+2uQKyjkrDuyivpIN
-vrdZWQbssY0CvbnFjHN2aQ1cZTguTnM1LS0EZrainnxAP6jNfGCqnx87MA8M9XeiNvZ1IndYMl6J
-+UoOz6Gj4Snon6br+e01LT3BpIQraKry1tncHWXQshwSr1eA77ckZlsgBbsNxNvjAEzQ1TD6RwEz
-z5r5xdojknQY5qTmR/DX/4WKe18M7stAUZH1oGY3lFip1cc0V0N5/iyreK+YvYOWn9mOHTh3gPzS
-Rjmm8Vp1sAaM3jvNH6MKZVM5hy2b5kSMQHMUS4c2XFfGN8RM2A0JmTKW59uQE3suFtnko94xqN70
-T8DvQ6t5pM8AA//gRkHovAAUVTDsgz4e1QPktKNIFRFYzDZRyTol25US9RH0TXyQCkopcFrMKxtc
-QtJi68bcplZ3GK/9F+cRKpgfBg+TKfmJw8EuBM0el1xvx2Qo4Q1P1Q+RCvxyVl8OZ+cKq0Xp7vn9
-UYcLAZACySLhW/wBMFvCjqtTZZ97p9nMLJJv9VqeaFfcCFk2ACJR8bdpLAmnVUZGBw1VGvVhyaBf
-/n5NwANfWOSivDqUfXlZ1Gkw7+HebVf9QZ494DDTS+vji4o7seYh859T9OE8J3O67Xz8hyVW5/Vf
-GHoPlGg3/y8Yml539B/ijKSuqMSvIe53QGcrBwDqu5C3XeGCwgt/VSJar3LsRrWGvILORnJvbyA9
-ofl2azUbzU0HjH+b9qSsH0oYzMEErW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Crammd5.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Mail_Protocol_Smtp
+ */
+require_once 'Zend/Mail/Protocol/Smtp.php';
+
+
+/**
+ * Performs CRAM-MD5 authentication
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Protocol_Smtp_Auth_Crammd5 extends Zend_Mail_Protocol_Smtp
+{
+    /**
+     * Constructor.
+     *
+     * @param  string $host   (Default: 127.0.0.1)
+     * @param  int    $port   (Default: null)
+     * @param  array  $config Auth-specific parameters
+     * @return void
+     */
+    public function __construct($host = '127.0.0.1', $port = null, $config = null)
+    {
+        if (is_array($config)) {
+            if (isset($config['username'])) {
+                $this->_username = $config['username'];
+            }
+            if (isset($config['password'])) {
+                $this->_password = $config['password'];
+            }
+        }
+
+        parent::__construct($host, $port, $config);
+    }
+
+
+    /**
+     * @todo Perform CRAM-MD5 authentication with supplied credentials
+     *
+     * @return void
+     */
+    public function auth()
+    {
+        // Ensure AUTH has not already been initiated.
+        parent::auth();
+
+        $this->_send('AUTH CRAM-MD5');
+        $challenge = $this->_expect(334);
+        $challenge = base64_decode($challenge);
+        $digest = $this->_hmacMd5($this->_password, $challenge);
+        $this->_send(base64_encode($this->_username . ' ' . $digest));
+        $this->_expect(235);
+        $this->_auth = true;
+    }
+
+
+    /**
+     * Prepare CRAM-MD5 response to server's ticket
+     *
+     * @param  string $key   Challenge key (usually password)
+     * @param  string $data  Challenge data
+     * @param  string $block Length of blocks
+     * @return string
+     */
+    protected function _hmacMd5($key, $data, $block = 64)
+    {
+        if (strlen($key) > 64) {
+            $key = pack('H32', md5($key));
+        } elseif (strlen($key) < 64) {
+            $key = str_pad($key, $block, chr(0));
+        }
+
+        $k_ipad = substr($key, 0, 64) ^ str_repeat(chr(0x36), 64);
+        $k_opad = substr($key, 0, 64) ^ str_repeat(chr(0x5C), 64);
+
+        $inner = pack('H32', md5($k_ipad . $data));
+        $digest = md5($k_opad . $inner);
+
+        return $digest;
+    }
+}

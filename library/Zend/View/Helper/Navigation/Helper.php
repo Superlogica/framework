@@ -1,32 +1,211 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-nYeU5naAKhUpCB2eg0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Interface for navigational helpers
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_View_Helper_Navigation_Helper
+{
+    /**
+     * Sets navigation container the helper should operate on by default
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               operate on. Default is
+     *                                               null, which indicates that
+     *                                               the container should be
+     *                                               reset.
+     * @return Zend_View_Helper_Navigation_Helper    fluent interface, returns
+     *                                               self
+     */
+    public function setContainer(Zend_Navigation_Container $container = null);
+
+    /**
+     * Returns the navigation container the helper operates on by default
+     *
+     * @return Zend_Navigation_Container  navigation container
+     */
+    public function getContainer();
+
+    /**
+     * Sets translator to use in helper
+     *
+     * @param  mixed $translator                   [optional] translator.
+     *                                             Expects an object of type
+     *                                             {@link Zend_Translate_Adapter}
+     *                                             or {@link Zend_Translate},
+     *                                             or null. Default is null.
+     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
+     *                                             self
+     */
+    public function setTranslator($translator = null);
+
+    /**
+     * Returns translator used in helper
+     *
+     * @return Zend_Translate_Adapter|null  translator or null
+     */
+    public function getTranslator();
+
+    /**
+     * Sets ACL to use when iterating pages
+     *
+     * @param  Zend_Acl $acl                       [optional] ACL instance
+     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
+     *                                             self
+     */
+    public function setAcl(Zend_Acl $acl = null);
+
+    /**
+     * Returns ACL or null if it isn't set using {@link setAcl()} or
+     * {@link setDefaultAcl()}
+     *
+     * @return Zend_Acl|null  ACL object or null
+     */
+    public function getAcl();
+
+    /**
+     * Sets ACL role to use when iterating pages
+     *
+     * @param  mixed $role                         [optional] role to set.
+     *                                             Expects a string, an
+     *                                             instance of type
+     *                                             {@link Zend_Acl_Role_Interface},
+     *                                             or null. Default is null.
+     * @throws Zend_View_Exception                 if $role is invalid
+     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
+     *                                             self
+     */
+    public function setRole($role = null);
+
+    /**
+     * Returns ACL role to use when iterating pages, or null if it isn't set
+     *
+     * @return string|Zend_Acl_Role_Interface|null  role or null
+     */
+    public function getRole();
+
+    /**
+     * Sets whether ACL should be used
+     *
+     * @param  bool $useAcl                        [optional] whether ACL
+     *                                             should be used. Default is
+     *                                             true.
+     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
+     *                                             self
+     */
+    public function setUseAcl($useAcl = true);
+
+    /**
+     * Returns whether ACL should be used
+     *
+     * @return bool  whether ACL should be used
+     */
+    public function getUseAcl();
+    
+    /**
+     * Return renderInvisible flag
+     *
+     * @return bool
+     */
+    public function getRenderInvisible();
+
+    /**
+     * Render invisible items?
+     *
+     * @param  bool $renderInvisible                       [optional] boolean flag
+     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface
+     *                                                     returns self
+     */
+    public function setRenderInvisible($renderInvisible = true);
+
+    /**
+     * Sets whether translator should be used
+     *
+     * @param  bool $useTranslator                 [optional] whether
+     *                                             translator should be used.
+     *                                             Default is true.
+     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
+     *                                             self
+     */
+    public function setUseTranslator($useTranslator = true);
+
+    /**
+     * Returns whether translator should be used
+     *
+     * @return bool  whether translator should be used
+     */
+    public function getUseTranslator();
+
+    /**
+     * Checks if the helper has a container
+     *
+     * @return bool  whether the helper has a container or not
+     */
+    public function hasContainer();
+
+    /**
+     * Checks if the helper has an ACL instance
+     *
+     * @return bool  whether the helper has a an ACL instance or not
+     */
+    public function hasAcl();
+
+    /**
+     * Checks if the helper has an ACL role
+     *
+     * @return bool  whether the helper has a an ACL role or not
+     */
+    public function hasRole();
+
+    /**
+     * Checks if the helper has a translator
+     *
+     * @return bool  whether the helper has a translator or not
+     */
+    public function hasTranslator();
+
+    /**
+     * Magic overload: Should proxy to {@link render()}.
+     *
+     * @return string
+     */
+    public function __toString();
+
+    /**
+     * Renders helper
+     *
+     * @param  Zend_Navigation_Container $container  [optional] container to
+     *                                               render. Default is null,
+     *                                               which indicates that the
+     *                                               helper should render the
+     *                                               container returned by
+     *                                               {@link getContainer()}.
+     * @return string                                helper output
+     * @throws Zend_View_Exception                   if unable to render
+     */
+    public function render(Zend_Navigation_Container $container = null);
+}

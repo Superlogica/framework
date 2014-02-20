@@ -1,49 +1,211 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_FileParser */
+require_once 'Zend/Pdf/FileParser.php';
+
+/**
+ * Abstract helper class for {@link Zend_Pdf_Font} that parses font files.
+ *
+ * Defines the public interface for concrete subclasses which are responsible
+ * for parsing the raw binary data from the font file on disk. Also provides
+ * a debug logging interface and a couple of shared utility methods.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_FileParser_Font extends Zend_Pdf_FileParser
+{
+  /**** Instance Variables ****/
+
+
+    /**
+     * Array of parsed font properties. Used with {@link __get()} and
+     * {@link __set()}.
+     * @var array
+     */
+    private $_fontProperties = array();
+
+    /**
+     * Flag indicating whether or not debug logging is active.
+     * @var boolean
+     */
+    private $_debug = false;
+
+
+
+  /**** Public Interface ****/
+
+
+  /* Object Lifecycle */
+
+    /**
+     * Object constructor.
+     *
+     * Validates the data source and enables debug logging if so configured.
+     *
+     * @param Zend_Pdf_FileParserDataSource $dataSource
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct(Zend_Pdf_FileParserDataSource $dataSource)
+    {
+        parent::__construct($dataSource);
+        $this->fontType = Zend_Pdf_Font::TYPE_UNKNOWN;
+    }
+
+
+  /* Accessors */
+
+    /**
+     * Get handler
+     *
+     * @param string $property
+     * @return mixed
+     */
+    public function __get($property)
+    {
+        if (isset($this->_fontProperties[$property])) {
+            return $this->_fontProperties[$property];
+        } else {
+            return null;
+        }
+    }
+
+    /* NOTE: The set handler is defined below in the internal methods group. */
+
+
+  /* Parser Methods */
+
+    /**
+     * Reads the Unicode UTF-16-encoded string from the binary file at the
+     * current offset location. Overridden to fix return character set at UTF-16BE.
+     *
+     * @todo Deal with to-dos in the parent method.
+     *
+     * @param integer $byteCount Number of bytes (characters * 2) to return.
+     * @param integer $byteOrder (optional) Big- or little-endian byte order.
+     *   Use the BYTE_ORDER_ constants defined in {@link Zend_Pdf_FileParser}. If
+     *   omitted, uses big-endian.
+     * @param string $characterSet (optional) --Ignored--
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readStringUTF16($byteCount,
+                                    $byteOrder = Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN,
+                                    $characterSet = '')
+    {
+        return parent::readStringUTF16($byteCount, $byteOrder, 'UTF-16BE');
+    }
+
+    /**
+     * Reads the Mac Roman-encoded string from the binary file at the current
+     * offset location. Overridden to fix return character set at UTF-16BE.
+     *
+     * @param integer $byteCount Number of bytes (characters) to return.
+     * @param string $characterSet (optional) --Ignored--
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readStringMacRoman($byteCount, $characterSet = '')
+    {
+        return parent::readStringMacRoman($byteCount, 'UTF-16BE');
+    }
+
+    /**
+     * Reads the Pascal string from the binary file at the current offset
+     * location. Overridden to fix return character set at UTF-16BE.
+     *
+     * @param string $characterSet (optional) --Ignored--
+     * @param integer $lengthBytes (optional) Number of bytes that make up the
+     *   length. Default is 1.
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public function readStringPascal($characterSet = '', $lengthBytes = 1)
+    {
+        return parent::readStringPascal('UTF-16BE');
+    }
+
+
+  /* Utility Methods */
+
+    /**
+     * Writes the entire font properties array to STDOUT. Used only for debugging.
+     */
+    public function writeDebug()
+    {
+        print_r($this->_fontProperties);
+    }
+
+
+
+  /**** Internal Methods ****/
+
+
+  /* Internal Accessors */
+
+    /**
+     * Set handler
+     *
+     * NOTE: This method is protected. Other classes may freely interrogate
+     * the font properties, but only this and its subclasses may set them.
+     *
+     * @param string $property
+     * @param  mixed $value
+     */
+    public function __set($property, $value)
+    {
+        if ($value === null) {
+            unset($this->_fontProperties[$property]);
+        } else {
+            $this->_fontProperties[$property] = $value;
+        }
+    }
+
+
+  /* Internal Utility Methods */
+
+    /**
+     * If debug logging is enabled, writes the log message.
+     *
+     * The log message is a sprintf() style string and any number of arguments
+     * may accompany it as additional parameters.
+     *
+     * @param string $message
+     * @param mixed (optional, multiple) Additional arguments
+     */
+    protected function _debugLog($message)
+    {
+        if (! $this->_debug) {
+            return;
+        }
+        if (func_num_args() > 1) {
+            $args = func_get_args();
+            $message = array_shift($args);
+            $message = vsprintf($message, $args);
+        }
+
+        $logger = new Zend_Log();
+        $logger->log($message, Zend_Log::DEBUG);
+    }
+
+}

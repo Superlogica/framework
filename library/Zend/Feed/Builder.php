@@ -1,140 +1,398 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Builder.php 15382 2009-05-07 13:28:14Z alexander $
+ */
+
+
+/**
+ * @see Zend_Feed_Builder_Interface
+ */
+require_once 'Zend/Feed/Builder/Interface.php';
+
+/**
+ * @see Zend_Feed_Builder_Header
+ */
+require_once 'Zend/Feed/Builder/Header.php';
+
+/**
+ * @see Zend_Feed_Builder_Entry
+ */
+require_once 'Zend/Feed/Builder/Entry.php';
+
+
+/**
+ * A simple implementation of Zend_Feed_Builder_Interface.
+ *
+ * Users are encouraged to make their own classes to implement Zend_Feed_Builder_Interface
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Builder implements Zend_Feed_Builder_Interface
+{
+    /**
+     * The data of the feed
+     *
+     * @var $_data array
+     */
+    private $_data;
+
+    /**
+     * Header of the feed
+     *
+     * @var $_header Zend_Feed_Builder_Header
+     */
+    private $_header;
+
+    /**
+     * List of the entries of the feed
+     *
+     * @var $_entries array
+     */
+    private $_entries = array();
+
+    /**
+     * Constructor. The $data array must conform to the following format:
+     * <code>
+     *  array(
+     *  'title'       => 'title of the feed', //required
+     *  'link'        => 'canonical url to the feed', //required
+     *  'lastUpdate'  => 'timestamp of the update date', // optional
+     *  'published'   => 'timestamp of the publication date', //optional
+     *  'charset'     => 'charset', // required
+     *  'description' => 'short description of the feed', //optional
+     *  'author'      => 'author/publisher of the feed', //optional
+     *  'email'       => 'email of the author', //optional
+     *  'webmaster'   => 'email address for person responsible for technical issues' // optional, ignored if atom is used
+     *  'copyright'   => 'copyright notice', //optional
+     *  'image'       => 'url to image', //optional
+     *  'generator'   => 'generator', // optional
+     *  'language'    => 'language the feed is written in', // optional
+     *  'ttl'         => 'how long in minutes a feed can be cached before refreshing', // optional, ignored if atom is used
+     *  'rating'      => 'The PICS rating for the channel.', // optional, ignored if atom is used
+     *  'cloud'       => array(
+     *                    'domain'            => 'domain of the cloud, e.g. rpc.sys.com' // required
+     *                    'port'              => 'port to connect to' // optional, default to 80
+     *                    'path'              => 'path of the cloud, e.g. /RPC2 //required
+     *                    'registerProcedure' => 'procedure to call, e.g. myCloud.rssPleaseNotify' // required
+     *                    'protocol'          => 'protocol to use, e.g. soap or xml-rpc' // required
+     *                    ), a cloud to be notified of updates // optional, ignored if atom is used
+     *  'textInput'   => array(
+     *                    'title'       => 'the label of the Submit button in the text input area' // required,
+     *                    'description' => 'explains the text input area' // required
+     *                    'name'        => 'the name of the text object in the text input area' // required
+     *                    'link'        => 'the URL of the CGI script that processes text input requests' // required
+     *                    ) // a text input box that can be displayed with the feed // optional, ignored if atom is used
+     *  'skipHours'   => array(
+     *                    'hour in 24 format', // e.g 13 (1pm)
+     *                    // up to 24 rows whose value is a number between 0 and 23
+     *                    ) // Hint telling aggregators which hours they can skip // optional, ignored if atom is used
+     *  'skipDays '   => array(
+     *                    'a day to skip', // e.g Monday
+     *                    // up to 7 rows whose value is a Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday
+     *                    ) // Hint telling aggregators which days they can skip // optional, ignored if atom is used
+     *  'itunes'      => array(
+     *                    'author'       => 'Artist column' // optional, default to the main author value
+     *                    'owner'        => array(
+     *                                        'name' => 'name of the owner' // optional, default to main author value
+     *                                        'email' => 'email of the owner' // optional, default to main email value
+     *                                        ) // Owner of the podcast // optional
+     *                    'image'        => 'album/podcast art' // optional, default to the main image value
+     *                    'subtitle'     => 'short description' // optional, default to the main description value
+     *                    'summary'      => 'longer description' // optional, default to the main description value
+     *                    'block'        => 'Prevent an episode from appearing (yes|no)' // optional
+     *                    'category'     => array(
+     *                                      array('main' => 'main category', // required
+     *                                            'sub'  => 'sub category' // optional
+     *                                        ),
+     *                                        // up to 3 rows
+     *                                        ) // 'Category column and in iTunes Music Store Browse' // required
+     *                    'explicit'     => 'parental advisory graphic (yes|no|clean)' // optional
+     *                    'keywords'     => 'a comma separated list of 12 keywords maximum' // optional
+     *                    'new-feed-url' => 'used to inform iTunes of new feed URL location' // optional
+     *                    ) // Itunes extension data // optional, ignored if atom is used
+     *  'entries'     => array(
+     *                   array(
+     *                    'title'        => 'title of the feed entry', //required
+     *                    'link'         => 'url to a feed entry', //required
+     *                    'description'  => 'short version of a feed entry', // only text, no html, required
+     *                    'guid'         => 'id of the article, if not given link value will used', //optional
+     *                    'content'      => 'long version', // can contain html, optional
+     *                    'lastUpdate'   => 'timestamp of the publication date', // optional
+     *                    'comments'     => 'comments page of the feed entry', // optional
+     *                    'commentRss'   => 'the feed url of the associated comments', // optional
+     *                    'source'       => array(
+     *                                        'title' => 'title of the original source' // required,
+     *                                        'url' => 'url of the original source' // required
+     *                                           ) // original source of the feed entry // optional
+     *                    'category'     => array(
+     *                                      array(
+     *                                        'term' => 'first category label' // required,
+     *                                        'scheme' => 'url that identifies a categorization scheme' // optional
+     *                                            ),
+     *                                      array(
+     *                                         //data for the second category and so on
+     *                                           )
+     *                                        ) // list of the attached categories // optional
+     *                    'enclosure'    => array(
+     *                                      array(
+     *                                        'url' => 'url of the linked enclosure' // required
+     *                                        'type' => 'mime type of the enclosure' // optional
+     *                                        'length' => 'length of the linked content in octets' // optional
+     *                                           ),
+     *                                      array(
+     *                                         //data for the second enclosure and so on
+     *                                           )
+     *                                        ) // list of the enclosures of the feed entry // optional
+     *                   ),
+     *                   array(
+     *                   //data for the second entry and so on
+     *                   )
+     *                 )
+     * );
+     * </code>
+     *
+     * @param  array $data
+     * @return void
+     */
+    public function __construct(array $data)
+    {
+        $this->_data = $data;
+        $this->_createHeader($data);
+        if (isset($data['entries'])) {
+            $this->_createEntries($data['entries']);
+        }
+    }
+
+    /**
+     * Returns an instance of Zend_Feed_Builder_Header
+     * describing the header of the feed
+     *
+     * @return Zend_Feed_Builder_Header
+     */
+    public function getHeader()
+    {
+        return $this->_header;
+    }
+
+    /**
+     * Returns an array of Zend_Feed_Builder_Entry instances
+     * describing the entries of the feed
+     *
+     * @return array of Zend_Feed_Builder_Entry
+     */
+    public function getEntries()
+    {
+        return $this->_entries;
+    }
+
+    /**
+     * Create the Zend_Feed_Builder_Header instance
+     *
+     * @param  array $data
+     * @throws Zend_Feed_Builder_Exception
+     * @return void
+     */
+    private function _createHeader(array $data)
+    {
+        $mandatories = array('title', 'link', 'charset');
+        foreach ($mandatories as $mandatory) {
+            if (!isset($data[$mandatory])) {
+                /**
+                 * @see Zend_Feed_Builder_Exception
+                 */
+                require_once 'Zend/Feed/Builder/Exception.php';
+                throw new Zend_Feed_Builder_Exception("$mandatory key is missing");
+            }
+        }
+        $this->_header = new Zend_Feed_Builder_Header($data['title'], $data['link'], $data['charset']);
+        if (isset($data['lastUpdate'])) {
+            $this->_header->setLastUpdate($data['lastUpdate']);
+        }
+        if (isset($data['published'])) {
+            $this->_header->setPublishedDate($data['published']);
+        }
+        if (isset($data['description'])) {
+            $this->_header->setDescription($data['description']);
+        }
+        if (isset($data['author'])) {
+            $this->_header->setAuthor($data['author']);
+        }
+        if (isset($data['email'])) {
+            $this->_header->setEmail($data['email']);
+        }
+        if (isset($data['webmaster'])) {
+            $this->_header->setWebmaster($data['webmaster']);
+        }
+        if (isset($data['copyright'])) {
+            $this->_header->setCopyright($data['copyright']);
+        }
+        if (isset($data['image'])) {
+            $this->_header->setImage($data['image']);
+        }
+        if (isset($data['generator'])) {
+            $this->_header->setGenerator($data['generator']);
+        }
+        if (isset($data['language'])) {
+            $this->_header->setLanguage($data['language']);
+        }
+        if (isset($data['ttl'])) {
+            $this->_header->setTtl($data['ttl']);
+        }
+        if (isset($data['rating'])) {
+            $this->_header->setRating($data['rating']);
+        }
+        if (isset($data['cloud'])) {
+            $mandatories = array('domain', 'path', 'registerProcedure', 'protocol');
+            foreach ($mandatories as $mandatory) {
+                if (!isset($data['cloud'][$mandatory])) {
+                    /**
+                     * @see Zend_Feed_Builder_Exception
+                     */
+                    require_once 'Zend/Feed/Builder/Exception.php';
+                    throw new Zend_Feed_Builder_Exception("you have to define $mandatory property of your cloud");
+                }
+            }
+            $uri_str = 'http://' . $data['cloud']['domain'] . $data['cloud']['path'];
+            $this->_header->setCloud($uri_str, $data['cloud']['registerProcedure'], $data['cloud']['protocol']);
+        }
+        if (isset($data['textInput'])) {
+            $mandatories = array('title', 'description', 'name', 'link');
+            foreach ($mandatories as $mandatory) {
+                if (!isset($data['textInput'][$mandatory])) {
+                    /**
+                     * @see Zend_Feed_Builder_Exception
+                     */
+                    require_once 'Zend/Feed/Builder/Exception.php';
+                    throw new Zend_Feed_Builder_Exception("you have to define $mandatory property of your textInput");
+                }
+            }
+            $this->_header->setTextInput($data['textInput']['title'],
+                                         $data['textInput']['description'],
+                                         $data['textInput']['name'],
+                                         $data['textInput']['link']);
+        }
+        if (isset($data['skipHours'])) {
+            $this->_header->setSkipHours($data['skipHours']);
+        }
+        if (isset($data['skipDays'])) {
+            $this->_header->setSkipDays($data['skipDays']);
+        }
+        if (isset($data['itunes'])) {
+            $itunes = new Zend_Feed_Builder_Header_Itunes($data['itunes']['category']);
+            if (isset($data['itunes']['author'])) {
+                $itunes->setAuthor($data['itunes']['author']);
+            }
+            if (isset($data['itunes']['owner'])) {
+                $name = isset($data['itunes']['owner']['name']) ? $data['itunes']['owner']['name'] : '';
+                $email = isset($data['itunes']['owner']['email']) ? $data['itunes']['owner']['email'] : '';
+                $itunes->setOwner($name, $email);
+            }
+            if (isset($data['itunes']['image'])) {
+                $itunes->setImage($data['itunes']['image']);
+            }
+            if (isset($data['itunes']['subtitle'])) {
+                $itunes->setSubtitle($data['itunes']['subtitle']);
+            }
+            if (isset($data['itunes']['summary'])) {
+                $itunes->setSummary($data['itunes']['summary']);
+            }
+            if (isset($data['itunes']['block'])) {
+                $itunes->setBlock($data['itunes']['block']);
+            }
+            if (isset($data['itunes']['explicit'])) {
+                $itunes->setExplicit($data['itunes']['explicit']);
+            }
+            if (isset($data['itunes']['keywords'])) {
+                $itunes->setKeywords($data['itunes']['keywords']);
+            }
+            if (isset($data['itunes']['new-feed-url'])) {
+                $itunes->setNewFeedUrl($data['itunes']['new-feed-url']);
+            }
+
+            $this->_header->setITunes($itunes);
+        }
+    }
+
+    /**
+     * Create the array of article entries
+     *
+     * @param  array $data
+     * @throws Zend_Feed_Builder_Exception
+     * @return void
+     */
+    private function _createEntries(array $data)
+    {
+        foreach ($data as $row) {
+            $mandatories = array('title', 'link', 'description');
+            foreach ($mandatories as $mandatory) {
+                if (!isset($row[$mandatory])) {
+                    /**
+                     * @see Zend_Feed_Builder_Exception
+                     */
+                    require_once 'Zend/Feed/Builder/Exception.php';
+                    throw new Zend_Feed_Builder_Exception("$mandatory key is missing");
+                }
+            }
+            $entry = new Zend_Feed_Builder_Entry($row['title'], $row['link'], $row['description']);
+            if (isset($row['author'])) {
+                $entry->setAuthor($row['author']);
+            }
+            if (isset($row['guid'])) {
+                $entry->setId($row['guid']);
+            }
+            if (isset($row['content'])) {
+                $entry->setContent($row['content']);
+            }
+            if (isset($row['lastUpdate'])) {
+                $entry->setLastUpdate($row['lastUpdate']);
+            }
+            if (isset($row['comments'])) {
+                $entry->setCommentsUrl($row['comments']);
+            }
+            if (isset($row['commentRss'])) {
+                $entry->setCommentsRssUrl($row['commentRss']);
+            }
+            if (isset($row['source'])) {
+                $mandatories = array('title', 'url');
+                foreach ($mandatories as $mandatory) {
+                    if (!isset($row['source'][$mandatory])) {
+                        /**
+                         * @see Zend_Feed_Builder_Exception
+                         */
+                        require_once 'Zend/Feed/Builder/Exception.php';
+                        throw new Zend_Feed_Builder_Exception("$mandatory key of source property is missing");
+                    }
+                }
+                $entry->setSource($row['source']['title'], $row['source']['url']);
+            }
+            if (isset($row['category'])) {
+                $entry->setCategories($row['category']);
+            }
+            if (isset($row['enclosure'])) {
+                $entry->setEnclosures($row['enclosure']);
+            }
+
+            $this->_entries[] = $entry;
+        }
+    }
+}

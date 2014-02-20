@@ -1,41 +1,96 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Geo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Geo
+ */
+require_once 'Zend/Gdata/Geo.php';
+
+/**
+ * @see Zend_Gdata_Geo_Extension_GeoRssWhere
+ */
+require_once 'Zend/Gdata/Geo/Extension/GeoRssWhere.php';
+
+/**
+ * An Atom entry containing Geograpic data.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Geo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Geo_Entry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_Geo_Entry';
+
+    protected $_where = null;
+
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Geo::$namespaces);
+        parent::__construct($element);
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_where != null) {
+            $element->appendChild($this->_where->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('georss') . ':' . 'where':
+            $where = new Zend_Gdata_Geo_Extension_GeoRssWhere();
+            $where->transferFromDOM($child);
+            $this->_where = $where;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    public function getWhere()
+    {
+        return $this->_where;
+    }
+
+    public function setWhere($value)
+    {
+        $this->_where = $value;
+        return $this;
+    }
+
+
+}

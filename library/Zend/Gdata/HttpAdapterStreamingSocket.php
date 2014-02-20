@@ -1,51 +1,107 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Http_Client_Adapter_Socket
+ */
+require_once 'Zend/Http/Client/Adapter/Socket.php';
+
+/**
+ * Extends the default HTTP adapter to handle streams instead of discrete body
+ * strings.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_HttpAdapterStreamingSocket extends Zend_Http_Client_Adapter_Socket
+{
+
+    /**
+     * The amount read from a stream source at a time.
+     *
+     * @var integer
+     */
+    const CHUNK_SIZE = 1024;
+
+    /**
+     * Send request to the remote server with streaming support.
+     *
+     * @param string        $method
+     * @param Zend_Uri_Http $uri
+     * @param string        $http_ver
+     * @param array         $headers
+     * @param string        $body
+     * @return string Request as string
+     */
+    public function write($method, $uri, $http_ver = '1.1', $headers = array(),
+        $body = '')
+    {
+        // Make sure we're properly connected
+        if (! $this->socket) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception(
+                'Trying to write but we are not connected');
+        }
+
+        $host = $uri->getHost();
+        $host = (strtolower($uri->getScheme()) == 'https' ? $this->config['ssltransport'] : 'tcp') . '://' . $host;
+        if ($this->connected_to[0] != $host || $this->connected_to[1] != $uri->getPort()) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception(
+                'Trying to write but we are connected to the wrong host');
+        }
+
+        // Save request method for later
+        $this->method = $method;
+
+        // Build request headers
+        $path = $uri->getPath();
+        if ($uri->getQuery()) $path .= '?' . $uri->getQuery();
+        $request = "{$method} {$path} HTTP/{$http_ver}\r\n";
+        foreach ($headers as $k => $v) {
+            if (is_string($k)) $v = ucfirst($k) . ": $v";
+            $request .= "$v\r\n";
+        }
+
+        // Send the headers over
+        $request .= "\r\n";
+        if (! @fwrite($this->socket, $request)) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception(
+                'Error writing request to server');
+        }
+
+
+        //read from $body, write to socket
+        while ($body->hasData()) {
+            if (! @fwrite($this->socket, $body->read(self::CHUNK_SIZE))) {
+                require_once 'Zend/Http/Client/Adapter/Exception.php';
+                throw new Zend_Http_Client_Adapter_Exception(
+                    'Error writing request to server');
+            }
+        }
+        return 'Large upload, request is not cached.';
+    }
+}

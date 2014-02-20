@@ -1,50 +1,129 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Controller_Response_Http
+ */
+require_once 'Zend/Controller/Response/Http.php';
+
+/**
+ * Zend_Controller_Response_HttpTestCase
+ *
+ * @uses Zend_Controller_Response_Http
+ * @package Zend_Controller
+ * @subpackage Request
+ */
+class Zend_Controller_Response_HttpTestCase extends Zend_Controller_Response_Http
+{
+    /**
+     * "send" headers by returning array of all headers that would be sent
+     * 
+     * @return array
+     */
+    public function sendHeaders()
+    {
+        $headers = array();
+        foreach ($this->_headersRaw as $header) {
+            $headers[] = $header;
+        }
+        foreach ($this->_headers as $header) {
+            $name = $header['name'];
+            $key  = strtolower($name);
+            if (array_key_exists($name, $headers)) {
+                if ($header['replace']) {
+                    $headers[$key] = $header['name'] . ': ' . $header['value'];
+                }
+            } else {
+                $headers[$key] = $header['name'] . ': ' . $header['value'];
+            }
+        }
+        return $headers;
+    }
+
+    /**
+     * Can we send headers?
+     * 
+     * @param  bool $throw 
+     * @return void
+     */
+    public function canSendHeaders($throw = false)
+    {
+        return true;
+    }
+
+    /**
+     * Return the concatenated body segments
+     * 
+     * @return string
+     */
+    public function outputBody()
+    {
+        $fullContent = '';
+        foreach ($this->_body as $content) {
+            $fullContent .= $content;
+        }
+        return $fullContent;
+    }
+
+    /**
+     * Get body and/or body segments
+     * 
+     * @param  bool|string $spec 
+     * @return string|array|null
+     */
+    public function getBody($spec = false)
+    {
+        if (false === $spec) {
+            return $this->outputBody();
+        } elseif (true === $spec) {
+            return $this->_body;
+        } elseif (is_string($spec) && isset($this->_body[$spec])) {
+            return $this->_body[$spec];
+        }
+
+        return null;
+    }
+
+    /**
+     * "send" Response
+     *
+     * Concats all response headers, and then final body (separated by two 
+     * newlines)
+     * 
+     * @return string
+     */
+    public function sendResponse()
+    {
+        $headers = $this->sendHeaders();
+        $content = implode("\n", $headers) . "\n\n";
+
+        if ($this->isException() && $this->renderExceptions()) {
+            $exceptions = '';
+            foreach ($this->getException() as $e) {
+                $exceptions .= $e->__toString() . "\n";
+            }
+            $content .= $exceptions;
+        } else {
+            $content .= $this->outputBody();
+        }
+
+        return $content;
+    }
+}

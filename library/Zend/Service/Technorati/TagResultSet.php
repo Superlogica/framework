@@ -1,35 +1,110 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5F+tYrBQGr6d7Guzn/bNNaw36YfOJJJ3oOsirX/1G7Lr4tjatTeF5gwXvkNMgim4OYMMXWjf
-QePtvThkPmiWSkrcV0oYGDPYhdd6CcLt7OW/L2uuqlEJyJ5GA2T3jy/IcihkAkp8pafGQ30Yp6W9
-6lBP2OwalSBhk+xTLY94boEpGnvI4fdihASzzscNjhD35VELiewdDRovyNlaOvW2KU2SarW2MA6X
-Rb4QVPRm6IjoIZX3ninQn4kJIPpDKor7T+KlBeH2Q2jX2lkiBETtjMY0gDMMYGGCxg2UX6RUoirU
-cjBLmEieiqkTqRBo2F3VyXcRE+3wNw0BAaRvHsn3sBKebrw0/OFYlCSA4VOS0syRAMXrVxlEkQ5W
-2yHGyNu1TYMKlw77wnNZPGwbbriMCtpqZ4XauzIlSvydNtVo7trnQSRC83lgyXKFJ+LnDE8Oejkn
-DvCtPYB1cfst8lfTElwNPHyG9/TeyciaGn6cl7a0TuBw4Xk9w/PNFtt+NoRHBkZZKfzuFdbayJ0A
-MeqQYsXGLrdsPlmq1ij00jz+aehj3QoPgKgYu++V16GQ2pEBc77DHIdYInILG9Fc6gYBGZ8qU8zo
-sHYCo5iG0hOuqnASHpMm+ccZ9D+K2dB/D4H5je1wmanf9pZESy7AUemX+LApWTIkzJfkZt3AHJBP
-bR2oFMICQcb4IEvZNdyv3Umq2+6sr7uGFxbcq/dV/uOL4woDFnKCNH95KDtJkVntc85bNWQwl6BE
-8jyXXURxAOCCCA5MBlcpPbgtTqwZ8zapUszii4KX49TkQWdd9r41CWJELr/nSd+6OykUXMQ8SaOk
-jjogLqYSPeSc56UEm94j5f3YlvGCgE+T8jPDFREr7xsr55W0DXwsqw6Pc4d8YR/pwJ7xKnxcnKMz
-EzoQvgbDaK1CuEx3LmYbq2FvtRC4vpeeMQQxKsf01nxhcZWjsQGPSFecyOpUErrmVXTqQaDAJD7S
-7HkTmZyHFdlCMzSuUXGOEH3hh7QK51muawdMG40zmkTmn/Hxyva/alJO1c2oaPUI3x6NKirlc+lt
-YEgWYU1nYh9YdzKU1nktWriis1OhNI81oX00kyOwtPGZR+zHgTGcJhceoQFgIT3vr2ceNseXjNNt
-BlPQR0AUCAWOD1tGHLaZ82HIIMgBetz3XfHqZwcTPXsdeeipabXH9IeoqShgoeK+VMjoOmCWiv94
-7OkSc9JIUSdrzMw8sobPyeowjCb7bgSPr7AF6hnXG4+4WGk97HmCOnqEeSPtms2eMfY8GXk8SuBr
-TnlyqS3W67UXfsLCuAMMLm1VjICXOW+GwnHtDQm6XaD613wEiByMEBXox72F8rSCUgMuVLB5C/Hj
-hxwaDRpccgkNZwfTDRWP249H2urQNYeCsjhVO1vuhkbWFTik9XtAzfSiumBWWq/EBJ/O+r0KBXTo
-bHrKAPkrfiJvnR6GU5RqQAhAC8NweUTeq0lT91fFNw87afI8Db8asA5V6tBvsHIC4WY9XcjOO1Eh
-uH+pTS8dsZy5cFngZxvDP7Gbut+sEmpZtGVznIIhX8TK+43mWkje8WIWOdFeKeAb+rpO0WDRplyO
-XLURBcz7AxA20oR7U5C78GrEwJb14B3bjcQwDA2mh/RQ26cXJPZpA1TVAGfYFj+915bDpVyei7kU
-I8WrwuVzYG4eNBMACYRcYhV9fRF1tZv27J/fFRB15A0cCGznLtD2EBaNLpSJLOdro87YCJ9DDxcu
-D1it+43cjJJxo/1gDJGsRnFQgKZP5fJEQs0iegkV4Z4MSV2AmE4ZG7eYfBh/bP45IgFSwzIngnDj
-4NJJt6rNXHVd+FYtoOqD+4A1mM/blapzrcY2GNz7bbmkJ081Cbfh7ADF/U8gt4tKkL8h5fGDq6YV
-8pDf4B0F5vvNbvmvw1jNEwcv1N3M+7G+ofGCkySi1GR9UThp71lSG+9nx2NHmDUC2QxZfUQjDIee
-1sAyH0ytdT/OiR8PbcD6RSg7XNZVb5XCqc24mbtceS1U302q4ZFfsr8XJl/AbFMLXH81Oidelh4f
-0f9KlXMjygoBKXaWD1nWOCQR8zvL64keocRsj/QqbETUS8zZumqeiiAxkJX4cdVYQxDsBX0petBH
-ISTHM1lREguCIu0g+5noGEr41Qj4bWOidCI7eGf0b+8iKVgXX4fKWYYLsqtTZsIu/k74jMVO416g
-CeRXmbC3tFk+jorEY7JA7PWniI6qFZFLscrh19p2EpHHZ9LXC2hk8VD8WygRqwJWlWw+lANyski9
-ycd1vNDjNNJDV/RAgiSuL06Xa804zrlHVGFgvW6ADY76jhjdoXH/jP4b++Wtofr3huibBdvZJ0e1
-lNtljrIKlDjkmVTEaUnp84L3A7zuxOfU7kEULqGURbJHZUreSE6W5oXvCHc6MO6AjaW9ZPq=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: TagResultSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/** 
+ * @see Zend_Service_Technorati_ResultSet 
+ */
+require_once 'Zend/Service/Technorati/ResultSet.php';
+
+
+/**
+ * Represents a Technorati Tag query result set.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_TagResultSet extends Zend_Service_Technorati_ResultSet
+{
+    /**
+     * Number of posts that match the tag.
+     *
+     * @var     int
+     * @access  protected
+     */
+    protected $_postsMatched;
+
+    /**
+     * Number of blogs that match the tag.
+     *
+     * @var     int
+     * @access  protected
+     */
+    protected $_blogsMatched;
+
+    /**
+     * Parses the search response and retrieve the results for iteration.
+     *
+     * @param   DomDocument $dom    the ReST fragment for this object
+     * @param   array $options      query options as associative array
+     */
+    public function __construct(DomDocument $dom, $options = array())
+    {
+        parent::__construct($dom, $options);
+
+        $result = $this->_xpath->query('/tapi/document/result/postsmatched/text()');
+        if ($result->length == 1) $this->_postsMatched = (int) $result->item(0)->data;
+
+        $result = $this->_xpath->query('/tapi/document/result/blogsmatched/text()');
+        if ($result->length == 1) $this->_blogsMatched = (int) $result->item(0)->data;
+
+        $this->_totalResultsReturned  = (int) $this->_xpath->evaluate("count(/tapi/document/item)");
+        /** @todo Validate the following assertion */
+        $this->_totalResultsAvailable = (int) $this->getPostsMatched();
+    }
+
+
+    /**
+     * Returns the number of posts that match the tag.
+     * 
+     * @return  int
+     */
+    public function getPostsMatched() {
+        return $this->_postsMatched;
+    }
+
+    /**
+     * Returns the number of blogs that match the tag.
+     * 
+     * @return  int
+     */
+    public function getBlogsMatched() {
+        return $this->_blogsMatched;
+    }
+
+    /**
+     * Implements Zend_Service_Technorati_ResultSet::current().
+     *
+     * @return Zend_Service_Technorati_TagResult current result
+     */
+    public function current()
+    {
+        /**
+         * @see Zend_Service_Technorati_TagResult
+         */
+        require_once 'Zend/Service/Technorati/TagResult.php';
+        return new Zend_Service_Technorati_TagResult($this->_results->item($this->_currentIndex));
+    }
+}

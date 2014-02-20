@@ -1,163 +1,565 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaContent
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaContent.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaCategory
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaCategory.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaCopyright
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaCopyright.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaCredit
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaCredit.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaDescription
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaDescription.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaHash
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaHash.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaKeywords
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaKeywords.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaPlayer
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaPlayer.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaRating
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaRating.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaRestriction
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaRestriction.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaText
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaText.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaThumbnail
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaThumbnail.php';
+
+/**
+ * @see Zend_Gdata_Media_Extension_MediaTitle
+ */
+require_once 'Zend/Gdata/Media/Extension/MediaTitle.php';
+
+
+/**
+ * This class represents the media:group element of Media RSS.
+ * It allows the grouping of media:content elements that are
+ * different representations of the same content.  When it exists,
+ * it is a child of an Entry (Atom) or Item (RSS).
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Media_Extension_MediaGroup extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'group';
+    protected $_rootNamespace = 'media';
+
+    /**
+     * @var array
+     */
+    protected $_content = array();
+
+    /**
+     * @var array
+     */
+    protected $_category = array();
+
+    /**
+     * @var Zend_Gdata_Media_Extension_MediaCopyright
+     */
+    protected $_copyright = null;
+
+    /**
+     * @var array
+     */
+    protected $_credit = array();
+
+    /**
+     * @var Zend_Gdata_Media_Extension_MediaDescription
+     */
+    protected $_description = null;
+
+    /**
+     * @var array
+     */
+    protected $_hash = array();
+
+    /**
+     * @var Zend_Gdata_Media_Extension_MediaKeywords
+     */
+    protected $_keywords = null;
+
+    /**
+     * @var array
+     */
+    protected $_player = array();
+
+    /**
+     * @var array
+     */
+    protected $_rating = array();
+
+    /**
+     * @var array
+     */
+    protected $_restriction = array();
+
+    /**
+     * @var array
+     */
+    protected $_mediaText = array();
+
+    /**
+     * @var array
+     */
+    protected $_thumbnail = array();
+
+    /**
+     * @var string
+     */
+    protected $_title = null;
+
+    /**
+     * Creates an individual MediaGroup object.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        foreach ($this->_content as $content) {
+            $element->appendChild($content->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_category as $category) {
+            $element->appendChild($category->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_credit as $credit) {
+            $element->appendChild($credit->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_player as $player) {
+            $element->appendChild($player->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_rating as $rating) {
+            $element->appendChild($rating->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_restriction as $restriction) {
+            $element->appendChild($restriction->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_mediaText as $text) {
+            $element->appendChild($text->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_thumbnail as $thumbnail) {
+            $element->appendChild($thumbnail->getDOM($element->ownerDocument));
+        }
+        if ($this->_copyright != null) {
+            $element->appendChild(
+                    $this->_copyright->getDOM($element->ownerDocument));
+        }
+        if ($this->_description != null) {
+            $element->appendChild(
+                    $this->_description->getDOM($element->ownerDocument));
+        }
+        foreach ($this->_hash as $hash) {
+            $element->appendChild($hash->getDOM($element->ownerDocument));
+        }
+        if ($this->_keywords != null) {
+            $element->appendChild(
+                    $this->_keywords->getDOM($element->ownerDocument));
+        }
+        if ($this->_title != null) {
+            $element->appendChild(
+                    $this->_title->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('media') . ':' . 'content';
+                $content = new Zend_Gdata_Media_Extension_MediaContent();
+                $content->transferFromDOM($child);
+                $this->_content[] = $content;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'category';
+                $category = new Zend_Gdata_Media_Extension_MediaCategory();
+                $category->transferFromDOM($child);
+                $this->_category[] = $category;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'copyright';
+                $copyright = new Zend_Gdata_Media_Extension_MediaCopyright();
+                $copyright->transferFromDOM($child);
+                $this->_copyright = $copyright;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'credit';
+                $credit = new Zend_Gdata_Media_Extension_MediaCredit();
+                $credit->transferFromDOM($child);
+                $this->_credit[] = $credit;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'description';
+                $description = new Zend_Gdata_Media_Extension_MediaDescription();
+                $description->transferFromDOM($child);
+                $this->_description = $description;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'hash';
+                $hash = new Zend_Gdata_Media_Extension_MediaHash();
+                $hash->transferFromDOM($child);
+                $this->_hash[] = $hash;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'keywords';
+                $keywords = new Zend_Gdata_Media_Extension_MediaKeywords();
+                $keywords->transferFromDOM($child);
+                $this->_keywords = $keywords;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'player';
+                $player = new Zend_Gdata_Media_Extension_MediaPlayer();
+                $player->transferFromDOM($child);
+                $this->_player[] = $player;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'rating';
+                $rating = new Zend_Gdata_Media_Extension_MediaRating();
+                $rating->transferFromDOM($child);
+                $this->_rating[] = $rating;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'restriction';
+                $restriction = new Zend_Gdata_Media_Extension_MediaRestriction();
+                $restriction->transferFromDOM($child);
+                $this->_restriction[] = $restriction;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'text';
+                $text = new Zend_Gdata_Media_Extension_MediaText();
+                $text->transferFromDOM($child);
+                $this->_mediaText[] = $text;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'thumbnail';
+                $thumbnail = new Zend_Gdata_Media_Extension_MediaThumbnail();
+                $thumbnail->transferFromDOM($child);
+                $this->_thumbnail[] = $thumbnail;
+                break;
+            case $this->lookupNamespace('media') . ':' . 'title';
+                $title = new Zend_Gdata_Media_Extension_MediaTitle();
+                $title->transferFromDOM($child);
+                $this->_title = $title;
+                break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function getContent()
+    {
+        return $this->_content;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Media_MediaGroup Provides a fluent interface
+     */
+    public function setContent($value)
+    {
+        $this->_content = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCategory()
+    {
+        return $this->_category;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setCategory($value)
+    {
+        $this->_category = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_Media_Extension_MediaCopyright
+     */
+    public function getCopyright()
+    {
+        return $this->_copyright;
+    }
+
+    /**
+     * @param Zend_Gdata_Media_Extension_MediaCopyright $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setCopyright($value)
+    {
+        $this->_copyright = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCredit()
+    {
+        return $this->_credit;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setCredit($value)
+    {
+        $this->_credit = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_Media_Extension_MediaTitle
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * @param Zend_Gdata_Media_Extension_MediaTitle $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setTitle($value)
+    {
+        $this->_title = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_Media_Extension_MediaDescription
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * @param Zend_Gdata_Media_Extension_MediaDescription $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setDescription($value)
+    {
+        $this->_description = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHash()
+    {
+        return $this->_hash;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setHash($value)
+    {
+        $this->_hash = $value;
+        return $this;
+    }
+
+    /**
+     * @return Zend_Gdata_Media_Extension_MediaKeywords
+     */
+    public function getKeywords()
+    {
+        return $this->_keywords;
+    }
+
+    /**
+     * @param array $value
+     * @return Zend_Gdata_Media_Extension_MediaGroup Provides a fluent interface
+     */
+    public function setKeywords($value)
+    {
+        $this->_keywords = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPlayer()
+    {
+        return $this->_player;
+    }
+
+    /**
+     * @param array
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setPlayer($value)
+    {
+        $this->_player = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRating()
+    {
+        return $this->_rating;
+    }
+
+    /**
+     * @param array
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setRating($value)
+    {
+        $this->_rating = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRestriction()
+    {
+        return $this->_restriction;
+    }
+
+    /**
+     * @param array
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setRestriction($value)
+    {
+        $this->_restriction = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getThumbnail()
+    {
+        return $this->_thumbnail;
+    }
+
+    /**
+     * @param array
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setThumbnail($value)
+    {
+        $this->_thumbnail = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMediaText()
+    {
+        return $this->_mediaText;
+    }
+
+    /**
+     * @param array
+     * @return Zend_Gdata_Media_Extension_MediaGroup
+     */
+    public function setMediaText($value)
+    {
+        $this->_mediaText = $value;
+        return $this;
+    }
+
+}

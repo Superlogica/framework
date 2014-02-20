@@ -1,41 +1,128 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * PHP Array (OO wrapper)
+ * Used to be returned by reference by __get() methods
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @todo       also implement Countable for PHP 5.1 but not yet to stay 5.0 compatible
+ */
+class Zend_Pdf_PhpArray implements ArrayAccess, Iterator, Countable {
+    /**
+     * Array element
+     * @var mixed
+     */
+    protected $_items = array();
+
+
+    /**
+     * Object constructor
+     *
+     * @param array $srcArray
+     */
+    public function __construct($srcArray = null)
+    {
+        if ($srcArray === null) {
+            reset($this->_items);
+        } else if (is_array($srcArray)) {
+            $this->_items = $srcArray;
+        } else {
+            throw new Exception('Array can be initialized only by other array');
+        }
+    }
+
+
+    public function current()
+    {
+        return current($this->_items);
+    }
+
+
+    public function next()
+    {
+        return next($this->_items);
+    }
+
+
+    public function key()
+    {
+        return key($this->_items);
+    }
+
+
+    public function valid() {
+        return current($this->_items)!==false;
+    }
+
+
+    public function rewind()
+    {
+        reset($this->_items);
+    }
+
+
+    public function offsetExists($offset)
+    {
+        return array_key_exists($offset, $this->_items);
+    }
+
+
+    public function offsetGet($offset)
+    {
+        return $this->_items[$offset];
+    }
+
+
+    public function offsetSet($offset, $value)
+    {
+        if ($offset === null) {
+            $this->_items[]        = $value;
+        } else {
+            $this->_items[$offset] = $value;
+        }
+    }
+
+
+    public function offsetUnset($offset)
+    {
+        unset($this->_items[$offset]);
+    }
+
+
+    public function clear()
+    {
+        $this->_items = array();
+    }
+    
+    /**
+     * Defined by Countable interface
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_items);
+    }
+    
+}
+

@@ -1,44 +1,197 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-nI2dHHBsxG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Json
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Json_Server_Error
+{
+    const ERROR_PARSE           = -32768;
+    const ERROR_INVALID_REQUEST = -32600;
+    const ERROR_INVALID_METHOD  = -32601;
+    const ERROR_INVALID_PARAMS  = -32602;
+    const ERROR_INTERNAL        = -32603;
+    const ERROR_OTHER           = -32000;
+
+    /**
+     * Allowed error codes
+     * @var array
+     */
+    protected $_allowedCodes = array(
+        self::ERROR_PARSE,
+        self::ERROR_INVALID_REQUEST,
+        self::ERROR_INVALID_METHOD,
+        self::ERROR_INVALID_PARAMS,
+        self::ERROR_INTERNAL,
+        self::ERROR_OTHER,
+    );
+
+    /**
+     * Current code
+     * @var int
+     */
+    protected $_code = -32000;
+
+    /**
+     * Error data
+     * @var mixed
+     */
+    protected $_data;
+
+    /**
+     * Error message
+     * @var string
+     */
+    protected $_message;
+
+    /**
+     * Constructor
+     * 
+     * @param  string $message 
+     * @param  int $code 
+     * @param  mixed $data 
+     * @return void
+     */
+    public function __construct($message = null, $code = -32000, $data = null)
+    {
+        $this->setMessage($message)
+             ->setCode($code)
+             ->setData($data);
+    }
+
+    /**
+     * Set error code
+     * 
+     * @param  int $code 
+     * @return Zend_Json_Server_Error
+     */
+    public function setCode($code)
+    {
+        if (!is_scalar($code)) {
+            return $this;
+        }
+
+        $code = (int) $code;
+        if (in_array($code, $this->_allowedCodes)) {
+            $this->_code = $code;
+        } elseif (in_array($code, range(-32099, -32000))) {
+            $this->_code = $code;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get error code
+     * 
+     * @return int|null
+     */
+    public function getCode()
+    {
+        return $this->_code;
+    }
+
+    /**
+     * Set error message
+     * 
+     * @param  string $message 
+     * @return Zend_Json_Server_Error
+     */
+    public function setMessage($message)
+    {
+        if (!is_scalar($message)) {
+            return $this;
+        }
+
+        $this->_message = (string) $message;
+        return $this;
+    }
+
+    /**
+     * Get error message
+     * 
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->_message;
+    }
+
+    /**
+     * Set error data
+     * 
+     * @param  mixed $data 
+     * @return Zend_Json_Server_Error
+     */
+    public function setData($data)
+    {
+        $this->_data = $data;
+        return $this;
+    }
+
+    /**
+     * Get error data
+     * 
+     * @return mixed
+     */
+    public function getData()
+    {
+        return $this->_data;
+    }
+
+    /**
+     * Cast error to array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        return array(
+            'code'    => $this->getCode(),
+            'message' => $this->getMessage(),
+            'data'    => $this->getData(),
+        );
+    }
+
+    /**
+     * Cast error to JSON
+     * 
+     * @return string
+     */
+    public function toJson()
+    {
+        require_once 'Zend/Json.php';
+        return Zend_Json::encode($this->toArray());
+    }
+
+    /**
+     * Cast to string (JSON)
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+}
+

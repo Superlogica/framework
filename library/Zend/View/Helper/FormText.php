@@ -1,33 +1,83 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-NOlR8bEQH83JgfCRXje7rYqMeM/360S=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract class for extension
+ */
+require_once 'Zend/View/Helper/FormElement.php';
+
+
+/**
+ * Helper to generate a "text" element
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_FormText extends Zend_View_Helper_FormElement
+{
+    /**
+     * Generates a 'text' element.
+     *
+     * @access public
+     *
+     * @param string|array $name If a string, the element name.  If an
+     * array, all other parameters are ignored, and the array elements
+     * are used in place of added parameters.
+     *
+     * @param mixed $value The element value.
+     *
+     * @param array $attribs Attributes for the element tag.
+     *
+     * @return string The element XHTML.
+     */
+    public function formText($name, $value = null, $attribs = null)
+    {
+        $info = $this->_getInfo($name, $value, $attribs);
+        extract($info); // name, value, attribs, options, listsep, disable
+
+        // build the element
+        $disabled = '';
+        if ($disable) {
+            // disabled
+            $disabled = ' disabled="disabled"';
+        }
+        
+        // XHTML or HTML end tag?
+        $endTag = ' />';
+        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
+            $endTag= '>';
+        }
+
+        $xhtml = '<input type="text"'
+                . ' name="' . $this->view->escape($name) . '"'
+                . ' id="' . $this->view->escape($id) . '"'
+                . ' value="' . $this->view->escape($value) . '"'
+                . $disabled
+                . $this->_htmlAttribs($attribs)
+                . $endTag;
+
+        return $xhtml;
+    }
+}

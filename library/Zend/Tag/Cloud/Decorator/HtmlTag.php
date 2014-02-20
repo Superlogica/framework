@@ -1,81 +1,278 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-R90KPpl4uAEB05lv
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tag
+ * @subpackage Cloud
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: HtmlTag.php 14682 2009-04-05 21:23:08Z dasprid $
+ */
+
+/**
+ * @see Zend_Tag_Cloud_Decorator_Tag
+ */
+require_once 'Zend/Tag/Cloud/Decorator/Tag.php';
+
+/**
+ * Simple HTML decorator for tags
+ *
+ * @category  Zend
+ * @package   Zend_Tag
+ * @uses      Zend_Tag_Cloud_Decorator_Tag
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tag_Cloud_Decorator_HtmlTag extends Zend_Tag_Cloud_Decorator_Tag
+{
+    /**
+     * List of tags which get assigned to the inner element instead of
+     * font-sizes.
+     * 
+     * @var array
+     */
+    protected $_classList = null;
+    
+    /**
+     * Unit for the fontsize
+     *
+     * @var string
+     */
+    protected $_fontSizeUnit = 'px';
+    
+    /**
+     * Allowed fontsize units
+     * 
+     * @var array
+     */
+    protected $_alloweFontSizeUnits = array('em', 'ex', 'px', 'in', 'cm', 'mm', 'pt', 'pc', '%'); 
+
+    /**
+     * List of HTML tags
+     *
+     * @var array
+     */
+    protected $_htmlTags = array(
+        'li'
+    );
+    
+    /**
+     * Maximum fontsize
+     *
+     * @var integer
+     */
+    protected $_maxFontSize = 20;
+    
+    /**
+     * Minimum fontsize
+     *
+     * @var integer
+     */
+    protected $_minFontSize = 10;
+    
+    /**
+     * Set a list of classes to use instead of fontsizes
+     *
+     * @param  array $classList
+     * @throws Zend_Tag_Cloud_Decorator_Exception When the classlist is empty
+     * @throws Zend_Tag_Cloud_Decorator_Exception When the classlist contains an invalid classname
+     * @return Zend_Tag_Cloud_Decorator_HtmlTag
+     */
+    public function setClassList(array $classList = null)
+    {
+        if (is_array($classList)) {
+            if (count($classList) === 0) {
+                require_once 'Zend/Tag/Cloud/Decorator/Exception.php';
+                throw new Zend_Tag_Cloud_Decorator_Exception('Classlist is empty');                
+            }
+            
+            foreach ($classList as $class) {
+                if (!is_string($class)) {
+                    require_once 'Zend/Tag/Cloud/Decorator/Exception.php';
+                    throw new Zend_Tag_Cloud_Decorator_Exception('Classlist contains an invalid classname');
+                }
+            }
+        }
+        
+        $this->_classList = $classList;
+        return $this;
+    }
+
+    /**
+     * Get class list
+     * 
+     * @return array
+     */
+    public function getClassList()
+    {
+        return $this->_classList;
+    }
+
+    /**
+     * Set the font size unit
+     * 
+     * Possible values are: em, ex, px, in, cm, mm, pt, pc and %
+     * 
+     * @param  string $fontSizeUnit
+     * @throws Zend_Tag_Cloud_Decorator_Exception When an invalid fontsize unit is specified
+     * @return Zend_Tag_Cloud_Decorator_HtmlTag
+     */
+    public function setFontSizeUnit($fontSizeUnit)
+    {
+        if (!in_array($fontSizeUnit, $this->_alloweFontSizeUnits)) {
+            require_once 'Zend/Tag/Cloud/Decorator/Exception.php';
+            throw new Zend_Tag_Cloud_Decorator_Exception('Invalid fontsize unit specified');
+        }
+        
+        $this->_fontSizeUnit = (string) $fontSizeUnit;
+        $this->setClassList(null);
+        return $this;
+    }
+
+    /**
+     * Retrieve font size unit
+     * 
+     * @return string
+     */
+    public function getFontSizeUnit()
+    {
+        return $this->_fontSizeUnit;
+    }
+     /**
+     * Set the HTML tags surrounding the <a> element
+     *
+     * @param  array $htmlTags
+     * @return Zend_Tag_Cloud_Decorator_HtmlTag
+     */
+    public function setHtmlTags(array $htmlTags)
+    {
+        $this->_htmlTags = $htmlTags;
+        return $this;   
+    }
+
+    /**
+     * Get HTML tags map
+     * 
+     * @return array
+     */
+    public function getHtmlTags()
+    {
+        return $this->_htmlTags;
+    }
+    
+    /**
+     * Set maximum font size
+     *
+     * @param  integer $maxFontSize
+     * @throws Zend_Tag_Cloud_Decorator_Exception When fontsize is not numeric
+     * @return Zend_Tag_Cloud_Decorator_HtmlTag
+     */
+    public function setMaxFontSize($maxFontSize)
+    {
+        if (!is_numeric($maxFontSize)) {
+            require_once 'Zend/Tag/Cloud/Decorator/Exception.php';
+            throw new Zend_Tag_Cloud_Decorator_Exception('Fontsize must be numeric');
+        }
+        
+        $this->_maxFontSize = (int) $maxFontSize;       
+        $this->setClassList(null);
+        return $this;
+    }
+    
+    /**
+     * Retrieve maximum font size
+     * 
+     * @return int
+     */
+    public function getMaxFontSize()
+    {
+        return $this->_maxFontSize;
+    }
+
+    /**
+     * Set minimum font size
+     *
+     * @param  int $minFontSize
+     * @throws Zend_Tag_Cloud_Decorator_Exception When fontsize is not numeric
+     * @return Zend_Tag_Cloud_Decorator_HtmlTag
+     */
+    public function setMinFontSize($minFontSize)
+    {
+        if (!is_numeric($minFontSize)) {
+            require_once 'Zend/Tag/Cloud/Decorator/Exception.php';
+            throw new Zend_Tag_Cloud_Decorator_Exception('Fontsize must be numeric');
+        }
+        
+        $this->_minFontSize = (int) $minFontSize;
+        $this->setClassList(null);
+        return $this;
+    }
+
+    /**
+     * Retrieve minimum font size
+     * 
+     * @return int
+     */
+    public function getMinFontSize()
+    {
+        return $this->_minFontSize;
+    }
+    
+    /**
+     * Defined by Zend_Tag_Cloud_Decorator_Tag
+     *
+     * @param  Zend_Tag_ItemList $tags
+     * @return array
+     */
+    public function render(Zend_Tag_ItemList $tags)
+    {
+        if (null === ($weightValues = $this->getClassList())) {
+            $weightValues = range($this->getMinFontSize(), $this->getMaxFontSize());
+        }
+        
+        $tags->spreadWeightValues($weightValues);
+        
+        $result = array();
+        
+        foreach ($tags as $tag) {
+            if (null === ($classList = $this->getClassList())) {
+                $attribute = sprintf('style="font-size: %d%s;"', $tag->getParam('weightValue'), $this->getFontSizeUnit());
+            } else {
+                $attribute = sprintf('class="%s"', htmlspecialchars($tag->getParam('weightValue')));
+            }
+            
+            $tagHtml = sprintf('<a href="%s" %s>%s</a>', htmlSpecialChars($tag->getParam('url')), $attribute, $tag->getTitle());
+            
+            foreach ($this->getHtmlTags() as $key => $data) {
+                if (is_array($data)) {
+                    $htmlTag    = $key;
+                    $attributes = '';
+                    
+                    foreach ($data as $param => $value) {
+                        $attributes .= ' ' . $param . '="' . htmlspecialchars($value) . '"';
+                    }
+                } else {
+                    $htmlTag    = $data;
+                    $attributes = '';
+                }
+                
+                $tagHtml = sprintf('<%1$s%3$s>%2$s</%1$s>', $htmlTag, $tagHtml, $attributes);
+            }
+            
+            $result[] = $tagHtml;
+        }
+        
+        return $result;
+    }
+}

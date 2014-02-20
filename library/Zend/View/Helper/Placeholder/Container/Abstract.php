@@ -1,94 +1,375 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-/iy6OtgWdR6q1G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Abstract.php 14191 2009-02-28 21:53:47Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Abstract class representing container for placeholder values
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_View_Helper_Placeholder_Container_Abstract extends ArrayObject
+{
+    /**
+     * Whether or not to override all contents of placeholder
+     * @const string
+     */
+    const SET    = 'SET';
+
+    /**
+     * Whether or not to append contents to placeholder
+     * @const string
+     */
+    const APPEND = 'APPEND';
+
+    /**
+     * Whether or not to prepend contents to placeholder
+     * @const string
+     */
+    const PREPEND = 'PREPEND';
+
+    /**
+     * What text to prefix the placeholder with when rendering
+     * @var string
+     */
+    protected $_prefix    = '';
+
+    /**
+     * What text to append the placeholder with when rendering
+     * @var string
+     */
+    protected $_postfix   = '';
+
+    /**
+     * What string to use between individual items in the placeholder when rendering
+     * @var string
+     */
+    protected $_separator = '';
+
+    /**
+     * What string to use as the indentation of output, this will typically be spaces. Eg: '    '
+     * @var string
+     */
+    protected $_indent = '';
+    
+    /**
+     * Whether or not we're already capturing for this given container
+     * @var bool
+     */
+    protected $_captureLock = false;
+
+    /**
+     * What type of capture (overwrite (set), append, prepend) to use
+     * @var string
+     */
+    protected $_captureType;
+
+    /**
+     * Key to which to capture content
+     * @var string
+     */
+    protected $_captureKey;
+    
+    /**
+     * Constructor - This is needed so that we can attach a class member as the ArrayObject container
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct(array(), parent::ARRAY_AS_PROPS);
+    }
+    
+    /**
+     * Set a single value
+     *
+     * @param  mixed $value
+     * @return void
+     */
+    public function set($value)
+    {
+        $this->exchangeArray(array($value));
+    }
+
+    /**
+     * Prepend a value to the top of the container
+     * 
+     * @param  mixed $value 
+     * @return void
+     */
+    public function prepend($value)
+    {
+        $values = $this->getArrayCopy();
+        array_unshift($values, $value);
+        $this->exchangeArray($values);
+    }
+
+    /**
+     * Retrieve container value
+     *
+     * If single element registered, returns that element; otherwise,
+     * serializes to array.
+     *
+     * @return mixed
+     */
+    public function getValue()
+    {
+        if (1 == count($this)) {
+            $keys = $this->getKeys();
+            $key  = array_shift($keys);
+            return $this[$key];
+        }
+
+        return $this->getArrayCopy();
+    }
+
+    /**
+     * Set prefix for __toString() serialization
+     *
+     * @param  string $prefix
+     * @return Zend_View_Helper_Placeholder_Container
+     */
+    public function setPrefix($prefix)
+    {
+        $this->_prefix = (string) $prefix;
+        return $this;
+    }
+
+    /**
+     * Retrieve prefix
+     *
+     * @return string
+     */
+    public function getPrefix()
+    {
+        return $this->_prefix;
+    }
+
+    /**
+     * Set postfix for __toString() serialization
+     *
+     * @param  string $postfix
+     * @return Zend_View_Helper_Placeholder_Container
+     */
+    public function setPostfix($postfix)
+    {
+        $this->_postfix = (string) $postfix;
+        return $this;
+    }
+
+    /**
+     * Retrieve postfix
+     *
+     * @return string
+     */
+    public function getPostfix()
+    {
+        return $this->_postfix;
+    }
+
+    /**
+     * Set separator for __toString() serialization
+     *
+     * Used to implode elements in container
+     *
+     * @param  string $separator
+     * @return Zend_View_Helper_Placeholder_Container
+     */
+    public function setSeparator($separator)
+    {
+        $this->_separator = (string) $separator;
+        return $this;
+    }
+
+    /**
+     * Retrieve separator
+     *
+     * @return string
+     */
+    public function getSeparator()
+    {
+        return $this->_separator;
+    }
+
+    /**
+     * Set the indentation string for __toString() serialization,
+     * optionally, if a number is passed, it will be the number of spaces
+     *
+     * @param  string|int $indent
+     * @return Zend_View_Helper_Placeholder_Container_Abstract
+     */
+    public function setIndent($indent)
+    {
+        $this->_indent = $this->getWhitespace($indent);
+        return $this;
+    }
+
+    /**
+     * Retrieve indentation
+     *
+     * @return string
+     */
+    public function getIndent()
+    {
+        return $this->_indent;
+    }
+
+    /**
+     * Retrieve whitespace representation of $indent
+     * 
+     * @param  int|string $indent 
+     * @return string
+     */
+    public function getWhitespace($indent)
+    {
+        if (is_int($indent)) {
+            $indent = str_repeat(' ', $indent);
+        }
+
+        return (string) $indent;
+    }
+   
+    /**
+     * Start capturing content to push into placeholder
+     *
+     * @param  int $type How to capture content into placeholder; append, prepend, or set
+     * @return void
+     * @throws Zend_View_Helper_Placeholder_Exception if nested captures detected
+     */
+    public function captureStart($type = Zend_View_Helper_Placeholder_Container_Abstract::APPEND, $key = null)
+    {
+        if ($this->_captureLock) {
+            require_once 'Zend/View/Helper/Placeholder/Container/Exception.php';
+            throw new Zend_View_Helper_Placeholder_Container_Exception('Cannot nest placeholder captures for the same placeholder');
+        }
+
+        $this->_captureLock = true;
+        $this->_captureType = $type;
+        if ((null !== $key) && is_scalar($key)) {
+            $this->_captureKey = (string) $key;
+        }
+        ob_start();
+    }
+
+    /**
+     * End content capture
+     *
+     * @return void
+     */
+    public function captureEnd()
+    {
+        $data               = ob_get_clean();
+        $key                = null;
+        $this->_captureLock = false;
+        if (null !== $this->_captureKey) {
+            $key = $this->_captureKey;
+        }
+        switch ($this->_captureType) {
+            case self::SET:
+                if (null !== $key) {
+                    $this[$key] = $data;
+                } else {
+                    $this->exchangeArray(array($data));
+                }
+                break;
+            case self::PREPEND:
+                if (null !== $key) {
+                    $array  = array($key => $data);
+                    $values = $this->getArrayCopy();
+                    $final  = $array + $values;
+                    $this->exchangeArray($final);
+                } else {
+                    $this->prepend($data);
+                }
+                break;
+            case self::APPEND:
+            default:
+                if (null !== $key) {
+                    if (empty($this[$key])) {                                                       
+                        $this[$key] = $data;                                                       
+                    } else {                                                                       
+                        $this[$key] .= $data;                                                      
+                    }
+                } else {
+                    $this[$this->nextIndex()] = $data;
+                }
+                break;
+        }
+    }
+
+    /**
+     * Get keys
+     * 
+     * @return array
+     */
+    public function getKeys()
+    {
+        $array = $this->getArrayCopy();
+        return array_keys($array);
+    }
+
+    /**
+     * Next Index
+     *
+     * as defined by the PHP manual
+     * @return int
+     */
+    public function nextIndex()
+    {
+        $keys = $this->getKeys();
+        if (0 == count($keys)) {
+            return 0;
+        }
+
+        return $nextIndex = max($keys) + 1;
+    }
+    
+    /**
+     * Render the placeholder
+     *
+     * @return string
+     */
+    public function toString($indent = null)
+    {
+        $indent = ($indent !== null) 
+                ? $this->getWhitespace($indent) 
+                : $this->getIndent();
+        
+        $items  = $this->getArrayCopy();
+        $return = $indent 
+                . $this->getPrefix()
+                . implode($this->getSeparator(), $items)
+                . $this->getPostfix();
+        $return = preg_replace("/(\r\n?|\n)/", '$1' . $indent, $return);
+        return $return;
+    }
+
+    /**
+     * Serialize object to string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+}

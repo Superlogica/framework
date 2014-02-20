@@ -1,154 +1,353 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Client_Adapter
+ * @version    $Id: Socket.php 13013 2008-12-04 12:04:24Z yoshida@zend.co.jp $
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+require_once 'Zend/Uri/Http.php';
+require_once 'Zend/Http/Client/Adapter/Interface.php';
+
+/**
+ * A sockets based (stream_socket_client) adapter class for Zend_Http_Client. Can be used
+ * on almost every PHP environment, and does not require any special extensions.
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Client_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Http_Client_Adapter_Socket implements Zend_Http_Client_Adapter_Interface
+{
+    /**
+     * The socket for server connection
+     *
+     * @var resource|null
+     */
+    protected $socket = null;
+
+    /**
+     * What host/port are we connected to?
+     *
+     * @var array
+     */
+    protected $connected_to = array(null, null);
+
+    /**
+     * Parameters array
+     *
+     * @var array
+     */
+    protected $config = array(
+        'persistent'    => false,
+        'ssltransport'  => 'ssl',
+        'sslcert'       => null,
+        'sslpassphrase' => null
+    );
+
+    /**
+     * Request method - will be set by write() and might be used by read()
+     *
+     * @var string
+     */
+    protected $method = null;
+
+    /**
+     * Adapter constructor, currently empty. Config is set using setConfig()
+     *
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * Set the configuration array for the adapter
+     *
+     * @param array $config
+     */
+    public function setConfig($config = array())
+    {
+        if (! is_array($config)) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception(
+                '$concig expects an array, ' . gettype($config) . ' recieved.');
+        }
+
+        foreach ($config as $k => $v) {
+            $this->config[strtolower($k)] = $v;
+        }
+    }
+
+    /**
+     * Connect to the remote server
+     *
+     * @param string  $host
+     * @param int     $port
+     * @param boolean $secure
+     * @param int     $timeout
+     */
+    public function connect($host, $port = 80, $secure = false)
+    {
+        // If the URI should be accessed via SSL, prepend the Hostname with ssl://
+        $host = ($secure ? $this->config['ssltransport'] : 'tcp') . '://' . $host;
+
+        // If we are connected to the wrong host, disconnect first
+        if (($this->connected_to[0] != $host || $this->connected_to[1] != $port)) {
+            if (is_resource($this->socket)) $this->close();
+        }
+
+        // Now, if we are not connected, connect
+        if (! is_resource($this->socket) || ! $this->config['keepalive']) {
+            $context = stream_context_create();
+            if ($secure) {
+                if ($this->config['sslcert'] !== null) {
+                    if (! stream_context_set_option($context, 'ssl', 'local_cert',
+                                                    $this->config['sslcert'])) {
+                        require_once 'Zend/Http/Client/Adapter/Exception.php';
+                        throw new Zend_Http_Client_Adapter_Exception('Unable to set sslcert option');
+                    }
+                }
+                if ($this->config['sslpassphrase'] !== null) {
+                    if (! stream_context_set_option($context, 'ssl', 'passphrase',
+                                                    $this->config['sslpassphrase'])) {
+                        require_once 'Zend/Http/Client/Adapter/Exception.php';
+                        throw new Zend_Http_Client_Adapter_Exception('Unable to set sslpassphrase option');
+                    }
+                }
+            }
+
+            $flags = STREAM_CLIENT_CONNECT;
+            if ($this->config['persistent']) $flags |= STREAM_CLIENT_PERSISTENT;
+
+            $this->socket = @stream_socket_client($host . ':' . $port,
+                                                  $errno,
+                                                  $errstr,
+                                                  (int) $this->config['timeout'],
+                                                  $flags,
+                                                  $context);
+            if (! $this->socket) {
+                $this->close();
+                require_once 'Zend/Http/Client/Adapter/Exception.php';
+                throw new Zend_Http_Client_Adapter_Exception(
+                    'Unable to Connect to ' . $host . ':' . $port . '. Error #' . $errno . ': ' . $errstr);
+            }
+
+            // Set the stream timeout
+            if (! stream_set_timeout($this->socket, (int) $this->config['timeout'])) {
+                require_once 'Zend/Http/Client/Adapter/Exception.php';
+                throw new Zend_Http_Client_Adapter_Exception('Unable to set the connection timeout');
+            }
+
+            // Update connected_to
+            $this->connected_to = array($host, $port);
+        }
+    }
+
+    /**
+     * Send request to the remote server
+     *
+     * @param string        $method
+     * @param Zend_Uri_Http $uri
+     * @param string        $http_ver
+     * @param array         $headers
+     * @param string        $body
+     * @return string Request as string
+     */
+    public function write($method, $uri, $http_ver = '1.1', $headers = array(), $body = '')
+    {
+        // Make sure we're properly connected
+        if (! $this->socket) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception('Trying to write but we are not connected');
+        }
+
+        $host = $uri->getHost();
+        $host = (strtolower($uri->getScheme()) == 'https' ? $this->config['ssltransport'] : 'tcp') . '://' . $host;
+        if ($this->connected_to[0] != $host || $this->connected_to[1] != $uri->getPort()) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception('Trying to write but we are connected to the wrong host');
+        }
+
+        // Save request method for later
+        $this->method = $method;
+
+        // Build request headers
+        $path = $uri->getPath();
+        if ($uri->getQuery()) $path .= '?' . $uri->getQuery();
+        $request = "{$method} {$path} HTTP/{$http_ver}\r\n";
+        foreach ($headers as $k => $v) {
+            if (is_string($k)) $v = ucfirst($k) . ": $v";
+            $request .= "$v\r\n";
+        }
+
+        // Add the request body
+        $request .= "\r\n" . $body;
+
+        // Send the request
+        if (! @fwrite($this->socket, $request)) {
+            require_once 'Zend/Http/Client/Adapter/Exception.php';
+            throw new Zend_Http_Client_Adapter_Exception('Error writing request to server');
+        }
+
+        return $request;
+    }
+
+    /**
+     * Read response from server
+     *
+     * @return string
+     */
+    public function read()
+    {
+        // First, read headers only
+        $response = '';
+        $gotStatus = false;
+        while (($line = @fgets($this->socket)) !== false) {
+            $gotStatus = $gotStatus || (strpos($line, 'HTTP') !== false);
+            if ($gotStatus) {
+                $response .= $line;
+                if (rtrim($line) === '') break;
+            }
+        }
+
+        $statusCode = Zend_Http_Response::extractCode($response);
+
+        // Handle 100 and 101 responses internally by restarting the read again
+        if ($statusCode == 100 || $statusCode == 101) return $this->read();
+
+        /**
+         * Responses to HEAD requests and 204 or 304 responses are not expected
+         * to have a body - stop reading here
+         */
+        if ($statusCode == 304 || $statusCode == 204 ||
+            $this->method == Zend_Http_Client::HEAD) return $response;
+
+        // Check headers to see what kind of connection / transfer encoding we have
+        $headers = Zend_Http_Response::extractHeaders($response);
+
+        // If we got a 'transfer-encoding: chunked' header
+        if (isset($headers['transfer-encoding'])) {
+            if ($headers['transfer-encoding'] == 'chunked') {
+                do {
+                    $line  = @fgets($this->socket);
+                    $chunk = $line;
+
+                    // Figure out the next chunk size
+                    $chunksize = trim($line);
+                    if (! ctype_xdigit($chunksize)) {
+                        $this->close();
+                        require_once 'Zend/Http/Client/Adapter/Exception.php';
+                        throw new Zend_Http_Client_Adapter_Exception('Invalid chunk size "' .
+                            $chunksize . '" unable to read chunked body');
+                    }
+
+                    // Convert the hexadecimal value to plain integer
+                    $chunksize = hexdec($chunksize);
+
+                    // Read chunk
+                    $left_to_read = $chunksize;
+                    while ($left_to_read > 0) {
+                        $line = @fread($this->socket, $left_to_read);
+                        if ($line === false || strlen($line) === 0)
+                        {
+                            break;
+                        } else {
+                            $chunk .= $line;
+                            $left_to_read -= strlen($line);
+                        }
+
+                        // Break if the connection ended prematurely
+                        if (feof($this->socket)) break;
+                    }
+
+                    $chunk .= @fgets($this->socket);
+                    $response .= $chunk;
+                } while ($chunksize > 0);
+
+            } else {
+                throw new Zend_Http_Client_Adapter_Exception('Cannot handle "' .
+                    $headers['transfer-encoding'] . '" transfer encoding');
+            }
+
+        // Else, if we got the content-length header, read this number of bytes
+        } elseif (isset($headers['content-length'])) {
+            $left_to_read = $headers['content-length'];
+            $chunk = '';
+            while ($left_to_read > 0) {
+                $chunk = @fread($this->socket, $left_to_read);
+                if ($chunk === false || strlen($chunk) === 0)
+                {
+                    break;
+                } else {
+                    $left_to_read -= strlen($chunk);
+                    $response .= $chunk;
+                }
+
+                // Break if the connection ended prematurely
+                if (feof($this->socket)) break;
+            }
+
+        // Fallback: just read the response until EOF
+        } else {
+        	do {
+        		$buff = @fread($this->socket, 8192);
+        		if ($buff === false || strlen($buff) === 0)
+        		{
+        			break;
+        		} else {
+                    $response .= $buff;
+        		}
+        	} while (feof($this->socket) === false);
+
+            $this->close();
+        }
+
+        // Close the connection if requested to do so by the server
+        if (isset($headers['connection']) && $headers['connection'] == 'close') {
+            $this->close();
+        }
+
+        return $response;
+    }
+
+    /**
+     * Close the connection to the server
+     *
+     */
+    public function close()
+    {
+        if (is_resource($this->socket)) @fclose($this->socket);
+        $this->socket = null;
+        $this->connected_to = array(null, null);
+    }
+
+    /**
+     * Destructor: make sure the socket is disconnected
+     *
+     * If we are in persistent TCP mode, will not close the connection
+     *
+     */
+    public function __destruct()
+    {
+        if (! $this->config['persistent']) {
+            if ($this->socket) $this->close();
+        }
+    }
+}

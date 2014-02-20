@@ -1,31 +1,120 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Dynamic.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling acceleration conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Viscosity_Dynamic
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Viscosity_Dynamic extends Zend_Measure_Abstract
+{
+    const STANDARD = 'KILOGRAM_PER_METER_SECOND';
+
+    const CENTIPOISE                              = 'CENTIPOISE';
+    const DECIPOISE                               = 'DECIPOISE';
+    const DYNE_SECOND_PER_SQUARE_CENTIMETER       = 'DYNE_SECOND_PER_SQUARE_CENTIMETER';
+    const GRAM_FORCE_SECOND_PER_SQUARE_CENTIMETER = 'GRAM_FORCE_SECOND_PER_SQUARE_CENTIMETER';
+    const GRAM_PER_CENTIMETER_SECOND              = 'GRAM_PER_CENTIMETER_SECOND';
+    const KILOGRAM_FORCE_SECOND_PER_SQUARE_METER  = 'KILOGRAM_FORCE_SECOND_PER_SQUARE_METER';
+    const KILOGRAM_PER_METER_HOUR                 = 'KILOGRAM_PER_METER_HOUR';
+    const KILOGRAM_PER_METER_SECOND               = 'KILOGRAM_PER_METER_SECOND';
+    const MILLIPASCAL_SECOND                      = 'MILLIPASCAL_SECOND';
+    const MILLIPOISE                              = 'MILLIPOISE';
+    const NEWTON_SECOND_PER_SQUARE_METER          = 'NEWTON_SECOND_PER_SQUARE_METER';
+    const PASCAL_SECOND                           = 'PASCAL_SECOND';
+    const POISE                                   = 'POISE';
+    const POISEUILLE                              = 'POISEUILLE';
+    const POUND_FORCE_SECOND_PER_SQUARE_FEET      = 'POUND_FORCE_SECOND_PER_SQUARE_FEET';
+    const POUND_FORCE_SECOND_PER_SQUARE_INCH      = 'POUND_FORCE_SECOND_PER_SQUARE_INCH';
+    const POUND_PER_FOOT_HOUR                     = 'POUND_PER_FOOT_HOUR';
+    const POUND_PER_FOOT_SECOND                   = 'POUND_PER_FOOT_SECOND';
+    const POUNDAL_HOUR_PER_SQUARE_FOOT            = 'POUNDAL_HOUR_PER_SQUARE_FOOT';
+    const POUNDAL_SECOND_PER_SQUARE_FOOT          = 'POUNDAL_SECOND_PER_SQUARE_FOOT';
+    const REYN                                    = 'REYN';
+    const SLUG_PER_FOOT_SECOND                    = 'SLUG_PER_FOOT_SECOND';
+    const LBFS_PER_SQUARE_FOOT                    = 'LBFS_PER_SQUARE_FOOT';
+    const NS_PER_SQUARE_METER                     = 'NS_PER_SQUARE_METER';
+    const WATER_20C                               = 'WATER_20C';
+    const WATER_40C                               = 'WATER_40C';
+    const HEAVY_OIL_20C                           = 'HEAVY_OIL_20C';
+    const HEAVY_OIL_40C                           = 'HEAVY_OIL_40C';
+    const GLYCERIN_20C                            = 'GLYCERIN_20C';
+    const GLYCERIN_40C                            = 'GLYCERIN_40C';
+    const SAE_5W_MINUS18C                         = 'SAE_5W_MINUS18C';
+    const SAE_10W_MINUS18C                        = 'SAE_10W_MINUS18C';
+    const SAE_20W_MINUS18C                        = 'SAE_20W_MINUS18C';
+    const SAE_5W_99C                              = 'SAE_5W_99C';
+    const SAE_10W_99C                             = 'SAE_10W_99C';
+    const SAE_20W_99C                             = 'SAE_20W_99C';
+
+    /**
+     * Calculations for all dynamic viscosity units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'CENTIPOISE'          => array('0.001',      'cP'),
+        'DECIPOISE'           => array('0.01',       'dP'),
+        'DYNE_SECOND_PER_SQUARE_CENTIMETER'       => array('0.1',     'dyn s/cm²'),
+        'GRAM_FORCE_SECOND_PER_SQUARE_CENTIMETER' => array('98.0665', 'gf s/cm²'),
+        'GRAM_PER_CENTIMETER_SECOND'              => array('0.1',     'g/cm s'),
+        'KILOGRAM_FORCE_SECOND_PER_SQUARE_METER'  => array('9.80665', 'kgf s/m²'),
+        'KILOGRAM_PER_METER_HOUR'    => array(array('' => '1', '/' => '3600'), 'kg/m h'),
+        'KILOGRAM_PER_METER_SECOND'  => array('1',   'kg/ms'),
+        'MILLIPASCAL_SECOND'  => array('0.001',      'mPa s'),
+        'MILLIPOISE'          => array('0.0001',     'mP'),
+        'NEWTON_SECOND_PER_SQUARE_METER' => array('1', 'N s/m²'),
+        'PASCAL_SECOND'       => array('1',          'Pa s'),
+        'POISE'               => array('0.1',        'P'),
+        'POISEUILLE'          => array('1',          'Pl'),
+        'POUND_FORCE_SECOND_PER_SQUARE_FEET' => array('47.880259',  'lbf s/ft²'),
+        'POUND_FORCE_SECOND_PER_SQUARE_INCH' => array('6894.75729', 'lbf s/in²'),
+        'POUND_PER_FOOT_HOUR' => array('0.00041337887',             'lb/ft h'),
+        'POUND_PER_FOOT_SECOND'          => array('1.4881639',      'lb/ft s'),
+        'POUNDAL_HOUR_PER_SQUARE_FOOT'   => array('0.00041337887',  'pdl h/ft²'),
+        'POUNDAL_SECOND_PER_SQUARE_FOOT' => array('1.4881639',      'pdl s/ft²'),
+        'REYN'                => array('6894.75729', 'reyn'),
+        'SLUG_PER_FOOT_SECOND'=> array('47.880259',  'slug/ft s'),
+        'WATER_20C'           => array('0.001',      'water (20°)'),
+        'WATER_40C'           => array('0.00065',    'water (40°)'),
+        'HEAVY_OIL_20C'       => array('0.45',       'oil (20°)'),
+        'HEAVY_OIL_40C'       => array('0.11',       'oil (40°)'),
+        'GLYCERIN_20C'        => array('1.41',       'glycerin (20°)'),
+        'GLYCERIN_40C'        => array('0.284',      'glycerin (40°)'),
+        'SAE_5W_MINUS18C'     => array('1.2',        'SAE 5W (-18°)'),
+        'SAE_10W_MINUS18C'    => array('2.4',        'SAE 10W (-18°)'),
+        'SAE_20W_MINUS18C'    => array('9.6',        'SAE 20W (-18°)'),
+        'SAE_5W_99C'          => array('0.0039',     'SAE 5W (99°)'),
+        'SAE_10W_99C'         => array('0.0042',     'SAE 10W (99°)'),
+        'SAE_20W_99C'         => array('0.0057',     'SAE 20W (99°)'),
+        'STANDARD'            => 'KILOGRAM_PER_METER_SECOND'
+    );
+}

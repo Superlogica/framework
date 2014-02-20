@@ -1,41 +1,173 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-yOpe3FhkNQcZ7v74YxMJYK2nGsE/KBRoMW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_ValidationTextBox */
+require_once 'Zend/Dojo/Form/Element/ValidationTextBox.php';
+
+/**
+ * NumberTextBox dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_ValidationTextBox
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: NumberTextBox.php 10079 2008-07-14 10:56:37Z matthew $
+ */
+class Zend_Dojo_Form_Element_NumberTextBox extends Zend_Dojo_Form_Element_ValidationTextBox
+{
+    /**
+     * Use NumberTextBox dijit view helper
+     * @var string
+     */
+    public $helper = 'NumberTextBox';
+
+    /**
+     * Allowed numeric type formats
+     * @var array
+     */
+    protected $_allowedTypes = array(
+        'decimal',
+        'scientific',
+        'percent',
+        'currency',
+    );
+
+    /**
+     * Set locale
+     *
+     * @param  string $locale
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setLocale($locale)
+    {
+        $this->setConstraint('locale', (string) $locale);
+        return $this;
+    }
+
+    /**
+     * Retrieve locale
+     *
+     * @return string|null
+     */
+    public function getLocale()
+    {
+        return $this->getConstraint('locale');
+    }
+
+    /**
+     * Set numeric format pattern
+     *
+     * @param  string $pattern
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setPattern($pattern)
+    {
+        $this->setConstraint('pattern', (string) $pattern);
+        return $this;
+    }
+
+    /**
+     * Retrieve numeric format pattern
+     *
+     * @return string|null
+     */
+    public function getPattern()
+    {
+        return $this->getConstraint('pattern');
+    }
+
+    /**
+     * Set numeric format type
+     *
+     * @see    $_allowedTypes
+     * @param  string $type
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setType($type)
+    {
+        $type = strtolower($type);
+        if (!in_array($type, $this->_allowedTypes)) {
+            require_once 'Zend/Form/Element/Exception.php';
+            throw new Zend_Form_Element_Exception(sprintf('Invalid numeric type "%s" specified', $type));
+        }
+
+        $this->setConstraint('type', $type);
+        return $this;
+    }
+
+    /**
+     * Retrieve type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->getConstraint('type');
+    }
+
+    /**
+     * Set decimal places
+     *
+     * @param  int $places
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setPlaces($places)
+    {
+        $this->setConstraint('places', (int) $places);
+        return $this;
+    }
+
+    /**
+     * Retrieve decimal places
+     *
+     * @return int|null
+     */
+    public function getPlaces()
+    {
+        return $this->getConstraint('places');
+    }
+
+    /**
+     * Set strict flag
+     *
+     * @param  bool $strict
+     * @return Zend_Dojo_Form_Element_NumberTextBox
+     */
+    public function setStrict($flag)
+    {
+        $this->setConstraint('strict', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve strict flag
+     *
+     * @return bool
+     */
+    public function getStrict()
+    {
+        if (!$this->hasConstraint('strict')) {
+            return false;
+        }
+        return ('true' == $this->getConstraint('strict'));
+    }
+}

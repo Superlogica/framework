@@ -1,42 +1,102 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category     Zend
+ * @package      Zend_Gdata
+ * @subpackage   Spreadsheets
+ * @copyright    Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Spreadsheets_Extension_Cell
+ */
+require_once 'Zend/Gdata/Spreadsheets/Extension/Cell.php';
+
+/**
+ * Concrete class for working with Cell entries.
+ *
+ * @category     Zend
+ * @package      Zend_Gdata
+ * @subpackage   Spreadsheets
+ * @copyright    Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Spreadsheets_CellEntry extends Zend_Gdata_Entry
+{
+
+    protected $_entryClassName = 'Zend_Gdata_Spreadsheets_CellEntry';
+    protected $_cell;
+
+    /**
+     * Constructs a new Zend_Gdata_Spreadsheets_CellEntry object.
+     * @param string $uri (optional)
+     * @param DOMElement $element (optional) The DOMElement on which to base this object.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Spreadsheets::$namespaces);
+        parent::__construct($element);
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_cell != null) {
+            $element->appendChild($this->_cell->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('gs') . ':' . 'cell';
+            $cell = new Zend_Gdata_Spreadsheets_Extension_Cell();
+            $cell->transferFromDOM($child);
+            $this->_cell = $cell;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Gets the Cell element of this Cell Entry.
+     * @return Zend_Gdata_Spreadsheets_Extension_Cell
+     */
+    public function getCell()
+    {
+        return $this->_cell;
+    }
+
+    /**
+     * Sets the Cell element of this Cell Entry.
+     * @param $cell Zend_Gdata_Spreadsheets_Extension_Cell $cell
+     */
+    public function setCell($cell)
+    {
+        $this->_cell = $cell;
+        return $this;
+    }
+
+}

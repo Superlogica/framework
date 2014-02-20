@@ -1,44 +1,132 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Fdo4PCONEgayKA4i5WLkTunSOxI7EHepOMiNePGG0bs5flAmrDnx8Uw3bUoLNhgZ4zycMG/
-wE5arBJhHld+lAV2sclj81yHbQk1OtQ/TrJvvGxV5hOS5hgL0dzd9p2MihOapniXIj3sfLJuWhuR
-Q9RG8IxRrzp1wHiSviE19E8e01rzbZzdLuoP+Uq1NsDANACEcRwpjeEEkdtXN5RN5PV5toUFxgyf
-n354XWDq4S6/6Z36z52Kn4kJIPpDKor7T+KlBeH2QATaEYy6XaR8a1ViazKsViDVmgNNqB6Xzz8N
-XG1XtyyzfbC1g5/fxWS867ugeLZj/tG+SkqTffwkHLFKEpESrkgTTiUTlpdqZi6kr+ZOH9cmQKnH
-hctj6spq86Yklo+HiY+qQnenlvuJPavgoVjubQeVGCFWqHNcUCZQo06ldHNRzNBTaFjThwzjGCdl
-vcufiqmeI/KzrpbnTYmheb1HtdGAlzGZPcfAPgcE9s2280rM1yjEgro7wOdRbFi90AzPCMDpy+xh
-1v+RMkUOyi0dG/kYnZTzdyeLEwoewEF8KAw8NvniEzOKwD44Txd3a2Pvm4q4GnjPwj5c18F7G25I
-SxUtHp4teL1hqGscCV5hGO0C8BAoBG4KVof0qH7Eki1pcjkrAQyPQaWEfNbWaGxSuYb5x2fFh2yk
-ux4jjrEq6djGp+gV0ICWOYEymhdBSaZhXY/Lv2d7b0KqBVT9H7C0rnbGa3q6wpA3vsEpyIu9knWe
-hdlnR4MQ4YGp+5lJR8/4ph2SKd5Jg5mrIJIQ7S3AQ/ZGn5wj1NAbfHGUaS+48dyMI1YpdYq/jGsD
-78rjo0qVQFpXlQDi6zVPZfjEEJvNltjPZdhZnfEAISVYrjVNV2y+bzAdWHzEQAhadbbcOOIAySF9
-57SKC1N9kXuOHchsoccIdIPldnnmMcYDBJ+RAI3S3uBB5wwmEhkxQgpm915Dv6vDlkaOlU9kAgqe
-cRDK//ZHMN74hAJwEH7NQlJXY4dlvCrhmn6qs572OyOB7J+SXLaKnqd2IVDT8T0FTlx/5ExfmRY6
-YRqMzjI4bLlCrZ/J/P99av1cRb/Dpbb7qkyGxfHfXUQgaX4CrhSEfeY5J71UH6KEeDWO1xKZTQl9
-EViK35vUSKlpW+T0nFfaJF66ZVST/hPHi2GXfY3K305vDjANMxpV8746Jo3FsW1PISOrvQtuLfok
-ZNRXXv73RVtWjYVAQhzfTbWzVkVSPWfYbU6kEJPv4KlE9T2iw1jf07s4jvr9ffhpTx5RIx25cdir
-42j+uOcQQ0l440nWpY0OL5eL7ofgAHzWa5OKY2xbAmqYPyg+2fVdyh8rN/sgnnEmawTVaS5JM5Nt
-Un4nW27mKyxqz8rJRzm9SsorWetLtuHkLF95bf9bxSNgB+Rjk9Akl1nKK0w7SW95105REuwTD0MC
-wSLuyBtK8I6AtrXerwkt0I1QPMH83h7KDfLLL/bSURaou4mUwqXOtnXEEFvayU5dvltQCDBWu3/m
-j5L4rhwixN8A8wl9JBoFGkVjtzmghxGmDw5U/nlWl8Ol5DFfEP/PP67ETy5rZNV+nA2WT+X+gtzD
-X8rEbbKr/WrSk0SA6oAeQZYaFaT8zAGOoJ6rJzPkH09F1ILZ2bOj9RUt1bZj4iSXPAh+YSUr1058
-qxpf+r+NKFzrWHdITcOIWEnr0wrA9zS6kIYej5nLquwhK7TdMnr5Sa5kANzYSs+Jm73l49j07AJW
-q0DlLI3DEkWDPEMmKknY2yQDQBz1tLKPVDcf7SkeJ9QBDStQdVxfBG4wofo8X5CRCL8v8ZtlU3PL
-u+qepw5QU0P3uYBiN8fczdzCDONgXiaiA/38rMQmBxNLyR52rfUpBeSZ2xzMpg4aDy1MVLDoIwNv
-qpVGo32xG091Dce8nMfsOScLV75TQ+w0yEsLL8/2REs7PsVg9zzuvsZJukhu6Di8o8csIe8bPlVx
-oT8jX6YWTWIlqvm00a2xheQ7GIDuIxBBLk8vpJM3wvhXYpfv/sVT9CiiGK2ehtYb1RBnR+G9cjiS
-eIbYuY5vfQNGNfrdjPGXESINLV2+eiJgiGNU3hsZKQPa1HDBtDkHpmZLBhx4hGM5Sdl9B0uad4On
-N95DCOz8M5LAHtol7TXnWb1kPPAhr97pk9EC6s/AhUQwPrQKUpLi+snj2hyB75rlWEkqpTpjHbFa
-UIuJ7Nc10vhgMhHPiA3ZX4cpqAABkYOKHiAUKQFRcbDDbKopwsz6mtpfxONERHXhMpIgiJ53yEHq
-3yUQEK0af+DLSmJdDZ20KLEAEAWQQCKmD585oxoh7ZjucDXqaIwkpcrKE0kruy0JZQdr91fg+7N9
-wbvXAJQKU7//OyESUTAQ5moxyvUB/FmbeONVs7h7gVbDLkb91Dior/9UlCAR2yX4FO4m2kszeHsJ
-Q6q7joimcRHInSfthg85I6zXco3Y2J2evRXcgttPmVSgpcMidnZjMJRScxOCGyXWVzZBnvfhZWif
-USv18I7NuAgDtvrUueRY+mI3l1ZFN7354dzg2v53ygtvZCyxYEc0k33jNYn682ueg1XnnxUuKdhL
-9nY75EGNbujaFOp6urnCIGNEC+6vebX3XX4HTyvCiLZ8kEushDgbXNZhTSOkYU5qnQXFbnoFJpLO
-xBH8uINcGttPBPXWVKJaPQHnsOcq8lHiGMaX7BnjcdRbHKeQVRUD3/hhOb3VmcsUjU359gwxyqpf
-tCFQHX6F4IpyH5FHNxru3O46owkO4YHj1YLUAAzx2BzAwDvPKCZpj5FZPliwExelGlFn1WEnQCtI
-4rDM8nPIGG+i5uxya+KA2cYGWPudL1AStpvA6lS2OwACKFyo0v1bqADkxwvnEmWfJZKXZFBCPGdh
-43NjyyrmbLjO97YWHNBEyTOFqGh3M95XG+msg/Jl81FwhcewJM5q34uZ56htW80gR+YT4sD7UtNX
-6+2otSilDMtuZarAPd6AMU3OdctBAjoiHfeGtgvJYqJ2B/obSwLL3ojFk6yKEHzBVP9UvXi8SP1V
-hUYlKLlaZpIQzCaI31Sgy8ikmR8rbVNfrh554iDa
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension_Control
+ */
+require_once 'Zend/Gdata/App/Extension/Control.php';
+
+/**
+ * @see Zend_Gdata_YouTube_Extension_State
+ */
+require_once 'Zend/Gdata/YouTube/Extension/State.php';
+
+
+/**
+ * Specialized Control class for use with YouTube. Enables use of yt extension elements.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_Extension_Control extends Zend_Gdata_App_Extension_Control
+{
+
+    protected $_state = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Calendar_Extension_Control object.
+     * @see Zend_Gdata_App_Extension_Control#__construct
+     * @param Zend_Gdata_App_Extension_Draft $draft
+     * @param Zend_Gdata_YouTube_Extension_State $state
+     */
+    public function __construct($draft = null, $state = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct($draft);
+        $this->_state = $state;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_state != null) {
+            $element->appendChild($this->_state->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('yt') . ':' . 'state':
+            $state = new Zend_Gdata_YouTube_Extension_State();
+            $state->transferFromDOM($child);
+            $this->_state = $state;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Get the value for this element's state attribute.
+     *
+     * @return Zend_Gdata_YouTube_Extension_State The state element.
+     */
+    public function getState()
+    {
+        return $this->_state;
+    }
+
+    /**
+     * Set the value for this element's state attribute.
+     *
+     * @param Zend_Gdata_YouTube_Extension_State $value The desired value for this attribute.
+     * @return Zend_YouTube_Extension_Control The element being modified.
+     */
+    public function setState($value)
+    {
+        $this->_state = $value;
+        return $this;
+    }
+
+    /**
+    * Get the value of this element's state attribute.
+    *
+    * @return string The state's text value
+    */
+    public function getStateValue()
+    {
+      return $this->getState()->getText();
+    }
+
+}

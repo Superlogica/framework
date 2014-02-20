@@ -1,52 +1,146 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Registry_EnabledInterface
+ */
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Tool_Framework_Loader_Abstract implements Zend_Tool_Framework_Registry_EnabledInterface
+{
+    /**
+     * @var Zend_Tool_Framework_Repository_Interface
+     */
+    protected $_registry = null;
+    
+    /**
+     * @var array
+     */
+    private $_retrievedFiles = array();
+    
+    /**
+     * @var array
+     */
+    private $_loadedClasses  = array();
+    
+    /**
+     * _getFiles
+     *
+     * @return array Array Of Files
+     */
+    abstract protected function _getFiles();
+
+    /**
+     * setRegistry() - required by the enabled interface to get an instance of
+     * the registry
+     *
+     * @param Zend_Tool_Framework_Registry_Interface $registry
+     * @return Zend_Tool_Framework_Loader_Abstract
+     */
+    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+    
+    /**
+     * load() - called by the client initialize routine to load files
+     *
+     */
+    public function load()
+    {
+        $this->_retrievedFiles = $this->getRetrievedFiles();
+        $this->_loadedClasses  = array();
+        
+        $manifestRegistry = $this->_registry->getManifestRepository();
+        $providerRegistry = $this->_registry->getProviderRepository();
+        
+        $loadedClasses = array();
+        
+        // loop through files and find the classes declared by loading the file
+        foreach ($this->_retrievedFiles as $file) {
+            $classesLoadedBefore = get_declared_classes();
+            $oldLevel = error_reporting(E_ALL | ~E_STRICT); // remove strict so that other packages wont throw warnings
+            // should we lint the files here? i think so
+            include_once $file;
+            error_reporting($oldLevel); // restore old error level
+            $classesLoadedAfter = get_declared_classes();
+            $loadedClasses = array_merge($loadedClasses, array_diff($classesLoadedAfter, $classesLoadedBefore));
+        }
+        
+        // loop through the loaded classes and ensure that 
+        foreach ($loadedClasses as $loadedClass) {
+            
+            // reflect class to see if its something we want to load
+            $reflectionClass = new ReflectionClass($loadedClass);
+            if ($reflectionClass->implementsInterface('Zend_Tool_Framework_Manifest_Interface') 
+                && !$reflectionClass->isAbstract()) 
+            {
+                $manifestRegistry->addManifest($reflectionClass->newInstance());
+                $this->_loadedClasses[] = $loadedClass;
+            }
+            
+            if ($reflectionClass->implementsInterface('Zend_Tool_Framework_Provider_Interface') 
+                && !$reflectionClass->isAbstract()
+                && !$providerRegistry->hasProvider($reflectionClass->getName(), false)) 
+            {
+                $providerRegistry->addProvider($reflectionClass->newInstance());
+                $this->_loadedClasses[] = $loadedClass;
+            }
+
+        }
+        
+        return $this->_loadedClasses;
+    }
+    
+    /**
+     * getRetrievedFiles()
+     *
+     * @return array Array of Files Retrieved
+     */
+    public function getRetrievedFiles()
+    {
+        if ($this->_retrievedFiles == null) {
+            $this->_retrievedFiles = $this->_getFiles();
+        }
+        
+        return $this->_retrievedFiles;
+    }
+    
+    /**
+     * getLoadedClasses()
+     *
+     * @return array Array of Loaded Classes
+     */
+    public function getLoadedClasses()
+    {
+        return $this->_loadedClasses;
+    }
+
+    
+}

@@ -1,42 +1,147 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-3wkdtQZIraJ+Pwhz9Z/MzRbUrEdN
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Cache.php 12195 2008-10-30 13:34:35Z matthew $
+ */
+
+/**
+ * Zend_Server_Cache: cache server definitions
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Server_Cache
+{
+    /**
+     * @var array Methods to skip when caching server
+     */
+    protected static $_skipMethods = array();
+
+    /**
+     * Cache a file containing the dispatch list.
+     *
+     * Serializes the server definition stores the information
+     * in $filename.
+     *
+     * Returns false on any error (typically, inability to write to file), true
+     * on success.
+     *
+     * @param  string $filename
+     * @param  Zend_Server_Interface $server
+     * @return bool
+     */
+    public static function save($filename, Zend_Server_Interface $server)
+    {
+        if (!is_string($filename)
+            || (!file_exists($filename) && !is_writable(dirname($filename))))
+        {
+            return false;
+        }
+
+        $methods = $server->getFunctions();
+
+        if ($methods instanceof Zend_Server_Definition) {
+            $definition = new Zend_Server_Definition();
+            foreach ($methods as $method) {
+                if (in_array($method->getName(), self::$_skipMethods)) {
+                    continue;
+                }
+                $definition->addMethod($method);
+            }
+            $methods = $definition;
+        }
+
+        if (0 === @file_put_contents($filename, serialize($methods))) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Load server definition from a file
+     *
+     * Unserializes a stored server definition from $filename. Returns false if 
+     * it fails in any way, true on success.
+     *
+     * Useful to prevent needing to build the server definition on each 
+     * request. Sample usage:
+     *
+     * <code>
+     * if (!Zend_Server_Cache::get($filename, $server)) {
+     *     require_once 'Some/Service/Class.php';
+     *     require_once 'Another/Service/Class.php';
+     *
+     *     // Attach Some_Service_Class with namespace 'some'
+     *     $server->attach('Some_Service_Class', 'some');
+     *
+     *     // Attach Another_Service_Class with namespace 'another'
+     *     $server->attach('Another_Service_Class', 'another');
+     *
+     *     Zend_Server_Cache::save($filename, $server);
+     * }
+     *
+     * $response = $server->handle();
+     * echo $response;
+     * </code>
+     *
+     * @param  string $filename
+     * @param  Zend_Server_Interface $server
+     * @return bool
+     */
+    public static function get($filename, Zend_Server_Interface $server)
+    {
+        if (!is_string($filename)
+            || !file_exists($filename)
+            || !is_readable($filename))
+        {
+            return false;
+        }
+
+
+        if (false === ($dispatch = @file_get_contents($filename))) {
+            return false;
+        }
+
+        if (false === ($dispatchArray = @unserialize($dispatch))) {
+            return false;
+        }
+
+        $server->loadFunctions($dispatchArray);
+
+        return true;
+    }
+
+    /**
+     * Remove a cache file
+     *
+     * @param  string $filename
+     * @return boolean
+     */
+    public static function delete($filename)
+    {
+        if (is_string($filename) && file_exists($filename)) {
+            unlink($filename);
+            return true;
+        }
+
+        return false;
+    }
+}

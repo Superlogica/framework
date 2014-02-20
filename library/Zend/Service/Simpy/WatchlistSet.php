@@ -1,29 +1,82 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51yjRT6W2bRdgPZuyZCoa+Pczt0rVWmOuRciNZBuJVXaVRiP4GVlo1ADDlOgxYRvu7YAFqiU
-ab9kIFJlzD/03M56ElhOIDPKgNPR0iyJa6Zk32R4lgI5PqItkaj5wn1x9Bi5HjXDe+5ez++Pisf2
-oS11fJk8ijeM9zqXkJeUkJWSKufWTd6ZiJZPBZHBeovGkgEwJhdxxoC+0zEQrYrCRzBY/GV4LTJu
-xOVYy4CKNTHGQJK4EB6/n4kJIPpDKor7T+KlBeH2QFnYGCs9hbQ7/NDNITKstke1//6Xewxi3pTC
-SgfgUFiJZGF4LHqwTahaHuINBqXbxp+W0crr9iOur8nXYU3IdWpxIKhz5NbQbVCA5Awg8xxhzQ+L
-1wOF5H9aXjEUnYl8Eg3Joh6N3PKz3IOL38Nv1IrP7zqf70x4Q1ZlCTwzVMmYIAtYN1kxT7XG7PH1
-XzbRXnT0UdM+CgH2Syxploi/1zXPAkSrerGhR9swUakG2Xc18GpsDs66KxOUghdGbtpz/2gdDuEU
-Pylx7duWf+tAUJX6O6722N5/HAwJhL0M1ijg42LK1SUiK4bdpYl+tvFK/9uniGJ9hu/USJ+D3VzE
-u5mW4f4p1dnmyWvWThHTHV5dyGWTFiw3NJqbjV9YVvughjp7mCEpboYeIA97ltoWVWk8mJwFVUHu
-FNWirFRU7GWvawd2NiIJjezoWOgjxRD+D0FuO8MmaODOmgvj3h9dKbrJoh+KQOSwZHOhpGoWiiVh
-AmkuMO+eWPxkl8oVmnP9Hb7pZkTYyEQmN49euL/MHL13hJeNCR8H3ObumOcSJLLEiDp5UAjsnGO/
-/hVrKCLxA8fTmyb4Zg7euG7bZ7uuR+BoQ16UX6fHLDLxCd+NrJ3PaOULf52WWKFTj8mYTuhIVw8/
-gqCL0T9MtGZzM3cWz7COtUWIPEmzfbwQ68ZQIw/2JELcXjMexwc7yLRpUBn58vE4r8kDCe7P3Fy0
-NjAoX4nxW4LZiX/p3fmdWaJPQJ7LHYkUELYbfdJujer8Es2HlvbHUOvz1WrnKuov7+nScwvxXNZy
-vDJLxbX1l+DkOoXYfgaR80HxAhWKn75JoJabwuoKQ0U3Dw59USThcmEuDVbmTPAt038k5LGcUBpA
-4W+wypI5AH5Jorq1J/IvftYKSf4MCIJssesm11YyzOe5pEe1dlfwv9Dl+YWQqYFAuYqGJf0Ldanc
-0S7ICdFumj3vqln2jcShu+7JbpLzq2dkg7jgeP2EHBdKqgflzKJQNBgRPmV2ym4+OEHJkGii48yx
-RPcvls5mCMAS1R3X4BlD2XvcALbcweNkLnHbBN+YKSIUoledH0rJ2st6/INxndxxzW6wvpyGjWzv
-OtLs2I31H2knkCDEToTVUOKvU94E0XobNkZnHhD7V6J7gjrjPk9xBqWE+bkSUirUCcaNbvSkeNg5
-WFB/mXJAzB3FovjzdKe1p/WEDkF41AS25D4NNEJnRoq0UhnzDuPBnDC5cDGm7hXe0aOiY15XfvYn
-FWiKPGbi49PZRm55EGFAyJNV0MdwyQHLXX6giREVWPIwQgmeZuQffcrMDHN0Z0tjmaxfc0CzFsbM
-zZddExyShCyu5cXHzx7EmLy++1xMmG3Nnjk+03Q2gfW+kE+LsQpZ2IgHxJyU/Ybu7ajnB2fiBZx5
-w6NTxH60VUstq2qclq3EkXO1MNXyO1qwFhsUjtuFLM+7Kay1pn7liL2BA5Cwq1FTelfQvmIsndoL
-ZiyP5fI/YZJrhiW9QrBzfhkvtpfjrK9V/At2+7YhUM1KQA2Zxu2Pq8qJTYgScZOa7tyRDwxX6GQk
-DtQdmAjforzfvx7VFqgoftK5MfwHy04ZSQJX6XlgfVcrQ6y8O0LcOBI4hQK6if2myCvcU2YSFdBY
-LrMomKyY+0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: WatchlistSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Simpy_Watchlist
+ */
+require_once 'Zend/Service/Simpy/Watchlist.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Simpy
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Simpy_WatchlistSet implements IteratorAggregate
+{
+    /**
+     * List of watchlists
+     *
+     * @var array of Zend_Service_Simpy_Watchlist objects
+     */
+    protected $_watchlists = array();
+
+    /**
+     * Constructor to initialize the object with data
+     *
+     * @param  DOMDocument $doc Parsed response from a GetWatchlists operation
+     * @return void
+     */
+    public function __construct(DOMDocument $doc)
+    {
+        $xpath = new DOMXPath($doc);
+        $list = $xpath->query('//watchlists/watchlist');
+
+        for ($x = 0; $x < $list->length; $x++) {
+            $this->_watchlists[$x] = new Zend_Service_Simpy_Watchlist($list->item($x));
+        }
+    }
+
+    /**
+     * Returns an iterator for the watchlist set
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->_watchlists);
+    }
+
+    /**
+     * Returns the number of watchlists in the set
+     *
+     * @return int
+     */
+    public function getLength()
+    {
+        return count($this->_watchlists);
+    }
+}

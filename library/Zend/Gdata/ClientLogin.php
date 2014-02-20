@@ -1,77 +1,181 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-rHUuwtbDnTSjMvc8qgPjdgMkDRzh5W==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_HttpClient
+ */
+require_once 'Zend/Gdata/HttpClient.php';
+
+/**
+ * Zend_Version
+ */
+require_once 'Zend/Version.php';
+
+/**
+ * Class to facilitate Google's "Account Authentication
+ * for Installed Applications" also known as "ClientLogin".
+ * @see http://code.google.com/apis/accounts/AuthForInstalledApps.html
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_ClientLogin
+{
+
+    /**
+     * The Google client login URI
+     *
+     */
+    const CLIENTLOGIN_URI = 'https://www.google.com/accounts/ClientLogin';
+
+    /**
+     * The default 'source' parameter to send to Google
+     *
+     */
+    const DEFAULT_SOURCE = 'Zend-ZendFramework';
+
+    /**
+     * Set Google authentication credentials.
+     * Must be done before trying to do any Google Data operations that
+     * require authentication.
+     * For example, viewing private data, or posting or deleting entries.
+     *
+     * @param string $email
+     * @param string $password
+     * @param string $service
+     * @param Zend_Gdata_HttpClient $client
+     * @param string $source
+     * @param string $loginToken The token identifier as provided by the server.
+     * @param string $loginCaptcha The user's response to the CAPTCHA challenge.
+     * @param string $accountType An optional string to identify whether the
+     * account to be authenticated is a google or a hosted account. Defaults to 
+     * 'HOSTED_OR_GOOGLE'. See: http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html#Request
+     * @throws Zend_Gdata_App_AuthException
+     * @throws Zend_Gdata_App_HttpException
+     * @throws Zend_Gdata_App_CaptchaRequiredException
+     * @return Zend_Gdata_HttpClient
+     */
+    public static function getHttpClient($email, $password, $service = 'xapi',
+        $client = null,
+        $source = self::DEFAULT_SOURCE,
+        $loginToken = null,
+        $loginCaptcha = null,
+        $loginUri = self::CLIENTLOGIN_URI,
+        $accountType = 'HOSTED_OR_GOOGLE')
+    {
+        if (! ($email && $password)) {
+            require_once 'Zend/Gdata/App/AuthException.php';
+            throw new Zend_Gdata_App_AuthException(
+                   'Please set your Google credentials before trying to ' .
+                   'authenticate');
+        }
+
+        if ($client == null) {
+            $client = new Zend_Gdata_HttpClient();
+        }
+        if (!$client instanceof Zend_Http_Client) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_HttpException(
+                    'Client is not an instance of Zend_Http_Client.');
+        }
+
+        // Build the HTTP client for authentication
+        $client->setUri($loginUri);
+        $useragent = $source . ' Zend_Framework_Gdata/' . Zend_Version::VERSION;
+        $client->setConfig(array(
+                'maxredirects'    => 0,
+                'strictredirects' => true,
+                'useragent' => $useragent
+            )
+        );
+        $client->setParameterPost('accountType', $accountType);
+        $client->setParameterPost('Email', (string) $email);
+        $client->setParameterPost('Passwd', (string) $password);
+        $client->setParameterPost('service', (string) $service);
+        $client->setParameterPost('source', (string) $source);
+        if ($loginToken || $loginCaptcha) {
+            if($loginToken && $loginCaptcha) {
+                $client->setParameterPost('logintoken', (string) $loginToken);
+                $client->setParameterPost('logincaptcha', 
+                        (string) $loginCaptcha);
+            }
+            else {
+                require_once 'Zend/Gdata/App/AuthException.php';
+                throw new Zend_Gdata_App_AuthException(
+                    'Please provide both a token ID and a user\'s response ' .
+                    'to the CAPTCHA challenge.');
+            }
+        }
+
+        // Send the authentication request
+        // For some reason Google's server causes an SSL error. We use the
+        // output buffer to supress an error from being shown. Ugly - but works!
+        ob_start();
+        try {
+            $response = $client->request('POST');
+        } catch (Zend_Http_Client_Exception $e) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
+        }
+        ob_end_clean();
+
+        // Parse Google's response
+        $goog_resp = array();
+        foreach (explode("\n", $response->getBody()) as $l) {
+            $l = chop($l);
+            if ($l) {
+                list($key, $val) = explode('=', chop($l), 2);
+                $goog_resp[$key] = $val;
+            }
+        }
+
+        if ($response->getStatus() == 200) {
+            $client->setClientLoginToken($goog_resp['Auth']);
+            $useragent = $source . ' Zend_Framework_Gdata/' . Zend_Version::VERSION;
+            $client->setConfig(array(
+                    'strictredirects' => true,
+                    'useragent' => $useragent
+                )
+            );
+            return $client;
+
+        } elseif ($response->getStatus() == 403) {
+            // Check if the server asked for a CAPTCHA
+            if (array_key_exists('Error', $goog_resp) &&
+                $goog_resp['Error'] == 'CaptchaRequired') {
+                require_once 'Zend/Gdata/App/CaptchaRequiredException.php';
+                throw new Zend_Gdata_App_CaptchaRequiredException(
+                    $goog_resp['CaptchaToken'], $goog_resp['CaptchaUrl']);
+            }
+            else {
+                require_once 'Zend/Gdata/App/AuthException.php';
+                throw new Zend_Gdata_App_AuthException('Authentication with Google failed. Reason: ' .
+                    (isset($goog_resp['Error']) ? $goog_resp['Error'] : 'Unspecified.'));
+            }
+        }
+    }
+
+}
+

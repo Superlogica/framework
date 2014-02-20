@@ -1,39 +1,199 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-6/hy1b1At2REcedzQsUpUONLym==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Dojo_Form_Element_Dijit */
+require_once 'Zend/Dojo/Form/Element/Dijit.php';
+
+/**
+ * Abstract Slider dijit
+ * 
+ * @uses       Zend_Dojo_Form_Element_Dijit
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Slider.php 10003 2008-07-09 02:40:49Z matthew $
+ */
+abstract class Zend_Dojo_Form_Element_Slider extends Zend_Dojo_Form_Element_Dijit
+{
+    /**
+     * Set clickSelect flag
+     *
+     * @param  bool $clickSelect
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setClickSelect($flag)
+    {
+        $this->setDijitParam('clickSelect', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve clickSelect flag
+     *
+     * @return bool
+     */
+    public function getClickSelect()
+    {
+        if (!$this->hasDijitParam('clickSelect')) {
+            return false;
+        }
+        return $this->getDijitParam('clickSelect');
+    }
+
+    /**
+     * Set intermediateChanges flag
+     *
+     * @param  bool $intermediateChanges
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setIntermediateChanges($flag)
+    {
+        $this->setDijitParam('intermediateChanges', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve intermediateChanges flag
+     *
+     * @return bool
+     */
+    public function getIntermediateChanges()
+    {
+        if (!$this->hasDijitParam('intermediateChanges')) {
+            return false;
+        }
+        return $this->getDijitParam('intermediateChanges');
+    }
+
+    /**
+     * Set showButtons flag
+     *
+     * @param  bool $showButtons
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setShowButtons($flag)
+    {
+        $this->setDijitParam('showButtons', (bool) $flag);
+        return $this;
+    }
+
+    /**
+     * Retrieve showButtons flag
+     *
+     * @return bool
+     */
+    public function getShowButtons()
+    {
+        if (!$this->hasDijitParam('showButtons')) {
+            return false;
+        }
+        return $this->getDijitParam('showButtons');
+    }
+
+    /**
+     * Set discreteValues
+     *
+     * @param  int $value
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setDiscreteValues($value)
+    {
+        $this->setDijitParam('discreteValues', (int) $value);
+        return $this;
+    }
+
+    /**
+     * Retrieve discreteValues
+     *
+     * @return int|null
+     */
+    public function getDiscreteValues()
+    {
+        return $this->getDijitParam('discreteValues');
+    }
+
+    /**
+     * Set maximum
+     *
+     * @param  int $value
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setMaximum($value)
+    {
+        $this->setDijitParam('maximum', (int) $value);
+        return $this;
+    }
+
+    /**
+     * Retrieve maximum
+     *
+     * @return int|null
+     */
+    public function getMaximum()
+    {
+        return $this->getDijitParam('maximum');
+    }
+
+    /**
+     * Set minimum
+     *
+     * @param  int $value
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setMinimum($value)
+    {
+        $this->setDijitParam('minimum', (int) $value);
+        return $this;
+    }
+
+    /**
+     * Retrieve minimum
+     *
+     * @return int|null
+     */
+    public function getMinimum()
+    {
+        return $this->getDijitParam('minimum');
+    }
+
+    /**
+     * Set pageIncrement
+     *
+     * @param  int $value
+     * @return Zend_Dojo_Form_Element_TextBox
+     */
+    public function setPageIncrement($value)
+    {
+        $this->setDijitParam('pageIncrement', (int) $value);
+        return $this;
+    }
+
+    /**
+     * Retrieve pageIncrement
+     *
+     * @return int|null
+     */
+    public function getPageIncrement()
+    {
+        return $this->getDijitParam('pageIncrement');
+    }
+}

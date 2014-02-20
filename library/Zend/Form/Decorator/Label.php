@@ -1,120 +1,329 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-YP70cM8jQb5Eml1nV47bTwqYVmwb
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Label
+ *
+ * Accepts the options:
+ * - separator: separator to use between label and content (defaults to PHP_EOL)
+ * - placement: whether to append or prepend label to content (defaults to prepend)
+ * - tag: if set, used to wrap the label in an additional HTML tag
+ * - opt(ional)Prefix: a prefix to the label to use when the element is optional
+ * - opt(iona)lSuffix: a suffix to the label to use when the element is optional
+ * - req(uired)Prefix: a prefix to the label to use when the element is required
+ * - req(uired)Suffix: a suffix to the label to use when the element is required
+ *
+ * Any other options passed will be used as HTML attributes of the label tag.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Label.php 13615 2009-01-13 19:52:10Z norm2782 $
+ */
+class Zend_Form_Decorator_Label extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Default placement: prepend
+     * @var string
+     */
+    protected $_placement = 'PREPEND';
+
+    /**
+     * HTML tag with which to surround label
+     * @var string
+     */
+    protected $_tag;
+
+    /**
+     * Set element ID
+     *
+     * @param  string $id
+     * @return Zend_Form_Decorator_Label
+     */
+    public function setId($id)
+    {
+        $this->setOption('id', $id);
+        return $this;
+    }
+
+    /**
+     * Retrieve element ID (used in 'for' attribute)
+     *
+     * If none set in decorator, looks first for element 'id' attribute, and
+     * defaults to element name.
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        $id = $this->getOption('id');
+        if (null === $id) {
+            if (null !== ($element = $this->getElement())) {
+                $id = $element->getId();
+                $this->setId($id);
+            }
+        }
+
+        return $id;
+    }
+
+    /**
+     * Set HTML tag with which to surround label
+     *
+     * @param  string $tag
+     * @return Zend_Form_Decorator_Label
+     */
+    public function setTag($tag)
+    {
+        if (empty($tag)) {
+            $this->_tag = null;
+        } else {
+            $this->_tag = (string) $tag;
+        }
+        return $this;
+    }
+
+    /**
+     * Get HTML tag, if any, with which to surround label
+     *
+     * @return void
+     */
+    public function getTag()
+    {
+        if (null === $this->_tag) {
+            $tag = $this->getOption('tag');
+            if (null !== $tag) {
+                $this->removeOption('tag');
+                $this->setTag($tag);
+            }
+            return $tag;
+        }
+
+        return $this->_tag;
+    }
+
+    /**
+     * Get class with which to define label
+     *
+     * Appends either 'optional' or 'required' to class, depending on whether
+     * or not the element is required.
+     *
+     * @return string
+     */
+    public function getClass()
+    {
+        $class   = '';
+        $element = $this->getElement();
+
+        $decoratorClass = $this->getOption('class');
+        if (!empty($decoratorClass)) {
+            $class .= ' ' . $decoratorClass;
+        }
+
+        $type  = $element->isRequired() ? 'required' : 'optional';
+
+        if (!strstr($class, $type)) {
+            $class .= ' ' . $type;
+            $class = trim($class);
+        }
+
+        return $class;
+    }
+
+    /**
+     * Load an optional/required suffix/prefix key
+     *
+     * @param  string $key
+     * @return void
+     */
+    protected function _loadOptReqKey($key)
+    {
+        if (!isset($this->$key)) {
+            $value = $this->getOption($key);
+            $this->$key = (string) $value;
+            if (null !== $value) {
+                $this->removeOption($key);
+            }
+        }
+    }
+
+    /**
+     * Overloading
+     *
+     * Currently overloads:
+     *
+     * - getOpt(ional)Prefix()
+     * - getOpt(ional)Suffix()
+     * - getReq(uired)Prefix()
+     * - getReq(uired)Suffix()
+     * - setOpt(ional)Prefix()
+     * - setOpt(ional)Suffix()
+     * - setReq(uired)Prefix()
+     * - setReq(uired)Suffix()
+     *
+     * @param  string $method
+     * @param  array $args
+     * @return mixed
+     * @throws Zend_Form_Exception for unsupported methods
+     */
+    public function __call($method, $args)
+    {
+        $tail = substr($method, -6);
+        $head = substr($method, 0, 3);
+        if (in_array($head, array('get', 'set'))
+            && (('Prefix' == $tail) || ('Suffix' == $tail))
+        ) {
+            $position = substr($method, -6);
+            $type     = strtolower(substr($method, 3, 3));
+            switch ($type) {
+                case 'req':
+                    $key = 'required' . $position;
+                    break;
+                case 'opt':
+                    $key = 'optional' . $position;
+                    break;
+                default:
+                    require_once 'Zend/Form/Exception.php';
+                    throw new Zend_Form_Exception(sprintf('Invalid method "%s" called in Label decorator, and detected as type %s', $method, $type));
+            }
+
+            switch ($head) {
+                case 'set':
+                    if (0 === count($args)) {
+                        require_once 'Zend/Form/Exception.php';
+                        throw new Zend_Form_Exception(sprintf('Method "%s" requires at least one argument; none provided', $method));
+                    }
+                    $value = array_shift($args);
+                    $this->$key = $value;
+                    return $this;
+                case 'get':
+                default:
+                    if (null === ($element = $this->getElement())) {
+                        $this->_loadOptReqKey($key);
+                    } elseif (isset($element->$key)) {
+                        $this->$key = (string) $element->$key;
+                    } else {
+                        $this->_loadOptReqKey($key);
+                    }
+                    return $this->$key;
+            }
+        }
+
+        require_once 'Zend/Form/Exception.php';
+        throw new Zend_Form_Exception(sprintf('Invalid method "%s" called in Label decorator', $method));
+    }
+
+    /**
+     * Get label to render
+     *
+     * @return void
+     */
+    public function getLabel()
+    {
+        if (null === ($element = $this->getElement())) {
+            return '';
+        }
+
+        $label = $element->getLabel();
+        $label = trim($label);
+
+        if (empty($label)) {
+            return '';
+        }
+
+        if (null !== ($translator = $element->getTranslator())) {
+            $label = $translator->translate($label);
+        }
+
+        $optPrefix = $this->getOptPrefix();
+        $optSuffix = $this->getOptSuffix();
+        $reqPrefix = $this->getReqPrefix();
+        $reqSuffix = $this->getReqSuffix();
+        $separator = $this->getSeparator();
+
+        if (!empty($label)) {
+            if ($element->isRequired()) {
+                $label = $reqPrefix . $label . $reqSuffix;
+            } else {
+                $label = $optPrefix . $label . $optSuffix;
+            }
+        }
+
+        return $label;
+    }
+
+
+    /**
+     * Render a label
+     *
+     * @param  string $content
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view    = $element->getView();
+        if (null === $view) {
+            return $content;
+        }
+
+        $label     = $this->getLabel();
+        $separator = $this->getSeparator();
+        $placement = $this->getPlacement();
+        $tag       = $this->getTag();
+        $id        = $this->getId();
+        $class     = $this->getClass();
+        $options   = $this->getOptions();
+
+
+        if (empty($label) && empty($tag)) {
+            return $content;
+        }
+
+        if (!empty($label)) {
+            $options['class'] = $class;
+            $label = $view->formLabel($element->getFullyQualifiedName(), trim($label), $options);
+        } else {
+            $label = '&nbsp;';
+        }
+
+        if (null !== $tag) {
+            require_once 'Zend/Form/Decorator/HtmlTag.php';
+            $decorator = new Zend_Form_Decorator_HtmlTag();
+            $decorator->setOptions(array('tag' => $tag,
+                                         'id'  => $this->getElement()->getName() . '-label'));
+
+            $label = $decorator->render($label);
+        }
+
+        switch ($placement) {
+            case self::APPEND:
+                return $content . $separator . $label;
+            case self::PREPEND:
+                return $label . $separator . $content;
+        }
+    }
+}

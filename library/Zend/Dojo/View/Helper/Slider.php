@@ -1,120 +1,251 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Slider.php 13657 2009-01-15 23:36:35Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Abstract class for Dojo Slider dijits
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+abstract class Zend_Dojo_View_Helper_Slider extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Dojo module to use
+     * @var string
+     */
+    protected $_module = 'dijit.form.Slider';
+
+    /**
+     * Required slider parameters
+     * @var array
+     */
+    protected $_requiredParams = array('minimum', 'maximum', 'discreteValues');
+
+    /**
+     * Slider type -- vertical or horizontal
+     * @var string
+     */
+    protected $_sliderType;
+
+    /**
+     * dijit.form.Slider
+     * 
+     * @param  int $id 
+     * @param  mixed $value 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @return string
+     */
+    public function prepareSlider($id, $value = null, array $params = array(), array $attribs = array())
+    {
+        $this->_sliderType = strtolower($this->_sliderType);
+
+        // Prepare two items: a hidden element to store the value, and the slider
+        $hidden = $this->_renderHiddenElement($id, $value);
+        $hidden = preg_replace('/(name=")([^"]*)"/', 'id="$2" $1$2"', $hidden);
+
+        foreach ($this->_requiredParams as $param) {
+            if (!array_key_exists($param, $params)) {
+                require_once 'Zend/Dojo/View/Exception.php';
+                throw new Zend_Dojo_View_Exception('prepareSlider() requires minimally the "minimum", "maximum", and "discreteValues" parameters');
+            }
+        }
+
+        $content = '';
+        $params['value'] = $value;
+
+        if (!array_key_exists('onChange', $attribs)) {
+            $attribs['onChange'] = "dojo.byId('" . $id . "').value = arguments[0];";
+        }
+
+        $id  = str_replace('][', '-', $id);
+        $id  = str_replace(array('[', ']'), '-', $id);
+        $id  = rtrim($id, '-');
+        $id .= '-slider';
+
+        switch ($this->_sliderType) {
+            case 'horizontal':
+                if (array_key_exists('topDecoration', $params)) {
+                    $content .= $this->_prepareDecoration('topDecoration', $id, $params['topDecoration']);
+                    unset($params['topDecoration']);
+                }
+
+                if (array_key_exists('bottomDecoration', $params)) {
+                    $content .= $this->_prepareDecoration('bottomDecoration', $id, $params['bottomDecoration']);
+                    unset($params['bottomDecoration']);
+                }
+
+                if (array_key_exists('leftDecoration', $params)) {
+                    unset($params['leftDecoration']);
+                }
+
+                if (array_key_exists('rightDecoration', $params)) {
+                    unset($params['rightDecoration']);
+                }
+                break;
+            case 'vertical':
+                if (array_key_exists('leftDecoration', $params)) {
+                    $content .= $this->_prepareDecoration('leftDecoration', $id, $params['leftDecoration']);
+                    unset($params['leftDecoration']);
+                }
+
+                if (array_key_exists('rightDecoration', $params)) {
+                    $content .= $this->_prepareDecoration('rightDecoration', $id, $params['rightDecoration']);
+                    unset($params['rightDecoration']);
+                }
+
+                if (array_key_exists('topDecoration', $params)) {
+                    unset($params['topDecoration']);
+                }
+
+                if (array_key_exists('bottomDecoration', $params)) {
+                    unset($params['bottomDecoration']);
+                }
+                break;
+            default:
+                require_once 'Zend/Dojo/View/Exception.php';
+                throw new Zend_Dojo_View_Exception('Invalid slider type; slider must be horizontal or vertical');
+        }
+
+        return $hidden . $this->_createLayoutContainer($id, $content, $params, $attribs);
+    }
+
+    /**
+     * Prepare slider decoration
+     * 
+     * @param  string $position 
+     * @param  string $id 
+     * @param  array $decInfo 
+     * @return string
+     */
+    protected function _prepareDecoration($position, $id, $decInfo)
+    {
+        if (!in_array($position, array('topDecoration', 'bottomDecoration', 'leftDecoration', 'rightDecoration'))) {
+            return '';
+        }
+
+        if (!is_array($decInfo) 
+            || !array_key_exists('labels', $decInfo)
+            || !is_array($decInfo['labels'])
+        ) {
+            return '';
+        }
+
+        $id .= '-' . $position;
+
+        if (!array_key_exists('dijit', $decInfo)) {
+            $dijit = 'dijit.form.' . ucfirst($this->_sliderType) . 'Rule';
+        } else {
+            $dijit = $decInfo['dijit'];
+            if ('dijit.form.' != substr($dijit, 0, 10)) {
+                $dijit = 'dijit.form.' . $dijit;
+            }
+        }
+
+        $params  = array();
+        $attribs = array();
+        $labels  = $decInfo['labels'];
+        if (array_key_exists('params', $decInfo)) {
+            $params = $decInfo['params'];
+        }
+        if (array_key_exists('attribs', $decInfo)) {
+            $attribs = $decInfo['attribs'];
+        }
+
+        $containerParams = null;
+        if (array_key_exists('container', $params)) {
+            $containerParams = $params['container'];
+            unset($params['container']);
+        }
+
+        if (array_key_exists('labels', $params)) {
+            $labelsParams = $params['labels'];
+            unset($params['labels']);
+        } else {
+            $labelsParams = $params;
+        }
+
+        if (null === $containerParams) {
+            $containerParams = $params;
+        }
+
+        $containerAttribs = null;
+        if (array_key_exists('container', $attribs)) {
+            $containerAttribs = $attribs['container'];
+            unset($attribs['container']);
+        }
+
+        if (array_key_exists('labels', $attribs)) {
+            $labelsAttribs = $attribs['labels'];
+            unset($attribs['labels']);
+        } else {
+            $labelsAttribs = $attribs;
+        }
+
+        if (null === $containerAttribs) {
+            $containerAttribs = $attribs;
+        }
+
+        $containerParams['container'] = $position;
+        $labelsParams['container']    = $position;
+
+        $labelList = $this->_prepareLabelsList($id, $labelsParams, $labelsAttribs, $labels);
+
+        $dijit = 'dijit.form.' . ucfirst($this->_sliderType) . 'Rule';
+        $containerAttribs['id'] = $id;
+        $containerAttribs = $this->_prepareDijit($containerAttribs, $containerParams, 'layout', $dijit);
+        $containerHtml = '<div' . $this->_htmlAttribs($containerAttribs) . "></div>\n";
+
+        switch ($position) {
+            case 'topDecoration':
+            case 'leftDecoration':
+                return $labelList . $containerHtml;
+            case 'bottomDecoration':
+            case 'rightDecoration':
+                return $containerHtml . $labelList;
+        }
+    }
+
+    /**
+     * Prepare slider label list
+     * 
+     * @param  string $id 
+     * @param  array $params 
+     * @param  array $attribs 
+     * @param  array $labels 
+     * @return string
+     */
+    protected function _prepareLabelsList($id, array $params, array $attribs, array $labels)
+    {
+        $attribs['id'] = $id . '-labels';
+        $dijit = 'dijit.form.' . ucfirst($this->_sliderType) . 'RuleLabels';
+        $attribs = $this->_prepareDijit($attribs, $params, 'layout', $dijit);
+
+        return $this->view->htmlList($labels, true, $attribs);
+    }
+}

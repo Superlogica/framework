@@ -1,94 +1,331 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-62npLC3pIjaxPyIlj6bdeW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Channel
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Wildfire_Channel_Interface */
+require_once 'Zend/Wildfire/Channel/Interface.php';
+
+/** Zend_Controller_Request_Abstract */
+require_once('Zend/Controller/Request/Abstract.php');
+
+/** Zend_Controller_Response_Abstract */
+require_once('Zend/Controller/Response/Abstract.php');
+
+/** Zend_Controller_Plugin_Abstract */
+require_once 'Zend/Controller/Plugin/Abstract.php';
+
+/** Zend_Wildfire_Protocol_JsonStream */
+require_once 'Zend/Wildfire/Protocol/JsonStream.php';
+
+/** Zend_Controller_Front **/
+require_once 'Zend/Controller/Front.php';
+
+/**
+ * Implements communication via HTTP request and response headers for Wildfire Protocols.
+ *
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Channel
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Wildfire_Channel_HttpHeaders extends Zend_Controller_Plugin_Abstract implements Zend_Wildfire_Channel_Interface
+{
+    /**
+     * The string to be used to prefix the headers.
+     * @var string
+     */
+    protected static $_headerPrefix = 'X-WF-';
+
+    /**
+     * Singleton instance
+     * @var Zend_Wildfire_Channel_HttpHeaders
+     */
+    protected static $_instance = null;
+
+    /**
+     * The index of the plugin in the controller dispatch loop plugin stack
+     * @var integer
+     */
+    protected static $_controllerPluginStackIndex = 999;
+
+    /**
+     * The protocol instances for this channel
+     * @var array
+     */
+    protected $_protocols = null;
+
+    /**
+     * Initialize singleton instance.
+     *
+     * @param string $class OPTIONAL Subclass of Zend_Wildfire_Channel_HttpHeaders
+     * @return Zend_Wildfire_Channel_HttpHeaders Returns the singleton Zend_Wildfire_Channel_HttpHeaders instance
+     * @throws Zend_Wildfire_Exception
+     */
+    public static function init($class = null)
+    {
+        if (self::$_instance !== null) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('Singleton instance of Zend_Wildfire_Channel_HttpHeaders already exists!');
+        }
+        if ($class !== null) {
+            if (!is_string($class)) {
+                require_once 'Zend/Wildfire/Exception.php';
+                throw new Zend_Wildfire_Exception('Third argument is not a class string');
+            }
+
+            if (!class_exists($class)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($class);
+            }
+
+            self::$_instance = new $class();
+
+            if (!self::$_instance instanceof Zend_Wildfire_Channel_HttpHeaders) {
+                self::$_instance = null;
+                require_once 'Zend/Wildfire/Exception.php';
+                throw new Zend_Wildfire_Exception('Invalid class to third argument. Must be subclass of Zend_Wildfire_Channel_HttpHeaders.');
+            }
+        } else {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+
+
+    /**
+     * Get or create singleton instance
+     *
+     * @param $skipCreate boolean True if an instance should not be created
+     * @return Zend_Wildfire_Channel_HttpHeaders
+     */
+    public static function getInstance($skipCreate=false)
+    {
+        if (self::$_instance===null && $skipCreate!==true) {
+            return self::init();
+        }
+        return self::$_instance;
+    }
+
+    /**
+     * Destroys the singleton instance
+     *
+     * Primarily used for testing.
+     *
+     * @return void
+     */
+    public static function destroyInstance()
+    {
+        self::$_instance = null;
+    }
+
+    /**
+     * Get the instance of a give protocol for this channel
+     *
+     * @param string $uri The URI for the protocol
+     * @return object Returns the protocol instance for the diven URI
+     */
+    public function getProtocol($uri)
+    {
+        if (!isset($this->_protocols[$uri])) {
+            $this->_protocols[$uri] = $this->_initProtocol($uri);
+        }
+
+        $this->_registerControllerPlugin();
+
+        return $this->_protocols[$uri];
+    }
+
+    /**
+     * Initialize a new protocol
+     *
+     * @param string $uri The URI for the protocol to be initialized
+     * @return object Returns the new initialized protocol instance
+     * @throws Zend_Wildfire_Exception
+     */
+    protected function _initProtocol($uri)
+    {
+        switch ($uri) {
+            case Zend_Wildfire_Protocol_JsonStream::PROTOCOL_URI;
+                return new Zend_Wildfire_Protocol_JsonStream();
+        }
+        require_once 'Zend/Wildfire/Exception.php';
+        throw new Zend_Wildfire_Exception('Tyring to initialize unknown protocol for URI "'.$uri.'".');
+    }
+
+
+    /**
+     * Flush all data from all protocols and send all data to response headers.
+     *
+     * @return boolean Returns TRUE if data was flushed
+     */
+    public function flush()
+    {
+        if (!$this->_protocols || !$this->isReady()) {
+            return false;
+        }
+
+        foreach ( $this->_protocols as $protocol ) {
+
+            $payload = $protocol->getPayload($this);
+
+            if ($payload) {
+                foreach( $payload as $message ) {
+
+                    $this->getResponse()->setHeader(self::$_headerPrefix.$message[0],
+                                                    $message[1], true);
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Set the index of the plugin in the controller dispatch loop plugin stack
+     *
+     * @param integer $index The index of the plugin in the stack
+     * @return integer The previous index.
+     */
+    public static function setControllerPluginStackIndex($index)
+    {
+        $previous = self::$_controllerPluginStackIndex;
+        self::$_controllerPluginStackIndex = $index;
+        return $previous;
+    }
+
+    /**
+     * Register this object as a controller plugin.
+     *
+     * @return void
+     */
+    protected function _registerControllerPlugin()
+    {
+        $controller = Zend_Controller_Front::getInstance();
+        if (!$controller->hasPlugin(get_class($this))) {
+            $controller->registerPlugin($this, self::$_controllerPluginStackIndex);
+        }
+    }
+
+
+    /*
+     * Zend_Wildfire_Channel_Interface
+     */
+
+    /**
+     * Determine if channel is ready.
+     *
+     * The channel is ready as long as the request and response objects are initialized,
+     * can send headers and the FirePHP header exists in the User-Agent.
+     * 
+     * If the header does not exist in the User-Agent, no appropriate client
+     * is making this request and the messages should not be sent.
+     * 
+     * A timing issue arises when messages are logged before the request/response
+     * objects are initialized. In this case we do not yet know if the client
+     * will be able to accept the messages. If we consequently indicate that
+     * the channel is not ready, these messages will be dropped which is in
+     * most cases not the intended behaviour. The intent is to send them at the
+     * end of the request when the request/response objects will be available
+     * for sure.
+     * 
+     * If the request/response objects are not yet initialized we assume if messages are
+     * logged, the client will be able to receive them. As soon as the request/response
+     * objects are availoable and a message is logged this assumption is challenged.
+     * If the client cannot accept the messages any further messages are dropped
+     * and messages sent prior are kept but discarded when the channel is finally
+     * flushed at the end of the request.
+     * 
+     * When the channel is flushed the $forceCheckRequest option is used to force
+     * a check of the request/response objects. This is the last verification to ensure
+     * messages are only sent when the client can accept them.
+     * 
+     * @param boolean $forceCheckRequest OPTIONAL Set to TRUE if the request must be checked
+     * @return boolean Returns TRUE if channel is ready.
+     */
+    public function isReady($forceCheckRequest=false)
+    {
+        if (!$forceCheckRequest
+            && !$this->_request
+            && !$this->_response) {
+        
+            return true;
+        }
+
+        return ($this->getResponse()->canSendHeaders() &&
+                preg_match_all('/\s?FirePHP\/([\.|\d]*)\s?/si',
+                               $this->getRequest()->getHeader('User-Agent'),$m));
+    }
+
+
+    /*
+     * Zend_Controller_Plugin_Abstract
+     */
+
+    /**
+     * Flush messages to headers as late as possible but before headers have been sent.
+     *
+     * @return void
+     */
+    public function dispatchLoopShutdown()
+    {
+        $this->flush();
+    }
+
+    /**
+     * Get the request object
+     *
+     * @return Zend_Controller_Request_Abstract
+     * @throws Zend_Wildfire_Exception
+     */
+    public function getRequest()
+    {
+        if (!$this->_request) {
+            $controller = Zend_Controller_Front::getInstance();
+            $this->setRequest($controller->getRequest());
+        }
+        if (!$this->_request) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('Request objects not initialized.');
+        }
+        return $this->_request;
+    }
+
+    /**
+     * Get the response object
+     *
+     * @return Zend_Controller_Response_Abstract
+     * @throws Zend_Wildfire_Exception
+     */
+    public function getResponse()
+    {
+        if (!$this->_response) {
+            $response = Zend_Controller_Front::getInstance()->getResponse();
+            if ($response) {
+                $this->setResponse($response);
+            }
+        }
+        if (!$this->_response) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('Response objects not initialized.');
+        }
+        return $this->_response;
+    }
+}

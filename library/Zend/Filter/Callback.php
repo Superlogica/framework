@@ -1,36 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-q0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Callback.php 14975 2009-04-18 05:13:52Z norm2782 $
+ */
+
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_Callback implements Zend_Filter_Interface
+{
+    /**
+     * Callback in a call_user_func format
+     *
+     * @var string|array
+     */
+    protected $_callback = null;
+
+    /**
+     * Default options to set for the filter
+     *
+     * @var mixed
+     */
+    protected $_options = null;
+
+    /**
+     * Constructor
+     *
+     * @param string|array $callback Callback in a call_user_func format
+     * @param mixed        $options  (Optional) Default options for this filter
+     */
+    public function __construct($callback, $options = null)
+    {
+        $this->setCallback($callback);
+        $this->setOptions($options);
+    }
+
+    /**
+     * Returns the set callback
+     *
+     * @return string|array Set callback
+     */
+    public function getCallback()
+    {
+        return $this->_callback;
+    }
+
+    /**
+     * Sets a new callback for this filter
+     *
+     * @param unknown_type $callback
+     * @return unknown
+     */
+    public function setCallback($callback, $options = null)
+    {
+        if (!is_callable($callback)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Callback can not be accessed');
+        }
+
+        $this->_callback = $callback;
+        $this->setOptions($options);
+        return $this;
+    }
+
+    /**
+     * Returns the set default options
+     *
+     * @return mixed
+     */
+    public function getOptions()
+    {
+        return $this->_options;
+    }
+
+    /**
+     * Sets new default options to the callback filter
+     *
+     * @param mixed $options Default options to set
+     * @return Zend_Filter_Callback
+     */
+    public function setOptions($options)
+    {
+        $this->_options = $options;
+        return $this;
+    }
+
+    /**
+     * Calls the filter per callback
+     *
+     * @param $value mixed Options for the set callback
+     * @return mixed       Result from the filter which was callbacked
+     */
+    public function filter($value)
+    {
+    	$options = array();
+
+        if ($this->_options !== null) {
+            if (!is_array($this->_options)) {
+                $options = array($this->_options);
+            } else {
+                $options = $this->_options;
+            }
+        }
+
+        array_unshift($options, $value);
+
+        return call_user_func_array($this->_callback, $options);
+    }
+}

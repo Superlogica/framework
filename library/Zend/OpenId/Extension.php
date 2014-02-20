@@ -1,31 +1,137 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Extension.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Abstract extension class for Zend_OpenId
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_OpenId_Extension
+{
+
+    /**
+     * Calls given function with given argument for all extensions
+     *
+     * @param mixed $extensions list of extensions or one extension
+     * @param string $func function to be called
+     * @param mixed &$params argument to pass to given funcion
+     * @return bool
+     */
+    static public function forAll($extensions, $func, &$params)
+    {
+        if ($extensions !== null) {
+            if (is_array($extensions)) {
+                foreach ($extensions as $ext) {
+                    if ($ext instanceof Zend_OpenId_Extension) {
+                        if (!$ext->$func($params)) {
+                            return false;
+                        }
+                    } else {
+                        return false;
+                    }
+                }
+            } else if (!is_object($extensions) ||
+                       !($extensions instanceof Zend_OpenId_Extension) ||
+                       !$extensions->$func($params)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to add additional data to OpenId 'checkid_immediate' or
+     * 'checkid_setup' request. This method addes nothing but inherited class
+     * may add additional data into request.
+     *
+     * @param array &$params request's var/val pairs
+     * @return bool
+     */
+    public function prepareRequest(&$params)
+    {
+        return true;
+    }
+
+    /**
+     * Method to parse OpenId 'checkid_immediate' or 'checkid_setup' request
+     * and initialize object with passed data. This method parses nothing but
+     * inherited class may override this method to do somthing.
+     *
+     * @param array $params request's var/val pairs
+     * @return bool
+     */
+    public function parseRequest($params)
+    {
+        return true;
+    }
+
+    /**
+     * Method to add additional data to OpenId 'id_res' response. This method
+     * addes nothing but inherited class may add additional data into response.
+     *
+     * @param array &$params response's var/val pairs
+     * @return bool
+     */
+    public function prepareResponse(&$params)
+    {
+        return true;
+    }
+
+    /**
+     * Method to parse OpenId 'id_res' response and initialize object with
+     * passed data. This method parses nothing but inherited class may override
+     * this method to do somthing.
+     *
+     * @param array $params response's var/val pairs
+     * @return bool
+     */
+    public function parseResponse($params)
+    {
+        return true;
+    }
+
+    /**
+     * Method to prepare data to store it in trusted servers database.
+     *
+     * @param array &$data data to be stored in tusted servers database
+     * @return bool
+     */
+    public function getTrustData(&$data)
+    {
+        return true;
+    }
+
+    /**
+     * Method to check if data from trusted servers database is enough to
+     * sutisfy request.
+     *
+     * @param array $data data from tusted servers database
+     * @return bool
+     */
+    public function checkTrustData($data)
+    {
+        return true;
+    }
+}

@@ -1,78 +1,165 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-DNSWVqUMys3zLDMigql6f0ZBdVC=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Provider_Abstract
+ */
+require_once 'Zend/Tool/Project/Provider/Abstract.php';
+
+/**
+ * @see Zend_Tool_Framework_Provider_Pretendable
+ */
+require_once 'Zend/Tool/Framework/Provider/Pretendable.php';
+
+/**
+ * @see Zend_Tool_Project_Profile_Iterator_ContextFilter
+ */
+require_once 'Zend/Tool/Project/Profile/Iterator/ContextFilter.php';
+
+/**
+ * @see Zend_Tool_Project_Profile_Iterator_EnabledResourceFilter
+ */
+require_once 'Zend/Tool/Project/Profile/Iterator/EnabledResourceFilter.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Provider_Module 
+    extends Zend_Tool_Project_Provider_Abstract
+    implements Zend_Tool_Framework_Provider_Pretendable
+{
+
+    public static function createResources(Zend_Tool_Project_Profile $profile, $moduleName, Zend_Tool_Project_Profile_Resource $targetModuleResource = null)
+    {
+
+        // find the appliction directory, it will serve as our module skeleton
+        if ($targetModuleResource == null) {
+            $targetModuleResource = $profile->search('applicationDirectory');
+            $targetModuleEnabledResources = array(
+                'ControllersDirectory', 'ModelsDirectory', 'ViewsDirectory', 
+                'ViewScriptsDirectory', 'ViewHelpersDirectory', 'ViewFiltersDirectory'
+                );
+        }
+        
+        // find the actual modules directory we will use to house our module
+        $modulesDirectory = $profile->search('modulesDirectory');
+        
+        // if there is a module directory already, except
+        if ($modulesDirectory->search(array('moduleDirectory' => array('moduleName' => $moduleName)))) {
+            throw new Zend_Tool_Project_Provider_Exception('A module named "' . $moduleName . '" already exists.');
+        }
+        
+        // create the module directory
+        $moduleDirectory = $modulesDirectory->createResource('moduleDirectory', array('moduleName' => $moduleName));
+        
+        // create a context filter so that we can pull out only what we need from the module skeleton
+        $moduleContextFilterIterator = new Zend_Tool_Project_Profile_Iterator_ContextFilter(
+            $targetModuleResource, 
+            array(
+                'denyNames' => array('ModulesDirectory', 'ViewControllerScriptsDirectory'),
+                'denyType'  => 'Zend_Tool_Project_Context_Filesystem_File'
+                )
+            );
+        
+        // the iterator for the module skeleton
+        $targetIterator = new RecursiveIteratorIterator($moduleContextFilterIterator, RecursiveIteratorIterator::SELF_FIRST);
+        
+        // initialize some loop state information
+        $currentDepth = 0;
+        $parentResources = array();
+        $currentResource = $moduleDirectory;
+        
+        // loop through the target module skeleton
+        foreach ($targetIterator as $targetSubResource) {
+            
+            $depthDifference = $targetIterator->getDepth() - $currentDepth;
+            $currentDepth = $targetIterator->getDepth();
+            
+            if ($depthDifference === 1) {
+                // if we went down into a child, make note
+                array_push($parentResources, $currentResource);
+                // this will have always been set previously by another loop
+                $currentResource = $currentChildResource;
+            } elseif ($depthDifference < 0) {
+                // if we went up to a parent, make note
+                $i = $depthDifference;
+                do {
+                    // if we went out more than 1 parent, get to the correct parent
+                    $currentResource = array_pop($parentResources);
+                } while ($i-- > 0);
+            }
+
+            // get parameters for the newly created module resource
+            $params = $targetSubResource->getAttributes();
+            $currentChildResource = $currentResource->createResource($targetSubResource->getName(), $params);
+            
+            // based of the provided list (Currently up top), enable specific resources
+            if (isset($targetModuleEnabledResources)) {
+                $currentChildResource->setEnabled(in_array($targetSubResource->getName(), $targetModuleEnabledResources));
+            } else {
+                $currentChildResource->setEnabled($targetSubResource->isEnabled());
+            }
+
+        }
+        
+        return $moduleDirectory;
+    }
+    
+    /**
+     * create()
+     *
+     * @param string $name
+     */
+    public function create($name) //, $moduleProfile = null)
+    {
+        $this->_loadProfile(self::NO_PROFILE_THROW_EXCEPTION);
+        
+        $resources = self::createResources($this->_loadedProfile, $name);
+        
+        $response = $this->_registry->getResponse();
+        
+        if ($this->_registry->getRequest()->isPretend()) {
+            $response->appendContent('I would create the following module and artifacts:');
+            foreach (new RecursiveIteratorIterator($resources, RecursiveIteratorIterator::SELF_FIRST) as $resource) {
+                if (is_callable(array($resource->getContext(), 'getPath'))) {
+                    $response->appendContent($resource->getContext()->getPath());
+                }
+            }
+        } else {
+            $response->appendContent('Creating the following module and artifacts:');
+            $enabledFilter = new Zend_Tool_Project_Profile_Iterator_EnabledResourceFilter($resources);
+            foreach (new RecursiveIteratorIterator($enabledFilter, RecursiveIteratorIterator::SELF_FIRST) as $resource) {
+                $response->appendContent($resource->getContext()->getPath());
+                $resource->create();
+            }
+            
+            // store changes to the profile
+            $this->_storeProfile();
+        }
+        
+    }
+    
+}
+

@@ -1,60 +1,221 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Metadata_Interface
+ */
+require_once 'Zend/Tool/Framework/Metadata/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Metadata_Basic implements Zend_Tool_Framework_Metadata_Interface
+{
+    
+    /**#@+
+     * Search constants
+     */
+    const ATTRIBUTES_ALL        = 'attributesAll';
+    const ATTRIBUTES_NO_PARENT  = 'attributesParent';
+    /**#@-*/
+    
+    /**#@+
+     * @var string
+     */
+    protected $_type        = 'Basic';
+    protected $_name        = null;
+    protected $_value       = null;
+    /**#@-*/
+    
+    /**
+     * @var mixed
+     */
+    protected $_reference   = null;
+
+    /**
+     * Constructor - allows for the setting of options
+     *
+     * @param array $options
+     */
+    public function __construct(Array $options = array())
+    {
+        if ($options) {
+            $this->setOptions($options);
+        }
+    }
+    
+    /**
+     * setOptions() - standard issue implementation, this will set any 
+     * options that are supported via a set method.
+     *
+     * @param array $options
+     * @return Zend_Tool_Framework_Metadata_Basic
+     */
+    public function setOptions(Array $options)
+    {
+        foreach ($options as $optionName => $optionValue) {
+            $setMethod = 'set' . $optionName;
+            if (method_exists($this, $setMethod)) {
+                $this->{$setMethod}($optionValue);
+            }
+        }
+        
+        return $this;
+    }
+
+    /**
+     * getType()
+     * 
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+    
+    /**
+     * setType()
+     * 
+     * @param string $type
+     * @return Zend_Tool_Framework_Metadata_Basic
+     */
+    public function setType($type)
+    {
+        $this->_type = $type;
+        return $this;
+    }
+
+    /**
+     * getName()
+     * 
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+    
+    /**
+     * setName()
+     * 
+     * @param string $name
+     * @return Zend_Tool_Framework_Metadata_Basic
+     */
+    public function setName($name)
+    {
+        $this->_name = $name;
+        return $this;
+    }
+    
+    /**
+     * getValue() 
+     * 
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->_value;
+    }
+    
+    /**
+     * setValue()
+     * 
+     * @param unknown_type $Value
+     * @return Zend_Tool_Framework_Metadata_Basic
+     */
+    public function setValue($value)
+    {
+        $this->_value = $value;
+        return $this;
+    }
+
+    /**
+     * setReference()
+     *
+     * @param mixed $reference
+     * @return Zend_Tool_Framework_Metadata_Basic
+     */
+    public function setReference($reference)
+    {
+        $this->_reference = $reference;
+        return $this;
+    }
+    
+    /**
+     * getReference()
+     *
+     * @return mixed
+     */
+    public function getReference()
+    {
+        return $this->_reference;
+    }
+    
+    /**
+     * getAttributes() - this will retrieve any attributes of this object that exist as properties
+     * This is most useful for printing metadata.
+     *
+     * @param const $type
+     * @return array
+     */
+    public function getAttributes($type = self::ATTRIBUTES_ALL, $stringRepresentationOfNonScalars = false)
+    {
+        $thisReflection = new ReflectionObject($this);
+            
+        $metadataPairValues = array();
+
+        foreach (get_object_vars($this) as $varName => $varValue) {
+            if ($type == self::ATTRIBUTES_NO_PARENT && ($thisReflection->getProperty($varName)->getDeclaringClass()->getName() == 'Zend_Tool_Framework_Metadata_Basic')) {
+                continue;
+            }
+            
+            if ($stringRepresentationOfNonScalars) {
+                
+                if (is_object($varValue)) {
+                    $varValue = '(object)';
+                }
+                
+                if (is_null($varValue)) {
+                    $varValue = '(null)';
+                }
+                
+            }
+            
+            $metadataPairValues[ltrim($varName, '_')] = $varValue;
+        }
+        
+        return $metadataPairValues;
+    }
+    
+    /**
+     * __toString() - string representation of this object 
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Type: ' . $this->_type . ', Name: ' . $this->_name . ', Value: ' . (is_array($this->_value) ? http_build_query($this->_value) : (string) $this->_value);
+    }
+}

@@ -1,30 +1,147 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-BicGqMbcnVxlD65zdwGcXZyE
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Memory_Container_Interface
+ */
+require_once 'Zend/Memory/Container/Interface.php';
+
+/**
+ * Memory object container access controller.
+ *
+ * Memory manager stores a list of generated objects to control them.
+ * So container objects always have at least one reference and can't be automatically destroyed.
+ *
+ * This class is intended to be an userland proxy to memory container object.
+ * It's not referenced by memory manager and class destructor is invoked immidiately after gouing
+ * out of scope or unset operation.
+ *
+ * Class also provides Zend_Memory_Container_Interface interface and works as proxy for such cases.
+ *
+ * @category   Zend
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Memory_AccessController implements Zend_Memory_Container_Interface
+{
+    /**
+     * Memory container object
+     *
+     * @var Zend_Memory_Container
+     */
+    private $_memContainer;
+
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Memory_Container_Movable $memoryManager
+     */
+    public function __construct(Zend_Memory_Container_Movable $memContainer)
+    {
+        $this->_memContainer = $memContainer;
+    }
+
+    /**
+     * Object destructor
+     */
+    public function __destruct()
+    {
+        $this->_memContainer->destroy();
+    }
+
+
+    /**
+     * Get string value reference
+     *
+     * _Must_ be used for value access before PHP v 5.2
+     * or _may_ be used for performance considerations
+     *
+     * @return &string
+     */
+    public function &getRef()
+    {
+        return $this->_memContainer->getRef();
+    }
+
+    /**
+     * Signal, that value is updated by external code.
+     *
+     * Should be used together with getRef()
+     */
+    public function touch()
+    {
+        $this->_memContainer->touch();
+    }
+
+    /**
+     * Lock object in memory.
+     */
+    public function lock()
+    {
+        $this->_memContainer->lock();
+    }
+
+
+    /**
+     * Unlock object
+     */
+    public function unlock()
+    {
+        $this->_memContainer->unlock();
+    }
+
+    /**
+     * Return true if object is locked
+     *
+     * @return boolean
+     */
+    public function isLocked()
+    {
+        return $this->_memContainer->isLocked();
+    }
+
+    /**
+     * Get handler
+     *
+     * Loads object if necessary and moves it to the top of loaded objects list.
+     * Swaps objects from the bottom of loaded objects list, if necessary.
+     *
+     * @param string $property
+     * @return string
+     * @throws Zend_Memory_Exception
+     */
+    public function __get($property)
+    {
+        return $this->_memContainer->$property;
+    }
+
+    /**
+     * Set handler
+     *
+     * @param string $property
+     * @param  string $value
+     * @throws Zend_Exception
+     */
+    public function __set($property, $value)
+    {
+        $this->_memContainer->$property = $value;
+    }
+}

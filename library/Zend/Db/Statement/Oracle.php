@@ -1,183 +1,588 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-gymmL7MGxvNZQGPGEhSwQOAsJtHDH0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Db_Statement
+ */
+require_once 'Zend/Db/Statement.php';
+
+/**
+ * Extends for Oracle.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Statement_Oracle extends Zend_Db_Statement
+{
+
+    /**
+     * The connection_stmt object.
+     */
+    protected $_stmt;
+
+    /**
+     * Column names.
+     */
+    protected $_keys;
+
+    /**
+     * Fetched result values.
+     */
+    protected $_values;
+
+    /**
+     * Check if LOB field are returned as string
+     * instead of OCI-Lob object
+     *
+     * @var boolean
+     */
+    protected $_lobAsString = false;
+
+    /**
+     * Activate/deactivate return of LOB as string
+     *
+     * @param string $lob_as_string
+     * @return Zend_Db_Statement_Oracle
+     */
+    public function setLobAsString($lob_as_string)
+    {
+        $this->_lobAsString = (bool) $lob_as_string;
+        return $this;
+    }
+
+    /**
+     * Return whether or not LOB are returned as string
+     *
+     * @return boolean
+     */
+    public function getLobAsString()
+    {
+        return $this->_lobAsString;
+    }
+
+    /**
+     * Prepares statement handle
+     *
+     * @param string $sql
+     * @return void
+     * @throws Zend_Db_Statement_Oracle_Exception
+     */
+    protected function _prepare($sql)
+    {
+        $connection = $this->_adapter->getConnection();
+        $this->_stmt = oci_parse($connection, $sql);
+        if (!$this->_stmt) {
+            /**
+             * @see Zend_Db_Statement_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception(oci_error($connection));
+        }
+    }
+
+    /**
+     * Binds a parameter to the specified variable name.
+     *
+     * @param mixed $parameter Name the parameter, either integer or string.
+     * @param mixed $variable  Reference to PHP variable containing the value.
+     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
+     * @param mixed $length    OPTIONAL Length of SQL parameter.
+     * @param mixed $options   OPTIONAL Other options.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    protected function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
+    {
+        // default value
+        if ($type === NULL) {
+            $type = SQLT_CHR;
+        }
+
+        // default value
+        if ($length === NULL) {
+            $length = -1;
+        }
+
+        $retval = @oci_bind_by_name($this->_stmt, $parameter, $variable, $length, $type);
+        if ($retval === false) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
+        }
+
+        return true;
+    }
+
+    /**
+     * Closes the cursor, allowing the statement to be executed again.
+     *
+     * @return bool
+     */
+    public function closeCursor()
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        oci_free_statement($this->_stmt);
+        $this->_stmt = false;
+        return true;
+    }
+
+    /**
+     * Returns the number of columns in the result set.
+     * Returns null if the statement has no result set metadata.
+     *
+     * @return int The number of columns.
+     */
+    public function columnCount()
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        return oci_num_fields($this->_stmt);
+    }
+
+
+    /**
+     * Retrieves the error code, if any, associated with the last operation on
+     * the statement handle.
+     *
+     * @return string error code.
+     */
+    public function errorCode()
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        $error = oci_error($this->_stmt);
+
+        if (!$error) {
+            return false;
+        }
+
+        return $error['code'];
+    }
+
+
+    /**
+     * Retrieves an array of error information, if any, associated with the
+     * last operation on the statement handle.
+     *
+     * @return array
+     */
+    public function errorInfo()
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        $error = oci_error($this->_stmt);
+        if (!$error) {
+            return false;
+        }
+
+        if (isset($error['sqltext'])) {
+            return array(
+                $error['code'],
+                $error['message'],
+                $error['offset'],
+                $error['sqltext'],
+            );
+        } else {
+            return array(
+                $error['code'],
+                $error['message'],
+            );
+        }
+    }
+
+
+    /**
+     * Executes a prepared statement.
+     *
+     * @param array $params OPTIONAL Values to bind to parameter placeholders.
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function _execute(array $params = null)
+    {
+        $connection = $this->_adapter->getConnection();
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        if (! $this->_stmt) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception(oci_error($connection));
+        }
+
+        if ($params !== null) {
+            if (!is_array($params)) {
+                $params = array($params);
+            }
+            $error = false;
+            foreach (array_keys($params) as $name) {
+                if (!@oci_bind_by_name($this->_stmt, $name, $params[$name], -1)) {
+                    $error = true;
+                    break;
+                }
+            }
+            if ($error) {
+                /**
+                 * @see Zend_Db_Adapter_Oracle_Exception
+                 */
+                require_once 'Zend/Db/Statement/Oracle/Exception.php';
+                throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
+            }
+        }
+
+        $retval = @oci_execute($this->_stmt, $this->_adapter->_getExecuteMode());
+        if ($retval === false) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
+        }
+
+        $this->_keys = Array();
+        if ($field_num = oci_num_fields($this->_stmt)) {
+            for ($i = 1; $i <= $field_num; $i++) {
+                $name = oci_field_name($this->_stmt, $i);
+                $this->_keys[] = $name;
+            }
+        }
+
+        $this->_values = Array();
+        if ($this->_keys) {
+            $this->_values = array_fill(0, count($this->_keys), null);
+        }
+
+        return $retval;
+    }
+
+    /**
+     * Fetches a row from the result set.
+     *
+     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
+     * @param int $cursor OPTIONAL Absolute, relative, or other.
+     * @param int $offset OPTIONAL Number for absolute or relative cursors.
+     * @return mixed Array, object, or scalar depending on fetch mode.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetch($style = null, $cursor = null, $offset = null)
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        if ($style === null) {
+            $style = $this->_fetchMode;
+        }
+
+        $lob_as_string = $this->getLobAsString() ? OCI_RETURN_LOBS : 0;
+
+        switch ($style) {
+            case Zend_Db::FETCH_NUM:
+                $row = oci_fetch_array($this->_stmt, OCI_NUM | OCI_RETURN_NULLS | $lob_as_string);
+                break;
+            case Zend_Db::FETCH_ASSOC:
+                $row = oci_fetch_array($this->_stmt, OCI_ASSOC | OCI_RETURN_NULLS | $lob_as_string);
+                break;
+            case Zend_Db::FETCH_BOTH:
+                $row = oci_fetch_array($this->_stmt, OCI_BOTH | OCI_RETURN_NULLS | $lob_as_string);
+                break;
+            case Zend_Db::FETCH_OBJ:
+                $row = oci_fetch_object($this->_stmt);
+                break;
+            case Zend_Db::FETCH_BOUND:
+                $row = oci_fetch_array($this->_stmt, OCI_BOTH | OCI_RETURN_NULLS | $lob_as_string);
+                if ($row !== false) {
+                    return $this->_fetchBound($row);
+                }
+                break;
+            default:
+                /**
+                 * @see Zend_Db_Adapter_Oracle_Exception
+                 */
+                require_once 'Zend/Db/Statement/Oracle/Exception.php';
+                throw new Zend_Db_Statement_Oracle_Exception(
+                    array(
+                        'code'    => 'HYC00',
+                        'message' => "Invalid fetch mode '$style' specified"
+                    )
+                );
+                break;
+        }
+
+        if (! $row && $error = oci_error($this->_stmt)) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception($error);
+        }
+
+        if (is_array($row) && array_key_exists('zend_db_rownum', $row)) {
+            unset($row['zend_db_rownum']);
+        }
+
+        return $row;
+    }
+
+    /**
+     * Returns an array containing all of the result set rows.
+     *
+     * @param int $style OPTIONAL Fetch mode.
+     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
+     * @return array Collection of rows, each in a format by the fetch mode.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetchAll($style = null, $col = 0)
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        // make sure we have a fetch mode
+        if ($style === null) {
+            $style = $this->_fetchMode;
+        }
+
+        $flags = OCI_FETCHSTATEMENT_BY_ROW;
+
+        switch ($style) {
+            case Zend_Db::FETCH_BOTH:
+                /**
+                 * @see Zend_Db_Adapter_Oracle_Exception
+                 */
+                require_once 'Zend/Db/Statement/Oracle/Exception.php';
+                throw new Zend_Db_Statement_Oracle_Exception(
+                    array(
+                        'code'    => 'HYC00',
+                        'message' => "OCI8 driver does not support fetchAll(FETCH_BOTH), use fetch() in a loop instead"
+                    )
+                );
+                // notreached
+                $flags |= OCI_NUM;
+                $flags |= OCI_ASSOC;
+                break;
+            case Zend_Db::FETCH_NUM:
+                $flags |= OCI_NUM;
+                break;
+            case Zend_Db::FETCH_ASSOC:
+                $flags |= OCI_ASSOC;
+                break;
+            case Zend_Db::FETCH_OBJ:
+                break;
+            case Zend_Db::FETCH_COLUMN:
+                $flags = $flags &~ OCI_FETCHSTATEMENT_BY_ROW;
+                $flags |= OCI_FETCHSTATEMENT_BY_COLUMN;
+                $flags |= OCI_NUM;
+                break;
+            default:
+                /**
+                 * @see Zend_Db_Adapter_Oracle_Exception
+                 */
+                require_once 'Zend/Db/Statement/Oracle/Exception.php';
+                throw new Zend_Db_Statement_Oracle_Exception(
+                    array(
+                        'code'    => 'HYC00',
+                        'message' => "Invalid fetch mode '$style' specified"
+                    )
+                );
+                break;
+        }
+
+        $result = Array();
+        if ($flags != OCI_FETCHSTATEMENT_BY_ROW) { /* not Zend_Db::FETCH_OBJ */
+            if (! ($rows = oci_fetch_all($this->_stmt, $result, 0, -1, $flags) )) {
+                if ($error = oci_error($this->_stmt)) {
+                    /**
+                     * @see Zend_Db_Adapter_Oracle_Exception
+                     */
+                    require_once 'Zend/Db/Statement/Oracle/Exception.php';
+                    throw new Zend_Db_Statement_Oracle_Exception($error);
+                }
+                if (!$rows) {
+                    return array();
+                }
+            }
+            if ($style == Zend_Db::FETCH_COLUMN) {
+                $result = $result[$col];
+            }
+            foreach ($result as &$row) {
+                if (is_array($row) && array_key_exists('zend_db_rownum', $row)) {
+                    unset($row['zend_db_rownum']);
+                }
+            }
+        } else {
+            while (($row = oci_fetch_object($this->_stmt)) !== false) {
+                $result [] = $row;
+            }
+            if ($error = oci_error($this->_stmt)) {
+                /**
+                 * @see Zend_Db_Adapter_Oracle_Exception
+                 */
+                require_once 'Zend/Db/Statement/Oracle/Exception.php';
+                throw new Zend_Db_Statement_Oracle_Exception($error);
+            }
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Returns a single column from the next row of a result set.
+     *
+     * @param int $col OPTIONAL Position of the column to fetch.
+     * @return string
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetchColumn($col = 0)
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        if (!oci_fetch($this->_stmt)) {
+            // if no error, there is simply no record
+            if (!$error = oci_error($this->_stmt)) {
+                return false;
+            }
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception($error);
+        }
+
+        $data = oci_result($this->_stmt, $col+1); //1-based
+        if ($data === false) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
+        }
+
+        if ($this->getLobAsString()) {
+            // instanceof doesn't allow '-', we must use a temporary string
+            $type = 'OCI-Lob';
+            if ($data instanceof $type) {
+                $data = $data->read($data->size());
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Fetches the next row and returns it as an object.
+     *
+     * @param string $class  OPTIONAL Name of the class to create.
+     * @param array  $config OPTIONAL Constructor arguments for the class.
+     * @return mixed One object instance of the specified class.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetchObject($class = 'stdClass', array $config = array())
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        $obj = oci_fetch_object($this->_stmt);
+
+        if ($error = oci_error($this->_stmt)) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception($error);
+        }
+
+        /* @todo XXX handle parameters */
+
+        return $obj;
+    }
+
+    /**
+     * Retrieves the next rowset (result set) for a SQL statement that has
+     * multiple result sets.  An example is a stored procedure that returns
+     * the results of multiple queries.
+     *
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function nextRowset()
+    {
+        /**
+         * @see Zend_Db_Statement_Oracle_Exception
+         */
+        require_once 'Zend/Db/Statement/Oracle/Exception.php';
+        throw new Zend_Db_Statement_Oracle_Exception(
+            array(
+                'code'    => 'HYC00',
+                'message' => 'Optional feature not implemented'
+            )
+        );
+    }
+
+    /**
+     * Returns the number of rows affected by the execution of the
+     * last INSERT, DELETE, or UPDATE statement executed by this
+     * statement object.
+     *
+     * @return int     The number of rows affected.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function rowCount()
+    {
+        if (!$this->_stmt) {
+            return false;
+        }
+
+        $num_rows = oci_num_rows($this->_stmt);
+
+        if ($num_rows === false) {
+            /**
+             * @see Zend_Db_Adapter_Oracle_Exception
+             */
+            require_once 'Zend/Db/Statement/Oracle/Exception.php';
+            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
+        }
+
+        return $num_rows;
+    }
+
+}

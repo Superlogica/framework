@@ -1,68 +1,162 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-DuW=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract class for extension
+ */
+require_once 'Zend/View/Helper/FormElement.php';
+
+
+/**
+ * Helper to generate a "checkbox" element
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_FormCheckbox extends Zend_View_Helper_FormElement
+{
+    /**
+     * Default checked/unchecked options
+     * @var array
+     */
+    protected static $_defaultCheckedOptions = array(
+        'checked'   => '1',
+        'unChecked' => '0'
+    );
+
+    /**
+     * Generates a 'checkbox' element.
+     *
+     * @access public
+     *
+     * @param string|array $name If a string, the element name.  If an
+     * array, all other parameters are ignored, and the array elements
+     * are extracted in place of added parameters.
+     * @param mixed $value The element value.
+     * @param array $attribs Attributes for the element tag.
+     * @return string The element XHTML.
+     */
+    public function formCheckbox($name, $value = null, $attribs = null, array $checkedOptions = null)
+    {
+        $info = $this->_getInfo($name, $value, $attribs);
+        extract($info); // name, id, value, attribs, options, listsep, disable
+
+        $checked = false;
+        if (isset($attribs['checked']) && $attribs['checked']) {
+            $checked = true;
+            unset($attribs['checked']);
+        } elseif (isset($attribs['checked'])) {
+            $checked = false;
+            unset($attribs['checked']);
+        }
+
+        $checkedOptions = self::determineCheckboxInfo($value, $checked, $checkedOptions);
+
+        // is the element disabled?
+        $disabled = '';
+        if ($disable) {
+            $disabled = ' disabled="disabled"';
+        }
+
+        // XHTML or HTML end tag?
+        $endTag = ' />';
+        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
+            $endTag= '>';
+        }
+
+        // build the element
+        $xhtml = '';
+        if (!strstr($name, '[]')) {
+            $xhtml = $this->_hidden($name, $checkedOptions['unCheckedValue']);
+        }
+        $xhtml .= '<input type="checkbox"'
+                . ' name="' . $this->view->escape($name) . '"'
+                . ' id="' . $this->view->escape($id) . '"'
+                . ' value="' . $this->view->escape($checkedOptions['checkedValue']) . '"'
+                . $checkedOptions['checkedString']
+                . $disabled
+                . $this->_htmlAttribs($attribs)
+                . $endTag;
+
+        return $xhtml;
+    }
+
+    /**
+     * Determine checkbox information
+     * 
+     * @param  string $value 
+     * @param  bool $checked 
+     * @param  array|null $checkedOptions 
+     * @return array
+     */
+    public static function determineCheckboxInfo($value, $checked, array $checkedOptions = null)
+    {
+        // Checked/unchecked values
+        $checkedValue   = null;
+        $unCheckedValue = null;
+        if (is_array($checkedOptions)) {
+            if (array_key_exists('checked', $checkedOptions)) {
+                $checkedValue = (string) $checkedOptions['checked'];
+                unset($checkedOptions['checked']);
+            }
+            if (array_key_exists('unChecked', $checkedOptions)) {
+                $unCheckedValue = (string) $checkedOptions['unChecked'];
+                unset($checkedOptions['unChecked']);
+            }
+            if (null === $checkedValue) {
+                $checkedValue = array_shift($checkedOptions);
+            }
+            if (null === $unCheckedValue) {
+                $unCheckedValue = array_shift($checkedOptions);
+            }
+        } elseif ($value !== null) {
+            $unCheckedValue = self::$_defaultCheckedOptions['unChecked'];
+        } else {
+            $checkedValue   = self::$_defaultCheckedOptions['checked'];
+            $unCheckedValue = self::$_defaultCheckedOptions['unChecked'];
+        }
+
+        // is the element checked?
+        $checkedString = '';
+        if ($checked || ($value === $checkedValue)) {
+            $checkedString = ' checked="checked"';
+            $checked = true;
+        } else {
+            $checked = false;
+        }
+
+        // Checked value should be value if no checked options provided
+        if ($checkedValue == null) {
+            $checkedValue = $value;
+        }
+
+        return array(
+            'checked'        => $checked,
+            'checkedString'  => $checkedString,
+            'checkedValue'   => $checkedValue,
+            'unCheckedValue' => $unCheckedValue,
+        );
+    }
+}

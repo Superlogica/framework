@@ -1,64 +1,344 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-e028glMoDb3+CW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Controller_Request_Abstract
+{
+    /**
+     * Has the action been dispatched?
+     * @var boolean
+     */
+    protected $_dispatched = false;
+
+    /**
+     * Module
+     * @var string
+     */
+    protected $_module;
+
+    /**
+     * Module key for retrieving module from params
+     * @var string
+     */
+    protected $_moduleKey = 'module';
+
+    /**
+     * Controller
+     * @var string
+     */
+    protected $_controller;
+
+    /**
+     * Controller key for retrieving controller from params
+     * @var string
+     */
+    protected $_controllerKey = 'controller';
+
+    /**
+     * Action
+     * @var string
+     */
+    protected $_action;
+
+    /**
+     * Action key for retrieving action from params
+     * @var string
+     */
+    protected $_actionKey = 'action';
+
+    /**
+     * Request parameters
+     * @var array
+     */
+    protected $_params = array();
+
+    /**
+     * Retrieve the module name
+     *
+     * @return string
+     */
+    public function getModuleName()
+    {
+        if (null === $this->_module) {
+            $this->_module = $this->getParam($this->getModuleKey());
+        }
+
+        return $this->_module;
+    }
+
+    /**
+     * Set the module name to use
+     *
+     * @param string $value
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setModuleName($value)
+    {
+        $this->_module = $value;
+        return $this;
+    }
+
+    /**
+     * Retrieve the controller name
+     *
+     * @return string
+     */
+    public function getControllerName()
+    {
+        if (null === $this->_controller) {
+            $this->_controller = $this->getParam($this->getControllerKey());
+        }
+
+        return $this->_controller;
+    }
+
+    /**
+     * Set the controller name to use
+     *
+     * @param string $value
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setControllerName($value)
+    {
+        $this->_controller = $value;
+        return $this;
+    }
+
+    /**
+     * Retrieve the action name
+     *
+     * @return string
+     */
+    public function getActionName()
+    {
+        if (null === $this->_action) {
+            $this->_action = $this->getParam($this->getActionKey());
+        }
+
+        return $this->_action;
+    }
+
+    /**
+     * Set the action name
+     *
+     * @param string $value
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setActionName($value)
+    {
+        $this->_action = $value;
+        /**
+         * @see ZF-3465
+         */
+        if (null === $value) {
+            $this->setParam($this->getActionKey(), $value);
+        }
+        return $this;
+    }
+
+    /**
+     * Retrieve the module key
+     *
+     * @return string
+     */
+    public function getModuleKey()
+    {
+        return $this->_moduleKey;
+    }
+
+    /**
+     * Set the module key
+     *
+     * @param string $key
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setModuleKey($key)
+    {
+        $this->_moduleKey = (string) $key;
+        return $this;
+    }
+
+    /**
+     * Retrieve the controller key
+     *
+     * @return string
+     */
+    public function getControllerKey()
+    {
+        return $this->_controllerKey;
+    }
+
+    /**
+     * Set the controller key
+     *
+     * @param string $key
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setControllerKey($key)
+    {
+        $this->_controllerKey = (string) $key;
+        return $this;
+    }
+
+    /**
+     * Retrieve the action key
+     *
+     * @return string
+     */
+    public function getActionKey()
+    {
+        return $this->_actionKey;
+    }
+
+    /**
+     * Set the action key
+     *
+     * @param string $key
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setActionKey($key)
+    {
+        $this->_actionKey = (string) $key;
+        return $this;
+    }
+
+    /**
+     * Get an action parameter
+     *
+     * @param string $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed
+     */
+    public function getParam($key, $default = null)
+    {
+        $key = (string) $key;
+        if (isset($this->_params[$key])) {
+            return $this->_params[$key];
+        }
+
+        return $default;
+    }
+
+    /**
+     * Retrieve only user params (i.e, any param specific to the object and not the environment)
+     *
+     * @return array
+     */
+    public function getUserParams()
+    {
+        return $this->_params;
+    }
+
+    /**
+     * Retrieve a single user param (i.e, a param specific to the object and not the environment)
+     *
+     * @param string $key
+     * @param string $default Default value to use if key not found
+     * @return mixed
+     */
+    public function getUserParam($key, $default = null)
+    {
+        if (isset($this->_params[$key])) {
+            return $this->_params[$key];
+        }
+
+        return $default;
+    }
+
+    /**
+     * Set an action parameter
+     *
+     * A $value of null will unset the $key if it exists
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setParam($key, $value)
+    {
+        $key = (string) $key;
+
+        if ((null === $value) && isset($this->_params[$key])) {
+            unset($this->_params[$key]);
+        } elseif (null !== $value) {
+            $this->_params[$key] = $value;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get all action parameters
+     *
+     * @return array
+     */
+     public function getParams()
+     {
+         return $this->_params;
+     }
+
+    /**
+     * Set action parameters en masse; does not overwrite
+     *
+     * Null values will unset the associated key.
+     *
+     * @param array $array
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setParams(array $array)
+    {
+        $this->_params = $this->_params + (array) $array;
+
+        foreach ($this->_params as $key => $value) {
+            if (null === $value) {
+                unset($this->_params[$key]);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set flag indicating whether or not request has been dispatched
+     *
+     * @param boolean $flag
+     * @return Zend_Controller_Request_Abstract
+     */
+    public function setDispatched($flag = true)
+    {
+        $this->_dispatched = $flag ? true : false;
+        return $this;
+    }
+
+    /**
+     * Determine if the request has been dispatched
+     *
+     * @return boolean
+     */
+    public function isDispatched()
+    {
+        return $this->_dispatched;
+    }
+}

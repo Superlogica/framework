@@ -1,94 +1,228 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-dvuaH56w/8aMKm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Db2.php 9101 2008-03-30 19:54:38Z thomas $
+ */
+
+
+/** @see Zend_Db_Adapter_Pdo_Ibm */
+require_once 'Zend/Db/Adapter/Pdo/Ibm.php';
+
+/** @see Zend_Db_Statement_Pdo_Ibm */
+require_once 'Zend/Db/Statement/Pdo/Ibm.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Adapter_Pdo_Ibm_Db2
+{
+    /**
+     * @var Zend_Db_Adapter_Abstract
+     */
+    protected $_adapter = null;
+
+    /**
+     * Construct the data server class.
+     *
+     * It will be used to generate non-generic SQL
+     * for a particular data server
+     *
+     * @param Zend_Db_Adapter_Abstract $adapter
+     */
+    public function __construct($adapter)
+    {
+        $this->_adapter = $adapter;
+    }
+
+    /**
+     * Returns a list of the tables in the database.
+     *
+     * @return array
+     */
+    public function listTables()
+    {
+        $sql = "SELECT tabname "
+        . "FROM SYSCAT.TABLES ";
+        return $this->_adapter->fetchCol($sql);
+    }
+
+    /**
+     * DB2 catalog lookup for describe table
+     *
+     * @param string $tableName
+     * @param string $schemaName OPTIONAL
+     * @return array
+     */
+    public function describeTable($tableName, $schemaName = null)
+    {
+        $sql = "SELECT DISTINCT c.tabschema, c.tabname, c.colname, c.colno,
+                c.typename, c.default, c.nulls, c.length, c.scale,
+                c.identity, tc.type AS tabconsttype, k.colseq
+                FROM syscat.columns c
+                LEFT JOIN (syscat.keycoluse k JOIN syscat.tabconst tc
+                 ON (k.tabschema = tc.tabschema
+                   AND k.tabname = tc.tabname
+                   AND tc.type = 'P'))
+                 ON (c.tabschema = k.tabschema
+                 AND c.tabname = k.tabname
+                 AND c.colname = k.colname)
+            WHERE "
+            . $this->_adapter->quoteInto('UPPER(c.tabname) = UPPER(?)', $tableName);
+        if ($schemaName) {
+            $sql .= $this->_adapter->quoteInto(' AND UPPER(c.tabschema) = UPPER(?)', $schemaName);
+        }
+        $sql .= " ORDER BY c.colno";
+
+        $desc = array();
+        $stmt = $this->_adapter->query($sql);
+
+        /**
+         * To avoid case issues, fetch using FETCH_NUM
+         */
+        $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
+
+        /**
+         * The ordering of columns is defined by the query so we can map
+         * to variables to improve readability
+         */
+        $tabschema      = 0;
+        $tabname        = 1;
+        $colname        = 2;
+        $colno          = 3;
+        $typename       = 4;
+        $default        = 5;
+        $nulls          = 6;
+        $length         = 7;
+        $scale          = 8;
+        $identityCol    = 9;
+        $tabconstype    = 10;
+        $colseq         = 11;
+
+        foreach ($result as $key => $row) {
+            list ($primary, $primaryPosition, $identity) = array(false, null, false);
+            if ($row[$tabconstype] == 'P') {
+                $primary = true;
+                $primaryPosition = $row[$colseq];
+            }
+            /**
+             * In IBM DB2, an column can be IDENTITY
+             * even if it is not part of the PRIMARY KEY.
+             */
+            if ($row[$identityCol] == 'Y') {
+                $identity = true;
+            }
+
+            $desc[$this->_adapter->foldCase($row[$colname])] = array(
+            'SCHEMA_NAME'      => $this->_adapter->foldCase($row[$tabschema]),
+            'TABLE_NAME'       => $this->_adapter->foldCase($row[$tabname]),
+            'COLUMN_NAME'      => $this->_adapter->foldCase($row[$colname]),
+            'COLUMN_POSITION'  => $row[$colno]+1,
+            'DATA_TYPE'        => $row[$typename],
+            'DEFAULT'          => $row[$default],
+            'NULLABLE'         => (bool) ($row[$nulls] == 'Y'),
+            'LENGTH'           => $row[$length],
+            'SCALE'            => $row[$scale],
+            'PRECISION'        => ($row[$typename] == 'DECIMAL' ? $row[$length] : 0),
+            'UNSIGNED'         => false,
+            'PRIMARY'          => $primary,
+            'PRIMARY_POSITION' => $primaryPosition,
+            'IDENTITY'         => $identity
+            );
+        }
+
+        return $desc;
+    }
+
+    /**
+     * Adds a DB2-specific LIMIT clause to the SELECT statement.
+     *
+     * @param string $sql
+     * @param integer $count
+     * @param integer $offset OPTIONAL
+     * @throws Zend_Db_Adapter_Exception
+     * @return string
+     */
+    public function limit($sql, $count, $offset = 0)
+    {
+        $count = intval($count);
+        if ($count < 0) {
+            /** @see Zend_Db_Adapter_Exception */
+            require_once 'Zend/Db/Adapter/Exception.php';
+            throw new Zend_Db_Adapter_Exception("LIMIT argument count=$count is not valid");
+        } else {
+            $offset = intval($offset);
+            if ($offset < 0) {
+                /** @see Zend_Db_Adapter_Exception */
+                require_once 'Zend/Db/Adapter/Exception.php';
+                throw new Zend_Db_Adapter_Exception("LIMIT argument offset=$offset is not valid");
+            }
+
+            if ($offset == 0 && $count > 0) {
+                $limit_sql = $sql . " FETCH FIRST $count ROWS ONLY";
+                return $limit_sql;
+            }
+            /**
+             * DB2 does not implement the LIMIT clause as some RDBMS do.
+             * We have to simulate it with subqueries and ROWNUM.
+             * Unfortunately because we use the column wildcard "*",
+             * this puts an extra column into the query result set.
+             */
+            $limit_sql = "SELECT z2.*
+              FROM (
+                  SELECT ROW_NUMBER() OVER() AS \"ZEND_DB_ROWNUM\", z1.*
+                  FROM (
+                      " . $sql . "
+                  ) z1
+              ) z2
+              WHERE z2.zend_db_rownum BETWEEN " . ($offset+1) . " AND " . ($offset+$count);
+        }
+        return $limit_sql;
+    }
+
+    /**
+     * DB2-specific last sequence id
+     *
+     * @param string $sequenceName
+     * @return integer
+     */
+    public function lastSequenceId($sequenceName)
+    {
+        $sql = 'SELECT PREVVAL FOR '.$this->_adapter->quoteIdentifier($sequenceName).' AS VAL FROM SYSIBM.SYSDUMMY1';
+        $value = $this->_adapter->fetchOne($sql);
+        return $value;
+    }
+
+    /**
+     * DB2-specific sequence id value
+     *
+     *  @param string $sequenceName
+     *  @return integer
+     */
+    public function nextSequenceId($sequenceName)
+    {
+        $sql = 'SELECT NEXTVAL FOR '.$this->_adapter->quoteIdentifier($sequenceName).' AS VAL FROM SYSIBM.SYSDUMMY1';
+        $value = $this->_adapter->fetchOne($sql);
+        return $value;
+    }
+}

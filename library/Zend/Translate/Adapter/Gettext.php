@@ -1,81 +1,167 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-3i12YjKZBC3ycBL2Am30
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Locale */
+require_once 'Zend/Locale.php';
+
+/** Zend_Translate_Adapter */
+require_once 'Zend/Translate/Adapter.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
+    // Internal variables
+    private $_bigEndian   = false;
+    private $_file        = false;
+    private $_adapterInfo = array();
+    private $_data        = array();
+
+    /**
+     * Generates the  adapter
+     *
+     * @param  string              $data     Translation data
+     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
+     *                                       see Zend_Locale for more information
+     * @param  array               $options  OPTIONAL Options to set
+     */
+    public function __construct($data, $locale = null, array $options = array())
+    {
+        parent::__construct($data, $locale, $options);
+    }
+
+    /**
+     * Read values from the MO file
+     *
+     * @param  string  $bytes
+     */
+    private function _readMOData($bytes)
+    {
+        if ($this->_bigEndian === false) {
+            return unpack('V' . $bytes, fread($this->_file, 4 * $bytes));
+        } else {
+            return unpack('N' . $bytes, fread($this->_file, 4 * $bytes));
+        }
+    }
+
+    /**
+     * Load translation data (MO file reader)
+     *
+     * @param  string  $filename  MO file to add, full path must be given for access
+     * @param  string  $locale    New Locale/Language to set, identical with locale identifier,
+     *                            see Zend_Locale for more information
+     * @param  array   $option    OPTIONAL Options to use
+     * @throws Zend_Translation_Exception
+     * @return array
+     */
+    protected function _loadTranslationData($filename, $locale, array $options = array())
+    {
+        $this->_data      = array();
+        $this->_bigEndian = false;
+        $this->_file      = @fopen($filename, 'rb');
+        if (!$this->_file) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception('Error opening translation file \'' . $filename . '\'.');
+        }
+        if (@filesize($filename) < 10) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception('\'' . $filename . '\' is not a gettext file');
+        }
+
+        // get Endian
+        $input = $this->_readMOData(1);
+        if (strtolower(substr(dechex($input[1]), -8)) == "950412de") {
+            $this->_bigEndian = false;
+        } else if (strtolower(substr(dechex($input[1]), -8)) == "de120495") {
+            $this->_bigEndian = true;
+        } else {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception('\'' . $filename . '\' is not a gettext file');
+        }
+        // read revision - not supported for now
+        $input = $this->_readMOData(1);
+
+        // number of bytes
+        $input = $this->_readMOData(1);
+        $total = $input[1];
+
+        // number of original strings
+        $input = $this->_readMOData(1);
+        $OOffset = $input[1];
+
+        // number of translation strings
+        $input = $this->_readMOData(1);
+        $TOffset = $input[1];
+
+        // fill the original table
+        fseek($this->_file, $OOffset);
+        $origtemp = $this->_readMOData(2 * $total);
+        fseek($this->_file, $TOffset);
+        $transtemp = $this->_readMOData(2 * $total);
+
+        for($count = 0; $count < $total; ++$count) {
+            if ($origtemp[$count * 2 + 1] != 0) {
+                fseek($this->_file, $origtemp[$count * 2 + 2]);
+                $original = @fread($this->_file, $origtemp[$count * 2 + 1]);
+            } else {
+                $original = '';
+            }
+
+            if ($transtemp[$count * 2 + 1] != 0) {
+                fseek($this->_file, $transtemp[$count * 2 + 2]);
+                $this->_data[$locale][$original] = fread($this->_file, $transtemp[$count * 2 + 1]);
+            }
+        }
+
+        $this->_data[$locale][''] = trim($this->_data[$locale]['']);
+        if (empty($this->_data[$locale][''])) {
+            $this->_adapterInfo[$filename] = 'No adapter information available';
+        } else {
+            $this->_adapterInfo[$filename] = $this->_data[$locale][''];
+        }
+
+        unset($this->_data[$locale]['']);
+        return $this->_data;
+    }
+
+    /**
+     * Returns the adapter informations
+     *
+     * @return array Each loaded adapter information as array value
+     */
+    public function getAdapterInfo()
+    {
+        return $this->_adapterInfo;
+    }
+
+    /**
+     * Returns the adapter name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "Gettext";
+    }
+}

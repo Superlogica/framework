@@ -1,112 +1,369 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   ZendX
+ * @package    ZendX_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Db_Statement
+ */
+require_once 'Zend/Db/Statement.php';
+
+/**
+ * Extends for Firebird
+ *
+ * @category   ZendX
+ * @package    ZendX_Db
+ * @subpackage Statement
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_Db_Statement_Firebird extends Zend_Db_Statement
+{
+
+    /**
+     * The firebird_stmtPrepared resource.
+     *
+     * @var firebird_stmtPrepared
+     */
+    protected $_stmtPrepared = null;
+
+    /**
+     * The firebird_stmtResult resource.
+     *
+     * @var firebird_result
+     */
+    protected $_stmtResult = null;
+
+    /**
+     * The firebird_stmtResult resource.
+     *
+     * @var firebird_result
+     */
+    protected $_stmtRowCount = 0;
+
+    /**
+     * The firebird_stmtResult resource.
+     *
+     * @var firebird_result
+     */
+    protected $_stmtColumnCount = 0;
+
+    /**
+     * Column names.
+     *
+     * @var array
+     */
+    protected $_keys = array();
+
+    /**
+     * Fetched result values.
+     *
+     * @var array
+     */
+    protected $_values = array();
+
+    /**
+     * @var array
+     */
+    protected $_meta = null;
+
+    /**
+     * @param  string $sql
+     * @return void
+     * @throws ZendX_Db_Statement_Firebird_Exception
+     */
+    public function _prepare($sql)
+    {
+        $this->_stmtRowCount = 0;
+        $this->_stmtColumnCount = 0;
+
+        $connection = $this->_adapter->getConnection();
+
+        if ($trans = $this->_adapter->getTransaction())
+            $this->_stmtPrepared = @ibase_prepare($connection, $trans, $sql);
+        else
+            $this->_stmtPrepared = @ibase_prepare($connection, $sql);
+
+        if ($this->_stmtPrepared === false) {
+            /**
+             * @see ZendX_Db_Statement_Firebird_Exception
+             */
+            require_once 'ZendX/Db/Statement/Firebird/Exception.php';
+            throw new ZendX_Db_Statement_Firebird_Exception("Firebird prepare error: " . ibase_errmsg());
+        }
+    }
+
+    /**
+     * Binds a parameter to the specified variable name.
+     *
+     * @param mixed $parameter Name the parameter, either integer or string.
+     * @param mixed $variable  Reference to PHP variable containing the value.
+     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
+     * @param mixed $length    OPTIONAL Length of SQL parameter.
+     * @param mixed $options   OPTIONAL Other options.
+     * @return bool
+     * @throws ZendX_Db_Statement_Firebird_Exception
+     */
+    protected function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
+    {
+        return true;
+    }
+
+    /**
+     * Closes the cursor and the statement.
+     *
+     * @return bool
+     */
+    public function close()
+    {
+        if ($stmt = $this->_stmtResult) {
+            @ibase_free_result($this->_stmtResult);
+            $this->_stmtResult = null;
+        }
+
+        if ($this->_stmtPrepared) {
+            $r = @ibase_free_query($this->_stmtPrepared);
+            $this->_stmtPrepared = null;
+            return $r;
+        }
+        return false;
+    }
+
+    /**
+     * Closes the cursor, allowing the statement to be executed again.
+     *
+     * @return bool
+     */
+    public function closeCursor()
+    {
+        if ($stmt = $this->_stmtResult) {
+            return @ibase_free_result($this->_stmtResult);
+        }
+        return false;
+    }
+
+    /**
+     * Returns the number of columns in the result set.
+     * Returns null if the statement has no result set metadata.
+     *
+     * @return int The number of columns.
+     */
+    public function columnCount()
+    {
+        return $this->_stmtColumnCount ? $this->_stmtColumnCount : 0;
+    }
+
+    /**
+     * Retrieves the error code, if any, associated with the last operation on
+     * the statement handle.
+     *
+     * @return string error code.
+     */
+    public function errorCode()
+    {
+        if ($this->_stmtPrepared || $this->_stmtResult) {
+            return ibase_errcode();
+        }
+        return false;        
+    }
+
+    /**
+     * Retrieves an array of error information, if any, associated with the
+     * last operation on the statement handle.
+     *
+     * @return array
+     */
+    public function errorInfo()
+    {
+        if (!$this->_stmtPrepared) {
+            return false;
+        }
+        return array(
+            ibase_errcode(),
+            ibase_errmsg()
+        );
+    }
+
+    /**
+     * Executes a prepared statement.
+     *
+     * @param array $params OPTIONAL Values to bind to parameter placeholders.
+     * @return bool
+     * @throws ZendX_Db_Statement_Firebird_Exception
+     */
+    public function _execute(array $params = null)
+    {
+        if (!$this->_stmtPrepared) {
+            return false;
+        }
+
+        // if no params were given as an argument to execute(),
+        // then default to the _bindParam array
+        if ($params === null) {
+            $params = $this->_bindParam;
+        }
+        // send $params as input parameters to the statement
+        if ($params) {
+            array_unshift($params, $this->_stmtPrepared);
+            $retval = @call_user_func_array(
+                'ibase_execute',
+                $params
+            );
+        } else
+            // execute the statement
+            $retval = @ibase_execute($this->_stmtPrepared);
+        $this->_stmtResult = $retval;
+
+        if ($retval === false) {
+            $last_error = ibase_errmsg();
+            $this->_stmtRowCount = 0;
+        }        
+        
+        //Firebird php ibase extension, auto-commit is not after each call, but at
+        //end of script. Disabled when transaction is active
+        if (!$this->_adapter->getTransaction())
+            ibase_commit_ret();
+            
+        if ($retval === false) {
+            /**
+             * @see ZendX_Db_Statement_Firebird_Exception
+             */
+            require_once 'ZendX/Db/Statement/Firebird/Exception.php';
+            throw new ZendX_Db_Statement_Firebird_Exception("Firebird statement execute error : " . $last_error);
+        }               
+
+        // statements that have no result set do not return metadata
+        if (is_resource($this->_stmtResult)) {
+
+            // get the column names that will result
+            $this->_keys = array();
+            $coln = ibase_num_fields($this->_stmtResult);
+            $this->_stmtColumnCount = $coln;
+            for ($i = 0; $i < $coln; $i++) {
+                $col_info = ibase_field_info($this->_stmtResult, $i);
+                $this->_keys[] = $this->_adapter->foldCase($col_info['name']);
+            }
+
+            // set up a binding space for result variables
+            $this->_values = array_fill(0, count($this->_keys), null);
+
+            // set up references to the result binding space.
+            // just passing $this->_values in the call_user_func_array()
+            // below won't work, you need references.
+            $refs = array();
+            foreach ($this->_values as $i => &$f) {
+                $refs[$i] = &$f;
+            }
+        }
+
+        if ($trans = $this->_adapter->getTransaction())
+            $this->_stmtRowCount = ibase_affected_rows($trans);
+        else
+            $this->_stmtRowCount = ibase_affected_rows($this->_adapter->getConnection());
+        return true;
+    }
+
+    /**
+     * Fetches a row from the result set.
+     *
+     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
+     * @param int $cursor OPTIONAL Absolute, relative, or other.
+     * @param int $offset OPTIONAL Number for absolute or relative cursors.
+     * @return mixed Array, object, or scalar depending on fetch mode.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function fetch($style = null, $cursor = null, $offset = null)
+    {
+        if (!$this->_stmtResult) {
+            return false;
+        }
+
+        if ($style === null) {
+            $style = $this->_fetchMode;
+        }
+        
+        switch ($style) {
+            case Zend_Db::FETCH_NUM:
+                $row = ibase_fetch_row($this->_stmtResult, IBASE_TEXT);
+                break;
+            case Zend_Db::FETCH_ASSOC:
+                $row = ibase_fetch_assoc($this->_stmtResult, IBASE_TEXT);
+                break;
+            case Zend_Db::FETCH_BOTH:
+                $row = ibase_fetch_assoc($this->_stmtResult, IBASE_TEXT);
+                if ($row !== false)
+                    $row = array_merge($row, array_values($row));
+                break;
+            case Zend_Db::FETCH_OBJ:
+                $row = ibase_fetch_object($this->_stmtResult, IBASE_TEXT);
+                break;
+            case Zend_Db::FETCH_BOUND:
+                $row = ibase_fetch_assoc($this->_stmtResult, IBASE_TEXT);
+                if ($row !== false){
+                    $row = array_merge($row, array_values($row));
+                    $row = $this->_fetchBound($row);
+                }
+                break;
+            default:
+                /**
+                 * @see ZendX_Db_Adapter_Firebird_Exception
+                 */
+                require_once 'ZendX/Db/Statement/Firebird/Exception.php';
+                throw new ZendX_Db_Statement_Firebird_Exception(
+                    "Invalid fetch mode '$style' specified"
+                );
+                break;
+        }
+
+
+        return $row;
+    }
+
+    /**
+     * Retrieves the next rowset (result set) for a SQL statement that has
+     * multiple result sets.  An example is a stored procedure that returns
+     * the results of multiple queries.
+     *
+     * @return bool
+     * @throws ZendX_Db_Statement_Firebird_Exception
+     */
+    public function nextRowset()
+    {
+        /**
+         * @see ZendX_Db_Statement_Firebird_Exception
+         */
+        require_once 'ZendX/Db/Statement/Firebird/Exception.php';
+        throw new ZendX_Db_Statement_Firebird_Exception(__FUNCTION__.'() is not implemented');
+    }
+
+    /**
+     * Returns the number of rows affected by the execution of the
+     * last INSERT, DELETE, or UPDATE statement executed by this
+     * statement object.
+     *
+     * @return int     The number of rows affected.
+     * @throws Zend_Db_Statement_Exception
+     */
+    public function rowCount()
+    {
+        return $this->_stmtRowCount ? $this->_stmtRowCount : 0;
+    }
+
+}

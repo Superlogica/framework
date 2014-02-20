@@ -1,33 +1,98 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Query.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Amazon
+ */
+require_once 'Zend/Service/Amazon.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Query extends Zend_Service_Amazon
+{
+    /**
+     * Search parameters
+     *
+     * @var array
+     */
+    protected $_search = array();
+
+    /**
+     * Search index
+     *
+     * @var string
+     */
+    protected $_searchIndex = null;
+
+    /**
+     * Prepares query parameters
+     *
+     * @param  string $method
+     * @param  array  $args
+     * @throws Zend_Service_Exception
+     * @return Zend_Service_Amazon_Query Provides a fluent interface
+     */
+    public function __call($method, $args)
+    {
+        if (strtolower($method) === 'asin') {
+            $this->_searchIndex = 'asin';
+            $this->_search['ItemId'] = $args[0];
+            return $this;
+        }
+
+        if (strtolower($method) === 'category') {
+            $this->_searchIndex = $args[0];
+            $this->_search['SearchIndex'] = $args[0];
+        } else if (isset($this->_search['SearchIndex']) || $this->_searchIndex !== null || $this->_searchIndex === 'asin') {
+            $this->_search[$method] = $args[0];
+        } else {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('You must set a category before setting the search parameters');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Search using the prepared query
+     *
+     * @return Zend_Service_Amazon_Item|Zend_Service_Amazon_ResultSet
+     */
+    public function search()
+    {
+        if ($this->_searchIndex === 'asin') {
+            return $this->itemLookup($this->_search['ItemId'], $this->_search);
+        }
+        return $this->itemSearch($this->_search);
+    }
+}

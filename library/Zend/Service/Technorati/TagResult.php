@@ -1,32 +1,171 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: TagResult.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/** 
+ * @see Zend_Service_Technorati_Result 
+ */
+require_once 'Zend/Service/Technorati/Result.php';
+
+
+/**
+ * Represents a single Technorati Tag query result object. 
+ * It is never returned as a standalone object, 
+ * but it always belongs to a valid Zend_Service_Technorati_TagResultSet object.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_TagResult extends Zend_Service_Technorati_Result
+{
+    /**
+     * Technorati weblog object corresponding to queried keyword.
+     * 
+     * @var     Zend_Service_Technorati_Weblog
+     * @access  protected
+     */
+    protected $_weblog;
+
+    /**
+     * The title of the entry.
+     * 
+     * @var     string
+     * @access  protected
+     */
+    protected $_title;
+    
+    /**
+     * The blurb from entry with search term highlighted.
+     * 
+     * @var     string
+     * @access  protected
+     */
+    protected $_excerpt;
+
+    /**
+     * The datetime the entry was created.
+     * 
+     * @var     Zend_Date
+     * @access  protected
+     */
+    protected $_created;
+    
+    /**
+     * The datetime the entry was updated.
+     * Called 'postupdate' in original XML response,
+     * it has been renamed to provide more coherence.
+     * 
+     * @var     Zend_Date
+     * @access  protected
+     */
+    protected $_updated;
+    
+    /**
+     * The permalink of the blog entry.
+     * 
+     * @var     Zend_Uri_Http
+     * @access  protected
+     */
+    protected $_permalink;
+    
+
+    /**
+     * Constructs a new object object from DOM Element.
+     *
+     * @param   DomElement $dom the ReST fragment for this object
+     */
+    public function __construct(DomElement $dom)
+    {
+        $this->_fields = array( '_permalink'    => 'permalink',
+                                '_excerpt'      => 'excerpt',
+                                '_created'      => 'created',
+                                '_updated'      => 'postupdate',
+                                '_title'        => 'title');
+        parent::__construct($dom);
+
+        // weblog object field
+        $this->_parseWeblog();
+
+        // filter fields
+        $this->_permalink = Zend_Service_Technorati_Utils::normalizeUriHttp($this->_permalink);
+        $this->_created = Zend_Service_Technorati_Utils::normalizeDate($this->_created);
+        $this->_updated = Zend_Service_Technorati_Utils::normalizeDate($this->_updated);
+    }
+
+    /**
+     * Returns the weblog object that links queried URL.
+     * 
+     * @return  Zend_Service_Technorati_Weblog
+     */
+    public function getWeblog() {
+        return $this->_weblog;
+    }
+    
+    /**
+     * Returns the title of the entry.
+     * 
+     * @return  string
+     */
+    public function getTitle() {
+        return $this->_title;
+    }
+    
+    /**
+     * Returns the blurb from entry with search term highlighted.
+     * 
+     * @return  string
+     */
+    public function getExcerpt() {
+        return $this->_excerpt;
+    }
+        
+    /**
+     * Returns the datetime the entry was created.
+     * 
+     * @return  Zend_Date
+     */
+    public function getCreated() {
+        return $this->_created;
+    }
+        
+    /**
+     * Returns the datetime the entry was updated.
+     * 
+     * @return  Zend_Date
+     */
+    public function getUpdated() {
+        return $this->_updated;
+    }
+    
+    /**
+     * Returns the permalink of the blog entry.
+     * 
+     * @return  Zend_Uri_Http
+     */
+    public function getPermalink() {
+        return $this->_permalink;
+    }
+    
+}

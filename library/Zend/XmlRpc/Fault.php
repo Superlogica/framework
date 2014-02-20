@@ -1,93 +1,307 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-UjMu9g448cj2fAHK/QC1DsZ2WRzYhr1MN50=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_XmlRpc
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_XmlRpc_Value
+ */
+require_once 'Zend/XmlRpc/Value.php';
+
+/**
+ * XMLRPC Faults
+ *
+ * Container for XMLRPC faults, containing both a code and a message;
+ * additionally, has methods for determining if an XML response is an XMLRPC
+ * fault, as well as generating the XML for an XMLRPC fault response.
+ *
+ * To allow method chaining, you may only use the {@link getInstance()} factory
+ * to instantiate a Zend_XmlRpc_Server_Fault.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Fault
+{
+    /**
+     * Fault code
+     * @var int
+     */
+    protected $_code;
+
+    /**
+     * Fault character encoding
+     * @var string
+     */
+    protected $_encoding = 'UTF-8';
+
+    /**
+     * Fault message
+     * @var string
+     */
+    protected $_message;
+
+    /**
+     * Internal fault codes => messages
+     * @var array
+     */
+    protected $_internal = array(
+        404 => 'Unknown Error',
+
+        // 610 - 619 reflection errors
+        610 => 'Invalid method class',
+        611 => 'Unable to attach function or callback; not callable',
+        612 => 'Unable to load array; not an array',
+        613 => 'One or more method records are corrupt or otherwise unusable',
+
+        // 620 - 629 dispatch errors
+        620 => 'Method does not exist',
+        621 => 'Error instantiating class to invoke method',
+        622 => 'Method missing implementation',
+        623 => 'Calling parameters do not match signature',
+
+        // 630 - 639 request errors
+        630 => 'Unable to read request',
+        631 => 'Failed to parse request',
+        632 => 'Invalid request, no method passed; request must contain a \'methodName\' tag',
+        633 => 'Param must contain a value',
+        634 => 'Invalid method name',
+        635 => 'Invalid XML provided to request',
+        636 => 'Error creating xmlrpc value',
+
+        // 640 - 649 system.* errors
+        640 => 'Method does not exist',
+
+        // 650 - 659 response errors
+        650 => 'Invalid XML provided for response',
+        651 => 'Failed to parse response',
+        652 => 'Invalid response',
+        653 => 'Invalid XMLRPC value in response',
+    );
+
+    /**
+     * Constructor
+     *
+     * @return Zend_XmlRpc_Fault
+     */
+    public function __construct($code = 404, $message = '')
+    {
+        $this->setCode($code);
+        $code = $this->getCode();
+
+        if (empty($message) && isset($this->_internal[$code])) {
+            $message = $this->_internal[$code];
+        } elseif (empty($message)) {
+            $message = 'Unknown error';
+        }
+        $this->setMessage($message);
+    }
+
+    /**
+     * Set the fault code
+     *
+     * @param int $code
+     * @return Zend_XmlRpc_Fault
+     */
+    public function setCode($code)
+    {
+        $this->_code = (int) $code;
+        return $this;
+    }
+
+    /**
+     * Return fault code
+     *
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->_code;
+    }
+
+    /**
+     * Retrieve fault message
+     *
+     * @param string
+     * @return Zend_XmlRpc_Fault
+     */
+    public function setMessage($message)
+    {
+        $this->_message = (string) $message;
+        return $this;
+    }
+
+    /**
+     * Retrieve fault message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->_message;
+    }
+
+    /**
+     * Set encoding to use in fault response
+     *
+     * @param string $encoding
+     * @return Zend_XmlRpc_Fault
+     */
+    public function setEncoding($encoding)
+    {
+        $this->_encoding = $encoding;
+        return $this;
+    }
+
+    /**
+     * Retrieve current fault encoding
+     *
+     * @return string
+     */
+    public function getEncoding()
+    {
+        return $this->_encoding;
+    }
+
+    /**
+     * Load an XMLRPC fault from XML
+     *
+     * @param string $fault
+     * @return boolean Returns true if successfully loaded fault response, false
+     * if response was not a fault response
+     * @throws Zend_XmlRpc_Exception if no or faulty XML provided, or if fault
+     * response does not contain either code or message
+     */
+    public function loadXml($fault)
+    {
+        if (!is_string($fault)) {
+            require_once 'Zend/XmlRpc/Exception.php';
+            throw new Zend_XmlRpc_Exception('Invalid XML provided to fault');
+        }
+
+        try {
+            $xml = @new SimpleXMLElement($fault);
+        } catch (Exception $e) {
+            // Not valid XML
+            require_once 'Zend/XmlRpc/Exception.php';
+            throw new Zend_XmlRpc_Exception('Failed to parse XML fault: ' .  $e->getMessage(), 500);
+        }
+
+        // Check for fault
+        if (!$xml->fault) {
+            // Not a fault
+            return false;
+        }
+
+        if (!$xml->fault->value->struct) {
+            // not a proper fault
+            require_once 'Zend/XmlRpc/Exception.php';
+            throw new Zend_XmlRpc_Exception('Invalid fault structure', 500);
+        }
+
+        $structXml = $xml->fault->value->asXML();
+        $structXml = preg_replace('/<\?xml version=.*?\?>/i', '', $structXml);
+        $struct    = Zend_XmlRpc_Value::getXmlRpcValue(trim($structXml), Zend_XmlRpc_Value::XML_STRING);
+        $struct    = $struct->getValue();
+
+        if (isset($struct['faultCode'])) {
+            $code = $struct['faultCode'];
+        }
+        if (isset($struct['faultString'])) {
+            $message = $struct['faultString'];
+        }
+
+        if (empty($code) && empty($message)) {
+            require_once 'Zend/XmlRpc/Exception.php';
+            throw new Zend_XmlRpc_Exception('Fault code and string required');
+        }
+
+        if (empty($code)) {
+            $code = '404';
+        }
+
+        if (empty($message)) {
+            if (isset($this->_internal[$code])) {
+                $message = $this->_internal[$code];
+            } else {
+                $message = 'Unknown Error';
+            }
+        }
+
+        $this->setCode($code);
+        $this->setMessage($message);
+
+        return true;
+    }
+
+    /**
+     * Determine if an XML response is an XMLRPC fault
+     *
+     * @param string $xml
+     * @return boolean
+     */
+    public static function isFault($xml)
+    {
+        $fault = new self();
+        require_once 'Zend/XmlRpc/Exception.php';
+        try {
+            $isFault = $fault->loadXml($xml);
+        } catch (Zend_XmlRpc_Exception $e) {
+            $isFault = false;
+        }
+
+        return $isFault;
+    }
+
+    /**
+     * Serialize fault to XML
+     *
+     * @return string
+     */
+    public function saveXML()
+    {
+        // Create fault value
+        $faultStruct = array(
+            'faultCode'   => $this->getCode(),
+            'faultString' => $this->getMessage()
+        );
+        $value = Zend_XmlRpc_Value::getXmlRpcValue($faultStruct);
+        $valueDOM = new DOMDocument('1.0', $this->getEncoding());
+        $valueDOM->loadXML($value->saveXML());
+
+        // Build response XML
+        $dom  = new DOMDocument('1.0', $this->getEncoding());
+        $r    = $dom->appendChild($dom->createElement('methodResponse'));
+        $f    = $r->appendChild($dom->createElement('fault'));
+        $f->appendChild($dom->importNode($valueDOM->documentElement, 1));
+
+        return $dom->saveXML();
+    }
+
+    /**
+     * Return XML fault response
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->saveXML();
+    }
+}

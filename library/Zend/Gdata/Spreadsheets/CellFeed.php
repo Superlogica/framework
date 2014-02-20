@@ -1,53 +1,157 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-2zGq
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Feed
+ */
+require_once 'Zend/Gdata/Feed.php';
+
+/**
+ * @see Zend_Gdata_Spreadsheets_Extension_RowCount
+ */
+require_once 'Zend/Gdata/Spreadsheets/Extension/RowCount.php';
+
+/**
+ * @see Zend_Gdata_Spreadsheets_Extension_ColCount
+ */
+require_once 'Zend/Gdata/Spreadsheets/Extension/ColCount.php';
+
+/**
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage   Spreadsheets
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Spreadsheets_CellFeed extends Zend_Gdata_Feed
+{
+
+    /**
+    * The classname for individual feed elements.
+    *
+    * @var string
+    */
+    protected $_entryClassName = 'Zend_Gdata_Spreadsheets_CellEntry';
+
+    /**
+    * The classname for the feed.
+    *
+    * @var string
+    */
+    protected $_feedClassName = 'Zend_Gdata_Spreadsheets_CellFeed';
+
+    /**
+    * The row count for the feed.
+    *
+    * @var Zend_Gdata_Spreadsheets_Extension_RowCount
+    */
+    protected $_rowCount = null;
+
+    /**
+    * The column count for the feed.
+    *
+    * @var Zend_Gdata_Spreadsheets_Extension_ColCount
+    */
+    protected $_colCount = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Spreadsheets_CellFeed object.
+     * @param DOMElement $element (optional) The XML Element on which to base this object.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Spreadsheets::$namespaces);
+        parent::__construct($element);
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->rowCount != null) {
+            $element->appendChild($this->_rowCount->getDOM($element->ownerDocument));
+        }
+        if ($this->colCount != null) {
+            $element->appendChild($this->_colCount->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gs') . ':' . 'rowCount';
+                $rowCount = new Zend_Gdata_Spreadsheets_Extension_RowCount();
+                $rowCount->transferFromDOM($child);
+                $this->_rowCount = $rowCount;
+                break;
+            case $this->lookupNamespace('gs') . ':' . 'colCount';
+                $colCount = new Zend_Gdata_Spreadsheets_Extension_ColCount();
+                $colCount->transferFromDOM($child);
+                $this->_colCount = $colCount;
+                break;
+            default:
+                parent::takeChildFromDOM($child);
+                break;
+        }
+    }
+
+    /**
+     * Gets the row count for this feed.
+     * @return string The row count for the feed.
+     */
+    public function getRowCount()
+    {
+        return $this->_rowCount;
+    }
+
+    /**
+     * Gets the column count for this feed.
+     * @return string The column count for the feed.
+     */
+    public function getColumnCount()
+    {
+        return $this->_colCount;
+    }
+
+    /**
+     * Sets the row count for this feed.
+     * @param string $rowCount The new row count for the feed.
+     */
+    public function setRowCount($rowCount)
+    {
+        $this->_rowCount = $rowCount;
+        return $this;
+    }
+
+    /**
+     * Sets the column count for this feed.
+     * @param string $colCount The new column count for the feed.
+     */
+    public function setColumnCount($colCount)
+    {
+        $this->_colCount = $colCount;
+        return $this;
+    }
+
+}

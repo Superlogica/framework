@@ -1,52 +1,185 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Session
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 8064 2008-02-16 10:58:39Z thomas $
+ * @since      Preview Release 0.2
+ */
+
+
+/**
+ * Zend_Session_Abstract
+ *
+ * @category   Zend
+ * @package    Zend_Session
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Session_Abstract
+{
+    /**
+     * Whether or not session permits writing (modification of $_SESSION[])
+     *
+     * @var bool
+     */
+    protected static $_writable = false;
+
+    /**
+     * Whether or not session permits reading (reading data in $_SESSION[])
+     *
+     * @var bool
+     */
+    protected static $_readable = false;
+
+    /**
+     * Since expiring data is handled at startup to avoid __destruct difficulties,
+     * the data that will be expiring at end of this request is held here
+     *
+     * @var array
+     */
+    protected static $_expiringData = array();
+
+
+    /**
+     * Error message thrown when an action requires modification,
+     * but current Zend_Session has been marked as read-only.
+     */
+    const _THROW_NOT_WRITABLE_MSG = 'Zend_Session is currently marked as read-only.';
+
+
+    /**
+     * Error message thrown when an action requires reading session data,
+     * but current Zend_Session is not marked as readable.
+     */
+    const _THROW_NOT_READABLE_MSG = 'Zend_Session is not marked as readable.';
+
+
+    /**
+     * namespaceIsset() - check to see if a namespace or a variable within a namespace is set
+     *
+     * @param  string $namespace
+     * @param  string $name
+     * @return bool
+     */
+    protected static function _namespaceIsset($namespace, $name = null)
+    {
+        if (self::$_readable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(self::_THROW_NOT_READABLE_MSG);
+        }
+
+        if ($name === null) {
+            return ( isset($_SESSION[$namespace]) || isset(self::$_expiringData[$namespace]) );
+        } else {
+            return ( isset($_SESSION[$namespace][$name]) || isset(self::$_expiringData[$namespace][$name]) );
+        }
+    }
+
+
+    /**
+     * namespaceUnset() - unset a namespace or a variable within a namespace
+     *
+     * @param  string $namespace
+     * @param  string $name
+     * @throws Zend_Session_Exception
+     * @return void
+     */
+    protected static function _namespaceUnset($namespace, $name = null)
+    {
+        if (self::$_writable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(self::_THROW_NOT_WRITABLE_MSG);
+        }
+
+        $name = (string) $name;
+
+        // check to see if the api wanted to remove a var from a namespace or a namespace
+        if ($name === '') {
+            unset($_SESSION[$namespace]);
+            unset(self::$_expiringData[$namespace]);
+        } else {
+            unset($_SESSION[$namespace][$name]);
+            unset(self::$_expiringData[$namespace]);
+        }
+
+        // if we remove the last value, remove namespace.
+        if (empty($_SESSION[$namespace])) {
+            unset($_SESSION[$namespace]);
+        }
+    }
+
+
+    /**
+     * namespaceGet() - Get $name variable from $namespace, returning by reference.
+     *
+     * @param  string $namespace
+     * @param  string $name
+     * @return mixed
+     */
+    protected static function & _namespaceGet($namespace, $name = null)
+    {
+        if (self::$_readable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(self::_THROW_NOT_READABLE_MSG);
+        }
+
+        if ($name === null) {
+            if (isset($_SESSION[$namespace])) { // check session first for data requested
+                return $_SESSION[$namespace];
+            } elseif (isset(self::$_expiringData[$namespace])) { // check expiring data for data reqeusted
+                return self::$_expiringData[$namespace];
+            } else {
+                return $_SESSION[$namespace]; // satisfy return by reference
+            }
+        } else {
+            if (isset($_SESSION[$namespace][$name])) { // check session first
+                return $_SESSION[$namespace][$name];
+            } elseif (isset(self::$_expiringData[$namespace][$name])) { // check expiring data
+                return self::$_expiringData[$namespace][$name];
+            } else {
+                return $_SESSION[$namespace][$name]; // satisfy return by reference
+            }
+        }
+    }
+
+
+    /**
+     * namespaceGetAll() - Get an array containing $namespace, including expiring data.
+     *
+     * @param string $namespace
+     * @param string $name
+     * @return mixed
+     */
+    protected static function _namespaceGetAll($namespace)
+    {
+        $currentData  = (isset($_SESSION[$namespace]) && is_array($_SESSION[$namespace])) ?
+            $_SESSION[$namespace] : array();
+        $expiringData = (isset(self::$_expiringData[$namespace]) && is_array(self::$_expiringData[$namespace])) ?
+            self::$_expiringData[$namespace] : array();
+        return array_merge($currentData, $expiringData);
+    }
+}

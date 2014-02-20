@@ -1,58 +1,403 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Index_TermsStream_Interface */
+require_once 'Zend/Search/Lucene/Index/TermsStream/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Search_Lucene_Interface extends Zend_Search_Lucene_Index_TermsStream_Interface
+{
+    /**
+     * Get current generation number
+     *
+     * Returns generation number
+     * 0 means pre-2.1 index format
+     * -1 means there are no segments files.
+     *
+     * @param Zend_Search_Lucene_Storage_Directory $directory
+     * @return integer
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public static function getActualGeneration(Zend_Search_Lucene_Storage_Directory $directory);
+
+    /**
+     * Get segments file name
+     *
+     * @param integer $generation
+     * @return string
+     */
+    public static function getSegmentFileName($generation);
+
+    /**
+     * Get index format version
+     *
+     * @return integer
+     */
+    public function getFormatVersion();
+
+    /**
+     * Set index format version.
+     * Index is converted to this format at the nearest upfdate time
+     *
+     * @param int $formatVersion
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function setFormatVersion($formatVersion);
+
+    /**
+     * Returns the Zend_Search_Lucene_Storage_Directory instance for this index.
+     *
+     * @return Zend_Search_Lucene_Storage_Directory
+     */
+    public function getDirectory();
+
+    /**
+     * Returns the total number of documents in this index (including deleted documents).
+     *
+     * @return integer
+     */
+    public function count();
+
+    /**
+     * Returns one greater than the largest possible document number.
+     * This may be used to, e.g., determine how big to allocate a structure which will have
+     * an element for every document number in an index.
+     *
+     * @return integer
+     */
+    public function maxDoc();
+
+    /**
+     * Returns the total number of non-deleted documents in this index.
+     *
+     * @return integer
+     */
+    public function numDocs();
+
+    /**
+     * Checks, that document is deleted
+     *
+     * @param integer $id
+     * @return boolean
+     * @throws Zend_Search_Lucene_Exception    Exception is thrown if $id is out of the range
+     */
+    public function isDeleted($id);
+
+    /**
+     * Set default search field.
+     *
+     * Null means, that search is performed through all fields by default
+     *
+     * Default value is null
+     *
+     * @param string $fieldName
+     */
+    public static function setDefaultSearchField($fieldName);
+
+    /**
+     * Get default search field.
+     *
+     * Null means, that search is performed through all fields by default
+     *
+     * @return string
+     */
+    public static function getDefaultSearchField();
+
+    /**
+     * Set result set limit.
+     *
+     * 0 (default) means no limit
+     *
+     * @param integer $limit
+     */
+    public static function setResultSetLimit($limit);
+
+    /**
+     * Set result set limit.
+     *
+     * 0 means no limit
+     *
+     * @return integer
+     */
+    public static function getResultSetLimit();
+
+    /**
+     * Retrieve index maxBufferedDocs option
+     *
+     * maxBufferedDocs is a minimal number of documents required before
+     * the buffered in-memory documents are written into a new Segment
+     *
+     * Default value is 10
+     *
+     * @return integer
+     */
+    public function getMaxBufferedDocs();
+
+    /**
+     * Set index maxBufferedDocs option
+     *
+     * maxBufferedDocs is a minimal number of documents required before
+     * the buffered in-memory documents are written into a new Segment
+     *
+     * Default value is 10
+     *
+     * @param integer $maxBufferedDocs
+     */
+    public function setMaxBufferedDocs($maxBufferedDocs);
+
+    /**
+     * Retrieve index maxMergeDocs option
+     *
+     * maxMergeDocs is a largest number of documents ever merged by addDocument().
+     * Small values (e.g., less than 10,000) are best for interactive indexing,
+     * as this limits the length of pauses while indexing to a few seconds.
+     * Larger values are best for batched indexing and speedier searches.
+     *
+     * Default value is PHP_INT_MAX
+     *
+     * @return integer
+     */
+    public function getMaxMergeDocs();
+
+    /**
+     * Set index maxMergeDocs option
+     *
+     * maxMergeDocs is a largest number of documents ever merged by addDocument().
+     * Small values (e.g., less than 10,000) are best for interactive indexing,
+     * as this limits the length of pauses while indexing to a few seconds.
+     * Larger values are best for batched indexing and speedier searches.
+     *
+     * Default value is PHP_INT_MAX
+     *
+     * @param integer $maxMergeDocs
+     */
+    public function setMaxMergeDocs($maxMergeDocs);
+
+    /**
+     * Retrieve index mergeFactor option
+     *
+     * mergeFactor determines how often segment indices are merged by addDocument().
+     * With smaller values, less RAM is used while indexing,
+     * and searches on unoptimized indices are faster,
+     * but indexing speed is slower.
+     * With larger values, more RAM is used during indexing,
+     * and while searches on unoptimized indices are slower,
+     * indexing is faster.
+     * Thus larger values (> 10) are best for batch index creation,
+     * and smaller values (< 10) for indices that are interactively maintained.
+     *
+     * Default value is 10
+     *
+     * @return integer
+     */
+    public function getMergeFactor();
+
+    /**
+     * Set index mergeFactor option
+     *
+     * mergeFactor determines how often segment indices are merged by addDocument().
+     * With smaller values, less RAM is used while indexing,
+     * and searches on unoptimized indices are faster,
+     * but indexing speed is slower.
+     * With larger values, more RAM is used during indexing,
+     * and while searches on unoptimized indices are slower,
+     * indexing is faster.
+     * Thus larger values (> 10) are best for batch index creation,
+     * and smaller values (< 10) for indices that are interactively maintained.
+     *
+     * Default value is 10
+     *
+     * @param integer $maxMergeDocs
+     */
+    public function setMergeFactor($mergeFactor);
+
+    /**
+     * Performs a query against the index and returns an array
+     * of Zend_Search_Lucene_Search_QueryHit objects.
+     * Input is a string or Zend_Search_Lucene_Search_Query.
+     *
+     * @param mixed $query
+     * @return array Zend_Search_Lucene_Search_QueryHit
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function find($query);
+
+    /**
+     * Returns a list of all unique field names that exist in this index.
+     *
+     * @param boolean $indexed
+     * @return array
+     */
+    public function getFieldNames($indexed = false);
+
+    /**
+     * Returns a Zend_Search_Lucene_Document object for the document
+     * number $id in this index.
+     *
+     * @param integer|Zend_Search_Lucene_Search_QueryHit $id
+     * @return Zend_Search_Lucene_Document
+     */
+    public function getDocument($id);
+
+    /**
+     * Returns true if index contain documents with specified term.
+     *
+     * Is used for query optimization.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @return boolean
+     */
+    public function hasTerm(Zend_Search_Lucene_Index_Term $term);
+
+    /**
+     * Returns IDs of all the documents containing term.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return array
+     */
+    public function termDocs(Zend_Search_Lucene_Index_Term $term, $docsFilter = null);
+
+    /**
+     * Returns documents filter for all documents containing term.
+     *
+     * It performs the same operation as termDocs, but return result as
+     * Zend_Search_Lucene_Index_DocsFilter object
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return Zend_Search_Lucene_Index_DocsFilter
+     */
+    public function termDocsFilter(Zend_Search_Lucene_Index_Term $term, $docsFilter = null);
+
+    /**
+     * Returns an array of all term freqs.
+     * Return array structure: array( docId => freq, ...)
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return integer
+     */
+    public function termFreqs(Zend_Search_Lucene_Index_Term $term, $docsFilter = null);
+
+    /**
+     * Returns an array of all term positions in the documents.
+     * Return array structure: array( docId => array( pos1, pos2, ...), ...)
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @return array
+     */
+    public function termPositions(Zend_Search_Lucene_Index_Term $term, $docsFilter = null);
+
+    /**
+     * Returns the number of documents in this index containing the $term.
+     *
+     * @param Zend_Search_Lucene_Index_Term $term
+     * @return integer
+     */
+    public function docFreq(Zend_Search_Lucene_Index_Term $term);
+
+    /**
+     * Retrive similarity used by index reader
+     *
+     * @return Zend_Search_Lucene_Search_Similarity
+     */
+    public function getSimilarity();
+
+    /**
+     * Returns a normalization factor for "field, document" pair.
+     *
+     * @param integer $id
+     * @param string $fieldName
+     * @return float
+     */
+    public function norm($id, $fieldName);
+
+    /**
+     * Returns true if any documents have been deleted from this index.
+     *
+     * @return boolean
+     */
+    public function hasDeletions();
+
+    /**
+     * Deletes a document from the index.
+     * $id is an internal document id
+     *
+     * @param integer|Zend_Search_Lucene_Search_QueryHit $id
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function delete($id);
+
+    /**
+     * Adds a document to this index.
+     *
+     * @param Zend_Search_Lucene_Document $document
+     */
+    public function addDocument(Zend_Search_Lucene_Document $document);
+
+    /**
+     * Commit changes resulting from delete() or undeleteAll() operations.
+     */
+    public function commit();
+
+    /**
+     * Optimize index.
+     *
+     * Merges all segments into one
+     */
+    public function optimize();
+
+    /**
+     * Returns an array of all terms in this index.
+     *
+     * @return array
+     */
+    public function terms();
+
+    /**
+     * Undeletes all documents currently marked as deleted in this index.
+     */
+    public function undeleteAll();
+
+
+    /**
+     * Add reference to the index object
+     *
+     * @internal
+     */
+    public function addReference();
+
+    /**
+     * Remove reference from the index object
+     *
+     * When reference count becomes zero, index is closed and resources are cleaned up
+     *
+     * @internal
+     */
+    public function removeReference();
+}

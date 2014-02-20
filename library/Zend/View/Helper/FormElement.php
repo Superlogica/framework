@@ -1,78 +1,201 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-iaul/JRuedITngsmkJX1
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_View_Helper_HtmlElement
+ */
+require_once 'Zend/View/Helper/HtmlElement.php';
+
+/**
+ * Base helper for form elements.  Extend this, don't use it on its own.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_View_Helper_FormElement extends Zend_View_Helper_HtmlElement
+{
+    /**
+     * @var Zend_Translate
+     */
+    protected $_translator;
+
+    /**
+     * Get translator
+     *
+     * @return Zend_Translate
+     */
+    public function getTranslator()
+    {
+         return $this->_translator;
+    }
+
+    /**
+     * Set translator
+     *
+     * @param  $translator|null Zend_Translate
+     * @return Zend_View_Helper_FormElement
+     */
+    public function setTranslator($translator = null)
+    {
+        if (null === $translator) {
+            $this->_translator = null;
+        } elseif ($translator instanceof Zend_Translate_Adapter) {
+            $this->_translator = $translator;
+        } elseif ($translator instanceof Zend_Translate) {
+            $this->_translator = $translator->getAdapter();
+        } else {
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception('Invalid translator specified');
+        }
+         return $this;
+    }
+
+    /**
+     * Converts parameter arguments to an element info array.
+     *
+     * E.g, formExample($name, $value, $attribs, $options, $listsep) is
+     * the same thing as formExample(array('name' => ...)).
+     *
+     * Note that you cannot pass a 'disable' param; you need to pass
+     * it as an 'attribs' key.
+     *
+     * @access protected
+     *
+     * @return array An element info array with keys for name, value,
+     * attribs, options, listsep, disable, and escape.
+     */
+    protected function _getInfo($name, $value = null, $attribs = null,
+        $options = null, $listsep = null
+    ) {
+        // the baseline info.  note that $name serves a dual purpose;
+        // if an array, it's an element info array that will override
+        // these baseline values.  as such, ignore it for the 'name'
+        // if it's an array.
+        $info = array(
+            'name'    => is_array($name) ? '' : $name,
+            'id'      => is_array($name) ? '' : $name,
+            'value'   => $value,
+            'attribs' => $attribs,
+            'options' => $options,
+            'listsep' => $listsep,
+            'disable' => false,
+            'escape'  => true,
+        );
+
+        // override with named args
+        if (is_array($name)) {
+            // only set keys that are already in info
+            foreach ($info as $key => $val) {
+                if (isset($name[$key])) {
+                    $info[$key] = $name[$key];
+                }
+            }
+        }
+
+        // force attribs to an array, per note from Orjan Persson.
+        settype($info['attribs'], 'array');
+
+        // Normalize readonly tag
+        if (isset($info['attribs']['readonly'])
+            && $info['attribs']['readonly'] != 'readonly')
+        {
+            $info['attribs']['readonly'] = 'readonly';
+        }
+
+        // Disable attribute
+        if (isset($info['attribs']['disable'])
+            && is_scalar($info['attribs']['disable']))
+        {
+            // disable the element
+            $info['disable'] = (bool)$info['attribs']['disable'];
+            unset($info['attribs']['disable']);
+        } elseif (isset($info['attribs']['disable'])
+            && is_array($info['attribs']['disable']))
+        {
+            $info['disable'] = $info['attribs']['disable'];
+            unset($info['attribs']['disable']);
+        }
+
+        // Set ID for element
+        if (isset($info['attribs']['id'])) {
+            $info['id'] = (string) $info['attribs']['id'];
+        } elseif (!isset($info['attribs']['id']) && !empty($info['name'])) {
+            $id = $info['name'];
+            if (substr($id, -2) == '[]') {
+                $id = substr($id, 0, strlen($id) - 2);
+            }
+            if (strstr($id, ']')) {
+                $id = trim($id, ']');
+                $id = str_replace('][', '-', $id);
+                $id = str_replace('[', '-', $id);
+            }
+            $info['id'] = $id;
+        }
+
+        // Determine escaping from attributes
+        if (isset($info['attribs']['escape'])) {
+            $info['escape'] = (bool) $info['attribs']['escape'];
+        }
+
+        // Determine listsetp from attributes
+        if (isset($info['attribs']['listsep'])) {
+            $info['listsep'] = (string) $info['attribs']['listsep'];
+        }
+
+        // Remove attribs that might overwrite the other keys. We do this LAST
+        // because we needed the other attribs values earlier.
+        foreach ($info as $key => $val) {
+            if (isset($info['attribs'][$key])) {
+                unset($info['attribs'][$key]);
+            }
+        }
+
+        // done!
+        return $info;
+    }
+
+    /**
+     * Creates a hidden element.
+     *
+     * We have this as a common method because other elements often
+     * need hidden elements for their operation.
+     *
+     * @access protected
+     *
+     * @param $name The element name.
+     *
+     * @param $value The element value.
+     *
+     * @param $attribs Attributes for the element.
+     *
+     * @return string A hidden element.
+     */
+    protected function _hidden($name, $value = null, $attribs = null)
+    {
+        return '<input type="hidden"'
+             . ' name="' . $this->view->escape($name) . '"'
+             . ' value="' . $this->view->escape($value) . '"'
+             . $this->_htmlAttribs($attribs) . $this->getClosingBracket();
+    }
+}

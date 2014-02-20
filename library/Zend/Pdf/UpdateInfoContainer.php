@@ -1,32 +1,137 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-guggmbu=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+/** Zend_Pdf_Element_Object */
+require_once 'Zend/Pdf/Element/Object.php';
+
+/** Zend_Memory */
+require_once 'Zend/Memory.php';
+
+
+/**
+ * Container which collects updated object info.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_UpdateInfoContainer
+{
+    /**
+     * Object number
+     *
+     * @var integer
+     */
+    private $_objNum;
+
+    /**
+     * Generation number
+     *
+     * @var integer
+     */
+    private $_genNum;
+
+
+    /**
+     * Flag, which signals, that object is free
+     *
+     * @var boolean
+     */
+    private $_isFree;
+
+    /**
+     * String representation of the object
+     *
+     * @var Zend_Memory_Container|null
+     */
+    private $_dump = null;
+
+    /**
+     * Object constructor
+     *
+     * @param integer $objCount
+     */
+    public function __construct($objNum, $genNum, $isFree, $dump = null)
+    {
+        $this->_objNum = $objNum;
+        $this->_genNum = $genNum;
+        $this->_isFree = $isFree;
+
+        if ($dump !== null) {
+            if (strlen($dump) > 1024) {
+                $this->_dump = Zend_Pdf::getMemoryManager()->create($dump);
+            } else {
+                $this->_dump = $dump;
+            }
+        }
+    }
+
+
+    /**
+     * Get object number
+     *
+     * @return integer
+     */
+    public function getObjNum()
+    {
+        return $this->_objNum;
+    }
+
+    /**
+     * Get generation number
+     *
+     * @return integer
+     */
+    public function getGenNum()
+    {
+        return $this->_genNum;
+    }
+
+    /**
+     * Check, that object is free
+     *
+     * @return boolean
+     */
+    public function isFree()
+    {
+        return $this->_isFree;
+    }
+
+    /**
+     * Get string representation of the object
+     *
+     * @return string
+     */
+    public function getObjectDump()
+    {
+        if ($this->_dump === null) {
+            return '';
+        }
+
+        if (is_string($this->_dump)) {
+            return $this->_dump;
+        }
+
+        return $this->_dump->getRef();
+    }
+}
+

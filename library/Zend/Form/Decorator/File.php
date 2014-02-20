@@ -1,66 +1,142 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-cjgx7wI0WsMG
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/** Zend_Form_Decorator_Marker_File_Interface */
+require_once 'Zend/Form/Decorator/Marker/File/Interface.php';
+
+/** Zend_File_Transfer_Adapter_Http */
+require_once 'Zend/File/Transfer/Adapter/Http.php';
+
+/**
+ * Zend_Form_Decorator_File
+ *
+ * Fixes the rendering for all subform and multi file elements
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+class Zend_Form_Decorator_File
+    extends Zend_Form_Decorator_Abstract
+    implements Zend_Form_Decorator_Marker_File_Interface
+{
+    /**
+     * Attributes that should not be passed to helper
+     * @var array
+     */
+    protected $_attribBlacklist = array('helper', 'placement', 'separator', 'value');
+
+    /**
+     * Default placement: append
+     * @var string
+     */
+    protected $_placement = 'APPEND';
+
+    /**
+     * Get attributes to pass to file helper
+     *
+     * @return array
+     */
+    public function getAttribs()
+    {
+        $attribs   = $this->getOptions();
+
+        if (null !== ($element = $this->getElement())) {
+            $attribs = array_merge($attribs, $element->getAttribs());
+        }
+
+        foreach ($this->_attribBlacklist as $key) {
+            if (array_key_exists($key, $attribs)) {
+                unset($attribs[$key]);
+            }
+        }
+
+        return $attribs;
+    }
+
+    /**
+     * Render a form file
+     *
+     * @param  string $content
+     * @return string
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        if (!$element instanceof Zend_Form_Element) {
+            return $content;
+        }
+
+        $view = $element->getView();
+        if (!$view instanceof Zend_View_Interface) {
+            return $content;
+        }
+
+        $name      = $element->getName();
+        $attribs   = $this->getAttribs();
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id'] = $name;
+        }
+
+        $separator = $this->getSeparator();
+        $placement = $this->getPlacement();
+        $markup    = array();
+        $size      = $element->getMaxFileSize();
+        if ($size > 0) {
+            $element->setMaxFileSize(0);
+            $markup[] = $view->formHidden('MAX_FILE_SIZE', $size);
+        }
+
+        if (Zend_File_Transfer_Adapter_Http::isApcAvailable()) {
+            $markup[] = $view->formHidden('APC_UPLOAD_PROGRESS', uniqid(), array('id' => 'progress_key'));
+        } else if (Zend_File_Transfer_Adapter_Http::isUploadProgressAvailable()) {
+            $markup[] = $view->formHidden('UPLOAD_IDENTIFIER', uniqid(), array('id' => 'progress_key'));
+        }
+
+        if ($element->isArray()) {
+            $name .= "[]";
+            $count = $element->getMultiFile();
+            for ($i = 0; $i < $count; ++$i) {
+                $htmlAttribs        = $attribs;
+                $htmlAttribs['id'] .= '-' . $i;
+                $markup[] = $view->formFile($name, $htmlAttribs);
+            }
+        } else {
+            $markup[] = $view->formFile($name, $attribs);
+        }
+
+        $markup = implode($separator, $markup);
+
+        switch ($placement) {
+            case self::PREPEND:
+                return $markup . $separator . $content;
+            case self::APPEND:
+            default:
+                return $content . $separator . $markup;
+        }
+    }
+}

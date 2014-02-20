@@ -1,92 +1,245 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-wHZZKAoZHhAY
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Calendar_Extension_AccessLevel
+ */
+require_once 'Zend/Gdata/Calendar/Extension/AccessLevel.php';
+
+/**
+ * @see Zend_Calendar_Extension_Color
+ */
+require_once 'Zend/Gdata/Calendar/Extension/Color.php';
+
+/**
+ * @see Zend_Calendar_Extension_Hidden
+ */
+require_once 'Zend/Gdata/Calendar/Extension/Hidden.php';
+
+/**
+ * @see Zend_Calendar_Extension_Selected
+ */
+require_once 'Zend/Gdata/Calendar/Extension/Selected.php';
+
+/**
+ * @see Zend_Gdata_Extension_EventStatus
+ */
+require_once 'Zend/Gdata/Extension/EventStatus.php';
+
+/**
+ * @see Zend_Gdata_Extension_Visibility
+ */
+require_once 'Zend/Gdata/Extension/Visibility.php';
+
+
+/**
+ * @see Zend_Extension_Where
+ */
+require_once 'Zend/Gdata/Extension/Where.php';
+
+/**
+ * Represents a Calendar entry in the Calendar data API meta feed of a user's
+ * calendars.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Calendar_ListEntry extends Zend_Gdata_Entry
+{
+
+    protected $_color = null;
+    protected $_accessLevel = null;
+    protected $_hidden = null;
+    protected $_selected = null;
+    protected $_timezone = null;
+    protected $_where = array();
+
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
+        parent::__construct($element);
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_accessLevel != null) {
+            $element->appendChild($this->_accessLevel->getDOM($element->ownerDocument));
+        }
+        if ($this->_color != null) {
+            $element->appendChild($this->_color->getDOM($element->ownerDocument));
+        }
+        if ($this->_hidden != null) {
+            $element->appendChild($this->_hidden->getDOM($element->ownerDocument));
+        }
+        if ($this->_selected != null) {
+            $element->appendChild($this->_selected->getDOM($element->ownerDocument));
+        }
+        if ($this->_timezone != null) {
+            $element->appendChild($this->_timezone->getDOM($element->ownerDocument));
+        }
+        if ($this->_where != null) {
+            foreach ($this->_where as $where) {
+                $element->appendChild($where->getDOM($element->ownerDocument));
+            }
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('gCal') . ':' . 'accesslevel';
+            $accessLevel = new Zend_Gdata_Calendar_Extension_AccessLevel();
+            $accessLevel->transferFromDOM($child);
+            $this->_accessLevel = $accessLevel;
+            break;
+        case $this->lookupNamespace('gCal') . ':' . 'color';
+            $color = new Zend_Gdata_Calendar_Extension_Color();
+            $color->transferFromDOM($child);
+            $this->_color = $color;
+            break;
+        case $this->lookupNamespace('gCal') . ':' . 'hidden';
+            $hidden = new Zend_Gdata_Calendar_Extension_Hidden();
+            $hidden->transferFromDOM($child);
+            $this->_hidden = $hidden;
+            break;
+        case $this->lookupNamespace('gCal') . ':' . 'selected';
+            $selected = new Zend_Gdata_Calendar_Extension_Selected();
+            $selected->transferFromDOM($child);
+            $this->_selected = $selected;
+            break;
+        case $this->lookupNamespace('gCal') . ':' . 'timezone';
+            $timezone = new Zend_Gdata_Calendar_Extension_Timezone();
+            $timezone->transferFromDOM($child);
+            $this->_timezone = $timezone;
+            break;
+        case $this->lookupNamespace('gd') . ':' . 'where';
+            $where = new Zend_Gdata_Extension_Where();
+            $where->transferFromDOM($child);
+            $this->_where[] = $where;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    public function getAccessLevel()
+    {
+        return $this->_accessLevel;
+    }
+
+    /**
+     * @param Zend_Gdata_Calendar_Extension_AccessLevel $value
+     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     */
+    public function setAccessLevel($value)
+    {
+        $this->_accessLevel = $value;
+        return $this;
+    }
+    public function getColor()
+    {
+        return $this->_color;
+    }
+
+    /**
+     * @param Zend_Gdata_Calendar_Extension_Color $value
+     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     */
+    public function setColor($value)
+    {
+        $this->_color = $value;
+        return $this;
+    }
+
+    public function getHidden()
+    {
+        return $this->_hidden;
+    }
+
+    /**
+     * @param Zend_Gdata_Calendar_Extension_Hidden $value
+     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     */
+    public function setHidden($value)
+    {
+        $this->_hidden = $value;
+        return $this;
+    }
+
+    public function getSelected()
+    {
+        return $this->_selected;
+    }
+
+    /**
+     * @param Zend_Gdata_Calendar_Extension_Selected $value
+     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     */
+    public function setSelected($value)
+    {
+        $this->_selected = $value;
+        return $this;
+    }
+
+    public function getTimezone()
+    {
+        return $this->_timezone;
+    }
+
+    /**
+     * @param Zend_Gdata_Calendar_Extension_Timezone $value
+     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     */
+    public function setTimezone($value)
+    {
+        $this->_timezone = $value;
+        return $this;
+    }
+
+    public function getWhere()
+    {
+        return $this->_where;
+    }
+
+    /**
+     * @param Zend_Gdata_Extension_Where $value
+     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     */
+    public function setWhere($value)
+    {
+        $this->_where = $value;
+        return $this;
+    }
+
+}

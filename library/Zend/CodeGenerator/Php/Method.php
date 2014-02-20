@@ -1,81 +1,227 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @subpackage PHP
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_CodeGenerator_Php_Member_Abstract
+ */
+require_once 'Zend/CodeGenerator/Php/Member/Abstract.php';
+
+/**
+ * @see Zend_CodeGenerator_Php_Docblock
+ */
+require_once 'Zend/CodeGenerator/Php/Docblock.php';
+
+/**
+ * @see Zend_CodeGenerator_Php_Parameter
+ */
+require_once 'Zend/CodeGenerator/Php/Parameter.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_CodeGenerator_Php_Method extends Zend_CodeGenerator_Php_Member_Abstract 
+{
+    /**
+     * @var Zend_CodeGenerator_Php_Docblock
+     */
+    protected $_docblock = null;
+    
+    /**
+     * @var bool
+     */
+    protected $_isFinal = false;
+    
+    /**
+     * @var array
+     */
+    protected $_parameters = array();
+    
+    /**
+     * @var string
+     */
+    protected $_body = null;
+    
+    /**
+     * fromReflection()
+     *
+     * @param Zend_Reflection_Method $reflectionMethod
+     * @return Zend_CodeGenerator_Php_Method
+     */
+    public static function fromReflection(Zend_Reflection_Method $reflectionMethod)
+    {
+        $method = new self();
+        
+        $method->setSourceContent($reflectionMethod->getContents(false));
+        $method->setSourceDirty(false);
+        
+        if ($reflectionMethod->getDocComment() != '') {
+            $method->setDocblock(Zend_CodeGenerator_Php_Docblock::fromReflection($reflectionMethod->getDocblock()));
+        }
+        
+        $method->setFinal($reflectionMethod->isFinal());
+        
+        if ($reflectionMethod->isPrivate()) {
+            $method->setVisibility(self::VISIBILITY_PRIVATE);
+        } elseif ($reflectionMethod->isProtected()) {
+            $method->setVisibility(self::VISIBILITY_PROTECTED);
+        } else {
+            $method->setVisibility(self::VISIBILITY_PUBLIC);
+        }
+        
+        $method->setStatic($reflectionMethod->isStatic());
+
+        $method->setName($reflectionMethod->getName());
+        
+        foreach ($reflectionMethod->getParameters() as $reflectionParameter) {
+            $method->setParameter(Zend_CodeGenerator_Php_Parameter::fromReflection($reflectionParameter));
+        }
+        
+        $method->setBody($reflectionMethod->getBody());
+
+        return $method;
+    }
+    
+    /**
+     * setFinal()
+     *
+     * @param bool $isFinal
+     */
+    public function setFinal($isFinal)
+    {
+        $this->_isFinal = ($isFinal) ? true : false;
+    }
+    
+    /**
+     * setParameters()
+     *
+     * @param array $parameters
+     * @return Zend_CodeGenerator_Php_Method
+     */
+    public function setParameters(Array $parameters)
+    {
+        foreach ($parameters as $parameter) {
+            $this->setParameter($parameter);
+        }
+        return $this;
+    }
+    
+    /**
+     * setParameter()
+     *
+     * @param Zend_CodeGenerator_Php_Parameter|array $parameter
+     * @return Zend_CodeGenerator_Php_Method
+     */
+    public function setParameter($parameter)
+    {
+        if (is_array($parameter)) {
+            $parameter = new Zend_CodeGenerator_Php_Parameter($parameter);
+            $parameterName = $parameter->getName();
+        } elseif ($parameter instanceof Zend_CodeGenerator_Php_Parameter) {
+            $parameterName = $parameter->getName();
+        } else {
+            require_once 'Zend/CodeGenerator/Php/Exception.php';
+            throw new Zend_CodeGenerator_Php_Exception('setParameter() expects either an array of method options or an instance of Zend_CodeGenerator_Php_Parameter');
+        }
+        
+        $this->_parameters[$parameterName] = $parameter;
+        return $this;
+    }
+    
+    /**
+     * getParameters()
+     *
+     * @return array Array of Zend_CodeGenerator_Php_Parameter
+     */
+    public function getParameters()
+    {
+        return $this->_parameters;
+    }
+
+    /**
+     * setBody()
+     *
+     * @param string $body
+     * @return Zend_CodeGenerator_Php_Method
+     */
+    public function setBody($body)
+    {
+        $this->_body = $body;
+        return $this;
+    }
+    
+    /**
+     * getBody()
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->_body;
+    }
+    
+    /**
+     * generate()
+     *
+     * @return string
+     */
+    public function generate()
+    {
+        $output = '    ';
+        
+        if (null !== ($docblock = $this->getDocblock())) {
+            $docblock->setIndentation('    ');
+            $output .= $docblock->generate();
+            $output .= '    ';
+        }
+        
+        if ($this->isAbstract()) {
+            $output .= 'abstract ';
+        }
+                
+        $output .= $this->getVisibility() . ' function ' . $this->getName() . '(';
+
+        $parameters = $this->getParameters();
+        if (!empty($parameters)) {
+            foreach ($parameters as $parameter) {
+                $parameterOuput[] = $parameter->generate();
+            }
+            
+            $output .= implode(', ', $parameterOuput);
+        }
+        
+        $output .= ')' . PHP_EOL . '    {' . PHP_EOL;
+
+        if ($this->_body) {
+            $output .= '        ' 
+                    .  str_replace(PHP_EOL, PHP_EOL . '        ', trim($this->_body)) 
+                    .  PHP_EOL;
+        }
+        
+        $output .= '    }' . PHP_EOL;
+        
+        return $output;
+    }
+    
+}

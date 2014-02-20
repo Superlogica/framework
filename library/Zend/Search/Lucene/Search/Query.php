@@ -1,61 +1,233 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Document_Html */
+require_once 'Zend/Search/Lucene/Document/Html.php';
+
+/** Zend_Search_Lucene_Index_DocsFilter */
+require_once 'Zend/Search/Lucene/Index/DocsFilter.php';
+
+/** Zend_Search_Lucene_Search_Highlighter_Default */
+require_once 'Zend/Search/Lucene/Search/Highlighter/Default.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Search_Lucene_Search_Query
+{
+    /**
+     * query boost factor
+     *
+     * @var float
+     */
+    private $_boost = 1;
+
+    /**
+     * Query weight
+     *
+     * @var Zend_Search_Lucene_Search_Weight
+     */
+    protected $_weight = null;
+
+    /**
+     * Current highlight color
+     *
+     * @var integer
+     */
+    private $_currentColorIndex = 0;
+
+    /**
+     * Gets the boost for this clause.  Documents matching
+     * this clause will (in addition to the normal weightings) have their score
+     * multiplied by boost.   The boost is 1.0 by default.
+     *
+     * @return float
+     */
+    public function getBoost()
+    {
+        return $this->_boost;
+    }
+
+    /**
+     * Sets the boost for this query clause to $boost.
+     *
+     * @param float $boost
+     */
+    public function setBoost($boost)
+    {
+        $this->_boost = $boost;
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     */
+    abstract public function score($docId, Zend_Search_Lucene_Interface $reader);
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     */
+    abstract public function matchedDocs();
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * Query specific implementation
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     */
+    abstract public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null);
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     */
+    abstract public function createWeight(Zend_Search_Lucene_Interface $reader);
+
+    /**
+     * Constructs an initializes a Weight for a _top-level_query_.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     */
+    protected function _initWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        // Check, that it's a top-level query and query weight is not initialized yet.
+        if ($this->_weight !== null) {
+            return $this->_weight;
+        }
+
+        $this->createWeight($reader);
+        $sum = $this->_weight->sumOfSquaredWeights();
+        $queryNorm = $reader->getSimilarity()->queryNorm($sum);
+        $this->_weight->normalize($queryNorm);
+    }
+
+    /**
+     * Re-write query into primitive queries in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    abstract public function rewrite(Zend_Search_Lucene_Interface $index);
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    abstract public function optimize(Zend_Search_Lucene_Interface $index);
+
+    /**
+     * Reset query, so it can be reused within other queries or
+     * with other indeces
+     */
+    public function reset()
+    {
+        $this->_weight = null;
+    }
+
+
+    /**
+     * Print a query
+     *
+     * @return string
+     */
+    abstract public function __toString();
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     */
+    abstract public function getQueryTerms();
+
+    /**
+     * Query specific matches highlighting
+     *
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
+     */
+    abstract protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter);
+
+    /**
+     * Highlight matches in $inputHTML
+     *
+     * @param string $inputHTML
+     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface|null $highlighter
+     * @return string
+     */
+    public function highlightMatches($inputHTML, $defaultEncoding = '', $highlighter = null)
+    {
+        if ($highlighter === null) {
+        	$highlighter = new Zend_Search_Lucene_Search_Highlighter_Default();
+        }
+
+        $doc = Zend_Search_Lucene_Document_Html::loadHTML($inputHTML, false, $defaultEncoding);
+        $highlighter->setDocument($doc);
+
+        $this->_highlightMatches($highlighter);
+
+        return $doc->getHTML();
+    }
+
+    /**
+     * Highlight matches in $inputHtmlFragment and return it (without HTML header and body tag)
+     *
+     * @param string $inputHtmlFragment
+     * @param string  $encoding   Input HTML string encoding
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface|null $highlighter
+     * @return string
+     */
+    public function htmlFragmentHighlightMatches($inputHtmlFragment, $encoding = 'UTF-8', $highlighter = null)
+    {
+        if ($highlighter === null) {
+            $highlighter = new Zend_Search_Lucene_Search_Highlighter_Default();
+        }
+
+        $inputHTML = '<html><head><META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/></head><body>'
+                   . iconv($encoding, 'UTF-8//IGNORE', $inputHtmlFragment) . '</body></html>';
+
+    	$doc = Zend_Search_Lucene_Document_Html::loadHTML($inputHTML);
+        $highlighter->setDocument($doc);
+
+        $this->_highlightMatches($highlighter);
+
+        return $doc->getHtmlBody();
+    }
+}
+

@@ -1,110 +1,344 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-iPa3aTOd8wfk6r0u
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Cookie
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com/)
+ * @version    $Id: Cookie.php 14530 2009-03-29 14:17:14Z shahar $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+require_once 'Zend/Uri/Http.php';
+
+
+/**
+ * Zend_Http_Cookie is a class describing an HTTP cookie and all it's parameters.
+ *
+ * Zend_Http_Cookie is a class describing an HTTP cookie and all it's parameters. The
+ * class also enables validating whether the cookie should be sent to the server in
+ * a specified scenario according to the request URI, the expiry time and whether
+ * session cookies should be used or not. Generally speaking cookies should be
+ * contained in a Cookiejar object, or instantiated manually and added to an HTTP
+ * request.
+ *
+ * See http://wp.netscape.com/newsref/std/cookie_spec.html for some specs.
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com/)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Http_Cookie
+{
+    /**
+     * Cookie name
+     *
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * Cookie value
+     *
+     * @var string
+     */
+    protected $value;
+
+    /**
+     * Cookie expiry date
+     *
+     * @var int
+     */
+    protected $expires;
+
+    /**
+     * Cookie domain
+     *
+     * @var string
+     */
+    protected $domain;
+
+    /**
+     * Cookie path
+     *
+     * @var string
+     */
+    protected $path;
+
+    /**
+     * Whether the cookie is secure or not
+     *
+     * @var boolean
+     */
+    protected $secure;
+
+    /**
+     * Cookie object constructor
+     *
+     * @todo Add validation of each one of the parameters (legal domain, etc.)
+     *
+     * @param string $name
+     * @param string $value
+     * @param string $domain
+     * @param int $expires
+     * @param string $path
+     * @param bool $secure
+     */
+    public function __construct($name, $value, $domain, $expires = null, $path = null, $secure = false)
+    {
+        if (preg_match("/[=,; \t\r\n\013\014]/", $name)) {
+            require_once 'Zend/Http/Exception.php';
+            throw new Zend_Http_Exception("Cookie name cannot contain these characters: =,; \\t\\r\\n\\013\\014 ({$name})");
+        }
+
+        if (! $this->name = (string) $name) {
+            require_once 'Zend/Http/Exception.php';
+            throw new Zend_Http_Exception('Cookies must have a name');
+        }
+
+        if (! $this->domain = (string) $domain) {
+            require_once 'Zend/Http/Exception.php';
+            throw new Zend_Http_Exception('Cookies must have a domain');
+        }
+
+        $this->value = (string) $value;
+        $this->expires = ($expires === null ? null : (int) $expires);
+        $this->path = ($path ? $path : '/');
+        $this->secure = $secure;
+    }
+
+    /**
+     * Get Cookie name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get cookie value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Get cookie domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * Get the cookie path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Get the expiry time of the cookie, or null if no expiry time is set
+     *
+     * @return int|null
+     */
+    public function getExpiryTime()
+    {
+        return $this->expires;
+    }
+
+    /**
+     * Check whether the cookie should only be sent over secure connections
+     *
+     * @return boolean
+     */
+    public function isSecure()
+    {
+        return $this->secure;
+    }
+
+    /**
+     * Check whether the cookie has expired
+     *
+     * Always returns false if the cookie is a session cookie (has no expiry time)
+     *
+     * @param int $now Timestamp to consider as "now"
+     * @return boolean
+     */
+    public function isExpired($now = null)
+    {
+        if ($now === null) $now = time();
+        if (is_int($this->expires) && $this->expires < $now) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Check whether the cookie is a session cookie (has no expiry time set)
+     *
+     * @return boolean
+     */
+    public function isSessionCookie()
+    {
+        return ($this->expires === null);
+    }
+
+    /**
+     * Checks whether the cookie should be sent or not in a specific scenario
+     *
+     * @param string|Zend_Uri_Http $uri URI to check against (secure, domain, path)
+     * @param boolean $matchSessionCookies Whether to send session cookies
+     * @param int $now Override the current time when checking for expiry time
+     * @return boolean
+     */
+    public function match($uri, $matchSessionCookies = true, $now = null)
+    {
+        if (is_string ($uri)) {
+            $uri = Zend_Uri_Http::factory($uri);
+        }
+
+        // Make sure we have a valid Zend_Uri_Http object
+        if (! ($uri->valid() && ($uri->getScheme() == 'http' || $uri->getScheme() =='https'))) {
+            require_once 'Zend/Http/Exception.php';
+            throw new Zend_Http_Exception('Passed URI is not a valid HTTP or HTTPS URI');
+        }
+
+        // Check that the cookie is secure (if required) and not expired
+        if ($this->secure && $uri->getScheme() != 'https') return false;
+        if ($this->isExpired($now)) return false;
+        if ($this->isSessionCookie() && ! $matchSessionCookies) return false;
+
+        // Validate domain and path
+        // Domain is validated using tail match, while path is validated using head match
+        $domain_preg = preg_quote($this->getDomain(), "/");
+        if (! preg_match("/{$domain_preg}$/", $uri->getHost())) return false;
+        $path_preg = preg_quote($this->getPath(), "/");
+        if (! preg_match("/^{$path_preg}/", $uri->getPath())) return false;
+
+        // If we didn't die until now, return true.
+        return true;
+    }
+
+    /**
+     * Get the cookie as a string, suitable for sending as a "Cookie" header in an
+     * HTTP request
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name . '=' . urlencode($this->value) . ';';
+    }
+
+    /**
+     * Generate a new Cookie object from a cookie string
+     * (for example the value of the Set-Cookie HTTP header)
+     *
+     * @param string $cookieStr
+     * @param Zend_Uri_Http|string $ref_uri Reference URI for default values (domain, path)
+     * @return Zend_Http_Cookie A new Zend_Http_Cookie object or false on failure.
+     */
+    public static function fromString($cookieStr, $ref_uri = null)
+    {
+        // Set default values
+        if (is_string($ref_uri)) {
+            $ref_uri = Zend_Uri_Http::factory($ref_uri);
+        }
+
+        $name    = '';
+        $value   = '';
+        $domain  = '';
+        $path    = '';
+        $expires = null;
+        $secure  = false;
+        $parts   = explode(';', $cookieStr);
+
+        // If first part does not include '=', fail
+        if (strpos($parts[0], '=') === false) return false;
+
+        // Get the name and value of the cookie
+        list($name, $value) = explode('=', trim(array_shift($parts)), 2);
+        $name  = trim($name);
+        $value = urldecode(trim($value));
+
+        // Set default domain and path
+        if ($ref_uri instanceof Zend_Uri_Http) {
+            $domain = $ref_uri->getHost();
+            $path = $ref_uri->getPath();
+            $path = substr($path, 0, strrpos($path, '/'));
+        }
+
+        // Set other cookie parameters
+        foreach ($parts as $part) {
+            $part = trim($part);
+            if (strtolower($part) == 'secure') {
+                $secure = true;
+                continue;
+            }
+
+            $keyValue = explode('=', $part, 2);
+            if (count($keyValue) == 2) {
+                list($k, $v) = $keyValue;
+                switch (strtolower($k))    {
+                    case 'expires':
+                        if(($expires = strtotime($v)) === false) {
+                            /**
+                             * The expiration is past Tue, 19 Jan 2038 03:14:07 UTC
+                             * the maximum for 32-bit signed integer. Zend_Date
+                             * can get around that limit.
+                             * 
+                             * @see Zend_Date
+                             */
+                            require_once 'Zend/Date.php';
+    
+                            $expireDate = new Zend_Date($v);
+                            $expires = $expireDate->getTimestamp();
+                        }
+                        break;
+                        
+                    case 'path':
+                        $path = $v;
+                        break;
+                        
+                    case 'domain':
+                        $domain = $v;
+                        break;
+                        
+                    default:
+                        break;
+                }
+            }
+        }
+
+        if ($name !== '') {
+            return new self($name, $value, $domain, $expires, $path, $secure);
+        } else {
+            return false;
+        }
+    }
+}

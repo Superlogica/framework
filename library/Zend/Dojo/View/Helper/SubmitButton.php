@@ -1,30 +1,67 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-bG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: SubmitButton.php 12691 2008-11-18 20:16:06Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Button */
+require_once 'Zend/Dojo/View/Helper/Button.php';
+
+/**
+ * Dojo Button dijit tied to submit input
+ * 
+ * @uses       Zend_Dojo_View_Helper_Button
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_SubmitButton extends Zend_Dojo_View_Helper_Button
+{
+    /**
+     * @var string Submit input
+     */
+    protected $_elementType = 'submit';
+
+    /**
+     * dijit.form.Button tied to submit input
+     * 
+     * @param  string $id 
+     * @param  string $value 
+     * @param  array $params  Parameters to use for dijit creation
+     * @param  array $attribs HTML attributes
+     * @return string
+     */
+    public function submitButton($id, $value = null, array $params = array(), array $attribs = array()) 
+    {
+        if (!array_key_exists('label', $params)) {
+            $params['label'] = $value;
+        }
+        if (empty($params['label']) && !empty($params['content'])) {
+            $params['label'] = $params['content'];
+            $value = $params['content'];
+        }
+        if (empty($params['label']) && !empty($attribs['content'])) {
+            $params['label'] = $attribs['content'];
+            $value = $attribs['content'];
+            unset($attribs['content']);
+        }
+        return $this->_createFormElement($id, $value, $params, $attribs);
+    }
+}

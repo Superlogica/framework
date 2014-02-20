@@ -1,35 +1,110 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Server_Reflection_Function_Abstract
+ */
+require_once 'Zend/Server/Reflection/Function/Abstract.php';
+
+/**
+ * Method Reflection
+ *
+ * @uses       Zend_Server_Reflection_Function_Abstract
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Reflection
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version $Id: Method.php 12618 2008-11-13 15:23:05Z alexander $
+ */
+class Zend_Server_Reflection_Method extends Zend_Server_Reflection_Function_Abstract
+{
+    /**
+     * Parent class name
+     * @var string
+     */
+    protected $_class;
+
+    /**
+     * Parent class reflection
+     * @var Zend_Server_Reflection_Class
+     */
+    protected $_classReflection;
+
+    /**
+     * Constructor
+     *
+     * @param Zend_Server_Reflection_Class $class
+     * @param ReflectionMethod $r
+     * @param string $namespace
+     * @param array $argv
+     * @return void
+     */
+    public function __construct(Zend_Server_Reflection_Class $class, ReflectionMethod $r, $namespace = null, $argv = array())
+    {
+        $this->_classReflection = $class;
+        $this->_reflection      = $r;
+
+        $classNamespace = $class->getNamespace();
+
+        // Determine namespace
+        if (!empty($namespace)) {
+            $this->setNamespace($namespace);
+        } elseif (!empty($classNamespace)) {
+            $this->setNamespace($classNamespace);
+        }
+
+        // Determine arguments
+        if (is_array($argv)) {
+            $this->_argv = $argv;
+        }
+
+        // If method call, need to store some info on the class
+        $this->_class = $class->getName();
+
+        // Perform some introspection
+        $this->_reflect();
+    }
+
+    /**
+     * Return the reflection for the class that defines this method
+     *
+     * @return Zend_Server_Reflection_Class
+     */
+    public function getDeclaringClass()
+    {
+        return $this->_classReflection;
+    }
+
+    /**
+     * Wakeup from serialization
+     *
+     * Reflection needs explicit instantiation to work correctly. Re-instantiate
+     * reflection object on wakeup.
+     *
+     * @return void
+     */
+    public function __wakeup()
+    {
+        $this->_classReflection = new Zend_Server_Reflection_Class(new ReflectionClass($this->_class), $this->getNamespace(), $this->getInvokeArguments());
+        $this->_reflection = new ReflectionMethod($this->_classReflection->getName(), $this->getName());
+    }
+
+}

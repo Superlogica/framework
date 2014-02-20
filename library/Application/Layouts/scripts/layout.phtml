@@ -1,5 +1,20 @@
 <?php 
 
+Superlogica_Js::adicionarCodigo('
+
+    var adicionarEmbedded = function(){
+        new Superlogica_Js_Elemento("body").adicionarClasse("embedded");
+    };
+    
+    try{
+        if ( document != window.parent.document )
+            adicionarEmbedded();
+    }catch( e ){
+        adicionarEmbedded();
+    }
+    
+', 0 , true );
+
 $frontendOptions = array(
     'lifetime' => 60 * 60 * 24,
     "automatic_serialization" => true,
@@ -25,30 +40,48 @@ $layoutCacheName = md5(serialize($arrMenu) . $session->licenca.$_SERVER['REQUEST
 $cachedContent = $cache->load($layoutCacheName);
 $titulo = '';
 if ($cachedContent && $controllerName != 'error' ) {
-    
-    $menu = $cachedContent['menu'];
+    $menuString = $cachedContent['menu'];
+    $menuAppString = $cachedContent['menuapp'];
     $breadcrumb = $cachedContent['breadcrumb'];
     $titulo = $cachedContent['titulo'];
-    
 } else {
     
-    $_menu = new Zend_Navigation( $arrMenu );
-    $breadcrumb = $this->navigation()->breadcrumbs()->setContainer($_menu)->setMinDepth(0)->setLinkLast(true);
-    $menu = $this->navigation()->menu()->setUlClass('navegacao')->setContainer($_menu)->setMaxDepth(1);
-    
-    $paginaAtual = $this->navigation()->findActive($_menu);
-        
-    if ($paginaAtual['page'] instanceof Zend_Navigation_Page_Mvc) {
-        $titulo = $paginaAtual['page']->titulo;        
+    $arrMenuApp = $arrMenu['apps'];
+    unset($arrMenu['apps']);
+    $maisItensNome = $session->app_id == 'condor' ? 'mais' : 'ferramentas';
+    $maximoItensMenu = $session->app_id == 'condor' ? 6 : 8;
+    if ( is_array($arrMenu[$maisItensNome]['pages']) ){
+        $itemMais = $arrMenu[$maisItensNome];
+        $maisItensDoMenu = array_slice($arrMenu,$maximoItensMenu-1);
+        unset($maisItensDoMenu[$maisItensNome]);
+        array_splice($arrMenu, $maximoItensMenu-1);
+        $arrMenu[$maisItensNome] = $itemMais;
+        $arrMenu[$maisItensNome]['pages'] = $arrMenu[$maisItensNome]['pages'] + $maisItensDoMenu;
     }
     
+    $_menu = new Zend_Navigation( $arrMenu );
+    if(is_array($arrMenuApp))
+        $_menuApp = new Zend_Navigation( array($arrMenuApp) );
     
+    $breadcrumb = $this->navigation()->breadcrumbs()->setContainer($_menu)->setMinDepth(0)->setLinkLast(true);
+    $menu = $this->navigation()->menu()->setUlClass('navegacao')->setContainer($_menu)->setMaxDepth(1);
+    $menuString = $menu->__toString();
+    if(is_array($arrMenuApp)){
+        $menuApp = $this->navigation()->menu()->setUlClass('navegacao')->setContainer($_menuApp)->setMaxDepth(1);
+        $menuAppString = $menuApp->__toString();
+    }
+    $paginaAtual = $this->navigation()->findActive($_menu);
+
+    if ($paginaAtual['page'] instanceof Zend_Navigation_Page_Mvc) {
+        $titulo = $paginaAtual['page']->getTitle();
+    }
+
     if ( $controllerName != 'error' )
-        $cache->save(array('menu' => $menu->__toString(), 'breadcrumb' => $breadcrumb->__toString(), 'titulo' => $titulo), $layoutCacheName);      
-    
+        $cache->save(array('menu' => $menuString,'menuapp' => $menuAppString, 'breadcrumb' => $breadcrumb->__toString(), 'titulo' => $titulo), $layoutCacheName);
+        
 }
 $titulo = $this->titulo ? $titulo . ' ' . $this->titulo : $titulo;
-$bodyClass = (APPLICATION_ENV !== 'production') ? ' ambienteTeste' : '';
+$bodyClass = ( (APPLICATION_ENV !== 'production') ? ' ambienteTeste' : '' );
 
 Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
     
@@ -110,6 +143,29 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
         }
 });');
 
+Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+        __fecharFormatosExportar : function(){
+            this.bind("click", function(evento){                
+                evento.preventDefault();                
+                var formatosexportar = new Superlogica_Js_Elemento("#formatos");
+                if(formatosexportar.eh(":visible")){
+                    formatosexportar.esconder();
+                }else{
+                    formatosexportar.mostrar();
+                }                
+            });
+        },  
+        __formatosExportar : function(){
+            this.bind("mouseleave", function(evento){ 
+            console.log("sssa");
+                evento.preventDefault();                
+                var formatosexportar = new Superlogica_Js_Elemento("#formatos");
+                formatosexportar.esconder();
+            });
+        }        
+    });'
+);
+
 if ($session->vencimentoApp){ 
     $vencimentoSoftware= '<div id="trial">Seu período de utilização termina em '.$session->vencimentoApp.'.</div>';
 }
@@ -131,81 +187,84 @@ echo $this->doctype();
         <div id="wrap">
             
             <div id="topo">
-                <div class="bg">
-                    <div id="dados">
-                        <div class="licenca">
-                            <?php echo $session->licenca?>
+                    <?=$vencimentoSoftware?>
+                    <div class="conteudo">
+                        <?php
+                            $location = new Superlogica_Location();
+                            $location->viaProxy()
+                        ?>
+                        
+                        <a href="<?=$location->setParams(array())->setController('index')->setAction('index')->toString()?>">
+                            <div id="logo-topo" class="secao">
+                            </div>
+                        </a>                        
+<!--                        <div id="logo-topo" class="secao"></div>-->
+                        <div id="licencas-topo" class="secao">
+                            <?=$session->licenca;?>
                         </div>
-                        <?=$vencimentoSoftware?>
-                    </div>
-                </div>
-                <div class="bg2">
-                    <div class="infosoftware">
-                        <div id="info" class="layoutStatico">
-                           <div id="logo">
-                                    <?php
-                                    $session = Application_Helpers_Session::getInstance();
-                                    $location = new Superlogica_Location();
-                                    ?>
-                                <a href="<?php echo $location->setParams(array())->setController('index')->setAction('index')->toString();?>"><img src="<?php echo APPLICATION_CLIENT_TEMA_URL ?>/img/<?php echo $session->app_id?>.png" alt="Superlogica" border="0" /></a>
-                           </div>
-                            <?php
-                            $nomeUsuario = $session->ST_APELIDO_USU;
-                            if ( $controllerName != 'publico' ){
-                            ?>
+                        <div class="separador"></div>
+                        <div id="menu-topo" class="secao">
+                            <div id="menu">
+                                <?php echo $menuString; ?>
+                            </div>
+                        </div>
+                        <div id="usuario-topo" class="secao">
                             <div class="usuario" comportamentos="usuarioHover usuarioOut">
-                                    <a href="#">
-                                       <img src="<?=APPLICATION_CLIENT_TEMA_URL?>/img/usuario.png" title="<?php echo $nomeUsuario;?>" alt="<?php echo $nomeUsuario;?>" border="0" />
-                                   </a>
-                                   <br />
-                                   <?php
-                                       $location = new Superlogica_Location();
-                                       $location->viaProxy();
-                                   ?>
-                                   <ul id="divAlvo" class="blocoEscondido">
-                                       <li>
-                                           <span>
-                                               <b><?php echo ucwords($nomeUsuario);?></b>
-                                           </span>
-                                            <?php  if( $session->app_id != 'condor'){ ?>
-                                           <span><a href="<?=$location->setParams(array())->setController('usuario')->setParams(array('exibirAcessosDosUsuarios'=>1))->setAction('index')->toString();?>">Todos os usuários</a></span>                                    
-                                            <?php  } ?>                                           
-                                       </li>
-                                       <li>
-                                           <span><a href="<?=$location->setParams(array())->setController('auditoria')->setAction('index')->toString();?>">Histórico de alterações</a></span>
-                                       </li>
-                                       <li>
-                                           <span><a href="<?=$location->setParams(array())->setController('filadeemails')->setAction('index')->toString();?>">Histórico de e-mails enviados</a></span>
-                                       </li>
-                                       <li>
-                                           <?php 
-                                             $nomeMenu = ($session->app_id == 'condor') ? 'Documentos' : 'Histórico impressões';
-                                           ?>
-                                           <span><a href="<?=$location->setParams(array())->setController('impressoes')->setAction('index')->toString();?>"><?php echo $nomeMenu ?></a></span>
-                                       </li>
-                                       <li>
-                                           <span><a href="<?=$location->setParams(array())->setController('lotes')->setAction('index')->toString();?>">Histórico proc. em lote</a></span>
-                                       </li>                                    
-                                       <li>
-                                           <span><a href="<?=$location->setParams(array())->setController('contasuperlogica')->setAction('index')->toString();?>">Minha conta na Superlógica</a></span>
-                                       </li>                                                                           
-                                       <li>
-                                           <span><a href="<?=$location->setParams(array())->setController('auth')->setAction('logout');?>" comportamentos="logout">Sair</a></span>
-                                       </li>                                    
-                                   </ul>
-                               </div>
-                            <?php 
-                                } 
-                            ?>
-                       </div>      
+                                <a href="#">
+                                    <img src="<?=APPLICATION_CLIENT_TEMA_URL?>/img/usuario.png"  border="0" />
+                                </a>
+                                <?php
+                                    $location = new Superlogica_Location();
+                                    $location->viaProxy();
+                                    $nomeUsuario = $session->ST_APELIDO_USU;
+                                ?>
+                                <ul id="divAlvo" class="blocoEscondido">
+                                    <li>
+                                        <span>
+                                            <b><?php echo ucwords($nomeUsuario);?></b>
+                                        </span>
+                                         <?php  if($session->app_id != 'condor'){ ?>
+                                        <span><a href="<?=$location->setParams(array())->setController('usuario')->setParams(array('exibirAcessosDosUsuarios'=>1))->setAction('index')->toString();?>">Todos os usuários</a></span>                                    
+                                         <?php  } ?>                                           
+                                    </li>
+                                    <li>
+                                        <span><a href="<?=$location->setParams(array())->setController('auditoria')->setAction('index')->toString();?>">Histórico de alterações</a></span>
+                                    </li>
+                                    <li>
+                                        <span><a href="<?=$location->setParams(array())->setController('filadeemails')->setAction('index')->toString();?>">Histórico de e-mails enviados</a></span>
+                                    </li>
+                                    <li>
+                                        <?php 
+                                          $nomeMenu = ($session->app_id == 'condor') ? 'Documentos' : 'Histórico impressões';
+                                        ?>
+                                        <span><a href="<?=$location->setParams(array())->setController('impressoes')->setAction('index')->toString();?>"><?php echo $nomeMenu ?></a></span>
+                                    </li>
+                                    <li>
+                                        <span><a href="<?=$location->setParams(array())->setController('lotes')->setAction('index')->toString();?>">Histórico proc. em lote</a></span>
+                                    </li>                                    
+                                    <li>
+                                        <span><a href="<?=$location->setParams(array())->setController('contasuperlogica')->setAction('index')->toString();?>">Minha conta na Superlógica</a></span>
+                                    </li>                                                                           
+                                    <li>
+                                        <span><a href="<?="$baseUrl/auth/logout" ?>">Sair</a></span>
+                                    </li>                                    
+                                </ul>
+                            </div>                            
+                        </div>
+                        <?php if($menuAppString != ''){ ?>
+                            <div class="separador direita"></div>
+                            <div id="apps-topo" class="secao">
+                                <div id="menu">
+                                    <?php echo $menuAppString; ?>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <div id="condominios-topo" class="secao">
+                            <div class="condominios">
+                            </div>
+                        </div>
                     </div>
                 </div>
-               <div class="clearfix"></div>
-               <div id="menu">
-                    <?php echo $menu; ?>
-                </div>
-
-            </div>
             <div id="conteudo">
 
                 <?php
@@ -259,20 +318,43 @@ echo $this->doctype();
             if ( $codigosSlLayout )
                 echo '<div id="Superlogica_Layout_Codigos_Append" class="blocoEscondido">'.$codigosSlLayout.'</div>';
             ?>
-            <div id="rodape">
-                    <div class="shadow"></div>
-                    <div class="bg">
-                        <div class="container">
-
-                            <b>Executado em:</b>
-                            <?php
-                            global $time_start; 
-                            echo round(round(microtime(true), 4) - $time_start, 4);
-                            ?>s
-                        </div>
+                <div id="rodape">
+                    <div id="conteudo">
+                            <a href="http://www.superlogica.com" target="_blank" alt="Superlógica" title="Superlógica"><div id="logo" class="secao"><span></span></div></a>
+                            <div id="tempo-execucao" class="secao">
+                                Executado em:
+                                <?php global $time_start; echo round(round(microtime(true), 4) - $time_start, 4); ?>s
+                            </div>
+                            <div class="separador"></div>
+                            <div id="fechamento" class="secao">
+                                <?php echo $fechamento;?>
+                            </div>
+                            <?php if ($session->app_id == 'financeiro') { ?>                            
+                                <div class="separador fechamento"></div>
+                            <?php } ?>
+                            <div id="api" class="secao">
+                                    <?php
+                                        $locationPgAtual = new Superlogica_Location();
+                                        $locationPgAtual->setApi(true);
+                                    ?>                                
+                                <a href='<?php echo $locationPgAtual->toString(); ?>' target="_blank" >API</a><br />
+                            </div>
+                            <div class="separador"></div>
+                            <div id="exportar" class="secao">
+                                <div id="formatos" class="blocoEscondido" comportamentos="formatosExportar">
+                                    <?php
+                                        $locationPgAtual = new Superlogica_Location();
+                                        $locationPgAtual->setApi(true);
+                                        $arServerFormats = array('csv', 'xls');
+                                    ?>
+                                    <?php for ($x = 0; count($arServerFormats) > $x; $x++) { ?>
+                                        <a href='<?php echo $locationPgAtual->setParam( 'format', $arServerFormats[$x] )->toString(); ?>' target="_blank" ><?php echo $arServerFormats[$x]; ?></a><br />
+                                    <?php } ?>
+                                </div>                                    
+                                <a href="#" comportamentos="fecharFormatosExportar">Exportar</a>
+                            </div>
+                            <div class="separador"></div>
                     </div>
-                    
-                   
                 </div>
             
             

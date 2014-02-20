@@ -1,228 +1,1118 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Navigation
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Navigation_Container
+ */
+require_once 'Zend/Navigation/Container.php';
+
+/**
+ * Base class for Zend_Navigation_Page pages
+ *
+ * @category  Zend
+ * @package   Zend_Navigation
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Navigation_Page extends Zend_Navigation_Container
+{
+    /**
+     * Page label
+     *
+     * @var string|null
+     */
+    protected $_label;
+
+    /**
+     * Page id
+     *
+     * @var string|null
+     */
+    protected $_id;
+
+    /**
+     * Style class for this page (CSS)
+     *
+     * @var string|null
+     */
+    protected $_class;
+
+    /**
+     * A more descriptive title for this page
+     *
+     * @var string|null
+     */
+    protected $_title;
+
+    /**
+     * This page's target
+     *
+     * @var string|null
+     */
+    protected $_target;
+
+    /**
+     * Forward links to other pages
+     *
+     * @link http://www.w3.org/TR/html4/struct/links.html#h-12.3.1
+     *
+     * @var array
+     */
+    protected $_rel = array();
+
+    /**
+     * Reverse links to other pages
+     *
+     * @link http://www.w3.org/TR/html4/struct/links.html#h-12.3.1
+     *
+     * @var array
+     */
+    protected $_rev = array();
+
+    /**
+     * Page order used by parent container
+     *
+     * @var int|null
+     */
+    protected $_order;
+
+    /**
+     * ACL resource associated with this page
+     *
+     * @var string|Zend_Acl_Resource_Interface|null
+     */
+    protected $_resource;
+
+    /**
+     * ACL privilege associated with this page
+     *
+     * @var string|null
+     */
+    protected $_privilege;
+
+    /**
+     * Whether this page should be considered active
+     *
+     * @var bool
+     */
+    protected $_active = false;
+
+    /**
+     * Whether this page should be considered visible
+     *
+     * @var bool
+     */
+    protected $_visible = true;
+
+    /**
+     * Parent container
+     *
+     * @var Zend_Navigation_Container|null
+     */
+    protected $_parent;
+
+    /**
+     * Custom page properties, used by __set(), __get() and __isset()
+     *
+     * @var array
+     */
+    protected $_properties = array();
+
+    // Initialization:
+
+    /**
+     * Factory for Zend_Navigation_Page classes
+     *
+     * A specific type to construct can be specified by specifying the key
+     * 'type' in $options. If type is 'uri' or 'mvc', the type will be resolved
+     * to Zend_Navigation_Page_Uri or Zend_Navigation_Page_Mvc. Any other value
+     * for 'type' will be considered the full name of the class to construct.
+     * A valid custom page class must extend Zend_Navigation_Page.
+     *
+     * If 'type' is not given, the type of page to construct will be determined
+     * by the following rules:
+     * - If $options contains either of the keys 'action', 'controller',
+     *   'module', or 'route', a Zend_Navigation_Page_Mvc page will be created.
+     * - If $options contains the key 'uri', a Zend_Navigation_Page_Uri page
+     *   will be created.
+     *
+     * @param  array|Zend_Config $options  options used for creating page
+     * @return Zend_Navigation_Page        a page instance
+     * @throws Zend_Navigation_Exception   if $options is not array/Zend_Config
+     * @throws Zend_Exception              if 'type' is specified and
+     *                                     Zend_Loader is unable to load the
+     *                                     class
+     * @throws Zend_Navigation_Exception   if something goes wrong during
+     *                                     instantiation of the page
+     * @throws Zend_Navigation_Exception   if 'type' is given, and the specified
+     *                                     type does not extend this class
+     * @throws Zend_Navigation_Exception   if unable to determine which class
+     *                                     to instantiate
+     */
+    public static function factory($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        }
+
+        if (!is_array($options)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                'Invalid argument: $options must be an array or Zend_Config');
+        }
+
+        if (isset($options['type'])) {
+            $type = $options['type'];
+            if (is_string($type) && !empty($type)) {
+                switch (strtolower($type)) {
+                    case 'mvc':
+                        $type = 'Zend_Navigation_Page_Mvc';
+                        break;
+                    case 'uri':
+                        $type = 'Zend_Navigation_Page_Uri';
+                        break;
+                }
+
+                if (!class_exists($type)) {
+                    require_once 'Zend/Loader.php';
+                    @Zend_Loader::loadClass($type);
+                }
+
+                $page = new $type($options);
+                if (!$page instanceof Zend_Navigation_Page) {
+                    require_once 'Zend/Navigation/Exception.php';
+                    throw new Zend_Navigation_Exception(sprintf(
+                            'Invalid argument: Detected type "%s", which ' .
+                            'is not an instance of Zend_Navigation_Page',
+                            $type));
+                }
+                return $page;
+            }
+        }
+
+        $hasUri = isset($options['uri']);
+        $hasMvc = isset($options['action']) || isset($options['controller']) ||
+                  isset($options['module']) || isset($options['route']);
+
+        if ($hasMvc) {
+            require_once 'Zend/Navigation/Page/Mvc.php';
+            return new Zend_Navigation_Page_Mvc($options);
+        } elseif ($hasUri) {
+            require_once 'Zend/Navigation/Page/Uri.php';
+            return new Zend_Navigation_Page_Uri($options);
+        } else {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                'Invalid argument: Unable to determine class to instantiate');
+        }
+    }
+
+    /**
+     * Page constructor
+     *
+     * @param  array|Zend_Config $options   [optional] page options. Default is
+     *                                      null, which should set defaults.
+     * @throws Zend_Navigation_Exception    if invalid options are given
+     */
+    public function __construct($options = null)
+    {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } elseif ($options instanceof Zend_Config) {
+            $this->setConfig($config);
+        }
+
+        // do custom initialization
+        $this->_init();
+    }
+
+    /**
+     * Initializes page (used by subclasses)
+     *
+     * @return void
+     */
+    protected function _init()
+    {
+    }
+
+    /**
+     * Sets page properties using a Zend_Config object
+     *
+     * @param  Zend_Config $config        config object to get properties from
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if invalid options are given
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        return $this->setOptions($config->toArray());
+    }
+
+    /**
+     * Sets page properties using options from an associative array
+     *
+     * Each key in the array corresponds to the according set*() method, and
+     * each word is separated by underscores, e.g. the option 'target'
+     * corresponds to setTarget(), and the option 'reset_params' corresponds to
+     * the method setResetParams().
+     *
+     * @param  array $options             associative array of options to set
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if invalid options are given
+     */
+    public function setOptions(array $options)
+    {
+        foreach ($options as $key => $value) {
+            $this->set($key, $value);
+        }
+
+        return $this;
+    }
+
+    // Accessors:
+
+    /**
+     * Sets page label
+     *
+     * @param  string $label              new page label
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if empty/no string is given
+     */
+    public function setLabel($label)
+    {
+        if (null !== $label && !is_string($label)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $label must be a string or null');
+        }
+
+        $this->_label = $label;
+        return $this;
+    }
+
+    /**
+     * Returns page label
+     *
+     * @return string  page label or null
+     */
+    public function getLabel()
+    {
+        return $this->_label;
+    }
+
+    /**
+     * Sets page id
+     *
+     * @param  string|null $id            [optional] id to set. Default is null,
+     *                                    which sets no id.
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if not given string or null
+     */
+    public function setId($id = null)
+    {
+        if (null !== $id && !is_string($id) && !is_numeric($id)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $id must be a string, number or null');
+        }
+
+        $this->_id = null === $id ? $id : (string) $id;
+
+        return $this;
+    }
+
+    /**
+     * Returns page id
+     *
+     * @return string|null  page id or null
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /**
+     * Sets page CSS class
+     *
+     * @param  string|null $class         [optional] CSS class to set. Default
+     *                                    is null, which sets no CSS class.
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if not given string or null
+     */
+    public function setClass($class = null)
+    {
+        if (null !== $class && !is_string($class)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $class must be a string or null');
+        }
+
+        $this->_class = $class;
+        return $this;
+    }
+
+    /**
+     * Returns page class (CSS)
+     *
+     * @return string|null  page's CSS class or null
+     */
+    public function getClass()
+    {
+        return $this->_class;
+    }
+
+    /**
+     * Sets page title
+     *
+     * @param  string $title              [optional] page title. Default is
+     *                                    null, which sets no title.
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if not given string or null
+     */
+    public function setTitle($title = null)
+    {
+        if (null !== $title && !is_string($title)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $title must be a non-empty string');
+        }
+
+        $this->_title = $title;
+        return $this;
+    }
+
+    /**
+     * Returns page title
+     *
+     * @return string|null  page title or null
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * Sets page target
+     *
+     * @param  string|null $target        [optional] target to set. Default is
+     *                                    null, which sets no target.
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if target is not string or null
+     */
+    public function setTarget($target = null)
+    {
+        if (null !== $target && !is_string($target)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $target must be a string or null');
+        }
+
+        $this->_target = $target;
+        return $this;
+    }
+
+    /**
+     * Returns page target
+     *
+     * @return string|null  page target or null
+     */
+    public function getTarget()
+    {
+        return $this->_target;
+    }
+
+    /**
+     * Sets the page's forward links to other pages
+     *
+     * This method expects an associative array of forward links to other pages,
+     * where each element's key is the name of the relation (e.g. alternate,
+     * prev, next, help, etc), and the value is a mixed value that could somehow
+     * be considered a page.
+     *
+     * @param  array|Zend_Config $relations  [optional] an associative array of
+     *                                       forward links to other pages
+     * @return Zend_Navigation_Page          fluent interface, returns self
+     */
+    public function setRel($relations = null)
+    {
+        $this->_rel = array();
+
+        if (null !== $relations) {
+            if ($relations instanceof Zend_Config) {
+                $relations = $relations->toArray();
+            }
+
+            if (!is_array($relations)) {
+                require_once 'Zend/Navigation/Exception.php';
+                throw new Zend_Navigation_Exception(
+                        'Invalid argument: $relations must be an ' .
+                        'array or an instance of Zend_Config');
+            }
+
+            foreach ($relations as $name => $relation) {
+                if (is_string($name)) {
+                    $this->_rel[$name] = $relation;
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the page's forward links to other pages
+     *
+     * This method returns an associative array of forward links to other pages,
+     * where each element's key is the name of the relation (e.g. alternate,
+     * prev, next, help, etc), and the value is a mixed value that could somehow
+     * be considered a page.
+     *
+     * @param  string $relation  [optional] name of relation to return. If not
+     *                           given, all relations will be returned.
+     * @return array             an array of relations. If $relation is not
+     *                           specified, all relations will be returned in
+     *                           an associative array.
+     */
+    public function getRel($relation = null)
+    {
+        if (null !== $relation) {
+            return isset($this->_rel[$relation]) ?
+                   $this->_rel[$relation] :
+                   null;
+        }
+
+        return $this->_rel;
+    }
+
+    /**
+     * Sets the page's reverse links to other pages
+     *
+     * This method expects an associative array of reverse links to other pages,
+     * where each element's key is the name of the relation (e.g. alternate,
+     * prev, next, help, etc), and the value is a mixed value that could somehow
+     * be considered a page.
+     *
+     * @param  array|Zend_Config $relations  [optional] an associative array of
+     *                                       reverse links to other pages
+     * @return Zend_Navigation_Page          fluent interface, returns self
+     */
+    public function setRev($relations = null)
+    {
+        $this->_rev = array();
+
+        if (null !== $relations) {
+            if ($relations instanceof Zend_Config) {
+                $relations = $relations->toArray();
+            }
+
+            if (!is_array($relations)) {
+                require_once 'Zend/Navigation/Exception.php';
+                throw new Zend_Navigation_Exception(
+                        'Invalid argument: $relations must be an ' .
+                        'array or an instance of Zend_Config');
+            }
+
+            foreach ($relations as $name => $relation) {
+                if (is_string($name)) {
+                    $this->_rev[$name] = $relation;
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the page's reverse links to other pages
+     *
+     * This method returns an associative array of forward links to other pages,
+     * where each element's key is the name of the relation (e.g. alternate,
+     * prev, next, help, etc), and the value is a mixed value that could somehow
+     * be considered a page.
+     *
+     * @param  string $relation  [optional] name of relation to return. If not
+     *                           given, all relations will be returned.
+     * @return array             an array of relations. If $relation is not
+     *                           specified, all relations will be returned in
+     *                           an associative array.
+     */
+    public function getRev($relation = null)
+    {
+        if (null !== $relation) {
+            return isset($this->_rev[$relation]) ?
+                   $this->_rev[$relation] :
+                   null;
+        }
+
+        return $this->_rev;
+    }
+
+    /**
+     * Sets page order to use in parent container
+     *
+     * @param  int $order                 [optional] page order in container.
+     *                                    Default is null, which sets no
+     *                                    specific order.
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if order is not integer or null
+     */
+    public function setOrder($order = null)
+    {
+        if (is_string($order)) {
+            $temp = (int) $order;
+            if ($temp < 0 || $temp > 0 || $order == '0') {
+                $order = $temp;
+            }
+        }
+
+        if (null !== $order && !is_int($order)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $order must be an integer or null, ' .
+                    'or a string that casts to an integer');
+        }
+
+        $this->_order = $order;
+
+        // notify parent, if any
+        if (isset($this->_parent)) {
+            $this->_parent->notifyOrderUpdated();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns page order used in parent container
+     *
+     * @return int|null  page order or null
+     */
+    public function getOrder()
+    {
+        return $this->_order;
+    }
+
+    /**
+     * Sets ACL resource assoicated with this page
+     *
+     * @param  string|Zend_Acl_Resource_Interface $resource  [optional] resource
+     *                                                       to associate with
+     *                                                       page. Default is
+     *                                                       null, which sets no
+     *                                                       resource.
+     * @throws Zend_Navigation_Exception                     if $resource if
+     *                                                       invalid
+     * @return Zend_Navigation_Page                          fluent interface,
+     *                                                       returns self
+     */
+    public function setResource($resource = null)
+    {
+        if (null === $resource || is_string($resource) ||
+            $resource instanceof Zend_Acl_Resource_Interface) {
+            $this->_resource = $resource;
+        } else {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $resource must be null, a string, ' .
+                    ' or an instance of Zend_Acl_Resource_Interface');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns ACL resource assoicated with this page
+     *
+     * @return string|Zend_Acl_Resource_Interface|null  ACL resource or null
+     */
+    public function getResource()
+    {
+        return $this->_resource;
+    }
+
+    /**
+     * Sets ACL privilege associated with this page
+     *
+     * @param  string|null $privilege  [optional] ACL privilege to associate
+     *                                 with this page. Default is null, which
+     *                                 sets no privilege.
+     * @return Zend_Navigation_Page    fluent interface, returns self
+     */
+    public function setPrivilege($privilege = null)
+    {
+        $this->_privilege = is_string($privilege) ? $privilege : null;
+        return $this;
+    }
+
+    /**
+     * Returns ACL privilege associated with this page
+     *
+     * @return string|null  ACL privilege or null
+     */
+    public function getPrivilege()
+    {
+        return $this->_privilege;
+    }
+
+    /**
+     * Sets whether page should be considered active or not
+     *
+     * @param  bool $active          [optional] whether page should be
+     *                               considered active or not. Default is true.
+     * @return Zend_Navigation_Page  fluent interface, returns self
+     */
+    public function setActive($active = true)
+    {
+        $this->_active = (bool) $active;
+        return $this;
+    }
+
+    /**
+     * Returns whether page should be considered active or not
+     *
+     * @param  bool $recursive  [optional] whether page should be considered
+     *                          active if any child pages are active. Default is
+     *                          false.
+     * @return bool             whether page should be considered active
+     */
+    public function isActive($recursive = false)
+    {
+        if (!$this->_active && $recursive) {
+            foreach ($this->_pages as $page) {
+                if ($page->isActive(true)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        return $this->_active;
+    }
+
+    /**
+     * Proxy to isActive()
+     *
+     * @param  bool $recursive  [optional] whether page should be considered
+     *                          active if any child pages are active. Default
+     *                          is false.
+     * @return bool             whether page should be considered active
+     */
+    public function getActive($recursive = false)
+    {
+        return $this->isActive($recursive);
+    }
+
+    /**
+     * Sets whether the page should be visible or not
+     *
+     * @param  bool $visible         [optional] whether page should be
+     *                               considered visible or not. Default is true.
+     * @return Zend_Navigation_Page  fluent interface, returns self
+     */
+    public function setVisible($visible = true)
+    {
+        $this->_visible = (bool) $visible;
+        return $this;
+    }
+
+    /**
+     * Returns a boolean value indicating whether the page is visible
+     *
+     * @param  bool $recursive  [optional] whether page should be considered
+     *                          invisible if parent is invisible. Default is
+     *                          false.
+     * @return bool             whether page should be considered visible
+     */
+    public function isVisible($recursive = false)
+    {
+        if ($recursive && isset($this->_parent) &&
+            $this->_parent instanceof Zend_Navigation_Page) {
+            if (!$this->_parent->isVisible(true)) {
+                return false;
+            }
+        }
+
+        return $this->_visible;
+    }
+
+    /**
+     * Proxy to isVisible()
+     *
+     * Returns a boolean value indicating whether the page is visible
+     *
+     * @param  bool $recursive  [optional] whether page should be considered
+     *                          invisible if parent is invisible. Default is
+     *                          false.
+     * @return bool             whether page should be considered visible
+     */
+    public function getVisible($recursive = false)
+    {
+        return $this->isVisible($recursive);
+    }
+
+    /**
+     * Sets parent container
+     *
+     * @param  Zend_Navigation_Container $parent  [optional] new parent to set.
+     *                                            Default is null which will set
+     *                                            no parent.
+     * @return Zend_Navigation_Page               fluent interface, returns self
+     */
+    public function setParent(Zend_Navigation_Container $parent = null)
+    {
+        if ($parent === $this) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                'A page cannot have itself as a parent');
+        }
+
+        // return if the given parent already is parent
+        if ($parent === $this->_parent) {
+            return $this;
+        }
+
+        // remove from old parent
+        if (null !== $this->_parent) {
+            $this->_parent->removePage($this);
+        }
+
+        // set new parent
+        $this->_parent = $parent;
+
+        // add to parent if page and not already a child
+        if (null !== $this->_parent && !$this->_parent->hasPage($this, false)) {
+            $this->_parent->addPage($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns parent container
+     *
+     * @return Zend_Navigation_Container|null  parent container or null
+     */
+    public function getParent()
+    {
+        return $this->_parent;
+    }
+
+    /**
+     * Sets the given property
+     *
+     * If the given property is native (id, class, title, etc), the matching
+     * set method will be used. Otherwise, it will be set as a custom property.
+     *
+     * @param  string $property           property name
+     * @param  mixed  $value              value to set
+     * @return Zend_Navigation_Page       fluent interface, returns self
+     * @throws Zend_Navigation_Exception  if property name is invalid
+     */
+    public function set($property, $value)
+    {
+        if (!is_string($property) || empty($property)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $property must be a non-empty string');
+        }
+
+        $method = 'set' . self::_normalizePropertyName($property);
+
+        if ($method != 'setOptions' && $method != 'setConfig' &&
+            method_exists($this, $method)) {
+            $this->$method($value);
+        } else {
+            $this->_properties[$property] = $value;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the value of the given property
+     *
+     * If the given property is native (id, class, title, etc), the matching
+     * get method will be used. Otherwise, it will return the matching custom
+     * property, or null if not found.
+     *
+     * @param  string $property           property name
+     * @return mixed                      the property's value or null
+     * @throws Zend_Navigation_Exception  if property name is invalid
+     */
+    public function get($property)
+    {
+        if (!is_string($property) || empty($property)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(
+                    'Invalid argument: $property must be a non-empty string');
+        }
+
+        $method = 'get' . self::_normalizePropertyName($property);
+
+        if (method_exists($this, $method)) {
+            return $this->$method();
+        } elseif (isset($this->_properties[$property])) {
+            return $this->_properties[$property];
+        }
+
+        return null;
+    }
+
+    // Magic overloads:
+
+    /**
+     * Sets a custom property
+     *
+     * Magic overload for enabling <code>$page->propname = $value</code>.
+     *
+     * @param  string $name               property name
+     * @param  mixed  $value              value to set
+     * @return void
+     * @throws Zend_Navigation_Exception  if property name is invalid
+     */
+    public function __set($name, $value)
+    {
+        $this->set($name, $value);
+    }
+
+    /**
+     * Returns a property, or null if it doesn't exist
+     *
+     * Magic overload for enabling <code>$page->propname</code>.
+     *
+     * @param  string $name               property name
+     * @return mixed                      property value or null
+     * @throws Zend_Navigation_Exception  if property name is invalid
+     */
+    public function __get($name)
+    {
+        return $this->get($name);
+    }
+
+    /**
+     * Checks if a property is set
+     *
+     * Magic overload for enabling <code>isset($page->propname)</code>.
+     *
+     * Returns true if the property is native (id, class, title, etc), and
+     * true or false if it's a custom property (depending on whether the
+     * property actually is set).
+     *
+     * @param  string $name  property name
+     * @return bool          whether the given property exists
+     */
+    public function __isset($name)
+    {
+        $method = 'get' . self::_normalizePropertyName($name);
+        if (method_exists($this, $method)) {
+            return true;
+        }
+
+        return isset($this->_properties[$name]);
+    }
+
+    /**
+     * Unsets the given custom property
+     *
+     * Magic overload for enabling <code>unset($page->propname)</code>.
+     *
+     * @param  string $name               property name
+     * @return void
+     * @throws Zend_Navigation_Exception  if the property is native
+     */
+    public function __unset($name)
+    {
+        $method = 'set' . self::_normalizePropertyName($name);
+        if (method_exists($this, $method)) {
+            require_once 'Zend/Navigation/Exception.php';
+            throw new Zend_Navigation_Exception(sprintf(
+                    'Unsetting native property "%s" is not allowed',
+                    $name));
+        }
+
+        if (isset($this->_properties[$name])) {
+            unset($this->_properties[$name]);
+        }
+    }
+
+    /**
+     * Returns page label
+     *
+     * Magic overload for enabling <code>echo $page</code>.
+     *
+     * @return string  page label
+     */
+    public function __toString()
+    {
+        return $this->_label;
+    }
+
+    // Public methods:
+
+    /**
+     * Adds a forward relation to the page
+     *
+     * @param  string $relation      relation name (e.g. alternate, glossary,
+     *                               canonical, etc)
+     * @param  mixed  $value         value to set for relation
+     * @return Zend_Navigation_Page  fluent interface, returns self
+     */
+    public function addRel($relation, $value)
+    {
+        if (is_string($relation)) {
+            $this->_rel[$relation] = $value;
+        }
+        return $this;
+    }
+
+    /**
+     * Adds a reverse relation to the page
+     *
+     * @param  string $relation      relation name (e.g. alternate, glossary,
+     *                               canonical, etc)
+     * @param  mixed  $value         value to set for relation
+     * @return Zend_Navigation_Page  fluent interface, returns self
+     */
+    public function addRev($relation, $value)
+    {
+        if (is_string($relation)) {
+            $this->_rev[$relation] = $value;
+        }
+        return $this;
+    }
+
+    /**
+     * Removes a forward relation from the page
+     *
+     * @param  string $relation      name of relation to remove
+     * @return Zend_Navigation_Page  fluent interface, returns self
+     */
+    public function removeRel($relation)
+    {
+        if (isset($this->_rel[$relation])) {
+            unset($this->_rel[$relation]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Removes a reverse relation from the page
+     *
+     * @param  string $relation      name of relation to remove
+     * @return Zend_Navigation_Page  fluent interface, returns self
+     */
+    public function removeRev($relation)
+    {
+        if (isset($this->_rev[$relation])) {
+            unset($this->_rev[$relation]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns an array containing the defined forward relations
+     *
+     * @return array  defined forward relations
+     */
+    public function getDefinedRel()
+    {
+        return array_keys($this->_rel);
+    }
+
+    /**
+     * Returns an array containing the defined reverse relations
+     *
+     * @return array  defined reverse relations
+     */
+    public function getDefinedRev()
+    {
+        return array_keys($this->_rev);
+    }
+
+    /**
+     * Returns custom properties as an array
+     *
+     * @return array  an array containing custom properties
+     */
+    public function getCustomProperties()
+    {
+        return $this->_properties;
+    }
+
+    /**
+     * Returns a hash code value for the page
+     *
+     * @return string  a hash code value for this page
+     */
+    public final function hashCode()
+    {
+        return spl_object_hash($this);
+    }
+
+    /**
+     * Returns an array representation of the page
+     *
+     * @return array  associative array containing all page properties
+     */
+    public function toArray()
+    {
+        return array_merge(
+            $this->getCustomProperties(),
+            array(
+                'label'     => $this->getlabel(),
+                'id'        => $this->getId(),
+                'class'     => $this->getClass(),
+                'title'     => $this->getTitle(),
+                'target'    => $this->getTarget(),
+                'rel'       => $this->getRel(),
+                'rev'       => $this->getRev(),
+                'order'     => $this->getOrder(),
+                'resource'  => $this->getResource(),
+                'privilege' => $this->getPrivilege(),
+                'active'    => $this->isActive(),
+                'visible'   => $this->isVisible(),
+                'type'      => get_class($this),
+                'pages'     => parent::toArray()
+            ));
+    }
+
+    // Internal methods:
+
+    /**
+     * Normalizes a property name
+     *
+     * @param  string $property  property name to normalize
+     * @return string            normalized property name
+     */
+    protected static function _normalizePropertyName($property)
+    {
+        return str_replace(' ', '', ucwords(str_replace('_', ' ', $property)));
+    }
+
+    // Abstract methods:
+
+    /**
+     * Returns href for this page
+     *
+     * @return string  the page's href
+     */
+    abstract public function getHref();
+}

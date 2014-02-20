@@ -1,36 +1,161 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-8GbinPsmtJCkvyK3hanreRsnDdjo
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Auth.php 11747 2008-10-08 18:33:58Z norm2782 $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Auth
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Auth
+{
+    /**
+     * Singleton instance
+     *
+     * @var Zend_Auth
+     */
+    protected static $_instance = null;
+
+    /**
+     * Persistent storage handler
+     *
+     * @var Zend_Auth_Storage_Interface
+     */
+    protected $_storage = null;
+
+    /**
+     * Singleton pattern implementation makes "new" unavailable
+     *
+     * @return void
+     */
+    protected function __construct()
+    {}
+
+    /**
+     * Singleton pattern implementation makes "clone" unavailable
+     *
+     * @return void
+     */
+    protected function __clone()
+    {}
+
+    /**
+     * Returns an instance of Zend_Auth
+     *
+     * Singleton pattern implementation
+     *
+     * @return Zend_Auth Provides a fluent interface
+     */
+    public static function getInstance()
+    {
+        if (null === self::$_instance) {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+
+    /**
+     * Returns the persistent storage handler
+     *
+     * Session storage is used by default unless a different storage adapter has been set.
+     *
+     * @return Zend_Auth_Storage_Interface
+     */
+    public function getStorage()
+    {
+        if (null === $this->_storage) {
+            /**
+             * @see Zend_Auth_Storage_Session
+             */
+            require_once 'Zend/Auth/Storage/Session.php';
+            $this->setStorage(new Zend_Auth_Storage_Session());
+        }
+
+        return $this->_storage;
+    }
+
+    /**
+     * Sets the persistent storage handler
+     *
+     * @param  Zend_Auth_Storage_Interface $storage
+     * @return Zend_Auth Provides a fluent interface
+     */
+    public function setStorage(Zend_Auth_Storage_Interface $storage)
+    {
+        $this->_storage = $storage;
+        return $this;
+    }
+
+    /**
+     * Authenticates against the supplied adapter
+     *
+     * @param  Zend_Auth_Adapter_Interface $adapter
+     * @return Zend_Auth_Result
+     */
+    public function authenticate(Zend_Auth_Adapter_Interface $adapter)
+    {
+        $result = $adapter->authenticate();
+
+        if ($result->isValid()) {
+            $this->getStorage()->write($result->getIdentity());
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns true if and only if an identity is available from storage
+     *
+     * @return boolean
+     */
+    public function hasIdentity()
+    {
+        return !$this->getStorage()->isEmpty();
+    }
+
+    /**
+     * Returns the identity from storage or null if no identity is available
+     *
+     * @return mixed|null
+     */
+    public function getIdentity()
+    {
+        $storage = $this->getStorage();
+
+        if ($storage->isEmpty()) {
+            return null;
+        }
+
+        return $storage->read();
+    }
+
+    /**
+     * Clears the identity from persistent storage
+     *
+     * @return void
+     */
+    public function clearIdentity()
+    {
+        $this->getStorage()->clear();
+    }
+}

@@ -1,47 +1,120 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-eSanVPzRl6+b5NF4J8EmJHcaBL6NO0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Rsa.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Cipher_Pki_Adapter_Abstract
+ */
+require_once 'Zend/InfoCard/Cipher/Pki/Adapter/Abstract.php';
+
+/**
+ * Zend_InfoCard_Cipher_Pki_Rsa_Interface
+ */
+require_once 'Zend/InfoCard/Cipher/Pki/Rsa/Interface.php';
+
+/**
+ * RSA Public Key Encryption Cipher Object for the InfoCard component. Relies on OpenSSL
+ * to implement the RSA algorithm
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Cipher_Pki_Adapter_Rsa
+    extends Zend_InfoCard_Cipher_Pki_Adapter_Abstract
+    implements Zend_InfoCard_Cipher_Pki_Rsa_Interface
+{
+
+    /**
+     * Object Constructor
+     *
+     * @param integer $padding The type of Padding to use
+     */
+    public function __construct($padding = Zend_InfoCard_Cipher_Pki_Adapter_Abstract::NO_PADDING)
+    {
+        // Can't test this..
+        // @codeCoverageIgnoreStart
+        if(!extension_loaded('openssl')) {
+            require_once 'Zend/InfoCard/Cipher/Exception.php';
+            throw new Zend_InfoCard_Cipher_Exception("Use of this PKI RSA Adapter requires the openssl extension loaded");
+        }
+        // @codeCoverageIgnoreEnd
+
+        $this->setPadding($padding);
+    }
+
+    /**
+     * Decrypts RSA encrypted data using the given private key
+     *
+     * @throws Zend_InfoCard_Cipher_Exception
+     * @param string $encryptedData The encrypted data in binary format
+     * @param string $privateKey The private key in binary format
+     * @param string $password The private key passphrase
+     * @param integer $padding The padding to use during decryption (of not provided object value will be used)
+     * @return string The decrypted data
+     */
+    public function decrypt($encryptedData, $privateKey, $password = null, $padding = null)
+    {
+        $private_key = openssl_pkey_get_private(array($privateKey, $password));
+
+        if(!$private_key) {
+            require_once 'Zend/InfoCard/Cipher/Exception.php';
+            throw new Zend_InfoCard_Cipher_Exception("Failed to load private key");
+        }
+
+        if($padding !== null) {
+            try {
+                $this->setPadding($padding);
+            } catch(Exception $e) {
+                openssl_free_key($private_key);
+                throw $e;
+            }
+        }
+
+        switch($this->getPadding()) {
+            case self::NO_PADDING:
+                $openssl_padding = OPENSSL_NO_PADDING;
+                break;
+            case self::OAEP_PADDING:
+                $openssl_padding = OPENSSL_PKCS1_OAEP_PADDING;
+                break;
+        }
+
+        $result = openssl_private_decrypt($encryptedData, $decryptedData, $private_key, $openssl_padding);
+
+        openssl_free_key($private_key);
+
+        if(!$result) {
+            require_once 'Zend/InfoCard/Cipher/Exception.php';
+            throw new Zend_InfoCard_Cipher_Exception("Unable to Decrypt Value using provided private key");
+        }
+
+        if($this->getPadding() == self::NO_PADDING) {
+            $decryptedData = substr($decryptedData, 2);
+            $start = strpos($decryptedData, 0) + 1;
+            $decryptedData = substr($decryptedData, $start);
+        }
+
+        return $decryptedData;
+    }
+}

@@ -1,71 +1,203 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-KtMtnwuAyPUW
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * Validator which checks if the file already exists in the directory
+ *
+ * @category  Zend
+ * @package   Zend_Validate
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_File_Exists extends Zend_Validate_Abstract
+{
+    /**
+     * @const string Error constants
+     */
+    const DOES_NOT_EXIST = 'fileExistsDoesNotExist';
+
+    /**
+     * @var array Error message templates
+     */
+    protected $_messageTemplates = array(
+        self::DOES_NOT_EXIST => "The file '%value%' does not exist"
+    );
+
+    /**
+     * Internal list of directories
+     * @var string
+     */
+    protected $_directory = '';
+
+    /**
+     * @var array Error message template variables
+     */
+    protected $_messageVariables = array(
+        'directory' => '_directory'
+    );
+
+    /**
+     * Sets validator options
+     *
+     * @param  string|array $directory
+     * @return void
+     */
+    public function __construct($directory = array())
+    {
+        if ($directory instanceof Zend_Config) {
+            $directory = $directory->toArray();
+        } else if (is_string($directory)) {
+            $directory = explode(',', $directory);
+        } else if (!is_array($directory)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        }
+
+        $this->setDirectory($directory);
+    }
+
+    /**
+     * Returns the set file directories which are checked
+     *
+     * @param  boolean $asArray Returns the values as array, when false an concated string is returned
+     * @return string
+     */
+    public function getDirectory($asArray = false)
+    {
+        $asArray   = (bool) $asArray;
+        $directory = (string) $this->_directory;
+        if ($asArray) {
+            $directory = explode(',', $directory);
+        }
+
+        return $directory;
+    }
+
+    /**
+     * Sets the file directory which will be checked
+     *
+     * @param  string|array $directory The directories to validate
+     * @return Zend_Validate_File_Extension Provides a fluent interface
+     */
+    public function setDirectory($directory)
+    {
+        $this->_directory = null;
+        $this->addDirectory($directory);
+        return $this;
+    }
+
+    /**
+     * Adds the file directory which will be checked
+     *
+     * @param  string|array $directory The directory to add for validation
+     * @return Zend_Validate_File_Extension Provides a fluent interface
+     */
+    public function addDirectory($directory)
+    {
+        $directories = $this->getDirectory(true);
+
+        if (is_string($directory)) {
+            $directory = explode(',', $directory);
+        } else if (!is_array($directory)) {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        }
+
+        foreach ($directory as $content) {
+            if (empty($content) || !is_string($content)) {
+                continue;
+            }
+
+            $directories[] = trim($content);
+        }
+        $directories = array_unique($directories);
+
+        // Sanity check to ensure no empty values
+        foreach ($directories as $key => $dir) {
+            if (empty($dir)) {
+                unset($directories[$key]);
+            }
+        }
+
+        $this->_directory = implode(',', $directories);
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if the file already exists in the set directories
+     *
+     * @param  string  $value Real file to check for existance
+     * @param  array   $file  File data from Zend_File_Transfer
+     * @return boolean
+     */
+    public function isValid($value, $file = null)
+    {
+        $directories = $this->getDirectory(true);
+        if (($file !== null) and (!empty($file['destination']))) {
+            $directories[] = $file['destination'];
+        } else if (!isset($file['name'])) {
+            $file['name'] = $value;
+        }
+
+        $check = false;
+        foreach ($directories as $directory) {
+            if (empty($directory)) {
+                continue;
+            }
+
+            $check = true;
+            if (!file_exists($directory . DIRECTORY_SEPARATOR . $file['name'])) {
+                return $this->_throw($file, self::DOES_NOT_EXIST);
+            }
+        }
+
+        if (!$check) {
+            return $this->_throw($file, self::DOES_NOT_EXIST);
+        }
+
+        return true;
+    }
+
+    /**
+     * Throws an error of the given type
+     *
+     * @param  string $file
+     * @param  string $errorType
+     * @return false
+     */
+    protected function _throw($file, $errorType)
+    {
+        if ($file !== null) {
+            $this->_value = $file['name'];
+        }
+
+        $this->_error($errorType);
+        return false;
+    }
+}

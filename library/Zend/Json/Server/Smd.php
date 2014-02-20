@@ -1,124 +1,479 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Json_Server_Smd
+{
+    const ENV_JSONRPC_1 = 'JSON-RPC-1.0';
+    const ENV_JSONRPC_2 = 'JSON-RPC-2.0';
+    const SMD_VERSION   = '2.0';
+
+    /**
+     * Content type
+     * @var string
+     */
+    protected $_contentType = 'application/json';
+
+    /**
+     * Content type regex
+     * @var string
+     */
+    protected $_contentTypeRegex = '#[a-z]+/[a-z][a-z-]+#i';
+
+    /**
+     * Service description
+     * @var string
+     */
+    protected $_description;
+
+    /**
+     * Generate Dojo-compatible SMD
+     * @var bool
+     */
+    protected $_dojoCompatible = false;
+
+    /**
+     * Current envelope
+     * @var string
+     */
+    protected $_envelope = self::ENV_JSONRPC_1;
+
+    /**
+     * Allowed envelope types
+     * @var array
+     */
+    protected $_envelopeTypes = array(
+        self::ENV_JSONRPC_1,
+        self::ENV_JSONRPC_2,
+    );
+
+    /**
+     * Service id
+     * @var string
+     */
+    protected $_id;
+
+    /**
+     * Services offerred
+     * @var array
+     */
+    protected $_services = array();
+
+    /**
+     * Service target
+     * @var string
+     */
+    protected $_target;
+
+    /**
+     * Global transport
+     * @var string
+     */
+    protected $_transport = 'POST';
+
+    /**
+     * Allowed transport types
+     * @var array
+     */
+    protected $_transportTypes = array('POST');
+
+    /**
+     * Set object state via options
+     * 
+     * @param  array $options 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setOptions(array $options)
+    {
+        $methods = get_class_methods($this);
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Set transport
+     * 
+     * @param  string $transport 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setTransport($transport)
+    {
+        if (!in_array($transport, $this->_transportTypes)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception(sprintf('Invalid transport "%s" specified', $transport));
+        }
+        $this->_transport = $transport;
+        return $this;
+    }
+
+    /**
+     * Get transport
+     * 
+     * @return string
+     */
+    public function getTransport()
+    {
+        return $this->_transport;
+    }
+
+    /**
+     * Set envelope
+     * 
+     * @param  string $envelopeType 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setEnvelope($envelopeType)
+    {
+        if (!in_array($envelopeType, $this->_envelopeTypes)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception(sprintf('Invalid envelope type "%s"', $envelopeType));
+        }
+        $this->_envelope = $envelopeType;
+        return $this;
+    }
+
+    /**
+     * Retrieve envelope
+     * 
+     * @return string
+     */
+    public function getEnvelope()
+    {
+        return $this->_envelope;
+    }
+
+    // Content-Type of response; default to application/json
+    /**
+     * Set content type
+     * 
+     * @param  string $type 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setContentType($type)
+    {
+        if (!preg_match($this->_contentTypeRegex, $type)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception(sprintf('Invalid content type "%s" specified', $type));
+        }
+        $this->_contentType = $type;
+        return $this;
+    }
+
+    /**
+     * Retrieve content type
+     * 
+     * @return string
+     */
+    public function getContentType()
+    {
+        return $this->_contentType;
+    }
+
+    /**
+     * Set service target
+     * 
+     * @param  string $target 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setTarget($target)
+    {
+        $this->_target = (string) $target;
+        return $this;
+    }
+
+    /**
+     * Retrieve service target
+     * 
+     * @return string
+     */
+    public function getTarget()
+    {
+        return $this->_target;
+    }
+
+    /**
+     * Set service ID
+     * 
+     * @param  string $Id 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setId($id)
+    {
+        $this->_id = (string) $id;
+        return $this->_id;
+    }
+
+    /**
+     * Get service id 
+     * 
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    /**
+     * Set service description
+     * 
+     * @param  string $description 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setDescription($description)
+    {
+        $this->_description = (string) $description;
+        return $this->_description;
+    }
+
+    /**
+     * Get service description 
+     * 
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * Indicate whether or not to generate Dojo-compatible SMD
+     * 
+     * @param  bool $flag 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setDojoCompatible($flag)
+    {
+        $this->_dojoCompatible = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Is this a Dojo compatible SMD?
+     * 
+     * @return bool
+     */
+    public function isDojoCompatible()
+    {
+        return $this->_dojoCompatible;
+    }
+
+    /**
+     * Add Service 
+     * 
+     * @param Zend_Json_Server_Smd_Service|array $service 
+     * @return void
+     */
+    public function addService($service)
+    {
+        require_once 'Zend/Json/Server/Smd/Service.php';
+
+        if ($service instanceof Zend_Json_Server_Smd_Service) {
+            $name = $service->getName();
+        } elseif (is_array($service)) {
+            $service = new Zend_Json_Server_Smd_Service($service);
+            $name = $service->getName();
+        } else {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('Invalid service passed to addService()');
+        }
+
+        if (array_key_exists($name, $this->_services)) {
+            require_once 'Zend/Json/Server/Exception.php';
+            throw new Zend_Json_Server_Exception('Attempt to register a service already registered detected');
+        }
+        $this->_services[$name] = $service;
+        return $this;
+    }
+
+    /**
+     * Add many services
+     * 
+     * @param  array $services 
+     * @return Zend_Json_Server_Smd
+     */
+    public function addServices(array $services)
+    {
+        foreach ($services as $service) {
+            $this->addService($service);
+        }
+        return $this;
+    }
+
+    /**
+     * Overwrite existing services with new ones
+     * 
+     * @param  array $services 
+     * @return Zend_Json_Server_Smd
+     */
+    public function setServices(array $services)
+    {
+        $this->_services = array();
+        return $this->addServices($services);
+    }
+
+    /**
+     * Get service object
+     * 
+     * @param  string $name 
+     * @return false|Zend_Json_Server_Smd_Service
+     */
+    public function getService($name)
+    {
+        if (array_key_exists($name, $this->_services)) {
+            return $this->_services[$name];
+        }
+        return false;
+    }
+
+    /**
+     * Return services
+     * 
+     * @return array
+     */
+    public function getServices()
+    {
+        return $this->_services;
+    }
+
+    /**
+     * Remove service
+     * 
+     * @param  string $name 
+     * @return boolean
+     */
+    public function removeService($name)
+    {
+        if (array_key_exists($name, $this->_services)) {
+            unset($this->_services[$name]);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Cast to array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        if ($this->isDojoCompatible()) {
+            return $this->toDojoArray();
+        }
+
+        $transport   = $this->getTransport();
+        $envelope    = $this->getEnvelope();
+        $contentType = $this->getContentType();
+        $SMDVersion  = self::SMD_VERSION;
+        $service = compact('transport', 'envelope', 'contentType', 'SMDVersion');
+
+        if (null !== ($target = $this->getTarget())) {
+            $service['target']     = $target;
+        }
+        if (null !== ($id = $this->getId())) {
+            $service['id'] = $id;
+        }
+
+        $services = $this->getServices();
+        if (!empty($services)) {
+            $service['services'] = array();
+            foreach ($services as $name => $svc) {
+                $svc->setEnvelope($envelope);
+                $service['services'][$name] = $svc->toArray();
+            }
+            $service['methods'] = $service['services'];
+        }
+
+        return $service;
+    }
+
+    /**
+     * Export to DOJO-compatible SMD array
+     * 
+     * @return array
+     */
+    public function toDojoArray()
+    {
+        $SMDVersion  = '.1';
+        $serviceType = 'JSON-RPC';
+        $service = compact('SMDVersion', 'serviceType');
+
+        $target = $this->getTarget();
+
+        $services = $this->getServices();
+        if (!empty($services)) {
+            $service['methods'] = array();
+            foreach ($services as $name => $svc) {
+                $method = array(
+                    'name'       => $name,
+                    'serviceURL' => $target,
+                );
+                $params = array();
+                foreach ($svc->getParams() as $param) {
+                    $paramName = array_key_exists('name', $param) ? $param['name'] : $param['type'];
+                    $params[] = array(
+                        'name' => $paramName,
+                        'type' => $param['type'],
+                    );
+                }
+                if (!empty($params)) {
+                    $method['parameters'] = $params;
+                }
+                $service['methods'][] = $method;
+            }
+        }
+
+        return $service;
+    }
+
+    /**
+     * Cast to JSON
+     * 
+     * @return string
+     */
+    public function toJson()
+    {
+        require_once 'Zend/Json.php';
+        return Zend_Json::encode($this->toArray());
+    }
+
+    /**
+     * Cast to string (JSON)
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+}
+

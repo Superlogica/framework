@@ -1,36 +1,92 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-mwy58Ivv
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: DijitContainer.php 11744 2008-10-08 18:06:15Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Dijit layout container base class
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+abstract class Zend_Dojo_View_Helper_DijitContainer extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Capture locks
+     * @var array
+     */
+    protected $_captureLock = array();
+
+    /**
+     * Metadata information to use with captured content
+     * @var array
+     */
+    protected $_captureInfo = array();
+
+    /**
+     * Begin capturing content for layout container
+     * 
+     * @param  string $id 
+     * @param  array $params 
+     * @param  array $attribs 
+     * @return void
+     */
+    public function captureStart($id, array $params = array(), array $attribs = array())
+    {
+        if (array_key_exists($id, $this->_captureLock)) {
+            require_once 'Zend/Dojo/View/Exception.php';
+            throw new Zend_Dojo_View_Exception(sprintf('Lock already exists for id "%s"', $id));
+        }
+
+        $this->_captureLock[$id] = true;
+        $this->_captureInfo[$id] = array(
+            'params'  => $params,
+            'attribs' => $attribs,
+        );
+
+        ob_start();
+        return;
+    }
+
+    /**
+     * Finish capturing content for layout container
+     * 
+     * @param  string $id 
+     * @return string
+     */
+    public function captureEnd($id)
+    {
+        if (!array_key_exists($id, $this->_captureLock)) {
+            require_once 'Zend/Dojo/View/Exception.php';
+            throw new Zend_Dojo_View_Exception(sprintf('No capture lock exists for id "%s"; nothing to capture', $id));
+        }
+
+        $content = ob_get_clean();
+        extract($this->_captureInfo[$id]);
+        unset($this->_captureLock[$id], $this->_captureInfo[$id]);
+        return $this->_createLayoutContainer($id, $content, $params, $attribs);
+    }
+}

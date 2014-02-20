@@ -1,164 +1,658 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  ZendX
+ * @package   ZendX_Console
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Unix.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+
+/**
+ * ZendX_Console_Process_Unix allows you to spawn a class as a separated process
+ *
+ * @category  ZendX
+ * @package   ZendX_Console
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class ZendX_Console_Process_Unix
+{
+    /**
+     * Void method
+     */
+    const VOID_METHOD = 'void_method';
+
+    /**
+     * Return method
+     */
+    const RETURN_METHOD = 'void_method';
+    
+    /**
+     * Unique thread name
+     *
+     * @var string
+     */
+    private $_name;
+
+    /**
+     * PID of the child process
+     *
+     * @var integer
+     */
+    private $_pid = null;
+
+    /**
+     * UID of the child process owner
+     *
+     * @var integer
+     */
+    private $_puid = null;
+
+    /**
+     * GUID of the child process owner
+     *
+     * @var integer
+     */
+    private $_guid = null;
+
+    /**
+     * Whether the process is yet forked or not
+     *
+     * @var boolean
+     */
+    private $_isRunning = false;
+
+    /**
+     * Wether we are into child process or not
+     *
+     * @var boolean
+     */
+    private $_isChild = false;
+
+    /**
+     * A data structure to hold data for Inter Process Communications
+     *
+     * @var array
+     */
+    private $_internalIpcData = array();
+
+    /**
+     * Key to access to Shared Memory Area.
+     *
+     * @var integer
+     */
+    private $_internalIpcKey;
+
+    /**
+     * Key to access to Sync Semaphore.
+     *
+     * @var integer
+     */
+    private $_internalSemKey;
+
+    /**
+     * Is Shared Memory Area OK? If not, the start() method will block.
+     * Otherwise we'll have a running child without any communication channel.
+     *
+     * @var boolean
+     */
+    private $_ipcIsOkay;
+
+    /**
+     * Filename of the IPC segment file
+     *
+     * @var string
+     */
+    private $_ipcSegFile;
+
+    /**
+     * Filename of the semaphor file
+     *
+     * @var string
+     */
+    private $_ipcSemFile;
+
+    /**
+     * Constructor method
+     *
+     * Allocates a new pseudo-thread object. Optionally, set a PUID, a GUID and
+     * a UMASK for the child process. This also initialize Shared Memory
+     * Segments for process communications.
+     *
+     * @param  integer $puid
+     * @param  integer $guid
+     * @param  integer $umask
+     * @throws ZendX_Console_Process_Exception When running on windows
+     * @throws ZendX_Console_Process_Exception When running in web enviroment
+     * @throws ZendX_Console_Process_Exception When shmop_* functions don't exist
+     * @throws ZendX_Console_Process_Exception When pcntl_* functions don't exist
+     * @throws ZendX_Console_Process_Exception When posix_* functions don't exist
+     */
+    public function __construct($puid = null, $guid = null, $umask = null)
+    {
+        if (substr(PHP_OS, 0, 3) === 'WIN') {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Cannot run on windows');
+        } else if (!in_array(substr(PHP_SAPI, 0, 3), array('cli', 'cgi'))) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Can only run on CLI or CGI enviroment');
+        } else if (!function_exists('shmop_open')) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('shmop_* functions are required');
+        } else if (!function_exists('pcntl_fork')) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('pcntl_* functions are required');
+        } else if (!function_exists('posix_kill')) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('posix_* functions are required');
+        }
+    
+        $this->_isRunning = false;
+
+        $this->_name = md5(uniqid(rand()));
+        $this->_guid = $guid;
+        $this->_puid = $puid;
+
+        if ($umask !== null) {
+            umask($umask);
+        }
+
+        // Try to create the shared memory segment. The variable
+        // $this->_ipcIsOkay contains the return code of this operation and must
+        // be checked before forking
+        if ($this->_createIpcSegment() && $this->_createIpcSemaphore()) {
+            $this->_ipcIsOkay = true;
+        } else {
+            $this->_ipcIsOkay = false;
+        }
+    }
+    
+    /**
+     * Stop the child on destruction
+     */
+    public function __destruct()
+    {
+        if ($this->isRunning()) {
+            $this->stop();
+        }
+    }
+    
+    /**
+     * Causes this pseudo-thread to begin parallel execution.
+     *
+     * This method first checks of all the Shared Memory Segment. If okay, it
+     * forks the child process, attaches signal handler and returns immediatly.
+     * The status is set to running, and a PID is assigned. The result is that
+     * two pseudo-threads are running concurrently: the current thread (which
+     * returns from the call to the start() method) and the other thread (which
+     * executes its run() method).
+     * 
+     * @throws ZendX_Console_Process_Exception When SHM segments can't be created
+     * @throws ZendX_Console_Process_Exception When process forking fails
+     * @return void
+     */
+    public function start()
+    {
+        if (!$this->_ipcIsOkay) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Unable to create SHM segments for process communications');
+        }
+
+        // @see http://www.php.net/manual/en/function.pcntl-fork.php#41150
+        @ob_end_flush();
+        
+        pcntl_signal(SIGCHLD, SIG_IGN);
+
+        $pid = @pcntl_fork();
+        if ($pid === -1) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Forking process failed');
+        } else if ($pid === 0) {
+            // This is the child
+            $this->_isChild = true;
+           
+            // Sleep a second to avoid problems
+            sleep(1);
+            
+            // Install the signal handler
+            pcntl_signal(SIGUSR1, array($this, '_sigHandler'));
+
+            // If requested, change process identity
+            if ($this->_guid !== null) {
+                posix_setgid($this->_guid);
+            }
+
+            if ($this->_puid !== null) {
+                posix_setuid($this->_puid);
+            }
+
+            // Run the child
+            try {
+                $this->_run();
+            } catch (Exception $e) {
+                // We have to catch any exceptions and clean up the process,
+                // else we will have a memory leak.
+            }
+
+            // Destroy the child after _run() execution. Required to avoid
+            // unuseful child processes after execution
+            exit(0);
+        } else {
+            // Else this is the parent
+            $this->_isChild   = false;
+            $this->_isRunning = true;
+            $this->_pid       = $pid;
+        }
+    }
+    
+    /**
+     * Causes the current thread to die.
+     *
+     * The relative process is killed and disappears immediately from the
+     * processes list.
+     *
+     * @return boolean
+     */
+    public function stop()
+    {
+        $success = false;
+
+        if ($this->_pid > 0) {
+            $status = 0;
+            
+            posix_kill($this->_pid, 9);
+            pcntl_waitpid($this->_pid, $status, WNOHANG);
+            $success = pcntl_wifexited($status);
+            $this->_cleanProcessContext();
+        }
+
+        return $success;
+    }
+
+    /**
+     * Test if the pseudo-thread is already started.
+     *
+     * @return boolean
+     */
+    public function isRunning()
+    {       
+        return $this->_isRunning;
+    }
+
+    /**
+     * Set a variable into the shared memory segment, so that it can accessed
+     * both from the parent and from the child process. Variable names 
+     * beginning with underlines are only permitted to interal functions.
+     *
+     * @param  string $name
+     * @param  mixed  $value
+     * @throws ZendX_Console_Process_Exception When an invalid variable name is supplied
+     * @return void
+     */
+    public function setVariable($name, $value)
+    {
+        if ($name[0] === '_') {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Only internal functions may use underline (_) as variable prefix');
+        }
+
+        $this->_writeVariable($name, $value);
+    }
+
+    /**
+     * Get a variable from the shared memory segment. Returns NULL if the
+     * variable doesn't exist.
+     *
+     * @param  string $name
+     * @return mixed
+     */
+    public function getVariable($name)
+    {
+        $this->_readFromIpcSegment();
+
+        if (isset($this->_internalIpcData[$name])) {
+            return $this->_internalIpcData[$name];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Read the time elapsed since the last child setAlive() call.
+     *
+     * This method is useful because often we have a pseudo-thread pool and we
+     * need to know each pseudo-thread status. If the child executes the
+     * setAlive() method, the parent with getLastAlive() can know that child is
+     * alive.
+     *
+     * @return integer
+     */
+    public function getLastAlive()
+    {
+        $pingTime = $this->getVariable('_pingTime');
+
+        return ($pingTime === null ? 0 : (time() - $pingTime));
+    }
+
+    /**
+     * Returns the PID of the current pseudo-thread.
+     *
+     * @return integer
+     */
+    public function getPid()
+    {
+        return $this->_pid;
+    }
+    
+    /**
+     * Set a pseudo-thread property that can be read from parent process
+     * in order to know the child activity.
+     *
+     * Practical usage requires that child process calls this method at regular
+     * time intervals; parent will use the getLastAlive() method to know
+     * the elapsed time since the last pseudo-thread life signals...
+     * 
+     * @return void
+     */
+    protected function _setAlive()
+    {
+        $this->_writeVariable('_pingTime', time());
+    }
+    
+
+    /**
+     * This is called from within the parent; all the communication stuff
+     * is done here.
+     *
+     * @param  string $methodName
+     * @param  array  $argList
+     * @param  string $type
+     * @return mixed
+     */
+    protected function _callCallbackMethod($methodName, array $argList = array(), $type = self::VOID_METHOD)
+    {
+        // This is the parent, so we really cannot execute the method. Check
+        // arguments passed to the method.
+        if ($type === self::RETURN_METHOD) {
+            $this->_internalIpcData['_callType'] = self::RETURN_METHOD;
+        } else {
+            $this->_internalIpcData['_callType'] = self::VOID_METHOD;
+        }
+
+        // These setting are common to both the calling types
+        $this->_internalIpcData['_callMethod'] = $methodName;
+        $this->_internalIpcData['_callInput']  = $argList;
+
+        // Write the IPC data to the shared segment
+        $this->_writeToIpcSegment();
+
+        // Now we need to differentiate a bit.
+        switch ($this->_internalIpcData['_callType']) {
+            case VOID_METHOD:
+                // Notify the child so it can process the request
+                $this->_sendSigUsr1();
+                break;
+
+            case RETURN_METHOD:
+                // Set the semaphorew
+                shmop_write($this->_internalSemKey, 1, 0);
+
+                // Notify the child so it can process the request
+                $this->_sendSigUsr1();
+
+                // Block until the child process return
+                $this->_waitForIpcSemaphore();
+
+                // Read from the SHM segment. The result is stored into
+                // $this->_internalIpcData['_callOutput']
+                $this->_readFromIpcSegment();
+
+                // Data are returned. Now we can reset the semaphore
+                shmop_write($this->_internalSemKey, 0, 1);
+
+                // Return the result. Hence no break required here
+                return $this->_internalIpcData['_callOutput'];
+        }
+    }
+    
+    /**
+     * This method actually implements the pseudo-thread logic.
+     * 
+     * @return void
+     */
+    abstract protected function _run();
+    
+    /**
+     * Sends signal to the child process
+     * 
+     * @return void
+     */
+    private function _sendSigUsr1()
+    {
+        if ($this->_pid > 0) {
+            posix_kill($this->_pid, SIGUSR1);
+        }
+    }
+    
+    /**
+     * Acutally Write a variable to the shared memory segment
+     *
+     * @param  string $name
+     * @param  mixed  $value
+     * @return void
+     */
+    private function _writeVariable($name, $value)
+    {
+        $this->_internalIpcData[$name] = $value;
+        $this->_writeToIpcSegment();
+    }
+
+    /**
+     * Destroy thread context and free relative resources.
+     * 
+     * @return void
+     */
+    private function _cleanProcessContext()
+    {
+        shmop_delete($this->_internalIpcKey);
+        shmop_delete($this->_internalSemKey);
+
+        shmop_close($this->_internalIpcKey);
+        shmop_close($this->_internalSemKey);
+
+        @unlink($this->_ipcSegFile);
+        @unlink($this->_ipcSemFile);
+
+        $this->_isRunning = false;
+        $this->_pid       = null;
+    }
+
+    /**
+     * This is the signal handler that makes the communications between client
+     * and server possible.
+     *
+     * @param  integer $signo
+     * @return void
+     */
+    private function _sigHandler($signo)
+    {
+        switch ($signo) {
+            case SIGTERM:
+                // Handle shutdown tasks. Hence no break is require
+                exit;
+
+            case SIGUSR1:
+                // This is the User-defined signal we'll use. Read the SHM segment
+                $this->_readFromIpcSegment();
+
+                if (isset($this->_internalIpcData['_callType'])) {
+                    $method = $this->_internalIpcData['_callMethod'];
+                    $params = $this->_internalIpcData['_callInput'];
+
+                    switch ($this->_internalIpcData['_callType']) {
+                        case self::VOID_METHOD:
+                            // Simple call the (void) method and return immediatly
+                            // no semaphore is placed into parent, so the processing
+                            // is async
+                            call_user_func(array($this, $method), $params);
+                            break;
+
+                        case self::RETURN_METHOD:
+                            // Process the request
+                            $this->_internalIpcData['_callOutput'] = call_user_func(array($this, $method), $params);
+
+                            // Write the result into IPC segment
+                            $this->_writeToIPCsegment();
+
+                            // Unlock the semaphore but block _writeToIpcSegment()
+                            shmop_write($this->_internalSemKey, 0, 0);
+                            shmop_write($this->_internalSemKey, 1, 1);
+                            break;
+                    }
+                }
+                break;
+                
+            default:
+                // Ignore all other singals
+                break;
+        }
+    }
+
+    /**
+     * Wait for IPC Semaphore
+     * 
+     * @return void
+     */
+    private function _waitForIpcSemaphore()
+    {
+        while (true) {
+            $okay = shmop_read($this->_internalSemKey, 0, 1);
+
+            if ($okay === 0) {
+                break;
+            }
+
+            usleep(10);
+        }
+    }
+
+    /**
+     * Read data from IPC segment
+     * 
+     * @throws ZendX_Console_Process_Exception When writing of SHM segment fails
+     * @return void
+     */
+    private function _readFromIpcSegment()
+    {
+        $serializedIpcData = shmop_read($this->_internalIpcKey,
+                                        0,
+                                        shmop_size($this->_internalIpcKey));
+
+        if ($serializedIpcData === false) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Fatal error while reading SHM segment');
+        }
+
+        $data = @unserialize($serializedIpcData);
+        
+        if ($data !== false) {
+            $this->_internalIpcData = $data;
+        }
+    }
+
+    /**
+     * Write data to IPC segment
+     * 
+     * @throws ZendX_Console_Process_Exception When writing of SHM segment fails
+     * @return void
+     */
+    private function _writeToIpcSegment()
+    {
+        // Read the transaction bit (2 bit of _internalSemKey segment). If it's
+        // value is 1, we're into the execution of a PHP_FORK_RETURN_METHOD, so
+        // we must not write to segment (data corruption)
+        if (shmop_read($this->_internalSemKey, 1, 1) === 1) {
+            return;
+        }
+
+        $serializedIpcData = serialize($this->_internalIpcData);
+
+        // Set the exchange array (IPC) into the shared segment
+        $shmBytesWritten = shmop_write($this->_internalIpcKey,
+                                       $serializedIpcData,
+                                       0);
+
+        // Check if lenght of SHM segment is enougth to contain data
+        if ($shmBytesWritten !== strlen($serializedIpcData)) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Fatal error while writing to SHM segment');
+        }
+    }
+
+    /**
+     * Create an IPC segment
+     *
+     * @throws ZendX_Console_Process_Exception When SHM segment can't be created
+     * @return boolean
+     */
+    private function _createIpcSegment()
+    {
+        $this->_ipcSegFile = realpath(sys_get_temp_dir()) . '/' . rand() . $this->_name . '.shm';
+        touch($this->_ipcSegFile);
+
+        $shmKey = ftok($this->_ipcSegFile, 't');
+        if ($shmKey === -1) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Could not create SHM segment');
+        }
+
+        $this->_internalIpcKey = @shmop_open($shmKey, 'c', 0644, 10240);
+
+        if (!$this->_internalIpcKey) {
+            @unlink($this->_ipcSegFile);
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Create IPC semaphore
+     *
+     * @throws ZendX_Console_Process_Exception When semaphore can't be created
+     * @return boolean
+     */
+    private function _createIpcSemaphore()
+    {
+        $this->_ipcSemFile = realpath(sys_get_temp_dir()) . '/' . rand() . $this->_name . '.sem';
+        touch($this->_ipcSemFile);
+
+        $semKey = ftok($this->_ipcSemFile, 't');
+        if ($semKey === -1) {
+            require_once 'ZendX/Console/Process/Exception.php';
+            throw new ZendX_Console_Process_Exception('Could not create semaphore');
+        }
+
+        $this->_internalSemKey = @shmop_open($semKey, 'c', 0644, 10);
+
+        if (!$this->_internalSemKey) {
+            @unlink($this->_ipcSemFile);
+            return false;
+        }
+
+        return true;
+    }
+}

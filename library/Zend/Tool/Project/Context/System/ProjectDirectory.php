@@ -1,31 +1,128 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_Directory
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/Directory.php';
+
+/**
+ * @see Zend_Tool_Project_Context_System_Interface
+ */
+require_once 'Zend/Tool/Project/Context/System/Interface.php';
+
+/**
+ * @see Zend_Tool_Project_Context_System_TopLevelRestrictable
+ */
+require_once 'Zend/Tool/Project/Context/System/TopLevelRestrictable.php';
+
+/**
+ * @see Zend_Tool_Project_Context_System_NotOverwritable
+ */
+require_once 'Zend/Tool/Project/Context/System/NotOverwritable.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_System_ProjectDirectory 
+    extends Zend_Tool_Project_Context_Filesystem_Directory
+    implements Zend_Tool_Project_Context_System_Interface,
+               Zend_Tool_Project_Context_System_NotOverwritable,
+               Zend_Tool_Project_Context_System_TopLevelRestrictable 
+{
+    
+    /**
+     * @var string
+     */
+    protected $_filesystemName = null;
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ProjectDirectory';
+    }
+    
+    /**
+     * init()
+     *
+     * @return Zend_Tool_Project_Context_System_ProjectDirectory
+     */
+    public function init()
+    {
+        // get base path from attributes (would be in path attribute)
+        $projectDirectory = $this->_resource->getAttribute('path');
+        
+        // if not, get from profile
+        if ($projectDirectory == null) {
+            $projectDirectory = $this->_resource->getProfile()->getAttribute('projectDirectory');
+        }
+        
+        // if not, exception.
+        if ($projectDirectory == null) {
+            require_once 'Zend/Tool/Project/Exception.php';
+            throw new Zend_Tool_Project_Exception('projectDirectory cannot find the directory for this project.');
+        }
+        
+        $this->_baseDirectory = rtrim($projectDirectory, '\\/');
+        return $this;
+    }
+    
+    /**
+     * create()
+     *
+     * @return Zend_Tool_Project_Context_System_ProjectDirectory
+     */
+    public function create()
+    {
+        if (file_exists($this->getPath())) {
+            /*
+            foreach (new DirectoryIterator($this->getPath()) as $item) {
+                if (!$item->isDot()) {
+                    if ($registry->getClient()->isInteractive()) {
+                        // @todo prompt for override
+                    } else {
+                        require_once 'Zend/Tool/Project/Context/Exception.php';
+                        throw new Zend_Tool_Project_Context_Exception('This directory is not empty, project creation aborted.');
+                    }
+                    break;
+                }
+            }
+            */
+        }
+        
+        parent::create();
+        return $this;
+    }
+    
+}

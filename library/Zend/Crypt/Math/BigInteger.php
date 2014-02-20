@@ -1,40 +1,117 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-CpgHT4K8pb01gTobXLQZlvlQcG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage Math
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * Support for arbitrary precision mathematics in PHP.
+ *
+ * Zend_Crypt_Math_BigInteger is a wrapper across three PHP extensions: bcmath, gmp
+ * and big_int. Since each offer similar functionality, but availability of
+ * each differs across installations of PHP, this wrapper attempts to select
+ * the fastest option available and encapsulate a subset of its functionality
+ * which all extensions share in common.
+ *
+ * This class requires one of the three extensions to be available. BCMATH
+ * while the slowest, is available by default under Windows, and under Unix
+ * if PHP is compiled with the flag "--enable-bcmath". GMP requires the gmp
+ * library from http://www.swox.com/gmp/ and PHP compiled with the "--with-gmp"
+ * flag. BIG_INT support is available from a big_int PHP library available from
+ * only from PECL (a Windows port is not available).
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Crypt_Math_BigInteger
+{
+
+    /**
+     * Holds an instance of one of the three arbitrary precision wrappers.
+     *
+     * @var Zend_Crypt_Math_BigInteger_Interface
+     */
+    protected $_math = null;
+
+    /**
+     * Constructor; a Factory which detects a suitable PHP extension for
+     * arbitrary precision math and instantiates the suitable wrapper
+     * object.
+     *
+     * @param string $extension
+     * @throws  Zend_Crypt_Math_BigInteger_Exception
+     */
+    public function __construct($extension = null)
+    {
+        if (!is_null($extension) && !in_array($extension, array('bcmath', 'gmp', 'bigint'))) {
+            require_once('Zend/Crypt/Math/BigInteger/Exception.php');
+            throw new Zend_Crypt_Math_BigInteger_Exception('Invalid extension type; please use one of bcmath, gmp or bigint');
+        }
+        $this->_loadAdapter($extension);
+    }
+
+    /**
+     * Redirect all public method calls to the wrapped extension object.
+     *
+     * @param   string $methodName
+     * @param   array $args
+     * @throws  Zend_Crypt_Math_BigInteger_Exception
+     */
+    public function __call($methodName, $args)
+    {
+        if(!method_exists($this->_math, $methodName)) {
+            require_once 'Zend/Crypt/Math/BigInteger/Exception.php';
+            throw new Zend_Crypt_Math_BigInteger_Exception('invalid method call: ' . get_class($this->_math) . '::' . $methodName . '() does not exist');
+        }
+        return call_user_func_array(array($this->_math, $methodName), $args);
+    }
+
+    /**
+     * @param string $extension
+     * @throws  Zend_Crypt_Math_BigInteger_Exception
+     */
+    protected function _loadAdapter($extension = null)
+    {
+        if (is_null($extension)) {
+            if (extension_loaded('gmp')) {
+                $extension = 'gmp';
+            //} elseif (extension_loaded('big_int')) {
+            //    $extension = 'big_int';
+            } else {
+                $extension = 'bcmath';
+            }
+        }
+        if($extension == 'gmp' && extension_loaded('gmp')) {
+            require_once 'Zend/Crypt/Math/BigInteger/Gmp.php';
+            $this->_math = new Zend_Crypt_Math_BigInteger_Gmp();
+        //} elseif($extension == 'bigint' && extension_loaded('big_int')) {
+        //    require_once 'Zend/Crypt_Math/BigInteger/Bigint.php';
+        //    $this->_math = new Zend_Crypt_Math_BigInteger_Bigint();
+        } elseif ($extension == 'bcmath') {
+            require_once 'Zend/Crypt/Math/BigInteger/Bcmath.php';
+            $this->_math = new Zend_Crypt_Math_BigInteger_Bcmath();
+        } else {
+            require_once 'Zend/Crypt/Math/BigInteger/Exception.php';
+            throw new Zend_Crypt_Math_BigInteger_Exception($extension . ' big integer precision math support not detected');
+        }
+    }
+
+}

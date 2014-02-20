@@ -1,76 +1,307 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-h08PQ3WjSdAc6fHeB0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Claims.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Result value of the InfoCard component, contains any error messages and claims
+ * from the processing of an information card.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Claims
+{
+    /**
+     * Successful validation and extraion of claims
+     */
+    const RESULT_SUCCESS = 1;
+
+    /**
+     * Indicates there was an error processing the XML document
+     */
+    const RESULT_PROCESSING_FAILURE = 2;
+
+    /**
+     * Indicates that the signature values within the XML document failed verification
+     */
+    const RESULT_VALIDATION_FAILURE = 3;
+
+    /**
+     * The default namespace to assume in these claims
+     *
+     * @var string
+     */
+    protected $_defaultNamespace  = null;
+
+    /**
+     * A boolean indicating if the claims should be consider "valid" or not based on processing
+     *
+     * @var bool
+     */
+    protected $_isValid = true;
+
+    /**
+     * The error message if any
+     *
+     * @var string
+     */
+    protected $_error = "";
+
+    /**
+     * An array of claims taken from the information card
+     *
+     * @var array
+     */
+    protected $_claims;
+
+    /**
+     * The result code of processing the information card as defined by the constants of this class
+     *
+     * @var integer
+     */
+    protected $_code;
+
+    /**
+     * Override for the safeguard which ensures that you don't use claims which failed validation.
+     * Used in situations when there was a validation error you'd like to ignore
+     *
+     * @return Zend_InfoCard_Claims
+     */
+    public function forceValid()
+    {
+        trigger_error("Forcing Claims to be valid although it is a security risk", E_USER_WARNING);
+        $this->_isValid = true;
+        return $this;
+    }
+
+    /**
+     * Retrieve the PPI (Private Personal Identifier) associated with the information card
+     *
+     * @return string the private personal identifier
+     */
+    public function getCardID()
+    {
+        return $this->getClaim('http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier');
+    }
+
+    /**
+     * Retrieves the default namespace used in this information card. If a default namespace was not
+     * set, it figures out which one to consider 'default' by taking the first namespace sorted by use-count
+     * in claims
+     *
+     * @throws Zend_InfoCard_Exception
+     * @return string The default namespace
+     */
+    public function getDefaultNamespace()
+    {
+        if($this->_defaultNamespace === null) {
+            $namespaces = array();
+            $leader = '';
+            foreach($this->_claims as $claim) {
+                if(!isset($namespaces[$claim['namespace']])) {
+                    $namespaces[$claim['namespace']] = 1;
+                } else {
+                    $namespaces[$claim['namespace']]++;
+                }
+
+                if(empty($leader) || ($namespaces[$claim['namespace']] > $leader)) {
+                    $leader = $claim['namespace'];
+                }
+            }
+
+            if(empty($leader)) {
+                require_once 'Zend/InfoCard/Exception.php';
+                throw new Zend_InfoCard_Exception("Failed to determine default namespace");
+            }
+
+            $this->setDefaultNamespace($leader);
+        }
+
+        return $this->_defaultNamespace;
+    }
+
+    /**
+     * Set the default namespace, overriding any existing default
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param string $namespace The default namespace to use
+     * @return Zend_InfoCard_Claims
+     */
+    public function setDefaultNamespace($namespace)
+    {
+
+        foreach($this->_claims as $claim) {
+            if($namespace == $claim['namespace']) {
+                $this->_defaultNamespace = $namespace;
+                return $this;
+            }
+        }
+
+        require_once 'Zend/InfoCard/Exception.php';
+        throw new Zend_InfoCard_Exception("At least one claim must exist in specified namespace to make it the default namespace");
+    }
+
+    /**
+     * Indicates if this claim object contains validated claims or not
+     *
+     * @return bool
+     */
+    public function isValid()
+    {
+        return $this->_isValid;
+    }
+
+    /**
+     * Set the error message contained within the claims object
+     *
+     * @param string $error The error message
+     * @return Zend_InfoCard_Claims
+     */
+    public function setError($error)
+    {
+        $this->_error = $error;
+        $this->_isValid = false;
+        return $this;
+    }
+
+    /**
+     * Retrieve the error message contained within the claims object
+     *
+     * @return string The error message
+     */
+    public function getErrorMsg()
+    {
+        return $this->_error;
+    }
+
+    /**
+     * Set the claims for the claims object. Can only be set once and is done
+     * by the component itself. Internal use only.
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param array $claims
+     * @return Zend_InfoCard_Claims
+     */
+    public function setClaims(Array $claims)
+    {
+        if($this->_claims !== null) {
+            require_once 'Zend/InfoCard/Exception.php';
+            throw new Zend_InfoCard_Exception("Claim objects are read-only");
+        }
+
+        $this->_claims = $claims;
+        return $this;
+    }
+
+    /**
+     * Set the result code of the claims object.
+     *
+     * @throws Zend_InfoCard_Exception
+     * @param int $code The result code
+     * @return Zend_InfoCard_Claims
+     */
+    public function setCode($code)
+    {
+        switch($code) {
+            case self::RESULT_PROCESSING_FAILURE:
+            case self::RESULT_SUCCESS:
+            case self::RESULT_VALIDATION_FAILURE:
+                $this->_code = $code;
+                return $this;
+        }
+
+        require_once 'Zend/InfoCard/Exception.php';
+        throw new Zend_InfoCard_Exception("Attempted to set unknown error code");
+    }
+
+    /**
+     * Gets the result code of the claims object
+     *
+     * @return integer The result code
+     */
+    public function getCode()
+    {
+        return $this->_code;
+    }
+
+    /**
+     * Get a claim by providing its complete claim URI
+     *
+     * @param string $claimURI The complete claim URI to retrieve
+     * @return mixed The claim matching that specific URI or null if not found
+     */
+    public function getClaim($claimURI)
+    {
+        if($this->claimExists($claimURI)) {
+            return $this->_claims[$claimURI]['value'];
+        }
+
+        return null;
+    }
+
+    /**
+     * Indicates if a specific claim URI exists or not within the object
+     *
+     * @param string $claimURI The complete claim URI to check
+     * @return bool true if the claim exists, false if not found
+     */
+    public function claimExists($claimURI)
+    {
+        return isset($this->_claims[$claimURI]);
+    }
+
+    /**
+     * Magic helper function
+     * @throws Zend_InfoCard_Exception
+     */
+    public function __unset($k)
+    {
+        require_once 'Zend/InfoCard/Exception.php';
+        throw new Zend_InfoCard_Exception("Claim objects are read-only");
+    }
+
+    /**
+     * Magic helper function
+     */
+    public function __isset($k)
+    {
+        return $this->claimExists("{$this->getDefaultNamespace()}/$k");
+    }
+
+    /**
+     * Magic helper function
+     */
+    public function __get($k)
+    {
+        return $this->getClaim("{$this->getDefaultNamespace()}/$k");
+    }
+
+    /**
+     * Magic helper function
+     * @throws Zend_InfoCard_Exception
+     */
+    public function __set($k, $v)
+    {
+        require_once 'Zend/InfoCard/Exception.php';
+        throw new Zend_InfoCard_Exception("Claim objects are read-only");
+    }
+}

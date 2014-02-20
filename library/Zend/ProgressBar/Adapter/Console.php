@@ -1,155 +1,534 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-BQfS73Wlxnmk0xBILyZL
+<?php
+/**
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_ProgressBar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Console.php 14557 2009-03-31 12:06:30Z dasprid $
+ */
+
+/**
+ * @see Zend_ProgressBar_Adapter
+ */
+require_once 'Zend/ProgressBar/Adapter.php';
+
+/**
+ * @see Zend_Text_MultiByte
+ */
+require_once 'Zend/Text/MultiByte.php';
+
+/**
+ * Zend_ProgressBar_Adapter_Console offers a text-based progressbar for console
+ * applications
+ *
+ * @category  Zend
+ * @package   Zend_ProgressBar
+ * @uses      Zend_ProgressBar_Adapter_Interface
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_ProgressBar_Adapter_Console extends Zend_ProgressBar_Adapter
+{
+    /**
+     * Percentage value of the progress
+     */
+    const ELEMENT_PERCENT = 'ELEMENT_PERCENT';
+
+    /**
+     * Visual value of the progress
+     */
+    const ELEMENT_BAR = 'ELEMENT_BAR';
+
+    /**
+     * ETA of the progress
+     */
+    const ELEMENT_ETA = 'ELEMENT_ETA';
+
+    /**
+     * Text part of the progress
+     */
+    const ELEMENT_TEXT = 'ELEMENT_TEXT';
+
+    /**
+     * Finish action: End of Line
+     */
+    const FINISH_ACTION_EOL = 'FINISH_ACTION_EOL';
+
+    /**
+     * Finish action: Clear Line
+     */
+    const FINISH_ACTION_CLEAR_LINE = 'FINISH_ACTION_CLEAR_LINE';
+
+    /**
+     * Finish action: None
+     */
+    const FINISH_ACTION_NONE = 'FINISH_ACTION_NONE';
+
+    /**
+     * Width of the progressbar
+     *
+     * @var integer
+     */
+    protected $_width = null;
+
+    /**
+     * Elements to display
+     *
+     * @var array
+     */
+    protected $_elements = array(self::ELEMENT_PERCENT,
+                                 self::ELEMENT_BAR,
+                                 self::ELEMENT_ETA);
+
+    /**
+     * Which action to do at finish call
+     *
+     * @var string
+     */
+    protected $_finishAction = self::FINISH_ACTION_EOL;
+
+    /**
+     * Width of the bar element
+     *
+     * @var integer
+     */
+    protected $_barWidth;
+
+    /**
+     * Left character(s) within the bar
+     *
+     * @var string
+     */
+    protected $_barLeftChar = '#';
+
+    /**
+     * Indicator character(s) within the bar
+     *
+     * @var string
+     */
+    protected $_barIndicatorChar = '';
+
+    /**
+     * Right character(s) within the bar
+     *
+     * @var string
+     */
+    protected $_barRightChar = '-';
+
+    /**
+     * Output-stream, when STDOUT is not defined (e.g. in CGI) or set manually
+     *
+     * @var resource
+     */
+    protected $_outputStream = null;
+
+    /**
+     * Width of the text element
+     *
+     * @var string
+     */
+    protected $_textWidth = 20;
+
+    /**
+     * Wether the output started yet or not
+     *
+     * @var boolean
+     */
+    protected $_outputStarted = false;
+    
+    /**
+     * Charset of text element
+     *
+     * @var string
+     */
+    protected $_charset = 'utf-8';
+
+    /**
+     * Defined by Zend_ProgressBar_Adapter
+     *
+     * @param null|array|Zend_Config $options
+     */
+    public function __construct($options = null)
+    {
+        // Call parent constructor with options
+        parent::__construct($options);
+
+        // Check if a width was set, else use auto width
+        if ($this->_width === null) {
+            $this->setWidth();
+        }
+    }
+
+    /**
+     * Close local stdout, when open
+     */
+    public function __destruct()
+    {
+        if ($this->_outputStream !== null) {
+            fclose($this->_outputStream);
+        }
+    }
+
+    /**
+     * Set a different output-stream
+     *
+     * @param  string $resource
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setOutputStream($resource)
+    {
+       $stream = @fopen($resource, 'w');
+
+       if ($stream === false) {
+            require_once 'Zend/ProgressBar/Adapter/Exception.php';
+            throw new Zend_ProgressBar_Adapter_Exception('Unable to open stream');
+       }
+
+       if ($this->_outputStream !== null) {
+           fclose($this->_outputStream);
+       }
+       
+       $this->_outputStream = $stream;
+    }
+    
+    /**
+     * Get the current output stream
+     *
+     * @return resource
+     */
+    public function getOutputStream()
+    {
+        if ($this->_outputStream === null) {
+            if (!defined('STDOUT')) {
+                $this->_outputStream = fopen('php://stdout', 'w');    
+            } else {
+                return STDOUT;
+            }
+        }
+        
+        return $this->_outputStream;
+    }
+    
+    /**
+     * Set the width of the progressbar
+     *
+     * @param  integer $width
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setWidth($width = null)
+    {
+        if ($width === null || !is_integer($width)) {
+            if (substr(PHP_OS, 0, 3) === 'WIN') {
+                // We have to default to 79 on windows, because the windows
+                // terminal always has a fixed width of 80 characters and the
+                // cursor is counted to the line, else windows would line break
+                // after every update.
+                $this->_width = 79;
+            } else {
+                // Set the default width of 80
+                $this->_width = 80;
+
+                // Try to determine the width through stty
+                if (preg_match('#\d+ (\d+)#', @shell_exec('stty size'), $match) === 1) {
+                    $this->_width = (int) $match[1];
+                } else if (preg_match('#columns = (\d+);#', @shell_exec('stty'), $match) === 1) {
+                    $this->_width = (int) $match[1];
+                }
+            }
+        } else {
+            $this->_width = (int) $width;
+        }
+
+        $this->_calculateBarWidth();
+
+        return $this;
+    }
+
+    /**
+     * Set the elements to display with the progressbar
+     *
+     * @param  array $elements
+     * @throws Zend_ProgressBar_Adapter_Exception When an invalid element is foudn in the array
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setElements(array $elements)
+    {
+        $allowedElements = array(self::ELEMENT_PERCENT,
+                                 self::ELEMENT_BAR,
+                                 self::ELEMENT_ETA,
+                                 self::ELEMENT_TEXT);
+
+        if (count(array_diff($elements, $allowedElements)) > 0) {
+            require_once 'Zend/ProgressBar/Adapter/Exception.php';
+            throw new Zend_ProgressBar_Adapter_Exception('Invalid element found in $elements array');
+        }
+
+        $this->_elements = $elements;
+
+        $this->_calculateBarWidth();
+
+        return $this;
+    }
+
+    /**
+     * Set the left-hand character for the bar
+     *
+     * @param  string $char
+     * @throws Zend_ProgressBar_Adapter_Exception When character is empty
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setBarLeftChar($char)
+    {
+        if (empty($char)) {
+            require_once 'Zend/ProgressBar/Adapter/Exception.php';
+            throw new Zend_ProgressBar_Adapter_Exception('Character may not be empty');
+        }
+
+        $this->_barLeftChar = (string) $char;
+
+        return $this;
+    }
+
+    /**
+     * Set the right-hand character for the bar
+     *
+     * @param  string $char
+     * @throws Zend_ProgressBar_Adapter_Exception When character is empty
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setBarRightChar($char)
+    {
+        if (empty($char)) {
+            require_once 'Zend/ProgressBar/Adapter/Exception.php';
+            throw new Zend_ProgressBar_Adapter_Exception('Character may not be empty');
+        }
+
+        $this->_barRightChar = (string) $char;
+
+        return $this;
+    }
+
+    /**
+     * Set the indicator character for the bar
+     *
+     * @param  string $char
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setBarIndicatorChar($char)
+    {
+        $this->_barIndicatorChar = (string) $char;
+
+        return $this;
+    }
+
+    /**
+     * Set the width of the text element
+     *
+     * @param  integer $width
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setTextWidth($width)
+    {
+        $this->_textWidth = (int) $width;
+
+        $this->_calculateBarWidth();
+
+        return $this;
+    }
+
+    /**
+     * Set the charset of the text element
+     *
+     * @param string $charset
+     */
+    public function setCharset($charset)
+    {
+        $this->_charset = $charset;
+    }
+    
+    /**
+     * Set the finish action
+     *
+     * @param  string $action
+     * @throws Zend_ProgressBar_Adapter_Exception When an invalid action is specified
+     * @return Zend_ProgressBar_Adapter_Console
+     */
+    public function setFinishAction($action)
+    {
+        $allowedActions = array(self::FINISH_ACTION_CLEAR_LINE,
+                                self::FINISH_ACTION_EOL,
+                                self::FINISH_ACTION_NONE);
+
+        if (!in_array($action, $allowedActions)) {
+            require_once 'Zend/ProgressBar/Adapter/Exception.php';
+            throw new Zend_ProgressBar_Adapter_Exception('Invalid finish action specified');
+        }
+
+        $this->_finishAction = $action;
+
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_ProgressBar_Adapter_Interface
+     *
+     * @param  float   $current       Current progress value
+     * @param  float   $max           Max progress value
+     * @param  float   $percent       Current percent value
+     * @param  integer $timeTaken     Taken time in seconds
+     * @param  integer $timeRemaining Remaining time in seconds
+     * @param  string  $text          Status text
+     * @return void
+     */
+    public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text)
+    {
+        // See if we must clear the line
+        if ($this->_outputStarted) {
+            $data = str_repeat("\x08", $this->_width);
+        } else {
+            $data = '';
+            $this->_outputStarted = true;
+        }
+
+        // Build all elements
+        $renderedElements = array();
+
+        foreach ($this->_elements as $element) {
+            switch ($element) {
+                case self::ELEMENT_BAR:
+                    $visualWidth = $this->_barWidth - 2;
+                    $bar         = '[';
+
+                    $indicatorWidth = strlen($this->_barIndicatorChar);
+
+                    $doneWidth = min($visualWidth - $indicatorWidth, round($visualWidth * $percent));
+                    if ($doneWidth > 0) {
+                        $bar .= substr(str_repeat($this->_barLeftChar, ceil($doneWidth / strlen($this->_barLeftChar))), 0, $doneWidth);
+                    }
+
+                    $bar .= $this->_barIndicatorChar;
+
+                    $leftWidth = $visualWidth - $doneWidth - $indicatorWidth;
+                    if ($leftWidth > 0) {
+                        $bar .= substr(str_repeat($this->_barRightChar, ceil($leftWidth / strlen($this->_barRightChar))), 0, $leftWidth);
+                    }
+
+                    $bar .= ']';
+
+                    $renderedElements[] = $bar;
+                    break;
+
+                case self::ELEMENT_PERCENT:
+                    $renderedElements[] = str_pad(round($percent * 100), 3, ' ', STR_PAD_LEFT) . '%';
+                    break;
+
+                case self::ELEMENT_ETA:
+                    // In the first 5 seconds we don't get accurate results,
+                    // this skipping technique is found in many progressbar
+                    // implementations.
+                    if ($timeTaken < 5) {
+                        $renderedElements[] = str_repeat(' ', 12);
+                        break;
+                    }
+
+                    if ($timeRemaining === null || $timeRemaining > 86400) {
+                        $etaFormatted = '??:??:??';
+                    } else {
+                        $hours   = floor($timeRemaining / 3600);
+                        $minutes = floor(($timeRemaining % 3600) / 60);
+                        $seconds = ($timeRemaining % 3600 % 60);
+
+                        $etaFormatted = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
+                    }
+
+                    $renderedElements[] = 'ETA ' . $etaFormatted;
+                    break;
+
+                case self::ELEMENT_TEXT:
+                    $renderedElements[] = Zend_Text_MultiByte::strPad(substr($text, 0, $this->_textWidth), $this->_textWidth, ' ', STR_PAD_RIGHT, $this->_charset);
+                    break;
+            }
+        }
+
+        $data .= implode(' ', $renderedElements);
+
+        // Output line data
+        $this->_outputData($data);
+    }
+
+    /**
+     * Defined by Zend_ProgressBar_Adapter_Interface
+     *
+     * @return void
+     */
+    public function finish()
+    {
+        switch ($this->_finishAction) {
+            case self::FINISH_ACTION_EOL:
+                $this->_outputData(PHP_EOL);
+                break;
+
+            case self::FINISH_ACTION_CLEAR_LINE:
+                if ($this->_outputStarted) {
+                    $data = str_repeat("\x08", $this->_width)
+                          . str_repeat(' ', $this->_width)
+                          . str_repeat("\x08", $this->_width);
+
+                    $this->_outputData($data);
+                }
+                break;
+
+            case self::FINISH_ACTION_NONE:
+                break;
+        }
+    }
+
+    /**
+     * Calculate the bar width when other elements changed
+     *
+     * @return void
+     */
+    protected function _calculateBarWidth()
+    {
+        if (in_array(self::ELEMENT_BAR, $this->_elements)) {
+            $barWidth = $this->_width;
+
+            if (in_array(self::ELEMENT_PERCENT, $this->_elements)) {
+                $barWidth -= 4;
+            }
+
+            if (in_array(self::ELEMENT_ETA, $this->_elements)) {
+                $barWidth -= 12;
+            }
+
+            if (in_array(self::ELEMENT_TEXT, $this->_elements)) {
+                $barWidth -= $this->_textWidth;
+            }
+
+            $this->_barWidth = $barWidth - (count($this->_elements) - 1);
+        }
+    }
+
+    /**
+     * Outputs given data to STDOUT.
+     *
+     * This split-off is required for unit-testing.
+     *
+     * @param  string $data
+     * @return void
+     */
+    protected function _outputData($data)
+    {
+        fwrite($this->getOutputStream(), $data);
+    }
+}

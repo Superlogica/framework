@@ -1,23 +1,78 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5CKnkd1U6Hz7CuKlKwkLhC+ajDSYnUYsjuoioJ143ij+Lg846hPUedZ6YHvpJFMmta57cDRx
-AOuP521xuIr6x14Cfm4uVPehS2aOujlZrUKtSQgQP+DN2w/Oi4q7/V1o9ZdMU45A7RPpM6ol4cI+
-ll7wpU7nnTHD9JzUBFMTMkngrsyct8rpHEXo/48VO0MrxGyQM7rEzRr2+FeLw+oQjK/Bhhasrh2W
-S+7JKy24fwFWV/5X/3hUn4kJIPpDKor7T+KlBeH2Q8zcBw68PFCFYqCNvzNcHUu9/ynE69lqcQTV
-6QMJPLXJSPSssDx1IQtCTwwFgJHE74KZAtRJseO/scnM0CbrQTDJsSvqjGNBH0CeCYc5ii44QuLP
-dMvwQk5Ikcm1gq0PUsdFckNkTxxBSptqWPt+zXT/sLV1+uVWv7lO5jDJriBTa0t5Uv8NS68BWnq2
-hj2ETvWkrSm6mF2vx4EIZaCvXIOADRotYsUMdWG0Agbc2H9Kpf+Q8NxrJjhjIHnsv6PUZoQ0UVKM
-uMDfzUnl1cAde7zRFopkstPt8brSCfOfSa63gKKCPSfBiqlBepIq81ZHKyqM80SN/3B/fr53x7qk
-vXJOeiZcS4sbZk0WxfHiLusp11USg6lKItksHvb8mOUxRfFwfS29q+xgEA7prcrJQ21QjzyuIP59
-uAFyhRPu0mjtYE1hUABJGu4lHwJxD1s9N8pKCcMLPVstK9oRGavl0+KjaF9F6yBIm+r4zQ8hAkdN
-p6LKib4KJwfQhBybQFIACKqjv+coh1r3BVCDrxz+C5e4DZtwq8NYWh6yLC7PYfAJdpPawzdZClo/
-eX+o+HTJbnPJOhrMtLpAG84QILlo6WxDWPvXBjcFNwWdZRGkK+eL4RTC45qKmjTjmK/uMIuDKvnQ
-XwL1MIJAz3HxiRJ9selv3VNYCJNXa1gr+uhlwo14M2ZxFhwz4QPDRKoDnrwMlo2t9g8DMOKpzq0H
-53jKSZqViNrviiIHhhCrKk511O8bgQqk9dnD9dwTsThLeSjW97zB6codRB4HRl6EwQE3tlHPqric
-Kvf5u3E6dSeTQ8GE51XFw14pTVznNG5oCLgzpoZpGsO8AQXmD/1bh1Io9lAQc1d/DVmT3LJ6ZpIF
-tPGKAqFl1/yB+eOVW+/4cO93SOq5Jyvhy57wSk1tUJY5uH9UJmB3VXqt7i0+13Z+J6sEZDoehtrB
-81+dSlE7EUhJDr9IlbaS3TWHkyfy1/5tl0gZGVIpUAsGsuc6NY/HvUFUz7tm6P64dxrIQRTXhGfn
-CgT3mlgwTlCEDrWgJY5Ed2JyWpi71slYJ1JxQh4zQwxOFejMOptYnHne3wE5O20uixhmJ0TIS3IC
-rLTzXCOOmK/uMqthFTXczoabR5d1jmTECemdQCsoGfEqfZk2f77YM6PZPOQsLVG7fzSoiOwZWmlt
-P4hk9SR76lREW5eqsAA1hp6DRjVbyTRTjhMub50=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element_Object */
+require_once 'Zend/Pdf/Element/Object.php';
+
+/** Zend_Pdf_Element_Dictionary */
+require_once 'Zend/Pdf/Element/Dictionary.php';
+
+/** Zend_Pdf_Element_Name */
+require_once 'Zend/Pdf/Element/Name.php';
+
+/** Zend_Pdf_Resource */
+require_once 'Zend/Pdf/Resource.php';
+
+
+/**
+ * Image abstraction.
+ *
+ * Class is named not in accordance to the name convention.
+ * It's "end-user" class, but its ancestor is not.
+ * Thus part of the common class name is removed.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Resource_Image extends Zend_Pdf_Resource
+{
+    /**
+     * Object constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct('');
+
+        $this->_resource->dictionary->Type    = new Zend_Pdf_Element_Name('XObject');
+        $this->_resource->dictionary->Subtype = new Zend_Pdf_Element_Name('Image');
+    }
+    /**
+     * get the height in pixels of the image
+     *
+     * @return integer
+     */
+    abstract public function getPixelHeight();
+
+    /**
+     * get the width in pixels of the image
+     *
+     * @return integer
+     */
+    abstract public function getPixelWidth();
+
+    /**
+     * gets an associative array of information about an image
+     *
+     * @return array
+     */
+    abstract public function getProperties();
+}
+

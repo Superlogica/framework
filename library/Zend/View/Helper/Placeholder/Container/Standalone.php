@@ -1,73 +1,318 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Standalone.php 13197 2008-12-13 13:31:29Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_View_Helper_Placeholder_Registry */
+require_once 'Zend/View/Helper/Placeholder/Registry.php';
+
+/** Zend_View_Helper_Abstract.php */
+require_once 'Zend/View/Helper/Abstract.php';
+
+/**
+ * Base class for targetted placeholder helpers
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */ 
+abstract class Zend_View_Helper_Placeholder_Container_Standalone extends Zend_View_Helper_Abstract implements IteratorAggregate, Countable, ArrayAccess
+{  
+    /**
+     * @var Zend_View_Helper_Placeholder_Container_Abstract
+     */
+    protected $_container;
+
+    /**
+     * @var Zend_View_Helper_Placeholder_Registry
+     */
+    protected $_registry;
+
+    /**
+     * Registry key under which container registers itself
+     * @var string
+     */
+    protected $_regKey;
+
+    /**
+     * Flag wheter to automatically escape output, must also be
+     * enforced in the child class if __toString/toString is overriden
+     * @var book
+     */
+    protected $_autoEscape = true;
+
+    /**
+     * Constructor
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->setRegistry(Zend_View_Helper_Placeholder_Registry::getRegistry());
+        $this->setContainer($this->getRegistry()->getContainer($this->_regKey));
+    }
+
+    /**
+     * Retrieve registry
+     * 
+     * @return Zend_View_Helper_Placeholder_Registry
+     */
+    public function getRegistry()
+    {
+        return $this->_registry;
+    }
+
+    /**
+     * Set registry object 
+     * 
+     * @param  Zend_View_Helper_Placeholder_Registry $registry 
+     * @return Zend_View_Helper_Placeholder_Container_Standalone
+     */
+    public function setRegistry(Zend_View_Helper_Placeholder_Registry $registry)
+    {
+        $this->_registry = $registry;
+        return $this;
+    }
+
+    /**
+     * Set whether or not auto escaping should be used
+     * 
+     * @param  bool $autoEscape whether or not to auto escape output
+     * @return Zend_View_Helper_Placeholder_Container_Standalone
+     */
+    public function setAutoEscape($autoEscape = true)
+    {
+        $this->_autoEscape = ($autoEscape) ? true : false;
+        return $this;
+    }
+    
+    /**
+     * Return whether autoEscaping is enabled or disabled
+     *
+     * return bool
+     */
+    public function getAutoEscape()
+    {
+        return $this->_autoEscape;
+    }
+
+    /**
+     * Escape a string
+     * 
+     * @param  string $string 
+     * @return string
+     */
+    protected function _escape($string)
+    {
+        if ($this->view instanceof Zend_View_Interface) {
+            return $this->view->escape($string);
+        }
+
+        return htmlentities((string) $string, null, 'UTF-8');
+    }
+
+    /**
+     * Set container on which to operate
+     * 
+     * @param  Zend_View_Helper_Placeholder_Container_Abstract $container 
+     * @return Zend_View_Helper_Placeholder_Container_Standalone
+     */
+    public function setContainer(Zend_View_Helper_Placeholder_Container_Abstract $container)
+    {
+        $this->_container = $container;
+        return $this;
+    }
+
+    /**
+     * Retrieve placeholder container
+     * 
+     * @return Zend_View_Helper_Placeholder_Container_Abstract
+     */
+    public function getContainer()
+    {
+        return $this->_container;
+    }
+
+    /**
+     * Overloading: set property value
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return void
+     */
+    public function __set($key, $value)
+    {
+        $container = $this->getContainer();
+        $container[$key] = $value;
+    }
+
+    /**
+     * Overloading: retrieve property
+     * 
+     * @param  string $key 
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        $container = $this->getContainer();
+        if (isset($container[$key])) {
+            return $container[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Overloading: check if property is set
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function __isset($key)
+    {
+        $container = $this->getContainer();
+        return isset($container[$key]);
+    }
+
+    /**
+     * Overloading: unset property
+     * 
+     * @param  string $key 
+     * @return void
+     */
+    public function __unset($key)
+    {
+        $container = $this->getContainer();
+        if (isset($container[$key])) {
+            unset($container[$key]);
+        }
+    }
+
+    /**
+     * Overload
+     *
+     * Proxy to container methods
+     * 
+     * @param  string $method 
+     * @param  array $args 
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        $container = $this->getContainer();
+        if (method_exists($container, $method)) {
+            $return = call_user_func_array(array($container, $method), $args);
+            if ($return === $container) {
+                // If the container is returned, we really want the current object
+                return $this;
+            }
+            return $return;
+        }
+
+        require_once 'Zend/View/Exception.php';
+        throw new Zend_View_Exception('Method "' . $method . '" does not exist');
+    }
+
+    /**
+     * String representation
+     * 
+     * @return string
+     */
+    public function toString()
+    {
+        return $this->getContainer()->toString();
+    }
+
+    /**
+     * Cast to string representation
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
+    /**
+     * Countable
+     * 
+     * @return int
+     */
+    public function count()
+    {
+        $container = $this->getContainer();
+        return count($container);
+    }
+
+    /**
+     * ArrayAccess: offsetExists
+     * 
+     * @param  string|int $offset 
+     * @return bool
+     */
+    public function offsetExists($offset)
+    {
+        return $this->getContainer()->offsetExists($offset);
+    }
+
+    /**
+     * ArrayAccess: offsetGet
+     * 
+     * @param  string|int $offset 
+     * @return mixed
+     */
+    public function offsetGet($offset)
+    {
+        return $this->getContainer()->offsetGet($offset);
+    }
+
+    /**
+     * ArrayAccess: offsetSet
+     * 
+     * @param  string|int $offset 
+     * @param  mixed $value 
+     * @return void
+     */
+    public function offsetSet($offset, $value)
+    {
+        return $this->getContainer()->offsetSet($offset, $value);
+    }
+
+    /**
+     * ArrayAccess: offsetUnset
+     * 
+     * @param  string|int $offset 
+     * @return void
+     */
+    public function offsetUnset($offset)
+    {
+        return $this->getContainer()->offsetUnset($offset);
+    }
+
+    /**
+     * IteratorAggregate: get Iterator
+     * 
+     * @return Iterator
+     */
+    public function getIterator()
+    {
+        return $this->getContainer()->getIterator();
+    }
+}

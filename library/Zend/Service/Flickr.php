@@ -1,198 +1,627 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-SL6e+pInRW==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Flickr
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Flickr.php 8733 2008-03-10 15:56:48Z jokke $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Flickr
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Flickr
+{
+    /**
+     * Base URI for the REST client
+     */
+    const URI_BASE = 'http://www.flickr.com';
+
+    /**
+     * Your Flickr API key
+     *
+     * @var string
+     */
+    public $apiKey;
+
+    /**
+     * Reference to REST client object
+     *
+     * @var Zend_Rest_Client
+     */
+    protected $_restClient = null;
+
+
+    /**
+     * Performs object initializations
+     *
+     *  # Sets up character encoding
+     *  # Saves the API key
+     *
+     * @param  string $apiKey Your Flickr API key
+     * @return void
+     */
+    public function __construct($apiKey)
+    {
+        iconv_set_encoding('output_encoding', 'UTF-8');
+        iconv_set_encoding('input_encoding', 'UTF-8');
+        iconv_set_encoding('internal_encoding', 'UTF-8');
+
+        $this->apiKey = (string) $apiKey;
+    }
+
+
+    /**
+     * Find Flickr photos by tag.
+     *
+     * Query options include:
+     *
+     *  # per_page:        how many results to return per query
+     *  # page:            the starting page offset.  first result will be (page - 1) * per_page + 1
+     *  # tag_mode:        Either 'any' for an OR combination of tags,
+     *                     or 'all' for an AND combination. Default is 'any'.
+     *  # min_upload_date: Minimum upload date to search on.  Date should be a unix timestamp.
+     *  # max_upload_date: Maximum upload date to search on.  Date should be a unix timestamp.
+     *  # min_taken_date:  Minimum upload date to search on.  Date should be a MySQL datetime.
+     *  # max_taken_date:  Maximum upload date to search on.  Date should be a MySQL datetime.
+     *
+     * @param  string|array $query   A single tag or an array of tags.
+     * @param  array        $options Additional parameters to refine your query.
+     * @return Zend_Service_Flickr_ResultSet
+     * @throws Zend_Service_Exception
+     */
+    public function tagSearch($query, array $options = array())
+    {
+        static $method = 'flickr.photos.search';
+        static $defaultOptions = array('per_page' => 10,
+                                       'page'     => 1,
+                                       'tag_mode' => 'or',
+                                       'extras'   => 'license, date_upload, date_taken, owner_name, icon_server');
+
+        $options['tags'] = is_array($query) ? implode(',', $query) : $query;
+
+        $options = $this->_prepareOptions($method, $options, $defaultOptions);
+
+        $this->_validateTagSearch($options);
+
+        // now search for photos
+        $restClient = $this->getRestClient();
+        $restClient->getHttpClient()->resetParameters();
+        $response = $restClient->restGet('/services/rest/', $options);
+
+        if ($response->isError()) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+
+        self::_checkErrors($dom);
+
+        /**
+         * @see Zend_Service_Flickr_ResultSet
+         */
+        require_once 'Zend/Service/Flickr/ResultSet.php';
+        return new Zend_Service_Flickr_ResultSet($dom, $this);
+    }
+
+
+    /**
+     * Finds photos by a user's username or email.
+     *
+     * Additional query options include:
+     *
+     *  # per_page:        how many results to return per query
+     *  # page:            the starting page offset.  first result will be (page - 1) * per_page + 1
+     *  # min_upload_date: Minimum upload date to search on.  Date should be a unix timestamp.
+     *  # max_upload_date: Maximum upload date to search on.  Date should be a unix timestamp.
+     *  # min_taken_date:  Minimum upload date to search on.  Date should be a MySQL datetime.
+     *  # max_taken_date:  Maximum upload date to search on.  Date should be a MySQL datetime.
+     *
+     * @param  string $query   username or email
+     * @param  array  $options Additional parameters to refine your query.
+     * @return Zend_Service_Flickr_ResultSet
+     * @throws Zend_Service_Exception
+     */
+    public function userSearch($query, array $options = null)
+    {
+        static $method = 'flickr.people.getPublicPhotos';
+        static $defaultOptions = array('per_page' => 10,
+                                       'page'     => 1,
+                                       'extras'   => 'license, date_upload, date_taken, owner_name, icon_server');
+
+
+        // can't access by username, must get ID first
+        if (strchr($query, '@')) {
+            // optimistically hope this is an email
+            $options['user_id'] = $this->getIdByEmail($query);
+        } else {
+            // we can safely ignore this exception here
+            $options['user_id'] = $this->getIdByUsername($query);
+        }
+
+        $options = $this->_prepareOptions($method, $options, $defaultOptions);
+        $this->_validateUserSearch($options);
+
+        // now search for photos
+        $restClient = $this->getRestClient();
+        $restClient->getHttpClient()->resetParameters();
+        $response = $restClient->restGet('/services/rest/', $options);
+
+        if ($response->isError()) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+
+        self::_checkErrors($dom);
+
+        /**
+         * @see Zend_Service_Flickr_ResultSet
+         */
+        require_once 'Zend/Service/Flickr/ResultSet.php';
+        return new Zend_Service_Flickr_ResultSet($dom, $this);
+    }
+    
+    /**
+     * Finds photos in a group's pool.
+     *
+     * @param  string $query   group id
+     * @param  array  $options Additional parameters to refine your query.
+     * @return Zend_Service_Flickr_ResultSet
+     * @throws Zend_Service_Exception
+     */
+    public function groupPoolGetPhotos($query, array $options = array())
+    {
+        static $method = 'flickr.groups.pools.getPhotos';
+        static $defaultOptions = array('per_page' => 10,
+                                       'page'     => 1,
+                                       'extras'   => 'license, date_upload, date_taken, owner_name, icon_server');
+
+        if (empty($query) || !is_string($query)) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('You must supply a group id');
+        }
+
+        $options['group_id'] = $query;
+
+        $options = $this->_prepareOptions($method, $options, $defaultOptions);
+
+        $this->_validateGroupPoolGetPhotos($options);
+
+        // now search for photos
+        $restClient = $this->getRestClient();
+        $restClient->getHttpClient()->resetParameters();
+        $response = $restClient->restGet('/services/rest/', $options);
+
+        if ($response->isError()) {
+            /**
+            * @see Zend_Service_Exception
+            */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+
+        self::_checkErrors($dom);
+
+        /**
+        * @see Zend_Service_Flickr_ResultSet
+        */
+        require_once 'Zend/Service/Flickr/ResultSet.php';
+        return new Zend_Service_Flickr_ResultSet($dom, $this);
+    }
+
+
+
+    /**
+     * Utility function to find Flickr User IDs for usernames.
+     *
+     * (You can only find a user's photo with their NSID.)
+     *
+     * @param  string $username the username
+     * @return string the NSID (userid)
+     * @throws Zend_Service_Exception
+     */
+    public function getIdByUsername($username)
+    {
+        static $method = 'flickr.people.findByUsername';
+
+        $options = array('api_key' => $this->apiKey, 'method' => $method, 'username' => (string) $username);
+
+        if (empty($username)) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('You must supply a username');
+        }
+
+        $restClient = $this->getRestClient();
+        $restClient->getHttpClient()->resetParameters();
+        $response = $restClient->restGet('/services/rest/', $options);
+
+        if ($response->isError()) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+        self::_checkErrors($dom);
+        $xpath = new DOMXPath($dom);
+        return (string) $xpath->query('//user')->item(0)->getAttribute('id');
+    }
+
+
+    /**
+     * Utility function to find Flickr User IDs for emails.
+     *
+     * (You can only find a user's photo with their NSID.)
+     *
+     * @param  string $email the email
+     * @return string the NSID (userid)
+     * @throws Zend_Service_Exception
+     */
+    public function getIdByEmail($email)
+    {
+        static $method = 'flickr.people.findByEmail';
+
+        if (empty($email)) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('You must supply an e-mail address');
+        }
+
+        $options = array('api_key' => $this->apiKey, 'method' => $method, 'find_email' => (string) $email);
+
+        $restClient = $this->getRestClient();
+        $restClient->getHttpClient()->resetParameters();
+        $response = $restClient->restGet('/services/rest/', $options);
+
+        if ($response->isError()) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('An error occurred sending request. Status code: '
+                                           . $response->getStatus());
+        }
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+        self::_checkErrors($dom);
+        $xpath = new DOMXPath($dom);
+        return (string) $xpath->query('//user')->item(0)->getAttribute('id');
+    }
+
+
+    /**
+     * Returns Flickr photo details by for the given photo ID
+     *
+     * @param  string $id the NSID
+     * @return array of Zend_Service_Flickr_Image, details for the specified image
+     * @throws Zend_Service_Exception
+     */
+    public function getImageDetails($id)
+    {
+        static $method = 'flickr.photos.getSizes';
+
+        if (empty($id)) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('You must supply a photo ID');
+        }
+
+        $options = array('api_key' => $this->apiKey, 'method' => $method, 'photo_id' => $id);
+
+        $restClient = $this->getRestClient();
+        $restClient->getHttpClient()->resetParameters();
+        $response = $restClient->restGet('/services/rest/', $options);
+
+        $dom = new DOMDocument();
+        $dom->loadXML($response->getBody());
+        $xpath = new DOMXPath($dom);
+        self::_checkErrors($dom);
+        $retval = array();
+        /**
+         * @see Zend_Service_Flickr_Image
+         */
+        require_once 'Zend/Service/Flickr/Image.php';
+        foreach ($xpath->query('//size') as $size) {
+            $label = (string) $size->getAttribute('label');
+            $retval[$label] = new Zend_Service_Flickr_Image($size);
+        }
+
+        return $retval;
+    }
+
+
+    /**
+     * Returns a reference to the REST client, instantiating it if necessary
+     *
+     * @return Zend_Rest_Client
+     */
+    public function getRestClient()
+    {
+        if (null === $this->_restClient) {
+            /**
+             * @see Zend_Rest_Client
+             */
+            require_once 'Zend/Rest/Client.php';
+            $this->_restClient = new Zend_Rest_Client(self::URI_BASE);
+        }
+
+        return $this->_restClient;
+    }
+
+
+    /**
+     * Validate User Search Options
+     *
+     * @param  array $options
+     * @return void
+     * @throws Zend_Service_Exception
+     */
+    protected function _validateUserSearch(array $options)
+    {
+        $validOptions = array('api_key', 'method', 'user_id', 'per_page', 'page', 'extras', 'min_upload_date',
+                              'min_taken_date', 'max_upload_date', 'max_taken_date');
+
+        $this->_compareOptions($options, $validOptions);
+
+        /**
+         * @see Zend_Validate_Between
+         */
+        require_once 'Zend/Validate/Between.php';
+        $between = new Zend_Validate_Between(1, 500, true);
+        if (!$between->isValid($options['per_page'])) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception($options['per_page'] . ' is not valid for the "per_page" option');
+        }
+
+        /**
+         * @see Zend_Validate_Int
+         */
+        require_once 'Zend/Validate/Int.php';
+        $int = new Zend_Validate_Int();
+        if (!$int->isValid($options['page'])) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception($options['page'] . ' is not valid for the "page" option');
+        }
+
+        // validate extras, which are delivered in csv format
+        if ($options['extras']) {
+            $extras = explode(',', $options['extras']);
+            $validExtras = array('license', 'date_upload', 'date_taken', 'owner_name', 'icon_server');
+            foreach($extras as $extra) {
+                /**
+                 * @todo The following does not do anything [yet], so it is commented out.
+                 */
+                //in_array(trim($extra), $validExtras);
+            }
+        }
+    }
+
+
+    /**
+     * Validate Tag Search Options
+     *
+     * @param  array $options
+     * @return void
+     * @throws Zend_Service_Exception
+     */
+    protected function _validateTagSearch(array $options)
+    {
+        $validOptions = array('method', 'api_key', 'user_id', 'tags', 'tag_mode', 'text', 'min_upload_date',
+                              'max_upload_date', 'min_taken_date', 'max_taken_date', 'license', 'sort',
+                              'privacy_filter', 'bbox', 'accuracy', 'machine_tags', 'machine_tag_mode', 'group_id',
+                              'extras', 'per_page', 'page');
+
+        $this->_compareOptions($options, $validOptions);
+
+        /**
+         * @see Zend_Validate_Between
+         */
+        require_once 'Zend/Validate/Between.php';
+        $between = new Zend_Validate_Between(1, 500, true);
+        if (!$between->isValid($options['per_page'])) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception($options['per_page'] . ' is not valid for the "per_page" option');
+        }
+
+        /**
+         * @see Zend_Validate_Int
+         */
+        require_once 'Zend/Validate/Int.php';
+        $int = new Zend_Validate_Int();
+        if (!$int->isValid($options['page'])) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception($options['page'] . ' is not valid for the "page" option');
+        }
+
+        // validate extras, which are delivered in csv format
+        if ($options['extras']) {
+            $extras = explode(',', $options['extras']);
+            $validExtras = array('license', 'date_upload', 'date_taken', 'owner_name', 'icon_server');
+            foreach($extras as $extra) {
+                /**
+                 * @todo The following does not do anything [yet], so it is commented out.
+                 */
+                //in_array(trim($extra), $validExtras);
+            }
+        }
+
+    }
+    
+    
+    /**
+    * Validate Group Search Options
+    *
+    * @param  array $options
+    * @throws Zend_Service_Exception
+    * @return void
+    */
+    protected function _validateGroupPoolGetPhotos(array $options)
+    {
+        $validOptions = array('api_key', 'tags', 'method', 'group_id', 'per_page', 'page', 'extras', 'user_id');
+
+        $this->_compareOptions($options, $validOptions);
+
+        /**
+        * @see Zend_Validate_Between
+        */
+        require_once 'Zend/Validate/Between.php';
+        $between = new Zend_Validate_Between(1, 500, true);
+        if (!$between->isValid($options['per_page'])) {
+            /**
+            * @see Zend_Service_Exception
+            */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception($options['per_page'] . ' is not valid for the "per_page" option');
+        }
+
+        /**
+        * @see Zend_Validate_Int
+        */
+        require_once 'Zend/Validate/Int.php';
+        $int = new Zend_Validate_Int();
+        
+        if (!$int->isValid($options['page'])) {
+            /**
+            * @see Zend_Service_Exception
+            */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception($options['page'] . ' is not valid for the "page" option');
+        }
+
+        // validate extras, which are delivered in csv format
+        if (isset($options['extras'])) {
+            $extras = explode(',', $options['extras']);
+            $validExtras = array('license', 'date_upload', 'date_taken', 'owner_name', 'icon_server');
+            foreach($extras as $extra) {
+                /**
+                * @todo The following does not do anything [yet], so it is commented out.
+                */
+                //in_array(trim($extra), $validExtras);
+            }
+        }
+    }
+
+
+    /**
+     * Throws an exception if and only if the response status indicates a failure
+     *
+     * @param  DOMDocument $dom
+     * @return void
+     * @throws Zend_Service_Exception
+     */
+    protected static function _checkErrors(DOMDocument $dom)
+    {
+        if ($dom->documentElement->getAttribute('stat') === 'fail') {
+            $xpath = new DOMXPath($dom);
+            $err = $xpath->query('//err')->item(0);
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('Search failed due to error: ' . $err->getAttribute('msg')
+                                           . ' (error #' . $err->getAttribute('code') . ')');
+        }
+    }
+
+
+    /**
+     * Prepare options for the request
+     *
+     * @param  string $method         Flickr Method to call
+     * @param  array  $options        User Options
+     * @param  array  $defaultOptions Default Options
+     * @return array Merged array of user and default/required options
+     */
+    protected function _prepareOptions($method, array $options, array $defaultOptions)
+    {
+        $options['method']  = (string) $method;
+        $options['api_key'] = $this->apiKey;
+
+        return array_merge($defaultOptions, $options);
+    }
+
+
+    /**
+     * Throws an exception if and only if any user options are invalid
+     *
+     * @param  array $options      User options
+     * @param  array $validOptions Valid options
+     * @return void
+     * @throws Zend_Service_Exception
+     */
+    protected function _compareOptions(array $options, array $validOptions)
+    {
+        $difference = array_diff(array_keys($options), $validOptions);
+        if ($difference) {
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            throw new Zend_Service_Exception('The following parameters are invalid: ' . implode(',', $difference));
+        }
+    }
+}
+

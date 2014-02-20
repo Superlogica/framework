@@ -1,55 +1,179 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Loader
+ */
+require_once 'Zend/Loader.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Translate {
+    /**
+     * Adapter names constants
+     */
+    const AN_ARRAY   = 'Array';
+    const AN_CSV     = 'Csv';
+    const AN_GETTEXT = 'Gettext';
+    const AN_INI     = 'Ini';
+    const AN_QT      = 'Qt';
+    const AN_TBX     = 'Tbx';
+    const AN_TMX     = 'Tmx';
+    const AN_XLIFF   = 'Xliff';
+    const AN_XMLTM   = 'XmlTm';
+
+    const LOCALE_DIRECTORY = 'directory';
+    const LOCALE_FILENAME  = 'filename';
+
+    /**
+     * Adapter
+     *
+     * @var Zend_Translate_Adapter
+     */
+    private $_adapter;
+    private static $_cache = null;
+
+    /**
+     * Generates the standard translation object
+     *
+     * @param  string              $adapter  Adapter to use
+     * @param  array               $data     Translation source data for the adapter
+     *                                       Depends on the Adapter
+     * @param  string|Zend_Locale  $locale   OPTIONAL locale to use
+     * @param  array               $options  OPTIONAL options for the adapter
+     * @throws Zend_Translate_Exception
+     */
+    public function __construct($adapter, $data, $locale = null, array $options = array())
+    {
+        $this->setAdapter($adapter, $data, $locale, $options);
+    }
+
+    /**
+     * Sets a new adapter
+     *
+     * @param  string              $adapter  Adapter to use
+     * @param  string|array        $data     Translation data
+     * @param  string|Zend_Locale  $locale   OPTIONAL locale to use
+     * @param  array               $options  OPTIONAL Options to use
+     * @throws Zend_Translate_Exception
+     */
+    public function setAdapter($adapter, $data, $locale = null, array $options = array())
+    {
+        if (Zend_Loader::isReadable('Zend/Translate/Adapter/' . ucfirst($adapter). '.php')) {
+            $adapter = 'Zend_Translate_Adapter_' . ucfirst($adapter);
+        }
+
+        if (!class_exists($adapter)) {
+            Zend_Loader::loadClass($adapter);
+        }
+
+        if (self::$_cache !== null) {
+            call_user_func(array($adapter, 'setCache'), self::$_cache);
+        }
+        $this->_adapter = new $adapter($data, $locale, $options);
+        if (!$this->_adapter instanceof Zend_Translate_Adapter) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception("Adapter " . $adapter . " does not extend Zend_Translate_Adapter");
+        }
+    }
+
+    /**
+     * Returns the adapters name and it's options
+     *
+     * @return Zend_Translate_Adapter
+     */
+    public function getAdapter()
+    {
+        return $this->_adapter;
+    }
+
+    /**
+     * Returns the set cache
+     *
+     * @return Zend_Cache_Core The set cache
+     */
+    public static function getCache()
+    {
+        return self::$_cache;
+    }
+
+    /**
+     * Sets a cache for all instances of Zend_Translate
+     *
+     * @param  Zend_Cache_Core $cache Cache to store to
+     * @return void
+     */
+    public static function setCache(Zend_Cache_Core $cache)
+    {
+        self::$_cache = $cache;
+    }
+
+    /**
+     * Returns true when a cache is set
+     *
+     * @return boolean
+     */
+    public static function hasCache()
+    {
+        if (self::$_cache !== null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Removes any set cache
+     *
+     * @return void
+     */
+    public static function removeCache()
+    {
+        self::$_cache = null;
+    }
+
+    /**
+     * Clears all set cache data
+     *
+     * @return void
+     */
+    public static function clearCache()
+    {
+        self::$_cache->clean();
+    }
+
+    /**
+     * Calls all methods from the adapter
+     */
+    public function __call($method, array $options)
+    {
+        if (method_exists($this->_adapter, $method)) {
+            return call_user_func_array(array($this->_adapter, $method), $options);
+        }
+        require_once 'Zend/Translate/Exception.php';
+        throw new Zend_Translate_Exception("Unknown method '" . $method . "' called!");
+    }
+}

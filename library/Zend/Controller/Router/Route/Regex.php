@@ -1,121 +1,261 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Regex.php 15461 2009-05-09 15:54:21Z dasprid $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Router_Route_Abstract */
+require_once 'Zend/Controller/Router/Route/Abstract.php';
+
+/**
+ * Regex Route
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Router_Route_Regex extends Zend_Controller_Router_Route_Abstract
+{
+    protected $_regex = null;
+    protected $_defaults = array();
+    protected $_reverse = null;
+    protected $_map = array();
+    protected $_values = array();
+
+    /**
+     * Instantiates route based on passed Zend_Config structure
+     *
+     * @param Zend_Config $config Configuration object
+     */
+    public static function getInstance(Zend_Config $config)
+    {
+        $defs = ($config->defaults instanceof Zend_Config) ? $config->defaults->toArray() : array();
+        $map = ($config->map instanceof Zend_Config) ? $config->map->toArray() : array();
+        $reverse = (isset($config->reverse)) ? $config->reverse : null;
+        return new self($config->route, $defs, $map, $reverse);
+    }
+
+    public function __construct($route, $defaults = array(), $map = array(), $reverse = null)
+    {
+        $this->_regex    = $route;
+        $this->_defaults = (array) $defaults;
+        $this->_map      = (array) $map;
+        $this->_reverse  = $reverse;
+    }
+
+    public function getVersion() {
+        return 1;
+    }
+    
+    /**
+     * Matches a user submitted path with a previously defined route.
+     * Assigns and returns an array of defaults on a successful match.
+     *
+     * @param  string $path Path used to match against this routing map
+     * @return array|false  An array of assigned values or a false on a mismatch
+     */
+    public function match($path, $partial = false)
+    {
+        if (!$partial) {
+            $path = trim(urldecode($path), '/');
+            $regex = '#^' . $this->_regex . '$#i';
+        } else {
+            $regex = '#^' . $this->_regex . '#i';
+        }
+        
+        $res = preg_match($regex, $path, $values);
+        
+        if ($res === 0) {
+            return false;
+        }
+        
+        if ($partial) {
+            $this->setMatchedPath($values[0]);
+        }
+
+        // array_filter_key()? Why isn't this in a standard PHP function set yet? :)
+        foreach ($values as $i => $value) {
+            if (!is_int($i) || $i === 0) {
+                unset($values[$i]);
+            }
+        }
+
+        $this->_values = $values;
+
+        $values   = $this->_getMappedValues($values);
+        $defaults = $this->_getMappedValues($this->_defaults, false, true);
+        $return   = $values + $defaults;
+
+        return $return;
+    }
+
+    /**
+     * Maps numerically indexed array values to it's associative mapped counterpart.
+     * Or vice versa. Uses user provided map array which consists of index => name
+     * parameter mapping. If map is not found, it returns original array.
+     *
+     * Method strips destination type of keys form source array. Ie. if source array is
+     * indexed numerically then every associative key will be stripped. Vice versa if reversed
+     * is set to true.
+     *
+     * @param  array   $values Indexed or associative array of values to map
+     * @param  boolean $reversed False means translation of index to association. True means reverse.
+     * @param  boolean $preserve Should wrong type of keys be preserved or stripped.
+     * @return array   An array of mapped values
+     */
+    protected function _getMappedValues($values, $reversed = false, $preserve = false)
+    {
+        if (count($this->_map) == 0) {
+            return $values;
+        }
+
+        $return = array();
+
+        foreach ($values as $key => $value) {
+            if (is_int($key) && !$reversed) {
+                if (array_key_exists($key, $this->_map)) {
+                    $index = $this->_map[$key];
+                } elseif (false === ($index = array_search($key, $this->_map))) {
+                    $index = $key;
+                }
+                $return[$index] = $values[$key];
+            } elseif ($reversed) {
+                $index = (!is_int($key)) ? array_search($key, $this->_map, true) : $key;
+                if (false !== $index) {
+                    $return[$index] = $values[$key];
+                }
+            } elseif ($preserve) {
+                $return[$key] = $value;
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * Assembles a URL path defined by this route
+     *
+     * @param  array $data An array of name (or index) and value pairs used as parameters
+     * @return string Route path with user submitted parameters
+     */
+    public function assemble($data = array(), $reset = false, $encode = false, $partial = false)
+    {
+        if ($this->_reverse === null) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception('Cannot assemble. Reversed route is not specified.');
+        }
+
+        $defaultValuesMapped  = $this->_getMappedValues($this->_defaults, true, false);
+        $matchedValuesMapped  = $this->_getMappedValues($this->_values, true, false);
+        $dataValuesMapped     = $this->_getMappedValues($data, true, false);
+
+        // handle resets, if so requested (By null value) to do so
+        if (($resetKeys = array_search(null, $dataValuesMapped, true)) !== false) {
+            foreach ((array) $resetKeys as $resetKey) {
+                if (isset($matchedValuesMapped[$resetKey])) {
+                    unset($matchedValuesMapped[$resetKey]);
+                    unset($dataValuesMapped[$resetKey]);
+                }
+            }
+        }
+
+        // merge all the data together, first defaults, then values matched, then supplied
+        $mergedData = $defaultValuesMapped;
+        $mergedData = $this->_arrayMergeNumericKeys($mergedData, $matchedValuesMapped);
+        $mergedData = $this->_arrayMergeNumericKeys($mergedData, $dataValuesMapped);
+
+        if ($encode) {
+            foreach ($mergedData as $key => &$value) {
+                $value = urlencode($value);
+            }
+        }	
+
+        ksort($mergedData);
+
+        $return = @vsprintf($this->_reverse, $mergedData);
+
+        if ($return === false) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception('Cannot assemble. Too few arguments?');
+        }
+
+        return $return;
+
+    }
+
+    /**
+     * Return a single parameter of route's defaults
+     *
+     * @param string $name Array key of the parameter
+     * @return string Previously set default
+     */
+    public function getDefault($name) {
+        if (isset($this->_defaults[$name])) {
+            return $this->_defaults[$name];
+        }
+    }
+
+    /**
+     * Return an array of defaults
+     *
+     * @return array Route defaults
+     */
+    public function getDefaults() {
+        return $this->_defaults;
+    }
+    
+    /**
+     * Get all variables which are used by the route
+     *
+     * @return array
+     */
+    public function getVariables()
+    {
+        $variables = array();
+        
+        foreach ($this->_map as $key => $value) {
+            if (is_numeric($key)) {
+                $variables[] = $value;
+            } else {
+                $variables[] = $key;
+            }
+        }
+        
+        return $variables;
+    }
+
+    /**
+     * _arrayMergeNumericKeys() - allows for a strict key (numeric's included) array_merge.
+     * php's array_merge() lacks the ability to merge with numeric keys.
+     *
+     * @param array $array1
+     * @param array $array2
+     * @return array
+     */
+    protected function _arrayMergeNumericKeys(Array $array1, Array $array2)
+    {
+        $returnArray = $array1;
+        foreach ($array2 as $array2Index => $array2Value) {
+            $returnArray[$array2Index] = $array2Value;
+        }
+        return $returnArray;
+    }
+
+
+}

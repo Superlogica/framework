@@ -1,58 +1,210 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-o+2ir6Emzp0J/jZlENkageQPhJa=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Extension
+ */
+require_once 'Zend/Gdata/App/Extension.php';
+
+/**
+ * Represents the media:text element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Media
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Media_Extension_MediaText extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'text';
+    protected $_rootNamespace = 'media';
+
+    /**
+     * @var string
+     */
+    protected $_type = null;
+
+    /**
+     * @var string
+     */
+    protected $_lang = null;
+
+    /**
+     * @var string
+     */
+    protected $_start = null;
+
+    /**
+     * @var string
+     */
+    protected $_end = null;
+
+    /**
+     * Constructs a new MediaText element
+     *
+     * @param $text string
+     * @param $type string
+     * @param $lang string
+     * @param $start string
+     * @param $end string
+     */
+    public function __construct($text = null, $type = null, $lang = null,
+            $start = null, $end = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
+        parent::__construct();
+        $this->_text = $text;
+        $this->_type = $type;
+        $this->_lang = $lang;
+        $this->_start = $start;
+        $this->_end = $end;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_type !== null) {
+            $element->setAttribute('type', $this->_type);
+        }
+        if ($this->_lang !== null) {
+            $element->setAttribute('lang', $this->_lang);
+        }
+        if ($this->_start !== null) {
+            $element->setAttribute('start', $this->_start);
+        }
+        if ($this->_end !== null) {
+            $element->setAttribute('end', $this->_end);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'type':
+            $this->_type = $attribute->nodeValue;
+            break;
+        case 'lang':
+            $this->_lang = $attribute->nodeValue;
+            break;
+        case 'start':
+            $this->_start = $attribute->nodeValue;
+            break;
+        case 'end':
+            $this->_end = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaText Provides a fluent interface
+     */
+    public function setType($value)
+    {
+        $this->_type = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLang()
+    {
+        return $this->_lang;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaText Provides a fluent interface
+     */
+    public function setLang($value)
+    {
+        $this->_lang = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStart()
+    {
+        return $this->_start;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaText Provides a fluent interface
+     */
+    public function setStart($value)
+    {
+        $this->_start = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEnd()
+    {
+        return $this->_end;
+    }
+
+    /**
+     * @param string $value
+     * @return Zend_Gdata_Media_Extension_MediaText Provides a fluent interface
+     */
+    public function setEnd($value)
+    {
+        $this->_end = $value;
+        return $this;
+    }
+}

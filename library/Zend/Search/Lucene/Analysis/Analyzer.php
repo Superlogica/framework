@@ -1,36 +1,176 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-cI8vXavS3EunKhki4WnW
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Analysis_Token */
+require_once 'Zend/Search/Lucene/Analysis/Token.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8 */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8_CaseInsensitive */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8/CaseInsensitive.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num_CaseInsensitive */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num/CaseInsensitive.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_Text */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Text.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_Text_CaseInsensitive */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Text/CaseInsensitive.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum_CaseInsensitive */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum/CaseInsensitive.php';
+
+/** Zend_Search_Lucene_Analysis_TokenFilter_StopWords */
+require_once 'Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php';
+
+/** Zend_Search_Lucene_Analysis_TokenFilter_ShortWords */
+require_once 'Zend/Search/Lucene/Analysis/TokenFilter/ShortWords.php';
+
+
+/**
+ * An Analyzer is used to analyze text.
+ * It thus represents a policy for extracting index terms from text.
+ *
+ * Note:
+ * Lucene Java implementation is oriented to streams. It provides effective work
+ * with a huge documents (more then 20Mb).
+ * But engine itself is not oriented such documents.
+ * Thus Zend_Search_Lucene analysis API works with data strings and sets (arrays).
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+abstract class Zend_Search_Lucene_Analysis_Analyzer
+{
+    /**
+     * The Analyzer implementation used by default.
+     *
+     * @var Zend_Search_Lucene_Analysis_Analyzer
+     */
+    private static $_defaultImpl;
+
+    /**
+     * Input string
+     *
+     * @var string
+     */
+    protected $_input = null;
+
+    /**
+     * Input string encoding
+     *
+     * @var string
+     */
+    protected $_encoding = '';
+
+    /**
+     * Tokenize text to a terms
+     * Returns array of Zend_Search_Lucene_Analysis_Token objects
+     *
+     * Tokens are returned in UTF-8 (internal Zend_Search_Lucene encoding)
+     *
+     * @param string $data
+     * @return array
+     */
+    public function tokenize($data, $encoding = '')
+    {
+        $this->setInput($data, $encoding);
+
+        $tokenList = array();
+        while (($nextToken = $this->nextToken()) !== null) {
+            $tokenList[] = $nextToken;
+        }
+
+        return $tokenList;
+    }
+
+
+    /**
+     * Tokenization stream API
+     * Set input
+     *
+     * @param string $data
+     */
+    public function setInput($data, $encoding = '')
+    {
+        $this->_input    = $data;
+        $this->_encoding = $encoding;
+        $this->reset();
+    }
+
+    /**
+     * Reset token stream
+     */
+    abstract public function reset();
+
+    /**
+     * Tokenization stream API
+     * Get next token
+     * Returns null at the end of stream
+     *
+     * Tokens are returned in UTF-8 (internal Zend_Search_Lucene encoding)
+     *
+     * @return Zend_Search_Lucene_Analysis_Token|null
+     */
+    abstract public function nextToken();
+
+
+
+
+    /**
+     * Set the default Analyzer implementation used by indexing code.
+     *
+     * @param Zend_Search_Lucene_Analysis_Analyzer $similarity
+     */
+    public static function setDefault(Zend_Search_Lucene_Analysis_Analyzer $analyzer)
+    {
+        self::$_defaultImpl = $analyzer;
+    }
+
+
+    /**
+     * Return the default Analyzer implementation used by indexing code.
+     *
+     * @return Zend_Search_Lucene_Analysis_Analyzer
+     */
+    public static function getDefault()
+    {
+        if (!self::$_defaultImpl instanceof Zend_Search_Lucene_Analysis_Analyzer) {
+            self::$_defaultImpl = new Zend_Search_Lucene_Analysis_Analyzer_Common_Text_CaseInsensitive();
+        }
+
+        return self::$_defaultImpl;
+    }
+}
+

@@ -1,107 +1,423 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-j0JuPRO=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Header.php 13891 2009-01-31 11:41:00Z yoshida@zend.co.jp $
+ */
+
+/**
+ * @see Zend_Feed_Builder_Header_Itunes
+ */
+require_once 'Zend/Feed/Builder/Header/Itunes.php';
+
+/**
+ * @see Zend_Uri
+ */
+require_once 'Zend/Uri.php';
+
+
+/**
+ * Header of a custom build feed
+ *
+ * Classes implementing the Zend_Feed_Builder_Interface interface
+ * uses this class to describe the header of a feed
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Builder_Header extends ArrayObject
+{
+    /**
+     * Constructor
+     *
+     * @param  string $title title of the feed
+     * @param  string $link canonical url of the feed
+     * @param  string $charset charset of the textual data
+     * @return void
+     */
+    public function __construct($title, $link, $charset = 'utf-8')
+    {
+        $this->offsetSet('title', $title);
+        $this->offsetSet('link', $link);
+        $this->offsetSet('charset', $charset);
+        $this->setLastUpdate(time())
+             ->setGenerator('Zend_Feed');
+    }
+
+    /**
+     * Read only properties accessor
+     *
+     * @param  string $name property to read
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        if (!$this->offsetExists($name)) {
+            return NULL;
+        }
+
+        return $this->offsetGet($name);
+    }
+
+    /**
+     * Write properties accessor
+     *
+     * @param string $name  name of the property to set
+     * @param mixed  $value value to set
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->offsetSet($name, $value);
+    }
+
+    /**
+     * Isset accessor
+     *
+     * @param  string $key
+     * @return boolean
+     */
+    public function __isset($key)
+    {
+        return $this->offsetExists($key);
+    }
+
+    /**
+     * Unset accessor
+     *
+     * @param  string $key
+     * @return void
+     */
+    public function __unset($key)
+    {
+        if ($this->offsetExists($key)) {
+            $this->offsetUnset($key);
+        }
+    }
+
+    /**
+     * Timestamp of the update date
+     *
+     * @param  int $lastUpdate
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setLastUpdate($lastUpdate)
+    {
+        $this->offsetSet('lastUpdate', $lastUpdate);
+        return $this;
+    }
+
+    /**
+     * Timestamp of the publication date
+     *
+     * @param  int $published
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setPublishedDate($published)
+    {
+        $this->offsetSet('published', $published);
+        return $this;
+    }
+
+    /**
+     * Short description of the feed
+     *
+     * @param  string $description
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setDescription($description)
+    {
+        $this->offsetSet('description', $description);
+        return $this;
+    }
+
+    /**
+     * Sets the author of the feed
+     *
+     * @param  string $author
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setAuthor($author)
+    {
+        $this->offsetSet('author', $author);
+        return $this;
+    }
+
+    /**
+     * Sets the author's email
+     *
+     * @param  string $email
+     * @return Zend_Feed_Builder_Header
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setEmail($email)
+    {
+        /**
+         * @see Zend_Validate_EmailAddress
+         */
+        require_once 'Zend/Validate/EmailAddress.php';
+        $validate = new Zend_Validate_EmailAddress();
+        if (!$validate->isValid($email)) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception("you have to set a valid email address into the email property");
+        }
+        $this->offsetSet('email', $email);
+        return $this;
+    }
+
+    /**
+     * Sets the copyright notice
+     *
+     * @param  string $copyright
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setCopyright($copyright)
+    {
+        $this->offsetSet('copyright', $copyright);
+        return $this;
+    }
+
+    /**
+     * Sets the image of the feed
+     *
+     * @param  string $image
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setImage($image)
+    {
+        $this->offsetSet('image', $image);
+        return $this;
+    }
+
+    /**
+     * Sets the generator of the feed
+     *
+     * @param  string $generator
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setGenerator($generator)
+    {
+        $this->offsetSet('generator', $generator);
+        return $this;
+    }
+
+    /**
+     * Sets the language of the feed
+     *
+     * @param  string $language
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setLanguage($language)
+    {
+        $this->offsetSet('language', $language);
+        return $this;
+    }
+
+    /**
+     * Email address for person responsible for technical issues
+     * Ignored if atom is used
+     *
+     * @param  string $webmaster
+     * @return Zend_Feed_Builder_Header
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setWebmaster($webmaster)
+    {
+        /**
+         * @see Zend_Validate_EmailAddress
+         */
+        require_once 'Zend/Validate/EmailAddress.php';
+        $validate = new Zend_Validate_EmailAddress();
+        if (!$validate->isValid($webmaster)) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception("you have to set a valid email address into the webmaster property");
+        }
+        $this->offsetSet('webmaster', $webmaster);
+        return $this;
+    }
+
+    /**
+     * How long in minutes a feed can be cached before refreshing
+     * Ignored if atom is used
+     *
+     * @param  int $ttl
+     * @return Zend_Feed_Builder_Header
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setTtl($ttl)
+    {
+        /**
+         * @see Zend_Validate_Int
+         */
+        require_once 'Zend/Validate/Int.php';
+        $validate = new Zend_Validate_Int();
+        if (!$validate->isValid($ttl)) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception("you have to set an integer value to the ttl property");
+        }
+        $this->offsetSet('ttl', $ttl);
+        return $this;
+    }
+
+    /**
+     * PICS rating for the feed
+     * Ignored if atom is used
+     *
+     * @param  string $rating
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setRating($rating)
+    {
+        $this->offsetSet('rating', $rating);
+        return $this;
+    }
+
+    /**
+     * Cloud to be notified of updates of the feed
+     * Ignored if atom is used
+     *
+     * @param  string|Zend_Uri_Http $uri
+     * @param  string               $procedure procedure to call, e.g. myCloud.rssPleaseNotify
+     * @param  string               $protocol  protocol to use, e.g. soap or xml-rpc
+     * @return Zend_Feed_Builder_Header
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setCloud($uri, $procedure, $protocol)
+    {
+        if (is_string($uri) && Zend_Uri_Http::check($uri)) {
+            $uri = Zend_Uri::factory($uri);
+        }
+        if (!$uri instanceof Zend_Uri_Http) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception('Passed parameter is not a valid HTTP URI');
+        }
+        if (!$uri->getPort()) {
+            $uri->setPort(80);
+        }
+        $this->offsetSet('cloud', array('uri' => $uri,
+                                        'procedure' => $procedure,
+                                        'protocol' => $protocol));
+        return $this;
+    }
+
+    /**
+     * A text input box that can be displayed with the feed
+     * Ignored if atom is used
+     *
+     * @param  string $title       the label of the Submit button in the text input area
+     * @param  string $description explains the text input area
+     * @param  string $name        the name of the text object in the text input area
+     * @param  string $link        the URL of the CGI script that processes text input requests
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setTextInput($title, $description, $name, $link)
+    {
+        $this->offsetSet('textInput', array('title' => $title,
+                                            'description' => $description,
+                                            'name' => $name,
+                                            'link' => $link));
+        return $this;
+    }
+
+    /**
+     * Hint telling aggregators which hours they can skip
+     * Ignored if atom is used
+     *
+     * @param  array $hours list of hours in 24 format
+     * @return Zend_Feed_Builder_Header
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setSkipHours(array $hours)
+    {
+        if (count($hours) > 24) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception("you can not have more than 24 rows in the skipHours property");
+        }
+        foreach ($hours as $hour) {
+            if ($hour < 0 || $hour > 23) {
+                /**
+                 * @see Zend_Feed_Builder_Exception
+                 */
+                require_once 'Zend/Feed/Builder/Exception.php';
+                throw new Zend_Feed_Builder_Exception("$hour has te be between 0 and 23");
+            }
+        }
+        $this->offsetSet('skipHours', $hours);
+        return $this;
+    }
+
+    /**
+     * Hint telling aggregators which days they can skip
+     * Ignored if atom is used
+     *
+     * @param  array $days list of days to skip, e.g. Monday
+     * @return Zend_Feed_Builder_Header
+     * @throws Zend_Feed_Builder_Exception
+     */
+    public function setSkipDays(array $days)
+    {
+        if (count($days) > 7) {
+            /**
+             * @see Zend_Feed_Builder_Exception
+             */
+            require_once 'Zend/Feed/Builder/Exception.php';
+            throw new Zend_Feed_Builder_Exception("you can not have more than 7 days in the skipDays property");
+        }
+        $valid = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday');
+        foreach ($days as $day) {
+            if (!in_array(strtolower($day), $valid)) {
+                /**
+                 * @see Zend_Feed_Builder_Exception
+                 */
+                require_once 'Zend/Feed/Builder/Exception.php';
+                throw new Zend_Feed_Builder_Exception("$day is not a valid day");
+            }
+        }
+        $this->offsetSet('skipDays', $days);
+        return $this;
+    }
+
+    /**
+     * Sets the iTunes rss extension
+     *
+     * @param  Zend_Feed_Builder_Header_Itunes $itunes
+     * @return Zend_Feed_Builder_Header
+     */
+    public function setITunes(Zend_Feed_Builder_Header_Itunes $itunes)
+    {
+        $this->offsetSet('itunes', $itunes);
+        return $this;
+    }
+}

@@ -1,352 +1,1003 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV55ZT2Muvml51qD2SJVg+pOnemVttl5sv1k0s8CCApynckTEEttzD9EGFOF1qBHBGmnoJJ5qP
-Pjn6SBJdG6vLp7Hlbyy8VYMsHEbeEhNsAkUlctM8hINPtQiSKm54oig/4gStUNteIawa9qXdEKge
-sN8Ny2BfIp2SA1CGxr9Yc5OcdOAZykqo7Z41OhtM9pHRx2JJnXVG9xCs78Vs4DRwUJ+s9YPw76O5
-4ROgn6GgXCV8yrXB6o8JeCHBaqcSpLCjHtVbBow4GcXvNqrs8Dg80h5rGTJjlh1iHl+rZaNc5jl3
-ilIfVLC3HG2eJDHSs7D9AYbncRVsNvLmvQ9/nUwuoQVAhyP+WPIb20DrUhxbqCnHgrYCCWYxJP8X
-w40QB5JD1aNeTchQP4NFlcNd89yhga/omqiJykfIps/NZCgwfBOoq3IVoQtE5NKfahpyBBLT5Q9w
-oSRcwP8IXE9dCNg++2iaTUpcuziPCMPVv74gmZEaogNzqBhX4kECz/ujurd20bPkOp02XKFvL3Yt
-Nai/6lv1rx7TW8KOdNhdIrjCxZSFEeFdnLg8gllvomWYUUB4WMnRrCKGNqooBn7y5dbUOL+SUJ77
-fETS9IwjDr9Q5GLjdr3HGkg11HGwQZuSAvQtL58pOXy6J9BFCin8nC7N+G8FWeQEzCAwGKpfdTLK
-gEWuBnl3zwL8+loM3K8WK7Fk9GtBvhxXmOAJD5wyHw+p13L8pHbL3223APMMuWSQpUb9Fll1MGP9
-Um/5PKkSIfuop53kK2MQsq+Kln+1z8Qfz8qK0KZJhS02PszgBL3zIVy/j+B0tdb9xd83Syoik4/n
-a7f0oEsDNTJ7NaIX1KHSJ8SI+0f5emq9by7xU+iXKlFYhERR5aQ4Kol2sFf/Wt4qFm6VOtOguhM1
-Vj71dIVfYz6o1Z/+GzS/d80BAopdYyyPALBMsKK9ObMjhFuG7N/a+vMjpkrcUr8pssBoP1B/XyhG
-ecsBA4KC45NmS/UpnMD8L9XRmKPTgLLgSuoipEZiyVQgrHoZfavqX8Pqc/4wYTfwhoWw5NUhtxGS
-RU602FZdwObL5KRhypTZ5c4qn75NjVg7GGtIoL97hO+YpcpOFy0tUY5+uFNtXGCt4jZNDTra8xSl
-Ykp4tdBmR/lGIjkpiD7/vtidjhrsq38m3NwHYJI9/6BS9qczsYaTvKyG8JgnA0Vj4Bjnf06UPUua
-/4P6ftBAwWIpbl9eylwt2d3te0e2Xor0ctkD16+gm6IDlT2un0NRWRocyH7AlfpYTBRnCuoJPx3A
-4hPJYtu+tNuMxO2cJ1h+sRzTBfm5afSeRcNGwwn931LUpf+Pvu12YyRpJvIPtJqwt7C0kPYGuDpT
-v984Nt2r+e3k63/C4VdO+LmjokgnotnET/jHDQxdobLAseTrcT+5DJNrPc36pUKfOQm9YMOO0KjQ
-/vVAUc2eqb35ULbOo8xr8vcm739AVpHVbAA5xZlsAZSpMM1nk4DBV8CQQ7QgIJJNGDXng/w1/e/g
-sZ7x0fQkpNpP7DlVtWHqzUCa5YwcPu3z7NFs8kIZIm0REABR4PGGvQb20sP+27XIWotNXeTUaP8b
-+NH9MwWMR/nbjXdaYsg0sK18UrMtoV7tNPGVFiY5HooKA/qwDrl8CwL3B5n5thIhZCsz1EZ4p4bH
-uK/ilZN24101mXxZzt2hbRIT4BPwFR3ikOQJ4ieF+nJ4b6ruAaHS/yY6h+xZ4AdPcNeUo9jjrPur
-99YnroZVOgw3cYLBWkxSHAcJAzl/A/7ZFTckENOG+NYOIXhWtvzDB83Z+Szr53cSdpBTepXblzK5
-Q65we/X+FgjN0BtpArYC4vw98i4dk+sZkW477ICtJrtdyY9IHJw2p8wgOnIMsiy+yk+79iGKTwxH
-RDDbgKqrzL9ErOCibzx+SEnMDP7W8c1I1sIEJkBqTqp0WpxdqUb4FUfkBFqou4xBh7ufE3Mff94B
-L1sV+7lCxGMy3gJ+LmKHKVOSLGXqJgXK/bb6wxTDpdnyMNHhziMtisIeksIDHCxaAno7/a1JRLsr
-YfoCxaNTe8IpvKv1vPvyndilxEQaiRiYuBIGPKbC9XbFYAIs+0IN3XJ23jXqaHXc3k8j8p0djvFO
-bhDvPj2SnQCcJxfAVLN3qIha7utcbh1m3FY0NFyuOYST2qop3O1OkFWtpfof088l+tdTC1s7Srzr
-7umAlS8bE/g1JeMvBdm9K8cUX1D2OZeYhgcfjWUzPbREs921CxJiTwHPC4qoXA7LkYy9ygeA4m8L
-FTBcW+Cfxdo5vOGjD4LvFe4Y9XMbjNcM00dCCkvLK4xUKOGuF+OA777Fy2XkJjG5Dqys/aZbbvAe
-b1KTNR+DAdRNJBAuTkEN7V6XrNgJp4yrhUmU+t00VD/j8O+y1ym8xZcSaUSi2OsSUisBXMIbIf0C
-O4l+8Wjl6udBoeXhj4/DmSni0bsfr5MzS6N/1+/PGM9eL4LjGr48SfD6KUYHE9K5VGGRCmtUeVx7
-Ow0t0Fan6gUesKkBYjzR48J7Y8CB+Z+bfTWkeA8q91+RtdvtTx0aZNzHEoJjWFcZ+jCsaUU5P8qU
-yUK3yPoGqVr9NVZ36l7//66nmvC9t8+4D6Hc2nHL8UYmeEZ8EuTPEr9HrbUaOaWfSrGzqXwsV6xt
-0P3fqlYSHsuzVEYF7iy5jFv36arKajzLa8WT2xEJ2GuKaCJtVpw5pmqqHpNNPX7VUJ9OuI9YSH2R
-IlwsogCh33EWTSib5lry9DdB6wL9vtgAGLLS5pxyvQ153xIkyVM5QXhgjzrJtURVL6oYu4iqYciE
-bFvejtHFBfVROPJx4uC2SzlZbVIbrQzvVsiNols/AduShOoFwmEEx0WaOT9LKq1sukZGh/tPKGZX
-FnsKXXX3sh/vWITYUatZrWHeBA3l03d1qgaz32VL/PA499RYMUK+iu3cBOWY7lYrpQSmp+XXHn3i
-ZRivoNdrrDCss1Pbh0doLz3g3ib4wmMbbLTyGCtXfSF7oVeg3bRpJaNr78VR9sfSL2ReJgKXfr7l
-fMH3muMqkRgoZ0NbkWIDXM5x1eFR86aYMgWO1w7JGuhF3rddrIYILRuWaLyNKZUV1DIuWOWSPJ8N
-n4bgwOZ3dWOrRVwpPEtkOijYwvZKKn58yR8xbJMtO3hlgpXXgXIjeXOOE2ovtR+Rh8feTFi22qJD
-2IZEo86dvMR4qBpijCwgCy/tTdTkSKe/NBuKWJa+LYsFUi5cldI+2cT+sQqsmbfGmt9Ke5VgxalT
-UPEK2BNP99P2UTpVETLRfmr5Oj8Pv9NOlFx5AdJ2ZHwgrxy76WdLAREWpQwIS2XE3qodCN73mpaz
-8D04dY95BAJJ7wbIojZSRxDk+bwTYqh6QuLpMBW8QPIYOxrdOqyAZweQrfy/MtBmPDELBBrf+dVj
-6dlexbupipGNAEM8TFmg88Gf8vSzmK8nWGs1e5gP0wI4dMrDMo/HBdOrgV6BZwDmLbGCGtMCK/ib
-Z+F9ngmuSshOFhD8XnQlPtLtc/eXuAYbS9I/NuGMf3f3tJ36gGTCOIuDFItUobIpN0ISOYavNMM9
-C4OmdU+ODclkGU48yfiFFzdEbP/femWgl47IHgOVmEZGVhcQ7MBFt+yLiASvCWQoD1i11zy3rOtH
-KBr0f+wdgNNu351SDh6CN7T1uwTOTEz5NMv/QOZwtsgzsRfNaf2Uph/ptFLTbUES2X1oHtGUZAOu
-+5M8b/B6Xa9qH2vHK/muibJWAV8CZc/BSwD7/mkXtRME2lCwuCbZsCZNG0bCz7e+NgwvXYS9000Z
-+V9MiMM/hLvcEBx2nwwC8vmks1BQ9DUmn6NhmbF1MOmjg8Q7v/8JG6C/K3xTqHZBEDOJDpA+tgOG
-ggFe0Q+ngM81yJtKx8IKLdLRpUss3cadiEZMRIad4Z6QPL2xONpdu/fTw1RoRJBs3J0NOgT5HkUQ
-8UA4dEgpQ0VItvuq33efegjg119vnbLaMbLBap0A4KdNPYZhZVe1e2enuO53c/br9D2Dks8OxTeZ
-w4RnYEV4YijKRw5y2LEl5Z8l3d0Mvpe+a13kemTfIelnByoG3Qsl6niGN6peAjsj9lNQkRLJfX+w
-oGE4tPYNiay2c8tk6FDmsr7sSzKbL5A6u8L8ljf6xOQZZjlWjvVu7ua7uwcmeOhQuY2P2WcI047m
-MLEJZM/ou+dryIbVcinOT3+nuh4gf1THydXLCekds9w0Qn3XHDhJEsDYSaPoZwbjDN4YSSjeEAd5
-jzuGTcc1SK9R2KwTnA9+deBvz3r2McGoorEgKHXOxa2CIa16CLwDnC1Oe80B4BExN/Ol5TlLEG7N
-/J91jI/bcUCTyd0UhQYYdyCB1i3TaZRbOei91YD7Urgmq4hJjFfpYQ4lJf+XTGT8TFIzcgZROq2O
-04UdHMkqguPs4GEV6nsH+G0L193V/6tuvtvqcuJXeO/UGjPtGGG4ENUHOuHS08dlu00WsElQTB59
-56qsnZ0a+4NbfkIy7rsbBKnmlh9PgGmJfldd9zJs5TL8AOu/tvdTfwoOz9Hte9d063CRuyqB7Hzt
-aa5ZnlkyybjqCyZteq2IgFNhN3Vm0/Sm/Yc/RrBX7NEbH82kus2vtirmkLclafc51OUsCwVMFZDq
-emReEnE4O/cY2mae52SRlmi0Vui9x+GtT6IcrtsbvmCx6cBv+/qdwHIWfsKHB00fG8FjLDHSgzfF
-OeVkjS4aScoGdt7fwP7EvQtLTeQKJczUWvoxieT9wxb+ckgpeiAKbjplJ3lri2kGUxgE6LOhNb++
-JUlp/bOv02IkGedRVJWuXYdcBs2KqS9SRiEoCRV4A9oB4M4p1S3Xk+ZmXGRuru7nG83t7ol03y9z
-gyPf0GSMm69l4Ln0/8b9RK6d9/4D5JB089eCa0FcGHJ9qril+AsB2XEyjWLkKoBKoJfhCm5XkSi6
-DnfzMtyDaEmRZBOZK6tsE1bKmqkDDRCmpSvsY0cpzsx54Gh7c8Py4Yo5EYy6nSE3M0eknrBrRSHI
-cfoFHY+K8qSoM14+X8HFT/va+TimVQxAg2qvIqVigZ9BR4od16JVpI6bM36Cri2A9EQVU8QB63LZ
-zvVwfABvnyS+/wbkKIZNcmxQyUYmSi1qG3x9sDfqwz3DooXvLk4/uRWEAiDsRZVVZjS1FpZ/oUih
-RiNx4z1CNuFnB19bu0kSB9ZkzeThY1Oh9YSTQl8UKY0EbAF/7X8pvbIfGQQltG8QaCm7hMvy/gu0
-6F1mqdzZTsGubaWCYXx0dXxwuLdWcHe7jbWUmjf1hiLhMcZoGlDbZTOAI7JYlkm7Lat1VoGu8vIi
-vTUzXxopR7rlsLbHJ96RlDwayh2CojR7ew99yIfmA7kxSnOuVEbD7EG5d6CfSg49/Kzlv4TJ7vXr
-ZDc+9Apl0tGF6PBAdUdnRbontyRsOgtmzXz6CvvXJavNCl6eV0dHY1c9RzQh58IV2Lyt66gZFWfs
-bNEwkLBsGajUvAjaft+SgAP3DIdRqOPpSTFOvQgDdogkaMyY2Bxr3+j0JlTuaR9442M2rUejHLrj
-V7OcdI997niUWWlK+3ZPmowLScHamL9vt6LUAnePFdaRr/VXLavLHrGDyV51rEtDuKwPX4rR8JVe
-i4NA7M7Tkmnl8ASl33sOzOwPLMKtBko830NPzbO2590uBA3eOL57RfdgZ5tczNonO49diePfUp5y
-bJrWhoU6OnXC588x2ysPUYolQd+j1MnHdpSzdVU6SSw8hyKXVVepTAOFIz+wgZRWVW7XY+faj9Qq
-XDPM2IHG91FfaSPhAr7DBueIMte8hop2XOErSK+MeBH0UfndhJVDsZszmUGpvV7MjyANevWH9698
-KQ0m2Ix7GzaoKpBmJFdXs5q34Ep8TyaagQ55ZexgxQTNtTldpCiR+Ef9uXJoxONXbnCx9EejefqK
-FPitiGl84dqxuR1tgfbmUerpfvDkvMXztOWdCwqTdTpY//6ABH6mEBssylff/JqbDuRZ++4rkm6J
-wZa9gy4EEypkKuFi+Pe+rfqjsL62dy8SjeejRXZm1XwbZoGSW799XCHxokziNoHOAkfdP2J6E2wP
-uXAnTpXpn7h0Ywx8+DN37EAYW6Jr8IpDCfT6Z8WL28mwQvDGsPLF693y19xae6WFiOn1gSfALgZq
-WqfQo4LJ5IPIUEGHNMjX1IbRcx2m0xrIvcMJRaB7I19emFWVhjJyqF+raeZOrxQluLOS7bI/tUfB
-blBnhF6zt7yW92ScAl53lxVAxkZ4EBcXZ1UZeqx/Q5v3iGWGgzUXFlq84aTjcYO2qw3licC7WUt5
-3KGhly91Rjfwt8SrhUxJsiu5PjdAX2MIjIsM2C2qZH20OC9Lyoi0bFgp59vKr3k1qGPhT21bJmU0
-NfBnK9v2jAqQzerJxliIhuHHQYTomgpPwcRjbbYJzt2ervTObr9mPcFLN9rKy8w0Sme5ZC8Dx3ZN
-owhHmxLlDjgZtxztuO6HBQh46fH1EeKQX4ADG2jkAw8/W6wjaZD4ivnsB8vFyGrK13AopojThWSZ
-6nM3ratGUVycTYz6U0S8fEX/WVDNoEpn1yh0P5BlwM/AUA9pI1It7t3YDnhrqJHcGA3rbUiO0uUI
-2lkJDLT+1jFGruYQesflEmW14McK2uoopwpP9jL+KchkFPF2SfYufxFBBcYhvv/K9u/hiIkOuFCY
-oRfSWSuIticgAWZHYm6ohe8tBFgWLwCzRZvuXM4jHRPh/Gvey1yBhsIoeFj9vTfplew7dm1wTNyw
-NqnBPXbQzumMdfA0goj3CZyxap4e4HkMp7YUvIf37hYfZWa6QNYj2BvSSRjXbSWAZjOZz9jjYyyX
-qG2wfp+Agp6FmvM5WRYcHVY+Lds01GzCawEmM26LLn18ESGw/rVyu+njHwn9IzbqJ6D0Viehm4do
-Np+gjR0T4dZfcoccRYv7PgwI9dg/Ywp47GIsUWRtxPCgXd+DD6HoAm431nVF/FdgPd03+HdxJZ9w
-BdokMwF4PDuElxOS5Xd5RRJ7sErfS5BPFX25NZRmFanS/aqf20URJYa6Od2xRi31pl9duzw7VvbD
-/YPiDecMBVDBQBRjCdAILctef+UYJtnDWH/YKiY4e3zOzVb/sEkou4LheysGfIgIPoMnoq/5WHcL
-jigFqLgSrvAo9E3/TFFPD6bf9pHeVTjaM5EqQpz794Z1AhRJj7rAx+qgDBUs9ITPi3Ho/KVPeWpm
-Q3Ph4OIAB2SMcCL/2WZYd87uoqp+lxPM+cZMS9EdQ8SiTyMSmyiE6yFGcqvXrPBW+iJKAnekTCCm
-6UwtyTjOECUGzpx4+YdbfHkSAQ0j9kMsJEGGgO4hyLKD5veiYxzeiupVPE7KCyzseyQsb8/dn5wE
-O57mfuTd+d0KEqm5CxnRdPh9369v9SpF3uI2G8c9rTW1N3fUlpPB7HVaJNRx6Ff4p+R9CnzfETeg
-8NDMDKG2YB4h5L95KorOte4Hnu4u9FYeqy/tE5zGqVmr5ODAAV9WddLscGeu2A/HtKq+X79lNLKR
-bsoG2PVt4Y90zx4sZMSBScXPA3FzQt0HParvA0gtkApjbuNTaWMVOnz5ChQiXlQiuMUkhsa6Q14o
-T354ZgZSA3WRQDHLiBaZZ+n9pBMoPffpB7XdyPnyEtABqWhGyZASLqzrHhCecuFu5WUK5seFCv8s
-g4+4FwxcJou0zxqBKhESkORNf/5Jr3ljSNRFCRariX+zH25RxZyrlyKBdJXiKHfs4DDJIMCFD046
-Wa6VS/MuYVpAPrSCRz3cKF55Zt5l9oTO1lSHKRF60bfh0Jsvlp9/RqmLLHApqeMM4tz8cm+div8Z
-VKXkgASdJQ0QKLoa0nGsd0Pzpn5mY4bjn0oTTECmfIlEth49EEAl3RpI8Kb4+q3CRDzM3txHsMrD
-iDHCPcDw9nQ/y7kPbDBG4AOf8bj6wMYNGLXa6pQWvXhb/4tKEuHdh5Hap3uHHWrVQrk2Ml+91ZxS
-JzrCu+u3XcGXXaR8Bo9heTzAlRw3k14w9lZ1QalfE/jqCqOSq9Fxe3WxpB24les9BU2ayUWOV3fB
-RP9g+3QnehLLdHy8eMGdq21HPKxPqBHy70TbDR5Z6MG+00JxChobKx+D88GLNXTyUZbHIlRUsBis
-vIYRuKDqpJgHelbgaYk+rH9rNERp6g1rVk3Zdpd8K8veXGuqQajb86OYTWecWMg6PZDGJqCoVDE6
-GK2P2w4Tyf3A+nIQDc4bTxX6RQx3hs54NaAbyjPykIwMXjbWGq8A+SbOkjWB53YcEpGDEoNIuiOb
-eJT7ZpIXgvJfJM46yPbTTAstLEoEb5ILPMW2uQ3EbqBkX0NIpc/hZz5E2QaN8MDaJ+AKcsq44dI2
-30d7tescNcTZvj81av43o2tJWzvEBmPgHo7Ciw6qxpYHsSELr814EuhwDmXDwnchgZR5ZHnA8ohg
-/P8lM5mfZzvUx30SajRBPAQd70oWsHE3qPkG5VLpnV9TYdTE9q+5vPE6MQXE51zUBd1s5O4IZB0t
-pnHK+3Lz8gGeyadhvOz5I18mveun44F52V1QjGAkK3C77V389q2a+dW6b1Q243MEcTBgt8OlIrKS
-vQyhUy9xwYaTsErfHjc4rfNCUE5TNiXT1X1FWBm8dMH/7nPr7VNGI3Deb8yF628VljSbPhjqwwG9
-dmbhewnnWDX8FT17Axo6pYQksACwZriffJWgc1Km1XNjNAcUSSLPuH5liVq76Kahzhc+DkLEwskX
-K+owLEnDLarBJJdRj3DvE+8tPWmh5Ehe5lMB6uhqUHhys6g4wfazvXjTJxe5mOcrqOrQY8kyHBve
-Ho5Zmxzlcxj5Ni04sSQA4Ez1vTrX4nWYi2QJ/GS3Ew+1Et1SNM+35e8vC53YrsNYds+UvTUB4qr4
-VMmoDTxcXl0XJz9WA1NY0WvhyXk841uAZusMukw+yIkxwdAtKxZdvsOUiggEqwRMbYqPTDcceFs7
-ZF+cJXYN1qvkQ2bLIgKuW/G5gWKuFcgLa/TgHEoSUksKSCPv24ssbCNioGmNXyVSZhlviTns220F
-Ob9EEVHedT+ux132GKYjRgW6sRx/wVgs5lJN3za0bVbgfiCvSN4M4eUM3w3jvOG9VurjvS9HxWUu
-EvUrGt+KhxlbbBHIkgyJ713BrUW4kJ8v+D9GW6HlIYAtV4R4SuK1X9QnXGLfXwonV7MWOkzRGGaH
-6Yx4BUpQjemz+ziUuEpWiVkJDPHxK/EJ/vwJQbnCX0xQz5duoO8CDWcU4pO4Meblv3w7EOgsKOqs
-PigD6l/SXl7L5ax/ntzrB2J0B3IP4KnLRXmR1EQA9qaDA9/t29Q0ywIH3791UWyaawGV2MoyN0TX
-sK76Dt1p8LqLxtnjGpTaDbUEY59FTXmE6pzHZxr10UY1V3aCPhl3FxOvxMZH5mSecSygX16Ob+xs
-VnG0P2xKu8yNfKCx8l3ch6eTjIzqS+i2fy2aYcM9E1JdnXabftm25/s0MXH0hAbvC5hpTtl8hzyJ
-nUA/8k4mWa+D+3PKwVp70WJYTtF0gve6c5tKOFzyI6AX1LJs86hjPsfuU1dFw6MUWbj/5Xoi9GWY
-t/TZ6O9j/sN2OikYQ8fvJKRKBK6EjDC6a5zEbuCM5Jc4owf5XsHRhOarruGgBLK152TJoHyqNl1g
-nVTxNDJ67krI8750YxI7NAZSxCreYsdgBi0MK378DM7LSEjYm5rTnk0nCwDmjUsUfqJUs8mN5rZ5
-QoKx/HzcE8p3VEUvBjoY+lsZs2EYlgJJ+QWCy92marf0Td++btTQ3Ot3wdGpvb3U4itj/xXl9Rvk
-21P5RPcK9mx2IYsXfph9bQzt0/P7wPToJemnstcW/KZOr40zEXIybUwr3ASETAolJOnADikCFnct
-oSdKG7pXgtQAD9Jsb+imXRKXYpLZNjASig/XoF22jX0JZkXXdYzsfoKo+iPhQoV6NOewJklfZ/5O
-rk3dRXDrpWMw280jsz9b0kzKfwYAgxu4ALpezEoEghmcQQOnuvS7mJ444JOkNWMTTIF6l8wsNGok
-f3K3fjS/c0gBgbeqmRUVWea6nSjuhyv4+o5bP+K4DjwIyj4tk0Rd+CYkdtsKZA9YEjSn3OCHbw13
-hUrmP64wAVEgA3zlCMjSc7apxBB8tT3RPbov+djoMl/4HtWcCKxzw/wJsRvxw4X69jGpoq4u0/Kz
-190wKz590vLiAAzw7ss1/3CWqF3BcejXhnMdydZNGaA2ocvKjHwXISgttvy7pUi38h+BjcreQoj2
-BBs+lpBNuvOXklk6tvW/eE3k8/ufVOypMmhdo0kNgXFsHSwKRGqIDperf0IT5JPDVkrN7UYg3HCd
-ZPWOAkNHKSAqKeNRMDiht7NRvJZ3syFkvEiAViPW8tEA3Nhj5CMYn+wyYmnjXW//lMX93gD/eep4
-bULVmolXrIEWDcW1xLLiZ2CNuaW+axb8dy8T5UKny535JcV3c4DGd4TQ2PvUpnFyrW3hWGTAIFjo
-Wc2IjU0ig8m0PqFHZhZ/0Eu/vXvtvsGdXE/h4IH0je2ZWlP8Gzd5yqdZT9O2JveK54+t9I+Ys4uz
-i4e1GYpj0tu5WJjicYfaUqur41byMuxo2AszTE18k7YFqxAO5ELg8OaLO8RCmUXQN9+1xTs9WM6d
-iLGoETGwmLZTsCxK46w/fr5efS1x14SRxb3PKdkVlskQjiHGHFSdZeqDHoY3IjLWCF2fK+6mldYr
-brZmBnePEydgjHFCoHskLxID2Vy8d0hMeFUr9H6lH65qLrI7/jJlOzVQob2TkVlzvV+hHQUX0IzZ
-KP3wQGSHLK7T/cxj03i+0cxru+79u+3cug1WIgJWNGbLFHYA+QCr5b1EMj7MuIfYZfNaavdRbqNY
-Lzuqu4KtNCsDUD9YYf5Vp0Ywu2GH0pA5gNAxwCy+tXI/IXrFVuM11+W9YzjidoW12kAFSNeZK3Dc
-ptphtx3byH4Z0R6rlwmSMMW3o/vGFgvfkmfuERuPfUObZDg+0/N7Nb65Z0UAJg3WyJvS6KB5pGXu
-3xKcUHPTloZDLxQ5Ze1KX+24XMXG79hiCvw7Tw1hW/HvDqLuftd89uMf24YEdAsrmB04ooQ5kPi+
-M3zIV4vChCQNNwxa6WBcO6wy/bCJvoK9IpfX8RCdrekymMkaXxfXqO51ZdBV4cSReQpm9Tunjukv
-T6irQZszjj4npf1pQgm9VzWM26rziUMiBDDJt6Zw2F/Ue9NhxgP6ftWc0GPxFY3hR3tI0JJvHpTr
-4OZBh840RrSCh9IgD9D1AeQ0ToEzR+1YRbrywUV16ERCD5Maokivlyc1eEzuaQwqdBJPwupi1PT4
-PbLNNSs3r+NYC5NIrFboJQeLTDz42IN6q17XfK2rChqbNAPmGFXGjRc9C13WfXp510a13vl2qG08
-WErpsBIzswLgvibxv4kZntw1T3zmxdvOZxntvWk44//TmUqss68RRBs7VYl0fOQtQ1QZGfqUvrzr
-Qz/4/nq5pGRBhIvoVmiuSny+7HYkA5A1SxfVWsAgnbBiPABKLTdXJWfh8hFB7iXtos96GMMDVH2e
-kE3aLd7VhTyHKXNrNSpfU49IK7tv1tVskrDlZorDDBSCEbtJ/qEVO50tX+8qWSf0q2bc8WI4RmqG
-vW7SSfp68m6XLsnxG2viq5r+58qZILpDFSCrhDx5jhmaXN9jIfqhtrwYteyRJCIHJBFkin8Plago
-+LMg7dMdlFGUp2pxlR3qqabDjp3z0dPp5WKVhgBNKEKPgQ767ZO5ensAtNt+1vjwQ5rOIlLIGzX+
-64ab5ESG5rmwFMLRO+y95YfqEK01Ygb9XSjYwYBHcSsLXsLPwcvUWxILTTjmNOL9GiYdZByIV9qE
-X13QXrDcOT3xO6o+lpYLW/KPYLCh09xOFtuzsdWWTMyHaH9TDs93BnFIhBKDsvzdfOrvfReEfk2Z
-z5xKByf1CLpOtFf0ZiG0htvR092QFdAmMrgSzTR9IF3pEbsEVTCZgzlUyETezQNg1l5RB44XSscl
-sdhF/r0CK3fHFuVzlJMeq7Kdu4+iWgFZIzqgagmaR/wRGj+yPdoWfADQnmkOmuhYYAQ7BeIBzbAx
-30WMrhK/5mHPz5Xgk63dwk3Sk8kLHhntvZDobJg/EwHjAprIAzawHLUqBQMCW6m/klo+UsXlS+k3
-WLaq6cFp7i5Guhc/e+Vxxej5+XqqTytvfQ5c6ysszNVEbWV6d91LR5lypzPw+dGIm56LYIAc40Fu
-fLCCSPsO1K8iMVa7iA3WpxGMJGUPEK0khSRZtauAiCTk2wc9atfB8SRJv228OltyfBafBJN1vUVB
-QM30sAGm4N/FfLdc9oDDRbM5L0PfCxNB6/yR+sO2y2rh53h+pSOWyDqrLSNxAkAKZmOXFGjMgEIh
-FmHwr2lucRpFslJwNJf4gipQU3EoW8vCzPXvgWWmAXPfjFguo8AObDU8o13Aste6R7uOw7Zw7Ecj
-snNhuM6kRHIFjnsXBl+A25l3JA10+Lq8yomEWahHGpjeR0DWkxf3H7cINPEpWDrHxrwvXn0xLjUW
-tsyPJVOzCsi0Wl9usakL1KQQ1xOcLyyo2smzN0qNELmZiZKvXxQKtdwcrwEXBFP7sLQtD2F2Hy5A
-pfOnUbyKm30ZFfTi/0U7oR2ijxp2sXGHxPRbcbNNu3BIxnu2krEC+2tyec5ERDKM4vSnx2wSUtx0
-btVmaZGSWwDPTJj78BkEKJu1zgyb+TnW4E3Eh4oAwVB+EBlVsRdsx5JRyMe6eh1r8epcP31/D/IA
-v8QnIkLhs/B/r2YyM36hYQV/JFtyPLJvDGMLvKV4P+rpKZHigN8xd4SmLEKRixZIRyv1LornaT9w
-ufjCbWIMEU56kgk07ngzMp5f55SrRKjI89dejgUv9PtfTHkMqWSZxB6EP5mMs/OZHHOESp/TZedZ
-R4tKPetWlJOtfdoHWf1B8gg+v698CnPz+RKpKb5v0WZ2sMwrdgsPDWtm02tOyKW+KFaoZikR5Tww
-4+saohdl1Fb9UAFoi2s11roSpm1Ma3bOlYUEEX3zdFUU/g7rRn+RPKuO+sVp1FtCntVZBe4tc9LF
-p7vvyHFvXNJbK7l5nOcT3K1QwxIvGJFAcOKJ91AHkqqJ6ZjDpYZLueEiRxgN6QvfuiYhOEBEg4pd
-GTVpw2CxHDlGhMp3+yjbA0x/CF5THYAHoqh79YAtWrtFveWFqWZPhIyJvOwY1bI2fkBpOK/oxz3j
-wZyhtBQxf8PaY+dh79CAbBaAUSJw1K0ikTvmfyfGT83iWDZ1DV3C0RLUwILvz3MiuJjPsdkVX/sC
-B56kWMXNTLIpFIo3q9NF/YI/oPR4tGPms7w6iTKC7fQueBS3iwn6RKlVFgpNaVeWtpfoiGD8E5u1
-tlln8p1p81yvcNXyGrhPPInpCC+CV8XvFOhL5YLgJUG5f+lEN3MkBdxA7ZcnclLmlURZ5f8VrHwB
-jKR0nL06yl6iVOl3buiel4biG5Ifp2mlDKGMKuwz1/XlBwhWSG/XaBClnSe67rChtvYi40WLc8eI
-X3kcrjPOYgATFgyr9FKaUDEkAaxRcJCMMFgLS374HhZMJmLwUkRFlu7TBiieh5sLs2pqFTk1H8ej
-AhBc1ehCyHFHnto1X0pwTP+q01a5/mUWivRSp4GvagRZyh4effY0aOFLx29JW7iEaVFocjo8+UAU
-MAn1hjFMm2x+TTNSShPuOhgd7Z/YP4FzngtXAXsoWlcPOA2ZNnEXK6PrcvhLprMo7ru1w5k/JhtR
-+FgW0Vtq2wte1zdsw9WKvczV0nAXCc0d6omgE3XasEdBQ8PgDfllJm5WXXjWHSkP7im3IWo0rUF3
-MZi3SuAfUCCWruMurSCk0nMHo8dwEPGHnJYJEKWExTOApqiX5xFNm6IGrI7W3gC2KpCuPXjGY0ac
-LZzsb45CjYJMmFFAUsrrplu2HAIIz2smaR98X/u878a7GVO7E+K39B5TkUFYVAiWjbz43BXvCGNd
-q/QTI0a3uTSdjZ7vUU8xz57RNCoFHct5uOi1YefbryF2IAfDYU9aJ/TgHOSdd9YMxshNCoy/16Nw
-j7zj+TdjFITXXvnyZxtSoMO2QuwtLGiDVljJ3L70NLtRYouDYIGnyXpXwIjw0rZYARVdaTT0EHNj
-6DcTkVdI768d7TcUqCXdCG+PLqcybWXt6FYyu4i1uGgH6WGwZAiOqRVc+ztUhtAW+/ZptkvREWWU
-N1etOzXxTPb72VhhGXsN7PygXvmCPUbIeSJjT8OqY4OmgxlYQh50duzsxy6BjBP8EqtBdV7PIJc+
-v9Y/kdhYBhraS/0DJonZIhfglSrwZQxe3fCAdOqKabT4O9J8XHSSMV7Q9isTlYuqol1hMQDt3WLj
-bBUESnji2lOrZHMUg+x+UwN1gZbss2CdyoE8nTncehmMMYQnDidHjJd0pjNZnJbIgvIscU2w0C82
-AUjHegqz7T4UrVlq6GAD/9BSbImo5PSm+aHP0r9lPNZAj93vVpGJgmvEnw/dfJyFlAc+S5gjsot5
-1OoX4Ln6LgDveltjrlp8agm/Nd+UqVeral5iqhXrxYmzE/z5oAz0wrGd0ufjWgg2HVH4y+Nxld6o
-iADqW3bVzS75zwPHyZ2nAaDO+K6s4LZA4czsUcpV9zRha19PsuCO19uKvdyJpDJ1SjzGkZFAavV5
-EXSCJRV+N7Nsy752CX0cQ5ukDwkBLwHgAE5kvA3e876hDWpebjY/QMadX2BRGZVtxQcNemqj/JdL
-0BpeOSx7nk6f+IeBEE1iBcdL3ualPB/sDYbk76EoOHKKB6GUh5CuO0+Ik/2KKi0xvdSXGHRHcv5a
-OVHJXR/9OGG9AsPFMSPdV0iauj2Xg+MOrXu0m1O0VvsFl4gVRY/8/CKCFhiDp9EZKRxvKMakO57g
-RS+ISGzCljKfcxRIkjJdnr3iLn+t/drT67ZtKpRz+mfkeP/JJrtHFyW0csBTzF1tHhaqhK8kcNW2
-etETIYHMwuUqfQ+wqFD/8O7U3hKt1jGUwVhdG4OSwhWd9emDFrHfTaEZrJDqQxUiU2tACcC6LDOZ
-XR07UolqA9JQC5n3j82PCzP/jUanLROZt0bRExaOfah9cEdmmabcl5E5DtRqdK7QOTDDSDvCoUY2
-k02TFjGwz6y1p5ctnDTasFAaptjI7j7l6yICu1f0eHtNsupH2/UWe+pwYwnheEMR6qT6y2tmswhx
-stq83I4XdH+P15awIFqbHPIRIUzjx+G4Qkal9DfXjjk0QXlbhdl/EzQrht8GcGYA6AeJCE3eElbh
-86MPQM7J21ZIdXdt0ZF6fZ0/vBQyYR0SBEMBoP5qji3L++uU5huZAZv0AujZbf4Xk8bZpyz/quMn
-462I1CcGyjweq16ydYnXz98S7TX4FYucFsgj79Tk1dC/JszCuSJx9/1K2OBq4P4DbOscSVBXrXru
-xZP59AsErQsjMW9/FItgso2s+LWcFw4t28WjZDWDt64Gs7QxE8dMJ1dMKUFEjiZ4mxDytfSaijF3
-+6vUo5Ilif3/Yb/Pha6WW3dDy5J7OnNGwBFpJ6TadS0l5LVaMvOUA2GUVnHUFuIv15HLGvPTGhRF
-4A7ZGDlzk35+HW8UDeOT6FoQs03BVQZceVigXJriHA5R4Vjo9teATnanPvCuqMZcQH1mC3DGV4w2
-ZrncCNyzFYo7Cvmb/wNMOusvYMvvcLUEbu6tngTSBxYBJC2JOcim8CV5eTnZCeEdWMV273sW/R1p
-/ed4FqUH4l35gPvCKeA3BOdWstyzdMmldzpg5UaVMMAMnUdPsHVPVNWR/NFmNusj6QNVQUHVgkZt
-SeGn/bBeo/3r8dCHsRPYBvG18fD4eEQw9DL2YHeZTCs+QRkHDUOtjRcBnWb2z4/ZUl4oOJlyusy0
-jsyxuoXrSEofRE6yW/CjuHr2y1WqaOp0vO0HYG7t7KbxESUL+txQ5s4TNFPFMn/OKorJt9JClUrg
-jzG4FLCNmycHQexO5S/Ba1LmqN+2lDCxw/IFHHoV+IwHOObTSlQx3VIM8gEa+klbC/pO+MTeuNC/
-wmYss9CIGjA8tMSoXAZbkqeZAbv5dJeGeabybMLNcqaYlYESZUGNNDjDHM95Xin3RuNgqGUkVni4
-w12T6uJPHHqlB5g5Bjwi0sZXULhkasOzQW4su+/d4VO0f6hJhggK8UMFvdw/zXuk1DH+6B9FAt62
-wTQJOhQC7R0fjqIqdi8KnACLvsNa8f2RQCdX7YMox9KgfUhuJxg74f+wPwCCDcRhdByExeT37KoT
-3F0/MtzZkexJJMuCS26kQJh/bPkPZwYY3AuRhNTpztcWZQhrzwNVlABJeN3VWiFtq161KKFpCU2j
-fqVFGkKNsceAWtwJJnGdCmoeR3bxvrrzViKE7UYWh68xfioaOhqE1gILsgNn3nHybbPiiyJOOkir
-KDv6okfXUStDX/YsTa/QXWmU9yF9nkfnBJtzqHBzUu/hwVSALTcJ1EfCCL9pzqK2eBrNRMFuxtsq
-nHMvUr6lS6hkw1ljHeaZj2dHLJNXbV+mJauI3U771wjR3C7HQrrTHdxz256PIao3CPZQ1DbEZAD+
-2fDaOwGYdStBbr7+iHFDd60Xs6p4ZHU4WUK0c2lndmAVC/jZHfs+N6RJCSHsHTJRnDQnWgABxgiY
-hG/oKkLXIV6xdC7VWhmTnkBoc3IZNkyVA+HGwN+dxo01ipx2jZhvicsP+7nUTFTHKNcEkjNDozIp
-wYdgSSdFfYvvYFTFWX1iRqwkaXwp8Fgw23s+NzkmaXMarY9zp+Yv1A/4cW8ZR2wOhJum/nEYUMSf
-G6TnDIOEOyqdlS3GmdHEuF+a0Xp5HorsOx1mNizuOWQbfFAXEmpS3w6il9wmo4ih0u3sd5jxzcnr
-3bD0Maucc2aHzuULitOEE6kw6lRxIgazQRbhErglPOLv9Yetfj3p/FMNEy0CBGlGaXd7kgfg4Lpa
-4f7hDQ0eUXYsbcWxVPtutMMf+eXgYwHLWuMVaur4hPaKOIZIL7tlU5sakS3JZ9ws3013qMWlAEMu
-d1llN5i7TdQcWFIqFaUk623ATlo0fYufMVsx8qwuP5vbeLRLYcmxl+Kf7s2UOmGXYcAkXMzpTONR
-HCtV6J/k+6x6/bKIR0dP466d/YdB1EfHVO8PAQzgAIX/bBbeQ01NqR25koMtEiUANICorXhFte9m
-RPxn0F6zZCWEbpFwy7pQ4XmK6/CFZLI4xw3gr177idObY3aZ3fiBIBCfWW+3g0CSrxaRl3145amc
-RLQ/qANCiLnMh6Ya0gD5Dm3y0uFA2mK+YE33wOiJ61qvl3ds8vUkj3jSzs9J1HjEN98fGlD56Vnq
-cJKRDqt/XZeTu5UfZ+UjADLzM9cKkyCSN+Zv0bh1WluPNR2o5pxVZBeaLVu8FdomN4PlbZE7uEYJ
-HpL9klAzVrcQ5WYNEa1tJDcOcGLr8B3mOq2ya7UPkfBwyFzktOMpLzB+ZMOxDFE2olIE9zUjGuGz
-kbqwVpfVJXH/Jawz5P1rzFJoS1xSEAdBQ14p6ddhSV9ZeOcGJaAKe6FX27JulNfaUbc4duffXxG2
-L5YVC3JowfuBjgOS8wVI74cIQtn9hjNkGxI+27uUJBrG7DS9ZSVHaBDP/ZgWijQUljK9JO10cJ8/
-QKmrC1doZ5CwiMb8Jz/BkAuJg/NU3dW/ymrLzSbzUsopD/+V4WkB3LDxH2gGAFjuFTV5ZRSwCI0e
-IMKAttjMx5rZjEdtQQSWvCnF7EzgSsr1neNVLydHzohwKR3upAmEIHYeAGMELDDmJ7G96HCqRBrA
-thvwLx/mBr5JFd/yt2RpzFqmZFiJeRRRAnk5H75cXgMiHUABA8zIEXiCjDl4E0B6bXuVWzMyGCF1
-i9yuGU7zfaDNUK1bqKSbwEBP+DNJJQXaDo+9eMcGwnA6QzX3eNj5/+LEwBdRWghe7ZI6ziE0SKUp
-cHw+8ZhBw+ketYBeJweberjOx+Gn+xKsfXccpGfnYYk8LHpczUOJxYOzoTa8qfSOD5pwI/5ZoD4B
-2OGkJu0G//PWBqulrshdoCK52sZiEix3J6bZjpyRv6KXZPxaXPQwaexZ5cP9B0kL4Tw17f5kOMXm
-rPzXR7U78Ebnw0US4E29RnlwRObD+A4g22yxXXs9sZDtCsgmq7DUHE9tw9fL0rz5OJXzmKV8yX5J
-n7rIIoU55cGPuocRkTuYkmxzNWqZ2Hkvp6iTUGogX5eTpBfSQWY+xGMOKivOWqCZCFoJWJwpLQlB
-feT2OvQJLSryFpBBzX5BNhpRYFFPRs/047VINSH0bxaeETheZ11OGe4e216FTbhRvdYvvD3pxovK
-5EJZIUlw+de/CRI3GdSzSMbZURK/r0sGarQyv6Qq5i3lQdAvv13h+5RKq+Nn7IcNA+hNS292HNth
-+xQg0QMv2YzPY1fFfJETGaqDO68U/ZaWjMAZkGGgFbtxcZ7RJK8QYZk2NOs58ECF45VMEhlHmWOC
-M1ffAYLs/0cnh1qT3yC50N+YjvPSOFL2zx6BRWpHiUZtycoXa/eD7wLd3XsWsWBdFZ0P10fQxYnd
-lGP7m2//Sc5wNJ3m8ljjf3FhipcHbgEgyZA5rxKjWbwvnmHA/aEolBUrpW0Rteas9GwI2qr5euxO
-Equc6dnrnW/9O1TGQy6MkK1HWG4DdbpGtf5QheDMXlD2Lv1JbVbSbeLcTgre+HnmgsA1E+6vh17O
-WL/6UuIolQmwMMwRhVdLwCMXZFvxk2NoSKeaqO8uFQuOjyNklPNsGuwhsO2va+EJyZV8Gkdgwuu+
-hnYzApcuuSkgToyXZo91GaBm9RQ4N8XpPjLVHOZCNy26gc+M83H9n/UaINvwRYs71Twm3p5BfTRO
-/YmoJlQC99dLSP3g7eBlzgbtEoP5zvedjukoncqMAE2l3IeRg57k576P/3ToWR2k806qZeuo6Xbr
-/Cm8ljiO7+hrstrA/2bcnfmFPp+u9G2Dyv1EkIgaghvgL6RoYGry5zCwv6s+wfO3VJRzIs294RCi
-1l4htjKnhhTfBeMVr9pJAWXuoHzI+lNs3om8e54fyKq5QnWWcqpnB5G127BAMM3qH2h2WRyc7b5p
-QQXSvpV1L2fwQyzzXDEe7yMe+ZVfAkVYiwNiHOQXJjTEsnlksRSJ2aTPlrTJ1it78ErN69/7UO+Z
-3CTB8K8GcS0VDg91luGn6HJiGBR6SOMJb7V/FUzGC0IxPRRe9r7gcdvENHEmaeavB1n/quWv54o3
-Q8BVvMZZb20Pr0hyjgpyYBTpN+GWLGhONWJ6lmMdDwwn1fsQP3GYNKCbxyQpblqxusl+JMQtKOlQ
-D77ytzJxTVzB+wAXcMkf+tjLAEbSFoYFyR+j+bhnERBxWD+MHmXDRLNtFS/a0E9nGbyx5utKhEaW
-gqmRmaiXkhKuFivJ7Gm9ixNEhMbxY1oh3POroDvdGeQC8rXKtElY1jLz9hUdz8VT+Sm3GZ+ChSFU
-EIqbTelKKfcW/nJEr5+GXkAnVHRztgiuoMlvbHx4Xz3X9b/iFwpbP/xmn5/fQ2ITOwjNtUbr1Pum
-8iTGKbXn+z+ZjV/ojt57tVCnn0Vpy2KVN9LbwOsaYTvF3VxlMG6hLjbRQBr6EqYFxrr0BgBj+/ou
-NsZ7+38TcQ0SLxLhl9ZY0oWj+MwtAeWO7/jXJcBD2A55vYTZ6Rv377VLvlvVT3P6mdep5WeqTeH/
-T9sWK3JK1nZg0K22R9HBQ/1KmgGGSOtTegMOf3JjXkaEcrhAa4IlkXYaYnMr2yVSw5YCSsLEtDpV
-CHLk4KKDCx3U8S2t2uoh2DgMsvXf3kAHD4BfXi/CJGn4Uw1nWrHBSx23MWYAcbsZWdpVn5lJJJk8
-+vJRGUWnWWFbRBHQ311L3FjBxD1hZ2VL12aL8cmkcvhVJ7TY+TBm/FnFgIQcN8Z7k20tzYOpLDtP
-y/noIs6WW1eLPyzXy9ojePS03kp4e+pYgKui+GLcgbmY2TsTMWuLlLxByDBAeBDqsmrnoOa2NDpU
-XX+WDr8d/ZxAiv2dqFfE2i99pqt/60CaK1XPc77Cc7bCLYvpuJ8ZvCDAnJRDu2gH0JsBTdF4WBQm
-eIaU2uBZ9pt2dM2KpoLrzT5RAkqfEAbeES54AW0olIXs/y4fazNDL21MZYxFHXOZS4J6FbswfCO5
-y2MhKYhQfx0pj94fT1Z2S5rK+PvZHoA0IoI9EtwsUgYtmehSDym+WEF6CxGn9pBYljnUyfG1AXrT
-ed24haIM0vRqdpykobKEoXHMVujSzsSpwv/a55uGEtGDPJ15bSMOvetwciQ77f+kWz93KcURKqQS
-EkFjvJ4MWAR23fQ95FyPmTTo5TCLcRw7bP+2WJxTpwmhTz8Plo9w3jEUDiY3St8335N4xFx9pCz1
-EOp1QnDQD5s6e8fTOjTFE933iQSAnt3DvcQtTT4DGs1a23eYwq1nXrP+gm3UdRxZTthYP7P2mM0I
-qDNQk1T/qWlgkAo3JeNhaxD4ahQjAigzGVLAEBxSMeQqDZHdZMG13MwvIDLdNnWMRZACCeiqeLtG
-ojjKPP/WIQaYgxGck/AmFxh2KB/AZ3aDh55cFii2oQOETuu9xufr5Dv7pPVDXGNHPLDHz7FN4lxw
-EtUDDEf/t3XysRB2PMJjY1UWe9TnE7zYKgJrPWjfzxydrQbndtKcfkLltVmzlGa70D0D0uBB6aYw
-ASppZfnkPImMhbcN3zdfuYMBLcVSM96blVuM5O79BcYDXsBUddpTTC8KqN06RmvX7MLY9BEjxYo/
-VFSBQotrC8fiKEHPpQMqoHuvlT+4qR+veJsNAKcsZ4LRmW2t6jN6G+p4KAClV5Nr3hOa+wrxuUUI
-3+HH9Hx3C5dr9Yjwa+8+9ZtvTMWo7oxJqtYX9AbZPRZAICEdQS3vyO08lCOceL2Oy95E/9wu1jk5
-uVPQpQTyjJyzEXoHfEYsxJw2TnR0guIByc6moFlJjSIVlbXvrYel8Cwe9uUfAGMHx7ETMHG0kMqw
-cs2ELGVjejTq6slTVuRFwE0AETs3XTgsRK/lZqQjTjbZx13WhApkCdHb+np/UvslVaKFgb9F6IHB
-FmnHvcvz2RUH1nTCGsPK7Emt+1JJN5IQU00fKmh5Y1yxB766Rcd6tUBOpZUOImZUe1wAYYLXNa3p
-d1z/n+6JJ/Z5l+ns0ZZDbdnkYdUvw7bRxyb62bJX+wmwaLR8eh62KLcMRawxXB7lV00RUCcZYmYP
-oUOtXtD3qVizR7B1I+8syrE3k4cKlN/Ja0EO1jaUs/pl6hp/XnpAzRfoAi6mGFiGxVk8yx1bfE/4
-PPZZ36cDNDJfjGpPB5PevGj7B1W3hZFHsTJx5mJGnlQZndPJdbQ4magk7uwjUt5Y5jMBn1Sh4fQW
-oKRWIWrpIoVz21b3xeHvClHJHQ4GafIxcOQEMH5EtkInvgotB1zmnVbHHINuQA1O28sAnfc5f9GP
-XTtaCJSulVBIc606k4ZdZwnllOvKRNEaQxKzNHSCBRwpxiDWdV0MpQPEJrsa5mS7JaPbKKo7Q8TO
-0RNeUXcdsB6AsQcG0fBSIY/CkJ+p6MTfunsEEkpc1i/oEw+1pT5gDqZRJf/5X9Lxx9+6NZel+KIP
-tu0joUMFYpw6ElMXCAEsQddhC2wCufLCEaLiniykV6uTug3xOcakwHMsu0yk5jwke7O9GMMgDvz5
-CHyUtEIJKj6pI+iOlTItMLenxiigMNRY2EgzPbxY+QsMHJEKu41yzcFRuv8ICmI8JqH1ZusMmvAT
-GzaPgoUzvyQZ7X4aWJ8wGRQzQ9fMvc0BrnY6jdydb4ZND8VdkuAH6KcQFVL4/PhQD6laiw8eiPTJ
-Ln8Irzx15t1dxmO3PjSIRPuWXSlzygpq00wsBSYPZKuisAb2YUcogu1qkycKQ7jQy0ha6f+6HvLD
-anDG+Tf7czGMzoPKVonq4xxXnWvc5m2s4dTdH41zMH2D3O7Yt+6ytqIcZIRV6Z3LOqt5/1IEBkN0
-j8VGKygvwNdmx91Esj+XSUMZ1I8qvMD9OrkrVfxZhlBTirmqmHf9P/6swS4lbLDqYFTZIWijWbu1
-sQkC1Jf0nG3V1xMygKQsA/Ktas4sRcuYKgIUMyIl0bbT+ULqz3sO/KW1y5Th2lknxnWbsFqia8pE
-rfx8SYSjVncqgaTr7gsSfVEjyTzwQh9cyxYdKPo73eI/jrhj5Oz48TG2cBv6NndotroJ7OR3R0nZ
-ewoXC0KoMnH/MrW4I5bKol6adEpB/JNrFMaIKwLDRAwaCsJfE9pbwoaJ+a+InYj5LjCBn8glhO65
-ceMQBmq6qHV8L0GWg9S8VYRiZnbvIXKvets3MPmhlEJXVJ9+36yaiKvjaSscr8/AazQFs0bg0Z9c
-HC30BgGaSSgIXQ64oaJJL5PoYmo/G/PSSv+rc7yl2z0oKnNFiZBqcUKASe0k41tXxOftMk3R8sDZ
-OFH73vEEyNpDVEMe4On9St4aJm66J1MvVyT2V7OV1Gjl4L9k7vkjfphWEQRDYiM3pPnzcxwXSlrP
-eeaqpkvNiWl4Hp9yVDUomIIXR2XtkUNRs4ozGHIaOfPGKMXlWyVvXUbl9rl/rA9v92m14o2kjj/n
-Si2LlR+2S4C5xz20oXcwnROZdoEj18zzIrBPE/hrlCrgfB1QNvgyXEW6K6WwoipHjHzbZRr3lmRy
-Naf3rk8ckYvo/zS8TJOLGCs/YknvY42TqwuNMKnLlZrl5vHTZR3J/Whxuh2EzJW0uKvIVHTEj8DB
-sT1wBlc55zbnDbcNZntkwP830a1fBkyDxYH/+ZcJNYbboVU6dLBQwUhHdA09LL8Vj9ogyAriJIPg
-cyplUImgBvcWS5Q9wVVYAAcSjSyu2QmVWUPOhU4ztNzezDsnAMtCeL1+Dn95O4pefOJUC6yXFnec
-GzMrWkrdSzDrbm96yp6BHXkOIB3up623OveMsqBSdV3DjdSKNusHPVceQXY6xm3ZHNzi5Cb5sgeI
-S4kB9CJjo5Lj410VZr5U+r13vR3iOEs1AKv17l5fR/Lg/8LHTZ4Hqb2Z41I9mVgIgjNVr6DztuwZ
-C1pDsY0HsHKlBlRGw1W4c+XHarE+KOHXynQZr+ZZzgf1x7QHmG22vG4VG0Z8+/1S6nhH9TE0h1kS
-/xkT92JJzhNQvUSpd+XZ9zmdCyB5gAtbWJy6JQAWTPbF9SVZpHXUB6qV+wxmGQfMWQ2+eSWrD+vq
-v6aCrFVLEIqVRCz7hPqntAV1oINGB9AScIwHDKj6zLRU90wd2Ri4FiQxVf4v+NW/BfsdyFxWROIo
-AK5j6PKrdna7ZTLPJIaEiyX/Lfv++YiDLsvQY1OWO310JXhcGeUVkb/GBNzYWfN0EIVK+9qgLo8N
-+OmTI8EjfsgXEnk5TRg7GWOPaaDWWDjqA19h3cYG69TlA5mqe+aFZRqUIYSBhwaHymU/bB/gydwV
-srY9q/qbMuZSQFJZgdent+e1Si8CnEU39OSjkkVVrmFYnxdLYSZ8/Q4wgpOfkM2Y+vhYLV7Tvrto
-BwVuZCD4zDNb9YI+JJiRqH6+R0sL58M2idCVuQX77rFgAw1G5QeHlW/1SZM1qXYGfc5KVtKkHtHB
-awi7/3W4yOUR0ulzsSHnz2+ujd9O4b//wDwMze5EI85CwzXVPNmuNRQBX6cMe4+UPG+KrVZ5b+Yy
-yhdKqpUbw6fNNmSXJx/Vre2tNYGO7qmgM2U9uF1Naxn45Rm9c4y684NxM6BQuldIWTyO4loCRbob
-Q0Tpo6Y394nhYA+9WJBTb8gY8ANswcguj7IwNs1Xjqg5BszO8EStI/zxnzNFtHpP9s65WCoMJvC8
-yj7ksA22mPoZ4NATr9uq77zNRimMCSO0MNerXASboCPVnfu2LaUlA5FjvxU42A3Wka3z0qYY41UO
-7CTVWmlzQNg7mFQnIgrt2kJq0iwEJOb2Hsb3FpHhOSoIrVYPJAaDHXYeaNwwdUS0uugG6Fzeec/G
-l+xoRk/O3ahU1Rg6rcr9WlElxP8lwbOg8GBqyL+LYPzPgJId9GyTNfgbGHPkuyjeHBhhFPNONDQy
-LHDSfTfNNSvk9pC4Ych60ak7h/fgh3A9RFQ1m76nEwu6MLby4wxOU4LpHW1XCDDYKE4XRG2LO3tX
-xi17ZEodfQrmOdl0MnFTTMcxWwn6dEeWKo+h4TJjnx57j5CrnkYV/+iBCRO3BAV3L9/PPSAkO/Bz
-+7HCgHcgC+ox2puoH5S0i1S0CttlXZI/6RNaHkSl6q9iIBJEgfcDPGcwABuPaJ4DDg1WvVbDhGc4
-KOjcd+nSUI8Z8DDFfeG++Gj358LuymrLS64sQv+4rGg8ZCOTvjwnKcpV0EkEczBtg4bee9okyaAk
-U/W68+csI1zuzQ/pwsaN8+3YDHMoTnBK6Q7KEiTgsrJU7KEw713KuFoYoUwEqb/7E477G/9c0HEs
-1MYIVYSoSr5+WJJL2E9Dw2lxLGWqXnoLqc6ExXifVFXDJVL6Xuc/escyAXhhdqs8Nf8UTMZ+URF5
-2pkGDgo38cnRoNEuRDc+EFZgAWmkjqzZdc+zI2eKxiGa+2cQMdrZ67BtyGN70LmefJgX2i2ABAqj
-s8wSK7HEvnHr/S6q1oAvwRsMqRhZbifztbmrcCKD49AXKrynrK/y3bsftz7JoDdNkIB4l2Z73o4+
-B+9UPOsqloR49QCNrdNq+qobMn1OtycO1tryEn9qElKY/osdENtsACzDTAUqADyTatDtrqfAMBV8
-QzsyHhQ1m5QlcSCsFtIjkOc0c1GOgvJl51+0s5mWae6/W2IqctG2cWYq1SVAC/s91Frmnc+ymN6L
-Y73DMuSeCeDatkE/IkTAsAZEbKqMt9tbgVJ6B/aJc1Utyr/ymmfPbJguB7CqCO5MUnNE6WUT82Hr
-b25JHBH9f4++pqBbuOg1sK2ZyqS1kLD9cGML68OrOAUUTcse/YsXVsx8j5Fk1NyKMQTjYMT/hC+i
-Yze3dCyNwMestHuGkfQYNH3/0y0T6MUn5eB+Z+xBhvkhClzG6SdM9JJE39C0rL+642OZSX6LP2BN
-1SiFfwaY5Kixka9aiCP9gNxi95zVs1EaXMmeghDezJgzTiS4J+fOkR7Sch5EMiLPrEpS5z3Zp5k5
-7cj6I2vqaVuvjh4nh2z1uiF6/bVzPwXQU1JBIju27jzPUV3PonuMO3FtSITrgUrFQ0MwbWH0o/1h
-D0jZXUGk3/zeFPM3itGoewc427cH6R81WfhMo2ZR0tSbW55PNRUvjIPi8jsAVSB1buq1Za0rPtF+
-QGdyqTu7VTds9Fw4U40x5Wkulw00QBjzudmPXro76U6xfPBAUedRvDsGl3NflpRWTjqgeeg8Zp3p
-MiECpLbOjIc9+WA+7HiKZo1v5BPUw+aMrTWtAxLdLX+l03XyKJa3E5SPgYJFsA3WFpLnGaDc8v1y
-Uc9YOIzEkexsWw+DSCrc87yY3neU0ZWfKhzfKTH28aqkmSEMOvsCv1Zgag0kMptHHZzmV9pF5GYi
-d49tx6YvKax5jgEJxqXOiYIF8udJtu/A9xGlP52xSrv0TDy5+f4MHSetMoIIsWIgOt8YVW1If6LR
-ivaRVgWRgHzVvK9ZndXG88AOq619yWWodjz1UN+COI/wYqCNGz1qVxk7uUSOhdXZHzrdz07t4P8r
-lAUzZflqJ7qgDCnExKWti6Cf6ks3/O+75HDqQtwmrGTfARdkNIcbjFRgFJJ9ONZGS5gPPI6ZKeah
-AKYxW6vYC6rOCh/29thGjBWvo4HX/ZMFU6Lqecm8zwiJV/YnShFUwpE4ql1BBv9w3CVVzwfhsdjl
-ETqYPAi9tM80cQLzaWAiCAl4ytVQB7av/CPoQsEXNfP5xZWqHaAx3cGhIcuniRm5B0+PE/AWFoIl
-nvhnEtb0esoL46ibT0AkTmUEpevu0DG1Z9IOpHf4c+gHYTHvMGFWOFAQXahFnfC847aohwLC/LVx
-uPCccqeUIK1taWdb+puGHyYQcCwRnYluRLdBBQ/NGUFdVNt0wRFw2TnMQ63riDMrD7TaPD16gOMA
-cQrQBDfXrsMIY70CHidSQoiB4hVguGuz6MLbHFshJGkoiHv1MsVOWBuxpWnQgcsx1oz6tSHsmTzC
-5BtqioR2gAUQ92wZ2zVeNNLkyepBV8WSB7ruISVCR6wmzW4cECVd41km1nz3bKmSESBktXTim5S2
-5TnzkEwmqbFqkzZ8zkJqrjYSXf4jW1iDx4lP4fTcSG2drNmWwR4K6ltYXqk7KTWL3iz0qswpLThX
-x8iYGHwuR1MxndizvzNYX443PZCgaHU8KvDRVCaUURRbnbvc5n2LyUn/sqY6KpCr5lMOI5f5Dfd7
-bsvsInTUc2DKV9/d9hu+fvKg3knXP+3rg788WoHeSHhwKgTTz5AExmkZHlHKINC6kqNDAAx/TYTr
-/j8RVDmxcVBUu+US3Wh9Xkmo2ifGbIqqAWXpnD8S5qcWZIZGSbuWvRuj5YXBkain6zd3+oLrpoDm
-3UcrAxsh53tprm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Cache_Backend_Interface
+ */
+require_once 'Zend/Cache/Backend/ExtendedInterface.php';
+
+/**
+ * @see Zend_Cache_Backend
+ */
+require_once 'Zend/Cache/Backend.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend_File extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface
+{
+    /**
+     * Available options
+     *
+     * =====> (string) cache_dir :
+     * - Directory where to put the cache files
+     *
+     * =====> (boolean) file_locking :
+     * - Enable / disable file_locking
+     * - Can avoid cache corruption under bad circumstances but it doesn't work on multithread
+     * webservers and on NFS filesystems for example
+     *
+     * =====> (boolean) read_control :
+     * - Enable / disable read control
+     * - If enabled, a control key is embeded in cache file and this key is compared with the one
+     * calculated after the reading.
+     *
+     * =====> (string) read_control_type :
+     * - Type of read control (only if read control is enabled). Available values are :
+     *   'md5' for a md5 hash control (best but slowest)
+     *   'crc32' for a crc32 hash control (lightly less safe but faster, better choice)
+     *   'adler32' for an adler32 hash control (excellent choice too, faster than crc32)
+     *   'strlen' for a length only test (fastest)
+     *
+     * =====> (int) hashed_directory_level :
+     * - Hashed directory level
+     * - Set the hashed directory structure level. 0 means "no hashed directory
+     * structure", 1 means "one level of directory", 2 means "two levels"...
+     * This option can speed up the cache only when you have many thousands of
+     * cache file. Only specific benchs can help you to choose the perfect value
+     * for you. Maybe, 1 or 2 is a good start.
+     *
+     * =====> (int) hashed_directory_umask :
+     * - Umask for hashed directory structure
+     *
+     * =====> (string) file_name_prefix :
+     * - prefix for cache files
+     * - be really carefull with this option because a too generic value in a system cache dir
+     *   (like /tmp) can cause disasters when cleaning the cache
+     *
+     * =====> (int) cache_file_umask :
+     * - Umask for cache files
+     *
+     * =====> (int) metatadatas_array_max_size :
+     * - max size for the metadatas array (don't change this value unless you
+     *   know what you are doing)
+     *
+     * @var array available options
+     */
+    protected $_options = array(
+        'cache_dir' => null,
+        'file_locking' => true,
+        'read_control' => true,
+        'read_control_type' => 'crc32',
+        'hashed_directory_level' => 0,
+        'hashed_directory_umask' => 0700,
+        'file_name_prefix' => 'zend_cache',
+        'cache_file_umask' => 0600,
+        'metadatas_array_max_size' => 100
+    );
+
+    /**
+     * Array of metadatas (each item is an associative array)
+     *
+     * @var array
+     */
+    private $_metadatasArray = array();
+
+
+    /**
+     * Constructor
+     *
+     * @param  array $options associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        parent::__construct($options);
+        if ($this->_options['cache_dir'] !== null) { // particular case for this option
+            $this->setCacheDir($this->_options['cache_dir']);
+        } else {
+            $this->setCacheDir(self::getTmpDir() . DIRECTORY_SEPARATOR, false);
+        }
+        if (isset($this->_options['file_name_prefix'])) { // particular case for this option
+            if (!preg_match('~^[\w]+$~', $this->_options['file_name_prefix'])) {
+                Zend_Cache::throwException('Invalid file_name_prefix : must use only [a-zA-A0-9_]');
+            }
+        }
+        if ($this->_options['metadatas_array_max_size'] < 10) {
+            Zend_Cache::throwException('Invalid metadatas_array_max_size, must be > 10');
+        }
+        if (isset($options['hashed_directory_umask']) && is_string($options['hashed_directory_umask'])) {
+            // See #ZF-4422
+            $this->_options['hashed_directory_umask'] = octdec($this->_options['hashed_directory_umask']);
+        }
+        if (isset($options['cache_file_umask']) && is_string($options['cache_file_umask'])) {
+            // See #ZF-4422
+            $this->_options['cache_file_umask'] = octdec($this->_options['cache_file_umask']);
+        }
+    }
+
+    /**
+     * Set the cache_dir (particular case of setOption() method)
+     *
+     * @param  string  $value
+     * @param  boolean $trailingSeparator If true, add a trailing separator is necessary
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function setCacheDir($value, $trailingSeparator = true)
+    {
+        if (!is_dir($value)) {
+            Zend_Cache::throwException('cache_dir must be a directory');
+        }
+        if (!is_writable($value)) {
+            Zend_Cache::throwException('cache_dir is not writable');
+        }
+        if ($trailingSeparator) {
+            // add a trailing DIRECTORY_SEPARATOR if necessary
+            $value = rtrim(realpath($value), '\\/') . DIRECTORY_SEPARATOR;
+        }
+        $this->_options['cache_dir'] = $value;
+    }
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * @param string $id cache id
+     * @param boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
+     * @return string|false cached datas
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        if (!($this->_test($id, $doNotTestCacheValidity))) {
+            // The cache is not hit !
+            return false;
+        }
+        $metadatas = $this->_getMetadatas($id);
+        $file = $this->_file($id);
+        $data = $this->_fileGetContents($file);
+        if ($this->_options['read_control']) {
+            $hashData = $this->_hash($data, $this->_options['read_control_type']);
+            $hashControl = $metadatas['hash'];
+            if ($hashData != $hashControl) {
+                // Problem detected by the read control !
+                $this->_log('Zend_Cache_Backend_File::load() / read_control : stored hash and computed hash do not match');
+                $this->remove($id);
+                return false;
+            }
+        }
+        return $data;
+    }
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * @param string $id cache id
+     * @return mixed false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    public function test($id)
+    {
+        clearstatcache();
+        return $this->_test($id, false);
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * Note : $data is always "string" (serialization is done by the
+     * core not by the backend)
+     *
+     * @param  string $data             Datas to cache
+     * @param  string $id               Cache id
+     * @param  array  $tags             Array of strings, the cache record will be tagged by each string entry
+     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @return boolean true if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false)
+    {
+        clearstatcache();
+        $file = $this->_file($id);
+        $path = $this->_path($id);
+        if ($this->_options['hashed_directory_level'] > 0) {
+            if (!is_writable($path)) {
+                // maybe, we just have to build the directory structure
+                $this->_recursiveMkdirAndChmod($id);
+            }
+            if (!is_writable($path)) {
+                return false;
+            }
+        }
+        if ($this->_options['read_control']) {
+            $hash = $this->_hash($data, $this->_options['read_control_type']);
+        } else {
+            $hash = '';
+        }
+        $metadatas = array(
+            'hash' => $hash,
+            'mtime' => time(),
+            'expire' => $this->_expireTime($this->getLifetime($specificLifetime)),
+            'tags' => $tags
+        );
+        $res = $this->_setMetadatas($id, $metadatas);
+        if (!$res) {
+            $this->_log('Zend_Cache_Backend_File::save() / error on saving metadata');
+            return false;
+        }
+        $res = $this->_filePutContents($file, $data);
+        return $res;
+    }
+
+    /**
+     * Remove a cache record
+     *
+     * @param  string $id cache id
+     * @return boolean true if no problem
+     */
+    public function remove($id)
+    {
+        $file = $this->_file($id);
+        return ($this->_delMetadatas($id) && $this->_remove($file));
+    }
+
+    /**
+     * Clean some cache records
+     *
+     * Available modes are :
+     * 'all' (default)  => remove all cache entries ($tags is not used)
+     * 'old'            => remove too old cache entries ($tags is not used)
+     * 'matchingTag'    => remove cache entries matching all given tags
+     *                     ($tags can be an array of strings or a single string)
+     * 'notMatchingTag' => remove cache entries not matching one of the given tags
+     *                     ($tags can be an array of strings or a single string)
+     * 'matchingAnyTag' => remove cache entries matching any given tags
+     *                     ($tags can be an array of strings or a single string)
+     *
+     * @param string $mode clean mode
+     * @param tags array $tags array of tags
+     * @return boolean true if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        // We use this private method to hide the recursive stuff
+        clearstatcache();
+        return $this->_clean($this->_options['cache_dir'], $mode, $tags);
+    }
+
+    /**
+     * Return an array of stored cache ids
+     *
+     * @return array array of stored cache ids (string)
+     */
+    public function getIds()
+    {
+        return $this->_get($this->_options['cache_dir'], 'ids', array());
+    }
+
+    /**
+     * Return an array of stored tags
+     *
+     * @return array array of stored tags (string)
+     */
+    public function getTags()
+    {
+        return $this->_get($this->_options['cache_dir'], 'tags', array());
+    }
+
+    /**
+     * Return an array of stored cache ids which match given tags
+     *
+     * In case of multiple tags, a logical AND is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of matching cache ids (string)
+     */
+    public function getIdsMatchingTags($tags = array())
+    {
+        return $this->_get($this->_options['cache_dir'], 'matching', $tags);
+    }
+
+    /**
+     * Return an array of stored cache ids which don't match given tags
+     *
+     * In case of multiple tags, a logical OR is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of not matching cache ids (string)
+     */
+    public function getIdsNotMatchingTags($tags = array())
+    {
+        return $this->_get($this->_options['cache_dir'], 'notMatching', $tags);
+    }
+
+    /**
+     * Return an array of stored cache ids which match any given tags
+     *
+     * In case of multiple tags, a logical AND is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of any matching cache ids (string)
+     */
+    public function getIdsMatchingAnyTags($tags = array())
+    {
+        return $this->_get($this->_options['cache_dir'], 'matchingAny', $tags);
+    }
+
+    /**
+     * Return the filling percentage of the backend storage
+     *
+     * @throws Zend_Cache_Exception
+     * @return int integer between 0 and 100
+     */
+    public function getFillingPercentage()
+    {
+        $free = disk_free_space($this->_options['cache_dir']);
+        $total = disk_total_space($this->_options['cache_dir']);
+        if ($total == 0) {
+            Zend_Cache::throwException('can\'t get disk_total_space');
+        } else {
+            if ($free >= $total) {
+                return 100;
+            }
+            return ((int) (100. * ($total - $free) / $total));
+        }
+    }
+
+    /**
+     * Return an array of metadatas for the given cache id
+     *
+     * The array must include these keys :
+     * - expire : the expire timestamp
+     * - tags : a string array of tags
+     * - mtime : timestamp of last modification time
+     *
+     * @param string $id cache id
+     * @return array array of metadatas (false if the cache id is not found)
+     */
+    public function getMetadatas($id)
+    {
+        $metadatas = $this->_getMetadatas($id);
+        if (!$metadatas) {
+            return false;
+        }
+        if (time() > $metadatas['expire']) {
+            return false;
+        }
+        return array(
+            'expire' => $metadatas['expire'],
+            'tags' => $metadatas['tags'],
+            'mtime' => $metadatas['mtime']
+        );
+    }
+
+    /**
+     * Give (if possible) an extra lifetime to the given cache id
+     *
+     * @param string $id cache id
+     * @param int $extraLifetime
+     * @return boolean true if ok
+     */
+    public function touch($id, $extraLifetime)
+    {
+        $metadatas = $this->_getMetadatas($id);
+        if (!$metadatas) {
+            return false;
+        }
+        if (time() > $metadatas['expire']) {
+            return false;
+        }
+        $newMetadatas = array(
+            'hash' => $metadatas['hash'],
+            'mtime' => time(),
+            'expire' => $metadatas['expire'] + $extraLifetime,
+            'tags' => $metadatas['tags']
+        );
+        $res = $this->_setMetadatas($id, $newMetadatas);
+        if (!$res) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Return an associative array of capabilities (booleans) of the backend
+     *
+     * The array must include these keys :
+     * - automatic_cleaning (is automating cleaning necessary)
+     * - tags (are tags supported)
+     * - expired_read (is it possible to read expired cache records
+     *                 (for doNotTestCacheValidity option for example))
+     * - priority does the backend deal with priority when saving
+     * - infinite_lifetime (is infinite lifetime can work with this backend)
+     * - get_list (is it possible to get the list of cache ids and the complete list of tags)
+     *
+     * @return array associative of with capabilities
+     */
+    public function getCapabilities()
+    {
+        return array(
+            'automatic_cleaning' => true,
+            'tags' => true,
+            'expired_read' => true,
+            'priority' => false,
+            'infinite_lifetime' => true,
+            'get_list' => true
+        );
+    }
+
+    /**
+     * PUBLIC METHOD FOR UNIT TESTING ONLY !
+     *
+     * Force a cache record to expire
+     *
+     * @param string $id cache id
+     */
+    public function ___expire($id)
+    {
+        $metadatas = $this->_getMetadatas($id);
+        if ($metadatas) {
+            $metadatas['expire'] = 1;
+            $this->_setMetadatas($id, $metadatas);
+        }
+    }
+
+    /**
+     * Get a metadatas record
+     *
+     * @param  string $id  Cache id
+     * @return array|false Associative array of metadatas
+     */
+    private function _getMetadatas($id)
+    {
+        if (isset($this->_metadatasArray[$id])) {
+            return $this->_metadatasArray[$id];
+        } else {
+            $metadatas = $this->_loadMetadatas($id);
+            if (!$metadatas) {
+                return false;
+            }
+            $this->_setMetadatas($id, $metadatas, false);
+            return $metadatas;
+        }
+    }
+
+    /**
+     * Set a metadatas record
+     *
+     * @param  string $id        Cache id
+     * @param  array  $metadatas Associative array of metadatas
+     * @param  boolean $save     optional pass false to disable saving to file
+     * @return boolean True if no problem
+     */
+    private function _setMetadatas($id, $metadatas, $save = true)
+    {
+        if (count($this->_metadatasArray) >= $this->_options['metadatas_array_max_size']) {
+            $n = (int) ($this->_options['metadatas_array_max_size'] / 10);
+            $this->_metadatasArray = array_slice($this->_metadatasArray, $n);
+        }
+        if ($save) {
+            $result = $this->_saveMetadatas($id, $metadatas);
+            if (!$result) {
+                return false;
+            }
+        }
+        $this->_metadatasArray[$id] = $metadatas;
+        return true;
+    }
+
+    /**
+     * Drop a metadata record
+     *
+     * @param  string $id Cache id
+     * @return boolean True if no problem
+     */
+    private function _delMetadatas($id)
+    {
+        if (isset($this->_metadatasArray[$id])) {
+            unset($this->_metadatasArray[$id]);
+        }
+        $file = $this->_metadatasFile($id);
+        return $this->_remove($file);
+    }
+
+    /**
+     * Clear the metadatas array
+     *
+     * @return void
+     */
+    private function _cleanMetadatas()
+    {
+        $this->_metadatasArray = array();
+    }
+
+    /**
+     * Load metadatas from disk
+     *
+     * @param  string $id Cache id
+     * @return array|false Metadatas associative array
+     */
+    private function _loadMetadatas($id)
+    {
+        $file = $this->_metadatasFile($id);
+        $result = $this->_fileGetContents($file);
+        if (!$result) {
+            return false;
+        }
+        $tmp = @unserialize($result);
+        return $tmp;
+    }
+
+    /**
+     * Save metadatas to disk
+     *
+     * @param  string $id        Cache id
+     * @param  array  $metadatas Associative array
+     * @return boolean True if no problem
+     */
+    private function _saveMetadatas($id, $metadatas)
+    {
+        $file = $this->_metadatasFile($id);
+        $result = $this->_filePutContents($file, serialize($metadatas));
+        if (!$result) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Make and return a file name (with path) for metadatas
+     *
+     * @param  string $id Cache id
+     * @return string Metadatas file name (with path)
+     */
+    private function _metadatasFile($id)
+    {
+        $path = $this->_path($id);
+        $fileName = $this->_idToFileName('internal-metadatas---' . $id);
+        return $path . $fileName;
+    }
+
+    /**
+     * Check if the given filename is a metadatas one
+     *
+     * @param  string $fileName File name
+     * @return boolean True if it's a metadatas one
+     */
+    private function _isMetadatasFile($fileName)
+    {
+        $id = $this->_fileNameToId($fileName);
+        if (substr($id, 0, 21) == 'internal-metadatas---') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Remove a file
+     *
+     * If we can't remove the file (because of locks or any problem), we will touch
+     * the file to invalidate it
+     *
+     * @param  string $file Complete file path
+     * @return boolean True if ok
+     */
+    private function _remove($file)
+    {
+        if (!is_file($file)) {
+            return false;
+        }
+        if (!@unlink($file)) {
+            # we can't remove the file (because of locks or any problem)
+            $this->_log("Zend_Cache_Backend_File::_remove() : we can't remove $file");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Clean some cache records (private method used for recursive stuff)
+     *
+     * Available modes are :
+     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
+     *                                               ($tags can be an array of strings or a single string)
+     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
+     *                                               ($tags can be an array of strings or a single string)
+     * Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG => remove cache entries matching any given tags
+     *                                               ($tags can be an array of strings or a single string)
+     *
+     * @param  string $dir  Directory to clean
+     * @param  string $mode Clean mode
+     * @param  array  $tags Array of tags
+     * @throws Zend_Cache_Exception
+     * @return boolean True if no problem
+     */
+    private function _clean($dir, $mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        if (!is_dir($dir)) {
+            return false;
+        }
+        $result = true;
+        $prefix = $this->_options['file_name_prefix'];
+        $glob = @glob($dir . $prefix . '--*');
+        if ($glob === false) {
+            return true;
+        }
+        foreach ($glob as $file)  {
+            if (is_file($file)) {
+                $fileName = basename($file);
+                if ($this->_isMetadatasFile($fileName)) {
+                    // in CLEANING_MODE_ALL, we drop anything, even remainings old metadatas files
+                    if ($mode != Zend_Cache::CLEANING_MODE_ALL) {
+                        continue;
+                    }
+                }
+                $id = $this->_fileNameToId($fileName);
+                $metadatas = $this->_getMetadatas($id);
+                if ($metadatas === FALSE) {
+                    $metadatas = array('expire' => 1, 'tags' => array());
+                }
+                switch ($mode) {
+                    case Zend_Cache::CLEANING_MODE_ALL:
+                        $res = $this->remove($id);
+                        if (!$res) {
+                            // in this case only, we accept a problem with the metadatas file drop
+                            $res = $this->_remove($file);
+                        }
+                        $result = $result && $res;
+                        break;
+                    case Zend_Cache::CLEANING_MODE_OLD:
+                        if (time() > $metadatas['expire']) {
+                            $result = ($result) && ($this->remove($id));
+                        }
+                        break;
+                    case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
+                        $matching = true;
+                        foreach ($tags as $tag) {
+                            if (!in_array($tag, $metadatas['tags'])) {
+                                $matching = false;
+                                break;
+                            }
+                        }
+                        if ($matching) {
+                            $result = ($result) && ($this->remove($id));
+                        }
+                        break;
+                    case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
+                        $matching = false;
+                        foreach ($tags as $tag) {
+                            if (in_array($tag, $metadatas['tags'])) {
+                                $matching = true;
+                                break;
+                            }
+                        }
+                        if (!$matching) {
+                            $result = ($result) && $this->remove($id);
+                        }
+                        break;
+                    case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
+                        $matching = false;
+                        foreach ($tags as $tag) {
+                            if (in_array($tag, $metadatas['tags'])) {
+                                $matching = true;
+                                break;
+                            }
+                        }
+                        if ($matching) {
+                            $result = ($result) && ($this->remove($id));
+                        }
+                        break;
+                    default:
+                        Zend_Cache::throwException('Invalid mode for clean() method');
+                        break;
+                }
+            }
+            if ((is_dir($file)) and ($this->_options['hashed_directory_level']>0)) {
+                // Recursive call
+                $result = ($result) && ($this->_clean($file . DIRECTORY_SEPARATOR, $mode, $tags));
+                if ($mode=='all') {
+                    // if mode=='all', we try to drop the structure too
+                    @rmdir($file);
+                }
+            }
+        }
+        return $result;
+    }
+
+    private function _get($dir, $mode, $tags = array())
+    {
+        if (!is_dir($dir)) {
+            return false;
+        }
+        $result = array();
+        $prefix = $this->_options['file_name_prefix'];
+        $glob = @glob($dir . $prefix . '--*');
+        if ($glob === false) {
+            return true;
+        }
+        foreach ($glob as $file)  {
+            if (is_file($file)) {
+                $fileName = basename($file);
+                $id = $this->_fileNameToId($fileName);
+                $metadatas = $this->_getMetadatas($id);
+                if ($metadatas === FALSE) {
+                    continue;
+                }
+                if (time() > $metadatas['expire']) {
+                    continue;
+                }
+                switch ($mode) {
+                    case 'ids':
+                        $result[] = $id;
+                        break;
+                    case 'tags':
+                        $result = array_unique(array_merge($result, $metadatas['tags']));
+                        break;
+                    case 'matching':
+                        $matching = true;
+                        foreach ($tags as $tag) {
+                            if (!in_array($tag, $metadatas['tags'])) {
+                                $matching = false;
+                                break;
+                            }
+                        }
+                        if ($matching) {
+                            $result[] = $id;
+                        }
+                        break;
+                    case 'notMatching':
+                        $matching = false;
+                        foreach ($tags as $tag) {
+                            if (in_array($tag, $metadatas['tags'])) {
+                                $matching = true;
+                                break;
+                            }
+                        }
+                        if (!$matching) {
+                            $result[] = $id;
+                        }
+                        break;
+                    case 'matchingAny':
+                        $matching = false;
+                        foreach ($tags as $tag) {
+                            if (in_array($tag, $metadatas['tags'])) {
+                                $matching = true;
+                                break;
+                            }
+                        }
+                        if ($matching) {
+                            $result[] = $id;
+                        }
+                        break;
+                    default:
+                        Zend_Cache::throwException('Invalid mode for _get() method');
+                        break;
+                }
+            }
+            if ((is_dir($file)) and ($this->_options['hashed_directory_level']>0)) {
+                // Recursive call
+                $result = array_unique(array_merge($result, $this->_get($file . DIRECTORY_SEPARATOR, $mode, $tags)));
+            }
+        }
+        return array_unique($result);
+    }
+
+    /**
+     * Compute & return the expire time
+     *
+     * @return int expire time (unix timestamp)
+     */
+    private function _expireTime($lifetime)
+    {
+        if ($lifetime === null) {
+            return 9999999999;
+        }
+        return time() + $lifetime;
+    }
+
+    /**
+     * Make a control key with the string containing datas
+     *
+     * @param  string $data        Data
+     * @param  string $controlType Type of control 'md5', 'crc32' or 'strlen'
+     * @throws Zend_Cache_Exception
+     * @return string Control key
+     */
+    private function _hash($data, $controlType)
+    {
+        switch ($controlType) {
+        case 'md5':
+            return md5($data);
+        case 'crc32':
+            return crc32($data);
+        case 'strlen':
+            return strlen($data);
+        case 'adler32':
+            return hash('adler32', $data);
+        default:
+            Zend_Cache::throwException("Incorrect hash function : $controlType");
+        }
+    }
+
+    /**
+     * Transform a cache id into a file name and return it
+     *
+     * @param  string $id Cache id
+     * @return string File name
+     */
+    private function _idToFileName($id)
+    {
+        $prefix = $this->_options['file_name_prefix'];
+        $result = $prefix . '---' . $id;
+        return $result;
+    }
+
+    /**
+     * Make and return a file name (with path)
+     *
+     * @param  string $id Cache id
+     * @return string File name (with path)
+     */
+    private function _file($id)
+    {
+        $path = $this->_path($id);
+        $fileName = $this->_idToFileName($id);
+        return $path . $fileName;
+    }
+
+    /**
+     * Return the complete directory path of a filename (including hashedDirectoryStructure)
+     *
+     * @param  string $id Cache id
+     * @param  boolean $parts if true, returns array of directory parts instead of single string
+     * @return string Complete directory path
+     */
+    private function _path($id, $parts = false)
+    {
+        $partsArray = array();
+        $root = $this->_options['cache_dir'];
+        $prefix = $this->_options['file_name_prefix'];
+        if ($this->_options['hashed_directory_level']>0) {
+            $hash = hash('adler32', $id);
+            for ($i=0 ; $i < $this->_options['hashed_directory_level'] ; $i++) {
+                $root = $root . $prefix . '--' . substr($hash, 0, $i + 1) . DIRECTORY_SEPARATOR;
+                $partsArray[] = $root;
+            }
+        }
+        if ($parts) {
+            return $partsArray;
+        } else {
+            return $root;
+        }
+    }
+
+    /**
+     * Make the directory strucuture for the given id
+     *
+     * @param string $id cache id
+     * @return boolean true
+     */
+    private function _recursiveMkdirAndChmod($id)
+    {
+        if ($this->_options['hashed_directory_level'] <=0) {
+            return true;
+        }
+        $partsArray = $this->_path($id, true);
+        foreach ($partsArray as $part) {
+            if (!is_dir($part)) {
+                @mkdir($part, $this->_options['hashed_directory_umask']);
+                @chmod($part, $this->_options['hashed_directory_umask']); // see #ZF-320 (this line is required in some configurations)
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Test if the given cache id is available (and still valid as a cache record)
+     *
+     * @param  string  $id                     Cache id
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @return boolean|mixed false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    private function _test($id, $doNotTestCacheValidity)
+    {
+        $metadatas = $this->_getMetadatas($id);
+        if (!$metadatas) {
+            return false;
+        }
+        if ($doNotTestCacheValidity || (time() <= $metadatas['expire'])) {
+            return $metadatas['mtime'];
+        }
+        return false;
+    }
+
+    /**
+     * Return the file content of the given file
+     *
+     * @param  string $file File complete path
+     * @return string File content (or false if problem)
+     */
+    private function _fileGetContents($file)
+    {
+        $result = false;
+        if (!is_file($file)) {
+            return false;
+        }
+        if (function_exists('get_magic_quotes_runtime') && (false)) {
+            $mqr = @get_magic_quotes_runtime();
+            @set_magic_quotes_runtime(0);
+        }
+        $f = @fopen($file, 'rb');
+        if ($f) {
+            if ($this->_options['file_locking']) @flock($f, LOCK_SH);
+            $result = stream_get_contents($f);
+            if ($this->_options['file_locking']) @flock($f, LOCK_UN);
+            @fclose($f);
+        }
+        if (function_exists('set_magic_quotes_runtime')&& (false)) {
+            @set_magic_quotes_runtime($mqr);
+        }
+        return $result;
+    }
+
+    /**
+     * Put the given string into the given file
+     *
+     * @param  string $file   File complete path
+     * @param  string $string String to put in file
+     * @return boolean true if no problem
+     */
+    private function _filePutContents($file, $string)
+    {
+        $result = false;
+        $f = @fopen($file, 'ab+');
+        if ($f) {
+            if ($this->_options['file_locking']) @flock($f, LOCK_EX);
+            fseek($f, 0);
+            ftruncate($f, 0);
+            $tmp = @fwrite($f, $string);
+            if (!($tmp === FALSE)) {
+                $result = true;
+            }
+            @fclose($f);
+        }
+        @chmod($file, $this->_options['cache_file_umask']);
+        return $result;
+    }
+
+    /**
+     * Transform a file name into cache id and return it
+     *
+     * @param  string $fileName File name
+     * @return string Cache id
+     */
+    private function _fileNameToId($fileName)
+    {
+        $prefix = $this->_options['file_name_prefix'];
+        return preg_replace('~^' . $prefix . '---(.*)$~', '$1', $fileName);
+    }
+
+}

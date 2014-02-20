@@ -1,83 +1,198 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Part.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Mime_Decode
+ */
+require_once 'Zend/Mime/Decode.php';
+
+/**
+ * @see Zend_Mail_Part
+ */
+require_once 'Zend/Mail/Part.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Part_File extends Zend_Mail_Part
+{
+    protected $_contentPos = array();
+    protected $_partPos = array();
+    protected $_fh;
+
+    /**
+     * Public constructor
+     *
+     * This handler supports the following params:
+     * - file     filename or open file handler with message content (required)
+     * - startPos start position of message or part in file (default: current position)
+     * - endPos   end position of message or part in file (default: end of file)
+     *
+     * @param   array $params  full message with or without headers
+     * @throws  Zend_Mail_Exception
+     */
+    public function __construct(array $params)
+    {
+        if (empty($params['file'])) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('no file given in params');
+        }
+        
+        if (!is_resource($params['file'])) {
+            $this->_fh = fopen($params['file'], 'r');
+        } else {
+            $this->_fh = $params['file'];
+        }
+        if (!$this->_fh) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('could not open file');
+        }
+        if (isset($params['startPos'])) {
+            fseek($this->_fh, $params['startPos']);
+        }
+        $header = '';
+        $endPos = isset($params['endPos']) ? $params['endPos'] : null;
+        while (($endPos === null || ftell($this->_fh) < $endPos) && trim($line = fgets($this->_fh))) {
+            $header .= $line;
+        }
+
+        Zend_Mime_Decode::splitMessage($header, $this->_headers, $null);
+        
+        $this->_contentPos[0] = ftell($this->_fh);
+        if ($endPos !== null) {
+            $this->_contentPos[1] = $endPos;
+        } else {
+            fseek($this->_fh, 0, SEEK_END);
+            $this->_contentPos[1] = ftell($this->_fh);
+        }
+        if (!$this->isMultipart()) {
+            return;
+        }
+        
+        $boundary = $this->getHeaderField('content-type', 'boundary');
+        if (!$boundary) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('no boundary found in content type to split message');
+        }
+        
+        $part = array();
+        $pos = $this->_contentPos[0];
+        fseek($this->_fh, $pos);
+        while (!feof($this->_fh) && ($endPos === null || $pos < $endPos)) {
+            $line = fgets($this->_fh);
+            if ($line === false) {
+                if (feof($this->_fh)) {
+                    break;
+                }
+                /**
+                 * @see Zend_Mail_Exception
+                 */
+                require_once 'Zend/Mail/Exception.php';
+                throw new Zend_Mail_Exception('error reading file');
+            }
+
+            $lastPos = $pos;
+            $pos = ftell($this->_fh);
+            $line = trim($line);
+
+            if ($line == '--' . $boundary) {
+                if ($part) {
+                    // not first part
+                    $part[1] = $lastPos;
+                    $this->_partPos[] = $part;
+                }
+                $part = array($pos);
+            } else if ($line == '--' . $boundary . '--') {
+                $part[1] = $lastPos;
+                $this->_partPos[] = $part;
+                break;
+            }
+        }
+        $this->_countParts = count($this->_partPos);
+        
+    }
+
+
+    /**
+     * Body of part
+     *
+     * If part is multipart the raw content of this part with all sub parts is returned
+     *
+     * @return string body
+     * @throws Zend_Mail_Exception
+     */
+    public function getContent($stream = null)
+    {
+        fseek($this->_fh, $this->_contentPos[0]);
+        if ($stream !== null) {
+            return stream_copy_to_stream($this->_fh, $stream, $this->_contentPos[1] - $this->_contentPos[0]);    
+        }
+        $length = $this->_contentPos[1] - $this->_contentPos[0];
+        return $length < 1 ? '' : fread($this->_fh, $length);
+    }
+
+    /**
+     * Return size of part
+     *
+     * Quite simple implemented currently (not decoding). Handle with care.
+     *
+     * @return int size
+     */
+    public function getSize() {
+        return $this->_contentPos[1] - $this->_contentPos[0];
+    }
+
+    /**
+     * Get part of multipart message
+     *
+     * @param  int $num number of part starting with 1 for first part
+     * @return Zend_Mail_Part wanted part
+     * @throws Zend_Mail_Exception
+     */
+    public function getPart($num)
+    {
+        --$num;
+        if (!isset($this->_partPos[$num])) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('part not found');
+        }
+
+        return new self(array('file' => $this->_fh, 'startPos' => $this->_partPos[$num][0], 
+                              'endPos' => $this->_partPos[$num][1]));
+    }
+}

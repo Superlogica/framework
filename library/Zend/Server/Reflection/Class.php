@@ -1,51 +1,198 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Server_Reflection_Method
+ */
+require_once 'Zend/Server/Reflection/Method.php';
+
+/**
+ * Class/Object reflection
+ *
+ * Proxies calls to a ReflectionClass object, and decorates getMethods() by
+ * creating its own list of {@link Zend_Server_Reflection_Method}s.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Reflection
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version $Id: Class.php 13217 2008-12-14 11:09:37Z thomas $
+ */
+class Zend_Server_Reflection_Class
+{
+    /**
+     * Optional configuration parameters; accessible via {@link __get} and
+     * {@link __set()}
+     * @var array
+     */
+    protected $_config = array();
+
+    /**
+     * Array of {@link Zend_Server_Reflection_Method}s
+     * @var array
+     */
+    protected $_methods = array();
+
+    /**
+     * Namespace
+     * @var string
+     */
+    protected $_namespace = null;
+
+    /**
+     * ReflectionClass object
+     * @var ReflectionClass
+     */
+    protected $_reflection;
+
+    /**
+     * Constructor
+     *
+     * Create array of dispatchable methods, each a
+     * {@link Zend_Server_Reflection_Method}. Sets reflection object property.
+     *
+     * @param ReflectionClass $reflection
+     * @param string $namespace
+     * @param mixed $argv
+     * @return void
+     */
+    public function __construct(ReflectionClass $reflection, $namespace = null, $argv = false)
+    {
+        $this->_reflection = $reflection;
+        $this->setNamespace($namespace);
+
+        foreach ($reflection->getMethods() as $method) {
+            // Don't aggregate magic methods
+            if ('__' == substr($method->getName(), 0, 2)) {
+                continue;
+            }
+
+            if ($method->isPublic()) {
+                // Get signatures and description
+                $this->_methods[] = new Zend_Server_Reflection_Method($this, $method, $this->getNamespace(), $argv);
+            }
+        }
+    }
+
+    /**
+     * Proxy reflection calls
+     *
+     * @param string $method
+     * @param array $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        if (method_exists($this->_reflection, $method)) {
+            return call_user_func_array(array($this->_reflection, $method), $args);
+        }
+
+        require_once 'Zend/Server/Reflection/Exception.php';
+        throw new Zend_Server_Reflection_Exception('Invalid reflection method');
+    }
+
+    /**
+     * Retrieve configuration parameters
+     *
+     * Values are retrieved by key from {@link $_config}. Returns null if no
+     * value found.
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        if (isset($this->_config[$key])) {
+            return $this->_config[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Set configuration parameters
+     *
+     * Values are stored by $key in {@link $_config}.
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public function __set($key, $value)
+    {
+        $this->_config[$key] = $value;
+    }
+
+    /**
+     * Return array of dispatchable {@link Zend_Server_Reflection_Method}s.
+     *
+     * @access public
+     * @return array
+     */
+    public function getMethods()
+    {
+        return $this->_methods;
+    }
+
+    /**
+     * Get namespace for this class
+     *
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->_namespace;
+    }
+
+    /**
+     * Set namespace for this class
+     *
+     * @param string $namespace
+     * @return void
+     */
+    public function setNamespace($namespace)
+    {
+        if (empty($namespace)) {
+            $this->_namespace = '';
+            return;
+        }
+
+        if (!is_string($namespace) || !preg_match('/[a-z0-9_\.]+/i', $namespace)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid namespace');
+        }
+
+        $this->_namespace = $namespace;
+    }
+
+    /**
+     * Wakeup from serialization
+     *
+     * Reflection needs explicit instantiation to work correctly. Re-instantiate
+     * reflection object on wakeup.
+     *
+     * @return void
+     */
+    public function __wakeup()
+    {
+        $this->_reflection = new ReflectionClass($this->getName());
+    }
+}

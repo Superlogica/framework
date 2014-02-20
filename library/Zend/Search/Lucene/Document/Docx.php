@@ -1,68 +1,143 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Document
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Document_OpenXml */
+require_once 'Zend/Search/Lucene/Document/OpenXml.php';
+
+if (class_exists('ZipArchive', false)) {
+
+/**
+ * Docx document.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Document
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Document_Docx extends Zend_Search_Lucene_Document_OpenXml {
+    /**
+     * Xml Schema - WordprocessingML
+     *
+     * @var string
+     */
+    const SCHEMA_WORDPROCESSINGML = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+
+    /**
+     * Object constructor
+     *
+     * @param string  $fileName
+     * @param boolean $storeContent
+     */
+    private function __construct($fileName, $storeContent) {
+        // Document data holders
+        $documentBody = array();
+        $coreProperties = array();
+
+        // Open OpenXML package
+        $package = new ZipArchive();
+        $package->open($fileName);
+
+        // Read relations and search for officeDocument
+        $relations = simplexml_load_string($package->getFromName('_rels/.rels'));
+        foreach($relations->Relationship as $rel) {
+            if ($rel ["Type"] == Zend_Search_Lucene_Document_OpenXml::SCHEMA_OFFICEDOCUMENT) {
+                // Found office document! Read in contents...
+                $contents = simplexml_load_string($package->getFromName(
+                                                                $this->absoluteZipPath(dirname($rel['Target'])
+                                                              . '/'
+                                                              . basename($rel['Target']))
+                                                                       ));
+
+                $contents->registerXPathNamespace('w', Zend_Search_Lucene_Document_Docx::SCHEMA_WORDPROCESSINGML);
+                $paragraphs = $contents->xpath('//w:body/w:p');
+
+                foreach ($paragraphs as $paragraph) {
+                    $runs = $paragraph->xpath('.//w:r/*[name() = "w:t" or name() = "w:br"]');
+
+                    if ($runs === false) {
+                    	// Paragraph doesn't contain any text or breaks
+                    	continue;
+                    }
+
+                    foreach ($runs as $run) {
+                     if ($run->getName() == 'br') {
+                         // Break element
+                         $documentBody[] = ' ';
+                     } else {
+                     	$documentBody[] = (string)$run;
+                     }
+                    }
+
+                    // Add space after each paragraph. So they are not bound together.
+                    $documentBody[] = ' ';
+                }
+
+                break;
+            }
+        }
+
+        // Read core properties
+        $coreProperties = $this->extractMetaData($package);
+
+        // Close file
+        $package->close();
+
+        // Store filename
+        $this->addField(Zend_Search_Lucene_Field::Text('filename', $fileName, 'UTF-8'));
+
+        // Store contents
+        if ($storeContent) {
+            $this->addField(Zend_Search_Lucene_Field::Text('body', implode('', $documentBody), 'UTF-8'));
+        } else {
+            $this->addField(Zend_Search_Lucene_Field::UnStored('body', implode('', $documentBody), 'UTF-8'));
+        }
+
+        // Store meta data properties
+        foreach ($coreProperties as $key => $value) {
+            $this->addField(Zend_Search_Lucene_Field::Text($key, $value, 'UTF-8'));
+        }
+
+        // Store title (if not present in meta data)
+        if (! isset($coreProperties['title'])) {
+            $this->addField(Zend_Search_Lucene_Field::Text('title', $fileName, 'UTF-8'));
+        }
+    }
+
+    /**
+     * Load Docx document from a file
+     *
+     * @param string  $fileName
+     * @param boolean $storeContent
+     * @return Zend_Search_Lucene_Document_Docx
+     * @throws Zend_Search_Lucene_Document_Exception
+     */
+    public static function loadDocxFile($fileName, $storeContent = false) {
+        if (!is_readable($fileName)) {
+        	require_once 'Zend/Search/Lucene/Document/Exception.php';
+        	throw new Zend_Search_Lucene_Document_Exception('Provided file \'' . $fileName . '\' is not readable.');
+        }
+
+    	return new Zend_Search_Lucene_Document_Docx($fileName, $storeContent);
+    }
+}
+
+} // end if (class_exists('ZipArchive'))

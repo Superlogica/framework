@@ -1,60 +1,178 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-ay6LiS63faaZ48LNnOrZ9OydQxefmI8n
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: UiWidgetElement.php 20165 2010-01-09 18:57:56Z bkarwin $
+ */
+
+/**
+ * @see Zend_Form_Decorator_ViewHelper
+ */
+require_once "Zend/Form/Decorator/ViewHelper.php";
+
+/**
+ * @see ZendX_JQuery_Form_Decorator_UiWidgetElementMarker
+ */
+require_once "ZendX/JQuery/Form/Decorator/UiWidgetElementMarker.php";
+
+/**
+ * Abstract Form Decorator for all jQuery UI Form Elements
+ *
+ * @package    ZendX_JQuery
+ * @subpackage Form
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_Form_Decorator_UiWidgetElement
+    extends Zend_Form_Decorator_ViewHelper
+    implements ZendX_JQuery_Form_Decorator_UiWidgetElementMarker
+{
+    /**
+     * Element attributes
+     *
+     * @var array
+     */
+    protected $_attribs;
+
+    /**
+     * jQuery UI View Helper
+     *
+     * @var ZendX_JQuery_View_Helper_UiWidget
+     */
+    public $helper;
+
+    /**
+     * jQuery related attributes/options
+     *
+     * @var array
+     */
+    protected $_jQueryParams = array();
+
+    /**
+     * Get element attributes
+     *
+     * @return array
+     */
+    public function getElementAttribs()
+    {
+        if (null === $this->_attribs) {
+            if($this->_attribs = parent::getElementAttribs()) {
+                if (array_key_exists('jQueryParams', $this->_attribs)) {
+                    $this->setJQueryParams($this->_attribs['jQueryParams']);
+                    unset($this->_attribs['jQueryParams']);
+                }
+            }
+        }
+
+        return $this->_attribs;
+    }
+
+    /**
+     * Set a single jQuery option parameter
+     *
+     * @param  string $key
+     * @param  mixed $value
+     * @return ZendX_JQuery_Form_Decorator_UiWidgetElement
+     */
+    public function setJQueryParam($key, $value)
+    {
+        $this->_jQueryParams[(string) $key] = $value;
+        return $this;
+    }
+
+    /**
+     * Set jQuery option parameters
+     *
+     * @param  array $params
+     * @return ZendX_JQuery_Form_Decorator_UiWidgetElement
+     */
+    public function setJQueryParams(array $params)
+    {
+        $this->_jQueryParams = array_merge($this->_jQueryParams, $params);
+        return $this;
+    }
+
+    /**
+     * Retrieve a single jQuery option parameter
+     *
+     * @param  string $key
+     * @return mixed|null
+     */
+    public function getJQueryParam($key)
+    {
+        $this->getElementAttribs();
+        $key = (string) $key;
+        if (array_key_exists($key, $this->_jQueryParams)) {
+            return $this->_jQueryParams[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * Get jQuery option parameters
+     *
+     * @return array
+     */
+    public function getJQueryParams()
+    {
+        $this->getElementAttribs();
+        return $this->_jQueryParams;
+    }
+
+    /**
+     * Render an jQuery UI Widget element using its associated view helper
+     *
+     * @param  string $content
+     * @return string
+     * @throws Zend_Form_Decorator_Exception if element or view are not registered
+     */
+    public function render($content)
+    {
+        $element = $this->getElement();
+        $view = $element->getView();
+        if (null === $view) {
+            require_once 'Zend/Form/Decorator/Exception.php';
+            throw new Zend_Form_Decorator_Exception('UiWidgetElement decorator cannot render without a registered view object');
+        }
+
+        if(method_exists($element, 'getJQueryParams')) {
+            $this->setJQueryParams($element->getJQueryParams());
+        }
+        $jQueryParams = $this->getJQueryParams();
+
+        $helper    = $this->getHelper();
+        $separator = $this->getSeparator();
+        $value     = $this->getValue($element);
+        $attribs   = $this->getElementAttribs();
+        $name      = $element->getFullyQualifiedName();
+
+        $id = $element->getId();
+        $attribs['id'] = $id;
+
+        $elementContent = $view->$helper($name, $value, $jQueryParams, $attribs);
+        switch ($this->getPlacement()) {
+            case self::APPEND:
+                return $content . $separator . $elementContent;
+            case self::PREPEND:
+                return $elementContent . $separator . $content;
+            default:
+                return $elementContent;
+        }
+    }
+}

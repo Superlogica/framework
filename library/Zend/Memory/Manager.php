@@ -1,108 +1,461 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51J4H4exdxrjrWFHQLSYhlB+GBfuGdH6swIiXrXd9x29djZOcw5wlW9yyXjcA6Z66GcMpl8L
-zTSFvTLpwnVwRV0vnbYOWSN2kk5TX43zQYG9c8wTtzDgTH/Uf+OLwJcZ1+HMKx3DWmXCBBAfGx4f
-9o9cZPb0e6igf5EvT9N/3xSMnoxln5aHr3cHdC57JNuegKeJuAi9vJcWzJJekl5DlhMA/iiGnx8M
-Q/YCDmx5WxU7x/1wuzFDn4kJIPpDKor7T+KlBeH2QEbcGU0IrKXaAiwPhTMMoEOJ9PQC+xTLau7x
-WuBIZWJ5U+vwk6QyDwDGXLi4ug2epPD+U+v4M/IJsZxB0W/HMEVXBvmmK3jB5hhG951FGOCGs+Qm
-+eMNk8QKh8f8XUzvz/GKW1vZmAkoCLoGTKMhHvP99RJ/sEYKB53RQBC1/xHxjRysCgM84lOSA3eq
-5HXDbthNKB8+AfLUdMNZtOkwbsQVWeYgMLSh7eMv1JONB6CETHoyu02aO8ao7tVt48I+KJ4xYNBP
-XFt5KjXWd3hDcgumXgvcTBqG8xP8uySPn0qHgHND0UaKMqkhRzerAhG8iDvk9gPemcZw0UKOd22a
-7UnK115tydgUKdiD0rccieNc7He6xt1otq46GHRpDFJ3WNCd+1iknv9IKeYTFeIAMqKIC6CA3faw
-e9hG22Sl2WPo1wIu8Kfej2pnE5MAMDzBkA8Mmpur+LcNdBgvb30j2tCWpKdVqIARxd7uqBc9P6He
-pK2LFJyzkH8Rv7Z5JWM+yn+xA8M+lu+8+Q6RgL3UsYtHjmDh0cHvSOF9TaeRtpEr79CRQrYQpt26
-YEflpB2rmkx7ERQUjxLVGsax2cp/kcr42EkRNeRkSt1baFZBDrPr0OPhwLopMIzL+T5CkrlIsZ8V
-8GQNQzFjpEwstaZPeSDrgYOP8AyLEi1VqfhmigSo8hAwCyrU4aTD3gGTT7XfrsLe56JYtMZf12tM
-EdgNQmZ3ZCqSw/gGrYl71o/3iamO7x+vEG3RM9OdPF+rw2XW9p+IlRDhQsdGl37gh/hy3OcDu6L+
-w2RSSxU0Ggwe+iyg4+mkQqVt4/k7xOHzmVwkMtpTG0TgDdhKN9n3mtnKXCQZkhktc9DL3zRV1Ibo
-gVzA+wddxer7u9hQM7RIUAWS3I64G7NoIFff/uPp+gxQYiWJ5M3JNByw9xz/GkLmhhPj72GIkmYb
-PkUn15XTTATGJ7su36L7IXPmuWWb9T8bnYK4XqsTinIMWtkHj1DhD4820NV+vzfn3NCX1T3sr7uo
-Q9dj184hgMGjrVIYonaJ8kwic79u3J3s+XI7BhGl+R6ataL3JbRSXLZKk+9tQ1eeLa9xfEvcAZe0
-wo4uu9jRJFuJBVa3XRpdPAip3k6AKRSPyUFcV9NuP7KEtLakEClKjDAXPNioWFhaQwsF7iWkX4ut
-zOE0AR0IJM6B36y0p6bC7tRZ2wIfi4eY7UEpHxsFTWzTtrmksUoO04+Oixvct6IaTIFFucXBlZJx
-O/JjkXlaqPner8D8UuIj9JgGfQX3hVR4mHb2grDCEbIzVewtPienqrngvmGlEBJZmZZIUy/QLSea
-oe/S6rn6JdaFtZPtD1urHLkCH3JcEt8JDzS/4Ustoechd+mFChTl98o8X4OvPgJGH6Gsf2g/1s2n
-mIh7RUro/mToTsYyn3CBRJSCmoGR4NXYIToaflNCVBOLP06gVHBlRhcicTVeFRJorphMDGS6iSHq
-as0hDQ/VEVH7FoKQKv95xuaEYABr2+Ol+QC9yy6bAJwrdK7jwCZJZS9InNVNhkZ42jLoVPKGiUtc
-v9w58/X3XOINuZAt/Qir7XsXB7srX3zEqMZlWxNoZ4vGtZcqY1gDrGG68vYV0XYGb7rpOgTDa69K
-D7ZRYQ8baGko26GbvY/nNyiG76K+I2i/lQhtDlI85cL25/c0fgj4icIWRe/T+HhFJIGh78GlaT5J
-nvjeofFKz/JFh4Bkg8lowEi0IaMfhNEPxzYEhg55dDAl6kFesbpoS4ioHV+ogDuEYR/WZq2vzmWk
-2BxjwxG1J0MXuEX+fiiG4nT7vMJTNnvdCWi+0d1D5JzgGA6IXd3XiyaqUfHA9eRkZ566pC0vTIeG
-SxzFDR4dzYb2mYfWVfnH0IHUFTwNzytQOJY6Scl9I8oDQBTjaFoBNqNP2SE5j/WKKsbOZCfPI587
-Qpcg5Vmh9n8hGfr+S/sxN/7MIi2fPzYUeNS3nKWzn8UB2gOIER0JqEgB4N72EDNCyiJZHRLQzTJp
-5xqlebl+h0v0BO+2DX6tx8hajIp/YNVdU3ScjsZq7CWb0M+TfYehlMx5BcKLgzk6Bkv5f6smPRjj
-LZgkqj/FUVeY6JNjzcqdDCNjHw86y60NXmeEeKYFD1+mPz8+MDkh2SQSyjOEDHQDAVQhNyccThNL
-1mo5XUn7esMnpUE7enNAMY8/9hiHAHWdBwUHJ1NrJOtjrYIGO9eQ2skpo9vkigiH6taLtt3dAr4a
-uoEJqhyvCnWfAsGrg/t/cZ+1iXJahjnNA0JjZrHk/h1s1vfV9q2Euj2i0gInCCsyqMK912IkXOSZ
-2FiBkjQrJrfYCNQQww589Dl0WubHIqEe3pWjAExtfk6Awrb/0sGdmNPEoYLiEFzomn/Q6yq8nnqB
-nRPgkg8ihmf0glDn2PmzLEDDo8+C8QNAZjtv0oMA2N511wysyoMm1qp2m9Z7WL8viI7V9bOLumif
-aNHF7NVkhDwXnuGetqCZCpxcysKw/WSoWTRhDFQ8M5o3jCxhtGi3qhgIP9h9qmh0aiTinR9ST8/Q
-SNuLVqlsmCPazm8Q6T6+oiZN0Dd/BDbfLdZ0WGH2MuepTxsYcve6BkS+OiJmdytPNEIHSXAUPX3B
-5XzC3I2qux3GH8R099uxpt9z0zh+zLAnAHd2l0kpfdnijq3MRV1k0sHlOtB/tqRLPvKX44NrFZvr
-wE9gT2YvSCRjiizOCz7AcDhynw56kGem1LFXsbcMjFy2z278sYrJ0SZRgjbF1dzJXCtCVOv4UyJw
-UORIHyjhYvSFGklXUNsiAc0Am2KEH/zBKUIGLQ7Yc9px196HPL+fR+CGximDuarG7gkXYuWzYLWJ
-pMzHo3ZEzXz0zCWHzjBVPncMLaLf1AZyH4oGxeGx3NML3prAKDA+P71trFPK2jugR+03dxoG60DL
-QMxrWixLQtRm1xRuK8fM5HgKrTbqwx1X/rp/c2mu5WO7mDV3JCMlGpfjUT3ysAAYXP8H465Mz9hX
-5c7dw6rH1BH02ZE+BKbbRN84x7U4XggAi5YesGa1SM+TInBfmxOSxM1PK/Yx62qw5AYeStTKDZxV
-UP6pLRSVDiaMPF9a8W25Eyofp46rTGrGnpIngkcmM00p/VeUUeNvWNjNfo7ZzfgIfrad7AnjjbK3
-r2h8rRvNcfVD5Q215+88s8Al5RXqAIU7jLJYo4UCUHm73Yw1z7WQXAKbyqEHVPd5j1zhMQuE6FIy
-Lr9Mh4EIkbo6TA50RVjnq+TxiaqN0HJxX5Q5vCtHwBWbEdWmE5HkHF5bcmK6LLtE3MjlXyrGHohL
-qQtk1GIjRylmzy9BnF/8TRHhHNV4Lm/eMM6OAaz2QPwPYzwkclI/XXwIzBADYWGQqDLFqPR+tAGk
-RiFIO2367QaXJeY0YyluP/u0UNVMtKusGek+RdJZCS1/v02hxwBlf2NWUxSdiczJNllPxfRUxLEr
-O1emXgSAxCYPSOhxaczj9BQ5nm+xqxd5INJ//5g7FbCMr6XfSBUA7wZ42AZNnihi+CEIysSp5b7H
-NP5/1OGUdii5ucFs9z1YDm5haIX/NIKqh+CJ5bDGqCFku2/qGOFXm3+cXXXeXoTktSDYpOsxzdu5
-585uAZbrQlAKdq5gWfaIUm0qO1Ecq61DQ+ilVD+pjn/LdTVfSMVstNqjVJNFzSKrEC+2ZX0zIa3j
-7ssOcQoWCwMxIqf1M+TVYNc5ZgsvO2oPEA0Hh6Cv/rL0b7KZYzeGZjpMzFDgR6R8GHBv2WGaL8Fe
-xFg+42CfMvrXUFxcf5+alcvQAIUJOp752ic4tuqjKQVIC08GC//CknVqYexmi4Pt2PnEtB3h02YV
-B3FNoHzw6A9mK6TSuYptBXlwtLbO9/Mq95I3LFnS33HvI/SsYHxBW35XV4FdYsv52Gana5xTJhDJ
-UNxvA0uwX5HUVplQ8k9ibbXA+dVEB6+iKFrAuuWssQNsbXnHAw04YSg137QYr1xcvcZznDnPMtPh
-sqpUkVVvgu+FPs56FqY2KSFWHvxv764DGwFypFghIZsyrWE2Ayt5zroqPHPJ5lJEJ//rOqA1ZXO8
-gTyrSNbEGvIMn6LG5UBz3QxXoAkOpMql4Yka7f7xhMC5jwutKL0KAqW5SuKO3AsDzPPY9OyHim5U
-JRfv2u2cLt0rV3i2b/43fitq/WXSQujH8XoG5+fB0I06e/XscGv9QFpFiHx5LgNgz258TezglX20
-YOhbJSxKluAnOm3iRNNHAhoZdKXa0if3ufJcedHlqgPPJaNFgvgisJbukPQmttEm0znKBkXkgqwt
-6t688nIvq1YIeQj0RKKM6jm6UmETMhq5/KwCle1JkNwtL9xWA2p4VpAQV7L39IAJ/KyDlHZNawnV
-BS+yL4obA/S2AWhw8owVmuzAIvRbSsMwZEX0/kClU7w47/y58QCEzSrmdtZrnBvQsun6L10RBmHw
-Joli+0pS1CTVeREFkioUBv1D0CQ66v9CSpY1EWLJ2xUZBxWazi6H2/gEG5Vb0hduC0Tgk0IPKd59
-hzLVmphqZvEUDW71ON8sCgLX4dUQJEmLFaLCX9mqEaxBprQjLFYmS+F2hpqLLOlo2SZ1uKs8sO5+
-Ndwl0Qf1HOYhSO8CoHywW+5NMS5b9hWNT2JHH5b1QNeUEgRtRTQesnfE4mnCmxKua6Gux4KbX0qL
-4YHWdP+WMEwsyXLS0CXCn/FhAwuzHO93Thwf8usAHZe1eU80mxhJ305D9gCofZ6GK/jCaLTDWPSM
-G6B1h/HYqcEbhGY7ctfaRv/ikyr8HlRWFxwtqRwPw7xf8e6sJprkEm2aqcD+V4j88uvOAfHygr+s
-asXv0F10GvbMTMOms4juOqph+ZsdiKIRoBS7ZQlUIfsZKBt4HO46RgQnElyFtlqF4kRuISpZ7HtN
-q1Kf08aPxmI0rq16VFOEdPylg5df9Woboslnsi55uDXN2UoNs6YZBLb7sJ49/hmx+aaFvH+aGpDX
-muSNsLikTM2cHMKKgHQSTOHBeF/QgGXcyUFZSUK+XSAWjLZ7+IMQ77V7J4ju3ce1WPH0QobHLMQ+
-GQcQVd1qmW7sdl8nygZdqheX1XZ2nlU5PnIATcWxU4KQSoBZwSvHadLqCP8EQwRzr4g+hMTvg6ls
-MFwU2UWTDHPKCYtP7glgNEZ00a7mgqGbsVmd+R9vukmiUz72FnZ5qacJ9pNH6rzCKuJB64u1XOXa
-oYzNv/uc2a7FOCk8QVyVJw+tx53Edaxw9H3l/vrGB1YXexdjtyipXXK/hdnhWtgLDnBxEEcWgivW
-LtnIRaC9AhRD8bXzo3hXtKsjT8MLxNj6r/8/dVjEH9NxH3V333IVttclbFzj5Z6DCqUeWMzxlyAH
-1Jjfl5nPFQ3Gvjv6tbcgApgRR7JAk6ZmQKypfLpgpY9iLrUGNF+odpxufj/hAPFabC+bM903IXLA
-5+lls0SLc9mbpHvuAuKtl9NevkLyw3UvsZbVuDm5MJxUEG8bjbjXjja6bVvEdPhMxcevq2oCUfxt
-hxEEDBzKbYu4qI3EKcmOFgrRZ87xXlPdDOUSU4Q/UdxY2o1covxah518TGOTFJj95dowli3OhSJb
-iAmAjNoPYwqF9659VE/ltdnATs3s/qHeGBf94y2pXi99BIKohS29NHXrYUovUBAXIdK9UPK6iqDu
-B1cdVldKKvjXCMvp9Tak0yerfuxAJUyVxGnMMziA7DkDIZWLKhPjD/IQW8zh/aPeCEu0zUAm2gpX
-uIdp+dj7aIi9p0mk2aCl9dY8j7m/DkFxkETXIeAQmiwVGGE1nrtCxCs3kEIqrK9ElnTn5n5yTD8i
-2AJp52meRv4/EKQP9v8uNEHvmk4o4GX56tDRl7PhuKUWlwpDtPJUvdgjJEubESIDih21pBHpnU78
-DFo+4TVbOc3i4MAOajS6RCi+Zqhn2C0pQKIjKXFNndn/BE0bGq0t6Lq6vfU7ofvw7k8FmYsoR4Vd
-XGL0iDRy9RqcZzb9Lkk3DZl+MPa32yVHqIZnlbH6kLUkdYa6gOdSGIcUNqauGdO/A5Qm22ADrQLK
-Xklcvf5P360NNDVqWyP1Tf9WwySA8mzpr87uP90RDd4ffPpaGRhT7MyrvPMSjXrzXoKC8YRZcEWv
-cQqSksSwZBlYUSDJbNomhoWX6B60AcFOwP8jOPCuOdRIazxTB0BKGKNbvqjHiCP/z2eIMvre5sKO
-BH4v8LajGPJMLBA5cri5VFE0ykyhm5SsaQ+1mYxGV/gvYSMrdXn0caBZoK2uFnpdI9lwM2ggkbgo
-kEPZJxANWe7bSuxcYhX5QIGL+Po1M+emoLeeEHy9y5A6nH0UncadM9BSHY5ef90gVVJudjs3Fqhk
-ZejmhF6Db6HlCdODKgb85GDSUHqXHj1Hny+3yWXGOxfhsfJghcRR+7pNwOg8mgLG+i3FZsAxu9Pz
-yafCwHP2zvsBsfvoBATQ707EximCPDQ5yGXxP9XLUJstwb/toKnn9H2vviMM+cPqDl0JUu+8yaDU
-6quZ+1zAhHq/TYkGp+nMEdCgb/jIKhckKOGhzFQIkvp+almwQZXrCBZo1ATEk8Gel5DAvl0mWLu+
-0AXJrGOYDUVKeJGrJXpthmi7QxVgUBIsd5uD0ezX/RG90G2Ztch/KKMzUhg+PgaYnhfp5z8lwrq4
-mDS5nNQXu7zqrzaFe4vs8W0wFy9w2aMFa6ZZCab+9y5kKrrDFsUhoAKekmQ4skPqrYiMNZM7ebtq
-9DkRpDxqP/VU38vCXfHul+UX3AHWogpsvIhLQCHxsFcV1Qxmp9WDwhYXRLLl0VaNfT9Wd4Hqb90w
-53tAhLYePsgQJaDJk4BVHUBeUmpRSU+naE4mbmiTnTnXjKB152gBiaAjaETreLjfPhDMdcYG+3D2
-O7Cv3NOM6xU1eRKXcwpgKm3tcOrvmQc3xhL5D3avkcCWzwTywRfJNd8hDhuUiEMhnZxzfCCrpsC3
-ZVaCwfdGNvoy2JMEb7DCWBkdZeQ6bGgNW/5jTuoFdSlYUbF08CwxbelnTi7J8P8sIbRNXzmfFvZH
-6D69v/oBVOb9CicM/tamMlGthecp9ZxH9IJpQoDXCI+GzCHPceO3cT/2Tw7Q8IkKgsQb5EI9eS9t
-iRkuJhKq8MzHXdyRZj8pYJBvSXbCRTfEuK+P3TuIX7aWMTNoA4x5tAFIpFSWQTN7UkE9trJ9q6Iw
-FpcMPv9mCqJz1MWNPS/gQ/tSofJ8ltWwyfySHqMh5FqjYfjx7c+5I8IMZRyI1Qd2m2RNCC0xZdu2
-7Vxto920W56psgG79Zc5MBmkhUItoxLoCzd8imdB0ZERKH+J+yjpuKGKrR69VEjjYHdsY/YgjMKh
-lL6UUBbLdThJa7cCYyoBMKKQh7p1mOdChr44TWJl8VPq/lpYdMfHPGMNIhTgsZ/lsBXoMGDp69gL
-/94QsrZehCRdlOKbalSQSB+reAUXPsdWylTVg7pWwrIRcKhs+chgAp21A7Usi6MSL+ypskPpuye5
-bdrPvS9+Pot4fZrlsvyh+lItl3lCvbWlpoM50aYLS0SBXMfflh5lUpHkIsBTh5qD+5juZUzSUSNG
-RQnSn0ETqE8ZVyhalWzJG/115QJOKOba0S9AufIOTn5TzvcvO62CmcuwGE/6noAuSvTd9XTNBu/U
-wXesUUZhD95Bj2g6zR5+JxiaD1yAuQefmnV/LGD/pwuMBCVY
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Memory_Container_Movable */
+require_once 'Zend/Memory/Container/Movable.php';
+
+/** Zend_Memory_Container_Locked */
+require_once 'Zend/Memory/Container/Locked.php';
+
+/** Zend_Memory_AccessController */
+require_once 'Zend/Memory/AccessController.php';
+
+
+/**
+ * Memory manager
+ *
+ * This class encapsulates memory menagement operations, when PHP works
+ * in limited memory mode.
+ *
+ *
+ * @category   Zend
+ * @package    Zend_Memory
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Memory_Manager
+{
+    /**
+     * Object storage backend
+     *
+     * @var Zend_Cache_Backend_Interface
+     */
+    private $_backend = null;
+
+    /**
+     * Memory grow limit.
+     * Default value is 2/3 of memory_limit php.ini variable
+     * Negative value means no limit
+     *
+     * @var integer
+     */
+    private $_memoryLimit = -1;
+
+    /**
+     * Minimum value size to be swapped.
+     * Default value is 16K
+     * Negative value means that memory objects are never swapped
+     *
+     * @var integer
+     */
+    private $_minSize = 16384;
+
+    /**
+     * Overall size of memory, used by values
+     *
+     * @var integer
+     */
+    private $_memorySize = 0;
+
+    /**
+     * Id for next Zend_Memory object
+     *
+     * @var integer
+     */
+    private $_nextId = 0;
+
+    /**
+     * List of candidates to unload
+     *
+     * It also represents objects access history. Last accessed objects are moved to the end of array
+     *
+     * array(
+     *     <id> => <memory container object>,
+     *     ...
+     *      )
+     *
+     * @var array
+     */
+    private $_unloadCandidates = array();
+
+    /**
+     * List of object sizes.
+     *
+     * This list is used to calculate modification of object sizes
+     *
+     * array( <id> => <size>, ...)
+     *
+     * @var array
+     */
+    private $_sizes = array();
+
+    /**
+     * Last modified object
+     *
+     * It's used to reduce number of calls necessary to trace objects' modifications
+     * Modification is not processed by memory manager until we do not switch to another
+     * object.
+     * So we have to trace only _first_ object modification and do nothing for others
+     *
+     * @var Zend_Memory_Container_Movable
+     */
+    private $_lastModified = null;
+
+    /**
+     * Unique memory manager id
+     *
+     * @var integer
+     */
+    private $_managerId;
+
+    /**
+     * Tags array, used by backend to categorize stored values
+     *
+     * @var array
+     */
+    private $_tags;
+
+    /**
+     * This function is intended to generate unique id, used by memory manager
+     */
+    private function _generateMemManagerId()
+    {
+        /**
+         * @todo !!!
+         * uniqid() php function doesn't really garantee the id to be unique
+         * it should be changed by something else
+         * (Ex. backend interface should be extended to provide this functionality)
+         */
+        $this->_managerId = uniqid('ZendMemManager', true);
+        $this->_tags = array($this->_managerId);
+        $this->_managerId .= '_';
+    }
+
+
+    /**
+     * Memory manager constructor
+     *
+     * If backend is not specified, then memory objects are never swapped
+     *
+     * @param Zend_Cache_Backend $backend
+     * @param array $backendOptions associative array of options for the corresponding backend constructor
+     */
+    public function __construct($backend = null)
+    {
+        if ($backend === null) {
+            return;
+        }
+
+        $this->_backend = $backend;
+        $this->_generateMemManagerId();
+
+        $memoryLimitStr = trim(ini_get('memory_limit'));
+        if ($memoryLimitStr != '') {
+            $this->_memoryLimit = (integer)$memoryLimitStr;
+            switch (strtolower($memoryLimitStr[strlen($memoryLimitStr)-1])) {
+                case 'g':
+                    $this->_memoryLimit *= 1024;
+                    // Break intentionally omitted
+                case 'm':
+                    $this->_memoryLimit *= 1024;
+                    // Break intentionally omitted
+                case 'k':
+                    $this->_memoryLimit *= 1024;
+                    break;
+
+                default:
+                    break;
+            }
+
+            $this->_memoryLimit = (int)($this->_memoryLimit*2/3);
+        } // No limit otherwise
+    }
+
+    /**
+     * Object destructor
+     *
+     * Clean up backend storage
+     */
+    public function __destruct()
+    {
+        if ($this->_backend !== null) {
+            $this->_backend->clean(Zend_Cache::CLEANING_MODE_MATCHING_TAG, $this->_tags);
+        }
+    }
+
+    /**
+     * Set memory grow limit
+     *
+     * @param integer $newLimit
+     * @throws Zend_Exception
+     */
+    public function setMemoryLimit($newLimit)
+    {
+        $this->_memoryLimit = $newLimit;
+
+        $this->_swapCheck();
+    }
+
+    /**
+     * Get memory grow limit
+     *
+     * @return integer
+     */
+    public function getMemoryLimit()
+    {
+        return $this->_memoryLimit;
+    }
+
+    /**
+     * Set minimum size of values, which may be swapped
+     *
+     * @param integer $newSize
+     */
+    public function setMinSize($newSize)
+    {
+        $this->_minSize = $newSize;
+    }
+
+    /**
+     * Get minimum size of values, which may be swapped
+     *
+     * @return integer
+     */
+    public function getMinSize()
+    {
+        return $this->_minSize;
+    }
+
+    /**
+     * Create new Zend_Memory value container
+     *
+     * @param string $value
+     * @return Zend_Memory_Container_Interface
+     * @throws Zend_Memory_Exception
+     */
+    public function create($value = '')
+    {
+        return $this->_create($value,  false);
+    }
+
+    /**
+     * Create new Zend_Memory value container, which has value always
+     * locked in memory
+     *
+     * @param string $value
+     * @return Zend_Memory_Container_Interface
+     * @throws Zend_Memory_Exception
+     */
+    public function createLocked($value = '')
+    {
+        return $this->_create($value, true);
+    }
+
+    /**
+     * Create new Zend_Memory object
+     *
+     * @param string $value
+     * @param boolean $locked
+     * @return Zend_Memory_Container_Interface
+     * @throws Zend_Memory_Exception
+     */
+    private function _create($value, $locked)
+    {
+        $id = $this->_nextId++;
+
+        if ($locked  ||  ($this->_backend === null) /* Use only memory locked objects if backend is not specified */) {
+            return new Zend_Memory_Container_Locked($value);
+        }
+
+        // Commit other objects modifications
+        $this->_commit();
+
+        $valueObject = new Zend_Memory_Container_Movable($this, $id, $value);
+
+        // Store last object size as 0
+        $this->_sizes[$id] = 0;
+        // prepare object for next modifications
+        $this->_lastModified = $valueObject;
+
+        return new Zend_Memory_AccessController($valueObject);
+    }
+
+    /**
+     * Unlink value container from memory manager
+     *
+     * Used by Memory container destroy() method
+     *
+     * @internal
+     * @param integer $id
+     * @return Zend_Memory_Container
+     */
+    public function unlink(Zend_Memory_Container_Movable $container, $id)
+    {
+        if ($this->_lastModified === $container) {
+            // Drop all object modifications
+            $this->_lastModified = null;
+            unset($this->_sizes[$id]);
+            return;
+        }
+
+        if (isset($this->_unloadCandidates[$id])) {
+            unset($this->_unloadCandidates[$id]);
+        }
+
+        $this->_memorySize -= $this->_sizes[$id];
+        unset($this->_sizes[$id]);
+    }
+
+    /**
+     * Process value update
+     *
+     * @internal
+     * @param Zend_Memory_Container_Movable $container
+     * @param integer $id
+     */
+    public function processUpdate(Zend_Memory_Container_Movable $container, $id)
+    {
+        /**
+         * This method is automatically invoked by memory container only once per
+         * "modification session", but user may call memory container touch() method
+         * several times depending on used algorithm. So we have to use this check
+         * to optimize this case.
+         */
+        if ($container === $this->_lastModified) {
+            return;
+        }
+
+        // Remove just updated object from list of candidates to unload
+        if( isset($this->_unloadCandidates[$id])) {
+            unset($this->_unloadCandidates[$id]);
+        }
+
+        // Reduce used memory mark
+        $this->_memorySize -= $this->_sizes[$id];
+
+        // Commit changes of previously modified object if necessary
+        $this->_commit();
+
+        $this->_lastModified = $container;
+    }
+
+    /**
+     * Commit modified object and put it back to the loaded objects list
+     */
+    private function _commit()
+    {
+        if (($container = $this->_lastModified) === null) {
+            return;
+        }
+
+        $this->_lastModified = null;
+
+        $id = $container->getId();
+
+        // Calculate new object size and increase used memory size by this value
+        $this->_memorySize += ($this->_sizes[$id] = strlen($container->getRef()));
+
+        if ($this->_sizes[$id] > $this->_minSize) {
+            // Move object to "unload candidates list"
+            $this->_unloadCandidates[$id] = $container;
+        }
+
+        $container->startTrace();
+
+        $this->_swapCheck();
+    }
+
+    /**
+     * Check and swap objects if necessary
+     *
+     * @throws Zend_MemoryException
+     */
+    private function _swapCheck()
+    {
+        if ($this->_memoryLimit < 0  ||  $this->_memorySize < $this->_memoryLimit) {
+            // Memory limit is not reached
+            // Do nothing
+            return;
+        }
+
+        // walk through loaded objects in access history order
+        foreach ($this->_unloadCandidates as $id => $container) {
+            $this->_swap($container, $id);
+            unset($this->_unloadCandidates[$id]);
+
+            if ($this->_memorySize < $this->_memoryLimit) {
+                // We've swapped enough objects
+                return;
+            }
+        }
+
+        require_once 'Zend/Memory/Exception.php';
+        throw new Zend_Memory_Exception('Memory manager can\'t get enough space.');
+    }
+
+
+    /**
+     * Swap object data to disk
+     * Actualy swaps data or only unloads it from memory,
+     * if object is not changed since last swap
+     *
+     * @param Zend_Memory_Container_Movable $container
+     * @param integer $id
+     */
+    private function _swap(Zend_Memory_Container_Movable $container, $id)
+    {
+        if ($container->isLocked()) {
+            return;
+        }
+
+        if (!$container->isSwapped()) {
+            $this->_backend->save($container->getRef(), $this->_managerId . $id, $this->_tags);
+        }
+
+        $this->_memorySize -= $this->_sizes[$id];
+
+        $container->markAsSwapped();
+        $container->unloadValue();
+    }
+
+    /**
+     * Load value from swap file.
+     *
+     * @internal
+     * @param Zend_Memory_Container_Movable $container
+     * @param integer $id
+     */
+    public function load(Zend_Memory_Container_Movable $container, $id)
+    {
+        $value = $this->_backend->load($this->_managerId . $id, true);
+
+        // Try to swap other objects if necessary
+        // (do not include specified object into check)
+        $this->_memorySize += strlen($value);
+        $this->_swapCheck();
+
+        // Add loaded obect to the end of loaded objects list
+        $container->setValue($value);
+
+        if ($this->_sizes[$id] > $this->_minSize) {
+            // Add object to the end of "unload candidates list"
+            $this->_unloadCandidates[$id] = $container;
+        }
+    }
+}

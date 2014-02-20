@@ -1,32 +1,112 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_Abstract
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/Abstract.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Tool_Project_Context_Filesystem_File extends Zend_Tool_Project_Context_Filesystem_Abstract 
+{
+    
+    /**
+     * init()
+     *
+     * @return Zend_Tool_Project_Context_Filesystem_File
+     */
+    public function init()
+    {
+        // @todo check to ensure that this 'file' resource has no children
+        parent::init();
+        return $this;
+    }
+    
+    /**
+     * setResource()
+     *
+     * @param unknown_type $resource
+     */
+    public function setResource(Zend_Tool_Project_Profile_Resource $resource)
+    {
+        $this->_resource = $resource;
+        $this->_resource->setAppendable(false);
+        return $this;
+    }
+
+    /**
+     * create()
+     *
+     * @return Zend_Tool_Project_Context_Filesystem_File
+     */
+    public function create()
+    {
+        // check to ensure the parent exists, if not, call it and create it
+        if (($parentResource = $this->_resource->getParentResource()) instanceof Zend_Tool_Project_Profile_Resource) {
+            if ((($parentContext = $parentResource->getContext()) instanceof Zend_Tool_Project_Context_Filesystem_Abstract)
+                && (!$parentContext->exists())) {
+                $parentResource->create();
+            }
+        }
+        
+        
+        if (file_exists($this->getPath())) {
+            // @todo propt user to determine if its ok to overwrite file
+        }
+        
+        file_put_contents($this->getPath(), $this->getContents());
+        return $this;
+    }
+    
+    /**
+     * delete()
+     *
+     * @return Zend_Tool_Project_Context_Filesystem_File
+     */
+    public function delete()
+    {
+        unlink($this->getPath());
+        $this->_resource->setDeleted(true);
+        return $this;
+    }
+    
+    /**
+     * getContents()
+     *
+     * @return null
+     */
+    public function getContents()
+    {
+        return null;
+    }
+    
+}

@@ -1,62 +1,177 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Placeholder.php 7078 2007-12-11 14:29:33Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_View_Helper_Placeholder_Container_Standalone */
+require_once 'Zend/View/Helper/Placeholder/Container/Standalone.php';
+
+/**
+ * Helper for setting and retrieving title element for HTML head
+ *
+ * @uses       Zend_View_Helper_Placeholder_Container_Standalone
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_HeadTitle extends Zend_View_Helper_Placeholder_Container_Standalone
+{
+    /**
+     * Registry key for placeholder
+     * @var string
+     */
+    protected $_regKey = 'Zend_View_Helper_HeadTitle';
+
+    /**
+     * Whether or not auto-translation is enabled
+     * @var boolean
+     */
+    protected $_translate = false;
+
+    /**
+     * Translation object
+     *
+     * @var Zend_Translate_Adapter
+     */
+    protected $_translator;
+
+    /**
+     * Retrieve placeholder for title element and optionally set state
+     *
+     * @param  string $title
+     * @param  string $setType
+     * @param  string $separator
+     * @return Zend_View_Helper_HeadTitle
+     */
+    public function headTitle($title = null, $setType = Zend_View_Helper_Placeholder_Container_Abstract::APPEND)
+    {
+        if ($title) {
+            if ($setType == Zend_View_Helper_Placeholder_Container_Abstract::SET) {
+                $this->set($title);
+            } elseif ($setType == Zend_View_Helper_Placeholder_Container_Abstract::PREPEND) {
+                $this->prepend($title);
+            } else {
+                $this->append($title);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets a translation Adapter for translation
+     *
+     * @param  Zend_Translate|Zend_Translate_Adapter $translate
+     * @return Zend_View_Helper_HeadTitle
+     */
+    public function setTranslator($translate)
+    {
+        if ($translate instanceof Zend_Translate_Adapter) {
+            $this->_translator = $translate;
+        } elseif ($translate instanceof Zend_Translate) {
+            $this->_translator = $translate->getAdapter();
+        } else {
+            require_once 'Zend/View/Exception.php';
+            throw new Zend_View_Exception("You must set an instance of Zend_Translate or Zend_Translate_Adapter");
+        }
+        return $this;
+    }
+
+    /*
+     * Retrieve translation object
+     *
+     * If none is currently registered, attempts to pull it from the registry
+     * using the key 'Zend_Translate'.
+     *
+     * @return Zend_Translate_Adapter|null
+     */
+    public function getTranslator()
+    {
+        if (null === $this->_translator) {
+            require_once 'Zend/Registry.php';
+            if (Zend_Registry::isRegistered('Zend_Translate')) {
+                $this->setTranslator(Zend_Registry::get('Zend_Translate'));
+            }
+        }
+        return $this->_translator;
+    }
+
+    /**
+     * Enables translation
+     *
+     * @return Zend_View_Helper_HeadTitle
+     */
+    public function enableTranslation()
+    {
+        $this->_translate = true;
+        return $this;
+    }
+
+    /**
+     * Disables translation
+     *
+     * @return Zend_View_Helper_HeadTitle
+     */
+    public function disableTranslation()
+    {
+        $this->_translate = false;
+        return $this;
+    }
+
+    /**
+     * Turn helper into string
+     *
+     * @param  string|null $indent
+     * @param  string|null $locale
+     * @return string
+     */
+    public function toString($indent = null, $locale = null)
+    {
+        $indent = (null !== $indent)
+                ? $this->getWhitespace($indent)
+                : $this->getIndent();
+
+        $items = array();
+
+        if($this->_translate && $translator = $this->getTranslator()) {
+            foreach ($this as $item) {
+                $items[] = $translator->translate($item, $locale);
+            }
+        } else {
+            foreach ($this as $item) {
+                $items[] = $item;
+            }
+        }
+
+        $separator = $this->getSeparator();
+        $output = '';
+        if(($prefix = $this->getPrefix())) {
+            $output  .= $prefix;
+        }
+        $output .= implode($separator, $items);
+        if(($postfix = $this->getPostfix())) {
+            $output .= $postfix;
+        }
+
+        $output = ($this->_autoEscape) ? $this->_escape($output) : $output;
+
+        return $indent . '<title>' . $output . '</title>';
+    }
+}

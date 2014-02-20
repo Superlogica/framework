@@ -1,38 +1,97 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vKBlzVITfajIHZG=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Filter_Compression */
+require_once 'Zend/Pdf/Filter/Compression.php';
+
+
+/**
+ * Flate stream filter
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Filter_Compression_Flate extends Zend_Pdf_Filter_Compression
+{
+    /**
+     * Encode data
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public static function encode($data, $params = null)
+    {
+        if ($params != null) {
+            $data = self::_applyEncodeParams($data, $params);
+        }
+
+        if (extension_loaded('zlib')) {
+            $trackErrors = ini_get( "track_errors");
+            ini_set('track_errors', '1');
+
+            if (($output = @gzcompress($data)) === false) {
+                ini_set('track_errors', $trackErrors);
+                throw new Zend_Pdf_Exception($php_errormsg);
+            }
+
+            ini_set('track_errors', $trackErrors);
+        } else {
+            throw new Zend_Pdf_Exception('Not implemented yet. You have to use zlib extension.');
+        }
+
+        return $output;
+    }
+
+    /**
+     * Decode data
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    public static function decode($data, $params = null)
+    {
+        global $php_errormsg;
+
+        if (extension_loaded('zlib')) {
+            $trackErrors = ini_get( "track_errors");
+            ini_set('track_errors', '1');
+
+            if (($output = @gzuncompress($data)) === false) {
+                ini_set('track_errors', $trackErrors);
+                throw new Zend_Pdf_Exception($php_errormsg);
+            }
+
+            ini_set('track_errors', $trackErrors);
+        } else {
+            throw new Zend_Pdf_Exception('Not implemented yet');
+        }
+
+        if ($params !== null) {
+            return self::_applyDecodeParams($output, $params);
+        } else {
+            return $output;
+        }
+    }
+}

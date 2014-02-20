@@ -1,169 +1,501 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Cache_Backend_ExtendedInterface
+ */
+require_once 'Zend/Cache/Backend/ExtendedInterface.php';
+
+/**
+ * @see Zend_Cache_Backend
+ */
+require_once 'Zend/Cache/Backend.php';
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Cache_Backend_TwoLevels extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface
+{
+    /**
+     * Available options
+     *
+     * =====> (string) slow_backend :
+     * - Slow backend name
+     * - Must implement the Zend_Cache_Backend_ExtendedInterface
+     * - Should provide a big storage
+     *
+     * =====> (string) fast_backend :
+     * - Flow backend name
+     * - Must implement the Zend_Cache_Backend_ExtendedInterface
+     * - Must be much faster than slow_backend
+     *
+     * =====> (array) slow_backend_options :
+     * - Slow backend options (see corresponding backend)
+     *
+     * =====> (array) fast_backend_options :
+     * - Fast backend options (see corresponding backend)
+     *
+     * =====> (int) stats_update_factor :
+     * - Disable / Tune the computation of the fast backend filling percentage
+     * - When saving a record into cache :
+     *     1               => systematic computation of the fast backend filling percentage
+     *     x (integer) > 1 => computation of the fast backend filling percentage randomly 1 times on x cache write
+     *
+     * =====> (boolean) slow_backend_custom_naming :
+     * =====> (boolean) fast_backend_custom_naming :
+     * =====> (boolean) slow_backend_autoload :
+     * =====> (boolean) fast_backend_autoload :
+     * - See Zend_Cache::factory() method
+     *
+     * =====> (boolean) auto_refresh_fast_cache
+     * - If true, auto refresh the fast cache when a cache record is hit
+     *
+     * @var array available options
+     */
+    protected $_options = array(
+        'slow_backend' => 'File',
+        'fast_backend' => 'Apc',
+        'slow_backend_options' => array(),
+        'fast_backend_options' => array(),
+        'stats_update_factor' => 10,
+        'slow_backend_custom_naming' => false,
+        'fast_backend_custom_naming' => false,
+        'slow_backend_autoload' => false,
+        'fast_backend_autoload' => false,
+        'auto_refresh_fast_cache' => true
+    );
+
+    /**
+     * Slow Backend
+     *
+     * @var Zend_Cache_Backend
+     */
+    private $_slowBackend;
+
+    /**
+     * Fast Backend
+     *
+     * @var Zend_Cache_Backend
+     */
+    private $_fastBackend;
+
+    /**
+     * Cache for the fast backend filling percentage
+     *
+     * @var int
+     */
+    private $_fastBackendFillingPercentage = null;
+
+    /**
+     * Constructor
+     *
+     * @param  array $options Associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        parent::__construct($options);
+        if ($this->_options['slow_backend'] === null) {
+            Zend_Cache::throwException('slow_backend option has to set');
+        }
+        if ($this->_options['fast_backend'] === null) {
+            Zend_Cache::throwException('fast_backend option has to set');
+        }
+        $this->_slowBackend = Zend_Cache::_makeBackend($this->_options['slow_backend'], $this->_options['slow_backend_options'], $this->_options['slow_backend_custom_naming'], $this->_options['slow_backend_autoload']);
+        $this->_fastBackend = Zend_Cache::_makeBackend($this->_options['fast_backend'], $this->_options['fast_backend_options'], $this->_options['fast_backend_custom_naming'], $this->_options['fast_backend_autoload']);
+        if (!in_array('Zend_Cache_Backend_ExtendedInterface', class_implements($this->_slowBackend))) {
+            Zend_Cache::throwException('slow_backend must implement the Zend_Cache_Backend_ExtendedInterface interface');
+        }
+        if (!in_array('Zend_Cache_Backend_ExtendedInterface', class_implements($this->_fastBackend))) {
+            Zend_Cache::throwException('fast_backend must implement the Zend_Cache_Backend_ExtendedInterface interface');
+        }
+        $this->_slowBackend->setDirectives($this->_directives);
+        $this->_fastBackend->setDirectives($this->_directives);
+    }
+
+    /**
+     * Test if a cache is available or not (for the given id)
+     *
+     * @param  string $id cache id
+     * @return mixed|false (a cache is not available) or "last modified" timestamp (int) of the available cache record
+     */
+    public function test($id)
+    {
+        $fastTest = $this->_fastBackend->test($id);
+        if ($fastTest) {
+            return $fastTest;
+        } else {
+            return $this->_slowBackend->test($id);
+        }
+    }
+
+    /**
+     * Save some string datas into a cache record
+     *
+     * Note : $data is always "string" (serialization is done by the
+     * core not by the backend)
+     *
+     * @param  string $data            Datas to cache
+     * @param  string $id              Cache id
+     * @param  array $tags             Array of strings, the cache record will be tagged by each string entry
+     * @param  int   $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
+     * @param  int   $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends
+     * @return boolean true if no problem
+     */
+    public function save($data, $id, $tags = array(), $specificLifetime = false, $priority = 8)
+    {
+        $usage = $this->_getFastFillingPercentage('saving');
+        $boolFast = true;
+        $lifetime = $this->getLifetime($specificLifetime);
+        $preparedData = $this->_prepareData($data, $lifetime, $priority);
+        if (($priority > 0) && (10 * $priority >= $usage)) {
+            $fastLifetime = $this->_getFastLifetime($lifetime, $priority);
+            $boolFast = $this->_fastBackend->save($preparedData, $id, array(), $fastLifetime);
+        }
+        $boolSlow = $this->_slowBackend->save($preparedData, $id, $tags, $lifetime);
+        return ($boolFast && $boolSlow);
+    }
+
+    /**
+     * Test if a cache is available for the given id and (if yes) return it (false else)
+     *
+     * Note : return value is always "string" (unserialization is done by the core not by the backend)
+     *
+     * @param  string  $id                     Cache id
+     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
+     * @return string|false cached datas
+     */
+    public function load($id, $doNotTestCacheValidity = false)
+    {
+        $res = $this->_fastBackend->load($id, $doNotTestCacheValidity);
+        if ($res === false) {
+            $res = $this->_slowBackend->load($id, $doNotTestCacheValidity);
+            if ($res === false) {
+                // there is no cache at all for this id
+                return false;
+            }
+        }
+        $array = unserialize($res);
+        // maybe, we have to refresh the fast cache ?
+        if ($this->_options['auto_refresh_fast_cache']) {
+            if ($array['priority'] == 10) {
+                // no need to refresh the fast cache with priority = 10
+                return $array['data'];
+            }
+            $newFastLifetime = $this->_getFastLifetime($array['lifetime'], $array['priority'], time() - $array['expire']);
+            // we have the time to refresh the fast cache
+            $usage = $this->_getFastFillingPercentage('loading');
+            if (($array['priority'] > 0) && (10 * $array['priority'] >= $usage)) {
+                // we can refresh the fast cache
+                $preparedData = $this->_prepareData($array['data'], $array['lifetime'], $array['priority']);
+                $this->_fastBackend->save($preparedData, $id, array(), $newFastLifetime);
+            }
+        }
+        return $array['data'];
+    }
+
+    /**
+     * Remove a cache record
+     *
+     * @param  string $id Cache id
+     * @return boolean True if no problem
+     */
+    public function remove($id)
+    {
+        $this->_fastBackend->remove($id);
+        return $this->_slowBackend->remove($id);
+    }
+
+    /**
+     * Clean some cache records
+     *
+     * Available modes are :
+     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
+     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
+     *                                               ($tags can be an array of strings or a single string)
+     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
+     *                                               ($tags can be an array of strings or a single string)
+     * Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG => remove cache entries matching any given tags
+     *                                               ($tags can be an array of strings or a single string)
+     *
+     * @param  string $mode Clean mode
+     * @param  array  $tags Array of tags
+     * @throws Zend_Cache_Exception
+     * @return boolean true if no problem
+     */
+    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
+    {
+        switch($mode) {
+            case Zend_Cache::CLEANING_MODE_ALL:
+                $boolFast = $this->_fastBackend->clean(Zend_Cache::CLEANING_MODE_ALL);
+                $boolSlow = $this->_slowBackend->clean(Zend_Cache::CLEANING_MODE_ALL);
+                return $boolFast && $boolSlow;
+                break;
+            case Zend_Cache::CLEANING_MODE_OLD:
+                return $this->_slowBackend->clean(Zend_Cache::CLEANING_MODE_OLD);
+            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
+                $ids = $this->_slowBackend->getIdsMatchingTags($tags);
+                $res = true;
+                foreach ($ids as $id) {
+                    $res = $res && $this->_slowBackend->remove($id) && $this->_fastBackend->remove($id);
+                }
+                return $res;
+                break;
+            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
+                $ids = $this->_slowBackend->getIdsNotMatchingTags($tags);
+                $res = true;
+                foreach ($ids as $id) {
+                    $res = $res && $this->_slowBackend->remove($id) && $this->_fastBackend->remove($id);
+                }
+                return $res;
+                break;
+            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
+                $ids = $this->_slowBackend->getIdsMatchingAnyTags($tags);
+                $res = true;
+                foreach ($ids as $id) {
+                    $res = $res && $this->_slowBackend->remove($id) && $this->_fastBackend->remove($id);
+                }
+                return $res;
+                break;
+            default:
+                Zend_Cache::throwException('Invalid mode for clean() method');
+                break;
+        }
+    }
+
+    /**
+     * Return an array of stored cache ids
+     *
+     * @return array array of stored cache ids (string)
+     */
+    public function getIds()
+    {
+        return $this->_slowBackend->getIds();
+    }
+
+    /**
+     * Return an array of stored tags
+     *
+     * @return array array of stored tags (string)
+     */
+    public function getTags()
+    {
+        return $this->_slowBackend->getTags();
+    }
+
+    /**
+     * Return an array of stored cache ids which match given tags
+     *
+     * In case of multiple tags, a logical AND is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of matching cache ids (string)
+     */
+    public function getIdsMatchingTags($tags = array())
+    {
+        return $this->_slowBackend->getIdsMatchingTags($tags);
+    }
+
+    /**
+     * Return an array of stored cache ids which don't match given tags
+     *
+     * In case of multiple tags, a logical OR is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of not matching cache ids (string)
+     */
+    public function getIdsNotMatchingTags($tags = array())
+    {
+        return $this->_slowBackend->getIdsNotMatchingTags($tags);
+    }
+
+    /**
+     * Return an array of stored cache ids which match any given tags
+     *
+     * In case of multiple tags, a logical AND is made between tags
+     *
+     * @param array $tags array of tags
+     * @return array array of any matching cache ids (string)
+     */
+    public function getIdsMatchingAnyTags($tags = array())
+    {
+        return $this->_slowBackend->getIdsMatchingAnyTags($tags);
+    }
+
+
+    /**
+     * Return the filling percentage of the backend storage
+     *
+     * @return int integer between 0 and 100
+     */
+    public function getFillingPercentage()
+    {
+        return $this->_slowBackend->getFillingPercentage();
+    }
+
+    /**
+     * Return an array of metadatas for the given cache id
+     *
+     * The array must include these keys :
+     * - expire : the expire timestamp
+     * - tags : a string array of tags
+     * - mtime : timestamp of last modification time
+     *
+     * @param string $id cache id
+     * @return array array of metadatas (false if the cache id is not found)
+     */
+    public function getMetadatas($id)
+    {
+        return $this->_slowBackend->getMetadatas($id);
+    }
+
+    /**
+     * Give (if possible) an extra lifetime to the given cache id
+     *
+     * @param string $id cache id
+     * @param int $extraLifetime
+     * @return boolean true if ok
+     */
+    public function touch($id, $extraLifetime)
+    {
+        return $this->_slowBackend->touch($id, $extraLifetime);
+    }
+
+    /**
+     * Return an associative array of capabilities (booleans) of the backend
+     *
+     * The array must include these keys :
+     * - automatic_cleaning (is automating cleaning necessary)
+     * - tags (are tags supported)
+     * - expired_read (is it possible to read expired cache records
+     *                 (for doNotTestCacheValidity option for example))
+     * - priority does the backend deal with priority when saving
+     * - infinite_lifetime (is infinite lifetime can work with this backend)
+     * - get_list (is it possible to get the list of cache ids and the complete list of tags)
+     *
+     * @return array associative of with capabilities
+     */
+    public function getCapabilities()
+    {
+        $slowBackendCapabilities = $this->_slowBackend->getCapabilities();
+        return array(
+            'automatic_cleaning' => $slowBackendCapabilities['automatic_cleaning'],
+            'tags' => $slowBackendCapabilities['tags'],
+            'expired_read' => $slowBackendCapabilities['expired_read'],
+            'priority' => $slowBackendCapabilities['priority'],
+            'infinite_lifetime' => $slowBackendCapabilities['infinite_lifetime'],
+            'get_list' => $slowBackendCapabilities['get_list']
+        );
+    }
+
+    /**
+     * Prepare a serialized array to store datas and metadatas informations
+     *
+     * @param string $data data to store
+     * @param int $lifetime original lifetime
+     * @param int $priority priority
+     * @return string serialize array to store into cache
+     */
+    private function _prepareData($data, $lifetime, $priority)
+    {
+        $lt = $lifetime;
+        if ($lt === null) {
+            $lt = 9999999999;
+        }
+        return serialize(array(
+            'data' => $data,
+            'lifetime' => $lifetime,
+            'expire' => time() + $lt,
+            'priority' => $priority
+        ));
+    }
+
+    /**
+     * Compute and return the lifetime for the fast backend
+     *
+     * @param int $lifetime original lifetime
+     * @param int $priority priority
+     * @param int $maxLifetime maximum lifetime
+     * @return int lifetime for the fast backend
+     */
+    private function _getFastLifetime($lifetime, $priority, $maxLifetime = null)
+    {
+        if ($lifetime === null) {
+            // if lifetime is null, we have an infinite lifetime
+            // we need to use arbitrary lifetimes
+            $fastLifetime = (int) (2592000 / (11 - $priority));
+        } else {
+            $fastLifetime = (int) ($lifetime / (11 - $priority));
+        }
+        if (($maxLifetime !== null) && ($maxLifetime >= 0)) {
+            if ($fastLifetime > $maxLifetime) {
+                return $maxLifetime;
+            }
+        }
+        return $fastLifetime;
+    }
+
+    /**
+     * PUBLIC METHOD FOR UNIT TESTING ONLY !
+     *
+     * Force a cache record to expire
+     *
+     * @param string $id cache id
+     */
+    public function ___expire($id)
+    {
+        $this->_fastBackend->remove($id);
+        $this->_slowBackend->___expire($id);
+    }
+
+    private function _getFastFillingPercentage($mode)
+    {
+
+        if ($mode == 'saving') {
+            // mode saving
+            if ($this->_fastBackendFillingPercentage === null) {
+                $this->_fastBackendFillingPercentage = $this->_fastBackend->getFillingPercentage();
+            } else {
+                $rand = rand(1, $this->_options['stats_update_factor']);
+                if ($rand == 1) {
+                    // we force a refresh
+                    $this->_fastBackendFillingPercentage = $this->_fastBackend->getFillingPercentage();
+                }
+            }
+        } else {
+            // mode loading
+            // we compute the percentage only if it's not available in cache
+            if ($this->_fastBackendFillingPercentage === null) {
+                $this->_fastBackendFillingPercentage = $this->_fastBackend->getFillingPercentage();
+            }
+        }
+        return $this->_fastBackendFillingPercentage;
+    }
+
+}

@@ -1,54 +1,189 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-/g0O
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Element */
+require_once 'Zend/Form/Element.php';
+
+/**
+ * Base element for dijit elements
+ * 
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage Form_Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Dijit.php 13260 2008-12-15 14:30:35Z matthew $
+ */
+abstract class Zend_Dojo_Form_Element_Dijit extends Zend_Form_Element
+{
+    /**
+     * Dijit parameters
+     * @var array
+     */
+    public $dijitParams = array();
+
+    /**
+     * View helper to use
+     * @var string
+     */
+    public $helper;
+
+    /**
+     * Constructor
+     * 
+     * @todo Should we set dojo view helper paths here?
+     * @param  mixed $spec 
+     * @param  mixed $options 
+     * @return void
+     */
+    public function __construct($spec, $options = null)
+    {
+        $this->addPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator');
+        parent::__construct($spec, $options);
+    }
+
+    /**
+     * Set a dijit parameter
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return Zend_Dojo_Form_Element_Dijit
+     */
+    public function setDijitParam($key, $value)
+    {
+        $key = (string) $key;
+        $this->dijitParams[$key] = $value;
+        return $this;
+    }
+
+    /**
+     * Set multiple dijit params at once
+     * 
+     * @param  array $params 
+     * @return Zend_Dojo_Form_Element_Dijit
+     */
+    public function setDijitParams(array $params)
+    {
+        $this->dijitParams = array_merge($this->dijitParams, $params);
+        return $this;
+    }
+
+    /**
+     * Does the given dijit parameter exist?
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function hasDijitParam($key)
+    {
+        return array_key_exists($key, $this->dijitParams);
+    }
+
+    /**
+     * Get a single dijit parameter
+     * 
+     * @param  string $key 
+     * @return mixed
+     */
+    public function getDijitParam($key)
+    {
+        $key = (string) $key;
+        if ($this->hasDijitParam($key)) {
+            return $this->dijitParams[$key];
+        }
+        return null;
+    }
+
+    /**
+     * Retrieve all dijit parameters
+     * 
+     * @return array
+     */
+    public function getDijitParams()
+    {
+        return $this->dijitParams;
+    }
+
+    /**
+     * Remove a single dijit parameter
+     * 
+     * @param  string $key 
+     * @return Zend_Dojo_Form_Element_Dijit
+     */
+    public function removeDijitParam($key)
+    {
+        $key = (string) $key;
+        if (array_key_exists($key, $this->dijitParams)) {
+            unset($this->dijitParams[$key]);
+        }
+        return $this;
+    }
+
+    /**
+     * Clear all dijit parameters
+     * 
+     * @return Zend_Dojo_Form_Element_Dijit
+     */
+    public function clearDijitParams()
+    {
+        $this->dijitParams = array();
+        return $this;
+    }
+
+    /**
+     * Load default decorators
+     * 
+     * @return void
+     */
+    public function loadDefaultDecorators()
+    {
+        if ($this->loadDefaultDecoratorsIsDisabled()) {
+            return;
+        }
+
+        $decorators = $this->getDecorators();
+        if (empty($decorators)) {
+            $this->addDecorator('DijitElement')
+                 ->addDecorator('Errors')
+                 ->addDecorator('Description', array('tag' => 'p', 'class' => 'description'))
+                 ->addDecorator('HtmlTag', array('tag' => 'dd'))
+                 ->addDecorator('Label', array('tag' => 'dt'));
+        }
+    }
+
+    /**
+     * Set the view object
+     *
+     * Ensures that the view object has the dojo view helper path set.
+     * 
+     * @param  Zend_View_Interface $view 
+     * @return Zend_Dojo_Form_Element_Dijit
+     */
+    public function setView(Zend_View_Interface $view = null)
+    {
+        if (null !== $view) {
+            if (false === $view->getPluginLoader('helper')->getPaths('Zend_Dojo_View_Helper')) {
+                $view->addHelperPath('Zend/Dojo/View/Helper', 'Zend_Dojo_View_Helper');
+            }
+        }
+        return parent::setView($view);
+    }
+}

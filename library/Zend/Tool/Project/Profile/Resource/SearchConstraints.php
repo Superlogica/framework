@@ -1,40 +1,117 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-m3IihIIa6Ly=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * This class is an iterator that will iterate only over enabled resources
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Profile_Resource_SearchConstraints
+{
+    
+    /**
+     * @var array
+     */
+    protected $_constraints = array();
+    
+    /**
+     * __construct()
+     *
+     * @param array|string $options
+     */
+    public function __construct($options = null)
+    {
+        if (is_string($options)) {
+            $this->addConstraint($options);
+        } elseif (is_array($options)) {
+            $this->setOptions($options);
+        }
+    }
+    
+    /**
+     * setOptions()
+     *
+     * @param array $option
+     * @return Zend_Tool_Project_Profile_Resource_SearchConstraints
+     */
+    public function setOptions(Array $option)
+    {
+        foreach ($option as $optionName => $optionValue) {
+            if (is_int($optionName)) {
+                $this->addConstraint($optionValue);
+            } elseif (is_string($optionName)) {
+                $this->addConstraint(array('name' => $optionName, 'params' => $optionValue));
+            }
+        }
+
+        return $this;
+    }
+    
+    /**
+     * addConstraint()
+     *
+     * @param string|array $constraint
+     * @return Zend_Tool_Project_Profile_Resource_SearchConstraints
+     */
+    public function addConstraint($constraint)
+    {
+        if (is_string($constraint)) {
+            $name   = $constraint;
+            $params = array();
+        } elseif (is_array($constraint)) {
+            $name   = $constraint['name'];
+            $params = $constraint['params'];
+        }
+        
+        $constraint = $this->_makeConstraint($name, $params);
+        
+        array_push($this->_constraints, $constraint);
+        return $this;
+    }
+    
+    /**
+     * getConstraint()
+     *
+     * @return ArrayObject
+     */
+    public function getConstraint()
+    {
+        return array_shift($this->_constraints);
+    }
+
+    /**
+     * _makeConstraint
+     *
+     * @param string $name
+     * @param mixed $params
+     * @return ArrayObject
+     */
+    protected function _makeConstraint($name, $params)
+    {
+        $value = array('name' => $name, 'params' => $params);
+        return new ArrayObject($value, ArrayObject::ARRAY_AS_PROPS);
+    }
+    
+}

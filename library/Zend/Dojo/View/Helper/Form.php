@@ -1,33 +1,96 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-6RYUHDQubcSo2jOSjYYTl+T/nfsmZD6aw0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Form.php 10196 2008-07-18 22:01:18Z matthew $
+ */
+
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
+
+/**
+ * Dojo Form dijit
+ * 
+ * @uses       Zend_Dojo_View_Helper_Dijit
+ * @package    Zend_Dojo
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+  */
+class Zend_Dojo_View_Helper_Form extends Zend_Dojo_View_Helper_Dijit
+{
+    /**
+     * Dijit being used
+     * @var string
+     */
+    protected $_dijit  = 'dijit.form.Form';
+
+    /**
+     * Module being used
+     * @var string
+     */
+    protected $_module = 'dijit.form.Form';
+
+    /**
+     * @var Zend_View_Helper_Form
+     */
+    protected $_helper;
+
+    /**
+     * dijit.form.Form
+     * 
+     * @param  string $id 
+     * @param  null|array $attribs HTML attributes
+     * @param  false|string $content 
+     * @return string
+     */
+    public function form($id, $attribs = null, $content = false)
+    {
+        if (!is_array($attribs)) {
+            $attribs = (array) $attribs;
+        }
+        if (array_key_exists('id', $attribs)) {
+            $attribs['name'] = $id;
+        } else {
+            $attribs['id'] = $id;
+        }
+
+        if (false === $content) {
+            $content = '';
+        }
+
+        $attribs = $this->_prepareDijit($attribs, array(), 'layout');
+
+        return $this->getFormHelper()->form($id, $attribs, $content);
+    }
+
+    /**
+     * Get standard form helper
+     * 
+     * @return Zend_View_Helper_Form
+     */
+    public function getFormHelper()
+    {
+        if (null === $this->_helper) {
+            require_once 'Zend/View/Helper/Form.php';
+            $this->_helper = new Zend_View_Helper_Form;
+            $this->_helper->setView($this->view);
+        }
+        return $this->_helper;
+    }
+}

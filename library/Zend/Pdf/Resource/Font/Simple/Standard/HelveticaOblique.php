@@ -1,123 +1,301 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Resource_Font_Simple_Standard */
+require_once 'Zend/Pdf/Resource/Font/Simple/Standard.php';
+
+
+/**
+ * Implementation for the standard PDF font Helvetica-Oblique.
+ *
+ * This class was generated automatically using the font information and metric
+ * data contained in the Adobe Font Metric (AFM) files, available here:
+ * {@link http://partners.adobe.com/public/developer/en/pdf/Core14_AFMs.zip}
+ *
+ * The PHP script used to generate this class can be found in the /tools
+ * directory of the framework distribution. If you need to make modifications to
+ * this class, chances are the same modifications are needed for the rest of the
+ * standard fonts. You should modify the script and regenerate the classes
+ * instead of changing this class file by hand.
+ *
+ * @package    Zend_Pdf
+ * @subpackage Fonts
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Resource_Font_Simple_Standard_HelveticaOblique extends Zend_Pdf_Resource_Font_Simple_Standard
+{
+  /**** Public Interface ****/
+
+
+  /* Object Lifecycle */
+
+    /**
+     * Object constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+
+        /* Object properties */
+
+        /* The font names are stored internally as Unicode UTF-16BE-encoded
+         * strings. Since this information is static, save unnecessary trips
+         * through iconv() and just use pre-encoded hexidecimal strings.
+         */
+        $this->_fontNames[Zend_Pdf_Font::NAME_COPYRIGHT]['en'] =
+          "\x00\x43\x00\x6f\x00\x70\x00\x79\x00\x72\x00\x69\x00\x67\x00\x68\x00"
+          . "\x74\x00\x20\x00\x28\x00\x63\x00\x29\x00\x20\x00\x31\x00\x39\x00"
+          . "\x38\x00\x35\x00\x2c\x00\x20\x00\x31\x00\x39\x00\x38\x00\x37\x00"
+          . "\x2c\x00\x20\x00\x31\x00\x39\x00\x38\x00\x39\x00\x2c\x00\x20\x00"
+          . "\x31\x00\x39\x00\x39\x00\x30\x00\x2c\x00\x20\x00\x31\x00\x39\x00"
+          . "\x39\x00\x37\x00\x20\x00\x41\x00\x64\x00\x6f\x00\x62\x00\x65\x00"
+          . "\x20\x00\x53\x00\x79\x00\x73\x00\x74\x00\x65\x00\x6d\x00\x73\x00"
+          . "\x20\x00\x49\x00\x6e\x00\x63\x00\x6f\x00\x72\x00\x70\x00\x6f\x00"
+          . "\x72\x00\x61\x00\x74\x00\x65\x00\x64\x00\x2e\x00\x20\x00\x20\x00"
+          . "\x41\x00\x6c\x00\x6c\x00\x20\x00\x52\x00\x69\x00\x67\x00\x68\x00"
+          . "\x74\x00\x73\x00\x20\x00\x52\x00\x65\x00\x73\x00\x65\x00\x72\x00"
+          . "\x76\x00\x65\x00\x64\x00\x2e\x00\x48\x00\x65\x00\x6c\x00\x76\x00"
+          . "\x65\x00\x74\x00\x69\x00\x63\x00\x61\x00\x20\x00\x69\x00\x73\x00"
+          . "\x20\x00\x61\x00\x20\x00\x74\x00\x72\x00\x61\x00\x64\x00\x65\x00"
+          . "\x6d\x00\x61\x00\x72\x00\x6b\x00\x20\x00\x6f\x00\x66\x00\x20\x00"
+          . "\x4c\x00\x69\x00\x6e\x00\x6f\x00\x74\x00\x79\x00\x70\x00\x65\x00"
+          . "\x2d\x00\x48\x00\x65\x00\x6c\x00\x6c\x00\x20\x00\x41\x00\x47\x00"
+          . "\x20\x00\x61\x00\x6e\x00\x64\x00\x2f\x00\x6f\x00\x72\x00\x20\x00"
+          . "\x69\x00\x74\x00\x73\x00\x20\x00\x73\x00\x75\x00\x62\x00\x73\x00"
+          . "\x69\x00\x64\x00\x69\x00\x61\x00\x72\x00\x69\x00\x65\x00\x73\x00"
+          . "\x2e";
+        $this->_fontNames[Zend_Pdf_Font::NAME_FAMILY]['en'] =
+          "\x00\x48\x00\x65\x00\x6c\x00\x76\x00\x65\x00\x74\x00\x69\x00\x63\x00"
+          . "\x61";
+        $this->_fontNames[Zend_Pdf_Font::NAME_STYLE]['en'] =
+          "\x00\x4d\x00\x65\x00\x64\x00\x69\x00\x75\x00\x6d";
+        $this->_fontNames[Zend_Pdf_Font::NAME_ID]['en'] =
+          "\x00\x34\x00\x33\x00\x30\x00\x35\x00\x35";
+        $this->_fontNames[Zend_Pdf_Font::NAME_FULL]['en'] =
+          "\x00\x48\x00\x65\x00\x6c\x00\x76\x00\x65\x00\x74\x00\x69\x00\x63\x00"
+          . "\x61\x00\x2d\x00\x4f\x00\x62\x00\x6c\x00\x69\x00\x71\x00\x75\x00"
+          . "\x65\x00\x20\x00\x4d\x00\x65\x00\x64\x00\x69\x00\x75\x00\x6d";
+        $this->_fontNames[Zend_Pdf_Font::NAME_VERSION]['en'] =
+          "\x00\x30\x00\x30\x00\x32\x00\x2e\x00\x30\x00\x30\x00\x30";
+        $this->_fontNames[Zend_Pdf_Font::NAME_POSTSCRIPT]['en'] =
+          "\x00\x48\x00\x65\x00\x6c\x00\x76\x00\x65\x00\x74\x00\x69\x00\x63\x00"
+          . "\x61\x00\x2d\x00\x4f\x00\x62\x00\x6c\x00\x69\x00\x71\x00\x75\x00"
+          . "\x65";
+
+        $this->_isBold = false;
+        $this->_isItalic = true;
+        $this->_isMonospaced = false;
+
+        $this->_underlinePosition = -100;
+        $this->_underlineThickness = 50;
+        $this->_strikePosition = 225;
+        $this->_strikeThickness = 50;
+
+        $this->_unitsPerEm = 1000;
+
+        $this->_ascent  = 718;
+        $this->_descent = -207;
+        $this->_lineGap = 275;
+
+        /* The glyph numbers assigned here are synthetic; they do not match the
+         * actual glyph numbers used by the font. This is not a big deal though
+         * since this data never makes it to the PDF file. It is only used
+         * internally for layout calculations.
+         */
+        $this->_glyphWidths = array(
+            0x00 => 0x01f4,   0x01 => 0x0116,   0x02 => 0x0116,   0x03 => 0x0163,
+            0x04 => 0x022c,   0x05 => 0x022c,   0x06 => 0x0379,   0x07 => 0x029b,
+            0x08 =>   0xde,   0x09 => 0x014d,   0x0a => 0x014d,   0x0b => 0x0185,
+            0x0c => 0x0248,   0x0d => 0x0116,   0x0e => 0x014d,   0x0f => 0x0116,
+            0x10 => 0x0116,   0x11 => 0x022c,   0x12 => 0x022c,   0x13 => 0x022c,
+            0x14 => 0x022c,   0x15 => 0x022c,   0x16 => 0x022c,   0x17 => 0x022c,
+            0x18 => 0x022c,   0x19 => 0x022c,   0x1a => 0x022c,   0x1b => 0x0116,
+            0x1c => 0x0116,   0x1d => 0x0248,   0x1e => 0x0248,   0x1f => 0x0248,
+            0x20 => 0x022c,   0x21 => 0x03f7,   0x22 => 0x029b,   0x23 => 0x029b,
+            0x24 => 0x02d2,   0x25 => 0x02d2,   0x26 => 0x029b,   0x27 => 0x0263,
+            0x28 => 0x030a,   0x29 => 0x02d2,   0x2a => 0x0116,   0x2b => 0x01f4,
+            0x2c => 0x029b,   0x2d => 0x022c,   0x2e => 0x0341,   0x2f => 0x02d2,
+            0x30 => 0x030a,   0x31 => 0x029b,   0x32 => 0x030a,   0x33 => 0x02d2,
+            0x34 => 0x029b,   0x35 => 0x0263,   0x36 => 0x02d2,   0x37 => 0x029b,
+            0x38 => 0x03b0,   0x39 => 0x029b,   0x3a => 0x029b,   0x3b => 0x0263,
+            0x3c => 0x0116,   0x3d => 0x0116,   0x3e => 0x0116,   0x3f => 0x01d5,
+            0x40 => 0x022c,   0x41 =>   0xde,   0x42 => 0x022c,   0x43 => 0x022c,
+            0x44 => 0x01f4,   0x45 => 0x022c,   0x46 => 0x022c,   0x47 => 0x0116,
+            0x48 => 0x022c,   0x49 => 0x022c,   0x4a =>   0xde,   0x4b =>   0xde,
+            0x4c => 0x01f4,   0x4d =>   0xde,   0x4e => 0x0341,   0x4f => 0x022c,
+            0x50 => 0x022c,   0x51 => 0x022c,   0x52 => 0x022c,   0x53 => 0x014d,
+            0x54 => 0x01f4,   0x55 => 0x0116,   0x56 => 0x022c,   0x57 => 0x01f4,
+            0x58 => 0x02d2,   0x59 => 0x01f4,   0x5a => 0x01f4,   0x5b => 0x01f4,
+            0x5c => 0x014e,   0x5d => 0x0104,   0x5e => 0x014e,   0x5f => 0x0248,
+            0x60 => 0x014d,   0x61 => 0x022c,   0x62 => 0x022c,   0x63 =>   0xa7,
+            0x64 => 0x022c,   0x65 => 0x022c,   0x66 => 0x022c,   0x67 => 0x022c,
+            0x68 =>   0xbf,   0x69 => 0x014d,   0x6a => 0x022c,   0x6b => 0x014d,
+            0x6c => 0x014d,   0x6d => 0x01f4,   0x6e => 0x01f4,   0x6f => 0x022c,
+            0x70 => 0x022c,   0x71 => 0x022c,   0x72 => 0x0116,   0x73 => 0x0219,
+            0x74 => 0x015e,   0x75 =>   0xde,   0x76 => 0x014d,   0x77 => 0x014d,
+            0x78 => 0x022c,   0x79 => 0x03e8,   0x7a => 0x03e8,   0x7b => 0x0263,
+            0x7c => 0x014d,   0x7d => 0x014d,   0x7e => 0x014d,   0x7f => 0x014d,
+            0x80 => 0x014d,   0x81 => 0x014d,   0x82 => 0x014d,   0x83 => 0x014d,
+            0x84 => 0x014d,   0x85 => 0x014d,   0x86 => 0x014d,   0x87 => 0x014d,
+            0x88 => 0x014d,   0x89 => 0x03e8,   0x8a => 0x03e8,   0x8b => 0x0172,
+            0x8c => 0x022c,   0x8d => 0x030a,   0x8e => 0x03e8,   0x8f => 0x016d,
+            0x90 => 0x0379,   0x91 => 0x0116,   0x92 =>   0xde,   0x93 => 0x0263,
+            0x94 => 0x03b0,   0x95 => 0x0263,   0x96 => 0x0116,   0x97 => 0x022c,
+            0x98 => 0x022c,   0x99 => 0x022c,   0x9a => 0x022c,   0x9b => 0x029b,
+            0x9c => 0x0248,   0x9d => 0x029b,   0x9e => 0x029b,   0x9f => 0x022c,
+            0xa0 => 0x02d2,   0xa1 => 0x01f4,   0xa2 => 0x01f4,   0xa3 => 0x022c,
+            0xa4 => 0x02d2,   0xa5 => 0x02d2,   0xa6 => 0x022c,   0xa7 => 0x02d2,
+            0xa8 => 0x022c,   0xa9 => 0x029b,   0xaa => 0x02d2,   0xab =>   0xfa,
+            0xac => 0x02e1,   0xad => 0x029b,   0xae => 0x01f4,   0xaf => 0x022c,
+            0xb0 => 0x02d2,   0xb1 =>   0xde,   0xb2 => 0x022c,   0xb3 => 0x0263,
+            0xb4 => 0x02d2,   0xb5 => 0x022c,   0xb6 => 0x029b,   0xb7 => 0x01f4,
+            0xb8 => 0x01f4,   0xb9 => 0x0116,   0xba => 0x01d7,   0xbb => 0x02d2,
+            0xbc => 0x030a,   0xbd => 0x022c,   0xbe => 0x022c,   0xbf => 0x029b,
+            0xc0 => 0x014d,   0xc1 => 0x01f4,   0xc2 => 0x0263,   0xc3 => 0x029b,
+            0xc4 => 0x030a,   0xc5 => 0x02d2,   0xc6 => 0x029b,   0xc7 => 0x0283,
+            0xc8 => 0x02d2,   0xc9 => 0x022c,   0xca => 0x014d,   0xcb => 0x030a,
+            0xcc => 0x029b,   0xcd => 0x029b,   0xce => 0x0248,   0xcf => 0x022c,
+            0xd0 => 0x0263,   0xd1 => 0x01dc,   0xd2 => 0x01f4,   0xd3 => 0x02d2,
+            0xd4 => 0x0116,   0xd5 => 0x029b,   0xd6 => 0x022c,   0xd7 => 0x022c,
+            0xd8 => 0x01f4,   0xd9 => 0x022c,   0xda => 0x022c,   0xdb => 0x02d2,
+            0xdc => 0x0116,   0xdd => 0x0248,   0xde => 0x0104,   0xdf => 0x02e1,
+            0xe0 => 0x030a,   0xe1 => 0x0116,   0xe2 => 0x0258,   0xe3 => 0x029b,
+            0xe4 => 0x014d,   0xe5 => 0x022c,   0xe6 => 0x0263,   0xe7 => 0x0263,
+            0xe8 => 0x0225,   0xe9 => 0x02d2,   0xea => 0x02d2,   0xeb =>   0xde,
+            0xec => 0x013d,   0xed => 0x022c,   0xee => 0x02d2,   0xef => 0x029b,
+            0xf0 => 0x029b,   0xf1 => 0x022c,   0xf2 => 0x01f4,   0xf3 =>   0xde,
+            0xf4 => 0x030a,   0xf5 => 0x022c,   0xf6 => 0x022c,   0xf7 => 0x01f4,
+            0xf8 => 0x0116,   0xf9 => 0x030a,   0xfa => 0x02d2,   0xfb => 0x0264,
+            0xfc => 0x022c,   0xfd => 0x014d,   0xfe => 0x030a,   0xff => 0x022c,
+          0x0100 => 0x0116, 0x0101 => 0x022c, 0x0102 => 0x029b, 0x0103 => 0x022c,
+          0x0104 => 0x0342, 0x0105 => 0x029b, 0x0106 => 0x012b, 0x0107 => 0x029b,
+          0x0108 => 0x022c, 0x0109 => 0x03e8, 0x010a => 0x022c, 0x010b => 0x0116,
+          0x010c => 0x0116, 0x010d => 0x022c, 0x010e => 0x0342, 0x010f => 0x0225,
+          0x0110 => 0x022c, 0x0111 => 0x022c, 0x0112 => 0x02d2, 0x0113 => 0x029b,
+          0x0114 => 0x022c, 0x0115 => 0x022c, 0x0116 => 0x0342, 0x0117 => 0x029b,
+          0x0118 => 0x029b, 0x0119 => 0x030a, 0x011a => 0x0190, 0x011b => 0x022c,
+          0x011c => 0x02d2, 0x011d => 0x022c, 0x011e => 0x01c5, 0x011f => 0x02d2,
+          0x0120 => 0x014d, 0x0121 => 0x02d2, 0x0122 => 0x022c, 0x0123 => 0x02d2,
+          0x0124 => 0x022c, 0x0125 => 0x029b, 0x0126 => 0x029b, 0x0127 => 0x029b,
+          0x0128 => 0x030a, 0x0129 => 0x01f4, 0x012a => 0x029b, 0x012b => 0x0116,
+          0x012c => 0x01f4, 0x012d => 0x0248, 0x012e => 0x0116, 0x012f => 0x022c,
+          0x0130 => 0x0116, 0x0131 => 0x0248, 0x0132 => 0x022c, 0x0133 => 0x022c,
+          0x0134 => 0x0225, 0x0135 => 0x022c, 0x0136 => 0x022c, 0x0137 => 0x01f4,
+          0x0138 => 0x022c, 0x0139 => 0x014d, 0x013a => 0x0116, 0x013b => 0x022c,
+        );
+
+        /* The cmap table is similarly synthesized.
+         */
+        $cmapData = array(
+            0x20 =>   0x01,   0x21 =>   0x02,   0x22 =>   0x03,   0x23 =>   0x04,
+            0x24 =>   0x05,   0x25 =>   0x06,   0x26 =>   0x07, 0x2019 =>   0x08,
+            0x28 =>   0x09,   0x29 =>   0x0a,   0x2a =>   0x0b,   0x2b =>   0x0c,
+            0x2c =>   0x0d,   0x2d =>   0x0e,   0x2e =>   0x0f,   0x2f =>   0x10,
+            0x30 =>   0x11,   0x31 =>   0x12,   0x32 =>   0x13,   0x33 =>   0x14,
+            0x34 =>   0x15,   0x35 =>   0x16,   0x36 =>   0x17,   0x37 =>   0x18,
+            0x38 =>   0x19,   0x39 =>   0x1a,   0x3a =>   0x1b,   0x3b =>   0x1c,
+            0x3c =>   0x1d,   0x3d =>   0x1e,   0x3e =>   0x1f,   0x3f =>   0x20,
+            0x40 =>   0x21,   0x41 =>   0x22,   0x42 =>   0x23,   0x43 =>   0x24,
+            0x44 =>   0x25,   0x45 =>   0x26,   0x46 =>   0x27,   0x47 =>   0x28,
+            0x48 =>   0x29,   0x49 =>   0x2a,   0x4a =>   0x2b,   0x4b =>   0x2c,
+            0x4c =>   0x2d,   0x4d =>   0x2e,   0x4e =>   0x2f,   0x4f =>   0x30,
+            0x50 =>   0x31,   0x51 =>   0x32,   0x52 =>   0x33,   0x53 =>   0x34,
+            0x54 =>   0x35,   0x55 =>   0x36,   0x56 =>   0x37,   0x57 =>   0x38,
+            0x58 =>   0x39,   0x59 =>   0x3a,   0x5a =>   0x3b,   0x5b =>   0x3c,
+            0x5c =>   0x3d,   0x5d =>   0x3e,   0x5e =>   0x3f,   0x5f =>   0x40,
+          0x2018 =>   0x41,   0x61 =>   0x42,   0x62 =>   0x43,   0x63 =>   0x44,
+            0x64 =>   0x45,   0x65 =>   0x46,   0x66 =>   0x47,   0x67 =>   0x48,
+            0x68 =>   0x49,   0x69 =>   0x4a,   0x6a =>   0x4b,   0x6b =>   0x4c,
+            0x6c =>   0x4d,   0x6d =>   0x4e,   0x6e =>   0x4f,   0x6f =>   0x50,
+            0x70 =>   0x51,   0x71 =>   0x52,   0x72 =>   0x53,   0x73 =>   0x54,
+            0x74 =>   0x55,   0x75 =>   0x56,   0x76 =>   0x57,   0x77 =>   0x58,
+            0x78 =>   0x59,   0x79 =>   0x5a,   0x7a =>   0x5b,   0x7b =>   0x5c,
+            0x7c =>   0x5d,   0x7d =>   0x5e,   0x7e =>   0x5f,   0xa1 =>   0x60,
+            0xa2 =>   0x61,   0xa3 =>   0x62, 0x2044 =>   0x63,   0xa5 =>   0x64,
+          0x0192 =>   0x65,   0xa7 =>   0x66,   0xa4 =>   0x67,   0x27 =>   0x68,
+          0x201c =>   0x69,   0xab =>   0x6a, 0x2039 =>   0x6b, 0x203a =>   0x6c,
+          0xfb01 =>   0x6d, 0xfb02 =>   0x6e, 0x2013 =>   0x6f, 0x2020 =>   0x70,
+          0x2021 =>   0x71,   0xb7 =>   0x72,   0xb6 =>   0x73, 0x2022 =>   0x74,
+          0x201a =>   0x75, 0x201e =>   0x76, 0x201d =>   0x77,   0xbb =>   0x78,
+          0x2026 =>   0x79, 0x2030 =>   0x7a,   0xbf =>   0x7b,   0x60 =>   0x7c,
+            0xb4 =>   0x7d, 0x02c6 =>   0x7e, 0x02dc =>   0x7f,   0xaf =>   0x80,
+          0x02d8 =>   0x81, 0x02d9 =>   0x82,   0xa8 =>   0x83, 0x02da =>   0x84,
+            0xb8 =>   0x85, 0x02dd =>   0x86, 0x02db =>   0x87, 0x02c7 =>   0x88,
+          0x2014 =>   0x89,   0xc6 =>   0x8a,   0xaa =>   0x8b, 0x0141 =>   0x8c,
+            0xd8 =>   0x8d, 0x0152 =>   0x8e,   0xba =>   0x8f,   0xe6 =>   0x90,
+          0x0131 =>   0x91, 0x0142 =>   0x92,   0xf8 =>   0x93, 0x0153 =>   0x94,
+            0xdf =>   0x95,   0xcf =>   0x96,   0xe9 =>   0x97, 0x0103 =>   0x98,
+          0x0171 =>   0x99, 0x011b =>   0x9a, 0x0178 =>   0x9b,   0xf7 =>   0x9c,
+            0xdd =>   0x9d,   0xc2 =>   0x9e,   0xe1 =>   0x9f,   0xdb =>   0xa0,
+            0xfd =>   0xa1, 0x0219 =>   0xa2,   0xea =>   0xa3, 0x016e =>   0xa4,
+            0xdc =>   0xa5, 0x0105 =>   0xa6,   0xda =>   0xa7, 0x0173 =>   0xa8,
+            0xcb =>   0xa9, 0x0110 =>   0xaa, 0xf6c3 =>   0xab,   0xa9 =>   0xac,
+          0x0112 =>   0xad, 0x010d =>   0xae,   0xe5 =>   0xaf, 0x0145 =>   0xb0,
+          0x013a =>   0xb1,   0xe0 =>   0xb2, 0x0162 =>   0xb3, 0x0106 =>   0xb4,
+            0xe3 =>   0xb5, 0x0116 =>   0xb6, 0x0161 =>   0xb7, 0x015f =>   0xb8,
+            0xed =>   0xb9, 0x25ca =>   0xba, 0x0158 =>   0xbb, 0x0122 =>   0xbc,
+            0xfb =>   0xbd,   0xe2 =>   0xbe, 0x0100 =>   0xbf, 0x0159 =>   0xc0,
+            0xe7 =>   0xc1, 0x017b =>   0xc2,   0xde =>   0xc3, 0x014c =>   0xc4,
+          0x0154 =>   0xc5, 0x015a =>   0xc6, 0x010f =>   0xc7, 0x016a =>   0xc8,
+          0x016f =>   0xc9,   0xb3 =>   0xca,   0xd2 =>   0xcb,   0xc0 =>   0xcc,
+          0x0102 =>   0xcd,   0xd7 =>   0xce,   0xfa =>   0xcf, 0x0164 =>   0xd0,
+          0x2202 =>   0xd1,   0xff =>   0xd2, 0x0143 =>   0xd3,   0xee =>   0xd4,
+            0xca =>   0xd5,   0xe4 =>   0xd6,   0xeb =>   0xd7, 0x0107 =>   0xd8,
+          0x0144 =>   0xd9, 0x016b =>   0xda, 0x0147 =>   0xdb,   0xcd =>   0xdc,
+            0xb1 =>   0xdd,   0xa6 =>   0xde,   0xae =>   0xdf, 0x011e =>   0xe0,
+          0x0130 =>   0xe1, 0x2211 =>   0xe2,   0xc8 =>   0xe3, 0x0155 =>   0xe4,
+          0x014d =>   0xe5, 0x0179 =>   0xe6, 0x017d =>   0xe7, 0x2265 =>   0xe8,
+            0xd0 =>   0xe9,   0xc7 =>   0xea, 0x013c =>   0xeb, 0x0165 =>   0xec,
+          0x0119 =>   0xed, 0x0172 =>   0xee,   0xc1 =>   0xef,   0xc4 =>   0xf0,
+            0xe8 =>   0xf1, 0x017a =>   0xf2, 0x012f =>   0xf3,   0xd3 =>   0xf4,
+            0xf3 =>   0xf5, 0x0101 =>   0xf6, 0x015b =>   0xf7,   0xef =>   0xf8,
+            0xd4 =>   0xf9,   0xd9 =>   0xfa, 0x2206 =>   0xfb,   0xfe =>   0xfc,
+            0xb2 =>   0xfd,   0xd6 =>   0xfe,   0xb5 =>   0xff,   0xec => 0x0100,
+          0x0151 => 0x0101, 0x0118 => 0x0102, 0x0111 => 0x0103,   0xbe => 0x0104,
+          0x015e => 0x0105, 0x013e => 0x0106, 0x0136 => 0x0107, 0x0139 => 0x0108,
+          0x2122 => 0x0109, 0x0117 => 0x010a,   0xcc => 0x010b, 0x012a => 0x010c,
+          0x013d => 0x010d,   0xbd => 0x010e, 0x2264 => 0x010f,   0xf4 => 0x0110,
+            0xf1 => 0x0111, 0x0170 => 0x0112,   0xc9 => 0x0113, 0x0113 => 0x0114,
+          0x011f => 0x0115,   0xbc => 0x0116, 0x0160 => 0x0117, 0x0218 => 0x0118,
+          0x0150 => 0x0119,   0xb0 => 0x011a,   0xf2 => 0x011b, 0x010c => 0x011c,
+            0xf9 => 0x011d, 0x221a => 0x011e, 0x010e => 0x011f, 0x0157 => 0x0120,
+            0xd1 => 0x0121,   0xf5 => 0x0122, 0x0156 => 0x0123, 0x013b => 0x0124,
+            0xc3 => 0x0125, 0x0104 => 0x0126,   0xc5 => 0x0127,   0xd5 => 0x0128,
+          0x017c => 0x0129, 0x011a => 0x012a, 0x012e => 0x012b, 0x0137 => 0x012c,
+          0x2212 => 0x012d,   0xce => 0x012e, 0x0148 => 0x012f, 0x0163 => 0x0130,
+            0xac => 0x0131,   0xf6 => 0x0132,   0xfc => 0x0133, 0x2260 => 0x0134,
+          0x0123 => 0x0135,   0xf0 => 0x0136, 0x017e => 0x0137, 0x0146 => 0x0138,
+            0xb9 => 0x0139, 0x012b => 0x013a, 0x20ac => 0x013b);
+        $this->_cmap = Zend_Pdf_Cmap::cmapWithTypeData(
+          Zend_Pdf_Cmap::TYPE_BYTE_ENCODING_STATIC, $cmapData);
+
+
+        /* Resource dictionary */
+
+        /* The resource dictionary for the standard fonts is sparse because PDF
+         * viewers already have all of the metrics data. We only need to provide
+         * the font name and encoding method.
+         */
+        $this->_resource->BaseFont = new Zend_Pdf_Element_Name('Helvetica-Oblique');
+    }
+
+}

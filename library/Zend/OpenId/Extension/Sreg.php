@@ -1,110 +1,300 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-lbOeG/fn5bUneijuP7S=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Sreg.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+/**
+ * @see Zend_OpenId_Extension
+ */
+require_once "Zend/OpenId/Extension.php";
+
+/**
+ * 'Simple Refistration Extension' for Zend_OpenId
+ *
+ * @category   Zend
+ * @package    Zend_OpenId
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_OpenId_Extension_Sreg extends Zend_OpenId_Extension
+{
+    /**
+     * SREG 1.1 namespace. All OpenID SREG 1.1 messages MUST contain variable
+     * openid.ns.sreg with its value.
+     */
+    const NAMESPACE_1_1 = "http://openid.net/extensions/sreg/1.1";
+
+    private $_props;
+    private $_policy_url;
+    private $_version;
+
+    /**
+     * Creates SREG extension object
+     *
+     * @param array $props associative array of SREG variables
+     * @param string $policy_url SREG policy URL
+     * @param float $version SREG version
+     * @return array
+     */
+    public function __construct(array $props=null, $policy_url=null, $version=1.0)
+    {
+        $this->_props = $props;
+        $this->_policy_url = $policy_url;
+        $this->_version = $version;
+    }
+
+    /**
+     * Returns associative array of SREG variables
+     *
+     * @return array
+     */
+    public function getProperties() {
+        if (is_array($this->_props)) {
+            return $this->_props;
+        } else {
+            return array();
+        }
+    }
+
+    /**
+     * Returns SREG policy URL
+     *
+     * @return string
+     */
+    public function getPolicyUrl() {
+        return $this->_policy_url;
+    }
+
+    /**
+     * Returns SREG protocol version
+     *
+     * @return float
+     */
+    public function getVersion() {
+        return $this->_version;
+    }
+
+    /**
+     * Returns array of allowed SREG variable names.
+     *
+     * @return array
+     */
+    public static function getSregProperties()
+    {
+        return array(
+            "nickname",
+            "email",
+            "fullname",
+            "dob",
+            "gender",
+            "postcode",
+            "country",
+            "language",
+            "timezone"
+        );
+    }
+
+    /**
+     * Adds additional SREG data to OpenId 'checkid_immediate' or
+     * 'checkid_setup' request.
+     *
+     * @param array &$params request's var/val pairs
+     * @return bool
+     */
+    public function prepareRequest(&$params)
+    {
+        if (is_array($this->_props) && count($this->_props) > 0) {
+            foreach ($this->_props as $prop => $req) {
+                if ($req) {
+                    if (isset($required)) {
+                        $required .= ','.$prop;
+                    } else {
+                        $required = $prop;
+                    }
+                } else {
+                    if (isset($optional)) {
+                        $optional .= ','.$prop;
+                    } else {
+                        $optional = $prop;
+                    }
+                }
+            }
+            if ($this->_version >= 1.1) {
+                $params['openid.ns.sreg'] = Zend_OpenId_Extension_Sreg::NAMESPACE_1_1;
+            }
+            if (!empty($required)) {
+                $params['openid.sreg.required'] = $required;
+            }
+            if (!empty($optional)) {
+                $params['openid.sreg.optional'] = $optional;
+            }
+            if (!empty($this->_policy_url)) {
+                $params['openid.sreg.policy_url'] = $this->_policy_url;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Parses OpenId 'checkid_immediate' or 'checkid_setup' request,
+     * extracts SREG variables and sets ovject properties to corresponding
+     * values.
+     *
+     * @param array $params request's var/val pairs
+     * @return bool
+     */
+    public function parseRequest($params)
+    {
+        if (isset($params['openid_ns_sreg']) &&
+            $params['openid_ns_sreg'] === Zend_OpenId_Extension_Sreg::NAMESPACE_1_1) {
+            $this->_version= 1.1;
+        } else {
+            $this->_version= 1.0;
+        }
+        if (!empty($params['openid_sreg_policy_url'])) {
+            $this->_policy_url = $params['openid_sreg_policy_url'];
+        } else {
+            $this->_policy_url = null;
+        }
+        $props = array();
+        if (!empty($params['openid_sreg_optional'])) {
+            foreach (explode(',', $params['openid_sreg_optional']) as $prop) {
+                $prop = trim($prop);
+                $props[$prop] = false;
+            }
+        }
+        if (!empty($params['openid_sreg_required'])) {
+            foreach (explode(',', $params['openid_sreg_required']) as $prop) {
+                $prop = trim($prop);
+                $props[$prop] = true;
+            }
+        }
+        $props2 = array();
+        foreach (self::getSregProperties() as $prop) {
+            if (isset($props[$prop])) {
+                $props2[$prop] = $props[$prop];
+            }
+        }
+
+        $this->_props = (count($props2) > 0) ? $props2 : null;
+        return true;
+    }
+
+    /**
+     * Adds additional SREG data to OpenId 'id_res' response.
+     *
+     * @param array &$params response's var/val pairs
+     * @return bool
+     */
+    public function prepareResponse(&$params)
+    {
+        if (is_array($this->_props) && count($this->_props) > 0) {
+            if ($this->_version >= 1.1) {
+                $params['openid.ns.sreg'] = Zend_OpenId_Extension_Sreg::NAMESPACE_1_1;
+            }
+            foreach (self::getSregProperties() as $prop) {
+                if (!empty($this->_props[$prop])) {
+                    $params['openid.sreg.' . $prop] = $this->_props[$prop];
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Parses OpenId 'id_res' response and sets object's properties according
+     * to 'openid.sreg.*' variables in response
+     *
+     * @param array $params response's var/val pairs
+     * @return bool
+     */
+    public function parseResponse($params)
+    {
+        if (isset($params['openid_ns_sreg']) &&
+            $params['openid_ns_sreg'] === Zend_OpenId_Extension_Sreg::NAMESPACE_1_1) {
+            $this->_version= 1.1;
+        } else {
+            $this->_version= 1.0;
+        }
+        $props = array();
+        foreach (self::getSregProperties() as $prop) {
+            if (!empty($params['openid_sreg_' . $prop])) {
+                $props[$prop] = $params['openid_sreg_' . $prop];
+            }
+        }
+        if (isset($this->_props) && is_array($this->_props)) {
+            foreach (self::getSregProperties() as $prop) {
+                if (isset($this->_props[$prop]) &&
+                    $this->_props[$prop] &&
+                    !isset($props[$prop])) {
+                    return false;
+                }
+            }
+        }
+        $this->_props = (count($props) > 0) ? $props : null;
+        return true;
+    }
+
+    /**
+     * Addes SREG properties that are allowed to be send to consumer to
+     * the given $data argument.
+     *
+     * @param array &$data data to be stored in tusted servers database
+     * @return bool
+     */
+    public function getTrustData(&$data)
+    {
+        $data[get_class()] = $this->getProperties();
+        return true;
+    }
+
+    /**
+     * Check if given $data contains necessury SREG properties to sutisfy
+     * OpenId request. On success sets SREG response properties from given
+     * $data and returns true, on failure returns false.
+     *
+     * @param array $data data from tusted servers database
+     * @return bool
+     */
+    public function checkTrustData($data)
+    {
+        if (is_array($this->_props) && count($this->_props) > 0) {
+            $props = array();
+            $name = get_class();
+            if (isset($data[$name])) {
+                $props = $data[$name];
+            } else {
+                $props = array();
+            }
+            $props2 = array();
+            foreach ($this->_props as $prop => $req) {
+                if (empty($props[$prop])) {
+                    if ($req) {
+                        return false;
+                    }
+                } else {
+                    $props2[$prop] = $props[$prop];
+                }
+            }
+            $this->_props = (count($props2) > 0) ? $props2 : null;
+        }
+        return true;
+    }
+}

@@ -1,68 +1,302 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-SeJITlNFEM1pgE27iyw4E1G=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Color */
+require_once 'Zend/Pdf/Color.php';
+
+
+/** Zend_Pdf_Element_Numeric */
+require_once 'Zend/Pdf/Element/Numeric.php';
+
+/** Zend_Pdf_Element_Array */
+require_once 'Zend/Pdf/Element/Array.php';
+
+/** Zend_Pdf_Resource_Font */
+require_once 'Zend/Pdf/Resource/Font.php';
+
+
+/**
+ * Style object.
+ * Style object doesn't directly correspond to any PDF file object.
+ * It's utility class, used as a container for style information.
+ * It's used by Zend_Pdf_Page class in draw operations.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Style
+{
+    /**
+     * Fill color.
+     * Used to fill geometric shapes or text.
+     *
+     * @var Zend_Pdf_Color|null
+     */
+    private $_fillColor = null;
+
+    /**
+     * Line color.
+     * Current color, used for lines and font outlines.
+     *
+     * @var Zend_Pdf_Color|null
+     */
+
+    private $_color;
+
+    /**
+     * Line width.
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_lineWidth;
+
+    /**
+     * Array which describes line dashing pattern.
+     * It's array of numeric:
+     * array($on_length, $off_length, $on_length, $off_length, ...)
+     *
+     * @var array
+     */
+    private $_lineDashingPattern;
+
+    /**
+     * Line dashing phase
+     *
+     * @var float
+     */
+    private $_lineDashingPhase;
+
+    /**
+     * Current font
+     *
+     * @var Zend_Pdf_Resource_Font
+     */
+    private $_font;
+
+    /**
+     * Font size
+     *
+     * @var float
+     */
+    private $_fontSize;
+
+
+
+    /**
+     * Create style.
+     *
+     * @param Zend_Pdf_Style $anotherStyle
+     */
+    public function __construct($anotherStyle = null)
+    {
+        if ($anotherStyle !== null) {
+            $this->_fillColor          = $anotherStyle->_fillColor;
+            $this->_color              = $anotherStyle->_color;
+            $this->_lineWidth          = $anotherStyle->_lineWidth;
+            $this->_lineDashingPattern = $anotherStyle->_lineDashingPattern;
+            $this->_lineDashingPhase   = $anotherStyle->_lineDashingPhase;
+            $this->_font               = $anotherStyle->_font;
+            $this->_fontSize           = $anotherStyle->_fontSize;
+        }
+    }
+
+
+    /**
+     * Set fill color.
+     *
+     * @param Zend_Pdf_Color $color
+     */
+    public function setFillColor(Zend_Pdf_Color $color)
+    {
+        $this->_fillColor = $color;
+    }
+
+    /**
+     * Set line color.
+     *
+     * @param Zend_Pdf_Color $color
+     */
+    public function setLineColor(Zend_Pdf_Color $color)
+    {
+        $this->_color = $color;
+    }
+
+    /**
+     * Set line width.
+     *
+     * @param float $width
+     */
+    public function setLineWidth($width)
+    {
+        $this->_lineWidth = new Zend_Pdf_Element_Numeric($width);
+    }
+
+
+    /**
+     * Set line dashing pattern
+     *
+     * @param array $pattern
+     * @param float $phase
+     */
+    public function setLineDashingPattern($pattern, $phase = 0)
+    {
+        if ($pattern === Zend_Pdf_Page::LINE_DASHING_SOLID) {
+            $pattern = array();
+            $phase   = 0;
+        }
+
+        $this->_lineDashingPattern = $pattern;
+        $this->_lineDashingPhase   = new Zend_Pdf_Element_Numeric($phase);
+    }
+
+
+    /**
+     * Set current font.
+     *
+     * @param Zend_Pdf_Resource_Font $font
+     * @param float $fontSize
+     */
+    public function setFont(Zend_Pdf_Resource_Font $font, $fontSize)
+    {
+        $this->_font = $font;
+        $this->_fontSize = $fontSize;
+    }
+
+    /**
+     * Modify current font size
+     *
+     * @param float $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->_fontSize = $fontSize;
+    }
+
+    /**
+     * Get fill color.
+     *
+     * @return Zend_Pdf_Color|null
+     */
+    public function getFillColor()
+    {
+        return $this->_fillColor;
+    }
+
+    /**
+     * Get line color.
+     *
+     * @return Zend_Pdf_Color|null
+     */
+    public function getLineColor()
+    {
+        return $this->_color;
+    }
+
+    /**
+     * Get line width.
+     *
+     * @return float
+     */
+    public function getLineWidth()
+    {
+        return $this->_lineWidth->value;
+    }
+
+    /**
+     * Get line dashing pattern
+     *
+     * @return array
+     */
+    public function getLineDashingPattern()
+    {
+        return $this->_lineDashingPattern;
+    }
+
+
+    /**
+     * Get current font.
+     *
+     * @return Zend_Pdf_Resource_Font $font
+     */
+    public function getFont()
+    {
+        return $this->_font;
+    }
+
+    /**
+     * Get current font size
+     *
+     * @return float $fontSize
+     */
+    public function getFontSize()
+    {
+        return $this->_fontSize;
+    }
+
+    /**
+     * Get line dashing phase
+     *
+     * @return float
+     */
+    public function getLineDashingPhase()
+    {
+        return $this->_lineDashingPhase->value;
+    }
+
+
+    /**
+     * Dump style to a string, which can be directly inserted into content stream
+     *
+     * @return string
+     */
+    public function instructions()
+    {
+        $instructions = '';
+
+        if ($this->_fillColor !== null) {
+            $instructions .= $this->_fillColor->instructions(false);
+        }
+
+        if ($this->_color !== null) {
+            $instructions .= $this->_color->instructions(true);
+        }
+
+        if ($this->_lineWidth !== null) {
+            $instructions .= $this->_lineWidth->toString() . " w\n";
+        }
+
+        if ($this->_lineDashingPattern !== null) {
+            $dashPattern = new Zend_Pdf_Element_Array();
+
+            foreach ($this->_lineDashingPattern as $dashItem) {
+                $dashElement = new Zend_Pdf_Element_Numeric($dashItem);
+                $dashPattern->items[] = $dashElement;
+            }
+
+            $instructions .= $dashPattern->toString() . ' '
+                           . $this->_lineDashingPhase->toString() . " d\n";
+        }
+
+        return $instructions;
+    }
+
+}
+

@@ -1,47 +1,180 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-k5eE6AHMRCCe2y7W/FZUZFEtAba4b0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Gapps
+ */
+require_once 'Zend/Gdata/Gapps.php';
+
+/**
+ * Represents the apps:name element used by the Apps data API. This is used
+ * to represent a user's full name. This class is usually contained within
+ * instances of Zend_Gdata_Gapps_UserEntry.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_Extension_Name extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'apps';
+    protected $_rootElement = 'name';
+
+    /**
+     * The associated user's family name.
+     *
+     * @var string
+     */
+    protected $_familyName = null;
+
+    /**
+     * The associated user's given name.
+     *
+     * @var string
+     */
+    protected $_givenName = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Gapps_Extension_Name object.
+     *
+     * @param string $familyName (optional) The familyName to be set for this
+     *          object.
+     * @param string $givenName (optional) The givenName to be set for this
+     *          object.
+     */
+    public function __construct($familyName = null, $givenName = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
+        parent::__construct();
+        $this->_familyName = $familyName;
+        $this->_givenName = $givenName;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_familyName !== null) {
+            $element->setAttribute('familyName', $this->_familyName);
+        }
+        if ($this->_givenName !== null) {
+            $element->setAttribute('givenName', $this->_givenName);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'familyName':
+            $this->_familyName = $attribute->nodeValue;
+            break;
+        case 'givenName':
+            $this->_givenName = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's familyName attribute.
+     *
+     * @see setFamilyName
+     * @return string The requested attribute.
+     */
+    public function getFamilyName()
+    {
+        return $this->_familyName;
+    }
+
+    /**
+     * Set the value for this element's familyName attribute. This
+     * represents a user's family name.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Name Provides a fluent interface..
+     */
+    public function setFamilyName($value)
+    {
+        $this->_familyName = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's givenName attribute.
+     *
+     * @see setGivenName
+     * @return string The requested attribute.
+     */
+    public function getGivenName()
+    {
+        return $this->_givenName;
+    }
+
+    /**
+     * Set the value for this element's givenName attribute. This
+     * represents a user's given name.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_Name Provides a fluent interface.
+     */
+    public function setGivenName($value)
+    {
+        $this->_givenName = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     */
+    public function __toString()
+    {
+        return $this->getGivenName() . ' ' . $this->getFamilyName();
+    }
+
+}

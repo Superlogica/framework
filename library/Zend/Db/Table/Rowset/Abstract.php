@@ -1,91 +1,419 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Table
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 5896 2007-07-27 20:04:24Z bkarwin $
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Table
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Db_Table_Rowset_Abstract implements SeekableIterator, Countable, ArrayAccess
+{
+    /**
+     * The original data for each row.
+     *
+     * @var array
+     */
+    protected $_data = array();
+
+    /**
+     * Zend_Db_Table_Abstract object.
+     *
+     * @var Zend_Db_Table_Abstract
+     */
+    protected $_table;
+
+    /**
+     * Connected is true if we have a reference to a live
+     * Zend_Db_Table_Abstract object.
+     * This is false after the Rowset has been deserialized.
+     *
+     * @var boolean
+     */
+    protected $_connected = true;
+
+    /**
+     * Zend_Db_Table_Abstract class name.
+     *
+     * @var string
+     */
+    protected $_tableClass;
+
+    /**
+     * Zend_Db_Table_Row_Abstract class name.
+     *
+     * @var string
+     */
+    protected $_rowClass = 'Zend_Db_Table_Row';
+
+    /**
+     * Iterator pointer.
+     *
+     * @var integer
+     */
+    protected $_pointer = 0;
+
+    /**
+     * How many data rows there are.
+     *
+     * @var integer
+     */
+    protected $_count;
+
+    /**
+     * Collection of instantiated Zend_Db_Table_Row objects.
+     *
+     * @var array
+     */
+    protected $_rows = array();
+
+    /**
+     * @var boolean
+     */
+    protected $_stored = false;
+
+    /**
+     * @var boolean
+     */
+    protected $_readOnly = false;
+
+    /**
+     * Constructor.
+     *
+     * @param array $config
+     */
+    public function __construct(array $config)
+    {
+        if (isset($config['table'])) {
+            $this->_table      = $config['table'];
+            $this->_tableClass = get_class($this->_table);
+        }
+        if (isset($config['rowClass'])) {
+            $this->_rowClass   = $config['rowClass'];
+        }
+        if (!class_exists($this->_rowClass)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($this->_rowClass);
+        }
+        if (isset($config['data'])) {
+            $this->_data       = $config['data'];
+        }
+        if (isset($config['readOnly'])) {
+            $this->_readOnly   = $config['readOnly'];
+        }
+        if (isset($config['stored'])) {
+            $this->_stored     = $config['stored'];
+        }
+
+        // set the count of rows
+        $this->_count = count($this->_data);
+
+        $this->init();
+    }
+
+    /**
+     * Store data, class names, and state in serialized object
+     *
+     * @return array
+     */
+    public function __sleep()
+    {
+        return array('_data', '_tableClass', '_rowClass', '_pointer', '_count', '_rows', '_stored',
+                     '_readOnly');
+    }
+
+    /**
+     * Setup to do on wakeup.
+     * A de-serialized Rowset should not be assumed to have access to a live
+     * database connection, so set _connected = false.
+     *
+     * @return void
+     */
+    public function __wakeup()
+    {
+        $this->_connected = false;
+    }
+
+    /**
+     * Initialize object
+     *
+     * Called from {@link __construct()} as final step of object instantiation.
+     *
+     * @return void
+     */
+    public function init()
+    {
+    }
+
+    /**
+     * Return the connected state of the rowset.
+     *
+     * @return boolean
+     */
+    public function isConnected()
+    {
+        return $this->_connected;
+    }
+
+    /**
+     * Returns the table object, or null if this is disconnected rowset
+     *
+     * @return Zend_Db_Table_Abstract
+     */
+    public function getTable()
+    {
+        return $this->_table;
+    }
+
+    /**
+     * Set the table object, to re-establish a live connection
+     * to the database for a Rowset that has been de-serialized.
+     *
+     * @param Zend_Db_Table_Abstract $table
+     * @return boolean
+     * @throws Zend_Db_Table_Row_Exception
+     */
+    public function setTable(Zend_Db_Table_Abstract $table)
+    {
+        $this->_table = $table;
+        $this->_connected = false;
+        // @todo This works only if we have iterated through
+        // the result set once to instantiate the rows.
+        foreach ($this as $row) {
+            $connected = $row->setTable($table);
+            if ($connected == true) {
+                $this->_connected = true;
+            }
+        }
+        return $this->_connected;
+    }
+
+    /**
+     * Query the class name of the Table object for which this
+     * Rowset was created.
+     *
+     * @return string
+     */
+    public function getTableClass()
+    {
+        return $this->_tableClass;
+    }
+
+    /**
+     * Rewind the Iterator to the first element.
+     * Similar to the reset() function for arrays in PHP.
+     * Required by interface Iterator.
+     *
+     * @return Zend_Db_Table_Rowset_Abstract Fluent interface.
+     */
+    public function rewind()
+    {
+        $this->_pointer = 0;
+        return $this;
+    }
+
+    /**
+     * Return the current element.
+     * Similar to the current() function for arrays in PHP
+     * Required by interface Iterator.
+     *
+     * @return Zend_Db_Table_Row_Abstract current element from the collection
+     */
+    public function current()
+    {
+        if ($this->valid() === false) {
+            return null;
+        }
+
+        // do we already have a row object for this position?
+        if (empty($this->_rows[$this->_pointer])) {
+            $this->_rows[$this->_pointer] = new $this->_rowClass(
+                array(
+                    'table'    => $this->_table,
+                    'data'     => $this->_data[$this->_pointer],
+                    'stored'   => $this->_stored,
+                    'readOnly' => $this->_readOnly
+                )
+            );
+        }
+
+        // return the row object
+        return $this->_rows[$this->_pointer];
+    }
+
+    /**
+     * Return the identifying key of the current element.
+     * Similar to the key() function for arrays in PHP.
+     * Required by interface Iterator.
+     *
+     * @return int
+     */
+    public function key()
+    {
+        return $this->_pointer;
+    }
+
+    /**
+     * Move forward to next element.
+     * Similar to the next() function for arrays in PHP.
+     * Required by interface Iterator.
+     *
+     * @return void
+     */
+    public function next()
+    {
+        ++$this->_pointer;
+    }
+
+    /**
+     * Check if there is a current element after calls to rewind() or next().
+     * Used to check if we've iterated to the end of the collection.
+     * Required by interface Iterator.
+     *
+     * @return bool False if there's nothing more to iterate over
+     */
+    public function valid()
+    {
+        return $this->_pointer < $this->_count;
+    }
+
+    /**
+     * Returns the number of elements in the collection.
+     *
+     * Implements Countable::count()
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return $this->_count;
+    }
+
+    /**
+     * Take the Iterator to position $position
+     * Required by interface SeekableIterator.
+     *
+     * @param int $position the position to seek to
+     * @return Zend_Db_Table_Rowset_Abstract
+     * @throws Zend_Db_Table_Rowset_Exception
+     */
+    public function seek($position)
+    {
+        $position = (int) $position;
+        if ($position < 0 || $position >= $this->_count) {
+            require_once 'Zend/Db/Table/Rowset/Exception.php';
+            throw new Zend_Db_Table_Rowset_Exception("Illegal index $position");
+        }
+        $this->_pointer = $position;
+        return $this;
+    }
+
+    /**
+     * Check if an offset exists
+     * Required by the ArrayAccess implementation
+     *
+     * @param string $offset
+     * @return boolean
+     */
+    public function offsetExists($offset)
+    {
+        return isset($this->_data[(int) $offset]);
+    }
+
+    /**
+     * Get the row for the given offset
+     * Required by the ArrayAccess implementation
+     *
+     * @param string $offset
+     * @return Zend_Db_Table_Row_Abstract
+     */
+    public function offsetGet($offset)
+    {
+        $this->_pointer = (int) $offset;
+
+        return $this->current();
+    }
+
+    /**
+     * Does nothing
+     * Required by the ArrayAccess implementation
+     *
+     * @param string $offset
+     * @param mixed $value
+     */
+    public function offsetSet($offset, $value)
+    {
+    }
+
+    /**
+     * Does nothing
+     * Required by the ArrayAccess implementation
+     *
+     * @param string $offset
+     */
+    public function offsetUnset($offset)
+    {
+    }
+
+    /**
+     * Returns a Zend_Db_Table_Row from a known position into the Iterator
+     *
+     * @param int $position the position of the row expected
+     * @param bool $seek wether or not seek the iterator to that position after
+     * @return Zend_Db_Table_Row
+     * @throws Zend_Db_Table_Rowset_Exception
+     */
+    public function getRow($position, $seek = false)
+    {
+        $key = $this->key();
+        try {
+            $this->seek($position);
+            $row = $this->current();
+        } catch (Zend_Db_Table_Rowset_Exception $e) {
+            require_once 'Zend/Db/Table/Rowset/Exception.php';
+            throw new Zend_Db_Table_Rowset_Exception('No row could be found at position ' . (int) $position);
+        }
+        if ($seek == false) {
+            $this->seek($key);
+        }
+        return $row;
+    }
+
+    /**
+     * Returns all data as an array.
+     *
+     * Updates the $_data property with current row object values.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        // @todo This works only if we have iterated through
+        // the result set once to instantiate the rows.
+        foreach ($this->_rows as $i => $row) {
+            $this->_data[$i] = $row->toArray();
+        }
+        return $this->_data;
+    }
+
+}

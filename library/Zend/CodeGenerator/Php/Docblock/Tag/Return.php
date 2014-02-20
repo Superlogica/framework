@@ -1,29 +1,98 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @subpackage PHP
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_CodeGenerator_Php_Docblock_Tag
+ */
+require_once 'Zend/CodeGenerator/Php/Docblock/Tag.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_CodeGenerator_Php_Docblock_Tag_Return extends Zend_CodeGenerator_Php_Docblock_Tag 
+{
+    
+    /**
+     * @var string
+     */
+    protected $_datatype = null;
+    
+    /**
+     * @var string
+     */
+    protected $_description = null;
+    
+    /**
+     * fromReflection()
+     *
+     * @param Zend_Reflection_Docblock_Tag $reflectionTagReturn
+     * @return Zend_CodeGenerator_Php_Docblock_Tag_Return
+     */
+    public static function fromReflection(Zend_Reflection_Docblock_Tag $reflectionTagReturn)
+    {
+        $returnTag = new self();
+        
+        $returnTag->setName('return');
+        $returnTag->setDatatype($reflectionTagReturn->getType()); // @todo rename
+        $returnTag->setDescription($reflectionTagReturn->getDescription());
+        
+        return $returnTag;
+    }
+    
+    /**
+     * setDatatype()
+     *
+     * @param string $datatype
+     * @return Zend_CodeGenerator_Php_Docblock_Tag_Return
+     */
+    public function setDatatype($datatype)
+    {
+        $this->_datatype = $datatype;
+        return $this;
+    }
+    
+    /**
+     * getDatatype()
+     *
+     * @return string
+     */
+    public function getDatatype()
+    {
+        return $this->_datatype;
+    }
+
+
+    /**
+     * generate()
+     *
+     * @return string
+     */
+    public function generate()
+    {
+        $output = '@return ' . $this->_datatype . ' ' . $this->_description . PHP_EOL;
+        return $output;
+    }
+    
+}

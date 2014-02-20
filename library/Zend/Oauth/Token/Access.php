@@ -1,42 +1,99 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Access.php 23484 2010-12-10 03:57:59Z mjh_ca $
+ */
+
+/** Zend_Oauth_Token */
+require_once 'Zend/Oauth/Token.php';
+
+/** Zend_Oauth_Http */
+require_once 'Zend/Oauth/Http.php';
+
+/** Zend_Uri_Http */
+require_once 'Zend/Uri/Http.php';
+
+/** Zend_Oauth_Client */
+require_once 'Zend/Oauth/Client.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Oauth_Token_Access extends Zend_Oauth_Token
+{
+    /**
+     * Cast to HTTP header
+     *
+     * @param  string $url
+     * @param  Zend_Oauth_Config_ConfigInterface $config
+     * @param  null|array $customParams
+     * @param  null|string $realm
+     * @return string
+     */
+    public function toHeader(
+        $url, Zend_Oauth_Config_ConfigInterface $config, array $customParams = null, $realm = null
+    ) {
+        if (!Zend_Uri::check($url)) {
+            require_once 'Zend/Oauth/Exception.php';
+            throw new Zend_Oauth_Exception(
+                '\'' . $url . '\' is not a valid URI'
+            );
+        }
+        $params = $this->_httpUtility->assembleParams($url, $config, $customParams);
+        return $this->_httpUtility->toAuthorizationHeader($params, $realm);
+    }
+
+    /**
+     * Cast to HTTP query string
+     *
+     * @param  mixed $url
+     * @param  Zend_Oauth_Config_ConfigInterface $config
+     * @param  null|array $params
+     * @return string
+     */
+    public function toQueryString($url, Zend_Oauth_Config_ConfigInterface $config, array $params = null)
+    {
+        if (!Zend_Uri::check($url)) {
+            require_once 'Zend/Oauth/Exception.php';
+            throw new Zend_Oauth_Exception(
+                '\'' . $url . '\' is not a valid URI'
+            );
+        }
+        $params = $this->_httpUtility->assembleParams($url, $config, $params);
+        return $this->_httpUtility->toEncodedQueryString($params);
+    }
+
+    /**
+     * Get OAuth client
+     *
+     * @param  array $oauthOptions
+     * @param  null|string $uri
+     * @param  null|array|Zend_Config $config
+     * @param  bool $excludeCustomParamsFromHeader
+     * @return Zend_Oauth_Client
+     */
+    public function getHttpClient(array $oauthOptions, $uri = null, $config = null, $excludeCustomParamsFromHeader = true)
+    {
+        $client = new Zend_Oauth_Client($oauthOptions, $uri, $config, $excludeCustomParamsFromHeader);
+        $client->setToken($this);
+        return $client;
+    }
+}

@@ -1,29 +1,68 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51t/p+tssWNM+RU9UDLSd6WUG5sG3YOrbT1x7QNISUm0QFQkCCdWJJzDsXh+2R3hdfPzAgUs
-kYKkQDCpkFwndQjEXX8PNuoiyyzDaXxrp48EvWJ8E9EXv5fhBA+OT9+uSRo1pCTPvG0PkHZKQMvk
-l6qQI+44kBycWHhBnOBpkbcoRnZd/turkDidjojADcgArxpZyXVetW2rB/K3id7eZU02/AE+yAy2
-rkyBgR+gXQZYlGbhc5wGOmV4IvD9dCrJBKTtvIykX49ez6Y9g4Gt/+W6yLK7rHPyyMg0dPjSrKYY
-cl4S5uyDYNzClWybFiARPiQwcsCe6Cxq6qPUlPNJQMeJWoaiGnRbP6KbRV8YMCWFSHCABhHIMMY9
-Qd9fe8pyqks5ur1lNb4eKl3vanaen4Bhb1cYncc5yL7SO0HCiYwxZUH4SrfEzJVkmGq0KQY9mLDA
-lNgh9OCazBIAN7P+FOUaQRidau6VQK0rij8YGQlhvt1GnjSSRAS4tvOmxIf/pf7UWGR7+kRc/kx7
-inWsQsabMHTJFp+MSDB/XY7W642NMoON42j/1Im12jHGkPGpMolB2ZO9GO0lludSKyFDGMoZAxgn
-8kDj+hpu8zevOtu1HCejNm9gCCHSZXe7KHINYn9de1exfBnq8v38IRJFk5xry94PNJ08OGkwGHos
-IpQyHjGl3Wbf5rbOWVzfXF9KfkF/hTIRKoxIX6WuqnCOkWJflNj9o3+TYogvY9d7SQhOK5G+Kq1b
-EsyGEcMIvzdVQbqdJhFQdANIOzce24UeWP6Ch8FS5eaFpoFKRvBlq8TrkcHHecmTI9WG/hB3i4OW
-KEAS18QThGygts8lbFGAYNI6yYJjYOJxRXNHNCCLv4Em5fIDPd9TIljq7FE3jk0ZcsOkjo9YTdER
-6hmpZI8VGmwwgNb2EGBXyHy3nBWr6Uit5qVWsnWtl+HIHsnrVn9rWqMObbGA1s5P5MdagEddVgLl
-oHK8Z0WF7O2Q1SGI8apVjjoR1oW7di+R7pWYi6RTyIXUHBGcN5rxgDGVUd0ZRBdp2PO4uuPguHxt
-/QhBi886Oq4K1Sap8JTiUMxEeePgAFxA4zwZsCq1nQM1D7Jmp6a9JQnjD7Lerx3nspKsWwYfnRuL
-7erflvegOo7UXAdXIfATPDrgKkg6nxS5MFEYIKEuYFTF4x3KjjoVLNsCD5VHXRzF0wnsUBoFUob6
-E42WRGTrdyy/J2owLGR+hNBnvHlyyOsTxcamngwtYxElPzLEQInN67ZUSA1fMptIp7RIm6xrNTwj
-Q40auotiEzucbF5G1ObU3nT1o0bmHQltzeVmUH1QiaScX/ujN3X40djxlGxGuUJXshfEyXa4hPrA
-3QHfdTd3nxFDI4nl8SfE1hqw0Tzxi60G0N3fLMPrTQJlcQ7FRX4jWYtQXNtEoL/ydvYq06v8oBYq
-wJWMgk8Y/XLpCJkMTwMIFvHvT0pd/GfIYjJVo2ot6tywAm8voUH9KrAPPp/eYbzYDDcQcneGL6Hr
-WV+r8WcNNMvsSsnk6WWlSIJJdqgdrMSsCeNLbn8WapQ1c2hfRUn8O6LaE8L9jJ1L453ubZhUyP1g
-qBOAEdBJvFPHqj2Pwy8lTTx4TAfCg04H6900TYxTWQ0dvG3qEwoHqbdzfS8HL52xJomMhYbIWxUa
-xCCK6au0V+jUhDmLXUuC0Mr4DwNNlTewfcsiGOpayeZT7KKhoVai/WQxNDo7RlMkGB4IXHL0d9MD
-oJESU2Oz8W1eSckVKRLRYIXPJwD84pBh9qj5M78M0yUMZtqcp2TdpXp2A/TG3CJ15tLIPPsiiBj3
-IMOb9j1MfsHeYWp55afRoXKOduMTZQSroj6e6bSsteCB4X/SPsTb64p91dMbT6XNZ1vmjTaneQaK
-wt28+9GBMtjfVBR2iLI/WaCdxG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @todo       implement line numbers
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_Property extends ReflectionProperty
+{
+    /**
+     * Get declaring class reflection object
+     *
+     * @return Zend_Reflection_Class
+     */
+    public function getDeclaringClass($reflectionClass = 'Zend_Reflection_Class')
+    {
+        $phpReflection  = parent::getDeclaringClass();
+        $zendReflection = new $reflectionClass($phpReflection->getName());
+        if (!$zendReflection instanceof Zend_Reflection_Class) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
+        }
+        unset($phpReflection);
+        return $zendReflection;
+    }
+
+    /**
+     * Get docblock comment
+     * 
+     * @param  string $reflectionClass 
+     * @return Zend_Reflection_Docblock|false False if no docblock defined
+     */
+    public function getDocComment($reflectionClass = 'Zend_Reflection_Docblock')
+    {
+        $docblock = parent::getDocComment();
+        if (!$docblock) {
+            return false;
+        }
+
+        $r = new $reflectionClass($docblock);
+        if (!$r instanceof Zend_Reflection_Docblock) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Docblock');
+        }
+        return $r;
+    }
+}

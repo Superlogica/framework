@@ -1,32 +1,102 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/** Zend_Server_Cache */
+require_once 'Zend/Server/Cache.php';
+
+/**
+ * Zend_Json_Server_Cache: cache Zend_Json_Server server definition and SMD
+ *
+ * @category   Zend
+ * @package    Zend_Json
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Json_Server_Cache extends Zend_Server_Cache
+{
+    /**
+     * Cache a service map description (SMD) to a file
+     *
+     * Returns true on success, false on failure
+     * 
+     * @param  string $filename 
+     * @param  Zend_Json_Server $server 
+     * @return boolean
+     */
+    public static function saveSmd($filename, Zend_Json_Server $server)
+    {
+        if (!is_string($filename)
+            || (!file_exists($filename) && !is_writable(dirname($filename))))
+        {
+            return false;
+        }
+
+        if (0 === @file_put_contents($filename, $server->getServiceMap()->toJson())) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Retrieve a cached SMD
+     *
+     * On success, returns the cached SMD (a JSON string); an failure, returns 
+     * boolean false.
+     * 
+     * @param  string $filename 
+     * @return string|false
+     */
+    public static function getSmd($filename)
+    {
+        if (!is_string($filename)
+            || !file_exists($filename)
+            || !is_readable($filename))
+        {
+            return false;
+        }
+
+
+        if (false === ($smd = @file_get_contents($filename))) {
+            return false;
+        }
+
+        return $smd;
+    }
+
+    /**
+     * Delete a file containing a cached SMD
+     * 
+     * @param  string $filename 
+     * @return bool
+     */
+    public static function deleteSmd($filename)
+    {
+        if (is_string($filename) && file_exists($filename)) {
+            unlink($filename);
+            return true;
+        }
+
+        return false;
+    }
+}

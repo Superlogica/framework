@@ -1,32 +1,101 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Xzw2Lbc6cKBZjwfzkg5N
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Color */
+require_once 'Zend/Pdf/Color.php';
+
+/** Zend_Pdf_Element_Numeric */
+require_once 'Zend/Pdf/Element/Numeric.php';
+
+/**
+ * RGB color implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Color_Rgb extends Zend_Pdf_Color
+{
+    /**
+     * Red level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_r;
+
+    /**
+     * Green level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_g;
+
+    /**
+     * Blue level.
+     * 0.0 (zero concentration) - 1.0 (maximum concentration)
+     *
+     * @var Zend_Pdf_Element_Numeric
+     */
+    private $_b;
+
+
+    /**
+     * Object constructor
+     *
+     * @param float $r
+     * @param float $g
+     * @param float $b
+     */
+    public function __construct($r, $g, $b)
+    {
+        /** Clamp values to legal limits. */
+        if ($r < 0) { $r = 0; }
+        if ($r > 1) { $r = 1; }
+
+        if ($g < 0) { $g = 0; }
+        if ($g > 1) { $g = 1; }
+
+        if ($b < 0) { $b = 0; }
+        if ($b > 1) { $b = 1; }
+
+        $this->_r = new Zend_Pdf_Element_Numeric($r);
+        $this->_g = new Zend_Pdf_Element_Numeric($g);
+        $this->_b = new Zend_Pdf_Element_Numeric($b);
+    }
+
+    /**
+     * Instructions, which can be directly inserted into content stream
+     * to switch color.
+     * Color set instructions differ for stroking and nonstroking operations.
+     *
+     * @param boolean $stroking
+     * @return string
+     */
+    public function instructions($stroking)
+    {
+        return $this->_r->toString() . ' '
+             . $this->_g->toString() . ' '
+             . $this->_b->toString() .     ($stroking? " RG\n" : " rg\n");
+    }
+}
+

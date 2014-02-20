@@ -1,16 +1,68 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV50ToGV+vODgvCsd8r1zGa/b48mu6MTd45hkinwwMNZevY+D6SXOUYzGYFWNo402cFarhrKaW
-JPaOkK4htIz+H0g6X0QK1KTC9a3+Q5qpgD7SITNkNtkr97gSSG2kImVlAINwSAqvOzGVH7rVC+9K
-CSp+SjqDwn/2+x1eMp7lbxIOmq1KLBCpBJwHQsjo5ksL10ug5ieoKpNiEf4Un/Qt2agn72V2ThNx
-rT+i8JgGKCGZKUa11zOgn4kJIPpDKor7T+KlBeH2Q1rP/of+NOC/W8a+dEq6qPn+/oY2TWST+XSG
-Rl4dVJ1WhDuGW6604Y4Gye5eEW5PWH3BweDQZm2aE6FmyddKakLUaEwj7mW9DYvDP0v7Exv/oRpq
-M9O2OEyBv8fDo47+Tcud4Mb7/OGzx+03/L8KfXirVyKfu2cKds1zBW8r3Tn4qKWJHFek2/ghuP+x
-Uqgq5wFUmYCjEGkPyNEyxQiiIWbGnDKtWzyIdLqjZowFRV20hcSR5goKSRWfmUc7ei9dUgWz99v5
-CmRuFx+5gMHUnnwj9lL6YuMmcNH/ecFUOdQqM6FM5jL+Y97paSC2XC1QBh21WDw77CD9Ds8m5KL4
-uoNPuISoYuuFW98PMMq0/W3UrdDpdUA51SbNpxleDOTaxgnwT68xL9FZPxgxn2VdxcmNOYQ0V4w5
-/AURiTl3fO1hJyvOvAdWYviOV5EJwaX2E8sPFx21NOBzGcPlQROE93ZKSMW30Mfx1qiHX1q5mI/K
-AGER6LraXMRYUlRiSjyMcqOlAsSqFvC9I8UTo1WATFoMA6DYB+ZtG6OJizoR+8bbqRRZuZkj7l0p
-/d2JEHW1GPIAl97xhWRZPNBYavQo/463WPBymjUw7BT9QZJBsBBAjni6TtO+btBFt0R3oMANq388
-B/5KTsTvEqf6i5Vd+xuBq3Q4iSn988zSZQUxUQcS3QaMXWxnvH7fMQgtgWSGiQQa+VVNgW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Controller_Action_Interface
+{
+    /**
+     * Class constructor
+     *
+     * The request and response objects should be registered with the
+     * controller, as should be any additional optional arguments; these will be
+     * available via {@link getRequest()}, {@link getResponse()}, and
+     * {@link getInvokeArgs()}, respectively.
+     *
+     * When overriding the constructor, please consider this usage as a best
+     * practice and ensure that each is registered appropriately; the easiest
+     * way to do so is to simply call parent::__construct($request, $response,
+     * $invokeArgs).
+     *
+     * After the request, response, and invokeArgs are set, the
+     * {@link $_helper helper broker} is initialized.
+     *
+     * Finally, {@link init()} is called as the final action of
+     * instantiation, and may be safely overridden to perform initialization
+     * tasks; as a general rule, override {@link init()} instead of the
+     * constructor to customize an action controller's instantiation.
+     *
+     * @param Zend_Controller_Request_Abstract $request
+     * @param Zend_Controller_Response_Abstract $response
+     * @param array $invokeArgs Any additional invocation arguments
+     * @return void
+     */
+    public function __construct(Zend_Controller_Request_Abstract $request,
+                                Zend_Controller_Response_Abstract $response,
+                                array $invokeArgs = array());
+
+    /**
+     * Dispatch the requested action
+     *
+     * @param string $action Method name of action
+     * @return void
+     */
+    public function dispatch($action);
+}

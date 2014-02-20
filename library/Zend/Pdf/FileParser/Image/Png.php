@@ -1,107 +1,324 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-1mvqpzYZzHuve9KjUBLLtchhewxLjja1t2G=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2006 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_FileParser_Image */
+require_once 'Zend/Pdf/FileParser/Image.php';
+
+
+/**
+ * Abstract base class for Image file parsers.
+ *
+ * @package    Zend_Pdf
+ * @subpackage FileParser
+ * @copyright  Copyright (c) 2006 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_FileParser_Image_Png extends Zend_Pdf_FileParser_Image
+{
+     protected $_isPNG;
+     protected $_width;
+     protected $_height;
+     protected $_bits;
+     protected $_color;
+     protected $_compression;
+     protected $_preFilter;
+     protected $_interlacing;
+
+     protected $_imageData;
+     protected $_paletteData;
+     protected $_transparencyData;
+
+  /**** Public Interface ****/
+
+     public function getWidth() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_width;
+     }
+
+     public function getHeight() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_width;
+     }
+
+     public function getBitDepth() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_bits;
+     }
+
+     public function getColorSpace() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_color;
+     }
+
+     public function getCompressionStrategy() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_compression;
+     }
+
+     public function getPaethFilter() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_preFilter;
+     }
+
+     public function getInterlacingMode() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_interlacing;
+     }
+
+     public function getRawImageData() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_imageData;
+     }
+
+     public function getRawPaletteData() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_paletteData;
+     }
+
+     public function getRawTransparencyData() {
+          if(!$this->_isParsed) {
+               $this->parse();
+          }
+          return $this->_transparencyData;
+     }
+
+  /* Semi-Concrete Class Implementation */
+
+    /**
+     * Verifies that the image file is in the expected format.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    public function screen()
+    {
+         if ($this->_isScreened) {
+             return;
+         }
+         return $this->_checkSignature();
+    }
+
+    /**
+     * Reads and parses the image data from the file on disk.
+     *
+     * @throws Zend_Pdf_Exception
+     */
+    public function parse()
+    {
+        if ($this->_isParsed) {
+            return;
+        }
+
+        /* Screen the font file first, if it hasn't been done yet.
+        */
+        $this->screen();
+
+        $this->_parseIHDRChunk();
+        $this->_parseChunks();
+    }
+
+
+    protected function _parseSignature() {
+         $this->moveToOffset(1); //Skip the first byte (%)
+         if('PNG' != $this->readBytes(3)) {
+               $this->_isPNG = false;
+         } else {
+               $this->_isPNG = true;
+         }
+    }
+
+    protected function _checkSignature() {
+         if(!isset($this->_isPNG)) {
+              $this->_parseSignature();
+         }
+         return $this->_isPNG;
+    }
+
+    protected function _parseChunks() {
+         $this->moveToOffset(33); //Variable chunks start at the end of IHDR
+
+         //Start processing chunks. If there are no more bytes to read parsing is complete.
+         $size = $this->getSize();
+         while($size - $this->getOffset() >= 8) {
+              $chunkLength = $this->readUInt(4);
+              if($chunkLength < 0 || ($chunkLength + $this->getOffset() + 4) > $size) {
+                   throw new Zend_Pdf_Exception("PNG Corrupt: Invalid Chunk Size In File.");
+              }
+
+              $chunkType = $this->readBytes(4);
+              $offset = $this->getOffset();
+
+              //If we know how to process the chunk, do it here, else ignore the chunk and move on to the next
+              switch($chunkType) {
+                   case 'IDAT': // This chunk may appear more than once. It contains the actual image data.
+                       $this->_parseIDATChunk($offset, $chunkLength);
+                       break;
+
+                   case 'PLTE': // This chunk contains the image palette.
+                       $this->_parsePLTEChunk($offset, $chunkLength);
+                       break;
+
+                   case 'tRNS': // This chunk contains non-alpha channel transparency data
+                       $this->_parseTRNSChunk($offset, $chunkLength);
+                       break;
+
+                   case 'IEND':
+                       break 2; //End the loop too
+
+                   //@TODO Implement the rest of the PNG chunks. (There are many not implemented here)
+              }
+              if($offset + $chunkLength + 4 < $size) {
+                  $this->moveToOffset($offset + $chunkLength + 4); //Skip past the data finalizer. (Don't rely on the parse to leave the offsets correct)
+              }
+         }
+         if(empty($this->_imageData)) {
+              throw new Zend_Pdf_Exception ( "This PNG is corrupt. All png must contain IDAT chunks." );
+         }
+    }
+
+    protected function _parseIHDRChunk() {
+         $this->moveToOffset(12); //IHDR must always start at offset 12 and run for 17 bytes
+         if(!$this->readBytes(4) == 'IHDR') {
+              throw new Zend_Pdf_Exception( "This PNG is corrupt. The first chunk in a PNG file must be IHDR." );
+         }
+         $this->_width = $this->readUInt(4);
+         $this->_height = $this->readUInt(4);
+         $this->_bits = $this->readInt(1);
+         $this->_color = $this->readInt(1);
+         $this->_compression = $this->readInt(1);
+         $this->_preFilter = $this->readInt(1);
+         $this->_interlacing = $this->readInt(1);
+         if($this->_interlacing != Zend_Pdf_Image::PNG_INTERLACING_DISABLED) {
+              throw new Zend_Pdf_Exception( "Only non-interlaced images are currently supported." );
+         }
+    }
+
+    protected function _parseIDATChunk($chunkOffset, $chunkLength) {
+         $this->moveToOffset($chunkOffset);
+         if(!isset($this->_imageData)) {
+              $this->_imageData = $this->readBytes($chunkLength);
+         } else {
+              $this->_imageData .= $this->readBytes($chunkLength);
+         }
+    }
+
+    protected function _parsePLTEChunk($chunkOffset, $chunkLength) {
+         $this->moveToOffset($chunkOffset);
+         $this->_paletteData = $this->readBytes($chunkLength);
+    }
+
+    protected function _parseTRNSChunk($chunkOffset, $chunkLength) {
+         $this->moveToOffset($chunkOffset);
+
+         //Processing of tRNS data varies dependending on the color depth
+
+         switch($this->_color) {
+             case Zend_Pdf_Image::PNG_CHANNEL_GRAY:
+                  $baseColor = $this->readInt(1);
+                  $this->_transparencyData = array($baseColor, $baseColor);
+                  break;
+
+             case Zend_Pdf_Image::PNG_CHANNEL_RGB:
+
+                  //@TODO Fix this hack.
+                  //This parser cheats and only uses the lsb's (and only works with < 16 bit depth images)
+
+                  /*
+                       From the standard:
+
+                       For color type 2 (truecolor), the tRNS chunk contains a single RGB color value, stored in the format:
+
+                       Red:   2 bytes, range 0 .. (2^bitdepth)-1
+                       Green: 2 bytes, range 0 .. (2^bitdepth)-1
+                       Blue:  2 bytes, range 0 .. (2^bitdepth)-1
+
+                       (If the image bit depth is less than 16, the least significant bits are used and the others are 0.)
+                       Pixels of the specified color value are to be treated as transparent (equivalent to alpha value 0);
+                       all other pixels are to be treated as fully opaque (alpha value 2bitdepth-1).
+
+                  */
+
+                  $red = $this->readInt(1);
+                  $this->skipBytes(1);
+                  $green = $this->readInt(1);
+                  $this->skipBytes(1);
+                  $blue = $this->readInt(1);
+
+                  $this->_transparencyData = array($red, $red, $green, $green, $blue, $blue);
+
+                  break;
+
+             case Zend_Pdf_Image::PNG_CHANNEL_INDEXED:
+
+                  //@TODO Fix this hack.
+                  //This parser cheats too. It only masks the first color in the palette.
+
+                  /*
+                       From the standard:
+
+                       For color type 3 (indexed color), the tRNS chunk contains a series of one-byte alpha values, corresponding to entries in the PLTE chunk:
+
+                          Alpha for palette index 0:  1 byte
+                          Alpha for palette index 1:  1 byte
+                          ...etc...
+
+                       Each entry indicates that pixels of the corresponding palette index must be treated as having the specified alpha value.
+                       Alpha values have the same interpretation as in an 8-bit full alpha channel: 0 is fully transparent, 255 is fully opaque,
+                       regardless of image bit depth. The tRNS chunk must not contain more alpha values than there are palette entries,
+                       but tRNS can contain fewer values than there are palette entries. In this case, the alpha value for all remaining palette
+                       entries is assumed to be 255. In the common case in which only palette index 0 need be made transparent, only a one-byte
+                       tRNS chunk is needed.
+
+                  */
+
+                  $tmpData = $this->readBytes($chunkLength);
+                  if(($trnsIdx = strpos($tmpData, chr(0))) !== false) {
+                       $this->_transparencyData = array($trnsIdx, $trnsIdx);
+                  }
+
+                  break;
+
+             case Zend_Pdf_Image::PNG_CHANNEL_GRAY_ALPHA:
+                  //Fall through to the next case
+             case Zend_Pdf_Image::PING_CHANNEL_RGB_ALPHA:
+                  throw new Zend_Pdf_Exception( "tRNS chunk illegal for Alpha Channel Images" );
+                  break;
+         }
+    }
+}
+
+

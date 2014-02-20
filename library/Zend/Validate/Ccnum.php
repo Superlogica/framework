@@ -1,39 +1,111 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-UbMS4ysQ1bAJf8w7NLa=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Ccnum.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Ccnum extends Zend_Validate_Abstract
+{
+    /**
+     * Validation failure message key for when the value is not of valid length
+     */
+    const LENGTH   = 'ccnumLength';
+
+    /**
+     * Validation failure message key for when the value fails the mod-10 checksum
+     */
+    const CHECKSUM = 'ccnumChecksum';
+
+    /**
+     * Digits filter for input
+     *
+     * @var Zend_Filter_Digits
+     */
+    protected static $_filter = null;
+
+    /**
+     * Validation failure message template definitions
+     *
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::LENGTH   => "'%value%' must contain between 13 and 19 digits",
+        self::CHECKSUM => "Luhn algorithm (mod-10 checksum) failed on '%value%'"
+    );
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value follows the Luhn algorithm (mod-10 checksum)
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $this->_setValue($value);
+
+        if (null === self::$_filter) {
+            /**
+             * @see Zend_Filter_Digits
+             */
+            require_once 'Zend/Filter/Digits.php';
+            self::$_filter = new Zend_Filter_Digits();
+        }
+
+        $valueFiltered = self::$_filter->filter($value);
+
+        $length = strlen($valueFiltered);
+
+        if ($length < 13 || $length > 19) {
+            $this->_error(self::LENGTH);
+            return false;
+        }
+
+        $sum    = 0;
+        $weight = 2;
+
+        for ($i = $length - 2; $i >= 0; $i--) {
+            $digit = $weight * $valueFiltered[$i];
+            $sum += floor($digit / 10) + $digit % 10;
+            $weight = $weight % 2 + 1;
+        }
+
+        if ((10 - $sum % 10) % 10 != $valueFiltered[$length - 1]) {
+            $this->_error(self::CHECKSUM, $valueFiltered);
+            return false;
+        }
+
+        return true;
+    }
+
+}

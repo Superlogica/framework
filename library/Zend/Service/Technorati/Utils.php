@@ -1,34 +1,136 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-ABDE/0wL
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Utils.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * Collection of utilities for various Zend_Service_Technorati classes.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Technorati_Utils
+{
+    /**
+     * Parses, validates and returns a valid Zend_Uri object
+     * from given $input.
+     *
+     * @param   string|Zend_Uri_Http $input
+     * @return  null|Zend_Uri_Http
+     * @throws  Zend_Service_Technorati_Exception
+     * @static
+     */
+    public static function normalizeUriHttp($input)
+    {
+        // allow null as value
+        if ($input === null) {
+            return null;
+        }
+
+        /**
+         * @see Zend_Uri
+         */
+        require_once 'Zend/Uri.php';
+        if ($input instanceof Zend_Uri_Http) {
+            $uri = $input;
+        } else {
+            try {
+                $uri = Zend_Uri::factory((string) $input);
+            }
+            // wrap exception under Zend_Service_Technorati_Exception object
+            catch (Exception $e) {
+                /**
+                 * @see Zend_Service_Technorati_Exception
+                 */
+                require_once 'Zend/Service/Technorati/Exception.php';
+                throw new Zend_Service_Technorati_Exception($e->getMessage());
+            }
+        }
+
+        // allow inly Zend_Uri_Http objects or child classes
+        if (!($uri instanceof Zend_Uri_Http)) {
+            /**
+             * @see Zend_Service_Technorati_Exception
+             */
+            require_once 'Zend/Service/Technorati/Exception.php'; 
+            throw new Zend_Service_Technorati_Exception(
+                "Invalid URL $uri, only HTTP(S) protocols can be used");
+        }
+        
+        return $uri;
+    }
+    /**
+     * Parses, validates and returns a valid Zend_Date object
+     * from given $input.
+     * 
+     * $input can be either a string, an integer or a Zend_Date object.
+     * If $input is string or int, it will be provided to Zend_Date as it is.
+     * If $input is a Zend_Date object, the object instance will be returned. 
+     *
+     * @param   mixed|Zend_Date $input
+     * @return  null|Zend_Date
+     * @throws  Zend_Service_Technorati_Exception
+     * @static
+     */
+    public static function normalizeDate($input)
+    {
+        /**
+         * @see Zend_Date
+         */
+        require_once 'Zend/Date.php';
+        /**
+         * @see Zend_Locale
+         */
+        require_once 'Zend/Locale.php';
+        
+        // allow null as value and return valid Zend_Date objects
+        if (($input === null) || ($input instanceof Zend_Date)) {
+            return $input;
+        }
+        
+        // due to a BC break as of ZF 1.5 it's not safe to use Zend_Date::isDate() here
+        // see ZF-2524, ZF-2334
+        if (@strtotime($input) !== FALSE) {
+            return new Zend_Date($input);
+        } else {
+            /**
+             * @see Zend_Service_Technorati_Exception
+             */
+            require_once 'Zend/Service/Technorati/Exception.php';
+            throw new Zend_Service_Technorati_Exception("'$input' is not a valid Date/Time");
+        }
+    }
+    
+    /**
+     * @todo public static function xpathQueryAndSet() {}
+     */
+
+    /**
+     * @todo public static function xpathQueryAndSetIf() {}
+     */
+
+    /**
+     * @todo public static function xpathQueryAndSetUnless() {}
+     */
+}

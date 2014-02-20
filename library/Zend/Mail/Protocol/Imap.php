@@ -1,307 +1,837 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-GPTW+ryrgcQ+V1IWgXE3B0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Imap.php 12539 2008-11-11 02:47:17Z yoshida@zend.co.jp $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Protocol_Imap
+{
+    /**
+     * Default timeout in seconds for initiating session
+     */
+    const TIMEOUT_CONNECTION = 30;
+    
+    /**
+     * socket to imap server
+     * @var resource|null
+     */
+    protected $_socket;
+
+    /**
+     * counter for request tag
+     * @var int
+     */
+    protected $_tagCount = 0;
+
+    /**
+     * Public constructor
+     *
+     * @param  string   $host  hostname of IP address of IMAP server, if given connect() is called
+     * @param  int|null $port  port of IMAP server, null for default (143 or 993 for ssl)
+     * @param  bool     $ssl   use ssl? 'SSL', 'TLS' or false
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    function __construct($host = '', $port = null, $ssl = false)
+    {
+        if ($host) {
+            $this->connect($host, $port, $ssl);
+        }
+    }
+
+    /**
+     * Public destructor
+     */
+    public function __destruct()
+    {
+        $this->logout();
+    }
+
+    /**
+     * Open connection to POP3 server
+     *
+     * @param  string      $host  hostname of IP address of POP3 server
+     * @param  int|null    $port  of IMAP server, default is 143 (993 for ssl)
+     * @param  string|bool $ssl   use 'SSL', 'TLS' or false
+     * @return string welcome message
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function connect($host, $port = null, $ssl = false)
+    {
+        if ($ssl == 'SSL') {
+            $host = 'ssl://' . $host;
+        }
+
+        if ($port === null) {
+            $port = $ssl === 'SSL' ? 993 : 143;
+        }
+
+        $errno  =  0;
+        $errstr = '';
+        $this->_socket = @fsockopen($host, $port, $errno, $errstr, self::TIMEOUT_CONNECTION);
+        if (!$this->_socket) {
+            /**
+             * @see Zend_Mail_Protocol_Exception
+             */
+            require_once 'Zend/Mail/Protocol/Exception.php';
+            throw new Zend_Mail_Protocol_Exception('cannot connect to host : ' . $errno . ' : ' . $errstr);
+        }
+
+        if (!$this->_assumedNextLine('* OK')) {
+            /**
+             * @see Zend_Mail_Protocol_Exception
+             */
+            require_once 'Zend/Mail/Protocol/Exception.php';
+            throw new Zend_Mail_Protocol_Exception('host doesn\'t allow connection');
+        }
+
+        if ($ssl === 'TLS') {
+            $result = $this->requestAndResponse('STARTTLS');
+            $result = $result && stream_socket_enable_crypto($this->_socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+            if (!$result) {
+                /**
+                 * @see Zend_Mail_Protocol_Exception
+                 */
+                require_once 'Zend/Mail/Protocol/Exception.php';
+                throw new Zend_Mail_Protocol_Exception('cannot enable TLS');
+            }
+        }
+    }
+
+    /**
+     * get the next line from socket with error checking, but nothing else
+     *
+     * @return string next line
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    protected function _nextLine()
+    {
+        $line = @fgets($this->_socket);
+        if ($line === false) {
+            /**
+             * @see Zend_Mail_Protocol_Exception
+             */
+            require_once 'Zend/Mail/Protocol/Exception.php';
+            throw new Zend_Mail_Protocol_Exception('cannot read - connection closed?');
+        }
+
+        return $line;
+    }
+
+    /**
+     * get next line and assume it starts with $start. some requests give a simple
+     * feedback so we can quickly check if we can go on.
+     *
+     * @param  string $start the first bytes we assume to be in the next line
+     * @return bool line starts with $start
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    protected function _assumedNextLine($start)
+    {
+        $line = $this->_nextLine();
+        return strpos($line, $start) === 0;
+    }
+
+    /**
+     * get next line and split the tag. that's the normal case for a response line
+     *
+     * @param  string $tag tag of line is returned by reference
+     * @return string next line
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    protected function _nextTaggedLine(&$tag)
+    {
+        $line = $this->_nextLine();
+
+        // seperate tag from line
+        list($tag, $line) = explode(' ', $line, 2);
+
+        return $line;
+    }
+
+    /**
+     * split a given line in tokens. a token is literal of any form or a list
+     *
+     * @param  string $line line to decode
+     * @return array tokens, literals are returned as string, lists as array
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    protected function _decodeLine($line)
+    {
+        $tokens = array();
+        $stack = array();
+
+        /*
+            We start to decode the response here. The unterstood tokens are:
+                literal
+                "literal" or also "lit\\er\"al"
+                {bytes}<NL>literal
+                (literals*)
+            All tokens are returned in an array. Literals in braces (the last unterstood
+            token in the list) are returned as an array of tokens. I.e. the following response:
+                "foo" baz {3}<NL>bar ("f\\\"oo" bar)
+            would be returned as:
+                array('foo', 'baz', 'bar', array('f\\\"oo', 'bar'));
+                
+            // TODO: add handling of '[' and ']' to parser for easier handling of response text 
+        */
+        //  replace any trailling <NL> including spaces with a single space
+        $line = rtrim($line) . ' ';
+        while (($pos = strpos($line, ' ')) !== false) {
+            $token = substr($line, 0, $pos);
+            while ($token[0] == '(') {
+                array_push($stack, $tokens);
+                $tokens = array();
+                $token = substr($token, 1);
+            }
+            if ($token[0] == '"') {
+                if (preg_match('%^"((.|\\\\|\\")*?)" *%', $line, $matches)) {
+                    $tokens[] = $matches[1];
+                    $line = substr($line, strlen($matches[0]));
+                    continue;
+                }
+            }
+            if ($token[0] == '{') {
+                $endPos = strpos($token, '}');
+                $chars = substr($token, 1, $endPos - 1);
+                if (is_numeric($chars)) {
+                    $token = '';
+                    while (strlen($token) < $chars) {
+                        $token .= $this->_nextLine();
+                    }
+                    $line = '';
+                    if (strlen($token) > $chars) {
+                        $line = substr($token, $chars);
+                        $token = substr($token, 0, $chars);
+                    } else {
+                        $line .= $this->_nextLine();
+                    }
+                    $tokens[] = $token;
+                    $line = trim($line) . ' ';
+                    continue;
+                }
+            }
+            if ($stack && $token[strlen($token) - 1] == ')') {
+                // closing braces are not seperated by spaces, so we need to count them
+                $braces = strlen($token);
+                $token = rtrim($token, ')');
+                // only count braces if more than one
+                $braces -= strlen($token) + 1;
+                // only add if token had more than just closing braces
+                if ($token) {
+                    $tokens[] = $token;
+                }
+                $token = $tokens;
+                $tokens = array_pop($stack);
+                // special handline if more than one closing brace
+                while ($braces-- > 0) {
+                    $tokens[] = $token;
+                    $token = $tokens;
+                    $tokens = array_pop($stack);
+                }
+            }
+            $tokens[] = $token;
+            $line = substr($line, $pos + 1);
+        }
+
+        // maybe the server forgot to send some closing braces
+        while ($stack) {
+            $child = $tokens;
+            $tokens = array_pop($stack);
+            $tokens[] = $child;
+        }
+
+        return $tokens;
+    }
+
+    /**
+     * read a response "line" (could also be more than one real line if response has {..}<NL>)
+     * and do a simple decode
+     *
+     * @param  array|string  $tokens    decoded tokens are returned by reference, if $dontParse
+     *                                  is true the unparsed line is returned here
+     * @param  string        $wantedTag check for this tag for response code. Default '*' is
+     *                                  continuation tag.
+     * @param  bool          $dontParse if true only the unparsed line is returned $tokens
+     * @return bool if returned tag matches wanted tag
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function readLine(&$tokens = array(), $wantedTag = '*', $dontParse = false)
+    {
+        $line = $this->_nextTaggedLine($tag);
+        if (!$dontParse) {
+            $tokens = $this->_decodeLine($line);
+        } else {
+            $tokens = $line;
+        }
+
+        // if tag is wanted tag we might be at the end of a multiline response
+        return $tag == $wantedTag;
+    }
+
+    /**
+     * read all lines of response until given tag is found (last line of response)
+     *
+     * @param  string       $tag       the tag of your request
+     * @param  string|array $filter    you can filter the response so you get only the
+     *                                 given response lines
+     * @param  bool         $dontParse if true every line is returned unparsed instead of
+     *                                 the decoded tokens
+     * @return null|bool|array tokens if success, false if error, null if bad request
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function readResponse($tag, $dontParse = false)
+    {
+        $lines = array();
+        while (!$this->readLine($tokens, $tag, $dontParse)) {
+            $lines[] = $tokens;
+        }
+
+        if ($dontParse) {
+            // last to chars are still needed for response code
+            $tokens = array(substr($tokens, 0, 2));
+        }
+        // last line has response code
+        if ($tokens[0] == 'OK') {
+            return $lines ? $lines : true;
+        } else if ($tokens[0] == 'NO'){
+            return false;
+        }
+        return null;
+    }
+
+    /**
+     * send a request
+     *
+     * @param  string $command your request command
+     * @param  array  $tokens  additional parameters to command, use escapeString() to prepare
+     * @param  string $tag     provide a tag otherwise an autogenerated is returned
+     * @return null
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function sendRequest($command, $tokens = array(), &$tag = null)
+    {
+        if (!$tag) {
+            ++$this->_tagCount;
+            $tag = 'TAG' . $this->_tagCount;
+        }
+
+        $line = $tag . ' ' . $command;
+
+        foreach ($tokens as $token) {
+            if (is_array($token)) {
+                if (@fputs($this->_socket, $line . ' ' . $token[0] . "\r\n") === false) {
+                    /**
+                     * @see Zend_Mail_Protocol_Exception
+                     */
+                    require_once 'Zend/Mail/Protocol/Exception.php';
+                    throw new Zend_Mail_Protocol_Exception('cannot write - connection closed?');
+                }
+                if (!$this->_assumedNextLine('+ ')) {
+                    /**
+                     * @see Zend_Mail_Protocol_Exception
+                     */
+                    require_once 'Zend/Mail/Protocol/Exception.php';
+                    throw new Zend_Mail_Protocol_Exception('cannot send literal string');
+                }
+                $line = $token[1];
+            } else {
+                $line .= ' ' . $token;
+            }
+        }
+
+        if (@fputs($this->_socket, $line . "\r\n") === false) {
+            /**
+             * @see Zend_Mail_Protocol_Exception
+             */
+            require_once 'Zend/Mail/Protocol/Exception.php';
+            throw new Zend_Mail_Protocol_Exception('cannot write - connection closed?');
+        }
+    }
+
+    /**
+     * send a request and get response at once
+     *
+     * @param  string $command   command as in sendRequest()
+     * @param  array  $tokens    parameters as in sendRequest()
+     * @param  bool   $dontParse if true unparsed lines are returned instead of tokens
+     * @return mixed response as in readResponse()
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function requestAndResponse($command, $tokens = array(), $dontParse = false)
+    {
+        $this->sendRequest($command, $tokens, $tag);
+        $response = $this->readResponse($tag, $dontParse);
+
+        return $response;
+    }
+
+    /**
+     * escape one or more literals i.e. for sendRequest
+     *
+     * @param  string|array $string the literal/-s
+     * @return string|array escape literals, literals with newline ar returned
+     *                      as array('{size}', 'string');
+     */
+    public function escapeString($string)
+    {
+        if (func_num_args() < 2) {
+            if (strpos($string, "\n") !== false) {
+                return array('{' . strlen($string) . '}', $string);
+            } else {
+                return '"' . str_replace(array('\\', '"'), array('\\\\', '\\"'), $string) . '"';
+            }
+        }
+        $result = array();
+        foreach (func_get_args() as $string) {
+            $result[] = $this->escapeString($string);
+        }
+        return $result;
+    }
+
+    /**
+     * escape a list with literals or lists
+     *
+     * @param  array $list list with literals or lists as PHP array
+     * @return string escaped list for imap
+     */
+    public function escapeList($list)
+    {
+        $result = array();
+        foreach ($list as $k => $v) {
+            if (!is_array($v)) {
+//              $result[] = $this->escapeString($v);
+                $result[] = $v;
+                continue;
+            }
+            $result[] = $this->escapeList($v);
+        }
+        return '(' . implode(' ', $result) . ')';
+    }
+
+    /**
+     * Login to IMAP server.
+     *
+     * @param  string $user      username
+     * @param  string $password  password
+     * @return bool success
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function login($user, $password)
+    {
+        return $this->requestAndResponse('LOGIN', $this->escapeString($user, $password), true);
+    }
+
+    /**
+     * logout of imap server
+     *
+     * @return bool success
+     */
+    public function logout()
+    {
+        $result = false;
+        if ($this->_socket) {
+            try {
+                $result = $this->requestAndResponse('LOGOUT', array(), true);
+            } catch (Zend_Mail_Protocol_Exception $e) {
+                // ignoring exception
+            }
+            fclose($this->_socket);
+            $this->_socket = null;
+        }
+        return $result;
+    }
+
+
+    /**
+     * Get capabilities from IMAP server
+     *
+     * @return array list of capabilities
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function capability()
+    {
+        $response = $this->requestAndResponse('CAPABILITY');
+
+        if (!$response) {
+            return $response;
+        }
+
+        $capabilities = array();
+        foreach ($response as $line) {
+            $capabilities = array_merge($capabilities, $line);
+        }
+        return $capabilities;
+    }
+
+    /**
+     * Examine and select have the same response. The common code for both
+     * is in this method
+     *
+     * @param  string $command can be 'EXAMINE' or 'SELECT' and this is used as command
+     * @param  string $box which folder to change to or examine
+     * @return bool|array false if error, array with returned information
+     *                    otherwise (flags, exists, recent, uidvalidity)
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function examineOrSelect($command = 'EXAMINE', $box = 'INBOX')
+    {
+        $this->sendRequest($command, array($this->escapeString($box)), $tag);
+
+        $result = array();
+        while (!$this->readLine($tokens, $tag)) {
+            if ($tokens[0] == 'FLAGS') {
+                array_shift($tokens);
+                $result['flags'] = $tokens;
+                continue;
+            }
+            switch ($tokens[1]) {
+                case 'EXISTS':
+                case 'RECENT':
+                    $result[strtolower($tokens[1])] = $tokens[0];
+                    break;
+                case '[UIDVALIDITY':
+                    $result['uidvalidity'] = (int)$tokens[2];
+                    break;
+                default:
+                    // ignore
+            }
+        }
+
+        if ($tokens[0] != 'OK') {
+            return false;
+        }
+        return $result;
+    }
+
+    /**
+     * change folder
+     *
+     * @param  string $box change to this folder
+     * @return bool|array see examineOrselect()
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function select($box = 'INBOX')
+    {
+        return $this->examineOrSelect('SELECT', $box);
+    }
+
+    /**
+     * examine folder
+     *
+     * @param  string $box examine this folder
+     * @return bool|array see examineOrselect()
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function examine($box = 'INBOX')
+    {
+        return $this->examineOrSelect('EXAMINE', $box);
+    }
+
+    /**
+     * fetch one or more items of one or more messages
+     *
+     * @param  string|array $items items to fetch from message(s) as string (if only one item)
+     *                             or array of strings
+     * @param  int          $from  message for items or start message if $to !== null
+     * @param  int|null     $to    if null only one message ($from) is fetched, else it's the
+     *                             last message, INF means last message avaible
+     * @return string|array if only one item of one message is fetched it's returned as string
+     *                      if items of one message are fetched it's returned as (name => value)
+     *                      if one items of messages are fetched it's returned as (msgno => value)
+     *                      if items of messages are fetchted it's returned as (msgno => (name => value))
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function fetch($items, $from, $to = null)
+    {
+        if (is_array($from)) {
+            $set = implode(',', $from);
+        } else if ($to === null) {
+            $set = (int)$from;
+        } else if ($to === INF) {
+            $set = (int)$from . ':*';
+        } else {
+            $set = (int)$from . ':' . (int)$to;
+        }
+
+        $items = (array)$items;
+        $itemList = $this->escapeList($items);
+
+        $this->sendRequest('FETCH', array($set, $itemList), $tag);
+
+        $result = array();
+        while (!$this->readLine($tokens, $tag)) {
+            // ignore other responses
+            if ($tokens[1] != 'FETCH') {
+                continue;
+            }
+            // ignore other messages
+            if ($to === null && !is_array($from) && $tokens[0] != $from) {
+                continue;
+            }
+            // if we only want one item we return that one directly
+            if (count($items) == 1) {
+                if ($tokens[2][0] == $items[0]) {
+                    $data = $tokens[2][1];
+                } else {
+                    // maybe the server send an other field we didn't wanted
+                    $count = count($tokens[2]);
+                    // we start with 2, because 0 was already checked
+                    for ($i = 2; $i < $count; $i += 2) {
+                        if ($tokens[2][$i] != $items[0]) {
+                            continue;
+                        }
+                        $data = $tokens[2][$i + 1];
+                        break;
+                    }
+                }
+            } else {
+                $data = array();
+                while (key($tokens[2]) !== null) {
+                    $data[current($tokens[2])] = next($tokens[2]);
+                    next($tokens[2]);
+                }
+            }
+            // if we want only one message we can ignore everything else and just return
+            if ($to === null && !is_array($from) && $tokens[0] == $from) {
+                // we still need to read all lines
+                while (!$this->readLine($tokens, $tag));
+                return $data;
+            }
+            $result[$tokens[0]] = $data;
+        }
+
+        if ($to === null && !is_array($from)) {
+            /**
+             * @see Zend_Mail_Protocol_Exception
+             */
+            require_once 'Zend/Mail/Protocol/Exception.php';
+            throw new Zend_Mail_Protocol_Exception('the single id was not found in response');
+        }
+
+        return $result;
+    }
+
+    /**
+     * get mailbox list
+     *
+     * this method can't be named after the IMAP command 'LIST', as list is a reserved keyword
+     *
+     * @param  string $reference mailbox reference for list
+     * @param  string $mailbox   mailbox name match with wildcards
+     * @return array mailboxes that matched $mailbox as array(globalName => array('delim' => .., 'flags' => ..))
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function listMailbox($reference = '', $mailbox = '*')
+    {
+        $result = array();
+        $list = $this->requestAndResponse('LIST', $this->escapeString($reference, $mailbox));
+        if (!$list || $list === true) {
+            return $result;
+        }
+
+        foreach ($list as $item) {
+            if (count($item) != 4 || $item[0] != 'LIST') {
+                continue;
+            }
+            $result[$item[3]] = array('delim' => $item[2], 'flags' => $item[1]);
+        }
+
+        return $result;
+    }
+
+    /**
+     * set flags
+     *
+     * @param  array       $flags  flags to set, add or remove - see $mode
+     * @param  int         $from   message for items or start message if $to !== null
+     * @param  int|null    $to     if null only one message ($from) is fetched, else it's the
+     *                             last message, INF means last message avaible
+     * @param  string|null $mode   '+' to add flags, '-' to remove flags, everything else sets the flags as given
+     * @param  bool        $silent if false the return values are the new flags for the wanted messages
+     * @return bool|array new flags if $silent is false, else true or false depending on success
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function store(array $flags, $from, $to = null, $mode = null, $silent = true)
+    {
+        $item = 'FLAGS';
+        if ($mode == '+' || $mode == '-') {
+            $item = $mode . $item;
+        }
+        if ($silent) {
+            $item .= '.SILENT';
+        }
+
+        $flags = $this->escapeList($flags);
+        $set = (int)$from;
+        if ($to != null) {
+            $set .= ':' . ($to == INF ? '*' : (int)$to);
+        }
+
+        $result = $this->requestAndResponse('STORE', array($set, $item, $flags), $silent);
+
+        if ($silent) {
+            return $result ? true : false;
+        }
+
+        $tokens = $result;
+        $result = array();
+        foreach ($tokens as $token) {
+            if ($token[1] != 'FETCH' || $token[2][0] != 'FLAGS') {
+                continue;
+            }
+            $result[$token[0]] = $token[2][1];
+        }
+
+        return $result;
+    }
+
+    /**
+     * append a new message to given folder
+     *
+     * @param string $folder  name of target folder
+     * @param string $message full message content
+     * @param array  $flags   flags for new message
+     * @param string $date    date for new message
+     * @return bool success
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function append($folder, $message, $flags = null, $date = null)
+    {
+        $tokens = array();
+        $tokens[] = $this->escapeString($folder);
+        if ($flags !== null) {
+            $tokens[] = $this->escapeList($flags);
+        }
+        if ($date !== null) {
+            $tokens[] = $this->escapeString($date);
+        }
+        $tokens[] = $this->escapeString($message);
+
+        return $this->requestAndResponse('APPEND', $tokens, true);
+    }
+
+    /**
+     * copy message set from current folder to other folder
+     *
+     * @param string   $folder destination folder
+     * @param int|null $to     if null only one message ($from) is fetched, else it's the
+     *                         last message, INF means last message avaible
+     * @return bool success
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function copy($folder, $from, $to = null)
+    {
+        $set = (int)$from;
+        if ($to != null) {
+            $set .= ':' . ($to == INF ? '*' : (int)$to);
+        }
+
+        return $this->requestAndResponse('COPY', array($set, $this->escapeString($folder)), true);
+    }
+
+    /**
+     * create a new folder (and parent folders if needed)
+     *
+     * @param string $folder folder name
+     * @return bool success
+     */
+    public function create($folder)
+    {
+        return $this->requestAndResponse('CREATE', array($this->escapeString($folder)), true);
+    }
+
+    /**
+     * rename an existing folder
+     *
+     * @param string $old old name
+     * @param string $new new name
+     * @return bool success
+     */
+    public function rename($old, $new)
+    {
+        return $this->requestAndResponse('RENAME', $this->escapeString($old, $new), true);
+    }
+
+    /**
+     * remove a folder
+     *
+     * @param string $folder folder name
+     * @return bool success
+     */
+    public function delete($folder)
+    {
+        return $this->requestAndResponse('DELETE', array($this->escapeString($folder)), true);
+    }
+
+    /**
+     * permanently remove messages
+     *
+     * @return bool success
+     */
+    public function expunge()
+    {
+        // TODO: parse response?
+        return $this->requestAndResponse('EXPUNGE');
+    }
+
+    /**
+     * send noop
+     *
+     * @return bool success
+     */
+    public function noop()
+    {
+        // TODO: parse response
+        return $this->requestAndResponse('NOOP');
+    }
+
+    /**
+     * do a search request
+     *
+     * This method is currently marked as internal as the API might change and is not
+     * safe if you don't take precautions.
+     *
+     * @internal
+     * @return array message ids
+     */
+    public function search(array $params)
+    {
+        $response = $this->requestAndResponse('SEARCH', $params);
+        if (!$response) {
+            return $response;
+        }
+        
+        foreach ($response as $ids) {
+            if ($ids[0] == 'SEARCH') {
+                array_shift($ids);
+                return $ids;
+            }
+        }
+        return array();
+    }
+
+}

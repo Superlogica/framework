@@ -1,25 +1,135 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5CQI3FpnUFNpc2QPtqe/CChnD3XcYYYpG9oi2iGKNqItqg5UCEx0nEeBi7e7cvnd6sNwelXO
-NT8Egfxtlp88EYkfXNQ77neVIshyMvnB0lhlomm1r0V5/0d08uu0Vxryw7WWsTAYLzNwF+IRQ2Jk
-1r4CCQe4wrHNPfIR1MoHstLE4m8ZgcyjVfyY/S1fCjuxEWXHtvUHprndPIlA4mRBeJTLufW4IVdP
-eAK4jRHYU7HWCXJxy8HSn4kJIPpDKor7T+KlBeH2QFLUdFkfrWWON8VEhzKkJW5bJJlBg8bmU/uo
-QBEyGKbtFZET7tcVNLp+pWBQNhCHUef+7S0JTQ4UY15dRz+fsPKoiIoI5ynKMzHD5qgzx/Ea+E3w
-TqS7rUNH5GOOcgYrXJfyXhbNNbf0iz9GD5OdTMCvWkUCPPeG66U3t5NYIdMeYj8GP5600GK7WiW4
-N1Fp1DKmhGlmYHDIlBBQUU870/bS/R+wNb41CWhkthq+L4VJGA9MoKCn4wkxGI7h5Fs/XfXCGLy/
-UUuYv17+d/8L/ylIQ0xB4gvLDe8O+ymK13H1Bpv5GlyOyj5Ad8DrAf6Xg9niYdN1VsPldvYGStjT
-0dqZy71og1EN7F5cP6nbU58QEN+dUWcAKYHyJtWA0BLjcOA7Rf5um/kaiiEDj6Z2acYxrNTMqIEF
-0gaeao7cUCUZ1d0TWKb45/Area0f4e+CVcyjX8sRQf0oyPu93YrcS1dNNHWV9p6vH0vBDZyT8lK9
-53xSDx6Vkl1LzS1nN41rYI6y1thpJ+fdtvQP2SmBWyooqZd1+eGmPeAXBXXxzlTsn9Kb8ra63H5u
-WbwChu1cUHo6eqBDIihM4nadOOphTpwyWQT4r6pMjROraa5A4hveuWVgrXDVbg6um6b8pa1ONuJ7
-9fJVvNtGzJs2hr2BsQVnmeNiygkYnkUZOq4nANc6HPfzuOjpHtqZlOz5CK87McmrGAEcxEG7LkYE
-PJBAvBrqjHz54zjU8PUG+POeh3+IZ0L6VARzcqDHk+W6Fctw5mfoL6nIwqVheyLNFivomuM55qvV
-f73hUgg9D+f7vSEheiV8SWN8rq3rFr38xhOMAYCqeJbUMMPuoimwElpZhPy/ERttDsLozI12QbRY
-DbrhHULNt9EtVbAoaf+zP5apAX2N5djz5YMYT+cQmq4nZPaOgQC0s6j1sjvPiUzl14pNKnAjovk7
-DErNkQ38VnZOQ9YDfYdlaOkW/0WnjbSgKJtWjD89Q4m3nsIcPJZhwg5Si+TI3TUP1T+uj8v7evTY
-Ktsv7/KMM506fwnDJSDAVy8kw56HCkCbsmWmlpjLrX8JF/j4Acxz0NKDLME1nuLyHyg0UtvUgcG4
-RxjTPhXzPCHaUJjKGokD+RggvtlwAeJsFOyJkHcqR59k9s3/BAnzi2Pz+hCkXqsbFaAF0LYOgrKF
-QSf80S7t6nrxt290ur1i0ykJDtG3jKiEFJ7a3qGQrz5RdTPnigFaCEdzpoq3khfuhPsnQbnP9e5b
-Y46gWwuQobl+aFAxi9s9M2LtiZzyIyQnFhWtJ2OAAjMAuxJYT0JpqXaUui6GWiPf4Um/2PBPoQhy
-rHpi
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Storage
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Search_Lucene_Storage_Directory
+{
+
+    /**
+     * Closes the store.
+     *
+     * @return void
+     */
+    abstract public function close();
+
+    /**
+     * Returns an array of strings, one for each file in the directory.
+     *
+     * @return array
+     */
+    abstract public function fileList();
+
+    /**
+     * Creates a new, empty file in the directory with the given $filename.
+     *
+     * @param string $filename
+     * @return Zend_Search_Lucene_Storage_File
+     */
+    abstract public function createFile($filename);
+
+
+    /**
+     * Removes an existing $filename in the directory.
+     *
+     * @param string $filename
+     * @return void
+     */
+    abstract public function deleteFile($filename);
+
+    /**
+     * Purge file if it's cached by directory object
+     * 
+     * Method is used to prevent 'too many open files' error
+     *
+     * @param string $filename
+     * @return void
+     */
+    abstract public function purgeFile($filename);
+    
+    /**
+     * Returns true if a file with the given $filename exists.
+     *
+     * @param string $filename
+     * @return boolean
+     */
+    abstract public function fileExists($filename);
+
+
+    /**
+     * Returns the length of a $filename in the directory.
+     *
+     * @param string $filename
+     * @return integer
+     */
+    abstract public function fileLength($filename);
+
+
+    /**
+     * Returns the UNIX timestamp $filename was last modified.
+     *
+     * @param string $filename
+     * @return integer
+     */
+    abstract public function fileModified($filename);
+
+
+    /**
+     * Renames an existing file in the directory.
+     *
+     * @param string $from
+     * @param string $to
+     * @return void
+     */
+    abstract public function renameFile($from, $to);
+
+
+    /**
+     * Sets the modified time of $filename to now.
+     *
+     * @param string $filename
+     * @return void
+     */
+    abstract public function touchFile($filename);
+
+
+    /**
+     * Returns a Zend_Search_Lucene_Storage_File object for a given $filename in the directory.
+     *
+     * If $shareHandler option is true, then file handler can be shared between File Object
+     * requests. It speed-ups performance, but makes problems with file position.
+     * Shared handler are good for short atomic requests.
+     * Non-shared handlers are useful for stream file reading (especial for compound files).
+     *
+     * @param string $filename
+     * @param boolean $shareHandler
+     * @return Zend_Search_Lucene_Storage_File
+     */
+    abstract public function getFileObject($filename, $shareHandler = true);
+
+}
+

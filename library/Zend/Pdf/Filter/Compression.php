@@ -1,197 +1,380 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Filter_Interface */
+require_once 'Zend/Pdf/Filter/Interface.php';
+
+
+/**
+ * ASCII85 stream filter
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Pdf_Filter_Compression implements Zend_Pdf_Filter_Interface
+{
+    /**
+     * Paeth prediction function
+     *
+     * @param integer $a
+     * @param integer $b
+     * @param integer $c
+     * @return integer
+     */
+    private static function _paeth($a, $b, $c)
+    {
+        // $a - left, $b - above, $c - upper left
+        $p  = $a + $b - $c;       // initial estimate
+        $pa = abs($p - $a);       // distances to a, b, c
+        $pb = abs($p - $b);
+        $pc = abs($p - $c);
+
+        // return nearest of a,b,c,
+        // breaking ties in order a,b,c.
+        if ($pa <= $pb && $pa <= $pc) {
+            return $a;
+        } else if ($pb <= $pc) {
+            return $b;
+        } else {
+            return $c;
+        }
+    }
+
+
+    /**
+     * Get Predictor decode param value
+     *
+     * @param array $params
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    private static function _getPredictorValue(&$params)
+    {
+        if (isset($params['Predictor'])) {
+            $predictor = $params['Predictor'];
+
+            if ($predictor != 1   &&  $predictor != 2   &&
+                $predictor != 10  &&  $predictor != 11  &&   $predictor != 12  &&
+                $predictor != 13  &&  $predictor != 14  &&   $predictor != 15) {
+                throw new Zend_Pdf_Exception('Invalid value of \'Predictor\' decode param - ' . $predictor . '.' );
+            }
+            return $predictor;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
+     * Get Colors decode param value
+     *
+     * @param array $params
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    private static function _getColorsValue(&$params)
+    {
+        if (isset($params['Colors'])) {
+            $colors = $params['Colors'];
+
+            if ($colors != 1  &&  $colors != 2  &&  $colors != 3  &&  $colors != 4) {
+                throw new Zend_Pdf_Exception('Invalid value of \'Color\' decode param - ' . $colors . '.' );
+            }
+            return $colors;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
+     * Get BitsPerComponent decode param value
+     *
+     * @param array $params
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    private static function _getBitsPerComponentValue(&$params)
+    {
+        if (isset($params['BitsPerComponent'])) {
+            $bitsPerComponent = $params['BitsPerComponent'];
+
+            if ($bitsPerComponent != 1  &&  $bitsPerComponent != 2  &&
+                $bitsPerComponent != 4  &&  $bitsPerComponent != 8  &&
+                $bitsPerComponent != 16 ) {
+                throw new Zend_Pdf_Exception('Invalid value of \'BitsPerComponent\' decode param - ' . $bitsPerComponent . '.' );
+            }
+            return $bitsPerComponent;
+        } else {
+            return 8;
+        }
+    }
+
+    /**
+     * Get Columns decode param value
+     *
+     * @param array $params
+     * @return integer
+     */
+    private static function _getColumnsValue(&$params)
+    {
+        if (isset($params['Columns'])) {
+            return $params['Columns'];
+        } else {
+            return 1;
+        }
+    }
+
+
+    /**
+     * Convert stream data according to the filter params set before encoding.
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     * @throws Zend_Pdf_Exception
+     */
+    protected static function _applyEncodeParams($data, $params) {
+        $predictor        = self::_getPredictorValue($params);
+        $colors           = self::_getColorsValue($params);
+        $bitsPerComponent = self::_getBitsPerComponentValue($params);
+        $columns          = self::_getColumnsValue($params);
+
+        /** None of prediction */
+        if ($predictor == 1) {
+            return $data;
+        }
+
+        /** TIFF Predictor 2 */
+        if ($predictor == 2) {
+            throw new Zend_Pdf_Exception('Not implemented yet' );
+        }
+
+        /** Optimal PNG prediction */
+        if ($predictor == 15) {
+            /** Use Paeth prediction as optimal */
+            $predictor = 14;
+        }
+
+        /** PNG prediction */
+        if ($predictor == 10 ||  /** None of prediction */
+            $predictor == 11 ||  /** Sub prediction     */
+            $predictor == 12 ||  /** Up prediction      */
+            $predictor == 13 ||  /** Average prediction */
+            $predictor == 14     /** Paeth prediction   */
+            ) {
+            $predictor -= 10;
+
+            if($bitsPerComponent == 16) {
+                throw new Zend_Pdf_Exception("PNG Prediction with bit depth greater than 8 not yet supported.");
+            }
+
+            $bitsPerSample  = $bitsPerComponent*$colors;
+            $bytesPerSample = (int)(($bitsPerSample + 7)/8);           // (int)ceil(...) emulation
+            $bytesPerRow    = (int)(($bitsPerSample*$columns + 7)/8);  // (int)ceil(...) emulation
+            $rows           = strlen($data)/$bytesPerRow;
+            $output         = '';
+            $offset         = 0;
+
+            if (!is_integer($rows)) {
+                throw new Zend_Pdf_Exception('Wrong data length.');
+            }
+
+            switch ($predictor) {
+                case 0: // None of prediction
+                    for ($count = 0; $count < $rows; $count++) {
+                        $output .= chr($predictor);
+                        $output .= substr($data, $offset, $bytesPerRow);
+                        $offset += $bytesPerRow;
+                    }
+                    break;
+
+                case 1: // Sub prediction
+                    for ($count = 0; $count < $rows; $count++) {
+                        $output .= chr($predictor);
+
+                        $lastSample = array_fill(0, $bytesPerSample, 0);
+                        for ($count2 = 0; $count2 < $bytesPerRow; $count2++) {
+                            $newByte = ord($data[$offset++]);
+                            // Note. chr() automatically cuts input to 8 bit
+                            $output .= chr($newByte - $lastSample[$count2 % $bytesPerSample]);
+                            $lastSample[$count2 % $bytesPerSample] = $newByte;
+                        }
+                    }
+                    break;
+
+                case 2: // Up prediction
+                    $lastRow = array_fill(0, $bytesPerRow, 0);
+                    for ($count = 0; $count < $rows; $count++) {
+                        $output .= chr($predictor);
+
+                        for ($count2 = 0; $count2 < $bytesPerRow; $count2++) {
+                            $newByte = ord($data[$offset++]);
+                            // Note. chr() automatically cuts input to 8 bit
+                            $output .= chr($newByte - $lastRow[$count2]);
+                            $lastRow[$count2] = $newByte;
+                        }
+                    }
+                    break;
+
+                case 3: // Average prediction
+                    $lastRow = array_fill(0, $bytesPerRow, 0);
+                    for ($count = 0; $count < $rows; $count++) {
+                        $output .= chr($predictor);
+
+                        $lastSample = array_fill(0, $bytesPerSample, 0);
+                        for ($count2 = 0; $count2 < $bytesPerRow; $count2++) {
+                            $newByte = ord($data[$offset++]);
+                            // Note. chr() automatically cuts input to 8 bit
+                            $output .= chr($newByte - floor(( $lastSample[$count2 % $bytesPerSample] + $lastRow[$count2])/2));
+                            $lastSample[$count2 % $bytesPerSample] = $lastRow[$count2] = $newByte;
+                        }
+                    }
+                    break;
+
+                case 4: // Paeth prediction
+                    $lastRow    = array_fill(0, $bytesPerRow, 0);
+                    $currentRow = array();
+                    for ($count = 0; $count < $rows; $count++) {
+                        $output .= chr($predictor);
+
+                        $lastSample = array_fill(0, $bytesPerSample, 0);
+                        for ($count2 = 0; $count2 < $bytesPerRow; $count2++) {
+                            $newByte = ord($data[$offset++]);
+                            // Note. chr() automatically cuts input to 8 bit
+                            $output .= chr($newByte - self::_paeth( $lastSample[$count2 % $bytesPerSample],
+                                                                    $lastRow[$count2],
+                                                                    ($count2 - $bytesPerSample  <  0)?
+                                                                         0 : $lastRow[$count2 - $bytesPerSample] ));
+                            $lastSample[$count2 % $bytesPerSample] = $currentRow[$count2] = $newByte;
+                        }
+                        $lastRow = $currentRow;
+                    }
+                    break;
+            }
+            return $output;
+        }
+
+        throw new Zend_Pdf_Exception('Unknown prediction algorithm - ' . $predictor . '.' );
+    }
+
+    /**
+     * Convert stream data according to the filter params set after decoding.
+     *
+     * @param string $data
+     * @param array $params
+     * @return string
+     */
+    protected static function _applyDecodeParams($data, $params) {
+        $predictor        = self::_getPredictorValue($params);
+        $colors           = self::_getColorsValue($params);
+        $bitsPerComponent = self::_getBitsPerComponentValue($params);
+        $columns          = self::_getColumnsValue($params);
+
+        /** None of prediction */
+        if ($predictor == 1) {
+            return $data;
+        }
+
+        /** TIFF Predictor 2 */
+        if ($predictor == 2) {
+            throw new Zend_Pdf_Exception('Not implemented yet' );
+        }
+
+        /**
+         * PNG prediction
+         * Prediction code is duplicated on each row.
+         * Thus all cases can be brought to one
+         */
+        if ($predictor == 10 ||  /** None of prediction */
+            $predictor == 11 ||  /** Sub prediction     */
+            $predictor == 12 ||  /** Up prediction      */
+            $predictor == 13 ||  /** Average prediction */
+            $predictor == 14 ||  /** Paeth prediction   */
+            $predictor == 15     /** Optimal prediction */) {
+
+            $bitsPerSample  = $bitsPerComponent*$colors;
+            $bytesPerSample = ceil($bitsPerSample/8);
+            $bytesPerRow    = ceil($bitsPerSample*$columns/8);
+            $rows           = ceil(strlen($data)/($bytesPerRow + 1));
+            $output         = '';
+            $offset         = 0;
+
+            $lastRow = array_fill(0, $bytesPerRow, 0);
+            for ($count = 0; $count < $rows; $count++) {
+                $lastSample = array_fill(0, $bytesPerSample, 0);
+                switch (ord($data[$offset++])) {
+                    case 0: // None of prediction
+                        $output .= substr($data, $offset, $bytesPerRow);
+                        for ($count2 = 0; $count2 < $bytesPerRow  &&  $offset < strlen($data); $count2++) {
+                            $lastSample[$count2 % $bytesPerSample] = $lastRow[$count2] = ord($data[$offset++]);
+                        }
+                        break;
+
+                    case 1: // Sub prediction
+                        for ($count2 = 0; $count2 < $bytesPerRow  &&  $offset < strlen($data); $count2++) {
+                            $decodedByte = (ord($data[$offset++]) + $lastSample[$count2 % $bytesPerSample]) & 0xFF;
+                            $lastSample[$count2 % $bytesPerSample] = $lastRow[$count2] = $decodedByte;
+                            $output .= chr($decodedByte);
+                        }
+                        break;
+
+                    case 2: // Up prediction
+                        for ($count2 = 0; $count2 < $bytesPerRow  &&  $offset < strlen($data); $count2++) {
+                            $decodedByte = (ord($data[$offset++]) + $lastRow[$count2]) & 0xFF;
+                            $lastSample[$count2 % $bytesPerSample] = $lastRow[$count2] = $decodedByte;
+                            $output .= chr($decodedByte);
+                        }
+                        break;
+
+                    case 3: // Average prediction
+                        for ($count2 = 0; $count2 < $bytesPerRow  &&  $offset < strlen($data); $count2++) {
+                            $decodedByte = (ord($data[$offset++]) +
+                                            floor(( $lastSample[$count2 % $bytesPerSample] + $lastRow[$count2])/2)
+                                           ) & 0xFF;
+                            $lastSample[$count2 % $bytesPerSample] = $lastRow[$count2] = $decodedByte;
+                            $output .= chr($decodedByte);
+                        }
+                        break;
+
+                    case 4: // Paeth prediction
+                        $currentRow = array();
+                        for ($count2 = 0; $count2 < $bytesPerRow  &&  $offset < strlen($data); $count2++) {
+                            $decodedByte = (ord($data[$offset++]) +
+                                            self::_paeth($lastSample[$count2 % $bytesPerSample],
+                                                         $lastRow[$count2],
+                                                         ($count2 - $bytesPerSample  <  0)?
+                                                              0 : $lastRow[$count2 - $bytesPerSample])
+                                           ) & 0xFF;
+                            $lastSample[$count2 % $bytesPerSample] = $currentRow[$count2] = $decodedByte;
+                            $output .= chr($decodedByte);
+                        }
+                        $lastRow = $currentRow;
+                        break;
+
+                    default:
+                        throw new Zend_Pdf_Exception('Unknown prediction tag.');
+                }
+            }
+            return $output;
+        }
+
+        throw new Zend_Pdf_Exception('Unknown prediction algorithm - ' . $predictor . '.' );
+    }
+}

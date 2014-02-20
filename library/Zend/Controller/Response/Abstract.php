@@ -1,206 +1,755 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-i27+Ct8=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Controller_Response_Abstract
+ *
+ * Base class for Zend_Controller responses
+ *
+ * @package Zend_Controller
+ * @subpackage Response
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Controller_Response_Abstract
+{
+    /**
+     * Body content
+     * @var array
+     */
+    protected $_body = array();
+
+    /**
+     * Exception stack
+     * @var Exception
+     */
+    protected $_exceptions = array();
+
+    /**
+     * Array of headers. Each header is an array with keys 'name' and 'value'
+     * @var array
+     */
+    protected $_headers = array();
+
+    /**
+     * Array of raw headers. Each header is a single string, the entire header to emit
+     * @var array
+     */
+    protected $_headersRaw = array();
+
+    /**
+     * HTTP response code to use in headers
+     * @var int
+     */
+    protected $_httpResponseCode = 200;
+
+    /**
+     * Flag; is this response a redirect?
+     * @var boolean
+     */
+    protected $_isRedirect = false;
+
+    /**
+     * Whether or not to render exceptions; off by default
+     * @var boolean
+     */
+    protected $_renderExceptions = false;
+
+    /**
+     * Flag; if true, when header operations are called after headers have been
+     * sent, an exception will be raised; otherwise, processing will continue
+     * as normal. Defaults to true.
+     *
+     * @see canSendHeaders()
+     * @var boolean
+     */
+    public $headersSentThrowsException = true;
+
+    /**
+     * Normalize a header name
+     *
+     * Normalizes a header name to X-Capitalized-Names
+     * 
+     * @param  string $name 
+     * @return string
+     */
+    protected function _normalizeHeader($name)
+    {
+        $filtered = str_replace(array('-', '_'), ' ', (string) $name);
+        $filtered = ucwords(strtolower($filtered));
+        $filtered = str_replace(' ', '-', $filtered);
+        return $filtered;
+    }
+
+    /**
+     * Set a header
+     *
+     * If $replace is true, replaces any headers already defined with that
+     * $name.
+     *
+     * @param string $name
+     * @param string $value
+     * @param boolean $replace
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function setHeader($name, $value, $replace = false)
+    {
+        $this->canSendHeaders(true);
+        $name  = $this->_normalizeHeader($name);
+        $value = (string) $value;
+
+        if ($replace) {
+            foreach ($this->_headers as $key => $header) {
+                if ($name == $header['name']) {
+                    unset($this->_headers[$key]);
+                }
+            }
+        }
+
+        $this->_headers[] = array(
+            'name'    => $name,
+            'value'   => $value,
+            'replace' => $replace
+        );
+
+        return $this;
+    }
+
+    /**
+     * Set redirect URL
+     *
+     * Sets Location header and response code. Forces replacement of any prior
+     * redirects.
+     *
+     * @param string $url
+     * @param int $code
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function setRedirect($url, $code = 302)
+    {
+        $this->canSendHeaders(true);
+        $this->setHeader('Location', $url, true)
+             ->setHttpResponseCode($code);
+
+        return $this;
+    }
+
+    /**
+     * Is this a redirect?
+     *
+     * @return boolean
+     */
+    public function isRedirect()
+    {
+        return $this->_isRedirect;
+    }
+
+    /**
+     * Return array of headers; see {@link $_headers} for format
+     *
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->_headers;
+    }
+
+    /**
+     * Clear headers
+     *
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function clearHeaders()
+    {
+        $this->_headers = array();
+
+        return $this;
+    }
+
+    /**
+     * Set raw HTTP header
+     *
+     * Allows setting non key => value headers, such as status codes
+     *
+     * @param string $value
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function setRawHeader($value)
+    {
+        $this->canSendHeaders(true);
+        if ('Location' == substr($value, 0, 8)) {
+            $this->_isRedirect = true;
+        }
+        $this->_headersRaw[] = (string) $value;
+        return $this;
+    }
+
+    /**
+     * Retrieve all {@link setRawHeader() raw HTTP headers}
+     *
+     * @return array
+     */
+    public function getRawHeaders()
+    {
+        return $this->_headersRaw;
+    }
+
+    /**
+     * Clear all {@link setRawHeader() raw HTTP headers}
+     *
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function clearRawHeaders()
+    {
+        $this->_headersRaw = array();
+        return $this;
+    }
+
+    /**
+     * Clear all headers, normal and raw
+     *
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function clearAllHeaders()
+    {
+        return $this->clearHeaders()
+                    ->clearRawHeaders();
+    }
+
+    /**
+     * Set HTTP response code to use with headers
+     *
+     * @param int $code
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function setHttpResponseCode($code)
+    {
+        if (!is_int($code) || (100 > $code) || (599 < $code)) {
+            require_once 'Zend/Controller/Response/Exception.php';
+            throw new Zend_Controller_Response_Exception('Invalid HTTP response code');
+        }
+
+        if ((300 <= $code) && (307 >= $code)) {
+            $this->_isRedirect = true;
+        } else {
+            $this->_isRedirect = false;
+        }
+
+        $this->_httpResponseCode = $code;
+        return $this;
+    }
+
+    /**
+     * Retrieve HTTP response code
+     *
+     * @return int
+     */
+    public function getHttpResponseCode()
+    {
+        return $this->_httpResponseCode;
+    }
+
+    /**
+     * Can we send headers?
+     *
+     * @param boolean $throw Whether or not to throw an exception if headers have been sent; defaults to false
+     * @return boolean
+     * @throws Zend_Controller_Response_Exception
+     */
+    public function canSendHeaders($throw = false)
+    {
+        $ok = headers_sent($file, $line);
+        if ($ok && $throw && $this->headersSentThrowsException) {
+            require_once 'Zend/Controller/Response/Exception.php';
+            throw new Zend_Controller_Response_Exception('Cannot send headers; headers already sent in ' . $file . ', line ' . $line);
+        }
+
+        return !$ok;
+    }
+
+    /**
+     * Send all headers
+     *
+     * Sends any headers specified. If an {@link setHttpResponseCode() HTTP response code}
+     * has been specified, it is sent with the first header.
+     *
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function sendHeaders()
+    {
+        // Only check if we can send headers if we have headers to send
+        if (count($this->_headersRaw) || count($this->_headers) || (200 != $this->_httpResponseCode)) {
+            $this->canSendHeaders(true);
+        } elseif (200 == $this->_httpResponseCode) {
+            // Haven't changed the response code, and we have no headers
+            return $this;
+        }
+
+        $httpCodeSent = false;
+
+        foreach ($this->_headersRaw as $header) {
+            if (!$httpCodeSent && $this->_httpResponseCode) {
+                header($header, true, $this->_httpResponseCode);
+                $httpCodeSent = true;
+            } else {
+                header($header);
+            }
+        }
+
+        foreach ($this->_headers as $header) {
+            if (!$httpCodeSent && $this->_httpResponseCode) {
+                header($header['name'] . ': ' . $header['value'], $header['replace'], $this->_httpResponseCode);
+                $httpCodeSent = true;
+            } else {
+                header($header['name'] . ': ' . $header['value'], $header['replace']);
+            }
+        }
+
+        if (!$httpCodeSent) {
+            header('HTTP/1.1 ' . $this->_httpResponseCode);
+            $httpCodeSent = true;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set body content
+     *
+     * If $name is not passed, or is not a string, resets the entire body and
+     * sets the 'default' key to $content.
+     *
+     * If $name is a string, sets the named segment in the body array to
+     * $content.
+     *
+     * @param string $content
+     * @param null|string $name
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function setBody($content, $name = null)
+    {
+        if ((null === $name) || !is_string($name)) {
+            $this->_body = array('default' => (string) $content);
+        } else {
+            $this->_body[$name] = (string) $content;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Append content to the body content
+     *
+     * @param string $content
+     * @param null|string $name
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function appendBody($content, $name = null)
+    {
+        if ((null === $name) || !is_string($name)) {
+            if (isset($this->_body['default'])) {
+                $this->_body['default'] .= (string) $content;
+            } else {
+                return $this->append('default', $content);
+            }
+        } elseif (isset($this->_body[$name])) {
+            $this->_body[$name] .= (string) $content;
+        } else {
+            return $this->append($name, $content);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Clear body array
+     *
+     * With no arguments, clears the entire body array. Given a $name, clears
+     * just that named segment; if no segment matching $name exists, returns
+     * false to indicate an error.
+     *
+     * @param  string $name Named segment to clear
+     * @return boolean
+     */
+    public function clearBody($name = null)
+    {
+        if (null !== $name) {
+            $name = (string) $name;
+            if (isset($this->_body[$name])) {
+                unset($this->_body[$name]);
+                return true;
+            }
+
+            return false;
+        }
+
+        $this->_body = array();
+        return true;
+    }
+
+    /**
+     * Return the body content
+     *
+     * If $spec is false, returns the concatenated values of the body content
+     * array. If $spec is boolean true, returns the body content array. If
+     * $spec is a string and matches a named segment, returns the contents of
+     * that segment; otherwise, returns null.
+     *
+     * @param boolean $spec
+     * @return string|array|null
+     */
+    public function getBody($spec = false)
+    {
+        if (false === $spec) {
+            ob_start();
+            $this->outputBody();
+            return ob_get_clean();
+        } elseif (true === $spec) {
+            return $this->_body;
+        } elseif (is_string($spec) && isset($this->_body[$spec])) {
+            return $this->_body[$spec];
+        }
+
+        return null;
+    }
+
+    /**
+     * Append a named body segment to the body content array
+     *
+     * If segment already exists, replaces with $content and places at end of
+     * array.
+     *
+     * @param string $name
+     * @param string $content
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function append($name, $content)
+    {
+        if (!is_string($name)) {
+            require_once 'Zend/Controller/Response/Exception.php';
+            throw new Zend_Controller_Response_Exception('Invalid body segment key ("' . gettype($name) . '")');
+        }
+
+        if (isset($this->_body[$name])) {
+            unset($this->_body[$name]);
+        }
+        $this->_body[$name] = (string) $content;
+        return $this;
+    }
+
+    /**
+     * Prepend a named body segment to the body content array
+     *
+     * If segment already exists, replaces with $content and places at top of
+     * array.
+     *
+     * @param string $name
+     * @param string $content
+     * @return void
+     */
+    public function prepend($name, $content)
+    {
+        if (!is_string($name)) {
+            require_once 'Zend/Controller/Response/Exception.php';
+            throw new Zend_Controller_Response_Exception('Invalid body segment key ("' . gettype($name) . '")');
+        }
+
+        if (isset($this->_body[$name])) {
+            unset($this->_body[$name]);
+        }
+
+        $new = array($name => (string) $content);
+        $this->_body = $new + $this->_body;
+
+        return $this;
+    }
+
+    /**
+     * Insert a named segment into the body content array
+     *
+     * @param  string $name
+     * @param  string $content
+     * @param  string $parent
+     * @param  boolean $before Whether to insert the new segment before or
+     * after the parent. Defaults to false (after)
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function insert($name, $content, $parent = null, $before = false)
+    {
+        if (!is_string($name)) {
+            require_once 'Zend/Controller/Response/Exception.php';
+            throw new Zend_Controller_Response_Exception('Invalid body segment key ("' . gettype($name) . '")');
+        }
+
+        if ((null !== $parent) && !is_string($parent)) {
+            require_once 'Zend/Controller/Response/Exception.php';
+            throw new Zend_Controller_Response_Exception('Invalid body segment parent key ("' . gettype($parent) . '")');
+        }
+
+        if (isset($this->_body[$name])) {
+            unset($this->_body[$name]);
+        }
+
+        if ((null === $parent) || !isset($this->_body[$parent])) {
+            return $this->append($name, $content);
+        }
+
+        $ins  = array($name => (string) $content);
+        $keys = array_keys($this->_body);
+        $loc  = array_search($parent, $keys);
+        if (!$before) {
+            // Increment location if not inserting before
+            ++$loc;
+        }
+
+        if (0 === $loc) {
+            // If location of key is 0, we're prepending
+            $this->_body = $ins + $this->_body;
+        } elseif ($loc >= (count($this->_body))) {
+            // If location of key is maximal, we're appending
+            $this->_body = $this->_body + $ins;
+        } else {
+            // Otherwise, insert at location specified
+            $pre  = array_slice($this->_body, 0, $loc);
+            $post = array_slice($this->_body, $loc);
+            $this->_body = $pre + $ins + $post;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Echo the body segments
+     *
+     * @return void
+     */
+    public function outputBody()
+    {
+        foreach ($this->_body as $content) {
+            echo $content;
+        }
+    }
+
+    /**
+     * Register an exception with the response
+     *
+     * @param Exception $e
+     * @return Zend_Controller_Response_Abstract
+     */
+    public function setException(Exception $e)
+    {
+        $this->_exceptions[] = $e;
+        return $this;
+    }
+
+    /**
+     * Retrieve the exception stack
+     *
+     * @return array
+     */
+    public function getException()
+    {
+        return $this->_exceptions;
+    }
+
+    /**
+     * Has an exception been registered with the response?
+     *
+     * @return boolean
+     */
+    public function isException()
+    {
+        return !empty($this->_exceptions);
+    }
+
+    /**
+     * Does the response object contain an exception of a given type?
+     *
+     * @param  string $type
+     * @return boolean
+     */
+    public function hasExceptionOfType($type)
+    {
+        foreach ($this->_exceptions as $e) {
+            if ($e instanceof $type) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Does the response object contain an exception with a given message?
+     *
+     * @param  string $message
+     * @return boolean
+     */
+    public function hasExceptionOfMessage($message)
+    {
+        foreach ($this->_exceptions as $e) {
+            if ($message == $e->getMessage()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Does the response object contain an exception with a given code?
+     *
+     * @param  int $code
+     * @return boolean
+     */
+    public function hasExceptionOfCode($code)
+    {
+        $code = (int) $code;
+        foreach ($this->_exceptions as $e) {
+            if ($code == $e->getCode()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Retrieve all exceptions of a given type
+     *
+     * @param  string $type
+     * @return false|array
+     */
+    public function getExceptionByType($type)
+    {
+        $exceptions = array();
+        foreach ($this->_exceptions as $e) {
+            if ($e instanceof $type) {
+                $exceptions[] = $e;
+            }
+        }
+
+        if (empty($exceptions)) {
+            $exceptions = false;
+        }
+
+        return $exceptions;
+    }
+
+    /**
+     * Retrieve all exceptions of a given message
+     *
+     * @param  string $message
+     * @return false|array
+     */
+    public function getExceptionByMessage($message)
+    {
+        $exceptions = array();
+        foreach ($this->_exceptions as $e) {
+            if ($message == $e->getMessage()) {
+                $exceptions[] = $e;
+            }
+        }
+
+        if (empty($exceptions)) {
+            $exceptions = false;
+        }
+
+        return $exceptions;
+    }
+
+    /**
+     * Retrieve all exceptions of a given code
+     *
+     * @param mixed $code
+     * @return void
+     */
+    public function getExceptionByCode($code)
+    {
+        $code       = (int) $code;
+        $exceptions = array();
+        foreach ($this->_exceptions as $e) {
+            if ($code == $e->getCode()) {
+                $exceptions[] = $e;
+            }
+        }
+
+        if (empty($exceptions)) {
+            $exceptions = false;
+        }
+
+        return $exceptions;
+    }
+
+    /**
+     * Whether or not to render exceptions (off by default)
+     *
+     * If called with no arguments or a null argument, returns the value of the
+     * flag; otherwise, sets it and returns the current value.
+     *
+     * @param boolean $flag Optional
+     * @return boolean
+     */
+    public function renderExceptions($flag = null)
+    {
+        if (null !== $flag) {
+            $this->_renderExceptions = $flag ? true : false;
+        }
+
+        return $this->_renderExceptions;
+    }
+
+    /**
+     * Send the response, including all headers, rendering exceptions if so
+     * requested.
+     *
+     * @return void
+     */
+    public function sendResponse()
+    {
+        $this->sendHeaders();
+
+        if ($this->isException() && $this->renderExceptions()) {
+            $exceptions = '';
+            foreach ($this->getException() as $e) {
+                $exceptions .= $e->__toString() . "\n";
+            }
+            echo $exceptions;
+            return;
+        }
+
+        $this->outputBody();
+    }
+
+    /**
+     * Magic __toString functionality
+     *
+     * Proxies to {@link sendResponse()} and returns response value as string
+     * using output buffering.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        ob_start();
+        $this->sendResponse();
+        return ob_get_clean();
+    }
+}

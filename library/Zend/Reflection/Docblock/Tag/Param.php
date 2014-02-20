@@ -1,32 +1,93 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV58/xwhQ4GE+vHKr/bQvjC9yFdAoyFK9uzC2GcXZNec1P+1dPRSVra3Wjtb6RBLSd4KUgFZho
-iNvHL3Gh5oFfAGrC76ms5n5+LXTL3eNX6Xc0EEIR+STesEtDLizdlamEeUnn7+vU5SjMaoe9FQAP
-O2WS1BFZ3XaRCKCvuLSH/anf9cLvady51E1d/TVBvdEFOPRsPqmts3YNRgiLT1hBxZl8jXaXYqpI
-r11LfHlErXeShA8CZIs7kSHBaqcSpLCjHtVbBow4GcWsMqfLFXE3/b1mFhZL7Zxr1j11X1TH5/PB
-SHeA/bnMjhsnR7/BVq9NNVm5JMZIAUzuO/4b0lkHcieRj1N4y3EXNoDfXp1jFkZbyZlE+eMPasL5
-UgiLZ9mXWeqmGpVzVhaGqLOGGDckxNQl9RIf16UpKFkYE7MXN2FjHxmGbOSav4fCV6NWdJQ9HBwR
-P678X1lQU264B/CR335j7LZD0pX2C04Xk5TO6Mmn97MdS3MoTl+NIdR0jMuUWVecb6Kql6tI1oB/
-emU8jCJXYs580ZtTlIyGnIdNXH8ez2axRHzhMD6VXYLPBhb+hIfXEqtDuxuGU2dE42BkUGgvvzjL
-id/lyoFuaDHa32B4zRugYRSMnn0/pce9/tkMA5qzcmVzS552uEeg1JLCrZZEfFPau7ByRTHLXA1t
-1fuTECBHVMRQnEPMi0tS4sySOHJR1G+jHnXzs5IO0uwj3gusVrIDjUYxKgOwcnLgUCR/UOQgV0rw
-4QCDvPyEAqhquL2IB7p/43GVxe+MZ1kD4AuT6V0nYRYjM/bt2tzuQ5O3VA9vKs9ZaOybdAv2b01b
-4TdVh4YpBE1EacoBItP0pPo95eyUXXxvZz1HSkSv7TSmWOUsgfauKzuJspXNak/E3HajNyN0D3KF
-Bwu3Hd0iYgZ23xRlXRF8hf6HK9IVwsuMX0uEv9tY3A4AE6LSJxRZ8gyLx6rXQFxbHkNc/oCUk7+l
-6BcjjB23MVfdOmgMZCgQkYXi7tGfhe4FV631WmTX1dMfYLIWV85sSzbnRPQ7c/D9WzpN3E4nDOfy
-tS1k5G5FgfjnYg2J38XsKUDjtqT6cMwa57WfDqp3oDf8VvgTWo6Sjs8vdj89K8w8Ps0WA37vqHuQ
-S0vAyxmHFnVizEcz6g/1tr4YEOFkHpP+43bE65V3XE24biLg4XG3xG/UiHe/+QsmJMkTIg+uiS4G
-LAqedr/Cv4j8oKwuN0Ddf9VQzYp8efSPY97FYY1MUiFcpooE3d+MIUSKkvE1AunlJxXZaDWgYrH+
-StrZyvCTEggBSk/zdV5HytA7odnVNeMKpNtNPZuD9V/y13IV5xMKPjc1BnItV7dcwgE5NQj0WOAm
-Ko2CHgx1PRGR+uo4h5o6abXsY9NDHuLEj4Tnk3XmTrcVexf5an3OSetcrM1E7U6YefugZVX2OHZx
-CxpK2iob0aHjNzMWTBgWcLY/aPCcEU+h7Ud7uCP5spaQksKBEnYQcRqQdxexl05ZkWR3ZIzQlA2x
-ZEPW9KoUygbhTz3PM5jHDQXZtBcYaTan/dop/T9mnQF51HEhL8HJ63G+JvXnLUuiEIy00Fo79aMO
-HXwFvqmB3Hi8jCOVnlGE0aZcdaO5CXwbdL8pa57TplVyoFdlss85sBnjcr2qnAqdAfZdH3I2yOTG
-+LuHQ241/Wzz8+nFMwbZ7+Dt7ARTueFDtvhK7RrIwcQeZYKLBggWMfRBhPWLQm1DS5XaBPA6AKn9
-9TRHocgi2evZDwdiO4mVG6UwK0V4nh1edNsF+J2nKqZtp1sTqMHiasxsY4mWE+pIeM8zaL0i1pxG
-Lss4t5ICSrPuWhz4jsLqaOfCM/9wNCbq+3MRww5SPEhvglfIvTL7IJMcPQ1nwQMZHpzvJC19rb+i
-CshaaH5RN9WTXHWwq4gDCy4QrYKPjbmsNBSWa5Xtd/TgUMHA0xJnT3txv6v8gOZxZT38J1aKPEDg
-QOuulYalS5Eg2EP9OcPCblzt34aXztB4WqRSce2HafTH2mXBIbUzorNL7oj8tQludz8g2gJKLICr
-GjMeOtZ3Row/scO8uNPC9MZVmqPEMUWxRZT2bKENZCADOqbEbCEYNet1ynDA2zlRM3j/PdNG4QML
-AvIchIIQaIO=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/** Zend_Reflection_Docblock_Tag */
+require_once 'Zend/Reflection/Docblock/Tag.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_Docblock_Tag_Param extends Zend_Reflection_Docblock_Tag
+{
+    /**
+     * @var string
+     */
+    protected $_type = null;
+    
+    /**
+     * @var string
+     */
+    protected $_variableName = null;
+    
+    /**
+     * Constructor
+     *
+     * @param string $tagDocblockLine
+     */
+    public function __construct($tagDocblockLine)
+    {
+        $matches = array();
+        
+        if (!preg_match('#^@(\w+)\s(\w+)(?:\s(\$\S+))?(?:\s(.*))?#s', $tagDocblockLine, $matches)) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Provided docblock line is does not contain a valid tag');
+        }
+        
+        if ($matches[1] != 'param') {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Provided docblock line is does not contain a valid @param tag');
+        }
+        
+        $this->_name = 'param';
+        $this->_type = $matches[2];
+        
+        if (isset($matches[3])) {
+            $this->_variableName = $matches[3];
+        }
+        
+        if (isset($matches[4])) {
+            $this->_description = preg_replace('#\s+#', ' ', $matches[4]);
+        }
+    }
+    
+    /**
+     * Get parameter variable type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+    
+    /**
+     * Get parameter name
+     *
+     * @return string
+     */
+    public function getVariableName()
+    {
+        return $this->_variableName;
+    }
+}

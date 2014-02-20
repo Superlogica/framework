@@ -1,41 +1,111 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Aes256cbc.php 13522 2009-01-06 16:35:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Cipher_Symmetric_Adapter_Abstract
+ */
+require_once 'Zend/InfoCard/Cipher/Symmetric/Adapter/Abstract.php';
+
+/**
+ * Zend_InfoCard_Cipher_Symmetric_Aes256cbc_Interface
+ */
+require_once 'Zend/InfoCard/Cipher/Symmetric/Aes256cbc/Interface.php';
+
+/**
+ * Implements AES256 with CBC encryption implemented using the mCrypt extension
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Cipher
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Cipher_Symmetric_Adapter_Aes256cbc
+    extends Zend_InfoCard_Cipher_Symmetric_Adapter_Abstract
+    implements Zend_InfoCard_Cipher_Symmetric_Aes256cbc_Interface
+{
+    /**
+     * The MCRYPT Cipher constant for this encryption
+     */
+    const MCRYPT_CIPHER = MCRYPT_RIJNDAEL_128;
+
+    /**
+     * The MCRYPT Mode constant for this encryption
+     */
+    const MCRYPT_MODE   = MCRYPT_MODE_CBC;
+
+    /**
+     * The default length of the IV to use
+     */
+    const IV_LENGTH     = 16;
+
+    /**
+     * The object constructor
+     *
+     * @throws Zend_InfoCard_Cipher_Exception
+     */
+    public function __construct()
+    {
+        // Can't test for this
+        // @codeCoverageIgnoreStart
+        if(!extension_loaded('mcrypt')) {
+            require_once 'Zend/InfoCard/Cipher/Exception.php';
+            throw new Zend_InfoCard_Cipher_Exception("Use of the AES256CBC Cipher requires the mcrypt extension");
+        }
+        // @codeCoveregIgnoreEnd
+    }
+
+    /**
+     * Decrypts data using the AES Algorithm using the mCrypt extension
+     *
+     * @throws Zend_InfoCard_Cipher_Exception
+     * @param string $encryptedData The encrypted data in binary format
+     * @param string $decryptionKey The decryption key
+     * @param integer $iv_length The IV length to use
+     * @return string the decrypted data with any terminating nulls removed
+     */
+    public function decrypt($encryptedData, $decryptionKey, $iv_length = null)
+    {
+
+        $iv_length = ($iv_length === null) ? self::IV_LENGTH : $iv_length;
+
+        $mcrypt_iv = null;
+
+        if($iv_length > 0) {
+             $mcrypt_iv = substr($encryptedData, 0, $iv_length);
+            $encryptedData = substr($encryptedData, $iv_length);
+        }
+
+        $decrypted = mcrypt_decrypt(self::MCRYPT_CIPHER, $decryptionKey, $encryptedData, self::MCRYPT_MODE, $mcrypt_iv);
+
+        if(!$decrypted) {
+            require_once 'Zend/InfoCard/Cipher/Exception.php';
+            throw new Zend_InfoCard_Cipher_Exception("Failed to decrypt data using AES256CBC Algorithm");
+        }
+
+        $decryptedLength = strlen($decrypted);
+        $paddingLength = substr($decrypted, $decryptedLength -1, 1);
+        $decrypted = substr($decrypted, 0, $decryptedLength - ord($paddingLength));
+
+        return rtrim($decrypted, "\0");
+    }
+}

@@ -1,87 +1,282 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-qG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Reflection_Docblock_Tag
+ */
+require_once 'Zend/Reflection/Docblock/Tag.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_Docblock implements Reflector
+{
+    /**
+     * @var Reflector
+     */
+    protected $_reflector = null;
+    
+    /**#@+
+     * @var int
+     */
+    protected $_startLine = null;
+    protected $_endLine   = null;
+    /**#@-*/
+    
+    /**
+     * @var string
+     */
+    protected $_docComment = null;
+    
+    /**
+     * @var string
+     */
+    protected $_cleanDocComment = null;
+    
+    /**
+     * @var string
+     */
+    protected $_longDescription = null;
+    
+    /**
+     * @var string
+     */
+    protected $_shortDescription = null;
+    
+    /**
+     * @var array
+     */
+    protected $_tags = array();
+    
+    /**
+     * Export reflection
+     *
+     * Reqired by the Reflector interface.
+     *
+     * @todo   What should this do?
+     * @return void
+     */
+    public static function export()
+    {
+    }
+    
+    /**
+     * Serialize to string
+     *
+     * Required by the Reflector interface
+     *
+     * @todo   What should this return?
+     * @return string
+     */
+    public function __toString()
+    {
+    }
+    
+    /**
+     * Constructor
+     *
+     * @param Reflector|string $commentOrReflector
+     */
+    public function __construct($commentOrReflector)
+    {
+        if ($commentOrReflector instanceof Reflector) {
+            $this->_reflector = $commentOrReflector;
+            if (!method_exists($commentOrReflector, 'getDocComment')) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Reflector must contain method "getDocComment"');
+            }
+            $docComment = $commentOrReflector->getDocComment();
+            
+            $lineCount = substr_count($docComment, "\n");
+            
+            $this->_startLine = $this->_reflector->getStartLine() - $lineCount - 1;
+            $this->_endLine   = $this->_reflector->getStartLine() - 1;
+            
+        } elseif (is_string($commentOrReflector)) {
+            $docComment = $commentOrReflector;
+        } else {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception(get_class($this) . ' must have a (string) DocComment or a Reflector in the constructor');
+        }
+        
+        if ($docComment == '') {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('DocComment cannot be empty');
+        }
+        
+        $this->_docComment = $docComment;
+        $this->_parse();
+    }
+    
+    /**
+     * Retrieve contents of docblock
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+        return $this->_cleanDocComment;
+    }
+    
+    /**
+     * Get start line (position) of docblock
+     *
+     * @return int
+     */
+    public function getStartLine()
+    {
+        return $this->_startLine;
+    }
+    
+    /**
+     * Get last line (position) of docblock
+     *
+     * @return int
+     */
+    public function getEndLine()
+    {
+        return $this->_endLine;
+    }
+    
+    /**
+     * Get docblock short description
+     *
+     * @return string
+     */
+    public function getShortDescription()
+    {
+        return $this->_shortDescription;
+    }
+    
+    /**
+     * Get docblock long description
+     *
+     * @return string
+     */
+    public function getLongDescription()
+    {
+        return $this->_longDescription;
+    }
+    
+    /**
+     * Does the docblock contain the given annotation tag?
+     *
+     * @param  string $name
+     * @return bool
+     */
+    public function hasTag($name)
+    {
+        foreach ($this->_tags as $tag) {
+            if ($tag->getName() == $name) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * Retrieve the given docblock tag
+     *
+     * @param  string $name
+     * @return Zend_Reflection_Docblock_Tag|false
+     */
+    public function getTag($name)
+    {
+        foreach ($this->_tags as $tag) {
+            if ($tag->getName() == $name) {
+                return $tag;
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Get all docblock annotation tags
+     *
+     * @param string $filter
+     * @return array Array of Zend_Reflection_Docblock_Tag
+     */
+    public function getTags($filter = null)
+    {
+        if ($filter === null || !is_string($filter)) {
+            return $this->_tags;
+        }
+        
+        $returnTags = array();
+        foreach ($this->_tags as $tag) {
+            if ($tag->getName() == $filter) {
+                $returnTags[] = $tag;
+            }
+        }
+        return $returnTags;
+    }
+    
+    /**
+     * Parse the docblock
+     *
+     * @return void
+     */
+    protected function _parse()
+    {
+        $docComment = $this->_docComment;
+        
+        // First remove doc block line starters
+        $docComment = preg_replace('#[ \t]*(?:\/\*\*|\*\/|\*)?[ ]{0,1}(.*)?#', '$1', $docComment);
+        $docComment = ltrim($docComment, "\r\n"); // @todo should be changed to remove first and last empty line
+        
+        $this->_cleanDocComment = $docComment;
+        
+        // Next parse out the tags and descriptions
+        $parsedDocComment = $docComment;
+        $lineNumber = $firstBlandLineEncountered = 0;
+        while (($newlinePos = strpos($parsedDocComment, "\n")) !== false) {
+            $lineNumber++;
+            $line = substr($parsedDocComment, 0, $newlinePos);
+            
+            $matches = array();
+            
+            if ((strpos($line, '@') === 0) && (preg_match('#^(@\w+.*?)(\n)(?:@|\r?\n|$)#s', $parsedDocComment, $matches))) {
+                $this->_tags[] = Zend_Reflection_Docblock_Tag::factory($matches[1]);
+                $parsedDocComment = str_replace($matches[1] . $matches[2], '', $parsedDocComment);
+            } else {
+                if ($lineNumber < 3 && !$firstBlandLineEncountered) {
+                    $this->_shortDescription .= $line . "\n";
+                } else {
+                    $this->_longDescription .= $line . "\n";
+                }
+                
+                if ($line == '') {
+                    $firstBlandLineEncountered = true;
+                }
+                
+                $parsedDocComment = substr($parsedDocComment, $newlinePos + 1);
+            }
+            
+        }
+
+        $this->_shortDescription = rtrim($this->_shortDescription);
+        $this->_longDescription  = rtrim($this->_longDescription);
+    }
+}

@@ -1,41 +1,148 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_TimeSync
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Protocol.php 9488 2008-05-19 20:41:34Z thomas $
+ */
+
+/**
+ * Abstract class definition for all timeserver protocols
+ *
+ * @category  Zend
+ * @package   Zend_TimeSync
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_TimeSync_Protocol
+{
+    /**
+     * Holds the current socket connection
+     *
+     * @var array
+     */
+    protected $_socket;
+
+    /**
+     * Exceptions that might have occured
+     *
+     * @var array
+     */
+    protected $_exceptions;
+
+    /**
+     * Hostname for timeserver
+     *
+     * @var string
+     */
+    protected $_timeserver;
+
+    /**
+     * Holds information passed/returned from timeserver
+     *
+     * @var array
+     */
+    protected $_info = array();
+
+    /**
+     * Abstract method that prepares the data to send to the timeserver
+     *
+     * @return mixed
+     */
+    abstract protected function _prepare();
+
+    /**
+     * Abstract method that reads the data returned from the timeserver
+     *
+     * @return mixed
+     */
+    abstract protected function _read();
+
+    /**
+     * Abstract method that writes data to to the timeserver
+     *
+     * @param  string $data Data to write
+     * @return void
+     */
+    abstract protected function _write($data);
+
+    /**
+     * Abstract method that extracts the binary data returned from the timeserver
+     *
+     * @param  string|array $data Data returned from the timeserver
+     * @return integer
+     */
+    abstract protected function _extract($data);
+
+    /**
+     * Connect to the specified timeserver.
+     *
+     * @return void
+     * @throws Zend_TimeSync_Exception When the connection failed
+     */
+    protected function _connect()
+    {
+        $socket = @fsockopen($this->_timeserver, $this->_port, $errno, $errstr,
+                             Zend_TimeSync::$options['timeout']);
+        if ($socket === false) {
+            throw new Zend_TimeSync_Exception('could not connect to ' .
+                "'$this->_timeserver' on port '$this->_port', reason: '$errstr'");
+        }
+
+        $this->_socket = $socket;
+    }
+
+    /**
+     * Disconnects from the peer, closes the socket.
+     *
+     * @return void
+     */
+    protected function _disconnect()
+    {
+        @fclose($this->_socket);
+        $this->_socket = null;
+    }
+
+    /**
+     * Return information sent/returned from the timeserver
+     *
+     * @return  array
+     */
+    public function getInfo()
+    {
+        if (empty($this->_info) === true) {
+            $this->_write($this->_prepare());
+            $timestamp = $this->_extract($this->_read());
+        }
+
+        return $this->_info;
+    }
+
+    /**
+     * Query this timeserver without using the fallback mechanism
+     *
+     * @param  string|Zend_Locale $locale (Optional) Locale
+     * @return Zend_Date
+     */
+    public function getDate($locale = null)
+    {
+        $this->_write($this->_prepare());
+        $timestamp = $this->_extract($this->_read());
+
+        $date = new Zend_Date($this, null, $locale);
+        return $date;
+    }
+}

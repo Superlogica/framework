@@ -1,53 +1,186 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-haG7g//r
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Layout.php 11508 2008-09-24 14:21:30Z doctorrock83 $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Action_Helper_Abstract */
+require_once 'Zend/Controller/Action/Helper/Abstract.php';
+
+/**
+ * Helper for interacting with Zend_Layout objects
+ *
+ * @uses       Zend_Controller_Action_Helper_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Layout_Controller_Action_Helper_Layout extends Zend_Controller_Action_Helper_Abstract
+{
+    /**
+     * @var Zend_Controller_Front
+     */
+    protected $_frontController;
+
+    /**
+     * @var Zend_Layout
+     */
+    protected $_layout;
+
+    /**
+     * @var bool
+     */
+    protected $_isActionControllerSuccessful = false;
+    
+    /**
+     * Constructor
+     * 
+     * @param  Zend_Layout $layout 
+     * @return void
+     */
+    public function __construct(Zend_Layout $layout = null)
+    {
+        if (null !== $layout) {
+            $this->setLayoutInstance($layout);
+        } else {
+            /**
+             * @see Zend_Layout
+             */
+            require_once 'Zend/Layout.php';
+            $layout = Zend_Layout::getMvcInstance();
+        }
+        
+        if (null !== $layout) {
+            $pluginClass = $layout->getPluginClass();
+            $front = $this->getFrontController();
+            if ($front->hasPlugin($pluginClass)) {
+                $plugin = $front->getPlugin($pluginClass);
+                $plugin->setLayoutActionHelper($this);
+            }
+        }
+    }
+
+    public function init()
+    {
+        $this->_isActionControllerSuccessful = false;
+    }
+
+    /**
+     * Get front controller instance
+     * 
+     * @return Zend_Controller_Front
+     */
+    public function getFrontController()
+    {
+        if (null === $this->_frontController) {
+            /**
+             * @see Zend_Controller_Front
+             */
+            require_once 'Zend/Controller/Front.php';
+            $this->_frontController = Zend_Controller_Front::getInstance();
+        }
+
+        return $this->_frontController;
+    }
+    
+    /**
+     * Get layout object
+     * 
+     * @return Zend_Layout
+     */
+    public function getLayoutInstance()
+    {
+        if (null === $this->_layout) {
+            /**
+             * @see Zend_Layout
+             */
+            require_once 'Zend/Layout.php';
+            if (null === ($this->_layout = Zend_Layout::getMvcInstance())) {
+                $this->_layout = new Zend_Layout();
+            }
+        }
+
+        return $this->_layout;
+    }
+
+    /**
+     * Set layout object
+     * 
+     * @param  Zend_Layout $layout 
+     * @return Zend_Layout_Controller_Action_Helper_Layout
+     */
+    public function setLayoutInstance(Zend_Layout $layout)
+    {
+        $this->_layout = $layout;
+        return $this;
+    }
+
+    /**
+     * Mark Action Controller (according to this plugin) as Running successfully
+     *
+     * @return Zend_Layout_Controller_Action_Helper_Layout
+     */
+    public function postDispatch()
+    {
+        $this->_isActionControllerSuccessful = true;
+        return $this;
+    }
+    
+    /**
+     * Did the previous action successfully complete?
+     *
+     * @return bool
+     */
+    public function isActionControllerSuccessful()
+    {
+        return $this->_isActionControllerSuccessful;
+    }
+    
+    /**
+     * Strategy pattern; call object as method
+     *
+     * Returns layout object
+     * 
+     * @return Zend_Layout
+     */
+    public function direct()
+    {
+        return $this->getLayoutInstance();
+    }
+
+    /**
+     * Proxy method calls to layout object
+     * 
+     * @param  string $method 
+     * @param  array $args 
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        $layout = $this->getLayoutInstance();
+        if (method_exists($layout, $method)) {
+            return call_user_func_array(array($layout, $method), $args);
+        }
+
+        require_once 'Zend/Layout/Exception.php';
+        throw new Zend_Layout_Exception(sprintf("Invalid method '%s' called on layout action helper", $method));
+    }
+}

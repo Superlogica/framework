@@ -1,63 +1,173 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: SecurityTokenReference.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Element
+ */
+require_once 'Zend/InfoCard/Xml/Element.php';
+
+/**
+ * Represents a SecurityTokenReference XML block
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_InfoCard_Xml_SecurityTokenReference extends Zend_InfoCard_Xml_Element
+{
+    /**
+     * Base64 Binary Encoding URI
+     */
+    const ENCODING_BASE64BIN = 'http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary';
+
+    /**
+     * Return an instance of the object based on the input XML
+     *
+     * @param string $xmlData The SecurityTokenReference XML Block
+     * @return Zend_InfoCard_Xml_SecurityTokenReference
+     * @throws Zend_InfoCard_Xml_Exception
+     */
+    static public function getInstance($xmlData)
+    {
+        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
+            $strXmlData = $xmlData->asXML();
+        } else if (is_string($xmlData)) {
+            $strXmlData = $xmlData;
+        } else {
+            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
+        }
+
+        $sxe = simplexml_load_string($strXmlData);
+
+        if($sxe->getName() != "SecurityTokenReference") {
+            throw new Zend_InfoCard_Xml_Exception("Invalid XML Block provided for SecurityTokenReference");
+        }
+
+        return simplexml_load_string($strXmlData, "Zend_InfoCard_Xml_SecurityTokenReference");
+    }
+
+    /**
+     * Return the Key Identifier XML Object
+     *
+     * @return Zend_InfoCard_Xml_Element
+     * @throws Zend_InfoCard_Xml_Exception
+     */
+    protected function _getKeyIdentifier()
+    {
+        $this->registerXPathNamespace('o', 'http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd');
+        list($keyident) = $this->xpath('//o:KeyIdentifier');
+
+        if(!($keyident instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Failed to retrieve Key Identifier");
+        }
+
+        return $keyident;
+    }
+
+    /**
+     * Return the Key URI identifying the thumbprint type used
+     *
+     * @return string The thumbprint type URI
+     * @throws  Zend_InfoCard_Xml_Exception
+     */
+    public function getKeyThumbprintType()
+    {
+
+        $keyident = $this->_getKeyIdentifier();
+
+        $dom = self::convertToDOM($keyident);
+
+        if(!$dom->hasAttribute('ValueType')) {
+            throw new Zend_InfoCard_Xml_Exception("Key Identifier did not provide a type for the value");
+        }
+
+        return $dom->getAttribute('ValueType');
+    }
+
+
+    /**
+     * Return the thumbprint encoding type used as a URI
+     *
+     * @return string the URI of the thumbprint encoding used
+     * @throws Zend_InfoCard_Xml_Exception
+     */
+    public function getKeyThumbprintEncodingType()
+    {
+
+        $keyident = $this->_getKeyIdentifier();
+
+        $dom = self::convertToDOM($keyident);
+
+        if(!$dom->hasAttribute('EncodingType')) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to determine the encoding type for the key identifier");
+        }
+
+        return $dom->getAttribute('EncodingType');
+    }
+
+    /**
+     * Get the key reference data used to identify the public key
+     *
+     * @param bool $decode if true, will return a decoded version of the key
+     * @return string the key reference thumbprint, either in binary or encoded form
+     * @throws Zend_InfoCard_Xml_Exception
+     */
+    public function getKeyReference($decode = true)
+    {
+        $keyIdentifier = $this->_getKeyIdentifier();
+
+        $dom = self::convertToDOM($keyIdentifier);
+        $encoded = $dom->nodeValue;
+
+        if(empty($encoded)) {
+            throw new Zend_InfoCard_Xml_Exception("Could not find the Key Reference Encoded Value");
+        }
+
+        if($decode) {
+
+            $decoded = "";
+            switch($this->getKeyThumbprintEncodingType()) {
+                case self::ENCODING_BASE64BIN:
+
+                    if(version_compare(PHP_VERSION, "5.2.0", ">=")) {
+                        $decoded = base64_decode($encoded, true);
+                    } else {
+                        $decoded = base64_decode($encoded);
+                    }
+
+                    break;
+                default:
+                    throw new Zend_InfoCard_Xml_Exception("Unknown Key Reference Encoding Type: {$this->getKeyThumbprintEncodingType()}");
+            }
+
+            if(!$decoded || empty($decoded)) {
+                throw new Zend_InfoCard_Xml_Exception("Failed to decode key reference");
+            }
+
+            return $decoded;
+        }
+
+        return $encoded;
+    }
+}

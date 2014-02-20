@@ -1,31 +1,108 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5EsbxY83WjCLpX1x0Op18apfic6kp92crvgi+2YQKAQhLYuYYEsf5jMsK016mTz+3BoE4ESu
-3AxqqDF91U2nzfN6cDBCCpbT2dQeGjaFNqT5EcL3Z8QWCNWW9lI3Z4urHz+g33cZlcEoj3BYHHSj
-KBa7NOGMSirdd0bUIbAp1C+Y1fDBLB9GEbqHHqJ7Tafh6uAEYgbvsSaRmAi3PQksbhMQXfAuM3A3
-94NKvwTHD2F3KEMmtIAhn4kJIPpDKor7T+KlBeH2Q3rUneYFP/JQoskznTLkOoDT/qjzDDcDsiHc
-0jz8XRocdeOMbYUMhEW7ngTgHM8iRS+3+pJ1tGv5GRpvDCd+49fTHp6nDhNxyoyEOA28OGqx4icS
-0px2xsKHKBRm/P1V/OVMQpQTu5N5dAqgHtFC2hmBLJ+Y8xjwmqvNgLR9q223AzgV8+ckHIedhZfa
-iT2Nn0tkjyM906/kADFeT001m7DTCMwwWcWb3crZtmPpPqkLLVrf8c9YdBKel3YS2V9YbM/bRBc6
-d+pnDhU37fPY67W9326SOquUhxp3MnE1SNqz7AkaM8gffLQDwnOfe45gAg3iTKjjgT9vnP51RaiR
-fKpzL6gXLCf+k6pduaE7ZyBrsHteAPeuNfWs0yQGJXiBglu66vbYlkN8yZ3pFrwCOcEPQArAFNkf
-WfhjcSbuS6V4VXuXrU8neI1BhjCQ/14U5JdR09+ya/rXaYhwsK9Rxj45IOGkLqnA9hv4J8Uw9o8+
-/klKOg0UfW5bxPTndXGRC+APK+34sSnZDSNq+8HuqtHy5Sr13tU/vv4VTwTFShOGFnu9Cx4cDte3
-hhxaFqHt4NnaAMP1nO+Jljai9a5Cs5npld/k3huP/bH6TMOuTk3XyWM5VqCOmkh09AP+npef+2me
-pFuMsTpjZFZoUIJLGp23O/bZYbjafVceEPs+BHPcdKD62ghblf1iqBuKD6G8V2V97pYnVV+m6amK
-v+iIIWn2QLJCDWdN6n0K9qULHsjZoH0YNxSDBOCf5ET44jq+jIMXTOQSqRjRXW6xCIkzyYKtXYam
-MUWuHd9GTqnU2h3n9CYIRXh6xE2dcq3DgD+cnC80wePHaCEmVWXWPQCOp6G7aa3xSvlBKrq46QRp
-ocP1WPenwI2fxFUFWSFttbrlAg3NqnYTIQRsG/ZnTrYghduVeD2RJ15Vu/tAcV8I0+iISTbNqvlZ
-zpiOMGpVIIpjhukA2UCuURToEjmbgftSDYk2b5lcOifRxNiveGHzQmjtczWryw+Cb94oLE+LZu4z
-Q0oja5J4CZC7RpOGxkOTD4vU0OV6BeeF68JlxD/t/ZDo1KYd1A8VVO1df2IFVw/Dq8+G7a8+NUrZ
-lp0g63KYj1gpUGjZZL8EM1qLnadlsmduXRRjP7LOk8PsSquRT1/AK0xeiyiNPWs0arDIYQzU08Mw
-c/TLjFAU8J6Zb3ccgksFdq1y49UD7wj09CA7GBMKIzrj3cOeN38gsLFnp0sx7gCwY06MJULf8LM4
-U2/6dS5z0G2y/sAhV6wVcLk3qLnGIpAxzqPFJXrWg6RrJt/RNR4eRAP69q6V4HdWxRbpRBBihFZh
-skZZJUpGKRaxa62qPbJPCPSnqbUVB7AYXPftRqnmbeE49+ib/M/DI41ygxth3FfwTlcPKJOXUWGo
-9pN/HStK4SA+gZbU3i2TegFWYK7Sq7Nw+T627XGlieqe1r/G7rt0Mu/QiZ4TelEthblconFG/UgH
-QszcYQg0MZL34LFoti+c4TPXo/8LEIhdZygdY9hnrItPv9CxNy1kB3Scl7hggsxLt1OuqKs0QMtw
-0DCe1ND0wITzjfx2pDMmOeLO6SowG0YKp/KQt3WIj1B2qxcP57olgWLZ/rYddu6as/Bv3fFcuVhU
-Gqjj80Sw20No+WoLK3uZ+CFiA3VMydjz0k3rw7vFHewrRHO3tWPNkJ37CJ6vaogbsG0gjMnaQ7U9
-8fwS8mlZ7ZfAJtX1FHua/U4g4E/L55LVMuHvlSsbGp7Kilw3IfUj1QhrdtmVCumNMWjVXGXF/egQ
-SAtXGMJsRYgpQ8Isnwmb5wgZVwkxaM38W/TN2OJLkAKlnAYP0BECc64m
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Float.php 13375 2008-12-19 14:16:40Z thomas $
+ */
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+/**
+ * @see Zend_Locale_Format
+ */
+require_once 'Zend/Locale/Format.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Float extends Zend_Validate_Abstract
+{
+
+    const NOT_FLOAT = 'notFloat';
+
+    /**
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::NOT_FLOAT => "'%value%' does not appear to be a float"
+    );
+
+    protected $_locale;
+
+    /**
+     * Constructor for the float validator
+     *
+     * @param string|Zend_Locale $locale
+     */
+    public function __construct($locale = null)
+    {
+        $this->setLocale($locale);
+    }
+
+    /**
+     * Returns the set locale
+     */
+    public function getLocale()
+    {
+        return $this->_locale;
+    }
+
+    /**
+     * Sets the locale to use
+     *
+     * @param string|Zend_Locale $locale
+     */
+    public function setLocale($locale = null)
+    {
+        require_once 'Zend/Locale.php';
+        $this->_locale = Zend_Locale::findLocale($locale);
+        return $this;
+    }
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value is a floating-point value
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $valueString = (string) $value;
+
+        $this->_setValue($valueString);
+
+        try {
+            if (!Zend_Locale_Format::isFloat($value, array('locale' => $this->_locale))) {
+                $this->_error();
+                return false;
+            }
+        } catch (Zend_Locale_Exception $e) {
+            $this->_error();
+            return false;
+        }
+
+        return true;
+    }
+}

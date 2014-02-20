@@ -1,45 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-wU6Vmv64hqecixS=
+<?php  
+  
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */  
+  
+/**
+ * @see Zend_Validate_Abstract
+ */  
+require_once 'Zend/Validate/Abstract.php';  
+  
+/**
+ * Class for Database record validation
+ * 
+ * @category   Zend
+ * @package    Zend_Validate
+ * @uses       Zend_Validate_Abstract
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */  
+abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract    
+{   
+    /**
+     * Error constants
+     */ 
+    const ERROR_NO_RECORD_FOUND = 'noRecordFound';  
+    const ERROR_RECORD_FOUND    = 'recordFound';  
+   
+    /**
+     * @var array Message templates
+     */    
+    protected $_messageTemplates = array(self::ERROR_NO_RECORD_FOUND => 'No record matching %value% was found', 
+                                         self::ERROR_RECORD_FOUND    => 'A record matching %value% was found');     
+ 
+    /**
+     * @var string
+     */    
+    protected $_table = '';    
+    
+    /**
+     * @var string
+     */    
+    protected $_field = '';    
+       
+    /**
+     * @var mixed
+     */   
+    protected $_exclude = null;   
+       
+    /**
+     * Database adapter to use. If null isValid() will use Zend_Db::getInstance instead
+     *
+     * @var unknown_type
+     */    
+    protected $_adapter = null;    
+   
+    /**
+     * Provides basic configuration for use with Zend_Validate_Db Validators 
+     * Setting $exclude allows a single record to be excluded from matching.
+     * Exclude can either be a String containing a where clause, or an array with `field` and `value` keys
+     * to define the where clause added to the sql.  
+     * A database adapter may optionally be supplied to avoid using the registered default adapter. 
+     * 
+     * @param string $table The database table to validate against
+     * @param string $field The field to check for a match
+     * @param string||array $exclude An optional where clause or field/value pair to exclude from the query
+     * @param Zend_Db_Adapter_Abstract $adapter An optional database adapter to use.
+     */   
+    public function __construct($table, $field, $exclude = null, Zend_Db_Adapter_Abstract $adapter = null)    
+    {    
+        if ($adapter !== null) { 
+            $this->_adapter = $adapter;    
+        }   
+        $this->_exclude = $exclude;   
+        $this->_table   = (string) $table;    
+        $this->_field   = (string) $field;   
+    }  
+     
+    /**
+     * Run query and returns matches, or null if no matches are found.
+     *
+     * @param  String $value
+     * @return Array when matches are found.
+     */ 
+    protected function _query($value) 
+    { 
+        /**
+         * Check for an adapter being defined. if not, fetch the default adapter.
+         */ 
+        if($this->_adapter === null) {
+            $this->_adapter = Zend_Db_Table_Abstract::getDefaultAdapter();
+        }
+
+        /**
+         * Build select object
+         */ 
+        $select = new Zend_Db_Select($this->_adapter);
+        $select->from($this->_table)
+               ->columns($this->_field)
+               ->where($this->_adapter->quoteIdentifier($this->_field).' = ?', $value); 
+        if ($this->_exclude !== null) { 
+            if (is_array($this->_exclude)) { 
+                $select->where($this->_adapter->quoteIdentifier($this->_exclude['field']).' != ?', $this->_exclude['value']); 
+            } else { 
+                $select->where($this->_exclude); 
+            } 
+        } 
+        $select->limit(1); 
+                 
+        /**
+         * Run query
+         */ 
+        $result = $this->_adapter->fetchRow($select, array(), Zend_Db::FETCH_ASSOC); 
+         
+        return $result; 
+    } 
+}

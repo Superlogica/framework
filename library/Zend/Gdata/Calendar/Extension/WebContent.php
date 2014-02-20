@@ -1,51 +1,176 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * Represents the gCal:webContent element used by the Calendar data API
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Calendar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Calendar_Extension_WebContent extends Zend_Gdata_App_Extension
+{
+
+    protected $_rootNamespace = 'gCal';
+    protected $_rootElement = 'webContent';
+    protected $_url = null;
+    protected $_height = null;
+    protected $_width = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Calendar_Extension_WebContent object.
+     * @param string $url (optional) The value for this element's URL attribute.
+     * @param string $height (optional) The value for this element's height attribute.
+     * @param string $width (optional) The value for this element's width attribute.
+     */
+    public function __construct($url = null, $height = null, $width = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
+        parent::__construct();
+        $this->_url = $url;
+        $this->_height = $height;
+        $this->_width = $width;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->url != null) {
+            $element->setAttribute('url', $this->_url);
+        }
+        if ($this->height != null) {
+            $element->setAttribute('height', $this->_height);
+        }
+        if ($this->width != null) {
+            $element->setAttribute('width', $this->_width);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+                case 'url':
+                        $this->_url = $attribute->nodeValue;
+                        break;
+                case 'height':
+                        $this->_height = $attribute->nodeValue;
+                        break;
+                case 'width':
+                        $this->_width = $attribute->nodeValue;
+                        break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's URL attribute.
+     *
+     * @return string The desired value for this attribute.
+     */
+    public function getURL()
+    {
+        return $this->_url;
+    }
+
+    /**
+     * Set the value for this element's URL attribute.
+     *
+     * @param bool $value The desired value for this attribute.
+     * @return Zend_Gdata_Calendar_Extension_WebContent The element being modified.
+     */
+    public function setURL($value)
+    {
+        $this->_url = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's height attribute.
+     *
+     * @return int The desired value for this attribute.
+     */
+    public function getHeight()
+    {
+        return $this->_height;
+    }
+
+    /**
+     * Set the value for this element's height attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_Calendar_Extension_WebContent The element being modified.
+     */
+    public function setHeight($value)
+    {
+        $this->_height = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's height attribute.
+     *
+     * @return int The desired value for this attribute.
+     */
+    public function getWidth()
+    {
+        return $this->_width;
+    }
+
+    /**
+     * Set the value for this element's height attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_Calendar_Extension_WebContent The element being modified.
+     */
+    public function setWidth($value)
+    {
+        $this->_width = $value;
+        return $this;
+    }
+
+}

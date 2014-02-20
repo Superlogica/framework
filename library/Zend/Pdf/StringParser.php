@@ -1,249 +1,709 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5BzZwPPp6TBP7eLyjUrzXYYRu8H5WPKDvP6igW638fVv4c7L7lmFu+4HIBLSDGLi0CYzhFvS
-nKN4FzF9VKe17nwdl3jM4ypB0rrfVv8EICogBLE+Br9stKlC3JJc7CuTESKeQE0pEpzhlX45eoBu
-xfWm3DHiP2pIES43QjZLrMN/VKnHuGmjoo1D5qvS+l86pdSqxNMnOpRakmMOwxP8XEAEQWwjoJPs
-3S3E2tH6LoFJtUPLWZYKn4kJIPpDKor7T+KlBeH2Q2jUTHB/h96+1SNLoTNke/5W//w9GQW5ZIy/
-zn0Q1hbEonkeTY6k7kNo4sD7ZhGl78oZWIs42zZ1voQtKXwOi5nGoqPWQSwNtGwgoFXazAMMs7XW
-azD3l3k3IRBsNAof+9Bri1VXXX5KH6CrbmOZySX77K0Kk98e47fAACGlO3k0cu3OlUgX9BpIK4vE
-TVXhXxSQ74uu2ivx9nhm2ZfBQem2m2WO8sq3T/OEjeozICjqzSiky3fkqvoUVhdHuyolHyHR7sEm
-tSizyBTo3/ybR9Z2gKRo1heZvdwOncr1l2JmT3VQJHMHISxYBZH6j3z3u39ZvjZlNQ4ZCcXPBeFm
-nxJ3JhhXieB2M87VP/v5Qt/W/WOxHzeLMct0DeDVKUEP47dBOtUpfh4oUHNsCBOEI6Dpmxk0vbNF
-SDo+myevfbvjseFq3PUV/RzKWSuMDqQ6uqYhtnphS6NC1B9sVF1WV+y4pHkFltJsu0ZbH12Oq9oY
-JGWCfIzejt8uFcjJ4200WW23fsUrSBRCFnORAcM26wqnlwRxDhxHkT5MS/XwglVOepBaIURQ1Leh
-3VujATtPDQg+RFLUgJ1mi/5SVMZ28mFVSkdG9Geo12hrpXxPvGeIcfH3XXCuCv9OoK+rBkXDgKvw
-3tk2PQ8XQrSM8bGxu2aIsH0sCRiks5z6Bb8uY9Cz0rQuzPrJ01EaCx9J3Vaaz9Pd0ykGQ76jiNyQ
-OzDUGtyjo9bwy5iM496ikE22K7RPdS/740+dORcNnSTY1AfHEcdpFqQvljaddDTdP/S8ydMco0bV
-FfjuRhVoOlKETB2/Hqcb75awpuojfvSkCjYd9x4fBXavHt+ZJSraLytRija8xjz8xw0WGqap9tCf
-T2P/IuzewV7RmFsxSXvrB72rWTkDpfRc7yPcsQw8VwA0loapiTU5c7IR7aL53wupAFfGGBzXDAB5
-DMD+OdWpqvxAp7i1qzQ/Jn+gh1ipfQSF6RdgHBDj0pgGJmzcH/+o7TZkWqLGAuZLNRD5JkrMKJJn
-QtXiTykpGmVYespQFRiUGhXQf4xxKfNZlHQ6MI6MPezgz8VbMd4xgiqQoGSQwhHDmwr1SRyOAtRm
-8FU/+QH7KN0DVsbTQpwB84kxxOve0x5DYVAPA158acHUVqRA08eFMJ/DAe3XyGjd1XeSdcU7Xs9G
-etYNeaDbqvumTdjVjeC2fh3Mxrv5+VykQpK+ZrMqxzSTWpYG87yTr1NpzTdBu1xtYL5ntvPV2QsT
-7dQN4Qbr4dFwpu2gzFcs0D5wADeWxl305rxGH5KFTiXhYi4AvdgV/D7laBOz4RN8ySP821GG9DX7
-nDJv1kbL5ysD+vzAxMBmqA8NzZOuVqsRMmHFd2nV3oEHqSD/O+/mrybkzdYLsDSM/yIACZOAOaV3
-ETpWMT1E16g1YChXi/WOtsQXen+TwCnCI/GdtYVwh/s4qb4YdnATD9ejh5KZtmaaraUsxU6pDvdt
-feQvE30BS7sfBIRgmyFZL/JIBFDANfTMDMXWhdmfMMDCeMebhraxH5r5T4BGucLHzzoaUINB3APE
-NYjPZ8V+nguslkRw7dAHkZsm40TiFbyFYhiJVLNKbg8PAnBfcSL9fcy/suH3fVpETlB8HFbnJu/D
-t+i/4wN3OylTzKaqIAuIt0Haqt5SGI6M51z5X5thp/x55tQ25oqNJYSr37L5sZ66MTy7ET1VnL6i
-OGNewqmOd20F4cQr2I5Ffk4w14jC0m0bQnuU9deaWGuEdHsuofKCL/+wdhYgl0xIzcfM/asdQd59
-ccjbPpqh24NN1nJWPdOlwMoHV/XdJgB8PZA4ugCtLLv2Enjx20etXRMRiVO3b8FZ7S+vRQj/LqYR
-TtnKQanSv0qlBzwc/3/2DqYuU5AMiHkrZKUotP9/Cu0x6TBDdDNUGIcLpp3hirAxbiqP4ZYz+MsC
-Bx7BQ1i+Erz0vsQ0U7jxQDEl1uPoH3itebqqdjZXxN6BpxGXVSglLCCOgWX46obv8vfyKuH5z/w1
-xuD1YhVUt5k6sVHjY7naBYNp8+xdEczPVvBxZVICP4nFgckLURSAMGegAnp/YDr+rsavkGMAWvbU
-8/e1JXzjjC3RlAuayZLHkMk90FqEDfDr0misaJ+28qJEAeW11M31Eb6D1tBhMHQeX3VwRpEkRArm
-EnnTnxz985IawSgs280WAqqEZdD98H41ygKSX0UCXBo2+5FeSd8MGDdk/RT6j53PjW8BkNjwVsK3
-IFeflA55B2b8CtkeBCoGPnvNDNKAXPG45WwiN4MRWmWGleTavU8NbwcYZ1FKTSO18KEw4HmKgD77
-ZOsjDYB/qRTTC8oRonspjnkb78/y+sols1m4BWxk+8ZjaQ3b4v9w0yXdh7RBTFo6K2fuogouC6n/
-N/WItGDU/R3wnb/qBv9bJq5I4mXWHvGihUJ3X9CX3CwwMiHC8Lyic26Z1HxY6qaM6eDW3iTGY7J6
-q2puqSONHyUQR0EdBvfzSGZmsBzREjHYDXjXm91Kcxnkw9CpfC/eiukYjObSLbwYcy3I6g9ziSJB
-xdlS7oFQDkZU1jWn8gAwgXt62YSD0TbwmmqLth/kvRS9ENnU9ws+JZl2hlFgxWBAPCILgwGF4xGM
-VWQoowtEXPO1A76akUq4sjVOW+W0XiRmkXcREcPGn6MhvBr10Kw9m0xCzuOjKs3WdD7ghxyrKeRG
-ipYNEmUfYYIfJ45ZAIKOqzl1z4OBw3CtnxK5T0hLQz6H/GOarJdJhw1Vk9wBL0vXCKo3y/xyOIEi
-fRB2YvG080rO0MaLxrfAOSQUHU/rO/yODeHTMORSrhLIn92U0NDYLlxXcMLGATBIKolyeCA+5eKs
-q9npgs3yJ6V8uc/4tVh2q6HpqFb7luXGDmDtyBB2OyDK+EYhYxJffVYyyDesUiL985H6hWIDrqcM
-JY84OTXoiP0vDsSuSsDdvAIP1+vk2XG30Rgjd/4BxGIR4SuEvhn/3UwOUsahHJSZHyxh4xis61v9
-LKUvRl6KcQQDaXY56edlynCOh5tAXwgfckILSYM6hGyMiqV4te3qsIIlQYDBWfBMt7TaD+sTfz2d
-llkSrJVF0cBAVVKdTWNIGTnC0rDfiZNoQ5exjP03h+MLJYdh1dQh0nyHl3UCef06bCS/4VxpPaPe
-nn10VlauY0jESgBQdwrhIVd423HheXVywXRtLy/QnO324jT+514XxaKaMor/d0ZorDIwMgjhoFtS
-GmAg/z3f9JNY5w1/j1nJIldKGlCNphYKAG0GSOU7pxkBAs+ZQWWmgOw/PAqNRiXF88KZNz2QZkFv
-asvOUTm47q7H82raSx9/XNfhfN2OrdgBuqZdl795sp0VAUU8TNIiXOmb2ME8vGSoc877yDBOc3+b
-8of8JgFeFjg9rifYy0AQrZvFG6IiqHMIAKlczQxgZ/M0JtN/ODy1r9JQBfp/ASjr8EKiyPr9svIF
-DiX0oAULI5c0v7cDVDOr9a9mmYBnm973ybBnlcPAa+GHMOo8YXWiO3iFUNOrdXOE3tK3J66PbQxw
-shhlV7O85GVdhwqLwUPZiOTqsvEIkqdF+XKEbKiKN60/qDJUN3UwauxcPeCup7+69cPZp/4LeybO
-6USzylFoX5/VtzOiqDx8czoSaErGB0fuZFMcBUTGuTLgW7luaWwddeokyCrPpQt4AWPxtJNgcEn6
-5sw4jzvU+OAxg8raXmDGjbPK4zRMj25U7V18/tIcqKhxBRadXjCCKFuU7gYKrflBzWrcLslKXM/j
-6ud3IxAOtyeOc0/gPfnXr9mKJPD6/uH8+pGLgOHT1C7kykySlkhBlQHxdr7f3xwgy/bIFPFt+5EN
-Lh2MwNLU1omZS96cTKjPvpSYEtMepqBXyb+hup3GA5OZ8XqN231z0goWGlB8PKNsGnR+48SJQDBO
-1Gs+tuDJlKKIkIy8XNQZ4B5IP+CR7leR6OduKV9udeJwpWTk1xNH5p4uusfyikEeeOhToeF0yiyn
-7njLg7xwRM+9iutbeganEsscujJHGY1hZ1u3r4f+H4iB9UAjnmloeSjcKxk09ZxfsazlEkoWRhoV
-QKerSM4GXhXOmfspcg4PJhvqQ8YoZCTY935l0e6mXs4sdKX9oip00Gh9aHMcKKCAh/SNT4Rub0n2
-eFcPy51QoQJGDu64ltf2SpOOthny2V448jUVsJLdc1+fd6naK3TjYlSc+sEb1oZ4cNmPnMXLOlwh
-m3XM4ftRLVv3NMF8Y4Mf0PQKa14nYrotej0EFhlre9qDMxAplMHUKYPc0ZdBrTaG8Pky2bC95LOV
-XF1lOBjIalKmYahpQwOc5S09P+/ucVATu34XoRE7Rbjz2dVV0l3h095x3bcdysgvu9szV/Pug4/q
-8AKvDNe8Letw5oXsRPfh0ub66a+0eZfkzoA2FLlJDv/aqHwNrxDas1WEGKyzaUoJp53tbpS3ImhR
-q/JqkIj60FtkaXGPLbIZkbSItr/fplwyhmmgwRvgzPiPChkF0cuB6qCxjmEMi9dzC/xeHfHM2Ci6
-9NMPutQlXK38BK+k5P47TLPdlUwc5ics/cJpWA05agBhuv7vekZTfxdUUG3nfTZsg9gBKrG7Cdd1
-Gi209d8IKF9boSMnjNBlBKnLwctyAgjwWC0IAn0gR0USaLUNiGzXAPEuHoXb9p4n3hP4otqcEnt6
-GElhrTsEX9Pn3vSveSoBX3/8PrLWddWxsM0/c7BxTsxZmAYQbN6V375UhI6v9Kk9ZHbv9n4KDAtj
-8AzSmlwWNy6zocgiRPH1p1acdl+iQ+Kd7rxfaeAUVhm13V4LgfN9AeiTXvjtNcgZLJUK3sAM08od
-MRc6b/8IS6wWERgPaByzdgJBHMjv8I22n2t7DoNtgSxZj6fjbVw3VyLwQjyHXU3SMzi2rVI3Ke2t
-QuKJpPoelHFcLj+p8F6XsI20EEwv1583nakO4XZ/SuxIOn1xncYdhIwxFebXsI+7oJyawY79eVUV
-iyb7kFdP6FQnsouBsLphShrDu2xOGdwFEYpxblFEWTO1p/+hukR1THR+fg0truYB3RovrgjK7CAq
-HCX52aVRtPTxBfqFIUs5upI5L014UYD+jEX7d3xfHv/3o/ja0yaWGoInxS9l/hx4ktuTucfDfTlI
-X4nYgU/cXQA9zFUYFoJQ0vJhJiBKYVPTo9LMGVoS5tBl6XOcxxJDWLwRQr0Z/TGSQqhmzyMxiZ4i
-Nb2nWCZU2/+GHKmftc4ieuXfC06EDiy5/zDIvJltuvO+ms85QGOknNRJjlWPPTiSHiKIjXK47ydj
-5Y/5FLFMrYb1KDGn6qcZs6af1eddM95b9bjCjUKlhAlGxwMEe4C5Ler3zZcoZec3dOLR8l85d47x
-nBPB9Y4tDh3fSzgFCipf6qgYVG1AgihNL4N31ZK+7INbS6kuhlqzJRNqAu9gTq6FMZMHDlw6h4Bk
-D2uJfAexkVRwWgHe2HI7gNv928P1NskbrADb/xBPSqXct7yCABUZJ7hf3CxVpXy1TCjCM/cuctME
-LFhMVvM0zfGz4PZlikNWdZcqAmxyKwH0lMT5OL169HbV2DYGKVDcY1zvzSzWs4xp+Qk9V7KfoGeh
-yo++PQjfmPOapxCsC7SfgpJMjb168swKG6ClmG9B5+AS1jLDPRoLt75P5GpFZPHpK9MEpbQSt76v
-Vju9ZqBMLXS4tZT4Y+CTq4QgBOU625Nv6t2aJ9gnsjJTgxO1dQdXTNqlXYUJFPYKpYkwCD+teQD4
-ymryNprl+5sz2I7Cbq8vj4sHf29PbxMjQOZrQRwlevh+ELq8fV9gk02TUwVLq+qUSOlCvk1O0T61
-w3AZVrHhf8Bg4JYRylv/cEv53mB8gRaNcnotscd3Nw4/af77EUqL8e8oRSgkNxO7/fnRSVA2qGiX
-w/II0/65nMKUzEUn/F6NrLTO++gwEKmpibsXhkvYqsVxTS7vcWcK886bKLa5K0yabw7PnV82/Fxv
-1Lyx6BxRlPFDVWTwckL6z6fGBCTbMkCIRMMa6PVeAomEhn+yyUfUAHDn51vTg9320HvDNpPR1rSa
-g5tdP/QRbwZC+3yvET+atE60+0fZvuO4GHESPiINPtBS1N74EsArgihxXEHvA+i1D5/CrywWuXhy
-30xNWlr8WijUUF0udV9V6LLGZZJpCGHjL5ncEQtonQIMGFuDEfzPC2A3D0T7wnkMmOx0KyEebioN
-bHGcFSI4n6NUDuO9EVgwA3I4XQYmhw4EO3gZBxLDAvuao1l+UeCDJ00HCpNa0lqMVQVTDT0aiVfh
-KAN1bHcveP5swPWGzSaEnWNZu43o98hRslbCSzC1x8D1pLFW8UdwdC4KovUcL/8xJ8bddbI3b0mb
-ciro1w5KDV0Q0roeswtkP9oKViXKT6iLmLAdxtFHfZaCkCvLxVqNGEnvzHN+Nj22jq9vwOfMEwM1
-hq1/1CW8NQgZ4g9aFSPcZzEFvx39Cm/9DG1ZV+OrdVL7nkYf6Kv6N/XlYMGnYDbWUUaJh/lDrpDT
-OLwNjpI9ZHWofLzuvzsowP+ORptOFeQ2/YM9WjIAAo+79yAnNuz5pVHudl07Z/GqwkeSUUzcmFR9
-q8WK+dCD2U5LVw/k/54Xba1G5Nhk3pZPlMymLhuIWeJfe9UWUvtkLoaQYP8TFrH8FIPg989MUC8z
-p92VE3PH5RZRho69ybVaQ2Vel92F3E/SjZW1oTb689BlJTJ3lP9aFP19fD1RPS0Qxgxu6tMFbssd
-JnNCpuRbPTvBibOqOSMn14dV2Bux3mPb0n3ioFXLm9xnx0uL33rcmV5frUsCMI2MXNDuAsydJ3tS
-2nt1rtgq/ghmMyzC3zwUBw6TXw70I0DQrcOulp8GPo+LjVqLYuTLPxnEGHTjhZ9y5d1BI2CD7BtK
-u7lXccNBW5KHzJqzsdoYJXVuK+GTHYcY1+NfmqB8Ztb1fcTFydTnJ1FeOu1ZKL5zb0QHgUN4nmoD
-4XYIw0WD8I6akuuJx62gAGow2mS11nhKsMbPvTc9m4eel/t02z5U4CWVyxfSW1gYT906/aSUW4Fo
-78nQXe1oqM7K7cSBtaXwjuhkLCbLfgn+xDRxwgzzdlk4BIaJm6aw1yQkUYVku2Hvygfo+aOl6rq8
-mrCOBE7Wl3Ts5Wfwk90V+QUMIPNYXirDnwgS5lvqObAhxGxwfm+cisM13Ju+wMvpvrQ+SFzHWegH
-BJR3Rn4+AwhgR4BLhL3+QcgFp36CgHMybx4zs5K/L7aSlr5WvvUDuOk8hiLae4qvbYzRdlYm+3Et
-MTuXYSxw1HhkCAQGUXHXNfEJiNqL2LZiW54+Y2w/U6+bL5SEjUXj75iWUlArJSEbd7zDGWl8RsdB
-XoZWnBJ/3vp4MdItXsfanETzWvpJyvKB1Iv+hXvV8s5qPRs9Lt4TL+920xWxXCCXRU1YdwM+euOU
-v8Z1rOqgAho/S/MDZp+73bHL7z15V6KC3JY7WiK6eHwMSkWgXb3z5+qgSuYeczpSwindTxXLGb8X
-feci1GtIAq1k8Oqnu0Qb4AXnVbIaiMGpAEcn6R1ugaNHGccpRx4sINvLUSTYJmORzkUdFNGAxabs
-6LRGlxXiWNK9tT69brTyEv5L0zLxMCJAoxwz7DelOHOfmsvhgKLWQNI6zY0X6y1drHBC/Mx2kAOi
-kLel2vreJdrmXdqKBV5/KvsUYXAhXS7slGAEUkXP6fR3mwSllAmkBFaRzlpXZdAxcltbpxxcFyxs
-zDmtdhpJ+jix6AUVaGH2MENj6bZv1LWE3uzhERxOzRiFWIdgxOFV/8aSy6zKguDmyWcwbJ8TW39p
-DDu8k40StQ0KQiQLklw3XGXF/R3HfE7W0pj/+c0Jtr7UnxewzGNIilTMpuTSVMIMpFtSgzTFpuAZ
-671xdZ3wh9ntEWXSZosLALSptlt7NVVm2+5vPhByT/uD1YV54n59ol/nXeWOWWWTGVu6t0kk1baz
-FNsXV+eC1IQDU6AMbhR1XNMUFTb1o6CQ/BfX+CvPjPA+tJ9fRA3NeSWcfEBO5uIVmYVNmRuwcXZq
-VlznjX13d3OwyPKQ3V+j379sNxKl+YNeF+5vxmHxP2gXXZHfPOzIck2GgFMvm4aGRFf2E1MbmclX
-L3AC0tzDYBXW4XKEMWbJ/4L+VS7f1iHdhwYh6I166VXt5Vw1uT2mTwLKfCkEAM0RlNMsX30DnGlf
-jWrXprVQfUqUszTm+4JN+FWWLGIRjBftJFCU/njrqSsCvoUsZkTVXA3kDUMZIqkrhsv5KQtSRCsQ
-4prkGrn50RmFxaUn01TS9wOsonFljk3sSqWUznFR46/nCAckddjCyDbHGGkeGJYBn7pGV9HPR4mI
-kP6pbZhg32t6hx36+/q/LKu/ey0aVGMD13Kh5q4oaf+m58ZS0oSvn3I/DLC7y7v5QwUDiPogjogz
-OUbRKv/uZcBomzLHKhNUJdnPzeKlA+IfHi9Ewmoa5Kq4zwN7KgkeO6PheVRLIhd1g4Pn6pS9bhFs
-PdZ9EWa3jWTKDy6l73EdFiMV7OTC4k/HmicK+dEnG+H61eU8+9BsrM7lnhMH+rumHOyRdaJXfUxa
-rrggrn2lakaIFov2f9AAU5o/vNVbsp6s9Uav0mQwh+KeU97y2xNLwsDLQ10OzbqkILI4m6fZKzkW
-u6ENnPZLrq/sNfORylOML99VD2phbJdZhRWkoO90+YKtOTK2BEW12Y3PEDDhzWpxZUo4Q3Vo9yzT
-hoySV4h77IKJgG5yDMSDOdjF9Gt2l/YQlJrQOeLOSE3un414owfmDXjnBxBsnMJioF4oi54nApSv
-YplGEWyrJRBIidpkhUWXK8ClU+gpII+BiWga5tZWXEKq9UBG1nkuZOKL+EDMOznnKir+weBe/WWc
-DO7isgJ28GG1Vac1sXSVAHKwyNT8PH63wdw+U/KD6dIJMET2OL2p7QpIY2eWEtvxatvcB2n0rwQU
-5FyWwvgZcSgCNr45vYRTTzMGMs9Ag4q1GBW0RazvJTmept4AHkZ1Dj+kXy+bXpBiQiXxSB9+UBEG
-IKEtu/khqVVABQ8AbxxAtmqISx5/NCLpx5Gcbf1L4GgVQuTh5R/wZAZj5auZHfRfwFNFMblHog/V
-a/pxoQ5jtLF9ruuAX2IM1BjOT7ei0l9RNavX4MO7aGa/DI4q5tZfkZdbQ8nj0mtVAVGCfbp3XB3/
-+4vhntR1oaUMnnwmPj4kKPN0RxwN2qAqzI5ApSryOIYzRMw4RmQW1TsMWcegTSSv70ZwpDlRozdJ
-pWKFxBSFACAkdqA0rWYGvvX3+0GBDCkPp8lyRq7Zqp+sY0bT8ZXlrVOSI4+SdbQC6KEhjfEu6uQX
-e+yrAxhZL9N9yB5lkjahJh9FUTn9Gc57J1DU9zn/8WzkkFVLZwG6WBGcFVim6hLI98jacfL4sCQo
-2NTKoj4L8jbJmVsZc+Lo+GWuQOXuEqHVdBwFzr98JvBO9drRjp95Ea0mNzg1yHGLRRouN+lWTUNd
-eHrAT1DgGPt0Q+hh3ca4p3xMIZJZpV4dG56PAEBRVs90/7cOcVPBHortbw5ViZOGdfEWl4fPo1ii
-GIPNNtzRA03oNPWL5fK02nZhng928QODuFTFUGLotRFYR2n9tR4I7mv3DEal+dirMj/zoykJ2+nZ
-KLSbGzxV1vowjWstqmMh6UWuQzRAZn17QZxJ3UwjefCFlKt7vSeXTApLbZx+trhcXUD6bTWJ1EnW
-ChBIdHXUp+GMQcC5S1G/bhqJk5Mu9EeTcolNaoojs115K30SLjLRFdvrjgQXrfY9tLf+eDeVvICH
-Syh1JBD3Tk99WsartjPLNDTVhfocFXGHiF33bW0o36egF/AHJt9Ey8DscsMWTqCvCiWY2cImTDJ0
-l0jon7S4Vt24DAeSoJYNmMPLOdly48UaXO9St0mbtf5N8+P0RV388n2IpSZcl0pZ8+LQ3aMOUbUJ
-o6sDRjILceGFW1lbvCOPRyIbYepnSnQw9sQKYwBj/jNxxPQJCBTybuX+gJYXjXl1FoxW8OVuNWri
-pHq4bHJ4H5ZrYjkrw2hQE11Hhv8dzUz8sO/VueehpjDtDlylNgHyre0gZhuVKgvDQKd5wzaxFkeE
-TdRlD3bkOI/FpgI7dTPhgUsCt5b96l0hU/znP+yQju0b2qF4Oe/2CA1knNKOu38jIehcAQfQAt50
-nrO33MErjMuusAfqkXbYnBHvqxBQsV6lmPFWBnTpb3XOSAguyaFTNk+baZPB+Z7t/19aiud34ILn
-PulKifkSsyM8B26ueFuN6pBuxdNM4lGEs5BKprcG/X4vBS9ZqBGucld07aQ3wcBeEEoh/UNB4oCo
-2/jp83v5WX4GTe0q36nuLFXXbzoqY9xry8E0JARPI8f+coSlTRD2pTWRSrAA9IygSKNrX8wM8v/h
-fFoVy7Do5tnMU168qhvpACPAEaYdHXS/exupkHC/OvXb5fBytEmULTeazoyfDRzEHg6syEu1iyLr
-7y/QrDBoy/JLwJF/E1sDMh0iGV8GNg2MsGYftMstsATCab/nNg6HPdSH6wRF96ngxpP0MrtEr64x
-b7wJJpQTRMQHMa7BIE7dDufBTdXPfgNgyD+7cG5cBC3lFldQPSrsy9/se+aZW55H/VNwpWVjrK33
-lIDoDgZXs+cAH57f/lxvVDlFYzC56yBRbQnO1JPZzpirblitzKPEudH684AyKVy78HEz19pU9MsD
-hWx5rYzPWJOmItTp3SPpI+rPCpWlGS5CB6MT+TTPyP5uLGdec9Q38NkAsw250phNCLzMKKz0VwTS
-avKOuwBUvFI0dxFzJeJk3N1PbLZ47v9MnXs6Ng97lzPrHVysZYeVKBpGPFq07H9pztd61x9CltDn
-SOuK2bit9JGHxnAVdsGQrTb21DK1ap5BDgEK2pgXeqdSS7l5d0q86+Z8S6AfT1o/hct9bcI1voKA
-ndev/+trpmQ+D90MjoKq+UXCKWKcUJYRaa+WNu9g0N7WoyFF+etn8kRx0oGSbmlYg0v5p6OxVBW1
-2l8VZJ6gpw/TyOsk6ZGYukBC+42dgnUdAzlIfZt+NB27RaiLhISO8JdeytPRTRQhcgESmBVeLKKG
-QafQC9QPzTcG1PsPysb8Cf+IuR+1B9EJlE612Fgz5O0Aa4TjrJ09SI05UeQ9nDfWQo4sD9QYe9qq
-va5bAK4v/m2DtImsVy0AP+y9sI/tQhxvuWeI3psIzBQQyaP3Q7boc3cLOQ7pkXqB7ccoMZrIMGGn
-hZxDpxn+qUjw2G8RoEVnv/naXCaAuhRq71uo+r2FVAfvuXwgd99/RDaYtuCMBcjGdmZ2KyS72T84
-Jcy6Re3U3hUdayW6/aqYM0zXMwQMBZvx28umdffpX560hXZkgFPX9D+dCggcEIGOmJhhjPEHVmb0
-Cxa9go2a0k2ZRV9/uYVPwU3q6rEYTrGSky/uSSX3GsHzGQxdt0RvieQGkbCKvgbjWnwTu+uJaQQu
-q9iSUwNiulbsGQV8lXWmbgEHUM329oSo+Se/mTzTNgKOCZ3/pUQT8wUhmr34SuQJgwuhP6Jq1VOZ
-aojnYbHsQ7jUrtcdPK3ow+6bGGbo36xcwEVICBQ4gqptcRNBHuksDOQj8IaoQuxLafKGulJZFpTv
-PWv/b3uAlO9ln1ThcyEZ3LpSUVNz9h7RzVVeXnKM6cg2kIiiGiiHBnzG3XkL1li9zBT8v6DGsh0M
-6gWwvKI5/2Qeb4Yoic4V+Iy91NB6cKX2QdAHTolRFud50N4iKlmEXmJ7+nxSOpEx+gAPH6Rxdb6N
-8HqthPukdyconyoro9/ADMUrER404M5Q00xi168jF+uKpFvd1bTGa1fx9JqYfNAG46fgcmMwDCRh
-lBWtBjd/Nl/mDA3CzwF6QMu/fibZCIGcmRGzX/kUIdsbx9dJZ+lOXcjxICHGYCe4JW+GpVm7lwmx
-37H6sxZZ/wfRZd8xAn/hKr1k2F9IuyAxpoyWjNJ3zYl0UNeujI82D6k60G1Uo+xtZaOsFl452Ila
-O5ml9NTfseQHuBMsbRUmVTpzaQAURh7DsuB90geajT+IdnMCz2vP05xNkoV762kkn528Y679frg8
-7+7OXLE7a1fdLZwIFT7hIXTszSnQUstIhnQGUca4NP/NB1pHmCchpaQ3RUz3qhFqhZ5knzFaxy9L
-rLK7xWJlXU37tRZYzF4TQdhcmcuia+POAVoD9vj7J9+/TFz+/nWgrWmIteHlwExlz0J3Asky3Mb+
-Nr3JpkxEDyfCjBQPmDyQsVQ3UClyEGOX18DeEZLpVfPBYmXo7NK1tP0vt97lY4QMapf22UcBzlpJ
-PwF9cfLV7CwGR6p+PQWA4devORbOBEPfUnMnmevhKKLj5PfKLbml0BT+jdxp/vC+5+iT33f7XEVy
-RmIWKMLwDcfrOI7RER4K8vjGPuEwhwxqeM6hxm2bUQacecZEg7HoJ5BfbC/0pRgYMkdeSsOXrYde
-gE/xNLyKJyVRoVk8+GQDg6t7EU6sbreqRewa5aZB7GwjZfjnmKs8ldF+thZxxcWoQBe7dRT8j2lt
-HSkS6QKDgqj/5Gc8Gqn8Z33VcYzz9/PTdZMB5eCJA9KwyCzxrnnjn2aOU/9A5aKrawumNlUX053v
-7wnwZkZB7/0o0xAwNtms1mFA2nR3So7WmGcsrzgmvDd9/DGdWzmUL9VDknVXA4nXDh1hU+J6OU75
-vjL39kEGT0ruU8izNwZTnnJmymI8ZujL3tyW5ESnMNO5/GipLMiCaGH8ELphakKn/BX6IVg3wYJ2
-HvtKG1V5wlKdlcf7RufpbSCt1SC6MNSoKimAdxiCrZTnENzYDK3ZJEFtD27x3fPtsjR2ulHeucSY
-k+K+Sxj5Py2HslJzP0jkLjPWVgW4KHnl1S4+PzcTvR6AKzLEHXPMU0fA6mcw8xzFbPx0cFndkayR
-6u2/KrWnAR/s8mxWPfTi8/LF29xdqEX72Xfh7x1eLmEAIDZP1soqAZB+d5eYp0aRqk/6ZPlbgv4d
-L92kAroh/BSugyNyvHEbioOwZxJRNoQ+BHQnrwfsT3ZFZEPCsDe5JAp2qHJSxedrB6uuavwZqPE0
-tCa7I05gNT8dnCaMRK+xBQirzVBPQbkNZB99Wku8iOxE2q+BVhSEhHTbfv/LX5YNegV6HIZJjEbt
-k1D+ag9DJVVT9AJ5BOUnU3alCcNy+sAhQuJdhmojwYxHXhtW7chC4YAP2cv23I22S6jbGPJ23byj
-10fNvIwHz0kUw2e7ckh1ZI5r25jeomU7AWRebJegg4TW255Q5IUG+huD8e+Y4ghXLTqOzHzGzsFQ
-4p+tuQnNwcGccXJDi7DSVHVGXpXao7uJP4rLl3xuOVpGHw/+KxQSeLR1POZimlzCVi3apC8KczKb
-r4wjUUgd0/frmS8dGniPJl6zIqmVi0wiw2xn4KSwB5v8ATpYfjI0S8Hival3Rkq/HGv7GQLlR+MU
-JwUNqjW83xPsKa2kyN6j2AUV+taSSnwEkPUYT8ec2KtZG6oqHbUTxEHLniYDfa8q/hJX5ikrtSoH
-wntayGmOV2LI1NEmG/j0NS7PUk5LQkV0c3e83Rk7UhymBV2s/YsJy7eDznVb4sFuYNqaNbaKnqaF
-QpjBBsjCHPTDJCtl5SH9wcgPp0LtthnoIUt/NPYecbgHO09fOmQUuaVE2cfj5IfitboVSrrUYiSH
-yK1KSyohLzY7WT2y0p8u9AqI911Z5TgpEEKeAuhy1DxRmNWP9gg4AhP1DrCe3ixEksYDu4exIOIK
-wVoZ8rdedw8cH9/Fja4QRxLm8+Gl/6p9GjQ53oucW3I9WropwOHt8NX5MFIkPy9OIgRnzO5PgUzD
-rvdT0T/bnAE0u7oEw7HBeIrfARqC7sUBjQK6aXoIntRfgP/UVjE6J9dBPSMQy+m+gO5tTEToFRN9
-zZO+eM5GAseZEZuIv6ZumUkZOzDzaiDmwztpl9/NOoQrGvq5KkK4wq8tO2VwhDgNmeX5eVrE3UcD
-jer9oHpz/zQYMYrK03jCf7qulbzKCcW3ROQYvwiwephPUCDstrDxk4zeN8KmObNKCnC1kA3ok3MP
-lIB/7h675ym0FvU7pgs0BsL4Lp/zUh6NXesHA+5F2Wd3zQgKwWo7I5bUdDHflvL9btIIXPcSKP+P
-x4lRUqHwUKRjaEzR9HiuNLlB/3tJWsnYOIEg7CnDCs0TAB4S2hiuJ9lXxClfPuNZPxGVjUL6iVYW
-h32RI0it6OgpajglnWd87kOjVQOu6IPQPvZoJUMRHVpW9+NYThNv6Z9y8ImfEeLPyKZl0I4KVZ3y
-7e099PMbP84L/pJd4aSr+f2S64EJlOWcrVOnmpEFnf4SzmaziGbMjG2n9k3E5/T9jXM+ftkfIqP9
-TjNEKkJ+n7jhBXScGbtMbbsGqgtMTMJdt2Npb4sPsF9AKn2N1qSPABzLHndFBKPELy35gS/Io+BY
-i/FFfB27PnDDr7OZapQThtTw+92MxfK0nnp/r+t76Mnn7wbtE2iBiXmPB0hVET2LPG9Q8SLfN7jm
-437pJlfy5E0JWeGoQCruhuyIEE8BPZ+fd65l4jRHfdl8WHRfCf0lgCJqwNUwUlhqolGs7eb9HLQc
-6rLz5/Ajumc4yooYKrol9LodIXEEfNv4IoebSWn1EO8UKGfSLdl/IEVnN+IrQ2DW8V7xx6SiVOt/
-p0XNoF9tVvRVn1SdHa93WYwxjmyPkO+rp2IQn+dbWD83PAea1KCbD+auQnDUbjK26OPR9axR2mSO
-egbnRdru4oM4jcj+VG2CQOpeWpH0o7ZPWdQcWmQ1UNlxsbiDu9f4HXy8P2wsdll7poJG7Elgltbu
-+r6xhQ+pjLa6X27oNvKkpyyprzNveXlNenRH7tSTwgHWOgpZAG8bvCAy+9tbBVfAecb/HSH4PX21
-q7+SoBzd0ldLjNocPAtH17SWwle1/dnRSj+Td72wFlUMuy75obBmyg19hpCGa6eIDN4ULXhe23kg
-C6YgDXqkLumC2VzuUwI61GGRBhoLtI1HpqHh//Q/SR61IWd3xbBm2RfPq3PukBaRb669O2CEJy71
-fb06x0s67f1WPZD1mYAAPMG7WbROlMPw+Lh1offmed6fHWv2ik9QwMpXtO+OUv1WeXIAQkILQyOZ
-YHasyFMWfDcD8UX8lPQEDSiUSie0Wf/wZ0tv/UZkI23pSDcHO4XZtp3gWGb9EnmYVLg9NrRwb6Em
-j8oupwiKT2XHj9YghUDvdchMzqQs53+UgOk4xYnW7NgeY8ZqSDS0aawXzqUItbkor3fWPdlA2aGW
-UWYQeXHbMOjqIt4IB1hX0aW41/ZkWg8EE+OBWFg070Y7ORRYnBPf7cBppUpLPP1ZxN2ALygZtwBW
-McjzATKxIRjlINRu2udfQshh1vUxPeS8Ggc97K2q4ZdVnzDnHeoa3sbOr7K7qhE9EficJDnW6UGQ
-hgrui0TCp5RfQ/IuYhNAxf5Fujh9GrWjpM8ifTXkkrP0O94zngh55gAOh1S72TdT/uziVbaUhO6o
-/KrA21KcNvwNYw5ETGhABpTaWNGJbJAhE7gtO0tqzzuccYA/YmZYSj9m0m/vebH/pJWGoNtq0NCm
-kTQy7ud7xlgOoWoweuOQJQnis4JuhVVSNebL/LbMV5f4fPeUuKeMsZ1UkJCHutIpp3cNoaSAG937
-WgrK2YhdWwyQ57gAHENC54Qpq/O25fvfCSVlgkycOfmcuV1DYUxLPnbNRaI64t5fX1F6sDYrSH8o
-mMtqbAJKug4IkR2x58eX1rBYsND1xoN3UgMxiln8/vhaLsgTzwLtPBKB2FwPBBY5ZyWpQK4j74Xw
-nlDVnQvVkuM0rG0N/YxXXf7PhoYp76TZq1Jtp8xb92tB9fswYjfxUdLfXTPTHfXKGtuRpq6IDV3A
-mRHGCT5+cxNNpOttbGeYEuLVwUzokrm29f26s2vB+x38CR71iwvmKiFLh7+24lNRga6s3jFA1VH4
-uLHUdMcMuCpIqPf+6EJMGIdc0ANFXqrn4IbhIaibB7BAJhjTXxeDrwXYtWYfc4mQ2lyoDxF/3VM1
-AVzSzNdhhNj1LPe6uOAshUHzXT1HOmq3pxmINnlAgyK5y40Xit0lpxl1qNo1wdjmpgpoLS5RIsba
-kI0VGhGiAcIejMswjnZRl/6kqiPYx5vdtPoLjyZgOV+2zGm/R2kGjzqdWfoGH53EZSYNrtnQjdcE
-BQfxIlSVKtr5ifPnyngJkngWhLJMKoAXVxqFs9+d2vquzihkjKbMZKCzK3tEGUsXRIY9L/mZKnqI
-ak0DCubrP8+zi+F5ambh2xA6N6e4HgWO8BEou4+YEnZDPRQQFNrE2NaIAKMx4abvKKc4bn+6oGET
-JnKWE6N0t+t/g9/9lNMe1cxKktWhdFYAoxfYFvb7HuGuhrw+utWUY93I3khRu8/h6SWY5ym5ZzEi
-8+LoTZN5EZya99awCfF8K/l58MC6x3/3Lxh8FtfFiI6E3q+FLL/+JqutI8lb1qaUjskjLekglVVh
-0ALBStPNQHM15JS5f4MrZCC5quc6MPhIvkkV+6GqCvkoKgjdrapo/EtXzLlT7aDnzeMRUmCKuHEz
-uUQ4UFwpnulu2LB6vJvc7Iaga+bQkVyVzh8nedxXV9KUKRoYpObLU17bZyi2qyKreTGX2lHQ+8qh
-K8QXnAm/RbmxY1Wl9KGMkfDrSGcMVUFReyv82gkSwVT4oY1wYNno3s+1/6v/L4diMm2K85lteovB
-jRZXc+NdVTF5CAmN7JAH2kC+xiGXY1oge2LJ/6e5GA9c0LzKVPDGDwp7wCktdZxvJKBRAoJZDHBP
-FJVqjj9A12Nbv0rP/pMB6IeKZhvyio0mq1LMwH4/ETm1ApSAFbuO2EAMvVSXa6H3O7HKPLVkE4u7
-7dZ+TOudsZ0+jszuKFEo57O84P7HJsRNVVvP0VbmFGWlKm5kNP4aT0GPbYQEUX52EZPQ9jVV86F7
-M+vkYLXa1vbT3jJEfrr86ORfapfs/x3YXzm133wWUruo+KyjNSuZaXzniQttmcYILBwhgKW8URfo
-183zkD5sl6+ZdYxAg2s0ntLFUzzBpgnJ3TLGjOO0VMV6BQ3jOnSwphJzFWfPfWIVXD7ONDG+895C
-PiFswqm7m9HH4R3MiNYrxylW1bIq3UfMiLNWYB2geQXAVxmRMUZFJO8g30cHW9iEGyFai2/AfQYU
-xQj8pkLe5t/oydIJ7MAkGNYnM0dKdLf+5h+3uq8CxNZn2RoNg3cKA5OZakBA+acUiII0U0ZI10WZ
-wUd973CevExIfIH0DOdC6jK7ase+xGuOqRafxHsfEVJBR+G35YlcgTsY/StjLAeJmSjuAVqIpHHX
-VRAdUrdI675jUUqFRi/Z1ZJcDU07RHpkz1PAaqplw4gSBbz/L6A+di9PwPRXW4AeV+e/7KfQX67U
-lMy4L3Cb6r5tGm6EjdqbEkafK35GwDx6GTzOtjqg8H5/XRvemhMGWKr8aHIEQhcyKSLjOgbZpooG
-UFSPGc2JM9eKdr8S1bU6Fpq14vsNsnkx7oOqU8zZHxj5KMY2ZychHdiUUSfKpGQ6CZi9Xr0ISkw9
-g5hnzVK3mqOX6eT3Zkcm2WotE+B7pMdBEb76grqDOu8U0QOauSWx6j6ELfq2vxmhH29X12GMe5b6
-gyZHtn9gYiGczQOO0trGccvwvehQxN2NLiHXVQZN3AYe+CDN7vYnRrY5D8Q/LTJ9bUvODat+wf98
-SsVquzwZS38p8tczYGz8xDpKHYlictss1QfuKnmfpUW5iNMbzOSby6V/hsnBS9++MJV4y14TZ6Et
-sRSWqoqSt80XCR4j1HPL6/78OdzxXcuuv+7qIjLbQud+0N43eChTMOzHSpI0pb0nElrO865qDC9m
-l5HxrCaCwNSwCOikppka5CO1knZY4QW56HxCtaBrMXM7yUAttWRpmmp17lQdQke0j/8PY2vkkY57
-oDix+nDkHH1qSROYy0fKcd7tLAYgUF4Bkn55lnS60bu6vVd3/murISpBry2Jr0G52KlFDY9dUpLr
-NmN4OdLFBkvIebcyq9FbFXmbYiBeOXyQL7afVYoGLooRdBYbC8y+/GbGyMEK1RnJyCwZwKU0/ScL
-rMF3+5iVKFwDxXxP3o96ykewKIGaUVwTJrAf9RQvSSo/3orSuDsA8T3WHTC6T3wTZsH5pKAxhbVv
-lIKO0EoeuBbUeRMb5wZ6sNnmt00Co/iGcT3j4bbXLuc4P0ujjxKBbzhrKZOp/ZDLeo006fGIkpSc
-GMZ8qGPGFd+JtAlY8WXug8jpXHaf1I0CKKHeUcH5JVz8CCVYwek3Z8+m96eG5Ys8MNdqUfoCLTTl
-cQlDDO255ZwLykNbIX6EJMGqVqj5bFmFA3bZhG0O7vbJBsPIqKmF40F/hzi3eSVGeLrx9hOaXjHj
-EH5eiC6nZ+2airs2tUndu1KCHoA398Yk7av9C2MigBlRTG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+/** Zend_Pdf_Element_Array */
+require_once 'Zend/Pdf/Element/Array.php';
+
+/** Zend_Pdf_Element_String_Binary */
+require_once 'Zend/Pdf/Element/String/Binary.php';
+
+/** Zend_Pdf_Element_Boolean */
+require_once 'Zend/Pdf/Element/Boolean.php';
+
+/** Zend_Pdf_Element_Dictionary */
+require_once 'Zend/Pdf/Element/Dictionary.php';
+
+/** Zend_Pdf_Element_Name */
+require_once 'Zend/Pdf/Element/Name.php';
+
+/** Zend_Pdf_Element_Numeric */
+require_once 'Zend/Pdf/Element/Numeric.php';
+
+/** Zend_Pdf_Element_Object */
+require_once 'Zend/Pdf/Element/Object.php';
+
+/** Zend_Pdf_Element_Reference */
+require_once 'Zend/Pdf/Element/Reference.php';
+
+/** Zend_Pdf_Element_Object_Stream */
+require_once 'Zend/Pdf/Element/Object/Stream.php';
+
+/** Zend_Pdf_Element_String */
+require_once 'Zend/Pdf/Element/String.php';
+
+/** Zend_Pdf_Element_Null */
+require_once 'Zend/Pdf/Element/Null.php';
+
+/** Zend_Pdf_Element_Reference_Context */
+require_once 'Zend/Pdf/Element/Reference/Context.php';
+
+/** Zend_Pdf_Element_Reference_Table */
+require_once 'Zend/Pdf/Element/Reference/Table.php';
+
+/** Zend_Pdf_ElementFactory_Interface */
+require_once 'Zend/Pdf/ElementFactory/Interface.php';
+
+/** Zend_Pdf_PhpArray */
+require_once 'Zend/Pdf/PhpArray.php';
+
+
+/**
+ * PDF string parser
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_StringParser
+{
+    /**
+     * Source PDF
+     *
+     * @var string
+     */
+    public $data = '';
+
+    /**
+     * Current position in a data
+     *
+     * @var integer
+     */
+    public $offset = 0;
+
+    /**
+     * Current reference context
+     *
+     * @var Zend_Pdf_Element_Reference_Context
+     */
+    private $_context = null;
+
+    /**
+     * Array of elements of the currently parsed object/trailer
+     *
+     * @var array
+     */
+    private $_elements = array();
+
+    /**
+     * PDF objects factory.
+     *
+     * @var Zend_Pdf_ElementFactory_Interface
+     */
+    private $_objFactory = null;
+
+
+    /**
+     * Clean up resources.
+     *
+     * Clear current state to remove cyclic object references
+     */
+    public function cleanUp()
+    {
+        $this->_context = null;
+        $this->_elements = array();
+        $this->_objFactory = null;
+    }
+
+    /**
+     * Character with code $chCode is white space
+     *
+     * @param integer $chCode
+     * @return boolean
+     */
+    public static function isWhiteSpace($chCode)
+    {
+        if ($chCode == 0x00 || // null character
+            $chCode == 0x09 || // Tab
+            $chCode == 0x0A || // Line feed
+            $chCode == 0x0C || // Form Feed
+            $chCode == 0x0D || // Carriage return
+            $chCode == 0x20    // Space
+           ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * Character with code $chCode is a delimiter character
+     *
+     * @param integer $chCode
+     * @return boolean
+     */
+    public static function isDelimiter($chCode )
+    {
+        if ($chCode == 0x28 || // '('
+            $chCode == 0x29 || // ')'
+            $chCode == 0x3C || // '<'
+            $chCode == 0x3E || // '>'
+            $chCode == 0x5B || // '['
+            $chCode == 0x5D || // ']'
+            $chCode == 0x7B || // '{'
+            $chCode == 0x7D || // '}'
+            $chCode == 0x2F || // '/'
+            $chCode == 0x25    // '%'
+           ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * Skip white space
+     *
+     * @param boolean $skipComment
+     */
+    public function skipWhiteSpace($skipComment = true)
+    {
+        while ($this->offset < strlen($this->data)) {
+            if (self::isWhiteSpace( ord($this->data[$this->offset]) )) {
+                $this->offset++;
+            } else if (ord($this->data[$this->offset]) == 0x25 && $skipComment) { // '%'
+                $this->skipComment();
+            } else {
+                return;
+            }
+        }
+    }
+
+
+    /**
+     * Skip comment
+     */
+    public function skipComment()
+    {
+        while ($this->offset < strlen($this->data))
+        {
+            if (ord($this->data[$this->offset]) != 0x0A || // Line feed
+                ord($this->data[$this->offset]) != 0x0d    // Carriage return
+               ) {
+                $this->offset++;
+            } else {
+                return;
+            }
+        }
+    }
+
+
+    /**
+     * Read comment line
+     *
+     * @return string
+     */
+    public function readComment()
+    {
+        $this->skipWhiteSpace(false);
+
+        /** Check if it's a comment line */
+        if ($this->data[$this->offset] != '%') {
+            return '';
+        }
+
+        for ($start = $this->offset;
+             $this->offset < strlen($this->data);
+             $this->offset++) {
+            if (ord($this->data[$this->offset]) == 0x0A || // Line feed
+                ord($this->data[$this->offset]) == 0x0d    // Carriage return
+               ) {
+                break;
+            }
+        }
+
+        return substr($this->data, $start, $this->offset-$start);
+    }
+
+
+    /**
+     * Returns next lexeme from a pdf stream
+     *
+     * @return string
+     */
+    public function readLexeme()
+    {
+        $this->skipWhiteSpace();
+
+        if ($this->offset >= strlen($this->data)) {
+            return '';
+        }
+
+        $start = $this->offset;
+
+        if (self::isDelimiter( ord($this->data[$start]) )) {
+            if ($this->data[$start] == '<' && $this->offset + 1 < strlen($this->data) && $this->data[$start+1] == '<') {
+                $this->offset += 2;
+                return '<<';
+            } else if ($this->data[$start] == '>' && $this->offset + 1 < strlen($this->data) && $this->data[$start+1] == '>') {
+                $this->offset += 2;
+                return '>>';
+            } else {
+                $this->offset++;
+                return $this->data[$start];
+            }
+        } else {
+            while ( ($this->offset < strlen($this->data)) &&
+                    (!self::isDelimiter(  ord($this->data[$this->offset]) )) &&
+                    (!self::isWhiteSpace( ord($this->data[$this->offset]) ))   ) {
+                $this->offset++;
+            }
+
+            return substr($this->data, $start, $this->offset - $start);
+        }
+    }
+
+
+    /**
+     * Read elemental object from a PDF stream
+     *
+     * @return Zend_Pdf_Element
+     * @throws Zend_Pdf_Exception
+     */
+    public function readElement($nextLexeme = null)
+    {
+        if ($nextLexeme === null) {
+            $nextLexeme = $this->readLexeme();
+        }
+
+        /**
+         * Note: readElement() method is a public method and could be invoked from other classes.
+         * If readElement() is used not by Zend_Pdf_StringParser::getObject() method, then we should not care
+         * about _elements member management.
+         */
+        switch ($nextLexeme) {
+            case '(':
+                return ($this->_elements[] = $this->_readString());
+
+            case '<':
+                return ($this->_elements[] = $this->_readBinaryString());
+
+            case '/':
+                return ($this->_elements[] = new Zend_Pdf_Element_Name(
+                                                Zend_Pdf_Element_Name::unescape( $this->readLexeme() )
+                                                                      ));
+
+            case '[':
+                return ($this->_elements[] = $this->_readArray());
+
+            case '<<':
+                return ($this->_elements[] = $this->_readDictionary());
+
+            case ')':
+                // fall through to next case
+            case '>':
+                // fall through to next case
+            case ']':
+                // fall through to next case
+            case '>>':
+                // fall through to next case
+            case '{':
+                // fall through to next case
+            case '}':
+                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X.',
+                                                $this->offset));
+
+            default:
+                if (strcasecmp($nextLexeme, 'true') == 0) {
+                    return ($this->_elements[] = new Zend_Pdf_Element_Boolean(true));
+                } else if (strcasecmp($nextLexeme, 'false') == 0) {
+                    return ($this->_elements[] = new Zend_Pdf_Element_Boolean(false));
+                } else if (strcasecmp($nextLexeme, 'null') == 0) {
+                    return ($this->_elements[] = new Zend_Pdf_Element_Null());
+                }
+
+                $ref = $this->_readReference($nextLexeme);
+                if ($ref !== null) {
+                    return ($this->_elements[] = $ref);
+                }
+
+                return ($this->_elements[] = $this->_readNumeric($nextLexeme));
+        }
+    }
+
+
+    /**
+     * Read string PDF object
+     * Also reads trailing ')' from a pdf stream
+     *
+     * @return Zend_Pdf_Element_String
+     * @throws Zend_Pdf_Exception
+     */
+    private function _readString()
+    {
+        $start = $this->offset;
+        $openedBrackets = 1;
+
+        while ($this->offset < strlen($this->data)) {
+            switch (ord( $this->data[$this->offset] )) {
+                case 0x28: // '(' - opened bracket in the string, needs balanced pair.
+                    $openedBrackets++;
+                    break;
+
+                case 0x29: // ')' - pair to the opened bracket
+                    $openedBrackets--;
+                    break;
+
+                case 0x5C: // '\\' - escape sequence, skip next char from a check
+                    $this->offset++;
+            }
+
+            $this->offset++;
+            if ($openedBrackets == 0) {
+                break; // end of string
+            }
+        }
+        if ($openedBrackets != 0) {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Unexpected end of file while string reading. Offset - 0x%X. \')\' expected.', $start));
+        }
+
+        return new Zend_Pdf_Element_String(Zend_Pdf_Element_String::unescape( substr($this->data,
+                                                                 $start,
+                                                                 $this->offset - $start - 1) ));
+    }
+
+
+    /**
+     * Read binary string PDF object
+     * Also reads trailing '>' from a pdf stream
+     *
+     * @return Zend_Pdf_Element_String_Binary
+     * @throws Zend_Pdf_Exception
+     */
+    private function _readBinaryString()
+    {
+        $start = $this->offset;
+
+        while ($this->offset < strlen($this->data)) {
+            if (self::isWhiteSpace( ord($this->data[$this->offset]) ) ||
+                ctype_xdigit( $this->data[$this->offset] ) ) {
+                $this->offset++;
+            } else if ($this->data[$this->offset] == '>') {
+                $this->offset++;
+                return new Zend_Pdf_Element_String_Binary(
+                               Zend_Pdf_Element_String_Binary::unescape( substr($this->data,
+                                                                    $start,
+                                                                    $this->offset - $start - 1) ));
+            } else {
+                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Unexpected character while binary string reading. Offset - 0x%X.', $this->offset));
+            }
+        }
+        throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Unexpected end of file while binary string reading. Offset - 0x%X. \'>\' expected.', $start));
+    }
+
+
+    /**
+     * Read array PDF object
+     * Also reads trailing ']' from a pdf stream
+     *
+     * @return Zend_Pdf_Element_Array
+     * @throws Zend_Pdf_Exception
+     */
+    private function _readArray()
+    {
+        $elements = array();
+
+        while ( strlen($nextLexeme = $this->readLexeme()) != 0 ) {
+            if ($nextLexeme != ']') {
+                $elements[] = $this->readElement($nextLexeme);
+            } else {
+                return new Zend_Pdf_Element_Array($elements);
+            }
+        }
+
+        throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Unexpected end of file while array reading. Offset - 0x%X. \']\' expected.', $this->offset));
+    }
+
+
+    /**
+     * Read dictionary PDF object
+     * Also reads trailing '>>' from a pdf stream
+     *
+     * @return Zend_Pdf_Element_Dictionary
+     * @throws Zend_Pdf_Exception
+     */
+    private function _readDictionary()
+    {
+        $dictionary = new Zend_Pdf_Element_Dictionary();
+
+        while ( strlen($nextLexeme = $this->readLexeme()) != 0 ) {
+            if ($nextLexeme != '>>') {
+                $nameStart = $this->offset - strlen($nextLexeme);
+
+                $name  = $this->readElement($nextLexeme);
+                $value = $this->readElement();
+
+                if (!$name instanceof Zend_Pdf_Element_Name) {
+                    throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Name object expected while dictionary reading. Offset - 0x%X.', $nameStart));
+                }
+
+                $dictionary->add($name, $value);
+            } else {
+                return $dictionary;
+            }
+        }
+
+        throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Unexpected end of file while dictionary reading. Offset - 0x%X. \'>>\' expected.', $this->offset));
+    }
+
+
+    /**
+     * Read reference PDF object
+     *
+     * @param string $nextLexeme
+     * @return Zend_Pdf_Element_Reference
+     */
+    private function _readReference($nextLexeme = null)
+    {
+        $start = $this->offset;
+
+        if ($nextLexeme === null) {
+            $objNum = $this->readLexeme();
+        } else {
+            $objNum = $nextLexeme;
+        }
+        if (!ctype_digit($objNum)) { // it's not a reference
+            $this->offset = $start;
+            return null;
+        }
+
+        $genNum = $this->readLexeme();
+        if (!ctype_digit($genNum)) { // it's not a reference
+            $this->offset = $start;
+            return null;
+        }
+
+        $rMark  = $this->readLexeme();
+        if ($rMark != 'R') { // it's not a reference
+            $this->offset = $start;
+            return null;
+        }
+
+        $ref = new Zend_Pdf_Element_Reference((int)$objNum, (int)$genNum, $this->_context, $this->_objFactory->resolve());
+
+        return $ref;
+    }
+
+
+    /**
+     * Read numeric PDF object
+     *
+     * @param string $nextLexeme
+     * @return Zend_Pdf_Element_Numeric
+     */
+    private function _readNumeric($nextLexeme = null)
+    {
+        if ($nextLexeme === null) {
+            $nextLexeme = $this->readLexeme();
+        }
+
+        return new Zend_Pdf_Element_Numeric($nextLexeme);
+    }
+
+
+    /**
+     * Read inderect object from a PDF stream
+     *
+     * @param integer $offset
+     * @param Zend_Pdf_Element_Reference_Context $context
+     * @return Zend_Pdf_Element_Object
+     */
+    public function getObject($offset, Zend_Pdf_Element_Reference_Context $context)
+    {
+        if ($offset === null ) {
+            return new Zend_Pdf_Element_Null();
+        }
+
+        // Save current offset to make getObject() reentrant
+        $offsetSave = $this->offset;
+
+        $this->offset    = $offset;
+        $this->_context  = $context;
+        $this->_elements = array();
+
+        $objNum = $this->readLexeme();
+        if (!ctype_digit($objNum)) {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Object number expected.', $this->offset - strlen($objNum)));
+        }
+
+        $genNum = $this->readLexeme();
+        if (!ctype_digit($genNum)) {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Object generation number expected.', $this->offset - strlen($genNum)));
+        }
+
+        $objKeyword = $this->readLexeme();
+        if ($objKeyword != 'obj') {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. \'obj\' keyword expected.', $this->offset - strlen($objKeyword)));
+        }
+
+        $objValue = $this->readElement();
+
+        $nextLexeme = $this->readLexeme();
+
+        if( $nextLexeme == 'endobj' ) {
+            /**
+             * Object is not generated by factory (thus it's not marked as modified object).
+             * But factory is assigned to the obect.
+             */
+            $obj = new Zend_Pdf_Element_Object($objValue, (int)$objNum, (int)$genNum, $this->_objFactory->resolve());
+
+            foreach ($this->_elements as $element) {
+                $element->setParentObject($obj);
+            }
+
+            // Restore offset value
+            $this->offset = $offsetSave;
+
+            return $obj;
+        }
+
+        /**
+         * It's a stream object
+         */
+        if ($nextLexeme != 'stream') {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. \'endobj\' or \'stream\' keywords expected.', $this->offset - strlen($nextLexeme)));
+        }
+
+        if (!$objValue instanceof Zend_Pdf_Element_Dictionary) {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Stream extent must be preceded by stream dictionary.', $this->offset - strlen($nextLexeme)));
+        }
+
+        /**
+         * References are automatically dereferenced at this moment.
+         */
+        $streamLength = $objValue->Length->value;
+
+        /**
+         * 'stream' keyword must be followed by either cr-lf sequence or lf character only.
+         * This restriction gives the possibility to recognize all cases exactly
+         */
+        if ($this->data[$this->offset] == "\r" &&
+            $this->data[$this->offset + 1] == "\n"    ) {
+            $this->offset += 2;
+        } else if ($this->data[$this->offset] == "\n"    ) {
+            $this->offset++;
+        } else {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. \'stream\' must be followed by either cr-lf sequence or lf character only.', $this->offset - strlen($nextLexeme)));
+        }
+
+        $dataOffset = $this->offset;
+
+        $this->offset += $streamLength;
+
+        $nextLexeme = $this->readLexeme();
+        if ($nextLexeme != 'endstream') {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. \'endstream\' keyword expected.', $this->offset - strlen($nextLexeme)));
+        }
+
+        $nextLexeme = $this->readLexeme();
+        if ($nextLexeme != 'endobj') {
+            throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. \'endobj\' keyword expected.', $this->offset - strlen($nextLexeme)));
+        }
+
+        $obj = new Zend_Pdf_Element_Object_Stream(substr($this->data,
+                                                         $dataOffset,
+                                                         $streamLength),
+                                                  (int)$objNum,
+                                                  (int)$genNum,
+                                                  $this->_objFactory->resolve(),
+                                                  $objValue);
+
+        foreach ($this->_elements as $element) {
+            $element->setParentObject($obj);
+        }
+
+        // Restore offset value
+        $this->offset = $offsetSave;
+
+        return $obj;
+    }
+
+
+    /**
+     * Get length of source string
+     *
+     * @return integer
+     */
+    public function getLength()
+    {
+        return strlen($this->data);
+    }
+
+    /**
+     * Get source string
+     *
+     * @return string
+     */
+    public function getString()
+    {
+        return $this->data;
+    }
+
+
+    /**
+     * Parse integer value from a binary stream
+     *
+     * @param string $stream
+     * @param integer $offset
+     * @param integer $size
+     * @return integer
+     */
+    public static function parseIntFromStream($stream, $offset, $size)
+    {
+        $value = 0;
+        for ($count = 0; $count < $size; $count++) {
+            $value *= 256;
+            $value += ord($stream[$offset + $count]);
+        }
+
+        return $value;
+    }
+
+
+
+    /**
+     * Set current context
+     *
+     * @param Zend_Pdf_Element_Reference_Context $context
+     */
+    public function setContext(Zend_Pdf_Element_Reference_Context $context)
+    {
+        $this->_context = $context;
+    }
+
+    /**
+     * Object constructor
+     *
+     * Note: PHP duplicates string, which is sent by value, only of it's updated.
+     * Thus we don't need to care about overhead
+     *
+     * @param string $pdfString
+     * @param Zend_Pdf_ElementFactory_Interface $factory
+     */
+    public function __construct($source, Zend_Pdf_ElementFactory_Interface $factory)
+    {
+        $this->data         = $source;
+        $this->_objFactory  = $factory;
+    }
+}

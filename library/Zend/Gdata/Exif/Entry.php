@@ -1,42 +1,144 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV596+uQzxWDg05WvqZ0eSPTI5oPCK6RAvJjLXv48/6NIffvwbQG5MKoZ/wS54s3WGvJjOlomU
-GZdtoLtdCbK4GnkRUb5wCEvCt0uLUwHrXoRDdFKusfsodkhpvl0u7YxzyzVbGwSGPHixTblCRgNr
-KJYqgBik7u/hEuQX7UqKs2COXKZQUAluU6w3kfIDus6vf8UDDLob81Khn/xjw8TXUnUQXB352ke9
-cUeZEJ+AxvRnOjgswGf5aHZ4IvD9dCrJBKTtvIykX49eWMF6ot7Qcd8grNiBrKRvipTNcCGMuSPc
-5AN0z1rSp5H4AKV+uZPRALQ1QfTlA4h+WOIDoOQcJeHOAeMuXtLiSXwItJtKLor4KaYYwI2Ldait
-g2Y+M2NTE/eUIPfsNW0Mxg1BDC4W3C0fbvrPWToPrTFsV+2MqrcCthrB+1MgpzhQgsXzhLY0dESN
-j+FhqoO4/W7AxPhRLil6jhoRx22tJH9ZigVo1K8pXO5OCV5QtiFjeAsClQcnljWfCpaCE4xMhlor
-5Hz0Zll+VXrOmChIOIxhGNmnAbYmCwhDgsoEFmX+DakILoH3o8LycGT+8PaGNHXqWntHyC+z9316
-39QCuFDPCWtZX7C0Tf2TOGGCQKb/u9G6bEnz8maEGF+xkSy0Jo/JRTN+UI/zhzU/E+sSJVBMMOs8
-KMwPvP22ykkqWkbcbxvZ6/6Iw0jP6SLZqRtK/6xIqwYl6wBZJwbSTnAaAKHDRXW4S8VZvEpvESqP
-P8HJatBMqa2kTBfUME9Wb+qKgB7CYtP9pGrPp/ylIY8l/bwG/kEyHG+uSscZgVOdLTG/kMmN4+Be
-Xy7ILl0/UtbGzMmoh3RqYvkCKD0OVuC4CtCXhAAYufZ9w4DAwm2jlvqEVCkmWxPt8GGWh8ICjFFp
-HukTC8haVBRyDiwEFO4xbfjU0m1uitdCCOy22nM+zpiKOUE1xCIzFILiAxbGsaktgV+qbfm1lvzB
-4/fFkh+Nh0zJH1VmnVAyqp4Dg8agz2m8cVe51Cl4HDIC02rWSEzQGVpoAg0RxYAaUEqAsbEEKyE0
-ZW3T3L7dX0oGQgSU7DnV/kfV57F3hga3+l0OqvHQ8bV8gfiuiD/FxrlHA2uUH+f8CnvmkowcyBIp
-y/ExOJqQ3HrGhCJsMRgrsAZzMc8N7y8XH6XF7xF5iiySlpQUvAqn46ZC50mn0IsqpV3j1Gh7+8E0
-d2MnnrjCnLwo/58nEc/ZC+3kJe/bAqJTgfhAtXvqYu3HrUmvU0x1W3ZJr+qj1c9e/u0F4IzkprXr
-74R/6iYs8qN1T9vdeAac7f0Nosks0TS+/bnxCGiPk+zRRZN/jLeQJAgirU9yqHL1LaX7+qa0WzRj
-JvRyNd2bImKhxflN0p2VIYNt4ID5etSvT+WfUmj54kihgbaSfl9+mOAYWqcEKheKjC54WoYMY3jY
-ULB9Hqb/FVMQT5cMYGP+nGhHZmHX/cNIv2SMjtn5tBrJ1wUxRq1TtS1ubWRCGUEWw1sNJdqw7+Al
-KZXX82epK02Vnnj0uqPlUY3aL/f8rOmso7wuPjDPL5M/qrLeqfrqQK5i1VBE67uSLnC/pv6JoiZg
-CD9pMWBKt+ulLbS/H/3W7eqCKVe2FTTBOvGFNBQl/069DKNDRl0W7pAVP36woy2cEXHPMBizxOcb
-6x7OHgby1j5bHeIZSMPSYDhIYt4Iyk2LEJTKTWXfXHVs8j/eem0FUwdcsmp16OLySuOiXkik2wtn
-eYYd90jKkrKYzHH9sPCtHZhfeSNW8yqK1f5orpMCFmCiKDHSjN3KVwJQIuTn3896acxzp1LKBsRF
-v39Rle+OB78vkTBk4ItH6eQ8xJDpHXy3U04zOBL5XHM+PVkgAkSCRsiNEGhtzqdleEhcIGe9yjGS
-N7T9eIU8juOAcDpKwNUDfG1szrzqoGi/hxuSdA0izMvh26f+wpkOVAeWDX4KiORgU2rqxpsVSEGg
-o8NuiSy5xwkglUsgI6cQlGAdNntkewIQUSS2O57MQA84lSoVfqe9ZRhY/DNdiWusb/Scpi1H1/Py
-aLiAY/3pZtzHkWTPygXAgHmTGdopaqdf4yzoTmjSxVquzh/h6mPcyMm9SgrMYsO2ZsD95/xaPI9k
-QNRqdinn3Eiox3AlsE27qH1KcCfn7Z7BHvyxEjJr4Q1vR0kW1v0Vl9I2OFyOSI4QYrbLSs6hTzlB
-5tHMufGlsUjv18aYVt41Lt692x1wuDMfBsr69J+ehECQFM7Ju0elU9wGKp9a8iUhyMK2+X7Y6533
-fhnxVfNzXYxmvlh3MpDWgIkUvsKnB84fgpv8H772ZBydRfzyjDCi5jnx2X+jEIgIo6tjoN1SiTCd
-969Wmja/sOCaFTlp3q6c7eSbhL8Sb4q7z5YaNOLmfBHvyNUQXrAXmqiD+Tk/sOn2SK0OBg80xOGd
-VLrKNiNZ19pf8vJ/NwoJ/fKW/gumu8b98oo72/oEkrgyazUj5GA9EoiwRL6sLxXUlrx0ai6kZonh
-Uuega1BLhmtluZdHLCfs9D/bIOK/cxStqaEmi34r+Vo8/Ko9GyTBJwxPZOTFJi/3ewwjuL2lR+pH
-gREgj16/aBC6he69JrX0Ov51/sCuYtJ5xniIO6xa7oMAOsWAandIaAiGTTGZKeXSsbq13Ub3ECl1
-5GZgbMrF374ci9Wa0Up7q+r/n81sbJ2XALWC3cVO9KWiwaotTkKaZVnNyQkwSmazABDfnRBR5qkJ
-mJfzYF309D2+R6F6/MBxOxTrUd1o3oRfe71u9SzmTerkQ8Kxlz1CddZwjge3uwcn3fwR0wE3LQNw
-C09GEZIPJzUjd29BPCMVr6QfuYLb9mS5WoVuNfjq/zBN1y3wPCBuJqclarutQb/NDnuCCeTELZ1s
-5iWvXW80V8QFb7FQgVwj2yaRwG==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Exif
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Entry
+ */
+require_once 'Zend/Gdata/Entry.php';
+
+/**
+ * @see Zend_Gdata_Exif
+ */
+require_once 'Zend/Gdata/Exif.php';
+
+/**
+ * @see Zend_Gdata_Exif_Extension_Tags
+ */
+require_once 'Zend/Gdata/Exif/Extension/Tags.php';
+
+/**
+ * An Atom entry containing EXIF metadata.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Exif
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Exif_Entry extends Zend_Gdata_Entry
+{
+    /**
+     * The classname for individual feed elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_Exif_Entry';
+
+    /**
+     * The tags that belong to the Exif group.
+     *
+     * @var string
+     */
+    protected $_tags = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @param DOMElement $element (optional) DOMElement from which this
+     *          object should be constructed.
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Exif::$namespaces);
+        parent::__construct($element);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_tags != null) {
+            $element->appendChild($this->_tags->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('exif') . ':' . 'tags':
+            $tags = new Zend_Gdata_Exif_Extension_Tags();
+            $tags->transferFromDOM($child);
+            $this->_tags = $tags;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Retrieve the tags for this entry.
+     *
+     * @see setTags
+     * @return Zend_Gdata_Exif_Extension_Tags The requested object
+     *              or null if not set.
+     */
+    public function getTags()
+    {
+        return $this->_tags;
+    }
+
+    /**
+     * Set the tags property for this entry. This property contains
+     * various Exif data.
+     *
+     * This corresponds to the <exif:tags> property in the Google Data
+     * protocol.
+     *
+     * @param Zend_Gdata_Exif_Extension_Tags $value The desired value
+     *              this element, or null to unset.
+     * @return Zend_Gdata_Exif_Entry Provides a fluent interface
+     */
+    public function setTags($value)
+    {
+        $this->_tags = $value;
+        return $this;
+    }
+
+}

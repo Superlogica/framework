@@ -1,55 +1,188 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Flickr
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ResultSet.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Service_Flickr_Result
+ */
+require_once 'Zend/Service/Flickr/Result.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Flickr
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Flickr_ResultSet implements SeekableIterator
+{
+    /**
+     * Total number of available results
+     *
+     * @var int
+     */
+    public $totalResultsAvailable;
+
+    /**
+     * Number of results in this result set
+     *
+     * @var int
+     */
+    public $totalResultsReturned;
+
+    /**
+     * The offset of this result set in the total set of available results
+     *
+     * @var int
+     */
+    public $firstResultPosition;
+
+    /**
+     * Results storage
+     *
+     * @var DOMNodeList
+     */
+    protected $_results = null;
+
+    /**
+     * Reference to Zend_Service_Flickr object with which the request was made
+     *
+     * @var Zend_Service_Flickr
+     */
+    private $_flickr;
+
+    /**
+     * Current index for the Iterator
+     *
+     * @var int
+     */
+    private $_currentIndex = 0;
+
+    /**
+     * Parse the Flickr Result Set
+     *
+     * @param  DOMDocument         $dom
+     * @param  Zend_Service_Flickr $flickr
+     * @return void
+     */
+    public function __construct(DOMDocument $dom, Zend_Service_Flickr $flickr)
+    {
+        $this->_flickr = $flickr;
+
+        $xpath = new DOMXPath($dom);
+
+        $photos = $xpath->query('//photos')->item(0);
+
+        $page    = $photos->getAttribute('page');
+        $pages   = $photos->getAttribute('pages');
+        $perPage = $photos->getAttribute('perpage');
+        $total   = $photos->getAttribute('total');
+
+        $this->totalResultsReturned  = ($page == $pages) ? ($total - ($page - 1) * $perPage) : (int) $perPage;
+        $this->firstResultPosition   = ($page - 1) * $perPage + 1;
+        $this->totalResultsAvailable = (int) $total;
+
+        if ($total > 0) {
+            $this->_results = $xpath->query('//photo');
+        }
+    }
+
+    /**
+     * Total Number of results returned
+     *
+     * @return int Total number of results returned
+     */
+    public function totalResults()
+    {
+        return $this->totalResultsReturned;
+    }
+
+    /**
+     * Implements SeekableIterator::current()
+     *
+     * @return Zend_Service_Flickr_Result
+     */
+    public function current()
+    {
+        return new Zend_Service_Flickr_Result($this->_results->item($this->_currentIndex), $this->_flickr);
+    }
+
+    /**
+     * Implements SeekableIterator::key()
+     *
+     * @return int
+     */
+    public function key()
+    {
+        return $this->_currentIndex;
+    }
+
+    /**
+     * Implements SeekableIterator::next()
+     *
+     * @return void
+     */
+    public function next()
+    {
+        $this->_currentIndex += 1;
+    }
+
+    /**
+     * Implements SeekableIterator::rewind()
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_currentIndex = 0;
+    }
+
+    /**
+     * Implements SeekableIterator::seek()
+     *
+     * @param  int $index
+     * @throws OutOfBoundsException
+     * @return void
+     */
+    public function seek($index)
+    {
+        $indexInt = (int) $index;
+        if ($indexInt >= 0 && (null === $this->_results || $indexInt < $this->_results->length)) {
+            $this->_currentIndex = $indexInt;
+        } else {
+            throw new OutOfBoundsException("Illegal index '$index'");
+        }
+    }
+
+    /**
+     * Implements SeekableIterator::valid()
+     *
+     * @return boolean
+     */
+    public function valid()
+    {
+        return null !== $this->_results && $this->_currentIndex < $this->_results->length;
+    }
+}
+

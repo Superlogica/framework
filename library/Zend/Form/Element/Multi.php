@@ -1,92 +1,318 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-1YYQSBMqGc41YG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Element_Xhtml */
+require_once 'Zend/Form/Element/Xhtml.php';
+
+/**
+ * Base class for multi-option form elements
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Element
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Multi.php 12527 2008-11-10 21:00:57Z thomas $
+ */
+abstract class Zend_Form_Element_Multi extends Zend_Form_Element_Xhtml
+{
+    /**
+     * Array of options for multi-item
+     * @var array
+     */
+    public $options = array();
+
+    /**
+     * Flag: autoregister inArray validator?
+     * @var bool
+     */
+    protected $_registerInArrayValidator = true;
+
+    /**
+     * Separator to use between options; defaults to '<br />'.
+     * @var string
+     */
+    protected $_separator = '<br />';
+
+    /**
+     * Which values are translated already?
+     * @var array
+     */
+    protected $_translated = array();
+
+    /**
+     * Retrieve separator
+     *
+     * @return mixed
+     */
+    public function getSeparator()
+    {
+        return $this->_separator;
+    }
+
+    /**
+     * Set separator
+     *
+     * @param mixed $separator
+     * @return self
+     */
+    public function setSeparator($separator)
+    {
+        $this->_separator = $separator;
+        return $this;
+    }
+
+    /**
+     * Retrieve options array
+     *
+     * @return array
+     */
+    protected function _getMultiOptions()
+    {
+        if (null === $this->options || !is_array($this->options)) {
+            $this->options = array();
+        }
+
+        return $this->options;
+    }
+
+    /**
+     * Add an option
+     *
+     * @param  string $option
+     * @param  string $value
+     * @return Zend_Form_Element_Multi
+     */
+    public function addMultiOption($option, $value = '')
+    {
+        $option  = (string) $option;
+        $this->_getMultiOptions();
+        if (!$this->_translateOption($option, $value)) {
+            $this->options[$option] = $value;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add many options at once
+     *
+     * @param  array $options
+     * @return Zend_Form_Element_Multi
+     */
+    public function addMultiOptions(array $options)
+    {
+        foreach ($options as $option => $value) {
+            if (is_array($value)
+                && array_key_exists('key', $value)
+                && array_key_exists('value', $value)
+            ) {
+                $this->addMultiOption($value['key'], $value['value']);
+            } else {
+                $this->addMultiOption($option, $value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Set all options at once (overwrites)
+     *
+     * @param  array $options
+     * @return Zend_Form_Element_Multi
+     */
+    public function setMultiOptions(array $options)
+    {
+        $this->clearMultiOptions();
+        return $this->addMultiOptions($options);
+    }
+
+    /**
+     * Retrieve single multi option
+     *
+     * @param  string $option
+     * @return mixed
+     */
+    public function getMultiOption($option)
+    {
+        $option  = (string) $option;
+        $this->_getMultiOptions();
+        if (isset($this->options[$option])) {
+            $this->_translateOption($option, $this->options[$option]);
+            return $this->options[$option];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve options
+     *
+     * @return array
+     */
+    public function getMultiOptions()
+    {
+        $this->_getMultiOptions();
+        foreach ($this->options as $option => $value) {
+            $this->_translateOption($option, $value);
+        }
+        return $this->options;
+    }
+
+    /**
+     * Remove a single multi option
+     *
+     * @param  string $option
+     * @return bool
+     */
+    public function removeMultiOption($option)
+    {
+        $option  = (string) $option;
+        $this->_getMultiOptions();
+        if (isset($this->options[$option])) {
+            unset($this->options[$option]);
+            if (isset($this->_translated[$option])) {
+                unset($this->_translated[$option]);
+            }
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Clear all options
+     *
+     * @return Zend_Form_Element_Multi
+     */
+    public function clearMultiOptions()
+    {
+        $this->options = array();
+        $this->_translated = array();
+        return $this;
+    }
+
+    /**
+     * Set flag indicating whether or not to auto-register inArray validator
+     *
+     * @param  bool $flag
+     * @return Zend_Form_Element_Multi
+     */
+    public function setRegisterInArrayValidator($flag)
+    {
+        $this->_registerInArrayValidator = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Get status of auto-register inArray validator flag
+     *
+     * @return bool
+     */
+    public function registerInArrayValidator()
+    {
+        return $this->_registerInArrayValidator;
+    }
+
+    /**
+     * Is the value provided valid?
+     *
+     * Autoregisters InArray validator if necessary.
+     *
+     * @param  string $value
+     * @param  mixed $context
+     * @return bool
+     */
+    public function isValid($value, $context = null)
+    {
+        if ($this->registerInArrayValidator()) {
+            if (!$this->getValidator('InArray')) {
+                $multiOptions = $this->getMultiOptions();
+                $options      = array();
+
+                foreach ($multiOptions as $opt_value => $opt_label) {
+                    // optgroup instead of option label
+                    if (is_array($opt_label)) {
+                        $options = array_merge($options, array_keys($opt_label));
+                    }
+                    else {
+                        $options[] = $opt_value;
+                    }
+                }
+
+                $this->addValidator(
+                    'InArray',
+                    true,
+                    array($options)
+                );
+            }
+        }
+        return parent::isValid($value, $context);
+    }
+
+    /**
+     * Translate an option
+     *
+     * @param  string $option
+     * @param  string $value
+     * @return bool
+     */
+    protected function _translateOption($option, $value)
+    {
+        if ($this->translatorIsDisabled()) {
+            return true;
+        }
+
+        if (!isset($this->_translated[$option]) && !empty($value)) {
+            $this->options[$option] = $this->_translateValue($value);
+            if ($this->options[$option] === $value) {
+                return false;
+            }
+            $this->_translated[$option] = true;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Translate a multi option value
+     *
+     * @param  string $value
+     * @return string
+     */
+    protected function _translateValue($value)
+    {
+        if (is_array($value)) {
+            foreach ($value as $key => $val) {
+                $value[$key] = $this->_translateValue($val);
+            }
+            return $value;
+        } else {
+            if (null !== ($translator = $this->getTranslator())) {
+                if ($translator->isTranslated($value)) {
+                    return $translator->translate($value);
+                }
+            }
+            return $value;
+        }
+    }
+}

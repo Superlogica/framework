@@ -1,35 +1,102 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: AuthorizedRequest.php 23484 2010-12-10 03:57:59Z mjh_ca $
+ */
+
+/** Zend_Oauth_Token */
+require_once 'Zend/Oauth/Token.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Oauth
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
+{
+    /**
+     * @var array
+     */
+    protected $_data = array();
+
+    /**
+     * Constructor
+     *
+     * @param  null|array $data
+     * @param  null|Zend_Oauth_Http_Utility $utility
+     * @return void
+     */
+    public function __construct(array $data = null, Zend_Oauth_Http_Utility $utility = null)
+    {
+        if ($data !== null) {
+            $this->_data = $data;
+            $params = $this->_parseData();
+            if (count($params) > 0) {
+                $this->setParams($params);
+            }
+        }
+        if ($utility !== null) {
+            $this->_httpUtility = $utility;
+        } else {
+            $this->_httpUtility = new Zend_Oauth_Http_Utility;
+        }
+    }
+
+    /**
+     * Retrieve token data
+     *
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->_data;
+    }
+
+    /**
+     * Indicate if token is valid
+     *
+     * @return bool
+     */
+    public function isValid()
+    {
+        if (isset($this->_params[self::TOKEN_PARAM_KEY])
+            && !empty($this->_params[self::TOKEN_PARAM_KEY])
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Parse string data into array
+     *
+     * @return array
+     */
+    protected function _parseData()
+    {
+        $params = array();
+        if (empty($this->_data)) {
+            return;
+        }
+        foreach ($this->_data as $key => $value) {
+            $params[rawurldecode($key)] = rawurldecode($value);
+        }
+        return $params;
+    }
+}

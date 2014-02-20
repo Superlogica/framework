@@ -1,91 +1,234 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Wildfire_Plugin_Interface */
+require_once 'Zend/Wildfire/Plugin/Interface.php';
+
+/** Zend_Wildfire_Channel_Interface */
+require_once 'Zend/Wildfire/Channel/Interface.php';
+
+/** Zend_Json */
+require_once 'Zend/Json.php';
+
+/**
+ * Encodes messages into the Wildfire JSON Stream Communication Protocol.
+ *
+ * @category   Zend
+ * @package    Zend_Wildfire
+ * @subpackage Protocol
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Wildfire_Protocol_JsonStream
+{
+    /**
+     * The protocol URI for this protocol
+     */
+    const PROTOCOL_URI = 'http://meta.wildfirehq.org/Protocol/JsonStream/0.2';
+
+    /**
+     * All messages to be sent.
+     * @var array
+     */
+    protected $_messages = array();
+
+    /**
+     * Plugins that are using this protocol
+     * @var array
+     */
+    protected $_plugins = array();
+
+    /**
+     * Register a plugin that uses this protocol
+     *
+     * @param Zend_Wildfire_Plugin_Interface $plugin The plugin to be registered
+     * @return boolean Returns TRUE if plugin was registered, false if it was already registered
+     */
+    public function registerPlugin(Zend_Wildfire_Plugin_Interface $plugin)
+    {
+        if (in_array($plugin,$this->_plugins)) {
+            return false;
+        }
+        $this->_plugins[] = $plugin;
+        return true;
+    }
+
+    /**
+     * Record a message with the given data in the given structure
+     *
+     * @param Zend_Wildfire_Plugin_Interface $plugin The plugin recording the message
+     * @param string $structure The structure to be used for the data
+     * @param array $data The data to be recorded
+     * @return boolean Returns TRUE if message was recorded
+     */
+    public function recordMessage(Zend_Wildfire_Plugin_Interface $plugin, $structure, $data)
+    {
+        if(!isset($this->_messages[$structure])) {
+            $this->_messages[$structure] = array();
+        }
+
+        $uri = $plugin->getUri();
+
+        if(!isset($this->_messages[$structure][$uri])) {
+            $this->_messages[$structure][$uri] = array();
+        }
+
+        $this->_messages[$structure][$uri][] = $this->_encode($data);
+        return true;
+    }
+
+    /**
+     * Remove all qued messages
+     *
+     * @param Zend_Wildfire_Plugin_Interface $plugin The plugin for which to clear messages
+     * @return boolean Returns TRUE if messages were present
+     */
+    public function clearMessages(Zend_Wildfire_Plugin_Interface $plugin)
+    {
+        $uri = $plugin->getUri();
+
+        $present = false;
+        foreach ($this->_messages as $structure => $messages) {
+
+            if(!isset($this->_messages[$structure][$uri])) {
+                continue;
+            }
+
+            $present = true;
+
+            unset($this->_messages[$structure][$uri]);
+
+            if (!$this->_messages[$structure]) {
+                unset($this->_messages[$structure]);
+            }
+        }
+        return $present;
+    }
+
+    /**
+     * Get all qued messages
+     *
+     * @return mixed Returns qued messages or FALSE if no messages are qued
+     */
+    public function getMessages()
+    {
+        if (!$this->_messages) {
+            return false;
+        }
+        return $this->_messages;
+    }
+
+    /**
+     * Use the JSON encoding scheme for the value specified
+     *
+     * @param mixed $value The value to be encoded
+     * @return string  The encoded value
+     */
+    protected function _encode($value)
+    {
+        return Zend_Json::encode($value, true, array('silenceCyclicalExceptions'=>true));
+    }
+
+    /**
+     * Retrieves all formatted data ready to be sent by the channel.
+     *
+     * @param Zend_Wildfire_Channel_Interface $channel The instance of the channel that will be transmitting the data
+     * @return mixed Returns the data to be sent by the channel.
+     * @throws Zend_Wildfire_Exception
+     */
+    public function getPayload(Zend_Wildfire_Channel_Interface $channel)
+    {
+        if (!$channel instanceof Zend_Wildfire_Channel_HttpHeaders) {
+            require_once 'Zend/Wildfire/Exception.php';
+            throw new Zend_Wildfire_Exception('The '.get_class($channel).' channel is not supported by the '.get_class($this).' protocol.');
+        }
+
+        if ($this->_plugins) {
+            foreach ($this->_plugins as $plugin) {
+                $plugin->flushMessages(self::PROTOCOL_URI);
+            }
+        }
+
+        if (!$this->_messages) {
+            return false;
+        }
+
+        $protocol_index = 1;
+        $structure_index = 1;
+        $plugin_index = 1;
+        $message_index = 1;
+
+        $payload = array();
+
+        $payload[] = array('Protocol-'.$protocol_index, self::PROTOCOL_URI);
+
+        foreach ($this->_messages as $structure_uri => $plugin_messages ) {
+
+            $payload[] = array($protocol_index.'-Structure-'.$structure_index, $structure_uri);
+
+            foreach ($plugin_messages as $plugin_uri => $messages ) {
+
+                $payload[] = array($protocol_index.'-Plugin-'.$plugin_index, $plugin_uri);
+
+                foreach ($messages as $message) {
+
+                    $parts = explode("\n",chunk_split($message, 5000, "\n"));
+
+                    for ($i=0 ; $i<count($parts) ; $i++) {
+
+                        $part = $parts[$i];
+                        if ($part) {
+
+                            $msg = '';
+
+                            if (count($parts)>2) {
+                                $msg = (($i==0)?strlen($message):'')
+                                       . '|' . $part . '|'
+                                       . (($i<count($parts)-2)?'\\':'');
+                            } else {
+                                $msg = strlen($part) . '|' . $part . '|';
+                            }
+
+                            $payload[] = array($protocol_index . '-'
+                                               . $structure_index . '-'
+                                               . $plugin_index . '-'
+                                               . $message_index,
+                                               $msg);
+
+                            $message_index++;
+
+                            if ($message_index > 99999) {
+                                require_once 'Zend/Wildfire/Exception.php';
+                                throw new Zend_Wildfire_Exception('Maximum number (99,999) of messages reached!');
+                            }
+                        }
+                    }
+                }
+                $plugin_index++;
+            }
+            $structure_index++;
+        }
+
+        return $payload;
+    }
+
+}
+

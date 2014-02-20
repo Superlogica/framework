@@ -1,37 +1,128 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Form_Decorator_Abstract */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Callback
+ *
+ * Execute an arbitrary callback to decorate an element. Callbacks should take 
+ * three arguments, $content, $element, and $options:
+ *
+ * function mycallback($content, $element, array $options)
+ * {
+ * }
+ *
+ * and should return a string. ($options are whatever options were provided to 
+ * the decorator.)
+ *
+ * To specify a callback, pass a valid callback as the 'callback' option.
+ *
+ * Callback results will be either appended, prepended, or replace the provided
+ * content. To replace the content, specify a placement of boolean false; 
+ * defaults to append content.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Callback.php 15916 2009-06-06 14:47:55Z matthew $
+ */
+class Zend_Form_Decorator_Callback extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Callback
+     * @var string|array
+     */
+    protected $_callback;
+
+    /**
+     * Set callback
+     * 
+     * @param  callback $callback 
+     * @return Zend_Form_Decorator_Callback
+     * @throws Zend_Form_Exception
+     */
+    public function setCallback($callback)
+    {
+        if (!is_callable($callback)) {
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception('Invalid callback provided to callback decorator');
+        }
+        $this->_callback = $callback;
+        return $this;
+    }
+
+    /**
+     * Get registered callback
+     *
+     * If not previously registered, checks to see if it exists in registered 
+     * options.
+     * 
+     * @return null|string|array
+     */
+    public function getCallback()
+    {
+        if (null === $this->_callback) {
+            if (null !== ($callback = $this->getOption('callback'))) {
+                $this->setCallback($callback);
+                $this->removeOption('callback');
+            }
+        }
+
+        return $this->_callback;
+    }
+
+    /**
+     * Render 
+     *
+     * If no callback registered, returns callback. Otherwise, gets return 
+     * value of callback and either appends, prepends, or replaces passed in
+     * content.
+     *
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $callback = $this->getCallback();
+        if (null === $callback) {
+            return $content;
+        }
+
+        $placement = $this->getPlacement();
+        $separator = $this->getSeparator();
+
+        $response = call_user_func($callback, $content, $this->getElement(), $this->getOptions());
+
+        switch ($placement) {
+            case self::APPEND:
+                return $content . $separator . $response;
+            case self::PREPEND:
+                return $response . $separator . $content;
+            default:
+                // replace content
+                return $response;
+        }
+    }
+}

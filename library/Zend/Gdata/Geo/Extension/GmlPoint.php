@@ -1,41 +1,135 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Geo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Geo
+ */
+require_once 'Zend/Gdata/Geo.php';
+
+/**
+ * @see Zend_Gdata_Geo_Extension_GmlPos
+ */
+require_once 'Zend/Gdata/Geo/Extension/GmlPos.php';
+
+
+/**
+ * Represents the gml:point element used by the Gdata Geo extensions.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Geo
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Geo_Extension_GmlPoint extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'gml';
+    protected $_rootElement = 'Point';
+
+    /**
+     * The position represented by this GmlPoint
+     *
+     * @var Zend_Gdata_Geo_Extension_GmlPos
+     */
+    protected $_pos = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @param Zend_Gdata_Geo_Extension_GmlPos $pos (optional) Pos to which this
+     *          object should be initialized.
+     */
+    public function __construct($pos = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Geo::$namespaces);
+        parent::__construct();
+        $this->setPos($pos);
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     *          child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_pos !== null) {
+            $element->appendChild($this->_pos->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them as members of this entry based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+
+        switch ($absoluteNodeName) {
+            case $this->lookupNamespace('gml') . ':' . 'pos';
+                $pos = new Zend_Gdata_Geo_Extension_GmlPos();
+                $pos->transferFromDOM($child);
+                $this->_pos = $pos;
+                break;
+        }
+    }
+
+    /**
+     * Get the value for this element's pos attribute.
+     *
+     * @see setPos
+     * @return Zend_Gdata_Geo_Extension_GmlPos The requested attribute.
+     */
+    public function getPos()
+    {
+        return $this->_pos;
+    }
+
+    /**
+     * Set the value for this element's distance attribute.
+     *
+     * @param Zend_Gdata_Geo_Extension_GmlPos $value The desired value for this attribute
+     * @return Zend_Gdata_Geo_Extension_GmlPoint Provides a fluent interface
+     */
+    public function setPos($value)
+    {
+        $this->_pos = $value;
+        return $this;
+    }
+
+
+}

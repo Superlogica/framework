@@ -1,88 +1,173 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-RLikM2gStfsZ0PFLWfZ2yqyWa+Q4g5m4v3a=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Parser.php 12080 2008-10-22 16:40:33Z beberlei $
+ */
+
+require_once 'Zend/Soap/Wsdl/Parser/Result.php';
+
+/**
+ * Zend_Soap_Wsdl_Parser
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ */
+class Zend_Soap_Wsdl_Parser {
+    /**
+     * @var SimpleXML object for the WSDL document being parsed
+     */
+    private static $xml;
+
+    /**
+     * Parse a WSDL document into a generic object
+     *
+     * @param string|file $wsdl The WSDL document or a filename for the WSDL document to parse
+     * @return Zend_Soap_Wsdl_Parser_Result The contents of the WSDL file
+     */
+    public static function parse($wsdl)
+    {
+        if (strpos($wsdl, '<') === false) {
+            $wsdl_result = new Zend_Soap_Wsdl_Parser_Result($wsdl);
+            $wsdl = file_get_contents($wsdl);
+        } else {
+            $tmp = tempnam(ini_get('upload_tmp_dir'), 'ZF_Temp_');
+            file_put_contents($tmp, $wsdl);
+            $wsdl_result = new Zend_Soap_Wsdl_Parser_Result($tmp);
+        }
+
+        self::$xml = simplexml_load_string($wsdl);
+
+        /* This is done so that we have a known prefix to the WSDL elements
+            for XPath queries */
+
+        self::$xml['xmlns:zfwsdl'] = 'http://schemas.xmlsoap.org/wsdl/';
+
+        self::$xml = simplexml_load_string(self::$xml->asXML());
+
+        if (isset(self::$xml->documentation)) {
+            $wsdl_result->documentation = trim(self::$xml->documentation);
+        }
+        if (!isset(self::$xml['name'])) {
+            $wsdl_result->name = null;
+        } else {
+            $wsdl_result->name = (string) self::$xml['name'];
+        }
+
+        foreach (self::$xml->binding->operation as $operation) {
+            $name = (string) $operation['name'];
+            $wsdl_result->operations[$name] = array();
+            $wsdl_result->operations[$name]['input'] = self::getOperationInputs($name);
+            $wsdl_result->operations[$name]['output'] = self::getOperationOutput($name);
+            $wsdl_result->operations[$name]['documentation'] = self::getDocs($name);
+        }
+
+        $wsdl_result->portType = (string) self::$xml->portType['name'];
+        $wsdl_result->binding = (string) self::$xml->binding['name'];
+        $wsdl_result->service['name'] = (string) self::$xml->service['name'];
+        $wsdl_result->service['address'] = (string) self::$xml->service->port->children('http://schemas.xmlsoap.org/wsdl/soap/')->attributes();
+        $wsdl_result->targetNamespace = (string) self::$xml['targetNamespace'];
+
+        return $wsdl_result;
+    }
+
+    /**
+     * Get Function arguments
+     *
+     * @param string $operation_name Name of the <operation> element to find
+     * @return string
+     */
+    private static function getOperationInputs($operation_name)
+    {
+        $operation = self::$xml->xpath('/zfwsdl:definitions[1]/zfwsdl:portType/zfwsdl:operation[@name="' .$operation_name. '"]');
+
+        if ($operation == null) {
+            return '';
+        }
+
+        if (isset($operation[0]->input)) {
+            $input_message_name = $operation[0]->input['message'];
+            $input_message_name = explode(':', $input_message_name);
+            $input_message_name = $input_message_name[1];
+            $input_message = self::$xml->xpath('/zfwsdl:definitions[1]/zfwsdl:message[@name="' .$input_message_name. '"]');
+        }
+
+        if ($input_message != null) {
+            foreach ($input_message[0]->part as $part) {
+                $args[] = array(
+                            'name' => (string) $part['name'],
+                            'type' => (string) $part['type'],
+                            );
+            }
+
+            if (isset($args) && is_array($args)) {
+                return $args;
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Get Function return variable
+     *
+     * @param string $operation_name Name of the <operation> element to find
+     * @return string|false Returns variable name if found, or false
+     */
+    private static function getOperationOutput($operation_name)
+    {
+        $operation = self::$xml->xpath('/zfwsdl:definitions[1]/zfwsdl:portType/zfwsdl:operation[@name="' .$operation_name. '"]');
+
+
+        if (isset($operation[0]->output)) {
+            $output_message_name = $operation[0]->output['message'];
+            $output_message_name = explode(':', $output_message_name);
+            $output_message_name = $output_message_name[1];
+            $output_message = self::$xml->xpath('/zfwsdl:definitions[1]/zfwsdl:message[@name="' .$output_message_name. '"]');
+        }
+
+        if ($output_message != null) {
+            return array(
+                        'name' => (string) $output_message[0]->part['name'],
+                        'type' => (string) $output_message[0]->part['type']
+                    );
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Get Function Documentation
+     *
+     * @param string $operation_name Name of the <operation> element to find
+     * @return string
+     */
+    private static function getDocs($operation_name)
+    {
+
+        $portType = self::$xml->xpath('//zfwsdl:operation[@name="' .$operation_name. '"]/zfwsdl:documentation');
+        if (isset($portType) && is_array($portType) && (sizeof($portType) >= 1)) {
+            return trim((string) $portType[0]);
+        } else {
+            return null;
+        }
+    }
+}
+
+

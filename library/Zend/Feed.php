@@ -1,140 +1,404 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-jtwnwKkZUuY/98+805sXlaR9tkK=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Feed.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+
+/**
+ * Feed utility class
+ *
+ * Base Zend_Feed class, containing constants and the Zend_Http_Client instance
+ * accessor.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed
+{
+
+    /**
+     * HTTP client object to use for retrieving feeds
+     *
+     * @var Zend_Http_Client
+     */
+    protected static $_httpClient = null;
+
+    /**
+     * Override HTTP PUT and DELETE request methods?
+     *
+     * @var boolean
+     */
+    protected static $_httpMethodOverride = false;
+
+    /**
+     * @var array
+     */
+    protected static $_namespaces = array(
+        'opensearch' => 'http://a9.com/-/spec/opensearchrss/1.0/',
+        'atom'       => 'http://www.w3.org/2005/Atom',
+        'rss'        => 'http://blogs.law.harvard.edu/tech/rss',
+    );
+
+
+    /**
+     * Set the HTTP client instance
+     *
+     * Sets the HTTP client object to use for retrieving the feeds.
+     *
+     * @param  Zend_Http_Client $httpClient
+     * @return void
+     */
+    public static function setHttpClient(Zend_Http_Client $httpClient)
+    {
+        self::$_httpClient = $httpClient;
+    }
+
+
+    /**
+     * Gets the HTTP client object. If none is set, a new Zend_Http_Client will be used.
+     *
+     * @return Zend_Http_Client_Abstract
+     */
+    public static function getHttpClient()
+    {
+        if (!self::$_httpClient instanceof Zend_Http_Client) {
+            /**
+             * @see Zend_Http_Client
+             */
+            require_once 'Zend/Http/Client.php';
+            self::$_httpClient = new Zend_Http_Client();
+        }
+
+        return self::$_httpClient;
+    }
+
+
+    /**
+     * Toggle using POST instead of PUT and DELETE HTTP methods
+     *
+     * Some feed implementations do not accept PUT and DELETE HTTP
+     * methods, or they can't be used because of proxies or other
+     * measures. This allows turning on using POST where PUT and
+     * DELETE would normally be used; in addition, an
+     * X-Method-Override header will be sent with a value of PUT or
+     * DELETE as appropriate.
+     *
+     * @param  boolean $override Whether to override PUT and DELETE.
+     * @return void
+     */
+    public static function setHttpMethodOverride($override = true)
+    {
+        self::$_httpMethodOverride = $override;
+    }
+
+
+    /**
+     * Get the HTTP override state
+     *
+     * @return boolean
+     */
+    public static function getHttpMethodOverride()
+    {
+        return self::$_httpMethodOverride;
+    }
+
+
+    /**
+     * Get the full version of a namespace prefix
+     *
+     * Looks up a prefix (atom:, etc.) in the list of registered
+     * namespaces and returns the full namespace URI if
+     * available. Returns the prefix, unmodified, if it's not
+     * registered.
+     *
+     * @return string
+     */
+    public static function lookupNamespace($prefix)
+    {
+        return isset(self::$_namespaces[$prefix]) ?
+            self::$_namespaces[$prefix] :
+            $prefix;
+    }
+
+
+    /**
+     * Add a namespace and prefix to the registered list
+     *
+     * Takes a prefix and a full namespace URI and adds them to the
+     * list of registered namespaces for use by
+     * Zend_Feed::lookupNamespace().
+     *
+     * @param  string $prefix The namespace prefix
+     * @param  string $namespaceURI The full namespace URI
+     * @return void
+     */
+    public static function registerNamespace($prefix, $namespaceURI)
+    {
+        self::$_namespaces[$prefix] = $namespaceURI;
+    }
+
+
+    /**
+     * Imports a feed located at $uri.
+     *
+     * @param  string $uri
+     * @throws Zend_Feed_Exception
+     * @return Zend_Feed_Abstract
+     */
+    public static function import($uri)
+    {
+        $client = self::getHttpClient();
+        $client->setUri($uri);
+        $response = $client->request('GET');
+        if ($response->getStatus() !== 200) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('Feed failed to load, got response code ' . $response->getStatus());
+        }
+        $feed = $response->getBody();
+        return self::importString($feed);
+    }
+
+
+    /**
+     * Imports a feed represented by $string.
+     *
+     * @param  string $string
+     * @throws Zend_Feed_Exception
+     * @return Zend_Feed_Abstract
+     */
+    public static function importString($string)
+    {
+        // Load the feed as an XML DOMDocument object
+        @ini_set('track_errors', 1);
+        $doc = new DOMDocument;
+        $status = @$doc->loadXML($string);
+        @ini_restore('track_errors');
+
+        if (!$status) {
+            // prevent the class to generate an undefined variable notice (ZF-2590)
+            if (!isset($php_errormsg)) {
+                if (function_exists('xdebug_is_enabled')) {
+                    $php_errormsg = '(error message not available, when XDebug is running)';
+                } else {
+                    $php_errormsg = '(error message not available)';
+                }
+            }
+
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception("DOMDocument cannot parse XML: $php_errormsg");
+        }
+
+        // Try to find the base feed element or a single <entry> of an Atom feed
+        if ($doc->getElementsByTagName('feed')->item(0) ||
+            $doc->getElementsByTagName('entry')->item(0)) {
+            /**
+             * @see Zend_Feed_Atom
+             */
+            require_once 'Zend/Feed/Atom.php';
+            // return a newly created Zend_Feed_Atom object
+            return new Zend_Feed_Atom(null, $string);
+        }
+
+        // Try to find the base feed element of an RSS feed
+        if ($doc->getElementsByTagName('channel')->item(0)) {
+            /**
+             * @see Zend_Feed_Rss
+             */
+            require_once 'Zend/Feed/Rss.php';
+            // return a newly created Zend_Feed_Rss object
+            return new Zend_Feed_Rss(null, $string);
+        }
+
+        // $string does not appear to be a valid feed of the supported types
+        /**
+         * @see Zend_Feed_Exception
+         */
+        require_once 'Zend/Feed/Exception.php';
+        throw new Zend_Feed_Exception('Invalid or unsupported feed format');
+    }
+
+
+    /**
+     * Imports a feed from a file located at $filename.
+     *
+     * @param  string $filename
+     * @throws Zend_Feed_Exception
+     * @return Zend_Feed_Abstract
+     */
+    public static function importFile($filename)
+    {
+        @ini_set('track_errors', 1);
+        $feed = @file_get_contents($filename);
+        @ini_restore('track_errors');
+        if ($feed === false) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception("File could not be loaded: $php_errormsg");
+        }
+        return self::importString($feed);
+    }
+
+
+    /**
+     * Attempts to find feeds at $uri referenced by <link ... /> tags. Returns an
+     * array of the feeds referenced at $uri.
+     *
+     * @todo Allow findFeeds() to follow one, but only one, code 302.
+     *
+     * @param  string $uri
+     * @throws Zend_Feed_Exception
+     * @return array
+     */
+    public static function findFeeds($uri)
+    {
+        // Get the HTTP response from $uri and save the contents
+        $client = self::getHttpClient();
+        $client->setUri($uri);
+        $response = $client->request();
+        if ($response->getStatus() !== 200) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception("Failed to access $uri, got response code " . $response->getStatus());
+        }
+        $contents = $response->getBody();
+
+        // Parse the contents for appropriate <link ... /> tags
+        @ini_set('track_errors', 1);
+        $pattern = '~(<link[^>]+)/?>~i';
+        $result = @preg_match_all($pattern, $contents, $matches);
+        @ini_restore('track_errors');
+        if ($result === false) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception("Internal error: $php_errormsg");
+        }
+
+        // Try to fetch a feed for each link tag that appears to refer to a feed
+        $feeds = array();
+        if (isset($matches[1]) && count($matches[1]) > 0) {
+            foreach ($matches[1] as $link) {
+                // force string to be an utf-8 one
+                if (!mb_check_encoding($link, 'UTF-8')) {
+                    $link = mb_convert_encoding($link, 'UTF-8');
+                }
+                $xml = @simplexml_load_string(rtrim($link, ' /') . ' />');
+                if ($xml === false) {
+                    continue;
+                }
+                $attributes = $xml->attributes();
+                if (!isset($attributes['rel']) || !@preg_match('~^(?:alternate|service\.feed)~i', $attributes['rel'])) {
+                    continue;
+                }
+                if (!isset($attributes['type']) ||
+                        !@preg_match('~^application/(?:atom|rss|rdf)\+xml~', $attributes['type'])) {
+                    continue;
+                }
+                if (!isset($attributes['href'])) {
+                    continue;
+                }
+                try {
+                    // checks if we need to canonize the given uri
+                    try {
+                        $uri = Zend_Uri::factory((string) $attributes['href']);
+                    } catch (Zend_Uri_Exception $e) {
+                        // canonize the uri
+                        $path = (string) $attributes['href'];
+                        $query = $fragment = '';
+                        if (substr($path, 0, 1) != '/') {
+                            // add the current root path to this one
+                            $path = rtrim($client->getUri()->getPath(), '/') . '/' . $path;
+                        }
+                        if (strpos($path, '?') !== false) {
+                            list($path, $query) = explode('?', $path, 2);
+                        }
+                        if (strpos($query, '#') !== false) {
+                            list($query, $fragment) = explode('#', $query, 2);
+                        }
+                        $uri = Zend_Uri::factory($client->getUri(true));
+                        $uri->setPath($path);
+                        $uri->setQuery($query);
+                        $uri->setFragment($fragment);
+                    }
+
+                    $feed = self::import($uri);
+                } catch (Exception $e) {
+                    continue;
+                }
+                $feeds[] = $feed;
+            }
+        }
+
+        // Return the fetched feeds
+        return $feeds;
+    }
+
+    /**
+     * Construct a new Zend_Feed_Abstract object from a custom array
+     *
+     * @param  array  $data
+     * @param  string $format (rss|atom) the requested output format
+     * @return Zend_Feed_Abstract
+     */
+    public static function importArray(array $data, $format = 'atom')
+    {
+        $obj = 'Zend_Feed_' . ucfirst(strtolower($format));
+        if (!class_exists($obj)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($obj);
+        }
+
+        /**
+         * @see Zend_Feed_Builder
+         */
+        require_once 'Zend/Feed/Builder.php';
+        return new $obj(null, null, new Zend_Feed_Builder($data));
+    }
+
+    /**
+     * Construct a new Zend_Feed_Abstract object from a Zend_Feed_Builder_Interface data source
+     *
+     * @param  Zend_Feed_Builder_Interface $builder this object will be used to extract the data of the feed
+     * @param  string                      $format (rss|atom) the requested output format
+     * @return Zend_Feed_Abstract
+     */
+    public static function importBuilder(Zend_Feed_Builder_Interface $builder, $format = 'atom')
+    {
+        $obj = 'Zend_Feed_' . ucfirst(strtolower($format));
+        if (!class_exists($obj)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($obj);
+        }
+        return new $obj(null, null, $builder);
+    }
+}

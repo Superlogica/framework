@@ -1,35 +1,125 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-1I+FVnfeGuPHmuS+0KYo4WTzKW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @subpackage PHP
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_CodeGenerator_Php_Docblock_Tag
+ */
+require_once 'Zend/CodeGenerator/Php/Docblock/Tag.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_CodeGenerator
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_CodeGenerator_Php_Docblock_Tag_Param extends Zend_CodeGenerator_Php_Docblock_Tag
+{
+    
+    /**
+     * @var string
+     */
+    protected $_datatype = null;
+    
+    /**
+     * @var string
+     */
+    protected $_paramName = null;
+    
+    /**
+     * @var string
+     */
+    protected $_description = null;
+    
+    /**
+     * fromReflection()
+     *
+     * @param Zend_Reflection_Docblock_Tag $reflectionTagParam
+     * @return Zend_CodeGenerator_Php_Docblock_Tag_Param
+     */
+    public static function fromReflection(Zend_Reflection_Docblock_Tag $reflectionTagParam)
+    {
+        $paramTag = new self();
+
+        $paramTag->setName('param');
+        $paramTag->setDatatype($reflectionTagParam->getType()); // @todo rename
+        $paramTag->setParamName($reflectionTagParam->getVariableName());
+        $paramTag->setDescription($reflectionTagParam->getDescription());
+        
+        return $paramTag;
+    }
+
+    /**
+     * setDatatype()
+     *
+     * @param string $datatype
+     * @return Zend_CodeGenerator_Php_Docblock_Tag_Param
+     */
+    public function setDatatype($datatype)
+    {
+        $this->_datatype = $datatype;
+        return $this;
+    }
+    
+    /**
+     * getDatatype
+     *
+     * @return string
+     */
+    public function getDatatype()
+    {
+        return $this->_datatype;
+    }
+    
+    /**
+     * setParamName()
+     *
+     * @param string $paramName
+     * @return Zend_CodeGenerator_Php_Docblock_Tag_Param
+     */
+    public function setParamName($paramName)
+    {
+        $this->_paramName = $paramName;
+        return $this;
+    }
+    
+    /**
+     * getParamName()
+     *
+     * @return string
+     */
+    public function getParamName()
+    {
+        return $this->_paramName;
+    }
+    
+    /**
+     * generate()
+     *
+     * @return string
+     */
+    public function generate()
+    {
+        $output = '@param ' . $this->_datatype . ' ' . $this->_paramName . ' ' . $this->_description . PHP_EOL;
+        return $output;
+    }
+    
+}

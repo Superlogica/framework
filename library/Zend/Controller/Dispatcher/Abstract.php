@@ -1,102 +1,439 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-CP7FsBUprqnIQqbwRxaUVeW7/OF/Q073hYAOQkm=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Dispatcher
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Dispatcher_Interface */
+require_once 'Zend/Controller/Dispatcher/Interface.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Dispatcher
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Controller_Dispatcher_Abstract implements Zend_Controller_Dispatcher_Interface
+{
+    /**
+     * Default action
+     * @var string
+     */
+    protected $_defaultAction = 'index';
+
+    /**
+     * Default controller
+     * @var string
+     */
+    protected $_defaultController = 'index';
+
+    /**
+     * Default module
+     * @var string
+     */
+    protected $_defaultModule = 'default';
+
+    /**
+     * Front Controller instance
+     * @var Zend_Controller_Front
+     */
+    protected $_frontController;
+
+    /**
+     * Array of invocation parameters to use when instantiating action
+     * controllers
+     * @var array
+     */
+    protected $_invokeParams = array();
+
+    /**
+     * Path delimiter character
+     * @var string
+     */
+    protected $_pathDelimiter = '_';
+
+    /**
+     * Response object to pass to action controllers, if any
+     * @var Zend_Controller_Response_Abstract|null
+     */
+    protected $_response = null;
+
+    /**
+     * Word delimiter characters
+     * @var array
+     */
+    protected $_wordDelimiter = array('-', '.');
+
+    /**
+     * Constructor
+     *
+     * @return void
+     */
+    public function __construct(array $params = array())
+    {
+        $this->setParams($params);
+    }
+
+    /**
+     * Formats a string into a controller name.  This is used to take a raw
+     * controller name, such as one stored inside a Zend_Controller_Request_Abstract
+     * object, and reformat it to a proper class name that a class extending
+     * Zend_Controller_Action would use.
+     *
+     * @param string $unformatted
+     * @return string
+     */
+    public function formatControllerName($unformatted)
+    {
+        return ucfirst($this->_formatName($unformatted)) . 'Controller';
+    }
+
+    /**
+     * Formats a string into an action name.  This is used to take a raw
+     * action name, such as one that would be stored inside a Zend_Controller_Request_Abstract
+     * object, and reformat into a proper method name that would be found
+     * inside a class extending Zend_Controller_Action.
+     *
+     * @param string $unformatted
+     * @return string
+     */
+    public function formatActionName($unformatted)
+    {
+        $formatted = $this->_formatName($unformatted, true);
+        return strtolower(substr($formatted, 0, 1)) . substr($formatted, 1) . 'Action';
+    }
+
+    /**
+     * Verify delimiter
+     *
+     * Verify a delimiter to use in controllers or actions. May be a single
+     * string or an array of strings.
+     *
+     * @param string|array $spec
+     * @return array
+     * @throws Zend_Controller_Dispatcher_Exception with invalid delimiters
+     */
+    public function _verifyDelimiter($spec)
+    {
+        if (is_string($spec)) {
+            return (array) $spec;
+        } elseif (is_array($spec)) {
+            $allStrings = true;
+            foreach ($spec as $delim) {
+                if (!is_string($delim)) {
+                    $allStrings = false;
+                    break;
+                }
+            }
+
+            if (!$allStrings) {
+                require_once 'Zend/Controller/Dispatcher/Exception.php';
+                throw new Zend_Controller_Dispatcher_Exception('Word delimiter array must contain only strings');
+            }
+
+            return $spec;
+        }
+
+        require_once 'Zend/Controller/Dispatcher/Exception.php';
+        throw new Zend_Controller_Dispatcher_Exception('Invalid word delimiter');
+    }
+
+    /**
+     * Retrieve the word delimiter character(s) used in
+     * controller or action names
+     *
+     * @return array
+     */
+    public function getWordDelimiter()
+    {
+        return $this->_wordDelimiter;
+    }
+
+    /**
+     * Set word delimiter
+     *
+     * Set the word delimiter to use in controllers and actions. May be a
+     * single string or an array of strings.
+     *
+     * @param string|array $spec
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setWordDelimiter($spec)
+    {
+        $spec = $this->_verifyDelimiter($spec);
+        $this->_wordDelimiter = $spec;
+
+        return $this;
+    }
+
+    /**
+     * Retrieve the path delimiter character(s) used in
+     * controller names
+     *
+     * @return array
+     */
+    public function getPathDelimiter()
+    {
+        return $this->_pathDelimiter;
+    }
+
+    /**
+     * Set path delimiter
+     *
+     * Set the path delimiter to use in controllers. May be a single string or
+     * an array of strings.
+     *
+     * @param string $spec
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setPathDelimiter($spec)
+    {
+        if (!is_string($spec)) {
+            require_once 'Zend/Controller/Dispatcher/Exception.php';
+            throw new Zend_Controller_Dispatcher_Exception('Invalid path delimiter');
+        }
+        $this->_pathDelimiter = $spec;
+
+        return $this;
+    }
+
+    /**
+     * Formats a string from a URI into a PHP-friendly name.
+     *
+     * By default, replaces words separated by the word separator character(s)
+     * with camelCaps. If $isAction is false, it also preserves replaces words
+     * separated by the path separation character with an underscore, making
+     * the following word Title cased. All non-alphanumeric characters are
+     * removed.
+     *
+     * @param string $unformatted
+     * @param boolean $isAction Defaults to false
+     * @return string
+     */
+    protected function _formatName($unformatted, $isAction = false)
+    {
+        // preserve directories
+        if (!$isAction) {
+            $segments = explode($this->getPathDelimiter(), $unformatted);
+        } else {
+            $segments = (array) $unformatted;
+        }
+
+        foreach ($segments as $key => $segment) {
+            $segment        = str_replace($this->getWordDelimiter(), ' ', strtolower($segment));
+            $segment        = preg_replace('/[^a-z0-9 ]/', '', $segment);
+            $segments[$key] = str_replace(' ', '', ucwords($segment));
+        }
+
+        return implode('_', $segments);
+    }
+
+    /**
+     * Retrieve front controller instance
+     *
+     * @return Zend_Controller_Front
+     */
+    public function getFrontController()
+    {
+        if (null === $this->_frontController) {
+            require_once 'Zend/Controller/Front.php';
+            $this->_frontController = Zend_Controller_Front::getInstance();
+        }
+
+        return $this->_frontController;
+    }
+
+    /**
+     * Set front controller instance
+     *
+     * @param Zend_Controller_Front $controller
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setFrontController(Zend_Controller_Front $controller)
+    {
+        $this->_frontController = $controller;
+        return $this;
+    }
+
+    /**
+     * Add or modify a parameter to use when instantiating an action controller
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setParam($name, $value)
+    {
+        $name = (string) $name;
+        $this->_invokeParams[$name] = $value;
+        return $this;
+    }
+
+    /**
+     * Set parameters to pass to action controller constructors
+     *
+     * @param array $params
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setParams(array $params)
+    {
+        $this->_invokeParams = array_merge($this->_invokeParams, $params);
+        return $this;
+    }
+
+    /**
+     * Retrieve a single parameter from the controller parameter stack
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function getParam($name)
+    {
+        if(isset($this->_invokeParams[$name])) {
+            return $this->_invokeParams[$name];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve action controller instantiation parameters
+     *
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->_invokeParams;
+    }
+
+    /**
+     * Clear the controller parameter stack
+     *
+     * By default, clears all parameters. If a parameter name is given, clears
+     * only that parameter; if an array of parameter names is provided, clears
+     * each.
+     *
+     * @param null|string|array single key or array of keys for params to clear
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function clearParams($name = null)
+    {
+        if (null === $name) {
+            $this->_invokeParams = array();
+        } elseif (is_string($name) && isset($this->_invokeParams[$name])) {
+            unset($this->_invokeParams[$name]);
+        } elseif (is_array($name)) {
+            foreach ($name as $key) {
+                if (is_string($key) && isset($this->_invokeParams[$key])) {
+                    unset($this->_invokeParams[$key]);
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set response object to pass to action controllers
+     *
+     * @param Zend_Controller_Response_Abstract|null $response
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setResponse(Zend_Controller_Response_Abstract $response = null)
+    {
+        $this->_response = $response;
+        return $this;
+    }
+
+    /**
+     * Return the registered response object
+     *
+     * @return Zend_Controller_Response_Abstract|null
+     */
+    public function getResponse()
+    {
+        return $this->_response;
+    }
+
+    /**
+     * Set the default controller (minus any formatting)
+     *
+     * @param string $controller
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setDefaultControllerName($controller)
+    {
+        $this->_defaultController = (string) $controller;
+        return $this;
+    }
+
+    /**
+     * Retrieve the default controller name (minus formatting)
+     *
+     * @return string
+     */
+    public function getDefaultControllerName()
+    {
+        return $this->_defaultController;
+    }
+
+    /**
+     * Set the default action (minus any formatting)
+     *
+     * @param string $action
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setDefaultAction($action)
+    {
+        $this->_defaultAction = (string) $action;
+        return $this;
+    }
+
+    /**
+     * Retrieve the default action name (minus formatting)
+     *
+     * @return string
+     */
+    public function getDefaultAction()
+    {
+        return $this->_defaultAction;
+    }
+
+    /**
+     * Set the default module
+     *
+     * @param string $module
+     * @return Zend_Controller_Dispatcher_Abstract
+     */
+    public function setDefaultModule($module)
+    {
+        $this->_defaultModule = (string) $module;
+        return $this;
+    }
+
+    /**
+     * Retrieve the default module
+     *
+     * @return string
+     */
+    public function getDefaultModule()
+    {
+        return $this->_defaultModule;
+    }
+}

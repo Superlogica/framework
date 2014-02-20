@@ -1,182 +1,549 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Mysqli.php 15599 2009-05-16 01:30:48Z yoshida@zend.co.jp $
+ */
+
+
+/**
+ * @see Zend_Db_Adapter_Abstract
+ */
+require_once 'Zend/Db/Adapter/Abstract.php';
+
+/**
+ * @see Zend_Db_Profiler
+ */
+require_once 'Zend/Db/Profiler.php';
+
+/**
+ * @see Zend_Db_Select
+ */
+require_once 'Zend/Db/Select.php';
+
+/**
+ * @see Zend_Db_Statement_Mysqli
+ */
+require_once 'Zend/Db/Statement/Mysqli.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
+{
+
+    /**
+     * Keys are UPPERCASE SQL datatypes or the constants
+     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
+     *
+     * Values are:
+     * 0 = 32-bit integer
+     * 1 = 64-bit integer
+     * 2 = float or decimal
+     *
+     * @var array Associative array of datatypes to values 0, 1, or 2.
+     */
+    protected $_numericDataTypes = array(
+        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
+        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
+        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE,
+        'INT'                => Zend_Db::INT_TYPE,
+        'INTEGER'            => Zend_Db::INT_TYPE,
+        'MEDIUMINT'          => Zend_Db::INT_TYPE,
+        'SMALLINT'           => Zend_Db::INT_TYPE,
+        'TINYINT'            => Zend_Db::INT_TYPE,
+        'BIGINT'             => Zend_Db::BIGINT_TYPE,
+        'SERIAL'             => Zend_Db::BIGINT_TYPE,
+        'DEC'                => Zend_Db::FLOAT_TYPE,
+        'DECIMAL'            => Zend_Db::FLOAT_TYPE,
+        'DOUBLE'             => Zend_Db::FLOAT_TYPE,
+        'DOUBLE PRECISION'   => Zend_Db::FLOAT_TYPE,
+        'FIXED'              => Zend_Db::FLOAT_TYPE,
+        'FLOAT'              => Zend_Db::FLOAT_TYPE
+    );
+
+    /**
+     * @var Zend_Db_Statement_Mysqli
+     */
+    protected $_stmt = null;
+
+    /**
+     * Default class name for a DB statement.
+     *
+     * @var string
+     */
+    protected $_defaultStmtClass = 'Zend_Db_Statement_Mysqli';
+
+    /**
+     * Quote a raw string.
+     *
+     * @param mixed $value Raw string
+     *
+     * @return string           Quoted string
+     */
+    protected function _quote($value)
+    {
+        if (is_int($value) || is_float($value)) {
+            return $value;
+        }
+        $this->_connect();
+        return "'" . $this->_connection->real_escape_string($value) . "'";
+    }
+
+    /**
+     * Returns the symbol the adapter uses for delimiting identifiers.
+     *
+     * @return string
+     */
+    public function getQuoteIdentifierSymbol()
+    {
+        return "`";
+    }
+
+    /**
+     * Returns a list of the tables in the database.
+     *
+     * @return array
+     */
+    public function listTables()
+    {
+        $result = array();
+        // Use mysqli extension API, because SHOW doesn't work
+        // well as a prepared statement on MySQL 4.1.
+        $sql = 'SHOW TABLES';
+        if ($queryResult = $this->getConnection()->query($sql)) {
+            while ($row = $queryResult->fetch_row()) {
+                $result[] = $row[0];
+            }
+            $queryResult->close();
+        } else {
+            /**
+             * @see Zend_Db_Adapter_Mysqli_Exception
+             */
+            require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+            throw new Zend_Db_Adapter_Mysqli_Exception($this->getConnection()->error);
+        }
+        return $result;
+    }
+
+    /**
+     * Returns the column descriptions for a table.
+     *
+     * The return value is an associative array keyed by the column name,
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME      => string; name of database or schema
+     * TABLE_NAME       => string;
+     * COLUMN_NAME      => string; column name
+     * COLUMN_POSITION  => number; ordinal position of column in table
+     * DATA_TYPE        => string; SQL datatype name of column
+     * DEFAULT          => string; default expression of column, null if none
+     * NULLABLE         => boolean; true if column can have nulls
+     * LENGTH           => number; length of CHAR/VARCHAR
+     * SCALE            => number; scale of NUMERIC/DECIMAL
+     * PRECISION        => number; precision of NUMERIC/DECIMAL
+     * UNSIGNED         => boolean; unsigned property of an integer type
+     * PRIMARY          => boolean; true if column is part of the primary key
+     * PRIMARY_POSITION => integer; position of column in primary key
+     * IDENTITY         => integer; true if column is auto-generated with unique values
+     *
+     * @param string $tableName
+     * @param string $schemaName OPTIONAL
+     * @return array
+     */
+    public function describeTable($tableName, $schemaName = null)
+    {
+        /**
+         * @todo  use INFORMATION_SCHEMA someday when
+         * MySQL's implementation isn't too slow.
+         */
+
+        if ($schemaName) {
+            $sql = 'DESCRIBE ' . $this->quoteIdentifier("$schemaName.$tableName", true);
+        } else {
+            $sql = 'DESCRIBE ' . $this->quoteIdentifier($tableName, true);
+        }
+
+        /**
+         * Use mysqli extension API, because DESCRIBE doesn't work
+         * well as a prepared statement on MySQL 4.1.
+         */
+        if ($queryResult = $this->getConnection()->query($sql)) {
+            while ($row = $queryResult->fetch_assoc()) {
+                $result[] = $row;
+            }
+            $queryResult->close();
+        } else {
+            /**
+             * @see Zend_Db_Adapter_Mysqli_Exception
+             */
+            require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+            throw new Zend_Db_Adapter_Mysqli_Exception($this->getConnection()->error);
+        }
+
+        $desc = array();
+
+        $row_defaults = array(
+            'Length'          => null,
+            'Scale'           => null,
+            'Precision'       => null,
+            'Unsigned'        => null,
+            'Primary'         => false,
+            'PrimaryPosition' => null,
+            'Identity'        => false
+        );
+        $i = 1;
+        $p = 1;
+        foreach ($result as $key => $row) {
+            $row = array_merge($row_defaults, $row);
+            if (preg_match('/unsigned/', $row['Type'])) {
+                $row['Unsigned'] = true;
+            }
+            if (preg_match('/^((?:var)?char)\((\d+)\)/', $row['Type'], $matches)) {
+                $row['Type'] = $matches[1];
+                $row['Length'] = $matches[2];
+            } else if (preg_match('/^decimal\((\d+),(\d+)\)/', $row['Type'], $matches)) {
+                $row['Type'] = 'decimal';
+                $row['Precision'] = $matches[1];
+                $row['Scale'] = $matches[2];
+            } else if (preg_match('/^float\((\d+),(\d+)\)/', $row['Type'], $matches)) {
+                $row['Type'] = 'float';
+                $row['Precision'] = $matches[1];
+                $row['Scale'] = $matches[2];
+            } else if (preg_match('/^((?:big|medium|small|tiny)?int)\((\d+)\)/', $row['Type'], $matches)) {
+                $row['Type'] = $matches[1];
+                /**
+                 * The optional argument of a MySQL int type is not precision
+                 * or length; it is only a hint for display width.
+                 */
+            }
+            if (strtoupper($row['Key']) == 'PRI') {
+                $row['Primary'] = true;
+                $row['PrimaryPosition'] = $p;
+                if ($row['Extra'] == 'auto_increment') {
+                    $row['Identity'] = true;
+                } else {
+                    $row['Identity'] = false;
+                }
+                ++$p;
+            }
+            $desc[$this->foldCase($row['Field'])] = array(
+                'SCHEMA_NAME'      => null, // @todo
+                'TABLE_NAME'       => $this->foldCase($tableName),
+                'COLUMN_NAME'      => $this->foldCase($row['Field']),
+                'COLUMN_POSITION'  => $i,
+                'DATA_TYPE'        => $row['Type'],
+                'DEFAULT'          => $row['Default'],
+                'NULLABLE'         => (bool) ($row['Null'] == 'YES'),
+                'LENGTH'           => $row['Length'],
+                'SCALE'            => $row['Scale'],
+                'PRECISION'        => $row['Precision'],
+                'UNSIGNED'         => $row['Unsigned'],
+                'PRIMARY'          => $row['Primary'],
+                'PRIMARY_POSITION' => $row['PrimaryPosition'],
+                'IDENTITY'         => $row['Identity']
+            );
+            ++$i;
+        }
+        return $desc;
+    }
+
+    /**
+     * Creates a connection to the database.
+     *
+     * @return void
+     * @throws Zend_Db_Adapter_Mysqli_Exception
+     */
+    protected function _connect()
+    {
+        if ($this->_connection) {
+            return;
+        }
+
+        if (!extension_loaded('mysqli')) {
+            /**
+             * @see Zend_Db_Adapter_Mysqli_Exception
+             */
+            require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+            throw new Zend_Db_Adapter_Mysqli_Exception('The Mysqli extension is required for this adapter but the extension is not loaded');
+        }
+
+        if (isset($this->_config['port'])) {
+            $port = (integer) $this->_config['port'];
+        } else {
+            $port = null;
+        }
+
+        $this->_connection = mysqli_init();
+
+        if(!empty($this->_config['driver_options'])) {
+            foreach($this->_config['driver_options'] as $option=>$value) {
+                if(is_string($option)) {
+                    // Suppress warnings here
+                    // Ignore it if it's not a valid constant
+                    $option = @constant(strtoupper($option));
+                    if($option === null)
+                        continue;
+                }
+                mysqli_options($this->_connection, $option, $value);
+            }
+        }
+
+        // Suppress connection warnings here.
+        // Throw an exception instead.
+        $_isConnected = @mysqli_real_connect(
+            $this->_connection,
+            $this->_config['host'],
+            $this->_config['username'],
+            $this->_config['password'],
+            $this->_config['dbname'],
+            $port
+        );
+
+        if ($_isConnected === false || mysqli_connect_errno()) {
+
+            $this->closeConnection();
+            /**
+             * @see Zend_Db_Adapter_Mysqli_Exception
+             */
+            require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+            throw new Zend_Db_Adapter_Mysqli_Exception(mysqli_connect_error());
+        }
+
+        if (!empty($this->_config['charset'])) {
+            mysqli_set_charset($this->_connection, $this->_config['charset']);
+        }
+    }
+
+    /**
+     * Test if a connection is active
+     *
+     * @return boolean
+     */
+    public function isConnected()
+    {
+        return ((bool) ($this->_connection instanceof mysqli));
+    }
+
+    /**
+     * Force the connection to close.
+     *
+     * @return void
+     */
+    public function closeConnection()
+    {
+        if ($this->isConnected()) {
+            $this->_connection->close();
+        }
+        $this->_connection = null;
+    }
+
+    /**
+     * Prepare a statement and return a PDOStatement-like object.
+     *
+     * @param  string  $sql  SQL query
+     * @return Zend_Db_Statement_Mysqli
+     */
+    public function prepare($sql)
+    {
+        $this->_connect();
+        if ($this->_stmt) {
+            $this->_stmt->close();
+        }
+        $stmtClass = $this->_defaultStmtClass;
+        if (!class_exists($stmtClass)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($stmtClass);
+        }
+        $stmt = new $stmtClass($this, $sql);
+        if ($stmt === false) {
+            return false;
+        }
+        $stmt->setFetchMode($this->_fetchMode);
+        $this->_stmt = $stmt;
+        return $stmt;
+    }
+
+    /**
+     * Gets the last ID generated automatically by an IDENTITY/AUTOINCREMENT column.
+     *
+     * As a convention, on RDBMS brands that support sequences
+     * (e.g. Oracle, PostgreSQL, DB2), this method forms the name of a sequence
+     * from the arguments and returns the last id generated by that sequence.
+     * On RDBMS brands that support IDENTITY/AUTOINCREMENT columns, this method
+     * returns the last value generated for such a column, and the table name
+     * argument is disregarded.
+     *
+     * MySQL does not support sequences, so $tableName and $primaryKey are ignored.
+     *
+     * @param string $tableName   OPTIONAL Name of table.
+     * @param string $primaryKey  OPTIONAL Name of primary key column.
+     * @return string
+     * @todo Return value should be int?
+     */
+    public function lastInsertId($tableName = null, $primaryKey = null)
+    {
+        $mysqli = $this->_connection;
+        return (string) $mysqli->insert_id;
+    }
+
+    /**
+     * Begin a transaction.
+     *
+     * @return void
+     */
+    protected function _beginTransaction()
+    {
+        $this->_connect();
+        $this->_connection->autocommit(false);
+    }
+
+    /**
+     * Commit a transaction.
+     *
+     * @return void
+     */
+    protected function _commit()
+    {
+        $this->_connect();
+        $this->_connection->commit();
+        $this->_connection->autocommit(true);
+    }
+
+    /**
+     * Roll-back a transaction.
+     *
+     * @return void
+     */
+    protected function _rollBack()
+    {
+        $this->_connect();
+        $this->_connection->rollback();
+        $this->_connection->autocommit(true);
+    }
+
+    /**
+     * Set the fetch mode.
+     *
+     * @param int $mode
+     * @return void
+     * @throws Zend_Db_Adapter_Mysqli_Exception
+     */
+    public function setFetchMode($mode)
+    {
+        switch ($mode) {
+            case Zend_Db::FETCH_LAZY:
+            case Zend_Db::FETCH_ASSOC:
+            case Zend_Db::FETCH_NUM:
+            case Zend_Db::FETCH_BOTH:
+            case Zend_Db::FETCH_NAMED:
+            case Zend_Db::FETCH_OBJ:
+                $this->_fetchMode = $mode;
+                break;
+            case Zend_Db::FETCH_BOUND: // bound to PHP variable
+                /**
+                 * @see Zend_Db_Adapter_Mysqli_Exception
+                 */
+                require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+                throw new Zend_Db_Adapter_Mysqli_Exception('FETCH_BOUND is not supported yet');
+                break;
+            default:
+                /**
+                 * @see Zend_Db_Adapter_Mysqli_Exception
+                 */
+                require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+                throw new Zend_Db_Adapter_Mysqli_Exception("Invalid fetch mode '$mode' specified");
+        }
+    }
+
+    /**
+     * Adds an adapter-specific LIMIT clause to the SELECT statement.
+     *
+     * @param string $sql
+     * @param int $count
+     * @param int $offset OPTIONAL
+     * @return string
+     */
+    public function limit($sql, $count, $offset = 0)
+    {
+        $count = intval($count);
+        if ($count <= 0) {
+            /**
+             * @see Zend_Db_Adapter_Mysqli_Exception
+             */
+            require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+            throw new Zend_Db_Adapter_Mysqli_Exception("LIMIT argument count=$count is not valid");
+        }
+
+        $offset = intval($offset);
+        if ($offset < 0) {
+            /**
+             * @see Zend_Db_Adapter_Mysqli_Exception
+             */
+            require_once 'Zend/Db/Adapter/Mysqli/Exception.php';
+            throw new Zend_Db_Adapter_Mysqli_Exception("LIMIT argument offset=$offset is not valid");
+        }
+
+        $sql .= " LIMIT $count";
+        if ($offset > 0) {
+            $sql .= " OFFSET $offset";
+        }
+
+        return $sql;
+    }
+
+    /**
+     * Check if the adapter supports real SQL parameters.
+     *
+     * @param string $type 'positional' or 'named'
+     * @return bool
+     */
+    public function supportsParameters($type)
+    {
+        switch ($type) {
+            case 'positional':
+                return true;
+            case 'named':
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Retrieve server version in PHP style
+     *
+     *@return string
+     */
+    public function getServerVersion()
+    {
+        $this->_connect();
+        $version = $this->_connection->server_version;
+        $major = (int) ($version / 10000);
+        $minor = (int) ($version % 10000 / 100);
+        $revision = (int) ($version % 100);
+        return $major . '.' . $minor . '.' . $revision;
+    }
+}

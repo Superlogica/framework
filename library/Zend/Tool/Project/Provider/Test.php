@@ -1,73 +1,174 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Provider_Abstract
+ */
+require_once 'Zend/Tool/Project/Provider/Abstract.php';
+
+/**
+ * @see Zend_Tool_Project_Provider_Exception
+ */
+require_once 'Zend/Tool/Project/Provider/Exception.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Provider_Test extends Zend_Tool_Project_Provider_Abstract
+{
+    
+    protected $_specialties = array('Application', 'Library');
+    
+    /**
+     * isTestingEnabled()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @return bool
+     */
+    public static function isTestingEnabled(Zend_Tool_Project_Profile $profile)
+    {
+        $profileSearchParams = array('testsDirectory');
+        $testsDirectory = $profile->search($profileSearchParams);
+        
+        return $testsDirectory->isEnabled();
+    }
+    
+    /**
+     * createApplicationResource()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @param string $controllerName
+     * @param string $actionName
+     * @param string $moduleName
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public static function createApplicationResource(Zend_Tool_Project_Profile $profile, $controllerName, $actionName, $moduleName = null)
+    {
+        if (!is_string($controllerName)) {
+            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_View::createApplicationResource() expects \"controllerName\" is the name of a controller resource to create.');
+        }
+        
+        if (!is_string($actionName)) {
+            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_View::createApplicationResource() expects \"actionName\" is the name of a controller resource to create.');
+        }
+        
+        $testsDirectoryResource = $profile->search('testsDirectory');
+        
+        if (($testAppDirectoryResource = $testsDirectoryResource->search('testApplicationDirectory')) === false) {
+            $testAppDirectoryResource = $testsDirectoryResource->createResource('testApplicationDirectory');
+        }
+        
+        if ($moduleName) {
+            //@todo $moduleName
+            $moduleName = '';
+        }
+        
+        if (($testAppControllerDirectoryResource = $testAppDirectoryResource->search('testApplicationControllerDirectory')) === false) {
+            $testAppControllerDirectoryResource = $testAppDirectoryResource->createResource('testApplicationControllerDirectory');
+        }
+        
+        $testAppControllerFileResource = $testAppControllerDirectoryResource->createResource('testApplicationControllerFile', array('forControllerName' => $controllerName));
+        
+        return $testAppControllerFileResource;
+    }
+
+    /**
+     * createLibraryResource()
+     *
+     * @param Zend_Tool_Project_Profile $profile
+     * @param string $libraryClassName
+     * @return Zend_Tool_Project_Profile_Resource
+     */
+    public static function createLibraryResource(Zend_Tool_Project_Profile $profile, $libraryClassName)
+    {
+        $testLibraryDirectoryResource = $profile->search(array('TestsDirectory', 'TestLibraryDirectory'));
+        
+        
+        $fsParts = explode('_', $libraryClassName);
+        
+        $currentDirectoryResource = $testLibraryDirectoryResource;
+        
+        while ($nameOrNamespacePart = array_shift($fsParts)) {
+
+            if (count($fsParts) > 0) {
+                
+                if (($libraryDirectoryResource = $currentDirectoryResource->search(array('TestLibraryNamespaceDirectory' => array('namespaceName' => $nameOrNamespacePart)))) === false) {
+                    $currentDirectoryResource = $currentDirectoryResource->createResource('TestLibraryNamespaceDirectory', array('namespaceName' => $nameOrNamespacePart));
+                } else {
+                    $currentDirectoryResource = $libraryDirectoryResource;
+                }
+
+                
+            } else {
+                
+                if (($libraryFileResource = $currentDirectoryResource->search(array('TestLibraryFile' => array('forClassName' => $libraryClassName)))) === false) {
+                    $libraryFileResource = $currentDirectoryResource->createResource('TestLibraryFile', array('forClassName' => $libraryClassName));
+                }
+                
+            }
+            
+        }
+        
+        return $libraryFileResource;
+    }
+    
+    public function enable()
+    {
+        
+    }
+    
+    public function disable()
+    {
+        
+    }
+    
+    /**
+     * create()
+     *
+     * @param unknown_type $libraryClassName
+     */
+    public function create($libraryClassName)
+    {
+        $profile = $this->_loadProfile();
+        
+        if (!self::isTestingEnabled($profile)) {
+            $this->_registry->getResponse()->appendContent('Testing is not enabled for this project.');
+        }
+        
+        $testLibraryResource = self::createLibraryResource($profile, $libraryClassName);
+        
+        $response = $this->_registry->getResponse();
+        
+        if ($this->_registry->getRequest()->isPretend()) {
+            $response->appendContent('Would create a library stub in location ' . $testLibraryResource->getContext()->getPath());
+        } else {
+            $response->appendContent('Creating a library stub in location ' . $testLibraryResource->getContext()->getPath());
+            $testLibraryResource->create();
+            $this->_storeProfile();
+        }
+        
+    }
+    
+}

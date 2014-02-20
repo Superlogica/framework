@@ -1,136 +1,308 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category    ZendX
+ * @package     ZendX_JQuery
+ * @subpackage  View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license     http://framework.zend.com/license/new-bsd     New BSD License
+ * @version     $Id: AjaxLink.php 21865 2010-04-16 07:26:51Z beberlei $
+ */
+
+/**
+ * @see Zend_View_Helper_HtmlElement
+ */
+include_once "Zend/View/Helper/HtmlElement.php";
+
+/**
+ * jQuery Accordion Pane, goes with Accordion Container
+ *
+ * @uses 	   Zend_Json
+ * @package    ZendX_JQuery
+ * @subpackage View
+ * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class ZendX_JQuery_View_Helper_AjaxLink extends Zend_View_Helper_HtmlElement
+{
+    /**
+     * Static because multiple instances accross views of AjaxLink could reset the counter and a
+     * subcontainer because of this single private class variable seems too much overhead.
+     *
+     * @staticvar Integer
+     */
+    private static $currentLinkCallbackId = 1;
+
+    /**
+     * Create an anchor that enables ajax-based requests and handling of the response.
+     *
+     * This helper creates links that make XmlHttpRequests to the server. It allows to
+     * inject the response into the DOM. Fancy effects going with the links can be enabled
+     * via simple callback shortnames. The functionality is mostly controlled by the $options
+     * array:
+     *
+     * $options
+     *  Key				Behaviour
+     *  =================================================================================
+     *  'update'        Update a container with the content fetched from $url
+     *  'method'        Explicit Requesting method mimicing the jQuery functionality: GET, POST
+     *  'inline'        True or false, wheater to inline the javascript in onClick=""
+     * 					atttribute or append it to jQuery onLoad Stack.
+     *  'complete'      String specifies javascript called after successful request or a
+     * 					shortname of a jQuery effect that should be applied to the 'update' element.
+     *  'beforeSend'	String specifies javascript called before the request is sent, or a
+     * 					shortname of a jQuery effect that should be applied to the link clicked.
+     *  'noscript'		True/false, include a noscript variant that directly requests
+     * 					the given $url (make sure to check $request->isXmlHttpRequest())
+     *  'dataType'		What type of data is the response returning? text, html, json?
+     *  'title'			HTML Attribute title of the Anchor
+     *  'class'			HTML Attribute class of the Anchor
+     *  'id'			HTML Attribute id of the Anchor
+     *  'attribs'		Array of Key-Value pairs with HTML Attribute names and their content.
+     *
+     * BeforeSend Callback:
+     * Can include shortcuts as a string assignment to fire of effects before sending of request.
+     * Possible shortcuts are 'fadeOut', 'fadeOutSlow', 'hide', 'hideSlow', 'slideUp', 'flash',
+     * @example $options = array('beforeSend' => 'hideSlow', 'complete' => 'show');
+     *
+     * @link   http://docs.jquery.com/Ajax
+     * @param  String $label Urls Title
+     * @param  String $url Link to Point to
+     * @param  Array $options
+     * @param  Array $params Key Value Pairs of GET/POST Parameters
+     * @return String
+     */
+    public function ajaxLink($label, $url, $options=null, $params=null)
+    {
+        $jquery = $this->view->jQuery();
+        $jquery->enable();
+
+        $jqHandler = (ZendX_JQuery_View_Helper_JQuery::getNoConflictMode()==true)?'$j':'$';
+
+        $attribs = array();
+        if(isset($options['attribs']) && is_array($options['attribs'])) {
+            $attribs = $options['attribs'];
+        }
+
+        //
+        // The next following 4 conditions check for html attributes that the link might need
+        //
+        if(empty($options['noscript']) || $options['noscript'] == false) {
+            $attribs['href'] = "#";
+        } else {
+            $attribs['href'] = $url;
+        }
+
+        if(!empty($options['title'])) {
+            $attribs['title'] = $options['title'];
+        }
+
+        // class value is an array because the jQuery CSS selector
+        // click event needs its own classname later on
+        if(!isset($attribs['class'])) {
+            $attribs['class'] = array();
+        } elseif(is_string($attribs['class'])) {
+            $attribs['class'] = explode(" ", $attribs['class']);
+        }
+        if(!empty($options['class'])) {
+            $attribs['class'][] = $options['class'];
+        }
+
+        if(!empty($options['id'])) {
+            $attribs['id'] = $options['id'];
+        }
+
+        //
+        // Execute Javascript inline?
+        //
+        $inline = false;
+        if(!empty($options['inline']) && $options['inline'] == true) {
+            $inline = true;
+        }
+
+        //
+        // Detect the callbacks:
+        // Just those two callbacks, beforeSend and complete can be defined for the $.get and $.post options.
+        // Pick all the defined callbacks and put them on their respective stacks.
+        //
+        $callbacks = array('beforeSend' => null, 'complete' => null);
+        if(isset($options['beforeSend'])) {
+            $callbacks['beforeSend'] = $options['beforeSend'];
+        }
+        if(isset($options['complete'])) {
+            $callbacks['complete'] = $options['complete'];
+        }
+
+        $updateContainer = false;
+        if(!empty($options['update']) && is_string($options['update'])) {
+            $updateContainer = $options['update'];
+
+            // Additionally check if there is a callback complete that is a shortcut to be executed
+            // on the specified update container
+            if(!empty($callbacks['complete'])) {
+                switch(strtolower($callbacks['complete'])) {
+                    case 'show':
+                        $callbacks['complete'] = sprintf("%s('%s').show();", $jqHandler, $updateContainer);
+                        break;
+                    case 'showslow':
+                        $callbacks['complete'] = sprintf("%s('%s').show('slow');", $jqHandler, $updateContainer);
+                        break;
+                    case 'shownormal':
+                        $callbacks['complete'] = sprintf("%s('%s').show('normal');", $jqHandler, $updateContainer);
+                        break;
+                    case 'showfast':
+                        $callbacks['complete'] = sprintf("%s('%s').show('fast');", $jqHandler, $updateContainer);
+                        break;
+                    case 'fadein':
+                        $callbacks['complete'] = sprintf("%s('%s').fadeIn('normal');", $jqHandler, $updateContainer);
+                        break;
+                    case 'fadeinslow':
+                        $callbacks['complete'] = sprintf("%s('%s').fadeIn('slow');", $jqHandler, $updateContainer);
+                        break;
+                    case 'fadeinfast':
+                        $callbacks['complete'] = sprintf("%s('%s').fadeIn('fast');", $jqHandler, $updateContainer);
+                        break;
+                    case 'slidedown':
+                        $callbacks['complete'] = sprintf("%s('%s').slideDown('normal');", $jqHandler, $updateContainer);
+                        break;
+                    case 'slidedownslow':
+                        $callbacks['complete'] = sprintf("%s('%s').slideDown('slow');", $jqHandler, $updateContainer);
+                        break;
+                    case 'slidedownfast':
+                        $callbacks['complete'] = sprintf("%s('%s').slideDown('fast');", $jqHandler, $updateContainer);
+                        break;
+                }
+            }
+        }
+
+        if(empty($options['dataType'])) {
+            $options['dataType'] = "html";
+        }
+
+        $requestHandler = $this->_determineRequestHandler($options, (count($params)>0)?true:false);
+
+        $callbackCompleteJs = array();
+        if($updateContainer != false) {
+            if($options['dataType'] == "text") {
+                $callbackCompleteJs[] = sprintf("%s('%s').text(data);", $jqHandler, $updateContainer);
+            } else {
+                $callbackCompleteJs[] = sprintf("%s('%s').html(data);", $jqHandler, $updateContainer);
+            }
+        }
+        if($callbacks['complete'] != null) {
+            $callbackCompleteJs[] = $callbacks['complete'];
+        }
+
+        if(isset($params) && count($params) > 0) {
+            $params = ZendX_JQuery::encodeJson($params);
+        } else {
+            $params = '{}';
+        }
+
+        $js = array();
+        if($callbacks['beforeSend'] != null) {
+            switch(strtolower($callbacks['beforeSend'])) {
+                case 'fadeout':
+                    $js[] = sprintf("%s(this).fadeOut();", $jqHandler);
+                    break;
+                case 'fadeoutslow':
+                    $js[] = sprintf("%s(this).fadeOut('slow');", $jqHandler);
+                    break;
+                case 'fadeoutfast':
+                    $js[] = sprintf("%s(this).fadeOut('fast');", $jqHandler);
+                    break;
+                case 'hide':
+                    $js[] = sprintf("%s(this).hide();", $jqHandler);
+                    break;
+                case 'hideslow':
+                    $js[] = sprintf("%s(this).hide('slow');", $jqHandler);
+                    break;
+                case 'hidefast':
+                    $js[] = sprintf("%s(this).hide('fast');", $jqHandler);
+                    break;
+                case 'slideup':
+                    $js[] = sprintf("%s(this).slideUp(1000);", $jqHandler);
+                    break;
+                default:
+                    $js[] = $callbacks['beforeSend'];
+                    break;
+            }
+        }
+
+        switch($requestHandler) {
+            case 'GET':
+                $js[] = sprintf("%s.get('%s', %s, function(data, textStatus) { %s }, '%s');return false;",
+                    $jqHandler, $url, $params, implode(" ", $callbackCompleteJs), $options['dataType']);
+                break;
+            case 'POST':
+                $js[] = sprintf("%s.post('%s', %s, function(data, textStatus) { %s }, '%s');return false;",
+                    $jqHandler, $url, $params, implode(" ", $callbackCompleteJs), $options['dataType']);
+                break;
+        }
+
+        $js = implode($js);
+
+        if($inline == true) {
+            $attribs['onclick'] = $js;
+        } else {
+            if(!isset($attribs['id'])) {
+                $clickClass = sprintf("ajaxLink%d", ZendX_JQuery_View_Helper_AjaxLink::$currentLinkCallbackId);
+                ZendX_JQuery_View_Helper_AjaxLink::$currentLinkCallbackId++;
+
+                $attribs['class'][] = $clickClass;
+                $onLoad = sprintf("%s('a.%s').click(function() { %s });", $jqHandler, $clickClass, $js);
+            } else {
+                $onLoad = sprintf("%s('a#%s').click(function() { %s });", $jqHandler, $attribs['id'], $js);
+            }
+
+            $jquery->addOnLoad($onLoad);
+        }
+
+        if(count($attribs['class']) > 0) {
+            $attribs['class'] = implode(" ", $attribs['class']);
+        } else {
+            unset($attribs['class']);
+        }
+
+        $html = '<a'
+            . $this->_htmlAttribs($attribs)
+            . '>'
+            . $label
+            . '</a>';
+        return $html;
+    }
+
+    /**
+     * Determine which request method (GET or POST) should be used.
+     *
+     * Normally the request method is determined implicitly by the rule,
+     * if addiotional params are sent, POST, if not GET. You can overwrite
+     * this behaviiour by implicitly setting $options['method'] = "POST|GET";
+     *
+     * @param  Array   $options
+     * @param  Boolean $hasParams
+     * @return String
+     */
+    protected function _determineRequestHandler($options, $hasParams)
+    {
+        if(isset($options['method']) && in_array(strtoupper($options['method']), array('GET', 'POST'))) {
+            return strtoupper($options['method']);
+        }
+        $requestHandler = "GET";
+        if($hasParams == true) {
+            $requestHandler = "POST";
+        }
+        return $requestHandler;
+    }
+}

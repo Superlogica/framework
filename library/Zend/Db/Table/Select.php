@@ -1,74 +1,220 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Ttu=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Select
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Select.php 5308 2007-06-14 17:18:45Z bkarwin $
+ */
+
+
+/**
+ * @see Zend_Db_Select
+ */
+require_once 'Zend/Db/Select.php';
+
+
+/**
+ * @see Zend_Db_Table_Abstract
+ */
+require_once 'Zend/Db/Table/Abstract.php';
+
+
+/**
+ * Class for SQL SELECT query manipulation for the Zend_Db_Table component.
+ *
+ * @category   Zend
+ * @package    Zend_Db
+ * @subpackage Table
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Db_Table_Select extends Zend_Db_Select
+{
+    /**
+     * Table schema for parent Zend_Db_Table.
+     *
+     * @var array
+     */
+    protected $_info;
+
+    /**
+     * Table integrity override.
+     *
+     * @var array
+     */
+    protected $_integrityCheck = true;
+
+    /**
+     * Table instance that created this select object
+     *
+     * @var Zend_Db_Table_Abstract
+     */
+    protected $_table;
+
+    /**
+     * Class constructor
+     *
+     * @param Zend_Db_Table_Abstract $adapter
+     */
+    public function __construct(Zend_Db_Table_Abstract $table)
+    {
+        parent::__construct($table->getAdapter());
+
+        $this->setTable($table);
+    }
+
+    /**
+     * Return the table that created this select object
+     *
+     * @return Zend_Db_Table_Abstract
+     */
+    public function getTable()
+    {
+        return $this->_table;
+    }
+
+    /**
+     * Sets the primary table name and retrieves the table schema.
+     *
+     * @param Zend_Db_Table_Abstract $adapter
+     * @return Zend_Db_Select This Zend_Db_Select object.
+     */
+    public function setTable(Zend_Db_Table_Abstract $table)
+    {
+        $this->_adapter = $table->getAdapter();
+        $this->_info    = $table->info();
+        $this->_table   = $table;
+
+        return $this;
+    }
+
+    /**
+     * Sets the integrity check flag.
+     *
+     * Setting this flag to false skips the checks for table joins, allowing
+     * 'hybrid' table rows to be created.
+     *
+     * @param Zend_Db_Table_Abstract $adapter
+     * @return Zend_Db_Select This Zend_Db_Select object.
+     */
+    public function setIntegrityCheck($flag = true)
+    {
+        $this->_integrityCheck = $flag;
+        return $this;
+    }
+
+    /**
+     * Tests query to determine if expressions or aliases columns exist.
+     *
+     * @return boolean
+     */
+    public function isReadOnly()
+    {
+        $readOnly = false;
+        $fields   = $this->getPart(Zend_Db_Table_Select::COLUMNS);
+        $cols     = $this->_info[Zend_Db_Table_Abstract::COLS];
+
+        if (!count($fields)) {
+            return $readOnly;
+        }
+
+        foreach ($fields as $columnEntry) {
+            $column = $columnEntry[1];
+            $alias = $columnEntry[2];
+
+            if ($alias !== null) {
+                $column = $alias;
+            }
+
+            switch (true) {
+                case ($column == self::SQL_WILDCARD):
+                    break;
+
+                case ($column instanceof Zend_Db_Expr):
+                case (!in_array($column, $cols)):
+                    $readOnly = true;
+                    break 2;
+            }
+        }
+
+        return $readOnly;
+    }
+
+    /**
+     * Adds a FROM table and optional columns to the query.
+     *
+     * The table name can be expressed
+     *
+     * @param  array|string|Zend_Db_Expr|Zend_Db_Table_Abstract $name The table name or an
+                                                                      associative array relating
+                                                                      table name to correlation
+                                                                      name.
+     * @param  array|string|Zend_Db_Expr $cols The columns to select from this table.
+     * @param  string $schema The schema name to specify, if any.
+     * @return Zend_Db_Table_Select This Zend_Db_Table_Select object.
+     */
+    public function from($name, $cols = self::SQL_WILDCARD, $schema = null)
+    {
+        if ($name instanceof Zend_Db_Table_Abstract) {
+            $info = $name->info();
+            $name = $info[Zend_Db_Table_Abstract::NAME];
+            if (isset($info[Zend_Db_Table_Abstract::SCHEMA])) {
+                $schema = $info[Zend_Db_Table_Abstract::SCHEMA];
+            }
+        }
+
+        return $this->joinInner($name, null, $cols, $schema);
+    }
+
+    /**
+     * Performs a validation on the select query before passing back to the parent class.
+     * Ensures that only columns from the primary Zend_Db_Table are returned in the result.
+     *
+     * @return string This object as a SELECT string.
+     */
+    public function assemble()
+    {
+        $fields  = $this->getPart(Zend_Db_Table_Select::COLUMNS);
+        $primary = $this->_info[Zend_Db_Table_Abstract::NAME];
+        $schema  = $this->_info[Zend_Db_Table_Abstract::SCHEMA];
+
+        // If no fields are specified we assume all fields from primary table
+        if (!count($fields)) {
+            $this->from($primary, self::SQL_WILDCARD, $schema);
+            $fields = $this->getPart(Zend_Db_Table_Select::COLUMNS);
+        }
+
+        $from = $this->getPart(Zend_Db_Table_Select::FROM);
+
+        if ($this->_integrityCheck !== false) {
+            foreach ($fields as $columnEntry) {
+                list($table, $column) = $columnEntry;
+
+                // Check each column to ensure it only references the primary table
+                if ($column) {
+                    if (!isset($from[$table]) || $from[$table]['tableName'] != $primary) {
+                        require_once 'Zend/Db/Table/Select/Exception.php';
+                        throw new Zend_Db_Table_Select_Exception('Select query cannot join with another table');
+                    }
+                }
+            }
+        }
+
+        return parent::assemble();
+    }
+}

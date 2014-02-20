@@ -1,93 +1,269 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-EHpRarn9ybguwLU9B0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @package    Zend_Cache
+ * @subpackage Zend_Cache_Backend
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Cache_Backend
+{
+    /**
+     * Frontend or Core directives
+     *
+     * =====> (int) lifetime :
+     * - Cache lifetime (in seconds)
+     * - If null, the cache is valid forever
+     *
+     * =====> (int) logging :
+     * - if set to true, a logging is activated throw Zend_Log
+     *
+     * @var array directives
+     */
+    protected $_directives = array(
+        'lifetime' => 3600,
+        'logging'  => false,
+        'logger'   => null
+    );
+
+    /**
+     * Available options
+     *
+     * @var array available options
+     */
+    protected $_options = array();
+
+    /**
+     * Constructor
+     *
+     * @param  array $options Associative array of options
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function __construct(array $options = array())
+    {
+        while (list($name, $value) = each($options)) {
+            $this->setOption($name, $value);
+        }
+    }
+
+    /**
+     * Set the frontend directives
+     *
+     * @param  array $directives Assoc of directives
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function setDirectives($directives)
+    {
+        if (!is_array($directives)) Zend_Cache::throwException('Directives parameter must be an array');
+        while (list($name, $value) = each($directives)) {
+            if (!is_string($name)) {
+                Zend_Cache::throwException("Incorrect option name : $name");
+            }
+            $name = strtolower($name);
+            if (array_key_exists($name, $this->_directives)) {
+                $this->_directives[$name] = $value;
+            }
+
+        }
+
+        $this->_loggerSanity();
+    }
+
+    /**
+     * Set an option
+     *
+     * @param  string $name
+     * @param  mixed  $value
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    public function setOption($name, $value)
+    {
+        if (!is_string($name)) {
+            Zend_Cache::throwException("Incorrect option name : $name");
+        }
+        $name = strtolower($name);
+        if (array_key_exists($name, $this->_options)) {
+            $this->_options[$name] = $value;
+        }
+    }
+
+    /**
+     * Get the life time
+     *
+     * if $specificLifetime is not false, the given specific life time is used
+     * else, the global lifetime is used
+     *
+     * @param  int $specificLifetime
+     * @return int Cache life time
+     */
+    public function getLifetime($specificLifetime)
+    {
+        if ($specificLifetime === false) {
+            return $this->_directives['lifetime'];
+        }
+        return $specificLifetime;
+    }
+
+    /**
+     * Return true if the automatic cleaning is available for the backend
+     *
+     * DEPRECATED : use getCapabilities() instead
+     *
+     * @deprecated
+     * @return boolean
+     */
+    public function isAutomaticCleaningAvailable()
+    {
+        return true;
+    }
+   
+    /**
+     * Determine system TMP directory and detect if we have read access
+     *
+     * inspired from Zend_File_Transfer_Adapter_Abstract 
+     *
+     * @return string
+     * @throws Zend_Cache_Exception if unable to determine directory
+     */
+    public function getTmpDir()
+    {
+    	$tmpdir = array();
+        foreach (array($_ENV, $_SERVER) as $tab) {
+        	foreach (array('TMPDIR', 'TEMP', 'TMP', 'windir', 'SystemRoot') as $key) {
+        		if (isset($tab[$key])) {
+        			if (($key == 'windir') or ($key == 'SystemRoot')) {
+                        $dir = realpath($tab[$key] . '\\temp');
+                    } else {
+                    	$dir = realpath($tab[$key]);
+                    }
+        			if ($this->_isGoodTmpDir($dir)) {
+        				return $dir;
+        			}
+        		}
+        	}
+        }
+        $upload = ini_get('upload_tmp_dir');
+        if ($upload) {
+            $dir = realpath($upload);
+        	if ($this->_isGoodTmpDir($dir)) {
+        		return $dir;
+        	}
+        }
+        if (function_exists('sys_get_temp_dir')) {
+            $dir = sys_get_temp_dir();
+        	if ($this->_isGoodTmpDir($dir)) {
+        		return $dir;
+        	}
+        }
+        // Attemp to detect by creating a temporary file
+        $tempFile = tempnam(md5(uniqid(rand(), TRUE)), '');
+        if ($tempFile) {
+        	$dir = realpath(dirname($tempFile));
+            unlink($tempFile);
+            return $dir;
+        }
+        if ($this->_isGoodTmpDir('/tmp')) {
+        	return '/tmp';
+        }
+        if ($this->_isGoodTmpDir('\\temp')) {
+        	return '\\temp';
+        }
+        Zend_Cache::throwException('Could not determine temp directory, please specify a cache_dir manually');
+    }
+    
+    /**
+     * Verify if the given temporary directory is readable and writable
+     * 
+     * @param $dir temporary directory
+     * @return boolean true if the directory is ok
+     */
+    protected function _isGoodTmpDir($dir)
+    {
+    	if (is_readable($dir)) {
+	    	if (is_writable($dir)) {
+	    		return true;
+	    	}
+    	}
+    	return false;
+    }
+
+    /**
+     * Make sure if we enable logging that the Zend_Log class
+     * is available.
+     * Create a default log object if none is set.
+     *
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    protected function _loggerSanity()
+    {
+        if (!isset($this->_directives['logging']) || !$this->_directives['logging']) {
+            return;
+        }
+        try {
+            /**
+             * @see Zend_Log
+             */
+            require_once 'Zend/Log.php';
+        } catch (Zend_Exception $e) {
+            Zend_Cache::throwException('Logging feature is enabled but the Zend_Log class is not available');
+        }
+        if (isset($this->_directives['logger'])) {
+            if ($this->_directives['logger'] instanceof Zend_Log) {
+                return;
+            } else {
+                Zend_Cache::throwException('Logger object is not an instance of Zend_Log class.');
+            }
+        }
+        // Create a default logger to the standard output stream
+        require_once 'Zend/Log/Writer/Stream.php';
+        $logger = new Zend_Log(new Zend_Log_Writer_Stream('php://output'));
+        $this->_directives['logger'] = $logger;
+    }
+
+    /**
+     * Log a message at the WARN (4) priority.
+     *
+     * @param  string $message
+     * @throws Zend_Cache_Exception
+     * @return void
+     */
+    protected function _log($message, $priority = 4)
+    {
+        if (!$this->_directives['logging']) {
+            return;
+        }
+
+        if (!isset($this->_directives['logger'])) {
+        	Zend_Cache::throwException('Logging is enabled but logger is not set.');
+        }
+        $logger = $this->_directives['logger'];
+        if (!$logger instanceof Zend_Log) {
+            Zend_Cache::throwException('Logger object is not an instance of Zend_Log class.');
+        }
+        $logger->log($message, $priority);
+    }
+}

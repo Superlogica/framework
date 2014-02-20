@@ -1,41 +1,170 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-4Hn9bq6QGQvCTm3uu0sMKHntl5Uvlkgj1/S=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ * 
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Transport
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Sendmail.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * @see Zend_Mail_Transport_Abstract
+ */
+require_once 'Zend/Mail/Transport/Abstract.php';
+
+
+/**
+ * Class for sending eMails via the PHP internal mail() function
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @subpackage Transport
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Transport_Sendmail extends Zend_Mail_Transport_Abstract
+{
+    /**
+     * Subject
+     * @var string
+     * @access public
+     */
+    public $subject = null;
+
+
+    /**
+     * Config options for sendmail parameters
+     *
+     * @var string
+     */
+    public $parameters;
+
+
+    /**
+     * EOL character string
+     * @var string
+     * @access public
+     */
+    public $EOL = PHP_EOL;
+
+
+    /**
+     * Constructor.
+     *
+     * @param  string $parameters OPTIONAL (Default: null)
+     * @return void
+     */
+    public function __construct($parameters = null)
+    {
+        $this->parameters = $parameters;
+    }
+
+
+    /**
+     * Send mail using PHP native mail()
+     *
+     * @access public
+     * @return void
+     * @throws Zend_Mail_Transport_Exception on mail() failure
+     */
+    public function _sendMail()
+    {
+        if ($this->parameters === null) {
+            $result = mail(
+                $this->recipients,
+                $this->_mail->getSubject(),
+                $this->body,
+                $this->header);
+        } else {
+            $result = mail(
+                $this->recipients,
+                $this->_mail->getSubject(),
+                $this->body,
+                $this->header,
+                $this->parameters);
+        }
+        if (!$result) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Transport_Exception('Unable to send mail');
+        }
+    }
+
+
+    /**
+     * Format and fix headers
+     *
+     * mail() uses its $to and $subject arguments to set the To: and Subject:
+     * headers, respectively. This method strips those out as a sanity check to
+     * prevent duplicate header entries.
+     *
+     * @access  protected
+     * @param   array $headers
+     * @return  void
+     * @throws  Zend_Mail_Transport_Exception
+     */
+    protected function _prepareHeaders($headers)
+    {
+        if (!$this->_mail) {
+            /**
+             * @see Zend_Mail_Transport_Exception
+             */
+            require_once 'Zend/Mail/Transport/Exception.php';
+            throw new Zend_Mail_Transport_Exception('_prepareHeaders requires a registered Zend_Mail object');
+        }
+
+        // mail() uses its $to parameter to set the To: header, and the $subject
+        // parameter to set the Subject: header. We need to strip them out.
+        if (0 === strpos(PHP_OS, 'WIN')) {
+            // If the current recipients list is empty, throw an error
+            if (empty($this->recipients)) {
+                /**
+                 * @see Zend_Mail_Transport_Exception
+                 */
+                require_once 'Zend/Mail/Transport/Exception.php';
+                throw new Zend_Mail_Transport_Exception('Missing To addresses');
+            }
+        } else {
+            // All others, simply grab the recipients and unset the To: header
+            if (!isset($headers['To'])) {
+                /**
+                 * @see Zend_Mail_Transport_Exception
+                 */
+                require_once 'Zend/Mail/Transport/Exception.php';
+                throw new Zend_Mail_Transport_Exception('Missing To header');
+            }
+
+            unset($headers['To']['append']);
+            $this->recipients = implode(',', $headers['To']);
+        }
+
+        // Remove recipient header
+        unset($headers['To']);
+
+        // Remove subject header, if present
+        if (isset($headers['Subject'])) {
+            unset($headers['Subject']);
+        }
+
+        // Prepare headers
+        parent::_prepareHeaders($headers);
+    }
+
+}
+

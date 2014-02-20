@@ -1,46 +1,206 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category  Zend
+ * @package   Zend_Measure
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ * @version   $Id: Density.php 13209 2008-12-13 22:34:06Z thomas $
+ */
+
+/**
+ * Implement needed classes
+ */
+require_once 'Zend/Measure/Abstract.php';
+require_once 'Zend/Locale.php';
+
+/**
+ * Class for handling density conversions
+ *
+ * @category   Zend
+ * @package    Zend_Measure
+ * @subpackage Zend_Measure_Density
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Measure_Density extends Zend_Measure_Abstract
+{
+    const STANDARD = 'KILOGRAM_PER_CUBIC_METER';
+
+    const ALUMINIUM                      = 'ALUMINIUM';
+    const COPPER                         = 'COPPER';
+    const GOLD                           = 'GOLD';
+    const GRAIN_PER_CUBIC_FOOT           = 'GRAIN_PER_CUBIC_FOOT';
+    const GRAIN_PER_CUBIC_INCH           = 'GRAIN_PER_CUBIC_INCH';
+    const GRAIN_PER_CUBIC_YARD           = 'GRAIN_PER_CUBIC_YARD';
+    const GRAIN_PER_GALLON               = 'GRAIN_PER_GALLON';
+    const GRAIN_PER_GALLON_US            = 'GRAIN_PER_GALLON_US';
+    const GRAM_PER_CUBIC_CENTIMETER      = 'GRAM_PER_CUBIC_CENTIMETER';
+    const GRAM_PER_CUBIC_DECIMETER       = 'GRAM_PER_CUBIC_DECIMETER';
+    const GRAM_PER_CUBIC_METER           = 'GRAM_PER_CUBIC_METER';
+    const GRAM_PER_LITER                 = 'GRAM_PER_LITER';
+    const GRAM_PER_MILLILITER            = 'GRAM_PER_MILLILITER';
+    const IRON                           = 'IRON';
+    const KILOGRAM_PER_CUBIC_CENTIMETER  = 'KILOGRAM_PER_CUBIC_CENTIMETER';
+    const KILOGRAM_PER_CUBIC_DECIMETER   = 'KILOGRAM_PER_CUBIC_DECIMETER';
+    const KILOGRAM_PER_CUBIC_METER       = 'KILOGRAM_PER_CUBIC_METER';
+    const KILOGRAM_PER_CUBIC_MILLIMETER  = 'KILOGRAM_PER_CUBIC_MILLIMETER';
+    const KILOGRAM_PER_LITER             = 'KILOGRAM_PER_LITER';
+    const KILOGRAM_PER_MILLILITER        = 'KILOGRAM_PER_MILLILITER';
+    const LEAD                           = 'LEAD';
+    const MEGAGRAM_PER_CUBIC_CENTIMETER  = 'MEGAGRAM_PER_CUBIC_CENTIMETER';
+    const MEGAGRAM_PER_CUBIC_DECIMETER   = 'MEGAGRAM_PER_CUBIC_DECIMETER';
+    const MEGAGRAM_PER_CUBIC_METER       = 'MEGAGRAM_PER_CUBIC_METER';
+    const MEGAGRAM_PER_LITER             = 'MEGAGRAM_PER_LITER';
+    const MEGAGRAM_PER_MILLILITER        = 'MEGAGRAM_PER_MILLILITER';
+    const MICROGRAM_PER_CUBIC_CENTIMETER = 'MICROGRAM_PER_CUBIC_CENTIMETER';
+    const MICROGRAM_PER_CUBIC_DECIMETER  = 'MICROGRAM_PER_CUBIC_DECIMETER';
+    const MICROGRAM_PER_CUBIC_METER      = 'MICROGRAM_PER_CUBIC_METER';
+    const MICROGRAM_PER_LITER            = 'MICROGRAM_PER_LITER';
+    const MICROGRAM_PER_MILLILITER       = 'MICROGRAM_PER_MILLILITER';
+    const MILLIGRAM_PER_CUBIC_CENTIMETER = 'MILLIGRAM_PER_CUBIC_CENTIMETER';
+    const MILLIGRAM_PER_CUBIC_DECIMETER  = 'MILLIGRAM_PER_CUBIC_DECIMETER';
+    const MILLIGRAM_PER_CUBIC_METER      = 'MILLIGRAM_PER_CUBIC_METER';
+    const MILLIGRAM_PER_LITER            = 'MILLIGRAM_PER_LITER';
+    const MILLIGRAM_PER_MILLILITER       = 'MILLIGRAM_PER_MILLILITER';
+    const OUNCE_PER_CUBIC_FOOT           = 'OUNCE_PER_CUBIC_FOOT';
+    const OUNCR_PER_CUBIC_FOOT_TROY      = 'OUNCE_PER_CUBIC_FOOT_TROY';
+    const OUNCE_PER_CUBIC_INCH           = 'OUNCE_PER_CUBIC_INCH';
+    const OUNCE_PER_CUBIC_INCH_TROY      = 'OUNCE_PER_CUBIC_INCH_TROY';
+    const OUNCE_PER_CUBIC_YARD           = 'OUNCE_PER_CUBIC_YARD';
+    const OUNCE_PER_CUBIC_YARD_TROY      = 'OUNCE_PER_CUBIC_YARD_TROY';
+    const OUNCE_PER_GALLON               = 'OUNCE_PER_GALLON';
+    const OUNCE_PER_GALLON_US            = 'OUNCE_PER_GALLON_US';
+    const OUNCE_PER_GALLON_TROY          = 'OUNCE_PER_GALLON_TROY';
+    const OUNCE_PER_GALLON_US_TROY       = 'OUNCE_PER_GALLON_US_TROY';
+    const POUND_PER_CIRCULAR_MIL_FOOT    = 'POUND_PER_CIRCULAR_MIL_FOOT';
+    const POUND_PER_CUBIC_FOOT           = 'POUND_PER_CUBIC_FOOT';
+    const POUND_PER_CUBIC_INCH           = 'POUND_PER_CUBIC_INCH';
+    const POUND_PER_CUBIC_YARD           = 'POUND_PER_CUBIC_YARD';
+    const POUND_PER_GALLON               = 'POUND_PER_GALLON';
+    const POUND_PER_KILOGALLON           = 'POUND_PER_KILOGALLON';
+    const POUND_PER_MEGAGALLON           = 'POUND_PER_MEGAGALLON';
+    const POUND_PER_GALLON_US            = 'POUND_PER_GALLON_US';
+    const POUND_PER_KILOGALLON_US        = 'POUND_PER_KILOGALLON_US';
+    const POUND_PER_MEGAGALLON_US        = 'POUND_PER_MEGAGALLON_US';
+    const SILVER                         = 'SILVER';
+    const SLUG_PER_CUBIC_FOOT            = 'SLUG_PER_CUBIC_FOOT';
+    const SLUG_PER_CUBIC_INCH            = 'SLUG_PER_CUBIC_INCH';
+    const SLUG_PER_CUBIC_YARD            = 'SLUG_PER_CUBIC_YARD';
+    const SLUG_PER_GALLON                = 'SLUG_PER_GALLON';
+    const SLUG_PER_GALLON_US             = 'SLUG_PER_GALLON_US';
+    const TON_PER_CUBIC_FOOT_LONG        = 'TON_PER_CUBIC_FOOT_LONG';
+    const TON_PER_CUBIC_FOOT             = 'TON_PER_CUBIC_FOOT';
+    const TON_PER_CUBIC_INCH_LONG        = 'TON_PER_CUBIC_INCH_LONG';
+    const TON_PER_CUBIC_INCH             = 'TON_PER_CUBIC_INCH';
+    const TON_PER_CUBIC_YARD_LONG        = 'TON_PER_CUBIC_YARD_LONG';
+    const TON_PER_CUBIC_YARD             = 'TON_PER_CUBIC_YARD';
+    const TON_PER_GALLON_LONG            = 'TON_PER_GALLON_LONG';
+    const TON_PER_GALLON_US_LONG         = 'TON_PER_GALLON_US_LONG';
+    const TON_PER_GALLON                 = 'TON_PER_GALLON';
+    const TON_PER_GALLON_US              = 'TON_PER_GALLON_US';
+    const TONNE_PER_CUBIC_CENTIMETER     = 'TONNE_PER_CUBIC_CENTIMETER';
+    const TONNE_PER_CUBIC_DECIMETER      = 'TONNE_PER_CUBIC_DECIMETER';
+    const TONNE_PER_CUBIC_METER          = 'TONNE_PER_CUBIC_METER';
+    const TONNE_PER_LITER                = 'TONNE_PER_LITER';
+    const TONNE_PER_MILLILITER           = 'TONNE_PER_MILLILITER';
+    const WATER                          = 'WATER';
+
+    /**
+     * Calculations for all density units
+     *
+     * @var array
+     */
+    protected $_units = array(
+        'ALUMINIUM'                 => array('2643',           'aluminium'),
+        'COPPER'                    => array('8906',           'copper'),
+        'GOLD'                      => array('19300',          'gold'),
+        'GRAIN_PER_CUBIC_FOOT'      => array('0.0022883519',   'gr/ft³'),
+        'GRAIN_PER_CUBIC_INCH'      => array('3.9542721',      'gr/in³'),
+        'GRAIN_PER_CUBIC_YARD'      => array('0.000084753774', 'gr/yd³'),
+        'GRAIN_PER_GALLON'          => array('0.014253768',    'gr/gal'),
+        'GRAIN_PER_GALLON_US'       => array('0.017118061',    'gr/gal'),
+        'GRAM_PER_CUBIC_CENTIMETER' => array('1000',           'g/cm³'),
+        'GRAM_PER_CUBIC_DECIMETER'  => array('1',              'g/dm³'),
+        'GRAM_PER_CUBIC_METER'      => array('0.001',          'g/m³'),
+        'GRAM_PER_LITER'            => array('1',              'g/l'),
+        'GRAM_PER_MILLILITER'       => array('1000',           'g/ml'),
+        'IRON'                      => array('7658',           'iron'),
+        'KILOGRAM_PER_CUBIC_CENTIMETER' => array('1000000',    'kg/cm³'),
+        'KILOGRAM_PER_CUBIC_DECIMETER'  => array('1000',       'kg/dm³'),
+        'KILOGRAM_PER_CUBIC_METER'  => array('1',              'kg/m³'),
+        'KILOGRAM_PER_CUBIC_MILLIMETER' => array('1000000000', 'kg/l'),
+        'KILOGRAM_PER_LITER'        => array('1000',           'kg/ml'),
+        'KILOGRAM_PER_MILLILITER'   => array('1000000',        'kg/ml'),
+        'LEAD'                      => array('11370',          'lead'),
+        'MEGAGRAM_PER_CUBIC_CENTIMETER' => array('1.0e+9',     'Mg/cm³'),
+        'MEGAGRAM_PER_CUBIC_DECIMETER'  => array('1000000',    'Mg/dm³'),
+        'MEGAGRAM_PER_CUBIC_METER'  => array('1000',           'Mg/m³'),
+        'MEGAGRAM_PER_LITER'        => array('1000000',        'Mg/l'),
+        'MEGAGRAM_PER_MILLILITER'   => array('1.0e+9',         'Mg/ml'),
+        'MICROGRAM_PER_CUBIC_CENTIMETER' => array('0.001',     'µg/cm³'),
+        'MICROGRAM_PER_CUBIC_DECIMETER'  => array('1.0e-6',    'µg/dm³'),
+        'MICROGRAM_PER_CUBIC_METER' => array('1.0e-9',         'µg/m³'),
+        'MICROGRAM_PER_LITER'       => array('1.0e-6',         'µg/l'),
+        'MICROGRAM_PER_MILLILITER'  => array('0.001',          'µg/ml'),
+        'MILLIGRAM_PER_CUBIC_CENTIMETER' => array('1',         'mg/cm³'),
+        'MILLIGRAM_PER_CUBIC_DECIMETER'  => array('0.001',     'mg/dm³'),
+        'MILLIGRAM_PER_CUBIC_METER' => array('0.000001',       'mg/m³'),
+        'MILLIGRAM_PER_LITER'       => array('0.001',          'mg/l'),
+        'MILLIGRAM_PER_MILLILITER'  => array('1',              'mg/ml'),
+        'OUNCE_PER_CUBIC_FOOT'      => array('1.001154',       'oz/ft³'),
+        'OUNCE_PER_CUBIC_FOOT_TROY' => array('1.0984089',      'oz/ft³'),
+        'OUNCE_PER_CUBIC_INCH'      => array('1729.994',       'oz/in³'),
+        'OUNCE_PER_CUBIC_INCH_TROY' => array('1898.0506',      'oz/in³'),
+        'OUNCE_PER_CUBIC_YARD'      => array('0.037079776',    'oz/yd³'),
+        'OUNCE_PER_CUBIC_YARD_TROY' => array('0.040681812',    'oz/yd³'),
+        'OUNCE_PER_GALLON'          => array('6.2360233',      'oz/gal'),
+        'OUNCE_PER_GALLON_US'       => array('7.4891517',      'oz/gal'),
+        'OUNCE_PER_GALLON_TROY'     => array('6.8418084',      'oz/gal'),
+        'OUNCE_PER_GALLON_US_TROY'  => array('8.2166693',      'oz/gal'),
+        'POUND_PER_CIRCULAR_MIL_FOOT' => array('2.9369291',    'lb/cmil ft'),
+        'POUND_PER_CUBIC_FOOT'      => array('16.018463',      'lb/in³'),
+        'POUND_PER_CUBIC_INCH'      => array('27679.905',      'lb/in³'),
+        'POUND_PER_CUBIC_YARD'      => array('0.59327642',     'lb/yd³'),
+        'POUND_PER_GALLON'          => array('99.776373',      'lb/gal'),
+        'POUND_PER_KILOGALLON'      => array('0.099776373',    'lb/kgal'),
+        'POUND_PER_MEGAGALLON'      => array('0.000099776373', 'lb/Mgal'),
+        'POUND_PER_GALLON_US'       => array('119.82643',      'lb/gal'),
+        'POUND_PER_KILOGALLON_US'   => array('0.11982643',     'lb/kgal'),
+        'POUND_PER_MEGAGALLON_US'   => array('0.00011982643',  'lb/Mgal'),
+        'SILVER'                    => array('10510',          'silver'),
+        'SLUG_PER_CUBIC_FOOT'       => array('515.37882',      'slug/ft³'),
+        'SLUG_PER_CUBIC_INCH'       => array('890574.6',       'slug/in³'),
+        'SLUG_PER_CUBIC_YARD'       => array('19.088104',      'slug/yd³'),
+        'SLUG_PER_GALLON'           => array('3210.2099',      'slug/gal'),
+        'SLUG_PER_GALLON_US'        => array('3855.3013',      'slug/gal'),
+        'TON_PER_CUBIC_FOOT_LONG'   => array('35881.358',      't/ft³'),
+        'TON_PER_CUBIC_FOOT'        => array('32036.927',      't/ft³'),
+        'TON_PER_CUBIC_INCH_LONG'   => array('6.2202987e+7',   't/in³'),
+        'TON_PER_CUBIC_INCH'        => array('5.5359809e+7',   't/in³'),
+        'TON_PER_CUBIC_YARD_LONG'   => array('1328.9392',      't/yd³'),
+        'TON_PER_CUBIC_YARD'        => array('1186.5528',      't/yd³'),
+        'TON_PER_GALLON_LONG'       => array('223499.07',      't/gal'),
+        'TON_PER_GALLON_US_LONG'    => array('268411.2',       't/gal'),
+        'TON_PER_GALLON'            => array('199522.75',      't/gal'),
+        'TON_PER_GALLON_US'         => array('239652.85',      't/gal'),
+        'TONNE_PER_CUBIC_CENTIMETER' => array('1.0e+9',        't/cm³'),
+        'TONNE_PER_CUBIC_DECIMETER'  => array('1000000',       't/dm³'),
+        'TONNE_PER_CUBIC_METER'     => array('1000',           't/m³'),
+        'TONNE_PER_LITER'           => array('1000000',        't/l'),
+        'TONNE_PER_MILLILITER'      => array('1.0e+9',         't/ml'),
+        'WATER'                     => array('1000',           'water'),
+        'STANDARD'                  => 'KILOGRAM_PER_CUBIC_METER'
+    );
+}

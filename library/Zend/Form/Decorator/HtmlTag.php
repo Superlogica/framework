@@ -1,79 +1,219 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Form_Decorator_Abstract
+ */
+require_once 'Zend/Form/Decorator/Abstract.php';
+
+/**
+ * Zend_Form_Decorator_Element_HtmlTag
+ *
+ * Wraps content in an HTML block tag.
+ *
+ * Options accepted are:
+ * - tag: tag to use in decorator
+ * - noAttribs: do not render attributes in the opening tag
+ * - placement: 'append' or 'prepend'. If 'append', renders opening and 
+ *   closing tag after content; if prepend, renders opening and closing tag
+ *   before content.
+ * - openOnly: render opening tag only
+ * - closeOnly: render closing tag only
+ *
+ * Any other options passed are processed as HTML attributes of the tag.
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @subpackage Decorator
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: HtmlTag.php 12514 2008-11-10 16:30:24Z matthew $
+ */
+class Zend_Form_Decorator_HtmlTag extends Zend_Form_Decorator_Abstract
+{
+    /**
+     * Placement; default to surround content
+     * @var string
+     */
+    protected $_placement = null;
+
+    /**
+     * HTML tag to use
+     * @var string
+     */
+    protected $_tag;
+
+    /**
+     * @var Zend_Filter
+     */
+    protected $_tagFilter;
+
+    /**
+     * Convert options to tag attributes
+     * 
+     * @return string
+     */
+    protected function _htmlAttribs(array $attribs)
+    {
+        $xhtml = '';
+        foreach ((array) $attribs as $key => $val) {
+            $key = htmlspecialchars($key, ENT_COMPAT, 'UTF-8');
+            if (is_array($val)) {
+                $val = implode(' ', $val);
+            }
+            $val    = htmlspecialchars($val, ENT_COMPAT, 'UTF-8');
+            $xhtml .= " $key=\"$val\"";
+        }
+        return $xhtml;
+    }
+
+    /**
+     * Normalize tag
+     *
+     * Ensures tag is alphanumeric characters only, and all lowercase.
+     * 
+     * @param  string $tag 
+     * @return string
+     */
+    public function normalizeTag($tag)
+    {
+        if (!isset($this->_tagFilter)) {
+            require_once 'Zend/Filter.php';
+            require_once 'Zend/Filter/Alnum.php';
+            require_once 'Zend/Filter/StringToLower.php';
+            $this->_tagFilter = new Zend_Filter();
+            $this->_tagFilter->addFilter(new Zend_Filter_Alnum())
+                             ->addFilter(new Zend_Filter_StringToLower());
+        }
+        return $this->_tagFilter->filter($tag);
+    }
+
+    /**
+     * Set tag to use
+     * 
+     * @param  string $tag 
+     * @return Zend_Form_Decorator_HtmlTag
+     */
+    public function setTag($tag)
+    {
+        $this->_tag = $this->normalizeTag($tag);
+        return $this;
+    }
+
+    /**
+     * Get tag
+     *
+     * If no tag is registered, either via setTag() or as an option, uses 'div'.
+     * 
+     * @return string
+     */
+    public function getTag()
+    {
+        if (null === $this->_tag) {
+            if (null === ($tag = $this->getOption('tag'))) {
+                $this->setTag('div');
+            } else {
+                $this->setTag($tag);
+                $this->removeOption('tag');
+            }
+        }
+
+        return $this->_tag;
+    }
+
+    /**
+     * Get the formatted open tag
+     * 
+     * @param  string $tag 
+     * @param  array $attribs 
+     * @return string
+     */
+    protected function _getOpenTag($tag, array $attribs = null)
+    {
+        $html = '<' . $tag;
+        if (null !== $attribs) {
+            $html .= $this->_htmlAttribs($attribs);
+        }
+        $html .= '>';
+        return $html;
+    }
+
+    /**
+     * Get formatted closing tag
+     * 
+     * @param  string $tag 
+     * @return string
+     */
+    protected function _getCloseTag($tag)
+    {
+        return '</' . $tag . '>';
+    }
+
+    /**
+     * Render content wrapped in an HTML tag
+     * 
+     * @param  string $content 
+     * @return string
+     */
+    public function render($content)
+    {
+        $tag       = $this->getTag();
+        $placement = $this->getPlacement();
+        $noAttribs = $this->getOption('noAttribs');
+        $openOnly  = $this->getOption('openOnly');
+        $closeOnly = $this->getOption('closeOnly');
+        $this->removeOption('noAttribs');
+        $this->removeOption('openOnly');
+        $this->removeOption('closeOnly');
+
+        $attribs = null;
+        if (!$noAttribs) {
+            $attribs = $this->getOptions();
+        }
+
+        switch ($placement) {
+            case self::APPEND:
+                if ($closeOnly) {
+                    return $content . $this->_getCloseTag($tag);
+                }
+                if ($openOnly) {
+                    return $content . $this->_getOpenTag($tag, $attribs);
+                }
+                return $content 
+                     . $this->_getOpenTag($tag, $attribs) 
+                     . $this->_getCloseTag($tag);
+            case self::PREPEND:
+                if ($closeOnly) {
+                    return $this->_getCloseTag($tag) . $content;
+                }
+                if ($openOnly) {
+                    return $this->_getOpenTag($tag, $attribs) . $content;
+                }
+                return $this->_getOpenTag($tag, $attribs)
+                     . $this->_getCloseTag($tag)
+                     . $content;
+            default:
+                return (($openOnly || !$closeOnly) ? $this->_getOpenTag($tag, $attribs) : '')
+                     . $content
+                     . (($closeOnly || !$openOnly) ? $this->_getCloseTag($tag) : '');
+        }
+    }
+}

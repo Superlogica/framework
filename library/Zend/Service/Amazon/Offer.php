@@ -1,43 +1,99 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-qIRRgLGWU+acx7YSpuxzJ4iJmjBJ5Vk+X+Tbs0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Offer.php 14534 2009-03-30 11:14:53Z yoshida@zend.co.jp $
+ */
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Offer
+{
+    /**
+     * @var string
+     */
+    public $MerchantId;
+
+    /**
+     * @var string
+     */
+    public $GlancePage;
+
+    /**
+     * @var string
+     */
+    public $Condition;
+
+    /**
+     * @var string
+     */
+    public $OfferListingId;
+
+    /**
+     * @var string
+     */
+    public $Price;
+
+    /**
+     * @var string
+     */
+    public $CurrencyCode;
+
+    /**
+     * @var string
+     */
+    public $Availability;
+
+    /**
+     * @var boolean
+     */
+    public $IsEligibleForSuperSaverShipping = false;
+
+    /**
+     * Parse the given Offer element
+     *
+     * @param  DOMElement $dom
+     * @return void
+     */
+    public function __construct(DOMElement $dom)
+    {
+        $xpath = new DOMXPath($dom->ownerDocument);
+        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
+        $this->MerchantId = (string) $xpath->query('./az:Merchant/az:MerchantId/text()', $dom)->item(0)->data;
+        $this->GlancePage = (string) $xpath->query('./az:Merchant/az:GlancePage/text()', $dom)->item(0)->data;
+        $this->Condition = (string) $xpath->query('./az:OfferAttributes/az:Condition/text()', $dom)->item(0)->data;
+        $this->OfferListingId = (string) $xpath->query('./az:OfferListing/az:OfferListingId/text()', $dom)->item(0)->data;
+        $this->Price = (int) $xpath->query('./az:OfferListing/az:Price/az:Amount/text()', $dom)->item(0)->data;
+        $this->CurrencyCode = (string) $xpath->query('./az:OfferListing/az:Price/az:CurrencyCode/text()', $dom)->item(0)->data;
+        $availability = $xpath->query('./az:OfferListing/az:Availability/text()', $dom)->item(0);
+        if($availability instanceof DOMText) {
+            $this->Availability = (string) $availability->data;
+        }
+        $result = $xpath->query('./az:OfferListing/az:IsEligibleForSuperSaverShipping/text()', $dom);
+        if ($result->length >= 1) {
+            $this->IsEligibleForSuperSaverShipping = (bool) $result->item(0)->data;
+        }
+    }
+}

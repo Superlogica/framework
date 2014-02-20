@@ -1,64 +1,181 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-IYlZvm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @subpackage Hmac
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Crypt
+ */
+require_once 'Zend/Crypt.php';
+
+/**
+ * PHP implementation of the RFC 2104 Hash based Message Authentication Code
+ * algorithm.
+ *
+ * @todo  Patch for refactoring failed tests (key block sizes >80 using internal algo)
+ * @todo       Check if mhash() is a required alternative (will be PECL-only soon)
+ * @category   Zend
+ * @package    Zend_Crypt
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Crypt_Hmac extends Zend_Crypt
+{
+
+    /**
+     * The key to use for the hash
+     *
+     * @var string
+     */
+    protected static $_key = null;
+
+    /**
+     * pack() format to be used for current hashing method
+     *
+     * @var string
+     */
+    protected static $_packFormat = null;
+
+    /**
+     * Hashing algorithm; can be the md5/sha1 functions or any algorithm name
+     * listed in the output of PHP 5.1.2+ hash_algos().
+     *
+     * @var string
+     */
+    protected static $_hashAlgorithm = 'md5';
+
+    /**
+     * List of algorithms supported my mhash()
+     *
+     * @var array
+     */
+    protected static $_supportedMhashAlgorithms = array('adler32',' crc32', 'crc32b', 'gost',
+            'haval128', 'haval160', 'haval192', 'haval256', 'md4', 'md5', 'ripemd160',
+            'sha1', 'sha256', 'tiger', 'tiger128', 'tiger160');
+
+    /**
+     * Constants representing the output mode of the hash algorithm
+     */
+    const STRING = 'string';
+    const BINARY = 'binary';
+
+    /**
+     * Performs a HMAC computation given relevant details such as Key, Hashing
+     * algorithm, the data to compute MAC of, and an output format of String,
+     * Binary notation or BTWOC.
+     *
+     * @param string $key
+     * @param string $hash
+     * @param string $data
+     * @param string $output
+     * @param boolean $internal
+     * @return string
+     */
+    public static function compute($key, $hash, $data, $output = self::STRING)
+    {
+        // set the key
+        if (!isset($key) || empty($key)) {
+            require_once 'Zend/Crypt/Hmac/Exception.php';
+            throw new Zend_Crypt_Hmac_Exception('provided key is null or empty');
+        }
+        self::$_key = $key;
+
+        // set the hash
+        self::_setHashAlgorithm($hash);
+
+        // perform hashing and return
+        return self::_hash($data, $output);
+    }
+
+    /**
+     * Setter for the hash method.
+     *
+     * @param string $hash
+     * @return Zend_Crypt_Hmac
+     */
+    protected static function _setHashAlgorithm($hash)
+    {
+        if (!isset($hash) || empty($hash)) {
+            require_once 'Zend/Crypt/Hmac/Exception.php';
+            throw new Zend_Crypt_Hmac_Exception('provided hash string is null or empty');
+        }
+
+        $hash = strtolower($hash);
+        $hashSupported = false;
+
+        if (function_exists('hash_algos') && in_array($hash, hash_algos())) {
+            $hashSupported = true;
+        }
+
+        if ($hashSupported === false && function_exists('mhash') && in_array($hash, self::$_supportedAlgosMhash)) {
+            $hashSupported = true;
+        }
+
+        if ($hashSupported === false) {
+            require_once 'Zend/Crypt/Hmac/Exception.php';
+            throw new Zend_Crypt_Hmac_Exception('hash algorithm provided is not supported on this PHP installation; please enable the hash or mhash extensions');
+        }
+        self::$_hashAlgorithm = $hash;
+    }
+
+    /**
+     * Perform HMAC and return the keyed data
+     *
+     * @param string $data
+     * @param string $output
+     * @param bool $internal Option to not use hash() functions for testing
+     * @return string
+     */
+    protected static function _hash($data, $output = self::STRING, $internal = false)
+    {
+        if (function_exists('hash_hmac')) {
+            if ($output == self::BINARY) {
+                return hash_hmac(self::$_hashAlgorithm, $data, self::$_key, 1);
+            }
+            return hash_hmac(self::$_hashAlgorithm, $data, self::$_key);
+        }
+
+        if (function_exists('mhash')) {
+            if ($output == self::BINARY) {
+                return mhash(self::_getMhashDefinition(self::$_hashAlgorithm), $data, self::$_key);
+            }
+            $bin = mhash(self::_getMhashDefinition(self::$_hashAlgorithm), $data, self::$_key);
+            return bin2hex($bin);
+        }
+    }
+
+    /**
+     * Since MHASH accepts an integer constant representing the hash algorithm
+     * we need to make a small detour to get the correct integer matching our
+     * algorithm's name.
+     *
+     * @param string $hashAlgorithm
+     * @return integer
+     */
+    protected static function _getMhashDefinition($hashAlgorithm)
+    {
+        for ($i = 0; $i <= mhash_count(); $i++)
+        {
+            $types[mhash_get_hash_name($i)] = $i;
+        }
+        return $types[strtoupper($hashAlgorithm)];
+    }
+
+}

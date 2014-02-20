@@ -1,41 +1,140 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-HVW0vEDstHv9T/qOwRD2hRpE
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_Docblock_Tag implements Reflector
+{
+    /**
+     * @var array Array of Class names
+     */
+    protected static $_tagClasses = array(
+        'param'  => 'Zend_Reflection_Docblock_Tag_Param',
+        'return' => 'Zend_Reflection_Docblock_Tag_Return',
+        );
+
+    /**
+     * @var string
+     */
+    protected $_name = null;
+    
+    /**
+     * @var string
+     */
+    protected $_description = null;
+
+    /**
+     * Factory: Create the appropriate annotation tag object
+     *
+     * @param  string $tagDocblockLine
+     * @return Zend_Reflection_Docblock_Tag
+     */
+    public static function factory($tagDocblockLine)
+    {
+        $matches = array();
+        
+        if (!preg_match('#^@(\w+)\s#', $tagDocblockLine, $matches)) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('No valid tag name found within provided docblock line.');
+        }
+
+        $tagName = $matches[1];
+        if (array_key_exists($tagName, self::$_tagClasses)) {
+            $tagClass = self::$_tagClasses[$tagName];
+            if (!class_exists($tagClass)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($tagClass);
+            }
+            return new $tagClass($tagDocblockLine);
+        }
+        return new self($tagDocblockLine);
+    }
+    
+    /**
+     * Export reflection
+     *
+     * Required by Reflector
+     *
+     * @todo   What should this do?
+     * @return void
+     */
+    public static function export()
+    {
+    }
+    
+    /**
+     * Serialize to string
+     *
+     * Required by Reflector
+     *
+     * @todo   What should this do?
+     * @return string
+     */
+    public function __toString()
+    {
+    }
+    
+    /**
+     * Constructor
+     *
+     * @param  string $tagDocblockLine
+     * @return void
+     */
+    public function __construct($tagDocblockLine)
+    {
+        $matches = array();
+
+        // find the line
+        if (!preg_match('#^@(\w+)\s(.*)?#', $tagDocblockLine, $matches)) {
+            require_once 'Zend/Reflection/Exception.php';
+            throw new Zend_Reflection_Exception('Provided docblock line does not contain a valid tag');
+        }
+
+        $this->_name = $matches[1];
+        if ($matches[2]) {
+            $this->_description = $matches[2];
+        }
+    }
+    
+    /**
+     * Get annotation tag name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+    
+    /**
+     * Get annotation tag description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+}

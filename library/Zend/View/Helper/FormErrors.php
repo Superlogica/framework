@@ -1,44 +1,156 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-emxOsRrqGtJuVdNQFH6wNdacBh/ef0wyyFyFt4W=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Abstract class for extension
+ */
+require_once 'Zend/View/Helper/FormElement.php';
+
+
+/**
+ * Helper to render errors for a form element
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_FormErrors extends Zend_View_Helper_FormElement
+{
+    /**
+     * @var Zend_Form_Element
+     */
+    protected $_element;
+
+    /**#@+
+     * @var string Element block start/end tags and separator
+     */
+    protected $_htmlElementEnd       = '</li></ul>';
+    protected $_htmlElementStart     = '<ul%s><li>';
+    protected $_htmlElementSeparator = '</li><li>';
+    /**#@-*/
+
+    /**
+     * Render form errors
+     *
+     * @param  string|array $errors Error(s) to render
+     * @param  array $options
+     * @return string
+     */
+    public function formErrors($errors, array $options = null)
+    {
+        $escape = true;
+        if (isset($options['escape'])) {
+            $escape = (bool) $options['escape'];
+            unset($options['escape']);
+        }
+
+        if (empty($options['class'])) {
+            $options['class'] = 'errors';
+        }
+
+        $start = $this->getElementStart();
+        if (strstr($start, '%s')) {
+            $attribs = $this->_htmlAttribs($options);
+            $start   = sprintf($start, $attribs);
+        }
+
+        if ($escape) {
+            foreach ($errors as $key => $error) {
+                $errors[$key] = $this->view->escape($error);
+            }
+        }
+
+        $html  = $start
+               . implode($this->getElementSeparator(), (array) $errors)
+               . $this->getElementEnd();
+
+        return $html;
+    }
+
+    /**
+     * Set end string for displaying errors
+     *
+     * @param  string $string
+     * @return Zend_View_Helper_FormErrors
+     */
+    public function setElementEnd($string)
+    {
+        $this->_htmlElementEnd = (string) $string;
+        return $this;
+    }
+
+    /**
+     * Retrieve end string for displaying errors
+     *
+     * @return string
+     */
+    public function getElementEnd()
+    {
+        return $this->_htmlElementEnd;
+    }
+
+    /**
+     * Set separator string for displaying errors
+     *
+     * @param  string $string
+     * @return Zend_View_Helper_FormErrors
+     */
+    public function setElementSeparator($string)
+    {
+        $this->_htmlElementSeparator = (string) $string;
+        return $this;
+    }
+
+    /**
+     * Retrieve separator string for displaying errors
+     *
+     * @return string
+     */
+    public function getElementSeparator()
+    {
+        return $this->_htmlElementSeparator;
+    }
+
+    /**
+     * Set start string for displaying errors
+     *
+     * @param  string $string
+     * @return Zend_View_Helper_FormErrors
+     */
+    public function setElementStart($string)
+    {
+        $this->_htmlElementStart = (string) $string;
+        return $this;
+    }
+
+    /**
+     * Retrieve start string for displaying errors
+     *
+     * @return string
+     */
+    public function getElementStart()
+    {
+        return $this->_htmlElementStart;
+    }
+
+}

@@ -1,397 +1,1246 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-VYAWEM/4EBwtgKIWUWtPz0==
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Client
+ * @version    $Id: Client.php 15577 2009-05-14 12:43:34Z matthew $
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Loader
+ */
+require_once 'Zend/Loader.php';
+
+
+/**
+ * @see Zend_Uri
+ */
+require_once 'Zend/Uri.php';
+
+
+/**
+ * @see Zend_Http_Client_Adapter_Interface
+ */
+require_once 'Zend/Http/Client/Adapter/Interface.php';
+
+
+/**
+ * @see Zend_Http_Response
+ */
+require_once 'Zend/Http/Response.php';
+
+/**
+ * Zend_Http_Client is an implemetation of an HTTP client in PHP. The client
+ * supports basic features like sending different HTTP requests and handling
+ * redirections, as well as more advanced features like proxy settings, HTTP
+ * authentication and cookie persistance (using a Zend_Http_CookieJar object)
+ *
+ * @todo Implement proxy settings
+ * @category   Zend
+ * @package    Zend_Http
+ * @subpackage Client
+ * @throws     Zend_Http_Client_Exception
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Http_Client
+{
+    /**
+     * HTTP request methods
+     */
+    const GET     = 'GET';
+    const POST    = 'POST';
+    const PUT     = 'PUT';
+    const HEAD    = 'HEAD';
+    const DELETE  = 'DELETE';
+    const TRACE   = 'TRACE';
+    const OPTIONS = 'OPTIONS';
+    const CONNECT = 'CONNECT';
+
+    /**
+     * Supported HTTP Authentication methods
+     */
+    const AUTH_BASIC = 'basic';
+    //const AUTH_DIGEST = 'digest'; <-- not implemented yet
+
+    /**
+     * HTTP protocol versions
+     */
+    const HTTP_1 = '1.1';
+    const HTTP_0 = '1.0';
+
+    /**
+     * Content attributes
+     */
+    const CONTENT_TYPE   = 'Content-Type';
+    const CONTENT_LENGTH = 'Content-Length';
+
+    /**
+     * POST data encoding methods
+     */
+    const ENC_URLENCODED = 'application/x-www-form-urlencoded';
+    const ENC_FORMDATA   = 'multipart/form-data';
+
+    /**
+     * Configuration array, set using the constructor or using ::setConfig()
+     *
+     * @var array
+     */
+    protected $config = array(
+        'maxredirects'    => 5,
+        'strictredirects' => false,
+        'useragent'       => 'Zend_Http_Client',
+        'timeout'         => 10,
+        'adapter'         => 'Zend_Http_Client_Adapter_Socket',
+        'httpversion'     => self::HTTP_1,
+        'keepalive'       => false,
+        'storeresponse'   => true,
+        'strict'          => true
+    );
+
+    /**
+     * The adapter used to preform the actual connection to the server
+     *
+     * @var Zend_Http_Client_Adapter_Interface
+     */
+    protected $adapter = null;
+
+    /**
+     * Request URI
+     *
+     * @var Zend_Uri_Http
+     */
+    protected $uri;
+
+    /**
+     * Associative array of request headers
+     *
+     * @var array
+     */
+    protected $headers = array();
+
+    /**
+     * HTTP request method
+     *
+     * @var string
+     */
+    protected $method = self::GET;
+
+    /**
+     * Associative array of GET parameters
+     *
+     * @var array
+     */
+    protected $paramsGet = array();
+
+    /**
+     * Assiciative array of POST parameters
+     *
+     * @var array
+     */
+    protected $paramsPost = array();
+
+    /**
+     * Request body content type (for POST requests)
+     *
+     * @var string
+     */
+    protected $enctype = null;
+
+    /**
+     * The raw post data to send. Could be set by setRawData($data, $enctype).
+     *
+     * @var string
+     */
+    protected $raw_post_data = null;
+
+    /**
+     * HTTP Authentication settings
+     *
+     * Expected to be an associative array with this structure:
+     * $this->auth = array('user' => 'username', 'password' => 'password', 'type' => 'basic')
+     * Where 'type' should be one of the supported authentication types (see the AUTH_*
+     * constants), for example 'basic' or 'digest'.
+     *
+     * If null, no authentication will be used.
+     *
+     * @var array|null
+     */
+    protected $auth;
+
+    /**
+     * File upload arrays (used in POST requests)
+     *
+     * An associative array, where each element is of the format:
+     *   'name' => array('filename.txt', 'text/plain', 'This is the actual file contents')
+     *
+     * @var array
+     */
+    protected $files = array();
+
+    /**
+     * The client's cookie jar
+     *
+     * @var Zend_Http_CookieJar
+     */
+    protected $cookiejar = null;
+
+    /**
+     * The last HTTP request sent by the client, as string
+     *
+     * @var string
+     */
+    protected $last_request = null;
+
+    /**
+     * The last HTTP response received by the client
+     *
+     * @var Zend_Http_Response
+     */
+    protected $last_response = null;
+
+    /**
+     * Redirection counter
+     *
+     * @var int
+     */
+    protected $redirectCounter = 0;
+
+    /**
+     * Fileinfo magic database resource
+     * 
+     * This varaiable is populated the first time _detectFileMimeType is called
+     * and is then reused on every call to this method
+     *
+     * @var resource
+     */
+    static protected $_fileInfoDb = null;
+    
+    /**
+     * Contructor method. Will create a new HTTP client. Accepts the target
+     * URL and optionally configuration array.
+     *
+     * @param Zend_Uri_Http|string $uri
+     * @param array $config Configuration key-value pairs.
+     */
+    public function __construct($uri = null, $config = null)
+    {
+        if ($uri !== null) {
+            $this->setUri($uri);
+        }
+        if ($config !== null) {
+            $this->setConfig($config);
+        }
+    }
+
+    /**
+     * Set the URI for the next request
+     *
+     * @param  Zend_Uri_Http|string $uri
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setUri($uri)
+    {
+        if (is_string($uri)) {
+            $uri = Zend_Uri::factory($uri);
+        }
+
+        if (!$uri instanceof Zend_Uri_Http) {
+            /** @see Zend_Http_Client_Exception */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('Passed parameter is not a valid HTTP URI.');
+        }
+
+        // We have no ports, set the defaults
+        if (! $uri->getPort()) {
+            $uri->setPort(($uri->getScheme() == 'https' ? 443 : 80));
+        }
+
+        $this->uri = $uri;
+
+        return $this;
+    }
+
+    /**
+     * Get the URI for the next request
+     *
+     * @param boolean $as_string If true, will return the URI as a string
+     * @return Zend_Uri_Http|string
+     */
+    public function getUri($as_string = false)
+    {
+        if ($as_string && $this->uri instanceof Zend_Uri_Http) {
+            return $this->uri->__toString();
+        } else {
+            return $this->uri;
+        }
+    }
+
+    /**
+     * Set configuration parameters for this HTTP client
+     *
+     * @param array $config
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setConfig($config = array())
+    {
+        if (! is_array($config)) {
+            /** @see Zend_Http_Client_Exception */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('Expected array parameter, given ' . gettype($config));
+        }
+
+        foreach ($config as $k => $v)
+            $this->config[strtolower($k)] = $v;
+
+        // Pass configuration options to the adapter if it exists
+        if ($this->adapter instanceof Zend_Http_Client_Adapter_Interface) {
+            $this->adapter->setConfig($config);
+        }
+        
+        return $this;
+    }
+
+    /**
+     * Set the next request's method
+     *
+     * Validated the passed method and sets it. If we have files set for
+     * POST requests, and the new method is not POST, the files are silently
+     * dropped.
+     *
+     * @param string $method
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setMethod($method = self::GET)
+    {
+        $regex = '/^[^\x00-\x1f\x7f-\xff\(\)<>@,;:\\\\"\/\[\]\?={}\s]+$/';
+        if (! preg_match($regex, $method)) {
+            /** @see Zend_Http_Client_Exception */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception("'{$method}' is not a valid HTTP request method.");
+        }
+
+        if ($method == self::POST && $this->enctype === null)
+            $this->setEncType(self::ENC_URLENCODED);
+
+        $this->method = $method;
+
+        return $this;
+    }
+
+    /**
+     * Set one or more request headers
+     *
+     * This function can be used in several ways to set the client's request
+     * headers:
+     * 1. By providing two parameters: $name as the header to set (eg. 'Host')
+     *    and $value as it's value (eg. 'www.example.com').
+     * 2. By providing a single header string as the only parameter
+     *    eg. 'Host: www.example.com'
+     * 3. By providing an array of headers as the first parameter
+     *    eg. array('host' => 'www.example.com', 'x-foo: bar'). In This case
+     *    the function will call itself recursively for each array item.
+     *
+     * @param string|array $name Header name, full header string ('Header: value')
+     *     or an array of headers
+     * @param mixed $value Header value or null
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setHeaders($name, $value = null)
+    {
+        // If we got an array, go recusive!
+        if (is_array($name)) {
+            foreach ($name as $k => $v) {
+                if (is_string($k)) {
+                    $this->setHeaders($k, $v);
+                } else {
+                    $this->setHeaders($v, null);
+                }
+            }
+        } else {
+            // Check if $name needs to be split
+            if ($value === null && (strpos($name, ':') > 0)) {
+                list($name, $value) = explode(':', $name, 2);
+            }
+
+            // Make sure the name is valid if we are in strict mode
+            if ($this->config['strict'] && (! preg_match('/^[a-zA-Z0-9-]+$/', $name))) {
+                /** @see Zend_Http_Client_Exception */
+                require_once 'Zend/Http/Client/Exception.php';
+                throw new Zend_Http_Client_Exception("{$name} is not a valid HTTP header name");
+            }
+            
+            $normalized_name = strtolower($name);
+
+            // If $value is null or false, unset the header
+            if ($value === null || $value === false) {
+                unset($this->headers[$normalized_name]);
+
+            // Else, set the header
+            } else {
+                // Header names are storred lowercase internally.
+                if (is_string($value)) {
+                    $value = trim($value);
+                }
+                $this->headers[$normalized_name] = array($name, $value);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of a specific header
+     *
+     * Note that if the header has more than one value, an array
+     * will be returned.
+     *
+     * @param string $key
+     * @return string|array|null The header value or null if it is not set
+     */
+    public function getHeader($key)
+    {
+        $key = strtolower($key);
+        if (isset($this->headers[$key])) {
+            return $this->headers[$key][1];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Set a GET parameter for the request. Wrapper around _setParameter
+     *
+     * @param string|array $name
+     * @param string $value
+     * @return Zend_Http_Client
+     */
+    public function setParameterGet($name, $value = null)
+    {
+        if (is_array($name)) {
+            foreach ($name as $k => $v)
+                $this->_setParameter('GET', $k, $v);
+        } else {
+            $this->_setParameter('GET', $name, $value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set a POST parameter for the request. Wrapper around _setParameter
+     *
+     * @param string|array $name
+     * @param string $value
+     * @return Zend_Http_Client
+     */
+    public function setParameterPost($name, $value = null)
+    {
+        if (is_array($name)) {
+            foreach ($name as $k => $v)
+                $this->_setParameter('POST', $k, $v);
+        } else {
+            $this->_setParameter('POST', $name, $value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set a GET or POST parameter - used by SetParameterGet and SetParameterPost
+     *
+     * @param string $type GET or POST
+     * @param string $name
+     * @param string $value
+     * @return null
+     */
+    protected function _setParameter($type, $name, $value)
+    {
+        $parray = array();
+        $type = strtolower($type);
+        switch ($type) {
+            case 'get':
+                $parray = &$this->paramsGet;
+                break;
+            case 'post':
+                $parray = &$this->paramsPost;
+                break;
+        }
+
+        if ($value === null) {
+            if (isset($parray[$name])) unset($parray[$name]);
+        } else {
+            $parray[$name] = $value;
+        }
+    }
+
+    /**
+     * Get the number of redirections done on the last request
+     *
+     * @return int
+     */
+    public function getRedirectionsCount()
+    {
+        return $this->redirectCounter;
+    }
+
+    /**
+     * Set HTTP authentication parameters
+     *
+     * $type should be one of the supported types - see the self::AUTH_*
+     * constants.
+     *
+     * To enable authentication:
+     * <code>
+     * $this->setAuth('shahar', 'secret', Zend_Http_Client::AUTH_BASIC);
+     * </code>
+     *
+     * To disable authentication:
+     * <code>
+     * $this->setAuth(false);
+     * </code>
+     *
+     * @see http://www.faqs.org/rfcs/rfc2617.html
+     * @param string|false $user User name or false disable authentication
+     * @param string $password Password
+     * @param string $type Authentication type
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setAuth($user, $password = '', $type = self::AUTH_BASIC)
+    {
+        // If we got false or null, disable authentication
+        if ($user === false || $user === null) {
+            $this->auth = null;
+
+        // Else, set up authentication
+        } else {
+            // Check we got a proper authentication type
+            if (! defined('self::AUTH_' . strtoupper($type))) {
+                /** @see Zend_Http_Client_Exception */
+                require_once 'Zend/Http/Client/Exception.php';
+                throw new Zend_Http_Client_Exception("Invalid or not supported authentication type: '$type'");
+            }
+
+            $this->auth = array(
+                'user' => (string) $user,
+                'password' => (string) $password,
+                'type' => $type
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the HTTP client's cookie jar.
+     *
+     * A cookie jar is an object that holds and maintains cookies across HTTP requests
+     * and responses.
+     *
+     * @param Zend_Http_CookieJar|boolean $cookiejar Existing cookiejar object, true to create a new one, false to disable
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setCookieJar($cookiejar = true)
+    {
+        if (! class_exists('Zend_Http_CookieJar')) {
+            require_once 'Zend/Http/CookieJar.php';
+        }
+
+        if ($cookiejar instanceof Zend_Http_CookieJar) {
+            $this->cookiejar = $cookiejar;
+        } elseif ($cookiejar === true) {
+            $this->cookiejar = new Zend_Http_CookieJar();
+        } elseif (! $cookiejar) {
+            $this->cookiejar = null;
+        } else {
+            /** @see Zend_Http_Client_Exception */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('Invalid parameter type passed as CookieJar');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Return the current cookie jar or null if none.
+     *
+     * @return Zend_Http_CookieJar|null
+     */
+    public function getCookieJar()
+    {
+        return $this->cookiejar;
+    }
+
+    /**
+     * Add a cookie to the request. If the client has no Cookie Jar, the cookies
+     * will be added directly to the headers array as "Cookie" headers.
+     *
+     * @param Zend_Http_Cookie|string $cookie
+     * @param string|null $value If "cookie" is a string, this is the cookie value.
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setCookie($cookie, $value = null)
+    {
+        if (! class_exists('Zend_Http_Cookie')) {
+            require_once 'Zend/Http/Cookie.php';
+        }
+
+        if (is_array($cookie)) {
+            foreach ($cookie as $c => $v) {
+                if (is_string($c)) {
+                    $this->setCookie($c, $v);
+                } else {
+                    $this->setCookie($v);
+                }
+            }
+
+            return $this;
+        }
+
+        if ($value !== null) {
+            $value = urlencode($value);
+        }
+
+        if (isset($this->cookiejar)) {
+            if ($cookie instanceof Zend_Http_Cookie) {
+                $this->cookiejar->addCookie($cookie);
+            } elseif (is_string($cookie) && $value !== null) {
+                $cookie = Zend_Http_Cookie::fromString("{$cookie}={$value}", $this->uri);
+                $this->cookiejar->addCookie($cookie);
+            }
+        } else {
+            if ($cookie instanceof Zend_Http_Cookie) {
+                $name = $cookie->getName();
+                $value = $cookie->getValue();
+                $cookie = $name;
+            }
+
+            if (preg_match("/[=,; \t\r\n\013\014]/", $cookie)) {
+                /** @see Zend_Http_Client_Exception */
+                require_once 'Zend/Http/Client/Exception.php';
+                throw new Zend_Http_Client_Exception("Cookie name cannot contain these characters: =,; \t\r\n\013\014 ({$cookie})");
+            }
+
+            $value = addslashes($value);
+
+            if (! isset($this->headers['cookie'])) {
+                $this->headers['cookie'] = array('Cookie', '');
+            }
+            $this->headers['cookie'][1] .= $cookie . '=' . $value . '; ';
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set a file to upload (using a POST request)
+     *
+     * Can be used in two ways:
+     *
+     * 1. $data is null (default): $filename is treated as the name if a local file which
+     *    will be read and sent. Will try to guess the content type using mime_content_type().
+     * 2. $data is set - $filename is sent as the file name, but $data is sent as the file
+     *    contents and no file is read from the file system. In this case, you need to
+     *    manually set the Content-Type ($ctype) or it will default to
+     *    application/octet-stream.
+     *
+     * @param string $filename Name of file to upload, or name to save as
+     * @param string $formname Name of form element to send as
+     * @param string $data Data to send (if null, $filename is read and sent)
+     * @param string $ctype Content type to use (if $data is set and $ctype is
+     *     null, will be application/octet-stream)
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setFileUpload($filename, $formname, $data = null, $ctype = null)
+    {
+        if ($data === null) {
+            if (($data = @file_get_contents($filename)) === false) {
+                /** @see Zend_Http_Client_Exception */
+                require_once 'Zend/Http/Client/Exception.php';
+                throw new Zend_Http_Client_Exception("Unable to read file '{$filename}' for upload");
+            }
+
+            if (! $ctype) {
+                $ctype = $this->_detectFileMimeType($filename);
+            }
+        }
+
+        // Force enctype to multipart/form-data
+        $this->setEncType(self::ENC_FORMDATA);
+
+        $this->files[$formname] = array(basename($filename), $ctype, $data);
+
+        return $this;
+    }
+
+    /**
+     * Set the encoding type for POST data
+     *
+     * @param string $enctype
+     * @return Zend_Http_Client
+     */
+    public function setEncType($enctype = self::ENC_URLENCODED)
+    {
+        $this->enctype = $enctype;
+
+        return $this;
+    }
+
+    /**
+     * Set the raw (already encoded) POST data.
+     *
+     * This function is here for two reasons:
+     * 1. For advanced user who would like to set their own data, already encoded
+     * 2. For backwards compatibilty: If someone uses the old post($data) method.
+     *    this method will be used to set the encoded data.
+     *
+     * @param string $data
+     * @param string $enctype
+     * @return Zend_Http_Client
+     */
+    public function setRawData($data, $enctype = null)
+    {
+        $this->raw_post_data = $data;
+        $this->setEncType($enctype);
+
+        return $this;
+    }
+
+    /**
+     * Clear all GET and POST parameters
+     *
+     * Should be used to reset the request parameters if the client is
+     * used for several concurrent requests.
+     *
+     * @return Zend_Http_Client
+     */
+    public function resetParameters()
+    {
+        // Reset parameter data
+        $this->paramsGet     = array();
+        $this->paramsPost    = array();
+        $this->files         = array();
+        $this->raw_post_data = null;
+
+        // Clear outdated headers
+        if (isset($this->headers[strtolower(self::CONTENT_TYPE)])) {
+            unset($this->headers[strtolower(self::CONTENT_TYPE)]);
+        }
+        if (isset($this->headers[strtolower(self::CONTENT_LENGTH)])) {
+            unset($this->headers[strtolower(self::CONTENT_LENGTH)]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the last HTTP request as string
+     *
+     * @return string
+     */
+    public function getLastRequest()
+    {
+        return $this->last_request;
+    }
+
+    /**
+     * Get the last HTTP response received by this client
+     *
+     * If $config['storeresponse'] is set to false, or no response was
+     * stored yet, will return null
+     *
+     * @return Zend_Http_Response or null if none
+     */
+    public function getLastResponse()
+    {
+        return $this->last_response;
+    }
+
+    /**
+     * Load the connection adapter
+     *
+     * While this method is not called more than one for a client, it is
+     * seperated from ->request() to preserve logic and readability
+     *
+     * @param Zend_Http_Client_Adapter_Interface|string $adapter
+     * @return null
+     * @throws Zend_Http_Client_Exception
+     */
+    public function setAdapter($adapter)
+    {
+        if (is_string($adapter)) {
+            if (!class_exists($adapter)) {
+                try {
+                    require_once 'Zend/Loader.php';
+                    Zend_Loader::loadClass($adapter);
+                } catch (Zend_Exception $e) {
+                    /** @see Zend_Http_Client_Exception */
+                    require_once 'Zend/Http/Client/Exception.php';
+                    throw new Zend_Http_Client_Exception("Unable to load adapter '$adapter': {$e->getMessage()}");
+                }
+            }
+
+            $adapter = new $adapter;
+        }
+
+        if (! $adapter instanceof Zend_Http_Client_Adapter_Interface) {
+            /** @see Zend_Http_Client_Exception */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('Passed adapter is not a HTTP connection adapter');
+        }
+
+        $this->adapter = $adapter;
+        $config = $this->config;
+        unset($config['adapter']);
+        $this->adapter->setConfig($config);
+    }
+
+    /**
+     * Send the HTTP request and return an HTTP response object
+     *
+     * @param string $method
+     * @return Zend_Http_Response
+     * @throws Zend_Http_Client_Exception
+     */
+    public function request($method = null)
+    {
+        if (! $this->uri instanceof Zend_Uri_Http) {
+            /** @see Zend_Http_Client_Exception */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('No valid URI has been passed to the client');
+        }
+
+        if ($method) {
+            $this->setMethod($method);
+        }
+        $this->redirectCounter = 0;
+        $response = null;
+
+        // Make sure the adapter is loaded
+        if ($this->adapter == null) {
+            $this->setAdapter($this->config['adapter']);
+        }
+
+        // Send the first request. If redirected, continue.
+        do {
+            // Clone the URI and add the additional GET parameters to it
+            $uri = clone $this->uri;
+            if (! empty($this->paramsGet)) {
+                $query = $uri->getQuery();
+                   if (! empty($query)) {
+                       $query .= '&';
+                   }
+                $query .= http_build_query($this->paramsGet, null, '&');
+
+                $uri->setQuery($query);
+            }
+
+            $body = $this->_prepareBody();
+            $headers = $this->_prepareHeaders();
+
+            // Open the connection, send the request and read the response
+            $this->adapter->connect($uri->getHost(), $uri->getPort(),
+                ($uri->getScheme() == 'https' ? true : false));
+
+            $this->last_request = $this->adapter->write($this->method,
+                $uri, $this->config['httpversion'], $headers, $body);
+
+            $response = $this->adapter->read();
+            if (! $response) {
+                /** @see Zend_Http_Client_Exception */
+                require_once 'Zend/Http/Client/Exception.php';
+                throw new Zend_Http_Client_Exception('Unable to read response, or response is empty');
+            }
+
+            $response = Zend_Http_Response::fromString($response);
+            if ($this->config['storeresponse']) {
+                $this->last_response = $response;
+            }
+
+            // Load cookies into cookie jar
+            if (isset($this->cookiejar)) {
+                $this->cookiejar->addCookiesFromResponse($response, $uri);
+            }
+
+            // If we got redirected, look for the Location header
+            if ($response->isRedirect() && ($location = $response->getHeader('location'))) {
+
+                // Check whether we send the exact same request again, or drop the parameters
+                // and send a GET request
+                if ($response->getStatus() == 303 ||
+                   ((! $this->config['strictredirects']) && ($response->getStatus() == 302 ||
+                       $response->getStatus() == 301))) {
+
+                    $this->resetParameters();
+                    $this->setMethod(self::GET);
+                }
+
+                // If we got a well formed absolute URI
+                if (Zend_Uri_Http::check($location)) {
+                    $this->setHeaders('host', null);
+                    $this->setUri($location);
+
+                } else {
+
+                    // Split into path and query and set the query
+                    if (strpos($location, '?') !== false) {
+                        list($location, $query) = explode('?', $location, 2);
+                    } else {
+                        $query = '';
+                    }
+                    $this->uri->setQuery($query);
+
+                    // Else, if we got just an absolute path, set it
+                    if(strpos($location, '/') === 0) {
+                        $this->uri->setPath($location);
+
+                        // Else, assume we have a relative path
+                    } else {
+                        // Get the current path directory, removing any trailing slashes
+                        $path = $this->uri->getPath();
+                        $path = rtrim(substr($path, 0, strrpos($path, '/')), "/");
+                        $this->uri->setPath($path . '/' . $location);
+                    }
+                }
+                ++$this->redirectCounter;
+
+            } else {
+                // If we didn't get any location, stop redirecting
+                break;
+            }
+
+        } while ($this->redirectCounter < $this->config['maxredirects']);
+
+        return $response;
+    }
+
+    /**
+     * Prepare the request headers
+     *
+     * @return array
+     */
+    protected function _prepareHeaders()
+    {
+        $headers = array();
+
+        // Set the host header
+        if (! isset($this->headers['host'])) {
+            $host = $this->uri->getHost();
+
+            // If the port is not default, add it
+            if (! (($this->uri->getScheme() == 'http' && $this->uri->getPort() == 80) ||
+                  ($this->uri->getScheme() == 'https' && $this->uri->getPort() == 443))) {
+                $host .= ':' . $this->uri->getPort();
+            }
+
+            $headers[] = "Host: {$host}";
+        }
+
+        // Set the connection header
+        if (! isset($this->headers['connection'])) {
+            if (! $this->config['keepalive']) {
+                $headers[] = "Connection: close";
+            }
+        }
+
+        // Set the Accept-encoding header if not set - depending on whether
+        // zlib is available or not.
+        if (! isset($this->headers['accept-encoding'])) {
+            if (function_exists('gzinflate')) {
+                $headers[] = 'Accept-encoding: gzip, deflate';
+            } else {
+                $headers[] = 'Accept-encoding: identity';
+            }
+        }
+        
+        // Set the Content-Type header
+        if ($this->method == self::POST &&
+           (! isset($this->headers[strtolower(self::CONTENT_TYPE)]) && isset($this->enctype))) {
+
+            $headers[] = self::CONTENT_TYPE . ': ' . $this->enctype;
+        }
+        
+        // Set the user agent header
+        if (! isset($this->headers['user-agent']) && isset($this->config['useragent'])) {
+            $headers[] = "User-Agent: {$this->config['useragent']}";
+        }
+
+        // Set HTTP authentication if needed
+        if (is_array($this->auth)) {
+            $auth = self::encodeAuthHeader($this->auth['user'], $this->auth['password'], $this->auth['type']);
+            $headers[] = "Authorization: {$auth}";
+        }
+
+        // Load cookies from cookie jar
+        if (isset($this->cookiejar)) {
+            $cookstr = $this->cookiejar->getMatchingCookies($this->uri,
+                true, Zend_Http_CookieJar::COOKIE_STRING_CONCAT);
+
+            if ($cookstr) {
+                $headers[] = "Cookie: {$cookstr}";
+            }
+        }
+
+        // Add all other user defined headers
+        foreach ($this->headers as $header) {
+            list($name, $value) = $header;
+            if (is_array($value)) {
+                $value = implode(', ', $value);
+            }
+
+            $headers[] = "$name: $value";
+        }
+
+        return $headers;
+    }
+
+    /**
+     * Prepare the request body (for POST and PUT requests)
+     *
+     * @return string
+     * @throws Zend_Http_Client_Exception
+     */
+    protected function _prepareBody()
+    {
+        // According to RFC2616, a TRACE request should not have a body.
+        if ($this->method == self::TRACE) {
+            return '';
+        }
+
+        // If we have raw_post_data set, just use it as the body.
+        if (isset($this->raw_post_data)) {
+            $this->setHeaders(self::CONTENT_LENGTH, strlen($this->raw_post_data));
+            return $this->raw_post_data;
+        }
+
+        $body = '';
+
+        // If we have files to upload, force enctype to multipart/form-data
+        if (count ($this->files) > 0) {
+            $this->setEncType(self::ENC_FORMDATA);
+        }
+
+        // If we have POST parameters or files, encode and add them to the body
+        if (count($this->paramsPost) > 0 || count($this->files) > 0) {
+            switch($this->enctype) {
+                case self::ENC_FORMDATA:
+                    // Encode body as multipart/form-data
+                    $boundary = '---ZENDHTTPCLIENT-' . md5(microtime());
+                    $this->setHeaders(self::CONTENT_TYPE, self::ENC_FORMDATA . "; boundary={$boundary}");
+
+                    // Get POST parameters and encode them
+                    $params = $this->_getParametersRecursive($this->paramsPost);
+                    foreach ($params as $pp) {
+                        $body .= self::encodeFormData($boundary, $pp[0], $pp[1]);
+                    }
+
+                    // Encode files
+                    foreach ($this->files as $name => $file) {
+                        $fhead = array(self::CONTENT_TYPE => $file[1]);
+                        $body .= self::encodeFormData($boundary, $name, $file[2], $file[0], $fhead);
+                    }
+
+                    $body .= "--{$boundary}--\r\n";
+                    break;
+
+                case self::ENC_URLENCODED:
+                    // Encode body as application/x-www-form-urlencoded
+                    $this->setHeaders(self::CONTENT_TYPE, self::ENC_URLENCODED);
+                    $body = http_build_query($this->paramsPost, '', '&');
+                    break;
+
+                default:
+                    /** @see Zend_Http_Client_Exception */
+                    require_once 'Zend/Http/Client/Exception.php';
+                    throw new Zend_Http_Client_Exception("Cannot handle content type '{$this->enctype}' automatically." .
+                        " Please use Zend_Http_Client::setRawData to send this kind of content.");
+                    break;
+            }
+        }
+        
+        // Set the Content-Length if we have a body or if request is POST/PUT
+        if ($body || $this->method == self::POST || $this->method == self::PUT) {
+            $this->setHeaders(self::CONTENT_LENGTH, strlen($body));
+        }
+
+        return $body;
+    }
+
+    /**
+     * Helper method that gets a possibly multi-level parameters array (get or
+     * post) and flattens it.
+     *
+     * The method returns an array of (key, value) pairs (because keys are not
+     * necessarily unique. If one of the parameters in as array, it will also
+     * add a [] suffix to the key.
+     *
+     * @param array $parray The parameters array
+     * @param bool $urlencode Whether to urlencode the name and value
+     * @return array
+     */
+    protected function _getParametersRecursive($parray, $urlencode = false)
+    {
+        if (! is_array($parray)) {
+            return $parray;
+        }
+        $parameters = array();
+
+        foreach ($parray as $name => $value) {
+            if ($urlencode) {
+                $name = urlencode($name);
+            }
+
+            // If $value is an array, iterate over it
+            if (is_array($value)) {
+                $name .= ($urlencode ? '%5B%5D' : '[]');
+                foreach ($value as $subval) {
+                    if ($urlencode) {
+                        $subval = urlencode($subval);
+                    }
+                    $parameters[] = array($name, $subval);
+                }
+            } else {
+                if ($urlencode) {
+                    $value = urlencode($value);
+                }
+                $parameters[] = array($name, $value);
+            }
+        }
+
+        return $parameters;
+    }
+    
+    /**
+     * Attempt to detect the MIME type of a file using available extensions
+     * 
+     * This method will try to detect the MIME type of a file. If the fileinfo
+     * extension is available, it will be used. If not, the mime_magic 
+     * extension which is deprected but is still available in many PHP setups
+     * will be tried. 
+     * 
+     * If neither extension is available, the default application/octet-stream
+     * MIME type will be returned
+     *
+     * @param  string $file File path
+     * @return string       MIME type
+     */
+    protected function _detectFileMimeType($file)
+    {
+        $type = null;
+        
+        // First try with fileinfo functions
+        if (function_exists('finfo_open')) {
+            if (self::$_fileInfoDb === null) {
+                self::$_fileInfoDb = @finfo_open(FILEINFO_MIME);
+            }
+            
+            if (self::$_fileInfoDb) { 
+                $type = finfo_file(self::$_fileInfoDb, $file);
+            }
+            
+        } elseif (function_exists('mime_content_type')) {
+            $type = mime_content_type($file);
+        }
+        
+        // Fallback to the default application/octet-stream
+        if (! $type) {
+            $type = 'application/octet-stream';
+        }
+        
+        return $type;
+    }
+
+    /**
+     * Encode data to a multipart/form-data part suitable for a POST request.
+     *
+     * @param string $boundary
+     * @param string $name
+     * @param mixed $value
+     * @param string $filename
+     * @param array $headers Associative array of optional headers @example ("Content-Transfer-Encoding" => "binary")
+     * @return string
+     */
+    public static function encodeFormData($boundary, $name, $value, $filename = null, $headers = array()) {
+        $ret = "--{$boundary}\r\n" .
+            'Content-Disposition: form-data; name="' . $name .'"';
+
+        if ($filename) {
+            $ret .= '; filename="' . $filename . '"';
+        }
+        $ret .= "\r\n";
+
+        foreach ($headers as $hname => $hvalue) {
+            $ret .= "{$hname}: {$hvalue}\r\n";
+        }
+        $ret .= "\r\n";
+
+        $ret .= "{$value}\r\n";
+
+        return $ret;
+    }
+
+    /**
+     * Create a HTTP authentication "Authorization:" header according to the
+     * specified user, password and authentication method.
+     *
+     * @see http://www.faqs.org/rfcs/rfc2617.html
+     * @param string $user
+     * @param string $password
+     * @param string $type
+     * @return string
+     * @throws Zend_Http_Client_Exception
+     */
+    public static function encodeAuthHeader($user, $password, $type = self::AUTH_BASIC)
+    {
+        $authHeader = null;
+
+        switch ($type) {
+            case self::AUTH_BASIC:
+                // In basic authentication, the user name cannot contain ":"
+                if (strpos($user, ':') !== false) {
+                    /** @see Zend_Http_Client_Exception */
+                    require_once 'Zend/Http/Client/Exception.php';
+                    throw new Zend_Http_Client_Exception("The user name cannot contain ':' in 'Basic' HTTP authentication");
+                }
+
+                $authHeader = 'Basic ' . base64_encode($user . ':' . $password);
+                break;
+
+            //case self::AUTH_DIGEST:
+                /**
+                 * @todo Implement digest authentication
+                 */
+            //    break;
+
+            default:
+                /** @see Zend_Http_Client_Exception */
+                require_once 'Zend/Http/Client/Exception.php';
+                throw new Zend_Http_Client_Exception("Not a supported HTTP authentication type: '$type'");
+        }
+
+        return $authHeader;
+    }
+}

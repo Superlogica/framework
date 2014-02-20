@@ -1,96 +1,280 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Atom.php 13890 2009-01-31 10:10:30Z yoshida@zend.co.jp $
+ */
+
+
+/**
+ * @see Zend_Feed_Entry_Abstract
+ */
+require_once 'Zend/Feed/Entry/Abstract.php';
+
+
+/**
+ * Concrete class for working with Atom entries.
+ *
+ * @category   Zend
+ * @package    Zend_Feed
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Feed_Entry_Atom extends Zend_Feed_Entry_Abstract
+{
+	/**
+	 * Content-Type
+	 */
+	const CONTENT_TYPE = 'application/atom+xml';
+
+    /**
+     * Root XML element for Atom entries.
+     *
+     * @var string
+     */
+    protected $_rootElement = 'entry';
+
+    /**
+     * Root namespace for Atom entries.
+     *
+     * @var string
+     */
+    protected $_rootNamespace = 'atom';
+
+
+    /**
+     * Delete an atom entry.
+     *
+     * Delete tries to delete this entry from its feed. If the entry
+     * does not contain a link rel="edit", we throw an error (either
+     * the entry does not yet exist or this is not an editable
+     * feed). If we have a link rel="edit", we do the empty-body
+     * HTTP DELETE to that URI and check for a response of 2xx.
+     * Usually the response would be 204 No Content, but the Atom
+     * Publishing Protocol permits it to be 200 OK.
+     *
+     * @return void
+     * @throws Zend_Feed_Exception
+     */
+    public function delete()
+    {
+        // Look for link rel="edit" in the entry object.
+        $deleteUri = $this->link('edit');
+        if (!$deleteUri) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('Cannot delete entry; no link rel="edit" is present.');
+        }
+
+        // DELETE
+        $client = Zend_Feed::getHttpClient();
+        do {
+            $client->setUri($deleteUri);
+            if (Zend_Feed::getHttpMethodOverride()) {
+                $client->setHeader('X-HTTP-Method-Override', 'DELETE');
+                $response = $client->request('POST');
+            } else {
+                $response = $client->request('DELETE');
+            }
+            $httpStatus = $response->getStatus();
+            switch ((int) $httpStatus / 100) {
+                // Success
+                case 2:
+                    return true;
+                // Redirect
+                case 3:
+                    $deleteUri = $response->getHeader('Location');
+                    continue;
+                // Error
+                default:
+                    /**
+                     * @see Zend_Feed_Exception
+                     */
+                    require_once 'Zend/Feed/Exception.php';
+                    throw new Zend_Feed_Exception("Expected response code 2xx, got $httpStatus");
+            }
+        } while (true);
+    }
+
+
+    /**
+     * Save a new or updated Atom entry.
+     *
+     * Save is used to either create new entries or to save changes to
+     * existing ones. If we have a link rel="edit", we are changing
+     * an existing entry. In this case we re-serialize the entry and
+     * PUT it to the edit URI, checking for a 200 OK result.
+     *
+     * For posting new entries, you must specify the $postUri
+     * parameter to save() to tell the object where to post itself.
+     * We use $postUri and POST the serialized entry there, checking
+     * for a 201 Created response. If the insert is successful, we
+     * then parse the response from the POST to get any values that
+     * the server has generated: an id, an updated time, and its new
+     * link rel="edit".
+     *
+     * @param  string $postUri Location to POST for creating new entries.
+     * @return void
+     * @throws Zend_Feed_Exception
+     */
+    public function save($postUri = null)
+    {
+        if ($this->id()) {
+            // If id is set, look for link rel="edit" in the
+            // entry object and PUT.
+            $editUri = $this->link('edit');
+            if (!$editUri) {
+                /**
+                 * @see Zend_Feed_Exception
+                 */
+                require_once 'Zend/Feed/Exception.php';
+                throw new Zend_Feed_Exception('Cannot edit entry; no link rel="edit" is present.');
+            }
+
+            $client = Zend_Feed::getHttpClient();
+            $client->setUri($editUri);
+            if (Zend_Feed::getHttpMethodOverride()) {
+                $client->setHeaders(array('X-HTTP-Method-Override: PUT',
+                    'Content-Type: ' . self::CONTENT_TYPE));
+                $client->setRawData($this->saveXML());
+                $response = $client->request('POST');
+            } else {
+                $client->setHeaders('Content-Type', self::CONTENT_TYPE);
+                $client->setRawData($this->saveXML());
+                $response = $client->request('PUT');
+            }
+            if ($response->getStatus() !== 200) {
+                /**
+                 * @see Zend_Feed_Exception
+                 */
+                require_once 'Zend/Feed/Exception.php';
+                throw new Zend_Feed_Exception('Expected response code 200, got ' . $response->getStatus());
+            }
+        } else {
+            if ($postUri === null) {
+                /**
+                 * @see Zend_Feed_Exception
+                 */
+                require_once 'Zend/Feed/Exception.php';
+                throw new Zend_Feed_Exception('PostURI must be specified to save new entries.');
+            }
+            $client = Zend_Feed::getHttpClient();
+            $client->setUri($postUri);
+            $client->setHeaders('Content-Type', self::CONTENT_TYPE);
+            $client->setRawData($this->saveXML());
+            $response = $client->request('POST');
+
+            if ($response->getStatus() !== 201) {
+                /**
+                 * @see Zend_Feed_Exception
+                 */
+                require_once 'Zend/Feed/Exception.php';
+                throw new Zend_Feed_Exception('Expected response code 201, got '
+                                              . $response->getStatus());
+            }
+        }
+
+        // Update internal properties using $client->responseBody;
+        @ini_set('track_errors', 1);
+        $newEntry = new DOMDocument;
+        $status = @$newEntry->loadXML($response->getBody());
+        @ini_restore('track_errors');
+
+        if (!$status) {
+            // prevent the class to generate an undefined variable notice (ZF-2590)
+            if (!isset($php_errormsg)) {
+                if (function_exists('xdebug_is_enabled')) {
+                    $php_errormsg = '(error message not available, when XDebug is running)';
+                } else {
+                    $php_errormsg = '(error message not available)';
+                }
+            }
+
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('XML cannot be parsed: ' . $php_errormsg);
+        }
+
+        $newEntry = $newEntry->getElementsByTagName($this->_rootElement)->item(0);
+        if (!$newEntry) {
+            /**
+             * @see Zend_Feed_Exception
+             */
+            require_once 'Zend/Feed/Exception.php';
+            throw new Zend_Feed_Exception('No root <feed> element found in server response:'
+                                          . "\n\n" . $client->responseBody);
+        }
+
+        if ($this->_element->parentNode) {
+            $oldElement = $this->_element;
+            $this->_element = $oldElement->ownerDocument->importNode($newEntry, true);
+            $oldElement->parentNode->replaceChild($this->_element, $oldElement);
+        } else {
+            $this->_element = $newEntry;
+        }
+    }
+
+
+    /**
+     * Easy access to <link> tags keyed by "rel" attributes.
+     *
+     * If $elt->link() is called with no arguments, we will attempt to
+     * return the value of the <link> tag(s) like all other
+     * method-syntax attribute access. If an argument is passed to
+     * link(), however, then we will return the "href" value of the
+     * first <link> tag that has a "rel" attribute matching $rel:
+     *
+     * $elt->link(): returns the value of the link tag.
+     * $elt->link('self'): returns the href from the first <link rel="self"> in the entry.
+     *
+     * @param  string $rel The "rel" attribute to look for.
+     * @return mixed
+     */
+    public function link($rel = null)
+    {
+        if ($rel === null) {
+            return parent::__call('link', null);
+        }
+
+        // index link tags by their "rel" attribute.
+        $links = parent::__get('link');
+        if (!is_array($links)) {
+            if ($links instanceof Zend_Feed_Element) {
+                $links = array($links);
+            } else {
+                return $links;
+            }
+        }
+
+        foreach ($links as $link) {
+            if (empty($link['rel'])) {
+                continue;
+            }
+            if ($rel == $link['rel']) {
+                return $link['href'];
+            }
+        }
+
+        return null;
+    }
+
+}

@@ -1,30 +1,88 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Assertion.php 13213 2008-12-14 11:05:07Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Assertion_Interface
+ */
+require_once 'Zend/InfoCard/Xml/Assertion/Interface.php';
+
+/**
+ * Factory object to retrieve an Assertion object based on the type of XML document provided
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+final class Zend_InfoCard_Xml_Assertion
+{
+    /**
+     * The namespace for a SAML-formatted Assertion document
+     */
+    const TYPE_SAML = 'urn:oasis:names:tc:SAML:1.0:assertion';
+
+    /**
+     * Constructor (disabled)
+     *
+     * @return void
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Returns an instance of a InfoCard Assertion object based on the XML data provided
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @param string $xmlData The XML-Formatted Assertion
+     * @return Zend_InfoCard_Xml_Assertion_Interface
+     * @throws Zend_InfoCard_Xml_Exception
+     */
+    static public function getInstance($xmlData)
+    {
+
+        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
+            $strXmlData = $xmlData->asXML();
+        } else if (is_string($xmlData)) {
+            $strXmlData = $xmlData;
+        } else {
+            require_once 'Zend/InfoCard/Xml/Exception.php';
+            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
+        }
+
+        $sxe = simplexml_load_string($strXmlData);
+
+        $namespaces = $sxe->getDocNameSpaces();
+
+        foreach($namespaces as $namespace) {
+            switch($namespace) {
+                case self::TYPE_SAML:
+                    include_once 'Zend/InfoCard/Xml/Assertion/Saml.php';
+                    return simplexml_load_string($strXmlData, 'Zend_InfoCard_Xml_Assertion_Saml', null);
+            }
+        }
+
+        require_once 'Zend/InfoCard/Xml/Exception.php';
+        throw new Zend_InfoCard_Xml_Exception("Unable to determine Assertion type by Namespace");
+    }
+}

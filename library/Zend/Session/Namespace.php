@@ -1,142 +1,498 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Session
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Namespace.php 13337 2008-12-17 11:11:25Z sidhighwind $
+ * @since      Preview Release 0.2
+ */
+
+
+/**
+ * @see Zend_Session
+ */
+require_once 'Zend/Session.php';
+
+
+/**
+ * @see Zend_Session_Abstract
+ */
+require_once 'Zend/Session/Abstract.php';
+
+
+/**
+ * Zend_Session_Namespace
+ *
+ * @category   Zend
+ * @package    Zend_Session
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAggregate
+{
+
+    /**
+     * used as option to constructor to prevent additional instances to the same namespace
+     */
+    const SINGLE_INSTANCE = true;
+
+    /**
+     * Namespace - which namespace this instance of zend-session is saving-to/getting-from
+     *
+     * @var string
+     */
+    protected $_namespace = "Default";
+
+    /**
+     * Namespace locking mechanism
+     *
+     * @var array
+     */
+    protected static $_namespaceLocks = array();
+
+    /**
+     * Single instance namespace array to ensure data security.
+     *
+     * @var array
+     */
+    protected static $_singleInstances = array();
+
+    /**
+     * __construct() - Returns an instance object bound to a particular, isolated section
+     * of the session, identified by $namespace name (defaulting to 'Default').
+     * The optional argument $singleInstance will prevent construction of additional
+     * instance objects acting as accessors to this $namespace.
+     *
+     * @param string $namespace       - programmatic name of the requested namespace
+     * @param bool $singleInstance    - prevent creation of additional accessor instance objects for this namespace
+     * @return void
+     */
+    public function __construct($namespace = 'Default', $singleInstance = false)
+    {
+        if ($namespace === '') {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('Session namespace must be a non-empty string.');
+        }
+
+        if ($namespace[0] == "_") {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('Session namespace must not start with an underscore.');
+        }
+
+        if (preg_match('#(^[0-9])#i', $namespace[0])) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('Session namespace must not start with a number.');
+        }
+
+        if (isset(self::$_singleInstances[$namespace])) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception("A session namespace object already exists for this namespace ('$namespace'), and no additional accessors (session namespace objects) for this namespace are permitted.");
+        }
+
+        if ($singleInstance === true) {
+            self::$_singleInstances[$namespace] = true;
+        }
+
+        $this->_namespace = $namespace;
+
+        // Process metadata specific only to this namespace.
+        Zend_Session::start(true); // attempt auto-start (throws exception if strict option set)
+
+        if (self::$_readable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(self::_THROW_NOT_READABLE_MSG);
+        }
+
+        if (!isset($_SESSION['__ZF'])) {
+            return; // no further processing needed
+        }
+
+        // do not allow write access to namespaces, after stop() or writeClose()
+        if (parent::$_writable === true) {
+            if (isset($_SESSION['__ZF'][$namespace])) {
+
+                // Expire Namespace by Namespace Hop (ENNH)
+                if (isset($_SESSION['__ZF'][$namespace]['ENNH'])) {
+                    $_SESSION['__ZF'][$namespace]['ENNH']--;
+
+                    if ($_SESSION['__ZF'][$namespace]['ENNH'] === 0) {
+                        if (isset($_SESSION[$namespace])) {
+                            self::$_expiringData[$namespace] = $_SESSION[$namespace];
+                            unset($_SESSION[$namespace]);
+                        }
+                        unset($_SESSION['__ZF'][$namespace]['ENNH']);
+                    }
+                }
+
+                // Expire Namespace Variables by Namespace Hop (ENVNH)
+                if (isset($_SESSION['__ZF'][$namespace]['ENVNH'])) {
+                    foreach ($_SESSION['__ZF'][$namespace]['ENVNH'] as $variable => $hops) {
+                        $_SESSION['__ZF'][$namespace]['ENVNH'][$variable]--;
+
+                        if ($_SESSION['__ZF'][$namespace]['ENVNH'][$variable] === 0) {
+                            if (isset($_SESSION[$namespace][$variable])) {
+                                self::$_expiringData[$namespace][$variable] = $_SESSION[$namespace][$variable];
+                                unset($_SESSION[$namespace][$variable]);
+                            }
+                            unset($_SESSION['__ZF'][$namespace]['ENVNH'][$variable]);
+                        }
+                    }
+                }
+            }
+
+            if (empty($_SESSION['__ZF'][$namespace])) {
+                unset($_SESSION['__ZF'][$namespace]);
+            }
+
+            if (empty($_SESSION['__ZF'])) {
+                unset($_SESSION['__ZF']);
+            }
+        }
+    }
+
+
+    /**
+     * getIterator() - return an iteratable object for use in foreach and the like,
+     * this completes the IteratorAggregate interface
+     *
+     * @return ArrayObject - iteratable container of the namespace contents
+     */
+    public function getIterator()
+    {
+        return new ArrayObject(parent::_namespaceGetAll($this->_namespace));
+    }
+
+
+    /**
+     * lock() - mark a session/namespace as readonly
+     *
+     * @return void
+     */
+    public function lock()
+    {
+        self::$_namespaceLocks[$this->_namespace] = true;
+    }
+
+
+    /**
+     * unlock() - unmark a session/namespace to enable read & write
+     *
+     * @return void
+     */
+    public function unlock()
+    {
+        unset(self::$_namespaceLocks[$this->_namespace]);
+    }
+
+
+    /**
+     * unlockAll() - unmark all session/namespaces to enable read & write
+     *
+     * @return void
+     */
+    public static function unlockAll()
+    {
+        self::$_namespaceLocks = array();
+    }
+
+
+    /**
+     * isLocked() - return lock status, true if, and only if, read-only
+     *
+     * @return bool
+     */
+    public function isLocked()
+    {
+        return isset(self::$_namespaceLocks[$this->_namespace]);
+    }
+
+
+    /**
+     * unsetAll() - unset all variables in this namespace
+     *
+     * @return true
+     */
+    public function unsetAll()
+    {
+        return parent::_namespaceUnset($this->_namespace);
+    }
+
+
+    /**
+     * __get() - method to get a variable in this object's current namespace
+     *
+     * @param string $name - programmatic name of a key, in a <key,value> pair in the current namespace
+     * @return mixed
+     */
+    public function & __get($name)
+    {
+        if ($name === '') {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception("The '$name' key must be a non-empty string");
+        }
+
+        return parent::_namespaceGet($this->_namespace, $name);
+    }
+
+
+    /**
+     * __set() - method to set a variable/value in this object's namespace
+     *
+     * @param string $name - programmatic name of a key, in a <key,value> pair in the current namespace
+     * @param mixed $value - value in the <key,value> pair to assign to the $name key
+     * @throws Zend_Session_Exception
+     * @return true
+     */
+    public function __set($name, $value)
+    {
+        if (isset(self::$_namespaceLocks[$this->_namespace])) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('This session/namespace has been marked as read-only.');
+        }
+
+        if ($name === '') {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception("The '$name' key must be a non-empty string");
+        }
+
+        if (parent::$_writable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(parent::_THROW_NOT_WRITABLE_MSG);
+        }
+
+        $name = (string) $name;
+
+        $_SESSION[$this->_namespace][$name] = $value;
+    }
+
+
+    /**
+     * apply() - enables applying user-selected function, such as array_merge() to the namespace
+     * Parameters following the $callback argument are passed to the callback function.
+     * Caveat: ignores members expiring now.
+     *
+     * Example:
+     *   $namespace->apply('array_merge', array('tree' => 'apple', 'fruit' => 'peach'), array('flower' => 'rose'));
+     *   $namespace->apply('count');
+     *
+     * @param string|array $callback - callback function
+     */
+    public function apply($callback)
+    {
+        $arg_list = func_get_args();
+        $arg_list[0] = $_SESSION[$this->_namespace];
+        return call_user_func_array($callback, $arg_list);
+    }
+
+
+    /**
+     * applySet() - enables applying user-selected function, and sets entire namespace to the result
+     * Result of $callback must be an array.
+     * Parameters following the $callback argument are passed to the callback function.
+     * Caveat: ignores members expiring now.
+     *
+     * Example:
+     *   $namespace->applySet('array_merge', array('tree' => 'apple', 'fruit' => 'peach'), array('flower' => 'rose'));
+     *
+     * @param string|array $callback - callback function
+     */
+    public function applySet($callback)
+    {
+        $arg_list = func_get_args();
+        $arg_list[0] = $_SESSION[$this->_namespace];
+        $result = call_user_func_array($callback, $arg_list);
+        if (!is_array($result)) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('Result must be an array. Got: ' . gettype($result));
+        }
+        $_SESSION[$this->_namespace] = $result;
+        return $result;
+    }
+
+
+    /**
+     * __isset() - determine if a variable in this object's namespace is set
+     *
+     * @param string $name - programmatic name of a key, in a <key,value> pair in the current namespace
+     * @return bool
+     */
+    public function __isset($name)
+    {
+        if ($name === '') {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception("The '$name' key must be a non-empty string");
+        }
+
+        return parent::_namespaceIsset($this->_namespace, $name);
+    }
+
+
+    /**
+     * __unset() - unset a variable in this object's namespace.
+     *
+     * @param string $name - programmatic name of a key, in a <key,value> pair in the current namespace
+     * @return true
+     */
+    public function __unset($name)
+    {
+        if ($name === '') {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception("The '$name' key must be a non-empty string");
+        }
+
+        return parent::_namespaceUnset($this->_namespace, $name);
+    }
+
+
+    /**
+     * setExpirationSeconds() - expire the namespace, or specific variables after a specified
+     * number of seconds
+     *
+     * @param int $seconds     - expires in this many seconds
+     * @param mixed $variables - OPTIONAL list of variables to expire (defaults to all)
+     * @throws Zend_Session_Exception
+     * @return void
+     */
+    public function setExpirationSeconds($seconds, $variables = null)
+    {
+        if (parent::$_writable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(parent::_THROW_NOT_WRITABLE_MSG);
+        }
+
+        if ($seconds <= 0) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('Seconds must be positive.');
+        }
+
+        if ($variables === null) {
+
+            // apply expiration to entire namespace
+            $_SESSION['__ZF'][$this->_namespace]['ENT'] = time() + $seconds;
+
+        } else {
+
+            if (is_string($variables)) {
+                $variables = array($variables);
+            }
+
+            foreach ($variables as $variable) {
+                if (!empty($variable)) {
+                    $_SESSION['__ZF'][$this->_namespace]['ENVT'][$variable] = time() + $seconds;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * setExpirationHops() - expire the namespace, or specific variables after a specified
+     * number of page hops
+     *
+     * @param int $hops        - how many "hops" (number of subsequent requests) before expiring
+     * @param mixed $variables - OPTIONAL list of variables to expire (defaults to all)
+     * @param boolean $hopCountOnUsageOnly - OPTIONAL if set, only count a hop/request if this namespace is used
+     * @throws Zend_Session_Exception
+     * @return void
+     */
+    public function setExpirationHops($hops, $variables = null, $hopCountOnUsageOnly = false)
+    {
+        if (parent::$_writable === false) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception(parent::_THROW_NOT_WRITABLE_MSG);
+        }
+
+        if ($hops <= 0) {
+            /**
+             * @see Zend_Session_Exception
+             */
+            require_once 'Zend/Session/Exception.php';
+            throw new Zend_Session_Exception('Hops must be positive number.');
+        }
+
+        if ($variables === null) {
+
+            // apply expiration to entire namespace
+            if ($hopCountOnUsageOnly === false) {
+                $_SESSION['__ZF'][$this->_namespace]['ENGH'] = $hops;
+            } else {
+                $_SESSION['__ZF'][$this->_namespace]['ENNH'] = $hops;
+            }
+
+        } else {
+
+            if (is_string($variables)) {
+                $variables = array($variables);
+            }
+
+            foreach ($variables as $variable) {
+                if (!empty($variable)) {
+                    if ($hopCountOnUsageOnly === false) {
+                        $_SESSION['__ZF'][$this->_namespace]['ENVGH'][$variable] = $hops;
+                    } else {
+                        $_SESSION['__ZF'][$this->_namespace]['ENVNH'][$variable] = $hops;
+                    }
+                }
+            }
+        }
+    }
+
+}

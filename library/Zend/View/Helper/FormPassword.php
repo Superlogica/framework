@@ -1,36 +1,94 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract class for extension
+ */
+require_once 'Zend/View/Helper/FormElement.php';
+
+
+/**
+ * Helper to generate a "password" element
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_FormPassword extends Zend_View_Helper_FormElement
+{
+    /**
+     * Generates a 'password' element.
+     *
+     * @access public
+     *
+     * @param string|array $name If a string, the element name.  If an
+     * array, all other parameters are ignored, and the array elements
+     * are extracted in place of added parameters.
+     *
+     * @param mixed $value The element value.
+     *
+     * @param array $attribs Attributes for the element tag.
+     *
+     * @return string The element XHTML.
+     */
+    public function formPassword($name, $value = null, $attribs = null)
+    {
+        $info = $this->_getInfo($name, $value, $attribs);
+        extract($info); // name, value, attribs, options, listsep, disable
+
+        // is it disabled?
+        $disabled = '';
+        if ($disable) {
+            // disabled
+            $disabled = ' disabled="disabled"';
+        }
+
+        // determine the XHTML value
+        $valueString = ' value=""';
+        if (array_key_exists('renderPassword', $attribs)) {
+            if ($attribs['renderPassword']) {
+                $valueString = ' value="' . $this->view->escape($value) . '"';
+            }
+            unset($attribs['renderPassword']);
+        }
+        
+        // XHTML or HTML end tag?
+        $endTag = ' />';
+        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
+            $endTag= '>';
+        }
+
+        // render the element
+        $xhtml = '<input type="password"'
+                . ' name="' . $this->view->escape($name) . '"'
+                . ' id="' . $this->view->escape($id) . '"'
+                . $valueString
+                . $disabled
+                . $this->_htmlAttribs($attribs)
+                . $endTag;
+
+        return $xhtml;
+    }
+
+}

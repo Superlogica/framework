@@ -1,76 +1,205 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Ldap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Exception.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+/**
+ * @see Zend_Exception
+ */
+require_once 'Zend/Exception.php';
+
+class Zend_Ldap_Exception extends Zend_Exception
+{
+    const LDAP_SUCCESS = 0x00;
+    const LDAP_OPERATIONS_ERROR = 0x01;
+    const LDAP_PROTOCOL_ERROR = 0x02;
+    const LDAP_TIMELIMIT_EXCEEDED = 0x03;
+    const LDAP_SIZELIMIT_EXCEEDED = 0x04;
+    const LDAP_COMPARE_FALSE = 0x05;
+    const LDAP_COMPARE_TRUE = 0x06;
+    const LDAP_AUTH_METHOD_NOT_SUPPORTED = 0x07;
+    const LDAP_STRONG_AUTH_REQUIRED = 0x08;
+    const LDAP_PARTIAL_RESULTS = 0x09;
+    const LDAP_REFERRAL = 0x0a;
+    const LDAP_ADMINLIMIT_EXCEEDED = 0x0b;
+    const LDAP_UNAVAILABLE_CRITICAL_EXTENSION = 0x0c;
+    const LDAP_CONFIDENTIALITY_REQUIRED = 0x0d;
+    const LDAP_SASL_BIND_IN_PROGRESS = 0x0e;
+    const LDAP_NO_SUCH_ATTRIBUTE = 0x10;
+    const LDAP_UNDEFINED_TYPE = 0x11;
+    const LDAP_INAPPROPRIATE_MATCHING = 0x12;
+    const LDAP_CONSTRAINT_VIOLATION = 0x13;
+    const LDAP_TYPE_OR_VALUE_EXISTS = 0x14;
+    const LDAP_INVALID_SYNTAX = 0x15;
+    const LDAP_NO_SUCH_OBJECT = 0x20;
+    const LDAP_ALIAS_PROBLEM = 0x21;
+    const LDAP_INVALID_DN_SYNTAX = 0x22;
+    const LDAP_IS_LEAF = 0x23;
+    const LDAP_ALIAS_DEREF_PROBLEM = 0x24;
+    const LDAP_PROXY_AUTHZ_FAILURE = 0x2F;
+    const LDAP_INAPPROPRIATE_AUTH = 0x30;
+    const LDAP_INVALID_CREDENTIALS = 0x31;
+    const LDAP_INSUFFICIENT_ACCESS = 0x32;
+    const LDAP_BUSY = 0x33;
+    const LDAP_UNAVAILABLE = 0x34;
+    const LDAP_UNWILLING_TO_PERFORM = 0x35;
+    const LDAP_LOOP_DETECT = 0x36;
+    const LDAP_NAMING_VIOLATION = 0x40;
+    const LDAP_OBJECT_CLASS_VIOLATION = 0x41;
+    const LDAP_NOT_ALLOWED_ON_NONLEAF = 0x42;
+    const LDAP_NOT_ALLOWED_ON_RDN = 0x43;
+    const LDAP_ALREADY_EXISTS = 0x44;
+    const LDAP_NO_OBJECT_CLASS_MODS = 0x45;
+    const LDAP_RESULTS_TOO_LARGE = 0x46;
+    const LDAP_AFFECTS_MULTIPLE_DSAS = 0x47;
+    const LDAP_OTHER = 0x50;
+    const LDAP_SERVER_DOWN = 0x51;
+    const LDAP_LOCAL_ERROR = 0x52;
+    const LDAP_ENCODING_ERROR = 0x53;
+    const LDAP_DECODING_ERROR = 0x54;
+    const LDAP_TIMEOUT = 0x55;
+    const LDAP_AUTH_UNKNOWN = 0x56;
+    const LDAP_FILTER_ERROR = 0x57;
+    const LDAP_USER_CANCELLED = 0x58;
+    const LDAP_PARAM_ERROR = 0x59;
+    const LDAP_NO_MEMORY = 0x5a;
+    const LDAP_CONNECT_ERROR = 0x5b;
+    const LDAP_NOT_SUPPORTED = 0x5c;
+    const LDAP_CONTROL_NOT_FOUND = 0x5d;
+    const LDAP_NO_RESULTS_RETURNED = 0x5e;
+    const LDAP_MORE_RESULTS_TO_RETURN = 0x5f;
+    const LDAP_CLIENT_LOOP = 0x60;
+    const LDAP_REFERRAL_LIMIT_EXCEEDED = 0x61;
+    const LDAP_CUP_RESOURCES_EXHAUSTED = 0x71;
+    const LDAP_CUP_SECURITY_VIOLATION = 0x72;
+    const LDAP_CUP_INVALID_DATA = 0x73;
+    const LDAP_CUP_UNSUPPORTED_SCHEME = 0x74;
+    const LDAP_CUP_RELOAD_REQUIRED = 0x75;
+    const LDAP_CANCELLED = 0x76;
+    const LDAP_NO_SUCH_OPERATION = 0x77;
+    const LDAP_TOO_LATE = 0x78;
+    const LDAP_CANNOT_CANCEL = 0x79;
+    const LDAP_ASSERTION_FAILED = 0x7A;
+    const LDAP_SYNC_REFRESH_REQUIRED = 0x1000;
+    const LDAP_X_SYNC_REFRESH_REQUIRED = 0x4100;
+    const LDAP_X_NO_OPERATION = 0x410e;
+    const LDAP_X_ASSERTION_FAILED = 0x410f;
+    const LDAP_X_NO_REFERRALS_FOUND = 0x4110;
+    const LDAP_X_CANNOT_CHAIN = 0x4111;
+
+    /* internal error code constants */
+
+    const LDAP_X_DOMAIN_MISMATCH = 0x7001;
+
+    /**
+     * @param mixed $ldap A Zend_Ldap object or raw LDAP context resource
+     * @param string $str An informtive exception message
+     * @param int $code An LDAP error code
+     */
+    public function __construct($ldap = null, $str = null, $code = 0)
+    {
+        $resource = null;
+        if (is_resource($ldap)) {
+            $resource = $ldap;
+        } else if (is_object($ldap)) {
+            $resource = $ldap->getResource();
+        }
+
+        $message = '';
+        if ($code === 0)
+            $code = Zend_Ldap_Exception::getLdapCode($resource);
+        if ($code)
+            $message .= '0x' . dechex($code);
+        if (is_resource($resource)) {
+
+            /* The various error retrieval functions can return
+             * different things so we just try to collect what we
+             * can and eliminate dupes.
+             */
+
+            $estr1 = @ldap_error($resource);
+            if ($code !== 0 && $estr1 === 'Success')
+                $estr1 = @ldap_err2str($code);
+            if ($estr1 !== $str)
+                $this->_append($message, $estr1);
+
+            @ldap_get_option($resource, LDAP_OPT_ERROR_STRING, $estr2);
+            if ($estr2 !== $str && $estr2 !== $estr1)
+                $this->_append($message, $estr2);
+        }
+
+        $this->_append($message, $str);
+
+        parent::__construct($message, $code);
+    }
+
+    private function _append(&$message, $estr)
+    {
+        if ($estr) {
+            if ($message)
+                $message .= ': ';
+            $message .= $estr;
+        }
+    }
+
+    /**
+     * @param mixed $ldap A Zend_Ldap object or raw LDAP context resource
+     * @return int The current error code for the resource
+     */
+    public static function getLdapCode($ldap)
+    {
+        $resource = null;
+        if (is_resource($ldap)) {
+            $resource = $ldap;
+        } else if (is_object($ldap)) {
+            $resource = $ldap->getResource();
+        }
+        if (is_resource($resource)) {
+            $ret = @ldap_get_option($resource, LDAP_OPT_ERROR_NUMBER, $err);
+            if ($ret === true) {
+                if ($err <= -1 && $err >= -17) {
+                    /* For some reason draft-ietf-ldapext-ldap-c-api-xx.txt error
+                     * codes in OpenLDAP are negative values from -1 to -17. 
+                     */
+                    $err = Zend_Ldap_Exception::LDAP_SERVER_DOWN + (-$err - 1);
+                }
+                return $err;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * @param string $message An informtive exception message
+     *
+     */
+    public function setMessage($message)
+    {
+        $this->_message = $message;
+    }
+
+    /**
+     * @return int The current error code for this exception
+     */
+    public function getErrorCode()
+    {
+        return $this->getCode();
+    }
+}

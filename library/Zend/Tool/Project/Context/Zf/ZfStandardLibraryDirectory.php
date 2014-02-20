@@ -1,48 +1,104 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_Directory
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/Directory.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_Zf_ZfStandardLibraryDirectory extends Zend_Tool_Project_Context_Filesystem_Directory 
+{
+    
+    /**
+     * @var string
+     */
+    protected $_filesystemName = 'Zend';
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ZfStandardLibraryDirectory';
+    }
+    
+    /**
+     * create()
+     *
+     */
+    public function create()
+    {
+        parent::create();
+        $zfPath = $this->_getZfPath();
+        if ($zfPath != false) {
+            $zfIterator = new RecursiveDirectoryIterator($zfPath);
+            foreach ($rii = new RecursiveIteratorIterator($zfIterator, RecursiveIteratorIterator::SELF_FIRST) as $file) {
+                $relativePath = preg_replace('#^'.preg_quote(realpath($zfPath), '#').'#', '', realpath($file->getPath())) . DIRECTORY_SEPARATOR . $file->getFilename();
+                if (strpos($relativePath, DIRECTORY_SEPARATOR . '.') !== false) {
+                    continue;
+                }
+                
+                if ($file->isDir()) {
+                    mkdir($this->getBaseDirectory() . DIRECTORY_SEPARATOR . $this->getFilesystemName() . $relativePath);
+                } else {
+                    copy($file->getPathname(), $this->getBaseDirectory() . DIRECTORY_SEPARATOR . $this->getFilesystemName() . $relativePath);
+                }
+                    
+            }
+        }
+    }
+    
+    /**
+     * _getZfPath()
+     *
+     * @return string|false
+     */
+    protected function _getZfPath()
+    {
+        foreach (explode(PATH_SEPARATOR, get_include_path()) as $includePath) {
+            
+            if (!file_exists($includePath) || $includePath[0] == '.') {
+                continue;
+            }
+            
+            if (realpath($checkedPath = rtrim($includePath, '\\/') . '/Zend/Loader.php') !== false && file_exists($checkedPath)) {
+                return dirname($checkedPath);
+            }
+        }
+        
+        return false;
+    }
+    
+}

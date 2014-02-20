@@ -1,269 +1,997 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-UeAeSvM5WKirQzk9g7xkhOMZVkC=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Request_Abstract */
+require_once 'Zend/Controller/Request/Abstract.php';
+
+/** Zend_Uri */
+require_once 'Zend/Uri.php';
+
+/**
+ * Zend_Controller_Request_Http
+ *
+ * HTTP request object for use with Zend_Controller family.
+ *
+ * @uses Zend_Controller_Request_Abstract
+ * @package Zend_Controller
+ * @subpackage Request
+ */
+class Zend_Controller_Request_Http extends Zend_Controller_Request_Abstract
+{
+    /**
+     * Scheme for http
+     *
+     */
+    const SCHEME_HTTP  = 'http';
+
+    /**
+     * Scheme for https
+     *
+     */
+    const SCHEME_HTTPS = 'https';
+
+    /**
+     * Allowed parameter sources
+     * @var array
+     */
+    protected $_paramSources = array('_GET', '_POST');
+
+    /**
+     * REQUEST_URI
+     * @var string;
+     */
+    protected $_requestUri;
+
+    /**
+     * Base URL of request
+     * @var string
+     */
+    protected $_baseUrl = null;
+
+    /**
+     * Base path of request
+     * @var string
+     */
+    protected $_basePath = null;
+
+    /**
+     * PATH_INFO
+     * @var string
+     */
+    protected $_pathInfo = '';
+
+    /**
+     * Instance parameters
+     * @var array
+     */
+    protected $_params = array();
+
+    /**
+     * Alias keys for request parameters
+     * @var array
+     */
+    protected $_aliases = array();
+
+    /**
+     * Constructor
+     *
+     * If a $uri is passed, the object will attempt to populate itself using
+     * that information.
+     *
+     * @param string|Zend_Uri $uri
+     * @return void
+     * @throws Zend_Controller_Request_Exception when invalid URI passed
+     */
+    public function __construct($uri = null)
+    {
+        if (null !== $uri) {
+            if (!$uri instanceof Zend_Uri) {
+                $uri = Zend_Uri::factory($uri);
+            }
+            if ($uri->valid()) {
+                $path  = $uri->getPath();
+                $query = $uri->getQuery();
+                if (!empty($query)) {
+                    $path .= '?' . $query;
+                }
+
+                $this->setRequestUri($path);
+            } else {
+                require_once 'Zend/Controller/Request/Exception.php';
+                throw new Zend_Controller_Request_Exception('Invalid URI provided to constructor');
+            }
+        } else {
+            $this->setRequestUri();
+        }
+    }
+
+    /**
+     * Access values contained in the superglobals as public members
+     * Order of precedence: 1. GET, 2. POST, 3. COOKIE, 4. SERVER, 5. ENV
+     *
+     * @see http://msdn.microsoft.com/en-us/library/system.web.httprequest.item.aspx
+     * @param string $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        switch (true) {
+            case isset($this->_params[$key]):
+                return $this->_params[$key];
+            case isset($_GET[$key]):
+                return $_GET[$key];
+            case isset($_POST[$key]):
+                return $_POST[$key];
+            case isset($_COOKIE[$key]):
+                return $_COOKIE[$key];
+            case ($key == 'REQUEST_URI'):
+                return $this->getRequestUri();
+            case ($key == 'PATH_INFO'):
+                return $this->getPathInfo();
+            case isset($_SERVER[$key]):
+                return $_SERVER[$key];
+            case isset($_ENV[$key]):
+                return $_ENV[$key];
+            default:
+                return null;
+        }
+    }
+
+    /**
+     * Alias to __get
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public function get($key)
+    {
+        return $this->__get($key);
+    }
+
+    /**
+     * Set values
+     *
+     * In order to follow {@link __get()}, which operates on a number of
+     * superglobals, setting values through overloading is not allowed and will
+     * raise an exception. Use setParam() instead.
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     * @throws Zend_Controller_Request_Exception
+     */
+    public function __set($key, $value)
+    {
+        require_once 'Zend/Controller/Request/Exception.php';
+        throw new Zend_Controller_Request_Exception('Setting values in superglobals not allowed; please use setParam()');
+    }
+
+    /**
+     * Alias to __set()
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public function set($key, $value)
+    {
+        return $this->__set($key, $value);
+    }
+
+    /**
+     * Check to see if a property is set
+     *
+     * @param string $key
+     * @return boolean
+     */
+    public function __isset($key)
+    {
+        switch (true) {
+            case isset($this->_params[$key]):
+                return true;
+            case isset($_GET[$key]):
+                return true;
+            case isset($_POST[$key]):
+                return true;
+            case isset($_COOKIE[$key]):
+                return true;
+            case isset($_SERVER[$key]):
+                return true;
+            case isset($_ENV[$key]):
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Alias to __isset()
+     *
+     * @param string $key
+     * @return boolean
+     */
+    public function has($key)
+    {
+        return $this->__isset($key);
+    }
+
+    /**
+     * Set GET values
+     *
+     * @param  string|array $spec
+     * @param  null|mixed $value
+     * @return Zend_Controller_Request_Http
+     */
+    public function setQuery($spec, $value = null)
+    {
+        if ((null === $value) && !is_array($spec)) {
+            require_once 'Zend/Controller/Exception.php';
+            throw new Zend_Controller_Exception('Invalid value passed to setQuery(); must be either array of values or key/value pair');
+        }
+        if ((null === $value) && is_array($spec)) {
+            foreach ($spec as $key => $value) {
+                $this->setQuery($key, $value);
+            }
+            return $this;
+        }
+        $_GET[(string) $spec] = $value;
+        return $this;
+    }
+
+    /**
+     * Retrieve a member of the $_GET superglobal
+     *
+     * If no $key is passed, returns the entire $_GET array.
+     *
+     * @todo How to retrieve from nested arrays
+     * @param string $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed Returns null if key does not exist
+     */
+    public function getQuery($key = null, $default = null)
+    {
+        if (null === $key) {
+            return $_GET;
+        }
+
+        return (isset($_GET[$key])) ? $_GET[$key] : $default;
+    }
+
+    /**
+     * Set POST values
+     *
+     * @param  string|array $spec
+     * @param  null|mixed $value
+     * @return Zend_Controller_Request_Http
+     */
+    public function setPost($spec, $value = null)
+    {
+        if ((null === $value) && !is_array($spec)) {
+            require_once 'Zend/Controller/Exception.php';
+            throw new Zend_Controller_Exception('Invalid value passed to setPost(); must be either array of values or key/value pair');
+        }
+        if ((null === $value) && is_array($spec)) {
+            foreach ($spec as $key => $value) {
+                $this->setPost($key, $value);
+            }
+            return $this;
+        }
+        $_POST[(string) $spec] = $value;
+        return $this;
+    }
+
+    /**
+     * Retrieve a member of the $_POST superglobal
+     *
+     * If no $key is passed, returns the entire $_POST array.
+     *
+     * @todo How to retrieve from nested arrays
+     * @param string $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed Returns null if key does not exist
+     */
+    public function getPost($key = null, $default = null)
+    {
+        if (null === $key) {
+            return $_POST;
+        }
+
+        return (isset($_POST[$key])) ? $_POST[$key] : $default;
+    }
+
+    /**
+     * Retrieve a member of the $_COOKIE superglobal
+     *
+     * If no $key is passed, returns the entire $_COOKIE array.
+     *
+     * @todo How to retrieve from nested arrays
+     * @param string $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed Returns null if key does not exist
+     */
+    public function getCookie($key = null, $default = null)
+    {
+        if (null === $key) {
+            return $_COOKIE;
+        }
+
+        return (isset($_COOKIE[$key])) ? $_COOKIE[$key] : $default;
+    }
+
+    /**
+     * Retrieve a member of the $_SERVER superglobal
+     *
+     * If no $key is passed, returns the entire $_SERVER array.
+     *
+     * @param string $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed Returns null if key does not exist
+     */
+    public function getServer($key = null, $default = null)
+    {
+        if (null === $key) {
+            return $_SERVER;
+        }
+
+        return (isset($_SERVER[$key])) ? $_SERVER[$key] : $default;
+    }
+
+    /**
+     * Retrieve a member of the $_ENV superglobal
+     *
+     * If no $key is passed, returns the entire $_ENV array.
+     *
+     * @param string $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed Returns null if key does not exist
+     */
+    public function getEnv($key = null, $default = null)
+    {
+        if (null === $key) {
+            return $_ENV;
+        }
+
+        return (isset($_ENV[$key])) ? $_ENV[$key] : $default;
+    }
+
+    /**
+     * Set the REQUEST_URI on which the instance operates
+     *
+     * If no request URI is passed, uses the value in $_SERVER['REQUEST_URI'],
+     * $_SERVER['HTTP_X_REWRITE_URL'], or $_SERVER['ORIG_PATH_INFO'] + $_SERVER['QUERY_STRING'].
+     *
+     * @param string $requestUri
+     * @return Zend_Controller_Request_Http
+     */
+    public function setRequestUri($requestUri = null)
+    {
+        if ($requestUri === null) {
+            if (isset($_SERVER['HTTP_X_REWRITE_URL'])) { // check this first so IIS will catch
+                $requestUri = $_SERVER['HTTP_X_REWRITE_URL'];
+            } elseif (isset($_SERVER['REQUEST_URI'])) {
+                $requestUri = $_SERVER['REQUEST_URI'];
+                // Http proxy reqs setup request uri with scheme and host [and port] + the url path, only use url path
+                $schemeAndHttpHost = $this->getScheme() . '://' . $this->getHttpHost();
+                if (strpos($requestUri, $schemeAndHttpHost) === 0) {
+                    $requestUri = substr($requestUri, strlen($schemeAndHttpHost));
+                }
+            } elseif (isset($_SERVER['ORIG_PATH_INFO'])) { // IIS 5.0, PHP as CGI
+                $requestUri = $_SERVER['ORIG_PATH_INFO'];
+                if (!empty($_SERVER['QUERY_STRING'])) {
+                    $requestUri .= '?' . $_SERVER['QUERY_STRING'];
+                }
+            } else {
+                return $this;
+            }
+        } elseif (!is_string($requestUri)) {
+            return $this;
+        } else {
+            // Set GET items, if available
+            if (false !== ($pos = strpos($requestUri, '?'))) {
+                // Get key => value pairs and set $_GET
+                $query = substr($requestUri, $pos + 1);
+                parse_str($query, $vars);
+                $this->setQuery($vars);
+            }
+        }
+
+        $this->_requestUri = $requestUri;
+        return $this;
+    }
+
+    /**
+     * Returns the REQUEST_URI taking into account
+     * platform differences between Apache and IIS
+     *
+     * @return string
+     */
+    public function getRequestUri()
+    {
+        if (empty($this->_requestUri)) {
+            $this->setRequestUri();
+        }
+
+        return $this->_requestUri;
+    }
+
+    /**
+     * Set the base URL of the request; i.e., the segment leading to the script name
+     *
+     * E.g.:
+     * - /admin
+     * - /myapp
+     * - /subdir/index.php
+     *
+     * Do not use the full URI when providing the base. The following are
+     * examples of what not to use:
+     * - http://example.com/admin (should be just /admin)
+     * - http://example.com/subdir/index.php (should be just /subdir/index.php)
+     *
+     * If no $baseUrl is provided, attempts to determine the base URL from the
+     * environment, using SCRIPT_FILENAME, SCRIPT_NAME, PHP_SELF, and
+     * ORIG_SCRIPT_NAME in its determination.
+     *
+     * @param mixed $baseUrl
+     * @return Zend_Controller_Request_Http
+     */
+    public function setBaseUrl($baseUrl = null)
+    {
+        if ((null !== $baseUrl) && !is_string($baseUrl)) {
+            return $this;
+        }
+
+        if ($baseUrl === null) {
+            $filename = (isset($_SERVER['SCRIPT_FILENAME'])) ? basename($_SERVER['SCRIPT_FILENAME']) : '';
+
+            if (isset($_SERVER['SCRIPT_NAME']) && basename($_SERVER['SCRIPT_NAME']) === $filename) {
+                $baseUrl = $_SERVER['SCRIPT_NAME'];
+            } elseif (isset($_SERVER['PHP_SELF']) && basename($_SERVER['PHP_SELF']) === $filename) {
+                $baseUrl = $_SERVER['PHP_SELF'];
+            } elseif (isset($_SERVER['ORIG_SCRIPT_NAME']) && basename($_SERVER['ORIG_SCRIPT_NAME']) === $filename) {
+                $baseUrl = $_SERVER['ORIG_SCRIPT_NAME']; // 1and1 shared hosting compatibility
+            } else {
+                // Backtrack up the script_filename to find the portion matching
+                // php_self
+                $path    = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : '';
+                $file    = isset($_SERVER['SCRIPT_FILENAME']) ? $_SERVER['SCRIPT_FILENAME'] : '';
+                $segs    = explode('/', trim($file, '/'));
+                $segs    = array_reverse($segs);
+                $index   = 0;
+                $last    = count($segs);
+                $baseUrl = '';
+                do {
+                    $seg     = $segs[$index];
+                    $baseUrl = '/' . $seg . $baseUrl;
+                    ++$index;
+                } while (($last > $index) && (false !== ($pos = strpos($path, $baseUrl))) && (0 != $pos));
+            }
+
+            // Does the baseUrl have anything in common with the request_uri?
+            $requestUri = $this->getRequestUri();
+
+            if (0 === strpos($requestUri, $baseUrl)) {
+                // full $baseUrl matches
+                $this->_baseUrl = $baseUrl;
+                return $this;
+            }
+
+            if (0 === strpos($requestUri, dirname($baseUrl))) {
+                // directory portion of $baseUrl matches
+                $this->_baseUrl = rtrim(dirname($baseUrl), '/');
+                return $this;
+            }
+
+            if (!strpos($requestUri, basename($baseUrl))) {
+                // no match whatsoever; set it blank
+                $this->_baseUrl = '';
+                return $this;
+            }
+
+            // If using mod_rewrite or ISAPI_Rewrite strip the script filename
+            // out of baseUrl. $pos !== 0 makes sure it is not matching a value
+            // from PATH_INFO or QUERY_STRING
+            if ((strlen($requestUri) >= strlen($baseUrl))
+                && ((false !== ($pos = strpos($requestUri, $baseUrl))) && ($pos !== 0)))
+            {
+                $baseUrl = substr($requestUri, 0, $pos + strlen($baseUrl));
+            }
+        }
+
+        $this->_baseUrl = rtrim($baseUrl, '/');
+        return $this;
+    }
+
+    /**
+     * Everything in REQUEST_URI before PATH_INFO
+     * <form action="<?=$baseUrl?>/news/submit" method="POST"/>
+     *
+     * @return string
+     */
+    public function getBaseUrl()
+    {
+        if (null === $this->_baseUrl) {
+            $this->setBaseUrl();
+        }
+
+        return $this->_baseUrl;
+    }
+
+    /**
+     * Set the base path for the URL
+     *
+     * @param string|null $basePath
+     * @return Zend_Controller_Request_Http
+     */
+    public function setBasePath($basePath = null)
+    {
+        if ($basePath === null) {
+            $filename = basename($_SERVER['SCRIPT_FILENAME']);
+
+            $baseUrl = $this->getBaseUrl();
+            if (empty($baseUrl)) {
+                $this->_basePath = '';
+                return $this;
+            }
+
+            if (basename($baseUrl) === $filename) {
+                $basePath = dirname($baseUrl);
+            } else {
+                $basePath = $baseUrl;
+            }
+        }
+
+        if (substr(PHP_OS, 0, 3) === 'WIN') {
+            $basePath = str_replace('\\', '/', $basePath);
+        }
+
+        $this->_basePath = rtrim($basePath, '/');
+        return $this;
+    }
+
+    /**
+     * Everything in REQUEST_URI before PATH_INFO not including the filename
+     * <img src="<?=$basePath?>/images/zend.png"/>
+     *
+     * @return string
+     */
+    public function getBasePath()
+    {
+        if (null === $this->_basePath) {
+            $this->setBasePath();
+        }
+
+        return $this->_basePath;
+    }
+
+    /**
+     * Set the PATH_INFO string
+     *
+     * @param string|null $pathInfo
+     * @return Zend_Controller_Request_Http
+     */
+    public function setPathInfo($pathInfo = null)
+    {
+        if ($pathInfo === null) {
+            $baseUrl = $this->getBaseUrl();
+
+            if (null === ($requestUri = $this->getRequestUri())) {
+                return $this;
+            }
+
+            // Remove the query string from REQUEST_URI
+            if ($pos = strpos($requestUri, '?')) {
+                $requestUri = substr($requestUri, 0, $pos);
+            }
+
+            if ((null !== $baseUrl)
+                && (false === ($pathInfo = substr($requestUri, strlen($baseUrl)))))
+            {
+                // If substr() returns false then PATH_INFO is set to an empty string
+                $pathInfo = '';
+            } elseif (null === $baseUrl) {
+                $pathInfo = $requestUri;
+            }
+        }
+
+        $this->_pathInfo = (string) $pathInfo;
+        return $this;
+    }
+
+    /**
+     * Returns everything between the BaseUrl and QueryString.
+     * This value is calculated instead of reading PATH_INFO
+     * directly from $_SERVER due to cross-platform differences.
+     *
+     * @return string
+     */
+    public function getPathInfo()
+    {
+        if (empty($this->_pathInfo)) {
+            $this->setPathInfo();
+        }
+
+        return $this->_pathInfo;
+    }
+
+    /**
+     * Set allowed parameter sources
+     *
+     * Can be empty array, or contain one or more of '_GET' or '_POST'.
+     *
+     * @param  array $paramSoures
+     * @return Zend_Controller_Request_Http
+     */
+    public function setParamSources(array $paramSources = array())
+    {
+        $this->_paramSources = $paramSources;
+        return $this;
+    }
+
+    /**
+     * Get list of allowed parameter sources
+     *
+     * @return array
+     */
+    public function getParamSources()
+    {
+        return $this->_paramSources;
+    }
+
+    /**
+     * Set a userland parameter
+     *
+     * Uses $key to set a userland parameter. If $key is an alias, the actual
+     * key will be retrieved and used to set the parameter.
+     *
+     * @param mixed $key
+     * @param mixed $value
+     * @return Zend_Controller_Request_Http
+     */
+    public function setParam($key, $value)
+    {
+        $key = (null !== ($alias = $this->getAlias($key))) ? $alias : $key;
+        parent::setParam($key, $value);
+        return $this;
+    }
+
+    /**
+     * Retrieve a parameter
+     *
+     * Retrieves a parameter from the instance. Priority is in the order of
+     * userland parameters (see {@link setParam()}), $_GET, $_POST. If a
+     * parameter matching the $key is not found, null is returned.
+     *
+     * If the $key is an alias, the actual key aliased will be used.
+     *
+     * @param mixed $key
+     * @param mixed $default Default value to use if key not found
+     * @return mixed
+     */
+    public function getParam($key, $default = null)
+    {
+        $keyName = (null !== ($alias = $this->getAlias($key))) ? $alias : $key;
+
+        $paramSources = $this->getParamSources();
+        if (isset($this->_params[$keyName])) {
+            return $this->_params[$keyName];
+        } elseif (in_array('_GET', $paramSources) && (isset($_GET[$keyName]))) {
+            return $_GET[$keyName];
+        } elseif (in_array('_POST', $paramSources) && (isset($_POST[$keyName]))) {
+            return $_POST[$keyName];
+        }
+
+        return $default;
+    }
+
+    /**
+     * Retrieve an array of parameters
+     *
+     * Retrieves a merged array of parameters, with precedence of userland
+     * params (see {@link setParam()}), $_GET, $POST (i.e., values in the
+     * userland params will take precedence over all others).
+     *
+     * @return array
+     */
+    public function getParams()
+    {
+        $return = $this->_params;
+        if (isset($_GET) && is_array($_GET)) {
+            $return += $_GET;
+        }
+        if (isset($_POST) && is_array($_POST)) {
+            $return += $_POST;
+        }
+        return $return;
+    }
+
+    /**
+     * Set parameters
+     *
+     * Set one or more parameters. Parameters are set as userland parameters,
+     * using the keys specified in the array.
+     *
+     * @param array $params
+     * @return Zend_Controller_Request_Http
+     */
+    public function setParams(array $params)
+    {
+        foreach ($params as $key => $value) {
+            $this->setParam($key, $value);
+        }
+        return $this;
+    }
+
+    /**
+     * Set a key alias
+     *
+     * Set an alias used for key lookups. $name specifies the alias, $target
+     * specifies the actual key to use.
+     *
+     * @param string $name
+     * @param string $target
+     * @return Zend_Controller_Request_Http
+     */
+    public function setAlias($name, $target)
+    {
+        $this->_aliases[$name] = $target;
+        return $this;
+    }
+
+    /**
+     * Retrieve an alias
+     *
+     * Retrieve the actual key represented by the alias $name.
+     *
+     * @param string $name
+     * @return string|null Returns null when no alias exists
+     */
+    public function getAlias($name)
+    {
+        if (isset($this->_aliases[$name])) {
+            return $this->_aliases[$name];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve the list of all aliases
+     *
+     * @return array
+     */
+    public function getAliases()
+    {
+        return $this->_aliases;
+    }
+
+    /**
+     * Return the method by which the request was made
+     *
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->getServer('REQUEST_METHOD');
+    }
+
+    /**
+     * Was the request made by POST?
+     *
+     * @return boolean
+     */
+    public function isPost()
+    {
+        if ('POST' == $this->getMethod()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Was the request made by GET?
+     *
+     * @return boolean
+     */
+    public function isGet()
+    {
+        if ('GET' == $this->getMethod()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Was the request made by PUT?
+     *
+     * @return boolean
+     */
+    public function isPut()
+    {
+        if ('PUT' == $this->getMethod()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Was the request made by DELETE?
+     *
+     * @return boolean
+     */
+    public function isDelete()
+    {
+        if ('DELETE' == $this->getMethod()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Was the request made by HEAD?
+     *
+     * @return boolean
+     */
+    public function isHead()
+    {
+        if ('HEAD' == $this->getMethod()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Was the request made by OPTIONS?
+     *
+     * @return boolean
+     */
+    public function isOptions()
+    {
+        if ('OPTIONS' == $this->getMethod()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Is the request a Javascript XMLHttpRequest?
+     *
+     * Should work with Prototype/Script.aculo.us, possibly others.
+     *
+     * @return boolean
+     */
+    public function isXmlHttpRequest()
+    {
+        return ($this->getHeader('X_REQUESTED_WITH') == 'XMLHttpRequest');
+    }
+
+    /**
+     * Is this a Flash request?
+     *
+     * @return bool
+     */
+    public function isFlashRequest()
+    {
+        $header = strtolower($this->getHeader('USER_AGENT'));
+        return (strstr($header, ' flash')) ? true : false;
+    }
+
+    /**
+     * Is https secure request
+     *
+     * @return boolean
+     */
+    public function isSecure()
+    {
+        return ($this->getScheme() === self::SCHEME_HTTPS);
+    }
+
+    /**
+     * Return the raw body of the request, if present
+     *
+     * @return string|false Raw body, or false if not present
+     */
+    public function getRawBody()
+    {
+        $body = file_get_contents('php://input');
+
+        if (strlen(trim($body)) > 0) {
+            return $body;
+        }
+
+        return false;
+    }
+
+    /**
+     * Return the value of the given HTTP header. Pass the header name as the
+     * plain, HTTP-specified header name. Ex.: Ask for 'Accept' to get the
+     * Accept header, 'Accept-Encoding' to get the Accept-Encoding header.
+     *
+     * @param string $header HTTP header name
+     * @return string|false HTTP header value, or false if not found
+     * @throws Zend_Controller_Request_Exception
+     */
+    public function getHeader($header)
+    {
+        if (empty($header)) {
+            require_once 'Zend/Controller/Request/Exception.php';
+            throw new Zend_Controller_Request_Exception('An HTTP header name is required');
+        }
+
+        // Try to get it from the $_SERVER array first
+        $temp = 'HTTP_' . strtoupper(str_replace('-', '_', $header));
+        if (!empty($_SERVER[$temp])) {
+            return $_SERVER[$temp];
+        }
+
+        // This seems to be the only way to get the Authorization header on
+        // Apache
+        if (function_exists('apache_request_headers')) {
+            $headers = apache_request_headers();
+            if (!empty($headers[$header])) {
+                return $headers[$header];
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Get the request URI scheme
+     *
+     * @return string
+     */
+    public function getScheme()
+    {
+        return ($this->getServer('HTTPS') == 'on') ? self::SCHEME_HTTPS : self::SCHEME_HTTP;
+    }
+
+    /**
+     * Get the HTTP host.
+     *
+     * "Host" ":" host [ ":" port ] ; Section 3.2.2
+     * Note the HTTP Host header is not the same as the URI host.
+     * It includes the port while the URI host doesn't.
+     *
+     * @return string
+     */
+    public function getHttpHost()
+    {
+        $host = $this->getServer('HTTP_HOST');
+        if (!empty($host)) {
+            return $host;
+        }
+
+        $scheme = $this->getScheme();
+        $name   = $this->getServer('SERVER_NAME');
+        $port   = $this->getServer('SERVER_PORT');
+
+        if (($scheme == self::SCHEME_HTTP && $port == 80) || ($scheme == self::SCHEME_HTTPS && $port == 443)) {
+            return $name;
+        } else {
+            return $name . ':' . $port;
+        }
+    }
+}

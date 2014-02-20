@@ -1,39 +1,161 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Parameter Reflection
+ *
+ * Decorates a ReflectionParameter to allow setting the parameter type
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Reflection
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version $Id: Parameter.php 13217 2008-12-14 11:09:37Z thomas $
+ */
+class Zend_Server_Reflection_Parameter
+{
+    /**
+     * @var ReflectionParameter
+     */
+    protected $_reflection;
+
+    /**
+     * Parameter position
+     * @var int
+     */
+    protected $_position;
+
+    /**
+     * Parameter type
+     * @var string
+     */
+    protected $_type;
+
+    /**
+     * Parameter description
+     * @var string
+     */
+    protected $_description;
+
+    /**
+     * Constructor
+     *
+     * @param ReflectionParameter $r
+     * @param string $type Parameter type
+     * @param string $description Parameter description
+     */
+    public function __construct(ReflectionParameter $r, $type = 'mixed', $description = '')
+    {
+        $this->_reflection = $r;
+        $this->setType($type);
+        $this->setDescription($description);
+    }
+
+    /**
+     * Proxy reflection calls
+     *
+     * @param string $method
+     * @param array $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        if (method_exists($this->_reflection, $method)) {
+            return call_user_func_array(array($this->_reflection, $method), $args);
+        }
+
+        require_once 'Zend/Server/Reflection/Exception.php';
+        throw new Zend_Server_Reflection_Exception('Invalid reflection method');
+    }
+
+    /**
+     * Retrieve parameter type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+
+    /**
+     * Set parameter type
+     *
+     * @param string|null $type
+     * @return void
+     */
+    public function setType($type)
+    {
+        if (!is_string($type) && (null !== $type)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid parameter type');
+        }
+
+        $this->_type = $type;
+    }
+
+    /**
+     * Retrieve parameter description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * Set parameter description
+     *
+     * @param string|null $description
+     * @return void
+     */
+    public function setDescription($description)
+    {
+        if (!is_string($description) && (null !== $description)) {
+            require_once 'Zend/Server/Reflection/Exception.php';
+            throw new Zend_Server_Reflection_Exception('Invalid parameter description');
+        }
+
+        $this->_description = $description;
+    }
+
+    /**
+     * Set parameter position
+     *
+     * @param int $index
+     * @return void
+     */
+    public function setPosition($index)
+    {
+        $this->_position = (int) $index;
+    }
+
+    /**
+     * Return parameter position
+     *
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->_position;
+    }
+}

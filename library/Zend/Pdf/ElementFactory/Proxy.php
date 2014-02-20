@@ -1,44 +1,212 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-gQdq2i4=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_ElementFactory_Interface */
+require_once 'Zend/Pdf/ElementFactory/Interface.php';
+
+
+/**
+ * PDF element factory interface.
+ * Responsibility is to log PDF changes
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_ElementFactory_Proxy implements Zend_Pdf_ElementFactory_Interface
+{
+    /**
+     * Factory object
+     *
+     * @var Zend_Pdf_ElementFactory_Interface
+     */
+    private $_factory;
+
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Pdf_ElementFactory_Interface $factory
+     */
+    public function __construct(Zend_Pdf_ElementFactory_Interface $factory)
+    {
+        $this->_factory = $factory;
+    }
+
+    public function __destruct()
+    {
+        $this->_factory->close();
+        $this->_factory = null;
+    }
+
+    /**
+     * Close factory and clean-up resources
+     *
+     * @internal
+     */
+    public function close()
+    {
+        // Do nothing
+    }
+
+    /**
+     * Get source factory object
+     *
+     * @return Zend_Pdf_ElementFactory
+     */
+    public function resolve()
+    {
+        return $this->_factory->resolve();
+    }
+
+    /**
+     * Get factory ID
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->_factory->getId();
+    }
+
+    /**
+     * Set object counter
+     *
+     * @param integer $objCount
+     */
+    public function setObjectCount($objCount)
+    {
+        $this->_factory->setObjectCount($objCount);
+    }
+
+    /**
+     * Get object counter
+     *
+     * @return integer
+     */
+    public function getObjectCount()
+    {
+        return $this->_factory->getObjectCount();
+    }
+
+    /**
+     * Attach factory to the current;
+     *
+     * @param Zend_Pdf_ElementFactory_Interface $factory
+     */
+    public function attach(Zend_Pdf_ElementFactory_Interface $factory)
+    {
+        $this->_factory->attach($factory);
+    }
+
+    /**
+     * Calculate object enumeration shift.
+     *
+     * @internal
+     * @param Zend_Pdf_ElementFactory_Interface $factory
+     * @return integer
+     */
+    public function calculateShift(Zend_Pdf_ElementFactory_Interface $factory)
+    {
+        return $this->_factory->calculateShift($factory);
+    }
+
+    /**
+     * Retrive object enumeration shift.
+     *
+     * @param Zend_Pdf_ElementFactory_Interface $factory
+     * @return integer
+     * @throws Zend_Pdf_Exception
+     */
+    public function getEnumerationShift(Zend_Pdf_ElementFactory_Interface $factory)
+    {
+        return $this->_factory->getEnumerationShift($factory);
+    }
+
+    /**
+     * Mark object as modified in context of current factory.
+     *
+     * @param Zend_Pdf_Element_Object $obj
+     * @throws Zend_Pdf_Exception
+     */
+    public function markAsModified(Zend_Pdf_Element_Object $obj)
+    {
+        $this->_factory->markAsModified($obj);
+    }
+
+    /**
+     * Remove object in context of current factory.
+     *
+     * @param Zend_Pdf_Element_Object $obj
+     * @throws Zend_Pdf_Exception
+     */
+    public function remove(Zend_Pdf_Element_Object $obj)
+    {
+        $this->_factory->remove($obj);
+    }
+
+    /**
+     * Generate new Zend_Pdf_Element_Object
+     *
+     * @todo Reusage of the freed object. It's not a support of new feature, but only improvement.
+     *
+     * @param Zend_Pdf_Element $objectValue
+     * @return Zend_Pdf_Element_Object
+     */
+    public function newObject(Zend_Pdf_Element $objectValue)
+    {
+        return $this->_factory->newObject($objectValue);
+    }
+
+    /**
+     * Generate new Zend_Pdf_Element_Object_Stream
+     *
+     * @todo Reusage of the freed object. It's not a support of new feature, but only improvement.
+     *
+     * @param mixed $objectValue
+     * @return Zend_Pdf_Element_Object_Stream
+     */
+    public function newStreamObject($streamValue)
+    {
+        return $this->_factory->newStreamObject($streamValue);
+    }
+
+    /**
+     * Enumerate modified objects.
+     * Returns array of Zend_Pdf_UpdateInfoContainer
+     *
+     * @param Zend_Pdf_ElementFactory $rootFactory
+     * @return array
+     */
+    public function listModifiedObjects($rootFactory = null)
+    {
+        return $this->_factory->listModifiedObjects($rootFactory);
+    }
+
+    /**
+     * Check if PDF file was modified
+     *
+     * @return boolean
+     */
+    public function isModified()
+    {
+        return $this->_factory->isModified();
+    }
+}
+

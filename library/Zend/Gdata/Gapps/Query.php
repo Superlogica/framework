@@ -1,29 +1,122 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5C0RyTwQuyaHTwva/GAJ9JbPxUeMJ/dLw8MioKYTkcIXrvIuhFMnZfhkqi6pqffUhVNxieWB
-hvBe05l2hHnpvT5BtVaBjtnvCbut+bh8T0MMM+heSjSOWviudCfKUUiMvesUaGEDBavSp7Y6JCLy
-OLRdX0XTe8KDc78H19+gHZsv9lkE3wCUpiwCCNI6+hvtBkkh2OaEJWNOl81XZjOHEFuR8L50Cn0n
-MdjP4uwr2vTs1rDP8/ssn4kJIPpDKor7T+KlBeH2Q0baK3fh0NB9KKgx1TN++g9o/w43AnuNGVHY
-UJRJEk5WqOIUGS3kxKfDl2idztU8YclDIp3ZkSxc/rai/Lc9FtjRfpAuUCsJ7df82VRiyl9ZJPLO
-IfCfGtj/ejTeTfaBHMocaeMUa7NRN1h+8fvDsezvdM2jXnkP7FT0OhBCO58mCyc9TsDpNpMbnGVU
-itYMqI6UbyXvZyQl5pMEZnBBWL4nZfp0nmGX7j434LmLE1GVsWU053LLid86B7Wt+XXvHHtEkx3p
-dt8wdycWOJec41jJ1oFGEtDwCZ9Ju0r08MOXm2mIS6ReQFlN7s07uTe9AxZ3YHAPTleKKh89c5Yo
-ec4dQ9EGHCRugulTKsc4iRVwd4d/t7hlIQNKe0JDFllnikYDw8F/eaHihbYUCBHn6G0uJWFmJ7ZR
-hFlKrHVInPNC0Q10KqEKJhNFGrAFmg/uY/JjR0y8VsNOjzKvrdCcMM2LZzyNOM49KgC1Lg6X9ePs
-OxtSArTxsMynad3p94T8zRK3SFGYs43PfhOx7t49fXKXraV3hH1fxyXEyPPgEzOxg0G6pTrKH1n2
-8A6ok5wUAoAbTBv86s7MjAaOCKJTC5XXyUbuH5vTxkqz9B4MwXwuvW47mBP1eBzNzuOSBdNHd/Sq
-cR9aweo784vcTgpie1f2A9Hv/yALXP2iZV/76BnJNQPh34cTxJf1nSe/yYaRBL7XT3Cbl+6P5Emu
-E0dTL1MZ3n05Hap330csj8SlAFBrxY5q5hGi2oAuTBtMtrdJbVz47d8pevgKeM7BNubuLGfhmXN3
-/NT7KIAs3TVUf6wP/QDQyQFWajUM2hz15uY55vV5G0GR+T/SONqCCKG6WOqs3vDtWKh7SyEJHD6z
-FkLvVi3IzwJRtBQ15WUfyK1ZQIEQTVd8aFohbI55lYn4V4uLV/5l2D/4xB3cUmNoXqZnRb8wiuEz
-G5rpHrLOvXnN4wX3RxUyauKlCAVShkQsYm1n4lu9s0zNfUN4gPAXEZRBRFVnFwfVMwIk4PwekkNO
-sYliKp36i+rW7fOHrKX+quAIh3uO35eH6R3uJLoeB3quRQewkdlM+bZPBSp5uyTHVe2HjtNb3kbY
-fYM15Kn0kOUhnXn/gfkwn61/an5VcHtv6H7ZZJ2dFYs2cr0Ws3LFE9sCFexraA3OI8EObdtf6VWE
-G4KnHxw7kROOQ8CSeO//cgknnk3yeEyO/5t9wooYUJyamoymtDTHwUxcof6z4kpqYH6jYmxAVvX2
-2QSVNS1yp1EUA4cizjfyG5VJfXVak7IBZTAEvm/mql9zGsMlDlFr9JwAlhvlwnlSDXPX3jlgm5sT
-3jlUHci0j7V2M6uOLhRED4glGcdbVSL5nPsjP+csjgbTqNDiQAftVjD2WwAHugtvAG2YD/z8QdYk
-UOl8+HoS8jdPL5y71mfaJEd62Are0xguaY/0m6y9VuXCeUrB4sZVB1RYgAoSKMDoBDNqiLsZLBL4
-gBTkzUCkMaNV2p0EGym018XLG8qDm2k9+i/3HiyWmRzY1ZqSGQ6HpXG9G2XRH+vQIJNlChhsC7Oq
-S7iQtu0j0KBvpperLakRuvdnLekG9CRhwJ66TTGawQSJV5jRgSQ+ybjwGlPEJf9cnRvpMx5iOLsK
-xEK9ekjOXdq=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_Query
+ */
+require_once('Zend/Gdata/Query.php');
+
+/**
+ * Zend_Gdata_Gapps
+ */
+require_once('Zend/Gdata/Gapps.php');
+
+/**
+ * Assists in constructing queries for Google Apps entries. This class 
+ * provides common methods used by all other Google Apps query classes.
+ *
+ * This class should never be instantiated directly. Instead, instantiate a 
+ * class which inherits from this class.
+  * 
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Gdata_Gapps_Query extends Zend_Gdata_Query
+{
+    
+    /**
+     * The domain which is being administered via the Provisioning API.
+     *
+     * @var string
+     */
+    protected $_domain = null;
+    
+    /**
+     * Create a new instance.
+     * 
+     * @param string $domain (optional) The Google Apps-hosted domain to use 
+     *          when constructing query URIs.
+     */
+    public function __construct($domain = null)
+    {
+        parent::__construct();
+        $this->_domain = $domain;
+    }
+    
+    /**
+     * Set domain for this service instance. This should be a fully qualified 
+     * domain, such as 'foo.example.com'.
+     *
+     * This value is used when calculating URLs for retrieving and posting 
+     * entries. If no value is specified, a URL will have to be manually 
+     * constructed prior to using any methods which interact with the Google 
+     * Apps provisioning service.
+     * 
+     * @param string $value The domain to be used for this session.
+     */
+    public function setDomain($value)
+    {
+        $this->_domain = $value;
+    }
+
+    /**
+     * Get domain for this service instance. This should be a fully qualified 
+     * domain, such as 'foo.example.com'. If no domain is set, null will be 
+     * returned.
+     * 
+     * @see setDomain
+     * @return string The domain to be used for this session, or null if not 
+     *          set.
+     */
+    public function getDomain()
+    {
+        return $this->_domain;
+    }
+    
+    /**
+     * Returns the base URL used to access the Google Apps service, based 
+     * on the current domain. The current domain can be temporarily 
+     * overridden by providing a fully qualified domain as $domain.
+     *
+     * @see setDomain
+     * @param string $domain (optional) A fully-qualified domain to use 
+     *          instead of the default domain for this service instance.
+     */
+     public function getBaseUrl($domain = null)
+     {
+         if ($domain !== null) {
+             return Zend_Gdata_Gapps::APPS_BASE_FEED_URI . '/' . $domain;
+         }
+         else if ($this->_domain !== null) {
+             return Zend_Gdata_Gapps::APPS_BASE_FEED_URI . '/' . $this->_domain;
+         }
+         else {
+             require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+             throw new Zend_Gdata_App_InvalidArgumentException(
+                 'Domain must be specified.');
+         }
+     }
+
+}

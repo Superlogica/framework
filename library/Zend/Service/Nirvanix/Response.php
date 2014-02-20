@@ -1,37 +1,122 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-hm2IXuu182uSQ5S55N64HASHFoeP
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Nirvanix
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * This class decorates a SimpleXMLElement parsed from a Nirvanix web service
+ * response.  It is primarily exists to provide a convenience feature that 
+ * throws an exception when <ResponseCode> contains an error.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Nirvanix
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Nirvanix_Response
+{
+    /**
+     * SimpleXMLElement parsed from Nirvanix web service response.
+     * 
+     * @var SimpleXMLElement
+     */
+    protected $_sxml;
+    
+    /**
+     * Class constructor.  Parse the XML response from a Nirvanix method
+     * call into a decorated SimpleXMLElement element.
+     *
+     * @param string $xml  XML response string from Nirvanix
+     * @throws Zend_Service_Nirvanix_Exception
+     */
+    public function __construct($xml)
+    {
+        $this->_sxml = @simplexml_load_string($xml);
+
+        if (! $this->_sxml instanceof SimpleXMLElement) {
+            $this->_throwException("XML could not be parsed from response: $xml");
+        }
+
+        $name = $this->_sxml->getName();
+        if ($name != 'Response') {
+            $this->_throwException("Expected XML element Response, got $name");
+        }
+        
+        $code = (int)$this->_sxml->ResponseCode;
+        if ($code != 0) {
+            $msg = (string)$this->_sxml->ErrorMessage;
+            $this->_throwException($msg, $code);
+        }
+    }
+
+    /**
+     * Return the SimpleXMLElement representing this response
+     * for direct access.
+     *
+     * @return SimpleXMLElement
+     */
+    public function getSxml()
+    {
+        return $this->_sxml;
+    }
+
+    /**
+     * Delegate undefined properties to the decorated SimpleXMLElement.
+     *
+     * @param  string  $offset  Undefined property name
+     * @return mixed
+     */
+    public function __get($offset) 
+    {
+        return $this->_sxml->$offset;
+    }
+
+    /**
+     * Delegate undefined methods to the decorated SimpleXMLElement.
+     *
+     * @param  string  $offset  Underfined method name
+     * @param  array   $args    Method arguments
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        return call_user_func_array(array($this->_sxml, $method), $args);
+    }
+
+    /**
+     * Throw an exception.  This method exists to only contain the
+     * lazy-require() of the exception class.
+     * 
+     * @param  string   $message  Error message
+     * @param  integer  $code     Error code
+     * @throws Zend_Service_Nirvanix_Exception
+     * @return void
+     */
+    protected function _throwException($message, $code = null)
+    {
+        /**
+         * @see Zend_Service_Nirvanix_Exception
+         */
+        require_once 'Zend/Service/Nirvanix/Exception.php';        
+
+        throw new Zend_Service_Nirvanix_Exception($message, $code);
+    }
+
+}

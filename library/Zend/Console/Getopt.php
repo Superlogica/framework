@@ -1,296 +1,957 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend_Console_Getopt is a class to parse options for command-line
+ * applications.
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Console_Getopt
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * Zend_Console_Getopt is a class to parse options for command-line
+ * applications.
+ *
+ * Terminology:
+ * Argument: an element of the argv array.  This may be part of an option,
+ *   or it may be a non-option command-line argument.
+ * Flag: the letter or word set off by a '-' or '--'.  Example: in '--output filename',
+ *   '--output' is the flag.
+ * Parameter: the additional argument that is associated with the option.
+ *   Example: in '--output filename', the 'filename' is the parameter.
+ * Option: the combination of a flag and its parameter, if any.
+ *   Example: in '--output filename', the whole thing is the option.
+ *
+ * The following features are supported:
+ *
+ * - Short flags like '-a'.  Short flags are preceded by a single
+ *   dash.  Short flags may be clustered e.g. '-abc', which is the
+ *   same as '-a' '-b' '-c'.
+ * - Long flags like '--verbose'.  Long flags are preceded by a
+ *   double dash.  Long flags may not be clustered.
+ * - Options may have a parameter, e.g. '--output filename'.
+ * - Parameters for long flags may also be set off with an equals sign,
+ *   e.g. '--output=filename'.
+ * - Parameters for long flags may be checked as string, word, or integer.
+ * - Automatic generation of a helpful usage message.
+ * - Signal end of options with '--'; subsequent arguments are treated
+ *   as non-option arguments, even if they begin with '-'.
+ * - Raise exception Zend_Console_Getopt_Exception in several cases
+ *   when invalid flags or parameters are given.  Usage message is
+ *   returned in the exception object.
+ *
+ * The format for specifying options uses a PHP associative array.
+ * The key is has the format of a list of pipe-separated flag names,
+ * followed by an optional '=' to indicate a required parameter or
+ * '-' to indicate an optional parameter.  Following that, the type
+ * of parameter may be specified as 's' for string, 'w' for word,
+ * or 'i' for integer.
+ *
+ * Examples:
+ * - 'user|username|u=s'  this means '--user' or '--username' or '-u'
+ *   are synonyms, and the option requires a string parameter.
+ * - 'p=i'  this means '-p' requires an integer parameter.  No synonyms.
+ * - 'verbose|v-i'  this means '--verbose' or '-v' are synonyms, and
+ *   they take an optional integer parameter.
+ * - 'help|h'  this means '--help' or '-h' are synonyms, and
+ *   they take no parameter.
+ *
+ * The values in the associative array are strings that are used as
+ * brief descriptions of the options when printing a usage message.
+ *
+ * The simpler format for specifying options used by PHP's getopt()
+ * function is also supported.  This is similar to GNU getopt and shell
+ * getopt format.
+ *
+ * Example:  'abc:' means options '-a', '-b', and '-c'
+ * are legal, and the latter requires a string parameter.
+ *
+ * @category   Zend
+ * @package    Zend_Console_Getopt
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    Release: @package_version@
+ * @since      Class available since Release 0.6.0
+ *
+ * @todo  Handle params with multiple values, e.g. --colors=red,green,blue
+ *        Set value of parameter to the array of values.  Allow user to specify
+ *        the separator with Zend_Console_Getopt::CONFIG_PARAMETER_SEPARATOR.
+ *        If this config value is null or empty string, do not split values
+ *        into arrays.  Default separator is comma (',').
+ *
+ * @todo  Handle params with multiple values specified with separate options
+ *        e.g. --colors red --colors green --colors blue should give one
+ *        option with an array(red, green, blue).
+ *        Enable with Zend_Console_Getopt::CONFIG_CUMULATIVE_PARAMETERS.
+ *        Default is that subsequent options overwrite the parameter value.
+ *
+ * @todo  Handle flags occurring multiple times, e.g. -v -v -v
+ *        Set value of the option's parameter to the integer count of instances
+ *        instead of a boolean.
+ *        Enable with Zend_Console_Getopt::CONFIG_CUMULATIVE_FLAGS.
+ *        Default is that the value is simply boolean true regardless of
+ *        how many instances of the flag appear.
+ *
+ * @todo  Handle flags that implicitly print usage message, e.g. --help
+ *
+ * @todo  Handle freeform options, e.g. --set-variable
+ *        Enable with Zend_Console_Getopt::CONFIG_FREEFORM_FLAGS
+ *        All flag-like syntax is recognized, no flag generates an exception.
+ *
+ * @todo  Handle numeric options, e.g. -1, -2, -3, -1000
+ *        Enable with Zend_Console_Getopt::CONFIG_NUMERIC_FLAGS
+ *        The rule must specify a named flag and the '#' symbol as the
+ *        parameter type. e.g.,  'lines=#'
+ *
+ * @todo  Enable user to specify header and footer content in the help message.
+ *
+ * @todo  Feature request to handle option interdependencies.
+ *        e.g. if -b is specified, -a must be specified or else the
+ *        usage is invalid.
+ *
+ * @todo  Feature request to implement callbacks.
+ *        e.g. if -a is specified, run function 'handleOptionA'().
+ */
+class Zend_Console_Getopt
+{
+
+    /**
+     * The options for a given application can be in multiple formats.
+     * modeGnu is for traditional 'ab:c:' style getopt format.
+     * modeZend is for a more structured format.
+     */
+    const MODE_ZEND                         = 'zend';
+    const MODE_GNU                          = 'gnu';
+
+    /**
+     * Constant tokens for various symbols used in the mode_zend
+     * rule format.
+     */
+    const PARAM_REQUIRED                    = '=';
+    const PARAM_OPTIONAL                    = '-';
+    const TYPE_STRING                       = 's';
+    const TYPE_WORD                         = 'w';
+    const TYPE_INTEGER                      = 'i';
+
+    /**
+     * These are constants for optional behavior of this class.
+     * ruleMode is either 'zend' or 'gnu' or a user-defined mode.
+     * dashDash is true if '--' signifies the end of command-line options.
+     * ignoreCase is true if '--opt' and '--OPT' are implicitly synonyms.
+     * parseAll is true if all options on the command line should be parsed, regardless of
+     * whether an argument appears before them.
+     */
+    const CONFIG_RULEMODE                   = 'ruleMode';
+    const CONFIG_DASHDASH                   = 'dashDash';
+    const CONFIG_IGNORECASE                 = 'ignoreCase';
+    const CONFIG_PARSEALL                   = 'parseAll';
+
+    /**
+     * Defaults for getopt configuration are:
+     * ruleMode is 'zend' format,
+     * dashDash (--) token is enabled,
+     * ignoreCase is not enabled,
+     * parseAll is enabled.
+     */
+    protected $_getoptConfig = array(
+        self::CONFIG_RULEMODE   => self::MODE_ZEND,
+        self::CONFIG_DASHDASH   => true,
+        self::CONFIG_IGNORECASE => false,
+        self::CONFIG_PARSEALL => true
+    );
+
+    /**
+     * Stores the command-line arguments for the calling applicaion.
+     *
+     * @var array
+     */
+    protected $_argv = array();
+
+    /**
+     * Stores the name of the calling applicaion.
+     *
+     * @var string
+     */
+    protected $_progname = '';
+
+    /**
+     * Stores the list of legal options for this application.
+     *
+     * @var array
+     */
+    protected $_rules = array();
+
+    /**
+     * Stores alternate spellings of legal options.
+     *
+     * @var array
+     */
+    protected $_ruleMap = array();
+
+    /**
+     * Stores options given by the user in the current invocation
+     * of the application, as well as parameters given in options.
+     *
+     * @var array
+     */
+    protected $_options = array();
+
+    /**
+     * Stores the command-line arguments other than options.
+     *
+     * @var array
+     */
+    protected $_remainingArgs = array();
+
+    /**
+     * State of the options: parsed or not yet parsed?
+     *
+     * @var boolean
+     */
+    protected $_parsed = false;
+
+    /**
+     * The constructor takes one to three parameters.
+     *
+     * The first parameter is $rules, which may be a string for
+     * gnu-style format, or a structured array for Zend-style format.
+     *
+     * The second parameter is $argv, and it is optional.  If not
+     * specified, $argv is inferred from the global argv.
+     *
+     * The third parameter is an array of configuration parameters
+     * to control the behavior of this instance of Getopt; it is optional.
+     *
+     * @param  array $rules
+     * @param  array $argv
+     * @param  array $getoptConfig
+     * @return void
+     */
+    public function __construct($rules, $argv = null, $getoptConfig = array())
+    {
+        if (!isset($_SERVER['argv'])) {
+            require_once 'Zend/Console/Getopt/Exception.php';
+            if(ini_get('register_argc_argv') == false) {
+                throw new Zend_Console_Getopt_Exception(
+                    "argv is not available, because ini option 'register_argc_argv' is set Off"
+                );
+            } else {
+                throw new Zend_Console_Getopt_Exception(
+                    '$_SERVER["argv"] is not set, but Zend_Console_Getopt cannot work without this information.'
+                );
+            }
+        }
+
+        $this->_progname = $_SERVER['argv'][0];
+        $this->setOptions($getoptConfig);
+        $this->addRules($rules);
+        if (!is_array($argv)) {
+            $argv = array_slice($_SERVER['argv'], 1);
+        }
+        if (isset($argv)) {
+            $this->addArguments((array)$argv);
+        }
+    }
+
+    /**
+     * Return the state of the option seen on the command line of the
+     * current application invocation.  This function returns true, or the
+     * parameter to the option, if any.  If the option was not given,
+     * this function returns null.
+     *
+     * The magic __get method works in the context of naming the option
+     * as a virtual member of this class.
+     *
+     * @param  string $key
+     * @return string
+     */
+    public function __get($key)
+    {
+        return $this->getOption($key);
+    }
+
+    /**
+     * Test whether a given option has been seen.
+     *
+     * @param  string $key
+     * @return boolean
+     */
+    public function __isset($key)
+    {
+        $this->parse();
+        if (isset($this->_ruleMap[$key])) {
+            $key = $this->_ruleMap[$key];
+            return isset($this->_options[$key]);
+        }
+        return false;
+    }
+
+    /**
+     * Set the value for a given option.
+     *
+     * @param  string $key
+     * @param  string $value
+     * @return void
+     */
+    public function __set($key, $value)
+    {
+        $this->parse();
+        if (isset($this->_ruleMap[$key])) {
+            $key = $this->_ruleMap[$key];
+            $this->_options[$key] = $value;
+        }
+    }
+
+    /**
+     * Return the current set of options and parameters seen as a string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
+    /**
+     * Unset an option.
+     *
+     * @param  string $key
+     * @return void
+     */
+    public function __unset($key)
+    {
+        $this->parse();
+        if (isset($this->_ruleMap[$key])) {
+            $key = $this->_ruleMap[$key];
+            unset($this->_options[$key]);
+        }
+    }
+
+    /**
+     * Define additional command-line arguments.
+     * These are appended to those defined when the constructor was called.
+     *
+     * @param  array $argv
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function addArguments($argv)
+    {
+        $this->_argv = array_merge($this->_argv, $argv);
+        $this->_parsed = false;
+        return $this;
+    }
+
+    /**
+     * Define full set of command-line arguments.
+     * These replace any currently defined.
+     *
+     * @param  array $argv
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function setArguments($argv)
+    {
+        $this->_argv = $argv;
+        $this->_parsed = false;
+        return $this;
+    }
+
+    /**
+     * Define multiple configuration options from an associative array.
+     * These are not program options, but properties to configure
+     * the behavior of Zend_Console_Getopt.
+     *
+     * @param  array $getoptConfig
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function setOptions($getoptConfig)
+    {
+        if (isset($getoptConfig)) {
+            foreach ($getoptConfig as $key => $value) {
+                $this->setOption($key, $value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Define one configuration option as a key/value pair.
+     * These are not program options, but properties to configure
+     * the behavior of Zend_Console_Getopt.
+     *
+     * @param  string $configKey
+     * @param  string $configValue
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function setOption($configKey, $configValue)
+    {
+        if ($configKey !== null) {
+            $this->_getoptConfig[$configKey] = $configValue;
+        }
+        return $this;
+    }
+
+    /**
+     * Define additional option rules.
+     * These are appended to the rules defined when the constructor was called.
+     *
+     * @param  array $rules
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function addRules($rules)
+    {
+        $ruleMode = $this->_getoptConfig['ruleMode'];
+        switch ($this->_getoptConfig['ruleMode']) {
+            case self::MODE_ZEND:
+                if (is_array($rules)) {
+                    $this->_addRulesModeZend($rules);
+                    break;
+                }
+                // intentional fallthrough
+            case self::MODE_GNU:
+                $this->_addRulesModeGnu($rules);
+                break;
+            default:
+                /**
+                 * Call addRulesModeFoo() for ruleMode 'foo'.
+                 * The developer should subclass Getopt and
+                 * provide this method.
+                 */
+                $method = '_addRulesMode' . ucfirst($ruleMode);
+                $this->$method($rules);
+        }
+        $this->_parsed = false;
+        return $this;
+    }
+
+    /**
+     * Return the current set of options and parameters seen as a string.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        $this->parse();
+        $s = array();
+        foreach ($this->_options as $flag => $value) {
+            $s[] = $flag . '=' . ($value === true ? 'true' : $value);
+        }
+        return implode(' ', $s);
+    }
+
+    /**
+     * Return the current set of options and parameters seen
+     * as an array of canonical options and parameters.
+     *
+     * Clusters have been expanded, and option aliases
+     * have been mapped to their primary option names.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        $this->parse();
+        $s = array();
+        foreach ($this->_options as $flag => $value) {
+            $s[] = $flag;
+            if ($value !== true) {
+                $s[] = $value;
+            }
+        }
+        return $s;
+    }
+
+    /**
+     * Return the current set of options and parameters seen in Json format.
+     *
+     * @return string
+     */
+    public function toJson()
+    {
+        $this->parse();
+        $j = array();
+        foreach ($this->_options as $flag => $value) {
+            $j['options'][] = array(
+                'option' => array(
+                    'flag' => $flag,
+                    'parameter' => $value
+                )
+            );
+        }
+
+        /**
+         * @see Zend_Json
+         */
+        require_once 'Zend/Json.php';
+        $json = Zend_Json::encode($j);
+
+        return $json;
+    }
+
+    /**
+     * Return the current set of options and parameters seen in XML format.
+     *
+     * @return string
+     */
+    public function toXml()
+    {
+        $this->parse();
+        $doc = new DomDocument('1.0', 'utf-8');
+        $optionsNode = $doc->createElement('options');
+        $doc->appendChild($optionsNode);
+        foreach ($this->_options as $flag => $value) {
+            $optionNode = $doc->createElement('option');
+            $optionNode->setAttribute('flag', utf8_encode($flag));
+            if ($value !== true) {
+                $optionNode->setAttribute('parameter', utf8_encode($value));
+            }
+            $optionsNode->appendChild($optionNode);
+        }
+        $xml = $doc->saveXML();
+        return $xml;
+    }
+
+    /**
+     * Return a list of options that have been seen in the current argv.
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        $this->parse();
+        return array_keys($this->_options);
+    }
+
+    /**
+     * Return the state of the option seen on the command line of the
+     * current application invocation.
+     *
+     * This function returns true, or the parameter value to the option, if any.
+     * If the option was not given, this function returns false.
+     *
+     * @param  string $flag
+     * @return mixed
+     */
+    public function getOption($flag)
+    {
+        $this->parse();
+        if ($this->_getoptConfig[self::CONFIG_IGNORECASE]) {
+            $flag = strtolower($flag);
+        }
+        if (isset($this->_ruleMap[$flag])) {
+            $flag = $this->_ruleMap[$flag];
+            if (isset($this->_options[$flag])) {
+                return $this->_options[$flag];
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Return the arguments from the command-line following all options found.
+     *
+     * @return array
+     */
+    public function getRemainingArgs()
+    {
+        $this->parse();
+        return $this->_remainingArgs;
+    }
+
+    /**
+     * Return a useful option reference, formatted for display in an
+     * error message.
+     *
+     * Note that this usage information is provided in most Exceptions
+     * generated by this class.
+     *
+     * @return string
+     */
+    public function getUsageMessage()
+    {
+        $usage = "Usage: {$this->_progname} [ options ]\n";
+        $maxLen = 20;
+        foreach ($this->_rules as $rule) {
+            $flags = array();
+            if (is_array($rule['alias'])) {
+                foreach ($rule['alias'] as $flag) {
+                    $flags[] = (strlen($flag) == 1 ? '-' : '--') . $flag;
+                }
+            }
+            $linepart['name'] = implode('|', $flags);
+            if (isset($rule['param']) && $rule['param'] != 'none') {
+                $linepart['name'] .= ' ';
+                switch ($rule['param']) {
+                    case 'optional':
+                        $linepart['name'] .= "[ <{$rule['paramType']}> ]";
+                        break;
+                    case 'required':
+                        $linepart['name'] .= "<{$rule['paramType']}>";
+                        break;
+                }
+            }
+            if (strlen($linepart['name']) > $maxLen) {
+                $maxLen = strlen($linepart['name']);
+            }
+            $linepart['help'] = '';
+            if (isset($rule['help'])) {
+                $linepart['help'] .= $rule['help'];
+            }
+            $lines[] = $linepart;
+        }
+        foreach ($lines as $linepart) {
+            $usage .= sprintf("%s %s\n",
+            str_pad($linepart['name'], $maxLen),
+            $linepart['help']);
+        }
+        return $usage;
+    }
+
+    /**
+     * Define aliases for options.
+     *
+     * The parameter $aliasMap is an associative array
+     * mapping option name (short or long) to an alias.
+     *
+     * @param  array $aliasMap
+     * @throws Zend_Console_Getopt_Exception
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function setAliases($aliasMap)
+    {
+        foreach ($aliasMap as $flag => $alias)
+        {
+            if ($this->_getoptConfig[self::CONFIG_IGNORECASE]) {
+                $flag = strtolower($flag);
+                $alias = strtolower($alias);
+            }
+            if (!isset($this->_ruleMap[$flag])) {
+                continue;
+            }
+            $flag = $this->_ruleMap[$flag];
+            if (isset($this->_rules[$alias]) || isset($this->_ruleMap[$alias])) {
+                $o = (strlen($alias) == 1 ? '-' : '--') . $alias;
+                require_once 'Zend/Console/Getopt/Exception.php';
+                throw new Zend_Console_Getopt_Exception(
+                    "Option \"$o\" is being defined more than once.");
+            }
+            $this->_rules[$flag]['alias'][] = $alias;
+            $this->_ruleMap[$alias] = $flag;
+        }
+        return $this;
+    }
+
+    /**
+     * Define help messages for options.
+     *
+     * The parameter $help_map is an associative array
+     * mapping option name (short or long) to the help string.
+     *
+     * @param  array $helpMap
+     * @return Zend_Console_Getopt Provides a fluent interface
+     */
+    public function setHelp($helpMap)
+    {
+        foreach ($helpMap as $flag => $help)
+        {
+            if (!isset($this->_ruleMap[$flag])) {
+                continue;
+            }
+            $flag = $this->_ruleMap[$flag];
+            $this->_rules[$flag]['help'] = $help;
+        }
+        return $this;
+    }
+
+    /**
+     * Parse command-line arguments and find both long and short
+     * options.
+     *
+     * Also find option parameters, and remaining arguments after
+     * all options have been parsed.
+     *
+     * @return Zend_Console_Getopt|null Provides a fluent interface
+     */
+    public function parse()
+    {
+        if ($this->_parsed === true) {
+            return;
+        }
+        $argv = $this->_argv;
+        $this->_options = array();
+        $this->_remainingArgs = array();
+        while (count($argv) > 0) {
+            if ($argv[0] == '--') {
+                array_shift($argv);
+                if ($this->_getoptConfig[self::CONFIG_DASHDASH]) {
+                    $this->_remainingArgs = array_merge($this->_remainingArgs, $argv);
+                    break;
+                }
+            }
+            if (substr($argv[0], 0, 2) == '--') {
+                $this->_parseLongOption($argv);
+            } else if (substr($argv[0], 0, 1) == '-' && ('-' != $argv[0] || count($argv) >1))  {
+                $this->_parseShortOptionCluster($argv);
+            } else if($this->_getoptConfig[self::CONFIG_PARSEALL]) {
+                $this->_remainingArgs[] = array_shift($argv);
+            } else {
+                /*
+                 * We should put all other arguments in _remainingArgs and stop parsing
+                 * since CONFIG_PARSEALL is false.
+                 */
+                $this->_remainingArgs = array_merge($this->_remainingArgs, $argv);
+                break;
+            }
+        }
+        $this->_parsed = true;
+        return $this;
+    }
+
+    /**
+     * Parse command-line arguments for a single long option.
+     * A long option is preceded by a double '--' character.
+     * Long options may not be clustered.
+     *
+     * @param  mixed &$argv
+     * @return void
+     */
+    protected function _parseLongOption(&$argv)
+    {
+        $optionWithParam = ltrim(array_shift($argv), '-');
+        $l = explode('=', $optionWithParam, 2);
+        $flag = array_shift($l);
+        $param = array_shift($l);
+        if (isset($param)) {
+            array_unshift($argv, $param);
+        }
+        $this->_parseSingleOption($flag, $argv);
+    }
+
+    /**
+     * Parse command-line arguments for short options.
+     * Short options are those preceded by a single '-' character.
+     * Short options may be clustered.
+     *
+     * @param  mixed &$argv
+     * @return void
+     */
+    protected function _parseShortOptionCluster(&$argv)
+    {
+        $flagCluster = ltrim(array_shift($argv), '-');
+        foreach (str_split($flagCluster) as $flag) {
+            $this->_parseSingleOption($flag, $argv);
+        }
+    }
+
+    /**
+     * Parse command-line arguments for a single option.
+     *
+     * @param  string $flag
+     * @param  mixed  $argv
+     * @throws Zend_Console_Getopt_Exception
+     * @return void
+     */
+    protected function _parseSingleOption($flag, &$argv)
+    {
+        if ($this->_getoptConfig[self::CONFIG_IGNORECASE]) {
+            $flag = strtolower($flag);
+        }
+        if (!isset($this->_ruleMap[$flag])) {
+            require_once 'Zend/Console/Getopt/Exception.php';
+            throw new Zend_Console_Getopt_Exception(
+                "Option \"$flag\" is not recognized.",
+                $this->getUsageMessage());
+        }
+        $realFlag = $this->_ruleMap[$flag];
+        switch ($this->_rules[$realFlag]['param']) {
+            case 'required':
+                if (count($argv) > 0) {
+                    $param = array_shift($argv);
+                    $this->_checkParameterType($realFlag, $param);
+                } else {
+                    require_once 'Zend/Console/Getopt/Exception.php';
+                    throw new Zend_Console_Getopt_Exception(
+                        "Option \"$flag\" requires a parameter.",
+                        $this->getUsageMessage());
+                }
+                break;
+            case 'optional':
+                if (count($argv) > 0 && substr($argv[0], 0, 1) != '-') {
+                    $param = array_shift($argv);
+                    $this->_checkParameterType($realFlag, $param);
+                } else {
+                    $param = true;
+                }
+                break;
+            default:
+                $param = true;
+        }
+        $this->_options[$realFlag] = $param;
+    }
+
+    /**
+     * Return true if the parameter is in a valid format for
+     * the option $flag.
+     * Throw an exception in most other cases.
+     *
+     * @param  string $flag
+     * @param  string $param
+     * @throws Zend_Console_Getopt_Exception
+     * @return bool
+     */
+    protected function _checkParameterType($flag, $param)
+    {
+        $type = 'string';
+        if (isset($this->_rules[$flag]['paramType'])) {
+            $type = $this->_rules[$flag]['paramType'];
+        }
+        switch ($type) {
+            case 'word':
+                if (preg_match('/\W/', $param)) {
+                    require_once 'Zend/Console/Getopt/Exception.php';
+                    throw new Zend_Console_Getopt_Exception(
+                        "Option \"$flag\" requires a single-word parameter, but was given \"$param\".",
+                        $this->getUsageMessage());
+                }
+                break;
+            case 'integer':
+                if (preg_match('/\D/', $param)) {
+                    require_once 'Zend/Console/Getopt/Exception.php';
+                    throw new Zend_Console_Getopt_Exception(
+                        "Option \"$flag\" requires an integer parameter, but was given \"$param\".",
+                        $this->getUsageMessage());
+                }
+                break;
+            case 'string':
+            default:
+                break;
+        }
+        return true;
+    }
+
+    /**
+     * Define legal options using the gnu-style format.
+     *
+     * @param  string $rules
+     * @return void
+     */
+    protected function _addRulesModeGnu($rules)
+    {
+        $ruleArray = array();
+
+        /**
+         * Options may be single alphanumeric characters.
+         * Options may have a ':' which indicates a required string parameter.
+         * No long options or option aliases are supported in GNU style.
+         */
+        preg_match_all('/([a-zA-Z0-9]:?)/', $rules, $ruleArray);
+        foreach ($ruleArray[1] as $rule) {
+            $r = array();
+            $flag = substr($rule, 0, 1);
+            if ($this->_getoptConfig[self::CONFIG_IGNORECASE]) {
+                $flag = strtolower($flag);
+            }
+            $r['alias'][] = $flag;
+            if (substr($rule, 1, 1) == ':') {
+                $r['param'] = 'required';
+                $r['paramType'] = 'string';
+            } else {
+                $r['param'] = 'none';
+            }
+            $this->_rules[$flag] = $r;
+            $this->_ruleMap[$flag] = $flag;
+        }
+    }
+
+    /**
+     * Define legal options using the Zend-style format.
+     *
+     * @param  array $rules
+     * @throws Zend_Console_Getopt_Exception
+     * @return void
+     */
+    protected function _addRulesModeZend($rules)
+    {
+        foreach ($rules as $ruleCode => $helpMessage)
+        {
+            // this may have to translate the long parm type if there
+            // are any complaints that =string will not work (even though that use
+            // case is not documented)
+            if (in_array(substr($ruleCode, -2, 1), array('-', '='))) {
+                $flagList  = substr($ruleCode, 0, -2);
+                $delimiter = substr($ruleCode, -2, 1);
+                $paramType = substr($ruleCode, -1);
+            } else {
+                $flagList = $ruleCode;
+                $delimiter = $paramType = null;
+            }
+            if ($this->_getoptConfig[self::CONFIG_IGNORECASE]) {
+                $flagList = strtolower($flagList);
+            }
+            $flags = explode('|', $flagList);
+            $rule = array();
+            $mainFlag = $flags[0];
+            foreach ($flags as $flag) {
+                if (empty($flag)) {
+                    require_once 'Zend/Console/Getopt/Exception.php';
+                    throw new Zend_Console_Getopt_Exception(
+                        "Blank flag not allowed in rule \"$ruleCode\".");
+                }
+                if (strlen($flag) == 1) {
+                    if (isset($this->_ruleMap[$flag])) {
+                        require_once 'Zend/Console/Getopt/Exception.php';
+                        throw new Zend_Console_Getopt_Exception(
+                            "Option \"-$flag\" is being defined more than once.");
+                    }
+                    $this->_ruleMap[$flag] = $mainFlag;
+                    $rule['alias'][] = $flag;
+                } else {
+                    if (isset($this->_rules[$flag]) || isset($this->_ruleMap[$flag])) {
+                        require_once 'Zend/Console/Getopt/Exception.php';
+                        throw new Zend_Console_Getopt_Exception(
+                            "Option \"--$flag\" is being defined more than once.");
+                    }
+                    $this->_ruleMap[$flag] = $mainFlag;
+                    $rule['alias'][] = $flag;
+                }
+            }
+            if (isset($delimiter)) {
+                switch ($delimiter) {
+                    case self::PARAM_REQUIRED:
+                        $rule['param'] = 'required';
+                        break;
+                    case self::PARAM_OPTIONAL:
+                    default:
+                        $rule['param'] = 'optional';
+                }
+                switch (substr($paramType, 0, 1)) {
+                    case self::TYPE_WORD:
+                        $rule['paramType'] = 'word';
+                        break;
+                    case self::TYPE_INTEGER:
+                        $rule['paramType'] = 'integer';
+                        break;
+                    case self::TYPE_STRING:
+                    default:
+                        $rule['paramType'] = 'string';
+                }
+            } else {
+                $rule['param'] = 'none';
+            }
+            $rule['help'] = $helpMessage;
+            $this->_rules[$mainFlag] = $rule;
+        }
+    }
+
+}

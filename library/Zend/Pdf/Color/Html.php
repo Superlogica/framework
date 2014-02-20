@@ -1,232 +1,403 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Pdf_Color */
+require_once 'Zend/Pdf/Color.php';
+
+/** Zend_Pdf_Color_Rgb */
+require_once 'Zend/Pdf/Color/Rgb.php';
+
+/** Zend_Pdf_GrayScale */
+require_once 'Zend/Pdf/Color/GrayScale.php';
+
+/**
+ * HTML color implementation
+ *
+ * Factory class which vends Zend_Pdf_Color objects from typical HTML
+ * representations.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Color_Html extends Zend_Pdf_Color
+{
+
+    /**
+     * Color
+     *
+     * @var Zend_Pdf_Color
+     */
+    private $_color;
+
+    /**
+     * Class constructor.
+     *
+     * @param mixed $color
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($color)
+    {
+        $this->_color = self::color($color);
+    }
+
+
+    /**
+     * Instructions, which can be directly inserted into content stream
+     * to switch color.
+     * Color set instructions differ for stroking and nonstroking operations.
+     *
+     * @param boolean $stroking
+     * @return string
+     */
+    public function instructions($stroking)
+    {
+        return $this->_color->instructions($stroking);
+    }
+
+    /**
+     * Creates a Zend_Pdf_Color object from the HTML representation.
+     *
+     * @param string $color May either be a hexidecimal number of the form
+     *    #rrggbb or one of the 140 well-known names (black, white, blue, etc.)
+     * @return Zend_Pdf_Color
+     */
+    public static function color($color)
+    {
+        $pattern = '/^#([A-Fa-f0-9]{2})([A-Fa-f0-9]{2})([A-Fa-f0-9]{2})$/';
+        if (preg_match($pattern, $color, $matches)) {
+            $r = round((hexdec($matches[1]) / 255), 3);
+            $g = round((hexdec($matches[2]) / 255), 3);
+            $b = round((hexdec($matches[3]) / 255), 3);
+            if (($r == $g) && ($g == $b)) {
+                return new Zend_Pdf_Color_GrayScale($r);
+            } else {
+                return new Zend_Pdf_Color_Rgb($r, $g, $b);
+            }
+        } else {
+            return Zend_Pdf_Color_Html::namedColor($color);
+        }
+    }
+
+    /**
+     * Creates a Zend_Pdf_Color object from the named color.
+     *
+     * @param string $color One of the 140 well-known color names (black, white,
+     *    blue, etc.)
+     * @return Zend_Pdf_Color
+     */
+    public static function namedColor($color)
+    {
+        switch (strtolower($color)) {
+            case 'aqua':
+                $r = 0.0;   $g = 1.0;   $b = 1.0;   break;
+            case 'black':
+                $r = 0.0;   $g = 0.0;   $b = 0.0;   break;
+            case 'blue':
+                $r = 0.0;   $g = 0.0;   $b = 1.0;   break;
+            case 'fuchsia':
+                $r = 1.0;   $g = 0.0;   $b = 1.0;   break;
+            case 'gray':
+                $r = 0.502; $g = 0.502; $b = 0.502; break;
+            case 'green':
+                $r = 0.0;   $g = 0.502; $b = 0.0;   break;
+            case 'lime':
+                $r = 0.0;   $g = 1.0;   $b = 0.0;   break;
+            case 'maroon':
+                $r = 0.502; $g = 0.0;   $b = 0.0;   break;
+            case 'navy':
+                $r = 0.0;   $g = 0.0;   $b = 0.502; break;
+            case 'olive':
+                $r = 0.502; $g = 0.502; $b = 0.0;   break;
+            case 'purple':
+                $r = 0.502; $g = 0.0;   $b = 0.502; break;
+            case 'red':
+                $r = 1.0;   $g = 0.0;   $b = 0.0;   break;
+            case 'silver':
+                $r = 0.753; $g = 0.753; $b = 0.753; break;
+            case 'teal':
+                $r = 0.0;   $g = 0.502; $b = 0.502; break;
+            case 'white':
+                $r = 1.0;   $g = 1.0;   $b = 1.0;   break;
+            case 'yellow':
+                $r = 1.0;   $g = 1.0;   $b = 0.0;   break;
+
+            case 'aliceblue':
+                $r = 0.941; $g = 0.973; $b = 1.0;   break;
+            case 'antiquewhite':
+                $r = 0.980; $g = 0.922; $b = 0.843; break;
+            case 'aquamarine':
+                $r = 0.498; $g = 1.0;   $b = 0.831; break;
+            case 'azure':
+                $r = 0.941; $g = 1.0;   $b = 1.0;   break;
+            case 'beige':
+                $r = 0.961; $g = 0.961; $b = 0.863; break;
+            case 'bisque':
+                $r = 1.0;   $g = 0.894; $b = 0.769; break;
+            case 'blanchedalmond':
+                $r = 1.0;   $g = 1.0;   $b = 0.804; break;
+            case 'blueviolet':
+                $r = 0.541; $g = 0.169; $b = 0.886; break;
+            case 'brown':
+                $r = 0.647; $g = 0.165; $b = 0.165; break;
+            case 'burlywood':
+                $r = 0.871; $g = 0.722; $b = 0.529; break;
+            case 'cadetblue':
+                $r = 0.373; $g = 0.620; $b = 0.627; break;
+            case 'chartreuse':
+                $r = 0.498; $g = 1.0;   $b = 0.0;   break;
+            case 'chocolate':
+                $r = 0.824; $g = 0.412; $b = 0.118; break;
+            case 'coral':
+                $r = 1.0;   $g = 0.498; $b = 0.314; break;
+            case 'cornflowerblue':
+                $r = 0.392; $g = 0.584; $b = 0.929; break;
+            case 'cornsilk':
+                $r = 1.0;   $g = 0.973; $b = 0.863; break;
+            case 'crimson':
+                $r = 0.863; $g = 0.078; $b = 0.235; break;
+            case 'cyan':
+                $r = 0.0;   $g = 1.0;   $b = 1.0;   break;
+            case 'darkblue':
+                $r = 0.0;   $g = 0.0;   $b = 0.545; break;
+            case 'darkcyan':
+                $r = 0.0;   $g = 0.545; $b = 0.545; break;
+            case 'darkgoldenrod':
+                $r = 0.722; $g = 0.525; $b = 0.043; break;
+            case 'darkgray':
+                $r = 0.663; $g = 0.663; $b = 0.663; break;
+            case 'darkgreen':
+                $r = 0.0;   $g = 0.392; $b = 0.0;   break;
+            case 'darkkhaki':
+                $r = 0.741; $g = 0.718; $b = 0.420; break;
+            case 'darkmagenta':
+                $r = 0.545; $g = 0.0;   $b = 0.545; break;
+            case 'darkolivegreen':
+                $r = 0.333; $g = 0.420; $b = 0.184; break;
+            case 'darkorange':
+                $r = 1.0;   $g = 0.549; $b = 0.0;   break;
+            case 'darkorchid':
+                $r = 0.6;   $g = 0.196; $b = 0.8;   break;
+            case 'darkred':
+                $r = 0.545; $g = 0.0;   $b = 0.0;   break;
+            case 'darksalmon':
+                $r = 0.914; $g = 0.588; $b = 0.478; break;
+            case 'darkseagreen':
+                $r = 0.561; $g = 0.737; $b = 0.561; break;
+            case 'darkslateblue':
+                $r = 0.282; $g = 0.239; $b = 0.545; break;
+            case 'darkslategray':
+                $r = 0.184; $g = 0.310; $b = 0.310; break;
+            case 'darkturquoise':
+                $r = 0.0;   $g = 0.808; $b = 0.820; break;
+            case 'darkviolet':
+                $r = 0.580; $g = 0.0;   $b = 0.827; break;
+            case 'deeppink':
+                $r = 1.0;   $g = 0.078; $b = 0.576; break;
+            case 'deepskyblue':
+                $r = 0.0;   $g = 0.749; $b = 1.0;   break;
+            case 'dimgray':
+                $r = 0.412; $g = 0.412; $b = 0.412; break;
+            case 'dodgerblue':
+                $r = 0.118; $g = 0.565; $b = 1.0;   break;
+            case 'firebrick':
+                $r = 0.698; $g = 0.133; $b = 0.133; break;
+            case 'floralwhite':
+                $r = 1.0;   $g = 0.980; $b = 0.941; break;
+            case 'forestgreen':
+                $r = 0.133; $g = 0.545; $b = 0.133; break;
+            case 'gainsboro':
+                $r = 0.863; $g = 0.863; $b = 0.863; break;
+            case 'ghostwhite':
+                $r = 0.973; $g = 0.973; $b = 1.0;   break;
+            case 'gold':
+                $r = 1.0;   $g = 0.843; $b = 0.0;   break;
+            case 'goldenrod':
+                $r = 0.855; $g = 0.647; $b = 0.125; break;
+            case 'greenyellow':
+                $r = 0.678; $g = 1.0;   $b = 0.184; break;
+            case 'honeydew':
+                $r = 0.941; $g = 1.0;   $b = 0.941; break;
+            case 'hotpink':
+                $r = 1.0;   $g = 0.412; $b = 0.706; break;
+            case 'indianred':
+                $r = 0.804; $g = 0.361; $b = 0.361; break;
+            case 'indigo':
+                $r = 0.294; $g = 0.0;   $b = 0.510; break;
+            case 'ivory':
+                $r = 1.0;   $g = 0.941; $b = 0.941; break;
+            case 'khaki':
+                $r = 0.941; $g = 0.902; $b = 0.549; break;
+            case 'lavender':
+                $r = 0.902; $g = 0.902; $b = 0.980; break;
+            case 'lavenderblush':
+                $r = 1.0;   $g = 0.941; $b = 0.961; break;
+            case 'lawngreen':
+                $r = 0.486; $g = 0.988; $b = 0.0;   break;
+            case 'lemonchiffon':
+                $r = 1.0;   $g = 0.980; $b = 0.804; break;
+            case 'lightblue':
+                $r = 0.678; $g = 0.847; $b = 0.902; break;
+            case 'lightcoral':
+                $r = 0.941; $g = 0.502; $b = 0.502; break;
+            case 'lightcyan':
+                $r = 0.878; $g = 1.0;   $b = 1.0;   break;
+            case 'lightgoldenrodyellow':
+                $r = 0.980; $g = 0.980; $b = 0.824; break;
+            case 'lightgreen':
+                $r = 0.565; $g = 0.933; $b = 0.565; break;
+            case 'lightgrey':
+                $r = 0.827; $g = 0.827; $b = 0.827; break;
+            case 'lightpink':
+                $r = 1.0;   $g = 0.714; $b = 0.757; break;
+            case 'lightsalmon':
+                $r = 1.0;   $g = 0.627; $b = 0.478; break;
+            case 'lightseagreen':
+                $r = 0.125; $g = 0.698; $b = 0.667; break;
+            case 'lightskyblue':
+                $r = 0.529; $g = 0.808; $b = 0.980; break;
+            case 'lightslategray':
+                $r = 0.467; $g = 0.533; $b = 0.6;   break;
+            case 'lightsteelblue':
+                $r = 0.690; $g = 0.769; $b = 0.871; break;
+            case 'lightyellow':
+                $r = 1.0;   $g = 1.0;   $b = 0.878; break;
+            case 'limegreen':
+                $r = 0.196; $g = 0.804; $b = 0.196; break;
+            case 'linen':
+                $r = 0.980; $g = 0.941; $b = 0.902; break;
+            case 'magenta':
+                $r = 1.0;   $g = 0.0;   $b = 1.0;   break;
+            case 'mediumaquamarine':
+                $r = 0.4;   $g = 0.804; $b = 0.667; break;
+            case 'mediumblue':
+                $r = 0.0;   $g = 0.0;   $b = 0.804; break;
+            case 'mediumorchid':
+                $r = 0.729; $g = 0.333; $b = 0.827; break;
+            case 'mediumpurple':
+                $r = 0.576; $g = 0.439; $b = 0.859; break;
+            case 'mediumseagreen':
+                $r = 0.235; $g = 0.702; $b = 0.443; break;
+            case 'mediumslateblue':
+                $r = 0.482; $g = 0.408; $b = 0.933; break;
+            case 'mediumspringgreen':
+                $r = 0.0;   $g = 0.980; $b = 0.604; break;
+            case 'mediumturquoise':
+                $r = 0.282; $g = 0.820; $b = 0.8;   break;
+            case 'mediumvioletred':
+                $r = 0.780; $g = 0.082; $b = 0.522; break;
+            case 'midnightblue':
+                $r = 0.098; $g = 0.098; $b = 0.439; break;
+            case 'mintcream':
+                $r = 0.961; $g = 1.0;   $b = 0.980; break;
+            case 'mistyrose':
+                $r = 1.0;   $g = 0.894; $b = 0.882; break;
+            case 'moccasin':
+                $r = 1.0;   $g = 0.894; $b = 0.710; break;
+            case 'navajowhite':
+                $r = 1.0;   $g = 0.871; $b = 0.678; break;
+            case 'oldlace':
+                $r = 0.992; $g = 0.961; $b = 0.902; break;
+            case 'olivedrab':
+                $r = 0.420; $g = 0.557; $b = 0.137; break;
+            case 'orange':
+                $r = 1.0;   $g = 0.647; $b = 0.0;   break;
+            case 'orangered':
+                $r = 1.0;   $g = 0.271; $b = 0.0;   break;
+            case 'orchid':
+                $r = 0.855; $g = 0.439; $b = 0.839; break;
+            case 'palegoldenrod':
+                $r = 0.933; $g = 0.910; $b = 0.667; break;
+            case 'palegreen':
+                $r = 0.596; $g = 0.984; $b = 0.596; break;
+            case 'paleturquoise':
+                $r = 0.686; $g = 0.933; $b = 0.933; break;
+            case 'palevioletred':
+                $r = 0.859; $g = 0.439; $b = 0.576; break;
+            case 'papayawhip':
+                $r = 1.0;   $g = 0.937; $b = 0.835; break;
+            case 'peachpuff':
+                $r = 1.0;   $g = 0.937; $b = 0.835; break;
+            case 'peru':
+                $r = 0.804; $g = 0.522; $b = 0.247; break;
+            case 'pink':
+                $r = 1.0;   $g = 0.753; $b = 0.796; break;
+            case 'plum':
+                $r = 0.867; $g = 0.627; $b = 0.867; break;
+            case 'powderblue':
+                $r = 0.690; $g = 0.878; $b = 0.902; break;
+            case 'rosybrown':
+                $r = 0.737; $g = 0.561; $b = 0.561; break;
+            case 'royalblue':
+                $r = 0.255; $g = 0.412; $b = 0.882; break;
+            case 'saddlebrown':
+                $r = 0.545; $g = 0.271; $b = 0.075; break;
+            case 'salmon':
+                $r = 0.980; $g = 0.502; $b = 0.447; break;
+            case 'sandybrown':
+                $r = 0.957; $g = 0.643; $b = 0.376; break;
+            case 'seagreen':
+                $r = 0.180; $g = 0.545; $b = 0.341; break;
+            case 'seashell':
+                $r = 1.0;   $g = 0.961; $b = 0.933; break;
+            case 'sienna':
+                $r = 0.627; $g = 0.322; $b = 0.176; break;
+            case 'skyblue':
+                $r = 0.529; $g = 0.808; $b = 0.922; break;
+            case 'slateblue':
+                $r = 0.416; $g = 0.353; $b = 0.804; break;
+            case 'slategray':
+                $r = 0.439; $g = 0.502; $b = 0.565; break;
+            case 'snow':
+                $r = 1.0;   $g = 0.980; $b = 0.980; break;
+            case 'springgreen':
+                $r = 0.0;   $g = 1.0;   $b = 0.498; break;
+            case 'steelblue':
+                $r = 0.275; $g = 0.510; $b = 0.706; break;
+            case 'tan':
+                $r = 0.824; $g = 0.706; $b = 0.549; break;
+            case 'thistle':
+                $r = 0.847; $g = 0.749; $b = 0.847; break;
+            case 'tomato':
+                $r = 0.992; $g = 0.388; $b = 0.278; break;
+            case 'turquoise':
+                $r = 0.251; $g = 0.878; $b = 0.816; break;
+            case 'violet':
+                $r = 0.933; $g = 0.510; $b = 0.933; break;
+            case 'wheat':
+                $r = 0.961; $g = 0.871; $b = 0.702; break;
+            case 'whitesmoke':
+                $r = 0.961; $g = 0.961; $b = 0.961; break;
+            case 'yellowgreen':
+                $r = 0.604; $g = 0.804; $b = 0.196; break;
+
+            default:
+                require_once 'Zend/Pdf/Exception.php';
+                throw new Zend_Pdf_Exception('Unknown color name: ' . $color);
+        }
+        if (($r == $g) && ($g == $b)) {
+            return new Zend_Pdf_Color_GrayScale($r);
+        } else {
+            return new Zend_Pdf_Color_Rgb($r, $g, $b);
+        }
+    }
+}
+

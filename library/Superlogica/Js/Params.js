@@ -856,3 +856,16 @@ var Superlogica_Js_Params = new Class({
     }
 
 });
+Superlogica_Js_Params.chavesParaMaiusculo = function( array ){
+    var array = Object.clone(array);
+    Object.each( array, function( dados, chave ){
+        if ( typeof dados == 'object' ){
+              array[chave.toUpperCase() ] = Superlogica_Js_Params.chavesParaMaiusculo( dados );
+        }else{
+              array[chave.toUpperCase() ] = dados;
+       }  
+      if ( chave != chave.toUpperCase() )
+           delete array[chave];
+    });
+    return array;
+}

@@ -1,49 +1,159 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-rPkEPG==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+
+/**
+ * PDF file 'name' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Name extends Zend_Pdf_Element
+{
+    /**
+     * Object value
+     *
+     * @var string
+     */
+    public $value;
+
+
+    /**
+     * Object constructor
+     *
+     * @param string $val
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($val)
+    {
+        settype($val, 'string');
+        if (strpos($val,"\x00") !== false) {
+            throw new Zend_Pdf_Exception('Null character is not allowed in PDF Names');
+        }
+        $this->value   = (string)$val;
+    }
+
+
+    /**
+     * Return type of the element.
+     *
+     * @return integer
+     */
+    public function getType()
+    {
+        return Zend_Pdf_Element::TYPE_NAME;
+    }
+
+
+    /**
+     * Escape string according to the PDF rules
+     *
+     * @param string $inStr
+     * @return string
+     */
+    public static function escape($inStr)
+    {
+        $outStr = '';
+
+        for ($count = 0; $count < strlen($inStr); $count++) {
+            $nextCode = ord($inStr[$count]);
+
+            switch ($inStr[$count]) {
+                case '(':
+                // fall through to next case
+                case ')':
+                // fall through to next case
+                case '<':
+                // fall through to next case
+                case '>':
+                // fall through to next case
+                case '[':
+                // fall through to next case
+                case ']':
+                // fall through to next case
+                case '{':
+                // fall through to next case
+                case '}':
+                // fall through to next case
+                case '/':
+                // fall through to next case
+                case '%':
+                // fall through to next case
+                case '\\':
+                // fall through to next case
+                case '#':
+                    $outStr .= sprintf('#%02X', $nextCode);
+                    break;
+
+                default:
+                    if ($nextCode >= 33 && $nextCode <= 126 ) {
+                        // Visible ASCII symbol
+                        $outStr .= $inStr[$count];
+                    } else {
+                        $outStr .= sprintf('#%02X', $nextCode);
+                    }
+            }
+
+        }
+
+        return $outStr;
+    }
+
+
+    /**
+     * Unescape string according to the PDF rules
+     *
+     * @param string $inStr
+     * @return string
+     */
+    public static function unescape($inStr)
+    {
+        $outStr = '';
+
+        for ($count = 0; $count < strlen($inStr); $count++) {
+            if ($inStr[$count] != '#' )  {
+                $outStr .= $inStr[$count];
+            } else {
+                // Escape sequence
+                $outStr .= chr(base_convert(substr($inStr, $count+1, 2), 16, 10 ));
+                $count +=2;
+            }
+        }
+        return $outStr;
+    }
+
+
+    /**
+     * Return object as string
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        return '/' . self::escape((string)$this->value);
+    }
+}

@@ -1,37 +1,121 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Result.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+
+
+/**
+ * Represents a single Technorati Search query result object. 
+ * It is never returned as a standalone object, 
+ * but it always belongs to a valid Zend_Service_Technorati_SearchResultSet object.
+ * 
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Technorati
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @abstract 
+ */
+abstract class Zend_Service_Technorati_Result
+{
+    /**
+     * An associative array of 'fieldName' => 'xmlfieldtag'
+     *
+     * @var     array
+     * @access  protected
+     */
+    protected $_fields;
+
+    /**
+     * The ReST fragment for this result object
+     *
+     * @var     DomElement
+     * @access  protected
+     */
+    protected $_dom;
+
+    /**
+     * Object for $this->_dom
+     *
+     * @var     DOMXpath
+     * @access  protected
+     */
+    protected $_xpath;
+
+
+    /**
+     * Constructs a new object from DOM Element.
+     * Properties are automatically fetched from XML
+     * according to array of $_fields to be read.
+     *
+     * @param   DomElement $result  the ReST fragment for this object
+     */
+    public function __construct(DomElement $dom)
+    {
+        $this->_xpath = new DOMXPath($dom->ownerDocument);
+        $this->_dom = $dom;
+        
+        // default fields for all search results
+        $fields = array();
+
+        // merge with child's object fields
+        $this->_fields = array_merge($this->_fields, $fields);
+
+        // add results to appropriate fields
+        foreach($this->_fields as $phpName => $xmlName) {
+            $query = "./$xmlName/text()";
+            $node = $this->_xpath->query($query, $this->_dom);
+            if ($node->length == 1) {
+                $this->{$phpName} = (string) $node->item(0)->data;
+            }
+        }
+    }
+    
+    /**
+     * Parses weblog node and sets weblog object.
+     * 
+     * @return  void
+     */
+    protected function _parseWeblog()
+    {
+        // weblog object field
+        $result = $this->_xpath->query('./weblog', $this->_dom);
+        if ($result->length == 1) {
+            /**
+             * @see Zend_Service_Technorati_Weblog
+             */
+            require_once 'Zend/Service/Technorati/Weblog.php';
+            $this->_weblog = new Zend_Service_Technorati_Weblog($result->item(0));
+        } else {
+            $this->_weblog = null;
+        }
+    }
+
+    /**
+     * Returns the document fragment for this object as XML string.
+     *
+     * @return string   the document fragment for this object
+     *                  converted into XML format
+     */
+    public function getXml()
+    {
+        return $this->_dom->ownerDocument->saveXML($this->_dom);
+    }
+}

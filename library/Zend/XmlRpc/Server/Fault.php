@@ -1,56 +1,201 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Fault.php 9102 2008-03-30 20:27:03Z thomas $
+ */
+
+/**
+ * Zend_XmlRpc_Fault
+ */
+require_once 'Zend/XmlRpc/Fault.php';
+
+
+/**
+ * XMLRPC Server Faults
+ *
+ * Encapsulates an exception for use as an XMLRPC fault response. Valid
+ * exception classes that may be used for generating the fault code and fault
+ * string can be attached using {@link attachFaultException()}; all others use a
+ * generic '404 Unknown error' response.
+ *
+ * You may also attach fault observers, which would allow you to monitor
+ * particular fault cases; this is done via {@link attachObserver()}. Observers
+ * need only implement a static 'observe' method.
+ *
+ * To allow method chaining, you may use the {@link getInstance()} factory
+ * to instantiate a Zend_XmlRpc_Server_Fault.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Server_Fault extends Zend_XmlRpc_Fault
+{
+    /**
+     * @var Exception
+     */
+    protected $_exception;
+
+    /**
+     * @var array Array of exception classes that may define xmlrpc faults
+     */
+    protected static $_faultExceptionClasses = array('Zend_XmlRpc_Server_Exception' => true);
+
+    /**
+     * @var array Array of fault observers
+     */
+    protected static $_observers = array();
+
+    /**
+     * Constructor
+     *
+     * @param Exception $e
+     * @return Zend_XmlRpc_Server_Fault
+     */
+    public function __construct(Exception $e)
+    {
+        $this->_exception = $e;
+        $code             = 404;
+        $message          = 'Unknown error';
+        $exceptionClass   = get_class($e);
+
+        foreach (array_keys(self::$_faultExceptionClasses) as $class) {
+            if ($e instanceof $class) {
+                $code    = $e->getCode();
+                $message = $e->getMessage();
+                break;
+            }
+        }
+
+        parent::__construct($code, $message);
+
+        // Notify exception observers, if present
+        if (!empty(self::$_observers)) {
+            foreach (array_keys(self::$_observers) as $observer) {
+                call_user_func(array($observer, 'observe'), $this);
+            }
+        }
+    }
+
+    /**
+     * Return Zend_XmlRpc_Server_Fault instance
+     *
+     * @param Exception $e
+     * @return Zend_XmlRpc_Server_Fault
+     */
+    public static function getInstance(Exception $e)
+    {
+        return new self($e);
+    }
+
+    /**
+     * Attach valid exceptions that can be used to define xmlrpc faults
+     *
+     * @param string|array $classes Class name or array of class names
+     * @return void
+     */
+    public static function attachFaultException($classes)
+    {
+        if (!is_array($classes)) {
+            $classes = (array) $classes;
+        }
+
+        foreach ($classes as $class) {
+            if (is_string($class) && class_exists($class)) {
+                self::$_faultExceptionClasses[$class] = true;
+            }
+        }
+    }
+
+    /**
+     * Detach fault exception classes
+     *
+     * @param string|array $classes Class name or array of class names
+     * @return void
+     */
+    public static function detachFaultException($classes)
+    {
+        if (!is_array($classes)) {
+            $classes = (array) $classes;
+        }
+
+        foreach ($classes as $class) {
+            if (is_string($class) && isset(self::$_faultExceptionClasses[$class])) {
+                unset(self::$_faultExceptionClasses[$class]);
+            }
+        }
+    }
+
+    /**
+     * Attach an observer class
+     *
+     * Allows observation of xmlrpc server faults, thus allowing logging or mail
+     * notification of fault responses on the xmlrpc server.
+     *
+     * Expects a valid class name; that class must have a public static method
+     * 'observe' that accepts an exception as its sole argument.
+     *
+     * @param string $class
+     * @return boolean
+     */
+    public static function attachObserver($class)
+    {
+        if (!is_string($class)
+            || !class_exists($class)
+            || !is_callable(array($class, 'observe')))
+        {
+            return false;
+        }
+
+        if (!isset(self::$_observers[$class])) {
+            self::$_observers[$class] = true;
+        }
+
+        return true;
+    }
+
+    /**
+     * Detach an observer
+     *
+     * @param string $class
+     * @return boolean
+     */
+    public static function detachObserver($class)
+    {
+        if (!isset(self::$_observers[$class])) {
+            return false;
+        }
+
+        unset(self::$_observers[$class]);
+        return true;
+    }
+
+    /**
+     * Retrieve the exception
+     *
+     * @access public
+     * @return Exception
+     */
+    public function getException()
+    {
+        return $this->_exception;
+    }
+}

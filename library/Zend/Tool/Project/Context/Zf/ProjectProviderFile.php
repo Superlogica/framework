@@ -1,49 +1,152 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-vrWzT3W7iWd+7cQAvxz8wXvdMxlfi2IuFPTR5G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Project_Context_Filesystem_File
+ */
+require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+
+/**
+ * @see Zend_CodeGenerator_Php_File
+ */
+require_once 'Zend/CodeGenerator/Php/File.php';
+
+/**
+ * This class is the front most class for utilizing Zend_Tool_Project
+ *
+ * A profile is a hierarchical set of resources that keep track of
+ * items within a specific project.
+ * 
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Project_Context_Zf_ProjectProviderFile extends Zend_Tool_Project_Context_Filesystem_File 
+{
+    
+    /**
+     * @var string
+     */
+    protected $_projectProviderName = null;
+    
+    /**
+     * @var array
+     */
+    protected $_actionNames = array();
+    
+    /**
+     * init()
+     *
+     * @return Zend_Tool_Project_Context_Zf_ProjectProviderFile
+     */
+    public function init()
+    {
+        
+        $this->_projectProviderName = $this->_resource->getAttribute('projectProviderName');
+        $this->_actionNames = $this->_resource->getAttribute('actionNames');
+        $this->_filesystemName = ucfirst($this->_projectProviderName) . 'Provider.php';
+        
+        if (strpos($this->_actionNames, ',')) {
+            $this->_actionNames = explode(',', $this->_actionNames);
+        } else {
+            $this->_actionNames = ($this->_actionNames) ? array($this->_actionNames) : array();
+        }
+
+        parent::init();
+        return $this;
+    }
+    
+    /**
+     * getPersistentAttributes()
+     *
+     * @return array
+     */
+    public function getPersistentAttributes()
+    {
+        return array(
+            'projectProviderName' => $this->getProjectProviderName(),
+            'actionNames' => implode(',', $this->_actionNames)
+            );
+    }
+    
+    /**
+     * getName()
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ProjectProviderFile';
+    }
+    
+    /**
+     * getProjectProviderName()
+     *
+     * @return string
+     */
+    public function getProjectProviderName()
+    {
+        return $this->_projectProviderName;
+    }
+
+    /**
+     * getContents()
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+
+        $filter = new Zend_Filter_Word_DashToCamelCase();
+        
+        $className = $filter->filter($this->_projectProviderName) . 'Provider';
+        
+        $class = new Zend_CodeGenerator_Php_Class(array(
+            'name' => $className,
+            'extendedClass' => 'Zend_Tool_Project_Provider_Abstract'
+            ));
+        
+        $methods = array();
+        foreach ($this->_actionNames as $actionName) {
+            $methods[] = new Zend_CodeGenerator_Php_Method(array(
+                'name' => $actionName,
+                'body' => '        /** @todo Implementation */'
+                ));
+        }
+        
+        if ($methods) {
+            $class->setMethods($methods);
+        }
+        
+        $codeGenFile = new Zend_CodeGenerator_Php_File(array(
+            'requiredFiles' => array(
+                'Zend/Tool/Project/Provider/Abstract.php',
+                'Zend/Tool/Project/Provider/Exception.php'
+                ),
+            'classes' => array($class)
+            ));
+        
+        return $codeGenFile->generate();
+    }
+   
+}

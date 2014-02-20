@@ -1,183 +1,793 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-sHzB65dAeRUOPg3/wW==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Layout
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Layout.php 15577 2009-05-14 12:43:34Z matthew $
+ */
+
+/**
+ * Provide Layout support for MVC applications
+ *
+ * @category   Zend
+ * @package    Zend_Layout
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Layout
+{
+    /**
+     * Placeholder container for layout variables
+     * @var Zend_View_Helper_Placeholder_Container
+     */
+    protected $_container;
+
+    /**
+     * Key used to store content from 'default' named response segment
+     * @var string
+     */
+    protected $_contentKey = 'content';
+
+    /**
+     * Are layouts enabled?
+     * @var bool
+     */
+    protected $_enabled = true;
+
+    /**
+     * Helper class
+     * @var string
+     */
+    protected $_helperClass = 'Zend_Layout_Controller_Action_Helper_Layout';
+ 
+    /**
+     * Inflector used to resolve layout script
+     * @var Zend_Filter_Inflector
+     */
+    protected $_inflector;
+
+    /**
+     * Flag: is inflector enabled?
+     * @var bool
+     */
+    protected $_inflectorEnabled = true;
+
+    /**
+     * Inflector target
+     * @var string
+     */
+    protected $_inflectorTarget = ':script.:suffix';
+
+    /**
+     * Layout view
+     * @var string
+     */
+    protected $_layout = 'layout';
+
+    /**
+     * Layout view script path
+     * @var string
+     */
+    protected $_viewScriptPath = null;
+    
+    protected $_viewBasePath = null;
+    protected $_viewBasePrefix = 'Layout_View';
+
+    /**
+     * Flag: is MVC integration enabled?
+     * @var bool
+     */
+    protected $_mvcEnabled = true;
+
+    /**
+     * Instance registered with MVC, if any
+     * @var Zend_Layout
+     */
+    protected static $_mvcInstance;
+
+    /**
+     * Flag: is MVC successful action only flag set?
+     * @var bool
+     */
+    protected $_mvcSuccessfulActionOnly = true;
+
+    /**
+     * Plugin class
+     * @var string
+     */
+    protected $_pluginClass = 'Zend_Layout_Controller_Plugin_Layout';
+    
+    /**
+     * @var Zend_View_Interface
+     */
+    protected $_view;
+
+    /**
+     * View script suffix for layout script
+     * @var string
+     */
+    protected $_viewSuffix = 'phtml';
+
+    /**
+     * Constructor
+     *
+     * Accepts either:
+     * - A string path to layouts
+     * - An array of options
+     * - A Zend_Config object with options
+     *
+     * Layout script path, either as argument or as key in options, is 
+     * required.
+     *
+     * If mvcEnabled flag is false from options, simply sets layout script path. 
+     * Otherwise, also instantiates and registers action helper and controller 
+     * plugin.
+     * 
+     * @param  string|array|Zend_Config $options 
+     * @return void
+     */ 
+    public function __construct($options = null, $initMvc = false) 
+    { 
+        if (null !== $options) {
+            if (is_string($options)) {
+                $this->setLayoutPath($options);
+            } elseif (is_array($options)) {
+                $this->setOptions($options);
+            } elseif ($options instanceof Zend_Config) {
+                $this->setConfig($options);
+            } else {
+                require_once 'Zend/Layout/Exception.php';
+                throw new Zend_Layout_Exception('Invalid option provided to constructor');
+            }
+        }
+
+        $this->_initVarContainer();
+
+        if ($initMvc) {
+            $this->_setMvcEnabled(true);
+            $this->_initMvc();
+        } else {
+            $this->_setMvcEnabled(false);
+        }
+    }
+
+    /**
+     * Static method for initialization with MVC support
+     * 
+     * @param  string|array|Zend_Config $options 
+     * @return Zend_Layout
+     */
+    public static function startMvc($options = null)
+    {
+        if (null === self::$_mvcInstance) {
+            self::$_mvcInstance = new self($options, true);
+        } elseif (is_string($options)) {
+            self::$_mvcInstance->setLayoutPath($options);
+        } else {
+            self::$_mvcInstance->setOptions($options);
+        }
+
+        return self::$_mvcInstance;
+    }
+
+    /**
+     * Retrieve MVC instance of Zend_Layout object
+     * 
+     * @return Zend_Layout|null
+     */
+    public static function getMvcInstance()
+    {
+        return self::$_mvcInstance;
+    }
+
+    /**
+     * Reset MVC instance
+     *
+     * Unregisters plugins and helpers, and destroys MVC layout instance.
+     * 
+     * @return void
+     */
+    public static function resetMvcInstance()
+    {
+        if (null !== self::$_mvcInstance) {
+            $layout = self::$_mvcInstance;
+            $pluginClass = $layout->getPluginClass();
+            $front = Zend_Controller_Front::getInstance();
+            if ($front->hasPlugin($pluginClass)) {
+                $front->unregisterPlugin($pluginClass);
+            }
+
+            if (Zend_Controller_Action_HelperBroker::hasHelper('layout')) {
+                Zend_Controller_Action_HelperBroker::removeHelper('layout');
+            }
+
+            unset($layout);
+            self::$_mvcInstance = null;
+        }
+    }
+
+    /**
+     * Set options en masse
+     * 
+     * @param  array $options 
+     * @return void
+     */
+    public function setOptions($options)
+    {
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        } elseif (!is_array($options)) {
+            require_once 'Zend/Layout/Exception.php';
+            throw new Zend_Layout_Exception('setOptions() expects either an array or a Zend_Config object');
+        }
+
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
+
+    /**
+     * Initialize MVC integration
+     * 
+     * @return void
+     */
+    protected function _initMvc()
+    {
+        $this->_initPlugin();
+        $this->_initHelper();
+    }
+
+    /**
+     * Initialize front controller plugin
+     * 
+     * @return void
+     */
+    protected function _initPlugin()
+    {
+        $pluginClass = $this->getPluginClass();
+        require_once 'Zend/Controller/Front.php';
+        $front = Zend_Controller_Front::getInstance();
+        if (!$front->hasPlugin($pluginClass)) {
+            if (!class_exists($pluginClass)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($pluginClass);
+            }
+            $front->registerPlugin(
+                // register to run last | BUT before the ErrorHandler (if its available)
+                new $pluginClass($this), 
+                99
+            );
+        }
+    }
+
+    /**
+     * Initialize action helper
+     * 
+     * @return void
+     */
+    protected function _initHelper()
+    {
+        $helperClass = $this->getHelperClass();
+        require_once 'Zend/Controller/Action/HelperBroker.php';
+        if (!Zend_Controller_Action_HelperBroker::hasHelper('layout')) {
+            if (!class_exists($helperClass)) {
+                require_once 'Zend/Loader.php';
+                Zend_Loader::loadClass($helperClass);
+            }
+            Zend_Controller_Action_HelperBroker::getStack()->offsetSet(-90, new $helperClass($this));
+        }
+    }
+
+    /**
+     * Set options from a config object
+     * 
+     * @param  Zend_Config $config 
+     * @return Zend_Layout
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        $this->setOptions($config->toArray());
+        return $this;
+    }
+
+    /**
+     * Initialize placeholder container for layout vars
+     * 
+     * @return Zend_View_Helper_Placeholder_Container
+     */
+    protected function _initVarContainer()
+    {
+        if (null === $this->_container) {
+            require_once 'Zend/View/Helper/Placeholder/Registry.php';
+            $this->_container = Zend_View_Helper_Placeholder_Registry::getRegistry()->getContainer(__CLASS__);
+        }
+
+        return $this->_container;
+    }
+
+    /**
+     * Set layout script to use
+     *
+     * Note: enables layout.
+     * 
+     * @param  string $name 
+     * @return Zend_Layout
+     */ 
+    public function setLayout($name) 
+    {
+        $this->_layout = (string) $name;
+        $this->enableLayout();
+        return $this;
+    }
+ 
+    /**
+     * Get current layout script
+     * 
+     * @return string
+     */ 
+    public function getLayout() 
+    {
+        return $this->_layout;
+    } 
+ 
+    /**
+     * Disable layout
+     *
+     * @return Zend_Layout
+     */ 
+    public function disableLayout() 
+    {
+        $this->_enabled = false;
+        return $this;
+    } 
+
+    /**
+     * Enable layout 
+     * 
+     * @return Zend_Layout
+     */
+    public function enableLayout()
+    {
+        $this->_enabled = true;
+        return $this;
+    }
+
+    /**
+     * Is layout enabled?
+     * 
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->_enabled;
+    }
+
+    
+    public function setViewBasePath($path, $prefix = 'Layout_View')
+    {
+        $this->_viewBasePath = $path;
+        $this->_viewBasePrefix = $prefix;
+        return $this;
+    }
+    
+    public function getViewBasePath()
+    {
+        return $this->_viewBasePath;
+    }
+    
+    public function setViewScriptPath($path)
+    {
+        $this->_viewScriptPath = $path;
+        return $this;
+    }
+    
+    public function getViewScriptPath()
+    {
+        return $this->_viewScriptPath;
+    }
+    
+    /**
+     * Set layout script path
+     * 
+     * @param  string $path 
+     * @return Zend_Layout
+     */ 
+    public function setLayoutPath($path) 
+    {
+        return $this->setViewScriptPath($path);
+    } 
+    
+    /**
+     * Get current layout script path
+     * 
+     * @return string
+     */ 
+    public function getLayoutPath() 
+    {
+        return $this->getViewScriptPath();
+    } 
+
+    /**
+     * Set content key
+     *
+     * Key in namespace container denoting default content
+     *
+     * @param  string $contentKey
+     * @return Zend_Layout
+     */
+    public function setContentKey($contentKey)
+    {
+        $this->_contentKey = (string) $contentKey;
+        return $this;
+    }
+
+    /**
+     * Retrieve content key
+     *
+     * @return string
+     */
+    public function getContentKey()
+    {
+        return $this->_contentKey;
+    }
+
+    /**
+     * Set MVC enabled flag
+     *
+     * @param  bool $mvcEnabled
+     * @return Zend_Layout
+     */
+    protected function _setMvcEnabled($mvcEnabled)
+    {
+        $this->_mvcEnabled = ($mvcEnabled) ? true : false;
+        return $this;
+    }
+
+    /**
+     * Retrieve MVC enabled flag
+     *
+     * @return bool
+     */
+    public function getMvcEnabled()
+    {
+        return $this->_mvcEnabled;
+    }
+
+    /**
+     * Set MVC Successful Action Only flag
+     *
+     * @param bool $successfulActionOnly
+     * @return Zend_Layout
+     */
+    public function setMvcSuccessfulActionOnly($successfulActionOnly)
+    {
+        $this->_mvcSuccessfulActionOnly = ($successfulActionOnly) ? true : false;
+        return $this;
+    }
+    
+    /**
+     * Get MVC Successful Action Only Flag
+     *
+     * @return bool
+     */
+    public function getMvcSuccessfulActionOnly()
+    {
+        return $this->_mvcSuccessfulActionOnly;
+    }
+    
+    /**
+     * Set view object
+     * 
+     * @param  Zend_View_Interface $view
+     * @return Zend_Layout
+     */ 
+    public function setView(Zend_View_Interface $view) 
+    {
+        $this->_view = $view;
+        return $this;
+    } 
+
+    /**
+     * Retrieve helper class
+     *
+     * @return string
+     */
+    public function getHelperClass()
+    {
+        return $this->_helperClass;
+    }
+
+    /**
+     * Set helper class
+     *
+     * @param  string $helperClass
+     * @return Zend_Layout
+     */
+    public function setHelperClass($helperClass)
+    {
+        $this->_helperClass = (string) $helperClass;
+        return $this;
+    }
+
+    /**
+     * Retrieve plugin class
+     *
+     * @return string
+     */
+    public function getPluginClass()
+    {
+        return $this->_pluginClass;
+    }
+
+    /**
+     * Set plugin class
+     *
+     * @param  string $pluginClass
+     * @return Zend_Layout
+     */
+    public function setPluginClass($pluginClass)
+    {
+        $this->_pluginClass = (string) $pluginClass;
+        return $this;
+    }
+ 
+    /**
+     * Get current view object
+     *
+     * If no view object currently set, retrieves it from the ViewRenderer.
+     * 
+     * @todo Set inflector from view renderer at same time
+     * @return Zend_View_Interface
+     */ 
+    public function getView() 
+    {
+        if (null === $this->_view) {
+            require_once 'Zend/Controller/Action/HelperBroker.php';
+            $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+            if (null === $viewRenderer->view) {
+                $viewRenderer->initView();
+            }
+            $this->setView($viewRenderer->view);
+        }
+        return $this->_view;
+    } 
+
+    /**
+     * Set layout view script suffix
+     *
+     * @param  string $viewSuffix
+     * @return Zend_Layout
+     */
+    public function setViewSuffix($viewSuffix)
+    {
+        $this->_viewSuffix = (string) $viewSuffix;
+        return $this;
+    }
+ 
+    /**
+     * Retrieve layout view script suffix
+     *
+     * @return string
+     */
+    public function getViewSuffix()
+    {
+        return $this->_viewSuffix;
+    }
+
+    /**
+     * Retrieve inflector target
+     *
+     * @return string
+     */
+    public function getInflectorTarget()
+    {
+        return $this->_inflectorTarget;
+    }
+
+    /**
+     * Set inflector target
+     *
+     * @param  string $inflectorTarget
+     * @return Zend_Layout
+     */
+    public function setInflectorTarget($inflectorTarget)
+    {
+        $this->_inflectorTarget = (string) $inflectorTarget;
+        return $this;
+    }
+
+    /**
+     * Set inflector to use when resolving layout names
+     *
+     * @param  Zend_Filter_Inflector $inflector
+     * @return Zend_Layout
+     */
+    public function setInflector(Zend_Filter_Inflector $inflector)
+    {
+        $this->_inflector = $inflector;
+        return $this;
+    }
+
+    /**
+     * Retrieve inflector
+     *
+     * @return Zend_Filter_Inflector
+     */
+    public function getInflector()
+    {
+        if (null === $this->_inflector) {
+            require_once 'Zend/Filter/Inflector.php';
+            $inflector = new Zend_Filter_Inflector();
+            $inflector->setTargetReference($this->_inflectorTarget)
+                      ->addRules(array(':script' => array('Word_CamelCaseToDash', 'StringToLower')))
+                      ->setStaticRuleReference('suffix', $this->_viewSuffix);
+            $this->setInflector($inflector);
+        }
+
+        return $this->_inflector;
+    }
+
+    /**
+     * Enable inflector
+     * 
+     * @return Zend_Layout
+     */
+    public function enableInflector()
+    {
+        $this->_inflectorEnabled = true;
+        return $this;
+    }
+
+    /**
+     * Disable inflector
+     * 
+     * @return Zend_Layout
+     */
+    public function disableInflector()
+    {
+        $this->_inflectorEnabled = false;
+        return $this;
+    }
+
+    /**
+     * Return status of inflector enabled flag
+     * 
+     * @return bool
+     */
+    public function inflectorEnabled()
+    {
+        return $this->_inflectorEnabled;
+    }
+
+    /**
+     * Set layout variable
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return void
+     */ 
+    public function __set($key, $value) 
+    {
+        $this->_container[$key] = $value;
+    }
+ 
+    /**
+     * Get layout variable
+     * 
+     * @param  string $key
+     * @return mixed
+     */ 
+    public function __get($key) 
+    {
+        if (isset($this->_container[$key])) {
+            return $this->_container[$key];
+        }
+
+        return null;
+    }
+ 
+    /**
+     * Is a layout variable set?
+     *
+     * @param  string $key
+     * @return bool
+     */ 
+    public function __isset($key) 
+    {
+        return (isset($this->_container[$key]));
+    } 
+ 
+    /**
+     * Unset a layout variable?
+     *
+     * @param  string $key
+     * @return void
+     */ 
+    public function __unset($key) 
+    {
+        if (isset($this->_container[$key])) {
+            unset($this->_container[$key]);
+        }
+    } 
+ 
+    /**
+     * Assign one or more layout variables
+     * 
+     * @param  mixed $spec Assoc array or string key; if assoc array, sets each
+     * key as a layout variable
+     * @param  mixed $value Value if $spec is a key
+     * @return Zend_Layout
+     * @throws Zend_Layout_Exception if non-array/string value passed to $spec
+     */ 
+    public function assign($spec, $value = null) 
+    {
+        if (is_array($spec)) {
+            $orig = $this->_container->getArrayCopy();
+            $merged = array_merge($orig, $spec);
+            $this->_container->exchangeArray($merged);
+            return $this;
+        }
+
+        if (is_string($spec)) {
+            $this->_container[$spec] = $value;
+            return $this;
+        }
+
+        require_once 'Zend/Layout/Exception.php';
+        throw new Zend_Layout_Exception('Invalid values passed to assign()');
+    }
+
+    /**
+     * Render layout
+     *
+     * Sets internal script path as last path on script path stack, assigns 
+     * layout variables to view, determines layout name using inflector, and 
+     * renders layout view script.
+     *
+     * $name will be passed to the inflector as the key 'script'.
+     * 
+     * @param  mixed $name 
+     * @return mixed
+     */ 
+    public function render($name = null) 
+    { 
+        if (null === $name) {
+            $name = $this->getLayout();
+        }
+
+        if ($this->inflectorEnabled() && (null !== ($inflector = $this->getInflector())))
+        {
+            $name = $this->_inflector->filter(array('script' => $name));
+        }
+
+        $view = $this->getView();
+
+        if (null !== ($path = $this->getViewScriptPath())) {
+            if (method_exists($view, 'addScriptPath')) {
+                $view->addScriptPath($path);
+            } else {
+                $view->setScriptPath($path);
+            }
+        } elseif (null !== ($path = $this->getViewBasePath())) {
+            $view->addBasePath($path, $this->_viewBasePrefix);
+        }
+
+        return $view->render($name);
+    }
+}

@@ -1,39 +1,100 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-3KfIVbYKIboY+fnYEffglankl1C=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Analysis_TokenFilter */
+require_once 'Zend/Search/Lucene/Analysis/TokenFilter.php';
+
+/**
+ * Token filter that removes stop words. These words must be provided as array (set), example:
+ * $stopwords = array('the' => 1, 'an' => '1');
+ *
+ * We do recommend to provide all words in lowercase and concatenate this class after the lowercase filter.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Analysis
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+class Zend_Search_Lucene_Analysis_TokenFilter_StopWords extends Zend_Search_Lucene_Analysis_TokenFilter
+{
+    /**
+     * Stop Words
+     * @var array
+     */
+    private $_stopSet;
+
+    /**
+     * Constructs new instance of this filter.
+     *
+     * @param array $stopwords array (set) of words that will be filtered out
+     */
+    public function __construct($stopwords = array()) {
+        $this->_stopSet = array_flip($stopwords);
+    }
+
+    /**
+     * Normalize Token or remove it (if null is returned)
+     *
+     * @param Zend_Search_Lucene_Analysis_Token $srcToken
+     * @return Zend_Search_Lucene_Analysis_Token
+     */
+    public function normalize(Zend_Search_Lucene_Analysis_Token $srcToken) {
+        if (array_key_exists($srcToken->getTermText(), $this->_stopSet)) {
+            return null;
+        } else {
+            return $srcToken;
+        }
+    }
+
+    /**
+     * Fills stopwords set from a text file. Each line contains one stopword, lines with '#' in the first
+     * column are ignored (as comments).
+     *
+     * You can call this method one or more times. New stopwords are always added to current set.
+     *
+     * @param string $filepath full path for text file with stopwords
+     * @throws Zend_Search_Exception When the file doesn`t exists or is not readable.
+     */
+    public function loadFromFile($filepath = null) {
+        if (! $filepath || ! file_exists($filepath)) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('You have to provide valid file path');
+        }
+        $fd = fopen($filepath, "r");
+        if (! $fd) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Cannot open file ' . $filepath);
+        }
+        while (!feof ($fd)) {
+            $buffer = trim(fgets($fd));
+            if (strlen($buffer) > 0 && $buffer[0] != '#') {
+                $this->_stopSet[$buffer] = 1;
+            }
+        }
+        if (!fclose($fd)) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Cannot close file ' . $filepath);
+        }
+    }
+}
+

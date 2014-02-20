@@ -1,34 +1,145 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-SbR4RAvwwh05
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Trailer */
+require_once 'Zend/Pdf/Trailer.php';
+
+/** Zend_Pdf_Element_Reference_Context */
+require_once 'Zend/Pdf/Element/Reference/Context.php';
+
+
+/**
+ * PDF file trailer.
+ * Stores and provides access to the trailer parced from a PDF file
+ *
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Trailer_Keeper extends Zend_Pdf_Trailer
+{
+    /**
+     * Reference context
+     *
+     * @var Zend_Pdf_Element_Reference_Context
+     */
+    private $_context;
+
+    /**
+     * Previous trailer
+     *
+     * @var Zend_Pdf_Trailer
+     */
+    private $_prev;
+
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Pdf_Element_Dictionary $dict
+     * @param Zend_Pdf_Element_Reference_Context $context
+     * @param Zend_Pdf_Trailer $prev
+     */
+    public function __construct(Zend_Pdf_Element_Dictionary $dict,
+                                Zend_Pdf_Element_Reference_Context $context,
+                                $prev = null)
+    {
+        parent::__construct($dict);
+
+        $this->_context = $context;
+        $this->_prev    = $prev;
+    }
+
+    /**
+     * Setter for $this->_prev
+     *
+     * @param Zend_Pdf_Trailer_Keeper $prev
+     */
+    public function setPrev(Zend_Pdf_Trailer_Keeper $prev)
+    {
+        $this->_prev = $prev;
+    }
+
+    /**
+     * Getter for $this->_prev
+     *
+     * @return Zend_Pdf_Trailer
+     */
+    public function getPrev()
+    {
+        return $this->_prev;
+    }
+
+    /**
+     * Get length of source PDF
+     *
+     * @return string
+     */
+    public function getPDFLength()
+    {
+        return $this->_context->getParser()->getLength();
+    }
+
+    /**
+     * Get PDF String
+     *
+     * @return string
+     */
+    public function getPDFString()
+    {
+        return $this->_context->getParser()->getString();
+    }
+
+    /**
+     * Get reference table, which corresponds to the trailer.
+     * Proxy to the $_context member methad call
+     *
+     * @return Zend_Pdf_Element_Reference_Context
+     */
+    public function getRefTable()
+    {
+        return $this->_context->getRefTable();
+    }
+
+    /**
+     * Get header of free objects list
+     * Returns object number of last free object
+     *
+     * @throws Zend_Pdf_Exception
+     * @return integer
+     */
+    public function getLastFreeObject()
+    {
+        try {
+            $this->_context->getRefTable()->getNextFree('0 65535 R');
+        } catch (Zend_Pdf_Exception $e) {
+            if ($e->getMessage() == 'Object not found.') {
+                /**
+                 * Here is work around for some wrong generated PDFs.
+                 * We have not found reference to the header of free object list,
+                 * thus we treat it as there are no free objects.
+                 */
+                return 0;
+            }
+
+            throw $e;
+        }
+    }
+}

@@ -1,113 +1,345 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: $
+ */
+
+/**
+ * @see Zend_Filter_Encrypt_Interface
+ */
+require_once 'Zend/Filter/Encrypt/Interface.php';
+
+/**
+ * Encryption adapter for openssl
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_Encrypt_Openssl implements Zend_Filter_Encrypt_Interface
+{
+    /**
+     * Definitions for encryption
+     * array(
+     *     'key' => encryption key string
+     *     'algorithm' => algorithm to use
+     *     'algorithm_directory' => directory where to find the algorithm
+     *     'mode' => encryption mode to use
+     *     'modedirectory' => directory where to find the mode
+     *  ))
+     */
+    protected $_keys = array(
+        'public'   => array(),
+        'private'  => array(),
+        'envelope' => array()
+    );
+
+    /**
+     * Internal passphrase
+     *
+     * @var string
+     */
+    protected $_passphrase;
+
+    /**
+     * Class constructor
+     *
+     * @param string|array $oldfile   File which should be renamed/moved
+     * @param string|array $newfile   New filename, when not set $oldfile will be used as new filename
+     *                                for $value when filtering
+     * @param boolean      $overwrite If set to true, it will overwrite existing files
+     */
+    public function __construct($options = array())
+    {
+        if (!extension_loaded('openssl')) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('This filter needs the openssl extension');
+        }
+
+        if ($options instanceof Zend_Config) {
+            $options = $options->toArray();
+        }
+
+        $this->setPublicKey($options);
+    }
+
+    /**
+     * Returns the set encryption options
+     *
+     * @param  string|array $keys Key with type association
+     * @return Zend_Filter_Encrypt_Openssl
+     */
+    protected function setKeys($keys)
+    {
+        if (!is_array($keys)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Invalid options argument provided to filter');
+        }
+
+        foreach ($keys as $type => $key) {
+            if (is_file($key) and is_readable($key)) {
+                $file = fopen($key, 'r');
+                $cert = fread($file, 8192);
+                fclose($file);
+            } else {
+                $cert = $key;
+                $key  = count($this->_keys[$type]);
+            }
+
+            switch ($type) {
+                case 'public':
+                    $test = openssl_pkey_get_public($cert);
+                    if ($test === false) {
+                        require_once 'Zend/Filter/Exception.php';
+                        throw new Zend_Filter_Exception("Public key '{$cert}' not valid");
+                    }
+
+                    openssl_free_key($test);
+                    $this->_keys['public'][$key] = $cert;
+                    break;
+                case 'private':
+                    $test = openssl_pkey_get_private($cert, $this->_passphrase);
+                    if ($test === false) {
+                        require_once 'Zend/Filter/Exception.php';
+                        throw new Zend_Filter_Exception("Private key '{$cert}' not valid");
+                    }
+
+                    openssl_free_key($test);
+                    $this->_keys['private'][$key] = $cert;
+                    break;
+                case 'envelope':
+                    $this->_keys['envelope'][$key] = $cert;
+                    break;
+                default:
+                    require_once 'Zend/Filter/Exception.php';
+                    throw new Zend_Filter_Exception("Unknown key type '{$type}'");
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns all public keys
+     *
+     * @return array
+     */
+    public function getPublicKey()
+    {
+        return $this->_keys['public'];
+    }
+
+    /**
+     * Sets public keys
+     *
+     * @param  string|array $key Public keys
+     * @return Zend_Filter_Encrypt_Openssl
+     */
+    public function setPublicKey($key)
+    {
+        if (is_array($key)) {
+            foreach($key as $type => $option) {
+                if ($type !== 'public') {
+                    $key['public'] = $option;
+                    unset($key[$type]);
+                }
+            }
+        } else {
+            $key = array('public' => $key);
+        }
+
+        return $this->setKeys($key);
+    }
+
+    /**
+     * Returns all private keys
+     *
+     * @return array
+     */
+    public function getPrivateKey()
+    {
+        return $this->_keys['private'];
+    }
+
+    /**
+     * Sets private keys
+     *
+     * @param  string $key Private key
+     * @param  string $passphrase
+     * @return Zend_Filter_Encrypt_Openssl
+     */
+    public function setPrivateKey($key, $passphrase = null)
+    {
+        if (is_array($key)) {
+            foreach($key as $type => $option) {
+                if ($type !== 'private') {
+                    $key['private'] = $option;
+                    unset($key[$type]);
+                }
+            }
+        } else {
+            $key = array('private' => $key);
+        }
+
+        if ($passphrase !== null) {
+            $this->setPassphrase($passphrase);
+        }
+
+        return $this->setKeys($key);
+    }
+
+    /**
+     * Returns all envelope keys
+     *
+     * @return array
+     */
+    public function getEnvelopeKey()
+    {
+        return $this->_keys['envelope'];
+    }
+
+    /**
+     * Sets envelope keys
+     *
+     * @param  string|array $options Envelope keys
+     * @return Zend_Filter_Encrypt_Openssl
+     */
+    public function setEnvelopeKey($key)
+    {
+        if (is_array($key)) {
+            foreach($key as $type => $option) {
+                if ($type !== 'envelope') {
+                    $key['envelope'] = $option;
+                    unset($key[$type]);
+                }
+            }
+        } else {
+            $key = array('envelope' => $key);
+        }
+
+        return $this->setKeys($key);
+    }
+
+    /**
+     * Returns the passphrase
+     *
+     * @return string
+     */
+    public function getPassphrase()
+    {
+        return $this->_passphrase;
+    }
+
+    /**
+     * Sets a new passphrase
+     *
+     * @param string $passphrase
+     * @return Zend_Filter_Encrypt_Openssl
+     */
+    public function setPassphrase($passphrase)
+    {
+        $this->_passphrase = $passphrase;
+        return $this;
+    }
+
+    /**
+     * Encrypts the file $value with the defined settings
+     * Note that you also need the "encrypted" keys to be able to decrypt
+     *
+     * @param  string $value Content to encrypt
+     * @return string The encrypted content
+     * @throws Zend_Filter_Exception
+     */
+    public function encrypt($value)
+    {
+        $encrypted     = array();
+        $encryptedkeys = array();
+
+        if (count($this->_keys['public']) == 0) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Openssl can not encrypt without public keys');
+        }
+
+        foreach($this->_keys['public'] as $key => $cert) {
+            $keys[$key] = openssl_pkey_get_public($cert);
+        }
+
+        $crypt  = openssl_seal($value, $encrypted, $encryptedkeys, $keys);
+        foreach ($keys as $key) {
+            openssl_free_key($key);
+        }
+
+        if ($crypt === false) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Openssl was not able to encrypt you content with the given options');
+        }
+
+        $this->_keys['envelope'] = $encryptedkeys;
+        return $encrypted;
+    }
+
+    /**
+     * Defined by Zend_Filter_Interface
+     *
+     * Decrypts the file $value with the defined settings
+     *
+     * @param  string $value Content to decrypt
+     * @return string The decrypted content
+     * @throws Zend_Filter_Exception
+     */
+    public function decrypt($value)
+    {
+        $decrypted = "";
+        $envelope  = current($this->getEnvelopeKey());
+
+        if (count($this->_keys['private']) !== 1) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Openssl can only decrypt with one private key');
+        }
+
+        if (empty($envelope)) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Openssl can only decrypt with one envelope key');
+        }
+
+        foreach($this->_keys['private'] as $key => $cert) {
+            $keys = openssl_pkey_get_private($cert, $this->getPassphrase());
+        }
+
+        $crypt  = openssl_open($value, $decrypted, $envelope, $keys);
+        openssl_free_key($keys);
+
+        if ($crypt === false) {
+            require_once 'Zend/Filter/Exception.php';
+            throw new Zend_Filter_Exception('Openssl was not able to decrypt you content with the given options');
+        }
+
+        return $decrypted;
+    }
+
+    /**
+     * Returns the adapter name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'Openssl';
+    }
+}

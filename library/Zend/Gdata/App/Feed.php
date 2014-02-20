@@ -1,90 +1,351 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV56R2B0hnXPKjc0cvAJV2TZOeNAFgmYMQURUi7pEMLFWEiupDZ2ztNJFupLiZ3lZkpkSP/oP1
-JR8xUx3xPi9q9C2B7rmCPGSvE6tYqCUGde8tTF3lsM5OEGymtg1GhYA9gyI53wY8EW2ZdN/acHfJ
-KtxzOVgTmWsq8Am0ZFm75S6mVZxli03jTqj/exZb2T1l7ZwDzxkHVe+t76rAaaLqNzWBMW7MUU0a
-eCyxRLiaEDH7QmhorH5Jn4kJIPpDKor7T+KlBeH2QB9U43fTQymkZPqTrTLc+u9S/+IL7cVfMPKV
-fDS1CNOWCeiZNgrbKEGOsFNtmsGR0F5pEF2cj6UEkG6RIwp64UiREi6su4PN+EZigd3vO0gl3V23
-B2NN37uiGRW0MYJycBv+vQ8wRshz9mSz5q12Wjn4FbhLTgFD5frNMzzd+qQazi0LHTISXNDSpmSW
-k/czfNKtwUvRlEeFSvQDeiHmlP+jwpGU3RaVu3C/g1yNqBACjMvMPZEGyx3bM55sHObjR9bE5XzN
-DA7TRj9yRmv45sKPj0XDv/zxaTbxTSR0Au/bsoiKn/zhqDx1Z/7DqcY35MefVQ7jAFKAWuqdhh5S
-sL8TVe4aVjeaCf72t8Yo7wwNoNx/eSqZW1UqGarW+4dJ30FmeRNK3TOOgu+4NHhqc6sJkbSZmYYL
-UE7RopdVPckTlso2z5kRWfYIRehGmp83CL/RZMsWFiDIcfnYsRQahK21vONke83V0va/xTfdHpQs
-EdWQBTjp+9GaUbGbRfgbKKe2K7P8IFHB0Q7+BRrUiPyU56DlE7VBUBPHK8UFXQ9/dYd3ZJBJqiw+
-BL6+445fi1eLqJEBG4mzOP+yLSC3hEn2lwwt+l2YsRuTKGPsmhkJhbTKgW28WVcI2KuTLbO8mVMA
-qy4wbEyAkgs+VHOpINb4PiBbaoA6KVkOy8EB3s42PJKW2T5TVeV16tPAWSqmUatsOHQ4YlzrToRo
-mSaPXPVy+6pw0Q8wjPmvWOKNtJW9hKHl6Sl3yBX/BXXxSyqdAqUjgdAfolKQReR4NcDJ11okwGTT
-S35+vNTSTTUmK5U5KL7906DBZ+SLZD/xN0Cw8JtCEptHmpaOh4aTfi+u31G9zTxX/Hhy7Z3FPgVs
-AJ7VvGfSyl+DnaPGeEcmm1XMcpzJChQGVrObYAawU2zd4O5y2tFl1DaEv/Voc1Zb1cnzabu6KrTB
-bZZMJl4+PtxLI45khEw06UVDLmvFukuKr6w1XY76307nFNdhfPZ0Wgt3+fCFjBCkRdIeERPw6tRJ
-BxVE24Uvcup7hbAnbpOq2i6UlV/DkwAaTfOO/tnTIJaeBTUqABrQHAJFmkjQ48XwnTisVji7p5Xi
-Ts4iGXLrdDTUFV2czAbtpiQrRGri3RONZ5bTcONWkFRjNqfcgUjuLsAdzC9/tKvxUOZTUzcUcro9
-rHlJ/j2INOym+N7DerffYoJr9j3jBSjLqfjELCILcKOOSBLpqau0p0VizGk+HwFAdNTBZNwIjJkT
-59BSEjoxqtZDTCqexdYsZIZoDzhVIJ0ImiK5llz7HDNeqGdWcQg4eWVAy8Aumssq4f1RA+3c+LuB
-N81YXaiBf4OhK46Crt1PYwE5BaujDg7c2mbQvtBbTRjdXNEYcvXSOyKCMq9bpsUIGzm3bMwMpMiw
-3hNJyIuCqgm7K9nJaE/Y5dTDLP0pCvjHFflGdrwmTi3HbUDwJ7Nrplm30O0X26n7qx18z+WRUDDR
-CeiTKiGbn/Y8oYAWooup+YhlGfbSmk/UT2m4J35m3WvxcR17ltxKEgDOreRfZDsNyCX06Wl57Ypx
-YgcAoBIcs2v2jlqeN3wmZK8vg0BbuMaf4fTvjzAQF+NAH6AGr2G4zrpN/M4SE4kTrYfQ2/9s1xNV
-SyP0GvxrwCuMxH0A1E+nwskIOGoYINO1sNSq5LL9hRQXACPnRMkcQlZSXbGsN+MY1lDsUhm8qpGM
-aavJemaSRJ6GIQoszt1YU/XKEUmNWkWcsiMJBA2PVF/pGxA89yDjgVve/D7cMejMobLKmiuo7esh
-FTl6yNA+aobib7RKRPZzWl3T3SzX0ltoDG03SysGPs/akA9qA3TYwzkVZFoxhlnU0+Ff0/XqODP0
-jCgKjCqlgq0cQnT3K+l+cVYpt+y99GZQyVYF7OjfPwRxSK8noJdE27SMs/0VY+nopVhBmTIX6MXt
-3U3PTCV1HtdUs7fnjNKJWIPy9PpAQnQxaH2oJB15qgIRxzSXhxI2LB0K0NyD6bdr0gG9a+i5sCSh
-JLG0U5+2+0VzcKlLZi4aj3BsV2Qbvu7eSqu8KT3JnvjdiKsZbAsFfj3Sr9OxjFwkzD2zKxQgBi7g
-5JaMRelWRL6eDKSFzzNhXtOQEi7i2/HbKcfLau9HxMA2Z8mGo890L/OE6RK34GKfIQ+zKTWvkJKP
-BXFAYi4e7T5I6yboi9c9U1Ux0YM6yS/PXpeV7S8w0QNryt82ZMTvPV9suhLBCi1YB3YVKbY6NztX
-bf1ZaELs8JUOaePloTLD7uUnWNPoSfsz8U0tLIwqcuX4QA9/tvDBsMg+1+V6cUolA3VVA1t7c4+m
-sBQhFf33GzJwm0HJ12gfi17RfzIkEJCgcJer/dTlu/PFsRg9ZSdHPkQn3QZ7CYusQ0mhBDpex0ES
-hy7MhlUo70z8Zp6W7LKMTq6sJvOWSRM+wWtAHQsW06k7Wr3/gQ9zU35MfUoVJjfUMXFFLzvHP5oW
-ssf6p4Pi0vHfZ3eYWgQ883jx+hAp/tHa354c5UcYJ4nJIcHN9n+G1Z6+LlAG8zI6bUgt60IIhoEl
-gu7I5Ta5PUlVcoecTPXuDG4bGZ2ZF+kQtKQ643YJgPsva4z+wBGvZekTL3CXk1X/QY/6NOvmAk+x
-Ld0nZHCSF+NVvparH16uibP/e1HkQTH4ojGQn2E2dYKjTP/Pj/tzT/BBY2zAIxb9SGXtWYhlsczc
-qcKVmNLafCCtTxWAP1WuaXxnaYFOSU8X+sUZ4sJXZvpK7AAMxNDXbl42pvnU+8IeG2MwAWN5ByCn
-Pgnjt37ZAlSgMu5Qz91OOp5x+tqnW68uHyb5WHQ0i8d4GXsG0ulORGgYq4GUs6Ts5dJ5S/G5+bjB
-UsxWtFpgBoAT1maCN1d1nFaoEoiBYK9JPrvYs8DGl4Hcbom8m4349Cb/QvARx7GTrJKJ1DFljV6y
-7vaCukZnofHNHH8cCalOPGVveQm7mp8eswh/GC7V8/jw5NQ62oGMujUoGJI/uiHCPoXanBrgNJPt
-ECyEFNRO2a/DJRYEa8QhmzvXUPr/bwm5+982Z9ag5EkH2h1TFORGlQVEY5+U9x5j8pxPg/hetXz+
-1mFRNDkFg6wANg5qPk225ET6NyaRgITStnSTYi981xMx5IQQdQ5g6qDntQyzStUw3uK+2W5/XRAk
-UUlcLqCwNCTTf8fQDWwdRI6rtnqnqkSvHV4oB9Rh3DJamNXSmv+73jFloq3Q7IJwy0lPDXs1vTPJ
-CvH/CKiXn3JklHFb3NMwn6e/qLPQYo0VJqIzhwzQwDnfbO6UtnSVmdOkGj0D8/QU92qRvLHjx296
-mVWCQXpopwEZCWfW/7AjqjeC0D3Bi4hMwkxmQ4Gw37ck70d8Vf0d5GlCKoojbg2+HhfQpXS99YBw
-EvjBGgbHa4HLyo2oGboOqH+nLT1HcmnwTc/k8jIP5KQuv4NlUCtWPqXZjjDOUBLzOHI9DkeijtF/
-Qmiv/9hfeNabNth4koABcNS1CPUfIlq5aku3W/ODj8CqKO8KyUi9UoNCZVhYteMvtuS++pS3eyCt
-bDaa8BJPMBvRJOwUTYKoIghVie14Yz5len75iLJtklKavkjm15xdEwLNnP8ObUbPabj8ug1BVnyt
-q0Q3+32+mcy75+LE8qo3qx04v/+ER7LQ5hjN+0kBZHPiA2TRR0HhWEFWNLM3cQ5s0vdOZGncKcx8
-ZF/zWv7robCetOZVl8tCz8RWzXJk6ShXSmjXRyjb1mG4RQvTytS9WhtSCcY4AStEtz4b1pex+Jj5
-yRfcBbkoJ+Fyr8IRWT+b6luzQwgm6mhvFeQf9b5XYPDHkYy20kl9dhT8JVOzqWJWWRvV/bwPMEFR
-C+UYGxhVSnGjvl5AQKeS95NsT7zIMDF4kQzeI+7n7jh+3ORZhG6+3D7dfybNIX1/4Keu8m5J0ced
-7MypsUubw1PX2fXkxRiM1obBWywhc5PelH1f9T1ebZv1YK8j3W9j0+/kQVQ/7goWQ0HpNRIl8mRt
-/lhuiv/Zfe/IlXregI0Ux5TuUQMOwT9ZutpIWPovws5yLO49r+DGL4rWVcqGtKhhbVMgewgFrB8E
-66NmZqNzZM/Fv02ayu8jV2WgzuCmzH/zmFCnxoaW9RBRQH47gJQNjknRfglk3O7dGEYiMGsZV2EZ
-aFWfsG9xBBAq5s5rdj4KhMpPzXYM3lztZIN5RUrZGFm2yoQUMSR7FuhDxYMNguWnW5xYqQ8pbc8J
-woVfwedNbS+cQ9mombJeUjXm1Vxaayk0/VtM/X84g0RC5I1xyamL8oI1orPjt97VumgmVumTEGAq
-mjiCPfYb0gQH7h0GGTU03ejjz6t8RHEiwTxvmYvdNVe2fd70J3RsdoQlQGLCrZDSH4vVUIQy/UuC
-GT+L6BEnUKbis9LnH1QPMkYIvqtr3xQaK07C/ZCirrZdrtNWvGK30OgIUflCJBTIj+yXDB4hTtz5
-E5WT3OlnYyBcsNJA3l0NPUgr0cyGHn3uhmIGhPEY8xImq3w7Tcep+2kX9CSaQr625JaVteru1Fwt
-Ps/fIPyIv4kPEMDIwAYzx9H1bzdco6UrltCarxud/N4d+UTlTo8cOrAon0lRLYmPHCCRAwdVL2G9
-39t8azvWGd+MrQS6kSmMGMGY9Y1JPrjIgF4czP/k1HNUbPUO1wTeQ/Im9IVBebwgGoIk3VzIb8gc
-6m4J1cj2KXOZsuBJhTU+MPsKN4pRL61NukU0gp9+rsA2yMbLyWQq5c56ok1nE5kfmcuXi9sqQA9Y
-uJwezU6VGpKfucH5GzjFi3PkimA8GkbrvFdzQNb0rIWwdvjf+rZpI6Rwg7/rkPzKRo26IQJYOdMF
-CRb1hyvx3wN5DMVpiQ2K4dAkK8ilwwRDGb8gh8mkA2kiRWzvIRskkzIOrR4pUnme4bFXkj9j+uTS
-FqnGQoVxJpZOFzglacq35bLxvJWFu0hGrHhQyIL7NVytA8fmTYg3q5YCIkLGSZeBvOOC9TxzZgp8
-sLNEGkDgV2IBZjTEbOGCFbkwECLghSgeBNKLynTEv3JiU4IDnQPKPZ1Ws4r4WjhmLdZllpA3HHkq
-tCf/wvb3AFFqeviTm/Ioxummcl+HRVbYHA3REl60sztjXIVuwhyeiJY7KrKi+J7S1xRDgSVeB65A
-LqjU6eTgetpIudAO9GCVI/izPRlAYXy+ZHCYKE7GQ2OIzeOmcMgLKidLSs7rg8F45H1BNdoNbyK2
-V/JVRPiZ8y5ACV/T0m8MDI+xuEcZe+Gj3h5Leqw26E/XvC8ZVXWEHjZTbSFpXG7M+FqxwD8THJ1t
-sAXmOpNr5cN31aYc5USuU1NjkSbYo1Bwy4kNxgjF9HC6EnhWNBlnm6pAvCpQU/lGfNZk/2qsW0Bd
-s9tczbSL4O3779hsSLn+vwgy0bWk8Bqxj9sjCdlcXiauExkUa55W6++AvGdAzdyxIFkwTZ83PxTb
-K4n9R+nUXglm6q3PB7+JwE4rCpBMT2sma/8tDFcBDZC3v7ftqf88LNby6e7bWpSPAQSrjBu6IyQe
-76KcldlVVOVPt5GbiuPSCdrLSakC80zes6rnTDwuLHrBKTYbyb1yrp49TpJ26de8ibZg352+XULa
-ZR+QHerlhqYmCUqcSkvkgQt5o+p16vtz9L04EbHvL72V2AcdDcppHuRq+z5YrIEbyMx/UQCobGnr
-y0kTRpf+HAvjGAyPygYsxIIxxgnJ9E6MwSM7ETuVkS9x627m4eRdkfLg1L0o+sq2SDeJjdB7BTp/
-teUgVy03fzYbfrez+BueguRJW5H+WCZwMKRI6OqdbjfK3LBFWa7FQbCATHCUSr+pAwOvr2124SHv
-R0nJRBGxTL+WgVRCRUVj7dG2wNJPXL9WdCsOd7LI9m8YQ7/C25aoJjQiCpriqCbXPlb+71T8vex4
-juIpt9VOSIlsfrbxItqDLPmIDJA2ucZiazFpIPrPNturHb6SV96CQ6AX/Zc+abeg5768LLj90Vn3
-wtv5SV4PPAEsGy13lapncViqjBC35rbirp7RPr4xS+L4IOajDE3moy1RvMD6X/53maKu42qpaboI
-bVrw3A2qXRJrXZ2Aw+HG5t1uZ6zuRPn9MsH+UkicOL/h+Pl+visdDxCYTIoVApr6pxbvKsyT3is1
-nj+W+WW5PmdUq+LZfQHLIJj/ztJK7F2xzx/U8uDPpflIATQ5T8IjXU1juMI638D8XnJZboIJ2iFx
-w/n5sPsn5oihd8OEEWumB4pAYS3sANZLbR4KFZawpLSkFXA34/1r9l8HgSCGefT/2UvP8oajDoTF
-4Fv81VqpMSeFhW1XG2wbS3ts53dcbvMaV6xTGteeoPSChQDYmw18DqY8
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_Entry
+ */
+require_once 'Zend/Gdata/App/Entry.php';
+
+/**
+ * @see Zend_Gdata_App_FeedSourceParent
+ */
+require_once 'Zend/Gdata/App/FeedSourceParent.php';
+
+/**
+ * Atom feed class
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
+        implements Iterator, ArrayAccess
+{
+
+    /**
+     * The root xml element of this data element
+     *
+     * @var string
+     */
+    protected $_rootElement = 'feed';
+
+    /**
+     * Cache of feed entries.
+     *
+     * @var array
+     */
+    protected $_entry = array();
+
+    /**
+     * Current location in $_entry array
+     *
+     * @var int
+     */
+    protected $_entryIndex = 0;
+
+    /**
+     * Make accessing some individual elements of the feed easier.
+     *
+     * Special accessors 'entry' and 'entries' are provided so that if
+     * you wish to iterate over an Atom feed's entries, you can do so
+     * using foreach ($feed->entries as $entry) or foreach
+     * ($feed->entry as $entry).
+     *
+     * @param  string $var The property to get.
+     * @return mixed
+     */
+    public function __get($var)
+    {
+        switch ($var) {
+            case 'entries':
+                return $this;
+            default:
+                return parent::__get($var);
+        }
+    }
+
+    /**
+     * Retrieves the DOM model representing this object and all children
+     *
+     * @param DOMDocument $doc
+     * @return DOMElement
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        foreach ($this->_entry as $entry) {
+            $element->appendChild($entry->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    /**
+     * Creates individual Entry objects of the appropriate type and
+     * stores them in the $_entry array based upon DOM data.
+     *
+     * @param DOMNode $child The DOMNode to process
+     */
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('atom') . ':' . 'entry':
+            $newEntry = new $this->_entryClassName($child);
+            $newEntry->setHttpClient($this->getHttpClient());
+            $newEntry->setMajorProtocolVersion($this->getMajorProtocolVersion());
+            $newEntry->setMinorProtocolVersion($this->getMinorProtocolVersion());
+            $this->_entry[] = $newEntry;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Get the number of entries in this feed object.
+     *
+     * @return integer Entry count.
+     */
+    public function count()
+    {
+        return count($this->_entry);
+    }
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_entryIndex = 0;
+    }
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return mixed The current row, or null if no rows.
+     */
+    public function current()
+    {
+        return $this->_entry[$this->_entryIndex];
+    }
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return mixed The current row number (starts at 0), or NULL if no rows
+     */
+    public function key()
+    {
+        return $this->_entryIndex;
+    }
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return mixed The next row, or null if no more rows.
+     */
+    public function next()
+    {
+        ++$this->_entryIndex;
+    }
+
+    /**
+     * Required by the Iterator interface.
+     *
+     * @return boolean Whether the iteration is valid
+     */
+    public function valid()
+    {
+        return 0 <= $this->_entryIndex && $this->_entryIndex < $this->count();
+    }
+
+    /**
+     * Gets the array of atom:entry elements contained within this
+     * atom:feed representation
+     *
+     * @return array Zend_Gdata_App_Entry array
+     */
+    public function getEntry()
+    {
+        return $this->_entry;
+    }
+
+    /**
+     * Sets the array of atom:entry elements contained within this
+     * atom:feed representation
+     *
+     * @param array $value The array of Zend_Gdata_App_Entry elements
+     * @return Zend_Gdata_App_Feed Provides a fluent interface
+     */
+    public function setEntry($value)
+    {
+        $this->_entry = $value;
+        return $this;
+    }
+
+    /**
+     * Adds an entry representation to the array of entries
+     * contained within this feed
+     *
+     * @param Zend_Gdata_App_Entry An individual entry to add.
+     * @return Zend_Gdata_App_Feed Provides a fluent interface
+     */
+    public function addEntry($value)
+    {
+        $this->_entry[] = $value;
+        return $this;
+    }
+
+    /**
+     * Required by the ArrayAccess interface
+     *
+     * @param int $key The index to set
+     * @param Zend_Gdata_App_Entry $value The value to set
+     * @return void
+     */
+    public function offsetSet($key, $value)
+    {
+        $this->_entry[$key] = $value;
+    }
+
+    /**
+     * Required by the ArrayAccess interface
+     *
+     * @param int $key The index to get
+     * @param Zend_Gdata_App_Entry $value The value to set
+     */
+    public function offsetGet($key)
+    {
+        if (array_key_exists($key, $this->_entry)) {
+            return $this->_entry[$key];
+        }
+    }
+
+    /**
+     * Required by the ArrayAccess interface
+     *
+     * @param int $key The index to set
+     * @param Zend_Gdata_App_Entry $value The value to set
+     */
+    public function offsetUnset($key)
+    {
+        if (array_key_exists($key, $this->_entry)) {
+            unset($this->_entry[$key]);
+        }
+    }
+
+    /**
+     * Required by the ArrayAccess interface
+     *
+     * @param int $key The index to check for existence
+     * @return boolean
+     */
+    public function offsetExists($key)
+    {
+        return (array_key_exists($key, $this->_entry));
+    }
+
+   /**
+     * Retrieve the next set of results from this feed.
+     *
+     * @throws Zend_Gdata_App_Exception
+     * @return mixed|null Returns the next set of results as a feed of the same
+     *          class as this feed, or null if no results exist.
+     */
+    public function getNextFeed()
+    {
+        $nextLink = $this->getNextLink();
+        if (!$nextLink) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_Exception('No link to next set ' .
+            'of results found.');
+        }
+        $nextLinkHref = $nextLink->getHref();
+        $service = new Zend_Gdata_App($this->getHttpClient());
+
+        return $service->getFeed($nextLinkHref, get_class($this));
+    }
+
+   /**
+     * Retrieve the previous set of results from this feed.
+     *
+     * @throws Zend_Gdata_App_Exception
+     * @return mixed|null Returns the previous set of results as a feed of
+     *          the same class as this feed, or null if no results exist.
+     */
+    public function getPreviousFeed()
+    {
+        $previousLink = $this->getPreviousLink();
+        if (!$previousLink) {
+            require_once 'Zend/Gdata/App/HttpException.php';
+            throw new Zend_Gdata_App_Exception('No link to previous set ' .
+            'of results found.');
+        }
+        $previousLinkHref = $previousLink->getHref();
+        $service = new Zend_Gdata_App($this->getHttpClient());
+
+        return $service->getFeed($previousLinkHref, get_class($this));
+    }
+
+    /**
+     * Set the major protocol version that should be used. Values < 1 will
+     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
+     *
+     * This value will be propogated to all child entries.
+     *
+     * @see _majorProtocolVersion
+     * @param (int|NULL) $value The major protocol version to use.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function setMajorProtocolVersion($value)
+    {
+        parent::setMajorProtocolVersion($value);
+        foreach ($this->entries as $entry) {
+            $entry->setMajorProtocolVersion($value);
+        }
+    }
+
+    /**
+     * Set the minor protocol version that should be used. If set to NULL, no
+     * minor protocol version will be sent to the server. Values < 0 will
+     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
+     *
+     * This value will be propogated to all child entries.
+     *
+     * @see _minorProtocolVersion
+     * @param (int|NULL) $value The minor protocol version to use.
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
+    public function setMinorProtocolVersion($value)
+    {
+        parent::setMinorProtocolVersion($value);
+        foreach ($this->entries as $entry) {
+            $entry->setMinorProtocolVersion($value);
+        }
+    }
+
+}

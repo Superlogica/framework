@@ -1,197 +1,681 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Audioscrobbler
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Audioscrobbler.php 14809 2009-04-09 19:01:40Z beberlei $
+ */
+
+
+/**
+ * @see Zend_Http_Client
+ */
+require_once 'Zend/Http/Client.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Audioscrobbler
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Audioscrobbler
+{
+    /**
+     * Zend_Http_Client Object
+     *
+     * @var     Zend_Http_Client
+     * @access  protected
+     */
+    protected $_client;
+
+    /**
+     * Array that contains parameters being used by the webservice
+     *
+     * @var     array
+     * @access  protected
+     */
+    protected $_params;
+
+    /**
+     * Holds error information (e.g., for handling simplexml_load_string() warnings)
+     *
+     * @var     array
+     * @access  protected
+     */
+    protected $_error = null;
+
+
+    /**
+     * Sets up character encoding, instantiates the HTTP client, and assigns the web service version.
+     */
+    public function __construct()
+    {
+        $this->set('version', '1.0');
+
+        iconv_set_encoding('output_encoding', 'UTF-8');
+        iconv_set_encoding('input_encoding', 'UTF-8');
+        iconv_set_encoding('internal_encoding', 'UTF-8');
+    }
+
+    /**
+     * Set Http Client
+     * 
+     * @param Zend_Http_Client $client
+     */
+    public function setHttpClient(Zend_Http_Client $client)
+    {
+        $this->_client = $client;
+    }
+
+    /**
+     * Get current http client.
+     * 
+     * @return Zend_Http_Client
+     */
+    public function getHttpClient()
+    {
+        if($this->_client == null) {
+            $this->lazyLoadHttpClient();
+        }
+        return $this->_client;
+    }
+
+    /**
+     * Lazy load Http Client if none is instantiated yet.
+     *
+     * @return void
+     */
+    protected function lazyLoadHttpClient()
+    {
+        $this->_client = new Zend_Http_Client();
+    }
+
+    /**
+     * Returns a field value, or false if the named field does not exist
+     *
+     * @param  string $field
+     * @return string|false
+     */
+    public function get($field)
+    {
+        if (array_key_exists($field, $this->_params)) {
+            return $this->_params[$field];
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Generic set action for a field in the parameters being used
+     *
+     * @param  string $field name of field to set
+     * @param  string $value value to assign to the named field
+     * @return Zend_Service_Audioscrobbler Provides a fluent interface
+     */
+    public function set($field, $value)
+    {
+        $this->_params[$field] = urlencode($value);
+
+        return $this;
+    }
+
+    /**
+     * Protected method that queries REST service and returns SimpleXML response set
+     *
+     * @param  string $service name of Audioscrobbler service file we're accessing
+     * @param  string $params  parameters that we send to the service if needded
+     * @throws Zend_Http_Client_Exception
+     * @throws Zend_Service_Exception
+     * @return SimpleXMLElement result set
+     * @access protected
+     */
+    protected function _getInfo($service, $params = null)
+    {
+        $service = (string) $service;
+        $params  = (string) $params;
+
+        if ($params === '') {
+            $this->getHttpClient()->setUri("http://ws.audioscrobbler.com{$service}");
+        } else {
+            $this->getHttpClient()->setUri("http://ws.audioscrobbler.com{$service}?{$params}");
+        }
+
+        $response     = $this->getHttpClient()->request();
+        $responseBody = $response->getBody();
+
+        if (preg_match('/No such path/', $responseBody)) {
+            /**
+             * @see Zend_Http_Client_Exception
+             */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('Could not find: ' . $this->_client->getUri());
+        } elseif (preg_match('/No user exists with this name/', $responseBody)) {
+            /**
+             * @see Zend_Http_Client_Exception
+             */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('No user exists with this name');
+        } elseif (!$response->isSuccessful()) {
+            /**
+             * @see Zend_Http_Client_Exception
+             */
+            require_once 'Zend/Http/Client/Exception.php';
+            throw new Zend_Http_Client_Exception('The web service ' . $this->_client->getUri() . ' returned the following status code: ' . $response->getStatus());
+        }
+
+        set_error_handler(array($this, '_errorHandler'));
+
+        if (!$simpleXmlElementResponse = simplexml_load_string($responseBody)) {
+            restore_error_handler();
+            /**
+             * @see Zend_Service_Exception
+             */
+            require_once 'Zend/Service/Exception.php';
+            $exception = new Zend_Service_Exception('Response failed to load with SimpleXML');
+            $exception->error    = $this->_error;
+            $exception->response = $responseBody;
+            throw $exception;
+        }
+
+        restore_error_handler();
+
+        return $simpleXmlElementResponse;
+    }
+
+    /**
+    * Utility function to get Audioscrobbler profile information (eg: Name, Gender)
+     * 
+    * @return array containing information
+    */
+    public function userGetProfileInformation()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/profile.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function get this user's 50 most played artists
+     * 
+     * @return array containing info
+    */
+    public function userGetTopArtists()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/topartists.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function to get this user's 50 most played albums
+     *
+     * @return SimpleXMLElement object containing result set
+    */
+    public function userGetTopAlbums()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/topalbums.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function to get this user's 50 most played tracks
+     * @return SimpleXML object containing resut set
+    */
+    public function userGetTopTracks()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/toptracks.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function to get this user's 50 most used tags
+     * 
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetTopTags()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/tags.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns the user's top tags used most used on a specific artist
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetTopTagsForArtist()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/artisttags.xml";
+        $params = "artist={$this->get('artist')}";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Utility function that returns this user's top tags for an album
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetTopTagsForAlbum()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/albumtags.xml";
+        $params = "artist={$this->get('artist')}&album={$this->get('album')}";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Utility function that returns this user's top tags for a track
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetTopTagsForTrack()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/tracktags.xml";
+        $params = "artist={$this->get('artist')}&track={$this->get('track')}";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Utility function that retrieves this user's list of friends
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetFriends()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/friends.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of people with similar listening preferences to this user
+     * 
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetNeighbours()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/neighbours.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of the 10 most recent tracks played by this user
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetRecentTracks()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/recenttracks.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of the 10 tracks most recently banned by this user
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetRecentBannedTracks()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/recentbannedtracks.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of the 10 tracks most recently loved by this user
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetRecentLovedTracks()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/recentlovedtracks.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of dates of available weekly charts for a this user
+     *
+     * Should actually be named userGetWeeklyChartDateList() but we have to follow audioscrobbler's naming
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetWeeklyChartList()
+    {
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/weeklychartlist.xml";
+        return $this->_getInfo($service);
+    }
+
+
+    /**
+     * Utility function that returns weekly album chart data for this user
+     *
+     * @param integer $from optional UNIX timestamp for start of date range
+     * @param integer $to optional UNIX timestamp for end of date range
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetWeeklyAlbumChart($from = NULL, $to = NULL)
+    {
+        $params = "";
+
+        if ($from != NULL && $to != NULL) {
+            $from = (int)$from;
+            $to = (int)$to;
+            $params = "from={$from}&to={$to}";
+        }
+
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/weeklyalbumchart.xml";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Utility function that returns weekly artist chart data for this user
+     *
+     * @param integer $from optional UNIX timestamp for start of date range
+     * @param integer $to optional UNIX timestamp for end of date range
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetWeeklyArtistChart($from = NULL, $to = NULL)
+    {
+        $params = "";
+
+        if ($from != NULL && $to != NULL) {
+            $from = (int)$from;
+            $to = (int)$to;
+            $params = "from={$from}&to={$to}";
+        }
+
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/weeklyartistchart.xml";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Utility function that returns weekly track chart data for this user
+     *
+     * @param integer $from optional UNIX timestamp for start of date range
+     * @param integer $to optional UNIX timestamp for end of date range
+     * @return SimpleXMLElement object containing result set
+     */
+    public function userGetWeeklyTrackChart($from = NULL, $to = NULL)
+    {
+        $params = "";
+
+        if ($from != NULL && $to != NULL) {
+            $from = (int)$from;
+            $to = (int)$to;
+            $params = "from={$from}&to={$to}";
+        }
+
+        $service = "/{$this->get('version')}/user/{$this->get('user')}/weeklytrackchart.xml";
+        return $this->_getInfo($service, $params);
+    }
+
+
+    /**
+     * Utility function that returns a list of artists similiar to this artist
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function artistGetRelatedArtists()
+    {
+        $service = "/{$this->get('version')}/artist/{$this->get('artist')}/similar.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of this artist's top listeners
+     *
+     * @return SimpleXMLElement object containing result set
+     */
+    public function artistGetTopFans()
+    {
+        $service = "/{$this->get('version')}/artist/{$this->get('artist')}/fans.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of this artist's top-rated tracks
+     * 
+     * @return SimpleXMLElement object containing result set
+     */
+    public function artistGetTopTracks()
+    {
+        $service = "/{$this->get('version')}/artist/{$this->get('artist')}/toptracks.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of this artist's top-rated albums
+     * 
+     * @return SimpleXMLElement object containing result set
+     */
+    public function artistGetTopAlbums()
+    {
+        $service = "/{$this->get('version')}/artist/{$this->get('artist')}/topalbums.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Utility function that returns a list of this artist's top-rated tags
+     * 
+     * @return SimpleXMLElement object containing result set
+     */
+    public function artistGetTopTags()
+    {
+        $service = "/{$this->get('version')}/artist/{$this->get('artist')}/toptags.xml";
+        return $this->_getInfo($service);
+    }
+
+
+    /**
+     * Get information about an album
+     *
+     * @return SimpleXMLElement
+     */
+    public function albumGetInfo()
+    {
+        $service = "/{$this->get('version')}/album/{$this->get('artist')}/{$this->get('album')}/info.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get top fans of the current track.
+     * 
+     * @return SimpleXMLElement
+     */
+    public function trackGetTopFans()
+    {
+        $service = "/{$this->get('version')}/track/{$this->get('artist')}/{$this->get('track')}/fans.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get top tags of the current track.
+     *
+     * @return SimpleXMLElement
+     */
+    public function trackGetTopTags()
+    {
+        $service = "/{$this->get('version')}/track/{$this->get('artist')}/{$this->get('track')}/toptags.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get Top Tags.
+     *
+     * @return SimpleXMLElement
+     */
+    public function tagGetTopTags()
+    {
+        $service = "/{$this->get('version')}/tag/toptags.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get top albums by current tag.
+     *
+     * @return SimpleXMLElement
+     */
+    public function tagGetTopAlbums()
+    {
+        $service = "/{$this->get('version')}/tag/{$this->get('tag')}/topalbums.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get top artists by current tag.
+     * 
+     * @return SimpleXMLElement
+     */
+    public function tagGetTopArtists()
+    {
+        $service = "/{$this->get('version')}/tag/{$this->get('tag')}/topartists.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get Top Tracks by currently set tag.
+     *
+     * @return SimpleXMLElement
+     */
+    public function tagGetTopTracks()
+    {
+        $service = "/{$this->get('version')}/tag/{$this->get('tag')}/toptracks.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Get weekly chart list by current set group.
+     *
+     * @see set()
+     * @return SimpleXMLElement
+     */
+    public function groupGetWeeklyChartList()
+    {
+        $service = "/{$this->get('version')}/group/{$this->get('group')}/weeklychartlist.xml";
+        return $this->_getInfo($service);
+    }
+
+    /**
+     * Retrieve weekly Artist Charts
+     *
+     * @param  int $from
+     * @param  int $to
+     * @return SimpleXMLElement
+     */
+    public function groupGetWeeklyArtistChartList($from = NULL, $to = NULL)
+    {
+
+        if ($from != NULL && $to != NULL) {
+            $from = (int)$from;
+            $to = (int)$to;
+            $params = "from={$from}&$to={$to}";
+        } else {
+            $params = "";
+        }
+
+        $service = "/{$this->get('version')}/group/{$this->get('group')}/weeklyartistchart.xml";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Retrieve Weekly Track Charts
+     *
+     * @param  int $from
+     * @param  int $to
+     * @return SimpleXMLElement
+     */
+    public function groupGetWeeklyTrackChartList($from = NULL, $to = NULL)
+    {
+        if ($from != NULL && $to != NULL) {
+            $from = (int)$from;
+            $to = (int)$to;
+            $params = "from={$from}&to={$to}";
+        } else {
+            $params = "";
+        }
+
+        $service = "/{$this->get('version')}/group/{$this->get('group')}/weeklytrackchart.xml";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Retrieve Weekly album charts.
+     * 
+     * @param int $from
+     * @param int $to
+     * @return SimpleXMLElement
+     */
+    public function groupGetWeeklyAlbumChartList($from = NULL, $to = NULL)
+    {
+        if ($from != NULL && $to != NULL) {
+            $from = (int)$from;
+            $to = (int)$to;
+            $params = "from={$from}&to={$to}";
+        } else {
+            $params = "";
+        }
+
+        $service = "/{$this->get('version')}/group/{$this->get('group')}/weeklyalbumchart.xml";
+        return $this->_getInfo($service, $params);
+    }
+
+    /**
+     * Saves the provided error information to this instance
+     *
+     * @param  integer $errno
+     * @param  string  $errstr
+     * @param  string  $errfile
+     * @param  integer $errline
+     * @param  array   $errcontext
+     * @return void
+     */
+    protected function _errorHandler($errno, $errstr, $errfile, $errline, array $errcontext)
+    {
+        $this->_error = array(
+            'errno'      => $errno,
+            'errstr'     => $errstr,
+            'errfile'    => $errfile,
+            'errline'    => $errline,
+            'errcontext' => $errcontext
+            );
+    }
+
+    /**
+     * Call Intercept for set($name, $field)
+     *
+     * @param  string $method
+     * @param  array  $args
+     * @return Zend_Service_Audioscrobbler
+     */
+    public function __call($method, $args)
+    {
+        if(substr($method, 0, 3) !== "set") {
+            require_once "Zend/Service/Exception.php";
+            throw new Zend_Service_Exception(
+                "Method ".$method." does not exist in class Zend_Service_Audioscrobbler."
+            );
+        }
+        $field = strtolower(substr($method, 3));
+
+        if(!is_array($args) || count($args) != 1) {
+            require_once "Zend/Service/Exception.php";
+            throw new Zend_Service_Exception(
+                "A value is required for setting a parameter field."
+            );
+        }
+        $this->set($field, $args[0]);
+
+        return $this;
+    }
+}

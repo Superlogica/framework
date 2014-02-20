@@ -1,29 +1,92 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV51J7BQkWB9QCgNAuYF8jk7sig4GXxo3HYEwRL9NwVfX5/vdBXanI7fkBEzZWZHVWmQtBfkjo
-SQkKIhOqr/UdwIwOTAJ1kJ4/u97FdLZ6XwfSrU6qpEM9uNLy6FDOdl+AEGKg4qdgJno0zIRUPSiz
-vXotcFCbMPT8Z2r0JcU0sgDQdF75H52J1yxQdj8KX/Kb315j4bdOg4HhaTJl+IeNNeQDPhTUgWDY
-30LJJejAsyzdYjmRbsAe4CHBaqcSpLCjHtVbBow4GcZ4Ph91vc8nwoLKrrdLTkmALp5+sfwtAV24
-Ev6mIULukrSoMgs2Ban8+FxMULH/C36dUQdjxx8FYsuB9oyMTwCJ6PCkbvC16CD2EBLPgAAoUgDU
-sat0sAN05xPkpHQQCO67EBHPe1Gb6JV6bWQKb5Tm6nCC+QKa13zKlwHw3z/dNOQleyCHRmYfRG2f
-OxZAXPK6w8Z9zqS/3QSbH/bKShv4W6rlw/bqKsIKKURNfC5BUaOwWBQ2RtWz9GiSyDidcZELQklr
-Wk7SINiKv7e2gGmTbEmfxiP8wWldlI8O6NS+Lu1zkqz4+ry8jKK4naro2J3Ib77uUxcz0VtSfkt0
-e77q7c9gGF7nX+stRO5dw6zM6Z1KfI6i8/rxCCHJJrf+7ZyHdEDJlKrFDiVAzCfGtJa8W2tiQ7YP
-KJNxaNFgCaxxVNBSx7E8yKG10fjhCs6R6SxG3o36IcBQc1FBIsO0bTHFP9fSNRvRlShQXp6PPSq1
-9AFauiWzRqJcWsLhOyt7VS2MDj3vykBI5+gS2y1FSFUmwt7MebMTqCrL8pBFlCSrmg6fD3ciaF/d
-J8E3ZPuhauWY6KMgFhjEmj29cvWKiG2mwjZyridqaO8G6s62UZHIleo3yErb9Nx13W2baZkp3w6u
-psfvXp6rBeTizMsp9qn+45M8/cM4byA0xSVNrqgYH6tB0jDzSUxbN8tY3XSo3hCKAU6l7QBYuaZT
-W00Qawyvorh/jvhOWw8pGErEFWvJZGZAeaNQDtPQ0s1ngm5pLDLOrzB59vx1JuqQjf/7B6kjBze6
-YJfh7HBmfMcZJNsOsgiGW8h3usmgXR3OB4d4L0Fs0YZXGNT26cEQevc2SKb48iK1cUgVWl9+OVuh
-dHjCd2sR6bkV5wDr8TATeP4cS9OVlQ8Y6cU0YXnSSJI+qw7Ti3fJ4YpUyLKRREa1Q6CF/yhjIA3i
-lDT+WKOXEqr0XSqq7kYPZe6+S2BufIKSdzxH6Z7VSMUh2GltrrfkJy94vTaL3/+nW2GaqBMhPMs5
-cn2oS7O8SNFUbWOk5sVEMaTdHUaA8i8+DAUehF+ydPkgj33oQTguSI007/8RTBc6ZAwx5pvF++3U
-9rGMJ/KkNnD5BI50KftbX/cnY5ZEiie8teoW3BLoW9GMAb0/Xzs8jldGK7NlXzVTD+TFHOxmeIHu
-0HgHc2KshJBtoCty1wbetjToy8S8QnmOK3AXXwg4AjMknIlu+fPzOPmAfIVspncJ41TlJE0pL5+G
-7lawDitxiltutczVt2SskycrfHhVkdqt780MtuKojJlykvK4if5ie7paIC6MwhTxyvjB2/RQQb/z
-DggSmRQRwrS5fRjWS3iFhxn3v63RNOiavhly28bkM2JSyhYoEg0F0v935PXnOUbYRS5V/vDbb6jI
-M4am3pwBYw/WLlmacoBVQIMm/d5zNAugYXMUtFoI9Ga+ODxHJvW9G8yV40jK8zfthORWtLShN/RK
-h7vWu/I79/yh7Ww4oHy9+YWUAyau3akGPFSjCUyB4NzW8lYLH8OEPXknVH+c98OZP3qirFajh8uC
-NE/V3X/wt2UdibanrsyQT0lMbfjavcWKNJ72qti2C6HwEKKiC4bVEGcYDs1IH2ucEbM+0pIigzPA
-pdK=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Client
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Soap_Server */
+require_once 'Zend/Soap/Server.php';
+
+/** Zend_Soap_Client */
+require_once 'Zend/Soap/Client.php';
+
+if (extension_loaded('soap')) {
+
+/**
+ * Zend_Soap_Client_Local
+ *
+ * Class is intended to be used as local SOAP client which works
+ * with a provided Server object.
+ *
+ * Could be used for development or testing purposes.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @subpackage Client
+ */
+class Zend_Soap_Client_Local extends Zend_Soap_Client
+{
+    /**
+     * Server object
+     *
+     * @var Zend_Soap_Server
+     */
+    protected $_server;
+
+    /**
+     * Local client constructor
+     *
+     * @param Zend_Soap_Server $server
+     * @param string $wsdl
+     * @param array $options
+     */
+    function __construct(Zend_Soap_Server $server, $wsdl, $options = null)
+    {
+        $this->_server = $server;
+
+        // Use Server specified SOAP version as default
+        $this->setSoapVersion($server->getSoapVersion());
+
+        parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * Actual "do request" method.
+     *
+     * @internal
+     * @param Zend_Soap_Client_Common $client
+     * @param string $request
+     * @param string $location
+     * @param string $action
+     * @param int    $version
+     * @param int    $one_way
+     * @return mixed
+     */
+    public function _doRequest(Zend_Soap_Client_Common $client, $request, $location, $action, $version, $one_way = null)
+    {
+        // Perform request as is
+        ob_start();
+        $this->_server->handle($request);
+        $response = ob_get_contents();
+        ob_end_clean();
+
+        return $response;
+    }
+}
+
+} // end if (extension_loaded('soap')

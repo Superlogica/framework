@@ -1,221 +1,590 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Wsdl.php 15829 2009-05-30 19:04:57Z beberlei $
+ */
+
+require_once "Zend/Soap/Wsdl/Strategy/Interface.php";
+require_once "Zend/Soap/Wsdl/Strategy/Abstract.php";
+
+/**
+ * Zend_Soap_Wsdl
+ *
+ * @category   Zend
+ * @package    Zend_Soap
+ */
+class Zend_Soap_Wsdl
+{
+    /**
+     * @var object DomDocument Instance
+     */
+    private $_dom;
+
+    /**
+     * @var object WSDL Root XML_Tree_Node
+     */
+    private $_wsdl;
+
+    /**
+     * @var string URI where the WSDL will be available
+     */
+    private $_uri;
+
+    /**
+     * @var DOMElement
+     */
+    private $_schema = null;
+
+    /**
+     * Types defined on schema
+     *
+     * @var array
+     */
+    private $_includedTypes = array();
+
+    /**
+     * Strategy for detection of complex types
+     */
+    protected $_strategy = null;
+
+
+    /**
+     * Constructor
+     *
+     * @param string  $name Name of the Web Service being Described
+     * @param string  $uri URI where the WSDL will be available
+     * @param boolean|string|Zend_Soap_Wsdl_Strategy_Interface $strategy
+     */
+    public function __construct($name, $uri, $strategy = true)
+    {
+        if ($uri instanceof Zend_Uri_Http) {
+            $uri = $uri->getUri();
+        }
+        $this->_uri = $uri;
+
+        /**
+         * @todo change DomDocument object creation from cparsing to construxting using API
+         * It also should authomatically escape $name and $uri values if necessary
+         */
+        $wsdl = "<?xml version='1.0' ?>
+                <definitions name='$name' targetNamespace='$uri'
+                    xmlns='http://schemas.xmlsoap.org/wsdl/'
+                    xmlns:tns='$uri'
+                    xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+                    xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+                    xmlns:soap-enc='http://schemas.xmlsoap.org/soap/encoding/'
+                    xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'></definitions>";
+        $this->_dom = new DOMDocument();
+        if (!$this->_dom->loadXML($wsdl)) {
+            require_once 'Zend/Server/Exception.php';
+            throw new Zend_Server_Exception('Unable to create DomDocument');
+        } else {
+            $this->_wsdl = $this->_dom->documentElement;
+        }
+
+        $this->setComplexTypeStrategy($strategy);
+    }
+
+    /**
+     * Set a new uri for this WSDL
+     *
+     * @param  string|Zend_Uri_Http $uri
+     * @return Zend_Server_Wsdl
+     */
+    public function setUri($uri)
+    {
+        if ($uri instanceof Zend_Uri_Http) {
+            $uri = $uri->getUri();
+        }
+        $oldUri = $this->_uri;
+        $this->_uri = $uri;
+
+        if($this->_dom !== null) {
+            // @todo: This is the worst hack ever, but its needed due to design and non BC issues of WSDL generation
+            $xml = $this->_dom->saveXML();
+            $xml = str_replace($oldUri, $uri, $xml);
+            $this->_dom = new DOMDocument();
+            $this->_dom->loadXML($xml);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set a strategy for complex type detection and handling
+     *
+     * @todo Boolean is for backwards compability with extractComplexType object var. Remove it in later versions.
+     * @param boolean|string|Zend_Soap_Wsdl_Strategy_Interface $strategy
+     * @return Zend_Soap_Wsdl
+     */
+    public function setComplexTypeStrategy($strategy)
+    {
+        if($strategy === true) {
+            require_once "Zend/Soap/Wsdl/Strategy/DefaultComplexType.php";
+            $strategy = new Zend_Soap_Wsdl_Strategy_DefaultComplexType();
+        } else if($strategy === false) {
+            require_once "Zend/Soap/Wsdl/Strategy/AnyType.php";
+            $strategy = new Zend_Soap_Wsdl_Strategy_AnyType();
+        } else if(is_string($strategy)) {
+            if(class_exists($strategy)) {
+                $strategy = new $strategy();
+            } else {
+                require_once "Zend/Soap/Wsdl/Exception.php";
+                throw new Zend_Soap_Wsdl_Exception(
+                    sprintf("Strategy with name '%s does not exist.", $strategy
+                ));
+            }
+        }
+
+        if(!($strategy instanceof Zend_Soap_Wsdl_Strategy_Interface)) {
+            require_once "Zend/Soap/Wsdl/Exception.php";
+            throw new Zend_Soap_Wsdl_Exception("Set a strategy that is not of type 'Zend_Soap_Wsdl_Strategy_Interface'");
+        }
+        $this->_strategy = $strategy;
+        return $this;
+    }
+
+    /**
+     * Get the current complex type strategy
+     *
+     * @return Zend_Soap_Wsdl_Strategy_Interface
+     */
+    public function getComplexTypeStrategy()
+    {
+        return $this->_strategy;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_messages message} element to the WSDL
+     *
+     * @param string $name Name for the {@link http://www.w3.org/TR/wsdl#_messages message}
+     * @param array $parts An array of {@link http://www.w3.org/TR/wsdl#_message parts}
+     *                     The array is constructed like: 'name of part' => 'part xml schema data type'
+     * @return object The new message's XML_Tree_Node for use in {@link function addDocumentation}
+     */
+    public function addMessage($name, $parts)
+    {
+        $message = $this->_dom->createElement('message');
+
+        $message->setAttribute('name', $name);
+
+        if (sizeof($parts) > 0) {
+            foreach ($parts as $name => $type) {
+                $part = $this->_dom->createElement('part');
+                $part->setAttribute('name', $name);
+                $part->setAttribute('type', $type);
+                $message->appendChild($part);
+            }
+        }
+
+        $this->_wsdl->appendChild($message);
+
+        return $message;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_porttypes portType} element to the WSDL
+     *
+     * @param string $name portType element's name
+     * @return object The new portType's XML_Tree_Node for use in {@link function addPortOperation} and {@link function addDocumentation}
+     */
+    public function addPortType($name)
+    {
+        $portType = $this->_dom->createElement('portType');
+        $portType->setAttribute('name', $name);
+        $this->_wsdl->appendChild($portType);
+
+        return $portType;
+    }
+
+    /**
+     * Add an {@link http://www.w3.org/TR/wsdl#_request-response operation} element to a portType element
+     *
+     * @param object $portType a portType XML_Tree_Node, from {@link function addPortType}
+     * @param string $name Operation name
+     * @param string $input Input Message
+     * @param string $output Output Message
+     * @param string $fault Fault Message
+     * @return object The new operation's XML_Tree_Node for use in {@link function addDocumentation}
+     */
+    public function addPortOperation($portType, $name, $input = false, $output = false, $fault = false)
+    {
+        $operation = $this->_dom->createElement('operation');
+        $operation->setAttribute('name', $name);
+
+        if (is_string($input) && (strlen(trim($input)) >= 1)) {
+            $node = $this->_dom->createElement('input');
+            $node->setAttribute('message', $input);
+            $operation->appendChild($node);
+        }
+        if (is_string($output) && (strlen(trim($output)) >= 1)) {
+            $node= $this->_dom->createElement('output');
+            $node->setAttribute('message', $output);
+            $operation->appendChild($node);
+        }
+        if (is_string($fault) && (strlen(trim($fault)) >= 1)) {
+            $node = $this->_dom->createElement('fault');
+            $node->setAttribute('message', $fault);
+            $operation->appendChild($node);
+        }
+
+        $portType->appendChild($operation);
+
+        return $operation;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_bindings binding} element to WSDL
+     *
+     * @param string $name Name of the Binding
+     * @param string $type name of the portType to bind
+     * @return object The new binding's XML_Tree_Node for use with {@link function addBindingOperation} and {@link function addDocumentation}
+     */
+    public function addBinding($name, $portType)
+    {
+        $binding = $this->_dom->createElement('binding');
+        $binding->setAttribute('name', $name);
+        $binding->setAttribute('type', $portType);
+
+        $this->_wsdl->appendChild($binding);
+
+        return $binding;
+    }
+
+    /**
+     * Add an operation to a binding element
+     *
+     * @param object $binding A binding XML_Tree_Node returned by {@link function addBinding}
+     * @param array $input An array of attributes for the input element, allowed keys are: 'use', 'namespace', 'encodingStyle'. {@link http://www.w3.org/TR/wsdl#_soap:body More Information}
+     * @param array $output An array of attributes for the output element, allowed keys are: 'use', 'namespace', 'encodingStyle'. {@link http://www.w3.org/TR/wsdl#_soap:body More Information}
+     * @param array $fault An array of attributes for the fault element, allowed keys are: 'name', 'use', 'namespace', 'encodingStyle'. {@link http://www.w3.org/TR/wsdl#_soap:body More Information}
+     * @return object The new Operation's XML_Tree_Node for use with {@link function addSoapOperation} and {@link function addDocumentation}
+     */
+    public function addBindingOperation($binding, $name, $input = false, $output = false, $fault = false)
+    {
+        $operation = $this->_dom->createElement('operation');
+        $operation->setAttribute('name', $name);
+
+        if (is_array($input)) {
+            $node = $this->_dom->createElement('input');
+            $soap_node = $this->_dom->createElement('soap:body');
+            foreach ($input as $name => $value) {
+                $soap_node->setAttribute($name, $value);
+            }
+            $node->appendChild($soap_node);
+            $operation->appendChild($node);
+        }
+
+        if (is_array($output)) {
+            $node = $this->_dom->createElement('output');
+            $soap_node = $this->_dom->createElement('soap:body');
+            foreach ($output as $name => $value) {
+                $soap_node->setAttribute($name, $value);
+            }
+            $node->appendChild($soap_node);
+            $operation->appendChild($node);
+        }
+
+        if (is_array($fault)) {
+            $node = $this->_dom->createElement('fault');
+            if (isset($fault['name'])) {
+                $node->setAttribute('name', $fault['name']);
+            }
+            $soap_node = $this->_dom->createElement('soap:body');
+            foreach ($output as $name => $value) {
+                $soap_node->setAttribute($name, $value);
+            }
+            $node->appendChild($soap_node);
+            $operation->appendChild($node);
+        }
+
+        $binding->appendChild($operation);
+
+        return $operation;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_soap:binding SOAP binding} element to a Binding element
+     *
+     * @param object $binding A binding XML_Tree_Node returned by {@link function addBinding}
+     * @param string $style binding style, possible values are "rpc" (the default) and "document"
+     * @param string $transport Transport method (defaults to HTTP)
+     * @return boolean
+     */
+    public function addSoapBinding($binding, $style = 'document', $transport = 'http://schemas.xmlsoap.org/soap/http')
+    {
+        $soap_binding = $this->_dom->createElement('soap:binding');
+        $soap_binding->setAttribute('style', $style);
+        $soap_binding->setAttribute('transport', $transport);
+
+        $binding->appendChild($soap_binding);
+
+        return $soap_binding;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_soap:operation SOAP operation} to an operation element
+     *
+     * @param object $operation An operation XML_Tree_Node returned by {@link function addBindingOperation}
+     * @param string $soap_action SOAP Action
+     * @return boolean
+     */
+    public function addSoapOperation($binding, $soap_action)
+    {
+        if ($soap_action instanceof Zend_Uri_Http) {
+            $soap_action = $soap_action->getUri();
+        }
+        $soap_operation = $this->_dom->createElement('soap:operation');
+        $soap_operation->setAttribute('soapAction', $soap_action);
+
+        $binding->insertBefore($soap_operation, $binding->firstChild);
+
+        return $soap_operation;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_services service} element to the WSDL
+     *
+     * @param string $name Service Name
+     * @param string $port_name Name of the port for the service
+     * @param string $binding Binding for the port
+     * @param string $location SOAP Address for the service
+     * @return object The new service's XML_Tree_Node for use with {@link function addDocumentation}
+     */
+    public function addService($name, $port_name, $binding, $location)
+    {
+        if ($location instanceof Zend_Uri_Http) {
+            $location = $location->getUri();
+        }
+        $service = $this->_dom->createElement('service');
+        $service->setAttribute('name', $name);
+
+        $port = $this->_dom->createElement('port');
+        $port->setAttribute('name', $port_name);
+        $port->setAttribute('binding', $binding);
+
+        $soap_address = $this->_dom->createElement('soap:address');
+        $soap_address->setAttribute('location', $location);
+
+        $port->appendChild($soap_address);
+        $service->appendChild($port);
+
+        $this->_wsdl->appendChild($service);
+
+        return $service;
+    }
+
+    /**
+     * Add a documentation element to any element in the WSDL.
+     *
+     * Note that the WSDL {@link http://www.w3.org/TR/wsdl#_documentation specification} uses 'document',
+     * but the WSDL {@link http://schemas.xmlsoap.org/wsdl/ schema} uses 'documentation' instead.
+     * The {@link http://www.ws-i.org/Profiles/BasicProfile-1.1-2004-08-24.html#WSDL_documentation_Element WS-I Basic Profile 1.1} recommends using 'documentation'.
+     *
+     * @param object $input_node An XML_Tree_Node returned by another method to add the documentation to
+     * @param string $documentation Human readable documentation for the node
+     * @return DOMElement The documentation element
+     */
+    public function addDocumentation($input_node, $documentation)
+    {
+        if ($input_node === $this) {
+            $node = $this->_dom->documentElement;
+        } else {
+            $node = $input_node;
+        }
+
+        $doc = $this->_dom->createElement('documentation');
+        $doc_cdata = $this->_dom->createTextNode($documentation);
+        $doc->appendChild($doc_cdata);
+
+        if($node->hasChildNodes()) {
+            $node->insertBefore($doc, $node->firstChild);
+        } else {
+            $node->appendChild($doc);
+        }
+
+        return $doc;
+    }
+
+    /**
+     * Add WSDL Types element
+     *
+     * @param object $types A DomDocument|DomNode|DomElement|DomDocumentFragment with all the XML Schema types defined in it
+     */
+    public function addTypes($types)
+    {
+        if ($types instanceof DomDocument) {
+            $dom = $this->_dom->importNode($types->documentElement);
+            $this->_wsdl->appendChild($types->documentElement);
+        } elseif ($types instanceof DomNode || $types instanceof DomElement || $types instanceof DomDocumentFragment ) {
+            $dom = $this->_dom->importNode($types);
+            $this->_wsdl->appendChild($dom);
+        }
+    }
+
+    /**
+     * Add a complex type name that is part of this WSDL and can be used in signatures.
+     *
+     * @param string $type
+     * @return Zend_Soap_Wsdl
+     */
+    public function addType($type)
+    {
+        if(!in_array($type, $this->_includedTypes)) {
+            $this->_includedTypes[] = $type;
+        }
+        return $this;
+    }
+
+    /**
+     * Return an array of all currently included complex types
+     *
+     * @return array
+     */
+    public function getTypes()
+    {
+        return $this->_includedTypes;
+    }
+
+    /**
+     * Return the Schema node of the WSDL
+     *
+     * @return DOMElement
+     */
+    public function getSchema()
+    {
+        if($this->_schema == null) {
+            $this->addSchemaTypeSection();
+        }
+
+        return $this->_schema;
+    }
+
+    /**
+     * Return the WSDL as XML
+     *
+     * @return string WSDL as XML
+     */
+    public function toXML()
+    {
+           return $this->_dom->saveXML();
+    }
+
+    /**
+     * Return DOM Document
+     *
+     * @return object DomDocum ent
+     */
+    public function toDomDocument()
+    {
+        return $this->_dom;
+    }
+
+    /**
+     * Echo the WSDL as XML
+     *
+     * @return boolean
+     */
+    public function dump($filename = false)
+    {
+        if (!$filename) {
+            echo $this->toXML();
+            return true;
+        } else {
+            return file_put_contents($filename, $this->toXML());
+        }
+    }
+
+    /**
+     * Returns an XSD Type for the given PHP type
+     *
+     * @param string $type PHP Type to get the XSD type for
+     * @return string
+     */
+    public function getType($type)
+    {
+        switch (strtolower($type)) {
+            case 'string':
+            case 'str':
+                return 'xsd:string';
+                break;
+            case 'int':
+            case 'integer':
+                return 'xsd:int';
+                break;
+            case 'float':
+            case 'double':
+                return 'xsd:float';
+                break;
+            case 'boolean':
+            case 'bool':
+                return 'xsd:boolean';
+                break;
+            case 'array':
+                return 'soap-enc:Array';
+                break;
+            case 'object':
+                return 'xsd:struct';
+                break;
+            case 'mixed':
+                return 'xsd:anyType';
+                break;
+            case 'void':
+                return '';
+            default:
+                // delegate retrieval of complex type to current strategy
+                return $this->addComplexType($type);
+            }
+    }
+
+    /**
+     * This function makes sure a complex types section and schema additions are set.
+     *
+     * @return Zend_Soap_Wsdl
+     */
+    public function addSchemaTypeSection()
+    {
+        if ($this->_schema === null) {
+            $this->_schema = $this->_dom->createElement('xsd:schema');
+            $this->_schema->setAttribute('targetNamespace', $this->_uri);
+            $types = $this->_dom->createElement('types');
+            $types->appendChild($this->_schema);
+            $this->_wsdl->appendChild($types);
+        }
+        return $this;
+    }
+
+    /**
+     * Add a {@link http://www.w3.org/TR/wsdl#_types types} data type definition
+     *
+     * @param string $type Name of the class to be specified
+     * @return string XSD Type for the given PHP type
+     */
+    public function addComplexType($type)
+    {
+        if (in_array($type, $this->getTypes())) {
+            return "tns:$type";
+        }
+        $this->addSchemaTypeSection();
+
+        $strategy = $this->getComplexTypeStrategy();
+        $strategy->setContext($this);
+        // delegates the detection of a complex type to the current strategy
+        return $strategy->addComplexType($type);
+    }
+}

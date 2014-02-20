@@ -1,31 +1,85 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Reflection_Class
+ */
+require_once 'Zend/Reflection/Class.php';
+
+/**
+ * @see Zend_Reflection_Function
+ */
+require_once 'Zend/Reflection/Function.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Reflection
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Reflection_Extension extends ReflectionExtension
+{
+    /**
+     * Get extension function reflection objects
+     *
+     * @param  string $reflectionClass Name of reflection class to use
+     * @return array Array of Zend_Reflection_Function objects
+     */
+    public function getFunctions($reflectionClass = 'Zend_Reflection_Function')
+    {
+        $phpReflections  = parent::getFunctions();
+        $zendReflections = array();
+        while ($phpReflections && ($phpReflection = array_shift($phpReflections))) {
+            $instance = new $reflectionClass($phpReflection->getName());
+            if (!$instance instanceof Zend_Reflection_Function) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Function');
+            }
+            $zendReflections[] = $instance;
+            unset($phpReflection);
+        }
+        unset($phpReflections);
+        return $zendReflections;
+    }
+    
+    /**
+     * Get extension class reflection objects
+     *
+     * @param  string $reflectionClass Name of reflection class to use
+     * @return array Array of Zend_Reflection_Class objects
+     */
+    public function getClasses($reflectionClass = 'Zend_Reflection_Class')
+    {
+        $phpReflections  = parent::getClasses();
+        $zendReflections = array();
+        while ($phpReflections && ($phpReflection = array_shift($phpReflections))) {
+            $instance = new $reflectionClass($phpReflection->getName());
+            if (!$instance instanceof Zend_Reflection_Class) {
+                require_once 'Zend/Reflection/Exception.php';
+                throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
+            }
+            $zendReflections[] = $instance;
+            unset($phpReflection);
+        }
+        unset($phpReflections);
+        return $zendReflections;
+    }
+}

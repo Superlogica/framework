@@ -1,320 +1,1126 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV53rpatRV6MXvieK6LSoYpXrhV8P58laG8+8lt0JBXZRuMO6uu6aYzWMbIF/FHK8NOseGa7gF
-18DFMDgCcNmFsR+HtCU9DHZ4cv3u2vsKzKxrecApM6hQwGm/sGuz8WjPH+jUtD2LOyLNrFskWhz3
-txEtnEjYHtjzATbKevZr1HAM+2/hXgaxIRmSVzU/O1JfUpxj9StFh0yaAMMDCrCUh6wjMajW+nb2
-fGXi6RdCTd+k1jnnTKojCapwn4kJIPpDKor7T+KlBeH2Q9LYcqdykresbNYEuDLkPAKO28YvkNIo
-y2oxcEmG30ppdeGWpsNpAiPaOf1KHUaeoMtpjAifzY3fxyvoembJMD0iUHBApNBnIaVsbtzjV9AG
-2Pqoja62/bvIg3GI1FyWN0A4fsg8XqyHVPzkowkl06otkc4+cd0cmPnFmiHt3RtFm0Q2w67fyNxg
-aItWPJSAk/zqfvG7/ZQPr1VCBXlAyh2NomNGJzaDp5m363vBcfyf0igLKR/aBHrF1WgZJgE7LUtp
-5bLmNmp4u61/0tkN1UTnzZbP1eULZ/FMvOrD1ZSipA+8XtDCorZKlJvvWQBZfzxB5lM6gfYe9qY+
-fN57bIBeu6auDKM2zM1LYnHA9CvsPoNW0DfhPKig1UM8OX9uOB9WQl1711mI2nhz0mH9T9FCHRrf
-daEkDsoLS0Qr8D3+KDsgYpzXaGu6SB7N32UcQnrDbCTKBUC4j5W+9umd+NVLpbbMKY5EGJSmi78Q
-Y7bhTb7HbMIp/rvekae62EsPPCTmFZl4rt7u2ONnYVie+zwjFfDqdjzcsF41xr3AwTbzgDBoM1N6
-TZIKFP/S76+PY28KS5lHTNrm+LHSG61jlizrP5BSnhlid2N5u60aas01wQhEhqhsM4+1lZD2F+Bc
-Q1Zoz91Yqet0ps14Ef7P2pObHSn/TxjWcmsS8xw8f0qLUESGuHcIrpulcEYBUVu49kI62gml5Vj0
-akcIdZUAS/y9Qed2Gj80cdCMdSLWrcevGekWTmTuBc4gtB0IGZSSYjrvSslMZYhEuahQTZfyUPVG
-XVecA1pLFssxrpRM8OmWPcVssGY6MAMDIrwK3DS50XzV2Wdflb970vZPTqgWJpKzY8Qd91bf+hQ4
-BcaftxbYpVUj7XU009FcajfsJ1T+WqEklSzcPFcGnK2qqToiB5DVDPMlGSSL7+Fe1d/UxMZmal2c
-CvEsNlQeGMvi8KSS9CqpDcKE7omkXG+YPM476OAFU9S9PmcrRNIe2UqXJDzoFaYa3DNfvt/c9ZHr
-uHwnHjPVORPOLWkAEq2Y1J5LUWCMS1Q3R4BwPWYvyRtbzdPD/nL48RW6heKUQSr4Q5oGUscuWI/0
-OjqGH/JDr6x0cbGn9a675n3jyYa2Zchgy11odrv0kbomPlPZEefyNpxUXoogAWj5P5e0qw+DOM3e
-umyr0xqsPGoKOZ6N7vbgAnqeanNUordP2AWbvAGz1tbDC1ivAX4wReCEkvW+3wry0KXLgtAaP5hk
-pjnuyvVMpHoGri8AL4cRXxt5RiPc9oasILIHp60aCJTo6HAqp38Mv/ie6858JONvA+aWY2N916NI
-Vu3KXXyIIGzHv7001AKqKPrs4tUJtvhnlFxTmg82q8iUKUdd8bXzGONaWqLZyJj++rWXyt/Kkt7r
-RuZHUgSLBIUIE452+mi+FKo9oH5FuDKH0hMHZvxxmQRkuSZ/1LqEKDDwGkoh4scnInqNZ0QZj/xA
-qy8wmAOuZRgMWiNt6SPqb/lNie4iRjij561jxMptgiOJ7xb4un82CSN3OxSw7+I1f5v6Hdo83e3o
-V6DHvLjLW1GJotqewQHi/HIz5rc2deTc0tWNp30mgUVb8V2/TK6KKYU7Y7HiW4fqEhh75ArJf69C
-yQtKhHwbxzVKqSW46YgmPzmDb5nHg+l7cwprGGQhO6+078u8I+Lg/75MUipPdkqEqoMTfPfh0y5G
-xPUl4zxJ2Y0hzx/Gmkx+JLvEC8fUhHZnZ5X0GOWH8NjPCkqbNE0ZPGn/vwMF81iRINAskQs5FmJo
-orZD2dwXTUIf1K9MiRvI6m8O8C8XMPngV4o9vtd0o5hAwVuKrxuFGG7nS99bJfuCKMQ6I9gVBeWq
-1avH/h+9oQM9vygRwJ+fmCiRulZL+gWhgvqYlawsRrxySTBxGVR42v7IiPmOQqhusQZSwM2M3Z0g
-hj79RYv/tuzp/vP/LjiM6ho/T3T2r5cMCuyl05Ijt4RI6W40+rummCk/8CWUqN5y+I9ApKE02h9R
-giJU3kAN+cqrwOu8MBT3HncI+siKdpIWsUmrsp0sb2uTxculOw7K/O1vGcBai0yXsFrO6YnvFxih
-4Pzk43Z6pqy2RtrzDE45AJ4m7Si1Nx9Jmdol/W8XTgsMtZXZ49/4eDCMZ2t9GoOELXZSErbVvVCS
-XHqQrOcGHnadJFbyywTGQUfRZIeCfPiCVyTYESrJZ1hr8zy2PkqletiDc1RIH6FDQMuKrrDil6c8
-tziXNy2ch5FWdHB0XCFvtNGItX+sJsWESB8DLS6TlT43Cmj4cf8MYtjRePNDs5bHHkswqhY0jEFn
-xMtYbyiXT/g39Y0nN7ZY5Em86WxaL6+pp29yJuS5DlOv6uEAYUrKPmlL5j4hotU50RC4VfVuXDID
-Q3ITMVE+qkjH15KBAEukNdxAj4rfHJk1Q9MGZLlsrtxOT1D5MW9R+iSx/CxaOWk1vEOvrVl+47E5
-WadhICbC7nyjYvHc2sOxkOxqLjN7Bm2wrKYf692Zk7PCuJMuiZ+XycUgO84balcLAIfJPEKklQjC
-thxjTcQQR0Xvb6fJmns3XhdPU/famVSDqQ4JTZLDT+3Z8j5qiJY4mjwEGOwpUmcZI+Et5BV/NV3n
-jQFYWf4YYx086kmAMOOKm1wCxFE7ErUBKbEMD2jcZ/v676wHY2ehOctRgfj51HBjkEEwT4uUXrVC
-Txlm8+qrj4P8aO9IAzv41f/q560TYfwLfJc7I3amaT10Rd2/QY8gflIyufbehnbFUxzkJabegFq9
-EBUeo8wxm+J4j0C6MoV87H4p9yIFgqzbAvtf2JrZX9WqY61HLMGP51aBdzFc97YCEpLBju2Ez0b0
-LedPyq20Ej54gBEAAgdvLqhh3kUQiYZSFODHDqP6D/hfXTRTTb/JDCwHYcWdzEF93E9a6MqmAeL4
-WpDarmw7y37rXqxPGGFeC1TQBNNs0W24/Ixo/Pw5LQwjOfEBAmHNzBvq6sN8ZcFCmSljI4S1Cc3r
-OBlrp0j/lmfIZfk6YuLzOVJ2JUY44MpV8T7gaGJTPweG3p7S5oM8EuUMlyG5Qp3JnHX4OWtRT6HR
-u0yeSFgP/FHW9E2K5nl08x+DgtUY4NbTIKrHfVLJcebLQm0hQuFEzP8nBSLowwbsQjLN5fk1SiHZ
-Tg/0ptjSYOaRtZSkBH/hBAwdtC+7vbNCyh6cM0/OgWGts4fefPBF+sQyKN8htMpFG0zdYdIZjLJN
-zpd13XXtTwiZWmQh5K1M+gbgq9Bho9cTdwgYmGLv1oKixkOtY9BlLagrJQtybhiI0/KB6aP+L/pZ
-0bUwxmA3JIf/fIAPvHWTWyX/80FGXbgk2Aic5deXZU7i0fpvjG/Hi1ymJlaGJk01lRjS6RPRI6Cq
-EZU/G0ca9O2oP1Le7JFyivD17JzLiPpUQNWSy6EktWwWojuawGjC6hTocdTGJt9J/W0eFy3S1Es8
-DBtt5zPbF+QM6uZT6v9fis0luW8mU8hjCWZXFgmX2F0ep5x/ic4bsfq1GAF0AJka5vn8Im46+5Ua
-nOYC9uaMVqZLNdY5v0SRnGxxbg+YxMgJkx0//5g+wcGdbrl29vLFYfLI7HFG1g7O+fFK5K1jPU51
-9fuZsz/WfQ3ak9+rrufAoLxgPkTdKdpC1H38UAGl66k7LZMx3w+fzM8SzQxafC7xX1EiJLB8OKG4
-04vspwg89qcrrWLE53SNGEfMsONHNSnsB882vr4byoqONkOrGtXOgbE9pXKs0PZ3eymhPauh+neG
-cz9PMoE+7AVluOKbG0byz762syACooK/iI92Rb+/oiw7jRCMH/uV+JBGeA9HCjAAmyfNhccgfZTe
-KbHBzi+6AV+eD94Um5F+LGYVo9bLxZe6w1GiYhAU6caNzqeOSsO/JEvWYUYoZ9er3BTGfLLNEDR+
-BuognZ/kdVFH7aKxAkBi3Xrvvcja3S/JaMO0NonpwLB09mgoR0dvfCRm19J+iSN3nwhHSgRhOO/I
-4swKJqzcMCHhLVppiCZUbCVGiIsnJqauFeGKntmB0djS0PL8Nb3SC5XNtnjtoxPHMSHgWEa6B2dT
-IGJAnxHFZsyiJokh4V23cd8gPF1t54SIjspwIQ9MrT4SQKZqum93/U2/+dPz3rkIjjQuIVIKvG8p
-oH3n/IhX1ccko2slKvP+hdWhhT5+siCVvEtDmN0fUFozBjuF4q8R2n0SMBEbwZyCnczG+oaaxQ2F
-k5JhcNyLNeRv0RaugCMWDhxX7Nfwe4Eq2dXjSKgakg9QGtdTCYZvCRwQemT4GL+ID/z7rmOgaCmW
-xqeuTssnt9naDhhmijKschu2Ly1xjod4VuzpiWgl6JMBZnLihd8OiBGhm4BRP5J+24ifM32PAaVu
-VxlX9yK2QwIUs/SrZ+JhmB+A/ErhqTxTqeB5muElKSMJsKXFxrSbbeu5TNrXvqLyKmnpedJS+nD9
-GjPA3a7hSqvWyrF7HTxMgZLBH8gl7lKX8Gicsk95if1SnxLnm95cPPMPhV34LAYEffBzAjKZL5r1
-DGYvNH9YPQIGO1uvJ6s1FfmdJfY8flIdg7Dym5CaT00vf9dWZe49fhu0MjoczYVbvUNdgsH46ZU0
-foPpy+h2HhaJJveFdeuInIQN3rx9GQgI99exkedYZJlAsWvQ9kff11047zdrUwRSIuCQE4GObkSc
-1Uhk6LFSMUuHALpfq2sk2jVbHTPsLtOXteYjnEHcP2feLtBvccmWQ/lGn8lwfweG3O2FyaDD1SZk
-v+RxniZLHiI+V3Y6pLE7x8mryVSpaT5y+ZDLUMzvkQSrw3b/jtWKMn9skO90Qvb8hi7nrnccNZ6Q
-+UCQXqYAz/lJlDkUaMYi6i3ONxE+Nilj/B6rdz+bP7Bjm3v9JSO4UsBvbRW5hcYUDhy9eZYGsm0N
-Qai4SXSoxDZ+gSyBjNIrB4tsHLQAyhlwn5q807gqOYALgRPGoP1oZ/jD0ZKeZijdKPknbAV9thc8
-L49cp4zQEeIEUOGT2gaGqetvz8v3+ckehjObrkvoOYeN983IyzdE9AqVnwvD7ZNjI3/KPLIAtTi+
-XESaGCXvyYtnpXDQcbBzxEWRMlcw+Nnz1GBfLxkg81Wbu55ch1UO7geCkvLyX4f3KuK41aygHBtD
-a3i61oE/NIAEStSlZDlgX/Bew1lRLq29EejxdFLjKbhcy/xI/08WXsvfb1ut2d/sx22ron5PFQ3Y
-S4XfvmM9SH8XVvliWheg6IUEH/yjFdEradnufAOw6PzEiBPfQyBakAI/a5G78fUO9kbvyc4mjwkL
-fGqm+ND5MBtOIpMJrwYsCmkqwx0pmMTd3UTBTQ+qV2JQqMLleJsvw4k9qI1iLYyOGWmWsxxpbDkS
-UMpI9dUQGSE2ZI/hWgc9J2MuP4Pk2MRunJkILEbSitJLctkLBtESs50b3lztSAooSyaWnDhMCE/I
-FuI/MVKim2nYlaqFKdM+UBnQoEYqRiKFGAJSZnMsn4ktf/W34oQ5d8kviXiceCiN09EOwcApropQ
-Pjy1Q4rMkJe8eCi9vyehVfmEt+inWnookpedvIEuNSd82I7nt0DO17tJzSpMupPVQf6Zfc0PHPj4
-CXXIB0MimVQ4ztz3qvRbLT8K+GQeyoj9/9YLg4oKE5SwY0JPt7K0lW6cuHt6btuYchpUSgb/jRmj
-sq3CLZfBLmKbxzOfFdV3ip92fN/LYOew6QlX79BjSw+sVAxYAvrKKv+Ve2cKQhWbh0RRRqXIUS4H
-qVemtPzehu4WDhSGnAHLOUhekTFGnT5HgSy8fstmAh4XitKfEXofSP1/s2/oJV8nothQQ/r4ZJNB
-aJ9vl/Q8t7e42T5YP+HplpjEhzvJVwwRvKJCHe7fyXgILA89FctNqhUU0auUkpId9BOjZSGUtTM1
-Gd7SpwMLOI47nS/tVgdQsvNGPuKwr5V/Az45ilE9Cv/XpVanEC98fxlyD/Qi4SjLUyxzlsYBt9HJ
-70tsard9Wzo/kYWfuMzLInpr7E/BXLbBlqYv/6Z5A0xWHlvqpJQ4wFhDouj8qMmra1EW4eGrb9BH
-Hi4dKn6Ougt55SL7uMFDA6qUsL00nwmjUGlGI56kw9mH1TQx2Wh6KozhbxYllkIhBpll5WKIn3M8
-kvVSPa3K6ndnHXRGXy5ERzRjukagkkIhwbkC79UJ6lY41DBrKLU9aB4d9HySdZH7VzSQnDOwZye7
-HFgOtPN9LO6hXqzmt78rULuYFyrJYx4PTyxhggX/tduE24pcCZXHmkbU+kDPy3kZJsjIK/yvBA3c
-Qsnrp4z1hrVDmQ5bvt8/INzRZT6wLFB6N0yL1RWRdMYKtoh6JP0Qlx4odClLhzR8Svd5VOF5kmEQ
-Xeo0DZCLp3hmlkgzByzPfdeDN6YinA7tdoEaU9wZ2IdNpSbOU+/inhzGDSLAjO/tXowQrDjCstic
-Ul3m1BMy0JKFCv2FGlXAzNdKuClq3EvORi8FMDkfU6GJGTs/8FSoDxJeASthYBDKKa/fK34IgsMl
-cw8VR6iM0pUhqJEfeJK72QtvNUypmLffTlUz4ZbS0ejaTWR5II70ti5QuMuELZc1pClEtcgK8o3Q
-VcB4+K0LG1MzdNWrlDgVD6qjK4v6MRXD/mwYpDrNbTLBWfuEPM4JTe+dNKaQBt74wVDhJcZwEkIB
-9Yi6vxqzV4rGj7/dsxrb5b971ha3mBxO8EblvNyBm7tkfK83669dqNjjyBm2DkFBCZhQ7Rdz5ILZ
-ipff+Zt2YiPZT9mfOT3O78jrjJ2MxxgAKflz04sQNo9+GS9NxA+llWSj7WIIUkzsjUEFPfnSTL82
-dqHfklXhufs34AZmbAlRExNr5651AikdBIPh/bST5bPH1AgiFPgx0SsJPby5LJHtZh+MohG8FVow
-XVTyyY3llznxhVHhAoV4vyB1FXMj6H4osaXjc/iMnaCW1ohflJKlCcqjI3LpmYM6dD2cY5F/TDms
-XcQsWOlT/QbO1EM9hlPZehbUDPjYghTOaU/u08MG/kAm3d8mthqh3BEblKXwmSOQysN96MtKoxko
-1tVy0Gz3C92cV+fTVi382jGo9vaTL6Tu7OAPO3fXUFyJHmq5qqpNTvX9RQblhOvaKkbXyDsHUok5
-KDYcImy5UXfnmLXDMZqqFf/yq6lY+oXGAh28xuc2DJ7nwktQ8TmUm3LJ/30xjR90eUdLTUbLghA6
-nSStASj4x8G/qCZLRRVxjkT41QNSDzzW64semOlgkJuGWsbe334B0CPvP0eQiXdo71aBTuFmBnam
-RK9jMX4Uv0zElKyTj1hWL9KAk23/BfAANbF4FdzEo+i9UmoMgjfSJUfl+zCdH9dAer7pXetUTv4U
-r9ttPesXmO0gBHwN1XNoKaGgKv2aTcSqmB13sdCalM9aI3GdW5lYv/Ctt7G9qcqP2X+hcfuV1Yzi
-A9f0dUoFwjQPzjO3cZqd/Dtm9ZK8ieO3GKOKDeBF292oXktHGj9lzre2B3MGhuQuVdlUSyElC1eu
-qCFuW5khpLby/2bzCOMxmV5ADIIUPC3CMTmL8GYVylPltHcQBEXpRUwHpljYNAkemyCDxlMOOYoU
-Hht7SdqpPjJQ50pFUN/SuxdKmcRwDDiJCG/nBipAdQjLpGWpUcgTM54TCZHiK2bV3jXm0MD6fjFH
-p4XL/udQlXr/mMNWEzbCnxKTEVz+ghaPDuvSgSxGUYpLg+A+3qq9E7TMr6MEgWA5eeKEoE7zXC1A
-+UwSv21vG0XmubHlMvtSMNKe/yu3SGDdvKQ9a3M+VZKibIfobZb8jHrDvlcSRCWuXP8SQvYN27Bq
-wQjlOrkhkY3zHEZwaQcV4ZMAiwo2kKkx+s7DjXwPr1Ud0buUMMHYekYePLxBFa3ddd77pQhlDheQ
-UkxKkIbbSe4HQ/AS4LHdAgWEPpPym951EswO8wcQ9G2miX+TxyooNYSX5Zew/y0lf5n0pl+lrs7b
-gScWge4Lj6FWc0c/9OlqNarqx5EPII54NIK/tyXDEHmgfz81T3Fr2vujns78O5k3ya6+K5S9ksUD
-UZr2ONXlS4bnYj9LdXesNlr0dAb9OER36GmdGm+/7wpwukY9pPLwFbMEi6/hi6KUmVvu4JF2HLvy
-EHpTVNffpeNwpcfqmVOpWI5AQaNsIenLeWIm6BBjw3foQJNsHP6p4WI3WgF/667kgXTr1KnqRwZB
-Xxeql8cKSGs/sB59waN19qErIiRyaQTSPGYc4LKYT5RXjsVJmkB+7unydW4XN719Y5WwJqxW2AzQ
-DWOMfEV8umF3bWIKf/vmE9YTFcYsA2H4IU1TfBfIevoQwbUc0hshK0bsub3lE9VV2p1gtI9QV+12
-8AfspOVedSZ9EW6EAl+RI07ZBV4Hp6mOl5wHKC7FW0lCdj6u64QishDMcUnVHCYcRdO1Fwcb4gxH
-0Z7n5u9QpKszYwGe9ZA4+Yjz626CRCcvxN5E5K7aVs9Nn0oROYxnI2u/mDBFsimEjnXEaJOIQ3va
-7OhPatNP6BBVb+fPKeTn+PJVfpiCp2T+sET99y19NVHryqo3ZlVxhk5rhh9jarIoFUqI9dzgHQdY
-BARZ59AtkUpL3Y4xnZ6/XSZLMGShc74kMP65zy/Oh2+YLZldULa6MQdNtyS6Dx8GPO27NZ63YaFW
-K+cmc5aBbdVlmgQJei6uSAwBarqDovU7Oh+UfnFBhcZSCiryxKHXWjv4/zLUxe8CCI2XEcS5MxUf
-A9/VHDMjf+WRAi+j9UKqr8eBJaCFgj09x+O8s0LDY4GCEi7JTUargwMva5eLzfs+JoNeoYVEYWVs
-nxisvfSsBreVNXH8ysGEqIovcatw/pC/XGBO1hhwMoPB/IMoxvl2LspOuhND+hUqwC3qh2WVq16b
-bmULpi5thAvPMXXm4P6/ckkAjuSrM59yVGLJnX4CE6E8Hh3IM9NaRV1oZMuFTAakdl2syEw9L/xE
-YQ6652U/TOj6M3664rfKyK+KzdohfIO7/cdN6nKx8vIn3R6sE5+RAsq2LrD5O5+vL2Nld+/CsP/B
-53UCdosrTVxylDLpccWYf79v1xam34PZrNbB39V/EQvjegjDtK0ZOjOsgCLum9O88eY/VNxMIjg3
-/aSR6jUEchiktx7VMYeIZ3Gcg0pkk5NXqzUKNR+XYxgujj3+VmDK+x7XbUYJZUExPUYJcOvKx1cN
-IZxoCXgBcsVxpjN7P1xbTq7I35tseGKXB8jN6lHU2PjWKSLORk5USPvYZF05v8QMkYlamJeay3Ge
-yEwzJwlTHyUTg1HTHqWv5CIkVQRtUMNApfIUPhm8hm20m2aac4gOSr8AIwF6j7rRK4hFNtiwCKf2
-2MRntvWxGBWF5jjH1wYNbPgtHDazaF2IrNQZNa+iiwJF1Xh+3sCdWH8KekeDaXPUJkWFKaoweheY
-pYjX+Pnt0XYhgKo3YtcmchS9zRGKdQ++vA4z+l2c802FKhM2XFbfDbLHko1JToyVdMu+CGg5Uj84
-/4D/A0rRVBWl8Vh1oC8NxzrNQDfpK4NLc8LGNedY9LGog1K7ipkp4uIDGwVhr6DEroCDLK+y+kmG
-eIIPBULsXbKkHE66+8cVkdd6Ind83VlS6HRwzX3LiLsT+8YeV2QzEZdIS/Mcu4DZR4YZ0Vo3de1e
-ZLvTsv7UdNK0rOzEDQFGjO36+cIu6rDwnEKP3VoAZZL3h7XCP3euhqlaGa1RbIQL1MG9TTH/Zfbt
-5iPVRG6YJAoF22IYmz0+bsuU7V0j83uv5IMNGaUpc03MnU0QeQh+uDomBU4dbfbsLmpZijWfBjkV
-re5BvMINq3KfzHPe6n/ffAO0ImYDtZGZ5aSqb4RpxfRAadQWm9R2zE9T7dYFZhhAcjwLjmq7vA1K
-4KwoYusn9we8QU+7d66MxTvtpmgIR62xTgZZGrfAC/XsaBF2ocxFphRB7e8AIf1DFuYcECQzkN1s
-a4y6X2kLOrtYhq305hBCcrw142jDkLJje+aYMJWvZr9QwXt/rzoWevPgVmH5nXIiVDrxusYis5Vg
-CKjC/TdfiFj7ktjMtazXg1Bw8nXoy1X6GiBUOkWSrRuOPXJT7Bao+HWWwZF55o2aygfhAIa+1Qdu
-V6BdYn6R+XG9D2WQJoZhG6hebEPpOpWhRmSJkaThq8t7VL0Ap0pwlcMEf2q0n2/9lrOfa2c1Xxn6
-ibx/QE+aiTggs3arsjD0mqbLn8R3cb9GvxFTaDOZmwamhcwEAXk1RpRTdT9sJChz0BOhwa5x7Bcr
-H/Q3OOygpvCL594VRyVyhiQ4li7tSuKUZHeeg/zPhzlDsukePkb+zBUri58OtUuuwBlWOXgdUuX6
-dTLsfwZVgjo4jYPNoxSZZl9CSwHpjrylr4FWwHpCHLkPnCtATkFJmmTK5SfvkcfHIlyV/zLSYgiu
-OBCcx0039jWxJIJcUMG+wrphqWgcjWRy+tVzR/qbAwtpSRpQc3Q+l2Dk7lzoMyRXm6hxo0j0T+eo
-d8/Za66pAkcQnPzXkr37z1yUZv3TVKrkLUFnsp3lTYaRboGFeAb0vVnAK79NG55LcvfKZXfRXO1e
-azch8NRG8lC0c9LrR5MDopk26BGYWIrUPhmGop23Psyq74BEaPhE0klvK7jCPk0YGRLhdWoltuR9
-aA9as3VUdOXJgKacUneRHiJZvoYTMqXkRJuPKHbDwMxgNHgJFIwHKYuIgABTSGGH29+hGGvZgAoF
-20uhaVYg/6767M3gvjhrWEsiLWj1C6cMOKeidNrSKPAhdZWHRcJ5iEDAx2dsD8tqAO98ZbyQsjzi
-SC0ETxGsulyTA8Q8q7cdpfjVQJ++yNA754MCMtRA9Ka2UVIDPzBkOr8z2MbdizaOSCzrom+8PuFe
-/UNKpkMXSp4O9GSPdLe63ZDVWU+iDdPZ5HyXP1ZCie/kFcP/ET4lk2rhrnyx4ElLNhCVApD1fd6t
-A0jVq6ldyR3gQt+h9iGNMykKqVFj+RyOYwoldtC7lX2r8mUuso8WQUmKaVwlKR7m/iau4PShqqeA
-Gxurlhau8vPgobHBkYXdzPfqscRmmryEeSv3ctdzl21g41xrR9qNdfzf0q3c8ttwEgly0+grkqMJ
-QaBko5jPwYH/WRX79QLYhw7kxZIDNdH5TMgvdwRSRiNUUORpG/vDvCpF+yXHUzZdZd0dBErD6wuz
-vh48Eeodr0QU0h+DvbQ6+eVoPRbJQsNtD6pU5b+KLj9kGEqxcTxeKM+tEOoI6y7BnmtYMu7JN0DL
-fIsWd/nv5PgWIyv7JuexUDRiq7HlcXS+bPDVQbVKwvDHyBsQlTAKA5EoKyo7CmUhiFmEVXfxh9/7
-hR1/dt28xFVVZTmp+wqZikZ6jFXC/Q37tHSvZDgjU+CJUuH03/a01X1hbz1Brg7HHDuRX4QMeZ0c
-pMvDPDO0LjRXUzCRc+bPgZf2XSeW5iRw6rDp/x8miCzROgwoC7VrnjGHxDBDV+nO3425IRXpypNR
-e63ijuACPH0Hk/6pgWYyN0R2LLEZXnu0YU06fCMZikEvFVADSiXUVQCPqWlAu1uKRmVDKeL6x2W4
-k38WkNfJtNM4rU0acaL0yQvA3uyc8hJ7w3+BSasRBOroq583weJnP0+XvVeDxwHXR2xUODfJrYQQ
-5dG9lGIo1oRZudkKeLHVc1j1AbsN1y0CO2+flC5OHtup4JrVGJL0BLTi+n1DOTnrsxZN7DDwStMr
-YrAi94O1K8lZLjxPEdOJS2KsOXDjXezVMYa58CATU5Zc4dZt/ucXAtr0o0Z8rartyH8B9/vjuqLW
-ExSKlEHsrUQ19nDMuXo59530v5fgfjLcmGovj6Pxihh+aCRGOsBHojBW5V6Y0JYrGxM9brlkWyZU
-Lm7J/CYo7p4h/DH3ue1ckorwOG5ZTSweiM9TZgXyffM7J7ao88xpR/obl8n5UX+0crHzax3UXo2g
-/LnGobbMYuoNp93/6VbBQ9BXanSeLjQsq304W7dyWLbsNaB1aOkb6Jv9i6pTpnPRbAIZqBpufk5S
-eyw2HH4OHnrxv/E5fNtw/xkhtl19yj8bv4l2ZFVcHRuYrhk5eS7sojhN1GuSb0yegC8bkPyD3Zg6
-i4Doa8GRhLzvEGaKfs0ERPtgudKffX1LSH7qqwvEcZ3rBnTAqlzlmkATkO4s6YBuiGdMi4jqBDNQ
-t3v+6B6ZG0q/aqXEqSMFuTBxm0KIa7wGcZup227DIp0M7MoM6ORci5z53hlEAjE4HYOk5lkzyD1Q
-fVlP8geCPnCG/fsgq3w3u+XO3M2ion23rn6FKYXUOAANUBVomoha8oTG1uz7ZU+MKqt+EzyvFfTL
-eYBu32U1wdmJQ+RCJTRg1DtftO3flGypI/2jVYtuEvHaLJKNfRzl/xIz0maPGP8ZzMqAx1x1oUnY
-RfdANNYWd802Ln++RtTUgWJux210vK14tVxiA794fOVfRLRUo/rzhvLY8al2H3Muu7zKoTg526Bb
-CtkZn30ZLV6HblVDid7oNzYwAV5yPw+ytvqOavM1AjKUmVYDgT8m6VHrOzL6LEIFJQqZ9pOJoG/Z
-muc2xhmgn7kB+NfV/tU5SzcHmR2MTCPHe1Zn+jWo1x8XKyCH3CyoQw5fddOw9NFIeSLx8SMms4OV
-ZEKFz6TudEt8s8Eq7U3aTS07+fF+MrsRdfuOrKHo1yVJxub1wk3sN2HWA38635XXfIqmHZF7XK1j
-l5N4yEDKizi1hnPFOxZL6jMfnI6lc82mJGM4D/eXp/L6EuCqhkXdkms7lWlrWk4WGgo/aAnLmsqN
-LPtoY5PYvmuAy1Mk7YgG97vyLQSx2/CpS2ana8KUYotXZk0/UkbnKQ+Gl7t5MTxuEJzA4Nk/Qc7p
-ezjEkaWERBVsjj+3l2cN+tOhURTUOrYNSYgwueftaPVobLz2lAu0yaTk2a8TXMTvEsp2ULT0Vokv
-jU00/96KdUZObY/Ot3Okv//wD/bghIcDvBFa8Uh2iTZLe/K3xmvn4Tw4x93llId1Ys3CvPGGUNHT
-pPANUh7+wbvaDZwr5znOEaHRr9z67KGmGhSSyT0PyS7rpJP3Snc70tzpfknPEoglVp9ATsw2lNBP
-6y9W6I58NHDfSYIf/yzbNpimNOaa8vjhiINSBUOG52KaZcoqe8sQ96tUJ/VS4bgDXd61S7lw0hLy
-GRUqcmvVEGFs2l4JDtBQtHvoTqbz7+0D4cde0F9XlkvRJr+d0CIn3RTZOP+KFnmhGpawS3vH829q
-asNZKsWsyNiETYp+j7qFNaf7159Ohes5CRZDEbTxU65rcjgUlXicBFJ1Xt0sAij1iZPDlitF41M9
-qt7uzhU2KiSjLMwPk8UFJQBUlHUvCXLY+VcbVKAJ2PC4Wvn0xObDxK8QazZIXBmZcJYGWa/b3tC1
-JOsa1YHNLEJREGKKFUb/xCOeIXcv1Sfntcn727VW68HhfosIMQPGus10zveeyBE7j13PDB7jjtnO
-St6OghyisgzSIw8xNoRaK/0QIh4Vv9GAjfz0x1Vk2tpffctsUwAMYyA25szlCHVlvdVmfjOKRLFH
-yARIJHWcReQhfhJJjC5YNL09ab+RBYi/MNa66WyBWeDNGH9PeaFS8LMYfvAlimDs5Yl/Uuqr1hSj
-G/15T9KHN0uWy1fjV5SOwfKiBLECYvodDzpg4TDff/k0evUJe2hqCBWqM8o9LwmQehpJP5/yByy/
-bJJm8RKm5rrIcvfU5h7gSwfa7gsElbEPgwwiYDwjdcsoKsBcJ/umudACAgNSahWJ+0+agWWezTd3
-roeWjEx38xHb2j1k/PMOMhiRlOhA83rNOpglmmVhag6xsX8EyUa66ZhVanxL1FwH/hwobqT7v8No
-EV6+FlnHvCh/i4flgBxKm0hGO4m5w2tjz9+MWNcSkvXiwjAbvOMSu9Y3sCH4ooHoQmwYVR6W/GOE
-IbJjV0JG/WO1Wg5AphEAnJZSbqHN32Q3j8HeW+ySDvnxuGV/dGgaLmdzgM+I2rlAo6KMy9HBZuq+
-BtR9E0P2gOK1uhYGYhezHqELaLYZwbcusr2rRQh0UYq5HdJRzFcd/BdsBMxY8V/Mr1FsnLpljWU8
-0FqauzEeY40m8jvLnT5wpnU3feojLRPsrGH61/PaLe8vb0u5DGtVjqEwBp/cwSyZaA38AakxfEEi
-63qfw7voTtTAv5vK1ZDFGNJsvAbffCfcw+PdZ42KW7bDSVGh7R17d+sHVpTL7r8ZBh7Kq+G6QQqt
-8F7AT/YD61NljzAd+fN15gjY4tI0vGl5zbaT24Jty+6d7nk6r/OnYELTP9ajtn9C1+gKobchDgRh
-IcT6Tue3Tl/Bm1uzuACgkaAipBve8cQYx0zumkLfIWrqGh4/ZeSLp+vpj5Cs6IbZCnhA+Ad39cgx
-27MfAsnKRYcGMbkiyzInv/zZA5Zn3W4YBwY4mAbthfLv8TMvdsuCP1BRGRXDlXUBgIRqa6saW++m
-42uDXybE7YBPaxFgwPSJIyZ02dU/F/yvRjB7q+JZEI17w51oAfPH9O2K/NFrpxFsWxactRZcfHeK
-b6wXjF1fxAGSp5esdqYL+ZEJGp9q2QCoi7n+2e8N4xSx2N3AqD5vtRTk9s8Qg3j+FxehVNbNWYEq
-OZsBk2G94Q4iMiI7onj7MNFo18WBpstS2pVlBRMHHuN6PNiG1xu+4ilUv1QGpYttOqNpIys3lMPI
-eqaCvprGH/2zhHOJCVK4vHT6FK6xIrGEs58mnOrlYMu5aeVBfhrF6Aq2FbzvUqgpp6EbTy5IKWib
-vi+ElyA1xObeV1GZ17zLi6/hQnKYR6AoC8sz6ZKoqq0Z7mW/Q9UYCmKxRdGkYJjS+WzQYbh3ZWPu
-LQ3fd+zUK1PFRtNYuXfoEXS6E9KuzJI6CTfnUabM1Ru8Yn0ZCexG0bHmJ9ilaMTuAkrwyOyFr6p3
-iEarc5slzL40C5VM7opKNQlUPG0mR/ZGO4EOYEggDHQGdQJ873BEFl+ffnWqgZLrp6pn6+wIigiv
-QwobfXZo+LtZ79on2lv9EWCcAKtHEfcXLrzKXrnKhYOKawFmwd5I1q2jGx6KAV2XR9XjYFgjVYJQ
-gNOZSjhN5fQAWSVqJs6jGI/b1ddRfRxyC65smymhEpkY89Vzn0fB04XD0izeEFzTmLewVOnOnbMo
-LzK6CI97aw6kyMDD9+nf4ekpv0GWyfifMHlOsjPUO6LMH4ZpeRsdVE4x69RB7+3w2v2Cb/F3HKgW
-tfsXDKwTp20799XXOGdpNy1jtNrcEtqt+uUwxm5WCY585YvYBmmfqrt+RZR7bvAKCgCP2WIpltDL
-MjVLvHdOe0snzMqoARMP98YDKy58fFTByERDrQt8xQkVaWncJFPed5jO1CbBjSbyJAsypc14AdAS
-LtCe/K4Sa/qJyniQEEW8/pTgq9g0hbBpjOWJWE79ZCHuA/xuDR20i1z+ha0WlerHN/dCY4QbnaYL
-T23QiqjqBr56gd0LAYIYW9l17gOzz0y+Ru78KjcK2m1GMkJN+CcvD08T5G+NzJ5cMBSno7M9ELXH
-rimZw0KZlTT6NPkBRESaE6B03ODNDmlYTd2LxdMpm8IE7MfjoEsidSqZgdD0xsZqbnXsE4O2PB2X
-9nG3+fROrkEYzKRSUvRxMPv9WdM1Bs4PVp9Defu5C+Qamo1keT1tqrDldZU0JYvqxjkdmFE+QyGr
-ynD0WsDch1w2v4lp0A2sTFyfOfktlRPtQOvDDnHHVIRA1Tj+EbkPmT1XXpcz59pbWbM8xncym7jc
-5HBdB9ZaVywLgR+sZmvXM0+43xwhJWgvfCex6uqblaEPnwmX2qaYrArOu57C285rDkTNjihpviA5
-l6zptKDBS3c3Ha/QVgV5guk6x0XGQ1gU3EgUxQBoaEWSu4MPJc1dLPMqWVHQLhiwT6BtYsZkqUdG
-4CrpSD/KFWKr/cOvNI2kY6dBsBf9uRSuJLVO69zM4BxkmvXI2j2FLUVh4m0IxpuuStwAp5a/hhH7
-rpD1tBFLflO+O/LLW1jQx510RsnHkNSc5UL6mFFgEzY+JyT3pJMOhiWSYDHXiyYjScid2bz2VsFz
-vzj+3mP2Fcr1bJWIJ52x44FOYFWlGdUi8xWSuRKuWZ7mfR1/w4GaNcsq1qt3HPM/l0OBObZKlbvU
-01YvqP6h6cAWQ2XX9zY+FJ/xL/a7b/Ar1GoFDOGGAGAfAW7WS0pZJ4t2gYyslu+et3qXQUlQ5Kla
-XVKMB5rmlJkrXYG5Mv/lnEDcCMsnMkvzts7MYaDiGEhRlHtP5edmRXlKoxBOZZ/KJvhMyI38WNfS
-ImaZXFBD8fuTiAZFuem3zaeg+65IbiGmBDK3wKtybK9F7oplLAmfT9XDLXZO5MZcWRNNf0wSqXUU
-0CwoRYv8fbsE45RgcGUxVRvwXdR4JU5FIaHbUgahJYQKFHNa0t4n/0ecxThMS+0V4q5l+jdSh8Nm
-4tTxemPpWeFU2eBXRyJqX8CQ/7msIsqP9nTHr8TFxFNRwCQ1ctEQPh6b2t8vEXmIAn31FU7OsZ6q
-x60ZFkO9mDon+vlIohz+bC5TJQzyeEgyNpdVn4qhmaOC8qiePSE7IO4HtGa1kfY0fr+SDP5QH0QW
-4R/JU9Y7yxj59Y5mtARPqTxKgzocoepvBGVIZQMdv5D65gwHU+gXRi3innAjoPP8A3hd4MdhhQjf
-H5pSxu3YiykjcmDtEDq8KyNuXj39Z3OZCfJALwCr9SlOHLYmf8akfzSMH8HSnpTrn4V3AGpVy7gz
-tqT5YvMSmOw9ALbRjoqSh+PAEpjryv/ad9ONrG50BaKupAPIqpsbey73Akn6+vmCgUxBnhfRwhZb
-8CHyHMBgy/iN3ayMD93eWuF9zWqB/CrUE43Ey3V05uKg5vy9yNiraoFI6LOHDfa7L5ccN4IHrNr5
-eyzKFOUseQ6bUGapOQTq6pk+v1eWxeitNFE1KZZtGzUsFoaQh8tziPZQMEDeV+CwJv9yt7CxZK2L
-AQx9an1rEFYdI76iX1qmnDMdCqpxUCkKcfHv7Jleft56cUkGjiwjH6Iy+oiS1JExl3as7ko0gzSN
-n95PvJJhD3KoOGxhN6XweSml2PXCdUowAmnUL9LH/Y41gauWp5bZkpOxTUJRMxe4dHvk88crtXv/
-f0V3CiakDA7fiPsEHM3UlSG7DaUvhXY79UIOt9HvESCQp55IsbRQCtuWYsKqQ7gGJLt0DwxohmS7
-mkphqo9JCZI7R/HxHS6Jww8+4MWnm3+LAIdPEC5XCY5zotZlGYennW2T/2wEczzjKwHaB17+Vb+w
-nVAovaF/QIpVSChaaiDwDxb6wNB/Jc4wwpzygFFtuKzPvJPV1eb1rIbN1rrh5VpAKPFEUDGrKc0Y
-cjcT+ZIOWvAsTk2+vEGqI/rencL25K/9ElFwaWTaeSaS6JeMmtNf4YDfLoS1JRUJaTn3bqF4hdwM
-yjRslq+GqMl7N1paZmy6hF0Olk2YoMcLs5UnbYWQbXc8i4gsjcUud3XVa/G47DHs8vFF+Mp/z1K/
-pUHL7wrfyBWrqwmM/kSGokR08ZJ+K6P9hUD84WD80plQU+7kgXRQ9w7G3qitW28bO3AbvwcLxtR0
-tMOtydPbPA/TV9RU/kO+3VD1hjlcfpwnFjtyFqoToPTTq0LDpx8CR7Ia1BMm9WOf/bKRzTX+lX30
-EQ+hRitoxAnsGJ+YebWCeMmj2vySOKu+ojNZlc67nLq15YYlwsInnX1ClvSD4Dc00FUJGF86qpGh
-NgqNq6gfYUHb0NzTQP1Pc5QW+nSnRqJ0+w7HpbBdEV76p23dcrVLXfv+AfXK/q2OwSW9uGdNFWja
-ye9Mb/sAL8FLOuhjun+j8j58RHYmMWL5HEZnj+TbhO+fdtyQnL1Wt58BEBrj6dDIxrspOOJEcilb
-BX0VRiVhScH6ystsaYLFaCzWaP+VzFz6z23ABAqAC2keVZ/ulRYJYxhUZpH9zOJqA2ySzbkUofEd
-AR82RNRIb5UA/HVml4r+eFikMIHcXc32uzOCNMU9ThuO1fvXA3VnlUl1gBnnoIQ5V5AGnbDUr/PZ
-7DZ041fU+3dnjQkvq4J6+UL6stzYRPG1lpSA6K0OF+6S4Vglwa5124hnqyRN4HjzRW/T0FRadMTk
-73gmsqHtDOF/Cz1VumO4MHd/HwyOQD7dZsHL6QEju/miQMD7JnjY/P+umBbXqnCCJlUc32rAdJsg
-69QbvZvLowGfI1R1GJzMXTeWrwLvcP0F5/i6fsqpkPAFnF10geDb8AvnjrgG5dXxM2No8HsTrhgV
-x+X62bnEUYBZhddnt8XriSrmUqxkp41UVKuDwBwDW6L1/lmNaq8nn+SRRs7xDQX+lsEr5GUwoel9
-C2S4m2DOsXqtbPuSy0yefm1coiWslMp1mGb9nFUFebDa5mZxMz9h3uuYuRT65iWn8ETm7EdGjEFx
-pOi1pWagCrfhTnIRT11tg0MENB+60zZyn69UH7EufjwGpitdrInAm6Yj5Bym72YqhuaeiQ0sJnX+
-XfBwCxMMuzZ8/XJdajVvspvYrkArPZwKTe3YHQSodFPW32mMfOP0wI7GqeOGp83aUybtoA9DjZEc
-243RrSlRQZEqqRU4ZBeiwdSxDzYQMEG2NcmIH3lMLrfcHGBIJ7rC25UptP1oULy2o/WgMt9GSsXV
-LLgkDNxW6c34tARoquPVJmEAzi4vr8i4teEIJ2BOBQruf2Dzj5A2BN16wCAo7uVNJZzc8mCwwlg5
-J5BUjV3KArHjDJXEmbTmKo592VVvd/MzMTmfO5BXC/Q7R5dioNCtfKaWQGQi3cDkxyzjs5U3IHwv
-ZDzwi/Hi9Vvi55qrQZehRhOwas9arIiH6RoOGImDFGVUwxlzPWp9eIat4YrNliLMRqgHUHZbKPMQ
-SzylnDFy2KNUL5WC8gXL5fvCzeewyg+7rqEnexJ+Nt6Eb7jpvxM7DDB6iphSHxkAhmKjN+aIRck5
-7iSzu30hvXgDNPaubdEFXPNum/0qCLIAkIKKA/EyTCBQEwOxIzHI5lJunTm9dOpm1wVBSlIYLYAI
-sIn+2jbIQcMHw8cycn4m5BQy7SCcWV+8E3U/EM+LDrz2z6Sa8uG4R/xyYrF+IBB2EVratiIRqh72
-m2Rrsy8XuBWu9/Zzd3yMivfogx8giYcHByPoWdwUnu+2vUBT7zBQ3grFPWzseJgisSgjCqgpRs7P
-DPyLe28UZ+CG45ZVNN22o1dIsJImbNFLhGLA1t9VxaOg1qJspfy7P5m6mirOPlGLw75f7NnUR38X
-j2ZTO/0E15uZ0Xd9vg74qin1CMvOrtFUrzAZ4a9SbnOgerMm1BFVuSJMLwpjOH4mY4397TSu/7jq
-IYBnkk9stRmcucjh544YftECTmuQq2oQmyxnlEyafokzB7F5HTlUfT9uBqdqzvMiScvFyUcBUHor
-hbjmgj0U0J/5QOsjWaP+9/n5Z7HXjBwMBnGe2NY0PJuz1C/DQL2TCMcLvSBiAu7kAoK6tutyzpgK
-z2gWgQ8YOH819Va9vG445IRfVr51NusS9OQhS7bP2HuwXgTiBX+FBRoMcVot4ZtrxZBaZKjfVSfQ
-k85C1IA9ZJiBWM+qFIkH97MdPwcRTZdKrSklzWTp9qLRxzJEH2XtEddoCvLxsfC34Qk91VULt+ik
-ruka+OLbKo/VP5EGOo2M+5kaDHZwgmBAFdjun0Y9sN1mqOeeimGElOiqftR19geoT6DYEhbjQWRg
-md2L41AKAh64172OKlkoknK8gwUoGVhouxd+WXggfCZ7yzppNumwaJqk514UpgNQbcnY5p/AdZNI
-wAmx+1shyH7q3DjXUWVLSXj4jX+00z+yVbKaTxh5HkgXv8lCyv3RBT19afq6gHkz8ItltUKH4ic4
-p/DoLbRFWCXj/+JwP0W7XIBQpobBteIP7mf5pKnxTBA1yJ+SmfXPy3sJJcRbUstX6le7P5qnvODv
-6Lbv9IjHxWTD2VV8LH1UL6RNGaHZyf43zx8S+KMLC5snGQ8/0gJwlF6qf3D72mDKqesCebxmjiXF
-97cMr0zkpt0cB93fhmkEcgxl2keESJbAkdPHIIp4XmONbIDwV6baLH7D3yld77djNR1rYNuXzbEs
-vkT0S8DJjqXi2MOjlXzkySIIGda6BPgeXDOmMDSuRcVSIJMJAxOWnSGWEyx/kOvznKFeMjphwdE1
-YBTLp5sDhnm10Kvg4unc4WEvrwQ0gNPHjgHchcY3s1hJM5k9pLx/zB6dSt1BJLCvsnT0l9nqUoTm
-QmK2qQa8QN75f9bbFuz/ly2/Dh3GR8jINMgTYm9SjNeenBG2BGF8HQ6WB8JuWR0X2976JeaD+wBb
-Vovt2cNcvJqvpff8rMndZ3b3vstpJZ8Oe3QNBh78GEJyWMxBEwQq0R/IKBiL8vrXl43h2CBOQaz3
-DA/xRAsaO4/NYxZiQj36Cquhh0Z/xlTdbQVhmtZGBz8n+Scno+RZExp8SarQ5bN47XFLRg9haTxn
-vsTXOVTQCPUiHYqmGzmVzj7iujtey2NshmvCy3zFw85cYmSK7nsif9BAAGnss7tkpNYEnQbNe9I7
-v+5BhY5+WHul0RcIttBsjqzGItAY7x6xvbuRMsXxWsGSE0xaMiVyTVUAqkC/81lhD25j8fvulHuA
-oRJQ4mt/W81smS6dsADF43wFnP4LJKQP8AA4mIyquDXiJk65aeqLBJ04PgZsGfqYgCUjDRLdHHlw
-7Ia48uQ5itHJzFBbfJWEHxiJYplMWp2C1sNUtYghHleq4yx2j8h9+YmmZPr4os/s1S4g1uv1fu/R
-vDli9VvxGPzt26lIgRItg3jVzFJ4lFH8/e5PQ4Lms7K5RK3ARSaKkn3i+JJ5LZ4FdbXlRdRfo2ns
-aUAQJPC4eEXst09rhfpl76h7u7dBDoqCHBq7luiDahsqzLe6Perl+kDE5Co3kXq7mcELrtBxR5Sq
-lbKYzNMyZamMIGqUWdpgkGLQj0Arm6KV2V4oP4yRiDAU0akLG2JxUe7ozvsaXtqfDh71FLEcZ3PQ
-O064xxQEuuAnev+ddIZFPvRqcca8ZHJq4X6M90IWZyHXbt6+VwHtQd0MH0YV9thueycF8VTOOc0z
-OT18JqBpK7OAWcd8bk0KWbAQRoCNm+5XE/yLlsCwvf19WLiv0dxmfHbc19SKvYw7aBJTfJsId1k9
-Wr9ME+Ct8Cv457n2KdIHyKFYwzUVSgOBgtnu7ej18MqjWlRAxXdxhLJ9jW3kAmd3ghCLzGrlyhsv
-bZu1QedoNWRptu4QeP8/Soh/H3A9EVP5Zq67nXqdxfIRyH1u2Zt92n5kr5v1A9MOpYJ7+w3FYhzg
-PpQeQlXi3KVgMNCxTSezaKUi2W8FvKKYHmSK8U+U9RkxMU2DELWnYz/jIjRDNN4k0MQ/3zDCH07d
-u4RcYQazTBLkG2SvQKhoCingAtR4cY75pgT+GzXLWlOnNMTQaHNPLS5GDJ2IH1Lr8erkoXIUJQ39
-Xra7UZf4gK/9rmhv5dgZ0Gpeks3ni12tkl0zZnYbImxl0NoJfAzibE+e6arPnZLjGTJuMJKZQ6dz
-YOLguVlA5Ztu9CTXMvJJzl1fOIGc2zkctj04PPCipkl0Nqshzb+o6FMJzWxw3IoUm7hB34g2WAnN
-pVf7Ai+Zu452rVKxqKq6DtHDngFDYmJxA9A/EQfvI2nG9Ttnz0ew2CxntjRp8So9k0HE9DUcz2HF
-Xc3CEgNPHe2U4NhLiOmmlJDo7yKwGZhpTVuRYmUagRxWhrZMYu/wXCOtNe0UvslF+JYmmvVdpB9g
-3qGHp7jR6zZC3ZuMJ5FK3REW1k5FJEokc0NCGGcBNPhpUKCjI6eiKnsZcP5hMVAODoMwT2lxU2EM
-9RNvNhPPhjpf/x87KNo4yZjFER6hWLA0iwi5PkPBK/I3w7JvgQVNfv4kjdr8cKjUBGvGLYNpH7h4
-gw7kC+YWZc8wBOrggltvwMMTxMi8sXGQJpR1KoNn/eWws0cBfcEk6TPjlSDK5rbXzcLqD0r5YySz
-VbLmvepdGvCWYWQrs6KsKA30nqrxT3uhu0VzGuz/QXc8CvwdYYmXd5HxXq2yKc4jBnagp6EKuuU0
-f3dqZm1HcphNSh2rxxJLrftP4ctDwRyIPX6NZDwCnRrT06I6rarG0dquEVMM/YGZdVeIkUxNlSpT
-PhNFSE5NLdQvhBel7Inj3/CKblpTJiozKmn4yqZs0Tt4ynhSVzN0hmbzWyD5KFkKl7eiP1CWMhTg
-5YnDBO0vwHDFbUGLxLUGom8eV6wJSXPB/JhuuDPfpriwvKBfQipdVEt7ojxd3H7eteGOvmit82Bu
-LI/BKPDjKPFJ5Z+xBl+HVsv5yguEnZWEcxbq4BhXOR79Tz9t2vFD0ubJaCoEVdKPsPhBsuxfIaO9
-YJ9mTs93hYOZgsy49fuFgsToo9GNphhoBe7A34tMoJLk4pwUO/+j9QxqJIgCpFQGNmxc3ag2VYdS
-uoET6eSWsckVwrWPi1HxtGTgvi3Zh01EZp5CRsZZK2CewWmhtQhD7asT0/lPoHjnoU3YOOcl15va
-qosCQHBUkgQtlQT+izBVVWsE3FDNkM3s0f8KnqIginwiMOTm1DQPaQLBZ0upq3Fk2gwIUIxglO1T
-YSAMNfZ1Jj+3WwP3AIsUjce0SL1hjXx59M5hLOpUkhmvj/YkSZQx3hjy1/+Q3IgCQvQS/NgxPmMV
-SkvWh3ET/KcWfg84NbmKMzMYP/dWSfbe7diGLD/frvXojgTU4uiSlTUwr6UJsUbu0KPdWj6apUvo
-gjDEYRhkPg0MzTAl0XdaWJdW+xWstOK9EW++wV9S9bX6h2HOWg+LTRghk8qlKqO6X12Nr9kqecBM
-enh1kqs0uDCjM34imtx7FrkrW4/n2VsmxwyRq54u0k8khse/a/zpTTllv6zTegPAEP8naPezY2dg
-HSWarUaMUJT862LUA9fgN3iJhjOW4Z1AurnwfpKfYybEaTwpO3q6uWnhIbKYi7p4ehTnC8PZ9SNK
-k4xWcD7cO9+O188VdDfx/o3j60ex4MB2aWnPpO2SCcsYzDjWmiCfkR3JEURbOzoaOZqIu0Uy90vz
-oerdTetGfXmau+B5UTMHM4qAkkiiLM+AddB3REClHfWlpw3HuMZiL3HtJ94hp7DKhTuBXG18LNes
-jYvrUWxakhdJ4GU9PS6+zEeIv+JcwJbAD2J4vILMth9u1JEccnZsILuo6T7PfrZv0I1SUnJDLlBb
-5SxSEZOjvOlauyoBchX825Ma7j7dhjtMMn4HDOGxUVNk9+9cwhjg8SD7KmkjjXrzyOun2Z3p3ka/
-PcLmnDfJNBDFZEiDetMVxXJJuF4KeeReBEZWsg/L4T3gTQ1XvfIyVVTlR4zCktMI1+/xHl/INtYq
-yaLahtw3in3gg5jtOC3bRcB+NeSwFvtVA9uQVzYnLhDw7ezNq0uiXoMyKCaexMUBiWd9Q5NsfRZs
-fDIFPo+usBh4tzWN1WAu2ttvmAL+q2pPLA63gzGXmTacfu+mU0m66biHEreTglbCk6N3qf1vgSMD
-z1zWf8OYsdK6HI8MGXg8+DFN6vkHhRiY3yQMu6/DEeFxD2jqnz4stvbuECjb9DLR1AihfI8MSmN/
-nDkqiOmFG7iqdgkkUUOPy8mtqwkLLZI9coYWj0nd3VSAWC+JEWb0cR4buZT635ByAvZAw+UaIMvq
-eBINunJt6vOfM7mPmUVm0AtZ/iYt8l9tUIn7o81wwsH1hNvAD6w6XNdy0BJtpME8wziIfh630VSO
-aZic0YCrnIFVLtmVfJJjrJ/mk9YO8FVIfJHGzBK1zgobuJJSWsNPxvmu1Drk5GoUNP9qHznoWTm3
-0mM4tGfjIjTOusq9lD2pnkxWIiiD+Sac4+urW3FKHxAzUvzVQ0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Form
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Form_DisplayGroup
+ * 
+ * @category   Zend
+ * @package    Zend_Form
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: DisplayGroup.php 12786 2008-11-23 14:15:48Z matthew $
+ */
+class Zend_Form_DisplayGroup implements Iterator,Countable
+{
+    /**
+     * Group attributes
+     * @var array
+     */
+    protected $_attribs = array();
+
+    /**
+     * Display group decorators
+     * @var array
+     */
+    protected $_decorators = array();
+
+    /**
+     * Description
+     * @var string
+     */
+    protected $_description;
+
+    /**
+     * Should we disable loading the default decorators?
+     * @var bool
+     */
+    protected $_disableLoadDefaultDecorators = false;
+
+    /**
+     * Element order
+     * @var array
+     */
+    protected $_elementOrder = array();
+
+    /**
+     * Elements
+     * @var array
+     */
+    protected $_elements = array();
+
+    /**
+     * Whether or not a new element has been added to the group
+     * @var bool
+     */
+    protected $_groupUpdated = false;
+
+    /**
+     * Plugin loader for decorators
+     * @var Zend_Loader_PluginLoader
+     */
+    protected $_loader;
+
+    /**
+     * Group name
+     * @var string
+     */
+    protected $_name;
+
+    /**
+     * Group order
+     * @var int
+     */
+    protected $_order;
+
+    /**
+     * @var Zend_Translate
+     */
+    protected $_translator;
+
+    /**
+     * Is translation disabled?
+     * @var bool
+     */
+    protected $_translatorDisabled = false;
+
+    /**
+     * @var Zend_View_Interface
+     */
+    protected $_view;
+
+    /**
+     * Constructor
+     * 
+     * @param  string $name 
+     * @param  Zend_Loader_PluginLoader $loader 
+     * @param  array|Zend_Config $options 
+     * @return void
+     */
+    public function __construct($name, Zend_Loader_PluginLoader $loader, $options = null)
+    {
+        $this->setName($name);
+
+        $this->setPluginLoader($loader);
+
+        if (is_array($options)) {
+            $this->setOptions($options);
+        } elseif ($options instanceof Zend_Config) {
+            $this->setConfig($options);
+        }
+
+        // Extensions...
+        $this->init();
+
+        $this->loadDefaultDecorators();
+    }
+
+    /**
+     * Initialize object; used by extending classes
+     * 
+     * @return void
+     */
+    public function init()
+    {
+    }
+
+    /**
+     * Set options
+     * 
+     * @param  array $options 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setOptions(array $options)
+    {
+        $forbidden = array(
+            'Options', 'Config', 'PluginLoader', 'View',
+            'Translator', 'Attrib'
+        );
+        foreach ($options as $key => $value) {
+            $normalized = ucfirst($key);
+
+            if (in_array($normalized, $forbidden)) {
+                continue;
+            }
+
+            $method = 'set' . $normalized;
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            } else {
+                $this->setAttrib($key, $value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Set options from config object
+     * 
+     * @param  Zend_Config $config 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setConfig(Zend_Config $config)
+    {
+        return $this->setOptions($config->toArray());
+    }
+
+    /**
+     * Set group attribute
+     * 
+     * @param  string $key 
+     * @param  mixed $value 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setAttrib($key, $value)
+    {
+        $key = (string) $key;
+        $this->_attribs[$key] = $value;
+        return $this;
+    }
+
+    /**
+     * Add multiple form attributes at once
+     * 
+     * @param  array $attribs 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function addAttribs(array $attribs)
+    {
+        foreach ($attribs as $key => $value) {
+            $this->setAttrib($key, $value);
+        }
+        return $this;
+    }
+
+    /**
+     * Set multiple form attributes at once
+     *
+     * Overwrites any previously set attributes.
+     * 
+     * @param  array $attribs 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setAttribs(array $attribs)
+    {
+        $this->clearAttribs();
+        return $this->addAttribs($attribs);
+    }
+
+    /**
+     * Retrieve a single form attribute
+     * 
+     * @param  string $key 
+     * @return mixed
+     */
+    public function getAttrib($key)
+    {
+        $key = (string) $key;
+        if (!isset($this->_attribs[$key])) {
+            return null;
+        }
+
+        return $this->_attribs[$key];
+    }
+
+    /**
+     * Retrieve all form attributes/metadata
+     * 
+     * @return array
+     */
+    public function getAttribs()
+    {
+        return $this->_attribs;
+    }
+
+    /**
+     * Remove attribute
+     * 
+     * @param  string $key 
+     * @return bool
+     */
+    public function removeAttrib($key)
+    {
+        if (array_key_exists($key, $this->_attribs)) {
+            unset($this->_attribs[$key]);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Clear all form attributes
+     * 
+     * @return Zend_Form
+     */
+    public function clearAttribs()
+    {
+        $this->_attribs = array();
+        return $this;
+    }
+
+    /**
+     * Filter a name to only allow valid variable characters
+     * 
+     * @param  string $value 
+     * @return string
+     */
+    public function filterName($value)
+    {
+        return preg_replace('/[^a-zA-Z0-9_\x7f-\xff]/', '', (string) $value);
+    }
+
+    /**
+     * Set group name
+     * 
+     * @param  string $name 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setName($name)
+    {
+        $name = $this->filtername($name);
+        if (('0' !== $name) && empty($name)) {
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception('Invalid name provided; must contain only valid variable characters and be non-empty');
+        }
+
+        $this->_name = $name;
+        return $this;
+    }
+
+    /**
+     * Retrieve group name
+     * 
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * Get fully qualified name
+     *
+     * Places name as subitem of array and/or appends brackets.
+     * 
+     * @return string
+     */
+    public function getFullyQualifiedName()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * Get element id
+     * 
+     * @return string
+     */
+    public function getId()
+    {
+        if (isset($this->id)) {
+            return $this->id;
+        }
+
+        $id = $this->getFullyQualifiedName();
+
+        // Bail early if no array notation detected
+        if (!strstr($id, '[')) {
+            return $id;
+        }
+
+        // Strip array notation
+        if ('[]' == substr($id, -2)) {
+            $id = substr($id, 0, strlen($id) - 2);
+        }
+        $id = str_replace('][', '-', $id);
+        $id = str_replace(array(']', '['), '-', $id);
+        $id = trim($id, '-');
+
+        return $id;
+    }
+
+    /**
+     * Set group legend
+     * 
+     * @param  string $legend 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setLegend($legend)
+    {
+        return $this->setAttrib('legend', (string) $legend);
+    }
+
+    /**
+     * Retrieve group legend
+     * 
+     * @return string
+     */
+    public function getLegend()
+    {
+        return $this->getAttrib('legend');
+    }
+
+    /**
+     * Set description
+     * 
+     * @param  string $value 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setDescription($value)
+    {
+        $this->_description = (string) $value;
+        return $this;
+    }
+
+    /**
+     * Get description
+     * 
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    /**
+     * Set group order
+     * 
+     * @param  int $order 
+     * @return Zend_Form_Element
+     */
+    public function setOrder($order)
+    {
+        $this->_order = (int) $order;
+        return $this;
+    }
+
+    /**
+     * Retrieve group order
+     * 
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->_order;
+    }
+
+    // Elements
+
+    /**
+     * Add element to stack
+     * 
+     * @param  Zend_Form_Element $element 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function addElement(Zend_Form_Element $element)
+    {
+        $this->_elements[$element->getName()] = $element;
+        $this->_groupUpdated = true;
+        return $this;
+    }
+
+    /**
+     * Add multiple elements at once
+     * 
+     * @param  array $elements 
+     * @return Zend_Form_DisplayGroup
+     * @throws Zend_Form_Exception if any element is not a Zend_Form_Element
+     */
+    public function addElements(array $elements)
+    {
+        foreach ($elements as $element) {
+            if (!$element instanceof Zend_Form_Element) {
+                require_once 'Zend/Form/Exception.php';
+                throw new Zend_Form_Exception('elements passed via array to addElements() must be Zend_Form_Elements only');
+            }
+            $this->addElement($element);
+        }
+        return $this;
+    }
+
+    /**
+     * Set multiple elements at once (overwrites)
+     * 
+     * @param  array $elements 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setElements(array $elements)
+    {
+        $this->clearElements();
+        return $this->addElements($elements);
+    }
+
+    /**
+     * Retrieve element
+     * 
+     * @param  string $name 
+     * @return Zend_Form_Element|null
+     */
+    public function getElement($name)
+    {
+        $name = (string) $name;
+        if (isset($this->_elements[$name])) {
+            return $this->_elements[$name];
+        }
+
+        return null;
+    }
+
+    /**
+     * Retrieve elements
+     * @return array
+     */
+    public function getElements()
+    {
+        return $this->_elements;
+    }
+
+    /**
+     * Remove a single element
+     * 
+     * @param  string $name 
+     * @return boolean
+     */
+    public function removeElement($name)
+    {
+        $name = (string) $name;
+        if (array_key_exists($name, $this->_elements)) {
+            unset($this->_elements[$name]);
+            $this->_groupUpdated = true;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Remove all elements
+     * 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function clearElements()
+    {
+        $this->_elements = array();
+        $this->_groupUpdated = true;
+        return $this;
+    }
+
+    // Plugin loader (for decorators)
+
+    /**
+     * Set plugin loader
+     * 
+     * @param  Zend_Loader_PluginLoader $loader 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setPluginLoader(Zend_Loader_PluginLoader $loader)
+    {
+        $this->_loader = $loader;
+        return $this;
+    }
+
+    /**
+     * Retrieve plugin loader
+     * 
+     * @return Zend_Loader_PluginLoader
+     */
+    public function getPluginLoader()
+    {
+        return $this->_loader;
+    }
+
+    /**
+     * Add a prefix path for the plugin loader
+     * 
+     * @param  string $prefix 
+     * @param  string $path 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function addPrefixPath($prefix, $path)
+    {
+        $this->getPluginLoader()->addPrefixPath($prefix, $path);
+        return $this;
+    }
+
+    /**
+     * Add several prefix paths at once
+     * 
+     * @param  array $spec 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function addPrefixPaths(array $spec)
+    {
+        if (isset($spec['prefix']) && isset($spec['path'])) {
+            return $this->addPrefixPath($spec['prefix'], $spec['path']);
+        } 
+        foreach ($spec as $prefix => $paths) {
+            if (is_numeric($prefix) && is_array($paths)) {
+                $prefix = null;
+                if (isset($paths['prefix']) && isset($paths['path'])) {
+                    $this->addPrefixPath($paths['prefix'], $paths['path']);
+                }
+            } elseif (!is_numeric($prefix)) {
+                if (is_string($paths)) {
+                    $this->addPrefixPath($prefix, $paths);
+                } elseif (is_array($paths)) {
+                    foreach ($paths as $path) {
+                        $this->addPrefixPath($prefix, $path);
+                    }
+                }
+            }
+        }
+        return $this;
+    }
+
+    // Decorators
+
+    /**
+     * Set flag to disable loading default decorators
+     * 
+     * @param  bool $flag 
+     * @return Zend_Form_Element
+     */
+    public function setDisableLoadDefaultDecorators($flag)
+    {
+        $this->_disableLoadDefaultDecorators = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Should we load the default decorators?
+     * 
+     * @return bool
+     */
+    public function loadDefaultDecoratorsIsDisabled()
+    {
+        return $this->_disableLoadDefaultDecorators;
+    }
+
+    /**
+     * Load default decorators
+     * 
+     * @return void
+     */
+    public function loadDefaultDecorators()
+    {
+        if ($this->loadDefaultDecoratorsIsDisabled()) {
+            return;
+        }
+
+        $decorators = $this->getDecorators();
+        if (empty($decorators)) {
+            $this->addDecorator('FormElements')
+                 ->addDecorator('HtmlTag', array('tag' => 'dl'))
+                 ->addDecorator('Fieldset')
+                 ->addDecorator('DtDdWrapper');
+        }
+    }
+
+    /**
+     * Instantiate a decorator based on class name or class name fragment
+     * 
+     * @param  string $name 
+     * @param  null|array $options 
+     * @return Zend_Form_Decorator_Interface
+     */
+    protected function _getDecorator($name, $options = null)
+    {
+        $class = $this->getPluginLoader()->load($name);
+        if (null === $options) {
+            $decorator = new $class;
+        } else {
+            $decorator = new $class($options);
+        }
+
+        return $decorator;
+    }
+
+    /**
+     * Add a decorator for rendering the group
+     * 
+     * @param  string|Zend_Form_Decorator_Interface $decorator 
+     * @param  array|Zend_Config $options Options with which to initialize decorator
+     * @return Zend_Form_DisplayGroup
+     */
+    public function addDecorator($decorator, $options = null)
+    {
+        if ($decorator instanceof Zend_Form_Decorator_Interface) {
+            $name = get_class($decorator);
+        } elseif (is_string($decorator)) {
+            $name      = $decorator;
+            $decorator = array(
+                'decorator' => $name,
+                'options'   => $options,
+            );
+        } elseif (is_array($decorator)) {
+            foreach ($decorator as $name => $spec) {
+                break;
+            }
+            if (is_numeric($name)) {
+                require_once 'Zend/Form/Exception.php';
+                throw new Zend_Form_Exception('Invalid alias provided to addDecorator; must be alphanumeric string');
+            }
+            if (is_string($spec)) {
+                $decorator = array(
+                    'decorator' => $spec,
+                    'options'   => $options,
+                );
+            } elseif ($spec instanceof Zend_Form_Decorator_Interface) {
+                $decorator = $spec;
+            }
+        } else {
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception('Invalid decorator provided to addDecorator; must be string or Zend_Form_Decorator_Interface');
+        }
+
+        $this->_decorators[$name] = $decorator;
+
+        return $this;
+    }
+
+    /**
+     * Add many decorators at once
+     * 
+     * @param  array $decorators 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function addDecorators(array $decorators)
+    {
+        foreach ($decorators as $decoratorInfo) {
+            if (is_string($decoratorInfo)) {
+                $this->addDecorator($decoratorInfo);
+            } elseif ($decoratorInfo instanceof Zend_Form_Decorator_Interface) {
+                $this->addDecorator($decoratorInfo);
+            } elseif (is_array($decoratorInfo)) {
+                $argc    = count($decoratorInfo);
+                $options = array();
+                if (isset($decoratorInfo['decorator'])) {
+                    $decorator = $decoratorInfo['decorator'];
+                    if (isset($decoratorInfo['options'])) {
+                        $options = $decoratorInfo['options'];
+                    }
+                    $this->addDecorator($decorator, $options);
+                } else {
+                    switch (true) {
+                        case (0 == $argc):
+                            break;
+                        case (1 <= $argc):
+                            $decorator  = array_shift($decoratorInfo);
+                        case (2 <= $argc):
+                            $options = array_shift($decoratorInfo);
+                        default:
+                            $this->addDecorator($decorator, $options);
+                            break;
+                    }
+                }
+            } else {
+                require_once 'Zend/Form/Exception.php';
+                throw new Zend_Form_Exception('Invalid decorator passed to addDecorators()');
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Overwrite all decorators
+     * 
+     * @param  array $decorators 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setDecorators(array $decorators)
+    {
+        $this->clearDecorators();
+        return $this->addDecorators($decorators);
+    }
+
+    /**
+     * Retrieve a registered decorator
+     * 
+     * @param  string $name 
+     * @return false|Zend_Form_Decorator_Abstract
+     */
+    public function getDecorator($name)
+    {
+        if (!isset($this->_decorators[$name])) {
+            $len = strlen($name);
+            foreach ($this->_decorators as $localName => $decorator) {
+                if ($len > strlen($localName)) {
+                    continue;
+                }
+
+                if (0 === substr_compare($localName, $name, -$len, $len, true)) {
+                    if (is_array($decorator)) {
+                        return $this->_loadDecorator($decorator, $localName);
+                    }
+                    return $decorator;
+                }
+            }
+            return false;
+        }
+
+        if (is_array($this->_decorators[$name])) {
+            return $this->_loadDecorator($this->_decorators[$name], $name);
+        }
+
+        return $this->_decorators[$name];
+    }
+
+    /**
+     * Retrieve all decorators
+     * 
+     * @return array
+     */
+    public function getDecorators()
+    {
+        foreach ($this->_decorators as $key => $value) {
+            if (is_array($value)) {
+                $this->_loadDecorator($value, $key);
+            }
+        }
+        return $this->_decorators;
+    }
+
+    /**
+     * Remove a single decorator
+     * 
+     * @param  string $name 
+     * @return bool
+     */
+    public function removeDecorator($name)
+    {
+        $decorator = $this->getDecorator($name);
+        if ($decorator) {
+            if (array_key_exists($name, $this->_decorators)) {
+                unset($this->_decorators[$name]);
+            } else {
+                $class = get_class($decorator);
+                unset($this->_decorators[$class]);
+            }
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Clear all decorators
+     * 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function clearDecorators()
+    {
+        $this->_decorators = array();
+        return $this;
+    }
+
+    /**
+     * Set view
+     * 
+     * @param  Zend_View_Interface $view 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setView(Zend_View_Interface $view = null)
+    {
+        $this->_view = $view;
+        return $this;
+    }
+
+    /**
+     * Retrieve view
+     * 
+     * @return Zend_View_Interface
+     */
+    public function getView()
+    {
+        if (null === $this->_view) {
+            require_once 'Zend/Controller/Action/HelperBroker.php';
+            $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+            $this->setView($viewRenderer->view);
+        }
+
+        return $this->_view;
+    }
+
+    /**
+     * Render display group
+     * 
+     * @return string
+     */
+    public function render(Zend_View_Interface $view = null)
+    {
+        if (null !== $view) {
+            $this->setView($view);
+        }
+        $content = '';
+        foreach ($this->getDecorators() as $decorator) {
+            $decorator->setElement($this);
+            $content = $decorator->render($content);
+        }
+        return $content;
+    }
+
+    /**
+     * String representation of group
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        try {
+            $return = $this->render();
+            return $return;
+        } catch (Exception $e) {
+            trigger_error($e->getMessage(), E_USER_WARNING);
+            return '';
+        }
+    }
+
+    /**
+     * Set translator object
+     * 
+     * @param  Zend_Translate|Zend_Translate_Adapter|null $translator 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setTranslator($translator = null)
+    {
+        if ((null === $translator) || ($translator instanceof Zend_Translate_Adapter)) {
+            $this->_translator = $translator;
+        } elseif ($translator instanceof Zend_Translate) {
+            $this->_translator = $translator->getAdapter();
+        } else {
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception('Invalid translator specified');
+        }
+        return $this;
+    }
+
+    /**
+     * Retrieve translator object
+     * 
+     * @return Zend_Translate_Adapter|null
+     */
+    public function getTranslator()
+    {
+        if ($this->translatorIsDisabled()) {
+            return null;
+        }
+
+        if (null === $this->_translator) {
+            require_once 'Zend/Form.php';
+            return Zend_Form::getDefaultTranslator();
+        }
+
+        return $this->_translator;
+    }
+
+    /**
+     * Indicate whether or not translation should be disabled
+     * 
+     * @param  bool $flag 
+     * @return Zend_Form_DisplayGroup
+     */
+    public function setDisableTranslator($flag)
+    {
+        $this->_translatorDisabled = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Is translation disabled?
+     * 
+     * @return bool
+     */
+    public function translatorIsDisabled()
+    {
+        return $this->_translatorDisabled;
+    }
+
+    /**
+     * Overloading: allow rendering specific decorators
+     *
+     * Call renderDecoratorName() to render a specific decorator.
+     * 
+     * @param  string $method 
+     * @param  array $args 
+     * @return string
+     * @throws Zend_Form_Exception for invalid decorator or invalid method call
+     */
+    public function __call($method, $args)
+    {
+        if ('render' == substr($method, 0, 6)) {
+            $decoratorName = substr($method, 6);
+            if (false !== ($decorator = $this->getDecorator($decoratorName))) {
+                $decorator->setElement($this);
+                $seed = '';
+                if (0 < count($args)) {
+                    $seed = array_shift($args);
+                }
+                return $decorator->render($seed);
+            }
+
+            require_once 'Zend/Form/Exception.php';
+            throw new Zend_Form_Exception(sprintf('Decorator by name %s does not exist', $decoratorName));
+        }
+
+        require_once 'Zend/Form/Exception.php';
+        throw new Zend_Form_Exception(sprintf('Method %s does not exist', $method));
+    }
+
+    // Interfaces: Iterator, Countable
+
+    /**
+     * Current element
+     * 
+     * @return Zend_Form_Element
+     */
+    public function current()
+    {
+        $this->_sort();
+        current($this->_elementOrder);
+        $key = key($this->_elementOrder);
+        return $this->getElement($key);
+    }
+
+    /**
+     * Current element
+     * 
+     * @return string
+     */
+    public function key()
+    {
+        $this->_sort();
+        return key($this->_elementOrder);
+    }
+
+    /**
+     * Move pointer to next element
+     * 
+     * @return void
+     */
+    public function next()
+    {
+        $this->_sort();
+        next($this->_elementOrder);
+    }
+
+    /**
+     * Move pointer to beginning of element loop
+     * 
+     * @return void
+     */
+    public function rewind()
+    {
+        $this->_sort();
+        reset($this->_elementOrder);
+    }
+
+    /**
+     * Determine if current element/subform/display group is valid
+     * 
+     * @return bool
+     */
+    public function valid()
+    {
+        $this->_sort();
+        return (current($this->_elementOrder) !== false);
+    }
+
+    /**
+     * Count of elements/subforms that are iterable
+     * 
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->_elements);
+    }
+
+    /**
+     * Sort items according to their order
+     * 
+     * @return void
+     */
+    protected function _sort()
+    {
+        if ($this->_groupUpdated || !is_array($this->_elementOrder)) {
+            $elementOrder = array();
+            foreach ($this->getElements() as $key => $element) {
+                $elementOrder[$key] = $element->getOrder();
+            }
+
+            $items = array();
+            $index = 0;
+            foreach ($elementOrder as $key => $order) {
+                if (null === $order) {
+                    while (array_search($index, $elementOrder, true)) {
+                        ++$index;
+                    }
+                    $items[$index] = $key;
+                    ++$index;
+                } else {
+                    $items[$order] = $key;
+                }
+            }
+
+            $items = array_flip($items);
+            asort($items);
+            $this->_elementOrder = $items;
+            $this->_groupUpdated = false;
+        }
+    }
+
+    /**
+     * Lazy-load a decorator
+     * 
+     * @param  array $decorator Decorator type and options
+     * @param  mixed $name Decorator name or alias
+     * @return Zend_Form_Decorator_Interface
+     */
+    protected function _loadDecorator(array $decorator, $name)
+    {
+        $sameName = false;
+        if ($name == $decorator['decorator']) {
+            $sameName = true;
+        }
+
+        $instance = $this->_getDecorator($decorator['decorator'], $decorator['options']);
+        if ($sameName) {
+            $newName            = get_class($instance);
+            $decoratorNames     = array_keys($this->_decorators);
+            $order              = array_flip($decoratorNames);
+            $order[$newName]    = $order[$name];
+            $decoratorsExchange = array();
+            unset($order[$name]);
+            asort($order);
+            foreach ($order as $key => $index) {
+                if ($key == $newName) {
+                    $decoratorsExchange[$key] = $instance;
+                    continue;
+                }
+                $decoratorsExchange[$key] = $this->_decorators[$key];
+            }
+            $this->_decorators = $decoratorsExchange;
+        } else {
+            $this->_decorators[$name] = $instance;
+        }
+
+        return $instance;
+    }
+}

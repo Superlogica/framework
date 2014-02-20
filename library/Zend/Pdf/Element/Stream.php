@@ -1,32 +1,124 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-S1Mv1QtAUhp07AwMgbA3
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * @see Zend_Pdf
+ */
+require_once 'Zend/Pdf.php';
+
+/**
+ * @see Zend_Pdf_Element
+ */
+require_once 'Zend/Pdf/Element.php';
+
+/**
+ * @see Zend_Memory
+ */
+require_once 'Zend/Memory.php';
+
+/**
+ * PDF file 'stream' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Stream extends Zend_Pdf_Element
+{
+    /**
+     * Object value
+     *
+     * @var Zend_Memory_Container
+     */
+    public $value;
+
+
+    /**
+     * Object constructor
+     *
+     * @param string $val
+     */
+    public function __construct($val)
+    {
+        $this->value = Zend_Pdf::getMemoryManager()->create($val);
+    }
+
+
+    /**
+     * Return type of the element.
+     *
+     * @return integer
+     */
+    public function getType()
+    {
+        return Zend_Pdf_Element::TYPE_STREAM;
+    }
+
+
+    /**
+     * Stream length.
+     * (Method is used to avoid string copying, which may occurs in some cases)
+     *
+     * @return integer
+     */
+    public function length()
+    {
+        return strlen($this->value->getRef());
+    }
+
+
+    /**
+     * Clear stream
+     *
+     */
+    public function clear()
+    {
+        $ref = &$this->value->getRef();
+        $ref = '';
+        $this->value->touch();
+    }
+
+
+    /**
+     * Append value to a stream
+     *
+     * @param mixed $val
+     */
+    public function append($val)
+    {
+        $ref = &$this->value->getRef();
+        $ref .= (string)$val;
+        $this->value->touch();
+    }
+
+
+    /**
+     * Return object as string
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        return "stream\n" . $this->value->getRef() . "\nendstream";
+    }
+}

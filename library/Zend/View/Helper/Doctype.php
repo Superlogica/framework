@@ -1,64 +1,194 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Placeholder.php 7078 2007-12-11 14:29:33Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Registry */
+require_once 'Zend/Registry.php';
+
+/** Zend_View_Helper_Abstract.php */
+require_once 'Zend/View/Helper/Abstract.php';
+
+/**
+ * Helper for setting and retrieving the doctype
+ *
+ * @package    Zend_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View_Helper_Doctype extends Zend_View_Helper_Abstract
+{
+    /**#@+
+     * DocType constants
+     */
+    const XHTML11             = 'XHTML11';
+    const XHTML1_STRICT       = 'XHTML1_STRICT';
+    const XHTML1_TRANSITIONAL = 'XHTML1_TRANSITIONAL';
+    const XHTML1_FRAMESET     = 'XHTML1_FRAMESET';
+    const XHTML_BASIC1        = 'XHTML_BASIC1';
+    const HTML4_STRICT        = 'HTML4_STRICT';
+    const HTML4_LOOSE         = 'HTML4_LOOSE';
+    const HTML4_FRAMESET      = 'HTML4_FRAMESET';
+    const HTML5               = 'HTML5';
+    const CUSTOM_XHTML        = 'CUSTOM_XHTML';
+    const CUSTOM              = 'CUSTOM';
+    /**#@-*/
+
+    /**
+     * Default DocType
+     * @var string
+     */
+    protected $_defaultDoctype = self::HTML4_LOOSE;
+
+    /**
+     * Registry containing current doctype and mappings
+     * @var ArrayObject
+     */
+    protected $_registry;
+
+    /**
+     * Registry key in which helper is stored
+     * @var string
+     */
+    protected $_regKey = 'Zend_View_Helper_Doctype';
+
+    /**
+     * Constructor
+     *
+     * Map constants to doctype strings, and set default doctype
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        if (!Zend_Registry::isRegistered($this->_regKey)) {
+            $this->_registry = new ArrayObject(array(
+                'doctypes' => array(
+                    self::XHTML11             => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">',
+                    self::XHTML1_STRICT       => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">',
+                    self::XHTML1_TRANSITIONAL => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">',
+                    self::XHTML1_FRAMESET     => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">',
+                    self::XHTML_BASIC1        => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">',
+                    self::HTML4_STRICT        => '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">',
+                    self::HTML4_LOOSE         => '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
+                    self::HTML4_FRAMESET      => '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">',
+                    self::HTML5               => '<!DOCTYPE html>',
+                )
+            ));
+            Zend_Registry::set($this->_regKey, $this->_registry);
+            $this->setDoctype($this->_defaultDoctype);
+        } else {
+            $this->_registry = Zend_Registry::get($this->_regKey);
+        }
+    }
+
+    /**
+     * Set or retrieve doctype
+     *
+     * @param  string $doctype
+     * @return Zend_View_Helper_Doctype
+     */
+    public function doctype($doctype = null)
+    {
+        if (null !== $doctype) {
+            switch ($doctype) {
+                case self::XHTML11:
+                case self::XHTML1_STRICT:
+                case self::XHTML1_TRANSITIONAL:
+                case self::XHTML1_FRAMESET:
+                case self::XHTML_BASIC1:
+                case self::HTML4_STRICT:
+                case self::HTML4_LOOSE:
+                case self::HTML4_FRAMESET:
+                case self::HTML5:
+                    $this->setDoctype($doctype);
+                    break;
+                default:
+                    if (substr($doctype, 0, 9) != '<!DOCTYPE') {
+                        require_once 'Zend/View/Exception.php';
+                        throw new Zend_View_Exception('The specified doctype is malformed');
+                    }
+                    if (stristr($doctype, 'xhtml')) {
+                        $type = self::CUSTOM_XHTML;
+                    } else {
+                        $type = self::CUSTOM;
+                    }
+                    $this->setDoctype($type);
+                    $this->_registry['doctypes'][$type] = $doctype;
+                    break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set doctype
+     *
+     * @param  string $doctype
+     * @return Zend_View_Helper_Doctype
+     */
+    public function setDoctype($doctype)
+    {
+        $this->_registry['doctype'] = $doctype;
+        return $this;
+    }
+
+    /**
+     * Retrieve doctype
+     *
+     * @return string
+     */
+    public function getDoctype()
+    {
+        return $this->_registry['doctype'];
+    }
+
+    /**
+     * Get doctype => string mappings
+     *
+     * @return array
+     */
+    public function getDoctypes()
+    {
+        return $this->_registry['doctypes'];
+    }
+
+    /**
+     * Is doctype XHTML?
+     *
+     * @return boolean
+     */
+    public function isXhtml()
+    {
+        return (stristr($this->getDoctype(), 'xhtml') ? true : false);
+    }
+
+    /**
+     * String representation of doctype
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $doctypes = $this->getDoctypes();
+        return $doctypes[$this->getDoctype()];
+    }
+}

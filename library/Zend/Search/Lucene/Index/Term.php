@@ -1,45 +1,143 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-Py3a5aPJyzG6XoWYL1kyIwiQ4EgK
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * A Term represents a word from text.  This is the unit of search.  It is
+ * composed of two elements, the text of the word, as a string, and the name of
+ * the field that the text occured in, an interned string.
+ *
+ * Note that terms may represent more than words from text fields, but also
+ * things like dates, email addresses, urls, etc.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Index_Term
+{
+    /**
+     * Field name or field number (depending from context)
+     *
+     * @var mixed
+     */
+    public $field;
+
+    /**
+     * Term value
+     *
+     * @var string
+     */
+    public $text;
+
+
+    /**
+     * Object constructor
+     */
+    public function __construct($text, $field = null)
+    {
+        $this->field = ($field === null)?  Zend_Search_Lucene::getDefaultSearchField() : $field;
+        $this->text  = $text;
+    }
+
+
+    /**
+     * Returns term key
+     *
+     * @return string
+     */
+    public function key()
+    {
+        return $this->field . chr(0) . $this->text;
+    }
+
+    /**
+     * Get term prefix
+     *
+     * @param string $str
+     * @param integer $length
+     * @return string
+     */
+    public static function getPrefix($str, $length)
+    {
+        $prefixBytes = 0;
+        $prefixChars = 0;
+        while ($prefixBytes < strlen($str)  &&  $prefixChars < $length) {
+            $charBytes = 1;
+            if ((ord($str[$prefixBytes]) & 0xC0) == 0xC0) {
+                $charBytes++;
+                if (ord($str[$prefixBytes]) & 0x20 ) {
+                    $charBytes++;
+                    if (ord($str[$prefixBytes]) & 0x10 ) {
+                        $charBytes++;
+                    }
+                }
+            }
+
+            if ($prefixBytes + $charBytes > strlen($str)) {
+                // wrong character
+                break;
+            }
+
+            $prefixChars++;
+            $prefixBytes += $charBytes;
+        }
+
+        return substr($str, 0, $prefixBytes);
+    }
+
+    /**
+     * Get UTF-8 string length
+     *
+     * @param string $str
+     * @return string
+     */
+    public static function getLength($str)
+    {
+        $bytes = 0;
+        $chars = 0;
+        while ($bytes < strlen($str)) {
+            $charBytes = 1;
+            if ((ord($str[$bytes]) & 0xC0) == 0xC0) {
+                $charBytes++;
+                if (ord($str[$bytes]) & 0x20 ) {
+                    $charBytes++;
+                    if (ord($str[$bytes]) & 0x10 ) {
+                        $charBytes++;
+                    }
+                }
+            }
+
+            if ($bytes + $charBytes > strlen($str)) {
+                // wrong character
+                break;
+            }
+
+            $chars++;
+            $bytes += $charBytes;
+        }
+
+        return $chars;
+    }
+}
+

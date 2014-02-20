@@ -1,38 +1,143 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * @see Zend_Gdata_Gapps
+ */
+require_once 'Zend/Gdata/Gapps.php';
+
+/**
+ * Represents the apps:emailList element used by the Apps data API. This
+ * class represents properties of an email list and is usually contained
+ * within an instance of Zend_Gdata_Gapps_EmailListEntry.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gapps
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Gapps_Extension_EmailList extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'apps';
+    protected $_rootElement = 'emailList';
+
+    /**
+     * The name of the email list. This name is used as the email address
+     * for this list.
+     *
+     * @var string
+     */
+    protected $_name = null;
+
+    /**
+     * Constructs a new Zend_Gdata_Gapps_Extension_EmailList object.
+     *
+     * @param string $name (optional) The name to be used for this email list.
+     */
+    public function __construct($name = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
+        parent::__construct();
+        $this->_name = $name;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_name !== null) {
+            $element->setAttribute('name', $this->_name);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and value are
+     * stored in an array.
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'name':
+            $this->_name = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's name attribute.
+     *
+     * @see setName
+     * @return string The requested attribute.
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * Set the value for this element's name attribute. This is the unique
+     * name which will be used to identify this email list within this
+     * domain, and will be used to form this email list's email address.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Gapps_Extension_EmailList The element being modified.
+     */
+    public function setName($value)
+    {
+        $this->_name = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+}

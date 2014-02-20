@@ -1,52 +1,205 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Method
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * Method callback metadata
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @subpackage Method
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Server_Method_Callback
+{
+    /**
+     * @var string Class name for class method callback
+     */
+    protected $_class;
+
+    /**
+     * @var string Function name for function callback
+     */
+    protected $_function;
+
+    /**
+     * @var string Method name for class method callback
+     */
+    protected $_method;
+
+    /**
+     * @var string Callback type
+     */
+    protected $_type;
+
+    /**
+     * @var array Valid callback types
+     */
+    protected $_types = array('function', 'static', 'instance');
+
+    /**
+     * Constructor
+     * 
+     * @param  null|array $options 
+     * @return void
+     */
+    public function __construct($options = null)
+    {
+        if ((null !== $options) && is_array($options))  {
+            $this->setOptions($options);
+        }
+    }
+
+    /**
+     * Set object state from array of options
+     * 
+     * @param  array $options 
+     * @return Zend_Server_Method_Callback
+     */
+    public function setOptions(array $options)
+    {
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Set callback class
+     * 
+     * @param  string $class 
+     * @return Zend_Server_Method_Callback
+     */
+    public function setClass($class)
+    {
+        if (is_object($class)) {
+            $class = get_class($class);
+        }
+        $this->_class = $class;
+        return $this;
+    }
+
+    /**
+     * Get callback class
+     * 
+     * @return string|null
+     */
+    public function getClass()
+    {
+        return $this->_class;
+    }
+
+    /**
+     * Set callback function
+     * 
+     * @param  string $function 
+     * @return Zend_Server_Method_Callback
+     */
+    public function setFunction($function)
+    {
+        $this->_function = (string) $function;
+        $this->setType('function');
+        return $this;
+    }
+
+    /**
+     * Get callback function
+     * 
+     * @return null|string
+     */
+    public function getFunction()
+    {
+        return $this->_function;
+    }
+
+    /**
+     * Set callback class method
+     * 
+     * @param  string $method 
+     * @return Zend_Server_Method_Callback
+     */
+    public function setMethod($method)
+    {
+        $this->_method = $method;
+        return $this;
+    }
+
+    /**
+     * Get callback class  method
+     * 
+     * @return null|string
+     */
+    public function getMethod()
+    {
+        return $this->_method;
+    }
+
+    /**
+     * Set callback type
+     * 
+     * @param  string $type 
+     * @return Zend_Server_Method_Callback
+     * @throws Zend_Server_Exception
+     */
+    public function setType($type)
+    {
+        if (!in_array($type, $this->_types)) {
+            require_once 'Zend/Server/Exception.php';
+            throw new Zend_Server_Exception('Invalid method callback type  passed to ' . __CLASS__ . '::' . __METHOD__);
+        }
+        $this->_type = $type;
+        return $this;
+    }
+
+    /**
+     * Get callback type
+     * 
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_type;
+    }
+
+    /**
+     * Cast callback to array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        $type = $this->getType();
+        $array = array(
+            'type' => $type,
+        );
+        if ('function' == $type) {
+            $array['function'] = $this->getFunction();
+        } else {
+            $array['class']  = $this->getClass();
+            $array['method'] = $this->getMethod();
+        }
+        return $array;
+    }
+}

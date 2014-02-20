@@ -1,36 +1,100 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-IDu1KhBhpx308D8a
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: UpcA.php 8210 2008-02-20 14:09:05Z andries $
+ */
+
+
+/**
+ * @see Zend_Validate_Abstract
+ */
+require_once 'Zend/Validate/Abstract.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Validate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Validate_Barcode_UpcA extends Zend_Validate_Abstract
+{
+    /**
+     * Validation failure message key for when the value is
+     * an invalid barcode
+     */
+    const INVALID = 'invalid';
+
+    /**
+     * Validation failure message key for when the value is
+     * not 12 characters long
+     */
+    const INVALID_LENGTH = 'invalidLength';
+
+    /**
+     * Validation failure message template definitions
+     *
+     * @var array
+     */
+    protected $_messageTemplates = array(
+        self::INVALID        => "'%value%' is an invalid UPC-A barcode",
+        self::INVALID_LENGTH => "'%value%' should be 12 characters",
+    );
+
+    /**
+     * Defined by Zend_Validate_Interface
+     *
+     * Returns true if and only if $value contains a valid barcode
+     *
+     * @param  string $value
+     * @return boolean
+     */
+    public function isValid($value)
+    {
+        $valueString = (string) $value;
+        $this->_setValue($valueString);
+
+        if (strlen($valueString) !== 12) {
+            $this->_error(self::INVALID_LENGTH);
+            return false;
+        }
+
+        $barcode = substr($valueString, 0, -1);
+        $oddSum  = 0;
+        $evenSum = 0;
+
+        for ($i = 0; $i < 11; $i++) {
+            if ($i % 2 === 0) {
+                $oddSum += $barcode[$i] * 3;
+            } elseif ($i % 2 === 1) {
+                $evenSum += $barcode[$i];
+            }
+        }
+
+        $calculation = ($oddSum + $evenSum) % 10;
+        $checksum    = ($calculation === 0) ? 0 : 10 - $calculation;
+
+        if ($valueString[11] != $checksum) {
+            $this->_error(self::INVALID);
+            return false;
+        }
+
+        return true;
+    }
+}

@@ -1,32 +1,110 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Abstract master class for extension.
+ */
+require_once 'Zend/View/Abstract.php';
+
+
+/**
+ * Concrete class for handling view scripts.
+ *
+ * @category   Zend
+ * @package    Zend_View
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_View extends Zend_View_Abstract
+{
+    /**
+     * Whether or not to use streams to mimic short tags
+     * @var bool
+     */
+    private $_useViewStream = false;
+
+    /**
+     * Whether or not to use stream wrapper if short_open_tag is false
+     * @var bool
+     */
+    private $_useStreamWrapper = false;
+
+    /**
+     * Constructor
+     *
+     * Register Zend_View_Stream stream wrapper if short tags are disabled.
+     * 
+     * @param  array $config 
+     * @return void
+     */
+    public function __construct($config = array())
+    {
+        $this->_useViewStream = (bool) ini_get('short_open_tag') ? false : true;
+        if ($this->_useViewStream) {
+            if (!in_array('zend.view', stream_get_wrappers())) {
+                require_once 'Zend/View/Stream.php';
+                stream_wrapper_register('zend.view', 'Zend_View_Stream');
+            }
+        }
+
+        if (array_key_exists('useStreamWrapper', $config)) {
+            $this->setUseStreamWrapper($config['useStreamWrapper']);
+        }
+
+        parent::__construct($config);
+    }
+
+    /**
+     * Set flag indicating if stream wrapper should be used if short_open_tag is off
+     * 
+     * @param  bool $flag 
+     * @return Zend_View
+     */
+    public function setUseStreamWrapper($flag)
+    {
+        $this->_useStreamWrapper = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * Should the stream wrapper be used if short_open_tag is off?
+     * 
+     * @return bool
+     */
+    public function useStreamWrapper()
+    {
+        return $this->_useStreamWrapper;
+    }
+
+    /**
+     * Includes the view script in a scope with only public $this variables.
+     *
+     * @param string The view script to execute.
+     */
+    protected function _run()
+    {
+        if ($this->_useViewStream && $this->useStreamWrapper()) {
+            include 'zend.view://' . func_get_arg(0);
+        } else {
+            include func_get_arg(0);
+        }
+    }
+}

@@ -1,34 +1,33 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+if (empty($_REQUEST['list'])) {
+	header('Location: phpThumb.demo.demo.php');
+	exit;
+}
 ?>
-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
-LtLyIpydYaCwJJYoVVBZFW==
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Demo of phpThumb() - thumbnails created by PHP using GD and/or ImageMagick</title>
+	<link rel="stylesheet"    type="text/css" href="/style.css" title="style sheet">
+	<link rel="shortcut icon" type="image/x-icon" href="http://phpthumb.sourceforge.net/thumb.ico">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+</head>
+<body style="background-color: #C5C5C5;">
+<?php
+$dh = opendir('.');
+while ($file = readdir($dh)) {
+	if (is_file($file) && ($file{0} != '.') && ($file != basename(__FILE__))) {
+		switch ($file) {
+			case 'phpThumb.demo.object.simple.php':
+			case 'phpThumb.demo.object.php':
+				echo '<tt>'.str_replace(' ', '&nbsp;', str_pad(filesize($file), 10, ' ', STR_PAD_LEFT)).'</tt> '.$file.' (cannot work as a live demo)<br>';
+				break;
+			default:
+				echo '<tt>'.str_replace(' ', '&nbsp;', str_pad(filesize($file), 10, ' ', STR_PAD_LEFT)).'</tt> <a href="'.$file.'">'.$file.'</a><br>';
+				break;
+		}
+	}
+}
+?>
+</body>
+</html>

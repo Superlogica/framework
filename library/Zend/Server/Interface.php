@@ -1,24 +1,118 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV54YhHAi1SxsCo1/HY6uUESC3cGYMgIJrUuYiV5A+XiQkowMZANlIuTyDiLF+BPnnuJk3n1b+
-yRXj/Tz4c16/DiVLwSxeEvcVQvbKqc/2bFniiBtPuP9GcPEP3aNcX8u71mTKb/n6vsDMHyKS98Vd
-k3gvD1pwJvNwu0ZrkOqSVTm8OVmw/8BuwUzYdWS6AroY+S3AzHcYN4+gFPFMXzVmuCMjDDwQRDRb
-lfoLu97aTPAsRt4UR6Fin4kJIPpDKor7T+KlBeH2QAvhIPVGeRRNJajlVDKUJlyzOf8rc8NZQkBb
-9k8BxAJv/VGACaovyPYpn/o2qoWeYhRGE3rHDpX+J6wBs3dWSJ1Gz9TUGC7gJRGq2LMBJZF1G+nH
-1Po+9LhXU84X3ca86+9/D9r3haMWSf7o/PPmt+vPdh4idNnvdBPy5TP9XwItbjeUMv4F35YmCoSY
-Zay57O28fY+X/Yx6r4ASw5kZasYL2TfTrvOCA4BSpl3rAHTtoML+Kb8mC3leXf2fADlHrluM7dv5
-ebRFUOKovChBZdP9Z3HrOTyCXls4/GHYe+j8NqaCp253qkaiUJcnEA1WnfbsODfdvCaGvJNLoKvb
-BUkyzesP1fn95LUE6XnNy/zP5yxim2OcKLM8KV8BPVfkyJ3u5hteidVD6xUBZ9rjTXpxk3EgFbJw
-BJxgoiU6N6CryOnBTyoDxUPzsarXagEiQQHWvfCuBhwFgE+UXeFsczPvxVkZt0hHpjEuc0ZP920W
-mxfzIkQ3Vc8QBx1zu8pa/EucdedrErGKKQ3QFzo9yE9qCPY2i3iLtLacfzi1Wt1N7Wdg4UdJrfTl
-jqxNcv9bSLCvNq7v7NDdFm3MDPt4aHpPyMruBEidzY3blMo53RDTNqfm8qfgrf0/EaVbFgNm/X7v
-O+7v0e2TtXFx2O245kh7Ntbqh0I8aMPooSilnNM+KpK4S9tREZZnucPoPPH+1dg4fMSjhY2B1xc+
-X68rT2EQ8YHecDT4SBMGOxEmyGEukCaAGOtcikOjy6bG4LvheWhGN5Elcxw2fpj7We7OS6SzJiRP
-CwPHfTmtSPxo9ArxajICg3Mtd9S/WfXleR6a7JGPmL5t8ASJ05OmOWalP924SQXMZ6xvoubpNnpJ
-X4U4zPIRZJ2HpAKtfZXwlgKghoIuAGTYZUm9CA37E8XgjmSRz7xJ8XSvNc7n2LDSL72RzaoqMS4s
-/U9Gvm6t7Ei4d0BFuaMq+JfQ9kFB7/Xu2AluirS6HlwyC2FFvx54bLJyMyivJapjPhRlGQlE3kK7
-sbaNb9t2OYvbkAkCnn35q0pt/4LzzboN5ymS5qliBEqUzzAaZJy9lf03DfJgbaUeF+N2UWJY+JWU
-SwB9uIBRcIidK5jZ7sKiAxxMQTcr3v9qLlxw+3YDbDpeXb5bHQ9eZYjgr3Rxsll58u55nPkhkXdH
-tqzqowrpAQlARiIjz9j9fKrAyQ+WYT45Mu0r3KPkCDJWrHt7Cjo/7gJ/ri19E5ePbDCaP1AOaWhi
-y6VO+SVSj5q/Q5KXYAmSMd8ktoJlhKxU+Su=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Server_Interface
+ *
+ * @category Zend
+ * @package  Zend_Server
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version $Id: Interface.php 8064 2008-02-16 10:58:39Z thomas $
+ */
+interface Zend_Server_Interface
+{
+    /**
+     * Attach a function as a server method
+     *
+     * Namespacing is primarily for xmlrpc, but may be used with other
+     * implementations to prevent naming collisions.
+     *
+     * @param string $function
+     * @param string $namespace
+     * @param null|array Optional array of arguments to pass to callbacks at
+     * dispatch.
+     * @return void
+     */
+    public function addFunction($function, $namespace = '');
+
+    /**
+     * Attach a class to a server
+     *
+     * The individual implementations should probably allow passing a variable
+     * number of arguments in, so that developers may define custom runtime
+     * arguments to pass to server methods.
+     *
+     * Namespacing is primarily for xmlrpc, but could be used for other
+     * implementations as well.
+     *
+     * @param mixed $class Class name or object instance to examine and attach
+     * to the server.
+     * @param string $namespace Optional namespace with which to prepend method
+     * names in the dispatch table.
+     * methods in the class will be valid callbacks.
+     * @param null|array Optional array of arguments to pass to callbacks at
+     * dispatch.
+     * @return void
+     */
+    public function setClass($class, $namespace = '', $argv = null);
+
+    /**
+     * Generate a server fault
+     *
+     * @param mixed $fault
+     * @param int $code
+     * @return mixed
+     */
+    public function fault($fault = null, $code = 404);
+
+    /**
+     * Handle a request
+     *
+     * Requests may be passed in, or the server may automagically determine the
+     * request based on defaults. Dispatches server request to appropriate
+     * method and returns a response
+     *
+     * @param mixed $request
+     * @return mixed
+     */
+    public function handle($request = false);
+
+    /**
+     * Return a server definition array
+     *
+     * Returns a server definition array as created using
+     * {@link * Zend_Server_Reflection}. Can be used for server introspection,
+     * documentation, or persistence.
+     *
+     * @access public
+     * @return array
+     */
+    public function getFunctions();
+
+    /**
+     * Load server definition
+     *
+     * Used for persistence; loads a construct as returned by {@link getFunctions()}.
+     *
+     * @param array $array
+     * @return void
+     */
+    public function loadFunctions($definition);
+
+    /**
+     * Set server persistence
+     *
+     * @todo Determine how to implement this
+     * @param int $mode
+     * @return void
+     */
+    public function setPersistence($mode);
+}

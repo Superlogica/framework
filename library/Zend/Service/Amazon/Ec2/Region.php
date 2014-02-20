@@ -1,35 +1,73 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5DjxbpusmMinsyq27NXs9NaS7FwwdSeGnDOtMRDvjV41hb+RPApVT6IcEU5/J+i/JjhbzgWj
-53Ed+b4E4QZanQ8GJxkGlQ53l1LjL7L9BSghGFy2lOVJAZxMbsSfqzFogdhAm70X3j6KvzZ7MQKE
-toLPchDwkQ+wS0mI/Ut1E2ouywr6s7kvDkaVOblfDLOjyAVHAsa4qylXzcZ5lAhkpbw4T0UHeAL3
-q2ZVIWLZD4TyZ7T0/M+K1S9Qn4kJIPpDKor7T+KlBeH2QEzcAEVSJjcl74NvkjNM809dhkaNAUWN
-vK4MRNZPVhMdiQPk9+cT5zrVNWG8DckOR9m/ZzNQgfUAi+cwcAWQO/Y60vMP2j1sEd87VmDCRJMp
-aaPQtHSIb9IcyvM6W7o5Ed2ceoTXDqp00143ZPj3yaAT/aW107iaAtRKLfPrTx3i7FcCUs+Bjs2F
-6sd1OxVIEj18jJQKu+Za5oEFCr7a3j4YLaUhEIQ4QoalJcj1DHxleLZ0g0qgQm+7FOzMJSjX+OVh
-2b2y+ken4ngFt1chXCuwnxcavz+xKywswHAXC4X5aLw6HwdP1woGl06TUwVOulrh0o2VXsfXxzDw
-QwSGYsYx/22bvjqYrgmrw9t4GTrfkXzdcqR/qsgDcbzH1/cejU8UruD1zwxbYHM423TNgimCR7FM
-JtJqaSNi4mcBnV/X1Av3r8eGTChXtnZphaBmyZEErhRZAQuGYlWMJV8smAOR3SUuE2LgaaV8QO2m
-YQ6c/nWbFd3gE3KpW1kgqwFLcsC90BDjbz+WI8bk0YXhKmtnOwP7H6SYqnN5nOSgm8QsGnYYKjlQ
-0cnk5Pnr0y5WIhjKUyJYjrBmjnUjIelUMGjQuT2Owlbj75AvzYEX1bAG86bmMsykAnQ857683Opp
-TqiP8tJG31urWTERHwKJ7oeLZHxSRdrscXAyYL+yNDLJd7g50DnFjl6PAYQRHjKP6lApd1Ap5Vzp
-AtST9onzVMz5QXSdOdfltoopSUEwV60rDrliZUwnBUKmv52qfShjhWNmfaNUodn0QgH3AN60iEAC
-cmnKs26kb8ygR9460piS8XmokHu/5V9fwj3U0SAJ/U0ePUag0e5JKFiolwy7BwVSNRRvi1TbJlBo
-3muNBZV2quODUwJpjS3wdH3iYbWEca1x04mcwKyuTtkGzQZbW+NijaZvaFIeuwK/NYHOGfR4B1Pk
-wzUE4kTJS79Bkz4MR4WCWa+q069ukG4jAqyEuR8e5xs0CtFQrowSZlRywQ4WowFrqFigxanrv8sQ
-XogBDxQ9E3Oex9jv7lJHCF7RY+iWBnJitjHV/v9UXa91YZ970wsfFwGpbJ44LxWSRvMAUW3Ce1VN
-fuUHewC8xrDvuPBbETUdhk16N3dqycGZ6+wgb0cebiqlYE62xGhy/o5Jwy0wol57J1DFbEme1MaD
-w6bZs6ELGWXr+zGjzfQh7JhdGC4mrUAvwJM+C00oI4Z88uAHbdKgehumWQFEknqlKCuPImuxFOJ0
-QG6oNvppVBiTKOzP1hPTqlOqpEI8hneB7sYbjnx2NjP3iDzYLV0jXQR4nQlAstvIpJ20KBbtSYXq
-dLEWlixS0whZJwCn36834l33rRNBv3iBck/LjsLtg0lHUz7Z27vzUOczL5rdZVmUNywXsyQ8PsdH
-zTuNUpvXcKGcqMINeArFZur6QB7y4kbAzgiexQbMGDVzc1Km5j98Cd6gMMdyO2+sTtsAZQ/XtQro
-tYNvuNhOJv02fsT7Ohcq0NQzA0a4uKY1+b+z7mKqzOGp8pU/+CFLSOS4u6iGrPkWeybyQRa3Zc9r
-O0wpKzzV94Q4rYutHJ90PiJkYiwc+C6uKC0lDS1LHkZoDbmQPbRd1tywFg8LY8/oFpLxGnvu0V/4
-ITTL9yi1eKid94yvJ7BcaFNFoyFIXRa6jB5NljstbRjLap3aCFQ9lqSj5FuoSmNSuS7sziy/JTPU
-gxo2qY2cFXm35vBt7DxDVy9E4gqhlZ7rlfZOkZY1EBUzLyOhpZWldhabDBr5Sh5VlViM2fS0x7hw
-9xlpYqWLeiORiSgLIPrZ4BySQBgdpsFiXSSEtt9fByt82AR8+rnhCn5xZI0nSE9DkwwL6bD14cWz
-4KMlv392KvXN3nrIJ9XzYVXJa82tDMVOgD9402CBLP2+K3hgkznfXbAs9+RMdQGIh20kXw/0KG7J
-AH+JIv5oDn38BC+LRvhLUP6OuzYZVUxnuFAVG4B7zbXzV9IzJwLCO9LDegNOUrX7cdRwe/J+RV//
-mobZqtbtFQUhG9DKXgM934y+6van4dvaPAXdY7N1og1HnEMuhEoPx7fjMepbvqtojtP2eS4qQQ/u
-vz/WJzfn6nG5+U3TRPOz+MntLC7wG0jl70UMsc7tOea1xxDR4rA6
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+/**
+ * An Amazon EC2 interface to query which Regions your account has access to.
+ *
+ * @category   Zend
+ * @package    Zend_Service_Amazon
+ * @subpackage Ec2
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Service_Amazon_Ec2_Region extends Zend_Service_Amazon_Ec2_Abstract
+{
+
+    /**
+     * Describes availability zones that are currently available to the account
+     * and their states.
+     *
+     * @param string|array $region              Name of an region.
+     * @return array                            An array that contains all the return items.  Keys: regionName and regionUrl.
+     */
+    public function describe($region = null)
+    {
+        $params = array();
+        $params['Action'] = 'DescribeRegions';
+
+        if(is_array($region) && !empty($region)) {
+            foreach($region as $k=>$name) {
+                $params['Region.' . ($k+1)] = $name;
+            }
+        } elseif($region) {
+            $params['Region.1'] = $region;
+        }
+
+        $response = $this->sendRequest($params);
+
+        $xpath  = $response->getXPath();
+        $nodes  = $xpath->query('//ec2:item');
+
+        $return = array();
+        foreach ($nodes as $k => $node) {
+            $item = array();
+            $item['regionName']   = $xpath->evaluate('string(ec2:regionName/text())', $node);
+            $item['regionUrl']  = $xpath->evaluate('string(ec2:regionUrl/text())', $node);
+
+            $return[] = $item;
+            unset($item);
+        }
+
+        return $return;
+    }
+}

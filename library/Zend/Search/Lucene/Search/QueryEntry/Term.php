@@ -1,41 +1,129 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-MA0vdHgI
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Index_Term */
+require_once 'Zend/Search/Lucene/Index/Term.php';
+
+/** Zend_Search_Lucene_Search_QueryEntry */
+require_once 'Zend/Search/Lucene/Search/QueryEntry.php';
+
+/** Zend_Search_Lucene_Analysis_Analyzer */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_QueryEntry_Term extends Zend_Search_Lucene_Search_QueryEntry
+{
+    /**
+     * Term value
+     *
+     * @var string
+     */
+    private $_term;
+
+    /**
+     * Field
+     *
+     * @var string|null
+     */
+    private $_field;
+
+
+    /**
+     * Fuzzy search query
+     *
+     * @var boolean
+     */
+    private $_fuzzyQuery = false;
+
+    /**
+     * Similarity
+     *
+     * @var float
+     */
+    private $_similarity = 1.;
+
+
+    /**
+     * Object constractor
+     *
+     * @param string $term
+     * @param string $field
+     */
+    public function __construct($term, $field)
+    {
+        $this->_term  = $term;
+        $this->_field = $field;
+    }
+
+    /**
+     * Process modifier ('~')
+     *
+     * @param mixed $parameter
+     */
+    public function processFuzzyProximityModifier($parameter = null)
+    {
+        $this->_fuzzyQuery = true;
+
+        if ($parameter !== null) {
+            $this->_similarity = $parameter;
+        } else {
+            $this->_similarity = Zend_Search_Lucene_Search_Query_Fuzzy::DEFAULT_MIN_SIMILARITY;
+        }
+    }
+
+    /**
+     * Transform entry to a subquery
+     *
+     * @param string $encoding
+     * @return Zend_Search_Lucene_Search_Query
+     * @throws Zend_Search_Lucene_Search_QueryParserException
+     */
+    public function getQuery($encoding)
+    {
+    	if ($this->_fuzzyQuery) {
+    		$query = new Zend_Search_Lucene_Search_Query_Preprocessing_Fuzzy($this->_term,
+    		                                                                 $encoding,
+    		                                                                 ($this->_field !== null)?
+                                                                                  iconv($encoding, 'UTF-8', $this->_field) :
+                                                                                  null,
+    		                                                                 $this->_similarity
+    		                                                                 );
+            $query->setBoost($this->_boost);
+            return $query;
+    	}
+
+
+    	$query = new Zend_Search_Lucene_Search_Query_Preprocessing_Term($this->_term,
+    	                                                                $encoding,
+    	                                                                ($this->_field !== null)?
+                                                                              iconv($encoding, 'UTF-8', $this->_field) :
+                                                                              null
+                                                                        );
+    	$query->setBoost($this->_boost);
+        return $query;
+    }
+}

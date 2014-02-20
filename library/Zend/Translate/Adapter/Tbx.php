@@ -1,85 +1,179 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5B5u413SxUWdZR65CvwBwytc8IuTcU3ujgIitAKUWEdbAs6qC6h8GUXApLHCElemraZqZQKD
-UDbytvOgSVpRW63s++cV5hL9POFsV5S8qn4i3V5OyFhvP38ByDVlq5GfNic7tKXMNyU6rev7tqAp
-7fnjiQqMQ8XCLogmSvMEHMcGOcYsgscTBNKxWKlMLdpDEa1KOn1bWf7taYWINbxwn1HbYjck2mRW
-z6HXymwPHAvszWxs9z7En4kJIPpDKor7T+KlBeH2Q2fc54C0h74TPLJK8TMk8Xi19m6HH4YP0T56
-zSpze7hkhoxDT1uj+0Mp9FcMVeQ/XAKp9DNkyJDH384tCzSl4n7+kRhiUo9feGkuPMKA6OmFnUFj
-0WsvOdkt/2a8yoq/i5y+2RAShb/ctXndWV5xciDOkropWfsNNit8HKukEK7ZBkVIZWXOdCA2bn2A
-v0qSDy8vi7odOZRzyVQAgneqPXaiXVy6cPc1kfQEGOVQ6s/CAWcHquEmBZPy67ExrwmijTGvqnB+
-IEnfbxwBjfrtpdajEXGtMoZY76buM8xMgYZGTw9mp6ph5noqRceVrWicURFkD0L1c7UL+dLi8S7Z
-OtAZkfGF89inYqXdlg3CZHfJPMkjCI9bSM9cwMuwgq9Ehwf3T9coHvxdlZhsq9huocf/C2JmJh7Y
-oI4FMF7Zu3xm+5s+NisPjGCTz3NtQe9zdo8NmeE+8YVvOll9R4OoPRSG9RDTLCwNt6Cl2Di+NK9d
-c/y0+Z5KB6bcKu62o32PBsE80W4ur7UtNpf5QGDvukMtI9cgUD1LDIDBY5J5pXlhHvKfVF7UCcGQ
-7ZcUARKtZtAjnLJ/sGycFP5zFue9I0E40Db9riIkwfzrmqLdwgG2UHEpKXwV+lbAu/ACMzdq6GVK
-H3ch87DwQ5OhfO5r8lzYezCIcDuNzeDovSQVhpCt9lOxBnjjob/pCtTuANeUAggYldJzrSSv7/y6
-h50MvvQqse0Euirj5b0ZLL3SQX7rYCCW3/vhlo/VolUvxONG0ZtEPBTt2sW24XvB+Vj27xmkeAAn
-lEeEDRF3dif88ippyV6+HxopvKUEzT6/TbNWQVZBnDPtnkUnO1LHSc4SarA30Qr4Mwau7MDoZRbh
-gqvEGWMGpmr1veff6xEXtP90gZ6NDQiDpHc7CFxANzBEDTba1fyRR44g2Qz6ub3giAbmswtkpg/K
-66EEINHYXWvPabYSCiC6Z4nl5ahLaX2F/3HnXbdS92pKyIvnFnYipDrITG09g5V3fUQvbKU9cusK
-RY3vN6ae4skEU39bNzo13o9sq3PtKmLAFi8n/+e2TdW9Q33etLC/74fZWKietVEiZ7Z1I1VyO7g0
-gi47NnmeepTWFULnm7okBqaEa+PWqX4KH7fl3dMJsPcVX1dZMgja5vUW+kN/b0tj2mqCiF1WqleF
-1Zb5iTYr1jO5NBvNaL9ORP3rIFiiyzCoqLen3ei6RnEQmQHSJ4sNR2uNr0mKrCKJJ/pmGIGSPQRT
-ZxOnL6QmshWr+OxFyE9SfK/Sr8juG0kAxxGChgn6OS5Qkr2uyAAAOoyH/2kjSzYQl8ryFbW3bOeU
-K6Woz+x+EeS6W2K5W8YiZH5zYlgqRCRK5fdpruAsEq3M0KcUZPR4McqQwWOzLesutWpOtzGst0r6
-Dg75NIGQq/aMyi6C+/5JFQydSCBs6JFMRmXHb/ZBUi5K2NUE/r05EkW7x/T+1xL8VPpb6zVpsmdy
-CO9dXEc0rxdlEx6Hh8q7IxT7kak/kzLcLOk4Dx7SAjaN92bwFgoRzWdSKWCeukb/PIsL+1Rf5HPs
-erZjj+pQRRKGdXYaREEjvyMDGvO0fpJeKSIxIHtIsO9VEzkmjENSaWPSuHTi++up/LBsul/0qqpx
-uB9PCbRUVgFp7xqZSu5lZ6MYP68k3VKttqr8x0EXvtNlfC0xRHGqXfTycXq3LywYxPIKYXP9A5Ik
-obksTCE4Dpk7WwCMTrbLQvP1fxj+rvlNnaWL7B+BuNpEy8Lli6ypxTrpE/Ag0SwtwXW5Fw/qFvvM
-vno5g/QG+JrHoX7iz9U6/+ok6FYufAzZZozKLeFM6ufTcjHhzKWhfCzaBmDu5F15WuWu4mh4Ql5o
-OwsX4sMOiFTHggoc0QqgZVghxCnVDtohKxWS/RZQBbvpboDt2VgOl+ReZwOOjm9W8GLrgyw4pokK
-qjuROzFfVXn6XlT7TQNUwswusXolTYs/A8LTeMCG6iO4D+I23KcCVLh/CskdvZGQ5keefJGkp4mz
-tvoXBlNbkk2SjCUS3Zam+HzNi/WJ0bC7sFaFwIoMIs8nskTT6QxMU1azW7pqOcdq+x0s6U7YKDNN
-bWSflXwqS/zYRch8ZbRqDDvTDctokmxINMbrNEHAVxw9GRoJno4A9qH5Q7LPZ61q+qImeQtMNmX5
-bFf9m2hMoeLoxC6dREs5n3cQa8hJ7hryBqZLs/bGyauxo5FQ3YYUsfU0iKDc1bUgObEKjsqpgBd9
-I9lmO1+K+5kw2HtyUIYajHUuSsGvgq0fWDDbUQOgGdy1iSrgISxs/aGaeOQL6qO5njGCUi+ICwo6
-/vcDBOYDCLnwr0k/HYSvZVDxhfFavavmES/nir36gknRsA83EiTdAMIGbb7M+Zzivfrr97Xezzdp
-3Hic9BE+UnO4doj3nWgFcCtE6E+rROXaJspBVm/KwlPSIsOd/wlNL7UtSjWf5uM5mfr8t5uwx/zr
-o4AhaVmx+IKGA7ChODoZsuTttiANqTcL4bhINVssb2468wSEiCLTDPkgBdiYkLTxp796AVWHFGUf
-80y1s4pYkNLuTF9v+xL+RpaOlNjzr7XctzwRv+n75j40nKk86bjSMYFy9SHb+YZI/wvn9nK0HrHy
-w6rW6nun0mvUD/2hXZUSCd6ODj3dkaOfc8oB6cP1+AbPOhmfrNAOznYs7WcYQnTpIAH05Yark5hi
-rrNDzld1lVaAw+4dmj5HPxquswH1SYAgWNEeL16kXE9lqhNnnY2935KmN+j+HFxBtqEsL+9iCIGN
-FNFewBnMWmpa2H/UKABITfBmMsVnHHaQJwfWJEBwKk3ALB3Csxq3gJhqse/ympYViI8k0eU7I4tp
-W8mfUnp1q0MhxNidhiailNT1/XV0yfoZrpUEneGbLoY+hnU6gvzWaz7327d4mqOLpi/RI3im/6IP
-BuhW7lCekxwGLCtXOEin1rMBprTPqw1+GDx8sXM38/LLZC9+xht0uiulkE8I1Ek2T9CuzNgAwERr
-w24xOF5jN5H3HH4uH+pJxvmHas9qlcpgnMrfqs2tjvSGyN3kjQEakWGj5DsmKyhNJjPfM9byV4Tn
-IQKPZG3fUy3uZ9X66h5vhEuzzBC6QgbhJn9kXdtKyrWalyOSZWCI0NSuX1dps06HH+4GGT4544oW
-6CAVCO7Hv84d23a6EpxW7TMnCZDiuepQSHZZna9tGkpLn1xF+inhrTjBLdyr3aaCv++4pcqUkA7q
-UwdeMO9TR+JjkV/MHEe96M6peJlhyi31vYWouvJX9qNWb0LHNsnEn8VT1MKUIe58VeS7Yqgtw0M0
-dftTqhP8xPG7VRwvJnal65Qj4oLh+Ki7G3E9hI2GzsZko9Z1V0fjqrhdHfGlfJ7d66ZQBEVK2Fq+
-46/aohLxYWSqCGA+8/HEcV7Y8ZLe8Kc4mQloU4nS9N/lwcb0T/k1m5NySrh2YXaZlop82ORc/F6C
-SAazWGL4g66LEjhAom4S4ERMbahsfnG6m3vFQlVTtlESCmjKcJBcTMEyvawyUtrHhJg8MrYzqEMA
-e9gitvkA3+Hax1rH57cTqcD3WIzqvUjOsnuxVEVEZRHaIo1E2NA515yh0HISMebBNA101BvioVep
-myNd3QPwYtviGB7IZlRdyRNhxLycIAMGiEPy79sNYQTjeJ5AXemRYV8SDjkOn9OwMBkKDcSRPc+i
-V7jJRZVBbSzWiHpGeiRt8zkCkNTOKk/RuO/Ix2U1qB4dXHb7qDca4YmBa9alIKTEkgBmhkZED53t
-RGux5MN47vZkuYuJ0VRSf/RBWpHYjlsiWa/+xxDKDP16ent52/5o2ywVy3NtW+/jsE1YLtJ/FqtM
-SN4aYFHg2g+dESQFQy5x13QCmJxzasuH0AcmHyCtMdxZ8AD7O/kyyvgDdG0tiXgejOakUzG5PKtA
-WRt9EmQOUKrLmfQwSXsLjBmVIIgt2rnUn3gA2ttreNKW/In7XDYPIRwT+yVlZZt74aZaYszhp8hp
-71bFGfcLe8fJKbtOOhDOlWxoBUpiRlf88JHkSSsVp5QPyFsvqqwNhyPjo4LB3HEL43diK9Yq0G22
-4FBkWbHNVCY9TF0UvcSSVfji+vJpwJHfUeplHbUiL7rapdKkZltp2O0CQDuUj2+IUpAzQjSklFql
-3LePyGV0PpZf9KdDTxaujecWPGCCpmXv3FzAvXRI78AUMStMWlFAzNkvNq/YbLy31jlOd0btBHza
-DnlNs/fhVHjVVYABEscjX4zQkZfTeKBQwn7jnBzccxYmPHlXqFacWc/qwh+sVFY2Eqi/GqoWEMCp
-68prvw25WeANUMtmXck92UHAzfz8DMfawE12UEpkG6ELJfVpDvUYIhuuk5jb1FEgf5pf4a1qjmCq
-FOhthUUxsQa7J6gXLAw63ucRAKE+Pa8CGyctYMKW/2kyEA72KghAqA2E31AW/4a7mchswdaaFHl9
-JweqbQdjd07mzK/MqsH7wlTWBugUUWD5ouPCzeL/0IIl2CDzUSzDBtVEui5iwqt0s/4I0J8eTUNE
-LOeXCSqcyiPtDkVpbbYuwuZ2hQFBnlNGjBHGhf+4NEbvNHiUM71X3pHqM+f7j+9ApEq19O4zRCYS
-IfKevRvOcrulrfPDKj6VH8gvdD5FMkPAUh0+RggzTbJkJz5RxpX86iuWvdh/OF9ytFbKjbdTI/fA
-qOXZA8c20VqgZevGiajL+r+7Nu/L01xCvptiUlizIHacNFiuIJUSVRAZusB1H8wB9S9dS22XNC/M
-ahiJ/4TwS7j8IFfEdocNOc/eT5lPSGFfEQY03YpfOEpd6gE91Ub6UILWfPuxUK4BriCURIt3Yrig
-hMg6mLYgMSvYvTfLwlzWZ713HTqAzvhIiDz+4IwjfOY1ivYZrgzyUa7EbmGsse1Tva1QvMkqDyHR
-6Nj9VPOCXyExxEInHkQhs8FgYm3QKVjIN55VNVN1oWXnFNlcSsc9c6Wr6F37D37Oqlc3t9TijP2+
-LQOB4/UC2xXklkSgZSORo5hGZvvBvVyCM20/gVi5DT8gUyrUcYJXET5PYV08jUPNR1sOf4vYi4nw
-PPHOKS/faDDzSp+xJQKwg5Il8TzPRa0FI+vCtR1P1TEEsrKrC0jYHY+EX5uqRAB4dIRf74ZzdWCv
-3EJhVuFLDeQrEvmDYZEO2UY6JYg+qAddgd9FkmaPXusLIqmRrPUG/I2EVjzT19mfLX3ic73py+Gf
-zVgm0CFMBlyxCX3mfDsxuhA6CZLgIeXroPZztsGZm4Pk+cf5MviYfau9TWTFw9nz/WXDr3yBCw/S
-02i5bgWceR1TgDVUoS/LXBtouLgu5FCmgMUh8uNPh5/gjbJCL0vDEqX2NrrAVIrTWBAd5yO44ZVs
-FeHIggRvvB1VNzC1YKQZLaGCKsICNgqIjOVCDjufdSWADAcTI9aus6CFKp6n6Wd8s0vKz7CSBtht
-kbZ5QoDZqLEdmqiOYIIBXtyw+JVPlnvKxjzdSS+jxSVfJAUlz9BoeciU3C3HpWmuEav69Rh/T2qV
-RbTvmh6C/CpBHw+dkwMf9HZwJA8QSk4+zylHZRSrnNwCcBaAH/8thb1BldmU9myHWeHkeKTx6/ci
-Bs2kc8Yabuk3BfKOQgJ/LPv/HFW9dvBf5gVzy5s0YRWh056wqyHXew5EvkzXv9JeVcmKYdeO2MoP
-uIqY/fEwxPYC4QJa3KS/47YGzkESi7oEbW7qft0eiRBCiXxTY8v+iJqAFJ+s3mxMNUurnbDVoVZx
-2C59Wqd1Fa0g1Dl95wvXBpBQDdKekAW0Gn5EtyGdcq9hZV4sUmWC2ezH3ZRY5bH7T4XGBoJgJtvS
-tcpgJqKovlowc/nrDNCQBdhMVZq6WTkkOFlb5zJ7kpDtivD+hLTy3v1iSByR+IwOvX6ZzFGgEEId
-A2MhAwUIgLFT
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Locale */
+require_once 'Zend/Locale.php';
+
+/** Zend_Translate_Adapter */
+require_once 'Zend/Translate/Adapter.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Translate
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Translate_Adapter_Tbx extends Zend_Translate_Adapter {
+    // Internal variables
+    private $_file        = false;
+    private $_cleared     = array();
+    private $_langset     = null;
+    private $_termentry   = null;
+    private $_content     = null;
+    private $_term        = null;
+    private $_data        = array();
+
+    /**
+     * Generates the tbx adapter
+     * This adapter reads with php's xml_parser
+     *
+     * @param  string              $data     Translation data
+     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
+     *                                       see Zend_Locale for more information
+     * @param  array               $options  OPTIONAL Options to set
+     */
+    public function __construct($data, $locale = null, array $options = array())
+    {
+        parent::__construct($data, $locale, $options);
+    }
+
+    /**
+     * Load translation data (TBX file reader)
+     *
+     * @param  string  $filename  TBX file to add, full path must be given for access
+     * @param  string  $locale    Locale has no effect for TBX because TBX defines all languages within
+     *                            the source file
+     * @param  array   $option    OPTIONAL Options to use
+     * @throws Zend_Translation_Exception
+     * @return array
+     */
+    protected function _loadTranslationData($filename, $locale, array $options = array())
+    {
+        $this->_data = array();
+        if (!is_readable($filename)) {
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception('Translation file \'' . $filename . '\' is not readable.');
+        }
+
+        $encoding = $this->_findEncoding($filename);
+        $this->_file = xml_parser_create($encoding);
+        xml_set_object($this->_file, $this);
+        xml_parser_set_option($this->_file, XML_OPTION_CASE_FOLDING, 0);
+        xml_set_element_handler($this->_file, "_startElement", "_endElement");
+        xml_set_character_data_handler($this->_file, "_contentElement");
+
+        if (!xml_parse($this->_file, file_get_contents($filename))) {
+            $ex = sprintf('XML error: %s at line %d',
+                          xml_error_string(xml_get_error_code($this->_file)),
+                          xml_get_current_line_number($this->_file));
+            xml_parser_free($this->_file);
+            require_once 'Zend/Translate/Exception.php';
+            throw new Zend_Translate_Exception($ex);
+        }
+
+        return $this->_data;
+    }
+
+    private function _startElement($file, $name, $attrib)
+    {
+        if ($this->_term !== null) {
+            $this->_content .= "<".$name;
+            foreach($attrib as $key => $value) {
+                $this->_content .= " $key=\"$value\"";
+            }
+            $this->_content .= ">";
+        } else {
+            switch(strtolower($name)) {
+                case 'termentry':
+                    $this->_termentry = null;
+                    break;
+                case 'langset':
+                    if (isset($attrib['xml:lang']) === true) {
+                        $this->_langset = $attrib['xml:lang'];
+                        if (isset($this->_data[$this->_langset]) === false) {
+                            $this->_data[$this->_langset] = array();
+                        }
+                    }
+                    break;
+                case 'term':
+                    $this->_term    = true;
+                    $this->_content = null;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private function _endElement($file, $name)
+    {
+        if (($this->_term !== null) and ($name != "term")) {
+            $this->_content .= "</".$name.">";
+        } else {
+            switch (strtolower($name)) {
+                case 'langset':
+                    $this->_langset = null;
+                    break;
+                case 'term':
+                    $this->_term = null;
+                    if (empty($this->_termentry)) {
+                        $this->_termentry = $this->_content;
+                    }
+                    if (!empty($this->_content) or (isset($this->_data[$this->_langset][$this->_termentry]) === false)) {
+                        $this->_data[$this->_langset][$this->_termentry] = $this->_content;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private function _contentElement($file, $data)
+    {
+        if ($this->_term !== null) {
+            $this->_content .= $data;
+        }
+    }
+
+    private function _findEncoding($filename)
+    {
+        $file = file_get_contents($filename, null, null, 0, 100);
+        if (strpos($file, "encoding") !== false) {
+            $encoding = substr($file, strpos($file, "encoding") + 9);
+            $encoding = substr($encoding, 1, strpos($encoding, $encoding[0], 1) - 1);
+            return $encoding;
+        }
+        return 'UTF-8';
+    }
+
+    /**
+     * Returns the adapter name
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "Tbx";
+    }
+}

@@ -1,74 +1,250 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+/** Zend_Pdf_ElementFactory */
+require_once 'Zend/Pdf/ElementFactory.php';
+
+
+/**
+ * PDF file 'indirect object' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Object extends Zend_Pdf_Element
+{
+    /**
+     * Object value
+     *
+     * @var Zend_Pdf_Element
+     */
+    protected $_value;
+
+    /**
+     * Object number within PDF file
+     *
+     * @var integer
+     */
+    protected $_objNum;
+
+    /**
+     * Generation number
+     *
+     * @var integer
+     */
+    protected $_genNum;
+
+    /**
+     * Reference to the factory.
+     *
+     * @var Zend_Pdf_ElementFactory
+     */
+    protected $_factory;
+
+    /**
+     * Object constructor
+     *
+     * @param Zend_Pdf_Element $val
+     * @param integer $objNum
+     * @param integer $genNum
+     * @param Zend_Pdf_ElementFactory $factory
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct(Zend_Pdf_Element $val, $objNum, $genNum, Zend_Pdf_ElementFactory $factory)
+    {
+        if ($val instanceof self) {
+            throw new Zend_Pdf_Exception('Object number must not be instance of Zend_Pdf_Element_Object.');
+        }
+
+        if ( !(is_integer($objNum) && $objNum > 0) ) {
+            throw new Zend_Pdf_Exception('Object number must be positive integer.');
+        }
+
+        if ( !(is_integer($genNum) && $genNum >= 0) ) {
+            throw new Zend_Pdf_Exception('Generation number must be non-negative integer.');
+        }
+
+        $this->_value   = $val;
+        $this->_objNum  = $objNum;
+        $this->_genNum  = $genNum;
+        $this->_factory = $factory;
+
+        $factory->registerObject($this);
+    }
+
+
+    /**
+     * Check, that object is generated by specified factory
+     *
+     * @return Zend_Pdf_ElementFactory
+     */
+    public function getFactory()
+    {
+        return $this->_factory;
+    }
+
+    /**
+     * Return type of the element.
+     *
+     * @return integer
+     */
+    public function getType()
+    {
+        return $this->_value->getType();
+    }
+
+
+    /**
+     * Get object number
+     *
+     * @return integer
+     */
+    public function getObjNum()
+    {
+        return $this->_objNum;
+    }
+
+
+    /**
+     * Get generation number
+     *
+     * @return integer
+     */
+    public function getGenNum()
+    {
+        return $this->_genNum;
+    }
+
+
+    /**
+     * Return reference to the object
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        if ($factory === null) {
+            $shift = 0;
+        } else {
+            $shift = $factory->getEnumerationShift($this->_factory);
+        }
+
+        return $this->_objNum + $shift . ' ' . $this->_genNum . ' R';
+    }
+
+
+    /**
+     * Dump object to a string to save within PDF file.
+     *
+     * $factory parameter defines operation context.
+     *
+     * @param Zend_Pdf_ElementFactory $factory
+     * @return string
+     */
+    public function dump(Zend_Pdf_ElementFactory $factory)
+    {
+        $shift = $factory->getEnumerationShift($this->_factory);
+
+        return  $this->_objNum + $shift . " " . $this->_genNum . " obj \n"
+             .  $this->_value->toString($factory) . "\n"
+             . "endobj\n";
+    }
+
+    /**
+     * Get handler
+     *
+     * @param string $property
+     * @return mixed
+     */
+    public function __get($property)
+    {
+        return $this->_value->$property;
+    }
+
+    /**
+     * Set handler
+     *
+     * @param string $property
+     * @param  mixed $value
+     */
+    public function __set($property, $value)
+    {
+        $this->_value->$property = $value;
+    }
+
+    /**
+     * Call handler
+     *
+     * @param string $method
+     * @param array  $args
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        switch (count($args)) {
+            case 0:
+                return $this->_value->$method();
+            case 1:
+                return $this->_value->$method($args[0]);
+            case 2:
+                return $this->_value->$method($args[0], $args[1]);
+            case 3:
+                return $this->_value->$method($args[0], $args[1], $args[2]);
+            case 4:
+                return $this->_value->$method($args[0], $args[1], $args[2], $args[3]);
+            default:
+                throw new Zend_Pdf_Exception('Unsupported number of arguments');
+        }
+    }
+
+
+    /**
+     * Mark object as modified, to include it into new PDF file segment
+     */
+    public function touch()
+    {
+        $this->_factory->markAsModified($this);
+    }
+
+    /**
+     * Clean up resources, used by object
+     */
+    public function cleanUp()
+    {
+        $this->_value = null;
+    }
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return mixed
+     */
+    public function toPhp()
+    {
+        return $this->_value->toPhp();
+    }
+}

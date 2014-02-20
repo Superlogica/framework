@@ -1,20 +1,84 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV50+mOTEgXrhbfmlqyAoqRdiTGBaKWwQcYBIiKDgLkVSbWV67K3iqcYAFU9xhqO+TlE54f/V4
-vCg7zKf5sQpa0adG0aapkssotbjMwPo5CQGgFqvqIqCo7/wsy+LyYAFixitaq6bW0TSgFN2mOVzO
-xmvzMR4gt3/5DfoaPLrhbePyC7Gz6FL6Nb+wQWTqTQJlDC2dD1jFe+i0FHBfhgnqOLsu9trqOrAj
-73yfPfVf+7usaLO2bVogn4kJIPpDKor7T+KlBeH2QE5a80/eS8MKH9JdZ+tcTdCF82Adkd87YYXi
-/wzJY/8rNoI5DMNBpOgciOlNtIoldeiIZwqLtc1yw+0x8Nnd+YSSqDwkZubqKeaVxB+l4NxtxXQa
-n1l+EMLy7G0TVvKaPuykz4d70g93wwPlRZ0Z5WsWV0vUiicBeHZ8wH2b2Y8F/hqujVzhif374NGe
-ksGQhl5C8I7FpeNJGQlpU2TYQFeVNE82O/3rk7B8a7YdHF4Nm8EtNaq/D7LZEnp0hB5qX3RmlJCJ
-zyNwIZlfWmZQQtLCfcjX2ezAT03InNoB/rLkfdKx6h3cPyIBE17gVOH+srncGAc5DDed5eepkdPv
-w72o4VMrMLQDxKEjzHzy2KdS4D5PqM5wj5o0ejWGSaVDjPGz/JKKBp17yIHtzv052kE/vqokCtfG
-9XiLLQw82Ts+7aTjfvmh0DGUZWouaJaxfCswAXSudqAHdEBkQ6/VjoiiE6M5wnPsPSZhsgMlzHqx
-HE+te3YeN/zXh0kf5fadd4atneH43v7sQsnFb2OMH1I1LXQ4YRMs/uKKz1zH1pq1E+xtrFef2dOI
-KCj2idls81SWwin2C5BWlzdlBMb9A7qYaq5EHWb8q5N63aikBTNs6JvSJJTP+EuUJFMeDxUthDWj
-hpzL1GlpIGud4IoRPH/xHCwlb+D89sm3Xm4ChQEU/Gg+IiWaAprCkD6vj3iU4w4uvlUftdVI14O3
-CdeXhmd5+tHmsMXCiuW8k8M9w1hGcHlx/Brcw1XZ0kJcUIHm0V1QoQuhhVEuJ/uYUd2cp3CX0Prw
-5eUKDl+T/q0H2xtnXFy5E5ZYhIUwWFxRaWuGT6+ng6s7sd+nlUi4lvP9dIXudjXueFDJQWMYHkTD
-/jNjHZ+voGsXLJ99JclyXULyDnivDOQtHGTljxbzM3hJ7Pywbb5oFRrtnKNdn1d2FdSnwAark+8I
-Gj6iQiGAPMYGvWOrNdbTSL6xjLJgP0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * The following constants are used throughout serialization and 
+ * deserialization to detect the AMF marker and encoding types.
+ *
+ * @package    Zend_Amf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+final class Zend_Amf_Constants 
+{
+    const AMF0_NUMBER            = 0x00;
+    const AMF0_BOOLEAN           = 0x01;
+    const AMF0_STRING            = 0x02;
+    const AMF0_OBJECT            = 0x03;
+    const AMF0_MOVIECLIP         = 0x04;
+    const AMF0_NULL              = 0x05;
+    const AMF0_UNDEFINED         = 0x06;
+    const AMF0_REFERENCE         = 0x07;
+    const AMF0_MIXEDARRAY        = 0x08;
+    const AMF0_OBJECTTERM        = 0x09;
+    const AMF0_ARRAY             = 0x0a;
+    const AMF0_DATE              = 0x0b;
+    const AMF0_LONGSTRING        = 0x0c;
+    const AMF0_UNSUPPORTED       = 0x0e;
+    const AMF0_XML               = 0x0f;
+    const AMF0_TYPEDOBJECT       = 0x10;
+    const AMF0_AMF3              = 0x11;
+    const AMF0_OBJECT_ENCODING   = 0x00;
+
+    const AMF3_UNDEFINED         = 0x00;
+    const AMF3_NULL              = 0x01;
+    const AMF3_BOOLEAN_FALSE     = 0x02;
+    const AMF3_BOOLEAN_TRUE      = 0x03;
+    const AMF3_INTEGER           = 0x04;
+    const AMF3_NUMBER            = 0x05;
+    const AMF3_STRING            = 0x06;
+    const AMF3_XML               = 0x07;
+    const AMF3_DATE              = 0x08;
+    const AMF3_ARRAY             = 0x09;
+    const AMF3_OBJECT            = 0x0A;
+    const AMF3_XMLSTRING         = 0x0B;
+    const AMF3_BYTEARRAY         = 0x0C;
+    const AMF3_OBJECT_ENCODING   = 0x03;
+
+    // Object encodings for AMF3 object types
+    const ET_PROPLIST            = 0x00;
+    const ET_EXTERNAL            = 0x01;
+    const ET_DYNAMIC             = 0x02;
+    const ET_PROXY               = 0x03;
+
+    /**
+     * Special content length value that indicates "unknown" content length 
+     * per AMF Specification
+     */
+    const UNKNOWN_CONTENT_LENGTH = -1;
+    const URL_APPEND_HEADER      = 'AppendToGatewayUrl';
+    const RESULT_METHOD          = '/onResult';
+    const STATUS_METHOD          = '/onStatus';
+    const CREDENTIALS_HEADER     = 'Credentials';
+    const PERSISTENT_HEADER      = 'RequestPersistentHeader';
+    const DESCRIBE_HEADER        = 'DescribeService';
+    
+    const GUEST_ROLE             = 'anonymous';
+}

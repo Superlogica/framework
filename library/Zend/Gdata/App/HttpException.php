@@ -1,30 +1,120 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Gdata_App_Exception
+ */
+require_once 'Zend/Gdata/App/Exception.php';
+
+/**
+ * Zend_Http_Client_Exception
+ */
+require_once 'Zend/Http/Client/Exception.php';
+
+/**
+ * Gdata exceptions
+ *
+ * Class to represent exceptions that occur during Gdata operations.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_App_HttpException extends Zend_Gdata_App_Exception
+{
+
+    protected $_httpClientException = null;
+    protected $_response = null;
+
+    /**
+     * Create a new Zend_Gdata_App_HttpException
+     *
+     * @param  string $message Optionally set a message
+     * @param Zend_Http_Client_Exception Optionally pass in a Zend_Http_Client_Exception
+     * @param Zend_Http_Response Optionally pass in a Zend_Http_Response
+     */
+    public function __construct($message = null, $e = null, $response = null)
+    {
+        $this->_httpClientException = $e;
+        $this->_response = $response;
+        parent::__construct($message);
+    }
+
+    /**
+     * Get the Zend_Http_Client_Exception.
+     *
+     * @return Zend_Http_Client_Exception
+     */
+    public function getHttpClientException()
+    {
+        return $this->_httpClientException;
+    }
+
+    /**
+     * Set the Zend_Http_Client_Exception.
+     *
+     * @param Zend_Http_Client_Exception $value
+     */
+    public function setHttpClientException($value)
+    {
+        $this->_httpClientException = $value;
+        return $this;
+    }
+
+    /**
+     * Set the Zend_Http_Response.
+     *
+     * @param Zend_Http_Response $response
+     */
+    public function setResponse($response)
+    {
+        $this->_response = $response;
+        return $this;
+    }
+
+    /**
+     * Get the Zend_Http_Response.
+     *
+     * @return Zend_Http_Response
+     */
+    public function getResponse()
+    {
+        return $this->_response;
+    }
+
+    /**
+     * Get the body of the Zend_Http_Response
+     *
+     * @return string
+     */
+    public function getRawResponseBody()
+    {
+        if ($this->getResponse()) {
+            $response = $this->getResponse();
+            return $response->getRawBody();
+        }
+        return null;
+    }
+
+}

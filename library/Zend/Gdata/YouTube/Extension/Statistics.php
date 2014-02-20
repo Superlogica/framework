@@ -1,69 +1,308 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV56QwSVi9Bahzm7Jas6leVTUw2ajCCAUWhOMi40qS8alHFQb8twS/oZ6RO6VOVDJPydJhaZ0K
-uLzrIjlQH2mYaoN0DrrKl60JTUw4ztgIq+IGLg7g1iF9RkrjgEeKxgTAVUwTbJ8QwAuIRaEVHX60
-LaIgKZgotYR5fMw1dXoGmwPD3WKjrsX9cB26/5vcbJA+KQgyIueAERNX30f+Eq9yt2V7OfalsvoB
-Vkfbd8McYGJKqDaEUm2cn4kJIPpDKor7T+KlBeH2Q41YlI2rmHnpFj8VAjLM+SP61RXsCncXXjL3
-6XmErVW76NdKeFAgFgqoZBR4EhOArPKiXnc/WuqXtjEWXAkqTifaANWwUhXfxBFm2H/BVfMcefb4
-h2rtf7/Nenmn1qypz8GQXXUv24PuRKmF8Oq7l56b5P2DT39iU9+p1uJelnH+nJbjlxxSkRlfu220
-ggYNOKpFyKJe6lQrH+KKLNAkSXvtI+cL2FcyAANJwqQe6+0pZVcWsDyS8NzVNmdFpAiDQ5pOcoMs
-H4027jweHH0o4F4WOGHvkCWXOn8sGEZUze4EYGY0TeyJ0xxSLnv75a+n+t+mXMvB4vTOzNt4Mjtb
-9TCWJ66Fh7YA1gQ2psyRwwI70azqZfxOnH7/a3GADNxlo7Yx8v4O2eh5573AdqVzbniECr4XTFNX
-utDgXUrD4ev9ndz+MU9M5b1fKC/IZHL3v1y1dh4FAdHyl7CCdRuDCXxJgSNAYTWPOTafbd11DIQs
-k02Zt8u1gAX6VkmNdMs3CaU0rgC9hsWgVtg7fbKmNMVxqJHZdWQD9Nc5HjkVcfz+PaQSfSEX7+F6
-AivopDiub7kmnG6wd+ai8GuFVCfhJw2soCDRQJE3fm4kfM2/Di8jR4cFLXj+RTSYN12yfpaP8Tl3
-C/S7D7UYQyeBgctY0DiQsI/Wrs9jWwMYrR9aQJNg8RZ+1PIAUgfk0Tj31JA6kHE/tFmqHY8TKGeP
-kw+hD8uXxpEraMzYkjATYRtTef9QHdx1Sn0fq8nPd+nDY6Dx7t0fDhiMZjVNQHsBYGNoNSiBWq17
-2VyPcOnsAHfxXL5m+18fSmaBPrhKVANLvE8dEpXx3cG+v9ORmBEs37FeY6h4pQSOeqncDoOYq03n
-I12umA50C4AF53IH5w6OOUm4FSlMhfk3bj/mCvOrIOVTp4N2v6veLtX8HNncD5jUrTeBWEEb9RIU
-Z23ZcUKCifrjMkmNM1/vukxd6HytARvAFwwdHuBb9ZajlPPKgrwB0zzUKD/yEr3TcrVV8UfSXr5X
-jBbeAYFfVzCxJx1OWuDeLJsWSxINAYuuudgZ5bZtQruQ/wED7bHMpw8vqLj8/cPpSTSQ2sb4rBk8
-vXiNragTvcMzBicetloW647g1loMZK2G8YoTszFCNJaalM+bQdrG2O7DWHj/H5aUApf1IIIOR+po
-KsNZb/40f6+qwiBiMAO3vOsF8mJdKl/VtGIIDoPf43VW3zu5xJMTFklGq5nKaZYicpRJOXofpo/k
-rRZB3KkIQd9P5T9TMCeaaauCp9ytEc4FkvjdzL+pMe0KmuddoEXkwnIddj54KTYroOyN9F9Lio/r
-e1Ouj2FmsfDuoeNCWou7bkXOQUDLClHwarN42eEXc/P6Cq4iO5ugLGbqEEwCUh3UJ20M/H90fO7x
-D0LynJ1I4/SqIC6UDJjpS39aMHam321RdGD/NR7UGGf6I2xqwIdefgPKXpWddbABebk4dQA9uWxC
-VTU/w5x0QPtdMbxD6y6AnrlXu3FthifvGI5W2XOaSf3P4wmvehi389FT6/Y0zHwsMWA14xQ5oyxQ
-OpkBZf4CZbwsABh9hNGCWfKah2CXaJ878m/Ft5zkoCFwjYEqX7rRPz+yQE2Id/KL/89E+fBPfImJ
-lLthpwH57ugcloHnkB968g3XdIqA/CMJvUHV1/s88lJhNyqHcbIBPfy0/R7pK0fBzPRTwLqL01Sd
-Z87nSzvUEHwvkY/yiKq2bdEgzE9ua67suJNZx0ryy5KUQLeb0Y3qPrjBQVFGoTyOeCKxG8nfeiJ2
-oVQ0QDQLsxhL4Z0Jju9N9QfrhnPRvi5UbCgj2+Gsuomg/za/zO1Bao/xPDdrVymJ33UcXkXvsXSa
-mf/BphuFcx8ufCCSf6TbQFlipYF0bQmt/QEvQExaENhQjw4DV4APW9bS+feW1qchE+1nUaLdIv1i
-JBYsYp1lC1t4PjIr7Va0vudJ4m9hQK35HVKKhWrppWAmUWpGiaAef+vOZU117y2dtr1973gSuiYt
-sABrhwY3KkLLgZlFldc1BeLzRZCaaJrNdc79yKqzbeckNlN3rTv6WMpBu3kPTKa85gRKycGdwHHj
-3lTbric+xOowUCgn1Uva/z2CR9i9t2upSIlQSxKH2wx7k2MIxmcfEmcm9DRhTJcaA9m3GlDeeJ8d
-S72sHejahARZNF/5prGR4Iy2rtkhRXh2muPl1XR+PaXV1bk5WhePGzjuR2EGnYhEnPVPaKxihETA
-e0ZitTaZh6jTxtL2AaGVvLAY5Zc4/2hAS45FzDGPRxSigJJsMnfTsxJxc4tnP5pQKbtJkgx2L/pu
-NsIrZeIc1aCZZ3RZH00eweOk2L2YYjdS582qyxy5NzQg+8A3h4Tugw62luJGOzoq/RVgh+Wu9vMi
-SK7As5SjJT4CVFCHVgddp5bmiJublqZnI+6M5apa9G1q3DVH1DIiH9Z6UqV/6YP3Six6hL3ijFOa
-1/7yhs5pFked4yndOOf0ooTOoFVsb+L3M70a3Fmrgb437D7k4RMM/Vtx8sYhoTRq59PwsLDk9WWg
-nmHLSzqHAy73N2QvUTJ4CTpEaCgzfSUGDckHtuXOBWjmgsogv3V2XcZfby8XiqV5wQ8pRwT9lrjp
-u2dPXJ7stf4X0KP0yThK4kE/1bxUL93d9uGZ0OfnqHsKlAw+aIdwCR/fTxbjgiRjIVjycivOkh9A
-Jr60jFrIidjpqdqHPVoGg4YHshrpoo9zKfnSHYkL4qzt7HgxN8PvNp7zvPcD846HBss20+de8QkL
-sFi/q6/S6P4+M7RsJBE/D/zrv2UlyEe/Ggs5W60GN2yeCD0RjHx4iFvKwR60BewqsS1zV7LTH/Ug
-no3IYHRcc3rSWaoTuAFqGGp8wxzoRoWNxU7QgOdWUSNk6ja0l6NPdPAPU/4PqQVev++mNPKTiqXI
-5wihD1OI/2Fysq/n1Pymyzl62c4zlUIMtgId8PTFByTOl468Xiax9QB8jnCfgRaB9NIckP0CjpgN
-xZ3fk4SbMt3HTkLt8z5Ma7S+B4mMWvK7Lj8X3+6+vDW3ZxxRaYdtbyA7HwgCRMCCb8OtIWh+hFn0
-N7RbNsq3GjtHWyoPvZlFq+Es0JQbP8/T2s6Q3GEf5FLkPv+IDPBWT39Ze6Tv/pTC/BDXir95GE3r
-Bly8vpRbgI3Ziqx1LkmKkvDYT3wRlPCPlyGP8pDtveTKlZNUe67o8pbcPLBG0J+fO3D8Lp2udNps
-4JA/Kz70L6GKCtz23GkOrUSD0d/DArnYuo4Uit0liV25swqJqwqdeM+IY29lPBVe05cfbSBsZSwM
-5NHIqafuY/9+mPRq3ajte9M8CNBOgiBs1DCo1uFRb2K61lHQqhbjk7JgWUC7I5vem5O+jc+vAyK0
-fV7tvWM63POJJ4dDSA2Y57e/gZGRIdrO3uMNuTsfxxwkBWeYgUmzdzPjtw7NIsBVgzL+FsuH6avi
-ebiDSd7/Fbf0uJK/LNvz67J/qkLfeh4cjIBJ81HIsucxvJF7SgUiJQ1cQcHfhqjUKmqir0MQ2Ddb
-9B1QLYaCM/NTHO9585y5zrzp5DK6j8gfaBrvbfneWpe+hTvtlMp5NHrGP8nWMjW9tnwbMHJABNh+
-jlNzI6Mb9nOKBQW0QuR+o6VKfIGLOmoJsshP2XWVJlbCdrLAIR6o3Nd0pni4uiENqFpx0GjFD5lq
-mmWmrKRcHhpA3/l15EER724m882p0IvrqWUe8LuY3CeS6J/22tVZsnv9FSAJ1Xqa2amKcqbYRlo0
-5aSceRcoH3SBAV0JoYeV4x2NzPgErIJIRzkzXRMnuW7C098accMOvpV0jSMyQxUhFMnxuP2B2wlB
-cnRQ+kMOgz2OcrEoMW9aoSWFEHCKkGxwtSl+0ACOGUAMsbzlL6byGOaxrSgtnZjuxrQXSeKxkH4X
-9JqEYk1MVsL8uiiZTKqx9tgymBjufmZFlYsTtw3krAzFyC549kDYeMOW48ZvRAVP1JJu7UwiGk0H
-5RA8ZEfxW4oxvXfEdGRqiaW/6LyUkgO10Qej646aOugA+vc0mgKtAVC7+x5PatoDkZ+iDnjIW1It
-rbUBadH7MpWieOe7ylbCptQD2M+FH6ut2VIIW4fsEAbEQockiykCn9Oj4YbN0UI0xSn205fCYTtC
-AxcOlxIQ6o4TwYlVTSDUOb7tN1utIfwslyNcNXh4zd0ilLn0uH2A9ZGYjgM+rkg8Iv3V9ynytyPu
-S81nbqe30GzEEfaYkMvcQeFvHCMX5tHKekcvo9eW4pAMIBBRju+Gbx48BLj7RC6HguV8o9MiCAh1
-rTCtEIcgqt8Efv+t6NNyczSJJBkVjRS5UOv5QtCTiOZAQ8OFczYgxOvXie2c45UiXTz+4QejmcpL
-4NzqI3UJXRBSWx7PwKvp3o/mprLgkoSHo0CAYG/+dPq10dG9zryJ3GIqquAI1GSCPCMEooArvM/l
-sv+wQMsqR+U5sU4r53kMBPP1IF3SylSVkTtHW8gmzC/dhYjjgy4xlKuB77RyHqNd3KrFcWcdr0YS
-dhcfudA+0/J7AKIyT06g5vm9+045M4Slwon68wrFgurGro1GuA3kfjclfpM/KckJ6D8kFzr2caOH
-hcLBfC94aCwKZHoGHwBby5AjrD83wVG1Wgb2slVEwNtQOokOqlVP72LbDATeHkzomNeldljHD0rg
-iMiPoXPBjmnC2xaY2e4f2EuZE+fpeBGdeNAepI8DNwfPk6UrdztHp0Wkjb/GSY4=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * Represents the yt:statistics element used by the YouTube data API
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage YouTube
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_YouTube_Extension_Statistics extends Zend_Gdata_Extension
+{
+
+    protected $_rootNamespace = 'yt';
+    protected $_rootElement = 'statistics';
+
+    /**
+     * The videoWatchCount attribute specifies the number of videos
+     * that a user has watched on YouTube. The videoWatchCount attribute
+     * is only specified when the <yt:statistics> tag appears within a
+     * user profile entry.
+     *
+     * @var integer
+     */
+    protected $_videoWatchCount = null;
+
+    /**
+     * When the viewCount attribute refers to a video entry, the attribute
+     * specifies the number of times that the video has been viewed.
+     * When the viewCount attribute refers to a user profile, the attribute
+     * specifies the number of times that the user's profile has been
+     * viewed.
+     *
+     * @var integer
+     */
+    protected $_viewCount = null;
+
+    /**
+     * The subscriberCount attribute specifies the number of YouTube users
+     * who have subscribed to a particular user's YouTube channel.
+     * The subscriberCount attribute is only specified when the
+     * <yt:statistics> tag appears within a user profile entry.
+     * 
+     * @var integer
+     */
+    protected $_subscriberCount = null;
+
+    /**
+     * The lastWebAccess attribute indicates the most recent time that
+     * a particular user used YouTube.
+     *
+     * @var string
+     */
+    protected $_lastWebAccess = null;
+
+    /**
+     * The favoriteCount attribute specifies the number of YouTube users
+     * who have added a video to their list of favorite videos. The
+     * favoriteCount attribute is only specified when the
+     * <yt:statistics> tag appears within a video entry.
+     *
+     * @var integer
+     */
+    protected $_favoriteCount = null;
+
+    /**
+     * Constructs a new Zend_Gdata_YouTube_Extension_Statistics object.
+     * @param string $viewCount(optional) The viewCount value
+     * @param string $videoWatchCount(optional) The videoWatchCount value
+     * @param string $subscriberCount(optional) The subscriberCount value
+     * @param string $lastWebAccess(optional) The lastWebAccess value
+     * @param string $favoriteCount(optional) The favoriteCount value
+     */
+    public function __construct($viewCount = null, $videoWatchCount = null,
+        $subscriberCount = null, $lastWebAccess = null,
+        $favoriteCount = null)
+    {
+        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
+        parent::__construct();
+        $this->_viewCount = $viewCount;
+        $this->_videoWatchCount = $videoWatchCount;
+        $this->_subscriberCount = $subscriberCount;
+        $this->_lastWebAccess = $lastWebAccess;
+        $this->_favoriteCount = $favoriteCount;
+    }
+
+    /**
+     * Retrieves a DOMElement which corresponds to this element and all
+     * child properties.  This is used to build an entry back into a DOM
+     * and eventually XML text for sending to the server upon updates, or
+     * for application storage/persistence.
+     *
+     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
+     * @return DOMElement The DOMElement representing this element and all
+     * child properties.
+     */
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_videoWatchCount !== null) {
+            $element->setAttribute('watchCount', $this->_videoWatchCount);
+        }
+        if ($this->_viewCount !== null) {
+            $element->setAttribute('viewCount', $this->_viewCount);
+        }
+        if ($this->_subscriberCount !== null) {
+            $element->setAttribute('subscriberCount',
+                $this->_subscriberCount);
+        }
+        if ($this->_lastWebAccess !== null) {
+            $element->setAttribute('lastWebAccess',
+                $this->_lastWebAccess);
+        }
+        if ($this->_favoriteCount !== null) {
+            $element->setAttribute('favoriteCount',
+                $this->_favoriteCount);
+        }
+        return $element;
+    }
+
+    /**
+     * Given a DOMNode representing an attribute, tries to map the data into
+     * instance members.  If no mapping is defined, the name and valueare
+     * stored in an array.
+     * TODO: Convert attributes to proper types
+     *
+     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     */
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'videoWatchCount':
+            $this->_videoWatchCount = $attribute->nodeValue;
+            break;
+        case 'viewCount':
+            $this->_viewCount = $attribute->nodeValue;
+            break;
+        case 'subscriberCount':
+            $this->_subscriberCount = $attribute->nodeValue;
+            break;
+        case 'lastWebAccess':
+            $this->_lastWebAccess = $attribute->nodeValue;
+            break;
+        case 'favoriteCount':
+            $this->_favoriteCount = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's viewCount attribute.
+     *
+     * @return int The value associated with this attribute.
+     */
+    public function getViewCount()
+    {
+        return $this->_viewCount;
+    }
+
+    /**
+     * Set the value for this element's viewCount attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_YouTube_Extension_Statistics The element being
+     * modified.
+     */
+    public function setViewCount($value)
+    {
+        $this->_viewCount = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's videoWatchCount attribute.
+     *
+     * @return int The value associated with this attribute.
+     */
+    public function getVideoWatchCount()
+    {
+        return $this->_videoWatchCount;
+    }
+
+    /**
+     * Set the value for this element's videoWatchCount attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_YouTube_Extension_Statistics The element being 
+     * modified.
+     */
+    public function setVideoWatchCount($value)
+    {
+        $this->_videoWatchCount = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's subscriberCount attribute.
+     *
+     * @return int The value associated with this attribute.
+     */
+    public function getSubscriberCount()
+    {
+        return $this->_subscriberCount;
+    }
+
+    /**
+     * Set the value for this element's subscriberCount attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_YouTube_Extension_Statistics The element being 
+     * modified.
+     */
+    public function setSubscriberCount($value)
+    {
+        $this->_subscriberCount = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's lastWebAccess attribute.
+     *
+     * @return int The value associated with this attribute.
+     */
+    public function getLastWebAccess()
+    {
+        return $this->_lastWebAccess;
+    }
+
+    /**
+     * Set the value for this element's lastWebAccess attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_YouTube_Extension_Statistics The element being 
+     * modified.
+     */
+    public function setLastWebAccess($value)
+    {
+        $this->_lastWebAccess = $value;
+        return $this;
+    }
+
+    /**
+     * Get the value for this element's favoriteCount attribute.
+     *
+     * @return int The value associated with this attribute.
+     */
+    public function getFavoriteCount()
+    {
+        return $this->_favoriteCount;
+    }
+
+    /**
+     * Set the value for this element's favoriteCount attribute.
+     *
+     * @param int $value The desired value for this attribute.
+     * @return Zend_Gdata_YouTube_Extension_Statistics The element being 
+     * modified.
+     */
+    public function setFavoriteCount($value)
+    {
+        $this->_favoriteCount = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'View Count=' . $this->_viewCount .
+            ' VideoWatchCount=' . $this->_videoWatchCount .
+            ' SubscriberCount=' . $this->_subscriberCount .
+            ' LastWebAccess=' . $this->_lastWebAccess .
+            ' FavoriteCount=' . $this->_favoriteCount;
+    }
+
+}

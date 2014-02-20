@@ -1,79 +1,238 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-JNH34Q/2r3eq
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tag
+ * @subpackage ItemList
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: ItemList.php 15457 2009-05-09 15:19:13Z dasprid $
+ */
+
+/**
+ * @see Zend_Tag_Taggable
+ */
+require_once 'Zend/Tag/Taggable.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tag
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
+{
+    /**
+     * Items in this list
+     *
+     * @var array
+     */
+    protected $_items = array();
+    
+    /**
+     * Count all items
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        return count($this->_items);
+    }
+    
+    /**
+     * Spread values in the items relative to their weight
+     *
+     * @param  array $values
+     * @throws Zend_Tag_Exception When value list is empty
+     * @return void
+     */
+    public function spreadWeightValues(array $values)
+    {
+        // Don't allow an empty value list
+        if (count($values) === 0) {
+            require_once 'Zend/Tag/Exception.php';
+            throw new Zend_Tag_Exception('Value list may not be empty');
+        }
+        
+        // Re-index the array
+        $values = array_values($values);
+        
+        // If just a single value is supplied simply assign it to to all tags
+        if (count($values) === 1) {
+            foreach ($this->_items as $item) {
+                $item->setParam('weightValue', $values[0]);
+            }
+        } else {
+            // Calculate min- and max-weight
+            $minWeight = null;
+            $maxWeight = null;
+            
+            foreach ($this->_items as $item) {
+                if ($minWeight === null && $maxWeight === null) {
+                    $minWeight = $item->getWeight();
+                    $maxWeight = $item->getWeight();
+                } else {
+                    $minWeight = min($minWeight, $item->getWeight());
+                    $maxWeight = max($maxWeight, $item->getWeight());                
+                }
+            }
+            
+            // Calculate the thresholds
+            $steps      = count($values);
+            $delta      = ($maxWeight - $minWeight) / ($steps - 1);
+            $thresholds = array();
+            
+            for ($i = 0; $i < $steps; $i++) {
+                $thresholds[$i] = floor(100 * log(($minWeight + $i * $delta) + 2));
+            }
+    
+            // Then assign the weight values 
+            foreach ($this->_items as $item) {
+                $threshold = floor(100 * log($item->getWeight() + 2));
+                 
+                for ($i = 0; $i < $steps; $i++) {
+                    if ($threshold <= $thresholds[$i]) {
+                        $item->setParam('weightValue', $values[$i]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    /**
+     * Seek to an absolute positio
+     *
+     * @param  integer $index
+     * @throws OutOfBoundsException When the seek position is invalid
+     * @return void
+     */
+    public function seek($index)
+    {
+        $this->rewind();
+        $position = 0;
+        
+        while ($position < $index && $this->valid()) {
+            $this->next();
+            $position++;
+        }
+        
+        if (!$this->valid()) {
+            throw new OutOfBoundsException('Invalid seek position');
+        }       
+    }
+    
+    /**
+     * Return the current element
+     *
+     * @return mixed
+     */
+    public function current()
+    {
+        return current($this->_items);
+    }
+    
+    /**
+     * Move forward to next element
+     *
+     * @return mixed
+     */
+    public function next()
+    {
+        return next($this->_items);
+    }
+    
+    /**
+     * Return the key of the current element
+     *
+     * @return mixed
+     */
+    public function key()
+    {
+        return key($this->_items);
+    }
+
+    /**
+     * Check if there is a current element after calls to rewind() or next()
+     *
+     * @return boolean
+     */
+    public function valid()
+    {
+        return ($this->current() !== false);
+    }
+    
+    /**
+     * Rewind the Iterator to the first element
+     *
+     * @return void
+     */
+    public function rewind()
+    {
+        reset($this->_items);
+    }
+    
+    /**
+     * Check if an offset exists
+     *
+     * @param  mixed $offset
+     * @return boolean
+     */
+    public function offsetExists($offset) {
+        return array_key_exists($offset, $this->_items);
+    }
+ 
+    /**
+     * Get the value of an offset
+     *
+     * @param  mixed $offset
+     * @return Zend_Tag_Taggable
+     */
+    public function offsetGet($offset) {
+        return $this->_items[$offset];
+    }
+ 
+    /**
+     * Append a new item
+     *
+     * @param  mixed          $offset
+     * @param  Zend_Tag_Taggable $item
+     * @throws OutOfBoundsException When item does not implement Zend_Tag_Taggable
+     * @return void
+     */
+    public function offsetSet($offset, $item) {
+        // We need to make that check here, as the method signature must be
+        // compatible with ArrayAccess::offsetSet()
+        if (!($item instanceof Zend_Tag_Taggable)) {
+            require_once 'Zend/Tag/Exception.php';
+            throw new Zend_Tag_Exception('Item must implement Zend_Tag_Taggable');
+        }
+    
+        if ($offset === null) {
+            $this->_items[] = $item;
+        } else {
+            $this->_items[$offset] = $item;
+        }
+    }
+ 
+    /**
+     * Unset an item
+     *
+     * @param  mixed $offset
+     * @return void
+     */
+    public function offsetUnset($offset) {
+        unset($this->_items[$offset]);
+    }
+}

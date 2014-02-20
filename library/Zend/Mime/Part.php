@@ -1,73 +1,216 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-HFBP75db2YPK370KDWaFvq24/h9YKxdr
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Mime
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * Zend_Mime
+ */
+require_once 'Zend/Mime.php';
+
+/**
+ * Class representing a MIME part.
+ *
+ * @category   Zend
+ * @package    Zend_Mime
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mime_Part {
+
+    public $type = Zend_Mime::TYPE_OCTETSTREAM;
+    public $encoding = Zend_Mime::ENCODING_8BIT;
+    public $id;
+    public $disposition;
+    public $filename;
+    public $description;
+    public $charset;
+    public $boundary;
+    public $location;
+    public $language;
+    protected $_content;
+    protected $_isStream = false;
+
+
+    /**
+     * create a new Mime Part.
+     * The (unencoded) content of the Part as passed
+     * as a string or stream
+     *
+     * @param mixed $content  String or Stream containing the content
+     */
+    public function __construct($content)
+    {
+        $this->_content = $content;
+        if (is_resource($content)) {
+            $this->_isStream = true;
+        }
+    }
+
+    /**
+     * @todo setters/getters
+     * @todo error checking for setting $type
+     * @todo error checking for setting $encoding
+     */
+
+    /**
+     * check if this part can be read as a stream.
+     * if true, getEncodedStream can be called, otherwise
+     * only getContent can be used to fetch the encoded
+     * content of the part
+     *
+     * @return bool
+     */
+    public function isStream()
+    {
+      return $this->_isStream;
+    }
+
+    /**
+     * if this was created with a stream, return a filtered stream for
+     * reading the content. very useful for large file attachments.
+     *
+     * @return stream
+     * @throws Zend_Mime_Exception if not a stream or unable to append filter
+     */
+    public function getEncodedStream()
+    {
+        if (!$this->_isStream) {
+            require_once 'Zend/Mime/Exception.php';
+            throw new Zend_Mime_Exception('Attempt to get a stream from a string part');
+        }
+
+        //stream_filter_remove(); // ??? is that right?
+        switch ($this->encoding) {
+            case Zend_Mime::ENCODING_QUOTEDPRINTABLE:
+                $filter = stream_filter_append(
+                    $this->_content,
+                    'convert.quoted-printable-encode',
+                    STREAM_FILTER_READ,
+                    array(
+                        'line-length'      => 76,
+                        'line-break-chars' => Zend_Mime::LINEEND
+                    )
+                );
+                if (!is_resource($filter)) {
+                    require_once 'Zend/Mime/Exception.php';
+                    throw new Zend_Mime_Exception('Failed to append quoted-printable filter');
+                }
+                break;
+            case Zend_Mime::ENCODING_BASE64:
+                $filter = stream_filter_append(
+                    $this->_content,
+                    'convert.base64-encode',
+                    STREAM_FILTER_READ,
+                    array(
+                        'line-length'      => 76,
+                        'line-break-chars' => Zend_Mime::LINEEND
+                    )
+                );
+                if (!is_resource($filter)) {
+                    require_once 'Zend/Mime/Exception.php';
+                    throw new Zend_Mime_Exception('Failed to append base64 filter');
+                }
+                break;
+            default:
+        }
+        return $this->_content;
+    }
+
+    /**
+     * Get the Content of the current Mime Part in the given encoding.
+     *
+     * @return String
+     */
+    public function getContent($EOL = Zend_Mime::LINEEND)
+    {
+        if ($this->_isStream) {
+            return stream_get_contents($this->getEncodedStream());
+        } else {
+            return Zend_Mime::encode($this->_content, $this->encoding, $EOL);
+        }
+    }
+
+    /**
+     * Create and return the array of headers for this MIME part
+     *
+     * @access public
+     * @return array
+     */
+    public function getHeadersArray($EOL = Zend_Mime::LINEEND)
+    {
+        $headers = array();
+
+        $contentType = $this->type;
+        if ($this->charset) {
+            $contentType .= '; charset=' . $this->charset;
+        }
+
+        if ($this->boundary) {
+            $contentType .= ';' . $EOL
+                          . " boundary=\"" . $this->boundary . '"';
+        }
+
+        $headers[] = array('Content-Type', $contentType);
+
+        if ($this->encoding) {
+            $headers[] = array('Content-Transfer-Encoding', $this->encoding);
+        }
+
+        if ($this->id) {
+            $headers[]  = array('Content-ID', '<' . $this->id . '>');
+        }
+
+        if ($this->disposition) {
+            $disposition = $this->disposition;
+            if ($this->filename) {
+                $disposition .= '; filename="' . $this->filename . '"';
+            }
+            $headers[] = array('Content-Disposition', $disposition);
+        }
+
+        if ($this->description) {
+            $headers[] = array('Content-Description', $this->description);
+        }
+
+        if ($this->location) {
+            $headers[] = array('Content-Location', $this->location);
+        }
+
+        if ($this->language){
+            $headers[] = array('Content-Language', $this->language);
+        }
+
+        return $headers;
+    }
+
+    /**
+     * Return the headers for this part as a string
+     *
+     * @return String
+     */
+    public function getHeaders($EOL = Zend_Mime::LINEEND)
+    {
+        $res = '';
+        foreach ($this->getHeadersArray($EOL) as $header) {
+            $res .= $header[0] . ': ' . $header[1] . $EOL;
+        }
+
+        return $res;
+    }
+}

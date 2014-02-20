@@ -1,36 +1,100 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-fTytYCf4jbDqhH41lBV+7J6n
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_Extension
+ */
+require_once 'Zend/Gdata/Extension.php';
+
+/**
+ * Represents the gd:eventStatus element
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage Gdata
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_Extension_EventStatus extends Zend_Gdata_Extension
+{
+
+    protected $_rootElement = 'eventStatus';
+    protected $_value = null;
+
+    public function __construct($value = null)
+    {
+        parent::__construct();
+        $this->_value = $value;
+    }
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_value !== null) {
+            $element->setAttribute('value', $this->_value);
+        }
+        return $element;
+    }
+
+    protected function takeAttributeFromDOM($attribute)
+    {
+        switch ($attribute->localName) {
+        case 'value':
+            $this->_value = $attribute->nodeValue;
+            break;
+        default:
+            parent::takeAttributeFromDOM($attribute);
+        }
+    }
+
+    /**
+     * Get the value for this element's Value attribute.
+     *
+     * @return string The requested attribute.
+     */
+    public function getValue()
+    {
+        return $this->_value;
+    }
+
+    /**
+     * Set the value for this element's Value attribute.
+     *
+     * @param string $value The desired value for this attribute.
+     * @return Zend_Gdata_Extension_Visibility The element being modified.
+     */
+    public function setValue($value)
+    {
+        $this->_value = $value;
+        return $this;
+    }
+
+    /**
+     * Magic toString method allows using this directly via echo
+     * Works best in PHP >= 4.2.0
+     */
+    public function __toString()
+    {
+        return $this->getValue();
+    }
+
+}

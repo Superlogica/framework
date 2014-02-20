@@ -1,16 +1,64 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV59hOwWpa/vJl8+LYVoymTLGHIBdrYRcVGyLMm/CxPPE88pMiACAZ8jLRRXPpS4N2MbgVap35
-BLUAxCHvV5OsPV6aK1qeomAdxdHxJFZM32B917lUXCP0gYEK1w5RailjbTRJY1jEHJBtcyf0IfjV
-X5g8LNg/ODhtO4OvdUa9tDWBBgAYRM5lyrVxmTYfdB0QUYWAYvwaEyk5CMe9hrEkqVqzk7ntiBos
-SZDQxQGPD56QLIpWcerlRiHBaqcSpLCjHtVbBow4GcXhOr1TJkPxQMgARpBjPfzmG7iZwYNWgYNq
-8j54SE5dweBp7xRdT73EuahS5fqgJS/RtRwhKWxmORCd7ETdEXElK5gSKtvtqfp49gM2j69AnYrD
-Wjdv4d6NrvxNEijPCFO2ZVfW2PUMfOtvQN2mipR6TA+HMqMqSXMv5jy6DJbsffiQhAM9lOJUStpg
-fLA0nq9r4fJJT6qezwVPhetLazzGGcZGEr27QFvY5zqXB/FXJDtCt1ZUl9S4XDQKBIgSCr3toF8j
-5fQKtPjH3HC/2DxDKNe2rrAYMfl+W6kVMBRrHfkj7wg0FMQuUDnQtlOQPQon8J2WI6yjssRh/St+
-4AY9PXE1hERuWh123GFPBfu3vYsWq9HHNW4vcXvK+DBlB55Us1s4iYqDel+2yiorRN+ei0/UcDqm
-r0B8ra1z1c+itii6WZRPczeEM7m9739iLGr/baHFNZI4B8f7hltnMmLy8pNxxU3fYxQkQW49AviO
-/s/dUgQaPUn3peeuSVkk74ixOPJvcBj2uhdCdO6scPQfoUZdRq42D2BkhiTZNk93GDHXSQPoBEyf
-6ctUiy/XkKIFluwPxXb9JgsLHvfWJRTB+4USdBfVo9Uo8rMFeQ46Ef/GGTfOY+DWkTdrQSL7cAns
-hHkIlHLrv9NSD98gOrAjWCKz5Pl32Q86UhHCIl3ZBQ7B/t/k+G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Acl
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Interface.php 8861 2008-03-16 14:30:18Z thomas $
+ */
+
+
+/**
+ * @see Zend_Acl
+ */
+require_once 'Zend/Acl.php';
+
+
+/**
+ * @see Zend_Acl_Role_Interface
+ */
+require_once 'Zend/Acl/Role/Interface.php';
+
+
+/**
+ * @see Zend_Acl_Resource_Interface
+ */
+require_once 'Zend/Acl/Resource/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Acl
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+interface Zend_Acl_Assert_Interface
+{
+    /**
+     * Returns true if and only if the assertion conditions are met
+     *
+     * This method is passed the ACL, Role, Resource, and privilege to which the authorization query applies. If the
+     * $role, $resource, or $privilege parameters are null, it means that the query applies to all Roles, Resources, or
+     * privileges, respectively.
+     *
+     * @param  Zend_Acl                    $acl
+     * @param  Zend_Acl_Role_Interface     $role
+     * @param  Zend_Acl_Resource_Interface $resource
+     * @param  string                      $privilege
+     * @return boolean
+     */
+    public function assert(Zend_Acl $acl, Zend_Acl_Role_Interface $role = null, Zend_Acl_Resource_Interface $resource = null,
+                           $privilege = null);
+}

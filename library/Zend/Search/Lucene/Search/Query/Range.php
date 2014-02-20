@@ -1,140 +1,373 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-a9ei5sBroa9O1qo9oHlliEA/dPxlOm==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Search_Lucene_Search_Query */
+require_once 'Zend/Search/Lucene/Search/Query.php';
+
+/** Zend_Search_Lucene_Search_Query_MultiTerm */
+require_once 'Zend/Search/Lucene/Search/Query/MultiTerm.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Search_Query_Range extends Zend_Search_Lucene_Search_Query
+{
+    /**
+     * Lower term.
+     *
+     * @var Zend_Search_Lucene_Index_Term
+     */
+    private $_lowerTerm;
+
+    /**
+     * Upper term.
+     *
+     * @var Zend_Search_Lucene_Index_Term
+     */
+    private $_upperTerm;
+
+
+    /**
+     * Search field
+     *
+     * @var string
+     */
+    private $_field;
+
+    /**
+     * Inclusive
+     *
+     * @var boolean
+     */
+    private $_inclusive;
+
+    /**
+     * Matched terms.
+     *
+     * Matched terms list.
+     * It's filled during the search (rewrite operation) and may be used for search result
+     * post-processing
+     *
+     * Array of Zend_Search_Lucene_Index_Term objects
+     *
+     * @var array
+     */
+    private $_matches = null;
+
+
+    /**
+     * Zend_Search_Lucene_Search_Query_Range constructor.
+     *
+     * @param Zend_Search_Lucene_Index_Term|null $lowerTerm
+     * @param Zend_Search_Lucene_Index_Term|null $upperTerm
+     * @param boolean $inclusive
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function __construct($lowerTerm, $upperTerm, $inclusive)
+    {
+        if ($lowerTerm === null  &&  $upperTerm === null) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('At least one term must be non-null');
+        }
+        if ($lowerTerm !== null  &&  $upperTerm !== null  &&  $lowerTerm->field != $upperTerm->field) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Both terms must be for the same field');
+        }
+
+        $this->_field     = ($lowerTerm !== null)? $lowerTerm->field : $upperTerm->field;
+        $this->_lowerTerm = $lowerTerm;
+        $this->_upperTerm = $upperTerm;
+        $this->_inclusive = $inclusive;
+    }
+
+    /**
+     * Get query field name
+     *
+     * @return string|null
+     */
+    public function getField()
+    {
+        return $this->_field;
+    }
+
+    /**
+     * Get lower term
+     *
+     * @return Zend_Search_Lucene_Index_Term|null
+     */
+    public function getLowerTerm()
+    {
+        return $this->_lowerTerm;
+    }
+
+    /**
+     * Get upper term
+     *
+     * @return Zend_Search_Lucene_Index_Term|null
+     */
+    public function getUpperTerm()
+    {
+        return $this->_upperTerm;
+    }
+
+    /**
+     * Get upper term
+     *
+     * @return boolean
+     */
+    public function isInclusive()
+    {
+        return $this->_inclusive;
+    }
+
+    /**
+     * Re-write query into primitive queries in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function rewrite(Zend_Search_Lucene_Interface $index)
+    {
+        $this->_matches = array();
+
+        if ($this->_field === null) {
+            // Search through all fields
+            $fields = $index->getFieldNames(true /* indexed fields list */);
+        } else {
+            $fields = array($this->_field);
+        }
+
+        $maxTerms = Zend_Search_Lucene::getTermsPerQueryLimit();
+        foreach ($fields as $field) {
+            $index->resetTermsStream();
+
+            if ($this->_lowerTerm !== null) {
+                $lowerTerm = new Zend_Search_Lucene_Index_Term($this->_lowerTerm->text, $field);
+
+                $index->skipTo($lowerTerm);
+
+                if (!$this->_inclusive  &&
+                    $index->currentTerm() == $lowerTerm) {
+                    // Skip lower term
+                    $index->nextTerm();
+                }
+            } else {
+                $index->skipTo(new Zend_Search_Lucene_Index_Term('', $field));
+            }
+
+
+            if ($this->_upperTerm !== null) {
+                // Walk up to the upper term
+                $upperTerm = new Zend_Search_Lucene_Index_Term($this->_upperTerm->text, $field);
+
+                while ($index->currentTerm() !== null          &&
+                       $index->currentTerm()->field == $field  &&
+                       $index->currentTerm()->text  <  $upperTerm->text) {
+                    $this->_matches[] = $index->currentTerm();
+
+                    if ($maxTerms != 0  &&  count($this->_matches) > $maxTerms) {
+                        require_once 'Zend/Search/Lucene/Exception.php';
+                        throw new Zend_Search_Lucene_Exception('Terms per query limit is reached.');
+                    }
+
+                    $index->nextTerm();
+                }
+
+                if ($this->_inclusive  &&  $index->currentTerm() == $upperTerm) {
+                    // Include upper term into result
+                    $this->_matches[] = $upperTerm;
+                }
+            } else {
+                // Walk up to the end of field data
+                while ($index->currentTerm() !== null  &&  $index->currentTerm()->field == $field) {
+                    $this->_matches[] = $index->currentTerm();
+
+                    if ($maxTerms != 0  &&  count($this->_matches) > $maxTerms) {
+                        require_once 'Zend/Search/Lucene/Exception.php';
+                        throw new Zend_Search_Lucene_Exception('Terms per query limit is reached.');
+                    }
+
+                    $index->nextTerm();
+                }
+            }
+
+            $index->closeTermsStream();
+        }
+
+        if (count($this->_matches) == 0) {
+            return new Zend_Search_Lucene_Search_Query_Empty();
+        } else if (count($this->_matches) == 1) {
+            return new Zend_Search_Lucene_Search_Query_Term(reset($this->_matches));
+        } else {
+            $rewrittenQuery = new Zend_Search_Lucene_Search_Query_MultiTerm();
+
+            foreach ($this->_matches as $matchedTerm) {
+                $rewrittenQuery->addTerm($matchedTerm);
+            }
+
+            return $rewrittenQuery;
+        }
+    }
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function optimize(Zend_Search_Lucene_Interface $index)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function getQueryTerms()
+    {
+        if ($this->_matches === null) {
+            require_once 'Zend/Search/Lucene/Exception.php';
+            throw new Zend_Search_Lucene_Exception('Search or rewrite operations have to be performed before.');
+        }
+
+        return $this->_matches;
+    }
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function createWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function matchedDocs()
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function score($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
+    }
+
+    /**
+     * Query specific matches highlighting
+     *
+     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
+     */
+    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
+    {
+        $words = array();
+
+        $docBody = $highlighter->getDocument()->getFieldUtf8Value('body');
+        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($docBody, 'UTF-8');
+
+        $lowerTermText = ($this->_lowerTerm !== null)? $this->_lowerTerm->text : null;
+        $upperTermText = ($this->_upperTerm !== null)? $this->_upperTerm->text : null;
+
+        if ($this->_inclusive) {
+	        foreach ($tokens as $token) {
+	            $termText = $token->getTermText();
+	            if (($lowerTermText == null  ||  $lowerTermText <= $termText)  &&
+	                ($upperTermText == null  ||  $termText <= $upperTermText)) {
+	                $words[] = $termText;
+	            }
+	        }
+        } else {
+            foreach ($tokens as $token) {
+                $termText = $token->getTermText();
+                if (($lowerTermText == null  ||  $lowerTermText < $termText)  &&
+                    ($upperTermText == null  ||  $termText < $upperTermText)) {
+                    $words[] = $termText;
+                }
+            }
+        }
+
+        $highlighter->highlight($words);
+    }
+
+    /**
+     * Print a query
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        // It's used only for query visualisation, so we don't care about characters escaping
+        return (($this->_field === null)? '' : $this->_field . ':')
+             . (($this->_inclusive)? '[' : '{')
+             . (($this->_lowerTerm !== null)?  $this->_lowerTerm->text : 'null')
+             . ' TO '
+             . (($this->_upperTerm !== null)?  $this->_upperTerm->text : 'null')
+             . (($this->_inclusive)? ']' : '}')
+             . (($this->getBoost() != 1)? '^' . round($this->getBoost(), 4) : '');
+    }
+}
+

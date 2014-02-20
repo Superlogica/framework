@@ -1,36 +1,91 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Loader_IncludePathLoader_RecursiveFilterIterator extends RecursiveFilterIterator
+{
+
+    protected $_denyDirectoryPattern = null;
+    protected $_acceptFilePattern    = null;
+    
+    /**
+     * constructor
+     *
+     * @param RecursiveIterator $iterator
+     * @param string $denyDirectoryPattern
+     * @param string $acceptFilePattern
+     */
+    public function __construct(RecursiveIterator $iterator, $denyDirectoryPattern = null, $acceptFilePattern = null)
+    {
+        $this->_denyDirectoryPattern = $denyDirectoryPattern;
+        $this->_acceptFilePattern    = $acceptFilePattern;
+        parent::__construct($iterator);
+    }
+    
+    /**
+     * accept() - Which iterable items to accept or deny, required by FilterInterface
+     *
+     * @return unknown
+     */
+    public function accept()
+    {
+        $currentNode = $this->current();
+        $currentNodeRealPath = $currentNode->getRealPath();
+
+        // if the current node is a directory AND doesn't match the denyDirectory pattern, accept
+        if ($currentNode->isDir() 
+            && !preg_match('#' . $this->_denyDirectoryPattern . '#', $currentNodeRealPath)) {
+            return true;
+        }
+        
+        // if the file matches the accept file pattern, accept
+        $acceptable = (preg_match('#' . $this->_acceptFilePattern . '#', $currentNodeRealPath)) ? true : false;
+        return $acceptable;
+    }
+
+    /**
+     * getChildren() - overridden from RecursiveFilterIterator to allow the persistence of
+     * the $_denyDirectoryPattern and the $_acceptFilePattern when sub iterators of this filter
+     * are needed to be created.
+     *
+     * @return Zend_Tool_Framework_Loader_IncludePathLoader_RecursiveFilterIterator
+     */
+    public function getChildren()
+    {
+        if (empty($this->ref)) {
+            $this->ref = new ReflectionClass($this);
+        }
+        
+        return $this->ref->newInstance(
+            $this->getInnerIterator()->getChildren(),
+            $this->_denyDirectoryPattern,
+            $this->_acceptFilePattern
+            );
+    }
+    
+}
+

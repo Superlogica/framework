@@ -1,33 +1,117 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5Fj3XSg3g7tjJlKGwLCe6YJp2Dg2V90rlusiJdYLipvLJ5RVl8A34nsHgkK7Qo4w8h81rnAo
-azXIuuG+U3Eoh7rqtiBkld7Ty2Ag/YAIeGMb23FIz2bsIFVrBZVzOSEBxOSNGMfSd68Y/a/k5r1G
-yiOT4FpunnoXfxhsgj+DiWC5+fii+EgUvp0BGUjSAOpN1HHQcb5caJVZsH5LtgVbjvyhTfknXQYY
-bNJrxKbrELZnNJcTxb32n4kJIPpDKor7T+KlBeH2QELbOuhjiaG/wpq8SjNkMVHriv9Aw82Cihig
-Cy9RnU5bFT2qs22i948EG6Zi/i+EeKZDdd7qL0e4VT3oUoJ9u506FbYNVaPItEJL9YjtrawllCbC
-v7mEW+szR47LSAcUuQm26sbl4ZyA95d8+2ZOwJ3LMENyEjbOgI/lXbJO5ArMlPx/+Jvv//VuPJEZ
-060X9QjlOgnkvveGa3+DdsZxzcnZd4WfZtwzeTzgvjTuBwdEsPliQJlH6o8RsvQndiyJUsc+QRsu
-bRPzIsnbKE+Nrjr21mxlmNjZXWjdJahYOgyezMojNSDrWtFyFYYdqS4TPpeQA4zhc+IOGJQoJEBE
-bSuqW04B4sCkHb09KBU1s72KYFCnK2V/nKsipA4CSH1uPo/t/wvUzohOnUVShO618hw8fk0IKF9s
-Q7lfVrMcRTFH5+djn0eWN2VrMnGAW/pkSCgJo5dJ5NXIPC49QCHSHV+/r+rdM7nTDFodHd8ulaLA
-OrPKAAvqwOwFVInLK/AtyVauvTjyZOiVy3Q91J3QXa3pQ6kMoyVsBO0DvWcNdVBvOYByV/kKmG6I
-cNj/5eqTwHsryIXDXdwaEkomHRDQ8DTjE/inmY+0kn7QQdXA8dC+Ts8r/Se+2Q9fhc4wkG/2oEIz
-ZPSKbOSqOWeJ+PEEmSzB/g2vsJXlin+qEVYcyPRwQMsp59DtLVcQ0nES9R+xPufD912CBWzNU4B5
-v+JG3bfRD/KFKJsEiotlKg9HWgakGtzrXh1brCY4e/dDFOLXw5gF6VLUde25WA+tHJzF+LaxRCr8
-EMScOwtmRpku+TgcYfQu2skYyqMNQcUqwHvV0e1gG/Jx0EivPeyLq3c1P/fjXqzA8bYYBI4oGNbD
-BcvpBaKOifVwtaTIES49y73h1vzwmv2arc6mem67M/qfUREn6HdRqOsTz9MN3F/cRNCbw2PkecF2
-pdcrRdzY/CoZoNOtx7c1obnPKcXTxWpSu65XGhtPhgkf1GKd/lb4B+0KHOMoy+poIEC8Uv/uFzw7
-GsF7lChhtfyuoINQ1DEpiufVhiDHdsKLSxqf/m1dr0L12jVR8RA4yi8kVHvRFQT7b3HWO2iTEpFO
-aRrRZr8884J5W+vyGNqXmUPee8wbjYBngpFvd4NW860bt4FIANGiclJBTucJoDftsLGC/jbmNln0
-8Zgq3wiZwTKwCULH8Ha1WUQVnHZu3v2l4smcDG9tU9KU0HbPBVSz+yakUk76koXm5e7eR8Ey5Jy5
-IasMj0YE5fqPh/yIORrgTm17UH803KfPYLHFfkQ6702PTmiPYUM0fyC/RkDwkEj8FrXcpdThfbSd
-yjpIstsdppIbcsmR2w41v8cHTkHyVcQBA9u8Oyt0k/O+IfvOwdRbU3cvp0UYNIp6T590cV8fg3i3
-/1encvOcDcBLkYFtwxegJe6sDHkywcFVap7CZ5fk32vKPomkJts0/Qj2HobThYZGhNGJH7Io7g0e
-/bJfBuQGM5MtZpI62O/rk4+6WSpdfGIrlra/eciQv5tN/doFfgRI1bVZMqx4QXuwfr4oMAiHUsUd
-IRZ98/GUU7WFB744vqoCqBCXltrTzc8gWN6t58Bl+C4Iu81oc1LZRlPCeuB8Rw2iQIUDDbg2iy1X
-65lsAS6C+FHFmJeDavwTahvP0u1cq0sUvDtb6bPkLM1VRZ0ncYZvFv8XxRfjyeluUB3vWn3LwGqj
-cVqq//2dOwiQtC8h219zATEnfLu9rZTLbAvaQg10FhbQ6W5/OgP7qIgf2OSqLDdWxXlZoyiD/EMK
-5IxLJ8bkhjaUWN8ao++bedCgDBDfXIrmXLbD1/UDmy4hZuMEmmLje+L6+8dNzB26yWK6hsLyQkXl
-QIyb9mFLyQsFjMIYcM/Uh4ybiIWTxA4oeB4slu3HjSHByg7ZdzSUPiEkT+4wRhQTBf3K4AMtuXv8
-RFrzcVRdXYGSaZdONUJxTQlG9r2JHBf4aAgDQ4pOHeHYl9JYOxy=
+<?php
+/**
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_ProgressBar
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: JsPush.php 12233 2008-11-01 00:11:01Z dasprid $
+ */
+
+/**
+ * @see Zend_Json
+ */
+require_once 'Zend/Json.php';
+
+/**
+ * @see Zend_ProgressBar_Adapter
+ */
+require_once 'Zend/ProgressBar/Adapter.php';
+
+/**
+ * Zend_ProgressBar_Adapter_JsPull offers a simple method for updating a
+ * progressbar in a browser.
+ *
+ * @category  Zend
+ * @package   Zend_ProgressBar
+ * @uses      Zend_ProgressBar_Adapter_Interface
+ * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_ProgressBar_Adapter_JsPull extends Zend_ProgressBar_Adapter
+{
+    /**
+     * Wether to exit after json data send or not
+     *
+     * @var boolean
+     */
+    protected $_exitAfterSend = true;
+
+    /**
+     * Set wether to exit after json data send or not
+     *
+     * @param  boolean $exitAfterSend
+     * @return Zend_ProgressBar_Adapter_JsPull
+     */
+    public function setExitAfterSend($exitAfterSend)
+    {
+        $this->_exitAfterSend = $exitAfterSend;
+    }
+
+    /**
+     * Defined by Zend_ProgressBar_Adapter_Interface
+     *
+     * @param  float   $current       Current progress value
+     * @param  float   $max           Max progress value
+     * @param  float   $percent       Current percent value
+     * @param  integer $timeTaken     Taken time in seconds
+     * @param  integer $timeRemaining Remaining time in seconds
+     * @param  string  $text          Status text
+     * @return void
+     */
+    public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text)
+    {
+        $arguments = array(
+            'current'       => $current,
+            'max'           => $max,
+            'percent'       => ($percent * 100),
+            'timeTaken'     => $timeTaken,
+            'timeRemaining' => $timeRemaining,
+            'text'          => $text,
+            'finished'      => false
+        );
+
+        $data = Zend_Json::encode($arguments);
+
+        // Output the data
+        $this->_outputData($data);
+    }
+
+    /**
+     * Defined by Zend_ProgressBar_Adapter_Interface
+     *
+     * @return void
+     */
+    public function finish()
+    {
+        $data = Zend_Json::encode(array('finished' => true));
+
+        $this->_outputData($data);
+    }
+
+    /**
+     * Outputs given data the user agent.
+     *
+     * This split-off is required for unit-testing.
+     *
+     * @param  string $data
+     * @return void
+     */
+    protected function _outputData($data)
+    {
+        echo $data;
+
+        if ($this->_exitAfterSend) {
+            exit;
+        }
+    }
+}

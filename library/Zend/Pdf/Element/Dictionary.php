@@ -1,62 +1,181 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-0CH3oHOBwB6c3ys5
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/** Zend_Pdf_Element */
+require_once 'Zend/Pdf/Element.php';
+
+
+/**
+ * PDF file 'dictionary' element implementation
+ *
+ * @category   Zend
+ * @package    Zend_Pdf
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Pdf_Element_Dictionary extends Zend_Pdf_Element
+{
+    /**
+     * Dictionary elements
+     * Array of Zend_Pdf_Element objects ('name' => Zend_Pdf_Element)
+     *
+     * @var array
+     */
+    private $_items = array();
+
+
+    /**
+     * Object constructor
+     *
+     * @param array $val   - array of Zend_Pdf_Element objects
+     * @throws Zend_Pdf_Exception
+     */
+    public function __construct($val = null)
+    {
+        if ($val === null) {
+            return;
+        } else if (!is_array($val)) {
+            throw new Zend_Pdf_Exception('Argument must be an array');
+        }
+
+        foreach ($val as $name => $element) {
+            if (!$element instanceof Zend_Pdf_Element) {
+                throw new Zend_Pdf_Exception('Array elements must be Zend_Pdf_Element objects');
+            }
+            if (!is_string($name)) {
+                throw new Zend_Pdf_Exception('Array keys must be strings');
+            }
+            $this->_items[$name] = $element;
+        }
+    }
+
+
+    /**
+     * Add element to an array
+     *
+     * @name Zend_Pdf_Element_Name $name
+     * @param Zend_Pdf_Element $val   - Zend_Pdf_Element object
+     * @throws Zend_Pdf_Exception
+     */
+    public function add(Zend_Pdf_Element_Name $name, Zend_Pdf_Element $val)
+    {
+        $this->_items[$name->value] = $val;
+    }
+
+    /**
+     * Return dictionary keys
+     *
+     * @return array
+     */
+    public function getKeys()
+    {
+        return array_keys($this->_items);
+    }
+
+
+    /**
+     * Get handler
+     *
+     * @param string $property
+     * @return Zend_Pdf_Element | null
+     */
+    public function __get($item)
+    {
+        $element = isset($this->_items[$item]) ? $this->_items[$item]
+                                               : null;
+
+        return $element;
+    }
+
+    /**
+     * Set handler
+     *
+     * @param string $property
+     * @param  mixed $value
+     */
+    public function __set($item, $value)
+    {
+        if ($value === null) {
+            unset($this->_items[$item]);
+        } else {
+            $this->_items[$item] = $value;
+        }
+    }
+
+    /**
+     * Return type of the element.
+     *
+     * @return integer
+     */
+    public function getType()
+    {
+        return Zend_Pdf_Element::TYPE_DICTIONARY;
+    }
+
+
+    /**
+     * Return object as string
+     *
+     * @param Zend_Pdf_Factory $factory
+     * @return string
+     */
+    public function toString($factory = null)
+    {
+        $outStr = '<<';
+        $lastNL = 0;
+
+        foreach ($this->_items as $name => $element) {
+            if (!is_object($element)) {
+                throw new Zend_Pdf_Exception('Wrong data');
+            }
+
+            if (strlen($outStr) - $lastNL > 128)  {
+                $outStr .= "\n";
+                $lastNL = strlen($outStr);
+            }
+
+            $nameObj = new Zend_Pdf_Element_Name($name);
+            $outStr .= $nameObj->toString($factory) . ' ' . $element->toString($factory) . ' ';
+        }
+        $outStr .= '>>';
+
+        return $outStr;
+    }
+
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * Dictionary is returned as an associative array
+     *
+     * @return mixed
+     */
+    public function toPhp()
+    {
+        $phpArray = array();
+
+        foreach ($this->_items as $itemName => $item) {
+            $phpArray[$itemName] = $item->toPhp();
+        }
+
+        return $phpArray;
+    }
+}

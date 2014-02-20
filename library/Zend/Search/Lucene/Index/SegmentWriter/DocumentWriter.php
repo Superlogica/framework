@@ -1,103 +1,213 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-sKH+QFVc0lfvCjWZAt7F+/oryagwA62jQfAxA0==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Search_Lucene_Analysis_Analyzer */
+require_once 'Zend/Search/Lucene/Analysis/Analyzer.php';
+
+/** Zend_Search_Lucene_Index_SegmentWriter */
+require_once 'Zend/Search/Lucene/Index/SegmentWriter.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Index
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter extends Zend_Search_Lucene_Index_SegmentWriter
+{
+    /**
+     * Term Dictionary
+     * Array of the Zend_Search_Lucene_Index_Term objects
+     * Corresponding Zend_Search_Lucene_Index_TermInfo object stored in the $_termDictionaryInfos
+     *
+     * @var array
+     */
+    protected $_termDictionary;
+
+    /**
+     * Documents, which contain the term
+     *
+     * @var array
+     */
+    protected $_termDocs;
+
+    /**
+     * Object constructor.
+     *
+     * @param Zend_Search_Lucene_Storage_Directory $directory
+     * @param string $name
+     */
+    public function __construct(Zend_Search_Lucene_Storage_Directory $directory, $name)
+    {
+        parent::__construct($directory, $name);
+
+        $this->_termDocs       = array();
+        $this->_termDictionary = array();
+    }
+
+
+    /**
+     * Adds a document to this segment.
+     *
+     * @param Zend_Search_Lucene_Document $document
+     * @throws Zend_Search_Lucene_Exception
+     */
+    public function addDocument(Zend_Search_Lucene_Document $document)
+    {
+        $storedFields = array();
+        $docNorms     = array();
+        $similarity   = Zend_Search_Lucene_Search_Similarity::getDefault();
+
+        foreach ($document->getFieldNames() as $fieldName) {
+            $field = $document->getField($fieldName);
+            $this->addField($field);
+
+            if ($field->storeTermVector) {
+                /**
+                 * @todo term vector storing support
+                 */
+                require_once 'Zend/Search/Lucene/Exception.php';
+                throw new Zend_Search_Lucene_Exception('Store term vector functionality is not supported yet.');
+            }
+
+            if ($field->isIndexed) {
+                if ($field->isTokenized) {
+                    $analyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
+                    $analyzer->setInput($field->value, $field->encoding);
+
+                    $position     = 0;
+                    $tokenCounter = 0;
+                    while (($token = $analyzer->nextToken()) !== null) {
+                        $tokenCounter++;
+
+                        $term = new Zend_Search_Lucene_Index_Term($token->getTermText(), $field->name);
+                        $termKey = $term->key();
+
+                        if (!isset($this->_termDictionary[$termKey])) {
+                            // New term
+                            $this->_termDictionary[$termKey] = $term;
+                            $this->_termDocs[$termKey] = array();
+                            $this->_termDocs[$termKey][$this->_docCount] = array();
+                        } else if (!isset($this->_termDocs[$termKey][$this->_docCount])) {
+                            // Existing term, but new term entry
+                            $this->_termDocs[$termKey][$this->_docCount] = array();
+                        }
+                        $position += $token->getPositionIncrement();
+                        $this->_termDocs[$termKey][$this->_docCount][] = $position;
+                    }
+
+                    $docNorms[$field->name] = chr($similarity->encodeNorm( $similarity->lengthNorm($field->name,
+                                                                                                   $tokenCounter)*
+                                                                           $document->boost*
+                                                                           $field->boost ));
+                } else {
+                    $term = new Zend_Search_Lucene_Index_Term($field->getUtf8Value(), $field->name);
+                    $termKey = $term->key();
+
+                    if (!isset($this->_termDictionary[$termKey])) {
+                        // New term
+                        $this->_termDictionary[$termKey] = $term;
+                        $this->_termDocs[$termKey] = array();
+                        $this->_termDocs[$termKey][$this->_docCount] = array();
+                    } else if (!isset($this->_termDocs[$termKey][$this->_docCount])) {
+                        // Existing term, but new term entry
+                        $this->_termDocs[$termKey][$this->_docCount] = array();
+                    }
+                    $this->_termDocs[$termKey][$this->_docCount][] = 0; // position
+
+                    $docNorms[$field->name] = chr($similarity->encodeNorm( $similarity->lengthNorm($field->name, 1)*
+                                                                           $document->boost*
+                                                                           $field->boost ));
+                }
+            }
+
+            if ($field->isStored) {
+                $storedFields[] = $field;
+            }
+        }
+
+
+        foreach ($this->_fields as $fieldName => $field) {
+            if (!$field->isIndexed) {
+                continue;
+            }
+
+            if (!isset($this->_norms[$fieldName])) {
+                $this->_norms[$fieldName] = str_repeat(chr($similarity->encodeNorm( $similarity->lengthNorm($fieldName, 0) )),
+                                                       $this->_docCount);
+            }
+
+            if (isset($docNorms[$fieldName])){
+                $this->_norms[$fieldName] .= $docNorms[$fieldName];
+            } else {
+                $this->_norms[$fieldName] .= chr($similarity->encodeNorm( $similarity->lengthNorm($fieldName, 0) ));
+            }
+        }
+
+        $this->addStoredFields($storedFields);
+    }
+
+
+    /**
+     * Dump Term Dictionary (.tis) and Term Dictionary Index (.tii) segment files
+     */
+    protected function _dumpDictionary()
+    {
+        ksort($this->_termDictionary, SORT_STRING);
+
+        $this->initializeDictionaryFiles();
+
+        foreach ($this->_termDictionary as $termId => $term) {
+            $this->addTerm($term, $this->_termDocs[$termId]);
+        }
+
+        $this->closeDictionaryFiles();
+    }
+
+
+    /**
+     * Close segment, write it to disk and return segment info
+     *
+     * @return Zend_Search_Lucene_Index_SegmentInfo
+     */
+    public function close()
+    {
+        if ($this->_docCount == 0) {
+            return null;
+        }
+
+        $this->_dumpFNM();
+        $this->_dumpDictionary();
+
+        $this->_generateCFS();
+
+        return new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
+                                                        $this->_name,
+                                                        $this->_docCount,
+                                                        -1,
+                                                        null,
+                                                        true,
+                                                        true);
+    }
+
+}
+

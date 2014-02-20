@@ -1,139 +1,481 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-kNIvzGIzH7qP40==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: DbTable.php 14899 2009-04-14 22:04:56Z ralph $
+ */
+
+
+/**
+ * @see Zend_Auth_Adapter_Interface
+ */
+require_once 'Zend/Auth/Adapter/Interface.php';
+
+/**
+ * @see Zend_Db_Adapter_Abstract
+ */
+require_once 'Zend/Db/Adapter/Abstract.php';
+
+/**
+ * @see Zend_Auth_Result
+ */
+require_once 'Zend/Auth/Result.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Auth
+ * @subpackage Zend_Auth_Adapter
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Auth_Adapter_DbTable implements Zend_Auth_Adapter_Interface
+{
+
+    /**
+     * Database Connection
+     *
+     * @var Zend_Db_Adapter_Abstract
+     */
+    protected $_zendDb = null;
+
+    /**
+     * @var Zend_Db_Select
+     */
+    protected $_dbSelect = null;
+    
+    /**
+     * $_tableName - the table name to check
+     *
+     * @var string
+     */
+    protected $_tableName = null;
+
+    /**
+     * $_identityColumn - the column to use as the identity
+     *
+     * @var string
+     */
+    protected $_identityColumn = null;
+
+    /**
+     * $_credentialColumns - columns to be used as the credentials
+     *
+     * @var string
+     */
+    protected $_credentialColumn = null;
+
+    /**
+     * $_identity - Identity value
+     *
+     * @var string
+     */
+    protected $_identity = null;
+
+    /**
+     * $_credential - Credential values
+     *
+     * @var string
+     */
+    protected $_credential = null;
+
+    /**
+     * $_credentialTreatment - Treatment applied to the credential, such as MD5() or PASSWORD()
+     *
+     * @var string
+     */
+    protected $_credentialTreatment = null;
+
+    /**
+     * $_authenticateResultInfo
+     *
+     * @var array
+     */
+    protected $_authenticateResultInfo = null;
+
+    /**
+     * $_resultRow - Results of database authentication query
+     *
+     * @var array
+     */
+    protected $_resultRow = null;
+
+    /**
+     * __construct() - Sets configuration options
+     *
+     * @param  Zend_Db_Adapter_Abstract $zendDb
+     * @param  string                   $tableName
+     * @param  string                   $identityColumn
+     * @param  string                   $credentialColumn
+     * @param  string                   $credentialTreatment
+     * @return void
+     */
+    public function __construct(Zend_Db_Adapter_Abstract $zendDb, $tableName = null, $identityColumn = null,
+                                $credentialColumn = null, $credentialTreatment = null)
+    {
+        $this->_zendDb = $zendDb;
+
+        if (null !== $tableName) {
+            $this->setTableName($tableName);
+        }
+
+        if (null !== $identityColumn) {
+            $this->setIdentityColumn($identityColumn);
+        }
+
+        if (null !== $credentialColumn) {
+            $this->setCredentialColumn($credentialColumn);
+        }
+
+        if (null !== $credentialTreatment) {
+            $this->setCredentialTreatment($credentialTreatment);
+        }
+    }
+
+    /**
+     * setTableName() - set the table name to be used in the select query
+     *
+     * @param  string $tableName
+     * @return Zend_Auth_Adapter_DbTable Provides a fluent interface
+     */
+    public function setTableName($tableName)
+    {
+        $this->_tableName = $tableName;
+        return $this;
+    }
+
+    /**
+     * setIdentityColumn() - set the column name to be used as the identity column
+     *
+     * @param  string $identityColumn
+     * @return Zend_Auth_Adapter_DbTable Provides a fluent interface
+     */
+    public function setIdentityColumn($identityColumn)
+    {
+        $this->_identityColumn = $identityColumn;
+        return $this;
+    }
+
+    /**
+     * setCredentialColumn() - set the column name to be used as the credential column
+     *
+     * @param  string $credentialColumn
+     * @return Zend_Auth_Adapter_DbTable Provides a fluent interface
+     */
+    public function setCredentialColumn($credentialColumn)
+    {
+        $this->_credentialColumn = $credentialColumn;
+        return $this;
+    }
+
+    /**
+     * setCredentialTreatment() - allows the developer to pass a parameterized string that is
+     * used to transform or treat the input credential data
+     *
+     * In many cases, passwords and other sensitive data are encrypted, hashed, encoded,
+     * obscured, or otherwise treated through some function or algorithm. By specifying a
+     * parameterized treatment string with this method, a developer may apply arbitrary SQL
+     * upon input credential data.
+     *
+     * Examples:
+     *
+     *  'PASSWORD(?)'
+     *  'MD5(?)'
+     *
+     * @param  string $treatment
+     * @return Zend_Auth_Adapter_DbTable Provides a fluent interface
+     */
+    public function setCredentialTreatment($treatment)
+    {
+        $this->_credentialTreatment = $treatment;
+        return $this;
+    }
+
+    /**
+     * setIdentity() - set the value to be used as the identity
+     *
+     * @param  string $value
+     * @return Zend_Auth_Adapter_DbTable Provides a fluent interface
+     */
+    public function setIdentity($value)
+    {
+        $this->_identity = $value;
+        return $this;
+    }
+
+    /**
+     * setCredential() - set the credential value to be used, optionally can specify a treatment
+     * to be used, should be supplied in parameterized form, such as 'MD5(?)' or 'PASSWORD(?)'
+     *
+     * @param  string $credential
+     * @return Zend_Auth_Adapter_DbTable Provides a fluent interface
+     */
+    public function setCredential($credential)
+    {
+        $this->_credential = $credential;
+        return $this;
+    }
+
+    /**
+     * getDbSelect() - Return the preauthentication Db Select object for userland select query modification
+     *
+     * @return Zend_Db_Select
+     */
+    public function getDbSelect()
+    {
+        if ($this->_dbSelect == null) {
+            $this->_dbSelect = $this->_zendDb->select();
+        }
+        
+        return $this->_dbSelect;
+    }
+    
+    /**
+     * getResultRowObject() - Returns the result row as a stdClass object
+     *
+     * @param  string|array $returnColumns
+     * @param  string|array $omitColumns
+     * @return stdClass|boolean
+     */
+    public function getResultRowObject($returnColumns = null, $omitColumns = null)
+    {
+        if (!$this->_resultRow) {
+            return false;
+        }
+
+        $returnObject = new stdClass();
+
+        if (null !== $returnColumns) {
+
+            $availableColumns = array_keys($this->_resultRow);
+            foreach ( (array) $returnColumns as $returnColumn) {
+                if (in_array($returnColumn, $availableColumns)) {
+                    $returnObject->{$returnColumn} = $this->_resultRow[$returnColumn];
+                }
+            }
+            return $returnObject;
+
+        } elseif (null !== $omitColumns) {
+
+            $omitColumns = (array) $omitColumns;
+            foreach ($this->_resultRow as $resultColumn => $resultValue) {
+                if (!in_array($resultColumn, $omitColumns)) {
+                    $returnObject->{$resultColumn} = $resultValue;
+                }
+            }
+            return $returnObject;
+
+        } else {
+
+            foreach ($this->_resultRow as $resultColumn => $resultValue) {
+                $returnObject->{$resultColumn} = $resultValue;
+            }
+            return $returnObject;
+
+        }
+    }
+
+    /**
+     * authenticate() - defined by Zend_Auth_Adapter_Interface.  This method is called to
+     * attempt an authenication.  Previous to this call, this adapter would have already
+     * been configured with all nessissary information to successfully connect to a database
+     * table and attempt to find a record matching the provided identity.
+     *
+     * @throws Zend_Auth_Adapter_Exception if answering the authentication query is impossible
+     * @return Zend_Auth_Result
+     */
+    public function authenticate()
+    {
+        $this->_authenticateSetup();
+        $dbSelect = $this->_authenticateCreateSelect();
+        $resultIdentities = $this->_authenticateQuerySelect($dbSelect);
+
+        if ( ($authResult = $this->_authenticateValidateResultset($resultIdentities)) instanceof Zend_Auth_Result) {
+            return $authResult;
+        }
+
+        $authResult = $this->_authenticateValidateResult(array_shift($resultIdentities));
+        return $authResult;
+    }
+
+    /**
+     * _authenticateSetup() - This method abstracts the steps involved with making sure
+     * that this adapter was indeed setup properly with all required peices of information.
+     *
+     * @throws Zend_Auth_Adapter_Exception - in the event that setup was not done properly
+     * @return true
+     */
+    protected function _authenticateSetup()
+    {
+        $exception = null;
+
+        if ($this->_tableName == '') {
+            $exception = 'A table must be supplied for the Zend_Auth_Adapter_DbTable authentication adapter.';
+        } elseif ($this->_identityColumn == '') {
+            $exception = 'An identity column must be supplied for the Zend_Auth_Adapter_DbTable authentication adapter.';
+        } elseif ($this->_credentialColumn == '') {
+            $exception = 'A credential column must be supplied for the Zend_Auth_Adapter_DbTable authentication adapter.';
+        } elseif ($this->_identity == '') {
+            $exception = 'A value for the identity was not provided prior to authentication with Zend_Auth_Adapter_DbTable.';
+        } elseif ($this->_credential === null) {
+            $exception = 'A credential value was not provided prior to authentication with Zend_Auth_Adapter_DbTable.';
+        }
+
+        if (null !== $exception) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception($exception);
+        }
+
+        $this->_authenticateResultInfo = array(
+            'code'     => Zend_Auth_Result::FAILURE,
+            'identity' => $this->_identity,
+            'messages' => array()
+            );
+
+        return true;
+    }
+
+    /**
+     * _authenticateCreateSelect() - This method creates a Zend_Db_Select object that
+     * is completely configured to be queried against the database.
+     *
+     * @return Zend_Db_Select
+     */
+    protected function _authenticateCreateSelect()
+    {
+        // build credential expression
+        if (empty($this->_credentialTreatment) || (strpos($this->_credentialTreatment, '?') === false)) {
+            $this->_credentialTreatment = '?';
+        }
+
+        $credentialExpression = new Zend_Db_Expr(
+            '(CASE WHEN ' .
+            $this->_zendDb->quoteInto(
+                $this->_zendDb->quoteIdentifier($this->_credentialColumn, true)
+                . ' = ' . $this->_credentialTreatment, $this->_credential
+                )
+            . ' THEN 1 ELSE 0 END) AS '
+            . $this->_zendDb->quoteIdentifier('zend_auth_credential_match')
+            );
+
+        // get select
+        $dbSelect = clone $this->getDbSelect();
+        $dbSelect->from($this->_tableName, array('*', $credentialExpression))
+                 ->where($this->_zendDb->quoteIdentifier($this->_identityColumn, true) . ' = ?', $this->_identity);
+
+        return $dbSelect;
+    }
+
+    /**
+     * _authenticateQuerySelect() - This method accepts a Zend_Db_Select object and
+     * performs a query against the database with that object.
+     *
+     * @param Zend_Db_Select $dbSelect
+     * @throws Zend_Auth_Adapter_Exception - when a invalid select object is encoutered
+     * @return array
+     */
+    protected function _authenticateQuerySelect(Zend_Db_Select $dbSelect)
+    {
+        try {
+            if ($this->_zendDb->getFetchMode() != Zend_DB::FETCH_ASSOC) {
+                $origDbFetchMode = $this->_zendDb->getFetchMode();
+                $this->_zendDb->setFetchMode(Zend_DB::FETCH_ASSOC);
+            }
+            $resultIdentities = $this->_zendDb->fetchAll($dbSelect->__toString());
+            if (isset($origDbFetchMode)) {
+                $this->_zendDb->setFetchMode($origDbFetchMode);
+                unset($origDbFetchMode);
+            }
+        } catch (Exception $e) {
+            /**
+             * @see Zend_Auth_Adapter_Exception
+             */
+            require_once 'Zend/Auth/Adapter/Exception.php';
+            throw new Zend_Auth_Adapter_Exception('The supplied parameters to Zend_Auth_Adapter_DbTable failed to '
+                                                . 'produce a valid sql statement, please check table and column names '
+                                                . 'for validity.');
+        }
+        return $resultIdentities;
+    }
+
+    /**
+     * _authenticateValidateResultSet() - This method attempts to make certian that only one
+     * record was returned in the result set
+     *
+     * @param array $resultIdentities
+     * @return true|Zend_Auth_Result
+     */
+    protected function _authenticateValidateResultSet(array $resultIdentities)
+    {
+
+
+        if (count($resultIdentities) < 1) {
+            $this->_authenticateResultInfo['code'] = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
+            $this->_authenticateResultInfo['messages'][] = 'A record with the supplied identity could not be found.';
+            return $this->_authenticateCreateAuthResult();
+        } elseif (count($resultIdentities) > 1) {
+            $this->_authenticateResultInfo['code'] = Zend_Auth_Result::FAILURE_IDENTITY_AMBIGUOUS;
+            $this->_authenticateResultInfo['messages'][] = 'More than one record matches the supplied identity.';
+            return $this->_authenticateCreateAuthResult();
+        }
+
+        return true;
+    }
+
+    /**
+     * _authenticateValidateResult() - This method attempts to validate that the record in the
+     * result set is indeed a record that matched the identity provided to this adapter.
+     *
+     * @param array $resultIdentity
+     * @return Zend_Auth_Result
+     */
+    protected function _authenticateValidateResult($resultIdentity)
+    {
+        if ($resultIdentity['zend_auth_credential_match'] != '1') {
+            $this->_authenticateResultInfo['code'] = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
+            $this->_authenticateResultInfo['messages'][] = 'Supplied credential is invalid.';
+            return $this->_authenticateCreateAuthResult();
+        }
+
+        unset($resultIdentity['zend_auth_credential_match']);
+        $this->_resultRow = $resultIdentity;
+
+        $this->_authenticateResultInfo['code'] = Zend_Auth_Result::SUCCESS;
+        $this->_authenticateResultInfo['messages'][] = 'Authentication successful.';
+        return $this->_authenticateCreateAuthResult();
+    }
+
+    /**
+     * _authenticateCreateAuthResult() - This method creates a Zend_Auth_Result object
+     * from the information that has been collected during the authenticate() attempt.
+     *
+     * @return Zend_Auth_Result
+     */
+    protected function _authenticateCreateAuthResult()
+    {
+        return new Zend_Auth_Result(
+            $this->_authenticateResultInfo['code'],
+            $this->_authenticateResultInfo['identity'],
+            $this->_authenticateResultInfo['messages']
+            );
+    }
+
+}

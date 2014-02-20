@@ -1,110 +1,388 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-tn8QySyFrXTeXtT+yjqGU305YwpcfJaHiyfaJkW=
+<?php
+
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/**
+ * @see Zend_Gdata_App_FeedEntryParent
+ */
+require_once 'Zend/Gdata/App/FeedEntryParent.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Content
+ */
+require_once 'Zend/Gdata/App/Extension/Content.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Edited
+ */
+require_once 'Zend/Gdata/App/Extension/Edited.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Published
+ */
+require_once 'Zend/Gdata/App/Extension/Published.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Source
+ */
+require_once 'Zend/Gdata/App/Extension/Source.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Summary
+ */
+require_once 'Zend/Gdata/App/Extension/Summary.php';
+
+/**
+ * @see Zend_Gdata_App_Extension_Control
+ */
+require_once 'Zend/Gdata/App/Extension/Control.php';
+
+/**
+ * Concrete class for working with Atom entries.
+ *
+ * @category   Zend
+ * @package    Zend_Gdata
+ * @subpackage App
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Gdata_App_Entry extends Zend_Gdata_App_FeedEntryParent
+{
+
+    /**
+     * Root XML element for Atom entries.
+     *
+     * @var string
+     */
+    protected $_rootElement = 'entry';
+
+    /**
+     * Class name for each entry in this feed*
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Gdata_App_Entry';
+
+    /**
+     * atom:content element
+     *
+     * @var Zend_Gdata_App_Extension_Content
+     */
+    protected $_content = null;
+
+    /**
+     * atom:published element
+     *
+     * @var Zend_Gdata_App_Extension_Published
+     */
+    protected $_published = null;
+
+    /**
+     * atom:source element
+     *
+     * @var Zend_Gdata_App_Extension_Source
+     */
+    protected $_source = null;
+
+    /**
+     * atom:summary element
+     *
+     * @var Zend_Gdata_App_Extension_Summary
+     */
+    protected $_summary = null;
+
+    /**
+     * app:control element
+     *
+     * @var Zend_Gdata_App_Extension_Control
+     */
+    protected $_control = null;
+
+    /**
+     * app:edited element
+     *
+     * @var Zend_Gdata_App_Extension_Edited
+     */
+    protected $_edited = null;
+
+    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
+    {
+        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
+        if ($this->_content != null) {
+            $element->appendChild($this->_content->getDOM($element->ownerDocument));
+        }
+        if ($this->_published != null) {
+            $element->appendChild($this->_published->getDOM($element->ownerDocument));
+        }
+        if ($this->_source != null) {
+            $element->appendChild($this->_source->getDOM($element->ownerDocument));
+        }
+        if ($this->_summary != null) {
+            $element->appendChild($this->_summary->getDOM($element->ownerDocument));
+        }
+        if ($this->_control != null) {
+            $element->appendChild($this->_control->getDOM($element->ownerDocument));
+        }
+        if ($this->_edited != null) {
+            $element->appendChild($this->_edited->getDOM($element->ownerDocument));
+        }
+        return $element;
+    }
+
+    protected function takeChildFromDOM($child)
+    {
+        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
+        switch ($absoluteNodeName) {
+        case $this->lookupNamespace('atom') . ':' . 'content':
+            $content = new Zend_Gdata_App_Extension_Content();
+            $content->transferFromDOM($child);
+            $this->_content = $content;
+            break;
+        case $this->lookupNamespace('atom') . ':' . 'published':
+            $published = new Zend_Gdata_App_Extension_Published();
+            $published->transferFromDOM($child);
+            $this->_published = $published;
+            break;
+        case $this->lookupNamespace('atom') . ':' . 'source':
+            $source = new Zend_Gdata_App_Extension_Source();
+            $source->transferFromDOM($child);
+            $this->_source = $source;
+            break;
+        case $this->lookupNamespace('atom') . ':' . 'summary':
+            $summary = new Zend_Gdata_App_Extension_Summary();
+            $summary->transferFromDOM($child);
+            $this->_summary = $summary;
+            break;
+        case $this->lookupNamespace('app') . ':' . 'control':
+            $control = new Zend_Gdata_App_Extension_Control();
+            $control->transferFromDOM($child);
+            $this->_control = $control;
+            break;
+        case $this->lookupNamespace('app') . ':' . 'edited':
+            $edited = new Zend_Gdata_App_Extension_Edited();
+            $edited->transferFromDOM($child);
+            $this->_edited = $edited;
+            break;
+        default:
+            parent::takeChildFromDOM($child);
+            break;
+        }
+    }
+
+    /**
+     * Uploads changes in this entry to the server using Zend_Gdata_App
+     *
+     * @param string|null $uri The URI to send requests to, or null if $data
+     *        contains the URI.
+     * @param string|null $className The name of the class that should we
+     *        deserializing the server response. If null, then
+     *        'Zend_Gdata_App_Entry' will be used.
+     * @param array $extraHeaders Extra headers to add to the request, as an
+     *        array of string-based key/value pairs.
+     * @return Zend_Gdata_App_Entry The updated entry.
+     * @throws Zend_Gdata_App_Exception
+     */
+    public function save($uri = null, $className = null, $extraHeaders = array())
+    {
+        return $this->getService()->updateEntry($this,
+                                                $uri,
+                                                $className,
+                                                $extraHeaders);
+    }
+
+    /**
+     * Deletes this entry to the server using the referenced
+     * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
+     * entry's link collection.
+     *
+     * @return void
+     * @throws Zend_Gdata_App_Exception
+     */
+    public function delete()
+    {
+        $this->getService()->delete($this);
+    }
+
+    /**
+     * Reload the current entry. Returns a new copy of the entry as returned
+     * by the server, or null if no changes exist. This does not
+     * modify the current entry instance.
+     *
+     * @param string|null The URI to send requests to, or null if $data
+     *        contains the URI.
+     * @param string|null The name of the class that should we deserializing
+     *        the server response. If null, then 'Zend_Gdata_App_Entry' will
+     *        be used.
+     * @param array $extraHeaders Extra headers to add to the request, as an
+     *        array of string-based key/value pairs.
+     * @return mixed A new instance of the current entry with updated data, or
+     *         null if the server reports that no changes have been made.
+     * @throws Zend_Gdata_App_Exception
+     */
+    public function reload($uri = null, $className = null, $extraHeaders = array())
+    {
+        // Get URI
+        $editLink = $this->getEditLink();
+        if (($uri === null) && $editLink != null) {
+            $uri = $editLink->getHref();
+        }
+
+        // Set classname to current class, if not otherwise set
+        if ($className === null) {
+            $className = get_class($this);
+        }
+
+        // Append ETag, if present (Gdata v2 and above, only) and doesn't
+        // conflict with existing headers
+        if ($this->_etag != null
+                && !array_key_exists('If-Match', $extraHeaders)
+                && !array_key_exists('If-None-Match', $extraHeaders)) {
+            $extraHeaders['If-None-Match'] = $this->_etag;
+        }
+
+        // If an HTTP 304 status (Not Modified)is returned, then we return
+        // null.
+        $result = null;
+        try {
+            $result = $this->service->importUrl($uri, $className, $extraHeaders);
+        } catch (Zend_Gdata_App_HttpException $e) {
+            if ($e->getResponse()->getStatus() != '304')
+                throw $e;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Gets the value of the atom:content element
+     *
+     * @return Zend_Gdata_App_Extension_Content
+     */
+    public function getContent()
+    {
+        return $this->_content;
+    }
+
+    /**
+     * Sets the value of the atom:content element
+     *
+     * @param Zend_Gdata_App_Extension_Content $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setContent($value)
+    {
+        $this->_content = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the value of the atom:published element
+     * This represents the publishing date for an entry
+     *
+     * @return Zend_Gdata_App_Extension_Published
+     */
+    public function getPublished()
+    {
+        return $this->_published;
+    }
+
+    /**
+     * Sets the value of the atom:published element
+     * This represents the publishing date for an entry
+     *
+     * @param Zend_Gdata_App_Extension_Published $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setPublished($value)
+    {
+        $this->_published = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the value of the atom:source element
+     *
+     * @return Zend_Gdata_App_Extension_Source
+     */
+    public function getSource()
+    {
+        return $this->_source;
+    }
+
+    /**
+     * Sets the value of the atom:source element
+     *
+     * @param Zend_Gdata_App_Extension_Source $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setSource($value)
+    {
+        $this->_source = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the value of the atom:summary element
+     * This represents a textual summary of this entry's content
+     *
+     * @return Zend_Gdata_App_Extension_Summary
+     */
+    public function getSummary()
+    {
+        return $this->_summary;
+    }
+
+    /**
+     * Sets the value of the atom:summary element
+     * This represents a textual summary of this entry's content
+     *
+     * @param Zend_Gdata_App_Extension_Summary $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setSummary($value)
+    {
+        $this->_summary = $value;
+        return $this;
+    }
+
+    /**
+     * Gets the value of the app:control element
+     *
+     * @return Zend_Gdata_App_Extension_Control
+     */
+    public function getControl()
+    {
+        return $this->_control;
+    }
+
+    /**
+     * Sets the value of the app:control element
+     *
+     * @param Zend_Gdata_App_Extension_Control $value
+     * @return Zend_Gdata_App_Entry Provides a fluent interface
+     */
+    public function setControl($value)
+    {
+        $this->_control = $value;
+        return $this;
+    }
+
+}

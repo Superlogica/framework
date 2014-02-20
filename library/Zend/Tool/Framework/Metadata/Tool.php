@@ -1,43 +1,218 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @see Zend_Tool_Framework_Metadata_Basic
+ */
+require_once 'Zend/Tool/Framework/Metadata/Basic.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Metadata_Tool extends Zend_Tool_Framework_Metadata_Basic
+{
+    
+    /**
+     * @var string
+     */
+    protected $_type = 'Tool';
+    
+    /**#@+
+     * @var string
+     */
+    protected $_clientName    = null;
+    protected $_actionName    = null;
+    protected $_providerName  = null;
+    protected $_specialtyName = null;
+    /**#@-*/
+    
+    /**#@+
+     * @var string
+     */
+    protected $_clientReference = null;
+    protected $_actionReference = null;
+    protected $_providerReference = null;
+    /**#@-*/
+
+    public function setClientName($clientName)
+    {
+        $this->_clientName = $clientName;
+        return $this;
+    }
+    
+    public function getClientName()
+    {
+        return $this->_clientName;
+    }
+    
+    /**
+     * setActionName()
+     *
+     * @param string $actionName
+     * @return Zend_Tool_Framework_Metadata_Tool
+     */
+    public function setActionName($actionName)
+    {
+        $this->_actionName = $actionName;
+        return $this;
+    }
+
+    /**
+     * getActionName()
+     *
+     * @return string
+     */
+    public function getActionName()
+    {
+        return $this->_actionName;
+    }
+    
+    /**
+     * setProviderName()
+     *
+     * @param string $providerName
+     * @return Zend_Tool_Framework_Metadata_Tool
+     */
+    public function setProviderName($providerName)
+    {
+        $this->_providerName = $providerName;
+        return $this;
+    }
+
+    /**
+     * getProviderName()
+     *
+     * @return string
+     */
+    public function getProviderName()
+    {
+        return $this->_providerName;
+    }
+
+    /**
+     * setSpecialtyName()
+     *
+     * @param string $specialtyName
+     * @return Zend_Tool_Framework_Metadata_Tool
+     */
+    public function setSpecialtyName($specialtyName)
+    {
+        $this->_specialtyName = $specialtyName;
+        return $this;
+    }
+
+    /**
+     * getSpecialtyName()
+     *
+     * @return string
+     */
+    public function getSpecialtyName()
+    {
+        return $this->_specialtyName;
+    }
+
+    /**
+     * setClientReference()
+     *
+     * @param Zend_Tool_Framework_Client_Abstract $client
+     * @return Zend_Tool_Framework_Metadata_Tool
+     */
+    public function setClientReference(Zend_Tool_Framework_Client_Abstract $client)
+    {
+        $this->_clientReference = $client;
+        return $this;
+    }
+    
+    /**
+     * getClientReference()
+     *
+     * @return Zend_Tool_Framework_Client_Abstract
+     */
+    public function getClientReference()
+    {
+        return $this->_clientReference;
+    }
+    
+    /**
+     * setActionReference()
+     *
+     * @param Zend_Tool_Framework_Action_Interface $action
+     * @return Zend_Tool_Framework_Metadata_Tool
+     */
+    public function setActionReference(Zend_Tool_Framework_Action_Interface $action)
+    {
+        $this->_actionReference = $action;
+        return $this;
+    }
+    
+    /**
+     * getActionReference()
+     *
+     * @return Zend_Tool_Framework_Action_Interface
+     */
+    public function getActionReference()
+    {
+        return $this->_actionReference;
+    }
+    
+    /**
+     * setProviderReference()
+     *
+     * @param Zend_Tool_Framework_Provider_Interface $provider
+     * @return Zend_Tool_Framework_Metadata_Tool
+     */
+    public function setProviderReference(Zend_Tool_Framework_Provider_Interface $provider)
+    {
+        $this->_providerReference = $provider;
+        return $this;
+    }
+    
+    /**
+     * getProviderReference()
+     *
+     * @return Zend_Tool_Framework_Provider_Interface
+     */
+    public function getProviderReference()
+    {
+        return $this->_providerReference;
+    }
+    
+    /**
+     * __toString() cast to string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $string = parent::__toString();
+        $string .= ' (ProviderName: ' . $this->_providerName 
+             . ', ActionName: '     . $this->_actionName 
+             . ', SpecialtyName: '  . $this->_specialtyName 
+             . ')';
+        
+        return $string;
+    }
+
+}

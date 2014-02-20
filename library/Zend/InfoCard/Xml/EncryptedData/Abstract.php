@@ -1,29 +1,92 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-4+oV5291AiRohgxfd/I/vI3Jk5715JUu6gsKE8Yip3QOa3uNDHGHMfPHs+Ir3c0a+/xqSP5Vtk2h
-20LBgA5nQKrC9eptW8ENYaxn/De3b89UUUBenH9XC/X6wbW+nHoevOel3A+qpcoo2IXdUAw7MjNb
-VULXFSqfaahEc9QCY2YDzOTsQJJt+DYXua06gDsmfqwPZhkb6RXmgm3T4vzukwcnMCw3ZzCDwbWK
-pena/642iMCtPg5b4wvCn4kJIPpDKor7T+KlBeH2QALbvXr4t5pZ5U+4SzMEEyiOFNio2sb6RDWx
-p/sdHLxrSJV24OmKmBhPjiHnomDrIxtWxKM9LNkSUN17WweNq1KRw7G3oDJpwoa/K+HGQ0QOX6J1
-XFx8eUdbYFUJcDuhbWs8v5hvU58vi6f0x00WdWRlu11263RInbC5bh1RxXfZsKsQijqqz5yIhRPV
-2wNzBfLAI7QR9w7k3MBJVGhankHQvlyEx02zPqT02N+/flykJUy8aJDf9XbdE6NsCgkaX9s9d0/M
-Bs3qVSD7sbLyxwHOLo4ssiJpuJcP0g4UdXn8l5dmxCwcGkBbf8WrMBhnQtldmI0zBoySZRe/a9Ab
-Pesvb9QL+/ohgrOdXLL4e0zwNTHmiLTKoB9hiyPRRyHMeRTCopvkOnEA0XJKNHG9HdS5JNforspa
-SUFt7GGg4YKKairNN1CS0+S4oRI8GXJTwStXMRxDBDNXb2tXb2R7aRzV6DAdZBKor8aebo0Wga0U
-VEs0nsPxDyziFecPUU8Ed3t2ROuf+NvgjgOKV1ZQ/1DQYsnDifWIH3QF6FvF4SITw8Y1Dd8LX30u
-4ZPoapMsnujzLYOxYfVoSEyK6cjQW0Fnu+jI3jRabrMITqkqyV6cePRnTEs/lqQL9Qfy/rUKlObC
-0vJpTB8rCPjS72lUXYh+E15+y6OWte+limE65pQp9Qm9amXty+7sJKrRaW1PuPrQCF598KmBSSYl
-NQwmVxiZo3amTm3A00NXiRNCuqFP37s7bSJL825qMDWkxNkgYjSWayrj8Sl6vJT4acNzsfcYzU0U
-eKGUTSAOTYuY/PuU1nM/9nKwtB5xm6PvfhLDIKGFL0jMM93JUccHZEF5mXiAwxxx5m58/drehYOg
-zdbAheyAeoJ9qSjtVQgZfHA72seZLOrJ50nU+u8is1b/Ykkq4tyhEGPDd/Hs7SJPU/0XD8gQMMZR
-NkZGl5ese9EI08Bfhi/mCh7G9t6bMYcDrm3Iv96vUpOvfOa+rqCd/7JGP6WSnVMLf+n5G45H32CW
-4/ubbsgorsCtIV5yOOX21SBEPMMyz8te0W4F9sPkD2dIxwE0qXJ4bMTq4u8f2BgfKXqSbOdgLrt2
-2MGv/OPftHXRXqplZA/iajlSYD51phmwehAEdthAVDcVQ+UPt8y5geWoRQk5f+OK/yVWR2Ey8gro
-xHmNLsQAGvjhokOdzU8Fg9E8DQUSKGUtAUusZCUe+vHbAdSojuN0lNh82cCHHVFygAxo3mheUyVG
-j15PgWq8cvMr1WEucEMyiUo+XL6DhBF/ekDpBQsWr/f5YasGx1J1GN1eljxBKBpyT6YVSpLDUF+a
-3Jd412kcCt33ta8BksKThdF7sF1OJFzFbPNtJB7wVrkmW6kTtAOAvyWoEE48x4oVt3d2d48JrMhs
-RCakjtWMpdf7aDJS/90GDi6ve2u364nzJ/yFQ9ZdFuZYznfWh8gqGNhceidBsx/I6eqVBorRjRse
-SLQwKn6Vk9b2BtfG0GsFSRHS1dcDE508cRe189g5KKwrqNdWgZHFeqoke6O0qOnqM20z1xOqos+Y
-sX1j4zKqg6cFfDqYW3VYpcmVD7lNI5VbQkdmebgN7pb9PljshYYE1FERN1qcsOUgZFP3cfHfjebN
-fzO=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Abstract.php 9094 2008-03-30 18:36:55Z thomas $
+ */
+
+/**
+ * Zend_InfoCard_Xml_Element
+ */
+require_once 'Zend/InfoCard/Xml/Element.php';
+
+/**
+ * Zend_InfoCard_Xml_KeyInfo
+ */
+require_once 'Zend/InfoCard/Xml/KeyInfo.php';
+
+/**
+ * An abstract class representing a generic EncryptedData XML block. This class is extended
+ * into a specific type of EncryptedData XML block (i.e. XmlEnc) as necessary
+ *
+ * @category   Zend
+ * @package    Zend_InfoCard
+ * @subpackage Zend_InfoCard_Xml
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_InfoCard_Xml_EncryptedData_Abstract extends Zend_InfoCard_Xml_Element
+{
+
+    /**
+     * Returns the KeyInfo Block
+     *
+     * @return Zend_InfoCard_Xml_KeyInfo_Abstract
+     */
+    public function getKeyInfo()
+    {
+        return Zend_InfoCard_Xml_KeyInfo::getInstance($this->KeyInfo[0]);
+    }
+
+    /**
+     * Return the Encryption method used to encrypt the assertion document
+     * (the symmetric cipher)
+     *
+     * @throws Zend_InfoCard_Xml_Exception
+     * @return string The URI of the Symmetric Encryption Method used
+     */
+    public function getEncryptionMethod()
+    {
+
+        /**
+         * @todo This is pretty hacky unless we can always be confident that the first
+         * EncryptionMethod block is the correct one (the AES or compariable symetric algorithm)..
+         * the second is the PK method if provided.
+         */
+        list($encryption_method) = $this->xpath("//enc:EncryptionMethod");
+
+        if(!($encryption_method instanceof Zend_InfoCard_Xml_Element)) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to find the enc:EncryptionMethod symmetric encryption block");
+        }
+
+        $dom = self::convertToDOM($encryption_method);
+
+        if(!$dom->hasAttribute('Algorithm')) {
+            throw new Zend_InfoCard_Xml_Exception("Unable to determine the encryption algorithm in the Symmetric enc:EncryptionMethod XML block");
+        }
+
+        return $dom->getAttribute('Algorithm');
+    }
+
+    /**
+     * Returns the value of the encrypted block
+     *
+     * @return string the value of the encrypted CipherValue block
+     */
+    abstract function getCipherValue();
+}

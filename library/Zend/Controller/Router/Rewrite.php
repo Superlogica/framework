@@ -1,156 +1,455 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Rewrite.php 15577 2009-05-14 12:43:34Z matthew $
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+/** Zend_Controller_Router_Abstract */
+require_once 'Zend/Controller/Router/Abstract.php';
+
+/** Zend_Controller_Router_Route */
+require_once 'Zend/Controller/Router/Route.php';
+
+/**
+ * Ruby routing based Router.
+ *
+ * @package    Zend_Controller
+ * @subpackage Router
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @see        http://manuals.rubyonrails.com/read/chapter/65
+ */
+class Zend_Controller_Router_Rewrite extends Zend_Controller_Router_Abstract
+{
+
+    /**
+     * Whether or not to use default routes
+     * 
+     * @var boolean
+     */
+    protected $_useDefaultRoutes = true;
+
+    /**
+     * Array of routes to match against
+     * 
+     * @var array
+     */
+    protected $_routes = array();
+
+    /**
+     * Currently matched route
+     * 
+     * @var Zend_Controller_Router_Route_Interface
+     */
+    protected $_currentRoute = null;
+
+    /**
+     * Global parameters given to all routes
+     * 
+     * @var array
+     */
+    protected $_globalParams = array();
+    
+    /**
+     * Add default routes which are used to mimic basic router behaviour
+     * 
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function addDefaultRoutes()
+    {
+        if (!$this->hasRoute('default')) {
+            $dispatcher = $this->getFrontController()->getDispatcher();
+            $request = $this->getFrontController()->getRequest();
+
+            require_once 'Zend/Controller/Router/Route/Module.php';
+            $compat = new Zend_Controller_Router_Route_Module(array(), $dispatcher, $request);
+
+            $this->_routes = array_merge(array('default' => $compat), $this->_routes);
+        }
+        
+        return $this;
+    }
+
+    /**
+     * Add route to the route chain
+     * 
+     * If route contains method setRequest(), it is initialized with a request object
+     *
+     * @param  string                                 $name       Name of the route
+     * @param  Zend_Controller_Router_Route_Interface $route      Instance of the route
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function addRoute($name, Zend_Controller_Router_Route_Interface $route) 
+    {
+        if (method_exists($route, 'setRequest')) {
+            $route->setRequest($this->getFrontController()->getRequest());
+        }
+        
+        $this->_routes[$name] = $route;
+        
+        return $this;
+    }
+
+    /**
+     * Add routes to the route chain
+     *
+     * @param  array $routes Array of routes with names as keys and routes as values
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function addRoutes($routes) {
+        foreach ($routes as $name => $route) {
+            $this->addRoute($name, $route);
+        }
+        
+        return $this;
+    }
+
+    /**
+     * Create routes out of Zend_Config configuration
+     *
+     * Example INI:
+     * routes.archive.route = "archive/:year/*"
+     * routes.archive.defaults.controller = archive
+     * routes.archive.defaults.action = show
+     * routes.archive.defaults.year = 2000
+     * routes.archive.reqs.year = "\d+"
+     *
+     * routes.news.type = "Zend_Controller_Router_Route_Static"
+     * routes.news.route = "news"
+     * routes.news.defaults.controller = "news"
+     * routes.news.defaults.action = "list"
+     *
+     * And finally after you have created a Zend_Config with above ini:
+     * $router = new Zend_Controller_Router_Rewrite();
+     * $router->addConfig($config, 'routes');
+     *
+     * @param  Zend_Config $config  Configuration object
+     * @param  string      $section Name of the config section containing route's definitions
+     * @throws Zend_Controller_Router_Exception
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function addConfig(Zend_Config $config, $section = null)
+    {
+        if ($section !== null) {
+            if ($config->{$section} === null) {
+                require_once 'Zend/Controller/Router/Exception.php';
+                throw new Zend_Controller_Router_Exception("No route configuration in section '{$section}'");
+            }
+            
+            $config = $config->{$section};
+        }
+        
+        foreach ($config as $name => $info) {
+            $route = $this->_getRouteFromConfig($info);
+            
+            if ($route instanceof Zend_Controller_Router_Route_Chain) {
+                if (!isset($info->chain)) {
+                    require_once 'Zend/Controller/Router/Exception.php';
+                    throw new Zend_Controller_Router_Exception("No chain defined");                    
+                }
+                
+                if ($info->chain instanceof Zend_Config) {
+                    $childRouteNames = $info->chain;
+                } else {
+                    $childRouteNames = explode(',', $info->chain);
+                } 
+                    
+                foreach ($childRouteNames as $childRouteName) {
+                    $childRoute = $this->getRoute(trim($childRouteName));
+                    $route->chain($childRoute);
+                }
+                
+                $this->addRoute($name, $route);
+            } elseif (isset($info->chains) && $info->chains instanceof Zend_Config) {
+                $this->_addChainRoutesFromConfig($name, $route, $info->chains);
+            } else {
+                $this->addRoute($name, $route);
+            }
+        }
+
+        return $this;
+    }
+    
+    /**
+     * Get a route frm a config instance
+     *
+     * @param  Zend_Config $info
+     * @return Zend_Controller_Router_Route_Interface
+     */
+    protected function _getRouteFromConfig(Zend_Config $info)
+    {
+        $class = (isset($info->type)) ? $info->type : 'Zend_Controller_Router_Route';
+        if (!class_exists($class)) {
+            require_once 'Zend/Loader.php';
+            Zend_Loader::loadClass($class);
+        }
+              
+        $route = call_user_func(array($class, 'getInstance'), $info);
+        
+        if (isset($info->abstract) && $info->abstract && method_exists($route, 'isAbstract')) {
+            $route->isAbstract(true);
+        }
+
+        return $route;
+    }
+    
+    /**
+     * Add chain routes from a config route
+     *
+     * @param  string                                 $name
+     * @param  Zend_Controller_Router_Route_Interface $route
+     * @param  Zend_Config                            $childRoutesInfo
+     * @return void
+     */
+    protected function _addChainRoutesFromConfig($name,
+                                                 Zend_Controller_Router_Route_Interface $route,
+                                                 Zend_Config $childRoutesInfo)
+    {
+        foreach ($childRoutesInfo as $childRouteName => $childRouteInfo) {
+            if (is_string($childRouteInfo)) {
+                $childRouteName = $childRouteInfo;
+                $childRoute     = $this->getRoute($childRouteName);
+            } else {
+                $childRoute = $this->_getRouteFromConfig($childRouteInfo);
+            }
+            
+            if ($route instanceof Zend_Controller_Router_Route_Chain) {
+                $chainRoute = clone $route;
+                $chainRoute->chain($childRoute);
+            } else {
+                $chainRoute = $route->chain($childRoute);
+            }
+            
+            $chainName = $name . '-' . $childRouteName;
+            
+            if (isset($childRouteInfo->chains)) {
+                $this->_addChainRoutesFromConfig($chainName, $chainRoute, $childRouteInfo->chains);
+            } else {
+                $this->addRoute($chainName, $chainRoute);
+            }
+        }
+    }
+
+    /**
+     * Remove a route from the route chain
+     *
+     * @param  string $name Name of the route
+     * @throws Zend_Controller_Router_Exception
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function removeRoute($name)
+    {
+        if (!isset($this->_routes[$name])) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception("Route $name is not defined");
+        }
+        
+        unset($this->_routes[$name]);
+        
+        return $this;
+    }
+
+    /**
+     * Remove all standard default routes
+     *
+     * @param  Zend_Controller_Router_Route_Interface Route
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function removeDefaultRoutes()
+    {
+        $this->_useDefaultRoutes = false;
+        
+        return $this;
+    }
+
+    /**
+     * Check if named route exists
+     *
+     * @param  string $name Name of the route
+     * @return boolean
+     */
+    public function hasRoute($name)
+    {
+        return isset($this->_routes[$name]);
+    }
+
+    /**
+     * Retrieve a named route
+     *
+     * @param string $name Name of the route
+     * @throws Zend_Controller_Router_Exception
+     * @return Zend_Controller_Router_Route_Interface Route object
+     */
+    public function getRoute($name)
+    {
+        if (!isset($this->_routes[$name])) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception("Route $name is not defined");
+        }
+        
+        return $this->_routes[$name];
+    }
+
+    /**
+     * Retrieve a currently matched route
+     *
+     * @throws Zend_Controller_Router_Exception
+     * @return Zend_Controller_Router_Route_Interface Route object
+     */
+    public function getCurrentRoute()
+    {
+        if (!isset($this->_currentRoute)) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception("Current route is not defined");
+        }
+        return $this->getRoute($this->_currentRoute);
+    }
+
+    /**
+     * Retrieve a name of currently matched route
+     *
+     * @throws Zend_Controller_Router_Exception
+     * @return Zend_Controller_Router_Route_Interface Route object
+     */
+    public function getCurrentRouteName()
+    {
+        if (!isset($this->_currentRoute)) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception("Current route is not defined");
+        }
+        return $this->_currentRoute;
+    }
+
+    /**
+     * Retrieve an array of routes added to the route chain
+     *
+     * @return array All of the defined routes
+     */
+    public function getRoutes()
+    {
+        return $this->_routes;
+    }
+
+    /**
+     * Find a matching route to the current PATH_INFO and inject
+     * returning values to the Request object.
+     *
+     * @throws Zend_Controller_Router_Exception
+     * @return Zend_Controller_Request_Abstract Request object
+     */
+    public function route(Zend_Controller_Request_Abstract $request)
+    {
+        if (!$request instanceof Zend_Controller_Request_Http) {
+            require_once 'Zend/Controller/Router/Exception.php';
+            throw new Zend_Controller_Router_Exception('Zend_Controller_Router_Rewrite requires a Zend_Controller_Request_Http-based request object');
+        }
+
+        if ($this->_useDefaultRoutes) {
+            $this->addDefaultRoutes();
+        }
+
+        // Find the matching route
+        foreach (array_reverse($this->_routes) as $name => $route) {
+            // TODO: Should be an interface method. Hack for 1.0 BC
+            if (method_exists($route, 'isAbstract') && $route->isAbstract()) {
+                continue;
+            }
+            
+            // TODO: Should be an interface method. Hack for 1.0 BC  
+            if (!method_exists($route, 'getVersion') || $route->getVersion() == 1) {
+                $match = $request->getPathInfo();
+            } else {
+                $match = $request;
+            }
+                        
+            if ($params = $route->match($match)) {
+                $this->_setRequestParams($request, $params);
+                $this->_currentRoute = $name;
+                break;
+            }
+        }
+
+        return $request;
+
+    }
+
+    protected function _setRequestParams($request, $params)
+    {
+        foreach ($params as $param => $value) {
+
+            $request->setParam($param, $value);
+
+            if ($param === $request->getModuleKey()) {
+                $request->setModuleName($value);
+            }
+            if ($param === $request->getControllerKey()) {
+                $request->setControllerName($value);
+            }
+            if ($param === $request->getActionKey()) {
+                $request->setActionName($value);
+            }
+
+        }
+    }
+
+    /**
+     * Generates a URL path that can be used in URL creation, redirection, etc.
+     * 
+     * @param  array $userParams Options passed by a user used to override parameters
+     * @param  mixed $name The name of a Route to use
+     * @param  bool $reset Whether to reset to the route defaults ignoring URL params
+     * @param  bool $encode Tells to encode URL parts on output
+     * @throws Zend_Controller_Router_Exception
+     * @return string Resulting absolute URL path
+     */ 
+    public function assemble($userParams, $name = null, $reset = false, $encode = true)
+    {
+        if ($name == null) {
+            try {
+                $name = $this->getCurrentRouteName();
+            } catch (Zend_Controller_Router_Exception $e) {
+                $name = 'default';
+            }
+        }
+        
+        $params = array_merge($this->_globalParams, $userParams);
+        
+        $route = $this->getRoute($name);
+        $url   = $route->assemble($params, $reset, $encode);
+
+        if (!preg_match('|^[a-z]+://|', $url)) {
+            $url = rtrim($this->getFrontController()->getBaseUrl(), '/') . '/' . $url;
+        }
+
+        return $url;
+    }
+    
+    /**
+     * Set a global parameter
+     * 
+     * @param  string $name
+     * @param  mixed $value
+     * @return Zend_Controller_Router_Rewrite
+     */
+    public function setGlobalParam($name, $value)
+    {
+        $this->_globalParams[$name] = $value;
+    
+        return $this;
+    }
+}

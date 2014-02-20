@@ -1,36 +1,87 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: AutoCompleteDojo.php 12301 2008-11-05 16:04:12Z matthew $
+ */
+
+/**
+ * @see Zend_Controller_Action_Helper_AutoComplete_Abstract
+ */
+require_once 'Zend/Controller/Action/Helper/AutoComplete/Abstract.php';
+
+/**
+ * Create and send Dojo-compatible autocompletion lists
+ *
+ * @uses       Zend_Controller_Action_Helper_AutoComplete_Abstract
+ * @category   Zend
+ * @package    Zend_Controller
+ * @subpackage Zend_Controller_Action_Helper
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Controller_Action_Helper_AutoCompleteDojo extends Zend_Controller_Action_Helper_AutoComplete_Abstract
+{
+    /**
+     * Validate data for autocompletion
+     *
+     * Stub; unused
+     * 
+     * @param  mixed $data 
+     * @return boolean
+     */
+    public function validateData($data)
+    {
+        return true;
+    }
+
+    /**
+     * Prepare data for autocompletion
+     * 
+     * @param  mixed   $data 
+     * @param  boolean $keepLayouts 
+     * @return string
+     */
+    public function prepareAutoCompletion($data, $keepLayouts = false)
+    {
+        if (!$data instanceof Zend_Dojo_Data) {
+            require_once 'Zend/Dojo/Data.php';
+            $items = array();
+            foreach ($data as $key => $value) {
+                $items[] = array('label' => $value, 'name' => $value);
+            }
+            $data = new Zend_Dojo_Data('name', $items);
+        }
+
+        if (!$keepLayouts) {
+            require_once 'Zend/Controller/Action/HelperBroker.php';
+            Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->setNoRender(true);
+
+            require_once 'Zend/Layout.php';
+            $layout = Zend_Layout::getMvcInstance();
+            if ($layout instanceof Zend_Layout) {
+                $layout->disableLayout();
+            }
+        }
+
+        $response = Zend_Controller_Front::getInstance()->getResponse();
+        $response->setHeader('Content-Type', 'application/json');
+
+        return $data->toJson();
+    }
+}

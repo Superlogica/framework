@@ -1,47 +1,167 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+require_once 'Zend/Service/Abstract.php';
+
+/**
+ * Abstract Amazon class that handles the credentials for any of the Web Services that
+ * Amazon offers
+ *
+ * @category   Zend
+ * @package    Zend_Service
+ * @subpackage Amazon
+ * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Service_Amazon_Abstract extends Zend_Service_Abstract
+{
+    /**
+     * @var string Amazon Access Key
+     */
+    protected static $_defaultAccessKey = null;
+
+    /**
+     * @var string Amazon Secret Key
+     */
+    protected static $_defaultSecretKey = null;
+
+    /**
+     * @var string Amazon Region
+     */
+    protected static $_defaultRegion = null;
+
+    /**
+     * @var string Amazon Secret Key
+     */
+    protected $_secretKey;
+
+    /**
+     * @var string Amazon Access Key
+     */
+    protected $_accessKey;
+
+    /**
+     * @var string Amazon Region
+     */
+    protected $_region;
+
+    /**
+     * An array that contains all the valid Amazon Ec2 Regions.
+     *
+     * @var array
+     */
+    protected static $_validEc2Regions = array('eu-west-1', 'us-east-1');
+
+    /**
+     * Set the keys to use when accessing SQS.
+     *
+     * @param  string $access_key       Set the default Access Key
+     * @param  string $secret_key       Set the default Secret Key
+     * @return void
+     */
+    public static function setKeys($accessKey, $secretKey)
+    {
+        self::$_defaultAccessKey = $accessKey;
+        self::$_defaultSecretKey = $secretKey;
+    }
+
+    /**
+     * Set which region you are working in.  It will append the
+     * end point automaticly
+     *
+     * @param string $region
+     */
+    public static function setRegion($region)
+    {
+        if(in_array(strtolower($region), self::$_validEc2Regions, true)) {
+            self::$_defaultRegion = $region;
+        } else {
+            require_once 'Zend/Service/Amazon/Exception.php';
+            throw new Zend_Service_Amazon_Exception('Invalid Amazon Ec2 Region');
+        }
+    }
+
+    /**
+     * Create Amazon Sqs client.
+     *
+     * @param  string $access_key       Override the default Access Key
+     * @param  string $secret_key       Override the default Secret Key
+     * @param  string $region           Sets the AWS Region
+     * @return void
+     */
+    public function __construct($accessKey=null, $secretKey=null, $region=null)
+    {
+        if(!$accessKey) {
+            $accessKey = self::$_defaultAccessKey;
+        }
+        if(!$secretKey) {
+            $secretKey = self::$_defaultSecretKey;
+        }
+        if(!$region) {
+            $region = self::$_defaultRegion;
+        } else {
+            // make rue the region is valid
+            if(!empty($region) && !in_array(strtolower($region), self::$_validEc2Regions, true)) {
+                require_once 'Zend/Service/Amazon/Exception.php';
+                throw new Zend_Service_Amazon_Exception('Invalid Amazon Ec2 Region');
+            }
+        }
+
+        if(!$accessKey || !$secretKey) {
+            require_once 'Zend/Service/Amazon/Exception.php';
+            throw new Zend_Service_Amazon_Exception("AWS keys were not supplied");
+        }
+        $this->_accessKey = $accessKey;
+        $this->_secretKey = $secretKey;
+        $this->_region = $region;
+    }
+
+    /**
+     * Method to fetch the AWS Region
+     *
+     * @return string
+     */
+    protected function _getRegion()
+    {
+        return (!empty($this->_region)) ? $this->_region . '.' : '';
+    }
+
+    /**
+     * Method to fetch the Access Key
+     *
+     * @return string
+     */
+    protected function _getAccessKey()
+    {
+        return $this->_accessKey;
+    }
+
+    /**
+     * Method to fetch the Secret AWS Key
+     *
+     * @return string
+     */
+    protected function _getSecretKey()
+    {
+        return $this->_secretKey;
+    }
+}

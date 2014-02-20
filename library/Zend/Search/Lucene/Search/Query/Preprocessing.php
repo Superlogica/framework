@@ -1,31 +1,133 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-tshqPFamp8V8X/eSYo4waXTgYPQk8OG+1G==
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+
+
+/**
+ * Zend_Search_Lucene_Search_Query
+ */
+require_once 'Zend/Search/Lucene/Search/Query.php';
+
+/**
+ * Zend_Search_Lucene_Search_Weight
+ */
+require_once 'Zend/Search/Lucene/Search/Weight.php';
+
+
+/**
+ * It's an internal abstract class intended to finalize ase a query processing after query parsing.
+ * This type of query is not actually involved into query execution.
+ *
+ * @category   Zend
+ * @package    Zend_Search_Lucene
+ * @subpackage Search
+ * @internal
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+abstract class Zend_Search_Lucene_Search_Query_Preprocessing extends Zend_Search_Lucene_Search_Query
+{
+    /**
+     * Matched terms.
+     *
+     * Matched terms list.
+     * It's filled during rewrite operation and may be used for search result highlighting
+     *
+     * Array of Zend_Search_Lucene_Index_Term objects
+     *
+     * @var array
+     */
+    protected $_matches = null;
+
+    /**
+     * Optimize query in the context of specified index
+     *
+     * @param Zend_Search_Lucene_Interface $index
+     * @return Zend_Search_Lucene_Search_Query
+     */
+    public function optimize(Zend_Search_Lucene_Interface $index)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('This query is not intended to be executed.');
+    }
+
+    /**
+     * Constructs an appropriate Weight implementation for this query.
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return Zend_Search_Lucene_Search_Weight
+     */
+    public function createWeight(Zend_Search_Lucene_Interface $reader)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('This query is not intended to be executed.');
+    }
+
+    /**
+     * Execute query in context of index reader
+     * It also initializes necessary internal structures
+     *
+     * @param Zend_Search_Lucene_Interface $reader
+     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
+     */
+    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('This query is not intended to be executed.');
+    }
+
+    /**
+     * Get document ids likely matching the query
+     *
+     * It's an array with document ids as keys (performance considerations)
+     *
+     * @return array
+     */
+    public function matchedDocs()
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('This query is not intended to be executed.');
+    }
+
+    /**
+     * Score specified document
+     *
+     * @param integer $docId
+     * @param Zend_Search_Lucene_Interface $reader
+     * @return float
+     */
+    public function score($docId, Zend_Search_Lucene_Interface $reader)
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('This query is not intended to be executed.');
+    }
+
+    /**
+     * Return query terms
+     *
+     * @return array
+     */
+    public function getQueryTerms()
+    {
+        require_once 'Zend/Search/Lucene/Exception.php';
+        throw new Zend_Search_Lucene_Exception('Rewrite operation has to be done before retrieving query terms.');
+    }
+}
+

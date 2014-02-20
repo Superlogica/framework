@@ -1,50 +1,299 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
-OkUWhP1wJtuqN5UAI06EfKCR7HMs//Z9muK=
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Tool
+ * @subpackage Framework
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id$
+ */
+
+/**
+ * @category   Zend
+ * @package    Zend_Tool
+ * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Tool_Framework_Client_Request
+{
+    
+    /**
+     * @var string
+     */
+    protected $_providerName = null;
+    
+    /**
+     * @var string
+     */
+    protected $_specialtyName = null;
+    
+    /**
+     * @var string
+     */
+    protected $_actionName = null;
+    
+    /**
+     * @var array
+     */
+    protected $_actionParameters = array();
+    
+    /**
+     * @var array
+     */
+    protected $_providerParameters = array();
+    
+    /**
+     * @var bool
+     */
+    protected $_isPretend = false;
+    
+    /**
+     * @var bool
+     */
+    protected $_isDebug = false;
+    
+    /**
+     * @var bool
+     */
+    protected $_isVerbose = false;
+    
+    /**
+     * @var bool
+     */
+    protected $_isDispatchable = true;
+
+    /**
+     * setProviderName()
+     *
+     * @param string $providerName
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setProviderName($providerName)
+    {
+        $this->_providerName = $providerName;
+        return $this;
+    }
+    
+    /**
+     * getProviderName()
+     *
+     * @return string
+     */
+    public function getProviderName()
+    {
+        return $this->_providerName;
+    }
+    
+    /**
+     * setSpecialtyName()
+     *
+     * @param string $specialtyName
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setSpecialtyName($specialtyName)
+    {
+        $this->_specialtyName = $specialtyName;
+        return $this;
+    }
+    
+    /**
+     * getSpecialtyName()
+     * 
+     * @return string
+     */
+    public function getSpecialtyName()
+    {
+        return $this->_specialtyName;
+    }
+    
+    /**
+     * setActionName()
+     *
+     * @param string $actionName
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setActionName($actionName)
+    {
+        $this->_actionName = $actionName; 
+        return $this;
+    }
+    
+    /**
+     * getActionName()
+     *
+     * @return string
+     */
+    public function getActionName()
+    {
+        return $this->_actionName;
+    }
+    
+    /**
+     * setActionParameter()
+     *
+     * @param string $parameterName
+     * @param string $parameterValue
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setActionParameter($parameterName, $parameterValue)
+    {
+        $this->_actionParameters[$parameterName] = $parameterValue;
+        return $this;
+    }
+    
+    /**
+     * getActionParameters()
+     *
+     * @return array
+     */
+    public function getActionParameters()
+    {
+        return $this->_actionParameters;
+    }
+    
+    /**
+     * getActionParameter()
+     *
+     * @param string $parameterName
+     * @return string
+     */
+    public function getActionParameter($parameterName)
+    {
+        return (isset($this->_actionParameters[$parameterName])) ? $this->_actionParameters[$parameterName] : null;
+    }
+    
+    /**
+     * setProviderParameter()
+     *
+     * @param string $parameterName
+     * @param string $parameterValue
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setProviderParameter($parameterName, $parameterValue)
+    {
+        $this->_providerParameters[$parameterName] = $parameterValue;
+        return $this;
+    }
+    
+    /**
+     * getProviderParameters()
+     *
+     * @return array
+     */
+    public function getProviderParameters()
+    {
+        return $this->_providerParameters;
+    }
+    
+    /**
+     * getProviderParameter()
+     *
+     * @param string $parameterName
+     * @return string
+     */
+    public function getProviderParameter($parameterName)
+    {
+        return (isset($this->_providerParameters[$parameterName])) ? $this->_providerParameters[$parameterName] : null;
+    }
+    
+    /**
+     * setPretend()
+     *
+     * @param bool $pretend
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setPretend($pretend)
+    {
+        $this->_isPretend = (bool) $pretend;
+        return $this;
+    }
+    
+    /**
+     * isPretend() - Whether or not this is a pretend request
+     *
+     * @return bool
+     */
+    public function isPretend()
+    {
+        return $this->_isPretend;
+    }
+    
+    /**
+     * setDebug()
+     *
+     * @param bool $pretend
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setDebug($debug)
+    {
+        $this->_isDebug = (bool) $debug;
+        return $this;
+    }
+    
+    /**
+     * isDebug() - Whether or not this is a debug enabled request
+     *
+     * @return bool
+     */
+    public function isDebug()
+    {
+        return $this->_isDebug;
+    }
+    
+    /**
+     * setVerbose()
+     *
+     * @param bool $verbose
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setVerbose($verbose)
+    {
+        $this->_isVerbose = (bool) $verbose;
+        return $this;
+    }
+    
+    /**
+     * isVerbose() - Whether or not this is a verbose enabled request
+     *
+     * @return bool
+     */
+    public function isVerbose()
+    {
+        return $this->_isVerbose;
+    }
+    
+    /**
+     * setDispatchable()
+     *
+     * @param bool $dispatchable
+     * @return Zend_Tool_Framework_Client_Request
+     */
+    public function setDispatchable($dispatchable)
+    {
+        $this->_isDispatchable = (bool) $dispatchable;
+        return $this;
+    }
+    
+    /**
+     * isDispatchable() Is this request Dispatchable?
+     *
+     * @return bool
+     */
+    public function isDispatchable()
+    {
+        return $this->_isDispatchable;
+    }
+    
+}

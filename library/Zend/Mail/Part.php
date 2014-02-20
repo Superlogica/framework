@@ -1,133 +1,520 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Mail
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Part.php 13591 2009-01-11 09:04:09Z beberlei $
+ */
+
+
+/**
+ * @see Zend_Mime_Decode
+ */
+require_once 'Zend/Mime/Decode.php';
+
+/**
+ * @see Zend_Mail_Part_Interface
+ */
+require_once 'Zend/Mail/Part/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Mail
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Mail_Part implements RecursiveIterator, Zend_Mail_Part_Interface
+{
+    /**
+     * headers of part as array
+     * @var null|array
+     */
+    protected $_headers;
+
+    /**
+     * raw part body
+     * @var null|string
+     */
+    protected $_content;
+
+    /**
+     * toplines as fetched with headers
+     * @var string
+     */
+    protected $_topLines = '';
+
+    /**
+     * parts of multipart message
+     * @var array
+     */
+    protected $_parts = array();
+
+    /**
+     * count of parts of a multipart message
+     * @var null|int
+     */
+    protected $_countParts;
+
+    /**
+     * current position of iterator
+     * @var int
+     */
+    protected $_iterationPos = 1;
+
+    /**
+     * mail handler, if late fetch is active
+     * @var null|Zend_Mail_Storage_Abstract
+     */
+    protected $_mail;
+
+    /**
+     * message number for mail handler
+     * @var int
+     */
+    protected $_messageNum = 0;
+
+    /**
+     * Public constructor
+     *
+     * Zend_Mail_Part supports different sources for content. The possible params are:
+     * - handler    a instance of Zend_Mail_Storage_Abstract for late fetch
+     * - id         number of message for handler
+     * - raw        raw content with header and body as string
+     * - headers    headers as array (name => value) or string, if a content part is found it's used as toplines
+     * - noToplines ignore content found after headers in param 'headers'
+     * - content    content as string
+     *
+     * @param   array $params  full message with or without headers
+     * @throws  Zend_Mail_Exception
+     */
+    public function __construct(array $params)
+    {
+        if (isset($params['handler'])) {
+            if (!$params['handler'] instanceof Zend_Mail_Storage_Abstract) {
+                /**
+                 * @see Zend_Mail_Exception
+                 */
+                require_once 'Zend/Mail/Exception.php';
+                throw new Zend_Mail_Exception('handler is not a valid mail handler');
+            }
+            if (!isset($params['id'])) {
+                /**
+                 * @see Zend_Mail_Exception
+                 */
+                require_once 'Zend/Mail/Exception.php';
+                throw new Zend_Mail_Exception('need a message id with a handler');
+            }
+
+            $this->_mail       = $params['handler'];
+            $this->_messageNum = $params['id'];
+        }
+
+        if (isset($params['raw'])) {
+            Zend_Mime_Decode::splitMessage($params['raw'], $this->_headers, $this->_content);
+        } else if (isset($params['headers'])) {
+            if (is_array($params['headers'])) {
+                $this->_headers = $params['headers'];
+            } else {
+                if (!empty($params['noToplines'])) {
+                    Zend_Mime_Decode::splitMessage($params['headers'], $this->_headers, $null);
+                } else {
+                    Zend_Mime_Decode::splitMessage($params['headers'], $this->_headers, $this->_topLines);
+                }
+            }
+            if (isset($params['content'])) {
+                $this->_content = $params['content'];
+            }
+        }
+    }
+
+    /**
+     * Check if part is a multipart message
+     *
+     * @return bool if part is multipart
+     */
+    public function isMultipart()
+    {
+        try {
+            return stripos($this->contentType, 'multipart/') === 0;
+        } catch(Zend_Mail_Exception $e) {
+            return false;
+        }
+    }
+
+
+    /**
+     * Body of part
+     *
+     * If part is multipart the raw content of this part with all sub parts is returned
+     *
+     * @return string body
+     * @throws Zend_Mail_Exception
+     */
+    public function getContent()
+    {
+        if ($this->_content !== null) {
+            return $this->_content;
+        }
+
+        if ($this->_mail) {
+            return $this->_mail->getRawContent($this->_messageNum);
+        } else {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('no content');
+        }
+    }
+
+    /**
+     * Return size of part
+     *
+     * Quite simple implemented currently (not decoding). Handle with care.
+     *
+     * @return int size
+     */
+    public function getSize() {
+        return strlen($this->getContent());
+    }
+
+
+    /**
+     * Cache content and split in parts if multipart
+     *
+     * @return null
+     * @throws Zend_Mail_Exception
+     */
+    protected function _cacheContent()
+    {
+        // caching content if we can't fetch parts
+        if ($this->_content === null && $this->_mail) {
+            $this->_content = $this->_mail->getRawContent($this->_messageNum);
+        }
+
+        if (!$this->isMultipart()) {
+            return;
+        }
+
+        // split content in parts
+        $boundary = $this->getHeaderField('content-type', 'boundary');
+        if (!$boundary) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('no boundary found in content type to split message');
+        }
+        $parts = Zend_Mime_Decode::splitMessageStruct($this->_content, $boundary);
+        if ($parts === null) {
+            return;
+        }
+        $counter = 1;
+        foreach ($parts as $part) {
+            $this->_parts[$counter++] = new self(array('headers' => $part['header'], 'content' => $part['body']));
+        }
+    }
+
+    /**
+     * Get part of multipart message
+     *
+     * @param  int $num number of part starting with 1 for first part
+     * @return Zend_Mail_Part wanted part
+     * @throws Zend_Mail_Exception
+     */
+    public function getPart($num)
+    {
+        if (isset($this->_parts[$num])) {
+            return $this->_parts[$num];
+        }
+
+        if (!$this->_mail && $this->_content === null) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('part not found');
+        }
+
+        if ($this->_mail && $this->_mail->hasFetchPart) {
+            // TODO: fetch part
+            // return
+        }
+
+        $this->_cacheContent();
+
+        if (!isset($this->_parts[$num])) {
+            /**
+             * @see Zend_Mail_Exception
+             */
+            require_once 'Zend/Mail/Exception.php';
+            throw new Zend_Mail_Exception('part not found');
+        }
+
+        return $this->_parts[$num];
+    }
+
+    /**
+     * Count parts of a multipart part
+     *
+     * @return int number of sub-parts
+     */
+    public function countParts()
+    {
+        if ($this->_countParts) {
+            return $this->_countParts;
+        }
+
+        $this->_countParts = count($this->_parts);
+        if ($this->_countParts) {
+            return $this->_countParts;
+        }
+
+        if ($this->_mail && $this->_mail->hasFetchPart) {
+            // TODO: fetch part
+            // return
+        }
+
+        $this->_cacheContent();
+
+        $this->_countParts = count($this->_parts);
+        return $this->_countParts;
+    }
+
+
+    /**
+     * Get all headers
+     *
+     * The returned headers are as saved internally. All names are lowercased. The value is a string or an array
+     * if a header with the same name occurs more than once.
+     *
+     * @return array headers as array(name => value)
+     */
+    public function getHeaders()
+    {
+        if ($this->_headers === null) {
+            if (!$this->_mail) {
+                $this->_headers = array();
+            } else {
+                $part = $this->_mail->getRawHeader($this->_messageNum);
+                Zend_Mime_Decode::splitMessage($part, $this->_headers, $null);
+            }
+        }
+
+        return $this->_headers;
+    }
+
+    /**
+     * Get a header in specificed format
+     *
+     * Internally headers that occur more than once are saved as array, all other as string. If $format
+     * is set to string implode is used to concat the values (with Zend_Mime::LINEEND as delim).
+     *
+     * @param  string $name   name of header, matches case-insensitive, but camel-case is replaced with dashes
+     * @param  string $format change type of return value to 'string' or 'array'
+     * @return string|array value of header in wanted or internal format
+     * @throws Zend_Mail_Exception
+     */
+    public function getHeader($name, $format = null)
+    {
+        if ($this->_headers === null) {
+            $this->getHeaders();
+        }
+
+        $lowerName = strtolower($name);
+
+        if ($this->headerExists($name) == false) {
+            $lowerName = strtolower(preg_replace('%([a-z])([A-Z])%', '\1-\2', $name));
+            if($this->headerExists($lowerName) == false) {
+                /**
+                 * @see Zend_Mail_Exception
+                 */
+                require_once 'Zend/Mail/Exception.php';
+                throw new Zend_Mail_Exception("no Header with Name $name or $lowerName found");
+            }
+        }
+        $name = $lowerName;
+
+        $header = $this->_headers[$name];
+
+        switch ($format) {
+            case 'string':
+                if (is_array($header)) {
+                    $header = implode(Zend_Mime::LINEEND, $header);
+                }
+                break;
+            case 'array':
+                $header = (array)$header;
+            default:
+                // do nothing
+        }
+
+        return $header;
+    }
+
+    /**
+     * Check wheater the Mail part has a specific header.
+     *
+     * @param  string $name
+     * @return boolean
+     */
+    public function headerExists($name)
+    {
+        $name = strtolower($name);
+        if(isset($this->_headers[$name])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    /**
+     * Get a specific field from a header like content type or all fields as array
+     *
+     * If the header occurs more than once, only the value from the first header
+     * is returned.
+     *
+     * Throws a Zend_Mail_Exception if the requested header does not exist. If
+     * the specific header field does not exist, returns null.
+     *
+     * @param  string $name       name of header, like in getHeader()
+     * @param  string $wantedPart the wanted part, default is first, if null an array with all parts is returned
+     * @param  string $firstName  key name for the first part
+     * @return string|array wanted part or all parts as array($firstName => firstPart, partname => value)
+     * @throws Zend_Exception, Zend_Mail_Exception
+     */
+    public function getHeaderField($name, $wantedPart = 0, $firstName = 0) {
+        return Zend_Mime_Decode::splitHeaderField(current($this->getHeader($name, 'array')), $wantedPart, $firstName);
+    }
+
+
+    /**
+     * Getter for mail headers - name is matched in lowercase
+     *
+     * This getter is short for Zend_Mail_Part::getHeader($name, 'string')
+     *
+     * @see Zend_Mail_Part::getHeader()
+     *
+     * @param  string $name header name
+     * @return string value of header
+     * @throws Zend_Mail_Exception
+     */
+    public function __get($name)
+    {
+        return $this->getHeader($name, 'string');
+    }
+
+    /**
+     * Isset magic method proxy to hasHeader
+     *
+     * This method is short syntax for Zend_Mail_Part::hasHeader($name);
+     *
+     * @see Zend_Mail_Part::hasHeader
+     *
+     * @param  string
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        return $this->headerExists($name);
+    }
+
+    /**
+     * magic method to get content of part
+     *
+     * @return string content
+     */
+    public function __toString()
+    {
+        return $this->getContent();
+    }
+
+    /**
+     * implements RecursiveIterator::hasChildren()
+     *
+     * @return bool current element has children/is multipart
+     */
+    public function hasChildren()
+    {
+        $current = $this->current();
+        return $current && $current instanceof Zend_Mail_Part && $current->isMultipart();
+    }
+
+    /**
+     * implements RecursiveIterator::getChildren()
+     *
+     * @return Zend_Mail_Part same as self::current()
+     */
+    public function getChildren()
+    {
+        return $this->current();
+    }
+
+    /**
+     * implements Iterator::valid()
+     *
+     * @return bool check if there's a current element
+     */
+    public function valid()
+    {
+        if ($this->_countParts === null) {
+            $this->countParts();
+        }
+        return $this->_iterationPos && $this->_iterationPos <= $this->_countParts;
+    }
+
+    /**
+     * implements Iterator::next()
+     *
+     * @return null
+     */
+    public function next()
+    {
+        ++$this->_iterationPos;
+    }
+
+    /**
+     * implements Iterator::key()
+     *
+     * @return string key/number of current part
+     */
+    public function key()
+    {
+        return $this->_iterationPos;
+    }
+
+    /**
+     * implements Iterator::current()
+     *
+     * @return Zend_Mail_Part current part
+     */
+    public function current()
+    {
+        return $this->getPart($this->_iterationPos);
+    }
+
+    /**
+     * implements Iterator::rewind()
+     *
+     * @return null
+     */
+    public function rewind()
+    {
+        $this->countParts();
+        $this->_iterationPos = 1;
+    }
+}

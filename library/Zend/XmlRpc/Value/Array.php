@@ -1,34 +1,78 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
-?>
-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
+<?php
+/**
+ * Zend Framework
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Array.php 9096 2008-03-30 19:04:05Z thomas $
+ */
+
+
+/**
+ * Zend_XmlRpc_Value_Collection
+ */
+require_once 'Zend/XmlRpc/Value/Collection.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_XmlRpc
+ * @subpackage Value
+ * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_XmlRpc_Value_Array extends Zend_XmlRpc_Value_Collection
+{
+    /**
+     * Set the value of an array native type
+     *
+     * @param array $value
+     */
+    public function __construct($value)
+    {
+        $this->_type = self::XMLRPC_TYPE_ARRAY;
+        parent::__construct($value);
+    }
+
+
+    /**
+     * Return the XML code that represent an array native MXL-RPC value
+     *
+     * @return string
+     */
+    public function saveXML()
+    {
+        if (!$this->_as_xml) {   // The XML code was not calculated yet
+            $dom   = new DOMDocument('1.0');
+            $value = $dom->appendChild($dom->createElement('value'));
+            $array = $value->appendChild($dom->createElement('array'));
+            $data  = $array->appendChild($dom->createElement('data'));
+
+            if (is_array($this->_value)) {
+                foreach ($this->_value as $val) {
+                    /* @var $val Zend_XmlRpc_Value */
+                    $data->appendChild($dom->importNode($val->getAsDOM(), true));
+                }
+            }
+
+            $this->_as_dom = $value;
+            $this->_as_xml = $this->_stripXmlDeclaration($dom);
+        }
+
+        return $this->_as_xml;
+    }
+}
+
