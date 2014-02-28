@@ -675,6 +675,8 @@ var Superlogica_Js_Location = new Class({
         if ( this._proxy ){
             var controller = this.getController();
             var action = this.getAction();
+            if ( this._id )
+                this.setParam( 'remoteId', this._id );
             this.setController('proxy').setAction('index');
             this.setParam( 'remoteController', controller );
             this.setParam( 'remoteAction', action );
