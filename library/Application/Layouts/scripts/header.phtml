@@ -1,0 +1,118 @@
+<?php
+$baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
+$location = new Superlogica_Location();
+$location->viaProxy(true);
+$session = Application_Helpers_Session::getInstance();
+?>
+<header class="clearfix">
+
+    <a class="logo bg-superlogica blocoEscondido" href="<?=$location->setParams(array())->setController('index')->setAction('index')->toString()?>">
+        <div>
+            <span>
+                <img src="\images\logo_topo.png" />
+            </span>
+        </div>
+    </a>
+    
+    <button comportamentos="toogleMenuMin" type="button" class="menu-button navbar-toggle fechado" data-toggle="collapse" data-target=".sidebar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <div id="top-nav-padrao" class="top-nav fechado">
+        <ul class="nav-left list-unstyled" style="line-height: 18px;">
+            <li class="dropdown">
+        <ol class="breadcrumb-alt">
+            <li id="licencas-topo">
+                <a href="" class="licencas-topo" comportamentos="hint">
+                    <?php echo $session->licenca; ?>
+                </a>
+            </li>
+            <?php
+            
+            if ( $session->app_id == 'condor') { ?>
+                <li id="condominios-topo">
+                    <a href="#" class="condominios-topo">
+                        <?php
+                            echo $session->dadosCondominioAtual['st_fantasia_cond'];
+                        ?>
+                    </a>
+                </li>
+            <?php } ?>
+        </ol>
+                </li>
+                </ul>
+        <ul class="nav-right pull-right list-unstyled">
+            <li class="dropdown">
+                <?php
+                $locationAvisos = new Superlogica_Location();
+                $locationAvisos->setController("avisos")->setAction("index")->setParams(array());
+                ?>                
+                <a href="<?php echo $locationAvisos;?>" title="Avisos">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+            <li class="dropdown text-normal nav-profile" comportamentos="usuarioHover">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="<?=APPLICATION_CLIENT_TEMA_URL?>/img/usuario.png" title="<?=$session->ST_APELIDO_USU; ?>" alt="<?=$session->ST_APELIDO_USU; ?>" class="img-circle img30_30">
+                    <span class="hidden-xs">
+                        <span data-i18n="<?=ucwords($session->ST_APELIDO_USU); ?>">
+                            <?=ucwords($session->ST_APELIDO_USU); ?>
+                        </span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu pull-right list-group" comportamentos="submenuUsuarioHover">
+                    <li class="item-menu-usuario">
+                         <?php  if(APPLICATION_ID != 'condor'){ ?>
+                        <a href="<?=$location->setParams(array())->setController('usuario')->setParams(array('exibirAcessosDosUsuarios'=>1))->setAction('index')->toString();?>">
+                            <i class="fa fa-users"></i>
+                            <span data-i18n="Todos os usuários">Todos os usuários</span>
+                        </a>
+                        <?php  } ?>
+                    </li>
+                    <li class="item-menu-usuario">
+                        <a href="<?=$location->setParams(array())->setController('auditoria')->setAction('index')->toString();?>">
+                        <i class="fa fa-file-text-o"></i>
+                        <span data-i18n="Histórico de alterações">Histórico de alterações</span>
+                        </a>
+                    </li>
+                    <li class="item-menu-usuario">
+                        <a href="<?=$location->setParams(array())->setController('filadeemails')->setAction('index')->toString();?>">
+                        <i class="fa fa-file-text-o"></i>
+                        <span data-i18n="Histórico de e-mails enviados">Histórico de e-mails enviados</span>
+                        </a>
+                    </li>
+                    <li class="item-menu-usuario">
+                        <?php 
+                          $nomeMenu = (APPLICATION_ID == 'condor') ? 'Documentos' : 'Histórico impressões';
+                        ?>
+                        <a href="<?=$location->setParams(array())->setController('impressoes')->setAction('index')->toString();?>">
+                        <i class="fa fa-file-text-o"></i>
+                        <span data-i18n="<?php echo $nomeMenu ?>"><?php echo $nomeMenu ?></span>
+                        </a>
+                    </li>
+                    <li class="item-menu-usuario">
+                        <a href="<?=$location->setParams(array())->setController('lotes')->setAction('index')->toString();?>">
+                        <i class="fa fa-file-text-o"></i>
+                        <span data-i18n="Histórico proc. em lote">Histórico proc. em lote</span>
+                        </a>
+                    </li>
+                    <li class="list-group-item item-menu-usuario-destaque">
+                        <a href="<?=$location->setParams(array())->setController('contasuperlogica')->setAction('index')->toString();?>">
+                            <i class="fa fa-user"></i>
+                        <span data-i18n="Minha conta na Superlógica">Minha conta na Superlógica</span>
+                        </a>
+                    </li>                    
+                    <li class="panel-footer item-menu-usuario-destaque">
+                        <a href="<?="$baseUrl/auth/logout" ?>" comportamentos="logout">
+                            <i class="fa fa-sign-out"></i>
+                            <span data-i18n="Sair" comportamentos="logout">Sair</span>
+                        </a>
+                    </li>                       
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</header>
