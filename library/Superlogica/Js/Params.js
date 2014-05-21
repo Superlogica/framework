@@ -40,7 +40,7 @@ var Superlogica_Js_Params = new Class({
         this.parent( "<span>%label% <a href='javascript:void(0);' comportamentos='Params.clique' paramId='%indice%'>%valor%</a> </span> " );
 
         //botão de fora
-        new Superlogica_Js_Elemento( '<button class="blocoEscondido" id="aplicarConfiguracoes" idTemplateAlvo="'+ this.atributo('idTemplate') +'">Aplicar</button>' )
+        new Superlogica_Js_Elemento( '<button class="blocoEscondido btn btn-primary" id="aplicarConfiguracoes" idTemplateAlvo="'+ this.atributo('idTemplate') +'">Aplicar</button>' )
             .inserirDepoisDe( this )
             .bind('click', function(){
 
@@ -172,10 +172,11 @@ var Superlogica_Js_Params = new Class({
             'Aplicar' : {
 
                 'tipo' : 'botao',
-//                'atributos' :  {
+                'atributos' :  {
+                    'class' : 'btn btn-primary'
 //                    'comportamentos' : 'cliqueAlteraVisibilidade'
 //                    'idexibir' : ( Object.getLength( this.getData() ) > 1 ) ? "aplicarConfiguracoes" : ""
-//                },
+                },
                 'callback' : function(){
                     //informa quais elementos estão marcados
                     var checkboxes = elemento.encontrar("input[type='checkbox']");
@@ -276,7 +277,8 @@ var Superlogica_Js_Params = new Class({
         var dados = ( (typeof data['params']  == 'undefined') || ( typeof data['params'][data['subform']]  == 'undefined') )? [{'empty':''}] : data.opcoes[data.subform];
         if (typeof data.subform != 'undefined'){
             
-            var elementoExcluir = new Superlogica_Js_Elemento("<button id='"+data.subform+ "-__indice__-"+"excluir"+data.subform+"' class='subFormExcluir lineSeparator subFormExcluir__indice__' nomereal='excluir"+data.subform+"' indice='__indice__' comportamentos='Form.subFormExcluir' type='button'>excluir"+data.subform+"</button>");
+            var elementoExcluir = new Superlogica_Js_Elemento("<div class='item form-group'><div class='formElement'><div id='"+data.subform+ "-__indice__-"+"excluir"+data.subform+"' class='slTexto subFormExcluir lineSeparator subFormExcluir__indice__' nomereal='excluir"+data.subform+"' indice='__indice__' comportamentos='Form.subFormExcluir' type='button'><a href='javascript:void(0);'><span class='glyphicon glyphicon-trash'></span></a></div></div></div>");
+            
             autoComplete.encontrar('.formElement').adicionarHtmlAoFinal( elementoExcluir );
             
             if (typeof data['param_submeter'] != 'undefined'){
@@ -307,7 +309,7 @@ var Superlogica_Js_Params = new Class({
 
             var span = new Superlogica_Js_Elemento("<div class='subForm clearFix'></div>");
             span.adicionarHtmlAoFinal( subform );
-            span.adicionarHtmlAoFinal( new Superlogica_Js_Elemento("<input name='maisum' type='button' class='subformmaisitens' comportamentos='Form.subformMaisItens' subform='"+data.subform+"' value='Mais um'><br>") );
+            span.adicionarHtmlAoFinal( new Superlogica_Js_Elemento("<input name='maisum' type='button' class='subformmaisitens btn btn-link' comportamentos='Form.subformMaisItens' subform='"+data.subform+"' value='Mais um'><br>") );
 
             span.carregarComportamentos();
             divAutoCompletes.adicionarHtmlAoFinal( span );
@@ -320,6 +322,9 @@ var Superlogica_Js_Params = new Class({
         dialogo.adicionarHtmlAoFinal( this._HTMLDesenharRodape( {
             'Aplicar' : {
                 'tipo' : 'botao',
+                'atributos' :  {
+                    'class' : 'btn btn-primary'
+                },                
                 'callback' : function(event){
                     event.preventDefault();
                     var elemento = new Superlogica_Js_Form_Elementos( this );

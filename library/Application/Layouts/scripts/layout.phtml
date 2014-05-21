@@ -1,75 +1,193 @@
-<?php 
-
-Superlogica_Js::adicionarCodigo('
-
-    var adicionarEmbedded = function(){
-        new Superlogica_Js_Elemento("body").adicionarClasse("embedded");
-    };
-    
-    try{
-        if ( document != window.parent.document )
-            adicionarEmbedded();
-    }catch( e ){
-        adicionarEmbedded();
-    }
-    
-', 0 , true );
-
+<?php
 $frontendOptions = array(
-    'lifetime' => 60 * 60 * 24,
+    'lifetime' => 60 * 60 * 24, // Tempo do cache em 1 dia
     "automatic_serialization" => true,
-    'cache_id_prefix' => 'layout_'
+    'cache_id_prefix' => MODULE_ID . '_Layout_'
 );
 
 $backendOptions = array(
-    'cache_dir' => Superlogica_App::getCacheDir()
+    'cache_dir' => Superlogica_App::getCacheDir() // Diretórios onde colocar os arquivos de cache
 );
 
-$cache = Zend_Cache::factory(
-    'Core',
-    'File',
-    $frontendOptions,
-    $backendOptions
-);
+
+
+Superlogica_Js::adicionarCodigo('
+
+if ( document != window.parent.document ){
+        new Superlogica_Js_Elemento("body").adicionarClasse("embedded");
+        } ', 0, true);
+
+$cache = Zend_Cache::factory('Core',
+                'File',
+                $frontendOptions,
+                $backendOptions);
 
 $session = Application_Helpers_Session::getInstance();
+
 $arrMenu = $session->menu['array'];
+    
+if (APPLICATION_ID == 'financeiro') {
+    
+    try{
+        if (!$session->fechamento_mes){
+            $session->fechamento_mes = Financeiro_Helpers_EmpresaConf::get(1, 'fecharmes.anterior.a');        
+        }
+    }catch (Exception $e){}
+    
+    $fechamento= $session->fechamento_mes;
+    $formFechamento = new Financeiro_Forms_Empresas_FecharMes();
+
+    if ($fechamento) {
+        $dtFechamento = new Superlogica_Date($fechamento, 'd/m/Y');
+        $formFechamento->populate(array('DT_FECHAMENTO' => $dtFechamento->toString('m/d/Y')));
+
+        $fechamento = '<div class="fechamento">        
+                            <a href="javascript:void(0);" comportamentos="fecharMes">Fechamento: ' . $fechamento . '</a>
+                            <div id="formFechamento" class="blocoEscondido">                    
+                                <span>Não permitir alterações anteriores a esta data</span>
+                                ' . $formFechamento . '
+                            </div>             
+                      </div>';
+
+        Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+        __fecharMes : function(){
+            this.bind("click", function(evento){                
+                evento.preventDefault();                
+                var formFechamento = new Superlogica_Js_Elemento("#formFechamento");
+                    formFechamento.mostrar();
+            });
+        },
+       
+        __fecharFormularioFechamentoMes : function(){
+            this.bind("click", function(evento){                
+                evento.preventDefault();                    
+                new Superlogica_Js_Elemento("#formFechamento").esconder();
+       });
+        }        
+       
+       });
+       
+        Superlogica_Js_Elemento.implement({
+             __aposFecharMes : function(form, response){   
+                
+                if (response.isValid()){                
+                    new Superlogica_Js_Elemento("#formFechamento").esconder();
+                
+                    if (parseInt(response.getData(0).status)==206){
+                        alert(response.getData(0).msg);
+                    }
+
+                    window.location.reload();
+                    return true;                
+                }
+            }
+        });
+
+
+        ');
+    }
+}
+
+Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+        __fecharFormatosExportar : function(){
+            this.bind("click", function(evento){                
+                evento.preventDefault();                
+                var formatosexportar = new Superlogica_Js_Elemento("#formatos");
+                if(formatosexportar.eh(":visible")){
+                    formatosexportar.esconder();
+                }else{
+                    formatosexportar.mostrar();
+                }                
+            });
+        }, 
+
+        __formatosExportar : function(){
+            this.bind("mouseleave", function(evento){
+                evento.preventDefault();                
+                var formatosexportar = new Superlogica_Js_Elemento("#formatos");
+                formatosexportar.esconder();
+            });
+        },
+        
+        __inserirInput : function(){
+            var inputBusca = new Superlogica_Js_Elemento("'."<input id='inputPesquisa' type='text' name='pesquisa' comportamentos='Form_Elementos.popularBusca Form_Elementos.esconderFormBusca' class='form-control' />".'");
+
+            inputBusca.inserirAntesDe(  new Superlogica_Js_Elemento("#buscar") );
+        }, 
+        
+        __exibirFormBusca : function(){
+            this.bind("click", function(evento){                       
+                evento.preventDefault();    
+                var input = new Superlogica_Js_Elemento("#inputPesquisa");
+                var botoes = new Superlogica_Js_Elemento("#botoesTopo");
+                var form = new Superlogica_Js_Elemento("#formBuscaDiv");
+                botoes.esconder();                
+                form.mostrar();
+                input.focar();
+            });
+        }, 
+        
+        __esconderFormBusca: function(){
+            var elemento = this;
+            this.bind("blur", function(event){
+                if(!elemento.getValue()){
+                    var botoes = new Superlogica_Js_Elemento("#botoesTopo");
+                    var form = new Superlogica_Js_Elemento("#formBuscaDiv");
+                    botoes.mostrar();                
+                    form.esconder();
+                }
+            });
+        }, 
+
+        __imprimirTela : function(){
+            this.bind("click", function(evento){ 
+                window.print();
+		return false;
+            });
+        }
+    });'
+); 
+
+$request = Zend_Controller_Front::getInstance()->getRequest();
 $controllerName = strtolower(Zend_Controller_Front::getInstance()->getRequest()->getControllerName());
 $layoutCacheName = md5(serialize($arrMenu) . $session->licenca.$_SERVER['REQUEST_URI'] );
 
 $cachedContent = $cache->load($layoutCacheName);
+
 $titulo = '';
 if ($cachedContent && $controllerName != 'error' ) {
     $menuString = $cachedContent['menu'];
-    $menuAppString = $cachedContent['menuapp'];
-    $breadcrumb = $cachedContent['breadcrumb'];
+    //$menuAppString = $cachedContent['menuapp'];
+    //$breadcrumb = $cachedContent['breadcrumb'];
+    $abas = $cachedContent['abas'];
     $titulo = $cachedContent['titulo'];
-} else {
-    
-    $arrMenuApp = $arrMenu['apps'];
-    unset($arrMenu['apps']);
-    $maisItensNome = $session->app_id == 'condor' ? 'mais' : 'ferramentas';
-    $maximoItensMenu = $session->app_id == 'condor' ? 6 : 8;
-    if ( is_array($arrMenu[$maisItensNome]['pages']) ){
-        $itemMais = $arrMenu[$maisItensNome];
+} else {    
+    //$arrMenuApp = $arrMenu['apps'];
+    //unset($arrMenu['apps']);
+    $maximoItensMenu = 13;  
+    if( count($arrMenu) > $maximoItensMenu ){
+        $itemMais = is_array($arrMenu['mais']['pages']) ? $arrMenu['mais']['pages'] : array();
+        unset($arrMenu['mais']);
         $maisItensDoMenu = array_slice($arrMenu,$maximoItensMenu-1);
-        unset($maisItensDoMenu[$maisItensNome]);
         array_splice($arrMenu, $maximoItensMenu-1);
-        $arrMenu[$maisItensNome] = $itemMais;
-        $arrMenu[$maisItensNome]['pages'] = $arrMenu[$maisItensNome]['pages'] + $maisItensDoMenu;
+        $arrMenu['mais']['controller'] = 'index';
+        $arrMenu['mais']['label'] = 'Mais';
+        $arrMenu['mais']['class'] = 'mais';
+        $arrMenu['mais']['icone'] = 'fa fa-bars';
+        
+        foreach($maisItensDoMenu as $key=>$item){
+            unset($maisItensDoMenu[$key]['icone']);
+        }
+        $arrMenu['mais']['pages'] = $maisItensDoMenu + $itemMais;          
     }
     
     $_menu = new Zend_Navigation( $arrMenu );
-    if(is_array($arrMenuApp))
-        $_menuApp = new Zend_Navigation( array($arrMenuApp) );
-    
-    $breadcrumb = $this->navigation()->breadcrumbs()->setContainer($_menu)->setMinDepth(0)->setLinkLast(true);
-    $menu = $this->navigation()->menu()->setUlClass('navegacao')->setContainer($_menu)->setMaxDepth(1);
+
+    $menu = $this->navigation()->bootstrapmenu()->setUlClass('nav nav-sidebar')->setContainer($_menu)->setMaxDepth(1);
+    $abas = $this->navigation()->menu()->setUlClass('nav nav-tabs')->setContainer($_menu)->setMinDepth(1)->setRenderParents(false)->setOnlyActiveBranch(true)->__toString();
+
     $menuString = $menu->__toString();
-    if(is_array($arrMenuApp)){
-        $menuApp = $this->navigation()->menu()->setUlClass('navegacao')->setContainer($_menuApp)->setMaxDepth(1);
-        $menuAppString = $menuApp->__toString();
-    }
+
     $paginaAtual = $this->navigation()->findActive($_menu);
 
     if ($paginaAtual['page'] instanceof Zend_Navigation_Page_Mvc) {
@@ -77,14 +195,18 @@ if ($cachedContent && $controllerName != 'error' ) {
     }
 
     if ( $controllerName != 'error' )
-        $cache->save(array('menu' => $menuString,'menuapp' => $menuAppString, 'breadcrumb' => $breadcrumb->__toString(), 'titulo' => $titulo), $layoutCacheName);
+        $cache->save(array('menu' => $menuString,'abas' => $abas, 'titulo' => $titulo), $layoutCacheName);
         
 }
-$titulo = $this->titulo ? $titulo . ' ' . $this->titulo : $titulo;
-$bodyClass = ( (APPLICATION_ENV !== 'production') ? ' ambienteTeste' : '' );
 
+try{
+    $this->licencas = $this->render('licencas.phtml');
+    $this->configuracoes = $this->render('configuracoes.phtml');
+}catch( Exception $e){}
+
+$titulo = $this->titulo ? $titulo . ' ' . $this->titulo : $titulo;
 Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
-    
+
     __logout : function(){
         this.bind("click", function(event){
             event.preventDefault();
@@ -100,12 +222,84 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
             
             var request = new Superlogica_Js_Request( locationLogout.toString() );
             var response = request.getResponse();
-            if ( response.isValid() ){            
+            if ( response.isValid() )
                 window.location.href = url;
-            }
         });
     },
     
+    __mostraFormBreadCrumbs : function (){
+        var linkAlvo = this;
+        var divAlvo = new Superlogica_Js_Elemento("#div-"+this.atributo("class"));
+        this.bind("click",function(){
+            divAlvo.mostrar();
+            if(divAlvo.encontrar("input")){
+                divAlvo.encontrar("input").focar();
+                linkAlvo.esconder();
+                event.stopPropagation();
+            }
+        });
+        var body = new Superlogica_Js_Elemento("body");
+        body.bind("click", function(){
+            divAlvo.esconder();
+            linkAlvo.mostrar();
+        });
+    },
+    __toogleMenu : function (){
+        var body = new Superlogica_Js_Elemento("body");
+        var main = new Superlogica_Js_Elemento("main");
+        var sidebar = new Superlogica_Js_Elemento(".sidebar");
+        this.bind("click",function(){
+            if(this.temClasse("full") ){
+                this.removerClasse("full").adicionarClasse("minified").encontrar("i").removerClasse("fa-angle-double-left").adicionarClasse("fa-angle-double-right");
+                body.adicionarClasse("sidebar-minified");
+                main.adicionarClasse("sidebar-minified");
+                sidebar.adicionarClasse("minified");
+                new Superlogica_Js_Elemento(".sidebar > div > ul > li > a > .chevron").removerClasse("closed").adicionarClasse("opened");
+                new Superlogica_Js_Elemento(".sidebar > div > ul > li > a").adicionarClasse("open");
+                new Superlogica_Js_Elemento("#conteudo").adicionarClasse("full");
+            } else {
+                this.removerClasse("minified").adicionarClasse("full").encontrar("i").removerClasse("fa-angle-double-right").adicionarClasse("fa-angle-double-left");
+                body.removerClasse("sidebar-minified");
+                main.removerClasse("sidebar-minified");
+                sidebar.removerClasse("minified");
+                new Superlogica_Js_Elemento(".sidebar > div > ul > li > a > .chevron").removerClasse("opened").adicionarClasse("closed");
+                new Superlogica_Js_Elemento(".sidebar > div > ul > li > a").removerClasse("open");
+                new Superlogica_Js_Elemento("#conteudo").removerClasse("full");
+            }
+        }).simularClique();
+    }
+});');
+
+Superlogica_Js::adicionarCodigo('
+    var linkReduzirMenu = new Superlogica_Js_Elemento("#main-menu-min");
+    var elementoWindow = new Superlogica_Js_Elemento(window);
+    elementoWindow.bind("resize", function(event){
+        if( (this.largura() >= 753) && (linkReduzirMenu.temClasse("full")) ){
+            linkReduzirMenu.simularClique();
+        }else if( (this.largura() < 753) && (linkReduzirMenu.temClasse("minified")) ){
+            linkReduzirMenu.simularClique();
+        }
+    });
+    
+    var subMenu = new Superlogica_Js_Elemento(".sidebar.minified ul.nav.nav-sidebar > li.itemMenu");
+    subMenu.bind("mouseenter",function(event){
+        var elementoWindow = new Superlogica_Js_Elemento(window);    
+        var elementoDocument = new Superlogica_Js_Elemento(document);
+        var menu = this.encontrar("ul");
+        var primeiroItem = this.encontrar("a span.hidden-sm").css("top","0px");
+        var scroll = elementoDocument.scrollTopo();
+        var distanciaMenuAoTop = menu.altura() + menu.posicao().topo - scroll;
+        var distanciaMenuAoRodape = elementoWindow.altura()-distanciaMenuAoTop;
+        if(distanciaMenuAoRodape < 0){
+            var topPadrao = parseInt(menu.css("top").replace("px", ""));
+            var correcao = (topPadrao)+(distanciaMenuAoRodape);
+            menu.atributo("style","top:"+(correcao)+"px");
+        }
+    });
+
+', 0, true );    
+
+Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
     __focarConteudo : function(){
         this.bind("click", function(evento){
             evento.preventDefault();
@@ -117,249 +311,279 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
     },
         
     __usuarioHover : function (){            
-            this.bind("mouseover",function(event){
-               event.preventDefault();
-               var divAlvo = new Superlogica_Js_Elemento("#divAlvo");
-               divAlvo.mostrar();
-           });
-           
-           this.bind("focusin",function(event){
-                event.preventDefault();
-                new Superlogica_Js_Elemento( this ).simularEvento("mouseover");
-           })
-           .encontrar("a:last")
-           .bind("focusout", function(event){
-                event.preventDefault();
-                new Superlogica_Js_Elemento( this ).simularEvento("mouseout");
-           });
-           
-        },
-    __usuarioOut : function (){
-            this.bind("mouseout",function(event){
-               event.preventDefault();
-               var divAlvo = new Superlogica_Js_Elemento("#divAlvo");
-               divAlvo.esconder();
-           });
-        }
+        var navprofile = new Superlogica_Js_Elemento(".nav-profile");
+        this.bind("mouseover",function(event){
+            this.adicionarClasse("open");
+       }).bind("mouseleave",function(event){
+            window.timeout_submenuusuario = setTimeout(function(){
+                navprofile.removerClasse("open");
+            }, 500 );
+        });
+    },
+    __submenuUsuarioHover : function (){
+        this.bind("mouseover",function(event){
+            if( window.timeout_submenuusuario ){
+                clearTimeout( window.timeout_submenuusuario );
+                window.timeout_submenuusuario = null;
+            }
+        });
+    }
 });');
 
-Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
-        __fecharFormatosExportar : function(){
-            this.bind("click", function(evento){                
-                evento.preventDefault();                
-                var formatosexportar = new Superlogica_Js_Elemento("#formatos");
-                if(formatosexportar.eh(":visible")){
-                    formatosexportar.esconder();
-                }else{
-                    formatosexportar.mostrar();
-                }                
+if($session->vencimentoSoftware){ 
+    Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+        __contratar : function (){
+            this.bind("click",function(){
+                var location=  new Superlogica_Js_Location()
+                                               .setApi(true)
+                                               .setParams({})
+                                               .setController("comercial")
+                                               .setAction("contratar");
+                 var request= new Superlogica_Js_Request(location.toString());
+                 var response= request.getResponse();
             });
-        },  
-        __formatosExportar : function(){
-            this.bind("mouseleave", function(evento){ 
-            console.log("sssa");
-                evento.preventDefault();                
-                var formatosexportar = new Superlogica_Js_Elemento("#formatos");
-                formatosexportar.esconder();
-            });
-        }        
-    });'
-);
-
-if ($session->vencimentoApp){ 
-    $vencimentoSoftware= '<div id="trial">Seu período de utilização termina em '.$session->vencimentoApp.'.</div>';
+        }
+    });');
+    $linkContratar = 'https://superlogica.superlogica.net/clients/areadocliente/';
+    $vencimentoSoftware= '<div id="trial">Seu período de degustação expira em '.$session->vencimentoSoftware.'  <a href="'.$linkContratar.'" comportamentos="contratar"  class="link"><img src="'.APPLICATION_CLIENT_TEMA_URL.'/img/contratar.png" title="Contrate agora" alt="Contrate agora" border="0" /></a></div>';
 }
 
-echo $this->doctype();
-?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <?php
-    echo $this->headMeta();
-    $this->headTitle(strip_tags($titulo));
-    echo $this->headTitle();
-    echo $this->render('head.phtml');        
-  ?>
-</head>
-<body <?php echo $bodyClass ? 'class="'.$bodyClass.'"' : '';?>>
-    <div id="estrutura">
-        
-        <div id="wrap">
-            
-            <div id="topo">
-                    <?=$vencimentoSoftware?>
-                    <div class="conteudo">
-                        <?php
-                            $location = new Superlogica_Location();
-                            $location->viaProxy()
-                        ?>
-                        
-                        <a href="<?=$location->setParams(array())->setController('index')->setAction('index')->toString()?>">
-                            <div id="logo-topo" class="secao">
-                            </div>
-                        </a>                        
-<!--                        <div id="logo-topo" class="secao"></div>-->
-                        <div id="licencas-topo" class="secao">
-                            <?=$session->licenca;?>
-                        </div>
-                        <div class="separador"></div>
-                        <div id="menu-topo" class="secao">
-                            <div id="menu">
-                                <?php echo $menuString; ?>
-                            </div>
-                        </div>
-                        <div id="usuario-topo" class="secao">
-                            <div class="usuario" comportamentos="usuarioHover usuarioOut">
-                                <a href="#">
-                                    <img src="<?=APPLICATION_CLIENT_TEMA_URL?>/img/usuario.png"  border="0" />
-                                </a>
-                                <?php
-                                    $location = new Superlogica_Location();
-                                    $location->viaProxy();
-                                    $nomeUsuario = $session->ST_APELIDO_USU;
-                                ?>
-                                <ul id="divAlvo" class="blocoEscondido">
-                                    <li>
-                                        <span>
-                                            <b><?php echo ucwords($nomeUsuario);?></b>
-                                        </span>
-                                         <?php  if($session->app_id != 'condor'){ ?>
-                                        <span><a href="<?=$location->setParams(array())->setController('usuario')->setParams(array('exibirAcessosDosUsuarios'=>1))->setAction('index')->toString();?>">Todos os usuários</a></span>                                    
-                                         <?php  } ?>                                           
-                                    </li>
-                                    <li>
-                                        <span><a href="<?=$location->setParams(array())->setController('auditoria')->setAction('index')->toString();?>">Histórico de alterações</a></span>
-                                    </li>
-                                    <li>
-                                        <span><a href="<?=$location->setParams(array())->setController('filadeemails')->setAction('index')->toString();?>">Histórico de e-mails enviados</a></span>
-                                    </li>
-                                    <li>
-                                        <?php 
-                                          $nomeMenu = ($session->app_id == 'condor') ? 'Documentos' : 'Histórico impressões';
-                                        ?>
-                                        <span><a href="<?=$location->setParams(array())->setController('impressoes')->setAction('index')->toString();?>"><?php echo $nomeMenu ?></a></span>
-                                    </li>
-                                    <li>
-                                        <span><a href="<?=$location->setParams(array())->setController('lotes')->setAction('index')->toString();?>">Histórico proc. em lote</a></span>
-                                    </li>                                    
-                                    <li>
-                                        <span><a href="<?=$location->setParams(array())->setController('contasuperlogica')->setAction('index')->toString();?>">Minha conta na Superlógica</a></span>
-                                    </li>                                                                           
-                                    <li>
-                                        <span><a href="<?="$baseUrl/auth/logout" ?>">Sair</a></span>
-                                    </li>                                    
-                                </ul>
-                            </div>                            
-                        </div>
-                        <?php if($menuAppString != ''){ ?>
-                            <div class="separador direita"></div>
-                            <div id="apps-topo" class="secao">
-                                <div id="menu">
-                                    <?php echo $menuAppString; ?>
-                                </div>
-                            </div>
-                        <?php } ?>
-                        <div id="condominios-topo" class="secao">
-                            <div class="condominios">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <div id="conteudo">
 
-                <?php
-                if ($breadcrumb) {
-                ?>
-                    <div id="breadcrumbs">
-                        <?php echo $breadcrumb; ?>
-                    </div>
-                <?php
-                }
-                ?>
+if($session->apps_para_instalar>0){
+    
+        Superlogica_Js::adicionarCodigo('
+            new Superlogica_Js_Cron(
+                new Superlogica_Js_Location()
+                    .setController("apps")
+                    .setAction("autoInstalar")
+                    .setApi(true)
+                    .viaProxy(true)
+                    .setParams({})
+                    .toString(),
+                    "cron"
+                )
+                .parar(200,"",false)
+                .executar();
 
-
-                <h1>
-                    <a name="conteudo" href="javascript:void(0);"></a>
-                    <?php echo $titulo; ?>
-                    <?php
-                    if (is_array($this->subtitulo)) {
-
-                        if (is_array($this->subtitulo['itens'])) {
-                    ?>
-                            <div id="subTitulo">
-                                <?php
-                                foreach ($this->subtitulo['itens'] as $key => $item) {
-                                ?>
-                                    <span comportamentos="Superlogica_Js_Params" data='<?php echo Zend_Json::encode(Superlogica_Utf8::encode($item)) ?>'></span>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                        <?php
-                        } else {
-                        ?>
-                        <div id="subtitulo">
-                            <span comportamentos="Superlogica_Js_Params" data='<?php echo Zend_Json::encode(Superlogica_Utf8::encode($this->subtitulo)) ?>'></span>
-                        </div>
-                    <?php
+                setTimeout(function(){
+                    new Superlogica_Js_Cron(
+                        new Superlogica_Js_Location()
+                            .setController("apps")
+                            .setAction("autoInstalar")
+                            .setApi(true)
+                            .viaProxy(true)
+                            .setParams({})
+                            .toString(),
+                            "cron"
+                    )
+                    .aoProcessar(function( response ){
+                        var status = response.getStatus();        
+                        var data = response.getData();
+                        if ( status == 423 ){
+                            this.alterarMensagem(data["msg"],true,false);
                         }
-                    } else if (is_string($this->subtitulo)) {
-                        echo '<div id="subTitulo">' . $this->subtitulo . '</div>';
-                    }
-                    ?>
-                </h1>
-                
-                <?php echo $this->layout()->content ?>
+                    })
+                    .executar();
+                }, 1000 );
+        ');
+    }
+
+
+if (!$titulo) {
+    throw new Exception('Página sem título. Controller: ' . $request->getControllerName() . '. Action: ' . $request->getActionName());
+}
+
+$bodyId = $request->getControllerName().'_';
+$bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteName() == 'listid' ? 'id' : $request->getActionName();
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html class="col-h-100">
+    <head>
+        <?php
+        echo $this->render('head.phtml'); // Está dentro da pasta de layouts
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
+        $this->headTitle(strip_tags($titulo));
+        if( MODULE_ID != 'MODULE_ID' )
+            echo $this->headTitle(" :: Superlógica " . ucwords(MODULE_ID));
+         else
+             echo $this->headTitle(" :: Superlógica ");
+
+        ?>
+    </head>
+    <body  data-ng-app="app"  id="<?php echo $bodyId;?>" class="col-h-100 module_id_<?=MODULE_ID?> <?=(APPLICATION_ENV != 'production') ? ' ambienteTeste' : ''?>  <?= ($session->vencimentoSoftware) ? ' periodo-trial' : '' ?>" data-custom-background="" data-off-canvas-nav="">
+
+        <div class="navbar-static-top" data-ng-controller="AppCtrl">
+            <div data-ng-hide="isSpecificPage()" data-ng-cloak="">
+                <section>
+                    <?php echo $vencimentoSoftware;?>
+                </section>                
+                <section id="header" class="top-header fechado">
+                    <?php echo $this->render('header.phtml'); ?>
+                </section>
             </div>
-            <?php
-                
-            $slLayout = Superlogica_Layout::getInstance();
-            $codigosSlLayout = $slLayout->getCodigos(true);
-            if ( $codigosSlLayout )
-                echo '<div id="Superlogica_Layout_Codigos_Append" class="blocoEscondido">'.$codigosSlLayout.'</div>';
-            ?>
-                <div id="rodape">
-                    <div id="conteudo">
-                            <a href="http://www.superlogica.com" target="_blank" alt="Superlógica" title="Superlógica"><div id="logo" class="secao"><span></span></div></a>
-                            <div id="tempo-execucao" class="secao">
-                                Executado em:
-                                <?php global $time_start; echo round(round(microtime(true), 4) - $time_start, 4); ?>s
-                            </div>
-                            <div class="separador"></div>
-                            <div id="fechamento" class="secao">
-                                <?php echo $fechamento;?>
-                            </div>
-                            <?php if ($session->app_id == 'financeiro') { ?>                            
-                                <div class="separador fechamento"></div>
-                            <?php } ?>
-                            <div id="api" class="secao">
-                                    <?php
-                                        $locationPgAtual = new Superlogica_Location();
-                                        $locationPgAtual->setApi(true);
-                                    ?>                                
-                                <a href='<?php echo $locationPgAtual->toString(); ?>' target="_blank" >API</a><br />
-                            </div>
-                            <div class="separador"></div>
-                            <div id="exportar" class="secao">
-                                <div id="formatos" class="blocoEscondido" comportamentos="formatosExportar">
-                                    <?php
-                                        $locationPgAtual = new Superlogica_Location();
-                                        $locationPgAtual->setApi(true);
-                                        $arServerFormats = array('csv', 'xls');
-                                    ?>
-                                    <?php for ($x = 0; count($arServerFormats) > $x; $x++) { ?>
-                                        <a href='<?php echo $locationPgAtual->setParam( 'format', $arServerFormats[$x] )->toString(); ?>' target="_blank" ><?php echo $arServerFormats[$x]; ?></a><br />
-                                    <?php } ?>
-                                </div>                                    
-                                <a href="#" comportamentos="fecharFormatosExportar">Exportar</a>
-                            </div>
-                            <div class="separador"></div>
-                    </div>
-                </div>
-            
-            
         </div>
         
-    </div>
-</body>
+        <div class="container-fluid content col-h-100">
+
+            <div class="row col-h-100">
+                <!-- start: Main Menu -->
+                <div class="sidebar col-h-100 col-md-2 col-sm-1">
+                       <div class="sidebar-collapse collapse">
+                        <?php echo $menuString;?>
+                    </div>
+                    <a href="#" comportamentos="toogleMenu" id="main-menu-min" class="visible-md visible-lg full blocoEscondido"><i class="fa fa-angle-double-left"></i></a>
+                </div>
+                <!-- end: Main Menu -->
+
+                <!-- start: Content -->
+                <div class="col-md-10 col-sm-11 main" style="min-height: 204px;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="conteudo" class="page page-tasks ng-scope">
+                                <!--SubMenus em abas-->
+                                <?php  if($this->abas) echo $abas; ?>
+                                <?php 
+                                $linkVoltar = $this->voltar();
+                                if ( trim($linkVoltar) != '' ){
+                                    echo $linkVoltar . ( $this->tituloInvisivel ? '<br><br>' : '');
+                                }
+                                if ( !$this->tituloInvisivel ){ ?>
+                                    <h1>
+                                        <a name="conteudo" href="javascript:void(0);"></a>
+                                        <?php echo $titulo; ?>
+
+                                        <?php 
+                                        
+                                            $botao= new Superlogica_Button();
+                                                        
+                                            if($this->comBusca){   
+                                                
+                                                $request = Zend_Controller_Front::getInstance()->getRequest();
+                                                $pesquisa = $request->getParam( 'pesquisaEmTudo', '' );
+                                                if( $pesquisa === '' )
+                                                    $pesquisa = $request->getParam('pesquisa','');
+
+                                                if($pesquisa === '')
+                                                    $botao->addLink( 'Busca', '', '', 'glyphicon glyphicon-search', 'exibirFormBusca', array('class'=>'btn-warning')); 
+    
+                                                
+                                                $btBuscar =  new Superlogica_Button();
+                                                $btBuscar->addLink( 'Buscar', '', true, '', 'Form_Elementos.submeterBusca ', array('id'=>'buscar'));    
+                                                if ($this->buscarEmTudo) 
+                                                    $btBuscar->addLink( 'Buscar em tudo', '', false, '', 'Form_Elementos.submeterBusca', array('id'=>'buscar'));                                             
+                                        ?>
+                                        
+
+                                        <span <?php if ( $pesquisa === '' ) { ?>class="blocoEscondido"<?php } ?> id="formBuscaDiv">
+                                            <form id="formBusca" action="">
+
+                                                <span class="pull-right">
+                                                    <span class="input-group" comportamentos="inserirInput">
+                                                            <?php echo $btBuscar->toString(); ?>
+                                                    </span> 
+                                                </span>
+                                            </form>
+                                        </span>                                        
+                                        
+                                        <?php
+                                        
+                                            }                                            
+                                            
+                                            echo '<span id="botoesTopo" class="pull-right">' . $botao->toString() . '</span>'; 
+                                        
+                                        if (is_array($this->subtitulo)) {
+                                            if (is_array($this->subtitulo['itens'])) {
+                                        ?>
+                                                <div id="subTitulo">
+                                                    <?php
+                                                    foreach ($this->subtitulo['itens'] as $key => $item) {
+                                                    ?>
+                                                        <span comportamentos="Superlogica_Js_Params" data='<?php echo Zend_Json::encode(Superlogica_Utf8::encode($item)) ?>'></span>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                            <?php
+                                            } else {
+                                            ?>
+                                            <div id="subtitulo">
+                                                <span comportamentos="Superlogica_Js_Params" data='<?php echo Zend_Json::encode(Superlogica_Utf8::encode($this->subtitulo)) ?>'></span>
+                                            </div>
+                                        <?php
+                                            }
+                                        } else if (is_string($this->subtitulo)) {
+                                            echo '<div id="subTitulo">' . $this->subtitulo . '</div>';
+                                        }
+                                        ?>
+
+                                    </h1>
+                                    <br/>
+                                <?php } ?>
+                                
+                                <div id="Superlogica_Js_Alerta"></div>
+                                <?php echo $this->layout()->content; ?>
+                            </div>
+                            <?php
+
+                            $slLayout = Superlogica_Layout::getInstance();
+                            $codigosSlLayout = $slLayout->getCodigos(true);
+                            if ( $codigosSlLayout )
+                                echo '<div id="Superlogica_Layout_Codigos_Append" class="blocoEscondido">'.$codigosSlLayout.'</div>';
+                            ?>                    
+                        </div>
+                    </div><!--/col-->
+                </div><!--/row-->
+            </div>
+            <!-- end: Content -->
+        </div><!--/row-->	        
+        <div class="clearfix"></div>
+        <footer id="rodape">
+            <div class="row conteudo">
+                <div class="col-sm-3 secao" id="tempo-execucao">
+                    Executado em:
+                    <?php global $time_start; echo round(round(microtime(true), 4) - $time_start, 4); ?>s
+                </div>
+                <div class="col-sm-3 text-right secao" id="fechamento">
+                    <?php echo $fechamento;?>
+                </div>
+                <div class="col-sm-3 text-right secao" id="api">
+                        <?php
+                            $locationPgAtual = new Superlogica_Location();
+                            $locationPgAtual->setApi(true);
+                        ?>                                
+                    <a href='<?php echo $locationPgAtual->toString(); ?>' target="_blank" >API</a><br />
+                </div>
+                <div class="col-sm-3 secao" id="exportar">
+                    <div id="formatos" class="blocoEscondido" comportamentos="formatosExportar">
+                        <?php
+                            $locationPgAtual = new Superlogica_Location();
+                            $locationPgAtual->setApi(true);
+                            $arServerFormats = array('csv', 'xls');
+                        ?>
+                        <?php for ($x = 0; count($arServerFormats) > $x; $x++) { ?>
+                            <a href='<?php echo $locationPgAtual->setParam( 'format', $arServerFormats[$x] )->toString(); ?>' target="_blank" ><?php echo $arServerFormats[$x]; ?></a>
+                        <?php } ?>
+                    </div>                                    
+                    <a href="#" comportamentos="fecharFormatosExportar">Exportar</a>
+                </div>
+            </div>
+        </footer> 
+        <?php
+            if( APPLICATION_ENV == 'production'){
+        ?>
+            <!-- Google analytics -->
+            <script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-33202533-2']);
+              _gaq.push(['_setDomainName', 'superlogica.net']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>        
+        <?php } ?>         
+    </body>
 </html>

@@ -6,13 +6,36 @@ var Superlogica_Js_Notificacao = new Class({
      */
     _tempoAberto : 5000,
     
+    /**
+     * Mensagem a ser exibida
+     * @type {String}
+     */
     _msg : "",
+
+    /**
+     * Tipo da mensagem
+     * Disponíveis: success, warning, info ou error
+     * @type {String}
+     */
+    _tipo : "",
+
+    /**
+     * Tipo padrão a ser utilizado caso não seja informado
+     * @type {String}
+     */
+    _tipoPadrao :'success',
     
     /**
      * Chamada ao instanciar o objeto
      */
-    initialize : function( msg ){
-        this.setMsg(msg);
+    initialize : function( msg, tipo ){        
+        toastr.options = {
+            closeButton: true,
+            positionClass: "toast-bottom-right",
+            timeOut: this._tempoAberto
+        };
+        this.setMsg( msg );
+        this.setTipo( tipo );
     },
     
     /**
@@ -22,7 +45,7 @@ var Superlogica_Js_Notificacao = new Class({
     setMsg : function( msg ){
         this._msg = msg ? msg : "";
     },
-    
+
     /**
      * Retorna a msg da notificação
      * @return string
@@ -30,112 +53,32 @@ var Superlogica_Js_Notificacao = new Class({
     getMsg : function(){
         return this._msg;
     },
-    
+
     /**
-     * Cria o div com informações padrões
-     * 
-     * @return Superlogica_Js_Elemento
+     * Seta qual tipo a ser utilizado na notificação
+     * @param {String} tipo Disponível: success (padrão), warning, info, error
      */
-    _createBox : function(){
-        var box = new Superlogica_Js_Elemento("<div></div>");
-        box.adicionarClasse( 'blocoEscondido' ).adicionarClasse( 'Superlogica_Js_Notificacao' );
-        return box;
+    setTipo : function(tipo){
+        this._tipo = tipo;
     },
-    
+
     /**
-     * Retorna um novo box ou a referencia para o que já existe na tela
-     * 
-     * @param string classe Classe do elemento
-     * @param string texto Conteudo da msg
-     * @return Superlogica_Js_Elemento
+     * Retorna qual o tipo da notificação
+     * @return {String}
      */
-    _getBox : function( classe, texto ){
-        
-        var notificacao = new Superlogica_Js_Elemento("div.Superlogica_Js_Notificacao");
-        if ( !notificacao || notificacao.contar() <= 0 ){
-            notificacao = this._createBox();
-            new Superlogica_Js_Elemento('#conteudo').adicionarHtmlAoInicio( notificacao );
-        }
-        notificacao.conteudo( texto );      
-        notificacao.adicionarClasse(classe);
-        
-        return notificacao;
+    getTipo : function(){
+        return this._tipo ? this._tipo : this._tipoPadrao;
     },
-    
-    /**
-     * Responsável por mostrar o box
-     * 
-     * @param string tipo
-     * @param string texto
-     */
-    _show : function( tipo, texto ){
-        var box = this._getBox( tipo, texto );
-            box.mostrar();
         
-        new Superlogica_Js_Elemento(window.document).simularEvento('scroll');
-        new Superlogica_Js_Elemento(window).simularEvento('resize');
-        
-        setTimeout(function(){
-            box.esconder(true, function(){
-                new Superlogica_Js_Elemento(this).remover();
-            });
-        }, this._tempoAberto );
-        
-    },
-    
     /**
      * Função chamada para mostrar o box
      * 
      * @param string msg
      */
-    show : function( msg ){
-        if ( !msg )
-            msg = this.getMsg();
-        this._show( 'info', msg );
+    show : function(){
+        var tipo = this.getTipo();
+        var msg = this.getMsg();
+        toastr[tipo](msg);
     }
-        
+
 });
-
-Superlogica_Js_Notificacao.atualizarPosicoes = function( distanciaTopo ){
-    var notificacao = new Superlogica_Js_Elemento("div.Superlogica_Js_Notificacao");
-    var conteudo = new Superlogica_Js_Elemento("#conteudo");
-    var paddingTopo = parseFloat( (conteudo.css('padding-top')+"").replace('px','') );
-    var marginTopo = parseFloat( (conteudo.css('margin-top')+"").replace('px','') );
-    
-    if ( isNaN(marginTopo)) marginTopo = 0;
-    if ( isNaN(paddingTopo)) paddingTopo = 0;
-    notificacao.css({'top': conteudo.posicao().topo + distanciaTopo +paddingTopo+marginTopo });
-};
-
-new Superlogica_Js_Elemento(window.document).bind('scroll.Superlogica_Js_Notificacao', function(){
-    var elemento = this;
-    var timeoutPosicaoNotificacao = elemento.getDados('timeoutPosicaoNotificacao');
-    if ( timeoutPosicaoNotificacao ) return true;
-    timeoutPosicaoNotificacao = setTimeout( function(){
-        
-        elemento.setDados('timeoutPosicaoNotificacao', null );
-        var conteudo = new Superlogica_Js_Elemento("#conteudo");
-        var notificacao = new Superlogica_Js_Elemento("div.Superlogica_Js_Notificacao");
-        if ( notificacao.contar() <= 0 )
-            return true;
-
-        if( conteudo.contar() <= 0)
-            conteudo = new Superlogica_Js_Elemento('body');
-        var distanciaTopo = conteudo.posicao().topo;
-        var scrollTopo = elemento.scrollTopo();
-        if (  scrollTopo > distanciaTopo ){
-            Superlogica_Js_Notificacao.atualizarPosicoes( scrollTopo - distanciaTopo );
-        }
-        
-    }, 100 );
-    elemento.setDados('timeoutPosicaoNotificacao', timeoutPosicaoNotificacao );
-});
-new Superlogica_Js_Elemento(window).bind('resize.Superlogica_Js_Notificacao', function(){
-    var notificacao = new Superlogica_Js_Elemento(".Superlogica_Js_Notificacao");
-    var documento = new Superlogica_Js_Elemento(window.document);
-    var larguraTela = documento.largura();
-    notificacao.css({
-        'left' : (larguraTela/2) - (notificacao.largura()/2)
-    });
-});
-

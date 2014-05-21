@@ -235,6 +235,16 @@ var Superlogica_Js_Date = new Class({
         return parseInt( dif / (60*60*24) );
     },
     
+    /**
+     * Retorna diferença de meses entre 2 datas
+     * @param {type} date
+     * @returns {unresolved}
+     */
+    monthsBetween: function(date) {
+        var diasEntre = this.daysBetween(date);
+        return parseInt(diasEntre / (30.4375));
+    },
+    
     weeksBetween : function( date ){
         
         var diasEntre = this.daysBetween( date );
@@ -775,7 +785,7 @@ var Superlogica_Js_Date = new Class({
       * Criar os botões aplicar e cancelar
       */
     _criarBotoesPadroes : function ( elementoAlvo, elementoRemover, callback ){
-        var btAplicar = new Superlogica_Js_Elemento('<input type="submit" name="btAplicar" value="Aplicar" >');
+        var btAplicar = new Superlogica_Js_Elemento('<input class="btn btn-primary" type="submit" name="btAplicar" value="Aplicar" >');
         var option = new Superlogica_Js_Elemento('<span> ou </span>');
         var linkCancelar = new Superlogica_Js_Elemento('<a href="javascript:void(0);" class="btCancelar">Cancelar</a>');
 
@@ -1218,6 +1228,15 @@ Superlogica_Js_Date.mktime = function() {
           
     var humDate = new Date(dateUTC);
     return (humDate.getTime()/1000.0);
+    
+};
+
+Superlogica_Js_Date.getDayOfWeek = function(day, abreviado) {
+    var arDiasSemana = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira','Quinta-Feira' ,'Sexta-Feira', 'Sabado'];
+    var arDiasSemanaAbreviado = ['Dom', 'Seg', 'Ter', 'Quar','Quin' ,'Sex', 'Sab'];
+    
+    	
+    return abreviado ? arDiasSemanaAbreviado[day] : arDiasSemana[day];
     
 };
 

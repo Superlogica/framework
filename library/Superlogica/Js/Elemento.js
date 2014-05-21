@@ -70,6 +70,18 @@ var Superlogica_Js_Elemento = new Class({
             this.$_elemento.fadeIn.apply( this.$_elemento, args );
         }else
             this.$_elemento.show().removeClass('blocoEscondido blocoInvisivel');
+
+        // caso tenha popover de notificação então mostra novamente
+        if ( this.temClasse('hasPopoverNotificar') ){
+            this.popover('show');
+        }else if ( this.temClasse('item') ){
+            var elementoPopover = this.encontrar('.hasPopoverNotificar');
+            if ( elementoPopover ){
+                elementoPopover.emCadaElemento(function(){
+                    this.popover('show');
+                });
+            }
+        }
         return this;
     },
 
@@ -85,7 +97,20 @@ var Superlogica_Js_Elemento = new Class({
             Object.each ( arguments, function(valor){args.push(valor);});
             this.$_elemento.fadeOut.apply( this.$_elemento, args );
         }else
-            this.$_elemento.hide().addClass('blocoEscondido');    
+            this.$_elemento.hide().addClass('blocoEscondido');
+
+        // caso tenha popover de notificação então remove
+        if ( this.temClasse('hasPopoverNotificar') ){
+            this.popover('hide');
+        }else if ( this.temClasse('item') ){
+            var elementoPopover = this.encontrar('.hasPopoverNotificar');
+            if ( elementoPopover ){
+                elementoPopover.emCadaElemento(function(){
+                    this.popover('hide');
+                });
+            }
+        }
+
         return this;
     },
     
@@ -95,6 +120,10 @@ var Superlogica_Js_Elemento = new Class({
      * @param string seletor
      */
     maisProximo : function( seletor ){
+        if(typeof seletor == 'undefined'){
+            return new Superlogica_Js_Elemento( this.$_elemento.parent() );
+        }
+            
         return new Superlogica_Js_Elemento( this.$_elemento.closest( seletor ) );
     },
 
@@ -166,6 +195,11 @@ var Superlogica_Js_Elemento = new Class({
      * @return string|Superlogica_Js_Elemento
      */
     atributo: function(nome, valor){
+        
+        if ( nome == 'checked' && typeof valor != 'undefined' && valor == ''){
+            valor = false;
+        }
+
         var retorno = this._atributos[nome];
         
         if ( !valor && retorno )
@@ -194,6 +228,8 @@ var Superlogica_Js_Elemento = new Class({
             return this.$_elemento.prop(nome);
         
         if (!valor){
+            if ( retorno == 'checked' )
+                return true;
             return retorno;
         }
         return this;
@@ -294,6 +330,18 @@ var Superlogica_Js_Elemento = new Class({
      * @return boolean
      */
     eh: function (query){
+        if ( 
+            query.indexOf(':visible') !== -1
+            && (
+                this.$_elemento.is('input[type="checkbox"]')
+                || this.$_elemento.is('input[type="radio"]') 
+            )
+        ){
+            var item = this.maisProximo('.item');
+            if ( item )
+                return item.eh(query);
+        }
+
         return this.$_elemento.is(query);
 
     },
@@ -415,6 +463,17 @@ var Superlogica_Js_Elemento = new Class({
      */
     clonar : function ( IdNovaTag){
         var idAntigo = this.atributo('id');
+        
+        var elementosWysiwyg = this.encontrar('textarea.editorHtml');
+        if ( elementosWysiwyg ){
+        	
+            elementosWysiwyg.emCadaElemento(function(){
+                
+                var elementoEditor = new Superlogica_Js_Form_Elementos( this );
+                elementoEditor.wysiwyg('destroy');
+            });
+        }
+        
         var $clone = this.$_elemento.clone( false );
         var novoElemento = new Superlogica_Js_Elemento($clone);
         var elementosComId = novoElemento.encontrar('[id]');
@@ -451,7 +510,7 @@ var Superlogica_Js_Elemento = new Class({
         }
         if ( IdNovaTag )
             novoElemento.atributo('id', IdNovaTag+'-'+idAntigo);
-        
+
         novoElemento._carregar(true);
         return novoElemento;
     },
@@ -666,8 +725,14 @@ var Superlogica_Js_Elemento = new Class({
      * 
      * @return integer
      */
-    scrollTopo : function(){
-        return this.$_elemento.scrollTop();
+    scrollTopo : function( valor ){
+        
+        if (  isNaN(valor) ){
+            return this.$_elemento.scrollTop();
+        }
+        
+        this.$_elemento.scrollTop( valor )
+        return this;
     },
     
     /**
@@ -946,16 +1011,172 @@ var Superlogica_Js_Elemento = new Class({
             temVariavel = 0;
             if ( childs[key].childNodes )
                 totalCheckbox = totalCheckbox + new Superlogica_Js_Elemento(childs[key])._replaceHtmlVar( variavel, valor );
-            if ( childs[key].nodeType === document.TEXT_NODE ){
+            if ( (childs[key].nodeType === document.TEXT_NODE) && (childs[key].nodeValue) ){
                 temVariavel = childs[key].nodeValue.indexOf( variavel ) !== -1 ? 1 : 0
                 totalCheckbox += temVariavel;
-                if ( temVariavel ){
+                if ( (temVariavel) && (childs[key].nodeValue) ){
                     valor = jQuery( '<span>' + (childs[key].nodeValue.replace( variavel, valor )) + '</span>' )[0];
                     childs[key].parentNode.replaceChild( valor, childs[key] );
                 }
             }
         }
         return totalCheckbox;
+    },
+
+    /**
+     * Exibe um popover de notificação no elemento atual
+     * @param  {String} msg Texto a ser exibido no balão
+     * @return {void}
+     */
+    notificar : function( msg, options ){
+
+        if ( msg == 'fechar'){
+            this.removerClasse('hasPopoverNotificar');
+            this.popover('destroy');
+            return true;
+        }
+
+        var elemento = this;
+        var optionsPadrao = {
+            'content' : msg,
+            'html' : true,
+            'placement' : 'top',
+            'title' : function(){
+                var linkClose = new Superlogica_Js_Elemento('<a href="javascript:void(0);" class="popover-close"><span class="glyphicon glyphicon-remove"></span></a>');
+                linkClose.bind('click', function(){
+                    elemento.popover('destroy');
+                });
+                return new Superlogica_Js_Elemento('<span>Aviso</span>').adicionarHtmlAoFinal(linkClose).$_elemento[0];
+                
+            }
+        };
+
+        this.popover( Object.merge( optionsPadrao, typeof options == 'object' ? options : {}) );
+
+        this.popover('show');
+        this.adicionarClasse('hasPopoverNotificar');
+    },
+
+    /**
+     * Encapsulamento do plugin popover
+     * @return {Object} Fluent Interface
+     */
+    popover : function(){
+        if ( !this.$_elemento.popover ) return this;
+        if ( typeof arguments[0] == 'object' && this.$_elemento ){
+            this.$_elemento.popover('destroy'); // destroi o popover anterior pois não funcionar chamando duas vezes sem isso
+            if ( !arguments[0].template ){
+                var largura = arguments[0].width;
+                if ( !largura ){
+                    // caso a string passada seja maior que 30 caracteres então aumenta um pouco a largura do popover
+                    largura = (typeof arguments[0].content=='string' && arguments[0].content.length > 30) || this.eh('input,select') ? 'medium' : '';
+                }
+                arguments[0].template = '<div class="popover '+(  largura ? 'popover-'+ largura : '' )+'"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
+            }
+            
+            var elemento = this;
+            
+            var oldPlacement = arguments[0].placement ? arguments[0].placement : 'right';
+            arguments[0].placement = function(tip, ele) {
+                var width = jQuery(window).width();
+                return width >= 760 ? oldPlacement : ( elemento.posicao().topo < 50 ? 'bottom' : 'top' );
+            };
+
+        }
+
+
+        this.$_elemento.popover.apply( this.$_elemento, arguments );
+
+        if ( typeof arguments[0] == 'string' && arguments[0] == 'destroy' )
+            this.removerClasse('hasPopover');
+        else
+            this.adicionarClasse('hasPopover');
+
+
+        this.bind('show.bs.popover', function(){
+            this.desabilitarComponenteAoScroll();
+        });
+
+        this.bind('hide.bs.popover', function(){
+            this.removerEventoAoScrollComponente();
+        });
+
+        return this;
+        
+    },
+
+    removerEventoAoScrollComponente : function(){
+        var elemento = this;
+        var tipoElementos = this.getNomeComponentes();
+        if ( tipoElementos.length <= 0 ) 
+            return true;
+
+        var sufixoEvento = '';
+        Object.each( tipoElementos, function(tipo){
+            sufixoEvento += '_disable_' + tipo;
+        });
+
+        var corpoDoForm = elemento.maisProximo('.corpoDoForm');
+        if ( corpoDoForm.contar() )
+            corpoDoForm.unbind('scroll.'+sufixoEvento);
+        
+        new Superlogica_Js_Elemento(window).unbind('scroll.'+sufixoEvento);
+
+    },
+
+    desabilitarComponenteAoScroll : function(){
+        var elemento = this;
+
+        var tipoElementos = this.getNomeComponentes();
+        if ( tipoElementos.length <= 0 ) 
+            return true;
+        
+        var sufixoEvento = '';
+        Object.each( tipoElementos, function(tipo){
+            sufixoEvento += '_disable_' + tipo;
+        });
+        var desabilitarComponente = function(){
+            Object.each( tipoElementos, function(tipo){
+                elemento[tipo]( tipo == 'autocomplete' ? 'close' : 'hide');
+            });
+            this.unbind('scroll.'+sufixoEvento);
+        };
+
+        var corpoDoForm = elemento.maisProximo('.corpoDoForm');
+        if ( corpoDoForm.contar() )
+            corpoDoForm.bind('scroll.'+sufixoEvento, desabilitarComponente);
+        new Superlogica_Js_Elemento(window).bind('scroll.'+sufixoEvento, desabilitarComponente);
+
+    },
+
+    getNomeComponentes : function(){
+        var tipoElemento = [];
+
+        if ( this.temClasse('hasDatepicker') ){
+            tipoElemento.push('datepicker');
+        }else if ( this.temClasse('slautocomplete') ){
+            tipoElemento.push('autocomplete');
+        }
+
+        if ( this.temClasse('hasPopover') ){
+            tipoElemento.push('popover');
+        }
+
+        return tipoElemento;
+    },
+
+    title : function( title, width ){
+        this.popover({
+            'content' : title, 
+            'trigger' : 'hover'
+        });
+        return this;
+    },
+    
+    __hint : function(){
+        var title = this.atributo('title');
+        this.removerAtributo('title');
+        this.title(title,'medium');
     },
 
     /**
@@ -972,6 +1193,171 @@ var Superlogica_Js_Elemento = new Class({
         if ( arguments.length === 1 && typeof arguments[0] == 'string'){
             return retorno;
         }
+        return this;
+    },
+    
+    __openDialog : function(){
+        this
+            .bind(
+                'click',
+                function(event){
+                    
+                    event.preventDefault();
+                    var id = this.atributo('divid');                    
+                    var divId = new Superlogica_Js_Elemento( '#' + id );
+                    var div = divId.clonar();
+                    div.openDialogo();
+                }
+            );
+    },
+    
+    openDialogo : function(){
+        
+        var elementoConfiguracoesForm = this;
+        var form = this;
+        var focar = ( parseInt( form.atributo('focar') ) == 1 );
+        if ( !elementoConfiguracoesForm.eh('form') ){
+            elementoConfiguracoesForm = this.encontrar('form');
+            if ( !elementoConfiguracoesForm )
+                elementoConfiguracoesForm = this;
+        }
+
+        var larguraModal = 'modal-lg';
+        var atributoLarguraModal = form.atributo('largura_modal') ? form.atributo('largura_modal') : elementoConfiguracoesForm.atributo('largura_modal');
+        if ( atributoLarguraModal ){
+            
+            if ( atributoLarguraModal == 'large')
+                larguraModal = 'modal-lg';
+        }else if ( (form.eh('form') || form.eh('.form_grid')) && ( !form.encontrar('.subForm') ) ) 
+            larguraModal = 'modal-md';
+        
+        var tamanhoForm = elementoConfiguracoesForm.temClasse('assistente_superlogica') ? 'height' : 'max-height';
+        var classHeader = elementoConfiguracoesForm.temClasse('assistente_superlogica') && form.encontrar('.titleWizard') ? ' blocoEscondido' : '';
+        
+        var htmlDialog = "<div class='modal' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>\n\
+                              <div class='modal-dialog "+ larguraModal +"'>\n\
+                                  <div class='modal-content'>\n\
+                                      <div class='modal-header " + classHeader + "'>\n\
+                                          <button name='FECHAR_DIALOG' type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>\n\
+                                          <h4 class='modal-title' id='myModalLabel'>Modal title</h4>\n\
+                                      </div>\n\
+                                      <div class='modal-body'> </div>\n\
+                                  </div>\n\
+                              </div>\n\
+                          </div>";
+
+        var elementoDialog = new Superlogica_Js_Elemento( htmlDialog );        
+        elementoDialog.encontrar('.modal-title').conteudo( elementoConfiguracoesForm.atributo('titulo') );
+        elementoDialog.encontrar('.modal-body').conteudo( form );
+
+        if ( !form.encontrar('.corpoDoForm') ){
+            form.envolverTudo( "<div class='corpoDoForm'></div>" );
+        }
+
+        // Move o título do wizard pra dentro do corpo do form
+        var titleWizard = form.encontrar('.titleWizard');
+        if ( titleWizard ){
+            var corpoDoForm = form.encontrar('.corpoDoForm');
+            if ( corpoDoForm )
+                corpoDoForm.adicionarHtmlAoInicio( titleWizard );
+        }
+        
+        elementoDialog.encontrar('button[name=FECHAR_DIALOG]').bind('click', function(){
+            
+            var elementoFechar = form.getElemento('fechar');
+            if ( elementoFechar ){                
+                elementoFechar.simularClique();
+            }
+            return true;
+        });
+        
+        var elementoWindow = new Superlogica_Js_Elemento( window );
+        elementoWindow.bind('resize.open_dialog', function(event){
+            var corpoDoForm = elementoDialog.encontrar('.modal-body .corpoDoForm');
+            if ( !corpoDoForm ){
+                elementoWindow.unbind('resize.open_dialog');
+            }
+            var alturaPx = elementoWindow.altura() - 200;
+            corpoDoForm.css( tamanhoForm, alturaPx + 'px' );
+        });   
+
+        form.removerAtributo('carregado');
+        form.maisProximo('.modal-body').carregarComportamentos( false );
+
+        form.mostrar();
+        
+        elementoDialog.bind('show.bs.modal', function(){
+            new Superlogica_Js_Elemento( 'body' ).adicionarClasse('modal-open');    
+        });
+
+        elementoDialog.bind('shown.bs.modal', function(){
+            var grids = elementoDialog.encontrar('table.Superlogica_Js_Grid');
+            if ( grids ){
+                grids.emCadaElemento(function(){
+                    var grid = new Superlogica_Js_Grid( this ).getRealInstance();
+                    if ( typeof grid._aoIniciar != 'undefined')
+                        grid._aoIniciar();
+                });
+            }
+            elementoWindow.simularEvento('resize');
+            setTimeout(function(){
+                
+                if ( focar ) {
+                    
+                    form.focar();
+                }
+            }, 400 );            
+            
+        });        
+
+        elementoDialog.modal();        
+        elementoDialog.bind('hide.bs.modal', function(){
+            new Superlogica_Js_Elemento( 'body' ).removerClasse('modal-open');
+        });
+        elementoDialog.bind('hidden.bs.modal', function(){
+            new Superlogica_Js_Elemento( this) .remover();
+        });   
+
+        
+    },
+    
+    alterarTituloModal : function( titulo ){
+        
+        var elemento = this;
+        var modalDialog = elemento.maisProximo('.modal-dialog');
+        if ( modalDialog ){            
+            modalDialog = new Superlogica_Js_Form_Elementos( modalDialog );
+            var modalTitle = modalDialog.encontrar('.modal-title');
+            if ( modalTitle ){                
+
+                modalTitle.conteudo( titulo );
+            }
+        }
+        
+        return elemento;
+    },
+
+    fecharDialogo : function(){
+        
+        var elementoFechar = this.encontrar('.fechar');
+        setTimeout(function(){
+
+            if ( elementoFechar )
+                elementoFechar.simularClique();
+        }, 300 );
+    },
+    
+    
+    /**
+     * Abre a caixa de diálog
+     */
+    modal : function(){
+
+        this.$_elemento.modal({
+            'keyboard': false,
+            'backdrop' : 'static'
+        });
+        
         return this;
     },
 
@@ -1012,6 +1398,8 @@ var Superlogica_Js_Elemento = new Class({
      * @param object options
      */
     mask : function( mask, options ){
+        if ( mask.indexOf('*') !== -1 )
+            mask = mask.replace( /\*/g, 'A');
         this.$_elemento.mask(mask, options);
         return this;
     },

@@ -8661,7 +8661,11 @@ $.extend(Datepicker.prototype, {
 			$.datepicker._pos[1] -= document.documentElement.scrollTop;
 		}
 		var offset = {left: $.datepicker._pos[0], top: $.datepicker._pos[1]};
-		$.datepicker._pos = null;
+                $.datepicker._pos = null;
+                if( (offset.left == 0) && (offset.top == 0) ){
+                    return;
+                }
+                
 		// determine sizing offscreen
 		inst.dpDiv.css({position: 'absolute', display: 'block', top: '-1000px'});
 		$.datepicker._updateDatepicker(inst);
@@ -8690,6 +8694,7 @@ $.extend(Datepicker.prototype, {
 				postProcess();
 			if (inst.input.is(':visible') && !inst.input.is(':disabled'))
 				inst.input.focus();
+                            
 			$.datepicker._curInst = inst;
 		}
 	},

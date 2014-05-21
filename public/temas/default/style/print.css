@@ -17,10 +17,41 @@ td[coluna='botoes'] img,
 .module_id_areadocliente .barraAuxiliar,
 .module_id_areadocliente .header .complemento,
 .module_id_areadocondomino .barraAuxiliar,
-.module_id_areadocondomino .header .complemento
+.module_id_areadocondomino .header .complemento,
+.sidebar,
+.navbar-fixed-top,
+.btn,
+.btn-group,
+.dropdown-menu,
+.nav,
+.navbar-static-top
 {
     display:none;
     visibility: hidden;
+}
+
+.panel-default{
+    margin-bottom: 20px;
+}
+
+.panel-default div{
+    display:block;
+}
+
+a{
+    text-decoration: none;
+}
+
+.quebrarPaginaImpressao{
+    page-break-before: always;
+}
+
+.container-fluid.content {
+    margin-top: 0px !important;
+}
+
+#conteudo.full {
+    margin-left: 0px !important;
 }
 
 .module_id_areadocliente #rodape,
@@ -32,6 +63,27 @@ td[coluna='botoes'] img,
 .module_id_areadocliente .corpoBarraAuxiliar,
 .module_id_areadocondomino .corpoBarraAuxiliar{
     width:100%;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9px;
+}
+
+#subtitulo {
+    padding-bottom: 5px;
+    font-size: 9px!important;
+    font-weight: lighter;
+}
+
+.main {
+    margin-top: 0px !important;
 }
 
 .fr{width: 200px !important;}
@@ -60,3 +112,36 @@ table { page-break-inside:auto }
 tr    { page-break-inside:avoid; page-break-after:auto }
 thead { display:table-header-group }
 tfoot { display:table-footer-group }*/
+
+.label {
+  background-color: #ddd !important;
+  border-radius: .25em !important;
+  padding: .2em .8em !important;
+  font-size: 75% !important;
+}
+.Superlogica_Js_Grid .label {
+    line-height: inherit !important;
+}
+
+.Superlogica_Js_Grid th, .Superlogica_Js_Grid td{
+    padding: 5px 0px;
+    border: none;
+}
+
+input,fieldset,select{
+    border:none;
+}
+
+.boletopendente, .boletoacordo, .boletovencido, .boletoliquidado{
+    margin: 0px;
+}
+
+.panel-profile{
+    font-size: 16px !important;
+}
+
+.panel-profile .fa-user{
+    display:none;
+    padding: 0px;
+    margin: 0px;
+}

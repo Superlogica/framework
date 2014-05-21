@@ -144,8 +144,18 @@ var Superlogica_Js_Response = new Class({
     },
 
     isTimeout : function(){
+        
+        if (!this.getData(-1)[0]) return false;
         return ( this.getData(-1)[0].timeout == 1 );
     },
+
+    isMultipleResponse : function(){
+        
+        if (!this.getData(-1)[0]) return false;
+        return ( this.getData(-1)[0].multipleresponse == 1 );
+        
+    },
+
     /**
      * Coloca mensagem no div(se passar o div) ou abre o dialog
      * @param
@@ -179,13 +189,12 @@ var Superlogica_Js_Response = new Class({
         var detalhes = this.getDetalhes();
         
         var txtBtnDetalhes = [ this._esconderDetalhes ? 'Detalhes >>' : '<< Detalhes', this._esconderDetalhes ? '<< Detalhes' : 'Detalhes >>' ];
-        var exibindoDetalhes = !this._esconderDetalhes;
+        var exibindoDetalhes = this._esconderDetalhes;
         if ( this.getDados() && this.getDados().data && this.getDados().data.length > 1 ){
             this._dialogOptions.buttons[ txtBtnDetalhes[0] ] = function(event){
-
                 var btnDetalhes = new Superlogica_Js_Elemento( event.target );
                 
-                if ( !btnDetalhes.eh( '.ui-button-text' ))
+                if ( !btnDetalhes.eh( 'button' ))
                     btnDetalhes = btnDetalhes.encontrar('.ui-button-text');
                 
                 if( exibindoDetalhes ){
@@ -202,7 +211,7 @@ var Superlogica_Js_Response = new Class({
                 }
                 grid.trocarVisibilidade();
                 exibindoDetalhes = !exibindoDetalhes;
-            }
+            };
         }
         
         this._dialogOptions["dialogClass"] = this.getDados().status > 205  ||  this.getDados().status == 0 ? 'dialogError' : 'dialogInfo';

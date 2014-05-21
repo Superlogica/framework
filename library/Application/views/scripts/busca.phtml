@@ -9,21 +9,32 @@
     
 ?>
 <div class="maisopcoes">
-    
+      
     <?php
     if ( $pesquisa === '' ) {
     ?>
-        <a href="javascript:void(0);" class="btn-search" title="Pesquisar" comportamentos="cliqueAlteraVisibilidade alternarVisibilidadeComForm Form.formExibir" divid="formBuscaDiv">Pesquisar</a>
+    
+        <a href="javascript:void(0);" class="btn btn-danger fa fa-search" comportamentos="cliqueAlteraVisibilidade alternarVisibilidadeComForm Form.formExibir" divid="formBuscaDiv" style="float: right;"></a>
     <?php 
     }
-    ?>
-
+    ?>    
+    
     <span <?php if ( $pesquisa === '' ) { ?>class="blocoEscondido"<?php } ?> id="formBuscaDiv">
         <form id="formBusca" action="">
-            <input type="text" name="pesquisa" comportamentos="Form_Elementos.popularBusca">
-            <input type="submit" value="Buscar" id="buscar" comportamentos="Form_Elementos.submeterBusca">
-            <?php if ($this->buscarEmTudo) echo '<input id="buscarEmTudo" type="submit" value="Buscar em tudo" comportamentos="Form_Elementos.submeterBusca">'; ?>
-            <input type="submit" value="" id="btnBuscar" class="limparBusca" comportamentos="Form_Elementos.limparBusca">
+            
+            <div class="pull-right">
+                <div class="input-group">
+                    <input type="text" name="pesquisa" comportamentos="Form_Elementos.popularBusca" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default " type="submit" value="Buscar" id="buscar" comportamentos="Form_Elementos.submeterBusca" >Buscar</button>
+                        
+                        <?php if ($this->buscarEmTudo) echo '<button class="btn btn-default" id="buscarEmTudo" type="submit" value="Buscar" comportamentos="Form_Elementos.submeterBusca" >Buscar em tudo</button>'; ?>
+                        
+                        <!--<button class="btn btn-default " type="submit" id="btnBuscar" comportamentos="Form_Elementos.limparBusca" >Limpar busca</button>-->
+                        
+                    </span>
+                </div>
+            </div>            
             <a href="#" class='fechar blocoEscondido'>Fechar</a>
         </form>
     </span>

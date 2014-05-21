@@ -639,12 +639,18 @@ var Superlogica_Js_Template = new Class({
         if ( !idElementoDestino ){
             idElementoDestino = String.uniqueID();
         }
+        
         var elemento = new Superlogica_Js_Elemento( html );
-        if ( /^\</.test( html ) ){
-            elemento = elemento.adicionarClasse( this._classRows ).adicionarClasse( this._classRows+"_"+index  );
+        if ( /^\</.test( html ) ){            
+            elemento = elemento.adicionarClasse( this._classRows ).adicionarClasse( this._classRows+"_"+index  );    
         }else{
             elemento = new Superlogica_Js_Elemento( '<div class="' + this._classRows + ' '+ this._classRows+"_"+index+ '">' + html + '</div>' );
         }
+
+        var larguraContainer = this.getDados('largura_elementos');
+        if ( larguraContainer > 0 )
+            elemento.css( 'width', (larguraContainer*10) + 'px' );
+
         return elemento.atributo( 'id', idElementoDestino + '-' + index );
     },
 

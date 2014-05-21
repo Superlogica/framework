@@ -43,7 +43,7 @@ var Superlogica_Js_Grid = new Class({
         'marcadores' : "Superlogica_Js_Grid_Marcadores",
         "msgVazio" : "Superlogica_Js_Grid_MsgVazio"
     },
-        
+    
     /**
      * sobrescrito para fazer algumas rotinas para o Grid
      */
@@ -166,7 +166,7 @@ var Superlogica_Js_Grid = new Class({
                     return true;
                 }
 
-                grid.executarBotao.apply( this.getClosestInstance(), [ acao, this.atributo('indice'), this ] );
+                this.getClosestInstance().executarBotao.apply( this.getClosestInstance(), [ acao, this.atributo('indice'), this ] );
             }
             
         )
@@ -199,6 +199,11 @@ var Superlogica_Js_Grid = new Class({
                 grid['_aoMarcar']( grid.getData(  parseInt( this.atributo('indice') ) ) );
 
         });                
+
+        new Superlogica_Js_Elemento( window ).bind('resize.botoes_rodape', function(){
+            grid._corrigirPosicaoDropDown();
+        }).simularEvento('resize');
+
     },
     
     /**
@@ -231,7 +236,12 @@ var Superlogica_Js_Grid = new Class({
      * @return string
      */
     _getTemplateCheckbox : function( indice ){
-        var templateCheckbox = '<input type="checkbox" indice="{indice}" class="'+ this._cssGrid['marcador']+'" />';
+        
+        var templateCheckbox = '<label class="ui-checkbox">\
+        <input type="checkbox" indice="{indice}" class="'+ this._cssGrid['marcador']+'" />\
+        <span>&nbsp;</span></label>';
+
+        // var templateCheckbox = '<input type="checkbox" indice="{indice}" class="'+ this._cssGrid['marcador']+'" />';
         if ( typeof indice != 'undefined')
             templateCheckbox = templateCheckbox.replace( '{indice}', indice );
         return templateCheckbox;
@@ -263,7 +273,10 @@ var Superlogica_Js_Grid = new Class({
                 'template' : this._getTemplateCheckbox(),
                 'alinhamento' : 'center',
                 'tamanho' : '1%',
-                'label' : '<input type="checkbox" comportamentos="'+jsClassName+'.marcarMultiplos" tipo="todos" indice="{indice}" class="'+ this._cssGrid['marcadorPrincipal']+' '+ this._cssGrid['marcador']+'" />'
+                'classe' : 'noprint',
+                'label' : '<label class="ui-checkbox">\
+                            <input type="checkbox" indice="{indice}" tipo="todos" comportamentos="'+jsClassName+'.marcarMultiplos" class="'+ this._cssGrid['marcadorPrincipal']+'" />\
+                            <span>&nbsp;</span></label>'
             };
         }
 
@@ -303,6 +316,7 @@ var Superlogica_Js_Grid = new Class({
         colunas['botoes'].alinhamento = 'center';
         colunas['botoes'].tamanho = Math.round( quantidadeBotoes * 2.5 )+"%";
         colunas['botoes'].alinhamentovertical = "top";
+        colunas['botoes'].classe = "noprint";
         this.setOption( 'colunas', colunas );
     },
     
@@ -338,7 +352,7 @@ var Superlogica_Js_Grid = new Class({
         var conteudoHref= "";
         if ( botao.multiplo ){
             conteudoHref = titulo;
-            return '<a href="#" indice="'+indice+'" class="'+this._cssGrid['botao']+'" acao="'+botao['acao']+'">' + conteudoHref + '</a>';
+            return '<a href="#" indice="'+indice+'" class="btn btn-default '+this._cssGrid['botao']+'" acao="'+botao['acao']+'">' + conteudoHref + '</a>';
         }
 
         var botaoImg = typeof botao['img'] == 'undefined' ?  APPLICATION_CONF['APPLICATION_CLIENT_TEMA_URL']+'/img/' + botao['acao'].toLowerCase() + '.png' : APPLICATION_CONF['APPLICATION_CLIENT_TEMA_URL']+'/img/' + botao['img'];
@@ -374,7 +388,8 @@ var Superlogica_Js_Grid = new Class({
         var jsClassName = this.getOption('jsClassName');
         var template = '<tr comportamentos="' + jsClassName + '.comportamentosLinha" indice="{indice}">';
         Object.each( this.getOption('colunas'), function( item, nomeClasse ){
-            template = template + '<td indice="{indice}" class="' + jsClassName + '_' + nomeClasse.capitalize() + '" coluna="' + nomeClasse + '"';
+            var classe = (item.classe) ? item.classe : '';
+            template = template + '<td indice="{indice}" class="' + jsClassName + '_' + nomeClasse.capitalize() + ' '+classe+'  " coluna="' + nomeClasse + '"';
 
             if( item.alinhamento )
                 template = template+" align='" + item.alinhamento + "'";
@@ -382,6 +397,7 @@ var Superlogica_Js_Grid = new Class({
                 template = template+" width='" + item.tamanho + "'";
             if ( item.alinhamentovertical )
             	template = template+" valign='" + item.alinhamentovertical + "'";
+
             
             template = template+'>' + item.template + '</td>';
 
@@ -425,7 +441,7 @@ var Superlogica_Js_Grid = new Class({
      * Cria o HTML dos botões multiplos
      */
     _HTMLAdicionarBotoesRodape : function(){
-        
+
         var botoes = this._getBotoes();
         var comMarcadores = parseInt( this.getOption('comMarcadores') );
         
@@ -444,7 +460,8 @@ var Superlogica_Js_Grid = new Class({
         this._HTMLAdicionarMarcar();
         this._HTMLAdicionarComMarcados();
         tr.carregarComportamentos();
-
+        
+        this._corrigirPosicaoDropDown();
     },
 
     /**
@@ -468,17 +485,20 @@ var Superlogica_Js_Grid = new Class({
         var totalLinksSelecionar = Object.getLength( linksSelecionar ) - 1;
         
         var td = this.getClosestInstance().encontrar( 'tr.' + referencia._cssGrid['marcadores'] ).encontrar('td');
-            td.adicionarHtmlAoFinal( document.createTextNode('Marcar: ') );
+        var btnMarcar = new Superlogica_Js_Button();
+            // btnMarcar.add('Marcar:', '', '', '', '' , '','', {'disabled' : 'disabled', 'btnClass': ''});
+        var btnsMais = new Superlogica_Js_Button();
+
         var jsClassName = this.getOption('jsClassName');
         var x = 0;
         Object.each( linksSelecionar, function(valor, chave){
             var label = typeof valor['label'] == 'string' ? valor.label : chave.capitalize();
-            td.adicionarHtmlAoFinal( new Superlogica_Js_Elemento('<button class="link" comportamentos="' + jsClassName + '.marcarMultiplos" tipo="' + chave + '">'+label+'</a>') );
-            if (  totalLinksSelecionar > x )
-                td.adicionarHtmlAoFinal( document.createTextNode( ', ' ) );
+            // text, link, destaque, imagem, comportamentos, atributos
+            btnsMais.addLink( label, '','','',jsClassName + '.marcarMultiplos', { 'tipo' : chave } );
             x++;
         });
-        
+        btnMarcar.addDropDown("Marcar", btnsMais);
+        td.adicionarHtmlAoFinal( btnMarcar.toString() );
     },
 
     /**
@@ -496,17 +516,33 @@ var Superlogica_Js_Grid = new Class({
         
         if (!totalBotoesMultiplos) return this;
         var td = this.getClosestInstance().encontrar( 'tr.' + referencia._cssGrid['marcadores'] ).encontrar('td');
-        td.adicionarHtmlAoFinal( document.createTextNode('; Com marcados: ') );
+        // td.adicionarHtmlAoFinal( document.createTextNode('; Com marcados: ') );
         
-        Object.each( botoes, function( valor, chave){
+        var limiteBtnMultiplosVisiveis = 3;
+        var count = 0, totalBtnMais = 0;
+        var btnsMais = new Superlogica_Js_Button();
+        var btnMultiplo = new Superlogica_Js_Button();
+            btnMultiplo.add( "Com marcados:", '', '', '', '' , '','', {'disabled' : 'disabled', 'btnClass': ''});
+
+        
+        
+        Object.each( botoes, function( valor, chave){            
             if ( !valor.multiplo ) return ;
-            td.adicionarHtmlAoFinal( this._parseBotao(valor) );
-            if ( totalBotoesMultiplos > 1)
-                td.adicionarHtmlAoFinal( document.createTextNode( ', ' ) );
-            totalBotoesMultiplos--;
-        }, this );
-        
-        td.adicionarHtmlAoFinal( document.createTextNode( ';' ) );
+            if ( limiteBtnMultiplosVisiveis == count ){
+                btnsMais.addLink( valor.titulo, '', '', '', '' , {"acao" : valor.acao, 'classe' : 'Superlogica_Js_Grid_Botao' });
+                totalBtnMais++;
+                return true;
+            }
+            btnMultiplo.add( valor.titulo, '', '', '', '' , '','', {"acao" : valor.acao, 'classe' : 'Superlogica_Js_Grid_Botao' } );
+            count++;
+
+        });
+
+        if ( totalBtnMais ){
+            btnMultiplo.addDropDown("Mais", btnsMais, true, { "posicao" : "acima" });
+        }
+
+        td.adicionarHtmlAoFinal( btnMultiplo.toString() );
 
     },
 
@@ -568,7 +604,11 @@ var Superlogica_Js_Grid = new Class({
         
         var cabecalho = this._getHTMLCabecalho();
         if ( cabecalho ) cabecalho.remover();
-        this.adicionarHtmlAoFinal( '<tr class="' + this._cssGrid['msgVazio'] + '"><td colspan="' + Object.getLength( this.getOption('colunas') ) + '">'+ this.getOption('msgVazio')  +'</td></tr>' );
+        
+         
+        this.adicionarHtmlAoFinal( '<tr class="' + this._cssGrid['msgVazio'] + '"><td colspan="' + Object.getLength( this.getOption('colunas') ) + '"> <div class="callout callout-warning">'+ this.getOption('msgVazio')  +'</div></td></tr>' );
+        
+            
 
     },
 
@@ -679,9 +719,12 @@ var Superlogica_Js_Grid = new Class({
             this.getOption('colunas'),
             function( item, nomeColuna ){
                 var label = this._parserLabelCabecalho( item.label, item.ordenacao );
+                var classe = (item.classe) ? item.classe : '';
                 var th = new Superlogica_Js_Elemento('<th coluna="' + nomeColuna + '">' + label + '</th>');
-                if( item.alinhamento )
+                if( item.alinhamento ){
                     th.atributo('align', item.alinhamento);
+                    th.atributo('class','text-'+item.alinhamento+' '+classe );
+                }
                 if ( item.tamanho && item.tamanho != '0%' && item.tamanho != '0') // IE não aceita 0% e ocorre erro no js                    th.atributo('width', item.tamanho);
                     th.atributo('width', item.tamanho);
                 
@@ -958,7 +1001,7 @@ var Superlogica_Js_Grid = new Class({
      *
      */
     getItensPorPagina : function(){
-        return this.getOption('itensPorPagina');
+        return parseInt( this.getOption('itensPorPagina') );
     },
 
     /**
@@ -1004,6 +1047,8 @@ var Superlogica_Js_Grid = new Class({
         
         var divClonado = formulario;
             formulario = formulario.encontrar('form');
+        if ( formulario )
+            formulario.setDados('tipo_botao', infoBotao.tipo );
         var naoPopular = false;
         var paramsEventos = {};
         
@@ -1188,7 +1233,19 @@ var Superlogica_Js_Grid = new Class({
         
         request.setResponseOptions( {'esconderDetalhes' : false} );
 
-        return request.getResponse();
+        var response = request.getResponse();
+
+        // Exibe mensagem de sucesso do form
+        var msgOff =  parseInt(formulario.atributo('msgsucessoff'));              
+        if (isNaN(msgOff) || msgOff != 1) {                             
+            if ( response.isValid() ){
+                var msgSucesso = formulario.atributo('msgsucesso');
+                if ( msgSucesso )
+                    new Superlogica_Js_Notificacao( msgSucesso ).show();
+            }
+        }
+
+        return response;
         
         
     },
@@ -1363,6 +1420,14 @@ var Superlogica_Js_Grid = new Class({
 
     },
 
+    _abrirFormDefault : function( divClonado ){  
+        divClonado.adicionarClasse('form_grid').openDialogo();
+    },
+
+    _fecharFormDefault : function( formulario, response, indiceLinha ){
+        formulario.maisProximo('.modal').$_elemento.modal('hide');
+    },
+
     /**
      * Fecha o formulário embaixo da linhas
      */
@@ -1448,7 +1513,7 @@ var Superlogica_Js_Grid = new Class({
             var pagina = templateTable._getPaginaAtual();
             if ( response.isValid() ){
 
-                if ( response.getData() && typeof templateTable.getItensPorPagina() != 'number' ){
+                if ( response.getData() && isNaN(parseInt( templateTable.getItensPorPagina() )) ){
                     templateTable.setItensPorPagina( response.getTotalData() );
                 }
                 if ( ( (!response.getData() || response.getTotalData()<=0) ) || ( response.getTotalData() < templateTable.getItensPorPagina()) ){
@@ -1527,7 +1592,7 @@ var Superlogica_Js_Grid = new Class({
 
             }, 100);
         });
-        if ( this.getClosestInstance().getOption('comPaginacao') == 'todos' ){
+        if ( this.getClosestInstance().getOption('comPaginacao') == 'todos' ){            
             this.simularClique();
         }
     },
@@ -1579,7 +1644,7 @@ var Superlogica_Js_Grid = new Class({
             
         });
         
-        if ( this.getClosestInstance().getOption('comPaginacao') == 'auto' ){
+        if ( this.getClosestInstance().getOption('comPaginacao') == 'auto' ){            
             linkAuto.simularClique();
         }
 
@@ -1666,6 +1731,8 @@ var Superlogica_Js_Grid = new Class({
         var fechar = this.encontrar('.fechar');
         if ( fechar )
             fechar.bind('click', function(){
+                if ( referencia.getDados('tipo_botao') != 'abaixo' ) // caso o form não tenha sido aberto abaixo então não foi escondido os marcadores
+                    return true;
                 var grid = referencia.getClosestInstance();
                 grid._getHTMLRodape().encontrar( '.' + grid._cssGrid['marcadores'] ).mostrar();
             });
@@ -1676,5 +1743,40 @@ var Superlogica_Js_Grid = new Class({
         var ordenacao = new Superlogica_Js_Json( this.atributo('ordenacao') ).extrair();
         if ( typeof ordenacao != 'object' ) ordenacao = [ this.atributo('ordenacao') ];               
         this.conteudo( this._parserLabelCabecalho( this.conteudo(), ordenacao ) );
+    },
+
+    getRealInstance : function(){
+        return new window[ this.getOption('jsClassName') ]( this );
+    },
+            
+    _corrigirPosicaoDropDown : function(){
+        var janela = new Superlogica_Js_Elemento( window );
+        var processarClassesBotoesRodape = false;
+        var larguraJanela = janela.largura();
+
+        if ( larguraJanela <= 767 && !this.getDados('botoes_mobile') ){
+            this.setDados('botoes_mobile', true );
+            processarClassesBotoesRodape = 1;
+        }else if ( larguraJanela > 767 && this.getDados('botoes_mobile') ){
+            this.setDados('botoes_mobile', false );
+            processarClassesBotoesRodape = 2;
+        }
+        var btnsGroup = this._getHTMLRodape().encontrar('.btn-group');
+         if (btnsGroup){
+            if(btnsGroup.posicao().topo >= 700){
+                processarClassesBotoesRodape = 1;
+                this.setDados('botoes_acima', false );
+            }
+        }
+        if ( processarClassesBotoesRodape !== false){
+            var btnsGroup = this._getHTMLRodape().encontrar('.btn-group');
+            if ( btnsGroup ){
+                btnsGroup.emCadaElemento(function(){
+                    this[ processarClassesBotoesRodape ===1 ? 'adicionarClasse' : 'removerClasse' ]('dropup');
+                });
+            }
+        }
+        return true;
     }
+
 });

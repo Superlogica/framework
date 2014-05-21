@@ -21,7 +21,9 @@ var Superlogica_Js_Form = new Class({
         'classGenerica' : 'assistente_passo',
         'classPassoEspecifico' : 'passo', // O número do passo será concatenado ao final desta classe
         'classBtnProximo' : 'assistente_passo_proximo',
-        'classBtnAnterior' : 'assistente_passo_anterior'
+        'classBtnAnterior' : 'assistente_passo_anterior',
+        'comBtnFechar' : true,
+        'seletorElementoIgnorado' : ':not([name])'
     },
     
     /**
@@ -138,7 +140,17 @@ var Superlogica_Js_Form = new Class({
             }
 
         }, this);
-
+        
+        var elementosNaoLimpar = this.encontrar(".naoLimpar");
+        var arCamposNaoLimpar = [];
+        if ( elementosNaoLimpar ){
+            
+            elementosNaoLimpar.emCadaElemento(function(){
+                var elemento = new Superlogica_Js_Form_Elementos( this );
+                arCamposNaoLimpar[ elemento.atributo('name') ] = elemento.getJson();            
+            });        
+        }
+        
         //this.popular( subForms );
 
         var $form = this._getForm()[0];
@@ -151,6 +163,8 @@ var Superlogica_Js_Form = new Class({
                 throw 'Superlogica_Js_Form.limpar() nao encontrou o formulário.';
             }
         }
+        this.popular( arCamposNaoLimpar );//Popula os campos com a classe naoLimpar usando o valor antigo
+        
         var naoResetarAssistente = parseInt( this.atributo('naoResetarAssistente'), 10 );
         if ( naoResetarAssistente !== 1 )
             this.mostrarPasso(1);
@@ -245,14 +259,14 @@ var Superlogica_Js_Form = new Class({
             form = this;
         form.adicionarClasse('desabilitado');
         
-        var elementos = this.encontrar( 'input, select, textarea, button' );      
+        var elementos = this.encontrar( 'input, select, textarea, button' );
         if (!elementos) return false;
         elementos.emCadaElemento( function(){ 
         	var elemento = new Superlogica_Js_Form_Elementos( this );
         	elemento.desabilitar();
         });
-
-
+        
+        
         var funcaoExec = form.atributo("formatarAoDesativar");
         if (typeof funcaoExec != 'undefined'){
 
@@ -286,6 +300,7 @@ var Superlogica_Js_Form = new Class({
                 elemento.mostrar();
             }
         }
+
     },
     
     
@@ -305,8 +320,8 @@ var Superlogica_Js_Form = new Class({
         	var elemento = new Superlogica_Js_Form_Elementos( this );
         	elemento.habilitar();
         });
-
-
+        
+        
         var funcaoExec = form.atributo("formatarAoDesativar");        
         if (typeof funcaoExec != 'undefined'){
 
@@ -358,7 +373,7 @@ var Superlogica_Js_Form = new Class({
      */
     focar : function (){
         
-        var primeirosCampo = this.encontrar('input:not(:disabled):not(.desabilitado):visible:first, textarea:not(:disabled):not(.desabilitado):visible:first, select:not(:disabled):not(.desabilitado):visible:first');
+        var primeirosCampo = this.encontrar('input:not(:disabled):not(.desabilitado):visible:first, textarea:not(:disabled):not(.desabilitado):visible:first, select:not(:disabled):not(.desabilitado):visible:first, button.checkbox-trigger:not(:disabled):not(.desabilitado):visible:first');
 
         if (primeirosCampo) {
             new Superlogica_Js_Elemento(
@@ -558,6 +573,16 @@ var Superlogica_Js_Form = new Class({
         return new Superlogica_Js_Form_Elementos( $elemento );
     },
 
+    getBotaoExcluir : function( indice ){
+        
+        var classeSubform = '.subFormExcluir';
+        if ( indice > 0 ) classeSubform += indice;
+        
+        var botoesExcluir = this.encontrar('div.item ' + classeSubform);
+        if ( !botoesExcluir  ) return null;
+        return new Superlogica_Js_Form_Elementos( botoesExcluir );
+    },
+
     /**
      *
      * @param object extraParams Parametros extras que não
@@ -640,7 +665,8 @@ var Superlogica_Js_Form = new Class({
     },
     
     _aposSubmeter : function( response, dados ){
-        var atualizarDados =  parseInt(this.atributo('atualizardados'));
+        var atualizarDados =  parseInt(this.atributo('atualizardados'));        
+        
         if ( ( response.isValid() ) && ( isNaN(atualizarDados) || atualizarDados === 1 ) ){
             this.atributo('data', new Superlogica_Js_Json( dados ).encode() );
         }
@@ -660,9 +686,9 @@ var Superlogica_Js_Form = new Class({
 		if (isNaN(msgOff) || msgOff != 1) {								
 			if ( response.isValid() ){
 				var msgSucesso = this.atributo('msgsucesso');
-				if ( (typeof msgSucesso == 'undefined') || (msgSucesso === false) ){
-					msgSucesso = "Salvou com sucesso";
-				}
+				// if ( (typeof msgSucesso == 'undefined') || (msgSucesso === false) ){
+				// 	msgSucesso = "Salvou com sucesso"; // Agora sempre pega do atributo do formulário
+				// }
 				if ( msgSucesso )
 					new Superlogica_Js_Notificacao( msgSucesso ).show();
 			}
@@ -674,6 +700,15 @@ var Superlogica_Js_Form = new Class({
         
         if ( response.isValid() )
             this._getOpcoesAssistente(true);
+                
+        var fecharAposSalvar = this.getElemento('CONTINUAR_CADASTRANDO_APOS_SALVAR') ? ( this.getElemento('CONTINUAR_CADASTRANDO_APOS_SALVAR').getJson() == 0 ) : true;
+        if ( ( fecharAposSalvar ) && ( response.isValid() ) ){
+            
+            this.atributo('limpar', '0');
+            var fechar = this.getElemento('fechar');
+            if ( fechar )
+              fechar.simularClique();
+        }
     },
 
     /**
@@ -691,6 +726,36 @@ var Superlogica_Js_Form = new Class({
         }
     },
 
+
+    openDialogo : function(){
+
+//        modal-sm
+        var form = this;
+                
+        var elementosBotoesPadroes = form.encontrar('.botoesPadroes');
+        if ( elementosBotoesPadroes ){
+            
+            form.encontrar('dl.zend_form').envolverTudo( "<div class='corpoDoForm'></div>" );
+            elementosBotoesPadroes.inserirDepoisDe( form.encontrar('.corpoDoForm') );
+            elementosBotoesPadroes.adicionarClasse('modal-footer');            
+            var flCadstrarOutro = parseInt( form.atributo('cadastrar_outro') );
+            
+            if ( flCadstrarOutro == 1 ){
+                var elemento = new Superlogica_Js_Form_Elementos("<div class='item' style='display: block;'><label class='ui-checkbox'> <input type='checkbox' name='CONTINUAR_CADASTRANDO_APOS_SALVAR' class='integer naoLimpar' comportamentos='Form.integer'> <span><button type='button' comportamentos='Form_Elementos.linkMarcarCheckbox' class='btn btn-link checkbox-trigger' >Após salvar cadastrar outro</button></span></label></div>");
+                elemento.adicionarAoInicioDe( form.encontrar('.botoesPadroes fieldset') );
+            }
+            
+            form.encontrar('.botoesPadroes').carregarComportamentos();
+
+            var btFechar = elementosBotoesPadroes.getElemento('fechar');
+            if ( btFechar ){
+                btFechar.atributo('data-dismiss', 'modal');        
+            }            
+        }
+       
+       form.parent();
+              
+    },    
 
     /**
      *
@@ -890,6 +955,52 @@ var Superlogica_Js_Form = new Class({
             );
     },
 
+    /**
+     * Comportamentos dos links que exibem um formulário
+     */
+    __openDialog : function(){
+        this
+            .bind(
+                'click',
+                function(event){
+                    
+                    event.preventDefault();
+                    var id = this.atributo('divid');
+                    
+                    if ( id ){
+                        var prefixoId = this.atributo('prefixoId');
+                        if ( typeof prefixoId != 'undefined'){
+                            id = prefixoId+'-'+id ;
+                        }
+
+                        var formDiv = new Superlogica_Js_Form( '#' + id );
+                        var form = formDiv.encontrar('form').clonar();
+                        
+                        var dataAtual =  new Superlogica_Js_Json( form.atributo("data") ).extrair();
+                        if (typeof dataAtual != 'object')
+                            dataAtual = {};
+                        
+                        var dataLink =  new Superlogica_Js_Json( this.atributo('data') ).extrair();
+                        if (typeof dataLink != 'object')
+                            dataLink = {};
+                        
+                        var dadosForm = Object.merge( dataLink, dataAtual );
+                        
+                        var comportamentos = form.atributo('comportamentos');
+                        if ( comportamentos.indexOf('popularAoCarregar') === -1 ){
+                            form.atributo( 'comportamentos', comportamentos + ' Form.popularAoCarregar' );
+                        }
+                        
+                        form.atributo('data', new Superlogica_Js_Json( dadosForm  ).encode() );
+                        form.atributo('cadastrar_outro', this.atributo('cadastrar_outro') );
+
+                        form.openDialogo();
+                    }
+
+                }
+            );
+    },
+    
    /**
     * Submete o formulario usando o método get
     */
@@ -942,7 +1053,7 @@ var Superlogica_Js_Form = new Class({
         this
             .bind(
                 'submit',
-                function(event){               
+                function(event){                          
                     event.preventDefault();
                     var form = new Superlogica_Js_Form( this );
                     if ( parseInt( form.atributo("async"), 10 ) === 1 ){
@@ -1140,19 +1251,7 @@ var Superlogica_Js_Form = new Class({
     },
     
     __testeEmail : function(){
-        var elemento = new Superlogica_Js_Form_Elementos( this );
-        var form = elemento.getForm();
-        var label = form.encontrar('label[for=SMTP_TESTE]');
-        var linkTeste = new Superlogica_Js_Elemento('<a href="#" id="testeEmail" class="clearfix link">'+
-            label.conteudo()+
-            '</a>');
-        linkTeste.inserirDepoisDe( label );
-
-        label.remover();
-        
-        form.getElemento('SMTP_TESTE').remover();
-
-        linkTeste.bind( 'click', 
+        this.bind( 'click', 
             function(event){
                 event.preventDefault();
                 var params= {};
@@ -1211,7 +1310,8 @@ var Superlogica_Js_Form = new Class({
                 location.setController("filadeemails")
                 .setAction("teste")
                 .setApi(true);                        
-
+                
+                var linkTeste = formEmail.getElemento('SMTP_TESTE');
                 var request = new Superlogica_Js_Request(location.toString(), dados );
                 request._handler = linkTeste;
                 response = request.getResponse();
@@ -1241,17 +1341,20 @@ var Superlogica_Js_Form = new Class({
 
     __collapsible : function(){
         var elementosDobraveis = this.encontrar('.collapsible');
+        var imgDown = 'fa-angle-down';
+        var imgRight = 'fa-angle-right';
+
         if ( elementosDobraveis ){
             elementosDobraveis.emCadaElemento(function(){
                 var legend = new Superlogica_Js_Elemento( this.encontrar('legend:first') );
-                
-                if ( legend.contar() <=0 || legend.getDados('collapsible') )
-                    return true;
-                
+
                 var legendsExtras = this.encontrar('legend:eq(1)');
                 if ( legendsExtras )
                     legendsExtras.remover();
 
+                if ( legend.contar() <=0 || legend.getDados('collapsible') || this.eh('.collapse_fixed') )
+                    return true;
+                this.adicionarClasse('form_accordion_item');
                 var fieldset = this;
                 
                 legend.unbind('click.collapsible').bind("click.collapsible", function(evento){
@@ -1259,7 +1362,12 @@ var Superlogica_Js_Form = new Class({
                     evento.stopPropagation();
                     var closed = fieldset.temClasse('closed');
                         fieldset.alternarClasse('closed');                    
-                    fieldset[ closed ? "adicionarClasse" : "removerClasse"]('opened');                    
+//                    fieldset[ closed ? "adicionarClasse" : "removerClasse"]('opened'); 
+                    
+                    this.encontrar('.fa')
+                        .removerClasse( imgDown+ ' ' + imgRight )
+                        .adicionarClasse( closed ? imgDown : imgRight );
+
                     if ( closed ){
                         new Superlogica_Js_Form(fieldset).focar();
                     }
@@ -1269,7 +1377,16 @@ var Superlogica_Js_Form = new Class({
                 });
                 
                 legend.setDados( 'collapsible', true );
+                
+                if ( legend.encontrar('button') )
+                    return true;
+
                 legend.envolverDentro('<button type="button"></button>');
+
+                var fieldset = legend.maisProximo("fieldset");
+                var fieldsetFechado = fieldset.temClasse('closed');
+                legend.adicionarHtmlAoInicio('<span class="fa '+ (fieldsetFechado ? imgRight : imgDown) +'"></span>');
+                
             });            
         }
 
@@ -1338,8 +1455,7 @@ var Superlogica_Js_Form = new Class({
             });
             
             dadosAutocomplete.autocomplete.getForm().popular( dadosPopular );
-            
-            dadosAutocomplete.containerForm.dialogo('close');
+            this.getElemento("fechar").simularClique();
             
             var elementoAtual = dadosAutocomplete.autocomplete;
             var timeoutFocarProximoCampo = function(){
@@ -1424,7 +1540,7 @@ var Superlogica_Js_Form = new Class({
             if ( typeof this[ nomeFuncao ] == 'function' ){
                 retorno = this[ nomeFuncao ]( valor );
             }
-            
+
             if ( retorno !== false ){
                 result[nome] = valor;
             }
@@ -1439,7 +1555,11 @@ var Superlogica_Js_Form = new Class({
     
     _adicionarAtributosElementos : function(){
 
-        var opcoes = this._getOpcoesAssistente();
+        var opcoesForm = this.getDados('assistente');
+        var opcoes = Object.merge( 
+            this._assistenteConfigPadroes,
+            typeof opcoesForm == 'object' ? opcoesForm : {}
+        );
         if ( !opcoes.itens || typeof opcoes.itens != 'object')
             return true;
         
@@ -1457,6 +1577,7 @@ var Superlogica_Js_Form = new Class({
         var formulario = this;
         formulario.setDados( 'nomesPasssos', nomesPassos );
         var adicionarAtributosElemento = function( elemento, passo ){
+
             elemento.adicionarClasse(opcoes.classGenerica);            
             if ( passo ){                
                 elemento.adicionarClasse( opcoes.classPassoEspecifico + passo )
@@ -1475,6 +1596,9 @@ var Superlogica_Js_Form = new Class({
         };
         
         this.getElementos(true).emCadaElemento(function(){
+            if ( this.eh( opcoes.seletorElementoIgnorado ) ) 
+                return true;
+
             var elemento = new Superlogica_Js_Form_Elementos(this);            
             var nomeElemento = elemento.atributo('name').toLowerCase();
             removerAtributosElemento(elemento);
@@ -1494,6 +1618,8 @@ var Superlogica_Js_Form = new Class({
                 subform = new Superlogica_Js_Form(subform.maisProximo('.subForm'));
                 adicionarAtributosElemento( subform, passo );
                 subform.getElementos(true).emCadaElemento(function(){
+                    if ( this.eh( opcoes.seletorElementoIgnorado ) ) 
+                        return true;
                     removerAtributosElemento(this);
                     adicionarAtributosElemento( new Superlogica_Js_Form_Elementos(this), passo );
                 });
@@ -1546,6 +1672,7 @@ var Superlogica_Js_Form = new Class({
         var formulario = this;        
         var opcoes = this._getOpcoesAssistente(true);
         formulario.setDados('assistentePassoAtual', this._getNomePassoByIndice(1) );
+        formulario.adicionarClasse('assistente_superlogica');
         this._adicionarAtributosElementos();
         
         var callback =  function(event){
@@ -1568,7 +1695,20 @@ var Superlogica_Js_Form = new Class({
                         .toJson()
                 );
             }            
-            if ( permitirAlterarPasso !== false ){                
+            if ( permitirAlterarPasso !== false ){  
+                
+                // caso esteja avançando o assistente então valida os campos
+                if ( parseInt(this.atributo('acao'),10) === 1 ){
+                  var elementosPassos = new Superlogica_Js_Form_Elementos( formulario
+                    .encontrar('.'+opcoes.classPassoEspecifico+formulario.getDados('assistentePassoAtual')) 
+                  );
+
+                  if ( !elementosPassos.isValid() )
+                    return false;
+
+                }
+
+                formulario._getOpcoesAssistente(true);
                 var indicePasso = formulario._getIndiceByNomePasso( formulario.getDados('assistentePassoAtual') );
                 var mostrarPasso = formulario._getNomePassoByIndice( parseInt(this.atributo('acao'),10) === 1 ? indicePasso+1 : indicePasso-1);
                 formulario.mostrarPasso( mostrarPasso );
@@ -1581,10 +1721,10 @@ var Superlogica_Js_Form = new Class({
         if ( btnsAcao && btnsAcao.contar() )
             btnsAcao.remover();
         
-        var btnProximo = new Superlogica_Js_Elemento("<input type='submit' value='"+opcoes.textoProximo+"' acao='1' class='linkSubmit "+opcoes.classBtnProximo+"' />");
+        var btnProximo = new Superlogica_Js_Elemento("<input type='submit' value='"+opcoes.textoProximo+"' acao='1' class='linkSubmit btn btn-primary btn-form "+opcoes.classBtnProximo+"' />");
             btnProximo.esconder().bind('click',callback);
         if ( opcoes.textoAnterior ){
-            var btnAnterior = new Superlogica_Js_Elemento("<input type='button' value='"+opcoes.textoAnterior+"' acao='0' class='linkButton "+opcoes.classBtnAnterior+"' />");
+            var btnAnterior = new Superlogica_Js_Elemento("<input type='button' value='"+opcoes.textoAnterior+"' acao='0' class='linkButton btn btn-default btn-form "+opcoes.classBtnAnterior+"' />");
                 btnAnterior.esconder().bind('click',callback);
                 btnAnterior.inserirAntesDe( btnSubmit );
         }
@@ -1600,7 +1740,7 @@ var Superlogica_Js_Form = new Class({
      * Verifica se o passo informado pode ser mostrado
      * Caso não posso então retorna o nome do próximo/anterior passo ativo disponível
      */
-    _tratarPasso : function( passo ){
+    _tratarPasso : function( passo ){        
         var opcoes = this._getOpcoesAssistente();
         var proximoPasso = null;
         var indiceAnterior = this._getIndiceByNomePasso( this.getDados('assistentePassoAtual') );
@@ -1644,12 +1784,22 @@ var Superlogica_Js_Form = new Class({
     },
     
     /**
+     * Altera o título do assistente
+     */
+    alterarTitulo : function( titulo ){ 
+        
+        var tituloAssistente = this.encontrar(".titleWizard .titulo");
+        if ( tituloAssistente ) tituloAssistente.conteudo( titulo );
+        return this;
+    },
+    
+    /**
      * Mostra o passo informado pelo parametro
      * 
      * @param int passo
      */
-    mostrarPasso : function( passo, verificarPassos ){
-        
+    mostrarPasso : function( passo, verificarPassos ){        
+        var opcoes = this._getOpcoesAssistente(true);
         var formulario = this;
         var opcoesForm = this.getDados('assistente');
         
@@ -1679,7 +1829,7 @@ var Superlogica_Js_Form = new Class({
             }
         }
         
-        
+
         var btnSubmit = formulario.getElemento("salvar");
         
         var btnProximo = formulario.encontrar("."+opcoes.classBtnProximo);
@@ -1687,8 +1837,12 @@ var Superlogica_Js_Form = new Class({
         var mostrarSalvar = false;
         var numPassos = Object.getLength(opcoes.itens);
         
-        formulario.encontrar('.'+opcoes.classGenerica).emCadaElemento(function(){
-            
+        var itens = formulario.encontrar('.'+opcoes.classGenerica)
+        if ( !itens ) 
+            return true;
+        
+        itens.emCadaElemento(function(){
+
             var passoElemento = this.atributo("passo");
             var visibilidadeElemento = passoElemento != passo ? 'esconder' : 'mostrar';    
             var item = new Superlogica_Js_Form_Elementos( this ).getItem();
@@ -1710,8 +1864,16 @@ var Superlogica_Js_Form = new Class({
             }
 
         });
-
-        formulario.getElemento("fechar").mostrar();
+        
+        var botoesPadroes = formulario.encontrar('.botoesPadroes');
+        if ( botoesPadroes )
+            botoesPadroes.mostrar();
+        var elementoContinuarCadastrando = formulario.getElemento('CONTINUAR_CADASTRANDO_APOS_SALVAR');
+        if ( elementoContinuarCadastrando )
+            elementoContinuarCadastrando.getItem().mostrar();
+        
+        if ( opcoes.comBtnFechar )
+            formulario.getElemento("fechar").mostrar();
         btnSubmit.esconder();
         btnProximo
             .atributo('value', infoPassoAtual.textoProximo ? infoPassoAtual.textoProximo : opcoes.textoProximo )
@@ -1731,27 +1893,46 @@ var Superlogica_Js_Form = new Class({
                     
         if ( indicePassoAtual < numPassos )
             btnProximo.mostrar();                
-        
+
         var titulo = infoPassoAtual.titulo;
         var elementoTitulo = formulario.encontrar(".tituloAssistente");
         if ( elementoTitulo && elementoTitulo.contar() )
             elementoTitulo.esconder();        
-        if ( titulo ){            
+        
+        var corpoDoForm = false;
+        if ( titulo ){
             if ( !elementoTitulo || elementoTitulo.contar() <= 0 ){
-                elementoTitulo = new Superlogica_Js_Elemento("<h2 class='tituloAssistente'></h2>");
-                this.adicionarHtmlAoInicio( elementoTitulo );
+                
+                var subtitulo = this.atributo('titulo') ? this.atributo('titulo') : '';
+                elementoTitulo = new Superlogica_Js_Elemento("<div class='mini-box titleWizard'> <span class='box-icon bg-info'> <i class='fa fa-magic'></i> </span> <div class='box-info'> <p class='size-h2 titulo'></p> <p class='text-muted'>" + subtitulo + "</p> </div> </div> " );
+                
+                corpoDoForm = this.encontrar('.corpoDoForm');
+                if ( this.encontrar('.titleWizard') )
+                    this.encontrar('.titleWizard').remover();
+                if ( !corpoDoForm ){                 
+                    corpoDoForm = this;
+                }
+                
+                corpoDoForm.adicionarHtmlAoInicio( elementoTitulo );
             }
-            
-            elementoTitulo.conteudo( titulo ).mostrar();            
+            elementoTitulo.mostrar();
+            elementoTitulo.encontrar('.titulo').conteudo( titulo );
         }
         
+        var indiceAtualPasso = this._getIndiceByNomePasso( formulario.getDados('assistentePassoAtual' ) );
+        var indiceProximoPasso = this._getIndiceByNomePasso( passo );        
+        var avancando = indiceAtualPasso <= indiceProximoPasso ;
         formulario.setDados('assistentePassoAtual', passo );
         
         var aposMostrarPasso = '__antesPasso' + nomePassoAtual.capitalize();
         if ( typeof formulario[aposMostrarPasso] == 'function' ){
-            formulario[aposMostrarPasso]( passo );
-        }    
-
+            formulario[aposMostrarPasso]( passo, avancando );
+        } 
+        
+        if ( corpoDoForm ){
+            corpoDoForm.scrollTopo( 0 );
+        }
+        formulario.focar();
     },
 
     /**
@@ -1806,7 +1987,8 @@ var Superlogica_Js_Form = new Class({
                 'position' : 'absolute',
                 'z-index' : 99999999
             })
-            .bind('click', function(event){        
+            .bind('click', function(event){
+                form.atributo('escolhaDeArquivosAberta','1');
                 event.stopPropagation();
             })
             .bind('change', function(){
@@ -1816,32 +1998,206 @@ var Superlogica_Js_Form = new Class({
             var elemento = this;
             bodyElemento.bind('mousemove.uploadAuto', function(event){
                 
+                if ( form.atributo('escolhaDeArquivosAberta') ){
+                    return true;
+                }
+                
+                campoArquivo.css({
+                    'top' : event.pageY-10,
+                    'left' : (event.pageX - campoArquivo.largura()) + 10
+                });
+                
                 var altura = elemento.alturaComPaddings();
                 var largura = elemento.larguraComPaddings();
                 var posicao = elemento.posicao();
-                        
+                
+                if ( isNaN(altura) || isNaN(largura)){
+                    bodyElemento.unbind('mousemove.uploadAuto');
+                    form.remover();
+                    return true;
+                }
+                                
                 // Calcula o mousemove enquanto o usuário estiver dentro do botão
                 // 'mouseleave' não estava funcionando
                 if ( 
-                        ( event.pageY < posicao.topo ) || // saiu por cima
+                        ( event.pageY < (posicao.topo) ) || // saiu por cima
                         ( (posicao.topo + altura) < event.pageY ) || // saiu por baixo
-                        ( event.pageX < posicao.esquerda ) || // saiu pela esquerda
+                        ( event.pageX < (posicao.esquerda) ) || // saiu pela esquerda
                         ( event.pageX > (posicao.esquerda+largura) ) // Saiu pela direita
                         
                 ){
                     bodyElemento.unbind('mousemove.uploadAuto');
                     if (  new Superlogica_Js_Form_Elementos(campoArquivo).getValue().length <= 0 )
                         form.remover();
+                    return true;
                 }
                 
-                campoArquivo.css({
-                    'top' : event.pageY-10,
-                    'left' : (event.pageX - campoArquivo.largura()) + 10
-                });                
             });
 
         });
         
-    }
+    },
+    
+    __abrirApi : function(){
+        if (  this.maisProximo('.subForm').contar() || this.encontrar('div.linkAjuda')) return true;        
+        var linkApi = new Superlogica_Js_Elemento("<div class='linkAjuda'><button comportamentos='Form.clickAbrirApi' type='button' class='btn btn-link'>API</button></div>");
+        linkApi.carregarComportamentos();
+
+        this.encontrar('.zend_form').adicionarHtmlAoInicio( linkApi );
+    },
+            
+    __clickAbrirApi : function(){
+        this.bind("click", function( event ){
+            event.preventDefault();
+            var form = new Superlogica_Js_Form_Elementos( this ).getForm();
+            var locationApi = new Superlogica_Js_Location();
+            locationApi.setController('lotes').setAction('importar').setParam('id', form.atributo('formname'));
+            window.open( locationApi.toString(),'_blank');
+        });
+    },
+
+    /**
+     * Valida os campos do form
+     * @param  {Boolean}  somenteValidar True para não exibir a mensagem de erro
+     * @return {Boolean}
+     */
+    isValid : function( somenteValidar ){
+      return this.getElementos().isValid( somenteValidar );
+    },
+
+
+    __comportamentoEdicao : function(){
+
+        var form = this;
+        var fechar = form.getElemento('fechar');
+        var btnEditar = this.getElemento('editar');
+
+        btnEditar.bind('click', function( event ){
+            event.preventDefault();
+            
+            fechar.mostrar();
+            var elemento = this;
+            var aoEditar = form.atributoToArray('aoEditar');
+            var permitirEditar = true;
+            var habilitarChamado = false;
+
+            var funcaoHabilitar = function(){
+
+                if ( habilitarChamado ) 
+                    return true;
+
+                var btnSalvar = form.getElemento('salvar');
+
+                habilitarChamado = true;
+                elemento.esconder();
+
+                form.habilitar();
+                if ( form.encontrar('.campoPrincipal'))
+                  form.mostrarTodosOsCampos();
+                
+                if ( btnSalvar )
+                    btnSalvar.mostrar();
+                
+                var botaoExcluir = form.getElemento('excluir')
+                if ( botaoExcluir )
+                    botaoExcluir.mostrar();
+
+                form.focar();
+
+                var aposEditar = form.atributoToArray('aposEditar');
+                if (aposEditar){
+                    Object.each( aposEditar, function( item, chave){
+                        if ( typeof form[ '__'+ item ] != 'function' )
+                            throw "Função '" + '__' + item + "' não implementada no Superlogica_Js_Form (aposEditar).";
+                        else
+                            form[ '__'+ item ]();
+                    }, this );
+                }
+
+            };
+
+            if (aoEditar){
+                Object.each( aoEditar, function( item, chave){
+                    if ( typeof form[ '__'+ item ] != 'function' )
+                        throw "Função '" + '__' + item + "' não implementada no Superlogica_Js_Form (aoEditar).";
+                    else
+                        permitirEditar = form[ '__'+ item ]( funcaoHabilitar );
+                }, this );
+            }
+
+            if ( !habilitarChamado && permitirEditar ){
+                funcaoHabilitar();
+            }
+
+        });
+
+        fechar.unbind('click').bind('click', function(event){
+
+            if ( this.maisProximo('.modal-body').contar() )
+                return true; // caso esteja em um modal então ele apenas fecha o modal e não desabilita novamente
+
+            var desabilitarChamado=false;
+            var permitirDesabilitar = true;
+            var elemento = this;
+            
+            var aoDesabilitar = form.atributoToArray('aoDesabilitar');
+            if (aoDesabilitar){
+                Object.each( aoDesabilitar, function( item, chave){
+                    if ( typeof form[ '__'+ item ] != 'function' )
+                        throw "Função '" + '__' + item + "' não implementada no Superlogica_Js_Form (aoDesabilitar).";
+                    else
+                        permitirDesabilitar = form[ '__'+ item ]( funcaoDesabilitar );
+                }, this );
+            }
+
+            if ( !desabilitarChamado && permitirDesabilitar ){
+                funcaoDesabilitar();
+            }
+
+            event.stopImmediatePropagation();
+            event.preventDefault();
+
+        });
+        
+        var funcaoDesabilitar = function(){
+
+            form.desabilitar();
+            if ( form.encontrar('.campoPrincipal'))
+              form.mostrarCamposPrincipais();
+            form.encontrar('.botoesPadroes').mostrar();
+            form.encontrar('.botoesPadroes fieldset').mostrar();
+            var botaoSalvar = form.getElemento('salvar');
+            if ( botaoSalvar )
+                botaoSalvar.esconder();
+
+            var botaoExcluir = form.getElemento('excluir');
+            if ( botaoExcluir )
+                botaoExcluir.esconder();
+
+            fechar[ (!fechar.maisProximo('.modal-body').contar() ? 'esconder' : 'mostrar') ]();
+
+            btnEditar.mostrar();            
+            var aposDesabilitar = form.atributoToArray('aposDesabilitar');
+            if (aposDesabilitar){
+                Object.each( aposDesabilitar, function( item, chave){
+                    if ( typeof form[ '__'+ item ] != 'function' )
+                        throw "Função '" + '__' + item + "' não implementada no Superlogica_Js_Form (aposDesabilitar).";
+                    else
+                        form[ '__'+ item ]();
+                }, this );
+            }
+
+        };
+
+        setTimeout(function(){
+          funcaoDesabilitar();
+        },0);
+
+        if ( !this.maisProximo('.modal-body').contar() )
+            fechar.esconder();
+          else
+            fechar.mostrar();
+        
+    },
 
 });
