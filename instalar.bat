@@ -1,3 +1,4 @@
+mkdir Superlogica;
 (new-object System.Net.WebClient).DownloadFile("https://github.com/Superlogica/framework/archive/master.zip","/Superlogica/kit.zip"); unzip kit.zip;
 cd Superlogica;
 ren framework-master sdk;
