@@ -1,5 +1,5 @@
 mkdir Superlogica;
-(new-object System.Net.WebClient).DownloadFile("https://github.com/Superlogica/framework/archive/master.zip", "$pwd/Superlogica/kit.zip")
+(new-object System.Net.WebClient).DownloadFile("https://github.com/Superlogica/framework/archive/master.zip", "$pwd/Superlogica/kit.zip"); unzip "$pwd/Superlogica/kit.zip" -d "$pwd/Superlogica/";
 cd Superlogica
 ren framework-master sdk
 robocopy "$pwd/sdk/vagrant/"* "$pwd/vagrant" /e
