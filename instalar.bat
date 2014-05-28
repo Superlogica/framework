@@ -1,4 +1,3 @@
-echo 'Instalando kit da Superlogica';
 (new-object System.Net.WebClient).DownloadFile("https://github.com/Superlogica/framework/archive/master.zip", "$pwd/Superlogica/kit.zip")
 cd Superlogica
 ren framework-master sdk
