@@ -1,0 +1,5 @@
+!/bin/bash
+sudo apt-get install php5 php5-cli php5-dev php5-mcrypt php5-curl php5-gd libapache2-mod-php5;
+cd /vagrant; sudo mkdir /vagrant/cookbooks/; sudo chmod -R 777 cookbooks; cd cookbooks; sudo wget https://github.com/Superlogica/framework/tree/master/vagrant/cookbooks/cloud-producao.php;
+sudo wget https://github.com/Superlogica/framework/tree/master/vagrant/cookbooks/lib.php;
+sudo php5 /vagrant/cookbooks/cloud-apps.php;

@@ -14,6 +14,6 @@ Add-Content $caminhoArquivo "config.vm.synced_folder '$sharedFolder' , '/home/ap
 Add-Content $caminhoArquivo 'end'
 vagrant up  
 vagrant plugin install vagrant-vbguest;
-vagrant ssh; 
-sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions; exit;
+vagrant ssh default -c "sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions;"
 vagrant reload
+vagrant ssh default -c 'sudo ./cloud-apps'
