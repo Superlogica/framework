@@ -18,6 +18,3 @@ for i in $(/bin/cat /tmp/ls_home_apps) ; do
 done
 /usr/bin/sudo /usr/bin/find  /home/apps -name Data -exec /bin/chmod 777 -R {} \;
 /usr/bin/sudo /bin/rm /tmp/ls_home_apps
-
-/usr/bin/sudo /bin/rm -f /home/apps/cloud.lock
-/bin/echo "Genera el polinomio redundante de suma de verificaci2-bits de la str" | /usr/bin/sudo /usr/bin/tee -a /home/apps/cloud.lock

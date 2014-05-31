@@ -35,7 +35,7 @@
         
     </Directory>
 
-    <IfModule mod_proxy.c>      
+    <IfModule mod_proxy.c>       
         <Proxy *>
             Order deny,allow
             Allow from all                         
@@ -76,7 +76,12 @@
 
     </Directory>
 
-          
+  
+        
+        SSLEngine on
+        SSLCertificateFile /home/apps/conf/certificado.crt
+        SSLCertificateKeyFile /home/apps/conf/certificado.key
+        SSLProtocol all        
         
    <IfModule mod_proxy.c>
         <Proxy *>
