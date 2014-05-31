@@ -1,0 +1,88 @@
+        ######
+        ######  Este arquivo é uma copia do cloud/conf/cloud.superlogica.com, substituido /home/cloud por /home/apps
+        ######
+
+<VirtualHost *:80>
+    ServerAdmin suporte@superlogica.com
+    DocumentRoot /home/apps/public/
+
+    AddDefaultCharset Off
+
+    <Directory /home/apps/public/ >
+        DirectoryIndex index.php index.html index.htm
+        AllowOverride None
+        Order deny,allow
+        Options FollowSymLinks
+        Allow from all
+        
+        ######
+        ######  QUALQUER ALTERAÇÃO AQUI DEVE SER FEITA NO ARQUIVO public/.htaccess
+        ######  E NO BLOCO <VirtualHost *:443> abaixo
+        ######
+        RewriteEngine On
+        RewriteRule scripts/min/(.*) scripts/index.php?file=$1
+
+        RewriteCond %{HTTPS} off
+        RewriteCond %{HTTP_HOST} superlogica.net
+        RewriteCond %{REQUEST_URI} ^/clients/(areadocliente|areadocondomino)
+        RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+
+        RewriteCond %{REQUEST_FILENAME} -s [OR]
+        RewriteCond %{REQUEST_FILENAME} -l [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+        RewriteRule ^.*$ - [NC,L]
+        RewriteRule ^.*$ /index.php [NC,L]
+        
+    </Directory>
+
+    <IfModule mod_proxy.c>      
+        <Proxy *>
+            Order deny,allow
+            Allow from all                         
+        </Proxy>
+    </IfModule>
+
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerAdmin suporte@superlogica.com
+    DocumentRoot /home/apps/public/
+    AddDefaultCharset Off
+        
+    <Directory /home/apps/public/ >
+        DirectoryIndex index.php index.html index.htm
+        AllowOverride None
+        Order deny,allow
+        Options FollowSymLinks
+        Allow from all
+        
+        ######
+        ######  QUALQUER ALTERAÇÃO AQUI DEVE SER FEITA NO ARQUIVO public/.htaccess
+        ######  E NO BLOCO <VirtualHost *:80> acima
+        ######
+        RewriteEngine On
+        RewriteRule scripts/min/(.*) scripts/index.php?file=$1
+
+        RewriteCond %{HTTPS} off
+        RewriteCond %{HTTP_HOST} superlogica.net
+        RewriteCond %{REQUEST_URI} ^/clients/(areadocliente|areadocondomino)
+        RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+
+        RewriteCond %{REQUEST_FILENAME} -s [OR]
+        RewriteCond %{REQUEST_FILENAME} -l [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+        RewriteRule ^.*$ - [NC,L]
+        RewriteRule ^.*$ /index.php [NC,L]
+
+    </Directory>
+
+          
+        
+   <IfModule mod_proxy.c>
+        <Proxy *>
+            Order deny,allow
+            Allow from all                         
+        </Proxy>
+    </IfModule>
+
+</VirtualHost>
