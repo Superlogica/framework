@@ -9,7 +9,8 @@ global $conf;
 //pacotes
 exec_script("
     sudo apt-get update
-    sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql php5-suhosin;
+    apt-get -y install mysql-server-5.5        
+    sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql php5-suhosin;    
     sudo a2enmod ssl;
     sudo a2enmod rewrite;
     sudo apt-get -y install apachetop;
@@ -18,6 +19,8 @@ exec_script("
     sudo dpkg-reconfigure tzdata;
     sudo chmod 444 /etc/init.d/postfix
     sudo cp {$conf['basedir']}/templates/superlogica.ini /etc/php5/apache2/conf.d/;
+    cd /usr/local; sudo wget http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz; sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz;
+    sudo cp {$conf['basedir']}/templates/ioncube.ini /etc/php5/apache2/conf.d/;    
     sudo rm /etc/php5/conf.d/timezone.ini");
 
 //eaccelerator         
@@ -30,11 +33,6 @@ exec_script("
     sudo cp {$conf['basedir']}/templates/eaccelerator.ini /etc/php5/conf.d/;
 ");  
 
-//git clone
-exec_script("cd /home; sudo git clone git@github.com:Superlogica/apps.git"); 
-exec_script("cd /home; sudo git clone git@github.com:Superlogica/plataforma.git"); 
-
-exec_script("sudo ln -s /home/plataforma/library /home/apps/library");
 // exec_script("sudo ln -s /home/plataforma/public /home/apps/public");
 
 //firewall
@@ -43,6 +41,7 @@ exec_script("
          sudo ufw allow ssh
          sudo ufw allow http
          sudo ufw allow https
+         sudo ufw allow 3049
          sudo ufw enable");
 
 
@@ -50,6 +49,6 @@ exec_script("
 exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/001apps");
 
 deploy_action("apps");
-deploy_action("plataforma");
+//deploy_action("plataforma");
 apachetunning_action();
-_newrelic();
+//_newrelic();
