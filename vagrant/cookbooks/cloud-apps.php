@@ -10,7 +10,8 @@ global $conf;
 exec_script("
     sudo apt-get update
     apt-get -y install mysql-server-5.5        
-    sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql php5-suhosin;    
+    sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql php5-suhosin;  
+    apt-get install phpmyadmin;
     sudo a2enmod ssl;
     sudo a2enmod rewrite;
     sudo apt-get -y install apachetop;
