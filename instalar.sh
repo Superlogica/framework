@@ -1,7 +1,9 @@
-sudo mkdir Superlogica;
+sudo mkdir Superlogica; 
+sudo chmod -R 777 Superlogica
 sudo curl https://github.com/Superlogica/framework/archive/master.zip -o /Superlogica/kit.zip
 PWD = pwd;
 cd Superlogica
+sudo chmod -R 777 framework-master
 sudo mv framework-master sdk
 sudo cp -r /sdk/vagrant/* /vagrant
 cd vagrant; ls;
