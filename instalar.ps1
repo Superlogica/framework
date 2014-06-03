@@ -1,5 +1,6 @@
 mkdir Superlogica;
-(new-object System.Net.WebClient).DownloadFile("https://github.com/Superlogica/framework/archive/master.zip", "$pwd/Superlogica/kit.zip"); unzip "$pwd/Superlogica/kit.zip" -d "$pwd/Superlogica/";
+(new-object System.Net.WebClient).DownloadFile("https://github.com/Superlogica/framework/archive/master.zip", "$pwd/Superlogica/kit.zip"); 
+$helper = New-Object -ComObject Shell.Application; $files = $helper.NameSpace("$pwd\Superlogica\kit.zip").Items(); $helper.NameSpace("$pwd\Superlogica\").CopyHere($files)
 cd Superlogica
 $dirBase = "$pwd\"
 ren framework-master sdk
