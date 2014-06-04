@@ -1,5 +1,4 @@
-mkdir Superlogica/vagrant;
-mkdir Superlogica/sdk;
+mkdir Superlogica; mkdir Superlogica/vagrant; mkdir Superlogica/sdk;
 cd Superlogica/vagrant;
 vagrant box add desenv http://goo.gl/Y4aRr;
 vagrant init desenv http://goo.gl/Y4aRr
