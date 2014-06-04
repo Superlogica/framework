@@ -1,9 +1,8 @@
-sudo mkdir Superlogica; sudo chmod -R 777 Superlogica; sudo mkdir Superlogica/vagrant; sudo mkdir Superlogica/sdk;
+sudo mkdir Superlogica; sudo chmod -R 777 Superlogica; sudo mkdir Superlogica/vagrant; sudo chmod -R 777 Superlogica/vagrant; sudo mkdir Superlogica/sdk; sudo chmod -R 777 Superlogica/sdk;
 cd Superlogica/vagrant;
 vagrant box add desenv http://goo.gl/Y4aRr;
 vagrant init desenv http://goo.gl/Y4aRr
 sudo curl https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile -o Vagrantfile
-SHARED_FOLDER = "$(PWD)/../sdk";
 echo "config.vm.synced_folder '${PWD}/../sdk' , '/home/apps'" >> Vagrantfile;
 echo 'end' >> Vagrantfile
 vagrant up  
