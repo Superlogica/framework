@@ -1,4 +1,4 @@
-sudo mkdir Superlogica; sudo chmod -R 777 Superlogica; Superlogica sudo mkdir Superlogica/vagrant; sudo mkdir Superlogica/sdk;
+sudo mkdir Superlogica; sudo chmod -R 777 Superlogica; sudo mkdir Superlogica/vagrant; sudo mkdir Superlogica/sdk;
 cd Superlogica/vagrant;
 vagrant box add desenv http://goo.gl/Y4aRr;
 vagrant init desenv http://goo.gl/Y4aRr
