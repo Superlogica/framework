@@ -5,10 +5,7 @@ vagrant init desenv http://files.vagrantup.com/lucid32.box
 (new-object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile", "$pwd/Vagrantfile"); 
 $sharedFolder = "$pwd/../sdk";
 Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home/apps'";
+Add-Content "$pwd/Vagrantfile" "cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/getkit.sh; sudo bash getkit.sh $args[1];"
 Add-Content "$pwd/Vagrantfile" 'end'
-vagrant up  
 vagrant plugin install vagrant-vbguest;
-vagrant plugin install vagrant-multi-putty
-vagrant ssh default -c "sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions;"
-vagrant reload
-vagrant ssh default -c "cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/getkit.sh; sudo bash getkit.sh $args[1];"
+vagrant up
