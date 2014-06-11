@@ -11,6 +11,6 @@ vagrant provision
 (new-object System.Net.WebClient).DownloadFile("http://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile", "$pwd/Vagrantfile"); 
 $sharedFolder = "$pwd/../sdk";
 Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home/apps'";
-Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget http://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-apps; sudo bash cloud-apps;'";
+Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-apps --no-check-certificate; sudo bash cloud-apps;'";
 Add-Content "$pwd/Vagrantfile" 'end'
 vagrant up
