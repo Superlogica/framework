@@ -7,6 +7,5 @@ echo "config.vm.synced_folder '${PWD}/../sdk' , '/home/apps'" >> Vagrantfile;
 echo 'end' >> Vagrantfile
 vagrant up  
 vagrant plugin install vagrant-vbguest;
-vagrant ssh default -c "sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions;"
 vagrant reload
 vagrant ssh default -c 'cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/getkit.sh; sudo bash getkit.sh $1';
