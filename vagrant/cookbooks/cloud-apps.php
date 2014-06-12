@@ -22,7 +22,8 @@ exec_script("
     sudo cp {$conf['basedir']}/templates/superlogica.ini /etc/php5/apache2/conf.d/;
     cd /usr/local; sudo wget http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz; sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz;
     sudo cp {$conf['basedir']}/templates/ioncube.ini /etc/php5/apache2/conf.d/;    
-    sudo rm /etc/php5/conf.d/timezone.ini");
+    sudo rm /etc/php5/conf.d/timezone.ini
+	sudo mkdir /home/apps/session; sudo chmod -R 777 /home/apps/session");
 
 //eaccelerator         
 exec_script("
