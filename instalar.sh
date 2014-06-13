@@ -10,3 +10,6 @@ echo "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget https://raw.g
 echo 'end' >> Vagrantfile
 vagrant plugin install vagrant-vbguest;
 vagrant up  
+sudo mkdir ${PWD}/../sdk/public/scripts/min; sudo chmod -R 777 ${PWD}/../sdk/public/scripts/min; 
+sudo mkdir ${PWD}/../sdk/session; sudo chmod -R 777 ${PWD}/../sdk/session;
+sudo chmod -R 777 ${PWD}/../sdk;

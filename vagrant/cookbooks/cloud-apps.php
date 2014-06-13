@@ -9,13 +9,15 @@ global $conf;
 //pacotes
 exec_script("
     sudo apt-get update
-    apt-get -y install mysql-server-5.5        
+    apt-get -y install mysql-server-5.5;
+	mysql -u root -p; 
+	set password for root@localhost=password(''); quit; 
     sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql;  
-    apt-get install phpmyadmin;
+    sudo apt-get install phpmyadmin; echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf;
     sudo a2enmod ssl;
     sudo a2enmod rewrite;
     sudo apt-get -y install apachetop;
-    sudo apt-get -y install git-core;
+    sudo apt-get -y /home/apps/sessioninstall git-core;
     sudo apt-get -y install tz-brasil;
     sudo dpkg-reconfigure tzdata;
     sudo chmod 444 /etc/init.d/postfix
