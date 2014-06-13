@@ -14,3 +14,5 @@ Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home
 Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-apps --no-check-certificate; sudo bash cloud-apps;'";
 Add-Content "$pwd/Vagrantfile" 'end'
 vagrant up
+mkdir $pwd/../sdk/public/scripts/min;
+mkdir $pwd/../sdk/session;
