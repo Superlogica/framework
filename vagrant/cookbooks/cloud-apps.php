@@ -5,15 +5,19 @@ require_once realpath(dirname(__FILE__)).'/../actions.php';
 require_once realpath(dirname(__FILE__)).'/../conf.php'; 
 
 global $conf;
+
+exec_script("
+    sudo apt-get update
+    sudo apt-get -y install mysql-server-5.5;
+	mysql -u root -p; 
+	set password for root@localhost=password(''); quit; 
+");
         
 //pacotes
 exec_script("
-    sudo apt-get update
-    apt-get -y install mysql-server-5.5;
-	mysql -u root -p; 
-	set password for root@localhost=password(''); quit; 
     sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql;  
-    sudo apt-get install phpmyadmin; echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf;
+    sudo apt-get install phpmyadmin; 
+	sudo echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf;
     sudo a2enmod ssl;
     sudo a2enmod rewrite;
     sudo apt-get -y install apachetop;
