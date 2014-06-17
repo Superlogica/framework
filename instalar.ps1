@@ -9,13 +9,13 @@ Add-Content "$pwd/Vagrantfile" 'end'
 vagrant plugin install vagrant-vbguest;
 vagrant provision
 (new-object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile", "$pwd/Vagrantfile"); 
-$sharedFolder = "$pwd/../sdk";
 If ($args[0] = 'cloud-apps'){
+	$sharedFolder = "$pwd/../sdk";
 	Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home/apps'";
 } 
 Else 
 {
-	Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home/cloud'";
+	Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder 'C:/git/cloud' , '/home/cloud'";
 }
 Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/$args[0] --no-check-certificate; sudo bash $args[0];'";
 Add-Content "$pwd/Vagrantfile" 'end'
