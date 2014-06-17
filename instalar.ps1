@@ -8,8 +8,9 @@ Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'sudo ln -s
 Add-Content "$pwd/Vagrantfile" 'end'
 vagrant plugin install vagrant-vbguest;
 vagrant provision
+$modo = $args[0];
 (new-object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile", "$pwd/Vagrantfile"); 
-If ($args[0] = 'cloud-apps'){
+If ($modo = 'cloud-apps'){
 	$sharedFolder = "$pwd/../sdk";
 	Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home/apps'";
 } 
@@ -17,7 +18,7 @@ Else
 {
 	Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder 'C:/git/cloud' , '/home/cloud'";
 }
-Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/$args[0] --no-check-certificate; sudo bash $args[0];'";
+Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'cd /vagrant; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/$modo --no-check-certificate; sudo bash $modo;'";
 Add-Content "$pwd/Vagrantfile" 'end'
 vagrant up
 mkdir $pwd/../sdk/public/scripts/min;
