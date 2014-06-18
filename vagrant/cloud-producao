@@ -1,6 +1,23 @@
 !/bin/bash
 sudo apt-get update;
 sudo apt-get -y install php5 php5-cli php5-dev php5-mcrypt php5-curl php5-gd libapache2-mod-php5;
-cd /vagrant; sudo mkdir /vagrant/cookbooks/; sudo chmod -R 777 cookbooks; cd cookbooks; sudo rm -rf cloud-producao.php; https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/cloud-producao.php --no-check-certificate;
+cd /vagrant;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/actions.php --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/conf.php --no-check-certificate;
+sudo mkdir /vagrant/cookbooks/; sudo chmod -R 777 cookbooks; sudo mkdir /vagrant/firebird/; sudo chmod -R 777 firebird; sudo mkdir /vagrant/templates/; sudo chmod -R 777 templates;
+cd /vagrant/templates; 
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/eaccelerator.ini --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/ioncube.ini --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/limits.conf --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/php-5-4.ini --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/superlogica.ini --no-check-certificate;
+cd /vagrant/firebird; 
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/firebird/firebird.conf --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/firebird/fbudf.so --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/firebird/firebird25.conf --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/firebird/ib_udf.so --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/firebird/tbudf-64x.so --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/firebird/tbudf.so --no-check-certificate;
+cd /vagrant/cookbooks; sudo rm -rf cloud-producao.php; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/cloud-producao.php --no-check-certificate;
 sudo rm -rf lib.php; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/lib.php --no-check-certificate;
-sudo php5 /vagrant/cookbooks/cloud-producao.php;
+sudo chmod 777 /vagrant/cookbooks/cloud-producao.php; sudo php5 /vagrant/cookbooks/cloud-producao.php;
