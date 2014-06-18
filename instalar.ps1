@@ -4,6 +4,7 @@ if((Test-Path $pwd/Superlogica/vagrant/.vagrant) -eq 0){
 	vagrant box add desenv http://files.vagrantup.com/lucid32.box
 	vagrant init desenv http://files.vagrantup.com/lucid32.box
 }
+cd Superlogica/vagrant;
 (new-object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile", "$pwd/Vagrantfile"); 
 Add-Content "$pwd/Vagrantfile" "config.vm.provision 'shell', inline: 'sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions;'";
 Add-Content "$pwd/Vagrantfile" 'end'
