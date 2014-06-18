@@ -1,8 +1,8 @@
 if((Test-Path $pwd/Superlogica/vagrant/.vagrant) -eq 0){
 	mkdir Superlogica; mkdir Superlogica/vagrant; mkdir Superlogica/sdk;
 	cd Superlogica/vagrant;
-	vagrant box add desenv http://files.vagrantup.com/lucid32.box
-	vagrant init desenv http://files.vagrantup.com/lucid32.box
+	vagrant box add desenv http://dl.dropbox.com/u/1537815/precise64.box
+	vagrant init desenv http://dl.dropbox.com/u/1537815/precise64.box
 } else {
 	cd Superlogica/vagrant;
 }
