@@ -11,7 +11,7 @@ vagrant plugin install vagrant-vbguest;
 vagrant provision
 $modo = $args[0];
 (new-object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile", "$pwd/Vagrantfile"); 
-If ($modo == 'cloud-apps'){
+If ($modo -eq 'cloud-apps'){
 	$sharedFolder = "$pwd/../sdk";
 	Add-Content "$pwd/Vagrantfile" "config.vm.synced_folder '$sharedFolder' , '/home/apps'";
 } 
