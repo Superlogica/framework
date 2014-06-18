@@ -3,8 +3,10 @@ if [ "$PASSWORD" == "$VALID_PASSWORD" ]; then
 	cd Superlogica/vagrant;
 	vagrant box add desenv http://files.vagrantup.com/lucid32.box;
 	vagrant init desenv http://files.vagrantup.com/lucid32.box
+else 
+	cd Superlogica/vagrant;
 fi	
-cd Superlogica/vagrant;	
+	
 sudo rm -rf Vagrantfile;
 sudo curl https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/Vagrantfile -o Vagrantfile
 sudo chmod 777 Vagrantfile
