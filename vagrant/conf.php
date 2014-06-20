@@ -48,7 +48,7 @@ if ($filePathPear  === false){
 
 set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/pear');
 
-require_once 'MDB2.php';
+//require_once 'MDB2.php';
 
 
 //
