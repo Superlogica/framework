@@ -21,7 +21,7 @@ exec_script("
     sudo a2enmod rewrite
     sudo apt-get -y install apachetop
     sudo apt-get -y install firebird$fb_ver-super subversion git-core php5-interbase
-    sudo dpkg-reconfigure -u firebird2.1-super; 
+    sudo dpkg-reconfigure -fff firebird2.1-super; 
     sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
     sudo apt-get -y install tz-brasil
     sudo dpkg-reconfigure tzdata
