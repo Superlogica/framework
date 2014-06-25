@@ -47,11 +47,8 @@ exec_script("
          sudo ufw enable");
 
 //cloud.lock
-if (!$local){
-	exec_script("echo 'Genera el polinomio redundante de suma de verificaci2-bits de la str' | /usr/bin/sudo /usr/bin/tee -a /home/cloud/cloud.lock");
-} else{
-	@unlink("/home/cloud/cloud.lock");
-}
+@unlink("/home/cloud/cloud.lock");
+
 //ativar app no apache
 exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud");
 deploy_action("cloud");
