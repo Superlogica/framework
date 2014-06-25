@@ -333,7 +333,7 @@ exec("sudo /etc/init.d/apache2 restart 1>&2");
 
 function deploy_action($app="cloud"){
   $home = "/home/$app";   
-  exec_script("sudo $home/conf/deploy.sh $home");
+  exec_script("sudo bash $home/conf/deploy.sh $home");
   if (is_dir("/home/plataforma")){
       exec_script("cd /home/plataforma; sudo git pull;"); 
   }
