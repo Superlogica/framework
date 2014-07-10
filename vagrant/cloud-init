@@ -1,3 +1,41 @@
 #!/usr/bin/php
 <?php
-require_once "libs/lib.php";
+
+// checa se root
+if (posix_getuid() != 0) {
+    echo("\nSó o root pode fazer isto. Use sudo.\n\n");
+    exit(3);
+}
+
+// torna este script executável em qq diretório
+if (!is_file('/usr/sbin/cloud-init')) {
+    @exec("sudo ln -s __FILE__ /usr/sbin");
+}
+
+//parametros
+$args = $GLOBALS['argv'];
+$cookbook = $args[1];
+array_shift($args);
+array_shift($args);
+if (!$cookbook){
+    echo("\nNão informou cookbook a ser executado.\n\n");
+    exit(3);
+}
+
+//cria diretorios
+if (!is_dir('/vagrant')) { mkdir('/vagrant'); }
+if (!is_dir('/vagrant/tmp/')) { mkdir('/vagrant/tmp/'); }
+if (!is_dir('/vagrant/tmp/libs')) { mkdir('/vagrant/tmp/libs'); }
+
+//lib
+exec_script("cd /vagrant/tmp/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
+require_once "/vagrant/tmp/libs/lib.php";
+
+//executa
+exec_script("cd /vagrant/tmp/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
+if (!is_file("/vagrant/tmp/$cookbook.php")){
+    echo("\nCookbook '$cookbook' não encontrado.\n\n");
+    exit(3);
+}
+require "/vagrant/tmp/$cookbook.php";
+call_user_func_array($cookbook, $args);
