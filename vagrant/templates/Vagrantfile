@@ -6,10 +6,11 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "desenv"
-  config.vm.box_url = "https://dl.dropbox.com/u/14741389/vagrantboxes/lucid64-lamp.box"
+  config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
   
   config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true  
   config.vm.network :forwarded_port, guest: 3049, host: 3049, auto_correct: true  
+  config.vm.network :forwarded_port, guest: 3058, host: 3058, auto_correct: true   
   
   config.vm.network :private_network, ip: "192.168.80.10"
   
