@@ -4,8 +4,8 @@ if [ ! -d "$DIR" ];
 then
 	sudo mkdir Superlogica; sudo chmod -R 777 Superlogica; sudo mkdir Superlogica/vagrant; sudo chmod -R 777 Superlogica/vagrant; sudo mkdir Superlogica/sdk; sudo chmod -R 777 Superlogica/sdk;
 	cd Superlogica/vagrant;
-	vagrant box add desenv https://dl.dropbox.com/u/14741389/vagrantboxes/lucid64-lamp.box
-	vagrant init desenv https://dl.dropbox.com/u/14741389/vagrantboxes/lucid64-lamp.box
+	vagrant box add desenv http://files.vagrantup.com/lucid32.box
+	vagrant init desenv http://files.vagrantup.com/lucid32.box
 else 
 	cd Superlogica/vagrant;
 fi	
