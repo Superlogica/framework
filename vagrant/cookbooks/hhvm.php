@@ -11,7 +11,7 @@ sudo apt-get update
 sudo apt-get install hhvm
 sudo update-rc.d hhvm defaults
 sudo /usr/share/hhvm/install_fastcgi.sh
-sudo rm -Rf /var/www/html/
+sudo rm -Rf /var/www/html
 sudo ln -s /home/cloud/public /var/www/html
 ");
 
