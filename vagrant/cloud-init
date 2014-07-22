@@ -30,7 +30,7 @@ if (!is_dir("/tmp/cloud/libs")){
 }
 
 //lib
-exec("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
+exec("cd /tmp/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
 require_once "/tmp/cloud/libs/lib.php";
 
 //executa
