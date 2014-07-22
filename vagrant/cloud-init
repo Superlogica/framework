@@ -34,10 +34,13 @@ exec("cd /tmp/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogic
 require_once "/tmp/cloud/libs/lib.php";
 
 //executa
+if (!is_file("/tmp/cloud/$cookbook.php")){
+   @unlink("/tmp/cloud/$cookbook.php");
+}
 exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
 if (!is_file("/tmp/cloud/$cookbook.php")){
     echo("\nCookbook '$cookbook' não encontrado.\n\n");
     exit(3);
 }
 require "/tmp/cloud/$cookbook.php";
-call_user_func_array($cookbook, $args);
+call_user_func_array($cookbook."_init", $args);
