@@ -15,4 +15,6 @@ sudo rm -Rf /var/www/html/
 sudo ln -s /home/cloud/public /var/www/html
 ");
 
+put_template("hhvm_proxy_fcgi.conf", "/etc/apache2/mods-available/hhvm_proxy_fcgi.conf");
+
 }
