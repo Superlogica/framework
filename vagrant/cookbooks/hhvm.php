@@ -1,4 +1,4 @@
-<? 
+<?php
 
 function hhvm_init($maq="precise"){
 
