@@ -34,7 +34,7 @@ exec("cd /tmp/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogic
 require_once "/tmp/cloud/libs/lib.php";
 
 //executa
-if (!is_file("/tmp/cloud/$cookbook.php")){
+if (is_file("/tmp/cloud/$cookbook.php")){
    @unlink("/tmp/cloud/$cookbook.php");
 }
 exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
