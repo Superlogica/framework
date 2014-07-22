@@ -28,7 +28,7 @@ if (!mkdir("/tmp/cloud/libs", 0777, true)) {
 }
 
 //lib
-exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
+exec("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
 require_once "/tmp/cloud/libs/lib.php";
 
 //executa
