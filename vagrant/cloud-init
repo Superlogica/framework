@@ -30,6 +30,9 @@ if (!is_dir("/tmp/cloud/libs")){
 }
 
 //lib
+if (is_file("/tmp/cloud/libs/lib.php")){
+   @unlink("/tmp/cloud/libs/lib.php");
+}
 exec("cd /tmp/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
 require_once "/tmp/cloud/libs/lib.php";
 
