@@ -2,7 +2,7 @@
 sudo apt-get update;
 sudo apt-get -y install php5 php5-cli php5-dev php5-mcrypt php5-curl php5-gd libapache2-mod-php5;
 sudo rm /tmp/cloud-init;
-sudo rm -Rf /tmp/cloud/*
+sudo rm -Rf /tmp/cloud
 sudo mkdir /tmp/cloud
 cd /tmp/cloud; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-init --no-check-certificate;
 sudo chmod 777 /tmp/cloud/cloud-init;
