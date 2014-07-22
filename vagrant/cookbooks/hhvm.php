@@ -1,6 +1,6 @@
 <? 
 
-function hhvm($maq="precise"){
+function hhvm_init()($maq="precise"){
 
 
 exec_script("
