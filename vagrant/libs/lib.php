@@ -11,6 +11,13 @@ function exec_script($script){
 
 function put_template($nome,$destino,$vars=false){
 	
+if(!is_dir("/tmp/cloud/templates/")){
+   mkdir("/tmp/cloud/templates/");	
+}
+
+if (is_file($destino)){
+   @unlink($destino);
+}
 
 if (is_file("/tmp/cloud/templates/$nome")){
    @unlink("/tmp/cloud/templates/$nome");
