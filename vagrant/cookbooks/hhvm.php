@@ -1,3 +1,5 @@
+<? 
+
 function hhvm($maq="precise"){
 
 
