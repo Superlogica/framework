@@ -23,8 +23,10 @@ if (!$cookbook){
 }
 
 //cria diretorios
-if (!mkdir("/tmp/cloud/libs", 0777, true)) {
-    die('Falhou ao criar pastas.');
+if (!is_dir("/tmp/cloud/libs")){
+  if (!mkdir("/tmp/cloud/libs", 0777, true)) {
+      die('Falhou ao criar pastas.');
+  }
 }
 
 //lib
