@@ -9,7 +9,7 @@ if (posix_getuid() != 0) {
 
 // torna este script executável em qq diretório
 if (!is_file('/usr/sbin/cloud-init')) {
-    @exec("sudo ln -s __FILE__ /usr/sbin");
+    @exec("sudo ln -s ".__FILE__." /usr/sbin");
 }
 
 //parametros
@@ -23,19 +23,19 @@ if (!$cookbook){
 }
 
 //cria diretorios
-if (!is_dir('/vagrant')) { mkdir('/vagrant'); }
-if (!is_dir('/vagrant/tmp/')) { mkdir('/vagrant/tmp/'); }
-if (!is_dir('/vagrant/tmp/libs')) { mkdir('/vagrant/tmp/libs'); }
+if (!mkdir("/tmp/cloud/libs", 0777, true)) {
+    die('Falhou ao criar pastas.');
+}
 
 //lib
-exec_script("cd /vagrant/tmp/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
-require_once "/vagrant/tmp/libs/lib.php";
+exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
+require_once "/tmp/cloud/libs/lib.php";
 
 //executa
-exec_script("cd /vagrant/tmp/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
-if (!is_file("/vagrant/tmp/$cookbook.php")){
+exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
+if (!is_file("/tmp/cloud/$cookbook.php")){
     echo("\nCookbook '$cookbook' não encontrado.\n\n");
     exit(3);
 }
-require "/vagrant/tmp/$cookbook.php";
+require "/tmp/cloud/$cookbook.php";
 call_user_func_array($cookbook, $args);
