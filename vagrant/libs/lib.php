@@ -1,4 +1,4 @@
-<?
+<?php
 function exec_script($script){
     $comandos = explode("\n",$script);
 	$result = '';
