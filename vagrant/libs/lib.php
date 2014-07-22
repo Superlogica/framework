@@ -22,7 +22,7 @@ if (is_file($destino)){
 if (is_file("/tmp/cloud/templates/$nome")){
    @unlink("/tmp/cloud/templates/$nome");
 }
-exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/$nome --no-check-certificate;"); 
+exec_script("cd /tmp/cloud/templates/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/$nome --no-check-certificate;"); 
 if (!is_file("/tmp/cloud/templates/$nome")){
     echo("\nTemplate '$nome' não encontrado.\n\n");
     exit(3);
