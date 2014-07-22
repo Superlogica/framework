@@ -1,6 +1,6 @@
 <?php
 
-function hhvm_init($maq="precise"){
+function hhvm_init($maq="trusty"){
 
 
 exec_script("
