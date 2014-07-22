@@ -1,14 +1,19 @@
 <?php
 
-function cloud_init(){
+function cloud_init($php_version="5.4"){
 
-// sudo add-apt-repository ppa:ondrej/php5-oldstable
+if ($php_version=="5.4"){
+exec_script(" sudo add-apt-repository ppa:ondrej/php5-oldstable
+ sudo apt-get update");
+}
+
+if ($php_version=="5.5"){
+exec_script(" sudo add-apt-repository ppa:ondrej/php5
+ sudo apt-get update");
+} 
 
 //pacotes
 exec_script("
-   
-    sudo apt-get update
-    sudo apt-get update
     sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql 
     sudo a2enmod ssl
     sudo a2enmod rewrite
