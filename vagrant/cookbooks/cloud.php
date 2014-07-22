@@ -46,3 +46,4 @@ exec_script("
 //atualizarCloudIni_action();
 //apachetunning_action();
 //phpiniupdate_action();
+}
