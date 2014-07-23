@@ -11,8 +11,7 @@ function fb25_init(){
 
 	exec_script("
 		sudo sysctl -w net.ipv4.tcp_keepalive_time=60 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
-		sudo apt-get -y install firebird$fb_ver-super$classic subversion git-core
-		sudo dpkg-reconfigure firebird$fb_ver-super$classic
+		sudo apt-get -y -q install firebird$fb_ver-super$classic subversion git-core
                 sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
 		sudo apt-get -y install tz-brasil
 		sudo dpkg-reconfigure tzdata");
