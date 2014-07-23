@@ -14,7 +14,7 @@ cd /tmp
 git clone https://github.com/phalcon/zephir
 cd zephir
 ./install -c
-sudo apt-get install vim
+sudo apt-get -y install vim
 ");
 
 }
