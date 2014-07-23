@@ -18,7 +18,7 @@ function exec_script($script){
   *
   */
 function put_template($nome,$destino,$vars=false){
-	
+$basenome = basename($nome);	
 if(!is_dir("/tmp/cloud/templates/")){
    mkdir("/tmp/cloud/templates/");	
 }
@@ -27,16 +27,16 @@ if (is_file($destino)){
    @unlink($destino);
 }
 
-if (is_file("/tmp/cloud/templates/$nome")){
-   @unlink("/tmp/cloud/templates/$nome");
+if (is_file("/tmp/cloud/templates/$basenome")){
+   @unlink("/tmp/cloud/templates/$basenome");
 }
 exec_script("cd /tmp/cloud/templates/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/$nome --no-check-certificate;"); 
-$nome = basename($nome);
-if (!is_file("/tmp/cloud/templates/$nome")){
+
+if (!is_file("/tmp/cloud/templates/$basenome")){
     echo("\nTemplate '$nome' não encontrado.\n\n");
     exit(3);
 }	
-  $template = file_get_contents("/tmp/cloud/templates/$nome");
+  $template = file_get_contents("/tmp/cloud/templates/$basenome");
   if (is_array($vars)) $template = strtr($template, $vars);
   file_put_contents($destino, $template); 
 }  
