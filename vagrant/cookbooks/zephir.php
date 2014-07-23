@@ -4,6 +4,8 @@ function zephir_init(){
 
 
 exec_script("
+sudo apt-get update
+sudo apt-get install git gcc make re2c php5 php5-dev libpcre3-dev
 cd /tmp
 cd /tmp; sudo git clone https://github.com/json-c/json-c.git
 cd /tmp/json-c; sh autogen.sh; ./configure; make && sudo make install
