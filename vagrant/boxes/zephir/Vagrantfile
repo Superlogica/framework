@@ -18,10 +18,9 @@ config.vm.provider "virtualbox" do |v|
 end
 
   config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
-  config.vm.network :forwarded_port, guest: 3050, host: 3050, auto_correct: true
   config.vm.network :private_network, ip: "192.168.80.10"
   config.ssh.forward_agent = true
-  config.vm.synced_folder "." , "/home/cloud-db"
+  config.vm.synced_folder "." , "/home/zephir"
   config.vm.provision 'shell', inline: 'cd /tmp; sudo rm /tmp/cloud-init-init; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-init-init --no-check-certificate; sudo chmod 777 /tmp/cloud-init-init; sudo /tmp/cloud-init-init zephir;'
 
 
