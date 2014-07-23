@@ -18,8 +18,8 @@ exec_script("
     sudo a2enmod ssl
     sudo a2enmod rewrite
     sudo apt-get -y install apachetop
-    sudo apt-get -y install firebird2.5 subversion git-core php5-interbase
-    sudo dpkg-reconfigure firebird2.1-super; 
+    sudo apt-get -y install firebird2.5-superclassic subversion git-core php5-interbase
+    sudo dpkg-reconfigure firebird2.5-superclassic; 
     sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/2.5/UDF
     sudo apt-get -y install tz-brasil
     sudo dpkg-reconfigure tzdata
