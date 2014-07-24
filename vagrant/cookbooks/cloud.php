@@ -43,12 +43,17 @@ exec_script("
          sudo ufw enable");
 
 //cloud.lock
-//@unlink("/home/cloud/cloud.lock");
+@unlink("/home/cloud/cloud.lock");
 
 //ativar app no apache
-//exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud");
-//deploy_action("cloud");
-//atualizarCloudIni_action();
-//apachetunning_action();
-//phpiniupdate_action();
+ exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud"
+           . "sudo -Rf rm /var/www"
+           . "sudo ln -s /home/cloud  /var/www"
+           . "cloud-init cloudini"
+           . "cloud-init phpini"
+               );
+
+  //deploy_action("cloud");
+  apache_tunning();
+
 }

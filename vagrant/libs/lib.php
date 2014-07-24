@@ -93,6 +93,24 @@ function firebird_tunning($usar_um_core=false){
 }
 
 
+function apache_tunning(){
+    put_template("limits.conf","/etc/security/limits.conf"); 
+    apache_restart();
+    
+}
+
+function apache_restart(){
+    exec("sudo /etc/init.d/apache2 restart 1>&2");
+    if (is_file("/etc/init.d/hhvm")){
+        exec("sudo /etc/init.d/hhvm restart 1>&2");
+    }
+    if (is_file("/etc/init.d/varnish")){
+        exec("sudo /etc/init.d/varnish restart 1>&2");
+    }    
+    return true;
+}
+
+
 function time_zone(){
     put_template("timezone","/etc/timezone"); 
     exec_script("sudo apt-get -y -q install tz-brasil"
