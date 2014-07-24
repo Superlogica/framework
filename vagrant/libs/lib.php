@@ -94,8 +94,7 @@ function firebird_tunning($usar_um_core=false){
 
 
 function time_zone(){
-    exec_script("
-        sudo apt-get -y install tz-brasil
-		");
+    put_template("timezone","/etc/timezone"); 
+    exec_script("sudo apt-get -y install tz-brasil");
     
 }
