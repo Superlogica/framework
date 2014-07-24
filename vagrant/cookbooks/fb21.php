@@ -4,8 +4,8 @@ function fb25_init(){
     //http://www.slideshare.net/mindthebird/firebird-on-linux
     //http://www.ibphoenix.com/resources/documents/search/doc_26
     
-       $fb_ver = "2.5" ;
-       $classic = "classic";
+       $fb_ver = "2.1" ;
+       $classic = "";
     //   exec_script("sudo add-apt-repository ppa:mapopa
     //            sudo apt-get update");
 
@@ -44,10 +44,11 @@ function fb25_init(){
                 sudo mount /home/cloud-db
 		sudo chmod 444 /etc/init.d/postfix	
 		sudo chown firebird.firebird /usr/lib/firebird/$fb_ver/UDF/*.so
-                sudo ln -s /usr/lib/libfbclient.so.2.5.0 /usr/lib/libfbclient.so    
-	");       
+                 
+	");  
+          //  sudo ln -s /usr/lib/libfbclient.so.2.5.0 /usr/lib/libfbclient.so 
           
-        firebird_tunning(); 
+        firebird_tunning(true); 
         firebird_restart();
  
 }

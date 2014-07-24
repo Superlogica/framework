@@ -47,7 +47,7 @@ if (!is_file("/tmp/cloud/templates/$basenome")){
   *
   */
 
-function firebirdrestart(){
+function firebird_restart(){
  if (is_file("/etc/init.d/firebird2.5-superclassic")){   
    exec("sudo /etc/init.d/firebird2.5-superclassic restart 1>&2");
    return true;
@@ -63,4 +63,31 @@ function firebirdrestart(){
  
  return false;
 
+}
+
+
+function firebird_tunning($usar_um_core=false){
+    
+    //http://www.slideshare.net/ibsurgeon/resolving-firebird-performance-problems
+    if (is_dir("/etc/firebird/2.1/")){
+             put_template("firebird/firebird.conf","/etc/firebird/2.1/firebird.conf"); 
+    }   
+    if (is_dir("/etc/firebird/2.5/")){
+             put_template("firebird/firebird25.conf","/etc/firebird/2.5/firebird.conf"); 
+    }  
+
+     put_template("limits.conf","/etc/security/limits.conf"); 
+     // ATIVA APENAS UM CORE no SUPER SERVER
+     // https://groups.yahoo.com/neo/groups/firebird-support/conversations/topics/105143
+     // http://www.firebirdfaq.org/faq2/
+     if ($usar_um_core){
+        exec_script("echo 0 | sudo tee -a /sys/devices/system/cpu/cpu1/online");
+     }     
+// DESATIVA PROTECAO TCP 
+     // http://ubuntuforums.org/showthread.php?t=1204311
+     exec_script("echo 0 | sudo tee -a /proc/sys/net/ipv4/tcp_syncookies
+                  sudo sed -i s/#net.ipv4.tcp_syncookies=1/net.ipv4.tcp_syncookies=0/ /etc/sysctl.conf  
+                ");
+    
+    
 }
