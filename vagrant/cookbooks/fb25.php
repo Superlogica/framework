@@ -15,6 +15,7 @@ function fb25_init(){
                 sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
 		sudo apt-get -y install tz-brasil
 		sudo dpkg-reconfigure tzdata");
+        time_zone();         
 //	exec("sudo fdisk /dev/sdc << EOF\nn\np\n1\n\n\nw\nEOF");
 ////        exec_script("sudo mkfs -t ext3 /dev/sdc1
 //             

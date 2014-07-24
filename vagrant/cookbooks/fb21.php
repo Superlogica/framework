@@ -10,11 +10,12 @@ function fb21_init(){
     //            sudo apt-get update");
 
 	exec_script("
+                sudo apt-get update
 		sudo sysctl -w net.ipv4.tcp_keepalive_time=60 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
 		sudo apt-get -y -q install firebird$fb_ver-super$classic subversion git-core
                 sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
-		sudo apt-get -y install tz-brasil
-		sudo dpkg-reconfigure tzdata");
+		");
+        time_zone();        
 //	exec("sudo fdisk /dev/sdc << EOF\nn\np\n1\n\n\nw\nEOF");
 ////        exec_script("sudo mkfs -t ext3 /dev/sdc1
 //             
