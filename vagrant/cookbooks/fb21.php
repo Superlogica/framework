@@ -12,13 +12,14 @@ function fb21_init(){
 
 	exec_script("
                 sudo apt-get update
-                apt-get -f install
+                apt-get -f -y install
 		sudo sysctl -w net.ipv4.tcp_keepalive_time=60 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
 		sudo apt-get -y -q install firebird$fb_ver-super$classic subversion git-core
-                sudo dpkg-reconfigure firebird2.1-super
+                
                 sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
 		");
-        time_zone();        
+        time_zone();   
+        //sudo dpkg-reconfigure firebird2.1-super
 //	exec("sudo fdisk /dev/sdc << EOF\nn\np\n1\n\n\nw\nEOF");
 ////        exec_script("sudo mkfs -t ext3 /dev/sdc1
 //             
