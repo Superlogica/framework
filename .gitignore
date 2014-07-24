@@ -1,5 +1,5 @@
 public/scripts/min/
 application/Data/cache
 /nbproject/
-*/.vagrant/*
-/.vagrant/
+*.fdb
+*.vagrant*
