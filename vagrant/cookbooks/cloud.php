@@ -47,7 +47,7 @@ exec_script("
 
 //ativar app no apache
  exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud"
-           . "sudo -Rf rm /var/www"
+           . "sudo rm -Rf /var/www"
            . "sudo ln -s /home/cloud  /var/www"
            . "cloud-init cloudini"
            . "cloud-init phpini"
