@@ -20,11 +20,9 @@ exec_script("
     sudo apt-get -y install apachetop
     sudo apt-get -y install firebird2.5-superclassic subversion git-core php5-interbase
     sudo dpkg-reconfigure firebird2.5-superclassic; 
-    sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/2.5/UDF
-    sudo apt-get -y install tz-brasil
-    sudo dpkg-reconfigure tzdata
-    sudo chmod 444 /etc/init.d/postfix
+    sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/2.5/UDF    
     sudo rm /etc/php5/conf.d/timezone.ini");
+    time_zone();
 //eaccelerator         
 exec_script("sudo apt-get install make;
 	cd /tmp; mkdir /tmp/eaccelerator; cd eaccelerator; wget -O /tmp/eaccelerator/eaccelerator.tar https://github.com/eaccelerator/eaccelerator/tarball/master;
