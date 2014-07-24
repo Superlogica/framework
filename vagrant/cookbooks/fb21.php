@@ -8,11 +8,14 @@ function fb21_init(){
        $classic = "";
     //   exec_script("sudo add-apt-repository ppa:mapopa
     //            sudo apt-get update");
+       
 
 	exec_script("
                 sudo apt-get update
+                apt-get -f install
 		sudo sysctl -w net.ipv4.tcp_keepalive_time=60 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
 		sudo apt-get -y -q install firebird$fb_ver-super$classic subversion git-core
+                sudo dpkg-reconfigure firebird2.1-super
                 sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
 		");
         time_zone();        
