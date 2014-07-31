@@ -3,8 +3,7 @@
 function cloud_init($php_version="5.4"){
 
 if ($php_version=="5.4"){
-exec_script(" sudo add-apt-repository ppa:ondrej/php5-oldstable
- sudo apt-get update");
+exec_script("sudo cloud-init php54atualizado");
 }
 
 if ($php_version=="5.5"){

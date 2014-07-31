@@ -14,6 +14,7 @@ config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 end
 
+  config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
   config.vm.network :private_network, ip: "192.168.80.10"
   config.ssh.forward_agent = true
   config.vm.synced_folder "." , "/home/zephir"
