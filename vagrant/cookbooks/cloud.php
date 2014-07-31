@@ -39,16 +39,20 @@ exec_script("
          sudo ufw allow https
          sudo ufw enable");
 
-//cloud.lock
-@unlink("/home/cloud/cloud.lock");
+
 
 //ativar app no apache
  exec_script(" sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud
             sudo rm -Rf /var/www
             sudo ln -s /home/cloud  /var/www
             cloud-init cloudini
-           cloud-init phpini"
+            cloud-init phpini
+            /home/cloud/conf/deploy.sh"
                );
+ 
+ 
+ //cloud.lock
+@unlink("/home/cloud/cloud.lock");
 
   //deploy_action("cloud");
   apache_tunning();
