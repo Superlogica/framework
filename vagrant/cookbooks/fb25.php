@@ -1,4 +1,5 @@
 <?php
+include "/tmp/cloud/libs/lib.php";
 
 function fb25_init(){
     //http://www.slideshare.net/mindthebird/firebird-on-linux
