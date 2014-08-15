@@ -1,7 +1,5 @@
 <?php
 
-include "/tmp/cloud/libs/lib.php";
-
 function fb21_init(){
     //http://www.slideshare.net/mindthebird/firebird-on-linux
     //http://www.ibphoenix.com/resources/documents/search/doc_26
