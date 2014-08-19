@@ -47,7 +47,7 @@ exec_script("
             sudo ln -s /home/cloud  /var/www
             cloud-init cloudini
             cloud-init phpini
-            /home/cloud/conf/deploy.sh"
+            sudo bash /home/cloud/conf/deploy.sh"
                );
  
  
