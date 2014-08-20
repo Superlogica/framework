@@ -18,7 +18,8 @@ exec_script("
     sudo a2enmod rewrite
     sudo apt-get -y install apachetop
     sudo apt-get -y install firebird2.1-super subversion git-core php5-interbase   
-    sudo rm /etc/php5/conf.d/timezone.ini");
+    sudo rm /etc/php5/conf.d/timezone.ini
+    sudo mkdir /home/session;sudo chmod -R 777 /home/session");
     time_zone();
 //eaccelerator         
 exec_script("sudo apt-get install make;
