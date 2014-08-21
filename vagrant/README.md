@@ -1,6 +1,6 @@
 Como criar ambientes de teste/produção para o Superlógica?
 
- == INSTALACAO  == 
+# INSTALACAO 
 
 1. Instale VirtualBox:
  - https://www.virtualbox.org/wiki/Downloads
@@ -27,7 +27,7 @@ Como criar ambientes de teste/produção para o Superlógica?
 
 
 
-== USO ==
+# USO
 
 - Pasta sincronizada:
  - vagrant rsync-auto
