@@ -43,8 +43,10 @@ exec_script("
             sudo ln -s /home/cloud  /var/www
             cloud-init cloudini
             cloud-init phpini
-            sudo bash /home/cloud/conf/deploy.sh"
-               );
+            sudo bash /home/cloud/conf/deploy.sh
+            sudo chmod -R 777 /home/cloud/db
+            sudo chmod -R 777 /home/cloud/var
+               ");
  
  
  //cloud.lock
