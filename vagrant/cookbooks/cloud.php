@@ -46,6 +46,7 @@ exec_script("
             sudo bash /home/cloud/conf/deploy.sh
             sudo chmod -R 777 /home/cloud/db
             sudo chmod -R 777 /home/cloud/var
+            sudo chmod -R 777 /home/cloud/public/scripts/min
                ");
  
  
