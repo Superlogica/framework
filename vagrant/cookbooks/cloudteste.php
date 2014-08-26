@@ -1,3 +1,5 @@
+<?php
+
 function cloudteste_init(){
 
 
