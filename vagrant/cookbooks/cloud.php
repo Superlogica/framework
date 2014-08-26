@@ -44,10 +44,10 @@ exec_script("
             cloud-init cloudini
             cloud-init phpini
             sudo bash /home/cloud/conf/deploy.sh
-            sudo chmod -R 777 /home/cloud/db
             sudo chmod -R 777 /home/cloud/var
             sudo chmod -R 777 /home/cloud/public/scripts/min
-               ");
+			update-rc.d apache2 defaults
+         ");
  
  
  //cloud.lock
