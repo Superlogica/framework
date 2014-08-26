@@ -51,6 +51,12 @@ function fb21_init(){
 	");  
           //  sudo ln -s /usr/lib/libfbclient.so.2.5.0 /usr/lib/libfbclient.so 
           
+ exec_script("
+         sudo ufw allow 3050
+");         
+          
+          
+          
         firebird_tunning(true); 
         firebird_restart();
  
