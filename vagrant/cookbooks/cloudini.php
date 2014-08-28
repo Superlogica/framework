@@ -6,7 +6,7 @@ function cloudini_init($ambiente="cloud"){
            put_template("cloud.ini","/home/cloud/configs/cloud.ini");
         }
 		
-        if ($ambiente == "plataforma")){
+        if ($ambiente == "plataforma"){
             put_template("cloud-apps.ini","/home/plataforma/library/Application/Configs/cloud.ini");
         }    
 }
