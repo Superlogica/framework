@@ -23,27 +23,27 @@ if (!$cookbook){
 }
 
 //cria diretorios
-if (!is_dir("/tmp/cloud/libs")){
-  if (!mkdir("/tmp/cloud/libs", 0777, true)) {
+if (!is_dir("/opt/cloud-init/cloud/libs")){
+  if (!mkdir("/opt/cloud-init/cloud/libs", 0777, true)) {
       die('Falhou ao criar pastas.');
   }
 }
 
 //lib
-if (is_file("/tmp/cloud/libs/lib.php")){
-   @unlink("/tmp/cloud/libs/lib.php");
+if (is_file("/opt/cloud-init/cloud/libs/lib.php")){
+   @unlink("/opt/cloud-init/cloud/libs/lib.php");
 }
-exec("cd /tmp/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
-require_once "/tmp/cloud/libs/lib.php";
+exec("cd /opt/cloud-init/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/libs/lib.php --no-check-certificate;"); 
+require_once "/opt/cloud-init/cloud/libs/lib.php";
 
 //executa
-if (is_file("/tmp/cloud/$cookbook.php")){
-   @unlink("/tmp/cloud/$cookbook.php");
+if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
+   @unlink("/opt/cloud-init/cloud/$cookbook.php");
 }
-exec_script("cd /tmp/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
-if (!is_file("/tmp/cloud/$cookbook.php")){
+exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cookbooks/$cookbook.php --no-check-certificate;"); 
+if (!is_file("/opt/cloud-init/cloud/$cookbook.php")){
     echo("\nCookbook '$cookbook' não encontrado.\n\n");
     exit(3);
 }
-require "/tmp/cloud/$cookbook.php";
+require "/opt/cloud-init/cloud/$cookbook.php";
 call_user_func_array($cookbook."_init", $args);
