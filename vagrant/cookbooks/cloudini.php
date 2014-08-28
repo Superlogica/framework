@@ -1,11 +1,12 @@
 <?php
 
-function cloudini_init(){
+function cloudini_init($ambiente="cloud"){
 
-        if (is_dir("/home/cloud/")){
+        if ($ambiente == "cloud"){
            put_template("cloud.ini","/home/cloud/configs/cloud.ini");
         }
-        if (is_dir("/home/plataforma/")){
+		
+        if ($ambiente == "plataforma")){
             put_template("cloud-apps.ini","/home/plataforma/library/Application/Configs/cloud.ini");
         }    
 }
