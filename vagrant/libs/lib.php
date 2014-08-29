@@ -20,8 +20,8 @@ function exec_script($script){
 function put_template($nome,$destino,$vars=false){
 $basenome = basename($nome);	
 if(!is_dir("/opt/cloud-init/cloud/templates/")){
-   mkdir("/opt/cloud-init/templates/");	
-   exec_script("sudo chmod -R 777 /opt/cloud-init/templates");
+   mkdir("/opt/cloud-init/cloud/templates/");	
+   exec_script("sudo chmod -R 777 /opt/cloud-init/cloud/templates");
 }
 
 if (is_file($destino)){
