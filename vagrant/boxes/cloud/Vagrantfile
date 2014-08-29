@@ -20,5 +20,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_agent = true
   config.vm.synced_folder "./db", "/home/cloud-db"
   config.vm.synced_folder ".", "/home/cloud", type: "rsync", rsync__exclude: [".git/","fb", "var","utils", "db"], id: "home-cloud"
-  config.vm.provision 'shell', inline: 'cd /opt; sudo rm /opt/cloud-init;sudo mkdir /opt/cloud-init;sudo chmod 777 /opt/cloud-init/;cd /opt/cloud-init; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-init-init --no-check-certificate; sudo chmod 777 /opt/cloud-init/cloud-init-init; sudo /opt/cloud-init/cloud-init-init cloud;'
+  config.vm.provision 'shell', inline: 'cd /opt;sudo rm -rf /opt/cloud-init;sudo mkdir /opt/cloud-init;sudo chmod 777 /opt/cloud-init/;cd /opt/cloud-init; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/cloud-init-init --no-check-certificate; sudo chmod 777 /opt/cloud-init/cloud-init-init; sudo /opt/cloud-init/cloud-init-init cloud;'
 end
