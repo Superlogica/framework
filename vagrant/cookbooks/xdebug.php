@@ -16,8 +16,8 @@ function xdebug_init(){
         tar --strip-components 1 -xf /tmp/xdebug/xdebug.tar; 
         phpize; 
         ./configure; 
-        make; 
-        make install;
+        sudo make; 
+        sudo make install;
         rm -rf /tmp/xdebug;
         sudo mkdir -p /var/log/xdebug;
         sudo mkdir -p /var/log/xdebug/profiler/;
