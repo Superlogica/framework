@@ -21,6 +21,7 @@ function put_template($nome,$destino,$vars=false){
 $basenome = basename($nome);	
 if(!is_dir("/opt/cloud-init/cloud/templates/")){
    mkdir("/opt/cloud-init/templates/");	
+   exec_script("sudo chmod -R 777 /opt/cloud-init/templates");
 }
 
 if (is_file($destino)){
@@ -33,7 +34,7 @@ if (is_file("/opt/cloud-init/cloud/templates/$basenome")){
 exec_script("cd /opt/cloud-init/cloud/templates/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/templates/$nome --no-check-certificate;"); 
 
 if (!is_file("/opt/cloud-init/cloud/templates/$basenome")){
-    echo("\nTemplate '$nome' n„o encontrado.\n\n");
+    echo("\nTemplate '$nome' n√£o encontrado.\n\n");
     exit(3);
 }	
   $template = file_get_contents("/opt/cloud-init/cloud/templates/$basenome");
