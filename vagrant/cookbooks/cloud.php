@@ -41,8 +41,8 @@ exec_script("
  exec_script(" sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud
             sudo rm -Rf /var/www
             sudo ln -s /home/cloud  /var/www
-            cloud-init cloudini
-            cloud-init phpini
+            sudo cloud-init cloudini
+            sudo cloud-init phpini
             sudo bash /home/cloud/conf/deploy.sh
             sudo chmod -R 777 /home/cloud/var
             sudo chmod -R 777 /home/cloud/public/scripts/min
