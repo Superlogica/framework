@@ -22,9 +22,14 @@ exec_script("
     sudo mkdir /home/session;sudo chmod -R 777 /home/session");
     time_zone();
 	
-//eaccelerator         
-exec_script("sudo cloud-init eaccelerator");
 
+// ####################################################################################    
+// ###### COMENTADO POIS O XDEBUG NÃO FUNCIONA OS BREAKPOINTS     #####################
+// ###### ENTRANDO NAS FUNÇÕES COM ALGUMA EXTENSÃO DE CACHE ATIVA #####################
+//eaccelerator
+//exec_script("sudo cloud-init eaccelerator");
+// ####################################################################################
+    
 //git clone
 //exec_script("cd /home; sudo git clone git@github.com:Superlogica/cloud.git"); 
 //firewall
