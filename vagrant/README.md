@@ -34,11 +34,16 @@ Como criar ambientes de teste/produção para o Superlógica?
  - a pasta escolhida no item 3 será sincronizada dentro da maquina virtual do novo ambiente;
 
 - Acessar servidor web: 
- - http://localhost:8080
+ - http://192.168.80.1:3059
+ 
+- Abrir Diretório do projeto no WINDOWS
+ - cd c:\git\cloud
 
-- Iniciar a maquina:
- - vagrant up  
+- Criar a maquina:
+ - vagrant up 
 
+- iniciar a maquina:
+ - vagrant reload 
 
 - Acessar a maquina
  - vagrant ssh ou acesse via putty 127.0.0.1:2222 
@@ -46,7 +51,9 @@ Como criar ambientes de teste/produção para o Superlógica?
 - Destruir a maquina
  - vagrant destroy
 
-
+- Executar cookbooks
+ -  sudo cloud-init <nome_do_cookbook>
+ ex: sudo cloud-init fb21
 
 
 
