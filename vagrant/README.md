@@ -55,6 +55,13 @@ Como criar ambientes de teste/produção para o Superlógica?
  -  sudo cloud-init <nome_do_cookbook>
  ex: sudo cloud-init fb21
 
+- Firebird
+ - sudo /etc/init.d/firebird2.1-super restart
+
+- Debug.txt
+ - criar: sudo echo '' >> /home/cloud/var/log/debug.txt
+ - abrir: tail -f /home/cloud/var/log/debug.txt
+ - limpar: sudo echo '' > /home/cloud/var/log/debug.txt
 
 
 
