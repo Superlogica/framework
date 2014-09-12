@@ -8,6 +8,7 @@ function xdebug_init(){
     $xdebugIni = 'zend_extension='.rtrim($diretorioExtensoes,DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.'xdebug.so';
 
     exec_script("
+        sudo apt-get install make;
         sed -i '1i".$xdebugIni."' /etc/php5/conf.d/xdebug.ini;
         cd /tmp; 
         mkdir /tmp/xdebug; 
