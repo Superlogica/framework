@@ -15,10 +15,19 @@ Como criar ambientes de teste/produção para o Superlógica?
 4. Clone o projeto (Github) desejado: 
  - na pasta de c:\git ou $HOME/git
 
-5. Copie nesta pasta um dos Vagrantfiles conforme sua necessidade:
+5. Para instalação do cloud execute COMO ADMINISTRADOR o script instalarVagrant.ps1
+ - Diretório do script: \\192.168.0.40\programas\01-Super\DEV
+ - Para executar como ADMINISTRADOR:
+   - copie o script para algum diretório de facil localização;
+   - Abra o powerShell como ADM;
+   - Normalmente no primeiro acesso do powerShell, ele vem desabilitado para execução de script, para liberar use o comando: Set-ExecutionPolicy Unrestricted;
+   - Localize o diretório do script via linha de comando e execute. EX: cd C:\;./instalarVagrant.ps1
+ 
+OBS. Após a execução dos scripts 
+
+OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantFile conforme necessidade:
  - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
- - na maioria dos casos o Vagrantfile é este: 
- - https://raw.githubusercontent.com/Superlogica/framework/master/vagrant/boxes/cloudteste/Vagrantfile
+
 
 6. abra o shell (ou powershell), entre na pasta escolhida no item 3 e digite:
  - vagrant up
