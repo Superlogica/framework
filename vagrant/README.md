@@ -25,7 +25,7 @@ Como criar ambientes de teste/produção para o Superlógica?
  
 OBS. Após a execução dos scripts estará instalado: o virtualBox, Vagrant, o rsync, e o rsync estará declarado no PATH;
 
-OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantFile conforme necessidade:
+OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile conforme necessidade:
  - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
 
 
