@@ -23,7 +23,7 @@ Como criar ambientes de teste/produção para o Superlógica?
    - Normalmente no primeiro acesso do powerShell, ele vem desabilitado para execução de script, para liberar use o comando: Set-ExecutionPolicy Unrestricted;
    - Localize o diretório do script via linha de comando e execute. EX: cd C:\;./instalarVagrant.ps1
  
-OBS. Após a execução dos scripts 
+OBS. Após a execução dos scripts estará instalado: o virtualBox, Vagrant, o rsync, e o rsync estará declarado no PATH;
 
 OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantFile conforme necessidade:
  - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
