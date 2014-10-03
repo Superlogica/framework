@@ -24,8 +24,8 @@ exec_script("
 	
 
 // ####################################################################################    
-// ###### COMENTADO POIS O XDEBUG N√O FUNCIONA OS BREAKPOINTS     #####################
-// ###### ENTRANDO NAS FUN«’ES COM ALGUMA EXTENS√O DE CACHE ATIVA #####################
+// ###### COMENTADO POIS O XDEBUG N√ÉO FUNCIONA OS BREAKPOINTS     #####################
+// ###### ENTRANDO NAS FUN√á√ïES COM ALGUMA EXTENS√ÉO DE CACHE ATIVA #####################
 //eaccelerator
 //exec_script("sudo cloud-init eaccelerator");
 // ####################################################################################
@@ -54,8 +54,9 @@ else
             sudo cloud-init phpini
             sudo bash /home/cloud/conf/deploy.sh
             sudo chmod -R 777 /home/cloud/var
+            sudo mkdir /home/cloud/public/scripts/min
             sudo chmod -R 777 /home/cloud/public/scripts/min
-			update-rc.d apache2 defaults
+	    update-rc.d apache2 defaults
          ");
  
  
