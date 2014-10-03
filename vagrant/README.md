@@ -60,8 +60,8 @@ OBS. Algumas vezes ocorrem problemas com a alteração da variavel de ambiente P
  - vagrant destroy
 
 - Executar cookbooks
- -  sudo cloud-init <nome_do_cookbook>
- ex: sudo cloud-init fb21
+ - sudo cloud-init <nome_do_cookbook>
+ - ex: sudo cloud-init fb21
 
 - Firebird
  - sudo /etc/init.d/firebird2.1-super restart
