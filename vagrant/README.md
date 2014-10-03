@@ -15,7 +15,7 @@ Como criar ambientes de teste/produção para o Superlógica?
 4. Clone o projeto (Github) desejado: 
  - na pasta de c:\git ou $HOME/git
 
-5. Para instalação do cloud execute COMO ADMINISTRADOR o script instalarVagrant.ps1
+5. Para instalação do cloud execute COMO ADMINISTRADOR o script "instalarVagrant.ps1".
  - Diretório do script: \\192.168.0.40\programas\01-Super\DEV
  - Para executar como ADMINISTRADOR:
    - copie o script para algum diretório de facil localização;
