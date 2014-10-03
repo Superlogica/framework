@@ -15,7 +15,7 @@ Como criar ambientes de teste/produção para o Superlógica?
 4. Clone o projeto (Github) desejado: 
  - na pasta de c:\git ou $HOME/git
 
-5. Cria a pasta db dentro da pasta do projeto, para colocar os banco de dados:
+5. Cria a pasta "db" dentro da pasta do projeto, para colocar os banco de dados:
  - c:\git\cloud\db
 
 6. Para instalação do cloud execute COMO ADMINISTRADOR o script "instalarVagrant.ps1".
@@ -28,15 +28,13 @@ Como criar ambientes de teste/produção para o Superlógica?
  
 OBS. Após a execução dos scripts estará instalado: o virtualBox, Vagrant, o rsync, e o rsync estará declarado no PATH;
 
-OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile conforme necessidade:
- - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
-
 OBS. Algumas vezes ocorrem problemas com a alteração da variavel de ambiente PATH, para resolver reinicie o computador, abra o powershell como ADM, navegue até o diretório do projeto e execute o comando de criação de máquina(vagrant up) e sincronização(vagrant rsync-auto).
 
 7. Instale o firebird;
  - Abra o Putty e use o comando "sudo cloud-init fb21", nas interações selecione a opção "YES" e digite a senha "masterkey".
 
-
+OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile conforme necessidade:
+ - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
 
 # USO
 
