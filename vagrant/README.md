@@ -18,7 +18,7 @@ Como criar ambientes de teste/produção para o Superlógica?
 5. Para instalação do cloud execute COMO ADMINISTRADOR o script "instalarVagrant.ps1".
  - Diretório do script: \\192.168.0.40\programas\01-Super\DEV
  - Para executar como ADMINISTRADOR:
-   Copie o script para algum diretório de facil localização;
+   - Copie o script para algum diretório de facil localização;
    Abra o powerShell como ADM;
    Normalmente no primeiro acesso do powerShell, ele vem desabilitado para execução de script, para liberar use o comando: Set-ExecutionPolicy Unrestricted;
    Localize o diretório do script via linha de comando e execute. EX: cd C:\;./instalarVagrant.ps1
