@@ -28,7 +28,6 @@ OBS. Após a execução dos scripts estará instalado: o virtualBox, Vagrant, o 
 OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile conforme necessidade:
  - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
 
-
 6. abra o shell (ou powershell), entre na pasta escolhida no item 3 e digite:
  - vagrant up
 
