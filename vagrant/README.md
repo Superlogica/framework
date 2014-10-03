@@ -28,10 +28,10 @@ OBS. Após a execução dos scripts estará instalado: o virtualBox, Vagrant, o 
 OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile conforme necessidade:
  - https://github.com/Superlogica/framework/tree/master/vagrant/boxes
 
-6. abra o shell (ou powershell), entre na pasta escolhida no item 3 e digite:
- - vagrant up
+OBS. Algumas vezes ocorrem problemas com a alteração da variavel de ambiente PATH, para resolver reinicie o computador, abra o powershell como ADM, navegue até o diretório do projeto e execute o comando de criação de máquina e e sincronização(vagrant rsync-auto).
 
-
+6. Instale o firebird;
+ - Abra o Putty e use o comando "sudo cloud-init fb21", nas interações selecione a opção "YES" e digite a senha "masterkey".
 
 
 
