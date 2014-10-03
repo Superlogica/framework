@@ -71,6 +71,8 @@ OBS. Algumas vezes ocorrem problemas com a alteração da variavel de ambiente P
  - abrir: tail -f /home/cloud/var/log/debug.txt
  - limpar: sudo echo '' > /home/cloud/var/log/debug.txt
 
+- Limpar cache
+ - sudo rm -rf /home/cloud/var/log/cache
 
 
 
