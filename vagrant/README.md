@@ -19,8 +19,8 @@ Como criar ambientes de teste/produção para o Superlógica?
  - Diretório do script: \\192.168.0.40\programas\01-Super\DEV
  - Para executar como ADMINISTRADOR:
    + copie o script para algum diretório de facil localização;
-   + abra o powerShell como ADM;
-   + Normalmente no primeiro acesso do powerShell, ele vem desabilitado para execução de script, para liberar use o comando: Set-ExecutionPolicy Unrestricted;
+   b. abra o powerShell como ADM;
+   c. Normalmente no primeiro acesso do powerShell, ele vem desabilitado para execução de script, para liberar use o comando: Set-ExecutionPolicy Unrestricted;
    * Localize o diretório do script via linha de comando e execute. EX: cd C:\;./instalarVagrant.ps1
  
 OBS. Após a execução dos scripts estará instalado: o virtualBox, Vagrant, o rsync, e o rsync estará declarado no PATH;
