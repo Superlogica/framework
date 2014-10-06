@@ -71,6 +71,8 @@ OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile con
  - criar: sudo echo '' >> /home/cloud/var/log/debug.txt
  - abrir: tail -f /home/cloud/var/log/debug.txt
  - limpar: sudo echo '' > /home/cloud/var/log/debug.txt
+ 
+ - Alternativa com link simb.: sudo ln -s /vagrant/var/log/debug.txt /home/cloud/var/log/debug.txt
 
 - Limpar cache via putty
  - sudo rm -rf /home/cloud/var/log/cache
