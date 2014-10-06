@@ -53,7 +53,7 @@ else
             sudo cloud-init cloudini
             sudo cloud-init phpini
             sudo bash /home/cloud/conf/deploy.sh
-            sudo chmod -R 777 /home/cloud/var
+            sudo mkdir /home/cloud/var; sudo chmod -R 777 /home/cloud/var
             sudo mkdir /home/cloud/public/scripts/min
             sudo chmod -R 777 /home/cloud/public/scripts/min
 	    update-rc.d apache2 defaults
