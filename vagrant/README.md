@@ -67,6 +67,9 @@ OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile con
 - Firebird
  - sudo /etc/init.d/firebird2.1-super restart
 
+- Apache
+ - sudo /etc/init.d/apache2 restart
+
 - Debug.txt
  - criar: sudo echo '' >> /home/cloud/var/log/debug.txt
  - abrir: tail -f /home/cloud/var/log/debug.txt
