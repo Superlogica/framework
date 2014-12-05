@@ -79,6 +79,10 @@ OBS. Para subir outros ambientes acesse o link abaixo e copie os vagrantfile con
 
 - Limpar cache via putty
  - sudo rm -rf /home/cloud/var/log/cache
+ 
+ - Aumentar memoria via putty
+ - sudo nano /etc/php5/apache2/conf.d/php-5-4.ini
+ 
 
 
 
