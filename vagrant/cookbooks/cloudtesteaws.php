@@ -7,5 +7,5 @@ exec_script("sudo cloud-init cloud
              sudo cloud-init fb21
              sudo /home/cloud/conf/deploy.sh
              sudo rm /home/cloud/cloud.lock
-             sudo chmod 777 /home/cloud-db");
+             sudo chmod 777 /home/cloud-db -R");
 }
