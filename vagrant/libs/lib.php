@@ -114,8 +114,11 @@ function apache_restart(){
 
 function time_zone(){
     put_template("timezone","/etc/timezone"); 
-    exec_script("sudo apt-get -y -q install tz-brasil; "
-              . "sudo chmod 444 /etc/init.d/postfix; "
-            . "sudo pecl install timezonedb ");
+    exec_script("sudo apt-get -y -q install tz-brasil
+                 sudo chmod 444 /etc/init.d/postfix; 
+                 sudo aptitude remove --purge tzdata -y
+                 sudo aptitude  install tzdata -y
+                 sudo dpkg-reconfigure tzdata
+                 sudo pecl install timezonedb");
     
 }
