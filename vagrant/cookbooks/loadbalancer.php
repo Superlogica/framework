@@ -3,6 +3,7 @@
 function loadbalancer_init(){
     
     exec_script("
+        sudo apt­get update;
         sudo apt­get install haproxy;
     ");
 
