@@ -15,9 +15,12 @@ exec_script(" sudo add-apt-repository ppa:ondrej/php5
 exec_script("
     sudo apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql 
     sudo a2enmod ssl
+    sudo a2enmod version
+    sudo php5enmod mcrypt
     sudo a2enmod rewrite
     sudo apt-get -y install apachetop
     sudo apt-get -y install firebird2.1-super subversion git-core php5-interbase   
+    sudo php5enmod interbase
     sudo rm /etc/php5/conf.d/timezone.ini
     sudo mkdir /home/session;sudo chmod -R 777 /home/session");
     time_zone();
