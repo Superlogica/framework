@@ -16,6 +16,7 @@ exec_script("
 	sudo rm  /etc/apache2/ports.conf  
 ");
 
-put_template('apache-port-8080.conf','/etc/apache2/ports.conf');	
+put_template('apache-port-8080.conf','/etc/apache2/ports.conf');
+apache_tunning();
 
 }
