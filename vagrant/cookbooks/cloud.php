@@ -21,6 +21,7 @@ exec_script("
     sudo apt-get -y install apachetop
     sudo apt-get -y install firebird2.1-super subversion git-core php5-interbase   
     sudo php5enmod interbase
+    sudo apt-get -f install
     sudo rm /etc/php5/conf.d/timezone.ini
     sudo mkdir /home/session;sudo chmod -R 777 /home/session");
     time_zone();
@@ -60,7 +61,8 @@ else
             sudo mkdir /home/cloud/var; sudo chmod -R 777 /home/cloud/var
             sudo mkdir /home/cloud/public/scripts/min
             sudo chmod -R 777 /home/cloud/public/scripts/min
-	        update-rc.d apache2 defaults
+	    sudo update-rc.d apache2 defaults
+	    sudo cloud-init varnish
          ");
  
  
