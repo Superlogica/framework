@@ -4,7 +4,7 @@ function varnish_init(){
 
 
 exec_script("
-	sudo apt-get -y install varnish  
+	sudo apt-get --yes --force-yes install varnish  
 	sudo rm  /etc/default/varnish  
 ");
 
