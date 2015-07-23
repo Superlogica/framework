@@ -56,11 +56,12 @@ else
             sudo ln -s /home/cloud  /var/www
             sudo cloud-init cloudini
             sudo cloud-init phpini
+            sudo cloud-init varnish
             sudo bash /home/cloud/conf/deploy.sh
             sudo mkdir /home/cloud/var; sudo chmod -R 777 /home/cloud/var
             sudo mkdir /home/cloud/public/scripts/min
             sudo chmod -R 777 /home/cloud/public/scripts/min
-	        sudo update-rc.d apache2 defaults	       
+	        sudo update-rc.d apache2 defaults
          ");
  
  
